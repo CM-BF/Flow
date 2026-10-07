@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-07T22:15:08.419574+00:00",
+  "status": "BOUNDED_DESIGN_RESEARCH_NOT_IMPLEMENTED",
+  "parent": "/private/tmp/root-dashboard-client-update-research-20261007.json",
+  "fixedSource": "b7915e276374b8bffac3089d48a4bca0f18430d8",
+  "staticAllowlist": [
+    {
+      "name": "index.html",
+      "bytes": 8840,
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0"
+    },
+    {
+      "name": "app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+    },
+    {
+      "name": "styles.css",
+      "bytes": 10053,
+      "sha256": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c"
+    },
+    {
+      "name": "local-access.js",
+      "bytes": 6064,
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966"
+    },
+    {
+      "name": "local-access.css",
+      "bytes": 1315,
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707"
+    },
+    {
+      "name": "architecture.js",
+      "bytes": 8424,
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60"
+    },
+    {
+      "name": "architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78"
+    },
+    {
+      "name": "architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780"
+    }
+  ],
+  "totalStaticSourceBytes": 126100,
+  "scopeBoundary": "Public dashboard static interface only. Do not hash status files, credential endpoints, owner worktrees or entire Git tree.",
+  "dependencyFact": "architecture.js imports only ./architecture-data.js among these examined modules; app.js and local-access.js have no static import declarations.",
+  "candidate": "A bounded immutable asset bundle per server instance can provide one coherent derived UI revision without re-reading Git or every asset on each author-data poll.",
+  "coherence": [
+    "Read and hash the exact existing public allowlist once before serving, enforce a finite aggregate size cap, and serve those same captured bytes for the lifetime of that instance.",
+    "Derive revision from sorted route/bytes/digest tuples of source assets. A substituted HTML version marker must be excluded from its own derivation to avoid a self-referential hash.",
+    "Expose the loaded revision in the served HTML and the currently serving revision through the existing bounded summary response or header; compare only when both are present.",
+    "No inline script or weakened Content-Security-Policy. Use existing app.js to read the marker and render the explicit update action.",
+    "This deliberately makes asset changes require the already-controlled server restart. An owner must choose and document this lifecycle rather than claiming disk hot editing and immutable serving simultaneously."
+  ],
+  "userBehavior": [
+    "Keep author facts refreshing and mark interface-update availability separately.",
+    "Never auto-reload or close selected task/review or expanded claim. The user chooses the update action.",
+    "Keep display of unknown client version honest; old pre-feature loaded code will not gain a notifier retroactively and needs an ordinary reload once.",
+    "Metadata/status-only commits must not create new interface-update prompts."
+  ],
+  "validation": [
+    "Two immutable versions A/B with same registry/status facts: loaded A receives B response and displays update action without losing selection or data refresh.",
+    "Identical static assets with changed status facts or commit metadata produce no update notice.",
+    "Missing/unknown version does not claim current or fabricate stale.",
+    "When on-disk assets change after startup, same instance serves its captured coherent bytes; new instance changes revision and bytes together.",
+    "Malicious or oversized unexpected asset input fails in bounded startup path; no runtime registry crawl.",
+    "Keyboard-accessible update action and focus/selection continuity require mounted browser verification; pure hashes alone do not prove it."
+  ],
+  "costEvidence": "The fixed eight allowlisted source files total126100B; this is input size, not measured runtime memory or latency. A bounded in-memory static representation looks feasible but has not been benchmarked.",
+  "coordination": "Existing D05/dashboard-followup owner scopes any implementation, exact claim and controlled deployment. No second registry or editable state source.",
+  "cleanCode": "Keep one asset identity and one clear per-instance asset lifetime; prefer reusing summary delivery over introducing a polling subsystem.",
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "imports": 0,
+    "services": 0,
+    "newClaims": 0
+  }
+}

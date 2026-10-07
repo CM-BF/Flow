@@ -1,23 +1,24 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T22:14:49.459Z：当前actual=[]、NEXT=[]。C4四正式报告与cold限定三角色实际均PASS/归还并获独审，fixed b422/905af供Original接收；AV R2五例FAIL已22:06:17.330完整归还，不重试。个人held23仍停止，最终caller审中，准备不是占用；完整当前前瞻16,913,137,664B，个人514MiB增量组合值17,452,105,728B，尚未授运行。**
+**即时调度 2026-10-07T22:21:49.228Z：个人活动已22:20:13.131180精确RETURN，仍held23/服务未恢复；唯一NEXT `AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE`，Mika/architecture_read，fixed326a/sourceead8/a67v6，180s=110work+60cleanup+10final，17PG+16margin、0Chrome/provider/personal。完整冻结floor17,625,120,768B（新增R3 161MiB一次、reserve只一次），最晚新spawn 2026-10-07T22:25:49.228Z。同调用fresh后单次，actual尚空；R1/R2和个人部分失败均保留，不借旧时间。**
 
-**Original个人最终准备所需准入数值：** 当前无actual/NEXT，完整前瞻基线 16,913,137,664B；最终包548490/e97dee已亲读，live1GiB保护不降，added512MiB+raw2MiB新增538,968,064B一次，待批准单次个人操作组合fresh需 **17,452,105,728B**。原00dcd入口900swork+2sreap、0provider；仍审中NOT_GRANTED/不是reservation。最后独审通过即可原owner紧邻独占选择，不重源审；不与PG/Chrome/服务写并跑，现两Webowner0工程，Mika仅既有16MiB池内0PG普通。
+**个人准入来源：** 最终548490/00dcd已独审通过，准备基线16,913,137,664B加本次512MiB+2MiB共538,968,064B，形成已消费17,452,105,728B；live1GiB保护不另重复计。22:15:59.699选择、22:17:23.713320实际启动，历史准备/gate不改。
 
 **Original/native可立即接收新四报告：** e15/880060配固定461a/caa1/d629/779与原policy的四份正式报告已[root实际限定独审APPROVED](host-i01-newpair-queue-20261007/release-e15-actual-result-review.json)（13917B/SHA2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad）。[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json)含四canonical报告路径/ID/16checks和两产物descriptor；入口已含实际批准（17583B/SHA905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186），W01已fixed b4222f7660a8e4a176285ff154c82afd95ba3d98 remoteclean/all4STOP正式交付；不需再测或等另一准备审。cold81fa3974限定结果独审同已通过，个人held23最终caller仍待审，未授权个人迁入。
 
-**Original 公开center既有后继写权核对：** Mika/db21:54:36只读ledger见main.ts、index.ts、plugin-runtime/routes.ts无activeclaim，拟既有X01内聚接线准备。请明确是否已有未登记/已派writer或个人恢复仍需此literal；有则给owner与安全解除条件，无则Mika另行fresh原子claim。当前未授权take/写入，不触个人或main；公开enable仍待AV/VAR。
+**公开center后继已合法领取：** Mika/db 的 CENTER-WIRING daf9316f v1 ACTIVE6/独立树已成立。22:18后撤销仅基于“可能未登记writer”的额外HOLD；fresh ledger与已知派工无具体重叠即可既有16MiB池内source继续，通知Original，不等待无事实的重复审批。公开enable仍待AV/VAR，不能修改个人fixed产物/actual服务。
 
 **Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取并在原16MiB普通段实施，唯一source登记待原D05；不与个人恢复抢写。
 
+**普通源边界：** Arc新12min/4MiB source段22:19:49.646开始，只强化两browser wiring断言、不实际运行；CENTER已在既有16MiB池内fresh继续。完整当前floor只看页首和forward表，各历史实际gate不随此变化。
 
-**明确候选顺序：** e15四页兼容与冷启动均实际PASS并独立活动资源RETURN，结果审/固定接收后由Original沿个人恢复链准备；准备不占actual。AV7620与Arc876新浏览器均READY_CLOSED，无自动授权；Picker90未运行。
+**候选顺序：** 个人首次恢复部分失败且活动已RETURN；AV R3固定326a已获审，页首唯一选择。Arc浏览器需先完成两断言增强及窄审；Picker90未运行。新的个人准备不占actual，确切READY再正常优先协调。
 
 **预算剩余来源对账（不阻构建）：** [现有算术注](host-i01-newpair-queue-20261007/resource-residual-arithmetic-note.json)确认13,440,909,312B已扣R1/R2/R3封存3,462,397,952B，不能再扣；内含两DB规划268,435,456B，其他13,172,473,856B待两lead既有回执逐来源映射。不置零/扫描/删除/重测，也不改变本次冻结build或旧Qgate。
 
 **Original 后继依赖（不取权）：** Mika21:23核runtime.ts仍95f47f5c v8/assignment持权，21:24 SVC06B自身7源已STOP；请当前cold安全点明确此literal是否仍需后续写。若不再需写，仅runtime.ts STOP→原version partial amend后给固定receipt；若需保留到C4/cold验收则给明确解除条件。Mika继续VAR准备，不新WT/take、不抢scope、不触main.ts；configuration两叶/AV plugin-runner按各原owner顺序交权。本请求不阻当前恢复。
 
-**Original 个人恢复当前准备：** 固定e15/880060已构建获审；cold限定三角色初始化/0task/stop实际PASS、DBprivateKEEP，C4新四正式报告PASS；两窗均已归还，个人仍held23停止。结果审和新的现场个人准备必须沿Original既有合同，不能把验证PASS当恢复。
+**个人恢复事实：** e15/880060构建、cold三角色初始化、C4四报告均通过；首次个人操作已导入e15+四报告，但rebind身份拒绝且未写选择，未refresh/resume/发布779，活动22:20:13归还，held23与旧三role停止保持。后继须原owner精确诊断/新fixedcaller，不能重放旧900s。
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -33,13 +34,13 @@
 
 **Original 历史startup observer交权与窄接收入口：** 原 `native_center_owner` 可按[唯一两叶交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json)（SHA5f3954c4…20f）fresh take后实施 startup observer；main.ts/index.ts已原子移出，index未main两行patch必须窄合并保留，禁止整blob覆盖。PROCESS四叶现已main/origin3d6e0f546；历史[verifier-extension入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json)已Mika独审，sourceabc0736/packet3fcdf供Original正常main批；个人排他期间不build，不另授PG。详见[current](host-i01-newpair-queue-20261007/current.json)，Web管理不操作其他owner树。
 
-**Original 看板原优先级与来源请求：** GO 20:09只读发现 FLOW-001 自身priority仍3，关键服务恢复未进入首屏前三；请原owner核自身明确priority事实，Web管理不代改其status。请D05唯一writer在合法安全点完成已有Arc818B登记请求（c34d v1/exact20，唯一web-workspace-composition status；891f局部独审afb555已到），不新take或第二writer。阻塞阅读排序/紧凑时间沿原WPF001-37/TIMING02后继，个人恢复优先，不抢当前产品scope。
+**看板来源：** GO20:09的自身priority建议仍由Original核事实；Arc/TIMING02/VAR已D05实际211部署，旧Arc818B请求已关闭。新增GDEP01/CENTER沿同一登记请求，不另writer/重复take。
 
 **Original 可接TIMING02交付：** 七源94ed已main2c966接收，98局部与六组浏览器/双390图已审；owner ae8c930全9STOP/d26v2已释放。D05已由Original原writer实际登记并部署211来源。
 
-**TIMING02 主线工程片已正式交回：** owner ae8c930双端clean，已亲核main2c966完整七源/I02，21:53:03.496Z d26v2 RELEASED；工程delivered，D05登记/4320部署仍待原owner实际回执，释放后不回写。
+**TIMING02 主线工程片已正式交回：** owner ae8c930双端clean，已亲核main2c966完整七源/I02，21:53:03.496Z d26v2 RELEASED；工程delivered；D05后续已实际211部署，fb418于22:09:07.984核齐完成并96bv2再次释放，释放后不回写。
 
-**D05三来源登记与部署已实际完成：** Original main69a71e3d9888c24c8f7c7a5965487f106c065c17，22:01:36.229Z自有4320实际211项，TIMING02/Arc/VAR均sourceCurrent=true/issues[]；旧50158正常TERM absent→57950，ACCESS/publicmetadata不变，0个人操作。[固定部署回执](host-i01-newpair-queue-20261007/dashboard-three-canonical-211-live.json)已读，原唯一登记请求关闭，不重启或重复浏览器验证。TIMING已释放范围只由原owner随后合法metadata接权收尾，不回写产品。
+**D05三来源登记与部署已实际完成：** Original main69a71e3d9888c24c8f7c7a5965487f106c065c17，22:01:36.229Z自有4320实际211项，TIMING02/Arc/VAR均sourceCurrent=true/issues[]；旧50158正常TERM absent→57950，ACCESS/publicmetadata不变，0个人操作。[固定部署回执](host-i01-newpair-queue-20261007/dashboard-three-canonical-211-live.json)已读，原唯一登记请求关闭，不重启或重复浏览器验证。TIMING已合法metadata收口fb418并96bv2释放；0产品重跑/后写。
 
 **D05同一请求新增两来源：** 先前三项已实际登记部署211不回滚；GDEP01与X01-VERIFIER-CENTER-WIRING01已分别原子领取且唯一status存在。精确taskId由owner标题核，路径见[原pending登记记录](host-i01-newpair-queue-20261007/pending-source-registration-current.json)，请Original唯一D05 writer下一安全批新增；不按ID猜planDir，不重复take/另writer，也不把take可见冒sourceCurrent。
 
@@ -49,7 +50,7 @@
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release b4d7v1 exact4已实际四版本PASS/完整RETURN，root2fd4实际审通过且b422已自然封存；VISUAL Recovery两项双图PASS，Picker90未运行。TIMING main2c966/ae8c930已交回d26v2，D05已部署211/livecurrent。Arc20STOP/f6ec53，新876入口修复获审但browser仍NOT_RUN，首0/4FAIL保留；HTTP第三两项PASS。Q01已main62b、final1b1e51/a8a3v2已释放21:56:22.244。
+**当前领取与工作状态：** Release b4d7v1 exact4已实际四版本PASS/完整RETURN，root2fd4实际审通过且b422已自然封存；VISUAL Recovery两项双图PASS，Picker90未运行。TIMING main2c966/ae8c930已交回d26v2，D05已部署211/livecurrent。Arc以f6ec53为新普通段基线，原20scope内仅增强browser断言，实际browser仍NOT_RUN，首0/4FAIL保留；HTTP第三两项PASS。Q01已main62b、final1b1e51/a8a3v2已释放21:56:22.244。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T22:13:36.428Z",
-  "state": "NO_ACTUAL_HOLDER_AV03_R2_FAILED_RETURNED",
+  "recordedAt": "2026-10-07T22:21:49.228Z",
+  "state": "NO_ACTUAL_HOLDER_AV_R3_SELECTED",
   "groupWindowOwnership": "OriginalfixedR2build soleNEXT, no actual untilSTART; TIMING fullyreturned/sealed; b692 invalidC4/AV/Arcbrowser blocked.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,12 +407,12 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T22:13:36.428Z",
-    "state": "NO_ACTUAL_HOLDER_AV03_R2_FAILED_RETURNED",
+    "at": "2026-10-07T22:21:49.228Z",
+    "state": "NO_ACTUAL_HOLDER_AV_R3_SELECTED",
     "actualHolder": null,
-    "next": null,
-    "floorBytes": 16913137664,
-    "decision": "AV R2 fullactivityRETURN22:06:17.330;5selected0pass5fail, no retry/VAR prerequisite unmet. RecoveryC4/cold approved; Original personalcaller pendingREADY, notreservation."
+    "next": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
+    "floorBytes": 17625120768,
+    "decision": "Personal activity returned22:20:13, no personal pendinglaunch. AV R3 fixed reviewed candidate selected once; originalpersonal diagnosis/preparation does not reserve actual. One frozen contract untilSTART/explicitSTOP."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1380,7 +1380,51 @@
     "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
   },
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": null,
+  "webReservation": {
+    "state": "SELECTED_NOT_STARTED",
+    "windows": {
+      "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE": {
+        "logicalId": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
+        "state": "SELECTED_NOT_STARTED",
+        "at": "2026-10-07T22:21:49.228Z",
+        "latestStart": "2026-10-07T22:25:49.228Z",
+        "owner": "Mika/architecture_read",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+        "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+        "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+        "claim": "a67 v6 ACTIVE25",
+        "ready": "docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json",
+        "readySha256": "eb92185fbc281750f2cb603baaf46a8862dd5e09c913020185cfdc2d289bca73",
+        "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+        "invocationSha256": "83ac99c5ec9e3bbfdf762dc81168e6f22a9f9d75a2326830f68b9074cd9a17e9",
+        "fixedInputs": "281/191 external/16 links/34 SQL,7 delta rows reviewed",
+        "totalSeconds": 180,
+        "workSeconds": 110,
+        "cleanupSeconds": 60,
+        "finalSeconds": 10,
+        "PG": 17,
+        "adminMargin": 16,
+        "database": 1,
+        "HTTPListenerConcurrent": 1,
+        "HTTPMax": 160,
+        "tasksMax": 32,
+        "attemptsMax": 20,
+        "runnersMax": 10,
+        "registrationsMax": 6,
+        "temporaryBytes": 33554432,
+        "rawBytes": 1048576,
+        "PGWALReserveBytes": 134217728,
+        "minimumFreshFreeBytes": 17625120768,
+        "Chrome": 0,
+        "provider": 0,
+        "personal": 0,
+        "retry": false,
+        "transferUnused": false,
+        "fresh": "Same-call exact source/runtime/claims/no-overlap/namespace absence, PG capacity >=17+16 and preflight poolfinallyclosed, actualfree >= frozen complete floor. On prelaunch mismatch report0child; do not reopen prior R1/R2.",
+        "lifecycle": "START and terminal/exact process DB HTTP scratch RETURN separately; no outerexit-only release; historical failures and gates immutable."
+      }
+    }
+  },
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1802,7 +1846,7 @@
     "shortGaps": "Original <=60 restriction revoked; ordinary isolated work continues, each actual candidate separately selected.",
     "previousReasonHistorical": "OriginalcurrentlyallowsonlyREADY<=60sisolatedgaps during personalrepairpreparation; Q140exceeds thatcondition. NotwaitingVARSTOP/Arcdagnosis and noactualholder isbeinginvented."
   },
-  "currentIntake": "AV R2 fullactivityRETURN22:06:17.330;5selected0pass5fail, no retry/VAR prerequisite unmet. RecoveryC4/cold approved; Original personalcaller pendingREADY, notreservation.",
+  "currentIntake": "Only personalheld23 e15 recoveryselected afterfinalindependentreview andall prioractualRETURN. native_center_owner originalreviewedentry,900s+2reap,0provider/no779publish. NotSTARTyet.",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -2050,15 +2094,8 @@
     "formalReportCount": 4,
     "personalResumed": false
   },
-  "futureCompleteFreshFloorBytes": 16913137664,
+  "futureCompleteFreshFloorBytes": 17625120768,
   "futureFloorEvidence": "Current forwardAdmission terms; historical consumed gates retained by logicalId.",
-  "externalOrdinaryCurrent": {
-    "state": "KCALLER_ALL_ENGINEERING_RETURNED_METADATA_NOT_STOP",
-    "actualReturn": "2026-10-07T18:26:24.696182Z",
-    "result": "29pass;3childexit0/exactabsent/MERGED EOF/raw750B/3sameidentityTMPremoved",
-    "futureCapBytes": 16777216,
-    "drain": "Mika reports0engineering/pendinglaunch; await performance source/CLI safeSTOP confirmation"
-  },
   "externalPreparedCandidate": null,
   "currentActual": null,
   "releaseCandidateCurrent": {
@@ -2306,8 +2343,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "NO_ACTUAL_PENDING_PERSONAL_FINAL_REVIEW",
-    "at": "2026-10-07T22:13:36.428Z",
+    "state": "AV_R3_SELECTED_FROZEN_UNTIL_START_OR_STOP",
+    "at": "2026-10-07T22:21:49.228Z",
     "termsBytes": {
       "residualUnknown": 13440909312,
       "priorK01Db": 134217728,
@@ -2371,10 +2408,13 @@
       "selectedRecoveryColdR2": 1244659712,
       "selectedReleaseE15C4": 0,
       "selectedAV03R2": 0,
-      "Timing02DeploymentMetadataClose": 0
+      "Timing02DeploymentMetadataClose": 0,
+      "selectedHeld23E15PersonalRecovery": 538968064,
+      "ArcBrowserAcceptanceCoverageSource": 4194304,
+      "selectedAV03R3": 168820736
     },
-    "minimumFreshFreeBytes": 16913137664,
-    "formula": "13440909312 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 16777216 + 1244659712 = 16913137664",
+    "minimumFreshFreeBytes": 17625120768,
+    "formula": "13440909312 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 16777216 + 1244659712 + 538968064 + 4194304 + 168820736 = 17625120768",
     "method": "Still possible or unknown growth plus explicitly pending seal bounds and one reserve. Two consumed recovery gates remain historical17128095744. Cold retained full planning remains conservative until Original no-writer classification.",
     "classificationEvents": [
       {
@@ -3106,10 +3146,31 @@
         "afterBytes": 0,
         "basis": "Mika fixedc08fb03fac0602821b03bf29279c492f11cc93f3 remoteclean/31bindings325180B19raw22885B sealed, db22:10:07 fidelityapproved; exactRETURN alreadyrecorded. Newrepair allocatedinsidealreadycountedMika16MiB pool, noextra growth.",
         "rule": "Prospectivegrowth only; actualFAIL/gate preserved;no deletion/refund."
+      },
+      {
+        "at": "2026-10-07T22:15:59.699Z",
+        "term": "selectedHeld23E15PersonalRecovery",
+        "beforeBytes": 0,
+        "afterBytes": 538968064,
+        "basis": "Finalassignment independentapprovaltarget548490/source00dcd, 6bindings/66pins/cold81fa/C4b422 fixed. Originaladded512MiB+raw2MiB once; existingreserveonly. live1GiB isprotectedlowerbound, notduplicatecandidate."
+      },
+      {
+        "at": "2026-10-07T22:19:25.993Z",
+        "term": "ArcBrowserAcceptanceCoverageSource",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "New bounded 12min original Arc browser-test-only coverage repair and routine candidate package; no actual browser/HTTP/PG; personal consumed17452105728 remains immutable."
+      },
+      {
+        "at": "2026-10-07T22:21:49.228Z",
+        "term": "selectedAV03R3",
+        "beforeBytes": 0,
+        "afterBytes": 168820736,
+        "basis": "Independent R3 32MiB TMP +1MiB raw +128MiB DB/WAL; one global1GiB reserve already counted. R2 closed no budget reuse. Personal pending sealed classification kept conservative."
       }
     ],
-    "currentWindowConservativeFrozenFloorBytes": null,
-    "frozenFloorExplanation": "No currentgrant; historical consumedAV17091395584/pair17128095744 stay eachownrecord."
+    "currentWindowConservativeFrozenFloorBytes": 17452105728,
+    "frozenFloorExplanation": "Keep this accepted completecontract fixed until realSTART or explicit0childSTOP; only listedbudget/inputhash values may be filled byoriginaloperator. Existingaccountedordinary continues, no newunaccountedgrowth beforeSTART/STOP."
   },
   "originalOrdinaryCurrent": {
     "asOf": "2026-10-07T21:45:04.734Z",
@@ -3232,6 +3293,16 @@
         "closure": "3ownedgroupsabsent/dualEOF/emptydirsremoved",
         "phaseBoundary": "Three authorizedSVC06B checks returned; preparation seal/review pending, no personalactualgrant"
       }
+    },
+    "externalOrdinaryCurrentPriorSnapshot2219": {
+      "supersededAt": "2026-10-07T22:19:25.993Z",
+      "value": {
+        "state": "KCALLER_ALL_ENGINEERING_RETURNED_METADATA_NOT_STOP",
+        "actualReturn": "2026-10-07T18:26:24.696182Z",
+        "result": "29pass;3childexit0/exactabsent/MERGED EOF/raw750B/3sameidentityTMPremoved",
+        "futureCapBytes": 16777216,
+        "drain": "Mika reports0engineering/pendinglaunch; await performance source/CLI safeSTOP confirmation"
+      }
     }
   },
   "launchHandoffBoundary": {
@@ -3322,7 +3393,48 @@
     "state": "APPLIED_AFTER_ACTUAL_START"
   },
   "activeWindows": {},
-  "selectedWindows": {},
+  "selectedWindows": {
+    "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE": {
+      "logicalId": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
+      "state": "SELECTED_NOT_STARTED",
+      "at": "2026-10-07T22:21:49.228Z",
+      "latestStart": "2026-10-07T22:25:49.228Z",
+      "owner": "Mika/architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+      "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "claim": "a67 v6 ACTIVE25",
+      "ready": "docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json",
+      "readySha256": "eb92185fbc281750f2cb603baaf46a8862dd5e09c913020185cfdc2d289bca73",
+      "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+      "invocationSha256": "83ac99c5ec9e3bbfdf762dc81168e6f22a9f9d75a2326830f68b9074cd9a17e9",
+      "fixedInputs": "281/191 external/16 links/34 SQL,7 delta rows reviewed",
+      "totalSeconds": 180,
+      "workSeconds": 110,
+      "cleanupSeconds": 60,
+      "finalSeconds": 10,
+      "PG": 17,
+      "adminMargin": 16,
+      "database": 1,
+      "HTTPListenerConcurrent": 1,
+      "HTTPMax": 160,
+      "tasksMax": 32,
+      "attemptsMax": 20,
+      "runnersMax": 10,
+      "registrationsMax": 6,
+      "temporaryBytes": 33554432,
+      "rawBytes": 1048576,
+      "PGWALReserveBytes": 134217728,
+      "minimumFreshFreeBytes": 17625120768,
+      "Chrome": 0,
+      "provider": 0,
+      "personal": 0,
+      "retry": false,
+      "transferUnused": false,
+      "fresh": "Same-call exact source/runtime/claims/no-overlap/namespace absence, PG capacity >=17+16 and preflight poolfinallyclosed, actualfree >= frozen complete floor. On prelaunch mismatch report0child; do not reopen prior R1/R2.",
+      "lifecycle": "START and terminal/exact process DB HTTP scratch RETURN separately; no outerexit-only release; historical failures and gates immutable."
+    }
+  },
   "activeWindowPolicy": {
     "state": "TWO_ISOLATED_NON_MEASUREMENT_RECOVERY_WINDOWS",
     "maximumActive": 2,
@@ -3335,5 +3447,6 @@
     "ChromeTotal": 1,
     "combinedFloorBytes": 17128095744,
     "source": "Original explicit allowed2isolatedPG policy androot C4nativecontract reading no globalexclusive. Manager read both fixedpreparations andseparateownednamespaces. No concurrentpersonal/thirdheavy permitted."
-  }
+  },
+  "actualHolder": null
 }

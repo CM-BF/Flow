@@ -1,0 +1,96 @@
+{
+  "recordedAt": "2026-10-07T22:16:28.396888+00:00",
+  "status": "PARTIAL_COVERAGE_FINDINGS_NOT_RUNTIME_REVIEW",
+  "scope": "Current four-group browser candidate versus user Arc workspace requirements",
+  "source": "876731f4488419d4c9d84584a40944fcd848c0f2",
+  "observedHead": "f6ec53bb98f8900c2823fbd46b6dfdae45f5c883",
+  "branch": "codex/web-workspace-composition",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "worktreeCleanAtPeerReadStartAndEnd": true,
+  "peer": "w01_owner independent of Arc implementer; root read critical assertions directly",
+  "fixedInputs": [
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "bytes": 20050,
+      "sha256": "b1e293297aaf05a98ab6d1dab81b87d0d1301f875d6fb138c0b666c894114d5c"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "bytes": 16524,
+      "sha256": "96c9b8cfd7647ac13c7cb1d89b7c91fd72d6015778b1aa5c7f9379dcbbb62b9f"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 3280,
+      "sha256": "7cc73e7134012504adedf69ba79ba2640961612487c3b768164f8c5e47c1e79a"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    }
+  ],
+  "runtimeState": "Corrected Cookie entry NOT_RUN; first browser0/4 FAIL retained. No new execution by this review.",
+  "findings": [
+    {
+      "id": "ARC-COVERAGE-01",
+      "requirement": "At most3 visible panes",
+      "priority": "P2",
+      "confirmedByRoot": true,
+      "evidence": "browser52-58 starts3 conversations, splits into3 one-tab panes and only then checks Split disabled. App1111 disables both for tabs.length<2 and groups.length>=MAX_VISIBLE_PANES.",
+      "problem": "The disabled assertion can still pass if the max3 guard is removed because the selected pane contains only1tab.",
+      "next": "Construct3panes with a focused pane retaining at least2tabs, verify split is refused and count/state unchanged. Preserve the original3pane behavioral sequence as needed."
+    },
+    {
+      "id": "ARC-COVERAGE-02",
+      "requirement": "Merge back to a single pane/tab group while retaining active conversation",
+      "priority": "P2",
+      "confirmedByRoot": true,
+      "evidence": "browser142 immediately chains Merge tabs then Split chat; subsequent assertions cover composer identity and captured send state.",
+      "problem": "There is no intermediate one-pane/selected-chat assertion. A no-op merge/split pair may satisfy retention checks.",
+      "next": "Assert exact merged visible-pane count and selected chat before splitting again; retain the composer identity/payload tests."
+    }
+  ],
+  "requirementMatrix": [
+    {
+      "requirement": "Compact Arc sidebar",
+      "covered": "Conversations buttons and structure only",
+      "remaining": "Row height/width/density, collapse/reopen and active marker are not directly verified; CSS not examined."
+    },
+    {
+      "requirement": "Split/merge and active state",
+      "covered": "3visible panes, stable input DOM on move, independent drafts, pending-material merge/split identity and preserved captured request",
+      "remaining": "Immediate merged state; precise active chat across each transition; full reload state/ratio/drafts."
+    },
+    {
+      "requirement": "Single-tab semantics",
+      "covered": "Multiple conversations grouped into workspace tabs and split panes",
+      "remaining": "Do not silently reinterpret user wording as duplicate copies of one conversation. Current tabs.length<2 prevents splitting a lone conversation. Existing approved plan meaning must control scope."
+    },
+    {
+      "requirement": "Keyboard",
+      "covered": "Chat ArrowRight thenEnter, workspace ArrowRight thenSpace, range Home/End, Files Escape focus, empty-workspace-close focus",
+      "remaining": "ArrowLeft/Home/End/Delete in WorkspaceTabs source not directly exercised; no complete keyboard matrix."
+    },
+    {
+      "requirement": "Narrow layout and themes",
+      "covered": "Planned390x844 light/dark attribute,2PNGs bounded512KiB and<=1px document horizontal overflow",
+      "remaining": "Still NOT_RUN; actual image inspection required. No blanket desktop/allpane minimum-size/control-reachability proof."
+    },
+    {
+      "requirement": "Reduced motion",
+      "covered": "Planned reduce media and zero computed animation/transition for visible pane/tab/separator; close/workspace keyboard under reduce",
+      "remaining": "Limited elements/states, not all App animations or both preference modes."
+    }
+  ],
+  "boundary": "Fixture holds real attachment adapter.send preparation before completion; Cookie/public projection is synthetic. No claim of real center/provider acceptance.",
+  "recommendedSequencing": "Before granting the currently unexecuted browser candidate, manager should have original Arc owner strengthen the two false-positive boundary assertions in its legitimate scope, fix corresponding plan acceptance, then pin/review a superseding candidate. Do not mutate already-fixed prepared packet or discard first failure. Sidebar/remaining breadth stays explicitly open in existing mature plan.",
+  "cleanCode": "Behavioral boundaries must have independently discriminating assertions; do not infer acceptance from group names or source guards.",
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "services": 0,
+    "browserRuns": 0,
+    "newClaims": 0
+  }
+}

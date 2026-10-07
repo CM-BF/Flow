@@ -1,0 +1,154 @@
+{
+  "at": "2026-10-07T22:20:13.131180+00:00",
+  "logicalId": "SVC06B-HELD23-E15-PERSONAL-RECOVERY-20261007-ONCE",
+  "state": "FAILED_PARTIAL_PERSONAL_OPERATION_RUNTIME_RETURNED",
+  "terminalAt": "2026-10-07T22:18:46.870374Z",
+  "completed": [
+    "fresh",
+    "import-artifact",
+    "import-reports"
+  ],
+  "failedPhase": "rebind",
+  "primary": {
+    "outcome": "unconfirmed",
+    "mutation": "not-written",
+    "primary": {
+      "phase": "identity",
+      "code": "MAINTENANCE_TARGET_CHANGED"
+    },
+    "cleanup": [],
+    "result": null,
+    "maintenance": "held-required",
+    "retry": "not-authorized",
+    "actualClaim": "unknown"
+  },
+  "operatorAndDirectChildren": {
+    "at": "2026-10-07T22:19:32.601106+00:00",
+    "ownedPids": [
+      {
+        "pid": 69686,
+        "state": "absent"
+      },
+      {
+        "pid": 77041,
+        "state": "absent"
+      },
+      {
+        "pid": 77043,
+        "state": "absent"
+      },
+      {
+        "pid": 85151,
+        "state": "absent"
+      },
+      {
+        "pid": 12040,
+        "state": "absent"
+      },
+      {
+        "pid": 25148,
+        "state": "absent"
+      },
+      {
+        "pid": 77042,
+        "state": "absent"
+      }
+    ],
+    "phases": [
+      {
+        "phase": "fresh",
+        "pid": 77043,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      },
+      {
+        "phase": "import-artifact",
+        "pid": 85151,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      },
+      {
+        "phase": "import-reports",
+        "pid": 12040,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      },
+      {
+        "phase": "rebind",
+        "pid": 25148,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      }
+    ],
+    "scope": "PID_ONLY; phase reports own childPidOnly, no all-group assertion",
+    "newServiceLaunches": 0,
+    "basis": "Stopped before refresh phase; target identity rejection returns mutation not-written."
+  },
+  "oldRolesNow": [
+    {
+      "role": "center",
+      "pid": {
+        "id": 37026,
+        "state": "absent"
+      },
+      "group": {
+        "id": 37026,
+        "state": "absent"
+      }
+    },
+    {
+      "role": "runner",
+      "pid": {
+        "id": 39405,
+        "state": "absent"
+      },
+      "group": {
+        "id": 39405,
+        "state": "absent"
+      }
+    },
+    {
+      "role": "web",
+      "pid": {
+        "id": 39502,
+        "state": "absent"
+      },
+      "group": {
+        "id": 39502,
+        "state": "absent"
+      }
+    }
+  ],
+  "newDetachedRolesStarted": 0,
+  "pendingLaunch": 0,
+  "database": {
+    "at": "2026-10-07T22:20:12.969Z",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "connections": [],
+    "adminClosed": true
+  },
+  "privateDisposition": "KEEP",
+  "personalArtifact": "e15 imported and four reports imported; backend selection/resume not performed",
+  "mutationsAfterFailure": 0,
+  "services": "Original old three roles remain stopped; no refresh/start/resume was attempted",
+  "oldUnknownResources": "Unchanged",
+  "automaticRetry": false,
+  "actualClaim": "NOT_OBSERVED",
+  "providerQueriesByOperator": 0
+}

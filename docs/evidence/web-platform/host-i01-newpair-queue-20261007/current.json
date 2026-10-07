@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-07T22:13:36.428Z",
-  "state": "NO_ACTUAL_HOLDER_AV03_R2_FAILED_RETURNED",
+  "at": "2026-10-07T22:21:49.228Z",
+  "state": "NO_ACTUAL_HOLDER_AV_R3_SELECTED",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
-  "decision": "AV R2 fullactivityRETURN22:06:17.330;5selected0pass5fail, no retry/VAR prerequisite unmet. RecoveryC4/cold approved; Original personalcaller pendingREADY, notreservation.",
-  "floor": 16913137664,
+  "decision": "Personal activity returned22:20:13, no personal pendinglaunch. AV R3 fixed reviewed candidate selected once; originalpersonal diagnosis/preparation does not reserve actual. One frozen contract untilSTART/explicitSTOP.",
+  "floor": 17625120768,
   "SVC09A": {
     "state": "FAILED_ATTEMPT_RUNTIME_RETURNED_WITH_DB_PRIVATE_KEEP",
     "totalMs": 215000,
@@ -2046,8 +2046,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "NO_ACTUAL_PENDING_PERSONAL_FINAL_REVIEW",
-    "at": "2026-10-07T22:13:36.428Z",
+    "state": "AV_R3_SELECTED_FROZEN_UNTIL_START_OR_STOP",
+    "at": "2026-10-07T22:21:49.228Z",
     "termsBytes": {
       "residualUnknown": 13440909312,
       "priorK01Db": 134217728,
@@ -2111,10 +2111,13 @@
       "selectedRecoveryColdR2": 1244659712,
       "selectedReleaseE15C4": 0,
       "selectedAV03R2": 0,
-      "Timing02DeploymentMetadataClose": 0
+      "Timing02DeploymentMetadataClose": 0,
+      "selectedHeld23E15PersonalRecovery": 538968064,
+      "ArcBrowserAcceptanceCoverageSource": 4194304,
+      "selectedAV03R3": 168820736
     },
-    "minimumFreshFreeBytes": 16913137664,
-    "formula": "13440909312 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 16777216 + 1244659712 = 16913137664",
+    "minimumFreshFreeBytes": 17625120768,
+    "formula": "13440909312 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 16777216 + 1244659712 + 538968064 + 4194304 + 168820736 = 17625120768",
     "method": "Still possible or unknown growth plus explicitly pending seal bounds and one reserve. Two consumed recovery gates remain historical17128095744. Cold retained full planning remains conservative until Original no-writer classification.",
     "classificationEvents": [
       {
@@ -2846,10 +2849,31 @@
         "afterBytes": 0,
         "basis": "Mika fixedc08fb03fac0602821b03bf29279c492f11cc93f3 remoteclean/31bindings325180B19raw22885B sealed, db22:10:07 fidelityapproved; exactRETURN alreadyrecorded. Newrepair allocatedinsidealreadycountedMika16MiB pool, noextra growth.",
         "rule": "Prospectivegrowth only; actualFAIL/gate preserved;no deletion/refund."
+      },
+      {
+        "at": "2026-10-07T22:15:59.699Z",
+        "term": "selectedHeld23E15PersonalRecovery",
+        "beforeBytes": 0,
+        "afterBytes": 538968064,
+        "basis": "Finalassignment independentapprovaltarget548490/source00dcd, 6bindings/66pins/cold81fa/C4b422 fixed. Originaladded512MiB+raw2MiB once; existingreserveonly. live1GiB isprotectedlowerbound, notduplicatecandidate."
+      },
+      {
+        "at": "2026-10-07T22:19:25.993Z",
+        "term": "ArcBrowserAcceptanceCoverageSource",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "New bounded 12min original Arc browser-test-only coverage repair and routine candidate package; no actual browser/HTTP/PG; personal consumed17452105728 remains immutable."
+      },
+      {
+        "at": "2026-10-07T22:21:49.228Z",
+        "term": "selectedAV03R3",
+        "beforeBytes": 0,
+        "afterBytes": 168820736,
+        "basis": "Independent R3 32MiB TMP +1MiB raw +128MiB DB/WAL; one global1GiB reserve already counted. R2 closed no budget reuse. Personal pending sealed classification kept conservative."
       }
     ],
-    "currentWindowConservativeFrozenFloorBytes": null,
-    "frozenFloorExplanation": "No currentgrant; historical consumedAV17091395584/pair17128095744 stay eachownrecord."
+    "currentWindowConservativeFrozenFloorBytes": 17452105728,
+    "frozenFloorExplanation": "Keep this accepted completecontract fixed until realSTART or explicit0childSTOP; only listedbudget/inputhash values may be filled byoriginaloperator. Existingaccountedordinary continues, no newunaccountedgrowth beforeSTART/STOP."
   },
   "SVC09AR4": {
     "state": "FAILED_RUNTIME_RETURN_WITH_KEEP",
@@ -3602,21 +3626,6 @@
       "runtime": "Fresh90proposal NOT_RUN/noNEXT; no old77192 credit",
       "local": "No unnecessarytypes rerun; no newengineeringchild"
     }
-  },
-  "OriginalOrdinaryCurrent": {
-    "state": "ACTUAL_CHECKS_RETURNED_SEAL_PENDING",
-    "owner": "Original assignment_review",
-    "scope": "SVC06B two-stage fixedWeb import/publication preparation",
-    "phaseMs": 120000,
-    "growthCapBytes": 33554432,
-    "actualChild": "Latest exact child timing pending originalowner; do not infer",
-    "PG": 0,
-    "publicationReady": false,
-    "actualReturn": "2026-10-07T19:02:33.532Z",
-    "chargeMs": 619,
-    "rawBytes": 1251,
-    "closure": "3ownedgroupsabsent/dualEOF/emptydirsremoved",
-    "phaseBoundary": "Three authorizedSVC06B checks returned; preparation seal/review pending, no personalactualgrant"
   },
   "AV03ReadyCandidate": {
     "logicalId": "AV03-VERIFIER-CLAIM-PG-20261007-ONCE",
@@ -4530,12 +4539,12 @@
     "ownerStop": "three trees STOP/0childPGpending; pool16MiB retained despite4MiBsuballocationSTOP"
   },
   "readyQueueDecision": {
-    "state": "NO_ACTUAL_HOLDER_AV03_R2_FAILED_RETURNED",
+    "state": "NO_ACTUAL_HOLDER_AV_R3_SELECTED",
     "actualHolder": null,
-    "next": null,
+    "next": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
     "rule": "Recovery new artifact cold/C4 when fixed READY; no reservation for preparation. Other ready isolated candidates may be chosen independently. No automatic retry.",
-    "followingCandidate": "Personal recovery when actualREADY; Arc876browser90/Picker90 queued, no automatic grant.",
-    "at": "2026-10-07T22:08:11.964Z"
+    "followingCandidate": "Arc87690/Picker90 queued; no concurrentheavy/personal.",
+    "at": "2026-10-07T22:21:49.228Z"
   },
   "taskTimeDiscipline": {
     "source": "GO explicituserdiscipline via root20:54",
@@ -5694,7 +5703,48 @@
     "source": "Original explicit actualreceipt via root, durable pointer pending; do not add a new barrier probe"
   },
   "activeWindows": {},
-  "selectedWindows": {},
+  "selectedWindows": {
+    "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE": {
+      "logicalId": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
+      "state": "SELECTED_NOT_STARTED",
+      "at": "2026-10-07T22:21:49.228Z",
+      "latestStart": "2026-10-07T22:25:49.228Z",
+      "owner": "Mika/architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+      "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "claim": "a67 v6 ACTIVE25",
+      "ready": "docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json",
+      "readySha256": "eb92185fbc281750f2cb603baaf46a8862dd5e09c913020185cfdc2d289bca73",
+      "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+      "invocationSha256": "83ac99c5ec9e3bbfdf762dc81168e6f22a9f9d75a2326830f68b9074cd9a17e9",
+      "fixedInputs": "281/191 external/16 links/34 SQL,7 delta rows reviewed",
+      "totalSeconds": 180,
+      "workSeconds": 110,
+      "cleanupSeconds": 60,
+      "finalSeconds": 10,
+      "PG": 17,
+      "adminMargin": 16,
+      "database": 1,
+      "HTTPListenerConcurrent": 1,
+      "HTTPMax": 160,
+      "tasksMax": 32,
+      "attemptsMax": 20,
+      "runnersMax": 10,
+      "registrationsMax": 6,
+      "temporaryBytes": 33554432,
+      "rawBytes": 1048576,
+      "PGWALReserveBytes": 134217728,
+      "minimumFreshFreeBytes": 17625120768,
+      "Chrome": 0,
+      "provider": 0,
+      "personal": 0,
+      "retry": false,
+      "transferUnused": false,
+      "fresh": "Same-call exact source/runtime/claims/no-overlap/namespace absence, PG capacity >=17+16 and preflight poolfinallyclosed, actualfree >= frozen complete floor. On prelaunch mismatch report0child; do not reopen prior R1/R2.",
+      "lifecycle": "START and terminal/exact process DB HTTP scratch RETURN separately; no outerexit-only release; historical failures and gates immutable."
+    }
+  },
   "activeWindowPolicy": {
     "state": "TWO_ISOLATED_NON_MEASUREMENT_RECOVERY_WINDOWS",
     "maximumActive": 2,
@@ -6190,7 +6240,7 @@
     "postReleaseWrites": 0
   },
   "OriginalPersonalRecoveryCandidate": {
-    "state": "FINAL_REVIEW_PENDING_NOT_GRANTED_NOT_RESERVED",
+    "state": "APPROVED_SELECTED_NOT_STARTED",
     "at": "2026-10-07T22:13:36.428Z",
     "actualHolder": null,
     "sourcePacket": "548490abb9d9d8d970384200a531b90d212358f2",
@@ -6210,6 +6260,187 @@
     "provider": 0,
     "namespace": "flow-svc06-held-recovery-e15-20261007-once",
     "actual": "NOT_RUN",
-    "remaining": "Original final independent approval/pins only; no duplicate source review. OnREADY selectsoleexclusive noPGChrome/servicewriteconcurrency, freshfloor/live1GiB/added512/raw2 preserved. No personalinputs or livecommands byWebmanager."
+    "remaining": "Original final independent approval/pins only; no duplicate source review. OnREADY selectsoleexclusive noPGChrome/servicewriteconcurrency, freshfloor/live1GiB/added512/raw2 preserved. No personalinputs or livecommands byWebmanager.",
+    "approval": "APPROVED_LIMITED_FIXED_HELD23_E15_RECOVERY_CALLER_PREPARATION/0P1P2 by Original assignment_review",
+    "selectedAt": "2026-10-07T22:15:59.699Z",
+    "logicalId": "SVC06B-HELD23-E15-PERSONAL-RECOVERY-20261007-ONCE"
+  },
+  "PersonalHeld23E15Grant": {
+    "logicalId": "SVC06B-HELD23-E15-PERSONAL-RECOVERY-20261007-ONCE",
+    "state": "SELECTED_NOT_STARTED",
+    "at": "2026-10-07T22:15:59.699Z",
+    "latestStart": "2026-10-07T22:19:59.699Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "target": "548490abb9d9d8d970384200a531b90d212358f2",
+    "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+    "preparationSha256": "e97dee78525e3f188794cfcfe853b8e04d9567dc08e1405bc8bcc0fb5940b798",
+    "entry": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/dispatch.json",
+    "namespace": "flow-svc06-held-recovery-e15-20261007-once",
+    "approval": "APPROVED_LIMITED_FIXED_HELD23_E15_RECOVERY_CALLER_PREPARATION/0P1P2 by Original assignment_review",
+    "fixedInputs": "6bindings84893B/66pins553273B + existing0be/4e, fourb422formalreports16checks,cold81fa,e15/source880060; reviewed00dcdcallers unchanged",
+    "operatorWorkSeconds": 900,
+    "operatorTermGraceSeconds": 0,
+    "operatorReapSeconds": 2,
+    "rawBytes": 2097152,
+    "addedBytes": 536870912,
+    "liveFloorBytes": 1073741824,
+    "minimumFreshFreeBytes": 17452105728,
+    "provider": 0,
+    "publish779": false,
+    "retry": false,
+    "unusedTransfer": false,
+    "exclusivity": "No concurrent actualPG, Chrome, build, servicewrites orpersonaloperation; ownfixednativeoperator only. Existingisolated0PGHTTPChromesource/pure ordinary withinalreadycountedbounds may continue, nottouch frozeninputs/personalnamespace.",
+    "fresh": "Samecall exactapprovedpins/runtime/claimversion-owner-scope/nooverlap/newnamespace/held23operation+identity+stoppedroles/budgetfree>=17452105728 pluslive1GiB, listedsixresourcefields andinputhash only; originalcaller independentlyenforces allstagegates. Failurebeforelaunch records0child/0personal side effects or honestunknown; no newrun.",
+    "lifecycle": "ReportactualSTARTimmediately then terminal and exactRETURN separately. Directchildabsence neverproves detachedservicesstopped; healthyownedservicesafterrestore arepersistentpersonalstate, not inferredcleanup. STOP/unknown retainsoriginalreceipts; nofallback/replay unlessreviewedoperatoralreadydefinesit.",
+    "consumedAt": "2026-10-07T22:17:23.713320Z"
+  },
+  "webReservation": null,
+  "PersonalHeld23E15Actual": {
+    "logicalId": "SVC06B-HELD23-E15-PERSONAL-RECOVERY-20261007-ONCE",
+    "state": "FAILED_PARTIAL_OPERATION_ACTIVITY_RETURNED",
+    "at": "2026-10-07T22:15:59.699Z",
+    "latestStart": "2026-10-07T22:19:59.699Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "target": "548490abb9d9d8d970384200a531b90d212358f2",
+    "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+    "preparationSha256": "e97dee78525e3f188794cfcfe853b8e04d9567dc08e1405bc8bcc0fb5940b798",
+    "entry": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/dispatch.json",
+    "namespace": "flow-svc06-held-recovery-e15-20261007-once",
+    "approval": "APPROVED_LIMITED_FIXED_HELD23_E15_RECOVERY_CALLER_PREPARATION/0P1P2 by Original assignment_review",
+    "fixedInputs": "6bindings84893B/66pins553273B + existing0be/4e, fourb422formalreports16checks,cold81fa,e15/source880060; reviewed00dcdcallers unchanged",
+    "operatorWorkSeconds": 900,
+    "operatorTermGraceSeconds": 0,
+    "operatorReapSeconds": 2,
+    "rawBytes": 2097152,
+    "addedBytes": 536870912,
+    "liveFloorBytes": 1073741824,
+    "minimumFreshFreeBytes": 17452105728,
+    "provider": 0,
+    "publish779": false,
+    "retry": false,
+    "unusedTransfer": false,
+    "exclusivity": "No concurrent actualPG, Chrome, build, servicewrites orpersonaloperation; ownfixednativeoperator only. Existingisolated0PGHTTPChromesource/pure ordinary withinalreadycountedbounds may continue, nottouch frozeninputs/personalnamespace.",
+    "fresh": "Samecall exactapprovedpins/runtime/claimversion-owner-scope/nooverlap/newnamespace/held23operation+identity+stoppedroles/budgetfree>=17452105728 pluslive1GiB, listedsixresourcefields andinputhash only; originalcaller independentlyenforces allstagegates. Failurebeforelaunch records0child/0personal side effects or honestunknown; no newrun.",
+    "lifecycle": "ReportactualSTARTimmediately then terminal and exactRETURN separately. Directchildabsence neverproves detachedservicesstopped; healthyownedservicesafterrestore arepersistentpersonalstate, not inferredcleanup. STOP/unknown retainsoriginalreceipts; nofallback/replay unlessreviewedoperatoralreadydefinesit.",
+    "startedAt": "2026-10-07T22:17:23.713320Z",
+    "operatorPid": 69686,
+    "entryLauncherPid": 77041,
+    "consumedFloorBytes": 17452105728,
+    "freshEvidence": "Original same-call 66 pins/claim v12/two new namespaces/old cd27 and new e15 inventories matched; PG max100 occupied6 available94>=42; preflight poolclosed; freshfree satisfies consumed floor. Exact free bytes not supplied.",
+    "reportedBy": "Original via root",
+    "recordedAt": "2026-10-07T22:21:14.839Z",
+    "terminalAt": "2026-10-07T22:18:46.870374Z",
+    "terminal": "identity/MAINTENANCE_TARGET_CHANGED",
+    "mutation": "not-written",
+    "completedPhases": [
+      "fresh",
+      "import e15",
+      "import four reports"
+    ],
+    "notReached": [
+      "refresh",
+      "checkpoint",
+      "resume"
+    ],
+    "newRolesStarted": 0,
+    "returnConfirmed": true,
+    "returnedAt": "2026-10-07T22:20:13.131180Z",
+    "closure": "7 operator/direct PIDs absent; four phase and outer dual EOF; phase childPidOnly does not assert all groups. Old3roles exact PID+PGID absent; newDetached0/pending0; DB connections[] adminclosed. Sameop23/privateKEEP. Import side effects preserved; no rebind mutation/refresh/resume.",
+    "returnReceipt": "personal-held-e15-return.json",
+    "returnSha256": "cb99770170d3683ffb6064f9f4180971e6e8b0c61fe885412d06b434eb9ff219"
+  },
+  "ArcAcceptanceCoverageOrdinary": {
+    "state": "SOURCE_IMPLEMENTATION",
+    "at": "2026-10-07T22:19:25.993Z",
+    "owner": "workspace_panels_owner",
+    "worktree": "web-workspace-composition",
+    "branch": "codex/web-workspace-composition",
+    "claim": "c34d95d1 v1 exact20",
+    "sourceCapBytes": 4194304,
+    "durationMinutes": 12,
+    "scope": "Only browser-test coverage max3 with focused >=2 tabs; immediately verify merge one pane and active chat. Preserve old candidate and all historical outcomes. Same e744/worker/capture. No product change or actual runtime. Necessary syntax only <=10s within source envelope if required, no green pure rerun.",
+    "personalGateUnchanged": 17452105728,
+    "startedAt": "2026-10-07T22:19:49.646Z",
+    "deadline": "2026-10-07T22:31:49.646Z",
+    "freshClaimAt": "2026-10-07T22:19:49.579Z",
+    "actualRuntime": 0
+  },
+  "CenterSourceCoordination": {
+    "at": "2026-10-07T22:19:25.993Z",
+    "state": "EXTRA_ASSUMPTION_HOLD_REMOVED_FRESH_NO_ACTUAL_CONFLICT_REQUIRED",
+    "claim": "daf9316f v1 ACTIVE6",
+    "rule": "Existing Mika ordinary16MiB pool; fresh ledger/known dispatch no conflict suffices. Notify Original, do not require reply approval. Concrete overlapping owner stops only affected scope. No personal fixed input or actual service changes."
+  },
+  "historicalSupersededCurrentFields": {
+    "OriginalOrdinaryCurrentPriorSnapshot2219": {
+      "supersededAt": "2026-10-07T22:19:25.993Z",
+      "value": {
+        "state": "ACTUAL_CHECKS_RETURNED_SEAL_PENDING",
+        "owner": "Original assignment_review",
+        "scope": "SVC06B two-stage fixedWeb import/publication preparation",
+        "phaseMs": 120000,
+        "growthCapBytes": 33554432,
+        "actualChild": "Latest exact child timing pending originalowner; do not infer",
+        "PG": 0,
+        "publicationReady": false,
+        "actualReturn": "2026-10-07T19:02:33.532Z",
+        "chargeMs": 619,
+        "rawBytes": 1251,
+        "closure": "3ownedgroupsabsent/dualEOF/emptydirsremoved",
+        "phaseBoundary": "Three authorizedSVC06B checks returned; preparation seal/review pending, no personalactualgrant"
+      }
+    }
+  },
+  "researchCoverageIntake": {
+    "at": "2026-10-07T22:20:27.563Z",
+    "files": [
+      "arc-acceptance-coverage-review.json",
+      "arc-model-coverage-addendum.json",
+      "dashboard-interface-revision-design.json"
+    ],
+    "state": "EXISTING_PLAN_TODO_ONLY",
+    "runtime": 0
+  },
+  "AV03R3Grant": {
+    "logicalId": "AV03-VERIFIER-CLAIM-PG-R3-20261007-ONCE",
+    "state": "SELECTED_NOT_STARTED",
+    "at": "2026-10-07T22:21:49.228Z",
+    "latestStart": "2026-10-07T22:25:49.228Z",
+    "owner": "Mika/architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+    "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+    "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+    "claim": "a67 v6 ACTIVE25",
+    "ready": "docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json",
+    "readySha256": "eb92185fbc281750f2cb603baaf46a8862dd5e09c913020185cfdc2d289bca73",
+    "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+    "invocationSha256": "83ac99c5ec9e3bbfdf762dc81168e6f22a9f9d75a2326830f68b9074cd9a17e9",
+    "fixedInputs": "281/191 external/16 links/34 SQL,7 delta rows reviewed",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalSeconds": 10,
+    "PG": 17,
+    "adminMargin": 16,
+    "database": 1,
+    "HTTPListenerConcurrent": 1,
+    "HTTPMax": 160,
+    "tasksMax": 32,
+    "attemptsMax": 20,
+    "runnersMax": 10,
+    "registrationsMax": 6,
+    "temporaryBytes": 33554432,
+    "rawBytes": 1048576,
+    "PGWALReserveBytes": 134217728,
+    "minimumFreshFreeBytes": 17625120768,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "retry": false,
+    "transferUnused": false,
+    "fresh": "Same-call exact source/runtime/claims/no-overlap/namespace absence, PG capacity >=17+16 and preflight poolfinallyclosed, actualfree >= frozen complete floor. On prelaunch mismatch report0child; do not reopen prior R1/R2.",
+    "lifecycle": "START and terminal/exact process DB HTTP scratch RETURN separately; no outerexit-only release; historical failures and gates immutable."
   }
 }

@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-07T22:22:03.560122+00:00",
+  "status": "EXISTING_MATERIALS_READY_PERSONAL_PUBLISH_NOT_RUN",
+  "scope": "Post-recovery Web cutover requirement mapping; no second publisher",
+  "source": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+  "entry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+    "bytes": 17583,
+    "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+  },
+  "web": {
+    "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "releaseId": "52a261e294324a11aead58a554f547db",
+    "assets": 10,
+    "assetBytes": 1700569,
+    "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+  },
+  "validatedTuple": {
+    "backendArtifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "backendSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "peerReadBoundary": "W01 read only own plan/status/intake and3existing supply/artifact/intake records; no personal runtime observation.",
+  "remainingOwnerActions": [
+    "Original SVC06B must provide a successful recovery receipt identifying the actual accepting backend/source/policy and current Web/release/state version. Do not guess these from a PASS label.",
+    "Use original publish interface to validate/accept779 and its exact e15 compatibility report in the actual personal release state. Fixture importedReport paths alone do not prove personal import.",
+    "Explicitly activate779 in a separately bound original publication operation with expected current version and existing failure policy.",
+    "Record actual served779/releaseId/assets, public page and Cookie recovery entry acceptance, then update original publish status/REQ19."
+  ],
+  "currentFailureBoundary": "The personal recovery operation subsequently stopped at MAINTENANCE_TARGET_CHANGED/rebind not-written; Original reported full resource RETURN22:20:13.131180Z, e15+4reports imported but no refresh/resume/publish779. Those facts are separate from the W01 static material review.",
+  "avoidDuplicateWork": [
+    "Do not rebuild779 or recollect/reexecute C4 solely to prepare a publication candidate.",
+    "Do not wait for unrelated MSG/Plugin implementation to resupply these immutable materials.",
+    "No new publisher, no borrowed C4 runtime balance, no automatic replay of consumed personal import phases."
+  ],
+  "missingEvidence": [
+    "Successful personal recovery tuple/current version/publishable state",
+    "Specific next779 operator READY input bound to that actual state",
+    "Actual779 activation start/result/resource return and final served identity"
+  ],
+  "cleanCodeReview": {
+    "scope": "Source/evidence authority and full requested UI delivery",
+    "finding": "Material readiness and simulated compatibility are distinct from personal restoration and Web activation.",
+    "resolution": "Reuse one fixed intake and the existing publish owner; retain explicit incomplete deployment boundary.",
+    "unresolved": "Actual personal recovery and publication are not complete."
+  },
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "services": 0,
+    "personalIO": 0,
+    "newClaims": 0
+  }
+}

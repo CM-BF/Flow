@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:14:49.459Z；恢复验证已通过并归还，个人仍停止；TIMING已部署211并完整交付，原作者已释放。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:22:53.990Z；个人恢复部分失败但活动已归还，服务仍停止；AV R3已选待真实启动。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 新恢复产物的四版本兼容与三角色冷启动检查已通过；看板已部署紧凑时间和事项归组，211项中三条新来源都可展开查看。个人服务仍待恢复。 |
+| 当前产出 | 四版本兼容与三角色冷启动已通过，e15及四报告已导入个人环境；身份检查拒绝后续恢复，服务尚未恢复。看板211已部署紧凑时间和事项归组。 |
 | 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
-| 当前阻塞 | ACTIVE: 个人仍held23停止；恢复验证结果正在接收，尚未完成个人迁入与网页切换。Arc入口已修，四组浏览器仍待新独立验证。 |
+| 当前阻塞 | ACTIVE: 个人rebind身份不匹配，未refresh/resume/切换779；原owner诊断中。Arc需补两项页面断言并完成浏览器验证。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：恢复两窗与AV R2均已精确归还；AV5例失败原件保留，无actual/NEXT，个人caller待最终批准；预算数值只读唯一forward表。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：个人活动22:20:13.131180完整归还，AV R3独立窗口已选，未收到START前不记运行；原失败/导入事实/历史gate保持。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -73,7 +73,7 @@
 | WPF-001-35 | pending | d01_owner | RS13固定f82候选5asset/1,571,669 raw bytes仅观察，初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
-| WPF-001-37 | in-progress | 原TIMING02候选W01；d01_owner跟踪 | [原需求与候选scope](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)：按有效显式关系分组阻塞，保每项原文/owner/来源，未知单列；未take/未实现，不改旧DASHSUM01完成范围。  TIMING02同读层已d26acv1/exact9领取并开工，25min16MiB普通段，检查/页面尚未运行，D05来源登记待完成。 GO20:09补充原owner priority稳定排序、关键服务可用性首屏、TIMING02紧凑时间与详情；Arc既有D05来源登记/Original自身priority核对先行，UI独立领取后局部验收；未实施。 |
+| WPF-001-37 | in-progress | d01_owner跟踪既有后继 | TIMING02原阅读片98局部+6browser/双图通过，main2c966/D05于22:01:36.229部署211，原owner22:09:07.984完成并释放；界面版本提示/旧已加载UI差异仍沿[既有TODO](plan.md)，不倒改本片完成。 |
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
