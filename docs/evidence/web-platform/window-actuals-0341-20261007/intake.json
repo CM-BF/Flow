@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T03:43:24.378221+00:00",
+  "kind": "ACTUAL_WINDOW_SUCCESSION",
+  "svc06": {
+    "finishedAt": "2026-10-07T03:34:59.865Z",
+    "outerExit": 0,
+    "outerElapsedMs": 25390,
+    "ownedGroupAbsent": true,
+    "doubleEOF": true,
+    "lockAbsent": "Original Lead/root receipt; no new probe",
+    "evidence": [
+      {
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-first-run/outer-report.json",
+        "archive": "svc06-outer-report.json",
+        "sha256": "7260852e429910137a0427bf1f4811180fd453e6cd06cbd655d1628cbdd83efc"
+      },
+      {
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-first-run/actual-first/result.json",
+        "archive": "svc06-result.json",
+        "sha256": "730330b648f0f1eacc2ce525a98b7ee79eb36aa036100b7311a4e2f6727c5dce"
+      }
+    ]
+  },
+  "access": {
+    "cleanupAt": "2026-10-07T03:38:53.274Z",
+    "actualExit": 1,
+    "passed": 4,
+    "selected": 5,
+    "spentMs": 30839,
+    "remainingMs": 29161,
+    "review": "access-third-review.json",
+    "ownerHead": "309ed1e8f0ee37c2842c956adb36762fbd0b6efe"
+  },
+  "timing": {
+    "cleanupAt": "2026-10-07T03:41:04Z",
+    "actualExit": 0,
+    "passed": 5,
+    "selected": 5,
+    "outerElapsedMs": 6410.498,
+    "review": "timing-browser-review.json",
+    "registration": "main bf7eca59 registry185 registered; actual185 load not observed, old183 retained"
+  },
+  "mika": {
+    "owner": "Mika",
+    "window": "S01P07-CAPACITY-20261007-R1",
+    "state": "OPEN_ADMISSION_ACTUAL_START_NOT_RECEIVED",
+    "selectedGroups": 4,
+    "serialPG": true,
+    "totalMs": 200000,
+    "workMs": 120000,
+    "cleanupMs": 70000,
+    "providerCalls": 0,
+    "source": "Root/Mika specific coordination inbound; no manager runtime or resource sample."
+  },
+  "web": {
+    "holder": null,
+    "gate": null,
+    "reservation": false,
+    "d06": "Static preparation only; 9MiB conservative allowance in Mika coordination is not actual runtime."
+  },
+  "source": "Original Lead/Mika/owner specific receipts and root independent artifacts; no manager service/free/proc/4320 sampling."
+}

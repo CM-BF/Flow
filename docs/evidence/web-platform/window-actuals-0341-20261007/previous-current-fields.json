@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-07T03:34:01.814140+00:00",
+  "state": "WEB_IDLE_OFFERED_TO_LEAD_SVC06_FRESH_ADMISSION",
+  "groupWindowOwnership": "Web local/heavy holders are null. Both ACCESS attempts ended with owned cleanup; next heavy window offered to original Lead SVC06 for fresh admission. Offer is not actual OPEN/start. ACCESS and Timing do not reserve or compete.",
+  "latestCoordination": {
+    "at": "2026-10-07T03:34:01.814140+00:00",
+    "kind": "SVC06_HEAVY_HANDOFF_READY_FOR_LEAD_FRESH_NOT_STARTED",
+    "source": "svc06-heavy-handoff-20261007/lead-window-offer.json",
+    "summary": "Web当前local/heavy无holder/gate/预约；下一heavy交原Lead SVC06自行fresh准入，未接收实际启动。ACCESS两次失败及清理保留，fixture窄修仅源审；Timing已登记185但未加载；旧当前字段保历史。"
+  },
+  "currentWindowReturn": "svc06-heavy-handoff-20261007/lead-window-offer.json",
+  "currentWindowEvidence": "svc06-heavy-handoff-20261007/intake.json",
+  "nextWebReady": {
+    "state": "HOLD_UNTIL_LEAD_ACTUAL_HANDBACK",
+    "access": {
+      "ownerHead": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+      "fixture": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+      "review": "svc06-heavy-handoff-20261007/access-visibility-source-review.json",
+      "actual": "Two attempts FAILED; second 4/5, actualexit1; owned cleanup returned. New fixture NOT_RUN; no deployment.",
+      "spentMs": 18728,
+      "remainingMs": 41272,
+      "cleanupIncludedMs": 15000
+    },
+    "timing": "Source/parser scoped approved; browser caller preparation only; no window reservation."
+  }
+}
