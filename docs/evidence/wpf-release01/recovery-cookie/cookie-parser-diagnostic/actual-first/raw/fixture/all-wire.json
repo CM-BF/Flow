@@ -1,0 +1,1963 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": false,
+    "csrf": false,
+    "receivedBytes": 64,
+    "complete": true,
+    "responseSha256": "1752e28a39a1fd644347be95ed00fb202701a4d227aea6db12fc7c80b24f9b60"
+  },
+  {
+    "method": "POST",
+    "path": "/api/browser-session/connect",
+    "status": 200,
+    "bearer": true,
+    "cookie": false,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "3c12b85a1b779dd943c1378d87a9e72fba58dd5dc5b2d5ea7b8c0f257b7dace1"
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "3c12b85a1b779dd943c1378d87a9e72fba58dd5dc5b2d5ea7b8c0f257b7dace1"
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 30,
+    "complete": true,
+    "responseSha256": "61634523dc26a9ea56d3275eac0ec61fcbaefba7ec7321612bb2d3b5d95c8a8f",
+    "response": {
+      "tasks": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 38,
+    "complete": true,
+    "responseSha256": "0c71504e60f2820e58954ac746441d3d138ab75e8ecfd144fe5c7237984c714d",
+    "response": {
+      "conversations": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1038,
+    "complete": true,
+    "responseSha256": "99fcbea1942d8c41953a0aac48b6b0eb3feeb4fcfe1f0fb95c4497570b4ef779",
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-07T17:02:35.825Z",
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 60000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 224,
+    "complete": true,
+    "responseSha256": "17a464b6fccf1fccdbe914dd20cd92d0d9687bed111ccdbb163a371e8fd63a65",
+    "response": {
+      "workspaceId": "personal",
+      "entries": [],
+      "nextCursor": 0,
+      "previousCursor": 0,
+      "watermark": 0,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "3c12b85a1b779dd943c1378d87a9e72fba58dd5dc5b2d5ea7b8c0f257b7dace1"
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 38,
+    "complete": true,
+    "responseSha256": "0c71504e60f2820e58954ac746441d3d138ab75e8ecfd144fe5c7237984c714d",
+    "response": {
+      "conversations": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 30,
+    "complete": true,
+    "responseSha256": "61634523dc26a9ea56d3275eac0ec61fcbaefba7ec7321612bb2d3b5d95c8a8f",
+    "response": {
+      "tasks": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1038,
+    "complete": true,
+    "responseSha256": "99fcbea1942d8c41953a0aac48b6b0eb3feeb4fcfe1f0fb95c4497570b4ef779",
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-07T17:02:35.825Z",
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 60000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 224,
+    "complete": true,
+    "responseSha256": "17a464b6fccf1fccdbe914dd20cd92d0d9687bed111ccdbb163a371e8fd63a65",
+    "response": {
+      "workspaceId": "personal",
+      "entries": [],
+      "nextCursor": 0,
+      "previousCursor": 0,
+      "watermark": 0,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations",
+    "status": 201,
+    "bearer": false,
+    "cookie": true,
+    "csrf": true,
+    "receivedBytes": 715,
+    "complete": true,
+    "key": "0031dbba-01bd-446e-b920-87d56373d0d4:create",
+    "body": "{\"title\":\"Release recovery-779a durable message\",\"harness\":\"claude\",\"executionProfile\":{\"id\":\"4385ee07-42ab-4d7d-a931-9666547b0cd5\",\"runnerId\":\"1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3\",\"configDigest\":\"b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928\"},\"requested\":{\"model\":\"release-synthetic\",\"thinking\":\"disabled\",\"tools\":\"none\"}}",
+    "responseSha256": "676dfbcdaa32ffc5f115dbc75b5be3cd6969a72d9938a207a29ceb759d35e2a6",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 0,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.023Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": false,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "replayed": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/queue?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 153,
+    "complete": true,
+    "responseSha256": "6b2d5beac5cd0054f10a607071b591c1a61063baa7a4f2c32abe1eb217a05da9",
+    "response": {
+      "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": null
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns",
+    "status": 202,
+    "bearer": false,
+    "cookie": true,
+    "csrf": true,
+    "receivedBytes": 1239,
+    "complete": true,
+    "key": "0031dbba-01bd-446e-b920-87d56373d0d4:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"Release recovery-779a durable message\",\"mode\":\"follow-up\"}",
+    "responseSha256": "86f1dee9405f2af3f5216d121160a3aa5844537d072b1293e458f51eb401b45e",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "turn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "queued",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.040Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      },
+      "replayed": false
+    },
+    "fault": {
+      "contentLength": 1239,
+      "prefixBytes": 1,
+      "prefixSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "headersFlushed": true,
+      "prefixFlushed": true,
+      "endFlushed": true,
+      "socketClosed": true
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "3c12b85a1b779dd943c1378d87a9e72fba58dd5dc5b2d5ea7b8c0f257b7dace1"
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 517,
+    "complete": true,
+    "responseSha256": "d61aecd7a7cbecc1e999a7ed5a2b3aa3401571bb7c4f6a8e6490539b75a90a22",
+    "response": {
+      "conversations": [
+        {
+          "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "release-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-07T17:02:42.023Z",
+          "updatedAt": "2026-10-07T17:02:42.046Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 270,
+    "complete": true,
+    "responseSha256": "50ad789e3589c85a463d4e90e878454afe8e63f1690e798d9a3d3701909ea81d",
+    "response": {
+      "tasks": [
+        {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1038,
+    "complete": true,
+    "responseSha256": "99fcbea1942d8c41953a0aac48b6b0eb3feeb4fcfe1f0fb95c4497570b4ef779",
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-07T17:02:35.825Z",
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 60000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1126,
+    "complete": true,
+    "responseSha256": "603faaf01b0256e78fd0b82508f7bd9acd71cedd14909e741e1cbd63edeb59df",
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message"
+          },
+          "entry": {
+            "id": "accepted:b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-07T17:02:42.040Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message"
+          },
+          "entry": {
+            "id": "64f71f53-a993-4ffc-9c40-965b8f9c6a93",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-07T17:02:42.346Z",
+            "reference": {
+              "id": "b0ec4d4a-ed56-42f9-a283-9f0ea70de891",
+              "title": "Native session"
+            }
+          }
+        }
+      ],
+      "nextCursor": 2,
+      "previousCursor": 1,
+      "watermark": 2,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1664,
+    "complete": true,
+    "forwardedStream": "patch-v1",
+    "responseSha256": "8c65f125a984a17e4c4548415be3d9c599f75fb99e0b1b71c389d26db5c99c83",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "sourceTaskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "sourceAttemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b"
+      },
+      "lastTurn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1244,
+    "complete": true,
+    "responseSha256": "9e025be5e0162143b07218b3bc4e271699e860fe4a27a3567bd6888b72fc28e0",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "turns": [
+        {
+          "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+          "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "number": 1,
+          "createdAt": "2026-10-07T17:02:42.045Z",
+          "user": {
+            "role": "user",
+            "text": "Release recovery-779a durable message"
+          },
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message",
+            "harness": "claude",
+            "status": "running",
+            "verificationStatus": "pending",
+            "createdAt": "2026-10-07T17:02:42.040Z",
+            "updatedAt": "2026-10-07T17:02:42.348Z"
+          },
+          "assistant": {
+            "state": "pending",
+            "reason": "execution-pending"
+          },
+          "effective": {
+            "model": null,
+            "thinking": "unknown",
+            "tools": "unknown",
+            "source": null
+          },
+          "telemetry": {
+            "kind": "execution",
+            "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Execution details"
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 879,
+    "complete": true,
+    "responseSha256": "2327c36254db53caf2259871d1acae913e1fbeca3886b45730370b10a157ec2a",
+    "response": {
+      "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "title": "Release recovery-779a durable message",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-07T17:02:42.040Z",
+      "updatedAt": "2026-10-07T17:02:42.348Z",
+      "prompt": "Release recovery-779a durable message",
+      "entries": [
+        {
+          "id": "64f71f53-a993-4ffc-9c40-965b8f9c6a93",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-07T17:02:42.346Z",
+          "reference": {
+            "id": "b0ec4d4a-ed56-42f9-a283-9f0ea70de891",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-07T17:07:42.334Z",
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/queue?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 303,
+    "complete": true,
+    "responseSha256": "91d18b21d39f8b315952a4db953fd0fe077a895a796485f40c81f92adf74155e",
+    "response": {
+      "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "taskStatus": "running",
+        "turnId": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1664,
+    "complete": true,
+    "forwardedStream": "patch-v1",
+    "responseSha256": "8c65f125a984a17e4c4548415be3d9c599f75fb99e0b1b71c389d26db5c99c83",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "sourceTaskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "sourceAttemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b"
+      },
+      "lastTurn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream?limit=100",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 236,
+    "complete": true,
+    "responseSha256": "83d4ceb8b5de6e93febeb36a3139194cc0a9c95cde962ec9300793b198144132",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "taskStatus": "running",
+      "taskUpdatedAt": "2026-10-07T17:02:42.348Z",
+      "settlement": null,
+      "blocks": [],
+      "nextCursor": null,
+      "finalMessageId": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/stream?after=1",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 455,
+    "complete": true,
+    "sse": {
+      "chunks": 1,
+      "bytes": 455,
+      "firstChunkAt": "2026-10-07T17:02:42.599Z",
+      "endedAt": "2026-10-07T17:02:42.851Z",
+      "closedAt": "2026-10-07T17:02:42.851Z"
+    },
+    "responseSha256": "3ff6b3d47a9b7d9de5e6cfdb631106a7ff4baac731cf3ea5ba1499297e7d8255"
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream/patches?attemptId=409fe5ed-a59b-44a5-95c7-72ef48c6df0b&after=0&limit=8",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 144,
+    "complete": true,
+    "responseSha256": "e213ae8cdfc6a2e62f28c1dee48f52cb74169cc261d884eac515788ae43c0c54",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "patches": [],
+      "nextCursor": 0,
+      "hasMore": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns",
+    "status": 202,
+    "bearer": false,
+    "cookie": true,
+    "csrf": true,
+    "receivedBytes": 1238,
+    "complete": true,
+    "key": "0031dbba-01bd-446e-b920-87d56373d0d4:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"Release recovery-779a durable message\",\"mode\":\"follow-up\"}",
+    "responseSha256": "f2a84f7e0bb9a1b8832d4d81337db045b87a552bd4df81663f6751a0fd1e3c5e",
+    "response": {
+      "turn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "status": "queued",
+          "harness": "claude",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.040Z",
+          "verificationStatus": "pending"
+        },
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "number": 1,
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "effective": {
+          "model": null,
+          "tools": "unknown",
+          "source": null,
+          "thinking": "unknown"
+        },
+        "telemetry": {
+          "kind": "execution",
+          "title": "Execution details",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9"
+        },
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72"
+      },
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "updatedAt": "2026-10-07T17:02:42.046Z",
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        }
+      },
+      "replayed": true
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 517,
+    "complete": true,
+    "responseSha256": "d61aecd7a7cbecc1e999a7ed5a2b3aa3401571bb7c4f6a8e6490539b75a90a22",
+    "response": {
+      "conversations": [
+        {
+          "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "release-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-07T17:02:42.023Z",
+          "updatedAt": "2026-10-07T17:02:42.046Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 270,
+    "complete": true,
+    "responseSha256": "50ad789e3589c85a463d4e90e878454afe8e63f1690e798d9a3d3701909ea81d",
+    "response": {
+      "tasks": [
+        {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "3c12b85a1b779dd943c1378d87a9e72fba58dd5dc5b2d5ea7b8c0f257b7dace1"
+  },
+  {
+    "method": "POST",
+    "path": "/api/browser-session/logout",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": true,
+    "receivedBytes": 64,
+    "complete": true,
+    "responseSha256": "1752e28a39a1fd644347be95ed00fb202701a4d227aea6db12fc7c80b24f9b60",
+    "logoutHold": {
+      "received": true,
+      "released": true,
+      "downstreamFinished": true,
+      "setCookie": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 64,
+    "complete": true,
+    "responseSha256": "1752e28a39a1fd644347be95ed00fb202701a4d227aea6db12fc7c80b24f9b60"
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 400,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 65,
+    "complete": true,
+    "responseSha256": "cd2bab07811f4fcc733f084efab87b04c8932e1de80a3c9390d3181a2ea13535"
+  },
+  {
+    "method": "POST",
+    "path": "/api/browser-session/connect",
+    "status": 200,
+    "bearer": true,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "f5ce6455e1c591b489cb83c2fd0022b02786c72bebffef69d4754846f8f9e8a4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "f5ce6455e1c591b489cb83c2fd0022b02786c72bebffef69d4754846f8f9e8a4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 517,
+    "complete": true,
+    "responseSha256": "d61aecd7a7cbecc1e999a7ed5a2b3aa3401571bb7c4f6a8e6490539b75a90a22",
+    "response": {
+      "conversations": [
+        {
+          "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "release-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+            "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+            "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-07T17:02:42.023Z",
+          "updatedAt": "2026-10-07T17:02:42.046Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 270,
+    "complete": true,
+    "responseSha256": "50ad789e3589c85a463d4e90e878454afe8e63f1690e798d9a3d3701909ea81d",
+    "response": {
+      "tasks": [
+        {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1126,
+    "complete": true,
+    "responseSha256": "603faaf01b0256e78fd0b82508f7bd9acd71cedd14909e741e1cbd63edeb59df",
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message"
+          },
+          "entry": {
+            "id": "accepted:b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-07T17:02:42.040Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message"
+          },
+          "entry": {
+            "id": "64f71f53-a993-4ffc-9c40-965b8f9c6a93",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-07T17:02:42.346Z",
+            "reference": {
+              "id": "b0ec4d4a-ed56-42f9-a283-9f0ea70de891",
+              "title": "Native session"
+            }
+          }
+        }
+      ],
+      "nextCursor": 2,
+      "previousCursor": 1,
+      "watermark": 2,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1664,
+    "complete": true,
+    "forwardedStream": "patch-v1",
+    "responseSha256": "8c65f125a984a17e4c4548415be3d9c599f75fb99e0b1b71c389d26db5c99c83",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "sourceTaskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "sourceAttemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b"
+      },
+      "lastTurn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1244,
+    "complete": true,
+    "responseSha256": "9e025be5e0162143b07218b3bc4e271699e860fe4a27a3567bd6888b72fc28e0",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "turns": [
+        {
+          "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+          "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "number": 1,
+          "createdAt": "2026-10-07T17:02:42.045Z",
+          "user": {
+            "role": "user",
+            "text": "Release recovery-779a durable message"
+          },
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message",
+            "harness": "claude",
+            "status": "running",
+            "verificationStatus": "pending",
+            "createdAt": "2026-10-07T17:02:42.040Z",
+            "updatedAt": "2026-10-07T17:02:42.348Z"
+          },
+          "assistant": {
+            "state": "pending",
+            "reason": "execution-pending"
+          },
+          "effective": {
+            "model": null,
+            "thinking": "unknown",
+            "tools": "unknown",
+            "source": null
+          },
+          "telemetry": {
+            "kind": "execution",
+            "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Execution details"
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 280,
+    "complete": true,
+    "responseSha256": "f5ce6455e1c591b489cb83c2fd0022b02786c72bebffef69d4754846f8f9e8a4"
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/queue?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 303,
+    "complete": true,
+    "responseSha256": "91d18b21d39f8b315952a4db953fd0fe077a895a796485f40c81f92adf74155e",
+    "response": {
+      "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "taskStatus": "running",
+        "turnId": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 879,
+    "complete": true,
+    "responseSha256": "2327c36254db53caf2259871d1acae913e1fbeca3886b45730370b10a157ec2a",
+    "response": {
+      "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "title": "Release recovery-779a durable message",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-07T17:02:42.040Z",
+      "updatedAt": "2026-10-07T17:02:42.348Z",
+      "prompt": "Release recovery-779a durable message",
+      "entries": [
+        {
+          "id": "64f71f53-a993-4ffc-9c40-965b8f9c6a93",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-07T17:02:42.346Z",
+          "reference": {
+            "id": "b0ec4d4a-ed56-42f9-a283-9f0ea70de891",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-07T17:07:42.334Z",
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream?limit=100",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 236,
+    "complete": true,
+    "responseSha256": "83d4ceb8b5de6e93febeb36a3139194cc0a9c95cde962ec9300793b198144132",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "taskStatus": "running",
+      "taskUpdatedAt": "2026-10-07T17:02:42.348Z",
+      "settlement": null,
+      "blocks": [],
+      "nextCursor": null,
+      "finalMessageId": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/stream?after=1",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 455,
+    "complete": false,
+    "sse": {
+      "chunks": 1,
+      "bytes": 455,
+      "firstChunkAt": "2026-10-07T17:02:43.058Z",
+      "endedAt": null,
+      "closedAt": "2026-10-07T17:02:43.180Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream/patches?attemptId=409fe5ed-a59b-44a5-95c7-72ef48c6df0b&after=0&limit=8",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 144,
+    "complete": true,
+    "responseSha256": "e213ae8cdfc6a2e62f28c1dee48f52cb74169cc261d884eac515788ae43c0c54",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "patches": [],
+      "nextCursor": 0,
+      "hasMore": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1664,
+    "complete": true,
+    "forwardedStream": "patch-v1",
+    "responseSha256": "8c65f125a984a17e4c4548415be3d9c599f75fb99e0b1b71c389d26db5c99c83",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "sourceTaskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "sourceAttemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b"
+      },
+      "lastTurn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1244,
+    "complete": true,
+    "responseSha256": "9e025be5e0162143b07218b3bc4e271699e860fe4a27a3567bd6888b72fc28e0",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "turns": [
+        {
+          "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+          "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+          "number": 1,
+          "createdAt": "2026-10-07T17:02:42.045Z",
+          "user": {
+            "role": "user",
+            "text": "Release recovery-779a durable message"
+          },
+          "task": {
+            "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Release recovery-779a durable message",
+            "harness": "claude",
+            "status": "running",
+            "verificationStatus": "pending",
+            "createdAt": "2026-10-07T17:02:42.040Z",
+            "updatedAt": "2026-10-07T17:02:42.348Z"
+          },
+          "assistant": {
+            "state": "pending",
+            "reason": "execution-pending"
+          },
+          "effective": {
+            "model": null,
+            "thinking": "unknown",
+            "tools": "unknown",
+            "source": null
+          },
+          "telemetry": {
+            "kind": "execution",
+            "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+            "title": "Execution details"
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 879,
+    "complete": true,
+    "responseSha256": "2327c36254db53caf2259871d1acae913e1fbeca3886b45730370b10a157ec2a",
+    "response": {
+      "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "title": "Release recovery-779a durable message",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-07T17:02:42.040Z",
+      "updatedAt": "2026-10-07T17:02:42.348Z",
+      "prompt": "Release recovery-779a durable message",
+      "entries": [
+        {
+          "id": "64f71f53-a993-4ffc-9c40-965b8f9c6a93",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-07T17:02:42.346Z",
+          "reference": {
+            "id": "b0ec4d4a-ed56-42f9-a283-9f0ea70de891",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-07T17:07:42.334Z",
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream?limit=100",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 236,
+    "complete": true,
+    "responseSha256": "83d4ceb8b5de6e93febeb36a3139194cc0a9c95cde962ec9300793b198144132",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "taskStatus": "running",
+      "taskUpdatedAt": "2026-10-07T17:02:42.348Z",
+      "settlement": null,
+      "blocks": [],
+      "nextCursor": null,
+      "finalMessageId": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/queue?after=0&limit=20",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 303,
+    "complete": true,
+    "responseSha256": "91d18b21d39f8b315952a4db953fd0fe077a895a796485f40c81f92adf74155e",
+    "response": {
+      "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "taskStatus": "running",
+        "turnId": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 1664,
+    "complete": true,
+    "forwardedStream": "patch-v1",
+    "responseSha256": "8c65f125a984a17e4c4548415be3d9c599f75fb99e0b1b71c389d26db5c99c83",
+    "response": {
+      "conversation": {
+        "id": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "title": "Release recovery-779a durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "4385ee07-42ab-4d7d-a931-9666547b0cd5",
+          "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+          "configDigest": "b165aff4c46b6aca9a3d68375176a22d5039ca411398a1a94092c8f862d78928"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-07T17:02:42.023Z",
+        "updatedAt": "2026-10-07T17:02:42.046Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "c3ee8c89-bf57-4ecc-b9b1-a1df48748db2",
+        "runnerId": "1a25ade6-7d60-4b39-8da3-7f4bfa3d54e3",
+        "sourceTaskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+        "sourceAttemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b"
+      },
+      "lastTurn": {
+        "id": "6a157b0d-b20a-47fa-b29b-0adb6ae1f262",
+        "conversationId": "f811f376-a1ce-465a-95a2-5c2aae8e3c72",
+        "number": 1,
+        "createdAt": "2026-10-07T17:02:42.045Z",
+        "user": {
+          "role": "user",
+          "text": "Release recovery-779a durable message"
+        },
+        "task": {
+          "id": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Release recovery-779a durable message",
+          "harness": "claude",
+          "status": "running",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-07T17:02:42.040Z",
+          "updatedAt": "2026-10-07T17:02:42.348Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/stream?after=1",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 455,
+    "complete": false,
+    "sse": {
+      "chunks": 1,
+      "bytes": 455,
+      "firstChunkAt": "2026-10-07T17:02:43.202Z",
+      "endedAt": null,
+      "closedAt": "2026-10-07T17:02:43.247Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/assistant-stream/patches?attemptId=409fe5ed-a59b-44a5-95c7-72ef48c6df0b&after=0&limit=8",
+    "status": 200,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 144,
+    "complete": true,
+    "responseSha256": "e213ae8cdfc6a2e62f28c1dee48f52cb74169cc261d884eac515788ae43c0c54",
+    "response": {
+      "taskId": "b635bd5b-c798-4fab-86af-d402fafb4cb9",
+      "attemptId": "409fe5ed-a59b-44a5-95c7-72ef48c6df0b",
+      "patches": [],
+      "nextCursor": 0,
+      "hasMore": false
+    }
+  }
+]

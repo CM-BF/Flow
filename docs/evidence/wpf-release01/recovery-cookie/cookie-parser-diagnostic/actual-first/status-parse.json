@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T17:08:12.470Z",
+  "taskId": "WPF-RELEASE01",
+  "method": "Only own status through installed authoritative parseStatus; no aggregate/product tests",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+  "parserSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+  "statusSha256": "f3b7bc5b0f20986933c24257641a5cbcbc225e57163b72d2622621b4ca5b09a5",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

@@ -92,3 +92,9 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 当前诊断源码与必要局部检查已固定
 
 2026-10-07T16:50:24.040Z：RELEASE01-08内的诊断source fc291已获[root集中源码批准](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/root-source-review.json)，native边界已精确绑定；保存字节帽与真实pretty JSON完全一致。必要[strict两actual](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/README.md)首alias红保留/复验绿，2775ms/20s CLOSED。源码未变，不重跑旧绿；原正式兼容失败不改，待独立诊断捕获HTTP错误，90s仍无实际许可。诊断完成不能完成RELEASE01-08或生成四正式报告。
+
+## 当前首次被动诊断实际
+
+[新Cookie诊断原件](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/README.md)：17:02:28Z真实开始、outer0/DIAGNOSTIC_COMPLETE，17:03:55Z全部资源已归还。实际捕获HPE_CLOSED_CONNECTION而非零错误，但精确请求关联仍UNKNOWN；不代表四App兼容通过、不导入报告。RELEASE01-08保持未完成。新90s独立14881ms CLOSED/未用75119不转；旧红保持。下一步只基于独审原件决定窄修或更精确诊断，不自动第二次、不扩大发布scope。
+
+首次诊断actual经[root独立接受](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/root-actual-review.json)，1条错误与关联UNKNOWN保真，未给compatibility批准。保RELEASE01-08未完成；当前停写等既有只读原因研究，不新actual或重建。

@@ -1,0 +1,476 @@
+{
+  "diagnosticOnly": true,
+  "complete": true,
+  "limits": {
+    "errors": 16,
+    "upstreams": 128,
+    "bytes": 32768
+  },
+  "dropped": 0,
+  "invalidPhase": false,
+  "originalHandlersPreserved": true,
+  "errors": [
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "connectionId": 29,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "code": "HPE_CLOSED_CONNECTION",
+      "bytesParsed": 1,
+      "elapsedMs": 7112,
+      "association": "UNKNOWN",
+      "wireIndex": null
+    }
+  ],
+  "upstreams": [
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 0,
+      "clientPort": 60698,
+      "serverPort": 60655,
+      "elapsedMs": 5591
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 1,
+      "clientPort": 60699,
+      "serverPort": 60655,
+      "elapsedMs": 5670
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 2,
+      "clientPort": 60700,
+      "serverPort": 60655,
+      "elapsedMs": 5680
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 3,
+      "clientPort": 60701,
+      "serverPort": 60655,
+      "elapsedMs": 5686
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 4,
+      "clientPort": 60702,
+      "serverPort": 60655,
+      "elapsedMs": 5687
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 5,
+      "clientPort": 60703,
+      "serverPort": 60655,
+      "elapsedMs": 5687
+    },
+    {
+      "phase": "app-connect",
+      "step": null,
+      "wireIndex": 6,
+      "clientPort": 60705,
+      "serverPort": 60655,
+      "elapsedMs": 5717
+    },
+    {
+      "phase": "cookie-reload",
+      "step": null,
+      "wireIndex": 7,
+      "clientPort": 60709,
+      "serverPort": 60655,
+      "elapsedMs": 5891
+    },
+    {
+      "phase": "cookie-reload",
+      "step": null,
+      "wireIndex": 8,
+      "clientPort": 60710,
+      "serverPort": 60655,
+      "elapsedMs": 5898
+    },
+    {
+      "phase": "cookie-reload",
+      "step": null,
+      "wireIndex": 9,
+      "clientPort": 60711,
+      "serverPort": 60655,
+      "elapsedMs": 5898
+    },
+    {
+      "phase": "cookie-reload",
+      "step": null,
+      "wireIndex": 10,
+      "clientPort": 60712,
+      "serverPort": 60655,
+      "elapsedMs": 5898
+    },
+    {
+      "phase": "cookie-reload",
+      "step": null,
+      "wireIndex": 11,
+      "clientPort": 60713,
+      "serverPort": 60655,
+      "elapsedMs": 5906
+    },
+    {
+      "phase": "ack-loss",
+      "step": null,
+      "wireIndex": 12,
+      "clientPort": 60720,
+      "serverPort": 60655,
+      "elapsedMs": 6222
+    },
+    {
+      "phase": "ack-loss",
+      "step": null,
+      "wireIndex": 13,
+      "clientPort": 60721,
+      "serverPort": 60655,
+      "elapsedMs": 6236
+    },
+    {
+      "phase": "ack-loss",
+      "step": null,
+      "wireIndex": 14,
+      "clientPort": 60722,
+      "serverPort": 60655,
+      "elapsedMs": 6241
+    },
+    {
+      "phase": "durable-retry",
+      "step": "unknown-reload",
+      "wireIndex": 15,
+      "clientPort": 60726,
+      "serverPort": 60655,
+      "elapsedMs": 6619
+    },
+    {
+      "phase": "durable-retry",
+      "step": "unknown-reload",
+      "wireIndex": 16,
+      "clientPort": 60727,
+      "serverPort": 60655,
+      "elapsedMs": 6624
+    },
+    {
+      "phase": "durable-retry",
+      "step": "unknown-reload",
+      "wireIndex": 17,
+      "clientPort": 60728,
+      "serverPort": 60655,
+      "elapsedMs": 6624
+    },
+    {
+      "phase": "durable-retry",
+      "step": "unknown-reload",
+      "wireIndex": 18,
+      "clientPort": 60729,
+      "serverPort": 60655,
+      "elapsedMs": 6624
+    },
+    {
+      "phase": "durable-retry",
+      "step": "unknown-reload",
+      "wireIndex": 19,
+      "clientPort": 60730,
+      "serverPort": 60655,
+      "elapsedMs": 6632
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 20,
+      "clientPort": 60733,
+      "serverPort": 60655,
+      "elapsedMs": 6764
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 21,
+      "clientPort": 60734,
+      "serverPort": 60655,
+      "elapsedMs": 6764
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 22,
+      "clientPort": 60736,
+      "serverPort": 60655,
+      "elapsedMs": 6788
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 23,
+      "clientPort": 60737,
+      "serverPort": 60655,
+      "elapsedMs": 6788
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 24,
+      "clientPort": 60738,
+      "serverPort": 60655,
+      "elapsedMs": 6788
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 25,
+      "clientPort": 60740,
+      "serverPort": 60655,
+      "elapsedMs": 6794
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 26,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "elapsedMs": 6800
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 27,
+      "clientPort": 60742,
+      "serverPort": 60655,
+      "elapsedMs": 6806
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 28,
+      "clientPort": 60743,
+      "serverPort": 60655,
+      "elapsedMs": 6814
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 29,
+      "clientPort": 60744,
+      "serverPort": 60655,
+      "elapsedMs": 6821
+    },
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 30,
+      "clientPort": 60745,
+      "serverPort": 60655,
+      "elapsedMs": 6821
+    },
+    {
+      "phase": "late-logout",
+      "step": "held-response",
+      "wireIndex": 31,
+      "clientPort": 60751,
+      "serverPort": 60655,
+      "elapsedMs": 7002
+    },
+    {
+      "phase": "late-logout",
+      "step": "held-response",
+      "wireIndex": 32,
+      "clientPort": 60752,
+      "serverPort": 60655,
+      "elapsedMs": 7004
+    },
+    {
+      "phase": "late-logout",
+      "step": "old-read-revoked",
+      "wireIndex": 33,
+      "clientPort": 60753,
+      "serverPort": 60655,
+      "elapsedMs": 7032
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 34,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "elapsedMs": 7111
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 35,
+      "clientPort": 60756,
+      "serverPort": 60655,
+      "elapsedMs": 7201
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 36,
+      "clientPort": 60759,
+      "serverPort": 60655,
+      "elapsedMs": 7214
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 37,
+      "clientPort": 60760,
+      "serverPort": 60655,
+      "elapsedMs": 7222
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 38,
+      "clientPort": 60761,
+      "serverPort": 60655,
+      "elapsedMs": 7222
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 39,
+      "clientPort": 60763,
+      "serverPort": 60655,
+      "elapsedMs": 7232
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 40,
+      "clientPort": 60764,
+      "serverPort": 60655,
+      "elapsedMs": 7232
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 41,
+      "clientPort": 60765,
+      "serverPort": 60655,
+      "elapsedMs": 7232
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 42,
+      "clientPort": 60767,
+      "serverPort": 60655,
+      "elapsedMs": 7243
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 43,
+      "clientPort": 60768,
+      "serverPort": 60655,
+      "elapsedMs": 7247
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 44,
+      "clientPort": 60769,
+      "serverPort": 60655,
+      "elapsedMs": 7250
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 45,
+      "clientPort": 60770,
+      "serverPort": 60655,
+      "elapsedMs": 7255
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 46,
+      "clientPort": 60771,
+      "serverPort": 60655,
+      "elapsedMs": 7260
+    },
+    {
+      "phase": "late-logout",
+      "step": "new-session-ready",
+      "wireIndex": 47,
+      "clientPort": 60772,
+      "serverPort": 60655,
+      "elapsedMs": 7262
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 48,
+      "clientPort": 60775,
+      "serverPort": 60655,
+      "elapsedMs": 7381
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 49,
+      "clientPort": 60776,
+      "serverPort": 60655,
+      "elapsedMs": 7381
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 50,
+      "clientPort": 60777,
+      "serverPort": 60655,
+      "elapsedMs": 7392
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 51,
+      "clientPort": 60778,
+      "serverPort": 60655,
+      "elapsedMs": 7394
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 52,
+      "clientPort": 60780,
+      "serverPort": 60655,
+      "elapsedMs": 7397
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 53,
+      "clientPort": 60781,
+      "serverPort": 60655,
+      "elapsedMs": 7397
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 54,
+      "clientPort": 60782,
+      "serverPort": 60655,
+      "elapsedMs": 7403
+    },
+    {
+      "phase": "late-logout",
+      "step": "draft-restore",
+      "wireIndex": 55,
+      "clientPort": 60783,
+      "serverPort": 60655,
+      "elapsedMs": 7403
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "backend": {
+    "directory": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "root": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "sourceTree": "f4b65ef65bddfc4c167b8bd7fc3a7258ad285728",
+    "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "pins": [
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/backend-release/index.mjs",
+        "bytes": 6289,
+        "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/browser-session-configuration.mjs",
+        "bytes": 7335,
+        "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/web-release.mjs",
+        "bytes": 15567,
+        "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/index.ts",
+        "bytes": 15083,
+        "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/client/src/index.ts",
+        "bytes": 57553,
+        "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/contracts/src/index.ts",
+        "bytes": 1634,
+        "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/runner/src/verifier.ts",
+        "bytes": 1069,
+        "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+      }
+    ]
+  },
+  "apps": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289273
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289274
+      },
+      "format": 1,
+      "releaseId": null,
+      "manifest": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/manifest.json",
+        "bytes": 1604,
+        "sha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      }
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289289
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289290
+      },
+      "format": 2,
+      "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+      "manifest": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/manifest.json",
+        "bytes": 1651,
+        "sha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "artifactRoot": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 123030663
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 123030667
+      },
+      "format": 2,
+      "releaseId": "388371a4972c469b8ace623454594132",
+      "manifest": {
+        "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/manifest.json",
+        "bytes": 1651,
+        "sha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      }
+    }
+  ],
+  "recoveryApp": {
+    "label": "recovery-779a",
+    "artifact": {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    "artifactRoot": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "rootIdentity": {
+      "dev": 16777234,
+      "ino": 124271651
+    },
+    "distIdentity": {
+      "dev": 16777234,
+      "ino": 124271653
+    },
+    "format": 2,
+    "releaseId": "52a261e294324a11aead58a554f547db",
+    "manifest": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4/manifest.json",
+      "bytes": 1651,
+      "sha256": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    }
+  },
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "browserSettings": {
+    "cookieOrigin": "http://127.0.0.1:61228",
+    "trustedOrigins": [
+      "http://127.0.0.1:61228"
+    ],
+    "authEpoch": "svc09-b2b-20261007"
+  },
+  "databaseName": "flow_release_d13d2bd75f4143d4aea3e78fd664fee6",
+  "marker": "7107aa32-8f1e-4f00-b984-d5a6589d7f73",
+  "providerQueries": 0
+}

@@ -1,6 +1,6 @@
 # WPF-RELEASE01 review
 
-**当前状态：APPROVED，仅固定诊断源码和精确native准备；诊断actual未运行，正式四App兼容仍FAILED。**
+**当前状态：APPROVED，仅固定诊断源码和精确native准备；诊断首次实际捕获/完整RETURN已独立接受，正式四App兼容仍FAILED。**
 
 Review target commit：fc2916c275efe86203d91ec33656ea9871eac42a。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。
 
@@ -8,7 +8,7 @@ Review target commit：fc2916c275efe86203d91ec33656ea9871eac42a。范围：apps/
 
 [必要类型实际](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/README.md)：首resolver配置FAILED原件保留；同source仅修现有zod路径后strict/noEmit exit0，两个actual共2775ms/20s CLOSED且完整归还。[Root独立实际审查](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/root-result-review.json)已接受最后strict PASS及首红保留；不冒浏览器或compatibility通过。真实K01重叠时段保留，不将本次当性能结果。
 
-90s诊断尚NO_GRANT，四App reports=null，不可据此部署。UNKNOWN原key恢复仅覆盖reload后/logout前，不证明新登录后UNKNOWN恢复。
+首次[诊断actual](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/README.md)已实际完成，outer0/DIAGNOSTIC_COMPLETE仅说明捕获完整；1条HPE_CLOSED_CONNECTION关联UNKNOWN，passed=false/reports=null。90s段14881ms CLOSED、完整RETURN，[Root actual独审](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/root-actual-review.json)ACCEPTED，仍不是兼容批准；不可据此部署。UNKNOWN原key恢复仅覆盖reload后/logout前，不证明新登录后UNKNOWN恢复。
 
 ## 历史：d032源码及第二实际失败
 

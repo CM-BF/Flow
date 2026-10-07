@@ -1,0 +1,85 @@
+{
+  "reviewedAt": "2026-10-07T16:47:46.042794+00:00",
+  "reviewer": "/root gpt-6-astra ultra read-only",
+  "state": "ACCEPTED_FINAL_AFFECTED_STRICT_PASS_WITH_PRIOR_FAILURE_PRESERVED",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "executionHead": "4f7606c81e3416414e76186aa635aae44a9febd3",
+  "inputs": [
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/binding.json",
+      "bytes": 101005,
+      "sha256": "f3c91b2067033c227836770545e3bbe794b9b46cbcc5700a0ca651317208374e"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json",
+      "bytes": 1315,
+      "sha256": "86460b4fe225121800f43121c4900df7a4c375d417c1e40dc1dc44ccfa2ed337"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/result.json",
+      "bytes": 10262,
+      "sha256": "e6685dfb2168665375bf0fabd0ffb18e98e1f22020230071bb50e7c555201e35"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/terminal.json",
+      "bytes": 325,
+      "sha256": "3914ed125144faea6710a71e5e5517dbeebc9a4b9197a8325dc34e324da23718"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/outer-observation.json",
+      "bytes": 730,
+      "sha256": "c62869f67ec4c1f83bc7563ee50c37df471a2ef1a65d4873e08d72ff47dcf15d"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/return.json",
+      "bytes": 721,
+      "sha256": "b0484b5db79057f0888a348da9942b13bd0272fb3179622f89b9fa0cf055472b"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/binding.json",
+      "bytes": 156476,
+      "sha256": "e1a45c2030d37220288c92ffae3bbf1708c155042c874b4e90eb192bea1ea4e8"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/tsconfig.json",
+      "bytes": 1344,
+      "sha256": "bef3e32067ed28fd5c5ade0285371b94252204ca25d078e92896c2a9ce6f4d0f"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/result.json",
+      "bytes": 8125,
+      "sha256": "9c5c9cc6e1087ffd21a94adbc1f4b32fdbcbfd7545335e71c611c92e53fe0993"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/terminal.json",
+      "bytes": 325,
+      "sha256": "b140082bf2466648de87b56df9c4f4ff8ee79a41f3a3dfc881381d372941d612"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/outer-observation.json",
+      "bytes": 730,
+      "sha256": "67a71132f3f987075dbf49a34679685f2fcf05879ff133b7ae1c9d4b666c4d3a"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/return.json",
+      "bytes": 814,
+      "sha256": "85e6b361f0774025c6a990701d8b6b940d6b93b5c032847cab315e46b0e107e8"
+    }
+  ],
+  "evidence": [
+    "Read both actual compiler and outer results, original stdout/error facts and exact RETURN. First compilerexit2 with unresolved Zod alias/cascading strict errors remains FAILED; second compilerexit0 with empty stdout/stderr passes affected two-file strict/noEmit.",
+    "Configs differ only by Zod path mapping to existing exact installed zod4.6.5 declaration package. Same strict/noUncheckedIndexedAccess/noEmit flags, source roots, files and inherited direct consumer closure. No source/API relaxation or install.",
+    "Terminal result/budget hashes match raw; outer stdout/stderr hashes and exact terminal observations match. Both inner/outerEOF/drop0. First known outer17450/compiler17704 and second5981/6181 PID+PGID all absent; both scratch absent in exactreturn.",
+    "Twenty-second ordinary segment charged1125+1650=2775ms CLOSED, unused17225 never transferred. Second cap18700 stayed within remaining18875."
+  ],
+  "measurementOverlap": {
+    "typecheckStart": "2026-10-07T16:45:35.498477Z",
+    "typecheckEnd": "2026-10-07T16:45:37.148418Z",
+    "K01Start": "2026-10-07T16:44:58.670157Z",
+    "fact": "Actual approximately1.65s typecheck overlapped K01 operator window. Both managers notified; cannot claim fully isolated K01 measurement. Exact SQL-sample intersection requires its original phase evidence. No automatic rerun and no generic latency claim.",
+    "typecheckMeaning": "Concurrency does not convert the observed compilerexit0 into a failed typecheck; no speed claim is made."
+  },
+  "next": "Diagnostic source/native already22da/71da approved; manager may now list90s diagnostic READY, separately from single60s I01 candidate. Fresh exact heavy handoff and corrected future growth accounting still required; no actual diagnostic granted by reviewer.",
+  "runtimeAuthorized": false,
+  "quality": "Clean-code review preserved primary failure, precise dependency fix, compiler behavior scope, lifecycle and actual concurrency truth. No new test run by root."
+}

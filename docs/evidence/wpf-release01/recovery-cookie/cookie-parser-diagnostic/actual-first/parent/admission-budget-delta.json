@@ -1,0 +1,30 @@
+{
+  "kind": "ROUTINE_BUDGET_ONLY",
+  "before": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/before-admission/binding.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/before-admission/binding.json",
+    "bytes": 47174,
+    "sha256": "5a74f8974ac32674b072868eb241d04706a8d96b90100deb2af982bec4771afd"
+  },
+  "current": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/binding.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/binding.json",
+    "bytes": 46876,
+    "sha256": "13464c9133c1d42a088bded6d0166c5ec4c5b1f1b43efeb35ad2b2424b0394e9"
+  },
+  "parentUnchanged": "3872ee12e826c295ec498e6bc4047726621f4dbdcdf02b49db8b6dead43198c9",
+  "workerUnchanged": "85544966c56f42cf26701c66f696ea905a51b89d9174aaf0fe9c7573304aa30a",
+  "classification": {
+    "managerForwardClassificationAt": "2026-10-07T16:58:52.399044Z return then dispatch",
+    "unknownRetainedBytes": 13440909312,
+    "K01RetainedDatabaseBytes": 134217728,
+    "ownDiagnosticBytes": 210763776,
+    "MikaActiveOrdinaryBytes": 25165824,
+    "I01PendingSealBytes": 8388608,
+    "singleReserveBytes": 1073741824,
+    "completeFloorBytes": 14893187072,
+    "closedPhaseCapsNotPermanentlyAccumulated": true,
+    "actualGrant": true,
+    "higherActualCompleteSumWins": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T17:07:43.190183+00:00",
+  "kind": "READ_ONLY_DERIVATION_NOT_CAUSAL_PROOF",
+  "sourceHashes": {
+    "http-client-errors.json": "4637255679ec9231742f3d573e4152de5fed66b46e9273d63d9101ce38cad213",
+    "all-wire.json": "7c46dffbf529a99718ca361150f42a67e49267999c016ef29b9f47ae4b4d91d0"
+  },
+  "error": {
+    "phase": "late-logout",
+    "step": "reconnect",
+    "connectionId": 29,
+    "clientPort": 60741,
+    "serverPort": 60655,
+    "code": "HPE_CLOSED_CONNECTION",
+    "bytesParsed": 1,
+    "elapsedMs": 7112,
+    "association": "UNKNOWN",
+    "wireIndex": null
+  },
+  "samePortTupleCandidates": [
+    {
+      "phase": "durable-retry",
+      "step": "original-retry",
+      "wireIndex": 26,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "elapsedMs": 6800,
+      "method": "GET",
+      "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/stream?after=1",
+      "status": 200
+    },
+    {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "wireIndex": 34,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "elapsedMs": 7111,
+      "method": "GET",
+      "path": "/api/browser-session",
+      "status": 400
+    }
+  ],
+  "interpretation": "Two observations share the captured dynamic port tuple, so the original unique-match rule honestly leaves association UNKNOWN. One prior stream200 and later browser-session400 are candidates; this does not prove socket identity or cause. No raw packet or private auth fields copied.",
+  "noAdditionalRuntime": true
+}

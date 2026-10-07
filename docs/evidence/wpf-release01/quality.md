@@ -52,3 +52,7 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 ## 2026-10-07T16:50:24.040Z 诊断源码审查与必要strict封存
 
 沿既有本地find-skills、clean-code/codebase-design/webapp-testing，无安装。检查单一职责/错误/重复与资源边界：被动观察保原Fastify listener和socket处理，只存有限非秘密字段；发现compact估算与pretty实际保存不一致，fc291单行对齐真实saveJson字节，原上限不增。必要strict首红来自未materialize的donor根zod路径，改用已安装contracts精确只读入口后通过，未扩大产品出口或测试别名伪补合同。两次原件/失败、实际退出、EOF与owned清理分层固定；复验与K01重叠透明保留，不回写无重叠或重测。当前400原因仍未知，诊断0errors不能解释为无缺陷；原4App失败和reports=null不漂白。此批只owner metadata/routine准备绑定，四scope完成后STOP。
+
+## 2026-10-07T17:06:38.370Z 首次被动诊断实际收口
+
+复用本地find-skills/clean-code/webapp-testing既有方法：本轮没有新增源码/框架，执行已审fc291入口。错误边界保真：diagnosticOnly/DIAGNOSTIC_COMPLETE不是passed，reports恒null；HPE_CLOSED_CONNECTION已捕获但候选连接关联UNKNOWN，不按公开阶段猜根因、不白名单所有400。12runtime原件与outer唯一seal/EOF/DBmarkedDROP/exact身份清理完整保存；量化ceil最大elapsed14881，未用额度不自动复用。前置只routine资源分类更新，原parent/worker/native边界不变。只本owner status/链接核对，未追加types/产品检查；外层实际与status更新时点分别保留。

@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T17:01:56.292636+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-recovery",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "createdAt": "2026-10-07T14:52:41.385Z",
+    "updatedAt": "2026-10-07T15:10:52.444Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "af5d8077194fbc6e961d891687336478595ade49",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "pins": 74,
+  "backendEntries": 15628,
+  "backendFiles": 12677,
+  "webAssets": 40,
+  "allRootsMatched": true,
+  "availableBytes": 20004384768,
+  "minimumBytes": 14893187072,
+  "resourceComposition": {
+    "managerForwardClassificationAt": "2026-10-07T16:58:52.399044Z return then dispatch",
+    "unknownRetainedBytes": 13440909312,
+    "K01RetainedDatabaseBytes": 134217728,
+    "ownDiagnosticBytes": 210763776,
+    "MikaActiveOrdinaryBytes": 25165824,
+    "I01PendingSealBytes": 8388608,
+    "singleReserveBytes": 1073741824,
+    "completeFloorBytes": 14893187072,
+    "closedPhaseCapsNotPermanentlyAccumulated": true,
+    "actualGrant": true,
+    "higherActualCompleteSumWins": true
+  },
+  "binding": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/binding.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/binding.json",
+    "bytes": 46876,
+    "sha256": "13464c9133c1d42a088bded6d0166c5ec4c5b1f1b43efeb35ad2b2424b0394e9"
+  },
+  "manifest": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/manifest.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/manifest.json",
+    "bytes": 11737,
+    "sha256": "aa8ef24ae357041d25341bc8767725b86e660384cea131c88750de8ff6d578ae"
+  },
+  "adminSource": {
+    "git": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts",
+    "blobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+    "field": "adminUrl",
+    "mode": "0600",
+    "singleLink": true,
+    "identity": {
+      "dev": 16777234,
+      "ino": 124358739
+    }
+  },
+  "sourceGate": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/gate.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/gate.json",
+    "bytes": 1215,
+    "sha256": "20a2b52c989883d0c62b37046160c4c0c2bb815856c9300c3426e775c8119aa6"
+  }
+}

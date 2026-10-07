@@ -1,0 +1,37 @@
+{
+  "pid": 57021,
+  "pgid": 57021,
+  "parentPid": 50337,
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/rel01-recovery-diagnostic-c1/scratch/profile",
+    "--disk-cache-dir=/private/tmp/rel01-recovery-diagnostic-c1/scratch/cache",
+    "--proxy-server=http://127.0.0.1:60656",
+    "--proxy-bypass-list=<-loopback>",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/temp",
+    "TMP": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/temp",
+    "TEMP": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/temp",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/temp",
+    "XDG_CACHE_HOME": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/cache",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/rel01-recovery-diagnostic-c1/scratch/crash"
+  },
+  "proxyUrl": "http://127.0.0.1:60656",
+  "spawnedAt": "2026-10-07T17:02:35.855789+00:00",
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "at": "2026-10-07T17:02:43.333734+00:00"
+  },
+  "closeObserved": true
+}
