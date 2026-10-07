@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T18:26:58.440154Z",
+  "source": "bcd4568f2269ccaa126547c156fa08125540b8b6",
+  "purpose": "SVC09A_DEFAULT_THREE_ROLE_START_STOP",
+  "selected": 10,
+  "passed": 10,
+  "node": 7,
+  "python": 3,
+  "elapsedMs": 182,
+  "rawBytes": 1361,
+  "localCumulativeMs": 758,
+  "returnAt": "2026-10-07T18:22:43.477747+00:00",
+  "groups": 2,
+  "ownedState": "absent",
+  "dualEOF": true,
+  "scratch": {
+    "path": "/private/tmp/flow-svc09a-controller-t3xvfbve",
+    "dev": 16777234,
+    "ino": 124405665,
+    "remainingEntries": 0,
+    "cleanup": "removed"
+  },
+  "pg": 0,
+  "host": 0,
+  "provider": 0,
+  "actualHost": "NOT_RUN",
+  "limits": "Original 120s local cumulative/32MiB/2MiB/3 children; two sequential children",
+  "prior": "Original12/import not rerun; R1-R4 FAIL/KEEP unchanged"
+}

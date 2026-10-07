@@ -6,28 +6,28 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T18:03:43.714Z |
+| 更新时间 | 2026-10-07T18:26:58.440154Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 启动判定诊断已合入主线；固定控制器的独立加载检查通过，正在准备默认三角色的最小启动闭环。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 启动诊断已合入主线，固定加载装配获限定批准；默认三角色启动与停止候选已完成局部检查，正在交审。 |
 | 下一可用交付 | 固定控制器驱动的默认三角色启动、空任务核对和停止候选；真实运行待审查与窗口。 |
 | 当前阻塞 | ACTIVE: 默认中心尚无完整启动闭环通过证据；原失败底层原因未知，完整双槽与混合任务继续开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 四源f0e434bd已main；装配source c1e7ad877；旧R4结果a4a2/307d不变。 |
-| 实现目标 | f0e434bd04c496fbd60e8458c3f840f4d7b25e80 |
-| 工作分支状态 | in-progress（四产品已审/main并归还；own装配待审，下一默认宿主未启动） |
+| Head | 四源f0已main；loader c1e/745已审；默认闭环source bcd4568f2269ccaa126547c156fa08125540b8b6，旧R4原件不变。 |
+| 实现目标 | bcd4568f2269ccaa126547c156fa08125540b8b6 |
+| 工作分支状态 | in-progress（四产品及loader已审；默认3role caller准备待审，实际未启动） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
-| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/process.mjs, tools/personal-preview/process.test.mjs |
+| 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation（仅own准备；四产品已归还） |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v6；18:00:38.649Z归还四产品，仅own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-product-return-receipt.json) |
-| Review | 四源APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE，17:57:03Z；唯一main496b的docs/evidence/i02/svc09a-startup-controller-review.json。装配独审待完成。R4限定结果批准/main abdf69692保留。 |
-| 检查状态 | 新10+受影响2=12/12，476ms/raw1750B；注释前像与KEEP如实。另actual Node import/参数1场景100ms/raw4786B，组absent/双EOF，新shadow和scratch移除；累计576ms。旧33不重跑。 |
+| Review | 四源APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE，17:57:03Z；唯一main496b的docs/evidence/i02/svc09a-startup-controller-review.json。装配已获APPROVED_LIMITED_FIXED_CONTROLLER_LOADER_AND_IMPORT（Lead转达唯一结论，I02原件待正常引用）。默认闭环准备待审。R4限定结果批准/main abdf69692保留。 |
+| 检查状态 | 新10+受影响2=12/12，476ms/raw1750B；注释前像与KEEP如实。另actual Node import/参数1场景100ms/raw4786B，组absent/双EOF，新shadow和scratch移除；累计758ms；另默认caller7+3=10/10，182ms/raw1361B、两组absent/双EOF/exact scratch移除。旧33不重跑。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
 | 已集成main状态 | 原双槽11源main246ed0f；本次诊断四源main496b1d68caad14c7bc40a05b86b2136b12d68ca7，Lead确认逐字f0且main/origin clean；2515/098b旧产物未改变，个人未部署本片。 |
 | 运行窗口 | R4 2026-10-07T17:09:28.039Z START；32,137ms operator exit1；2026-10-07T17:10:57.626406Z实际RETURN。1center stopped/6PID及组absent/连接[]；DB/private KEEP，旧R1–R3不动。 |
@@ -120,3 +120,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T18:03:43.714Z：四产品f0已获唯一限定独审/main496，fresh18:00:07.331Z核v5及main四前像同后，18:00:38.649Z原子amend v6归还产品。局部实际17:47:04.837869Z RETURN：12/12，但empty-only wrapper exit1/tsx23686B KEEP；不当成产品失败或清理完成。17:58:45.927475Z实际Node加载RETURN：100ms、组absent双EOF，shadow/exact scratch移除。累计576ms/6536B；新装配scope尚未获得独审，原2515产物不变。R4唯一限定结果批准main abdf69692已收，旧UNKNOWN/FAIL/KEEP不改。下一继续own默认启动caller准备，无实际host窗口，不与Web/O16归因混淆。
 
 2026-10-07T18:12:30.320624Z：加载小包745ba7f已固定/pushed交Lead安排唯一独审，原四产品不重审。沿v6 own两scope开始默认3role独立purpose/namespace caller；复用setup/clone/OPS14，数据库和private明确KEEP，独立证明实际已登记身份/组及连接收束，不使用八代或mixed成功门槛。新片实际host未授权，Web C3优先；局部累计已用576ms，尚无本片工程child。
+
+2026-10-07T18:26:58.440154Z：默认purpose源码bcd4568f2269ccaa126547c156fa08125540b8b6及直接局部记录已固定。7 Node+3 Python通过，182ms/raw1361B，两组absent双EOF，18:22:43.477747Z exact空scratch removed并实际RETURN。累计758ms，旧12/import不重跑。新2namespace未创建、actual NOT_RUN，DB/private策略为KEEP；[最小Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-interface.md)与新packet仅请求独立准备审查，尚无宿主窗口。旧全旅程/个人/模型验收继续开放。
