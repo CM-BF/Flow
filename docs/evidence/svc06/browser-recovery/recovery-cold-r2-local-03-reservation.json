@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T21:50:47.857Z",
+  "source": "ccb8daceef31cc444f89e678b65b2710f25dc8f3",
+  "queueAt": "2026-10-07T21:50:38.189Z",
+  "queueSha256": "0cef27cd5947622583f8f4fad63d42bbad082f185a50cea983e1bf554b12a68a",
+  "freeBytes": 18259197952,
+  "minimumFreshBytes": 15689515008,
+  "limits": {
+    "seconds": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 65536
+  },
+  "scratch": {
+    "path": "/private/tmp/svc06b-cold-r2-pin-qz_ph0id",
+    "dev": 16777234,
+    "ino": 124567195
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-reporter=spec",
+    "--test-name-pattern=generated input manifest pin",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-inputs.json",
+      "bytes": 6111,
+      "sha256": "3c444d07e27a1864d9a9bfa1cefe69cf56f7c389e8386a5c74edc47d8dfba25f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-preparation.json",
+      "bytes": 11541,
+      "sha256": "7b41b374c34848f8837b9e96e82470395edeceb9f99b0bbe3f4d674ee056f0e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-dispatch.json",
+      "bytes": 2328,
+      "sha256": "bf8523f1a87033029cb5bb10de504ee51bb4975d3715b0b4657576b68af1f845"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.mjs",
+      "bytes": 2847,
+      "sha256": "3201a297d641fdc9d8b9d5582c5b5a80187e9e273c898d00bde59c08498c3900"
+    }
+  ],
+  "pg": 0,
+  "personal": 0,
+  "provider": 0
+}

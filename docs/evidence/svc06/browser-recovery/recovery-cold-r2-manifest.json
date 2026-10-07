@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T21:49:09.569Z",
-  "source": "aedb2e582f55ede91522305652f138e06dd4033b",
+  "at": "2026-10-07T21:51:18.970Z",
+  "source": "ccb8daceef31cc444f89e678b65b2710f25dc8f3",
   "sourceBindings": [
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-entry.mjs",
@@ -24,23 +24,23 @@
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-inputs.json",
-      "bytes": 6105,
-      "sha256": "364d6123356237cba1e20ccb4e2ca580b8f386a3332fbfe49ab069833a649626"
+      "bytes": 6111,
+      "sha256": "3c444d07e27a1864d9a9bfa1cefe69cf56f7c389e8386a5c74edc47d8dfba25f"
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-preparation.json",
       "bytes": 11541,
-      "sha256": "0e4b4ab8af89cd48c1bedecae15982fba45538e9790b0fb9c9d19f65903cdcb2"
+      "sha256": "7b41b374c34848f8837b9e96e82470395edeceb9f99b0bbe3f4d674ee056f0e4"
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-dispatch.json",
       "bytes": 2328,
-      "sha256": "364ab4ab37ef0c64fc91e510fd726720793becd8722a1aa998019eb7c748f021"
+      "sha256": "bf8523f1a87033029cb5bb10de504ee51bb4975d3715b0b4657576b68af1f845"
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.mjs",
-      "bytes": 1195,
-      "sha256": "598cbc9c0817550ed3bc96587520837d8cba7467c307e1f87fd1ab60d9bedfd8"
+      "bytes": 2847,
+      "sha256": "3201a297d641fdc9d8b9d5582c5b5a80187e9e273c898d00bde59c08498c3900"
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.py",
@@ -49,8 +49,8 @@
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-interface.md",
-      "bytes": 4256,
-      "sha256": "cd32686d71ae9c1473c62194a56f320d2e14f94e27b7ef1b61a421c746650b5d"
+      "bytes": 4926,
+      "sha256": "b63097e1f34776655574bd1ed29a70415d67e0588ead110189c5523fa2bd0aa8"
     }
   ],
   "rawBindings": [
@@ -103,6 +103,31 @@
       "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-02-stdout.txt",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-03-outer.json",
+      "bytes": 792,
+      "sha256": "e659ebcd71ee7151e261b3095bb1bbd23d5affda75efd4e97bec295a77444918"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-03-reservation.json",
+      "bytes": 1973,
+      "sha256": "409d4d5cc6e211cdebd753d67f5f591df5203f3fe8a1327d029ad7724a2ee9b7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-03-result.json",
+      "bytes": 396,
+      "sha256": "8dba82191914a8882dd1bb2bc4dc0511bebefde3b05647deae5058c4142bd12b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-03-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-local-03-stdout.txt",
+      "bytes": 209,
+      "sha256": "2f9fb4c52e8f19c9c15530ba73f6bd1c1f46cd91931ee13303d91d17a8a1a62f"
     }
   ],
   "inherited": [
@@ -128,13 +153,13 @@
   "executionPins": 17,
   "runtimePins": 6,
   "local": {
-    "nodeDistinct": 2,
+    "nodeDistinct": 3,
     "pythonDistinct": 1,
-    "elapsedMs": 179,
-    "rawBytes": 407,
-    "groupsAbsentDualEOF": 2,
-    "exactEmptyScratchRemoved": 2,
-    "returnAt": "2026-10-07T21:47:54.927Z",
+    "elapsedMs": 279,
+    "rawBytes": 616,
+    "groupsAbsentDualEOF": 3,
+    "exactEmptyScratchRemoved": 3,
+    "returnAt": "2026-10-07T21:50:47.960Z",
     "artifactRuntime": 0,
     "pg": 0,
     "personal": 0,
@@ -143,5 +168,14 @@
   "artifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
   "artifactSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
   "actual": "NOT_RUN",
-  "review": "PENDING"
+  "review": "PENDING",
+  "initialSource": "aedb2e582f55ede91522305652f138e06dd4033b",
+  "reviewRepair": {
+    "finding": "P2 stale b692 manifest pin despite corrected top tuple",
+    "before": "e2d6c7d09db88760d5fde03813086d34f3a9e393",
+    "fix": "ccb8daceef31cc444f89e678b65b2710f25dc8f3",
+    "changes": "One manifest runtime pin and dependent input/preparation/dispatch hashes; fifth non-artifact pins unchanged; no executable source changes.",
+    "validation": "Only one added generated-input alignment case; original2Node+1Python retained without repetition.",
+    "status": "FIXED_AWAITING_INDEPENDENT_DELTA_REVIEW"
+  }
 }

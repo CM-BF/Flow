@@ -57,3 +57,5 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## 恢复R2构建已审、冷启动差量待审
 
 2026-10-07T21:49:09.569Z：native_center_owner对fixed8bea给出APPROVED_LIMITED_FIXED_RECOVERY_R2_ARTIFACT_BUILD_RESULT，0blocking，未重跑/未全inventory复哈希；准确e15/source880060与内部import通过，不含cold/四App/个人恢复。新冷启动source aedb2e582f55ede91522305652f138e06dd4033b 与17+6固定绑定、2Node+1Python/179ms407B见[manifest](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json)。独立delta审查待Lead，作者自查不作批准；actual NOT_RUN。
+
+2026-10-07T21:51:18.970Z：原e2d准备P2旧manifest绑定由Lead识别，sourceccb8已修并保存原检查/缺口；唯一新增对齐例通过。最终[manifest](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json)含10源/15raw，4不同局部279ms/616B；P2闭合仍等独立复审，不自批。
