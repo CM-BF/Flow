@@ -1,0 +1,257 @@
+{
+  "at": "2026-10-07T16:15:06.638Z",
+  "main": "337060abb836770902493acd02b29d472a34e298",
+  "ledgerReadId": "191a3b81-2270-4469-bc18-83780ff6d510",
+  "state": "PROPOSAL_ONLY_NOT_AUTHORIZED",
+  "rows": [
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [
+        {
+          "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+          "version": 3,
+          "taskId": "X01-ARTIFACT-VERIFIER01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier"
+        }
+      ],
+      "requiredAction": "retain current AV03 frozen target until integration; amend only after next authorization"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [
+        {
+          "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+          "version": 3,
+          "taskId": "X01-ARTIFACT-VERIFIER01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier"
+        }
+      ],
+      "requiredAction": "retain current AV03 frozen target until integration; amend only after next authorization"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [],
+      "requiredAction": "fresh scope check and child atomic amend before write"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [],
+      "requiredAction": "fresh scope check and child atomic amend before write"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [],
+      "requiredAction": "fresh scope check and child atomic amend before write"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "owners": [],
+      "requiredAction": "fresh scope check and child atomic amend before write"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 2773,
+        "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 20703,
+        "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096"
+      },
+      "owners": [],
+      "requiredAction": "fresh scope check and child atomic amend before write"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 2477,
+        "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 13057,
+        "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 1277,
+        "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 2486,
+        "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 15452,
+        "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 2687,
+        "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "mainPreimage": {
+        "commit": "337060abb836770902493acd02b29d472a34e298",
+        "absent": false,
+        "bytes": 6049,
+        "sha256": "4dc8629df0b96862988418fb47faf8a12b9337f0a898e0841294725c705bf7b6"
+      },
+      "owners": [
+        {
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 30,
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+        }
+      ],
+      "requiredAction": "parent STOP/current-version amend removal then child amend"
+    }
+  ],
+  "migration": "New exact number/path pending Execution Lead/storage assignment; no 036 reservation or 034 changes.",
+  "localValidation": "Strict complete v4 response/client ACK match, cross-protocol same-key receipt identity, real route inject and direct legacy consumers, affected strict types. No mocks accepted as SQL proof.",
+  "PGValidation": "Separate fixed operator and unique NEXT: mixed ordinary/tool/verifier SQL pre-LIMIT eligibility v1-v4; current lock-time grant and positive immutable kind/reference/project checks; receipt status no lease renewal; capacity/session/attempt fence. Synthetic qualification seeds are not public installed verifier admission/execution.",
+  "notExposed": "No new writable verification-task producer until positive immutable tag/reference, source-project authorization and center-approved completion gate are jointly implemented."
+}

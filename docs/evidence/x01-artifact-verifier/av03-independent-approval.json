@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T16:08:39.000Z",
+  "archivedAt": "2026-10-07T16:15:06.638Z",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "result": "f9ea88e8dc38b0d912935739412af0d2a0f88705",
+  "packet": "6517781df1127f6f508d67de6710cc89b23e9b14",
+  "reviewReadySha256": "886055462a2bc8bf8460fb1549c7a5e6145b093d40a9583729d40c798ca37bae",
+  "bindings": {
+    "gitCount": 25,
+    "gitBytes": 93251,
+    "closureCount": 73,
+    "closureBytes": 388701,
+    "externalCount": 10
+  },
+  "evidence": "10 passed / 4 unselected (8 new + 2 direct old), types0; 2 children finalabsent/MERGED EOF, 2 ownedTMP+11fixture closure. 2479ms supervision / 5175B raw. Initial EPERM, wholeexternalwall/peak UNKNOWN and later floor timing retained.",
+  "findings": "Only clean v1 selects v4; old v2/v3/unknown v1 retain identity. Complete detached request before serialized tail; exact qualification/runner match; assignment+next key use original durable persistence. Old getters/bindRunner fail closed. Persistence unknown requires stopping instance and reopening same directory.",
+  "boundary": "Request codec and actual filesystem journal only; no response ACK decoder, center/SQL/HTTP/runtime dispatch, full AV03 or main approval.",
+  "reviewerActions": "0 engineering/import/PG/write/KEEP access; local find-skills/codebase-design/clean-code methods reused."
+}

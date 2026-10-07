@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:03:55.376Z / AV02 main e271fb21九叶逐hash核符 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:15:06.638Z / AV02已main；AV03四叶main前像337060ab核符 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；AV02 source989已main e271fb21；当前AV03 source e746029f6daa5751f59813f5c18012b782824d54 |
-| 工作树dirty状态 | AV03四源已固定；本次结果metadata提交后clean |
+| 工作树dirty状态 | AV03四源已固定；本次批准/intake metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED e746029f6daa5751f59813f5c18012b782824d54：AV03 10selected10pass/4未选、focused types0；0PG/provider |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；当前AV03 NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | e746029f6daa5751f59813f5c18012b782824d54（AV03 journal接缝局部已验，待独审） |
+| 实现目标 | e746029f6daa5751f59813f5c18012b782824d54（AV03 journal接缝独审批准，待窄集成） |
 | 实现范围 | packages/contracts/src/verifier-runner-claim.ts,packages/contracts/src/verifier-runner-claim.test.ts,apps/runner/src/admission-journal.ts,apps/runner/src/admission-verifier-claim.test.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | review |
-| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已局部验证，等待独审 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已通过独审，等待主线接收 |
 | 下一可用交付 | 接收v4资格journal接缝；中心验证任务、来源授权与完整运行链仍待实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV02 source/local APPROVED0P1P2且已main；AV03 SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING |
+| Review | AV03 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:08:39.000Z；AV02独立已main |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v3 ACTIVE16，15:57:01.967Z原子追加AV03四leaf；原AV02九改源冻结 |
 | 架构影响 | AV03 branch仅扩同一journal快照协议和显式资格API；无第二状态权威，center/SQL/runtime/v4 HTTP未接。main图更新target交Execution Lead |
 
@@ -101,3 +101,7 @@ AV02分支交付 2026-10-07T15:45:36.515Z：source9895181dfd90f18014d80589799f76
 AV02正式main接收e271fb21，九叶main/source/WT逐hash核符，I02 x01-artifact-verifier-av02-intake.json；原10/10与types0未重跑。当前只待AV03独审，AV03/04与完整X01未完成。
 
 AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c18012b782824d54 / result f9ea88e8dc38b0d912935739412af0d2a0f88705 / packet6517781df1127f6f508d67de6710cc89b23e9b14。一次followup被threadlimit拒绝未启动，review仍PENDING，不重试。当前写入STOP/0actual/0待launch，保留a67v3/16修复期；原截止16:19:44未延長。后继建议[精确scope](../../docs/evidence/x01-artifact-verifier/av03-next-scope.md)只是申请，尚未领取或实施；不把本journal片当完整AV03/X01完成。
+
+## AV03 独审批准与窄接收
+
+2026-10-07T16:15:06.638Z：db_transaction_owner于16:08:39独立批准固定e746/f9ea/651，0P1/P2；原派发失败及原raw保留。四路径及七required-existing直接支持的main前像逐字核符，唯一接收入口 [av03-main-intake.json](../../docs/evidence/x01-artifact-verifier/av03-main-intake.json)。AV03 journal片已审待集成，完整AV03及AV04仍OPEN；本次0工程child/PG。新接口候选精确前像与parent手交清单见 [av03-next-scope-observation.json](../../docs/evidence/x01-artifact-verifier/av03-next-scope-observation.json)，仅提案，migration号未分配且未take。metadata commit/push后STOP，保留a67v3/16。

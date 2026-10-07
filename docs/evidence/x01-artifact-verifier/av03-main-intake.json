@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-07T16:15:06.638Z",
+  "state": "APPROVED_READY",
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "result": "f9ea88e8dc38b0d912935739412af0d2a0f88705",
+  "packet": "6517781df1127f6f508d67de6710cc89b23e9b14",
+  "approval": "docs/evidence/x01-artifact-verifier/av03-independent-approval.json",
+  "mainObserved": {
+    "at": "2026-10-07T16:15:06.638Z",
+    "head": "337060abb836770902493acd02b29d472a34e298",
+    "meaning": "Preimage observation, not integration receipt"
+  },
+  "rows": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "absent": false,
+      "bytes": 14222,
+      "sha256": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "absent": false,
+        "bytes": 10960,
+        "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "apps/runner/src/admission-verifier-claim.test.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "absent": false,
+      "bytes": 7850,
+      "sha256": "677d997da31d282cddc5997e99863ba59098c18fa621977754a5a22a65bdc568",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "absent": false,
+      "bytes": 1888,
+      "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "absent": false,
+      "bytes": 2399,
+      "sha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "absent": true,
+        "bytes": 0,
+        "sha256": null
+      },
+      "mainObservation": "matches-preimage"
+    }
+  ],
+  "requiredSupport": [
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 9711,
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4"
+    },
+    {
+      "path": "apps/runner/src/admission-plugin-claim.test.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 6811,
+      "sha256": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.ts",
+      "mode": "required-existing",
+      "source": "337060abb836770902493acd02b29d472a34e298",
+      "absent": false,
+      "bytes": 3044,
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc"
+    }
+  ],
+  "transitiveValidationClosure": "docs/evidence/x01-artifact-verifier/av03-source-closure.json",
+  "closureMeaning": "73 fixed execution inputs preserve local evidence; do not overlay closure onto main. Seven direct existing dependencies checked above; integration checks use actual main imports.",
+  "evidenceBindings": "docs/evidence/x01-artifact-verifier/av03-review-ready.json",
+  "patch": "docs/evidence/x01-artifact-verifier/av03-products.patch",
+  "validation": {
+    "typesExit": 0,
+    "selected": 10,
+    "passed": 10,
+    "unselected": 4,
+    "PG": 0
+  },
+  "integration": "Apply only four fixed product/test deltas. Existing AV02 e271 already main. No branch/WT overlay, later changes or new schema. Main intake should use necessary journal/v2/v3 direct consumers plus affected strict types according to actual diff; no unrelated suite repetition.",
+  "boundary": "Request codec and actual filesystem journal only; no response ACK decoder, center/SQL/HTTP/runtime dispatch, full AV03 or main approval.",
+  "claimObservation": {
+    "readId": "191a3b81-2270-4469-bc18-83780ff6d510",
+    "observedAt": "2026-10-07T16:15:06.668Z",
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 3,
+    "scopeCount": 16
+  }
+}

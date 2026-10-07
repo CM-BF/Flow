@@ -1,6 +1,7 @@
 # X01-ARTIFACT-VERIFIER01 独立设计审查
 
-状态：DESIGN_DELTA_REVIEW_APPROVED（仅固定设计增量）；产品/工程/PG/个人部署均未执行。原CHANGES_REQUESTED保留如下。
+状态：APPROVED（AV03 journal固定源码与局部结果，非完整AV03）；原设计及后继各审查范围分列。
+Review target commit: e746029f6daa5751f59813f5c18012b782824d54
 
 ## 固定输入与审查范围
 
@@ -37,3 +38,7 @@ chatui01_owner / gpt-6-astra：DESIGN_DELTA_REVIEW_APPROVED，target bc5b68a0e4e
 ## AV03 固定源码与结果待审
 
 2026-10-07T16:03:55.376Z source e746029f6daa5751f59813f5c18012b782824d54：v4完整资格与真实AdmissionJournal消费者；types0、10selected10pass/4未选。AV02已审九叶冻结且已main e271；本片不含v4 HTTP/center/SQL/runtime/PG。一次独审待派发，旧批准不扩到本片。
+
+## AV03 独立源码与局部结果批准
+
+2026-10-07T16:08:39.000Z，db_transaction_owner/gpt-6-astra：SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2；source e746029f6daa5751f59813f5c18012b782824d54 / result f9ea88e8dc38b0d912935739412af0d2a0f88705 / packet 6517781df1127f6f508d67de6710cc89b23e9b14。25bindings93251B、73closure388701B、10external全核符；10pass/4未选、types0，两child闭合，2TMP/11fixture收据支持，原EPERM/wholewall/peakUNKNOWN保留。仅请求codec+真实FS journal，不包括center/响应ACK/SQL/HTTP/runtime分派或main。正式归档av03-independent-approval.json；无需重跑。
