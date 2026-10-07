@@ -1,3 +1,11 @@
+状态：PENDING（公开npm运行链唯一真实PG结果忠实性；准备已通过）
+
+Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db
+
+[结果入口](../../docs/evidence/x01/public-runner-pg-result-ready.md)。1/1实际通过，完整资源回执已归还；旧准备source批准保留，结果尚未独审。
+
+---
+
 状态：APPROVED（仅真实公开链准备源码/类型与收集证据；PG NOT_OPEN）
 
 Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db

@@ -1,0 +1,153 @@
+{
+  "window": "f0bdb898f3044e1b8fbeeed80213ada7",
+  "sourceHead": "8d8eb438fd33f5a6bf39273ad7d3ab0c2c53e686",
+  "suite": "runtime",
+  "database": "flow_x01_1592398a75934b7eab2a92e2447caebd",
+  "facts": [
+    {
+      "kind": "tar",
+      "pid": 70915,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "kind": "real-public-semver",
+      "taskId": "e78f43c3-0e49-4b5b-b9e2-2bcf8cc5dd49",
+      "binding": {
+        "protocol": "flow.plugin-runtime.v1",
+        "bindingId": "55503533-001e-46b6-b8b3-0b9793dfd71b",
+        "invocationId": "54779b6a-e945-4abb-93fd-05504a496a88",
+        "taskId": "e78f43c3-0e49-4b5b-b9e2-2bcf8cc5dd49",
+        "registrationId": "793f8720-2896-46bc-9774-78b48704d156",
+        "registrationRevision": 3,
+        "versionId": "879c950d-41f6-4f1c-82ac-5c4cd3607ca0",
+        "scope": {
+          "workspaceId": "personal",
+          "projectId": null
+        },
+        "materialInstallOperationId": "3ea021bf-3c24-4a5e-ae81-26acd776f237",
+        "targetRunnerId": "e5ae1229-7568-49aa-8e61-2b3b305f1bd1",
+        "storeId": "x01-public-semver",
+        "materialId": "20bf4cb5223a9fff0f0fc0f83a35cc99ffd9b50224e7b8afebee1d3d2b735ef8",
+        "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+        "hostApiMajor": 1,
+        "artifact": {
+          "artifactId": "3b0c4401-1803-4a05-bd16-05cf1909f78a",
+          "name": "flow-semver-compare",
+          "version": "1.0.0",
+          "integrity": "sha512-W9DnLp+RFU2BT4RN81+yx5EnDljmWO735dz+Q0TChQjLTr1N4ZFqXqz4TKAe4xW7zmKpWrDaXNquov/Ck6Lp7w==",
+          "bytes": 5211,
+          "sha256": "08984be03d481ac0ec8cc8b80fbee5657fb36848b9fa1c1b711f5ecd1f46133b"
+        },
+        "configuration": {},
+        "inputDigest": "c56208bf91ce6b2319f2da8e854976ecc9469d2140151d06e06d39718ef1cd34",
+        "createdAt": "2026-10-07T09:27:36.673Z"
+      },
+      "material": {
+        "schemaVersion": 1,
+        "id": "3ea021bf-3c24-4a5e-ae81-26acd776f237",
+        "registrationId": "793f8720-2896-46bc-9774-78b48704d156",
+        "versionId": "879c950d-41f6-4f1c-82ac-5c4cd3607ca0",
+        "admittedRevision": 1,
+        "fetchOperationId": "c98c4e12-c9b1-4f8a-bfeb-5e74a2a2717c",
+        "fetchAttemptId": "c593f9e5-2c64-4d56-9986-77dd176e71a5",
+        "artifactId": "3b0c4401-1803-4a05-bd16-05cf1909f78a",
+        "storeId": "x01-public-semver",
+        "status": "installed",
+        "materialId": "20bf4cb5223a9fff0f0fc0f83a35cc99ffd9b50224e7b8afebee1d3d2b735ef8",
+        "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+        "hostApiMajor": 1,
+        "error": null,
+        "createdAt": "2026-10-07T09:27:36.539Z",
+        "updatedAt": "2026-10-07T09:27:36.604Z"
+      },
+      "phases": [
+        {
+          "phase": "invoke",
+          "attempt_id": "f51f2d57-abe2-4bfc-894e-841e468b40d2",
+          "owner_version": 1
+        },
+        {
+          "phase": "load",
+          "attempt_id": "f51f2d57-abe2-4bfc-894e-841e468b40d2",
+          "owner_version": 1
+        }
+      ],
+      "artifactContent": "-1",
+      "association": {
+        "artifactId": "plugin-54779b6a-e945-4abb-93fd-05504a496a88",
+        "artifactVersion": "1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464",
+        "pluginSource": {
+          "protocol": "flow.plugin-artifact.v1",
+          "bindingId": "55503533-001e-46b6-b8b3-0b9793dfd71b",
+          "invocationId": "54779b6a-e945-4abb-93fd-05504a496a88",
+          "taskId": "e78f43c3-0e49-4b5b-b9e2-2bcf8cc5dd49",
+          "attemptId": "f51f2d57-abe2-4bfc-894e-841e468b40d2",
+          "ownerVersion": 1,
+          "installationId": "20bf4cb5223a9fff0f0fc0f83a35cc99ffd9b50224e7b8afebee1d3d2b735ef8",
+          "artifactId": "3b0c4401-1803-4a05-bd16-05cf1909f78a",
+          "artifactSha256": "08984be03d481ac0ec8cc8b80fbee5657fb36848b9fa1c1b711f5ecd1f46133b",
+          "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+          "hostApiMajor": 1
+        }
+      },
+      "finalStatus": "succeeded",
+      "verificationStatus": "passed",
+      "upstream": "semver@7.8.5",
+      "wrapper": "flow-semver-compare@1.0.0",
+      "source": "fixed local npm composition served by owned loopback registry"
+    },
+    {
+      "kind": "public-traffic",
+      "httpRequests": 43,
+      "responseBytes": 22113,
+      "registryRequests": 2,
+      "tarDownloads": 1,
+      "runnerSettled": true,
+      "runnerFailure": null
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "registry": true,
+      "runner": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1272635",
+      "owner": "flow",
+      "marker": "x01:f0bdb898f3044e1b8fbeeed80213ada7:runtime:1b0d128d-bbe1-462b-99ce-64e9c4d519b4"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:50430",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:50438",
+      "closed": true
+    }
+  ],
+  "httpRequests": 12,
+  "responseBytes": 11229,
+  "workUntil": 1791365362672,
+  "cleanupUntil": 1791365422672,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T09:27:37.378Z"
+}

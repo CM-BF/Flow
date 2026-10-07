@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-07T09:28:47.602998+00:00",
+  "basis": "immutable OPS14 final state plus fixture owned DB/listener receipts; only exact TMP lexists after closure, no PG/process rescan",
+  "selection": {
+    "numTotalTests": 1,
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "processes": [
+    {
+      "pid": 69023,
+      "exit": 0,
+      "owned": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 69054,
+      "exit": 0,
+      "owned": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "signals": []
+    }
+  ],
+  "database": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "registry": true,
+      "runner": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1272635",
+      "owner": "flow",
+      "marker": "x01:f0bdb898f3044e1b8fbeeed80213ada7:runtime:1b0d128d-bbe1-462b-99ce-64e9c4d519b4"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:50430",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:50438",
+      "closed": true
+    }
+  ],
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-dhfhgqi3",
+    "dev": 16777234,
+    "ino": 123733502,
+    "removed": true,
+    "sampleBytes": 46408,
+    "sampleEntries": 38,
+    "exactLexists": false
+  },
+  "PGAndHeavyReturned": true,
+  "nextLaunch": null,
+  "originalEarlyUnknownObservationsRetained": true,
+  "lateBudgetNotice": {
+    "source": "Mika message received after actual spawn/close; Web d01 full declared combined floor includes other existing/KEEP budgets",
+    "completeCombinedFloorBytes": 5334630400,
+    "actualPreflightAvailableBytes": 23439216640,
+    "mathematicallyAbove": true,
+    "originalGateFloorBytes": 1319108608,
+    "originalGateUnchanged": true,
+    "notClaimedAsPreflightCheck": true
+  },
+  "limits": "End sample is not peak; actual DB physical/WAL bytes unknown. One fixture not full CLI/recovery/security product acceptance."
+}
