@@ -362,7 +362,19 @@ async function summaryChecks({ page, f, report, output }) {
   await page.locator('#selected-proof .documents').waitFor();
   await page.getByRole('button', { name: 'plan.md', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('#document-text').textContent.includes('显式刷新后的新计划'));
+  await page.evaluate(() => {
+    window.fixtureReadingClose = false;
+    document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureReadingClose = true; }, { once: true });
+  });
   await page.keyboard.press('Escape');
+  // Observe the native close event after the product listener, without changing its focus target.
+  await page.waitForFunction(() => window.fixtureReadingClose === true);
+  report.readingCloseFocus = await page.evaluate(() => ({
+    dialogClosed: !document.querySelector('#task-dialog').open,
+    activeTask: document.activeElement?.dataset.openTask ?? null,
+    activeLabel: document.activeElement?.getAttribute('aria-label') ?? null,
+    activeInHeadline: !!document.activeElement?.closest('#active-work'),
+  }));
   assert.equal(await open('T02').evaluate(node => node === document.activeElement), true);
   report.checks.push('Automatic refresh preserves the exact document node/focus/selection/reading anchor for unchanged and changed status; proof becomes old and explicit keyboard refresh reads new content');
   const oldTime = await page.locator('#sync-time').textContent();
