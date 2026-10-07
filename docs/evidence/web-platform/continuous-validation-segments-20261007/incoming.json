@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-07T05:48:02.181131+00:00",
+  "policy": "formal-rule-source.json",
+  "recovery": {
+    "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+    "head": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+    "sourceReview": "recovery-source-review.json",
+    "delta": "recovery-handoff-delta.json",
+    "segmentAuthorization": "recovery-segment-authorization.json",
+    "segmentTotalMs": 150000,
+    "segmentSpentMs": 0,
+    "perRunMaximumMs": 60000,
+    "cleanupMs": 15000,
+    "firstSelection": "full original7",
+    "history": {
+      "oldEnvelopeMs": 90000,
+      "oldLateMs": 64134.08675,
+      "failures": 5,
+      "closedForNewLaunch": true,
+      "unusedCreditTransferred": false
+    },
+    "admission": {
+      "state": "ADMITTED_NOT_STARTED",
+      "handoff": "recovery-handoff.json",
+      "gate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+      "gateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
+      "expiresAt": "2026-10-07T05:52:32.901509+00:00",
+      "run": "recfull-20261007-054632-0263a4",
+      "actualHolder": null,
+      "adminEnvDeletionOwner": "d01_owner"
+    }
+  },
+  "quick": {
+    "segmentAuthorization": "quick-segment-authorization.json",
+    "causalProposal": "quick-causal-research.md",
+    "segmentTotalMs": 90000,
+    "segmentSpentMs": 0,
+    "perRunMaximumMs": 45000,
+    "cleanupMs": 15000,
+    "oldEnvelopeMs": 60000,
+    "oldActualMs": 30625,
+    "oldFailures": 3,
+    "oldRemainingNotTransferred": true,
+    "state": "DIAGNOSTIC_SOURCE_ONLY_INITIAL_ACCEPTANCE_DELTA_REVIEW_REQUIRED",
+    "gate": null,
+    "reservation": false
+  },
+  "external": {
+    "c02ActualReturn": "2026-10-07T05:41:35.604Z",
+    "result": "6/6 by originalowner receipt relayed Root",
+    "currentHandoff": "Mika confirms no successorPGholder/reservation; nextPG to originalRecoveryowner finite segment",
+    "other": "S01A/B no resumedowner and not reserved; C02 readonly resultreview may continue0PG"
+  },
+  "authorityLimit": "No provider, personalservice, installs or broad source scope. Actual each run input/claim/resource/uniquegate/cleanup stillchecked."
+}

@@ -1,12 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:37:29.755224+00:00。本页仅作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T05:48:02.181131+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
+**当前具体交接：Recovery新有限工作段首轮full已准入，尚未启动。** [唯一handoff](continuous-validation-segments-20261007/recovery-handoff.json)固定765ab362/0141及原21scope，173输入+19Git核同；到期05:52:32.901509Z，首次原7组60000ms含15s清理。Mika明确C02于05:41:35.604Z实际归还且无后继PGholder/预约，交原Recoveryowner。管理没有启动PG/Chrome。新adminenv仅Node按路径使用、管理负责actual后exact删除。
+
+[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick仅nativecontrol诊断源码，初始语义delta待一次独审，无Chrome许可或预约。
+
+### 已结束的前一运行段
+
 **Recovery第五page-auth实际失败并已归还窗口。** [唯一终态/输入删除回执](recovery-pageauth-return-20261007/return.json)保05:34:44.861028–05:34:54.743600Z actualexit1/双EOF；cookieRead通过，pageOnlyAuthLoss在fixture.expireSessions报browser_sessions_check，其余NOT_SELECTED、0PNG、全旅程未通过。markedDB正常0连接/DROP/absence，原30289/30305组ESRCH、scratch absent，fixture清理完成；无新增PG/端口/全局进程探测。05:36:12.637138Z仅按原dev/inode/uid/mode删除本次adminenv，未读内容。root已交回Mika/C02下一ready，尚无其新actualRUN，本组无holder/gate/预约。
 
-晚parent9250.887208ms加历史54883.199542，累计64134.08675/余25865.91325；外层9881.697250ms另列，原parent预算不覆盖。当前gate最低30000ms，剩余额不能自动第六次。[root独审](recovery-pageauth-return-20261007/root-failed-actual-review.json)接受失败与清理，并定位为fixture只改expires导致新session违约；原owner仅修自有DB的created/expires一致时间前置，不改生产约束/store。暂无runtime或新增预算，管理不代写其状态或源。
+晚parent9250.887208ms加历史54883.199542，累计64134.08675/余25865.91325；外层9881.697250ms另列，原parent预算不覆盖。旧段gate最低30000ms，旧剩余额不能自动再跑；其封套现已关闭，新段依据上方明确授权独立计账。[root独审](recovery-pageauth-return-20261007/root-failed-actual-review.json)接受失败与清理，并定位为fixture只改expires导致新session违约；原owner仅修自有DB的created/expires一致时间前置，不改生产约束/store。暂无runtime或新增预算，管理不代写其状态或源。
 
 **Quick第三次实际失败，独立浏览器窗口已归还；Web无实际PG/Chrome holder，两个已消费gate均不再有效。** [本次实际与来源](quick-b3-return-navigation-20261007/incoming.json)、[root限定审查](quick-b3-return-navigation-20261007/quick-b3-failed-review.json)记录05:21:05.923599Z返回，outerexit1/12156.567ms、0/6组/0PNG；三原组与scratch absent、全EOF/0drop、fixture/contextclosed。完整9529B/10条被动trace见按键抵达有效焦点选框、没有input/change、值仍空，尚不能唯一归因产品。保守本次12157、累计30625/余29375含15s清理，原parent30563与全部旧失败保持。owner e42bb双端clean；不自动第四跑，c2 strict+26及helper5PASS不冒页面通过。
 

@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-10-07T05:46:32.901509+00:00",
+  "gate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+  "gateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
+  "expiresAt": "2026-10-07T05:52:32.901509+00:00",
+  "run": "recfull-20261007-054632-0263a4",
+  "expectedRunDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-054632-0263a4",
+  "adminEnv": "/private/tmp/recovery-continuous-admission-dm3egjxs/admin.env",
+  "adminEnvIdentity": {
+    "device": 16777234,
+    "inode": 123539887,
+    "mode": "0o600",
+    "uid": 501
+  },
+  "directoryMode": "0700",
+  "secretValuesRecorded": false,
+  "inputSource": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts line185; approved isolated test admin endpoint",
+  "cleanupResponsibility": "d01_owner after actual terminal removes only this exact env with dev/inode/mode check; retain gate/observation/evidence. If expired/not launched, report and remove env, never reuse.",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-continuous-admission-dm3egjxs/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "admissionObservation": "/private/tmp/recovery-continuous-admission-dm3egjxs/admission-observation.json",
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "selection": {
+    "journey": "full",
+    "requiredGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "fullFeatureReview": "NOT_STARTED",
+    "fullJourneyPassedOnlyOriginalSevenGroupSubset": true
+  },
+  "remainingTotalMs": 60000,
+  "workMs": 45000,
+  "cleanupMs": 15000,
+  "authoritativePriorMs": 64134.08675,
+  "segment": {
+    "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
+    "totalRuntimeMs": 150000,
+    "spentMs": 0,
+    "remainingMs": 150000,
+    "perRunMaximumMs": 60000,
+    "oldUnusedCreditTransferred": false,
+    "record": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+      "bytes": 1024,
+      "sha256": "92557784f600c7c2f2b953f2eb45df8a20c4cc59c2059069b5461bdf3dfaa85b"
+    }
+  },
+  "noManagerProductLaunch": true,
+  "outerRequirement": "Capture actual outerexit/stdout/stderr without overwriting prior artifacts; retain late accounting/selection scope and all owned cleanup. No automatic retry.",
+  "continuousSegmentPolicy": "This gate authorizes one run only. Within the separately authorized new150s actual segment, originalowner may fix same-scope/same-boundary failures and perform related retests after fresh identity/resources/output/gate and actualPG coordination, without repeating unchanged preparation approval. No blind same-input rerun or reuse of consumed gate; stopunknown/scope/safety/acceptance changes."
+}

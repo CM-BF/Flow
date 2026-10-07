@@ -1,0 +1,109 @@
+{
+  "state": "READY_FOR_FRESH_ADMISSION_NOT_RUN",
+  "preparedAt": "2026-10-07T05:43:36.571306+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "head": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+  "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "basePreparedManifest": {
+    "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/manifest.json",
+    "bytes": 82420,
+    "sha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2"
+  },
+  "bindingMode": "Apply these explicit overrides to prior prepared inputs; no copied runtime/dependency manifest or new wrapper. Admission rechecks full current source/input pins.",
+  "changedSourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "beforeSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+      "bytes": 52099,
+      "sha256": "25f6efb1c70112ea5a611cc8c920bf9eb808d636cdc7e9c16b864df4874a6a58",
+      "gitBlob": "feb0f0b4e3d79144ffe466c4b05da9c4703ae418"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "beforeSha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "gitBlob": "ef320154539f174a1de7ae301d0ff3dde762ca66"
+    }
+  ],
+  "other17SourcePinsUnchanged": true,
+  "priorPublicPackageRuntimeNodeChromePins": "unchanged source preparation; fresh reread belongs to admission",
+  "sourceReview": {
+    "path": "/private/tmp/root-recovery-0141-expiry-source-review.json",
+    "bytes": 1451,
+    "sha256": "1a43fe903d1bbc476c5f704031df9287ef1dfeb16d805f758c3e1cc3929ae60f"
+  },
+  "segment": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+    "bytes": 1024,
+    "sha256": "92557784f600c7c2f2b953f2eb45df8a20c4cc59c2059069b5461bdf3dfaa85b"
+  },
+  "authorization": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment-authorization.json",
+    "bytes": 3764,
+    "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
+  },
+  "history": {
+    "oldEnvelopeMs": 90000,
+    "actualLateSpentMs": 64134.08675,
+    "oldEnvelopeClosed": true,
+    "oldUnusedCreditTransferred": false,
+    "fifthActual": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fifth-manifest.json",
+      "bytes": 22875,
+      "sha256": "40fc8d009fc10305316a8e9cbf877ea1c3a1f972921ecc915e466a3f091ab88b"
+    },
+    "previous54Unchanged": true,
+    "fifthRawCount": 11
+  },
+  "selection": {
+    "journey": "full",
+    "requiredGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "fullFeatureReview": "NOT_STARTED",
+    "fullJourneyPassedOnlyOriginalSevenGroupSubset": true
+  },
+  "newRuntime": {
+    "totalMs": 150000,
+    "spentMs": 0,
+    "remainingMs": 150000,
+    "nextMaximumMs": 60000,
+    "cleanupMs": 15000,
+    "nextWorkMaximumMs": 45000,
+    "parentDefensiveCumulativeCeilingMs": 240000
+  },
+  "freshGateOverrides": {
+    "sourceCommit": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+    "journey": "full",
+    "totalMsMaximum": 60000,
+    "sourceHashes": "previous19 mapping with exactly changedSourcePins sha256 replaced; verify current files before signing",
+    "created": false
+  },
+  "launch": "Original single-file parent; future fresh FLOW_RECOVERY_GATE and controlled --env-file only. No new launcher.",
+  "constraints": {
+    "scratchBytes": 67108864,
+    "totalEvidenceBytes": 8388608,
+    "logBytes": 1048576,
+    "providerCalls": 0,
+    "personalServiceCalls": 0,
+    "maxOwnedPg": 1,
+    "maxOwnedChrome": 1
+  },
+  "notCreated": [
+    "gate",
+    "admin environment",
+    "run directory",
+    "process",
+    "resource reservation"
+  ],
+  "runtime": 0,
+  "nextNaturalArchive": "root0141 source review after actualcheck, not extra ACK commit"
+}

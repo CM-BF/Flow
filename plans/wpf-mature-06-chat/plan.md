@@ -124,3 +124,9 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 2026-10-06 安全点，原06-03/01-03 CHATREAD补[accepted queue六源研究](../../docs/evidence/web-platform/accepted-queue-506-research/report.md)：只将accepted enqueue收据作为最小紧凑候选；accepted cancel-item可能already-promoted、cancel-task仅请求接受，不能推无待办。unknown/rejected/sending、刷新失败/paused/blocked/current task确认、原key/context/动作和插件权限继续显著；展开前0详情预取。研究0运行、不新增任务或当前scope，后继仍真实用户验收。
 
 06-04 / REQ22–23 外层唯一P01 host的[4d330新增差异](../../docs/evidence/web-platform/recovery-connection-p01-4d330-delta/report.md)及[root限定接收](../../docs/evidence/web-platform/recovery-connection-p01-4d330-delta/root-review.json)仅补后继验收：保默认Recovery.sync、同namespace新generation重放及disabled/failed不自启；保完整稿Restore租约与同view互斥；保retained guard失败期间A业务对象与撤权边界。签名明确：`RecoveryHost.restore(record, lease)`是私有callback；UI/plugin仍调`RecoveryWorkspace.restore(record, retry?)`，由其产生lease，不能把lease传为公共第二参数。三条时序仍未实现/未验证，不扩当前21scope或新publicslot/任务。
+
+### 已授权普通验证的有限连续工作段
+
+原06-04/06沿[正式规则](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)和[root有限段授权](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-segment-authorization.json)继续；不是扩功能或放宽断言。历史90k五FAIL/late64134.08675原件永久保留并关闭新增消费，新150k只按该段真实运行累计、每次最多60k含15kcleanup，未用旧余量不转入。首次建议full原7组；相同安全/验收边界下由原owner连续修复与相关复测，pass后一次独审，不重复旧50/types/119等未受影响绿检查。每次真实专库/Chrome仍需明确holder、fresh输入/资源与唯一gate、完整owned清理；unknown/预算/越scope须停止，不自动无限重试，不触provider或个人服务。
+
+[0141最小源码审查](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-source-review.json)仅修自有fixture的合法过期时间对及授权防御总额；生产auth/schema未改，原7组及生命周期不变。是否通过仍以实际结果为准。

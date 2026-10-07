@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:37:29.755224+00:00",
-  "state": "RECOVERY_FIFTH_PAGE_AUTH_FAILED_CLEANED_RETURNED",
-  "groupWindowOwnership": "Recovery fifth page-auth actualFAILED/exit1; ownedgroups/scratch and markedDB cleanup closed. Exact adminenv deleted05:36:12.637138Z. Web no actualPG/Chrome holder/gate/reservation. Root already returned sharedPG to Mika/C02 next-ready; no new actualRUN inferred.",
+  "recordedAt": "2026-10-07T05:48:02.181131+00:00",
+  "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
+  "groupWindowOwnership": "Mika explicitsharedPG handoff afterC02actual05:41:35.604Z return; Recovery new150s actual segment firstfull7 run admitted60000 incl15s cleanup, not launched. Quick onlydiagnostic source/noChromepermission; no parallelWeb PG/browser.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:37:29.755224+00:00",
-    "kind": "RECOVERY_FIFTH_ACTUAL_FAILURE_OWNED_CLEANUP_ENV_DELETE_RETURN",
-    "source": "recovery-pageauth-return-20261007/return.json",
-    "summary": "cookieReadPASS; pageOnlyAuthLoss fixture expiration violates browser_sessions_check, other groupsNOT_SELECTED/0PNG. Parentlate9250.887208 cumulative64134.08675/rem25865.91325; existinggate minimum30000 forbids automaticnext attempt. Exactenv removed; no manager service/proc/resource probe."
+    "at": "2026-10-07T05:48:02.181131+00:00",
+    "kind": "NEW_FINITE_VALIDATION_RULE_C02_RETURN_RECOVERY_FIRST_FULL_ADMISSION",
+    "source": "continuous-validation-segments-20261007/incoming.json",
+    "summary": "FormalLead rulea9f1fb74 permits bounded continuous same-scope/safety/acceptance fix/retest segments. Fresh765ab362/0141/6ffv4/173pins+19Git and available24567570432>=4053008384; firstfull60000incl15000cleanup. Old90k/5FAIL/64134.08675 immutable, nooldremainingcredit."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1066,6 +1066,17 @@
         "summary": "5e629/dd664,6ffv4 exact21/overlap[],145 fixed-input reads+19Git matched, fresh available25061769216>=4053008384. page-auth2 required/otherNOT_SELECTED,35116 incl15000cleanup. New exactowner-only testadminenv; no manager runtime/no automatic sixth."
       },
       "currentIntake": "recovery-pageauth-admission-20261007/handoff.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:37:29.755224+00:00",
+      "state": "RECOVERY_FIFTH_PAGE_AUTH_FAILED_CLEANED_RETURNED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:37:29.755224+00:00",
+        "kind": "RECOVERY_FIFTH_ACTUAL_FAILURE_OWNED_CLEANUP_ENV_DELETE_RETURN",
+        "source": "recovery-pageauth-return-20261007/return.json",
+        "summary": "cookieReadPASS; pageOnlyAuthLoss fixture expiration violates browser_sessions_check, other groupsNOT_SELECTED/0PNG. Parentlate9250.887208 cumulative64134.08675/rem25865.91325; existinggate minimum30000 forbids automaticnext attempt. Exactenv removed; no manager service/proc/resource probe."
+      },
+      "currentIntake": "recovery-pageauth-return-20261007/return.json"
     }
   ],
   "dperf05Pure": {
@@ -1113,7 +1124,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "RECOVERY_AND_QUICK_ACTUAL_FAILURE_DIAGNOSIS_NO_ADMISSION",
+    "state": "RECOVERY_SINGLE_FIRST_FULL_ADMISSION_QUICK_SOURCE_ONLY",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1187,15 +1198,28 @@
       "remainingMs": 29375,
       "failure": "Parent retained evidence sampling limit; static non-atomic BASE minus scratch overcount defect. Actual transient is consistent, not exact causal proof.",
       "review": "quick-b3-return-navigation-20261007/quick-b3-failed-review.json",
-      "next": "Original owner preserves actual failure and diagnosis; no automatic fourth browser or current gate/reservation.",
+      "next": "W01 onlyprepares nativecontrol diagnostic/finite selectiondelta; initialacceptance change rootreview required. No currentChromepermission. Oldthreefailures and30625remainhistorical.",
       "preparationReview": "quick-b3-admission-20261007/quick-b3-native-review.json",
-      "admissionPreparation": "quick-b3-admission-20261007/handoff.json"
+      "admissionPreparation": "quick-b3-admission-20261007/handoff.json",
+      "newSegment": {
+        "totalActualMs": 90000,
+        "spentMs": 0,
+        "perRunMaximumMs": 45000,
+        "cleanupMs": 15000,
+        "old60kClosed": true,
+        "oldSpentMs": 30625,
+        "oldRemainingNotTransferred": true,
+        "authorization": "continuous-validation-segments-20261007/quick-segment-authorization.json",
+        "state": "DIAGNOSTIC_SOURCE_ONLY_INITIAL_DELTA_REVIEW_REQUIRED",
+        "gate": null,
+        "reservation": false
+      }
     },
     "recovery": {
-      "ownerHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
-      "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
-      "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
-      "state": "FIFTH_CONSUMED_FAILED_CLEANED_RETURNED",
+      "ownerHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+      "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+      "packet": "/private/tmp/recovery-continuous-full-ready-pkyqyonj/handoff-delta.json",
+      "state": "NEW150S_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1205,7 +1229,7 @@
         "cleanupIncludedMs": 15000,
         "existingGateMinimumMs": 30000,
         "automaticSixthAllowed": false,
-        "reason": "Remaining original envelope is below existing gate minimum; do not reset/increase old budget or weaken gate.",
+        "reason": "Originalfifthfailure left25865.91325 below oldgate minimum; newer explicitfinite150s segment separately authorized, old figures unchanged.",
         "earlierParentBudget": {
           "complete": true,
           "cleanupComplete": true,
@@ -1216,32 +1240,46 @@
           "cleanupReserveMs": 15000,
           "elapsedMs": 9245.085125
         },
-        "outerWallMsSeparate": 9881.697250064462
+        "outerWallMsSeparate": 9881.697250064462,
+        "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "PG+HTTP+Chrome fifth selection failed, actualcleanup complete; no newholder/gate.",
-      "next": "Root accepted failed actual+ownedcleanup and identified isolated fixture expiration timestamp P2; originalowner source-only repair, no runtime/newbudget. Existinggate minimum30000 exceeds originalremaining25865.91325.",
+      "runtime": "No newsegment run yet. First full seven-group60000 incl15000cleanup single gate.",
+      "next": "Original panels runs withinnew150s actual segment; relatedsame-boundary fixes/retests allowed after routinefreshgate/PGcoordination, no repeatedunchanged rootapproval. Historical failures preserved.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
-        "handoff": "recovery-pageauth-admission-20261007/handoff.json",
-        "gate": "/private/tmp/recovery-pageauth-admission-6rpmu4he/gate.json",
-        "gateSha256": "db2870cacf0ab5198d65151acc54a34fff1343a117949cde1b33c5f1a6340611",
-        "expiresAt": "2026-10-07T05:39:00.600378+00:00",
-        "run": "recpageauth-20261007-053300-ca1a91",
-        "adminEnv": "/private/tmp/recovery-pageauth-admission-6rpmu4he/admin.env",
-        "state": "HISTORICAL_CONSUMED_ENV_DELETED",
-        "adminEnvDeletionOwner": "d01_owner",
+        "state": "ADMITTED_NOT_STARTED",
+        "handoff": "continuous-validation-segments-20261007/recovery-handoff.json",
+        "gate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+        "gateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
+        "expiresAt": "2026-10-07T05:52:32.901509+00:00",
+        "run": "recfull-20261007-054632-0263a4",
+        "adminEnv": "/private/tmp/recovery-continuous-admission-dm3egjxs/admin.env",
         "adminEnvIdentity": {
           "device": 16777234,
-          "inode": 123533744,
+          "inode": 123539887,
           "mode": "0o600",
           "uid": 501
         },
-        "envDeletion": "recovery-pageauth-return-20261007/admin-env-deletion-receipt.json"
+        "adminEnvDeletionOwner": "d01_owner"
       },
       "actualReceipt": "recovery-pageauth-return-20261007/return.json",
-      "sourceReview": "quick-b3-return-navigation-20261007/recovery-journey-source-review.json",
+      "sourceReview": "continuous-validation-segments-20261007/recovery-source-review.json",
       "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
-      "fifthSelection": {
+      "preparationReview": "continuous-validation-segments-20261007/recovery-handoff-delta.json",
+      "actualReview": "recovery-pageauth-return-20261007/root-failed-actual-review.json",
+      "newSegment": {
+        "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
+        "totalActualMs": 150000,
+        "spentMs": 0,
+        "remainingMs": 150000,
+        "perRunMaximumMs": 60000,
+        "cleanupMs": 15000,
+        "oldEnvelopeClosed": true,
+        "oldUnusedCreditTransferred": false,
+        "ownerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+        "authorization": "continuous-validation-segments-20261007/recovery-segment-authorization.json"
+      },
+      "historicalFifthSelection": {
         "journey": "page-auth",
         "required": [
           "cookieRead",
@@ -1250,8 +1288,19 @@
         "otherGroups": "NOT_SELECTED",
         "fullJourneyPassed": false
       },
-      "preparationReview": "quick-b3-return-navigation-20261007/recovery-pageauth-preparation-review.json",
-      "actualReview": "recovery-pageauth-return-20261007/root-failed-actual-review.json"
+      "currentSelection": {
+        "journey": "full",
+        "required": [
+          "cookieRead",
+          "textIntentDraft",
+          "crossTabCas",
+          "sameKeyTurn",
+          "pageOnlyAuthLoss",
+          "csrfOffline",
+          "themes390"
+        ],
+        "passingScope": "originalseven subset only, not fullfeature acceptance"
+      }
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1354,13 +1403,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "recovery-pageauth-return-20261007/post-cleanup-observation.json",
+  "currentWindowEvidence": "continuous-validation-segments-20261007/recovery-admission-observation.json",
   "webActualHolder": null,
-  "webGate": null,
+  "webGate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": true,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1687,9 +1736,11 @@
   },
   "externalCurrentAdmission": {
     "owner": null,
-    "state": "RECOVERY_ACTUAL_RETURNED_TO_MIKA_C02_NEXT_READY",
-    "source": "Root explicit actualhandoff; C02 preparation root109830 accepted, actual start not reported",
-    "newActualStart": "NOT_REPORTED"
+    "state": "C02_ACTUAL_RETURNED_SHARED_PG_HANDED_TO_RECOVERY",
+    "actualReturnAt": "2026-10-07T05:41:35.604Z",
+    "actualResult": "6/6 viaRoot originalownerreceipt",
+    "source": "continuous-validation-segments-20261007/incoming.json",
+    "next": "S01A/B ownernotresumed/notreserved; C02 readonly0PG review doesnotblock."
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1699,15 +1750,20 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Mika/C02 next ready follows explicit fresh admission; no automatic elapsed-time handoff"
+    "Recovery actual cleanup communicated to Mika; any subsequent same-segment run needs fresh currentPG coordination, not elapsed-time assumption"
   ],
-  "currentIntake": "recovery-pageauth-return-20261007/return.json",
+  "currentIntake": "continuous-validation-segments-20261007/incoming.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
     "fixedRuleCommit": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
     "path": "docs/quality/local-validation.md#ready-validation",
     "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
-    "application": "Fifth Recovery PG+HTTP+Chrome gate consumed and returned. No currentWebgate; remainingbudget below existingminimum does not authorize another run."
+    "application": "Recovery new150s firstfull gate admitted after explicitPGreturn; not actualRUN. Quick new90s sourceonly/noChromegrant. Preserve original categoryparallel and activeowner limits.",
+    "finiteSegments": {
+      "sourceCommit": "a9f1fb74a154f6a81deee3dbd5d2231d067bf877",
+      "source": "continuous-validation-segments-20261007/formal-rule-source.json",
+      "rule": "Ordinary authorized0provider ownPG/Chrome finite continuous segments; sameidentity/permissions/resource/cleanup/acceptance fixes+relatedretests then independentreview; changedboundaries reviewedproportionally. Immutablepriorenvelopes; no unusedcredittransfer. Eachactualrun stillfresh identities+combinedresources+uniquegate+cleanup."
+    }
   }
 }
