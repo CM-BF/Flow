@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T04:49:45.430064+00:00 |
+| 更新时间 | 2026-10-07T04:56:46.466425+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
@@ -20,8 +20,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | bad019d9691499bed69ae46b6c5d23944709cfe3；后续仅自身证据和metadata |
-| 工作树dirty状态 | 原3e636候选clean后接收；当前仅自身固定构建准备/metadata，提交后核clean |
+| Head | source20ed0ccd192127ed55f7f0677db17de32cc9e30e；实际结果2479e54aacd67395b4c3ac2468a7158beb439705；产品bad019不变 |
+| 工作树dirty状态 | 固定entry及实际结果已封，仅本次manifest/status；提交后核clean |
 | 工作分支状态 | in-progress；Web-only selector已审并main，当前仅产物入口准备 |
 | 实现目标 | 20ed0ccd192127ed55f7f0677db17de32cc9e30e；薄entry source，产品bad019不变 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
@@ -84,3 +84,5 @@
 ## 2026-10-07T04:56:15.022905+00:00：一次构建完成并归还窗口
 
 真实开工04:54:19.375Z，entry完成04:54:50.037Z；外层30,732ms exit0、双EOF、final group absent，首次unknown保留。产物c7b85已构建/内部加载与只读选择通过，私有root保留；[原始结果](../../docs/evidence/svc08/flow-host-artifact/build-once/RESULT.md)。实际host/个人部署NOT_RUN，03/04原授权不扩；当前只封结果待独审，无继续重负载。
+
+结果固定target `2479e54aacd67395b4c3ac2468a7158beb439705`，[单一result manifest](../../docs/evidence/svc08/flow-host-artifact/build-once/result-manifest.json)绑定23源/原始/衍生记录与3保留私有文件；等待独立结果review，作者停写entry。检查本status parse errors/human missing均[]；不重测。

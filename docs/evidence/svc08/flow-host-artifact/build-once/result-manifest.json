@@ -1,0 +1,249 @@
+{
+  "recordedAt": "2026-10-07T04:56:46.466425+00:00",
+  "resultSource": "2479e54aacd67395b4c3ac2468a7158beb439705",
+  "entrySource": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+  "artifactSource": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "artifactRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+  },
+  "result": "ARTIFACT_AND_IMPORTS_PASSED_PENDING_RESULT_REVIEW",
+  "bindingCount": 23,
+  "bindings": [
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/README.md",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 2886,
+      "sha256": "5348def8705ba7dae0d7418f9d5023ca3d7e12fdd7ebe1f28d0f0569656c3d64",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/entry.mjs",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 10417,
+      "sha256": "963ca15c5e6b46f1b6cc26c10cf85f23c2464dfc288d871e17266d082e3fbaa5",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/inputs.json",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 34311,
+      "sha256": "e035b6560f9003ec11c2b0467832cbfe124bc65a94f6177e4532ccf069bff78b",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/preparation-checks.json",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 1171,
+      "sha256": "6cf8eb01cbf34748b84f247b5f9753326d9a72a682c01697461a1fb1c63ec431",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/runtime-proof.mjs",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 4003,
+      "sha256": "854055ad4f250cda7ba936153ff4c3b4f128fbdb8a25317f72fc3fdc38bbfd9f",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/supervise.py",
+      "ref": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+      "bytes": 2131,
+      "sha256": "a460d1368551cd42d1d02a71f0f698759035a303c2c4dbfbc549b4188f53df9c",
+      "kind": "newEntryAndInputs"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/manifest.json",
+      "ref": "a359ed6cc0488c9dd0016869d245d1396cce6636",
+      "bytes": 22333,
+      "sha256": "4576c3ecdf06e14b68f9f33de1be4bc56bdddadada2090fca1f1fff16f5c27da",
+      "kind": "preparationManifest"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/entry-delta.txt",
+      "ref": "a359ed6cc0488c9dd0016869d245d1396cce6636",
+      "bytes": 8081,
+      "sha256": "aab64c17868ee45fe9a411a1568316b65d30f26bc78c17e5a2c30ead47aec743",
+      "kind": "preparationManifest"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/RESULT.md",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 1904,
+      "sha256": "db82aab54645f1ec9c0c7c2496ce5c1f7d5d8136519f28cab3764b5c7ff14bad",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/build-record.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 867,
+      "sha256": "6a2830f388a1dfa3fb0ab74f4bc243d85a3d144e55dd81631e1d51bc63b6a35f",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/imports.stderr",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/imports.stdout",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 2261,
+      "sha256": "08d31911600b13ca1812cc97b16191e9e09d79d7936292ceab6ac0118589d650",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/owned-root.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 161,
+      "sha256": "cab951bf402d891b1b0b1d876df7529fd00f3d2f943a692be9d7a61b9f930057",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/reservation.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 187,
+      "sha256": "bf20c3edad775c4496a48f12e44bfed8f90f6ce7b083c12ea120d40c181bda68",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/result-descriptor.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 275,
+      "sha256": "5fd69a2bdc1ecdef0ace211db96800f0482502dcb421bfab0fc85fb548e9318a",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/result.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 4646,
+      "sha256": "9e88ba4276cf2c917182df9fdcd275253c77b68288d28fe10a77ce3420136ba3",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-invocation.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 628,
+      "sha256": "48b19c1df3a94d8a40ed9db4cdda0272c846f99bd394d243eff6712c72d499be",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-preflight.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 1714,
+      "sha256": "a3e835c78327720327bc03d791e7826c4a591c89aedc04d97a9142c7ee84e5a4",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/outer-report.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 4836,
+      "sha256": "64445f51d14a48a7b3c2975cce0ed891b48e5c833283276f7542925bade2abd7",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/preparation-independent-review.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 1992,
+      "sha256": "8696997345339e0e5bd14139fd919db029cae5e592ec8ef897615ce77e36d1b6",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/result-analysis.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 6683,
+      "sha256": "72510df36f4f7d87f2bec425b429663d0edc0a8418ec1d39ecca328f6f43a822",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/tool-completion.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 370,
+      "sha256": "374aaba2b0551ee45e2cad0eb75fe9f4f62d2c91a200e606f02f5f1f13f5ac18",
+      "kind": "actualRawOrDerived"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/window-return.json",
+      "ref": "2479e54aacd67395b4c3ac2468a7158beb439705",
+      "bytes": 904,
+      "sha256": "77b99f13a1a5762f3a90ba5b5910f0076cf932aa05950b162213e2a7879a7674",
+      "kind": "actualRawOrDerived"
+    }
+  ],
+  "retainedPrivateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/owner.json",
+      "dev": 16777234,
+      "ino": 123475176,
+      "mode": "0o600",
+      "bytes": 259,
+      "sha256": "fe2dc7bd45341c62377794c9fd5257b0b6300529d33c0f3866790f6d8414576d",
+      "retained": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/stage-4087b158-3831-4566-adb3-98bac85438af.json",
+      "dev": 16777234,
+      "ino": 123501837,
+      "mode": "0o600",
+      "bytes": 867,
+      "sha256": "6a2830f388a1dfa3fb0ab74f4bc243d85a3d144e55dd81631e1d51bc63b6a35f",
+      "retained": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "dev": 16777234,
+      "ino": 123501822,
+      "mode": "0o600",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "retained": true
+    }
+  ],
+  "originalInputManifest": {
+    "path": "manifest.json",
+    "sha256": "4576c3ecdf06e14b68f9f33de1be4bc56bdddadada2090fca1f1fff16f5c27da",
+    "runtimeCount": 17,
+    "fixedGitCount": 61,
+    "reusedProcedureCount": 3
+  },
+  "outer": {
+    "pid": 10435,
+    "exit_code": 0,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "elapsedMs": 30732,
+  "rawBytesSubsetWithDefinedCounting": 16442,
+  "additionalToolCompletionBytes": 370,
+  "fullNewRawAndDerivedBytes": 27428,
+  "executionCount": 1,
+  "PG": 0,
+  "servicesStarted": 0,
+  "provider": 0,
+  "personalOperations": 0,
+  "scopeLimit": "Artifact build/internal loading/read-only selection; no host deployment, dev-checkout denial, old-data, browser or personal acceptance. Old failures and e5 unchanged."
+}
