@@ -1,0 +1,247 @@
+{
+  "at": "2026-10-07T12:37:31.170698+00:00",
+  "outcome": "PARTIAL_COMPLETE_STOPPED_BEFORE_MAINTENANCE",
+  "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "artifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "runtimeSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "migration": {
+    "at": "2026-10-07T12:30:17.057Z",
+    "outcome": "migrated",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    "operatorServiceMutations": 0,
+    "stageKept": true
+  },
+  "clone": {
+    "regularFiles": 12677,
+    "directories": 2209,
+    "internalSymlinks": 742,
+    "regularLogicalBytes": 367041727,
+    "regularAllocatedBytes": 401969152,
+    "cloneFallback": false,
+    "physicalExclusiveBytes": null,
+    "finalManifestVerification": "performed by original verifier immediately after copy"
+  },
+  "replacement": {
+    "action": "replace-host",
+    "operationId": "07f4afc6-dc18-4b16-a5ff-cd887b62d9a4",
+    "outcome": "ready",
+    "replayed": false,
+    "hostSourceDigest": "28c52113cf11e0b059b08e8fe0055b6afc96724948b5168ceda15e28b8bf0c0a"
+  },
+  "backgroundRecordsUnchanged": {
+    "center": true,
+    "runner": true
+  },
+  "backendSourceUnchanged": true,
+  "runnerMaintenanceUnchanged": true,
+  "afterReplaceProtectedTablesUnchanged": true,
+  "reports": [
+    {
+      "name": "import-461a",
+      "compatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+      "elapsedMs": 149
+    },
+    {
+      "name": "import-caa1",
+      "compatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "elapsedMs": 103
+    },
+    {
+      "name": "import-d629",
+      "compatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0",
+      "elapsedMs": 103
+    }
+  ],
+  "policy": {
+    "at": "2026-10-07T12:34:23.636322+00:00",
+    "elapsedMs": 4289,
+    "result": {
+      "outcome": "policy-created",
+      "policyBytes": 205,
+      "policySha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a",
+      "policyPin": {
+        "directory": "/Users/citrine/.flow-personal",
+        "rootDev": "16777234",
+        "rootIno": "117819905",
+        "file": {
+          "dev": "16777234",
+          "ino": "124139868",
+          "uid": "501",
+          "mode": "33152",
+          "nlink": "1",
+          "bytes": "205",
+          "modifiedNs": "1791376463623390214",
+          "changedNs": "1791376463623390214",
+          "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+        }
+      },
+      "verifiedTuple": {
+        "backendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+        "context": {
+          "format": 1,
+          "publicOrigin": "http://127.0.0.1:61228",
+          "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+        },
+        "compatibilityIds": {
+          "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+          "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+          "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+        }
+      }
+    }
+  },
+  "terminalFailure": {
+    "phase": "history-before ESM static linking",
+    "code": "SyntaxError",
+    "message": "Named export Pool not found from CommonJS pg/lib/index.js",
+    "elapsedMs": 62,
+    "moduleBodyExecuted": false,
+    "sql": 0,
+    "personalReadWrite": 0,
+    "raw": "history-before-outer.json"
+  },
+  "notRun": [
+    "bootstrap",
+    "refresh",
+    "ready-paused checkpoint",
+    "resume"
+  ],
+  "operatorProviderQueries": 0,
+  "personalPostFailureProbes": 0,
+  "originals": [
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/clone-input.json",
+      "copy": "migration-raw/clone-input.json",
+      "bytes": 639,
+      "sha256": "95b1ecd8711495277669fa866241eb2e1cb0f5533d68073d4df4cd78e0e919de",
+      "dev": "16777234",
+      "ino": "124123354",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/clone-result.json",
+      "copy": "migration-raw/clone-result.json",
+      "bytes": 300,
+      "sha256": "3c606dacb5683affd4397fe7d5da46ade6236b6befee5f088a8d6b287b251ab9",
+      "dev": "16777234",
+      "ino": "124139009",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-after.json",
+      "copy": "migration-raw/migration-after.json",
+      "bytes": 3246,
+      "sha256": "cf15a9cf89b6121d989bc4e1e40e857f2be60d671881e649b78ecc5e329be901",
+      "dev": "16777234",
+      "ino": "124139031",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-before.json",
+      "copy": "migration-raw/migration-before.json",
+      "bytes": 3246,
+      "sha256": "b8043d7c2abdf8e051552b06fd2b53475a17c88b617a28b5caeb3bb8dbb2b22d",
+      "dev": "16777234",
+      "ino": "124123338",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-checkpoint.json",
+      "copy": "migration-raw/migration-checkpoint.json",
+      "bytes": 541,
+      "sha256": "4a5632c3c14b3c3f16dcb442e20dd642f401d5da9f4cbfd51da030e2adeec4a7",
+      "dev": "16777234",
+      "ino": "124139019",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-intent.json",
+      "copy": "migration-raw/migration-intent.json",
+      "bytes": 405,
+      "sha256": "b9ffcd19a826719fd3069310d5ee02419abeab1f15e3555796b1ff37b4541129",
+      "dev": "16777234",
+      "ino": "124123347",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-result.json",
+      "copy": "migration-raw/migration-result.json",
+      "bytes": 418,
+      "sha256": "ecfd44bc7130a739ca353db03903f96ab1e5863019bf738e1a16e6402f2929c5",
+      "dev": "16777234",
+      "ino": "124139032",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/migration-store-intent.json",
+      "copy": "migration-raw/migration-store-intent.json",
+      "bytes": 700,
+      "sha256": "959a51fb6f84b909e3d89e74d56a4ac18019c575fcaafdce9650e762fef24ad0",
+      "dev": "16777234",
+      "ino": "124123349",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/reservation.json",
+      "copy": "migration-raw/reservation.json",
+      "bytes": 533,
+      "sha256": "9dc2c5f46998025aacd17aa33e3e494c25be33a9584a0935d205a43815b7f4af",
+      "dev": "16777234",
+      "ino": "124123336",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1/resource.json",
+      "copy": "migration-raw/resource.json",
+      "bytes": 99,
+      "sha256": "af91121af735b3a5efd6bcebe9b4d77416421b69a57b0121520e345910b2b6ad",
+      "dev": "16777234",
+      "ino": "124139033",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-personal-update-20261007-r1.migration-outer.json",
+      "copy": "migration-raw/flow-svc06-personal-update-20261007-r1.migration-outer.json",
+      "bytes": 461,
+      "sha256": "898af8669bf8689c8c6cdc00c3bddd41bd036892d70c68266a7efce663db4f51",
+      "dev": "16777234",
+      "ino": "124123334",
+      "mode": "0600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "limits": {
+    "privateAddedBytes": 536870912,
+    "rawBytes": 2097152,
+    "observedCloneLogicalBytes": 367041727,
+    "physicalExclusiveBytes": "UNKNOWN; clone allocation is not exclusive physical recovery"
+  },
+  "windowReturnedAt": "2026-10-07T12:35:37.013013+00:00",
+  "scope": "No final backend deployment / acceptance / browser-session enablement claim. Policy exists on disk; backend remains af51 at last observed point. Success stages must not replay; original and new private resources KEEP."
+}

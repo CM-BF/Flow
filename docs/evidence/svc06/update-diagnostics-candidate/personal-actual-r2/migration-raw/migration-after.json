@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-07T12:30:17.041Z",
+  "files": {
+    "config.json": {
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "claude.json": {
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+    },
+    "state.json": {
+      "bytes": 3230,
+      "sha256": "a36b2e86b6535f0a8ee29e1ea596d1eb652e43fa59d09b6518ff9780bb088889"
+    },
+    "maintenance.json": {
+      "bytes": 314,
+      "sha256": "2d912692cd6ba7ade5dea3d1430f74703d94549d144b08f5131fa170d88dcc7b"
+    },
+    "web-release.json": {
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "source": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "webHost": {
+    "operationId": "adb05eec-4ca2-4d7f-a3a8-f260e44cc3d9",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    "source": {
+      "policy": "flow.web-host-source.v1",
+      "location": {
+        "kind": "backend-artifact",
+        "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d"
+      },
+      "digest": "0d450e173fa0c1f3f83fbe77f165d2578a2affedbd0fb6931d62be222389d855",
+      "files": [
+        {
+          "path": "cli.mjs",
+          "bytes": 5301,
+          "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01"
+        },
+        {
+          "path": "preview.mjs",
+          "bytes": 41320,
+          "sha256": "6d85a9890d15dc619b22cce71bf88701fb70826ab646395c45dc803b9329efc0"
+        },
+        {
+          "path": "static-web.mjs",
+          "bytes": 6800,
+          "sha256": "ca632440092ae3d403a65fffe8c5321232f83036aaf6558e6132c6cfad299206"
+        },
+        {
+          "path": "process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "environment.mjs",
+          "bytes": 1983,
+          "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+        },
+        {
+          "path": "web-artifact.mjs",
+          "bytes": 8163,
+          "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+        },
+        {
+          "path": "web-release.mjs",
+          "bytes": 12759,
+          "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+        },
+        {
+          "path": "backend-release/host.mjs",
+          "bytes": 4368,
+          "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+        }
+      ]
+    },
+    "recordSha256": "0fb840f089e5949fccdc07af569813bf5b0418b5e4dff6bf95b0cff0bfe6a79a"
+  },
+  "processDigests": {
+    "center": "e9214718727551c871953661915538d2e984a8e528243ee7c045f40b39142562",
+    "runner": "251344369898c77709064c61d74f121f5cd60389b5e7e7a95eaa8698ed00254e",
+    "web": "0fb840f089e5949fccdc07af569813bf5b0418b5e4dff6bf95b0cff0bfe6a79a"
+  }
+}

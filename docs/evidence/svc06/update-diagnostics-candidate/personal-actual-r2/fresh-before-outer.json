@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T12:29:20.521121+00:00",
+  "finishedAt": "2026-10-07T12:29:21.091162+00:00",
+  "report": {
+    "pid": 35579,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 570,
+    "stdout": "{\"outcome\":\"observed\",\"output\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/fresh-before.json\"}\n",
+    "stderr": "",
+    "observed_bytes": 188,
+    "retained_bytes": 188,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": []
+  },
+  "helper": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "bytes": 8740,
+    "sha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca"
+  },
+  "argvContract": "fixed Node / helper / absolute exclusive output"
+}
