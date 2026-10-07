@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-07T18:14:40.665Z",
+  "task": "SVC09A",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_CONTROLLER_LOADER_AND_IMPORT",
+  "blockingFindings": [],
+  "source": "c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792",
+  "metadata": "32558fd94234df72f40da80fbbc1ca6d932ee908",
+  "delivery": "745ba7f61858afc2b8b833160b9722e73d8e381f",
+  "canonicalEvidence": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/controller-loader-manifest.json",
+  "manifest": {
+    "bytes": 6273,
+    "sha256": "6b96ebd44e1478885665e9d8aa558eb5dacf78ae434f1dc07ecf8a5881296b8e",
+    "bindings": 15,
+    "boundBytes": 32957,
+    "fixedCurrentMatch": true
+  },
+  "reviewed": "18 explicit tool pins matched f0/098b; local02 eight inputs match. Two source copies, nine relative links and bare pg bind the fixed artifact closure. Old worktree files/index excluded. Full dependency inventory inherited prior artifact approval, not reread here.",
+  "actualCheck": {
+    "scenarios": 1,
+    "assertions": 4,
+    "elapsedMs": 100,
+    "rawBytes": 4786,
+    "exitCode": 0,
+    "ownedGroup": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "cleanup": "17 owned entries reverse-order identity checked; exact empty scratch removed"
+  },
+  "preserved": "local01 cache KEEP, callerexit1 and tested comment preimage remain; prior four product source review is referenced once.",
+  "limitations": [
+    "No actual default three-role host or R4 root-cause conclusion",
+    "New minimal caller and actual window are excluded",
+    "Reviewer ran zero tests, PG, services or provider requests"
+  ]
+}

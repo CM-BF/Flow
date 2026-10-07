@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:58:01.455Z / main/origin abdf69692已核；启动诊断四源限定接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T18:14:40.665Z / 已核main/origin496b；本批接收既有C3兼容批准与loader限定审查 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main f8853d473；已审I01六源/208来源已接收，本批仅R4限定结果与管理事实 |
-| 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
+| 工作基线 / HEAD | main496b1d68c；本批仅已审记录与状态，不改变冻结产物 |
+| 工作树dirty状态 | 本次审查接收metadata；两个原有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 固定doc字节/链接、两限定独审与own-status解析；0重复产品测试/PG/浏览器/provider，历史UNKNOWN保持 |
-| 已集成main状态 / HEAD | 最近已核main/origin f8853d473；I01固定5438六源已5592f9d83接收、208来源17:02实际载入。本次R4限定结果进入受控metadata接收，未运行新检查或改变个人部署。 |
+| 检查状态 | 既有独审、固定输入与文档差量/own-status；0产品复测/PG/浏览器/provider |
+| 已集成main状态 / HEAD | main496b已含启动诊断四源；C3兼容与loader限定审查本批接收。固定cd27/779尚未个人部署，2515未改 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 后台启动诊断代码已通过限定独审并受控接收；真实启动与网页兼容仍须分别验证。 |
-| 下一可用交付 | 固定独立控制器与原产物的加载组合，完成最小启动/停止验证后再继续完整消息设置旅程。 |
+| 当前产出 | 新版页面与保留页面的后台兼容验证已通过独审；固定启动诊断模块及独立加载证据已接收。 |
+| 下一可用交付 | 按已验证组合完成个人更新准备和发布；消息设置的最小启动闭环独立推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -486,3 +486,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 ### 2026-10-07T17:58:01.455Z 启动诊断四源接收
 
 [限定源码与局部结果独审](../../docs/evidence/i02/svc09a-startup-controller-review.json)绑定f0e434bd四源；当前main前像与其父版本逐字同，受控接收后四源逐字保持。12项局部行为通过，检查后的一条注释通过原hash精确复原核对；不声称逐字f0已执行。空目录清理规则发现tsx缓存，因此caller exit1/KEEP保留，不能算完整清理。独立controller装配、真实默认启动、完整双槽和个人部署均不在本批准；原2515及个人未改，不重跑已过检查。
+
+2026-10-07T18:14:40.665Z：接收[loader限定审查](../../docs/evidence/i02/svc09a-controller-loader-review.json)及[四App兼容结果](../../docs/evidence/i02/recovery-four-app-intake.json)。唯一raw保留在原owner，未复制源码/重新运行。当前个人发布准备由原SVC06B owner接续；SVC09A新默认3role候选尚未运行，两条用户结果不互为门禁。
