@@ -85,3 +85,7 @@ PENDING。当前source-only准备，0工程检查/PG；历史ea276批准不继�
 ## 2026-10-07 领取资格差量
 
 Mika/root，2026-10-07T13:23:26Z，SOURCE_REVIEW_APPROVED，0P1/P2。固定aa74137d84cd7acc45ec23c2ff22128ce944a410 / packet7ecbc452b7abe4f1e3e3368b3fcb948613a1904a。详见claim-eligibility/source-independent-review.json；不含实际PG、性能、个人激活或main。
+
+## CORE mixed queue actual PG result review
+
+2026-10-07T13:59:19Z chatui01_owner / gpt-6-astra：RESULT_FIDELITY_REVIEW_APPROVED，0P1/P2。固定result `a66627678c22fc229fa085a07a07732a07e84da3` / packet `069bf1526755555220426e00c9328a6e0655ab00`，24bindings200702B / 17raw24919B，256preparedinputs不变。5/5公共claim/profile/SQL与全部已观察资源收尾成立；历史EPERM、峰值/DBWAL未知保持，0provider。详见[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json)。本审不批准个人激活、main组合或新窗口；后续intake只接精确4必需叶及可选config。作者接受结论，0重测/产品修改。

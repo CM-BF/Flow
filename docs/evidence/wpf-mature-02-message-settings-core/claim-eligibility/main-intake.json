@@ -1,7 +1,7 @@
 {
-  "at": "2026-10-07T13:58:00.716Z",
+  "at": "2026-10-07T14:00:26.111Z",
   "taskId": "WPF-MATURE-02-CORE",
-  "state": "RESULT_REVIEW_PENDING",
+  "state": "READY",
   "owner": "architecture_read",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
   "branch": "codex/claude-settings-claim-eligibility",
@@ -115,7 +115,16 @@
       "verdict": "OPERATOR_PREPARATION_DELTA_REVIEW_APPROVED",
       "receipt": "pg-operator-independent-reviews.json"
     },
-    "actualResult": "PENDING"
+    "actualResult": {
+      "at": "2026-10-07T13:59:19Z",
+      "reviewer": "chatui01_owner",
+      "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+      "P1": 0,
+      "P2": 0,
+      "result": "a66627678c22fc229fa085a07a07732a07e84da3",
+      "packet": "069bf1526755555220426e00c9328a6e0655ab00",
+      "receipt": "pg-result-independent-review.json"
+    }
   },
   "validation": {
     "actual": "5 selected / 5 passed / suitePASS / 67HTTP / 0provider; full resource return",
@@ -126,11 +135,27 @@
     ],
     "doNotRepeat": "No blind PG rerun or old whole-suite runs for this intake; drift that changes semantics must be reviewed first."
   },
-  "evidenceIntake": "Copy only reviewed manifests/review receipts and referenced original raw result files as needed; source rows/support are explicit and fixed. Do not copy validation source mirrors or future work.",
+  "evidenceIntake": "Fixed result packet/manifests and review receipts below identify exact raw/support evidence; no validation source mirrors or future work. Prepared input copies are not product overlays.",
   "boundaries": [
     "No provider/account usability/SDK execution or personal two-slot activation",
     "No new DTO/DDL/queue/runner loop",
     "No main acceptance until independent actual result review and integrator fresh preimage+direct checks",
     "Historical CORE task start UNKNOWN remains unchanged"
-  ]
+  ],
+  "requiredEvidenceManifests": [
+    {
+      "commit": "069bf1526755555220426e00c9328a6e0655ab00",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-manifest.json",
+      "sha256": "a8186b97f587b2433594733e2a16a4fbcd1ba9ea7bba0fb32e601927a4fdf87b",
+      "bindingCount": 24,
+      "totalBoundBytes": 200702
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json",
+      "bytes": 1968,
+      "sha256": "2711c87cd5c944aaecb4f7891a5aa629d0c4c08768114379591f8ab066680dd3",
+      "source": "same final intake commit"
+    }
+  ],
+  "writing": "STOP after metadata commit/push; claim retained for intake/repair,0actual/0pendingLaunch"
 }

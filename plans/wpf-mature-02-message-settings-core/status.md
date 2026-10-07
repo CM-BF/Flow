@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:19.459Z / fixed main ae8500dd（只读前像核对，本轮产品未集成） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:00:26.111Z / fixed main ae8500dd（只读前像核对，本轮产品未集成） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,23 +10,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | 产品aa741/准备operator9af028冻结；actual原件与结果交审元数据提交后clean |
+| 工作树dirty状态 | 产品aa741/准备operator9af028冻结；source/result全部冻结；正式结果批准/窄intake元数据提交推送后clean并STOP |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
 | 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：真实PG恰5 selected/5 passed/0skip，suitePASS/outer0；原focused types0/list5及失败均保留 |
 | 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
-| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+tests；SOURCE_REVIEW_APPROVED / PG5_PASS_RESULT_REVIEW_PENDING |
+| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+tests；SOURCE_REVIEW_APPROVED / PG5_PASS_RESULT_REVIEW_APPROVED |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新旧后端混合队列与旧会话归属的五项真实数据库验收全部通过，资源已完整归还，结果待独立审查 |
-| 下一可用交付 | 独立核对本次结果后窄接收领取资格改动；个人两槽激活与用户端可用性另行验收 |
+| 当前产出 | 新旧后端混合队列与旧会话归属已通过真实数据库验收及独立结果审查，等待窄范围主线接收 |
+| 下一可用交付 | 主线接收领取资格改动和必要测试支持；个人两槽激活与用户端可用性另行验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；上述批准不含本次实际PG；结果忠实性待独审 |
+| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；chatui2026-10-07T13:59:19Z result a666/packet069bf独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；均非main/个人激活批准 |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -35,7 +35,7 @@
 | --- | --- | --- | --- |
 | M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
 | M02CORE-CLAIM02 | completed | architecture_read | aa74137d84cd7acc45ec23c2ff22128ce944a410固定5行SQL及5个prepared PG用例源码；没有行为执行通过 |
-| M02CORE-CLAIM03 | pending | architecture_read | source独审已通过；实际5/5公共认证/SQL验证与收尾完成，结果独审待完成 |
+| M02CORE-CLAIM03 | completed | architecture_read | source与actual5/5独审通过，资源完整RETURN；result a666/packet069bf/独审13:59:19Z |
 | M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
 
 ## 等待记录
@@ -156,3 +156,7 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 2026-10-07T13:56:19.459Z：唯一 R1 已于13:54:32.579Z启动，13:54:36.490Z outer exit0，5selected/5passed/0skip/suitePASS；13tasks/10attempts/10runners、67HTTP/31024B。两个owned group absent/mergedEOF，专库同OID/marker、0conn普通DROP/absence、监听及精确TMP关闭；heavy已向Mika RETURN，0actual/待launch。原全部输入和历史失败/EPERM不改。[结果与口径](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result.md)。
 
 本次仅公共中心数据库/HTTP资格与fence验证；没有provider或个人服务操作。结果固定后交独立只读忠实性审，main未集成，不自动第二窗。顶层任务开工UNKNOWN保持。
+
+2026-10-07T14:00:26.111Z：chatui2026-10-07T13:59:19Z固定result a666/packet069bf RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，[正式审查](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json)。[唯一窄main intake](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)现READY：1product+1test+2requiredsupport，optionalconfig；13:58:00.716Z核main ae850 clean，runners与原base前像相同，其余新增路径absent。该快照不替接收时fresh前像/组合检查，不overlay验证镜像。
+
+本轮分支实际结果交付13:56:19.459Z，独审13:59:19Z；main NOT_INTEGRATED、部署NOT_DEPLOYED、task NOT_COMPLETED。本次仅metadata收口，0新工程check/PG；own parseStatus errors[]/humanMissing[]，历史开工UNKNOWN的timing issue保留。提交推送后STOP全部写入，保CORE claim v1供接收/repair，0actual/待launch。
