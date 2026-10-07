@@ -1,0 +1,33 @@
+{
+  "pid": 73925,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 375,
+  "stdout": "\u2714 same operation continuation rejects new operation, replacement backend and progressed phase (6.535958ms)\n\u2714 bound journal requires exact v2 identity and empty assignment but does not claim an HTTP success (0.653667ms)\n\u2714 old-column history permits only explicit pre-refresh audit additions and rejects same-count value changes (0.880083ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 3\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 328.923542\n",
+  "stderr": "",
+  "observed_bytes": 461,
+  "retained_bytes": 461,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

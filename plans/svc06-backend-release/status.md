@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:21:45.905888+00:00；R4已bootstrap/draining后因本地admission门停止，窗口归还；新后台未刷新 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:42:05.963018Z；本地guard/实际调用入口检查收尾，0个人I/O；新窗口未领取 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；当前caller source 4916591ba89b2999404e3d13814968180594da98，原迁入5c29/产品源不改；helper独立c51 |
-| 工作树dirty状态 | 本次仅R4原件/结果/计划封存；source491/helperc51及已审参数保持，不重放已消费步骤 |
+| 工作基线 / HEAD | 原产品3cb/目标产物7d1/source6c不变；当前精确intent续接caller ec9c775462de61487836665973e792b4b15d616d，原core独立0f5891da；root工具上下文ae8500dd |
+| 工作树dirty状态 | 本次仅own证据与status封存；caller/core停止写入待独审，个人无新动作 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | R4事实/预检/旧列摘要/bootstrap完成；operation RUNNER_ADMISSION_NOT_IDLE，refresh/checkpoint/resume未运行；旧失败保持 |
-| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；R4 bootstrap已进入draining，refresh/resume未运行；实际结果待独审。 |
+| 检查状态 | 12guard（9新）+3caller纯例通过；实际Node/PG模块0connect导入与参数检查通过；6组absent/双EOF/所有exact scratch清理；个人续接NOT_RUN |
+| 已集成main状态 / HEAD | R4实际与限定独审已main9f0fe5b2c096a49195ff8060d97584de235785d2；当前root ae8500dd仅管理后继，43工具来源不变。已消费R2迁入/Web-host/三报告/策略与R4 bootstrap保持；个人后台最后确认为af51/draining19，refresh/resume尚未执行。新v2精确intent续接未集成/未实际运行。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台已停止接收新任务；本地空闲门未通过，刷新尚未开始。已保留所有记录并归还运行窗口。 |
-| 下一可用交付 | 核清本地空闲门拒绝的依据，沿现有维护操作完成安全续接。 |
-| 当前阻塞 | ACTIVE: 已确认本地存在未决claim intent；中心已drain，尚无本次退役或恢复接单执行依据，不得重放bootstrap。 |
+| 当前产出 | 已查明旧本地未决记录阻止接单，并完成保留排队任务的精确修复入口；尚未修改该个人记录。 |
+| 下一可用交付 | 独立核验后，在同一维护操作中安全处置未决记录、刷新服务并解除停止接单。 |
+| 当前阻塞 | ACTIVE: 本次精确续接入口待独审和实际运行窗口；原未决记录与排队任务保留，不能重放已完成步骤。 |
 | 需用户决定 | NONE |
-| Review | reader修复491/c51已独审；R4实际部分结果待Lead唯一独审，原R2/R3批准与FAIL/KEEP保持。 |
+| Review | R4实际失败与drain已独审/main9f0；0f5891da guard模块限定独审通过。caller ec9c7754待最终独审，旧结果不重写。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -414,3 +414,7 @@ Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原
 ## 2026-10-07T13:25:53.154837+00:00：本次单intent处置提案
 
 [最小提案](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/retirement-proposal.md)固定新cad3/d52摘要、同op/CAS19和真实来源；旧退役zero-pending条件与本次保留queued任务冲突，不能原样套用或伪造计数。旧rootaf51入口与现7524也需受审适配。当前仅提案/静态核读，0新增个人读取/操作；待新语义裁决，不延长原13:34:53.793Z截止。R4结果独审原件按既有记录归档，原FAIL与raw不改。
+
+## 精确未决intent续接实现（2026-10-07 13:29–13:42 UTC）
+
+[Interface/运行顺序](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/Interface.md) / [唯一manifest](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json)。037f v2 exact scope于13:29:15.075Z已原子领取；新合同只允许完整R4旧列证据与排队状态保持，不要求取消任务，不改变原默认零pending。局部实际1464ms，全部自有组/临时目录已清理。原R4窗口已结束；当前等待新caller独审与fresh受控窗口，不把旧900s延长。未来仅启动/accepting证据不足时actualClaimRecovery=UNKNOWN，完整任务不提前Done。

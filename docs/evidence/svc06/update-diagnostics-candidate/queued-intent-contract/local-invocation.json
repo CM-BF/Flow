@@ -1,0 +1,27 @@
+{
+  "start": "2026-10-07T13:35:39.845413+00:00",
+  "source": "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=preserved queued v2|actual SQL producer|retires only the specified|rejects every source|pending queue refuses",
+    "docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs",
+    "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.test.mjs"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+  "policy": {
+    "work": 30,
+    "term": 0.5,
+    "reap": 2,
+    "raw": 65536
+  },
+  "scratch": "/private/tmp/flow-svc06-queued-guard-zw1se4jp",
+  "identity": [
+    16777234,
+    124165914
+  ],
+  "maxBytes": 8388608,
+  "provider": 0,
+  "personal": 0,
+  "pg": 0
+}

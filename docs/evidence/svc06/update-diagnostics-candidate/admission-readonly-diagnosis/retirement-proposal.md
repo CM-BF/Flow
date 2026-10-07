@@ -1,4 +1,4 @@
-# 当前精确未决 intent 的最小处置提案（未授权、未执行）
+# 当前精确未决 intent 的最小处置提案（历史初稿，未执行）
 
 本提案只处理13:22:52实际只读观察的单一80B admission。R4已经bootstrap/draining，原迁入、Web-host、三报告、策略和bootstrap都禁止重放。无新模型query，不把退役当缺失claim ACK或成功任务。
 
@@ -32,3 +32,7 @@
 候选新增私有审计/证据≤1MiB、raw≤256KiB，沿原≥2.5GiB、live1GiB并叠加团队fresh门槛；不扩大产物空间或模型额度。所需PG连接与原public维护相同max2+确认max1，阶段顺序不重叠；实际新holder由Lead安排。任何意外用户工作/身份变化/新unknown停止，不取消、清journal、rebase或自动rollback。
 
 仅发owner-http同op/CAS resume可以解除中心drain，但runtime仍因inFlight不null阻断claim；这不是恢复实际接单的证明，也未被本提案执行。真正恢复必须解决该精确intent语义和重新启动后本地journal状态，0operator query保持。
+
+## 后到条件授权与固定实现
+
+GO已明确允许queued逐值保留；新显式v2合同与实际SQL/同锁证据已实现，旧零pending默认保持。当前可审入口及全部停止/迟到HTTP边界见[唯一Interface](../queued-intent-contract/Interface.md)和[固定manifest](../queued-intent-contract/manifest.json)。root工具上下文更新ae8500dd，旧运行af51和目标7d1/6c不变；新段最多15min且不追溯延长R4。上文未授权/建议240s仅保留初始提案历史，不代表当前审批结论。实际个人续接仍NOT_RUN，需独审与fresh窗口。
