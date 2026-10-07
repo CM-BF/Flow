@@ -73,6 +73,25 @@
     "newRunBudget": false,
     "resourceGatesLowered": false
   },
-  "independentReview": "PENDING fixed source target",
-  "mainIntegration": "PENDING"
+  "independentReview": {
+    "target": "d95551a06157dbd3a88891166d37c75f98800b39",
+    "reviewer": "assignment_review / gpt-6-astra",
+    "result": "APPROVED_DOCS",
+    "findings": [],
+    "scope": "Only the three-file planning delta; whole FLOW-001 and product capacity not approved.",
+    "netBytesAtReview": 9126,
+    "sourceBindingsVerified": 8
+  },
+  "mainIntegration": {
+    "commit": "c919fd3f7705a3e8753b820c0bbf73002c94b949",
+    "pushed": true,
+    "sourceFilesMatched": 3,
+    "runtimeChanges": false
+  },
+  "documentationChecks": {
+    "publishedBase": "05cdc51e9668d8e3b5219440361ee6b8f1b3a549",
+    "relativeLinksPresent": 3,
+    "initialOwnerTreeCheck": "FAILED local exists assertion: S01 report unmaterialized; subsequent fixed-main object check confirmed all three. Sparse owner tree also lacks S01 plan; no source expansion or product check."
+  },
+  "closeoutAt": "2026-10-07T01:18:33.576367+00:00"
 }

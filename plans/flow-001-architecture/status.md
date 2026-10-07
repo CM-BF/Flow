@@ -19,7 +19,7 @@
 | 下一可用交付 | 资源恢复后优先SVC07必要HTTP检查与聊天关键路径，随后按ready队列补局部验证；远程最小片等待原用户选择。 |
 | 当前阻塞 | ACTIVE: GO于00:08:27观测主卷783,925,248B，低于现有运行门槛；CI唯一用户选择PENDING。已归并恢复顺序，不循环采样或占用worker等待。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
-| Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+| Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
 | 本片段交付阶段 | implementation |
 
@@ -165,4 +165,6 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 
 ### 2026-10-07 01:16 UTC REQ-18插件宿主组合验收规划
 
-固定只读输入05cdc51e9668d8e3b5219440361ee6b8f1b3a549。新增FLOW-001-T04-POOL-01，四种host启用组合、连接占用/checkout等待、心跳/取消/交互响应与资源释放；保留session advisory fence和unknown恢复。新条件尚未运行，不称饥饿/泄漏，也不扩大S01原128fixture证据；SCAN-01沿原项处理。仅计划/状态/质量记录，独立文档review待固定target，产品/负载/服务0改动。[本段交付记录](../../docs/quality/req18-plugin-pool-acceptance-2026-10-07.json)。
+固定只读输入05cdc51e9668d8e3b5219440361ee6b8f1b3a549。新增FLOW-001-T04-POOL-01，四种host启用组合、连接占用/checkout等待、心跳/取消/交互响应与资源释放；保留session advisory fence和unknown恢复。新条件尚未运行，不称饥饿/泄漏，也不扩大S01原128fixture证据；SCAN-01沿原项处理。仅计划/状态/质量记录，独立文档review已批准固定target d95551a06157dbd3a88891166d37c75f98800b39，无finding；已接收并push main c919fd3f7705a3e8753b820c0bbf73002c94b949。产品/负载/服务0改动。[本段交付记录](../../docs/quality/req18-plugin-pool-acceptance-2026-10-07.json)。
+
+本段文档交付已完成；FLOW-001-T04-POOL-01仍pending/NOT_RUN，实施owner未领取、原聊天关键路径及资源恢复顺序不变。独立审查8项绑定一致、3个新增引用在固定发布main中存在；历史管理树缺两份S01物化副本的首轮本地链接检查失败保留，未冒称owner树检查通过。
