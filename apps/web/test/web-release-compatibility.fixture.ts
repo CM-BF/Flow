@@ -1,183 +1,340 @@
 import assert from "node:assert/strict";
 import { createHash, randomUUID } from "node:crypto";
-import { execFile } from "node:child_process";
-import { mkdtemp, mkdir, writeFile, realpath } from "node:fs/promises";
-import { createServer, request as httpRequest, type Server } from "node:http";
-import { tmpdir } from "node:os";
-import { createRequire } from "node:module";
-import { join } from "node:path";
-import { pathToFileURL, fileURLToPath } from "node:url";
-import { promisify } from "node:util";
-import { Pool } from "pg";
+import { constants } from "node:fs";
+import { lstat, open, realpath, writeFile, readdir } from "node:fs/promises";
+import { createServer, request as httpRequest, type Server, type IncomingMessage, type ServerResponse } from "node:http";
+import { isAbsolute, join, relative } from "node:path";
+import { pathToFileURL } from "node:url";
+import type { Socket } from "node:net";
+import type { RunnerEvent, VerificationRule } from "../../../packages/contracts/src/index.js";
+import type { FlowClient } from "../../../packages/client/src/index.js";
 
-export const BACKEND = "b1c2e39837c2208e6fc2c59a80e16797f26448b5";
-export const NEW_WEB = "8d8ab520a9d43c7b9dafb22911416ee799ebf665";
-export const RELEASE_ID = "8d8ab520a9d43c7b9dafb22911416ee7";
-export const repository = fileURLToPath(new URL("../../../", import.meta.url));
-export const evidence = join(repository, "docs/evidence/wpf-release01");
 export const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
-const execute = promisify(execFile);
-const git = async (...args: string[]) => (await execute("git", ["-C", repository, ...args], { maxBuffer: 1024 * 1024 })).stdout.trim();
-const load = (root: string, path: string) => import(pathToFileURL(join(root, path)).href);
-const adminUrl = process.env.FLOW_RELEASE_TEST_ADMIN ?? "postgresql://flow:flow-local-only@127.0.0.1:55432/postgres";
-type Artifact = { artifactId: string; sourceHead: string; manifestDigest: string };
-export type Wire = { method: string; path: string; key?: string; body?: string; status: number; response?: any; stream?: string; forwardedStream?: string; profile?: string; dropped: boolean };
-
-async function listen(server: Server) {
-  await new Promise<void>(resolve => server.listen(0, "127.0.0.1", resolve));
-  return (server.address() as { port: number }).port;
+export type FilePin = { path: string; bytes: number; sha256: string };
+export type Artifact = { artifactId: string; sourceHead: string; manifestDigest: string };
+type Identity = { dev: number; ino: number };
+export type AppInput = { label: string; artifact: Artifact; artifactRoot: string; rootIdentity: Identity; distIdentity: Identity;
+  format: 1 | 2; releaseId: string | null; manifest: FilePin };
+export type PublicContext = { format: 1; publicOrigin: string; policySha256: string };
+export type Admission = {
+  finalBackend: { directory: string; root: string; artifact: Artifact & { policy: "flow.backend-artifact.v1" }; sourceTree: string; node: string; pins: FilePin[] };
+  context: PublicContext;
+  browserSettings: { cookieOrigin: string; trustedOrigins: string[]; authEpoch: string };
+  apps: AppInput[];
+  output: string;
+};
+/** The already reviewed external caller owns resource/time monitoring and native Chrome/process cleanup. */
+export type Lifetime = { signal: AbortSignal; checkpoint: () => Promise<void> };
+type AssetFile = { path: string; bytes: number; sha256: string };
+export type LoadedApp = AppInput & { files: AssetFile[]; snapshot: { index: AssetFile; assets: Map<string, AssetFile> } };
+type Center = { listen(options: { host: string; port: number }): Promise<unknown>; close(): Promise<void>; server: Server };
+type PoolLike = { query(text: string, values?: unknown[]): Promise<{ rows: Record<string, unknown>[]; rowCount: number | null }>; end(): Promise<void> };
+type Runtime = {
+  createCenter(options: { databaseUrl: string; ownerToken: string; browserSession: Admission["browserSettings"]; leaseMs: number }): Promise<Center>;
+  Client: typeof FlowClient;
+  Pool: new (options: { connectionString: string; max: number; connectionTimeoutMillis: number; statement_timeout: number }) => PoolLike;
+  adapterVersion: string;
+  parseEvent(value: unknown): RunnerEvent;
+  verifyText(artifactId: string, content: string, requested?: VerificationRule): unknown;
+  releaseAsset(snapshot: LoadedApp["snapshot"], rawPath: string, acceptsHtml?: boolean): Promise<{ bytes: Buffer; path: string } | null>;
+  importWebCompatibility(options: { directory: string; reportDirectory: string }): Promise<string>;
+  verifyWebCompatibility(options: { directory: string; artifact: Artifact; backendHead: string; compatibilityId: string; expectedContext: PublicContext }): Promise<unknown>;
+};
+const requiredRuntimePaths = ["tools/personal-preview/backend-release/index.mjs", "tools/personal-preview/browser-session-configuration.mjs",
+  "tools/personal-preview/web-release.mjs", "apps/server/src/index.ts", "packages/client/src/index.ts", "packages/contracts/src/index.ts", "apps/server/node_modules/pg/lib/index.js", "apps/runner/src/verifier.ts"];
+const retained = [
+  ["461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90", "b1c2e39837c2208e6fc2c59a80e16797f26448b5", null],
+  ["caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe", "8d8ab520a9d43c7b9dafb22911416ee799ebf665", "8d8ab520a9d43c7b9dafb22911416ee7"],
+  ["d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88", "5069586a9f17332de526e101eca3a4250cbc8d91", "388371a4972c469b8ace623454594132"],
+] as const;
+export function errorCode(error: unknown): string {
+  // Do not persist driver messages/URLs or credentials in failure evidence.
+  return error instanceof Error ? `${error.name}:${"code" in error ? String(error.code) : "OPERATION_FAILED"}` : "UNKNOWN_FAILURE";
 }
-async function closeServer(server: Server) {
-  server.closeAllConnections();
-  await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+export async function pinnedBytes(pin: FilePin, limit = 32 * 1024 * 1024): Promise<Buffer> {
+  assert.ok(isAbsolute(pin.path) && pin.bytes >= 0 && pin.bytes <= limit && /^[a-f0-9]{64}$/.test(pin.sha256), "Invalid file pin");
+  assert.equal(await realpath(pin.path), pin.path, "Pin must name the exact regular realpath");
+  const file = await open(pin.path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
+  try {
+    const before = await file.stat({ bigint: true });
+    assert.ok(before.isFile() && before.nlink === 1n && before.uid === BigInt(process.getuid!()) && before.size === BigInt(pin.bytes));
+    const bytes = Buffer.alloc(pin.bytes + 1); let bytesRead = 0;
+    while (bytesRead < bytes.length) { const part = await file.read(bytes, bytesRead, bytes.length - bytesRead, bytesRead); if (!part.bytesRead) break; bytesRead += part.bytesRead; }
+    const after = await file.stat({ bigint: true }), current = await lstat(pin.path, { bigint: true });
+    for (const key of ["dev", "ino", "size", "mtimeNs", "ctimeNs"] as const) { assert.equal(before[key], after[key]); assert.equal(after[key], current[key]); }
+    assert.equal(bytesRead, pin.bytes); const result = bytes.subarray(0, bytesRead); assert.equal(hash(result), pin.sha256); return result;
+  } finally { await file.close(); }
 }
-async function unusedPort() { const server = createServer(); const port = await listen(server); await closeServer(server); return port; }
-/** Correct production base for the candidate before a compatibility record exists. No release pointer is invented. */
-async function startCandidatePreview(source: string, dist: string, artifact: Artifact, webPort: number, proxyPort: number) {
-  const require = createRequire(join(source, "apps/web/package.json"));
-  const { preview } = await import(pathToFileURL(require.resolve("vite")).href);
-  const server = await preview({ root: dist, configFile: false, envDir: false, publicDir: false, logLevel: "silent", base: `/__flow_releases/${RELEASE_ID}/`, build: { outDir: dist },
-    plugins: [{ name: "fixture-artifact-identity", configurePreviewServer(server: any) { server.middlewares.use((request: any, response: any, next: () => void) => {
-      if (request.url !== "/__flow_preview_identity") return next();
-      response.setHeader("content-type", "application/json"); response.end(JSON.stringify(artifact));
-    }); } }],
-    preview: { host: "127.0.0.1", port: webPort, strictPort: true, open: false, cors: false, proxy: { "^/api(?:/|$)": { target: `http://127.0.0.1:${proxyPort}`, changeOrigin: false, ws: false } } } });
-  return { close: () => closeServer(server.httpServer) };
+async function directory(path: string, identity?: Identity) {
+  assert.ok(isAbsolute(path)); assert.equal(await realpath(path), path); const info = await lstat(path);
+  assert.ok(info.isDirectory() && !info.isSymbolicLink() && info.uid === process.getuid!());
+  if (identity) { assert.equal(info.dev, identity.dev); assert.equal(info.ino, identity.ino); }
+  return info;
 }
-export async function until<T>(read: () => Promise<T>, predicate: (value: T) => boolean, timeout = 15_000): Promise<T> {
-  const end = Date.now() + timeout;
-  do { const value = await read(); if (predicate(value)) return value; await new Promise(resolve => setTimeout(resolve, 50)); } while (Date.now() < end);
-  throw Error("Owned compatibility fixture condition timed out");
+export async function saveJson(output: string, name: string, value: unknown) {
+  assert.match(name, /^[a-z0-9][a-z0-9.-]*\.json$/); const text = JSON.stringify(value, null, 2) + "\n";
+  assert.ok(Buffer.byteLength(text) <= 2 * 1024 * 1024, "Raw file cap");
+  await writeFile(join(output, name), text, { flag: "wx", mode: 0o600 });
 }
-
-/** Actual HTTP forwarding. A lost ACK is injected only after the real center answered successfully. */
-async function startObservationProxy(centerPort: number) {
-  const records: Wire[] = []; let loseTurn = false, legacy = false;
-  const server = createServer((request, response) => {
-    if (records.length >= 2000) { response.statusCode = 503; response.end("Fixture request budget exceeded"); return; }
-    const chunks: Buffer[] = []; let bytes = 0;
-    request.on("data", chunk => { bytes += chunk.length; if (bytes <= 64 * 1024) chunks.push(chunk); else request.destroy(); });
-    request.on("end", () => {
-      const body = Buffer.concat(chunks).toString("utf8");
-      const shouldDrop = loseTurn && request.method === "POST" && /\/conversations\/[^/]+\/turns$/.test(request.url ?? "");
-      if (shouldDrop) loseTurn = false;
-      const forwardedHeaders = { ...request.headers }; if (legacy) delete forwardedHeaders["x-flow-assistant-stream"];
-      const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path: request.url, method: request.method, headers: forwardedHeaders }, incoming => {
-        const capture: Buffer[] = []; let received = 0;
-        const record: Wire = { method: request.method!, path: request.url!, status: incoming.statusCode!, dropped: false,
-          ...(request.headers["idempotency-key"] ? { key: String(request.headers["idempotency-key"]) } : {}), ...(body ? { body } : {}),
-          ...(request.headers["x-flow-assistant-stream"] ? { stream: String(request.headers["x-flow-assistant-stream"]) } : {}),
-          ...(forwardedHeaders["x-flow-assistant-stream"] ? { forwardedStream: String(forwardedHeaders["x-flow-assistant-stream"]) } : {}),
-          ...(request.headers["x-flow-execution-profile"] ? { profile: String(request.headers["x-flow-execution-profile"]) } : {}) };
-        if (!shouldDrop) response.writeHead(incoming.statusCode!, incoming.headers);
-        incoming.on("data", chunk => { received += chunk.length; if (received <= 1024 * 1024) capture.push(chunk); if (!shouldDrop) response.write(chunk); });
-        incoming.on("end", () => {
-          if (incoming.headers["content-type"]?.includes("application/json") && received <= 1024 * 1024) {
-            try { record.response = JSON.parse(Buffer.concat(capture).toString("utf8")); } catch { /* Preserve status without inventing JSON. */ }
-          }
-          record.dropped = shouldDrop && incoming.statusCode! >= 200 && incoming.statusCode! < 300;
-          // Exhaustion is an HTTP failure handled by the browser harness, never an uncaught event callback.
-          if (records.length >= 2000) { response.destroy(); return; }
-          records.push(record);
-          if (record.dropped) response.destroy(); else if (shouldDrop) { response.writeHead(incoming.statusCode!, incoming.headers); response.end(Buffer.concat(capture)); } else response.end();
-        });
-      });
-      upstream.on("error", () => { if (!response.destroyed) { response.statusCode = 502; response.end("Fixture upstream unavailable"); } });
-      response.on("close", () => upstream.destroy()); upstream.end(body);
-    });
-  });
-  const port = await listen(server);
-  return { port, records, loseNextTurn: () => { loseTurn = true; }, setLegacy: (value: boolean) => { legacy = value; }, close: () => closeServer(server) };
+async function runtime(input: Admission, life: Lifetime): Promise<Runtime> {
+  assert.ok(input.finalBackend, "Final reviewed backend tuple is required; no legacy fallback");
+  const backend = input.finalBackend; await directory(backend.root);
+  assert.match(backend.artifact.sourceHead, /^[a-f0-9]{40}$/); assert.match(backend.sourceTree, /^[a-f0-9]{40}$/);
+  const load = (path: string) => import(pathToFileURL(join(backend.root, path)).href);
+  const pinByPath = new Map(backend.pins.map(pin => [pin.path, pin])); assert.equal(pinByPath.size, backend.pins.length);
+  for (const pin of backend.pins) { assert.ok(pin.path.startsWith(backend.root + "/") && relative(backend.root, pin.path).split("/")[0] !== ".."); await pinnedBytes(pin); await life.checkpoint(); }
+  for (const path of requiredRuntimePaths) {
+    // Dependency entry may be an internal package symlink; only its admitted regular target is imported.
+    const resolved = await realpath(join(backend.root, path)); assert.ok(resolved.startsWith(backend.root + "/")); assert.ok(pinByPath.has(resolved), `Missing fixed runtime input: ${path}`);
+  }
+  await life.checkpoint(); const verifier = await load(requiredRuntimePaths[0]!); await life.checkpoint();
+  const verified = await verifier.verifyBackendArtifact({ directory: backend.directory, artifact: backend.artifact }); await life.checkpoint();
+  assert.equal(verified.root, backend.root); assert.equal(verified.node, backend.node); assert.equal(await realpath(process.execPath), backend.node);
+  assert.equal(verified.manifest.sourceTree, backend.sourceTree);
+  const policy = await load(requiredRuntimePaths[1]!); await life.checkpoint();
+  const settings = policy.normalizeBrowserSessionSettings(input.browserSettings);
+  assert.equal(settings.cookieOrigin, "http://127.0.0.1:61228");
+  assert.deepEqual(policy.browserCompatibilityContext(settings), input.context);
+  assert.equal(input.context.policySha256, "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638");
+  const tools = await load(requiredRuntimePaths[2]!); await life.checkpoint();
+  const factory = await load(requiredRuntimePaths[3]!); await life.checkpoint();
+  const client = await load(requiredRuntimePaths[4]!); await life.checkpoint();
+  const contracts = await load(requiredRuntimePaths[5]!); await life.checkpoint();
+  const pg = await import(pathToFileURL(await realpath(join(backend.root, requiredRuntimePaths[6]!))).href); await life.checkpoint();
+  assert.equal(typeof factory.createServer, "function"); assert.equal(typeof client.FlowClient, "function"); assert.equal(typeof contracts.CLAUDE_CONTEXT_SOURCE.adapterVersion, "string");
+  const textVerifier = await load(requiredRuntimePaths[7]!); await life.checkpoint();
+  return { createCenter: factory.createServer, Client: client.FlowClient, Pool: pg.Pool ?? pg.default.Pool,
+    parseEvent: value => contracts.runnerEventSchema.parse(value), verifyText: textVerifier.verifyText,
+    adapterVersion: contracts.CLAUDE_CONTEXT_SOURCE.adapterVersion, releaseAsset: tools.releaseAsset,
+    importWebCompatibility: tools.importWebCompatibility, verifyWebCompatibility: tools.verifyWebCompatibility };
 }
-
-export async function startReleaseFixture() {
-  assert.match(RELEASE_ID, /^[a-f0-9]{32}$/);
-  for (const target of [BACKEND, NEW_WEB]) { assert.match(target, /^[a-f0-9]{40}$/); assert.equal(await git("cat-file", "-t", target), "commit"); }
-  const parent = await realpath(await mkdtemp(join(tmpdir(), "flow-release01-")));
-  const checkoutPaths: string[] = [], closures: Array<() => Promise<void>> = [];
-  const databaseName = `flow_release_${randomUUID().replaceAll("-", "").slice(0, 24)}`;
-  const databaseUrl = new URL(adminUrl); databaseUrl.pathname = `/${databaseName}`;
-  const ownerId = randomUUID(), token = `release-fixture-${randomUUID()}`;
-  let databaseCreated = false, closed = false;
-  const cleanup: Record<string, unknown> = { parent, databaseName, startedAt: new Date().toISOString(), providerQueries: 0 };
-  const close = async () => {
-    if (closed) return; closed = true; const failures: string[] = [];
-    for (const action of closures.reverse()) { try { await action(); } catch (error) { failures.push(error instanceof Error ? error.message : "Cleanup failed"); } }
-    if (databaseCreated) {
-      try {
-        const own = new Pool({ connectionString: databaseUrl.href, max: 1 });
-        try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: ownerId }]); }
-        finally { await own.end(); }
-        // Any failure above deliberately prevents DROP. Other owned resource cleanup still proceeds.
-        const admin = new Pool({ connectionString: adminUrl, max: 1 });
-        try { await admin.query(`DROP DATABASE "${databaseName}"`); cleanup.databaseRemoved = (await admin.query("SELECT datname FROM pg_database WHERE datname=$1", [databaseName])).rowCount === 0; }
-        finally { await admin.end(); }
-      } catch { failures.push("Owned database cleanup failed; verify its marker before manual cleanup"); }
+async function loadApps(inputs: AppInput[], life: Lifetime): Promise<LoadedApp[]> {
+  assert.equal(inputs.length, retained.length); assert.equal(new Set(inputs.map(app => app.label)).size, inputs.length);
+  const loaded: LoadedApp[] = [];
+  for (let i = 0; i < inputs.length; i++) {
+    const app = inputs[i]!, expected = retained[i]!; assert.match(app.label, /^[a-z0-9-]{1,32}$/);
+    assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
+    assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
+    await directory(app.artifactRoot, app.rootIdentity); const dist = join(app.artifactRoot, "dist"); await directory(dist, app.distIdentity);
+    assert.equal(app.manifest.path, join(app.artifactRoot, "manifest.json")); assert.equal(app.manifest.sha256, app.artifact.manifestDigest);
+    const manifest = JSON.parse((await pinnedBytes(app.manifest, 64 * 1024)).toString("utf8"));
+    assert.equal(manifest.sourceHead, app.artifact.sourceHead); assert.equal(manifest.format, app.format);
+    assert.equal(manifest.releaseId ?? null, app.releaseId); assert.equal(manifest.files.length, 10);
+    const files: AssetFile[] = manifest.files;
+    const assets = new Map<string, AssetFile>(); let index: AssetFile | undefined;
+    for (const file of files) {
+      assert.ok(typeof file.path === "string" && !file.path.startsWith("/") && file.path.split("/").every(part => part && part !== "." && part !== ".." && !part.includes("\\")));
+      const path = join(dist, file.path); await pinnedBytes({ ...file, path }, 8 * 1024 * 1024); await life.checkpoint();
+      const item = { ...file, path }; if (file.path === "index.html") index = item;
+      const url = `${app.releaseId ? `/__flow_releases/${app.releaseId}` : ""}/${file.path}`;
+      assert.ok(!assets.has(url)); assets.set(url, item);
     }
-    for (const path of checkoutPaths) { try { assert.equal((await execute("git", ["-C", path, "status", "--porcelain"])).stdout.trim(), ""); await git("worktree", "remove", "--force", path); } catch { failures.push("Owned build checkout cleanup failed"); } }
-    cleanup.finishedAt = new Date().toISOString(); cleanup.failures = failures; cleanup.retained = "Private verified artifacts only; no token/config persisted";
-    await writeFile(join(evidence, "cleanup.json"), JSON.stringify(cleanup, null, 2) + "\n"); assert.deepEqual(failures, []);
+    assert.ok(index); loaded.push({ ...app, files, snapshot: { index, assets } });
+  }
+  return loaded;
+}
+export type Wire = { method: string; path: string; status: number; key?: string; body?: string; response?: Record<string, any>;
+  forwardedStream?: string; profile?: string; bearer: boolean; receivedBytes: number; complete: boolean; responseSha256?: string;
+  sse?: { chunks: number; bytes: number; firstChunkAt: string | null; endedAt: string | null; closedAt: string | null };
+  fault?: { contentLength: number; prefixBytes: number; prefixSha256: string; headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string } };
+const hopHeaders = ["connection", "keep-alive", "proxy-connection", "proxy-authenticate", "proxy-authorization", "te", "trailer", "transfer-encoding", "upgrade"];
+function forwardHeaders(headers: IncomingMessage["headers"]) {
+  const result = { ...headers };
+  for (const key of [...hopHeaders, ...String(headers.connection ?? "").split(",").map(value => value.trim().toLowerCase())]) delete result[key];
+  return result;
+}
+async function truncateAck(incoming: IncomingMessage, response: ServerResponse, bytes: Buffer, record: Wire) {
+  assert.ok(incoming.complete && bytes.length > 1 && bytes.length <= 128 * 1024);
+  assert.ok(!incoming.headers["content-encoding"] || incoming.headers["content-encoding"] === "identity");
+  const contentType = incoming.headers["content-type"] ?? ""; assert.match(contentType, /^application\/json(?:\s*;|$)/i);
+  const length = incoming.headers["content-length"], transfer = incoming.headers["transfer-encoding"];
+  assert.ok(!(length && transfer) && (!transfer || transfer.toLowerCase() === "chunked"));
+  if (length !== undefined) { assert.match(length, /^\d+$/); assert.equal(Number(length), bytes.length); }
+  assert.ok(bytes.equals(Buffer.from(bytes.toString("utf8"))));
+  const ack = JSON.parse(bytes.toString("utf8")); assert.equal(typeof ack.turn?.id, "string"); assert.equal(typeof ack.turn?.task?.id, "string");
+  const socket = response.socket; assert.ok(socket && !socket.destroyed); const prefix = bytes.subarray(0, 1);
+  const fault = { contentLength: bytes.length, prefixBytes: 1, prefixSha256: hash(prefix), headersFlushed: false, prefixFlushed: false, endFlushed: false, socketClosed: false, error: undefined as string | undefined }; record.fault = fault;
+  await new Promise<void>((resolve, reject) => {
+    const timeout = setTimeout(() => { fault.error = "ACK_CLOSE_DEADLINE"; socket.destroy(); }, 1000);
+    socket.once("error", () => { fault.error = "ACK_SOCKET_ERROR"; }); response.once("error", () => { fault.error = "ACK_RESPONSE_ERROR"; socket.destroy(); });
+    socket.once("close", hadError => { clearTimeout(timeout); fault.socketClosed = true;
+      if (hadError || fault.error || !fault.prefixFlushed || !fault.endFlushed) reject(Error(fault.error ?? "ACK_FLUSH_UNKNOWN")); else resolve(); });
+    response.writeHead(record.status, { ...forwardHeaders(incoming.headers), "content-type": contentType, "content-length": bytes.length, connection: "close", "cache-control": "no-store" });
+    response.flushHeaders(); fault.headersFlushed = true;
+    response.write(prefix, error => { if (error) { fault.error = "ACK_PREFIX_WRITE"; socket.destroy(); return; } fault.prefixFlushed = true; socket.end(() => { fault.endFlushed = true; }); });
+  });
+}
+async function listen(server: Server) {
+  await new Promise<void>((resolve, reject) => { server.once("error", reject); server.listen(0, "127.0.0.1", () => { server.off("error", reject); resolve(); }); });
+  const address = server.address(); assert.ok(address && typeof address !== "string" && address.port !== 61228, "Owned listener must not be public origin"); return address.port;
+}
+async function closeServer(server: Server, sockets: Set<Socket>) {
+  const closed = new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
+  for (const socket of sockets) socket.destroy(); server.closeAllConnections(); await closed;
+}
+async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, life: Lifetime) {
+  assert.ok(Number.isSafeInteger(centerPort) && centerPort > 0 && centerPort <= 65535); assert.notEqual(centerPort, 61228); let app: LoadedApp | undefined, legacy = false, faultArmed = false, publicEnabled = false;
+  const records: Wire[] = [], errors: string[] = [], rejected: string[] = [], sockets = new Set<Socket>(), upstreams = new Set<ReturnType<typeof httpRequest>>();
+  const pending = new Set<Promise<void>>(); let captured = 0, port = 0, closing = false;
+  const canaryPath = `/__flow_proxy_canary_${randomUUID()}`; let canaryObserved = false;
+  const track = (operation: Promise<void>) => { pending.add(operation); void operation.catch(error => { errors.push(errorCode(error)); }).finally(() => pending.delete(operation)); };
+  const server = createServer((request, response) => {
+    track((async () => {
+      await life.checkpoint(); if (closing) { response.destroy(); return; } const raw = request.url ?? "";
+      const hosts = request.rawHeaders.filter((_, i, all) => i % 2 === 0 && all[i]!.toLowerCase() === "host");
+      assert.equal(hosts.length, 1, "Exactly one Host required");
+      if (raw === `http://127.0.0.1:${port}${canaryPath}` && request.headers.host === `127.0.0.1:${port}` && request.method === "GET") {
+        canaryObserved = true; publicEnabled = true; response.writeHead(200, { "content-type": "text/plain", "cache-control": "no-store" }); response.end("OWNED_PROXY_ROUTE"); return;
+      }
+      let url: URL;
+      try { url = new URL(raw); } catch { response.writeHead(421); response.end(); if (rejected.length < 32) rejected.push("non-absolute-target"); return; }
+      if (!publicEnabled || url.origin !== publicOrigin || url.username || url.password || url.hash || raw !== url.href || request.headers.host !== url.host) {
+        if (rejected.length < 32) rejected.push("non-admitted-authority"); response.writeHead(421); response.end(); return;
+      }
+      const path = url.pathname + url.search;
+      if (path === "/__flow_compat_probe" && request.method === "GET") { response.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" }); response.end("<!doctype html><title>Owned compatibility probe</title>"); return; }
+      if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
+        assert.ok(["GET", "POST", "OPTIONS", "DELETE", "PATCH", "PUT"].includes(request.method ?? "")); assert.ok(records.length < 1000);
+        const chunks: Buffer[] = []; let count = 0;
+        for await (const chunk of request) { count += chunk.length; assert.ok(count <= 64 * 1024); chunks.push(Buffer.from(chunk)); }
+        if (closing) { response.destroy(); return; }
+        const body = Buffer.concat(chunks); const isSession = url.pathname.startsWith("/api/browser-session");
+        const selected = faultArmed && request.method === "POST" && /^\/api\/conversations\/[^/]+\/turns$/.test(url.pathname);
+        if (selected) faultArmed = false;
+        const headers = forwardHeaders(request.headers); if (legacy) delete headers["x-flow-assistant-stream"];
+        // Preserve public Host/Origin/Cookie/CSRF; upstream destination is always this owned listener.
+        headers.host = url.host; headers.connection = "close";
+        const record: Wire = { method: request.method!, path, status: 0, bearer: String(headers.authorization ?? "").startsWith("Bearer "),
+          receivedBytes: 0, complete: false, ...(request.headers["idempotency-key"] ? { key: String(request.headers["idempotency-key"]) } : {}),
+          ...(!isSession && body.length ? { body: body.toString("utf8") } : {}),
+          ...(headers["x-flow-assistant-stream"] ? { forwardedStream: String(headers["x-flow-assistant-stream"]) } : {}),
+          ...(headers["x-flow-execution-profile"] ? { profile: String(headers["x-flow-execution-profile"]) } : {}) };
+        records.push(record);
+        await new Promise<void>((resolve, reject) => {
+          let downstreamClosed = false;
+          const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers }, incoming => {
+            record.status = incoming.statusCode!; const sse = /text\/event-stream/i.test(String(incoming.headers["content-type"]));
+            if (sse) record.sse = { chunks: 0, bytes: 0, firstChunkAt: null, endedAt: null, closedAt: null };
+            if (!selected) response.writeHead(record.status, forwardHeaders(incoming.headers));
+            const capture: Buffer[] = []; const digest = createHash("sha256"); let captureBytes = 0;
+            incoming.on("data", (chunk: Buffer) => {
+              record.receivedBytes += chunk.length; digest.update(chunk);
+              if (record.sse) { record.sse.chunks++; record.sse.bytes += chunk.length; record.sse.firstChunkAt ??= new Date().toISOString(); }
+              if (!sse && !isSession) { captureBytes += chunk.length; if (captureBytes <= 128 * 1024) capture.push(chunk); else { incoming.destroy(); reject(Error("UPSTREAM_CAPTURE_CAP")); } }
+              if (!selected && !response.write(chunk)) { incoming.pause(); response.once("drain", () => incoming.resume()); }
+            });
+            incoming.once("error", error => downstreamClosed ? resolve() : reject(error));
+            incoming.once("aborted", () => downstreamClosed ? resolve() : reject(Error("UPSTREAM_INCOMPLETE")));
+            incoming.once("end", () => { track((async () => {
+              record.complete = incoming.complete; record.responseSha256 = digest.digest("hex");
+              if (record.sse) record.sse.endedAt = new Date().toISOString();
+              if (!sse && !isSession) {
+                const bytes = Buffer.concat(capture); captured += bytes.length; assert.ok(captured <= 2 * 1024 * 1024);
+                if (/application\/json/i.test(String(incoming.headers["content-type"]))) record.response = JSON.parse(bytes.toString("utf8"));
+                if (record.response && url.pathname === "/api/runners") delete record.response.token;
+                if (selected) { assert.ok(record.status >= 200 && record.status < 300, "Selected upstream ACK was not successful"); await truncateAck(incoming, response, bytes, record); }
+              }
+              if (!selected) response.end(); resolve();
+            })().catch(reject)); });
+            incoming.once("close", () => { if (record.sse) record.sse.closedAt = new Date().toISOString(); });
+          });
+          upstreams.add(upstream); upstream.once("close", () => upstreams.delete(upstream));
+          upstream.once("error", error => downstreamClosed ? resolve() : reject(error));
+          response.once("close", () => { downstreamClosed = true; upstream.destroy(); resolve(); }); upstream.end(body);
+        });
+      } else {
+        assert.ok(app && request.method === "GET", "App must be selected before asset access");
+        const asset = await tools.releaseAsset(app.snapshot, url.pathname, String(request.headers.accept).includes("text/html"));
+        if (!asset) { response.writeHead(404); response.end(); return; }
+        response.writeHead(200, { "content-type": asset.path.endsWith(".html") ? "text/html; charset=utf-8" : asset.path.endsWith(".js") ? "text/javascript" : asset.path.endsWith(".css") ? "text/css" : "application/octet-stream", "cache-control": "no-store" }); response.end(asset.bytes);
+      }
+    })().catch(error => { if (!response.destroyed) { if (!response.headersSent) response.writeHead(502); response.end(); } throw error; }));
+  });
+  server.on("connection", socket => { sockets.add(socket); socket.once("close", () => sockets.delete(socket)); });
+  server.on("connect", (_request, socket) => { if (rejected.length < 32) rejected.push("CONNECT"); socket.end("HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n"); });
+  try { port = await listen(server); } catch (error) { await closeServer(server, sockets).catch(() => {}); throw error; }
+  return { url: `http://127.0.0.1:${port}`, canaryUrl: `http://127.0.0.1:${port}${canaryPath}`, records, errors, rejected,
+    assertCanary() { assert.equal(canaryObserved, true, "Chrome must prove absolute-form proxy route before accessing public origin"); },
+    select(value: LoadedApp) { app = value; legacy = false; faultArmed = false; },
+    setLegacy(value: boolean) { legacy = value; }, arm() { assert.equal(faultArmed, false); faultArmed = true; },
+    async settle() { await Promise.all([...pending]); assert.deepEqual(errors, []); },
+    async close() {
+      closing = true;
+      const upstreamClosed = [...upstreams].map(upstream => new Promise<void>(resolve => { upstream.once("close", resolve); }));
+      for (const upstream of upstreams) upstream.destroy();
+      await closeServer(server, sockets); await Promise.all(upstreamClosed); await Promise.allSettled([...pending]);
+      assert.equal(sockets.size, 0); assert.equal(upstreams.size, 0);
+    }
+  };
+}
+export async function until<T>(read: () => Promise<T>, predicate: (value: T) => boolean, life: Lifetime, timeout = 10_000): Promise<T> {
+  const end = performance.now() + timeout;
+  do { await life.checkpoint(); const value = await read(); if (predicate(value)) return value;
+    await new Promise(resolve => setTimeout(resolve, 30)); } while (performance.now() < end);
+  throw Error("FIXTURE_CONDITION_DEADLINE");
+}
+export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime) {
+  life.signal.throwIfAborted(); await life.checkpoint();
+  const outputInfo = await directory(input.output); assert.equal(outputInfo.mode & 0o077, 0); assert.deepEqual(await readdir(input.output), []);
+  const tools = await runtime(input, life); const apps = await loadApps(input.apps, life); await life.checkpoint();
+  const adminIdentity = new URL(adminUrl); assert.ok(adminIdentity.protocol === "postgres:" || adminIdentity.protocol === "postgresql:");
+  assert.equal(adminIdentity.hostname, "127.0.0.1", "Explicit owned test PG only"); assert.ok(adminIdentity.port && adminIdentity.pathname === "/postgres");
+  const databaseName = `flow_release_${randomUUID().replaceAll("-", "")}`, marker = randomUUID(), token = `release-owned-${randomUUID()}`;
+  const databaseUrl = new URL(adminUrl); databaseUrl.pathname = `/${databaseName}`;
+  const pool = (url: string) => new tools.Pool({ connectionString: url, max: 1, connectionTimeoutMillis: 3000, statement_timeout: 3000 });
+  const cleanup = { databaseName, marker, create: "NOT_STARTED", markerWritten: false, databaseRemoved: false, centerClosed: false, proxyClosed: false, errors: [] as string[] };
+  let app: Center | undefined, front: Awaited<ReturnType<typeof proxy>> | undefined, closed = false;
+  const close = async () => {
+    if (closed) return cleanup; closed = true;
+    if (front) try { await front.close(); cleanup.proxyClosed = true; } catch (error) { cleanup.errors.push("proxy:" + errorCode(error)); }
+    if (app) try { await app.close(); cleanup.centerClosed = true; } catch (error) { cleanup.errors.push("center:" + errorCode(error)); }
+    if (cleanup.create === "CONFIRMED" && cleanup.markerWritten) try {
+      const own = pool(databaseUrl.href); try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: marker }]); } finally { await own.end(); }
+      const admin = pool(adminUrl); try {
+        assert.deepEqual((await admin.query("SELECT pid FROM pg_stat_activity WHERE datname=$1", [databaseName])).rows, [], "Owned connections must close before DROP");
+        await admin.query(`DROP DATABASE "${databaseName}"`); cleanup.databaseRemoved = (await admin.query("SELECT datname FROM pg_database WHERE datname=$1", [databaseName])).rowCount === 0;
+        assert.equal(cleanup.databaseRemoved, true);
+      } finally { await admin.end(); }
+    } catch (error) { cleanup.errors.push("database:" + errorCode(error)); }
+    else if (cleanup.create !== "NOT_STARTED") cleanup.errors.push("database:UNKNOWN_CREATION_OR_MARKER_KEEP");
+    await saveJson(input.output, "fixture-cleanup.json", cleanup); return cleanup;
   };
   try {
-    const { prepareWebArtifact, verifyWebArtifact } = await load(repository, "tools/personal-preview/web-artifact.mjs");
-    const { startStaticWeb } = await load(repository, "tools/personal-preview/static-web.mjs");
-    const artifacts: Array<{ label: string; source: string; directory: string; dist: string; artifact: Artifact; manifest: unknown }> = [];
-    for (const [label, target] of [["old", BACKEND], ["new", NEW_WEB]]) {
-      const source = join(parent, `${label}-source`), directory = join(parent, `${label}-state`);
-      await git("worktree", "add", "--detach", source, target); checkoutPaths.push(source); await mkdir(directory, { mode: 0o700 });
-      console.log(`Preparing actual ${label} Web ${target}`);
-      const installed = await execute("pnpm", ["install", "--frozen-lockfile", "--offline", "--ignore-scripts"], { cwd: source, timeout: 90_000, maxBuffer: 1024 * 1024 });
-      await writeFile(join(evidence, `${label}-install.log`), installed.stdout + installed.stderr);
-      const artifact: Artifact = await prepareWebArtifact({ directory, repository: source, target, ...(label === "new" ? { releaseId: RELEASE_ID } : {}) });
-      const { dist, manifest } = await verifyWebArtifact({ directory, artifact });
-      await writeFile(join(evidence, `${label}-manifest.json`), JSON.stringify(manifest, null, 2) + "\n");
-      artifacts.push({ label, source, directory, dist, artifact, manifest });
-    }
-    const oldSource = artifacts[0]!.source;
-    const admin = new Pool({ connectionString: adminUrl, max: 1 });
-    try { await admin.query(`CREATE DATABASE "${databaseName}"`); databaseCreated = true; }
-    finally { await admin.end(); }
-    const own = new Pool({ connectionString: databaseUrl.href, max: 1 });
-    try { await own.query("CREATE TABLE public.release_fixture_owner(id uuid PRIMARY KEY)"); await own.query("INSERT INTO public.release_fixture_owner VALUES($1)", [ownerId]); }
-    finally { await own.end(); }
-    const { createServer: createCenter } = await load(oldSource, "apps/server/src/index.ts");
-    const app = await createCenter({ databaseUrl: databaseUrl.href, ownerToken: token });
-    await app.listen({ host: "127.0.0.1", port: 0 }); closures.push(() => app.close());
-    const centerPort = app.server.address().port, centerUrl = `http://127.0.0.1:${centerPort}`;
-    const request = async (path: string, body?: unknown, auth = token, headers: Record<string, string> = {}) => {
-      const result = await fetch(centerUrl + path, { method: body ? "POST" : "GET", headers: { authorization: `Bearer ${auth}`, "content-type": "application/json", ...headers }, ...(body ? { body: JSON.stringify(body) } : {}), signal: AbortSignal.timeout(10_000) });
-      assert.ok(result.ok, `Fixture HTTP ${path}: ${result.status}`); return result.json();
+    await saveJson(input.output, "inputs.json", { backend: input.finalBackend, apps: input.apps, context: input.context, browserSettings: input.browserSettings, databaseName, marker, providerQueries: 0 });
+    await life.checkpoint(); cleanup.create = "UNKNOWN"; const admin = pool(adminUrl);
+    try { await admin.query(`CREATE DATABASE "${databaseName}"`); cleanup.create = "CONFIRMED"; } finally { await admin.end(); }
+    await life.checkpoint(); const own = pool(databaseUrl.href);
+    try { await own.query("CREATE TABLE public.release_fixture_owner(id uuid PRIMARY KEY)"); await own.query("INSERT INTO public.release_fixture_owner VALUES($1)", [marker]); cleanup.markerWritten = true; } finally { await own.end(); }
+    await life.checkpoint(); app = await tools.createCenter({ databaseUrl: databaseUrl.href, ownerToken: token, browserSession: input.browserSettings, leaseMs: 300_000 });
+    await life.checkpoint(); await app.listen({ host: "127.0.0.1", port: 0 }); await life.checkpoint();
+    const address = app.server.address(); assert.ok(address && typeof address !== "string" && address.port !== 61228);
+    const centerUrl = `http://127.0.0.1:${address.port}`; front = await proxy(address.port, input.context.publicOrigin, tools, life); await life.checkpoint();
+    const owner = new tools.Client({ baseUrl: centerUrl, token });
+    const runner = await owner.registerRunner({ name: "RELEASE01 fixed-origin deterministic runner", harnesses: ["claude"], capacity: 1 }); await life.checkpoint();
+    const client = new tools.Client({ baseUrl: centerUrl, token: runner.token });
+    const configuration = { harness: "claude", adapterVersion: tools.adapterVersion, model: "release-synthetic", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: hash("[]"), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60_000 } } as const;
+    const { profile } = await client.publishExecutionProfile({ configuration }, life.signal); await life.checkpoint();
+    const completeTask = async (taskId: string, text: string) => {
+      const claimed = await until(() => client.claim(life.signal), value => value.assignment !== null, life); assert.ok(claimed.assignment);
+      const assignment = claimed.assignment; assert.equal(assignment.task.id, taskId);
+      const nativeSessionId = randomUUID(), sourceMessageId = randomUUID(), artifactId = randomUUID(), content = "Release fixture reply: " + text;
+      const events = [
+        { type: "session", nativeSessionId, adapterVersion: tools.adapterVersion, resources: ["owned compatibility fixture; zero provider"] },
+        { type: "assistant-final", messageId: hash(JSON.stringify([nativeSessionId, sourceMessageId])), nativeSessionId, source: "claude.sdk.result", sourceMessageId, content,
+          settings: { requested: { model: configuration.model, permissionMode: "dontAsk", thinking: "disabled" }, effective: { model: null, permissionMode: null, tools: null, thinking: "unknown" } } },
+        { type: "artifact", artifactId, title: "Synthetic output", version: hash(content), content, mediaType: "text/plain" },
+        tools.verifyText(artifactId, content, assignment.task.verification),
+        { type: "completed", outcome: "succeeded" },
+      ];
+      // Public codec, not a fabricated page response, validates actual event types at the server.
+      for (let sequence = 1; sequence <= events.length; sequence++) {
+        const event = tools.parseEvent({ ...Object(events[sequence - 1]), id: randomUUID(), sequence });
+        await client.report({ attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion, events: [event] }, life.signal); await life.checkpoint();
+      }
     };
-    const runner = await request("/api/runners", { name: "RELEASE01 deterministic adapter", harnesses: ["claude"], capacity: 1 });
-    const configuration = { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "release-synthetic", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: hash("[]"), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 30_000 } };
-    const { profile } = await request("/api/runner/execution-profile", { configuration }, runner.token);
-    const { runRunner } = await load(oldSource, "apps/runner/src/runtime.ts");
-    const { guardExecutionProfile } = await load(oldSource, "apps/runner/src/execution-profiles.ts");
-    const { verifyText } = await load(oldSource, "apps/runner/src/verifier.ts");
-    const stop = new AbortController(); let runnerError: string | null = null;
-    const adapter = { name: "claude", version: configuration.adapterVersion, async run(context: any) {
-      const nativeSessionId = context.task.nativeSessionId ?? randomUUID();
-      await context.emit({ type: "session", nativeSessionId, adapterVersion: configuration.adapterVersion, resources: ["RELEASE01 deterministic fixture; zero SDK/provider"] });
-      await context.assertOwnership(); const content = "Release fixture reply: " + context.task.prompt;
-      const sourceMessageId = randomUUID(), artifactId = randomUUID();
-      await context.emit({ type: "assistant-final", messageId: hash(JSON.stringify([nativeSessionId, sourceMessageId])), nativeSessionId, source: "claude.sdk.result", sourceMessageId, content,
-        settings: { requested: { model: configuration.model, permissionMode: "dontAsk", thinking: "disabled" }, effective: { model: null, permissionMode: null, tools: null, thinking: "unknown" } } });
-      await context.emit({ type: "artifact", artifactId, title: "Synthetic output", version: hash(content), content, mediaType: "text/plain" });
-      await context.emit(verifyText(artifactId, content, context.task.verification));
-    } };
-    const runnerPromise = runRunner({ baseUrl: centerUrl, token: runner.token, workingDirectory: join(parent, "runner"), signal: stop.signal, pollIntervalMs: 50, heartbeatIntervalMs: 500, adapters: [guardExecutionProfile(adapter, profile.reference, configuration)] }).catch((error: Error) => { if (!stop.signal.aborted) runnerError = error.message; });
-    closures.push(async () => { stop.abort(); await runnerPromise; assert.equal(runnerError, null); });
-    const previews = [];
-    for (const artifact of artifacts) {
-      const proxy = await startObservationProxy(centerPort); closures.push(proxy.close);
-      const port = await unusedPort();
-      const web = artifact.label === "new"
-        ? await startCandidatePreview(artifact.source, artifact.dist, artifact.artifact, port, proxy.port)
-        : await startStaticWeb({ directory: artifact.directory, artifact: artifact.artifact, repository: artifact.source, webPort: port, centerPort: proxy.port });
-      closures.push(web.close);
-      previews.push({ ...artifact, proxy, url: `http://127.0.0.1:${port}` });
-    }
-    await writeFile(join(evidence, "environment.json"), JSON.stringify({ startedAt: cleanup.startedAt, node: process.version, backend: BACKEND, sourceTree: await git("rev-parse", `${BACKEND}^{tree}`), oldWeb: BACKEND, newWeb: NEW_WEB, releaseId: RELEASE_ID, artifacts: previews.map(({ label, artifact, directory, url }) => ({ label, artifact, directory, url })), providerQueries: 0, isolation: "random marked database, generated fixture auth, in-process fixed backend and fixture runner" }, null, 2) + "\n");
-    return { previews, profile, token, centerUrl, request, close };
+    const request = async (path: string) => { assert.ok(path.startsWith("/api/") && !path.includes("\\") && !path.includes("#")); await life.checkpoint();
+      const result = await fetch(centerUrl + path, { headers: { authorization: `Bearer ${token}` }, redirect: "error", signal: life.signal }); assert.ok(result.ok); return result.json(); };
+    return { apps, profile, token, proxy: front, request, completeTask, tools, close, input };
   } catch (error) { await close(); throw error; }
 }
+export type ReleaseFixture = Awaited<ReturnType<typeof startReleaseFixture>>;

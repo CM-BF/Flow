@@ -1,0 +1,23 @@
+{
+  "state": "SOURCE_IMPLEMENTED_NOT_RUN",
+  "at": "2026-10-07T10:09:48.291343+00:00",
+  "base": "41276e2ecd154087f66958339d9abfce4d44964c",
+  "sourceFiles": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31749,
+      "sha256": "647a986ce617d8068e7de560fb3381ab5a621c1532dc7c03dbb2afba9ff4c2d9"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 21579,
+      "sha256": "551908013a1efda17e279be3caae58a32e9a3d3d9c074562e7679b65a4d54b18"
+    }
+  ],
+  "finalBackendTuple": null,
+  "checks": "NOT_RUN; only text/diff checks",
+  "runtimeEntry": "runReleaseCompatibility(admission, explicitAdminUrl, lifetime) export; importing has no top-level launch",
+  "lifetimeOwner": "Existing admitted parent/worker must supply checkpoint+signal+owned Chrome launcher/receipt/close; no new supervisor",
+  "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+  "claimVersion": 1
+}
