@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:21:55.897Z / main/origin96b424777；插件宿主/当前迁入模块接收，固定双槽后台产物结果独审已收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:55:26.554Z / main/origin7aa9a6b08；固定受管入口已审接收，新Web产物已核收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin96b424777已含已审插件进程宿主、消息设置App接线、双槽宿主源及后台保留策略；远端推送错误已解除。最后已审个人7d1/source6c、accepting21、Webd629/v3保持；本段未新采个人事实或部署。 |
+| 已集成main状态 / HEAD | main/origin7aa9a6b08已收SVC06B当前入口/显式reader ports与SVC09A隔离宿主准备；二者只是准备。新Web779/c231构建结果独审通过，四网页对cd27/04da的兼容报告未齐。最后已审个人7d1/source6c、accepting21、Webd629/v3保持，本段未新采个人事实或操作。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新网页配套后台与消息设置后台产物已备妥；网页兼容验证和双槽宿主验证由原团队并行收口。 |
-| 下一可用交付 | 完成最小新网页与固定后台的兼容验证并发布；并行验证逐消息设置的双槽宿主。 |
+| 当前产出 | 新网页及配套后台产物已完成固定构建；更新入口已审，正在收口网页兼容与后台独立启动验收。 |
+| 下一可用交付 | 取得旧页面和新页面的正式兼容依据，再受管发布可体验页面；逐消息设置后台独立启动和接单另外验收。 |
 | 当前阻塞 | ACTIVE: 工程写入资格仍待既有用户选择；个人更新阻塞已解除，其余聊天验证继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -34,6 +34,7 @@
 | FLOW-001-T02 | completed | Execution Lead | [M1系统旅程](../../docs/evidence/i01/m1-system.md)与独立review已通过，main14fea3d已集成 |
 | FLOW-001-T03 | in-progress | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
+| FLOW-001-T04-DEPENDENCY-READ-01 | pending | Execution Lead排期，产品owner未领取 | 固定9a815源码推导的依赖串行读候选；当前未测，见plan同ID；个人发布/消息设置/S01当前修复优先 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
 | CHAT05P01-06 | pending | Execution Lead / 原端owner | 底层P01/P02已交付；[唯一后继交接](plan.md#chat05-06-完整工具原文已交付底层与下一用户交付)明确SDK/CLI开通及两端共享reader，当前发布与SVC09A优先；无新writer/运行 |
@@ -244,3 +245,8 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 ## 2026-10-07T15:21:55.897Z 发布准备与接收事实
 
 已审插件宿主进入主线，网页与消息设置两份固定后台产物各自备妥；双槽产物完成构建及内部加载限定独审，实际宿主与个人设置尚未验收。具体范围、实际起止和运行窗口见[OPS本次收口](../ops-001-status-review/status.md)，不复制第二份运行记录。最小新网页兼容与受管发布继续优先；工程写资格与原CI决定仍按各自唯一入口等待。
+
+### 2026-10-07T15:55:26.554Z 固定发布输入收口
+
+[SVC06B当前入口独审](../../../m2-integration/docs/evidence/i02/svc06b-current-entry-review.json)与[SVC09A宿主准备增量审查](../../../m2-integration/docs/evidence/i02/svc09a-host-preparation-delta-review.json)均已main；未重复构建或已绿局部检查。新Web779/c231已有正式构建批准，但四页面对cd27/04da的真实兼容仍待收口；具体缺项只引用[唯一owner输入](../../../backend-browser-recovery/docs/evidence/svc06/browser-recovery/managed-update-inputs.json)，不复制第二清单。现有用户服务保持，准备批准不当实际部署/接单证明。
+新增依赖批量读取仅为REQ-18/S01后继静态验收登记，与SCAN-01/POOL-01分责；不启动实验、无新增模型或运行预算。
