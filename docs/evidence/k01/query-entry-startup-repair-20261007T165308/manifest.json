@@ -1,0 +1,103 @@
+{
+  "recordedAt": "2026-10-07T16:59:48.955881+00:00",
+  "implementationTarget": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "previousReviewedSource": "a82e44be17a7a31b051bf98400d9553513600542",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "sourceFilesChanged": [
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 15633,
+      "sha256": "d759735bfe70418841068e71b3b2982a921905b67aa51e3769c773aebcd3edb0"
+    },
+    {
+      "path": "experiments/knowledge-search/diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 14202,
+      "sha256": "7b38ca92fd61952bd207b0568fc7ee2d08608ec430003db2121af3b90ab9c56e"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    }
+  ],
+  "unchangedSourceAuthority": "All other experiments/knowledge-search files remain byte-identical to a82; full per-run actual sourceFiles retained once in iterations.jsonl. No copied 245-file manifest.",
+  "fixedProductInputs": {
+    "path": "experiments/knowledge-search/source-inputs.json",
+    "bytes": 49602,
+    "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c",
+    "count": 245
+  },
+  "dependencies": {
+    "path": "experiments/knowledge-search/dependencies.json",
+    "bytes": 5171,
+    "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+  },
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-startup-repair-20261007T165308/iterations.jsonl",
+      "bytes": 8621,
+      "sha256": "527f80206c248689315d73b1ec9e6a6c2fc627e4cd185ea0646bac1fa01bacb3"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-startup-repair-20261007T165308/check-01.raw",
+      "bytes": 519,
+      "sha256": "20b55130d52dd447aeb971046b3a49bf66d962d455ff6d7a49d40e56d8177735"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-startup-repair-20261007T165308/check-02.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-startup-repair-permit.json",
+      "bytes": 692,
+      "sha256": "58b6ea2f6d60e22ffc117f04115389f59d9fa524a8a2aab80c444030f0cca093"
+    }
+  ],
+  "checks": {
+    "pureSelected": 9,
+    "purePassed": 9,
+    "originalListenCases": 3,
+    "newCases": 6,
+    "typesExit": 0,
+    "children": 2,
+    "operatorElapsedMs": 2847,
+    "supervisorElapsedMs": 2636,
+    "rawBytes": 519,
+    "actualReturnAt": "2026-10-07T16:57:35.046460+00:00",
+    "sourceChanged": false,
+    "scratch": "both exact identity removed and lstat absent; original KEEP not accessed"
+  },
+  "budget": {
+    "newLogicalLimit": 8388608,
+    "newSourceWholeChangedFilesBytes": 55654,
+    "evidenceAtCheckBytes": 9832,
+    "removedScratchBytesSum": 506,
+    "currentNewBytesConservative": 65992,
+    "rawLimit": 524288,
+    "tmpLimit": 4194304,
+    "note": "Final metadata receipt adds bounded small bytes; no source rematerialization/cache/build/dependency install; actual scratch receipt size is not a continuous peak sample."
+  },
+  "limits": [
+    "0 PG/HTTP listener/provider/cloud/fullbuild",
+    "No actual import hang reproduced: controlled pending promise cases prove lifecycle seam only",
+    "Original FAILED/HOLD/KEEP and sole PG window unchanged; no fresh PG permit",
+    "SQL timing is client driver round trip, not server CPU; EXPLAIN TIMING OFF separate",
+    "No executed red run in this bounded delta; test source written and final source validated together"
+  ]
+}

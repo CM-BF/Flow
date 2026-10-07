@@ -39,3 +39,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07T16:30:15.342251+00:00：按已读find-skills/codebase-design/固定clean-code归档db_transaction_owner独审；UNKNOWN计量与原first failure职责分离、根/遍历failclosed和局部URL边界已核通过。仅metadata，实际源/raw不改、无重跑；没有将批准升级为PG执行权。当前源a82，主线/真实PG仍待后继。
 
 2026-10-07T16:50:50.636078+00:00: 首次PG FAIL后的独立窄审采用原find-skills/codebase-design/clean-code方法；保计算组闭合与DB清理两项事实，原primary/raw不被追加审查改写。发现dynamic import责任不在既有work deadline内及有限phase事实缺失；仅记录后继最小修复，根因不猜，SELECT客户端+observer计时不误称SQL执行时间。无源码变更/补测试/新PG。
+
+2026-10-07T16:59:48.955881+00:00: 本段复用本地find-skills/codebase-design/固定clean-code，StartupLifecycle仅负责单import→单factory及pending所有权，不造调度器；DiagnosticProgress只追加有限已完成事实/首错，最终汇总仍由run持有；timedQuery明确observer与driver时段。事务/产品/权限未动，保原错误与UNKNOWN，不把超时当取消。实际9纯/noEmit绑定最终源，不重复无关suite；没有执行red或真实PG，独审待db。原FALSE/HOLD/恢复只读事实保持。

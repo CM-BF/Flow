@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:52 UTC |
+| 最近更新 | 2026-10-07 16:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -18,21 +18,21 @@
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
 | 工作树dirty状态 | actual准备起点c659bc204=origin clean；新permit/准入/status提交后运行，旧源/raw/KEEP不改 |
 | 工作分支状态 | review（源码及纯结果已审；真实PG首次FAILED/HOLD，待窄审） |
-| 检查状态 | FAILED a82e44be17a7a31b051bf98400d9553513600542；首次PG时限失败/HOLD；历史纯3+1/noEmit仍仅其原范围 |
+| 检查状态 | PASSED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；9纯行为/focused noEmit0；原首次PG FAILED，不含本修复真实PG验证 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
-| 实现目标 | a82e44be17a7a31b051bf98400d9553513600542 |
+| 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 正在修复诊断启动期限、失败阶段留存和时延口径；原失败与保留库不变 |
-| 下一可用交付 | 带合成行为证据的最小入口修复，实际PG仍未开放 |
-| 当前阻塞 | ACTIVE: 首次查询诊断未完成；原身份数据库已核零连接并保留，待合法后继修复入口覆盖缺口 |
+| 当前产出 | 诊断启动期限、失败阶段留存与时延口径已修复并通过局部行为检查 |
+| 下一可用交付 | 独立审查修复后，另行验证真实检索诊断 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据FIDELITY_ACCEPTED；新P2动态import生命周期待修；独立恢复结果待核 |
+| Review | [review.md](review.md)；本次9c802db修复待独审，历史PG失败/恢复各有独审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -134,3 +134,5 @@
 2026-10-07T16:53:08Z：新15分钟source/local段开始、截止17:08:08Z；fresh45d731374=origin clean、claim30965v2三scope。仅修既有实验生命周期/有限progress/计时边界，0PG/HTTP listener/provider/KEEP访问；新8MiB(TMP4MiB/raw512KiB included)、≤4serialchild/30s各/60s累计，经理floor至少18146131968B。本组ordinary归本owner，归还后直接告architecture_read。原全部FAIL/raw/固定3c产品不改。恢复独审16:52:57限定APPROVED，仅当次0连接/计算闭合，不推持续0连接。
 
 2026-10-07T16:56:56.214955+00:00: 生命周期/有限progress/计时小接缝源码已准备；旧listen3保持，新增6纯行为例（包含多个明确边界），待本段首次local检查。测试自身只创建child TMP内小文件且finally删除；0PG/HTTP。当前旧PG失败仍为事实，不把本源修未经检查写成绿。
+
+2026-10-07T16:59:48.955881+00:00: 本段源码/局部结果固定9c802db，9/9纯行为+focusednoEmit0，2child operator2847ms/raw519B，两个TMP身份/归还明确；actualRETURN16:57:35.046460Z已直交architecture_read。源码与两run逐字同一target，未测试后再改可执行代码；0PG/HTTP/provider。唯一[增量manifest](../../docs/evidence/k01/query-entry-startup-repair-20261007T165308/manifest.json)，不复制245旧输入/原raw。有限progress与import/factory期限、observer计时边界均待db一次只读审查；旧P2不自行标独审关闭。提交push后source与actual全部STOP，原K01-06/08～10仍开放。
