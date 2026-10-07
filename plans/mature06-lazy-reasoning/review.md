@@ -20,3 +20,5 @@ PG准备07:58:24独审2P2/0P1，原fixture/current inputs及local结果忠实性
 ## Public client slice — pending independent review
 
 Target 2949569bcac7d3b0257a0026f488f42eb6276222, relative fixed main2a7e; two source paths and support-only commits separated in client-review-ready.md. Actual first3/7 retained, new5 pass/2unselected+strict0, 0PG. Earlier core/PG approval does not approve this new client source. Current verdict: NOT_STARTED.
+
+Client复核 2026-10-07T08:42:02Z：chatui01_owner/gpt-6-astra，source2949569bcac7d3b0257a0026f488f42eb6276222/packet55dc7de880747a86ed4b64fe7c9ba8cf31c6017b，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2；18bindings133559B及4raw5651B核符。仅7distinct分轮+strict与注入projection兼容，不含新client真实PG/UI/main。正式回执client-review-receipt.json，当前READY见client-integration-ready.md。

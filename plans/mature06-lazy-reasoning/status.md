@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:38:58.667099+00:00 |
+| 最近更新 | 2026-10-07T08:43:35.483632+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
-| 独立审查时间 | 2026-10-07T08:13:23Z（结果）；core07:47:03Z/准备08:07:26Z |
+| 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
 | 主线集成时间 | UNKNOWN |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -19,15 +19,15 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
-| 工作分支状态 | ready-for-review |
+| 工作分支状态 | ready-for-integration |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 公开客户端已接入选择性读取并完成定向检查，正在独审；已审核心仍可独立接收。 |
-| 下一可用交付 | 独审后接收公开客户端，再由界面owner绑定共享投影；真实客户端HTTP验收另选。 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 公开客户端选择性读取已独审通过，可接收；已审核心与真实HTTP验收保持独立证据。 |
+| 下一可用交付 | 主线接收核心和客户端；界面owner绑定共享投影，真实客户端HTTP验收另选。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | client 2949569b待独审；旧core/准备P2 CLOSED，R1结果08:13:23 APPROVED/0P1P2，仅原范围 |
+| Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
 | main | NOT_INTEGRATED |
 | 实现目标 | 2949569bcac7d3b0257a0026f488f42eb6276222 |
@@ -62,3 +62,5 @@ R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:0
 2026-10-07T08:38:58.667099+00:00 public client source 2949569bcac7d3b0257a0026f488f42eb6276222：candidate依据fixed main2a7e，七support精确已审主线字节分独立commit，均STOP并移出；当前claimv8/14。client-review-ready.md为本片唯一交审入口。四child实际完成并已交X01local；原3/7失败保留→新增5定向通过/最终strict0，不重跑旧2或core/PG。瞬时JSON内存不冒projection3MiB resident budget。旧core canonical不改，client/main/UI仍NOT_INTEGRATED；等待聚合器登记展示。
 
 本次状态解析：主线既有parseStatus仅本status，errors[]/human.missing[]/timing.issues[]；parent/co-lead已知。只是形状核对，不代表已登记或main接收。
+
+2026-10-07T08:43:35.483632+00:00 正式client独审已归档client-review-receipt.json，唯一新intake为client-integration-ready.md/json；严格仅两client相对main2a7e语义delta，七support不交为新产品。明确STOP client/index，准备当前v8原子移出供X01；接收者take前无写权。原core intake与raw不改，main尚NOT_INTEGRATED/等待聚合器登记展示。0新工程运行。

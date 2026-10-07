@@ -1,0 +1,38 @@
+{
+  "taskId": "MATURE06-LAZY01",
+  "state": "READY_NOT_INTEGRATED",
+  "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+  "reviewPacket": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+  "review": "client-review-receipt.json",
+  "coreDependency": {
+    "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+    "canonical": "integration-ready.json"
+  },
+  "applyOnly": [
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "bytes": 62574,
+      "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733",
+      "baseline": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "baselineSHA256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "bytes": 13408,
+      "sha256": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468",
+      "baseline": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "baselineSHA256": "666650ceb633587edfbdded9ca2ee8277d6fbd64dac56594832ae0efcc98fc1f"
+    }
+  ],
+  "doNotApplyAsFeature": [
+    "d20eb91f support-only seven-main source contribution part1",
+    "d8476c12 support-only contribution part2"
+  ],
+  "constraints": [
+    "Apply minimal delta relative main2a7e; preserve unrelated current main changes.",
+    "Do not merge entire branch or overwrite server/helper/source snapshot.",
+    "No repeated old core/PG checks implied; actual integration evidence belongs to Lead."
+  ]
+}
