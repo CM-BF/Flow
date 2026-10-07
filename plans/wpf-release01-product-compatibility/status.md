@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:15:10.520Z |
+| 最近更新时间 | 2026-10-07T11:26:29.682Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility |
 | Branch | codex/web-release-compatibility |
 | 工作基线 / HEAD | 固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase |
-| 工作树dirty状态 | 两harness源码9658已固定不变；当前仅自有caller准备与记录 |
+| 工作树dirty状态 | 两harness源码9658已固定不变；caller准备已固定，本批仅own records，正常提交后停止四scope写入 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED 9658a6b763de69038778de1b0c16de64ff824c75：两harness strict/noUnchecked/noEmit实际exit0；首f3d红保留。仅类型检查，browser/PG/compat NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前后继；历史7805于c450c2da7e6185b88db9f46e0299ee504ee6f3e8接收 |
 | 实现目标 | 9658a6b763de69038778de1b0c16de64ff824c75 |
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 最终后台与公开会话策略已核齐，固定地址验证入口类型检查已通过；受控调用器正在准备 |
-| 下一可用交付 | 受控调用器与完整输入包就绪并独审后，安排三份保留App的真实兼容验证 |
+| 当前产出 | 最终后台与公开会话策略已核齐，验证入口类型检查已通过；三App受控调用器准备已固定，尚未实跑 |
+| 下一可用交付 | 集中独审受控调用器与完整输入包，再安排三份保留App的真实兼容验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED（仅两harness源码）；f3d源审与9658 type-only修正已独立接受，实际compat未验 |
@@ -35,7 +35,7 @@
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
-| RELEASE01-05 | pending | w01_owner | 最终tuple和公开设置已核齐；受控caller待闭合，三App真实四项compat待完成；strict复验PASS/真实compat0actual，首红保留 |
+| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，native边界及运行预算待独审/准入；三App四项compat仍NOT_RUN，首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
 ## 等待记录
@@ -62,4 +62,6 @@
 
 2026-10-07T11:15:10.520Z fresh 确认原38b9 v1 exact4 / owner / branch / 无overlap，接续原Release树0482 clean。最终后台6c0fdcda / artifact7d1a3928 / Snq8cV已只读定位，公开cookieOrigin与trustedOrigins固定http://127.0.0.1:61228，authEpoch=svc09-b2b-20261007，规范化policy SHA81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638核同。共享供应不再阻塞。
 
-当前工作是owned Chrome/HTTP proxy/backend生命周期caller与完整输入准备；没有runtime grant/预约，compat仍NOT_RUN。不重编三App/backend，不复测旧types。总任务开工UNKNOWN不以本段10:01时间替代，总完成NOT_COMPLETED。
+owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固定准备稿；[入口/资源/网络/清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)及[精确pins](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/source-pins.json)供一次集中独审。最终SVC r2正式限定接收[原件](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/final-backend-result-review.json)已纳入输入。没有runtime grant/预约，compat仍NOT_RUN。不重编三App/backend，不复测旧types。总任务开工UNKNOWN不以本段10:01时间替代，总完成NOT_COMPLETED。
+
+本批安全点：caller PREPARED/native approval=null；新180s含30s清理只是proposal，64MiB scratch/8MiB retained/1MiB metadata与PG128MiB规划估算均待真实组合准入。未运行Node/Chrome/PG/HTTP、未采空间。四scope正常seal后STOP、claim38b9v1保留；TMP最终HEAD绑定不触发重复项目提交。

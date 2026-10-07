@@ -23,4 +23,6 @@
 
 历史首段2026-10-07：f3d限定源审0blocking；唯一strict检查发现adapterVersion声明过宽，9658仅type-only公共接口修正，NOT_RETESTED。首失败/1170ms/完整清理保留；暂停本四scope写入并保claim，管理顺序先DPERF收口，后独立10s必要复验。
 
-当前：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05仍待最终tuple、caller与三App真实兼容，不把类型检查当四check通过。四scope停写，38b9v1保留，无运行预约。
+当前：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05的最终tuple/公开策略已核齐，caller源码准备已固定待集中审查与实际准入；三App真实兼容仍NOT_RUN，不把类型检查当四check通过。四scope本批seal后停写，38b9v1保留，无运行预约。
+
+当前可审调用准备：[资源、真实网络与清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)。重用既有fixture/report codec与DPERF自有双组生命周期；延迟Chrome握手仅为取得真实owned代理端口，不新增发布平台。标准Python语法和文本/pin核验是静态准备，非产品行为通过。

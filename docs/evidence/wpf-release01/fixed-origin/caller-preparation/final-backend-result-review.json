@@ -1,0 +1,43 @@
+{
+  "verdict": "APPROVED_LIMITED_ISOLATED_HOST_RESULT",
+  "reviewedAt": "2026-10-07T10:49:17.625668+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "target": "92a207b5bbca513efc6ac6f8191b31c51467a3ac",
+  "delivery": "a0117ed097ccaa26fcfe05e0374af9e336032bdb",
+  "manifest": {
+    "path": "docs/evidence/svc06/diagnostics-host-bootstrap/result-manifest.json",
+    "bytes": 33418,
+    "sha256": "95a410b52538cc40e4347ce7ba96d325e9f5e114fe3dc89f9bc65ffdb2b598b9"
+  },
+  "bindingChecks": {
+    "fixedAndCurrent": 39,
+    "privateOriginalIdentityHashBytes": 50,
+    "byteExactPublicCopies": 15,
+    "errors": []
+  },
+  "evidenceRead": [
+    "RESULT.md",
+    "result-analysis.json",
+    "actual-r2/work-result.json",
+    "actual-r2/cleanup-result.json",
+    "host-policy-outer.json",
+    "journey.mjs relevant complete assertion paths",
+    "entry.mjs cleanup and ownership paths previously independently reviewed"
+  ],
+  "findings": [],
+  "accepted": [
+    "Real isolated three-role bootstrap/refresh/resume with fixed artifact 7d1a3928 and source 6c0fdcda; maintenance 0/1/2/3",
+    "Original migrations 1..27 preserved and forward migrations through 35 applied; original selected business columns/history digest unchanged",
+    "Default browser policy off; invalid policy and missing v2 rejected before drain",
+    "Cookie read, CSRF logout rejection and accepted logout; pointer/config/profile preserved",
+    "Two supervised groups absent with dual EOF and no unresolved failure; six nonce-owned groups stopped; marker/OID 1288209 and empty connections before normal DROP; remaining/failures empty"
+  ],
+  "limits": [
+    "Synthetic loader contract only, not three actual App compatibility or personal deployment",
+    "Both explicitly stopped Web generations exit1 preserved; center/runner exit0",
+    "Original c2c/r1 failures and root cause UNKNOWN preserved",
+    "Configured maximum 15 connections not measured concurrency peak; non-atomic resource samples are observations",
+    "No repeated tests, PG, SDK/provider, personal service or raw changes by reviewer"
+  ],
+  "resourceReturn": "2026-10-07T10:44:35.378972Z"
+}
