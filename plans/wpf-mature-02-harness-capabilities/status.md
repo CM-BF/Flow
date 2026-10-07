@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T20:43:45.281305+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:31:45.985465+00:00 / 本次只核固定main e30d40cf actualExecution语义，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；source e7ff1a83，result 9b9c1182d2e649d2a68f3d3c7de980bac0e71fed；封口为本提交，旧源按历史Git保留 |
-| 工作树dirty状态 | 仅本次限定结果批准/status及独立sealed-accounting封口；交付commit后clean，原9b9c raw/manifest不变。 |
+| 工作树dirty状态 | fresh6dfbb213 clean；本次仅authority-inputs与本status文档更新，旧raw/manifest/sealed-accounting未改。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | delivered |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -22,7 +22,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude中心与公共客户端已在主线；Codex受控初始化后首次取得6个模型的目录，尚未验证账号或实际模型调用。 |
-| 下一可用交付 | 本目录观察片段已交付；完整隔离、账号模型与跨端验收沿原大计划继续，当前无新真实目标授权。 |
+| 下一可用交付 | 本目录片段已交付；受信host资料已刷新供ENG原owner消费，C02公开流沿其唯一status推进，真实模型资格与跨端验收仍开放。 |
 | 当前阻塞 | ACTIVE: PRODUCT_QUALIFICATION_PENDING：目录已读到，真实账号/模型、全部writer与完整跨端验收仍未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
@@ -67,3 +67,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native是三种角色；�
 资源、共享owner与S01P07/SVC07/REQ15当前可行动入口仅在[canonical](../../docs/evidence/wpf-mature-02/interface.md)维护路由；各子任务唯一status归原owner，本父不复制其TODO。性能输入仍沿[research-inputs](../../docs/evidence/wpf-mature-02/research-inputs.md)回原计划，静态推算不是当前容量或SLO。
 
 本轮沿固定本地find-skills/openai-docs/brainstorming与clean-code bdacd76检查窄接口、单一生命周期owner、旧默认、错误传播与计量；只新6组fake/sh加本次获授实际目标，未重跑历史全集。共享entry/probe历史源以61e28 Git冻结，当前改动e7ff已独审；raw/input/manifest不可回写。当前原始结果与外部clock见native-remote-status证据，本结果限定审查已通过，仍不宣称完整MATURE02交付。
+
+2026-10-07T05:31:45.985465+00:00 [受信host输入](../../docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md)已按原v6文档scope更新：目录6项与actual model未知分开，ENG01J固定五轮仅提供有限OS/既有R06启动事实，模型≥Sol/no-fallback/完整撤销仍待。资料缺口不全局阻断其OS实现。C02当前公开流准备仅链接[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/plans/wpf-mature-02-codex-continuity/status.md)，不复制子进度。0测试/目标/PG/provider，旧封账适用原Git不追改。
