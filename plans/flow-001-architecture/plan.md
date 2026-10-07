@@ -615,3 +615,9 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 - 若复现成立，最小修复应明确告知会话当前无法继续及既有恢复选择；保留旧幂等回执、历史消息、原session/runner归属和锁序，不迁移session、不重置unknown任务。只验证新key拒绝、旧key原回执、正常续聊及直接queue消费者；技术方案与精确scope在fresh账本核对后确定，0模型，不重跑容量或聊天全集。
 
 2026-10-07T08:57:27.268283+00:00 O16零模型公开旅程已独审并main b768接收，1 selected/1 passed/0provider，旧FAIL/KEEP保留。原O16-06下一native片段仍有实施缺口，不仅缺预算：现operator仅rehearse并要求完整independently-accepted与DROP，不能直接在plan后停下复核。排在SVC06实际发布/OPS-METER01收口之后，由原native_center_owner重新fresh领取原三范围，准备一次planner后关闭进程/连接、只保有期限独立复核材料，再依实际proposal确认两children的分阶段候选；复用OPS14/既有SDK循环，固定Claude登录来源、SDK/配置、总写入上限与结束条件。此处只排准备，未启动query/未复用O08/O10预算，真实模型预算仍交具体候选；ENG授写资格决定保持独立。
+
+### 2026-10-07 11:55 轻读取后继补充
+
+沿既有REQ-04/P01与TUI001-08，GO只读固定main7272151b补充：反向A2A bridge更新仍从cursor0重新映射并先读所有reference正文后筛artifact；包装取消未传入支持signal的detail，events仍无signal，底层默认15秒，不称无限泄漏。普通detail是新UUID持久记录、native完整材料在另一表，不能据此泛化为所有投影永不变化。复用上段公开Interface有界测请求/字节/取消，保留[GetTask完整产物](https://a2a-protocol.org/v1.0.0/specification/#313-get-task)与[订阅初始Task及有序更新](https://a2a-protocol.org/v1.0.0/specification/#316-subscribe-to-task)、授权和unknown；原P03去history不重复，未测前不预设缓存或新框架。
+
+同一TUI001-08后继保留非聊天界面的观察生命周期：controller离开conversation已停止TurnObservation，但schedule仍只核connected/closed/selected，help/settings/profiles可能继续刷新原会话/turns/已开启queue。此为未测源码候选，合并原有headless有界投影验收：非聊天界面无无用读取、返回恢复观察，后台任务继续、未知发送不改变。由原TUI owner后续fresh范围与局部fixture测量，不扩大当前发布或消息设置writer。两项均NOT_RUN，无新task、测试、模型或运行预算。
