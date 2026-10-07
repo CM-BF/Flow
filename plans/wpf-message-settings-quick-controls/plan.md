@@ -91,3 +91,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 ### C 后继编码前提修正 · 2026-10-07 06:59:15 UTC
 
 诊断目标 `2e71bea91c188c5f13723dace905fe429d83834b`；原ac44保持历史。仅React fixture HTML响应明确UTF-8，C的characterSet断言不弱化。固定Vite transform/插件源码未自动补charset；这次是静态预防、非实际复现。原六组/三产品源/父worker不改，runtime/noEmit/26仍无新增。当前候选待固定审，预算23322/余66678保持。[依据](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json)。
+
+## C实际失败接收及DOM文本窄修 · 2026-10-07 07:13:13 UTC
+
+实际source2e71/run63457保持FAILED/INCONCLUSIVE，plain+modal真实m选值成立但后保稿基线断言失败；原六组0/PNG0。root已接受actual/cleanup和d755 `d7556b616e018ac985519b08a2954b1810029e05` SOURCE_ONLY；[原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json)。后继五值textContent+非空只统一观测语义，所有状态断言保留。新段35077/余54923；完整feature仍UNKNOWN，no重复types/direct或实际续跑。

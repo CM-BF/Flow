@@ -1,0 +1,47 @@
+--- ac44/binding.json
++++ 2e71/binding.json
+@@ -3,7 +3,7 @@
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+-  "head": "f7f56fb0c47e1f6292ee4e017f5fe7cdedbf91fd",
++  "head": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+   "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+   "claim": {
+     "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+@@ -15,7 +15,7 @@
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+-    "apps/web/test/message-settings.browser.ts": "3e6a77d8e94b02dba8a8b057750e6baaa4a821d5c7c4ecf4fc59677868a55996"
++    "apps/web/test/message-settings.browser.ts": "26064c93d8ee8a63ef2aeb82dd85e6dd26fe4706b81287da5cf5fbafc3116080"
+   },
+   "readOnlyDependencies": {
+     "tsconfig.json": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+@@ -128,7 +128,7 @@
+     "packages/contracts/src/tasks.ts": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+     "packages/contracts/src/usage-readout.ts": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+     "packages/contracts/src/workspace.ts": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+-    "apps/web/test/message-settings.browser.ts": "3e6a77d8e94b02dba8a8b057750e6baaa4a821d5c7c4ecf4fc59677868a55996",
++    "apps/web/test/message-settings.browser.ts": "26064c93d8ee8a63ef2aeb82dd85e6dd26fe4706b81287da5cf5fbafc3116080",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+@@ -464,7 +464,7 @@
+   },
+   "originalAcceptanceFunctionSha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+   "segmentMetadataBytes": 6508,
+-  "diagnosticSourceTarget": "ac44d327cdff3180c0dff36c3e199cd47669fc88",
++  "diagnosticSourceTarget": "2e71bea91c188c5f13723dace905fe429d83834b",
+   "nativeChromeBoundaryReuseEvidence": {
+     "path": "/private/tmp/manager-msgquick-native3-routine-binding-review.json",
+     "sha256": "9f3d7f4dd5c9276916be27a41bb824f258ba5fd37d3a2feeda3326c99c2e8296",
+@@ -472,7 +472,7 @@
+   },
+   "sourceRepair": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json",
+-    "sha256": "ccb6cb013ed1813f613982ef81d3736d1dd022d43fa06900c6e87dd75a9dffa0",
++    "sha256": "6ee3448672184c3774df38feb1ab82c2f034ef6d0e5d4dfe13b7282e38ffe6a2",
+     "meaning": "Optional C only; actual native m key plus trusted keypress/input/change; no full six-group PASS or exact-version popup cause inferred."
+   },
+   "runtimeProvenance": {

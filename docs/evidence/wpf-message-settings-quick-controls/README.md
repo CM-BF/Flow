@@ -17,3 +17,5 @@
 [portable-check](portable-check/README.md)固定dc67为APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN；九候选源不改、远程未启用，本地c2通过不等远程通过。当前另有[b3第三次实际浏览器失败](b3-browser-20261007/README.md)：actualouterexit1、完整trace、正常fixture/context关闭与owned清理；0组/0PNG，累计30625/余29375。旧raw与fe6不动，没有第四次或strict26重复。
 
 - 2026-10-07 06:55:52 UTC [native typeahead C 源准备](native-typeahead-preparation/README.md)：独立m对照/可信事件前置；NOT_RUN，原六组/旧raw不改。
+
+- 2026-10-07 07:13:13 UTC [C实际FAILED/选值与清理](native-typeahead-first-20261007/README.md)；[d755DOM文本基线窄修](native-typeahead-text-preparation/README.md)，SOURCE_ONLY/NOT_RUN，累计35077/余54923。

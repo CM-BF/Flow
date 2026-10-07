@@ -1,0 +1,53 @@
+{
+  "source": "d7556b616e018ac985519b08a2954b1810029e05",
+  "base": "2e71bea91c188c5f13723dace905fe429d83834b",
+  "files": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "5dfb587b2e76d835763c14ddad387e9abd2aadc3f4ceabdf56e76facf5f6de6a"
+  },
+  "acceptanceFunctionSha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-typeahead1-actual-and-fix-review.json",
+    "sha256": "eb5572ce2be5b6325097c8f06ca06a4ab3f6466c762cde65b4e860dd4686443d",
+    "scope": "sourceCorrectionReviewed only"
+  },
+  "readOnlySourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js",
+      "bytes": 546839,
+      "sha256": "5ef2a695e787386367f4b1e03c79b05100b5526121462b24d7730a731689d941"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.fixture.tsx",
+      "bytes": 9510,
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd"
+    }
+  ],
+  "findings": [
+    {
+      "source": "fixture",
+      "lines": "68-71",
+      "fact": "current/sent/queued output under closed native details; default omission DOM string is omitted."
+    },
+    {
+      "source": "expect.js",
+      "lines": "12909-12920",
+      "fact": "toHaveText defaults options={}, forwards optional useInnerText."
+    },
+    {
+      "source": "coreBundle.js",
+      "line": 19837,
+      "fact": "Bundled injected matcher chooses options.useInnerText ? element.innerText : elementText(...).full. This fixture output contains text only, so textContent baseline matches the DOM-text oracle."
+    }
+  ],
+  "change": "textContent all5 baselines + require nonnull/nonempty, unchanged later five comparisons/draft/commits0/catalog1; originalsix unchanged",
+  "checks": "Text/hash/diff only; no noEmit/direct/Chrome/free repeated",
+  "at": "2026-10-07 07:13:13 UTC"
+}

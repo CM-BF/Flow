@@ -1,0 +1,38 @@
+{
+  "sourceHead": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "26064c93d8ee8a63ef2aeb82dd85e6dd26fe4706b81287da5cf5fbafc3116080"
+  },
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "startedAt": "2026-10-07T07:09:42.666Z",
+  "workerPid": 77099,
+  "parentPid": 77075,
+  "chromePid": 77089,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "selection": "typeahead",
+  "diagnosticComplete": false,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T07:09:48.087Z",
+  "failure": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('left-current')\nExpected: \"\"\nReceived: \"omitted\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('left-current') with timeout 5000ms\n  - waiting for getByTestId('left-current')\n    14 × locator resolved to <output data-testid=\"left-current\">omitted</output>\n       - unexpected value \"omitted\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toHaveText (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at Module.diagnoseMessageSettingsNativeSelect (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts:347:78)\n    at async <anonymous> (/private/tmp/msgquick-typeahead1/worker.mjs:136:20)",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 12749,
+    "sha256": "2338d2fe08a9d10fe9cb015b71f2ba3448f4d621725fc7b242767860bfb105ee",
+    "state": "INSTALLED",
+    "truncated": false
+  },
+  "finishedAt": "2026-10-07T07:09:53.947Z",
+  "observedElapsedMs": 11281,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

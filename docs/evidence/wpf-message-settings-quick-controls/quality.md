@@ -115,3 +115,7 @@ find-skills优先复用已装本地技能，无安装/联网：find-skills、web
 ## 2026-10-07 06:59:15 UTC · C charset 窄修
 
 沿已读find-skills/webapp-testing/clean-code，查实际固定Vite/React HTML transform而不假定自动补charset。只修custom响应声明一行，保持断言与错误保真；无新抽象/依赖/行为实验。未复现编码失败，已在状态限定；只文本/hash/diff核对，无noEmit/26/Chrome/free。
+
+## 2026-10-07 07:13:13 UTC · C actual / DOM文本窄修
+
+沿已读find-skills/webapp-testing/clean-code核实际DOM与PW1.63 matcher源码。发现闭合details innerText与默认toHaveText DOM文本不一致；仅统一5个采样为非空textContent，后断言不变，不强开详情、不赋值、不改产品。首失败原raw与较早计时保持；保守11755/35077。仅文本/hash核验、无noEmit/direct/Chrome/free，未解决为固定修正尚未runtime复验。

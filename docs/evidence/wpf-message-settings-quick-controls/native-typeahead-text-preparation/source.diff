@@ -1,0 +1,17 @@
+diff --git a/apps/web/test/message-settings.browser.ts b/apps/web/test/message-settings.browser.ts
+index d9cdaf97..3f82f99e 100644
+--- a/apps/web/test/message-settings.browser.ts
++++ b/apps/web/test/message-settings.browser.ts
+@@ -335,7 +335,11 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
+       const left = page.getByRole("region", { name: "Pane left", exact: true });
+       await expect(page.getByTestId("catalog-state")).toContainText("stale; 0"); assert.equal(fixture.requests.length, 0);
+       const preserved = new Map<string, string>();
+-      for (const id of ["left-current", "left-sent", "left-queued", "right-current", "left-commits"]) preserved.set(id, await page.getByTestId(id).innerText());
++      for (const id of ["left-current", "left-sent", "left-queued", "right-current", "left-commits"]) {
++        const text = await page.getByTestId(id).textContent();
++        assert(text !== null && text.length > 0, `Expected fixture snapshot text: ${id}`);
++        preserved.set(id, text);
++      }
+       await left.getByLabel("Draft left", { exact: true }).fill("诊断仍保留当前草稿");
+       await left.getByRole("button", { name: /^消息设置：/ }).click();
+       const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });

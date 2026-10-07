@@ -1,0 +1,119 @@
+--- native3/supervisor.py
++++ typeahead1/supervisor.py
+@@ -67,14 +67,14 @@
+     assert gate['entry'] == 'message-settings-quick' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
+     assert gate['sourceHead'] == binding['head'] and gate['sourceHashes'] == binding['sources']
+     assert gate['previousRuntimeMs'] == binding['previousRuntimeMs']
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 48074
+-    assert gate['selection'] == binding['selection'] and gate['selection'] in ('diagnostic','full')
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 53947
++    assert gate['selection'] == binding['selection'] and gate['selection'] in ('diagnostic','typeahead','full')
+     assert CLEANUP_MS < gate['totalMs'] <= SINGLE_RUN_MS
+     segment = load(binding['segmentUsage']['path'])
+     assert sha(binding['segmentUsage']['path']) == binding['segmentUsage']['sha256'] == gate['segmentUsageSha256']
+     assert segment['id'] == 'MSGQUICK-NATIVE-CONTROL-CLOSEOUT-20261007'
+     assert segment['historyConservativeMs'] == 30625 and segment['newSegmentLimitMs'] == SEGMENT_MS
+-    assert segment['actualConservativeSpentMs'] == gate['previousSegmentRuntimeMs'] == 17449 and len(segment['runs']) == 2
++    assert segment['actualConservativeSpentMs'] == gate['previousSegmentRuntimeMs'] == 23322 and len(segment['runs']) == 3
+     assert gate['previousSegmentRuntimeMs']+gate['totalMs'] <= SEGMENT_MS
+     assert gate['previousRuntimeMs']+gate['totalMs'] <= TOTAL_MS
+     authorization=binding['segmentAuthorization']
+@@ -89,7 +89,8 @@
+         '/private/tmp/msgquick-b2', '/private/tmp/msgquick-b2-outer-017_g6hn', '/private/tmp/msgquick-b2-admission-rijzrvzi',
+         '/private/tmp/msgquick-b3', '/private/tmp/msgquick-b3-outer-na_54sb4', '/private/tmp/msgquick-b3-admission-okeh9ium',
+         '/private/tmp/msgquick-native1','/private/tmp/msgquick-native1-outer-mnw15emr','/private/tmp/msgquick-native1-admission-uvmtggp4',
+-        '/private/tmp/msgquick-native2','/private/tmp/msgquick-native2-outer-qwf16841','/private/tmp/msgquick-native2-admission-9ez8egf8']
++        '/private/tmp/msgquick-native2','/private/tmp/msgquick-native2-outer-qwf16841','/private/tmp/msgquick-native2-admission-9ez8egf8',
++        '/private/tmp/msgquick-native3','/private/tmp/msgquick-native3-outer-1gejsqrh','/private/tmp/msgquick-native3-admission-d5v71cvf']
+     assert prior['accountedRuntimeMs'] == 30625 and prior['remainingMs'] == 29375  # Closed historical envelope; not new credit.
+     assert len(prior['files']) == prior['fileCount'] and len({item['path'] for item in prior['files']}) == prior['fileCount']
+     assert prior['bytes'] == sum(item['bytes'] for item in prior['files']) == binding['previousEvidenceBytes']
+@@ -131,11 +132,12 @@
+         old_review=load(review['path'])
+         assert old_review['decision']==decision and old_review['source']==binding['implementation'] and old_review['terminal']==old_terminal
+     assert sum(entry['accountedMs'] for entry in prior['runs'].values())==30625
+-    # Both failed diagnostics keep immutable actual outer/seal/cleanup evidence and conservative charges.
+-    assert set(prior['nativeRuns'])=={'native1','native2'}
++    # Three failed diagnostics keep immutable actual outer/seal/cleanup evidence and conservative charges.
++    assert set(prior['nativeRuns'])=={'native1','native2','native3'}
+     for index,(name,previous,elapsed,late,charge,run_name,outer_path) in enumerate((
+         ('native1',0,11178,11182,11222,'msgquick-native1-20261007-060926-18698b','/private/tmp/msgquick-native1-outer-mnw15emr'),
+-        ('native2',11222,6188,6189,6227,'msgquick-native2-20261007-062946-51fcb2','/private/tmp/msgquick-native2-outer-qwf16841'))):
++        ('native2',11222,6188,6189,6227,'msgquick-native2-20261007-062946-51fcb2','/private/tmp/msgquick-native2-outer-qwf16841'),
++        ('native3',17449,5830,5831,5873,'msgquick-native3-20261007-064135-4132ba','/private/tmp/msgquick-native3-outer-1gejsqrh'))):
+         entry=prior['nativeRuns'][name]; old_root=Path(entry['packet']); old_outer=Path(entry['outer'])
+         assert str(old_root)=='/private/tmp/msgquick-'+name and str(old_outer)==outer_path
+         old_result=load(old_root/'result.json'); old_budget=load(old_root/'browser-budget.json'); old_exit=load(old_outer/'actual-exit.json')
+@@ -151,8 +153,13 @@
+             'raw/'+run_name+'/native-control.json','raw/'+run_name+'/select-diagnostics.json'}
+         assert set(old_terminal['sealedFiles'])==expected_keys and all(digest is not None and sha(old_root/path)==digest for path,digest in old_terminal['sealedFiles'].items())
+         review=entry['rootReview']; assert sha(review['path'])==review['sha256']; actual=load(review['path'])
+-        assert actual['decision']=='ACCEPTED_FAILED_INCONCLUSIVE_DIAGNOSTIC_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS'
+-        assert actual['actual']['chargeMs']==entry['accountedMs']==segment['runs'][index]['conservativeChargeMs']==charge
++        if name=='native3':
++            assert actual['decision']=='ACCEPTED_FAILED_INCONCLUSIVE_NATIVE_CONTROL_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS'
++            reviewed_charge=actual['accounting']['chargeMs']
++        else:
++            assert actual['decision']=='ACCEPTED_FAILED_INCONCLUSIVE_DIAGNOSTIC_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS'
++            reviewed_charge=actual['actual']['chargeMs']
++        assert reviewed_charge==entry['accountedMs']==segment['runs'][index]['conservativeChargeMs']==charge
+     assert sum(entry['accountedMs'] for entry in prior['nativeRuns'].values())==gate['previousSegmentRuntimeMs']
+     assert gate['previousRuntimeMs']==30625+gate['previousSegmentRuntimeMs']
+     assert binding['terminalAcceptance']['contract'] == TERMINAL_CONTRACT
+@@ -384,13 +391,20 @@
+                 assert result['sourceHead']==binding['head'] and result['sourceHashes']==binding['sources']
+                 assert not result.get('failure') and result['cleanupErrors']==[]
+                 assert result['selection']==gate['selection']
+-                if gate['selection']=='diagnostic':
++                if gate['selection'] in ('diagnostic','typeahead'):
+                     measurement=load(output/'native-control.json')
+                     report['diagnosticComplete']=measurement.get('diagnosticComplete',False)
+                     report['diagnosticConclusion']=measurement.get('conclusion','INCONCLUSIVE')
+-                    assert measurement['mode']=='native-control' and measurement['diagnosticComplete'] is True and not measurement.get('failure')
+-                    assert [item['name'] for item in measurement['arms']]==['plain-A-ArrowDown-Enter','plain-B-Space-ArrowDown-Enter','actual-B-Space-ArrowDown-Enter']
+-                    assert measurement['arms'][1]['selectedWithNativeEvents'] is True and measurement['pageErrors']==[]
++                    assert measurement['diagnosticComplete'] is True and not measurement.get('failure')
++                    if gate['selection']=='typeahead':
++                        assert measurement['mode']=='native-typeahead-control'
++                        assert [item['name'] for item in measurement['arms']]==['plain-C-Typeahead-m','actual-C-Typeahead-m']
++                        assert measurement['arms'][0]['selectedWithNativeEvents'] is True
++                    else:
++                        assert measurement['mode']=='native-control'
++                        assert [item['name'] for item in measurement['arms']]==['plain-A-ArrowDown-Enter','plain-B-Space-ArrowDown-Enter','actual-B-Space-ArrowDown-Enter']
++                        assert measurement['arms'][1]['selectedWithNativeEvents'] is True
++                    assert measurement['pageErrors']==[]
+                     assert result['outcome']=='diagnostic-complete' and result['diagnosticComplete'] is True and result['checks']==[]
+                     report['diagnosticComplete']=True; report['diagnosticConclusion']=measurement['conclusion']
+                 else: assert result['outcome']=='passed'
+@@ -425,7 +439,7 @@
+                   exitCode=process.returncode if process else None,chromeExit=chrome_facts['exit'] if chrome_facts else None,
+                   logStreams=streams,retainedBytes=retained,cleanup={'errors':cleanup,'groupAbsent':groups_absent,
+                     'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
+-                  state=('DIAGNOSTIC_COMPLETE' if gate['selection']=='diagnostic' else 'PASS') if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
++                  state=('DIAGNOSTIC_COMPLETE' if gate['selection'] in ('diagnostic','typeahead') else 'PASS') if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+                 save(BASE/'result.json',report)
+                 save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
+                   'segmentId':segment['id'],'segmentSpentMs':segment_cumulative,'segmentLimitMs':SEGMENT_MS,'singleRunLimitMs':SINGLE_RUN_MS,
+@@ -437,11 +451,11 @@
+             persist_results()
+             evidence_files = []
+             try:
+-                for name in ('browser-results.json', 'owned-chrome.json', 'chrome.log', 'select-diagnostics.json', *(['native-control.json'] if gate['selection']=='diagnostic' else binding['expectedScreenshots'])):
++                for name in ('browser-results.json', 'owned-chrome.json', 'chrome.log', 'select-diagnostics.json', *(['native-control.json'] if gate['selection'] in ('diagnostic','typeahead') else binding['expectedScreenshots'])):
+                     path=output/name
+                     assert path.is_file() and not path.is_symlink() and path.stat().st_size<=8*MiB, name
+                     evidence_files.append({'path':str(path), 'bytes':path.stat().st_size, 'sha256':sha(path)})
+-                save(BASE/'runtime-evidence-manifest.json',{'files':evidence_files,'selection':gate['selection'],'expectedChecks':[] if gate['selection']=='diagnostic' else binding['expectedChecks'],
++                save(BASE/'runtime-evidence-manifest.json',{'files':evidence_files,'selection':gate['selection'],'expectedChecks':[] if gate['selection'] in ('diagnostic','typeahead') else binding['expectedChecks'],
+                   'sourceHashes':binding['sources'],'sourceHead':binding['head']})
+             except BaseException as e: errors.append('Expected runtime evidence: '+str(e))
+             try: observe_resources('after-runtime-evidence-manifest-and-prior-result-writes')
+@@ -463,7 +477,7 @@
+     for name in ('binding.json','result.json','browser-budget.json','runtime-evidence-manifest.json'):
+         path=BASE/name
+         sealed[name]=sha(path) if path.is_file() else None
+-    if gate['selection']=='diagnostic':
++    if gate['selection'] in ('diagnostic','typeahead'):
+         measurement_path=output/'native-control.json'
+         sealed['raw/'+gate['run']+'/native-control.json']=sha(measurement_path) if measurement_path.is_file() else None
+     diagnostic_path=output/'select-diagnostics.json'
