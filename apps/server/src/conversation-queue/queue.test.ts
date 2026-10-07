@@ -1,37 +1,34 @@
 import { setTimeout as delay } from 'node:timers/promises';
 import { randomUUID } from 'node:crypto';
-import { writeFile } from 'node:fs/promises';
 import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
-import { afterAll, beforeAll, expect, it } from 'vitest';
+import { afterAll, beforeAll, beforeEach, expect, it } from 'vitest';
+import { QueueDatabaseFixture } from '../../../../docs/evidence/s01q01-paused-queue/pg-fixture.js';
 import type { ConversationQueueItem } from '../../../../packages/contracts/src/conversation-queue.js';
-import { createServer } from '../index.js';
+let createServer: typeof import('../index.js')['createServer'];
 import { migrateConversationQueue, registerConversationQueueRoutes, promoteReady, scanConversationQueue } from './index.js';
 
-const databaseName = `flow_chat04_${process.pid}_${randomUUID().slice(0, 8)}`;
-const localAdmin = process.env.FLOW_CHAT04_TEST_ADMIN ?? 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
-const databaseUrl = new URL(localAdmin); databaseUrl.pathname = `/${databaseName}`;
-const admin = new Pool({ connectionString: localAdmin, max: 1 });
+let databaseFixture: QueueDatabaseFixture;
+let databaseUrl: URL;
 const ownerToken = randomUUID();
-let created = false;
 let pool: Pool;
 let boss: PgBoss;
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl: string;
-const startedAt = new Date().toISOString();
 async function start() {
   const options = { databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false };
-  server = await createServer(options);
-  await migrateConversationQueue(pool);
+  server = await databaseFixture.startServer(() => createServer(options));
+  await databaseFixture.work('migrate-queue', () => migrateConversationQueue(pool));
   if (!server.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(server, pool, boss);
   server.addHook('onSend', async (request, reply, payload) => {
     if (request.headers['x-chat04-drop-ack'] === 'yes' && [200, 202].includes(reply.statusCode)) reply.raw.destroy();
     return payload;
   });
-  baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+  baseUrl = await databaseFixture.listen(server);
 }
 async function request(path: string, body?: unknown, key = randomUUID()) {
-  const response = await fetch(`${baseUrl}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(10_000) });
+  databaseFixture.checkWork();
+  const response = await databaseFixture.fetch(`${baseUrl}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(10_000) });
   return { status: response.status, body: await response.json() };
 }
 async function conversation() {
@@ -40,32 +37,13 @@ async function conversation() {
   return result.body.conversation;
 }
 beforeAll(async () => {
-  if ((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [databaseName])).rowCount) throw new Error('Refusing existing test database.');
-  await writeFile(new URL('../../../../docs/evidence/chat04/latest-resource.json', import.meta.url), JSON.stringify({ databaseName, startedAt }));
-  await admin.query(`CREATE DATABASE "${databaseName}"`); created = true;
-  pool = new Pool({ connectionString: databaseUrl.href, max: 10, statement_timeout: 5000 });
-  boss = new PgBoss({ connectionString: databaseUrl.href, max: 2 });
-  boss.on('error', error => console.error('CHAT04 scheduler:', error.message));
-  await boss.start();
-  await start();
-});
-afterAll(async () => {
-  try {
-    await server?.close();
-    await boss?.stop({ graceful: true, timeout: 5000 });
-    await pool?.end();
-    if (created) {
-      const deadline = performance.now() + 5000;
-      while (Number((await admin.query('SELECT count(*) AS count FROM pg_stat_activity WHERE datname=$1', [databaseName])).rows[0].count)) {
-        if (performance.now() > deadline) throw new Error('Own database still has live connections.');
-        await delay(25);
-      }
-      await admin.query(`DROP DATABASE "${databaseName}"`);
-    }
-    const remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [databaseName])).rows;
-    await writeFile(new URL('../../../../docs/evidence/chat04/latest-cleanup.json', import.meta.url), JSON.stringify({ startedAt, endedAt: new Date().toISOString(), databaseName, remaining }, null, 2));
-  } finally { await admin.end(); }
-});
+  databaseFixture = await QueueDatabaseFixture.prepare(); databaseUrl = databaseFixture.url;
+  pool = databaseFixture.pool; boss = databaseFixture.boss;
+  createServer = (await databaseFixture.work('load-factory', () => import('../index.js'))).createServer;
+  await databaseFixture.create(); await start();
+}, 70_000);
+beforeEach(() => databaseFixture.checkWork());
+afterAll(async () => { if (databaseFixture) await databaseFixture.finish(); }, 110_000);
 it('skips more than a default batch of paused queues without rotating them and scans again after explicit resume', async () => {
   const paused: { id: string; itemId: string }[] = [];
   for (let index = 0; index < 21; index += 1) {
@@ -157,7 +135,7 @@ it('promotes an empty conversation once, forbids follow-up bypass, and preserves
   expect((await request(path)).body.items).toEqual([]);
   const cancelAfterPromotion = await request(`${path}/${accepted.item.id}/cancel`, { expectedQueueRevision: 1 });
   expect(cancelAfterPromotion.body).toMatchObject({ outcome: 'already-promoted', item: { promoted: current.item.promoted } });
-  await server!.close(); await start();
+  await databaseFixture.closeServer(server!); await start();
   expect((await request(path, input, key)).body).toEqual({ ...accepted, replayed: true });
   expect((await request(`${path}/${accepted.item.id}`)).body).toEqual(current);
 });
@@ -242,19 +220,19 @@ it('cancellation and promotion agree on a single outcome under the conversation 
 });
 it('restarts pending work and permits only one promotion across two center instances', async () => {
   const c = await conversation(); const item = await enqueueItem(c.id, 0, 'Recovered waiting');
-  await server!.close(); await start();
-  const otherPool = new Pool({ connectionString: databaseUrl.href, max: 2 });
+  await databaseFixture.closeServer(server!); await start();
+  const otherPool = databaseFixture.additionalPool();
   const options = { databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false };
-  const other = await createServer(options);
+  const other = await databaseFixture.startServer(() => createServer(options));
   if (!other.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(other, otherPool, boss);
-  const otherUrl = await other.listen({ host: '127.0.0.1', port: 0 });
+  const otherUrl = await databaseFixture.listen(other);
   try {
-    const before = await fetch(`${otherUrl}/api/conversations/${c.id}/queue`, { headers: { authorization: `Bearer ${ownerToken}` } }).then(response => response.json());
+    const before = await databaseFixture.fetch(`${otherUrl}/api/conversations/${c.id}/queue`, { headers: { authorization: `Bearer ${ownerToken}` } }).then(response => response.json());
     expect(before.items[0].id).toBe(item.item.id);
     const results = await Promise.all([promoteReady(pool, boss, c.id), promoteReady(otherPool, boss, c.id)]);
     expect(results.map(value => value.outcome).sort()).toEqual(['empty', 'promoted']);
     expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(1);
-  } finally { await other.close(); await otherPool.end(); }
+  } finally { await databaseFixture.closeServer(other); }
 });
 it('rolls back task, wake and turn when item update fails and scan still reaches other ready conversations', async () => {
   const broken = await conversation(); await enqueueItem(broken.id, 0, 'Rollback probe');
@@ -304,7 +282,7 @@ it('bounds UTF-8 previews and pending count, pages only waiting items, and confi
 it('recovers an actually dropped HTTP ACK using the same key after promotion', async () => {
   const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
   const key = randomUUID(); const input = { expectedQueueRevision: 0, text: 'ACK deliberately dropped after commit' };
-  await expect(fetch(`${baseUrl}${path}`, { method: 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key, 'x-chat04-drop-ack': 'yes' }, body: JSON.stringify(input), signal: AbortSignal.timeout(5000) })).rejects.toThrow();
+  await expect(databaseFixture.fetch(`${baseUrl}${path}`, { method: 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key, 'x-chat04-drop-ack': 'yes' }, body: JSON.stringify(input), signal: AbortSignal.timeout(5000) })).rejects.toThrow();
   const current = (await request(path)).body;
   expect(current.items).toHaveLength(1);
   expect(await promoteReady(pool, boss, c.id)).toMatchObject({ outcome: 'promoted' });
@@ -323,9 +301,9 @@ it('persists pause before cancelling and never auto-promotes after a late succes
   expect(paused.status).toBe(200);
   expect(paused.body).toMatchObject({ paused: true, queueRevision: 2, currentTurn: { taskId: first.turn.task.id, taskStatus: 'running', queueItemId: null } });
   expect((await request(`/api/tasks/${first.turn.task.id}/cancel`, {})).body.status).toBe('cancel_requested');
-  const completed = await fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) });
+  const completed = await databaseFixture.fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) });
   expect(completed.status).toBe(200);
-  await server!.close(); await start();
+  await databaseFixture.closeServer(server!); await start();
   expect(await promoteReady(pool, boss, c.id)).toEqual({ outcome: 'blocked', conversationId: c.id, reason: 'queue-paused' });
   expect((await request(path)).body).toMatchObject({ paused: true, blocked: 'queue-paused', queueRevision: 2, currentTurn: { taskStatus: 'succeeded' }, items: [{ id: waiting.item.id, state: 'waiting' }] });
   expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(1);
@@ -368,7 +346,7 @@ it('returns 409 when promotion wins pause CAS and distinguishes lost pause/resum
   expect((await request(`${path}/pause`, { expectedQueueRevision: 1 })).status).toBe(409);
   expect((await request(path)).body.paused).toBe(false);
   const pauseKey = randomUUID(); const pauseInput = { expectedQueueRevision: 2 };
-  const lostAck = (command: string, body: unknown, key: string) => fetch(`${baseUrl}${path}/${command}`, { method: 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key, 'x-chat04-drop-ack': 'yes' }, body: JSON.stringify(body), signal: AbortSignal.timeout(5000) });
+  const lostAck = (command: string, body: unknown, key: string) => databaseFixture.fetch(`${baseUrl}${path}/${command}`, { method: 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key, 'x-chat04-drop-ack': 'yes' }, body: JSON.stringify(body), signal: AbortSignal.timeout(5000) });
   await expect(lostAck('pause', pauseInput, pauseKey)).rejects.toThrow();
   const paused = (await request(`${path}/pause`, pauseInput, pauseKey)).body;
   expect(paused).toMatchObject({ paused: true, replayed: true, queueRevision: 3, currentTurn: { taskStatus: 'queued', turnNumber: 1 } });
@@ -440,7 +418,7 @@ it('serializes concurrent pause, real completion and promotion without admitting
     await enqueueItem(c.id, 0, 'Concurrent next');
     const [pauseResult, completed] = await Promise.all([
       request(`${path}/pause`, { expectedQueueRevision: 1 }),
-      fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) }),
+      databaseFixture.fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) }),
       promoteReady(pool, boss, c.id),
     ]);
     expect(completed.status).toBe(200);

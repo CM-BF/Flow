@@ -19,3 +19,22 @@
 ## 固定源交付
 
 2026-10-07T16:31:06.487336+00:00：实现 target `42c6c8cf81d3d648fc3477109e66db6c843aefe3`，两源SHA见source-checkpoint.json。clean-code收尾：一个candidate predicate，无新抽象/重复状态；锁内暂停复核和异常隔离未改；原测试全文从新增两例前后拼回与base逐字相等。当前没有执行证据，不将静态行为推导写成red/green。源码准备 STOP，claim保留待独审/下一有界入口准备。
+
+## 2026-10-07 fixture preparation successor (PG NOT_OPEN)
+
+The one-line `promotion.ts` predicate remains byte-identical to `42c6c8c`. The test now delegates resource ownership to this task's `pg-fixture.ts`, adapting the marked DB lifecycle from the fixed `b79121e` X01-removal reference. No new product fixture path or supervisor is introduced. Every original business assertion and both new cases remain; the normalized test-body proof is in `fixture-preparation.json`.
+
+- Dedicated generated DB `flow_s01q01_<32hex>`, explicit CREATE intent/ACK then OID/owner/marker and fsynced receipt. Unknown CREATE or record failure never licenses DROP. It never reuses CHAT04 evidence paths.
+- Factory import is performed inside tracked work before DB creation. Factory starts/listen promises are tracked; closing prohibits new starts, aborts listening, joins pending operations, and final close verifies `server.listening === false`. An unresolved operation/close/identity is KEEP. Timeouts are observations, not cancellation proofs.
+- Planned common 120s frame: 70s work / 40s cleanup / 10s receipt, measured from external operator's actual start; only a **proposal**, no live permit. Auxiliary/admin SQL have 1500ms statement and 1800ms client limits; production business/scheduler defaults stay unchanged. The fixture's test-only boss also keeps its package defaults. Each HTTP request gets remaining-work cancellation and count cap256. Response-body storage/total candidate bytes need final actual caller binding; this source stage does not claim an enforced DB/local peak cap.
+- Configuration totals are 24 connections (1 admin +10 fixture +2 fixture boss +8 factory +3 factory boss). The existing two-center case adds2 helper pool +8 business +3 boss =13, peak configured37. No package worker is enabled. Timers/background jobs are still present with `automaticQueueScan:false`.
+- Finish closes all known servers, fixture boss and pools, verifies matching DB identity plus up to20 bounded activity observations, checks identity again, performs ordinary DROP only with zero connections, then confirms absence and closes admin. Failed or unknown facts retain DB/evidence. No FORCE, external signals or old KEEP access.
+- Only the two new mixed-paused/ready and pause-race cases are initial future candidates. Running all historical cases needs an explicit separate selection/time/request budget; preserving assertions is not execution evidence.
+
+The fixed source closure contains252 files/1,237,032B including fixed migration SQL and package entries. A private ignored `.source` receives that fixed Git content plus explicit current test/promotion/helper overlays. Seventeen installed dependency aliases and three `@flow` aliases point respectively to fixed existing package directories and this supply; no moving-main internal package resolution, installation or full node_modules copy. `types.tsconfig.json` inherits ES2023 and `noEmit`; command candidate:
+
+```text
+/opt/homebrew/opt/node@24/bin/node docs/evidence/s01q01-paused-queue/node_modules/typescript/bin/tsc --noEmit --project docs/evidence/s01q01-paused-queue/types.tsconfig.json
+```
+
+This command was **not run**. Mika drained engineering before the first launch at17:17:38Z; no OPS14 child/PID/TMP/PG/HTTP was created. Caller+focused type and bounded real lifecycle evidence remain required. Subsequent actual execution must bind the fixed source/helper, a new marked record root, explicit `FLOW_S01Q01_PG_OPEN=reviewed`, actual start/head/window and fresh manager resource floor. Merely setting environment variables is not authorization. OPS14 still owns process supervision; fixture owns only its DB/servers/pools. Synthetic or static source review cannot approve a PG window.

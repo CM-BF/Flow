@@ -1,0 +1,7 @@
+# S01Q01 fixture preparation quality
+
+2026-10-07T17:13:13Z new bounded segment; fixed input96c552384, claima8a3b2d7 v1 unchanged. Skills reused/read locally: find-skills, brainstorming, codebase-design, clean-code (paths/hashes in skills.json; clean-code source sickn33/agentic-awesome-skills bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5). This is a bounded already-authorized fixture adaptation, no new approval ceremony/install.
+
+Responsibilities: production candidate selection stays one SQL predicate; business assertions stay in queue.test; fixture alone owns marked DB and server/pool lifecycle; OPS14 remains sole process supervisor. Fixed X01 reference is recorded by commit/path/hash without importing another worktree. Normal DROP requires independently known startup/listen/pool/identity/activity facts; unknown remains KEEP. Error summaries omit credential values; malformed admin URL is sanitized. Production leases/FSM/session guards do not change.
+
+Source-only inspection preserved every test-body byte after six documented resource-call substitutions. Current source was not typechecked or executed: ordinary drain preceded first child. This is not a TDD green claim. Candidate total connection counts include both schedulers and optional second center. No new universal framework or resource authority. Final source review must check the new fixture and its finite budget/cleanup semantics; the earlier42c SOURCE_ONLY approval covers only the original two product/test leaves.

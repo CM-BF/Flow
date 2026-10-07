@@ -1,0 +1,94 @@
+{
+  "startedAt": "2026-10-07T17:13:13Z",
+  "deadline": "2026-10-07T17:28:13Z",
+  "sourceStageStoppedAt": "2026-10-07T17:22:07.735327+00:00",
+  "inputHead": "96c5523843efa4cb1664cb24a1f6dda8e914ce92",
+  "fixedProduct": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+  "sourceBindings": [
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4302,
+      "sha256": "353c4d1969cfc16fea4d351efeb644d702adabb0c7e2530a552990e597195a8c"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "bytes": 36405,
+      "sha256": "02a5917fc3eeec3f4c2884574f4c268d2c55741b92788d207ab5d23e1d3e7a48"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/pg-fixture.ts",
+      "bytes": 11892,
+      "sha256": "5a554c052b6991b1d7f4e95983116c0ecc598477fe8be6127cf1a0228fcf7c71"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/types.tsconfig.json",
+      "bytes": 527,
+      "sha256": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    }
+  ],
+  "sourceSupply": {
+    "fileCount": 252,
+    "fixedBytes": 1237032,
+    "method": "fixed Git module/package/SQL closure then explicit same-byte current promotion/test/helper overlay",
+    "externalAliases": 17,
+    "internalAliases": 3,
+    "rootConfig": "ES2023 unchanged; focused noEmit pending",
+    "dynamicSqlCount": 33
+  },
+  "fixtureReference": {
+    "commit": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+    "path": "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+    "bytes": 15702,
+    "sha256": "67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107",
+    "reuse": "marked CREATE intent/ACK/OID+owner+marker/durable receipt; zero activity + identity recheck + normal DROP; adapted local deadline and pending/listen ownership; no imported other-WT code"
+  },
+  "testBodyPreservation": {
+    "base": "42c6c8cf81d3d648fc3477109e66db6c843aefe3",
+    "normalizedOldAndNewSha256": "f7cb44885a532b826a1691d1c950fa4f80580c208ed6d788f76cc6d9e66b5371",
+    "method": "from first it onward, normalize only six explicit fixture resource transport/start/close replacements; exact text match",
+    "allBusinessAssertionsPreserved": true
+  },
+  "actual": {
+    "engineeringChildren": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "browser": 0,
+    "provider": 0,
+    "testSelection": 0,
+    "checks": "NOT_RUN",
+    "ordinaryDrainAt": "2026-10-07T17:17:38Z",
+    "ownedPid": null,
+    "ownedTmpCreated": false,
+    "reason": "Mika drain before first check launch; source/static only"
+  },
+  "budgets": {
+    "segmentNewBytes": 8388608,
+    "tmpBytes": 4194304,
+    "rawBytes": 524288,
+    "childrenMax": 3,
+    "childSeconds": 30,
+    "cumulativeSeconds": 60,
+    "futurePg": "NOT_OPEN"
+  },
+  "futureConnections": {
+    "admin": 1,
+    "fixturePool": 10,
+    "fixtureBoss": 2,
+    "factoryBusiness": 8,
+    "factoryBoss": 3,
+    "total": 24,
+    "twoCenterAdditional": 13,
+    "twoCenterTotal": 37,
+    "measured": false
+  },
+  "unvalidated": [
+    "focused noEmit not launched after drain",
+    "no test/import/collection/lifecycle run",
+    "future OPS14 actual caller/storage/runtime bindings and explicit PG window not granted"
+  ]
+}

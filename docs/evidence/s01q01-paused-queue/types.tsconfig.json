@@ -1,0 +1,23 @@
+{
+  "extends": "./.source/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "baseUrl": ".",
+    "paths": {
+      "@flow/contracts": [
+        ".source/packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        ".source/packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        ".source/packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "include": [
+    ".source/apps/server/src/conversation-queue/queue.test.ts"
+  ],
+  "exclude": []
+}
