@@ -1,0 +1,33 @@
+{
+  "executionHead": "4949118f2101b902582cdfd744a68d0e8d29f45f",
+  "toolExit": 0,
+  "toolInitialWaitSeconds": 1.001822667,
+  "toolFinalWaitSeconds": 7.125e-06,
+  "toolWaitIsWholeWall": false,
+  "shellStartSecond": "2026-10-07T10:38:43Z",
+  "shellEndSecond": "2026-10-07T10:38:50Z",
+  "shellExpandedWallUpperSeconds": 8,
+  "timeRealSeconds": 7.05,
+  "timeUserSeconds": 4.68,
+  "timeSystemSeconds": 0.9,
+  "delivery": {
+    "state": "PASSED",
+    "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/process-runner-pg-run-r1",
+    "receiptState": "PASSED",
+    "resultPersistence": "CONFIRMED",
+    "elapsedAfterPersistence": 6.9682313749799505,
+    "withinTotalDeadline": true,
+    "endedAfterPersistenceAt": "2026-10-07T10:38:50.153227+00:00",
+    "retained": [],
+    "temporary": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-l2ryrz0q",
+      "dev": 16777234,
+      "ino": 124041347,
+      "removed": true,
+      "sampleBytes": 50479,
+      "sampleEntries": 50
+    }
+  },
+  "rawCombinedToolOutput": "X01_PROCESS_TOOL_START 2026-10-07T10:38:43Z\n{\"state\": \"PASSED\", \"run\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/process-runner-pg-run-r1\", \"receiptState\": \"PASSED\", \"resultPersistence\": \"CONFIRMED\", \"elapsedAfterPersistence\": 6.9682313749799505, \"withinTotalDeadline\": true, \"endedAfterPersistenceAt\": \"2026-10-07T10:38:50.153227+00:00\", \"retained\": [], \"temporary\": {\"path\": \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-l2ryrz0q\", \"dev\": 16777234, \"ino\": 124041347, \"removed\": true, \"sampleBytes\": 50479, \"sampleEntries\": 50}}\nreal 7.05\nuser 4.68\nsys 0.90\nX01_PROCESS_TOOL_END 2026-10-07T10:38:50Z\n",
+  "rawCombinedToolOutputSha256": "87459bf17d1bb7004d9df318ce11388f9373e939740f7be0d6bfbf1e12301a36"
+}

@@ -1,0 +1,160 @@
+{
+  "observedAt": "2026-10-07T10:39:11.276531+00:00",
+  "recordedAt": "2026-10-07T10:40:38.852223+00:00",
+  "window": "f460b2a085614987a8e09b6acf99d112",
+  "selection": {
+    "numTotalTests": 1,
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "state": "PASSED",
+  "unknown": false,
+  "completeAccounting": true,
+  "processes": [
+    {
+      "pid": 28414,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": []
+    },
+    {
+      "pid": 28415,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": []
+    }
+  ],
+  "entryProcesses": [
+    {
+      "label": "bootstrap-center",
+      "pid": 28419,
+      "startedAt": "2026-10-07T10:38:44.164Z",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "closed": true,
+      "outputBytes": 0,
+      "terminationRequested": true,
+      "workDeadlineReached": false,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "trusted-center",
+      "pid": 28492,
+      "startedAt": "2026-10-07T10:38:46.361Z",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "closed": true,
+      "outputBytes": 0,
+      "terminationRequested": true,
+      "workDeadlineReached": false,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "runner-first",
+      "pid": 28494,
+      "startedAt": "2026-10-07T10:38:47.393Z",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "closed": true,
+      "outputBytes": 0,
+      "terminationRequested": true,
+      "workDeadlineReached": false,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "runner-second",
+      "pid": 29109,
+      "startedAt": "2026-10-07T10:38:49.142Z",
+      "exitCode": 0,
+      "signal": null,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "closed": true,
+      "outputBytes": 0,
+      "terminationRequested": true,
+      "workDeadlineReached": false,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "databaseCleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "registry": true,
+      "runner": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1286138",
+      "owner": "flow",
+      "marker": "x01:f460b2a085614987a8e09b6acf99d112:runtime:a0d8ca91-5d71-4fe3-952a-cb3619e4297c"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:56450",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:56451",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:56451",
+      "closed": true
+    }
+  ],
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-l2ryrz0q",
+    "dev": 16777234,
+    "ino": 124041347,
+    "removed": true,
+    "sampleBytes": 50479,
+    "sampleEntries": 50
+  },
+  "exactLstatResult": "ENOENT",
+  "resourceReturnedToMikaAt": "2026-10-07T10:39:11Z",
+  "PGAfterReturn": 0,
+  "pendingLaunches": 0,
+  "runnerActualHttp": null,
+  "fixtureHttpSubset": 38,
+  "managementCalls": 6,
+  "registryRequests": 2,
+  "sourceUnchanged": true,
+  "originalUnknownObservationsPreserved": true,
+  "peakAndDatabasePhysicalWal": "UNKNOWN",
+  "notProven": [
+    "arbitrary crash/unknown-effect recovery",
+    "management OS CLI spawn",
+    "third-party isolation",
+    "complete X01/three-end UI"
+  ]
+}

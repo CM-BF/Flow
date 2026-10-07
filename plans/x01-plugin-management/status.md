@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:34:19Z |
+| 最近更新时间 | 2026-10-07T10:40:38.853889+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -16,18 +16,18 @@
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 新准备段2026-10-07T10:15:07Z→10:35:07Z；固定main6aa2d42e，bac95641起点 |
 | 工作树 dirty 状态 | 真实双入口单case与薄支持准备中；已审startup/terminal原件不改 |
-| 工作分支状态 | ready |
-| 检查状态 | 本段full-entry types0 + exact list1（0hooks/PG）；两child最终absent/EOF、ownTMP同identity删除，post-check新增断言未执行 |
-| Review | process准备 e6bf/902b 于10:33:54独审APPROVED/0P1P2；仅准备，不是actual通过 |
+| 工作分支状态 | review |
+| 检查状态 | 真实进程PG一次1/1；两runner任务-1/+1、4main exit0/双EOF、专库与精确TMP已正常收尾；旧检查不重跑 |
+| Review | e6bf/902b准备APPROVED；本次真实结果封存待独立忠实性审 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源已main6aa2d42e96c33b73e511e69e2984b5279ce4eb7e/正式I02回执与10hash核符 |
 | 实现目标 | e6bfab16c1b783406729b0a4deb4f3c7e720446f |
 | 实现范围 | apps/server/src/plugin-runtime/process-runner-pg.test.ts；docs/evidence/x01/process-runner-* |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实中心、runner重启和四管理命令的共同验收准备已独立审查通过 |
-| 下一可用交付 | 一次新专库窗口验证两个真实semver任务及clean post-ACK restart；保持精确身份和清理证据 |
-| 当前阻塞 | NONE：准备READY，实际PG NOT_OPEN；无活动local或待launch |
+| 当前产出 | 真实中心和runner进程通过公开管理命令执行npm能力，正常重启后新任务成功且旧结果不重复 |
+| 下一可用交付 | 封存本次共同旅程供独立结果审与主线验收关联，完整未知结果恢复与三端管理仍开放 |
+| 当前阻塞 | NONE：actual PG已10:39:11明确归还；当前0PG/local/待launch，仅结果审 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -355,3 +355,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:29:02.981799+00:00：本段 source e6bfab16c1b783406729b0a4deb4f3c7e720446f 已固定；333镜像为main6aa/管理9f5/自有fixture明确来源，35官方SQL、65只读external、21既有链接。source/meta约1.9MiB（含manifest，未复制依赖）在2MiB内。正式startup I02回执10产品hash全同main6aa，历史15不重跑。固定[准备manifest](../../docs/evidence/x01/process-runner-pg-manifest.json)交chatui一次只读独审；实际新run不存在，没有PG预约。两准备检查local已返db，types/list不是case通过；第二任务新增phase/source静态断言时间界限如实披露。未改主线生产/原raw。
 
 2026-10-07T10:34:19Z：fresh902b clean/v24 ACTIVE60身份与原scope核符。归档chatui10:33:54对e6bf/902b的SOURCE_AND_PREPARATION_REVIEW_APPROVED/0P1P2，[限定独审](../../docs/evidence/x01/process-runner-independent-review.json)。350bindings/65external/21links核符；333镜像实际1,537,803B（已含后增断言），HTTP1892<2048限定理论及真实入口/收尾门禁获认可。仅metadata，不改原manifest/检查/raw，不再types/list。准备段10:15:07–10:34:19闭合，实际case尚0、PG NOT_OPEN；保留后继真实CLI/fullX01验收。
+
+2026-10-07T10:39:11.276531Z：新process PG-R1一次实际1/1完成。执行4949118f，10:38:43.414168Z主监督spawn28415，10:38:50.153227Z独立delivery PASSED/CONFIRMED；pre-save6.96789575秒、post-save6.96823137秒、外部time7.05秒/工具exit0分列。bootstrap28419/trusted28492/runner28494/29109均真实SIGTERM请求→exit0/双EOF；监督28414/28415 finalabsent/完整mergedEOF，无signals-secondary，历史EPERM仍原样。DB1286138同marker、owners/pool/adminclosed/0conn普通DROPACK+absence；registry56450与两次center56451均closed；TMP16777234/124041347同identity50项50479B样本后removed，exactlstatENOENT。已立即返Mika供Web排下一ready，不等metadata/review占窗。fixture HTTP子集38、management6、registry2/download1、tar28418 close0/null；runner实际总HTTP仍UNKNOWN，不把2048理论数写为测量。两semver任务-1/+1、旧attempt/events/phase/pin无增，属clean post-ACK restart。管理9f三产品已main b675正式事实后到附记，不重写原6aa/9f镜像。
