@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-10-07T17:02:13.204Z",
+  "source": "e5ecd07bce27d6c0e4092eebda992c0df02559f8",
+  "oldPid": 55292,
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "previousPublicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "oldCwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "oldConfirmedAbsent": true,
+  "newPid": 50158,
+  "log": "/tmp/flow-dashboard-208-20261007-1702.log",
+  "summaryHttp": 200,
+  "summaryCount": 208,
+  "generatedAt": "2026-10-07T17:02:13.655Z",
+  "selected": [
+    {
+      "id": "S01Q01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/plans/s01q01-paused-queue/status.md",
+        "digest": "6d40dccfe42dd4c97860b814125e1f145275adc8120c1b833d3c680a8bef26fa",
+        "modifiedAt": "2026-10-07T16:31:06.489Z",
+        "readAt": "2026-10-07T17:02:13.655Z",
+        "declaredUpdatedAt": "2026-10-07T16:31:00.000Z",
+        "stale": false,
+        "ageHours": 0.5204597222222223,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "human": null,
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[FLOW-001](../flow-001-architecture/plan.md)",
+          "reason": "父 ID 与登记计划链接不一致"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "WPF-VISUAL01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md",
+        "digest": "98e1de71c5af6eba749fcefeeeadbe1f3a6ea68c24a55e0848b78ba7b4c41178",
+        "modifiedAt": "2026-10-07T16:00:08.603Z",
+        "readAt": "2026-10-07T17:02:13.655Z",
+        "declaredUpdatedAt": "2026-10-07T16:00:08.479Z",
+        "stale": false,
+        "ageHours": 1.034771111111111,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "human": null,
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-01",
+          "title": "成熟双主题视觉"
+        },
+        "basis": "status-source"
+      }
+    }
+  ],
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "completedAt": "2026-10-07T17:02:13.739Z"
+}
