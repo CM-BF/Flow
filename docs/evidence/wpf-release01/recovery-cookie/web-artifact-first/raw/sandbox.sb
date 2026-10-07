@@ -1,0 +1,5 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/release01-web-artifact-prepared-20261007/actual") (literal "/dev/null"))

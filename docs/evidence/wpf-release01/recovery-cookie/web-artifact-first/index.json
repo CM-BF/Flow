@@ -1,0 +1,282 @@
+{
+  "observedAt": "2026-10-07T15:40:07.837Z",
+  "task": "WPF-RELEASE01",
+  "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  "sourceTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "state": "APPROVED_FIXED_WEB_ARTIFACT_AND_COMPLETE_RETURN_NOT_COMPATIBILITY",
+  "artifactStore": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
+  "artifactDirectory": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+  "descriptor": {
+    "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+  },
+  "files": 10,
+  "assetBytes": 1700569,
+  "artifactDisposition": "KEEP",
+  "compatibility": "NOT_RUN",
+  "deployment": "NOT_RUN",
+  "outerAccounting": {
+    "startedAt": "2026-10-07T15:34:26.957Z",
+    "monotonicSource": "Tool-call enclosing wall clock; parent monotonic elapsed is independently sealed.",
+    "observedCompletedAt": "2026-10-07T15:34:52.198Z",
+    "actualExit": 0,
+    "toolPollWallSeconds": 6.041e-06,
+    "sessionId": 24675,
+    "conservativeObservationUpperBoundMs": 25241,
+    "parentElapsedMs": 3755.8461660519242,
+    "terminalLateElapsedMs": 3756.269416073337,
+    "conservativeChargeMs": 25241,
+    "phaseTotalMs": 150000,
+    "phaseState": "CLOSED",
+    "unusedMs": 124759,
+    "unusedTransferable": false,
+    "measurementLimit": "The enclosing observation interval includes reporting/poll delay; it is a conservative upper bound, not the measured process wall time. Tool exit0 is actual; parent monotonic timing remains unchanged."
+  },
+  "originals": [
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/builder-result.json",
+      "archive": "raw/builder-result.json",
+      "bytes": 668,
+      "sha256": "5fbaa15871335c8d93a663d0fa724ddf33e4e7e89df9cf2c9a2a8ceeb05d3866"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+      "archive": "raw/descriptor.json",
+      "bytes": 222,
+      "sha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/input.json",
+      "archive": "raw/input.json",
+      "bytes": 494,
+      "sha256": "f09eb8d982c7a03d66c83cca929b25a056fd3fc36fbb7ef08bb40521ad6208a9"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/result.json",
+      "archive": "raw/result.json",
+      "bytes": 3323,
+      "sha256": "0f14298b87bd0137ead40f60fa1cd53be1e7dd002b91d46763e7b7b448d23152"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/sandbox.sb",
+      "archive": "raw/sandbox.sb",
+      "bytes": 178,
+      "sha256": "1fc5d480a6076b88dfdae25d873dec31bebbe327430f34f834e0020d54008577"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/terminal.json",
+      "archive": "raw/terminal.json",
+      "bytes": 164,
+      "sha256": "f01eaf557ffe9bae26462b5fdd6d6fc3305f6e3d814a1b18f3745c73da3ab0d6"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/worker.stderr",
+      "archive": "raw/worker.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/worker.stdout",
+      "archive": "raw/worker.stdout",
+      "bytes": 184,
+      "sha256": "495960937d8cf2b0f9cef5cd70b8558b4d27d830c9e03bce0b636f0c2ccdee08"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/actual-exit.json",
+      "archive": "outer/actual-exit.json",
+      "bytes": 783,
+      "sha256": "0fbe78bf874e9bbd95287d5d92efe654d3262ba7d4c7956a2b265aeae2a25e91"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/index.json",
+      "archive": "outer/index.json",
+      "bytes": 4310,
+      "sha256": "7d80a892356e317eb0b74764b508fa00cea7fcfbdba990f07e292fc5e69ceb7c"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/pid.txt",
+      "archive": "outer/pid.txt",
+      "bytes": 6,
+      "sha256": "2afdc2036c67872a9304bede77c99a4c5b57cba6d649193f461b0490c82c6dee"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/return-observation.json",
+      "archive": "outer/return-observation.json",
+      "bytes": 4076,
+      "sha256": "6692e292c0bde5759ec50fa6261da00a6ebb193f70fe1c5f3b61bee81f46f972"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/stderr.txt",
+      "archive": "outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/stdout.txt",
+      "archive": "outer/stdout.txt",
+      "bytes": 237,
+      "sha256": "a7f298c7481445751e0e4d2840d7224a652483ec5011cc4e84b300c3cd3adddb"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-admission-20261007/claim.json",
+      "archive": "admission/claim.json",
+      "bytes": 185361,
+      "sha256": "7ba7e8e929c47752c20dbcba56a2a53c246ce3dcf7fc101dd8220614c0db50e3"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-admission-20261007/preflight.json",
+      "archive": "admission/preflight.json",
+      "bytes": 508,
+      "sha256": "e4275e6d28305a1cc566c3272b9b1b04a492953005a5964655987a8b97d05086"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-admission-20261007/admission.json",
+      "archive": "admission/admission.json",
+      "bytes": 705,
+      "sha256": "65ab46567b1587fde9299f0cf8bd52d43ece32d696a95bf04bfd45f0d3778e78"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/binding.json",
+      "archive": "prepared/binding.json",
+      "bytes": 2501,
+      "sha256": "60481db12ff4e8e5ea729dc011934a4462ce25851987f44a7e4713beb3b0e996"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/manifest.json",
+      "archive": "prepared/manifest.json",
+      "bytes": 5160,
+      "sha256": "bad7efe7b62cd1d2ef1e62077bfd3abb321f44c387e6226c1b0a28adc5ee10dc"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/dependency-links.json",
+      "archive": "prepared/dependency-links.json",
+      "bytes": 11161,
+      "sha256": "47a2ee718304194850150c1f9517a17b4c49ecf6dbe688d6884e075eafe19de2"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/consumed.json",
+      "archive": "prepared/consumed.json",
+      "bytes": 120,
+      "sha256": "62bfd176af33ae08771329d3884e3756629e5cce23ed456264a17f7f0544c03d"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/routine-rebind.json",
+      "archive": "prepared/routine-rebind.json",
+      "bytes": 610,
+      "sha256": "91c4b7284fa513b262997658545626f93763e4e96adfc20d909c99339927e05e"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/README.md",
+      "archive": "prepared/README.md",
+      "bytes": 6968,
+      "sha256": "1ac882ee6a5c819ec35b18f581c6e7435f4338034d110e95f2e11402278075b4"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/report.json",
+      "archive": "cleanup-repair/report.json",
+      "bytes": 2513,
+      "sha256": "b8f9003584eb700b5b1728acb45e2012eb8349808073247b10134407ae5accf0"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/check-result.json",
+      "archive": "cleanup-repair/check-result.json",
+      "bytes": 866,
+      "sha256": "16384b2dda43758138b955c5c032e3669e4311bfedf98c02b9a292c63cbb695b"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/outer-actual.json",
+      "archive": "cleanup-repair/outer-actual.json",
+      "bytes": 333,
+      "sha256": "3cfbdc0cfb1118e1c5acb0c1ea1b38824580748db0b1eeef0840710e2b4fdf6c"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/cleanup.json",
+      "archive": "cleanup-repair/cleanup.json",
+      "bytes": 395,
+      "sha256": "f143acca18ef5f80b79c6ebb4ae3387aaf0289b5558d7f0ae29956ed8780b266"
+    },
+    {
+      "source": "/private/tmp/root-release01-artifact-preparation-review-20261007.json",
+      "archive": "root-preparation-first-review.json",
+      "bytes": 6585,
+      "sha256": "a8eed5d2030779d6859495777ef607f775f9577e5a6add0891203d9c5736c05f"
+    },
+    {
+      "source": "/private/tmp/root-release01-artifact-preparation-approved-20261007.json",
+      "archive": "root-preparation-approved.json",
+      "bytes": 6440,
+      "sha256": "bad4b036f8be3a1390e27e6a1cbc5e5469551011fe28242e3e0e22ac63e6f0e9"
+    },
+    {
+      "source": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4/manifest.json",
+      "archive": "artifact-manifest.json",
+      "bytes": 1651,
+      "sha256": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/supply-request.json",
+      "archive": "supply-request-before.json",
+      "bytes": 6523,
+      "sha256": "d856a517ccc45c5248f777ce668e83963b6ee67b98f173ca5b7c789e048fd305"
+    },
+    {
+      "source": "/private/tmp/root-release01-web-artifact-result-review-20261007.json",
+      "archive": "root-actual-review.json",
+      "bytes": 7119,
+      "sha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b"
+    }
+  ],
+  "fixedReferencedOriginals": [
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/input-pins.json",
+      "bytes": 1630830,
+      "sha256": "7fa9e2469f99243f94519d14bb84ededf36b73a080cd91c2f3ccd24b3e918715",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/run.py",
+      "bytes": 12269,
+      "sha256": "a63d9c6ced1a368b946d542c7f33ef4eaa654d2d046d5835c322f5e4e0f362be",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/build-entry.mjs",
+      "bytes": 1767,
+      "sha256": "2bcb658cfb49397545d6b99e61d633d281bc4a31fff7d7212563a9e7470f6754",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/collect-inputs.py",
+      "bytes": 5066,
+      "sha256": "2d5b58226f131105d471a8ba56df6f89d61098c28ea5141d0700480df3add103",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/parent-from-oldconsumer.diff",
+      "bytes": 18326,
+      "sha256": "0024b352c376783c8ca74e54f8980b5553cc4b94c1bf4dc0c2baee83986fd2fd",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/check.py",
+      "bytes": 3826,
+      "sha256": "24d7264bb5ce0941eca3afabd7f0db2b7de834048762f44715aa922258c8f39d",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/cleanup-order.diff",
+      "bytes": 1147,
+      "sha256": "ba6db709586a76500ceb253877b6b7f4681b492a4e69e1bce7fb87ebf4149443",
+      "disposition": "KEEP_FIXED_ORIGINAL_NOT_COPIED"
+    }
+  ],
+  "archivedBytes": 260164,
+  "sourceAuthority": "Current claim7d60 v2 exact4; attachments/session STOP and handed back, no product writes."
+}

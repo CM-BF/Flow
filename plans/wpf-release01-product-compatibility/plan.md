@@ -1,6 +1,6 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继经合法交权在web-release-recovery固定7272以exact6继续同任务，不创建第二发布系统。
+状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继经合法交权在web-release-recovery固定7272落地两产品，现产品已交回、以exact4继续同任务，不创建第二发布系统。
 
 ## 历史：三保留App固定origin片段
 
@@ -45,7 +45,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 [独立实际批准与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)已完成；188后继路径同c06fa。保失败、不重跑已绿检查，个人更新/后继后台不扩称。
 
-## 当前：新版Cookie网页后继（2026-10-07）
+## 历史准备：新版Cookie网页后继（2026-10-07；当前见末尾artifact安全点）
 
 - [x] RELEASE01-07 在原fixture/browser加入首固定7272新版App入口（后继精确pair供给规则见请求），Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
 - [ ] RELEASE01-08 本组供给唯一新Web descriptor，与已到修正后台组成精确输入；有界兼容与集中独审后交原operator发布，不借旧tuple/PASS。
@@ -61,10 +61,14 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 [两file旧base最小移植准备](../../docs/evidence/wpf-release01/recovery-cookie/held-transplant-preparation/report.md)只在TMP核固定patch/result；RELEASE01-08仍pending。生产两literal仍MSG持有，需原owner移交或Original受控集成，不由Release原4scope擅写。
 
-## 当前执行交接
+## 历史执行交接
 
 见[唯一source-switch](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)。旧树与MSG范围已实际交回，新exact6不包括App/Thread或共享配置/依赖。只应用77bc两file，预计hash802e/728a；必要检查和artifact build仍待有界安排。此前关于Original生产接单与MSG持有范围的文字为历史准备条件，已由本次交权替代。
 
 本次仅两file与旧consumer定向检查已完成，见[实际证据](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)。RELEASE01-08的独审/新artifact/兼容/发布继续开放；本地普通段6165ms关闭，未用余额不是新运行许可。
 
 当前d736两产品及定向用例/局部实际已获[root集中APPROVED](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)，RELEASE01-09完成；两产品STOP并按账本partial amend交回。RELEASE01-08继续唯一producer的固定Web artifact准备，descriptor仍NULL；本地6165ms关闭，无build/PG/Chrome新许可。
+
+## 当前artifact交付安全点
+
+[新Web实际](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)已生成descriptor779a/sourcec231，两产品1cea与批准d736不变。RELEASE01-08保持pending：两descriptors已齐，结果独审已APPROVED，当前需要两harness最小pair guard适配后再真实兼容，不借本次构建或旧三App报告冒通过。资源已归还，无第二build/Chrome/PG预约；独立150s段按外层观察上界25241ms CLOSED。

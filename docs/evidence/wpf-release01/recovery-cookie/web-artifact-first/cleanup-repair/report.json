@@ -1,0 +1,61 @@
+{
+  "decision": "SOURCE_FIXED_LOCAL_TWO_CASES_PASS_PENDING_INDEPENDENT_REVIEW",
+  "finding": "RELEASE-BUILD-P2-01",
+  "sourceHeadUnchanged": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  "change": "Validate every created scoped-directory dev/ino/uid before any unlink, and recheck root/current parent immediately before each unlink. Existing later rmdir identity guard remains.",
+  "parentBefore": "bcd7f7f8cbf4e4d82f71d24392703c4cb8acf7092d00e4a569d359fad53f7030",
+  "parentAfter": "a63d9c6ced1a368b946d542c7f33ef4eaa654d2d046d5835c322f5e4e0f362be",
+  "entryUnchanged": "2bcb658cfb49397545d6b99e61d633d281bc4a31fff7d7212563a9e7470f6754",
+  "inputPinsUnchanged": "7fa9e2469f99243f94519d14bb84ededf36b73a080cd91c2f3ccd24b3e918715",
+  "method": "Compile only actual run.py identity function plus exact cleanup try-block selected from AST; execute that unmodified block against two owned filesystem arrangements. No candidate top-level import or product import.",
+  "cases": [
+    {
+      "name": "normal",
+      "passed": true,
+      "errorsFromCaller": [],
+      "replacementChildrenUntouched": false
+    },
+    {
+      "name": "replaced-same-shape",
+      "passed": true,
+      "errorsFromCaller": [
+        "dependency cleanup scope directory replaced KEEP"
+      ],
+      "replacementChildrenUntouched": true
+    }
+  ],
+  "actualExit": 0,
+  "startedAt": "2026-10-07T15:26:09.795841Z",
+  "endedAt": "2026-10-07T15:26:09.804897Z",
+  "scriptElapsedMs": 9.069708059541881,
+  "outerChargeMs": 144,
+  "segment": {
+    "totalMs": 10000,
+    "spentMs": 144,
+    "unusedMs": 9856,
+    "state": "CLOSED",
+    "transferredCredit": 0
+  },
+  "cleanup": {
+    "observedAt": "2026-10-07T15:26:19.016687+00:00",
+    "pid": 94638,
+    "pidState": "ESRCH",
+    "ownedTmpAbsent": true,
+    "stdout": {
+      "bytes": 841,
+      "sha256": "9c8188f012f5c630f540093841099a92b07dd3ab13fe89504f923b87fe76ca33"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "regularLogsClosedByActualExit": true
+  },
+  "limitations": [
+    "Cooperative owned lifecycle check, not protection against arbitrary hostile concurrent rename between separate syscalls.",
+    "No artifact build, no package/product imports, no browser/PG/network, no old-green check repeated.",
+    "The normal and same-shape replacement cases prove this narrow guard order, not all OS failure permutations."
+  ],
+  "floorUpdatedRoutine": 14355202048,
+  "buildState": "PREPARED_NOT_RUN"
+}

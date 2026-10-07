@@ -1,0 +1,99 @@
+{
+  "state": "ARTIFACT_VERIFIED_AND_RETURNED_COMPATIBILITY_NOT_RUN",
+  "observedAt": "2026-10-07T15:38:15.421646+00:00",
+  "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  "actualOuterExit": 0,
+  "outerAccounting": {
+    "startedAt": "2026-10-07T15:34:26.957Z",
+    "monotonicSource": "Tool-call enclosing wall clock; parent monotonic elapsed is independently sealed.",
+    "observedCompletedAt": "2026-10-07T15:34:52.198Z",
+    "actualExit": 0,
+    "toolPollWallSeconds": 6.041e-06,
+    "sessionId": 24675,
+    "conservativeObservationUpperBoundMs": 25241,
+    "parentElapsedMs": 3755.8461660519242,
+    "terminalLateElapsedMs": 3756.269416073337,
+    "conservativeChargeMs": 25241,
+    "phaseTotalMs": 150000,
+    "phaseState": "CLOSED",
+    "unusedMs": 124759,
+    "unusedTransferable": false,
+    "measurementLimit": "The enclosing observation interval includes reporting/poll delay; it is a conservative upper bound, not the measured process wall time. Tool exit0 is actual; parent monotonic timing remains unchanged."
+  },
+  "descriptor": {
+    "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+  },
+  "artifactStore": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
+  "artifactDisposition": "KEEP",
+  "raw": [
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/builder-result.json",
+      "bytes": 668,
+      "sha256": "5fbaa15871335c8d93a663d0fa724ddf33e4e7e89df9cf2c9a2a8ceeb05d3866"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+      "bytes": 222,
+      "sha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/input.json",
+      "bytes": 494,
+      "sha256": "f09eb8d982c7a03d66c83cca929b25a056fd3fc36fbb7ef08bb40521ad6208a9"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/result.json",
+      "bytes": 3323,
+      "sha256": "0f14298b87bd0137ead40f60fa1cd53be1e7dd002b91d46763e7b7b448d23152"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/sandbox.sb",
+      "bytes": 178,
+      "sha256": "1fc5d480a6076b88dfdae25d873dec31bebbe327430f34f834e0020d54008577"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/terminal.json",
+      "bytes": 164,
+      "sha256": "f01eaf557ffe9bae26462b5fdd6d6fc3305f6e3d814a1b18f3745c73da3ab0d6"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/worker.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/worker.stdout",
+      "bytes": 184,
+      "sha256": "495960937d8cf2b0f9cef5cd70b8558b4d27d830c9e03bce0b636f0c2ccdee08"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/actual-exit.json",
+      "bytes": 783,
+      "sha256": "0fbe78bf874e9bbd95287d5d92efe654d3262ba7d4c7956a2b265aeae2a25e91"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/pid.txt",
+      "bytes": 6,
+      "sha256": "2afdc2036c67872a9304bede77c99a4c5b57cba6d649193f461b0490c82c6dee"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/return-observation.json",
+      "bytes": 4076,
+      "sha256": "6692e292c0bde5759ec50fa6261da00a6ebb193f70fe1c5f3b61bee81f46f972"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/outer-actual/stdout.txt",
+      "bytes": 237,
+      "sha256": "a7f298c7481445751e0e4d2840d7224a652483ec5011cc4e84b300c3cd3adddb"
+    }
+  ],
+  "retainedRawBytes": 10335,
+  "scope": "One exact Web artifact build only; no compatibility/browser/deployment/PG/HTTP/provider."
+}

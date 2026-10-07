@@ -1,0 +1,114 @@
+{
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T15:23:44.344755+00:00",
+  "decision": "CHANGES_REQUESTED_ONE_CLEANUP_ORDER_FINDING",
+  "scope": "Read-only focused review of existing-builder adaptation and temporary dependency provision; no product execution or new acceptance claim.",
+  "target": {
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "approvedProductTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+    "manifest": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/manifest.json",
+      "bytes": 1819,
+      "sha256": "039bf4de2ba98ac83b694f89564fb6c93664aee17ec364f4659780f822bbd052"
+    },
+    "parent": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/run.py",
+      "bytes": 11994,
+      "sha256": "bcd7f7f8cbf4e4d82f71d24392703c4cb8acf7092d00e4a569d359fad53f7030"
+    },
+    "entry": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/build-entry.mjs",
+      "bytes": 1767,
+      "sha256": "2bcb658cfb49397545d6b99e61d633d281bc4a31fff7d7212563a9e7470f6754"
+    },
+    "binding": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/binding.json",
+      "bytes": 2308,
+      "sha256": "c8027e63ea1c519050863645b7cd42cd2e5f661c91f6b739fe070fa73243f153"
+    }
+  },
+  "observations": [
+    {
+      "path": "/private/tmp/root-release01-artifact-preparation-static-observation-20261007.json",
+      "bytes": 2765,
+      "sha256": "89d50b3835b3f8a7a87a659e3f4878e8a217ae6d0ff54e8559152c04a949c480"
+    },
+    {
+      "path": "/private/tmp/root-release01-artifact-preparation-dependency-observation-20261007.json",
+      "bytes": 243,
+      "sha256": "3a7f8031f05c26fb4a63c58dfee3e5e90658ea33358893dbae0bdf3bfe263e95"
+    }
+  ],
+  "sourceAudit": {
+    "files": 219,
+    "allGitAndDiskHashesMatch": true,
+    "gitClean": true,
+    "dependencyRootAbsent": true,
+    "all11PreparedFileHashesMatch": true
+  },
+  "dependencyAudit": {
+    "at": "2026-10-07T15:22:42.967699+00:00",
+    "packages": 252,
+    "files": 13700,
+    "logicalBytes": 137183284,
+    "mismatches": [],
+    "nodeHashMatch": true,
+    "method": "Read-only byte/hash audit; no imports, installs or product processes."
+  },
+  "acceptedDesign": [
+    "Uses fixed existing prepareWebArtifact default builder followed by complete verifyWebArtifact; no build-port substitute or second descriptor codec.",
+    "Existing sourceIdentity before and after build, sourceTree/lock/toolchain/release namespace and file-set integrity remain authoritative.",
+    "29 exact links reference pinned installed packages or this fixed worktree source; no root donor node_modules, install, shared git mutation or product edits.",
+    "Sandbox denies network and writes outside owned actual root plus /dev/null; actual build uses existing envDir:false, production fixture:false and release base. This is a source review, not an observed sandbox execution.",
+    "New 150s total includes 30s cleanup; fixed builder retains own 90s timeout. Full fresh floor >=14338424832 or later larger; new256MiB counted once. Old KEEP and closed budgets remain.",
+    "Meter is byte-identical existing52b925 helper; one-pruned traversal for parent retained scope, regular logical/allocated separately. Unknown is not zero.",
+    "Group absence, independent outer exit, terminal/result binding, exact link-root and scratch absence are required for acceptance. Regular file writer closure is not dual-pipe EOF.",
+    "Artifact store is retained on success/failure and never treated as scratch. Compatibility/main/deployment remain NOT_RUN."
+  ],
+  "findings": [
+    {
+      "id": "RELEASE-BUILD-P2-01",
+      "priority": 2,
+      "blocking": true,
+      "file": "/private/tmp/release01-web-artifact-prepared-20261007/run.py",
+      "start": 123,
+      "end": 130,
+      "title": "Check all created scope-directory identities before unlinking their contents",
+      "trigger": "After provision, node_modules/@flow (or any created scoped directory) is replaced with another directory containing the same named symlinks and targets. node_modules root identity and expected set still match.",
+      "observedByStaticTrace": "The link-target checks pass and line128 removes entries from that replaced directory; only line130 checks the scoped directory identity and raises KEEP after destructive work already occurred.",
+      "requiredFix": "Validate every created scoped-directory dev/ino/uid before any child unlink. Retain immediate identity checks around exact removal as needed. Unknown/replaced directory must fail/KEEP without touching any child. No broader deletion policy or new framework.",
+      "verification": "Focused source diff plus a bounded owned-temp same-shape replacement case and normal cleanup case if owner uses the local helper; do not rerun product/oldconsumer tests or build before the correction is accepted."
+    }
+  ],
+  "nonBlockingNotes": [
+    "Prepared count11 excludes manifest itself; report exact listed bytes1696889 separately from whole-directory retained bytes.",
+    "Preflight hashing/read-only commands and native imports are not independently hard real-time bounded by Python checks; actual outer elapsed/termination and no-drop output must be retained, and no through-OS-exit guarantee claimed.",
+    "Installed dylib/system runtime closure remains the documented native boundary, not an exhaustive hermetic toolchain claim."
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T15:23:44.348012+00:00",
+    "scope": "Single existing artifact constructor, error paths, ownership and cleanup order, raw/result separation",
+    "actualFinding": "One post-mutation identity check moved to review finding; no mechanical refactor, module framework, product implementation or tests performed by root."
+  },
+  "notAuthorized": [
+    "This review is not an actual build grant or NEXT reservation.",
+    "Do not mutate fixed sourceHead to moving main or use source review as browser/HTTP/Cookie compatibility proof."
+  ]
+}

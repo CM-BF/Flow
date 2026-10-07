@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-10-07T15:34:26.957Z",
+  "monotonicSource": "Tool-call enclosing wall clock; parent monotonic elapsed is independently sealed.",
+  "observedCompletedAt": "2026-10-07T15:34:52.198Z",
+  "actualExit": 0,
+  "toolPollWallSeconds": 0.000006041,
+  "sessionId": 24675,
+  "conservativeObservationUpperBoundMs": 25241,
+  "parentElapsedMs": 3755.8461660519242,
+  "terminalLateElapsedMs": 3756.269416073337,
+  "conservativeChargeMs": 25241,
+  "phaseTotalMs": 150000,
+  "phaseState": "CLOSED",
+  "unusedMs": 124759,
+  "unusedTransferable": false,
+  "measurementLimit": "The enclosing observation interval includes reporting/poll delay; it is a conservative upper bound, not the measured process wall time. Tool exit0 is actual; parent monotonic timing remains unchanged."
+}

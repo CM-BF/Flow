@@ -1,23 +1,11 @@
 {
-  "state": "EXACT_PAIR_SUPPLIED_WEB_ARTIFACT_APPROVED_COMPATIBILITY_NOT_RUN",
+  "state": "BACKEND_RECEIVED_MINIMAL_WEB_SOURCE_LOCAL_CHECKED_AWAITING_REVIEW_AND_ARTIFACT",
   "task": "WPF-RELEASE01 / REQ19",
-  "owner": "w01_owner sole Web producer; Original deployment operator via d01",
+  "owner": "Original artifact/release owner via d01",
   "consumerSource": "8964dc1185f62ed8934c15416e9798929359ab89",
   "newWeb": {
-    "descriptor": {
-      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
-      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
-      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
-    },
-    "descriptorEvidence": "web-artifact-first/raw/descriptor.json",
-    "descriptorSha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b",
-    "artifactRoot": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
-    "manifestEvidence": "web-artifact-first/artifact-manifest.json",
-    "releaseId": "52a261e294324a11aead58a554f547db",
-    "retention": "KEEP",
-    "actual": "Default builder+verifier actual exit0 with complete return; independent fixed artifact approval received.",
-    "resultReview": "web-artifact-first/root-actual-review.json",
-    "resultReviewSha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b"
+    "descriptor": null,
+    "required": "Original sole producer supplies a real format2 immutable artifactId/sourceHead/manifestDigest/releaseId, artifactRoot/root/dist identities and manifest pin. Minimal7272+two-file draft-protection transplant is statically approved; its old-consumer execution and artifact remain unverified. No full MSG03/Plugin bundle."
   },
   "correctedBackend": {
     "descriptor": {
@@ -42,16 +30,16 @@
     "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
   },
   "retainedApps": "The exact existing three immutable Apps and their Bearer path remain; their four-check reports must be newly produced against the same newly supplied backend/context. Historical 6c reports cannot be relabelled.",
-  "nextAfterSupply": "Both descriptors and artifact result approvals now exist. Bind the distinct Web c231/779a and backend04da/cd27 in existing8964 exact guard sites and owned compatibility input. Actual compatibility still needs finite resource admission; no old6c fallback.",
+  "nextAfterSupply": "Only newWeb immutable descriptor/final source remains missing. Original sole producer is assigned through assignment_review; acceptance/unique WT receipt still awaited. Once the fixed Web arrives, minimally update8964 exact Web/backend guards and owned caller for that pair, then seek actual compatibility admission. No second producer or old6c fallback.",
   "visiblePublish": "Original publication action not performed by this owner; current source approval is not main/deployment/compatibility approval.",
-  "updatedAt": "2026-10-07T15:40:07.837Z",
+  "updatedAt": "2026-10-07T14:47:33.469Z",
   "historicalCommonSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
   "sourceSelection": {
-    "state": "EXACT_PAIR_SUPPLIED_AND_ARTIFACT_RESULTS_APPROVED",
+    "state": "BACKEND_FIXED_ARTIFACT_RESULT_APPROVED_AWAITING_WEB",
     "authority": "d01 owner dispatch 2026-10-07: Original expressly authorized independent SVC06B / 6c-base lateLogout composition; supersedes former no-third-composition research constraint.",
     "requirement": "Reviewed lateLogout public contract is mandatory; identical Web/backend sourceHead is not a supply requirement. Exact independently fixed pair and contract evidence must be supplied, then consumer input guards updated and reviewed for that pair.",
     "webBaseCandidate": "7272151bb1e3e59e08937dca44949dcdeb42f009",
-    "webFinalSource": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "webFinalSource": null,
     "backendCandidateSource": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
     "backendBaseSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
     "backendSourceReview": {
@@ -65,17 +53,17 @@
   "consumerAdmission": {
     "fixedSource": "8964dc1185f62ed8934c15416e9798929359ab89",
     "currentGuard": "Existing fixture still requires both sourceHead values to equal historical 7272. This metadata revision does not change or bypass that gate.",
-    "next": "Source-only update exact accepted distinct Web/backend guards, review only affected pair/lifecycle delta, then separately admit compatibility. No new run authorized by this build."
+    "next": "When both actual descriptors and final source reviews arrive, minimally bind the exact accepted Web/backend pair, assess affected inputs, then prepare lawful compatibility execution. No inferred descriptor or runtime."
   },
   "sharedDraftFix": {
-    "state": "MINIMAL_OLD_CONSUMER_SOURCE_AND_LOCAL_APPROVED_ARTIFACT_GENERATED",
+    "state": "MSG_SOURCE_LOCAL_AND_EXACT_STATIC_TRANSPLANT_APPROVED_OLD_CONSUMER_NOT_RUN",
     "sourceTarget": "b92470377349dea17a12d0abc244f0fed7992e33",
     "delivery": "c848024a20ac59182360d31c7e0087828bca018d",
     "sourceReviewSha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad",
     "patchSha256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
     "staticTransplantManifest": "held-transplant-preparation/manifest.json",
-    "finalWebSource": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
-    "scope": "Exact two-file current-draft membership repair only; old-consumer noEmit and one controlled-IDB membership case accepted. Artifact generated. Mounted/newpair compatibility remains NOT_RUN.",
+    "finalWebSource": null,
+    "scope": "Only two-file current-draft membership projection delta; static7272 composition approved. Old-base consumer/type/mounted/artifact/compat remain unverified; no whole MSG03/Plugin session copy.",
     "staticTransplantReview": "backend-cd27-supply/minimal-transplant-root-review.json",
     "staticTransplantReviewSha256": "754608bb83cc86a67c0274286b69b67d302b78f975daa290aa0fc3a2c0005b2e"
   },
@@ -83,7 +71,7 @@
     "svc09AHostMain246edIncluded": false,
     "factoryCalls": 0,
     "processT7": "NOT_PROVEN",
-    "oldConsumerExecution": "PASSED_AFFECTED_NOEMIT_AND_EXACT_1_CASE",
+    "oldConsumerExecution": "NOT_RUN",
     "newPairCompatibility": "NOT_RUN",
     "personalDeployment": "NOT_RUN"
   },
@@ -92,21 +80,20 @@
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
     "branch": "codex/web-release-recovery",
     "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
-    "version": 2,
+    "version": 1,
     "soleProducer": true,
     "intake": "source-switch/source-switch-intake.json",
     "fixedSource": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
-    "productPatchCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
-    "artifactSourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37"
+    "productPatchCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804"
   },
-  "nextAction": "根独立核实际artifact后，在原两harness/records四scope准备精确Web779a+后台cd27兼容；发布由Original独立执行。",
+  "nextAction": "本组同任务在7272落地已审两file及必要检查，随后有界生成唯一新Webartifact；Original不再被记录为待接受producer。",
   "oldConsumerValidation": {
     "source": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
     "strict": "PASS",
     "direct": "PASS_EXACT_1",
     "firstDirectFailurePreserved": true,
     "mounted": "NOT_RUN",
-    "artifact": "APPROVED_FIXED_ARTIFACT_ACTUAL",
+    "artifact": "NOT_RUN",
     "compat": "NOT_RUN"
   }
 }

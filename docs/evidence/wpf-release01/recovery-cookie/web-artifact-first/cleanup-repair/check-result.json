@@ -1,0 +1,36 @@
+{
+  "startedAt": "2026-10-07T15:26:09.795841Z",
+  "pid": 94638,
+  "budgetMs": 10000,
+  "cases": [
+    {
+      "name": "normal",
+      "passed": true,
+      "errorsFromCaller": [],
+      "replacementChildrenUntouched": false
+    },
+    {
+      "name": "replaced-same-shape",
+      "passed": true,
+      "errorsFromCaller": [
+        "dependency cleanup scope directory replaced KEEP"
+      ],
+      "replacementChildrenUntouched": true
+    }
+  ],
+  "errors": [],
+  "productImports": false,
+  "subprocesses": 0,
+  "parentSha256": "a63d9c6ced1a368b946d542c7f33ef4eaa654d2d046d5835c322f5e4e0f362be",
+  "freeBefore": 20373958656,
+  "ownedTmpIdentity": {
+    "dev": 16777234,
+    "ino": 124269883
+  },
+  "ownedRegularBytes": 244,
+  "ownedTmpAbsent": true,
+  "endedAt": "2026-10-07T15:26:09.804897Z",
+  "elapsedMs": 9.069708059541881,
+  "chargeMs": 10,
+  "state": "PASS"
+}

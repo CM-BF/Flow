@@ -1,10 +1,16 @@
 # WPF-RELEASE01 review
 
-**当前状态：APPROVED（固定7272旧消费者最小源码与必要局部检查；不包含产物构建、浏览器兼容或部署）**
+**当前状态：APPROVED（固定7272旧消费者最小源码/必要局部及固定新Web artifact实际；不包含新pair浏览器兼容或部署）**
 
 当前 Review target commit：d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6。范围：apps/web/src/plugin-integration/attachments.tsx、apps/web/src/plugin-integration/session.ts、docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts。
 
-[固定源码与actual](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：精确patch落地，affected noEmit0/单case actual0、首resolverFAIL保留，6165ms CLOSED及完整清理。经[root集中独立审查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)APPROVED，0blocking；两产品hash802e/728a与35原件固定相符。无新Web descriptor/compat/build/用户部署。
+[固定源码与actual](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：精确patch落地，affected noEmit0/单case actual0、首resolverFAIL保留，6165ms CLOSED及完整清理。经[root集中独立审查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)APPROVED，0blocking；两产品hash802e/728a与35原件固定相符。新Web artifact现已实际生成并完整归还；[原件](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)已获[Root实际独审APPROVED](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/root-actual-review.json)。新pair兼容/用户部署未执行。
+
+[两产品主线核对](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/product-main-observation.json)确认main729d已含membership窄修，session保留已审MSG设置接线；不覆盖main，不等于后继harness/compat/部署已接收。
+
+## 本次调用器准备与artifact实际边界
+
+[准备批准](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/root-preparation-approved.json)已关闭唯一cleanup目录身份P2；两定向helper实际通过。artifact fixed c231 /779a生成不改变以上d736产品审批范围，亦不等于新pair compatibility。原builder/工具链/输入与outer actual0/完整RETURN由[本次原件](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/index.json)固定，[Root实际独审](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/root-actual-review.json)APPROVED、0blocking，仅此固定artifact/完整RETURN，不扩大产品scope。
 
 ## 历史：8964后继两harness限定批准
 

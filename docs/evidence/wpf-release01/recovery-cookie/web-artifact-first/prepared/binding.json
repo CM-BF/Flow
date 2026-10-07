@@ -1,0 +1,68 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND",
+  "taskId": "WPF-RELEASE01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  "approvedSourceTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "productCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+  "claimVersion": 2,
+  "scope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ],
+  "preparedRootIdentity": [
+    16777234,
+    124267456,
+    501
+  ],
+  "sourceReview": {
+    "path": "/private/tmp/root-release01-1cea-source-local-review-20261007.json",
+    "sha256": "e0a28c9f0cec48d7f58da6606a1b62fa94bdcf79f78a6c2d085f4a8671abce54"
+  },
+  "callerReview": {
+    "path": "/private/tmp/root-release01-artifact-preparation-approved-20261007.json",
+    "bytes": 6440,
+    "sha256": "bad4b036f8be3a1390e27e6a1cbc5e5469551011fe28242e3e0e22ac63e6f0e9"
+  },
+  "actualAdmission": null,
+  "newWebDescriptor": null,
+  "minimumFloorBytes": 14414970880,
+  "totalMs": 150000,
+  "cleanupMs": 30000,
+  "spentMs": 0,
+  "closedPriorLocalMs": 6165,
+  "closedPriorUnusedMs": 83835,
+  "newAllocationEnvelopeBytes": 268435456,
+  "caps": {
+    "scratchLogicalAndAllocated": 134217728,
+    "artifactLogicalAndAllocated": 100663296,
+    "retainedIncludingPreparedRawOuter": 8388608,
+    "outerAndTerminalReserveWithinRetained": 262144,
+    "metadataSeparate": 1048576,
+    "linkMetadataAllowanceWithinEnvelope": 262144
+  },
+  "readonlyDependencies": {
+    "packages": 252,
+    "files": 13700,
+    "logicalBytes": 137183284,
+    "allocatedObservationBytes": 175386624,
+    "copiedBytes": 0
+  },
+  "sourceOperatorDelegation": "d01 2026-10-07 same-tree temporary exact links approved; no import/build authorization",
+  "remoteStatus": {
+    "local": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "remoteObserved": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+    "push": "two GitHub HTTP500 rejections; no repeated retry",
+    "sourceTargetD736AlreadyRemote": true
+  },
+  "backend": {
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "useDuringThisBuild": false
+  }
+}
