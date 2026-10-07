@@ -2,7 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T02:49:08.448494+00:00 |
+| 最近更新时间 | 2026-10-07T03:15:38.909093+00:00 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4及支持源码d6f52c3a0db45eb69a57c68c54ff47423a8ccb79均仅源码静审，未main |
-| 工作树 dirty 状态 | 执行前3cd3f670 clean；当前仅归档一次内存回归及metadata，源码af2/产品ade4/原Stage A证据未改；提交后clean |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4冻结；后继支持源码5fcadf8f1b8084d56670393a8ec07ebfb644015f，未main |
+| 工作树 dirty 状态 | 启动e484a6d clean；当前仅三行支持源路径及新输入/own metadata；交审提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASS 本次七组内存Report回归7/7，exit0/完整输出/最终absent；Stage A strict/Vitest17项与11tar仍NOT_RUN，旧HOLD原件保留 |
-| Review | APPROVED af2b926bc112cdf0c8f169a88671c610aeacc9ef SOURCE_REVIEW（chatui01_owner，02:42:07UTC，0P1/P2）；本次7组结果待只读接收，不产生Stage A OPEN |
+| 检查状态 | PASS 七组内存Report回归7/7及忠实性独审；后继Stage A strict/Vitest17项与11tar NOT_RUN；旧HOLD完整保留 |
+| Review | NOT_STARTED 5fcadf8f1b8084d56670393a8ec07ebfb644015f三行路径与小输入增量待独审；af2源码及e484七组结果已有独立APPROVED |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | af2b926bc112cdf0c8f169a88671c610aeacc9ef |
-| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md, docs/evidence/x01/enable-binding-ownership.test.py |
-| 本片段交付阶段 | implementation |
+| 实现目标 | 5fcadf8f1b8084d56670393a8ec07ebfb644015f |
+| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md, docs/evidence/x01/enable-binding-ownership.test.py, docs/evidence/x01/enable-binding-stage-a-input-r2.json, docs/evidence/x01/enable-binding-stage-a-r2.md |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 调用方历史记录误判已修正并通过七组内存反例；合同与实际包执行尚未开始 |
-| 下一可用交付 | 在独立namespace绑定下一次受控合同与包执行输入；原窗口不复开，当前先固定本段结果供独审 |
-| 当前阻塞 | ACTIVE: Stage A后继实际包检查仍需新的namespace/输入绑定与Lead实质风险准入；当前局部槽已交C02，X01不并行实际运行 |
+| 当前产出 | 调用方消费修复已通过七组回归与独审；原合同和实际包执行准备使用独立运行目录 |
+| 下一可用交付 | 完成原合同与实际包执行的局部验证；复用现运行器，按strict→17项产品检查一次连续执行 |
+| 当前阻塞 | ACTIVE: 后继Stage A尚未启动；先让REQ15主线接收修复使用本队local，实际归还且固定输入独审后执行受控30秒段 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -147,3 +150,13 @@
 2026-10-07T02:40:42.525303+00:00：fresh02:38:47.791Z核原v8 ACTIVE/17scope及新树身份完全匹配。接收OPS14共享Interface715525与结果0720625（4/4归属其owner，不累计为X01）；supervise.py SHA725bad保持。固定af2b926b只提取并修正caller报告消费：observations保留审计，不压过最终owned_state；signal unknown、first/secondary监督失败、capture/持久化/身份未知仍阻后继。新增七组内存Report行为反例源码和[限定准备](../../docs/evidence/x01/enable-binding-ownership-fix.md)，0测试/import/进程/PG/tar。旧HOLD结果91f86与全部原raw/manifest/d54不改；新的执行namespace与manifest未准备，此处SOURCE_ONLY并非可执行Stage A。局部槽尚无本任务准入，当前仅待独审。
 
 2026-10-07T02:49:08.448494+00:00：chatui01_owner于02:42:07UTC完成af2/3cd固定SOURCE_REVIEW_APPROVED，16bindings逐GitWT/hash符、0P1/P2。Lead明确Web恢复终态归还后Mika授权本组local工作段；fresh02:47:37.294Z核原v8/17scope，固定af2源码一次7/7内存回归通过，[单结构化记录](../../docs/evidence/x01/enable-binding-ownership-check.json)3004B/SHA8f593e420ddae45bb1b2edc896505a9d0cb6be86fe6416f706aab6d3bc1a38db。受监督check exit0/最终absent/EOF完整，1232B observed=retained、无failure/signal unknown；0测试内子进程/临时根/tar/PG/Chrome/provider，未安装。OPS14监督只启动一个Python检查进程，七组中的参数化子项不累计。外部工具exit0，wall0.1141195s仅等待口径；CLI持久化后实际elapsed174.354ms为另一计量，不相加或声称完整工具启动前时间。既有bounded工作段只用一次，无修后重跑。实际local已归还并直接followup给C02 owner（派交前da6 clean/status已核），附其原有限段与随后REQ15接力要求；本X01停止实际运行，只作这次metadata归档。旧Stage A窗口、HOLD、d6manifest与d54供给全部保留，af2源码不变，完整X01未Done。
+
+## 2026-10-07T03:15:38.909093+00:00 — 原Stage A后继准备
+
+fresh v8 ACTIVE17、原e484 clean。已接chatui01_owner于03:11:53对e484七组结果的RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；不计为产品17检查。支持源只改三个路径字面，独立[后继输入与预算](../../docs/evidence/x01/enable-binding-stage-a-r2.md)保原合同/配置/命令/未知门禁，旧run/manifest/HOLD与7deps供给未改。依据固定main73717的新local工作段规则，不为strict与tests增加分条批准链；当前仅准备无执行、无磁盘轮询。REQ15 intake修复先用本队local，实际清理归还后才接续。架构：产品/存储/运行时无变，只有验证支持路径。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| X01-STAGE-A-R2-LOCAL | 2026-10-07T03:15:38.909093+00:00 | OPEN | local资源 | REQ15主线接收修复先行，等待其明确终态归还；X01固定增量须独审 | Mika当前派工与db_transaction_owner直接交接；本status |

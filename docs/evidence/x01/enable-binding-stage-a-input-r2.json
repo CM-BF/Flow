@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "kind": "X01_STAGE_A_SUCCESSOR_INPUT",
+  "createdAt": "2026-10-07T03:15:00.408488+00:00",
+  "sourceCommit": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+  "previousPacketCommit": "e484a6d263886dcd3874610d10c5f02482662d02",
+  "originalManifest": {
+    "path": "docs/evidence/x01/enable-binding-caller-manifest.json",
+    "bytes": 11441,
+    "sha256": "9046ad8b0388e08765a43ef94539e73933aefc5f71fb2ca3a92ec38f69e6f136"
+  },
+  "runDirectory": "docs/evidence/x01/enable-binding-stage-a-run-r2",
+  "pythonRealpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "files": [
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "gitCommit": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+      "gitBlob": "af3dbd86bc2839ac1eabbf6f615dbfac09309b8b",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-launch.py",
+      "gitCommit": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+      "gitBlob": "3a16b11329ff02156e4483ac05c4fb0ef1692598",
+      "bytes": 2569,
+      "sha256": "220dd00c7bd28b1990de7436a1e436e82591459c1b5de6513383f8d085b8a08c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-caller-ready.md",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "a46ab953af5e29da6220496be802b2d642715fc2",
+      "bytes": 4674,
+      "sha256": "ad6cdf84ac7da03c515f2a6df7a7426784de1bca424f6786f56b9a25cd8f17e2"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-amend-v8.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "035e7e86a208a493ff2b4ad7e0cb1ee0066ff48c",
+      "bytes": 1240,
+      "sha256": "0a4721ebac4c097d961aaa311862f745063a4dea1ae45caf9d3a9fbae21b605c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-input.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "0a6601d1bebe564f213c2f8a9210e9b6c12ee953",
+      "bytes": 25912,
+      "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-request.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "f17abc4b47a6f9dc4aacfbb4b485884fc98b1928",
+      "bytes": 12108,
+      "sha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878"
+    }
+  ],
+  "external": [
+    {
+      "path": "/opt/homebrew/bin/python3",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/usr/bin/git",
+      "realpath": "/usr/bin/git",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "changes": [
+    "Caller and same-PID launcher use the new exact run directory.",
+    "Caller reads this bounded support projection. Only its first two bindings change.",
+    "Original product/configuration/dependency input files and all historical raw remain unchanged."
+  ],
+  "checks": "NOT_RUN; planned strict then 17 selected product cases / 11 real tar children",
+  "limits": {
+    "lifecycleSeconds": 30,
+    "rawBytesIncludingCliReserve": 524288,
+    "mergedStreamsBytes": 458752,
+    "tailReservedBytes": 65536,
+    "cliReservedWithinTailBytes": 8192,
+    "temporarySampleBytes": 33554432,
+    "temporarySampleEntries": 4096,
+    "temporaryHardPeakProven": false,
+    "freeFloorBytes": 1107296256
+  },
+  "authorization": "NOT_OPEN. One bounded local segment uses the existing independent fresh claim receipt for the whole strict/tests sequence, not separate approval per command."
+}
