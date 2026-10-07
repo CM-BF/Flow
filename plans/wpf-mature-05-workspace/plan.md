@@ -155,3 +155,7 @@ Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-plat
 ### 已有模型通过与待补页面接线断言
 
 [独立页面覆盖审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-acceptance-coverage-review.json)与[模型覆盖补件](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-model-coverage-addendum.json)区分两层：既有pure已经以三pane中focused保留两tab证明max3拒绝第四，且验证Merge精确一pane/activeC；不重跑这些绿例。原browser需单独建立focused至少两tab再验上限，并在Merge后立即断言一pane和activechat，再Split验证保活，不能由单tab禁拆或连续操作间接冒覆盖。此为原MATURE05-01/02/03/05验收增强，不是已复现产品失败；原876候选和首0/4失败保留。compact sidebar完整密度/折叠/active、更多keyboard/reload/desktop仍开放，双390末态图与局部reduced-motion computed样式不冒所有体验通过。原panels在现20scope实施test-only增量，实际browser另择窗。
+
+### 原Arc身体读取测量分层（2026-10-07）
+
+[固定测量设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-flight-measurement-design.json)针对第二browser实际1/4失败：六exact GET均完成而server peak1，仅1200ms timer与顺序UI等待不能证明六个逻辑请求重叠；常驻SSE存在时等六个server到达才释放会自锁。原测试后继保六真实UI/六identity，先用有帽浏览器请求生命周期与visible loading证明六logical pending，再有界释放已到达HTTP holds，验六完成、server真实peak≤6、隐藏无新增及全部其余组。只删exact6而保宽松上界不构成验收。先原两test源修/必要类型，新的90s实际另择；旧0/4、1/4失败、parentUNKNOWN与rawclosed及ChromeEOFfalse原件保持。

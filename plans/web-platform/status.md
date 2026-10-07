@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**已验证的能力与交付边界：** 逐消息设置、完整草稿恢复和插件管理所选四组真实界面检查已通过；个人网页仍未更新。新网页修复后的四版本检查已通过，固定验证结果已独立通过，个人发布已实际开始但刷新服务阶段停止，优先核实并恢复接单，未完成新网页切换。
+**已验证的能力与交付边界：** 逐消息设置、完整草稿恢复和插件管理所选四组真实界面检查已通过；个人网页仍未更新。新网页修复后的四版本检查已通过，固定验证结果已独立通过，个人恢复已导入e15与四报告，身份拒绝后修正入口又被窗口名称门禁拒绝，仍未恢复接单或切换新网页。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:36:26.479Z；个人修正调用器已审并选中，等真实启动；Arc第二次浏览器失败已归还，context历史消费已合法开工。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:45:02.863Z；个人continuation入口拒绝已归还，下一fixed待审；GDEP01独立专库候选已选择待真实START；Arc测量修正源码在做，context模块局部通过待独审。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 四版本兼容与三角色冷启动已通过，e15及四报告已导入个人环境；身份检查拒绝后续恢复，服务尚未恢复。看板211已部署紧凑时间和事项归组。 |
+| 当前产出 | e15及四正式报告已导入个人环境；两次恢复均未到接单恢复，最新continuation在窗口名前置拒绝且0phase。看板211已部署；Web历史context新模块16pure与strict通过，App尚未接线。 |
 | 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
-| 当前阻塞 | ACTIVE: 个人首操作身份拒绝，修正调用器独占窗口已选尚未恢复；Arc三窗读取并发观测失败，下一测试修正未运行。 |
+| 当前阻塞 | ACTIVE: 个人修正入口尚未成功恢复；Arc第二browser实际1/4、0PNG，正文逻辑pending与serverpeak测量需修；context薄接线范围尚未交权。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：原个人/AV/Arc活动均精确归还；continuation独占SELECT，未START前不冒RUNNING，0其他重窗；两个已计普通源封套继续隔离。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：个人continuation精确RETURN；GDEP01唯一140s候选已选择，未START不冒运行。已计Arc8MiB/context16MiB/Mika16MiB普通封套隔离，消费gate历史不改。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -43,7 +43,7 @@
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验，原始receipt保留；[已释放/从未领取的派生显示验收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)沿原D04/D01后继，不撤销原限定通过；[U14/TIMING02时间首屏易读后继](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-followup.json)沿D01排队，原已审Timing不回滚 |
-| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已main cde，Lead组合PG2已验；实际backend362仍缺该修复，不冒完整材料展示 |
+| WPF-001-09 | in-progress | d01_owner | 原MATURE04-05历史消费模块已独立web-context-history/25d7v1exact3合法实施，sourcec5f896/finalbdf6clean；16pure+strict通过、1797ms CLOSED，root独审中，App薄接线未获权/未写。父context-transparency由Mika/architecture_read唯一维护，完整CT01–09仍开放；引用own证据，不复制父status。 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |

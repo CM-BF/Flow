@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T22:41:44.661693+00:00",
+  "kind": "actual existing-dashboard UI observation",
+  "method": "Existing Codex in-app browser id2/tab1, read-only DOM and one expand of MATURE04-05 take detail. No new browser/tab/server/credentials/product navigation/reload. Existing expanded GDEP/CENTER preserved.",
+  "url": "http://127.0.0.1:4320/",
+  "displayedSnapshotAt": "2026-10-07T22:40:58Z",
+  "planCount": 211,
+  "visibleClaim": {
+    "taskId": "MATURE04-05",
+    "id": "25d7e029-9334-479e-8872-61090c406e0a",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "state": "active",
+    "role": "writer",
+    "branch": "codex/web-context-history",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "scope": [
+      "apps/web/src/conversation-context-history",
+      "apps/web/src/plugin-integration/context-history.tsx",
+      "docs/evidence/wpf-mature04-web-history"
+    ],
+    "updatedAtDisplayed": "2026/10/7 15:35:02",
+    "source": "atomic take",
+    "progressSourceStatus": "NOT_REGISTERED (shown explicitly; do not infer implementation completion)"
+  },
+  "otherVisibleFindings": [
+    "GDEP01 old expanded v1 was preserved and explicitly warned that claim content/version changed; viewer must refresh detail before a new take. Root did not replace that old read snapshot.",
+    "GDEP01 and X01-VERIFIER-CENTER-WIRING01 take records remain visible in progress-source-unregistered section; Original/D05 canonical registration request is outstanding.",
+    "Context progress belongs to existing WPF-001-09 and MATURE04-05 parent owner route, not a second hand-filled status. This UI evidence proves claim visibility, not source registration or permission for extra leaves."
+  ],
+  "outcome": "The new context assignment, sole implementer, branch/worktree and exact3 scope are visible in the actual dashboard.",
+  "notClaimed": [
+    "No code verification or main integration",
+    "No product UI acceptance",
+    "No new context canonical status registration",
+    "No fresher claim than the displayed observation"
+  ]
+}

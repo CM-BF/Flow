@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-07T22:42:57.683748+00:00",
+  "taskId": "MATURE04-05",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "branch": "codex/web-context-history",
+  "source": "c5f896333458579b0e0fa65ba2b389e14084a81e",
+  "head": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
+  "remote": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
+  "remoteEqual": true,
+  "dirty": "",
+  "scopeStopped": [
+    "apps/web/src/conversation-context-history",
+    "apps/web/src/plugin-integration/context-history.tsx",
+    "docs/evidence/wpf-mature04-web-history"
+  ],
+  "claimRetained": "25d7e029-9334-479e-8872-61090c406e0a v1",
+  "productSourceBytes": 27297,
+  "suppliedBytes": 1826585,
+  "evidenceBytes": 141591,
+  "tmpBytes": 137167,
+  "ownedGroups": [
+    {
+      "name": "direct-1",
+      "pid": 74097,
+      "pgid": 74097,
+      "scratchAbsent": true,
+      "pidAbsent": true,
+      "pgidAbsent": true
+    },
+    {
+      "name": "types-1",
+      "pid": 89237,
+      "pgid": 89237,
+      "scratchAbsent": true,
+      "pidAbsent": true,
+      "pgidAbsent": true
+    }
+  ],
+  "linksChecked": [
+    "source-local-review-input.json",
+    "quality.json"
+  ],
+  "checks": "16 direct PASS + affected strict PASS on4366466; final one-line heading source-only",
+  "browser": "NOT_RUN",
+  "actualApp": "NOT_INTEGRATED",
+  "readableReviewInput": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/source-local-review-input.json",
+  "inputSha256": "eaa49afc2404cee73650a5dd9e44e954074bb86c6b03d8c2e35e15ca29ad86e0",
+  "children": 0,
+  "pendingLaunch": 0
+}

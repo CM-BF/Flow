@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-07T22:09:31.899Z",
+  "recordedAt": "2026-10-07T22:45:02.863Z",
   "state": "PRIOR_THREE_CLOSED_TWO_NEW_CANONICAL_SOURCES_PENDING_D05",
   "authority": "Request only; not parallel sourcewriter or generatedprogress. Preserve owner unique status and exactclaim. Do not retake activeclaims.",
   "actualObservation": "Arc/X01 root20:39 API208+2 fixed; laterTIMING02 take20:40:08 andmanager-readownstatus20:41:20/source-switch. No newGET/claimed-live-registration.",
@@ -88,13 +88,16 @@
         "statusPath": "plans/gdep01-dependency-batch/status.md"
       },
       "claimId": "f2442a2f-357e-42d5-bb3d-da1c261684ab",
-      "claimVersion": 1,
-      "scopeCount": 5,
+      "claimVersion": 2,
+      "scopeCount": 6,
       "claimCreatedAt": "2026-10-07T22:04:52Z",
       "ordinaryActualStart": "2026-10-07T22:03:42Z",
       "checkpoint": "3c0697986dfd9456d8afbf322004b97dbd360270 clean",
       "state": "PENDING_REGISTRY_SOURCE",
-      "boundary": "Ordinarypreparationstart precedes claim; no inferred productwritebeforeclaim."
+      "boundary": "Ordinarypreparationstart precedes claim; no inferred productwritebeforeclaim.",
+      "ownerFixed": "850d61376373eb59df8afdf6004ef7dda030bd10",
+      "currentEvidence": "source/local/PG preparation APPROVED; actual selected but START not yet reported",
+      "parentRoutingCorrection": "FLOW-001 T04-DEPENDENCY-READ-01 must reference this same owner WT/status, not pending-unclaimed; do not duplicate check facts."
     },
     {
       "taskId": "X01-VERIFIER-CENTER-WIRING01",
@@ -115,10 +118,12 @@
       "ordinaryActualStart": "2026-10-07T22:04:21Z",
       "checkpoint": "base69a71 ownmetadata dirty",
       "state": "PENDING_REGISTRY_SOURCE",
-      "boundary": "ExacttaskId confirmed from uniqueownerstatus heading; explicitplan/evidenceDirs mustnot derive extra01."
+      "boundary": "ExacttaskId confirmed from uniqueownerstatus heading; explicitplan/evidenceDirs mustnot derive extra01.",
+      "ownerFixed": "f440e53d2",
+      "currentEvidence": "source/local APPROVED and cleanSTOP; real PG/main pending, original assumed-writer HOLD removed"
     }
   ],
-  "requestedAction": "Original existing D05 owner: add only two newly supplied unique sources after exact ownstatus/taskId verification. Preserve prior211 deployment and three closedsources. No secondwriter or repeatedAPIpoll; claimvisible doesnotmeanregistered.",
+  "requestedAction": "Original existing D05 writer register the two explicit unique sources in one natural batch; no new writer/task, no duplicate authority. FLOW owner correct same GDEP T04 route.",
   "latestObservation": {
     "source": "Mika21:19:43 readonly",
     "main": "3f5ee09f",

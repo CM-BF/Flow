@@ -626,3 +626,7 @@ WPF-001-37 / TIMING02 已完成的紧凑时间/关联事项阅读片已main并�
 P01诊断正确性设计留原TODO05/REQ22–23，不在本次context前新take。W01限时只读证实精确taskId WPF-P01（非协议P01），现唯一web-plugin-host/plans/wpf-p01-plugin-host三件套、旧28b70记录；主线plugin-system仅入口。旧6ce3/basec890、15模块/12browser/PH-R1..R4和maina26a历史保留；原精确start/finish UNKNOWN，不能用旧take/main观察时间补造。未来若迁web-plugin-diagnostics，应同taskId替换D05权威WT/同planDir，先合法scope交权与claim，不保两个status或复制Arc整blob。当前不迁、不写旧树。
 
 MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范围，fixedb129/独立web-context-history、263源1826585B。原子take沿已有子项名，不新建同义task；父status仍context-transparency唯一，Web阶段own evidence由本TODO09索引。实现先做历史reader/controller/真实Dialog，App/session/Thread与capability等尚未交权不写，全部当前窗口能力继续OPEN。
+
+### MATURE04-05 模块交付与薄接线路由（2026-10-07）
+
+原WPF-001-09引用[父MATURE04唯一计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)和[Web模块限定审查](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-history-module-review.json)。新历史模块c5f896已16pure+strict通过并限定批准；ui.layout只打开UI，App/session私有reader仍须在真实身份/当前view/task与请求返回时授权，完整CT01–09不因本片关闭。接线前仅Arc真实持有的App/session两叶STOP→partial-amend；Thread另核真实writer。两个固定基线b129与Arc e611后续由Original窄合并保双方改动，交权不等源码已集成或组合浏览器通过。领取已真实可见：[现有UI观察](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-context-take-observation.json)，不新增同ID第二status。

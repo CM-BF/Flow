@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T22:08:11.964Z；第三次真实HTTP两项同轮通过，首浏览器在连接前置失败，公开Cookie入口已窄修并获审，新四组尚未运行。 |
+| 最近更新 | 2026-10-07T22:45:02.863Z；第三HTTP同轮两项通过；第二browser d034实际1/4、0PNG/50944ms CLOSED并归还；e611全20STOP后新两test测量修正普通段实施。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；完整Arc验收尚未完成。 |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 最多三窗格的拆分组合、草稿保护与流读取实现已通过局部回归及源码审查；第三轮真实HTTP两项同轮通过。首浏览器0/4、0图，修后四组尚待新独立验证。 |
-| 下一可用交付 | 验证修后真实连接入口，再验三窗格布局、刷新恢复、双主题与减少动画偏好；保草稿身份和两条流读取上限，个人恢复优先。 |
-| 当前阻塞 | ACTIVE: 第三轮HTTP两项已通过；首浏览器在Owner token前置超时，未进入四组。公开?recovery=1入口与Connect heading已修并获审，既有模型边界已通过；d034补齐三pane上限与Merge中间可见态两处browser wiring断言并获独审，1205干净停写，新90s候选待实际结果。 |
+| 当前产出 | 最多三pane布局与保护源码/局部已审，第三HTTP同轮两项通过；第二browser仅layout-navigation通过，three-pane-reads以serverpeak期望6实际1失败，其余未通过/0PNG。 |
+| 下一可用交付 | 修正六逻辑读请求与服务端到达并发的测量区别，保真实UI/六identity/后续组断言；固定源独审后再择新的90s浏览器窗口，不提高超时或借旧额度。 |
+| 当前阻塞 | ACTIVE: d034第二browser1/4失败，旧1200ms timer与顺序UI不建立六逻辑pending；有常驻SSE的HTTP1下等待六server齐到有自锁风险。原作者仅两test有界instrumentation/hold修正，0实际browser授权。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |
@@ -64,4 +64,4 @@ GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先�
 
 当前Arc实施继续沿原20scope与稳定composer父级。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
 
-当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）；首browser0/4、0PNG/12808ms CLOSED且完整资源归还；source876731f公开入口窄修已独审；d034/1205两项browser wiring增强已获root7379批准，旧876候选不改，新browser四组NOT_RUN。来源为Arc唯一status和root第三HTTP/首browser审查，不替子task合成整体PASS。
+当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）。首browser0/4、0PNG/12808ms CLOSED；旧876入口候选未运行，后继d034补wiring并实际1/4、0PNG/50944ms CLOSED，22:29:52精确ownedRETURN。parent closure UNKNOWN/worker result null与raw context/httpClosed true分层保留，Chrome两流EOF false不改。固定e611已封；两test新测量修正见[计划设计](plan.md)，新的实际浏览器尚未授。来源沿子task唯一status，不合成整体PASS。
