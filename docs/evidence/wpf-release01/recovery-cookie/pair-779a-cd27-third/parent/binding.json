@@ -1,0 +1,784 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND",
+  "task": "WPF-RELEASE01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "head": "eada6fd65491f86e1a3bddead407e79090bea852",
+  "implementation": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "claim": {
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+    }
+  ],
+  "harness": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "chrome": {
+    "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "bytes": 367696,
+    "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+  },
+  "chromeVersion": "154.0.8037.99",
+  "tsxLoader": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+  "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+  "nativeBoundaryApproval": {
+    "path": "/private/tmp/root-release01-recovery-c1-native-boundary-20261007.json",
+    "realpath": "/private/tmp/root-release01-recovery-c1-native-boundary-20261007.json",
+    "bytes": 902,
+    "sha256": "7bfb9880f23c98c3edb51cead72fdc2fc8fbb8530aceb81972424bacbc69e57b"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-release01-c3-single-use-source-review-20261007.json",
+    "realpath": "/private/tmp/root-release01-c3-single-use-source-review-20261007.json",
+    "bytes": 4229,
+    "sha256": "8b311b5d0166f57f5baa49d50ad2f7d7a6d4c8ef8eb04f91411698e1bb065caa"
+  },
+  "reviewInputs": {
+    "existingLifecycleAcceptance": {
+      "path": "/private/tmp/root-release-c3-native-boundary-acceptance-20261007.json",
+      "realpath": "/private/tmp/root-release-c3-native-boundary-acceptance-20261007.json",
+      "bytes": 980,
+      "sha256": "084ec5af8937a8e4ac32ab6eeec7aa6a930169ab651efd512224435c3e18415c"
+    },
+    "newWebActual": {
+      "path": "/private/tmp/root-release01-web-artifact-result-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-web-artifact-result-review-20261007.json",
+      "bytes": 7119,
+      "sha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b"
+    },
+    "harness8964": {
+      "path": "/private/tmp/root-release01-8964-source-local-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-8964-source-local-review-20261007.json",
+      "bytes": 5554,
+      "sha256": "20dccd8d8ff126be623fa13e97a12d9317ec53156a33f2b4299f3296740e7acd"
+    },
+    "finalBackend": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/independent-result-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/independent-result-review.json",
+      "bytes": 2101,
+      "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566"
+    },
+    "previousPairSource": {
+      "path": "/private/tmp/root-release01-recovery-c1-intake-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-recovery-c1-intake-review-20261007.json",
+      "bytes": 4137,
+      "sha256": "1ec952998f812ec6b35d0687a9e70e8bfedc95182d303c2e629a55b8f69ce6cd"
+    },
+    "firstFailedActual": {
+      "path": "/private/tmp/root-release01-c1-failed-result-return-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-c1-failed-result-return-review-20261007.json",
+      "bytes": 5814,
+      "sha256": "ad5d7acd5d799cc947a0152674bc1652c9b787492f6fc05fd805e12a861127b8"
+    },
+    "previousFormal2Review": {
+      "path": "/private/tmp/root-release01-c2-failed-result-return-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-c2-failed-result-return-review-20261007.json",
+      "bytes": 5023,
+      "sha256": "8ddcff6de15e117222b73fe7cb6ff2674eaaa842d7343a623f946f07dfdbb085"
+    },
+    "diagnosticSourceReview": {
+      "path": "/private/tmp/root-release01-cookie-diagnostic-source-preparation-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-cookie-diagnostic-source-preparation-review-20261007.json",
+      "bytes": 5110,
+      "sha256": "22da126669f24e29598f01ba472766e7466579eb9c4a2f96fef9256477b2cc23"
+    },
+    "diagnosticActualReview": {
+      "path": "/private/tmp/root-release01-cookie-diagnostic-result-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-cookie-diagnostic-result-review-20261007.json",
+      "bytes": 7613,
+      "sha256": "d8ba604bd7518f9a965fe56c62f591436c54ae09278b1ab4dd17ffb683682695"
+    },
+    "connectionPolicyResearch": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/root-policy-research.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/root-policy-research.json",
+      "bytes": 4568,
+      "sha256": "0573a20a31b2449371300a18a0d8c8e2174055aee497019bbbbf270602c58990"
+    },
+    "connectionPolicyPeer": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/peer-policy-research.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/peer-policy-research.json",
+      "bytes": 7680,
+      "sha256": "9e69078f547c4a554e1a69f97e6e32fe83329a207f3b9b0a98a5c4dd1ff05128"
+    }
+  },
+  "measurementHelper": {
+    "path": "/private/tmp/rel01-recovery-c3/measure.py",
+    "realpath": "/private/tmp/rel01-recovery-c3/measure.py",
+    "bytes": 8979,
+    "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "measurementRoot": {
+    "dev": 16777234,
+    "ino": 124382305
+  },
+  "proposedLimits": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalEstimateBytes": 134217728,
+    "startFreeBytes": 16298278912,
+    "stopFreeBytes": 1207959552,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0
+  },
+  "pins": [
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.js",
+      "bytes": 648,
+      "sha256": "499da5dd8585212108a1443793de31ebc061ca7db02343f107955f261180cdfc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/bin/esbuild",
+      "bytes": 9350,
+      "sha256": "183d6ead2dbc3af51aec767d5395f86fe54fbbc2d2aa8e54feb4e31d76a62f7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "bytes": 697,
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "bytes": 1063,
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "bytes": 3481,
+      "sha256": "4637f4dbfef9cfc01baeb5f5d2cb63fa0901522c96915ea2227290558d27123e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "bytes": 648,
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "bytes": 704,
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/common/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/common/index.js",
+      "bytes": 115517,
+      "sha256": "f4a6b14f5ba21a118b58a6a25eb0b281a3acc4157023b014e0197145056124a4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "bytes": 36487,
+      "sha256": "54bf5935cf339938408c656bde958047a1217bf77434acdf75a0c717cddaaeae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "bytes": 806,
+      "sha256": "b97fa53a6ab864f51c9c48b5e4647d0acae45ba2948c5d78e38bfeb56755d974"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "bytes": 1400,
+      "sha256": "1deb265617d0e87b6d05bf8b3d5bf73cd4b788665c249c609a01b94ceff2eea1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "bytes": 332,
+      "sha256": "97a9d7b9d959f9528c46660beedcef69adc1ae29c71948b1e695860511a711d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "bytes": 124418,
+      "sha256": "8690135061bc49d187143493b82d26a09b7fb71d6dd817d2242cc9dc52506de9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "bytes": 675,
+      "sha256": "a57842a725ba112ab029d3a0748f4ba5dc7b7a38bc9d38e7c4985af36aaa3c84"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "bytes": 32,
+      "sha256": "20f38ff0210e4f838032714d0590012e4fb82ad4095c8930652a13b37420cd80"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "bytes": 506,
+      "sha256": "33f5f6755270054783f4c568d0d48d4a79fecde965ec6f91ca27f0f949ba6da6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "bytes": 1061,
+      "sha256": "853ed9c14711bb11333f3a53803965149509bac4bc515492707f73c83ed9193d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "bytes": 738,
+      "sha256": "dad3f9708f4eceb99a5885f9c41b03b01bf30db1418514d7b1dc0637f45cdc21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "bytes": 474,
+      "sha256": "a29a3db7a21cfd665df96d4cb800b527139903df6e6c52c206f944e854ab59d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "bytes": 497,
+      "sha256": "028063d20bd49083f03a0b1ed4f7a3d55fac1f64f5aca0e58e1ec61601f20ee7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/independent-result-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/independent-result-review.json",
+      "bytes": 2101,
+      "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/manifest.json",
+      "realpath": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/manifest.json",
+      "bytes": 1651,
+      "sha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/manifest.json",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/manifest.json",
+      "bytes": 3196606,
+      "sha256": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/runner/src/verifier.ts",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/index.ts",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/scheduler.ts",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+      "bytes": 43134,
+      "sha256": "1eb0ad087375bf296e1b7bf9ecf0628fd9aeae54c071aa684c80012964def7bd"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+      "bytes": 16198,
+      "sha256": "3391762eef4a93bc9a03acee585f6a2c4b11a5e59519f633e17bf7df085b5102"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/client/src/index.ts",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/client/src/index.ts",
+      "bytes": 57553,
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/contracts/src/index.ts",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/packages/contracts/src/index.ts",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/backend-release/index.mjs",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/browser-session-configuration.mjs",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/web-release.mjs",
+      "realpath": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/inputs.json",
+      "realpath": "/private/tmp/rel01-recovery-c3/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/measure.py",
+      "realpath": "/private/tmp/rel01-recovery-c3/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/supervisor.py",
+      "realpath": "/private/tmp/rel01-recovery-c3/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/tsconfig.json",
+      "realpath": "/private/tmp/rel01-recovery-c3/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/worker.mjs",
+      "realpath": "/private/tmp/rel01-recovery-c3/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4/manifest.json",
+      "realpath": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4/manifest.json",
+      "bytes": 1651,
+      "sha256": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+      "realpath": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+      "bytes": 222,
+      "sha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b"
+    },
+    {
+      "path": "/private/tmp/root-release-public-settings-supply-20261007.json",
+      "realpath": "/private/tmp/root-release-public-settings-supply-20261007.json",
+      "bytes": 2006,
+      "sha256": "03ba8efaecf1c10d8f5452667a7bb6aa64ba5dbefe6b77ceb270e9db276e5bfc"
+    },
+    {
+      "path": "/private/tmp/root-release01-8964-source-local-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-8964-source-local-review-20261007.json",
+      "bytes": 5554,
+      "sha256": "20dccd8d8ff126be623fa13e97a12d9317ec53156a33f2b4299f3296740e7acd"
+    },
+    {
+      "path": "/private/tmp/root-release01-web-artifact-result-review-20261007.json",
+      "realpath": "/private/tmp/root-release01-web-artifact-result-review-20261007.json",
+      "bytes": 7119,
+      "sha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b"
+    },
+    {
+      "path": "/private/tmp/root-svc09-retained-three-app-asset-integrity-20261007.json",
+      "realpath": "/private/tmp/root-svc09-retained-three-app-asset-integrity-20261007.json",
+      "bytes": 13073,
+      "sha256": "b655c872739f25d0dfc0611d988e53b88c4d096e2d2041f1c4ec76a63307a65c"
+    },
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/manifest.json",
+      "realpath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/manifest.json",
+      "bytes": 1604,
+      "sha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+    },
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/manifest.json",
+      "realpath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/manifest.json",
+      "bytes": 1651,
+      "sha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+    }
+  ],
+  "runtime": "NOT_RUN",
+  "budget": "PROPOSED_NEW_INDEPENDENT180000_INCLUDING30000_NO_GRANT_NO_PRIOR_CREDIT",
+  "expected": {
+    "apps": 4,
+    "retainedBearerApps": 3,
+    "newCookieApp": 1,
+    "checksPerApp": [
+      "read",
+      "send",
+      "samekeyrecover",
+      "negotiation"
+    ],
+    "cookieNewApp": [
+      "reload-recovery",
+      "original-key-durable-retry",
+      "late-old-logout-headers-preserve-new-cookie"
+    ],
+    "allReportsAfterOwnedCleanup": true
+  },
+  "receivingContract": "Actual outer exit0 + unique terminal with sealed result/budget/raw manifest + worker0 + both owned groups absent/complete EOF/no dropped streams + marked DB normalDROP + center/proxy closed + 4 actual imported verified reports, same exactbackend/context. File PASS alone insufficient.",
+  "pgConnections": {
+    "databases": 1,
+    "serverPoolMax": 8,
+    "fixturePoolMax": 1,
+    "fixturePoolsSequential": true,
+    "conservativeConnectionCeiling": 12,
+    "cleanupExpected": 0,
+    "budgetBytes": 134217728,
+    "budgetKind": "planning allowance, not measured DB/WAL peak or independently enforced PG quota",
+    "schedulerPoolMax": 3,
+    "schedulerUseListenNotify": false
+  },
+  "preparedSource": [
+    {
+      "path": "/private/tmp/rel01-recovery-c3/supervisor.py",
+      "realpath": "/private/tmp/rel01-recovery-c3/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/worker.mjs",
+      "realpath": "/private/tmp/rel01-recovery-c3/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/inputs.json",
+      "realpath": "/private/tmp/rel01-recovery-c3/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/measure.py",
+      "realpath": "/private/tmp/rel01-recovery-c3/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/tsconfig.json",
+      "realpath": "/private/tmp/rel01-recovery-c3/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    }
+  ],
+  "rootIdentities": {
+    "backendDirectory": {
+      "dev": 16777234,
+      "ino": 124198066
+    },
+    "backendRoot": {
+      "dev": 16777234,
+      "ino": 124198073
+    },
+    "webStore": {
+      "dev": 16777234,
+      "ino": 124271607
+    },
+    "webArtifact": {
+      "dev": 16777234,
+      "ino": 124271651
+    }
+  },
+  "closedPriorSegments": [
+    {
+      "kind": "old 6c threeApp",
+      "elapsedMs": 23495,
+      "totalMs": 180000,
+      "unusedTransferred": false
+    },
+    {
+      "kind": "newWeb build",
+      "elapsedMs": 25241,
+      "totalMs": 150000,
+      "unusedTransferred": false
+    },
+    {
+      "kind": "new pair c1 FAILED",
+      "elapsedMs": 56504,
+      "totalMs": 180000,
+      "unusedMs": 123496,
+      "state": "CLOSED",
+      "unusedTransferred": false,
+      "returnReceipt": {
+        "path": "/private/tmp/rel01-recovery-c1-actual-an571_hj/return-receipt.json",
+        "realpath": "/private/tmp/rel01-recovery-c1-actual-an571_hj/return-receipt.json",
+        "bytes": 2215,
+        "sha256": "e4e6da2515b4617cc94b8ae2db0d3613635eb931eb9f9a6f9d8405eff25944f0"
+      },
+      "result": {
+        "path": "/private/tmp/rel01-recovery-c1/result.json",
+        "realpath": "/private/tmp/rel01-recovery-c1/result.json",
+        "bytes": 194075,
+        "sha256": "bcdf0dc2c4f48d3cc6412d525f52c29e3905840ac2b618f628f147edf27f8c23"
+      },
+      "terminal": {
+        "path": "/private/tmp/rel01-recovery-c1/terminal.json",
+        "realpath": "/private/tmp/rel01-recovery-c1/terminal.json",
+        "bytes": 407,
+        "sha256": "d2fe0b1c24ab706e1f398b1fa8a975b848790e3a2f8aa9633b44b8946e7b4cb8"
+      }
+    },
+    {
+      "phase": "formal-c2",
+      "state": "FAILED_CLOSED",
+      "spentMs": 26554,
+      "limitMs": 180000,
+      "unusedMs": 153446,
+      "creditToThisPhase": 0,
+      "review": {
+        "path": "/private/tmp/root-release01-c2-failed-result-return-review-20261007.json",
+        "realpath": "/private/tmp/root-release01-c2-failed-result-return-review-20261007.json",
+        "bytes": 5023,
+        "sha256": "8ddcff6de15e117222b73fe7cb6ff2674eaaa842d7343a623f946f07dfdbb085"
+      }
+    },
+    {
+      "phase": "cookie-parser-diagnostic-first",
+      "state": "DIAGNOSTIC_COMPLETE_CLOSED_NOT_COMPATIBILITY",
+      "spentMs": 14881,
+      "limitMs": 90000,
+      "unusedMs": 75119,
+      "creditToThisPhase": 0,
+      "review": {
+        "path": "/private/tmp/root-release01-cookie-diagnostic-result-review-20261007.json",
+        "realpath": "/private/tmp/root-release01-cookie-diagnostic-result-review-20261007.json",
+        "bytes": 7613,
+        "sha256": "d8ba604bd7518f9a965fe56c62f591436c54ae09278b1ab4dd17ffb683682695"
+      }
+    }
+  ],
+  "preparationClaimObservation": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/claim-live.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/claim-live.json",
+    "bytes": 846,
+    "sha256": "f197db46d4f4e77772025d698a6063658b7c699c174aae9a7edf6c6ec4dd59a9"
+  },
+  "limitations": [
+    "Runtime alias is statically bound but not imported/tested in preparation.",
+    "Same native lifecycle, no custom Chrome outer egress/write sandbox. Worker deny personal61228 retained; Chrome only exact ownedproxy with no direct fallback.",
+    "Fresh future admission must raise planning floor to complete current sum and verify all fixedroots/native/inputs.",
+    "Backend full inventory verified by existing artifact verifier at actual; preparation only checks its fixedmanifest and exact imported entry targets."
+  ],
+  "resourceComposition": {
+    "classification": "MANAGER_FRESH_FORWARD_SINGLE_SELECTED_PHASE",
+    "grant": "RELEASE-C3-20261007-ONCE",
+    "managerCanonicalAt": "2026-10-07T17:54:01.526Z",
+    "completeFloorBytes": 16298278912,
+    "ownSelectedEnvelopeBytes": 210763776,
+    "actualGrant": true,
+    "higherActualCompleteSumWins": true,
+    "priorBudgetsClosedNoCredit": true,
+    "K01RecoveredAt": "2026-10-07T17:48:38.570227Z",
+    "singleReserveAlreadyIncluded": true,
+    "tinyMetadataNotAddedAgain": true
+  },
+  "metadataBindingOnly": {
+    "sourceTarget": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+    "previousHead": "931e302238f2add57f3e148dc8b4eea685e68aef",
+    "currentHead": "eada6fd65491f86e1a3bddead407e79090bea852",
+    "runnableUnchanged": true
+  },
+  "sourceChange": {
+    "previousSource": "fc2916c275efe86203d91ec33656ea9871eac42a",
+    "path": "apps/web/test/web-release-compatibility.fixture.ts",
+    "summary": "One upstream httpRequest agent:false matches existing Connection:close. No globalAgent/request headers/body/ACK/Cookie/lateLogout/400 changes. Candidate causal explanation remains UNKNOWN."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "source": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "actualHead": "eada6fd65491f86e1a3bddead407e79090bea852",
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+    }
+  ],
+  "state": "APPROVED_SCOPED_FIXED_FOUR_APP_COMPATIBILITY_AND_COMPLETE_RETURN",
+  "actualOuterExit": 0,
+  "formalReports": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced"
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251"
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6"
+    },
+    {
+      "label": "recovery-779a",
+      "artifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "compatibilityId": "071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7"
+    }
+  ],
+  "checksPerApp": [
+    "read",
+    "send",
+    "samekeyrecover",
+    "negotiation"
+  ],
+  "newAppCookieEvidence": {
+    "cookieHidden": true,
+    "tokenNotStored": true,
+    "cookieRead": true,
+    "explicitRestoreNoPost": true
+  },
+  "newAppLogoutEvidence": {
+    "actualHeldHeaders": true,
+    "oldReadRevoked": true,
+    "oldStreamsClosed": true,
+    "newerCookiePreserved": true,
+    "newerReadReady": true,
+    "runningTaskPreserved": true
+  },
+  "publicContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "chargeMs": 26788,
+  "limitMs": 180000,
+  "unusedMs": 153212,
+  "completeReturnAt": "2026-10-07T18:01:09.576114+00:00",
+  "runtimeClosed": true,
+  "providerQueries": 0,
+  "limits": [
+    "UNKNOWN retry occurs after reload and before logout; retry after a new login remains unverified.",
+    "agent:false passed this fixed pair once; unique HPE root cause remains UNKNOWN.",
+    "No personal deployment or moving-main compatibility.",
+    "Prior c1/c2 FAILED and diagnostic captures remain immutable."
+  ],
+  "originals": "index.json",
+  "independentReview": {
+    "path": "root-actual-review.json",
+    "bytes": 8807,
+    "sha256": "6e24e157b7e0dc9e5200012c269a8d072a8034037846dda9944cb4345a54bc31"
+  }
+}

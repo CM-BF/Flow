@@ -1,0 +1,253 @@
+{
+  "taskId": "WPF-RELEASE01",
+  "status": "READY_FIXED_SCOPED_FOUR_APP_COMPATIBILITY_MAIN_AND_RELEASE_INTAKE",
+  "implementation": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "actualMetadata": "eada6fd65491f86e1a3bddead407e79090bea852",
+  "scope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts"
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+    }
+  ],
+  "web": {
+    "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+  },
+  "backend": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+  },
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "formalReports": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced/report.json",
+        "bytes": 791,
+        "sha256": "fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced"
+      },
+      "checkFiles": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced/read.json",
+          "bytes": 394,
+          "sha256": "820aa18c1d7cb39f6d4274e9f435032cbc3fb002c0da61ece46aaccee8dce119"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced/send.json",
+          "bytes": 384,
+          "sha256": "6aa31ba29a424d33d26b1b19ff26823ad6360d4d62f9b4b1e01334e38f85221b"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced/recover.json",
+          "bytes": 376,
+          "sha256": "197d6167f629296fd332ac1eeb78ae12850c7d45bd991ddcb30b1bdfcc8cadb1"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced/negotiation.json",
+          "bytes": 410,
+          "sha256": "6d3c6aa100f37f2df7ef42d0905797cd43f3d42f146b6992829bee3a2966a181"
+        }
+      ]
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251/report.json",
+        "bytes": 791,
+        "sha256": "15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251"
+      },
+      "checkFiles": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251/read.json",
+          "bytes": 394,
+          "sha256": "38756e6c1c07b0505c17205f57df4baed2e15509f4aabe6fb66391d0b173ef93"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251/send.json",
+          "bytes": 384,
+          "sha256": "eed8b21722398b2f4d116f610a195b6667cfe0ed2334e9739c5be4033a91d970"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251/recover.json",
+          "bytes": 376,
+          "sha256": "ae7db5d776fc49e9930b3c0e9c62619f2c32edcc85ea9a20c57ff45234ef8fcf"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251/negotiation.json",
+          "bytes": 410,
+          "sha256": "3590f9267ae86c400c2d7481cad4107403ad0fa018d73d3b911c13ee622edcc6"
+        }
+      ]
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6/report.json",
+        "bytes": 791,
+        "sha256": "366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6"
+      },
+      "checkFiles": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6/read.json",
+          "bytes": 394,
+          "sha256": "ab0da90560b4027f8b5818607cf6451b79c2b5db53a4f14074b97f80f6794772"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6/send.json",
+          "bytes": 384,
+          "sha256": "a3234b428b9656ce3b7f4ac3775d0655d5fa54afe8b50f9b3eb5d34b6d17dd04"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6/recover.json",
+          "bytes": 376,
+          "sha256": "32a8e0034cbb385bb47a0dab26af1516aaa60e003e0a1cf50bb55dae1d33c2ef"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6/negotiation.json",
+          "bytes": 410,
+          "sha256": "74cba02449cb4e2744c6df385fc996f7b0cffcfe13e70c10deb12ab7611c1c35"
+        }
+      ]
+    },
+    {
+      "label": "recovery-779a",
+      "artifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "compatibilityId": "071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7/report.json",
+        "bytes": 791,
+        "sha256": "071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7"
+      },
+      "checkFiles": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7/read.json",
+          "bytes": 394,
+          "sha256": "635edef67b4e58f95c326fbe9d7795aebc28fd5487849dbb04ce36c39f0d441f"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7/send.json",
+          "bytes": 384,
+          "sha256": "5a2ad26b0efc043361b4d04ca8deafbde5b6561e382e11ddd2ecb01bd1ec4ecc"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7/recover.json",
+          "bytes": 376,
+          "sha256": "aaf9df4e95aa4644402ed8b44175cb4b48173c128b0c2d360fd3fbf6eea8d6c2"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7/negotiation.json",
+          "bytes": 410,
+          "sha256": "951e37a83ba0763042b9d501c5e70958f40db4bfaa283a3ec9ecd8ac3147d09a"
+        }
+      ]
+    }
+  ],
+  "formalReportStore": "raw/fixture/compatibility-state/web-compatibility",
+  "checks": {
+    "state": "PASSED",
+    "apps": 4,
+    "each": [
+      "read",
+      "send",
+      "samekeyrecover",
+      "negotiation"
+    ],
+    "newCookie": {
+      "cookieHidden": true,
+      "tokenNotStored": true,
+      "cookieRead": true,
+      "explicitRestoreNoPost": true
+    },
+    "lateLogout": {
+      "actualHeldHeaders": true,
+      "oldReadRevoked": true,
+      "oldStreamsClosed": true,
+      "newerCookiePreserved": true,
+      "newerReadReady": true,
+      "runningTaskPreserved": true
+    },
+    "runtime": "180000ms CLOSED charge26788; no credit",
+    "cleanup": "outer/return-receipt.json"
+  },
+  "sourceReview": "../connection-policy-candidate/root-source-preparation-review.json",
+  "actualReview": "root-actual-review.json",
+  "retainedHistory": [
+    "../pair-779a-cd27-first/README.md",
+    "../pair-779a-cd27-second/README.md",
+    "../cookie-parser-diagnostic/actual-first/README.md"
+  ],
+  "limits": [
+    "UNKNOWN retry occurs after reload and before logout; retry after a new login remains unverified.",
+    "agent:false passed this fixed pair once; unique HPE root cause remains UNKNOWN.",
+    "No personal deployment or moving-main compatibility.",
+    "Prior c1/c2 FAILED and diagnostic captures remain immutable."
+  ],
+  "main": "NOT_INTEGRATED current harness; narrow shared product repair already main via MSG",
+  "deployment": "NOT_DEPLOYED by this task; Original release owner must accept fixed pair/reports",
+  "reviewSha256": "6e24e157b7e0dc9e5200012c269a8d072a8034037846dda9944cb4345a54bc31",
+  "webDescriptor": {
+    "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+    "bytes": 222,
+    "sha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b"
+  },
+  "backendDescriptor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+    "bytes": 275,
+    "sha256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4"
+  },
+  "actualImportedStore": "/private/tmp/rel01-recovery-c3/raw/release-recovery-c3-20261007-175754-6f45bb/fixture/compatibility-state",
+  "publicationAuthority": "Original SVC06B release owner; no dependency on SVC09A or full MSG/Plugin",
+  "svc06bAcceptanceEntry": {
+    "task": "SVC06B",
+    "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-independent-review.json",
+      "bytes": 2101,
+      "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566"
+    },
+    "originalApprovedArtifactTarget": "a6adfd5970aa77c2440f8eeb89b285ed90bae565",
+    "consumer": "Original SVC06B / personal preview release owner",
+    "instruction": "Use existing fixed release interfaces to accept these verified compatibility records; no dependency on SVC09A or message-settings dual-slot feature."
+  }
+}

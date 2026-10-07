@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T17:57:54.993817+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-recovery",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "createdAt": "2026-10-07T14:52:41.385Z",
+    "updatedAt": "2026-10-07T15:10:52.444Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "eada6fd65491f86e1a3bddead407e79090bea852",
+  "source": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "pins": 74,
+  "backendEntries": 15628,
+  "backendFiles": 12677,
+  "webAssets": 40,
+  "allRootsMatched": true,
+  "availableBytes": 19502706688,
+  "minimumBytes": 16298278912,
+  "resourceComposition": {
+    "classification": "MANAGER_FRESH_FORWARD_SINGLE_SELECTED_PHASE",
+    "grant": "RELEASE-C3-20261007-ONCE",
+    "managerCanonicalAt": "2026-10-07T17:54:01.526Z",
+    "completeFloorBytes": 16298278912,
+    "ownSelectedEnvelopeBytes": 210763776,
+    "actualGrant": true,
+    "higherActualCompleteSumWins": true,
+    "priorBudgetsClosedNoCredit": true,
+    "K01RecoveredAt": "2026-10-07T17:48:38.570227Z",
+    "singleReserveAlreadyIncluded": true,
+    "tinyMetadataNotAddedAgain": true
+  },
+  "binding": {
+    "path": "/private/tmp/rel01-recovery-c3/binding.json",
+    "realpath": "/private/tmp/rel01-recovery-c3/binding.json",
+    "bytes": 47072,
+    "sha256": "048398e72a16ee755203d51755a84a42bbb3459d804f7283e05db6186386860a"
+  },
+  "manifest": {
+    "path": "/private/tmp/rel01-recovery-c3/manifest.json",
+    "realpath": "/private/tmp/rel01-recovery-c3/manifest.json",
+    "bytes": 5479,
+    "sha256": "43b3eb84d7dde65526d574e604d2595a6c56c93ac9bc8b231307aacd63a279d9"
+  },
+  "adminSource": {
+    "git": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts",
+    "blobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+    "field": "adminUrl",
+    "mode": "0600",
+    "singleLink": true,
+    "identity": {
+      "dev": 16777234,
+      "ino": 124398319
+    }
+  },
+  "sourceGate": {
+    "path": "/private/tmp/rel01-recovery-c3-actual-7d5yktbk/gate.json",
+    "realpath": "/private/tmp/rel01-recovery-c3-actual-7d5yktbk/gate.json",
+    "bytes": 1189,
+    "sha256": "f2cd7cb3494a0e5b684fb647064b4b95fe87bee70c93330a56d35dbd684d7a65"
+  }
+}

@@ -1,0 +1,689 @@
+{
+  "startedAt": "2026-10-07T17:58:39.819Z",
+  "finishedAt": "2026-10-07T17:59:05.955Z",
+  "results": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "4a3a4e1f-82f4-4877-b07a-9f71ddfa1b85",
+      "taskId": "7fdff534-1713-413a-a9f1-b0e8af104d51",
+      "fault": {
+        "path": "/api/conversations/4a3a4e1f-82f4-4877-b07a-9f71ddfa1b85/turns",
+        "key": "8a76a8da-ab39-4587-9337-1a9774745ef3:turn",
+        "bodySha256": "c5ae7510939f6f55e6f56fdadd41757773dc036000756f94af5bfc39548aa12a",
+        "status": 202,
+        "contentLength": 1239,
+        "contentType": "application/json; charset=utf-8",
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "sameRequest": true,
+        "matches": 1
+      },
+      "loadedAssets": [
+        {
+          "path": "/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/assets/index-5W26Yecv.css",
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+        },
+        {
+          "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/assets/index-DuzR10it.js",
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+        },
+        {
+          "path": "/assets/assistant-ui-BW1JBgq4.js",
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+        },
+        {
+          "path": "/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/assets/index-5W26Yecv.css",
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+        },
+        {
+          "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/assets/index-DuzR10it.js",
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+        },
+        {
+          "path": "/assets/assistant-ui-BW1JBgq4.js",
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+          "path": "/api/conversations/4a3a4e1f-82f4-4877-b07a-9f71ddfa1b85/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "path": "/api/conversations/4a3a4e1f-82f4-4877-b07a-9f71ddfa1b85"
+        }
+      ],
+      "auth": "original retained App Bearer",
+      "cookieEvidence": null,
+      "logoutEvidence": null,
+      "providerQueries": 0
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "28be3030-1608-4ac5-b202-ebc4e1dfa462",
+      "taskId": "d3cb8a66-eb16-43bd-9647-96b5010b243f",
+      "fault": {
+        "path": "/api/conversations/28be3030-1608-4ac5-b202-ebc4e1dfa462/turns",
+        "key": "f2c8b4fa-d968-4a65-bbe0-32a882ef4964:turn",
+        "bodySha256": "300015fc91107df518fbc4fea36cfa11ec356fc0d904d69c295cf9b8fc2c2176",
+        "status": 202,
+        "contentLength": 1239,
+        "contentType": "application/json; charset=utf-8",
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "sameRequest": true,
+        "matches": 1
+      },
+      "loadedAssets": [
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+          "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+          "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+          "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+          "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+          "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+        },
+        {
+          "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+          "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+          "path": "/api/conversations/28be3030-1608-4ac5-b202-ebc4e1dfa462/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "path": "/api/conversations/28be3030-1608-4ac5-b202-ebc4e1dfa462"
+        }
+      ],
+      "auth": "original retained App Bearer",
+      "cookieEvidence": null,
+      "logoutEvidence": null,
+      "providerQueries": 0
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "bf6db02a-e35b-4ad5-85c4-47227c994869",
+      "taskId": "eb13bea2-57da-46e3-922d-4efa9c91a046",
+      "fault": {
+        "path": "/api/conversations/bf6db02a-e35b-4ad5-85c4-47227c994869/turns",
+        "key": "e57c9566-28b7-4153-9f64-85ca6dd8c86c:turn",
+        "bodySha256": "1a7e0a1df462ca96427078ce66d2322b67c40d344f20d0c2a181eb0397ad8a79",
+        "status": 202,
+        "contentLength": 1239,
+        "contentType": "application/json; charset=utf-8",
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "sameRequest": true,
+        "matches": 1
+      },
+      "loadedAssets": [
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-DzESKX8S.css",
+          "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-CZaGITme.js",
+          "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-C7NurJFc.js",
+          "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-DzESKX8S.css",
+          "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-CZaGITme.js",
+          "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+        },
+        {
+          "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-C7NurJFc.js",
+          "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+          "path": "/api/conversations/bf6db02a-e35b-4ad5-85c4-47227c994869/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "path": "/api/conversations/bf6db02a-e35b-4ad5-85c4-47227c994869"
+        }
+      ],
+      "auth": "original retained App Bearer",
+      "cookieEvidence": null,
+      "logoutEvidence": null,
+      "providerQueries": 0
+    },
+    {
+      "label": "recovery-779a",
+      "artifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "a5e27977-06d4-4d76-b784-a24f3ebee940",
+      "taskId": "d5e6ada4-6903-4190-84cb-fbc94d6ab770",
+      "fault": {
+        "path": "/api/conversations/a5e27977-06d4-4d76-b784-a24f3ebee940/turns",
+        "key": "70eb6195-e6a8-43ae-9265-a83f58e2e47b:turn",
+        "bodySha256": "165f4006c90262859c4cdc5eb50fc7839c63c9cc161a29975ba52f1209b2c6d2",
+        "status": 202,
+        "contentLength": 1239,
+        "contentType": "application/json; charset=utf-8",
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "sameRequest": true,
+        "matches": 1
+      },
+      "loadedAssets": [
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-Pgp6IokS.css",
+          "sha256": "45b57c246848b8a577f3613b77cfd0d8d384e74c3263ed53cafdace513a5ff14"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-CabYml9j.js",
+          "sha256": "8f5ec44d5b13a9a5ed386381c37ad8ab1ddbde72c34ce764afd59eda09422867"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-BWc0s5iC.js",
+          "sha256": "d8724c3860a9783a8d5597b1e8c9b1e211a5d0a807b474bde3658100a2564eae"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-Pgp6IokS.css",
+          "sha256": "45b57c246848b8a577f3613b77cfd0d8d384e74c3263ed53cafdace513a5ff14"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-CabYml9j.js",
+          "sha256": "8f5ec44d5b13a9a5ed386381c37ad8ab1ddbde72c34ce764afd59eda09422867"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-BWc0s5iC.js",
+          "sha256": "d8724c3860a9783a8d5597b1e8c9b1e211a5d0a807b474bde3658100a2564eae"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-Pgp6IokS.css",
+          "sha256": "45b57c246848b8a577f3613b77cfd0d8d384e74c3263ed53cafdace513a5ff14"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-BWc0s5iC.js",
+          "sha256": "d8724c3860a9783a8d5597b1e8c9b1e211a5d0a807b474bde3658100a2564eae"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-CabYml9j.js",
+          "sha256": "8f5ec44d5b13a9a5ed386381c37ad8ab1ddbde72c34ce764afd59eda09422867"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-Pgp6IokS.css",
+          "sha256": "45b57c246848b8a577f3613b77cfd0d8d384e74c3263ed53cafdace513a5ff14"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-BWc0s5iC.js",
+          "sha256": "d8724c3860a9783a8d5597b1e8c9b1e211a5d0a807b474bde3658100a2564eae"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-CabYml9j.js",
+          "sha256": "8f5ec44d5b13a9a5ed386381c37ad8ab1ddbde72c34ce764afd59eda09422867"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-Pgp6IokS.css",
+          "sha256": "45b57c246848b8a577f3613b77cfd0d8d384e74c3263ed53cafdace513a5ff14"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/assistant-ui-BWc0s5iC.js",
+          "sha256": "d8724c3860a9783a8d5597b1e8c9b1e211a5d0a807b474bde3658100a2564eae"
+        },
+        {
+          "path": "/__flow_releases/52a261e294324a11aead58a554f547db/assets/index-CabYml9j.js",
+          "sha256": "8f5ec44d5b13a9a5ed386381c37ad8ab1ddbde72c34ce764afd59eda09422867"
+        }
+      ],
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+          "path": "/api/conversations/a5e27977-06d4-4d76-b784-a24f3ebee940/turns"
+        }
+      ],
+      "auth": "new immutable App HttpOnly session and CSRF",
+      "cookieEvidence": {
+        "cookieHidden": true,
+        "tokenNotStored": true,
+        "cookieRead": true,
+        "explicitRestoreNoPost": true
+      },
+      "logoutEvidence": {
+        "actualHeldHeaders": true,
+        "oldReadRevoked": true,
+        "oldStreamsClosed": true,
+        "newerCookiePreserved": true,
+        "newerReadReady": true,
+        "runningTaskPreserved": true
+      },
+      "providerQueries": 0
+    }
+  ],
+  "errors": [],
+  "progress": {
+    "phase": "done",
+    "app": null,
+    "step": null,
+    "completed": [
+      {
+        "phase": "fixture",
+        "app": null
+      },
+      {
+        "phase": "chrome",
+        "app": null
+      },
+      {
+        "phase": "canary",
+        "app": null
+      },
+      {
+        "phase": "cookie-connect",
+        "app": null
+      },
+      {
+        "phase": "cookie-flags",
+        "app": null
+      },
+      {
+        "phase": "cookie-csrf",
+        "app": null
+      },
+      {
+        "phase": "app-connect",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "profile",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "ack-loss",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "task-completion",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "explicit-retry",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "legacy-read",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "asset-observation",
+        "app": "retained-461a"
+      },
+      {
+        "phase": "app-connect",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "profile",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "ack-loss",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "task-completion",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "explicit-retry",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "legacy-read",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "asset-observation",
+        "app": "retained-caa1"
+      },
+      {
+        "phase": "app-connect",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "profile",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "ack-loss",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "task-completion",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "explicit-retry",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "legacy-read",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "asset-observation",
+        "app": "retained-d629"
+      },
+      {
+        "phase": "app-connect",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "cookie-reload",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "profile",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "ack-loss",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "task-completion",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "durable-retry",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "late-logout",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "explicit-retry",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "legacy-read",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "asset-observation",
+        "app": "recovery-779a"
+      },
+      {
+        "phase": "reports",
+        "app": null
+      }
+    ]
+  },
+  "failedAt": null,
+  "reports": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced"
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251"
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6"
+    },
+    {
+      "label": "recovery-779a",
+      "artifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "compatibilityId": "071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7"
+    }
+  ],
+  "cleanup": {
+    "databaseName": "flow_release_fe60a1ae955e4838ab7f1240f1085a6a",
+    "marker": "f2800534-fe68-41ff-ace5-df31b6db88c7",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "diagnosticOnly": false,
+  "diagnosticComplete": false,
+  "diagnosticEvidence": null,
+  "passed": true,
+  "publicContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "providerQueries": 0
+}
