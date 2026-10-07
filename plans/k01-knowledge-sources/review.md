@@ -1,7 +1,7 @@
 # K01 same-window failure observation — pending review
 
 状态：NOT_STARTED
-Review target commit：b6feabeb451d59cdc84c3386b2a20c97befe2db6
+Review target commit：74934ecd9fd8e33f2c83e858dcc3e1b4e343581c
 
 Scope: original operator composes primary OPS14 and at most one separate readonly observer; bounded current-namespace identity/receipts, same-origin phase budgets, primary failure preservation, pure direct tests. Canonical docs/evidence/k01/query-entry-postflight-20261007T181324/manifest.json. Actual PG NOT_OPEN;29pure only. Prior callback47354 independently approved18:12:26, not this new source.
 

@@ -1,5 +1,5 @@
 {
-  "source": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
+  "source": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
   "base": "47354f92fed41eafbc5b03e3841ffe446dd65b61",
   "sources": [
     {
@@ -9,8 +9,8 @@
     },
     {
       "path": "experiments/knowledge-search/README.md",
-      "bytes": 18858,
-      "sha256": "074a332d5dd629aec8f4dca75020e275f08507451305b3dd39c55c387f23404d"
+      "bytes": 19016,
+      "sha256": "2fb56027cbe969e9ee385e2632b092ddaabaf1d1e0818ece4106dbc83c6b44dc"
     },
     {
       "path": "experiments/knowledge-search/budget.test.ts",
@@ -152,15 +152,15 @@
   ],
   "summary": {
     "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/summary.json",
-    "bytes": 1285,
-    "sha256": "b5c7b470e042c22b9411f9cc29b5e2c4dabb7c7f3fa5ae979c3768e5b26f8dc3"
+    "bytes": 1459,
+    "sha256": "a12528463137676e3d4a2d558150a173a77765d16258d97041dc126a6129bce1"
   },
   "fixedOps14": {
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
     "bytes": 12543,
     "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
   },
-  "verifiedExecutionBindings": "all three original started source snapshots match target/current executable source bytes; no executable modifications after checks",
+  "verifiedExecutionBindings": "all three started snapshots match final executable bytes; execution b6feabeb→final74934 only README/meta; runtime overlap clarification not a new test",
   "originals": "prior PG failure/recovery/callback evidence unchanged; no old KEEP read",
   "review": "NOT_STARTED",
   "noNewPG": true

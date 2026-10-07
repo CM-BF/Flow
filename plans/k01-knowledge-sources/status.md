@@ -18,9 +18,9 @@
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
 | 工作树dirty状态 | 本段实现与局部结果已固定待独审；原产品/245供给/旧原件不变 |
 | 工作分支状态 | review（同窗收尾源与局部结果待独审；callback修复已独审，实际PG不沿用批准） |
-| 检查状态 | PASSED b6feabeb451d59cdc84c3386b2a20c97befe2db6；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED，当前新候选未实跑 |
+| 检查状态 | PASSED 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED，当前新候选未实跑 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
-| 实现目标 | b6feabeb451d59cdc84c3386b2a20c97befe2db6 |
+| 实现目标 | 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
@@ -154,3 +154,5 @@
 2026-10-07T18:13:24Z：新20分钟同窗失败收尾段开始，截止18:33:24Z；Mika授权new16MiB（TMP8/raw1MiB包含），≤4串行child/每30s/累计90s，仅pure及必要focusedtypes，0PG/HTTP/Chrome/provider/install/旧KEEP读写。fresh b5de40a8=origin clean/claim30965v2三scope已核。未来150s候选使用同origin70/110/120/130/140/150截止，测量FAIL与计算终态/独立DB快照分离；本段不消费真实PG许可。callback修复47354已于18:12:26由Mika独审SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2，7pure/types0/原始两child闭合已核；历史两次真实PG失败因果仍UNKNOWN。
 
 2026-10-07T18:30:21.443816+00:00：同窗收尾源b6feabeb451d59cdc84c3386b2a20c97befe2db6固定，29个纯用例分11新postflight/11直接影响旧caller/7只读observer假pool通过，3child监督762ms/operator1039ms/raw750B，actualFULLRETURN18:26:24.696182Z。三owned group finalabsent/MERGED EOF完整/无first-secondary-signals，三ownTMP同身份REMOVED/absent；初EPERM观察仍保留。只修改Python/MJS，无TS变化故不重跑noEmit，历史noEmit不称本轮证据。新150s候选使用同origin70/110/120/130/140/150，原primary失败/原件先持久化，计算确定终态且本次marked identity与预算皆已知时才允许一次单adminSELECT；无DROP/terminate/旧KEEP读取。未来完整输入绑定、真实PG/失败注入生命周期、窗口仍待后继，旧12gold/scale要求未减少，K01-06/08～10保持开放。单份证据query-entry-postflight-20261007T181324/manifest.json，待独立review。提交push后本段STOP，无待launchchild。
+
+2026-10-07T18:32:15.849869+00:00：最终source target 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c仅README补primary18与observer1可能同残留backend短暂重叠，未来准入须纳19或显式额外余量；非运行峰值。实际检查后可执行源逐字未变，原raw无改动；本段最终metadata推送后STOP，待一次独审，不开PG。

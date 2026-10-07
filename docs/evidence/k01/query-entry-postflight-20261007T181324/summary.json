@@ -1,5 +1,5 @@
 {
-  "source": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
+  "source": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
   "executionSource": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
   "actualLocalStart": "2026-10-07T18:25:56.556425+00:00",
   "actualReturn": "2026-10-07T18:26:24.696182+00:00",
@@ -28,5 +28,6 @@
     "newCap": 16777216,
     "note": "tracked changed bytes conservatively count complete files; original retained artifacts excluded from new allocation, not inspected"
   },
-  "candidate": "future150s common origin70/110/120/130/140/150; needs reviewed complete input bindings and new manager grant"
+  "candidate": "future150s common origin70/110/120/130/140/150; needs reviewed complete input bindings and new manager grant",
+  "finalDelta": "README only: primary18+observer1 may transiently overlap retained PG backends; future connection admission must account19. All executable bytes unchanged."
 }
