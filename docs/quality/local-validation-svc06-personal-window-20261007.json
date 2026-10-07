@@ -1,6 +1,6 @@
 {
   "at": "2026-10-07T12:27:52.330992+00:00",
-  "state": "RESERVED_NEW_SEGMENT_AFTER_PRECONDITION_FAILURE_FRESH_GATES_REQUIRED",
+  "state": "RETURNED_PARTIAL_COMPLETE_BEFORE_MAINTENANCE",
   "window": "svc06-personal-7d1-20261007-1230",
   "operator": "assignment_review",
   "coLead": "astra_ultra_execution_lead",
@@ -56,5 +56,24 @@
       "scope": "childPidOnly helper absent/dualEOF, not a general process-group proof"
     }
   ],
-  "correction": "Only operator invocation: fixed Node + original facts.mjs + fresh absolute exclusive output path in verified private preparation directory, not the migration namespace. Helper writes wx0600+fsync; read full facts from file, stdout summary only. No product/source changes or replay of a consumed migration/service action."
+  "correction": "Only operator invocation: fixed Node + original facts.mjs + fresh absolute exclusive output path in verified private preparation directory, not the migration namespace. Helper writes wx0600+fsync; read full facts from file, stdout summary only. No product/source changes or replay of a consumed migration/service action.",
+  "returnedAt": "2026-10-07T12:35:37.013013Z",
+  "actual": {
+    "completed": [
+      "artifact migration7d1",
+      "Web host replacement only",
+      "3compatibility imports",
+      "205B browser policy"
+    ],
+    "migrationMs": 23649,
+    "webReplacementMs": 16689,
+    "reportsPolicyMs": 4289,
+    "stopped": "Supplemental history digest reader static CommonJS named-export linking failure,62ms/exit1 before evaluation/SQL",
+    "bootstrap": 0,
+    "refresh": 0,
+    "resume": 0,
+    "operatorProviderQueries": 0,
+    "noReplay": "Completed import/replace/report/policy stages may not be replayed; maintenance has not begun. Original FAIL/KEEP preserved.",
+    "ownerEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json"
+  }
 }

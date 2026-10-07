@@ -18,9 +18,9 @@
 | 已集成main状态 / HEAD | main/origin e0295747已接三个保留App→固定后台7d1/source6c的真实兼容与验证入口；个人仍af51/v18、Web d629/v3/c7b，现场未更新。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 三个保留网页与新版后台的兼容及更新入口均已独审。首次现场核验因调用参数缺失提前停止，未改变个人服务；已更正调用并安排继续。 |
+| 当前产出 | 新版后台产物、网页宿主和三份兼容记录已准备到个人安装；原后台仍在运行。维护前的旧数据核验调用需修正，已保留失败并归还窗口。 |
 | 下一可用交付 | 完成受控个人后台更新和恢复接单核验，保留现有页面、会话与任务。 |
-| 当前阻塞 | ACTIVE: 个人更新尚未实际完成，原操作者正按已审入口重新核验现场。规划认证原因仍未知，远程验证和工程授写保持原用户待决。 |
+| 当前阻塞 | ACTIVE: 个人后台切换尚未开始，原操作者正在修正只读历史摘要的模块加载；已完成阶段不重放。规划认证原因仍未知，远程验证和工程授写保持原用户待决。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -231,3 +231,5 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 此次兼容状态引用Web唯一WPF-RELEASE01的c3 actual（source9658，owner记录11:55:28，三App各四项及独立Cookie通过，清理完成）；结果独审仍待收口。没有新个人操作；main183aba3a仅接已审插件版本回滚测试/证据。
 
 2026-10-07T12:27:52.330992+00:00：SVC06前置调用r1漏输出参数，在snapshot/SQL前51ms退出，0个人读写/迁入；原失败35e22b6b经native限定APPROVED_PRECONDITION_FAILURE_FIDELITY，不改历史。修正为原facts入口的独占输出路径，新有限段沿[同一窗口记录](../../docs/quality/local-validation-svc06-personal-window-20261007.json)继续原一次迁入/发布授权；原5c29产品和root7524固定，非重放已消费个人操作。完整结果由原owner归档。
+
+2026-10-07T12:37:26.141032+00:00：SVC06新段12:35:37.013013Z归还；已实际迁入7d1/替换独立Web宿主/导入3报告及策略，旧后台与d629/v3仍保持。随后旧列历史摘要调用在模块静态链接时失败（62ms/0SQL）；尚未bootstrap/drain/refresh/resume。唯一owner封原[分阶段结果](../../../backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json)，只修观察调用并做0PG加载检查；无heavy预占，后续只接未消费维护阶段，不重放已完成副作用。
