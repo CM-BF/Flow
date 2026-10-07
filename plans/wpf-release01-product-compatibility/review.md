@@ -1,12 +1,12 @@
 # WPF-RELEASE01 review
 
-**当前状态：APPROVED，新e15/880固定输入差量/native准备已独审通过；实际NOT_RUN，0blocking。**
+**当前状态：APPROVED，固定e15四App源码/native准备与本次实际/完整RETURN均已独审通过，0blocking。**
 
 Review target commit：cb3ca8ec7ed4611097a3ab7414f9591526ccd896。原两harness范围，fixture仅三个可信backend身份值，browser原字节。
 
 [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md)：复用四App/native生命周期，R2产物限定独审00dcd1/f705已固定并核齐；不推运行许可。b692已因后台默认null resolver被阻塞，未运行；旧cd27四App通过仍保历史限定。
 
-[Root集中源审](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json)及[native接受](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json)已原样归档。固定cb3两harness/三literal，仅当前candidate批准；不追metadataSHA、不改旧C3 reports、不授实际。
+[Root集中源审](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json)及[native接受](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json)已原样归档。固定cb3两harness/三literal，仅当前candidate批准；不追metadataSHA、不改旧C3 reports。后续经理新窗口已实际完成，见下。
 
 ## 历史：b692 source/native限定批准（未实际）
 
@@ -131,3 +131,9 @@ Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 [65原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json)及[限定结果与清理](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)：真实outer0/23,495ms、3App各4观察/3compat IDs、独立Cookie probe；完整marked DB/HTTP/Chrome/PGID/scratch/admin清理。作者仅报告实际，不自行批准独立review。原源码/准备批准与失败不改，主线/部署仍未接收。
 
 2026-10-07T16:40:47.350Z：诊断字节计数单行差量已按实际saveJson格式修正；原compact计量历史保候选before，父/worker不变，集中复审待回。
+
+## e15四App首次实际（限定独审APPROVED）
+
+[75项原件/58runtime及四formal报告](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/README.md)已封存。原assertions均保留，outer0、four reports、完整RETURN；执行source cb3/execution68d7，未重build或改签旧报告。新27215/180000ms CLOSED，独立actual/主线/个人发布分别记录。
+
+[Root实际独审](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json)确认58raw/四formal报告及16checks、779 Cookie/logout、outer0与完整RETURN。仅fixedtuple通过；inner4 streams、PARTIAL_RETAINED_ADOPTION保真。main与个人发布由Original独立接收，不从本审核推部署。
