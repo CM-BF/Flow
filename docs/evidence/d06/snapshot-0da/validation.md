@@ -9,3 +9,7 @@
 - `snapshot-aeb/source-audit.mjs`、`browser-check.mjs`、`preview.mjs`均原样保留历史：其中旧baseline、正负挂载regex、checker/history旧断言和输出目录不能用于新target。后继如需执行，须在新own证据目录重绑；本批不增加运行包装、不覆盖旧raw。
 
 源码提交阶段无Node产品import/测试；后继本次按唯一原入口实际运行22项，3.127s，fresh资源核一次，临时8MiB+raw1MiB预算。未执行页面/PG/Chrome/provider或个人服务；自有进程组与scratch清理。source-only审批不自动升级为本次结果/main接收。
+
+## 后继浏览器静态准备
+
+[候选入口及固定输入](browser-preparation-20261007/index.json)复用原五图/静态fixture与ACCESS已实证清理套路。五图×两viewport×两theme共20个SVG观察和20张计划截图；含node与edge实际getBBox背景及canvas界限，390允许图内滚动而页面无横溢。源5124不改，实际22不重跑。90s含15s清理/256MiB TMP/8MiB raw仅新固定target提案，不继承旧aeb或其他任务许可。当前无gate/native boundary接受/预约；新caller源码待审、真实渲染全部NOT_RUN。
