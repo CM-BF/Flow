@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T14:30:38.029Z",
+  "startedAt": "2026-10-07T14:29:36Z",
+  "deadline": "2026-10-07T14:44:36Z",
+  "base": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+  "branch": "codex/plugin-artifact-verifier",
+  "sourceOnly": true,
+  "targetAbsentBeforeCreate": true,
+  "existingVerifierOwner": null,
+  "ledgerObservedAt": "2026-10-07T14:30:37.826Z",
+  "availableBytes": 20948430848,
+  "sourceMetadataCap": 262144,
+  "onlyMaterialized": [
+    "AGENTS.md",
+    "plans/AGENTS.md"
+  ],
+  "initialization": "New --no-checkout index initially empty; initialized with read-tree -mu HEAD after worktree-local sparse settings; no existing user files overwritten.",
+  "sharedGitConfigUnchanged": true,
+  "claim": {
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 1,
+    "taskId": "X01-ARTIFACT-VERIFIER01",
+    "lead": "mika",
+    "worker": "architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+    "branch": "codex/plugin-artifact-verifier",
+    "scope": [
+      "docs/evidence/x01-artifact-verifier",
+      "plans/x01-artifact-verifier"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-07T14:30:38.019Z",
+    "createdAt": "2026-10-07T14:30:38.019Z"
+  },
+  "engineeringChecks": 0,
+  "PG": 0
+}
