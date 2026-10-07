@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T19:54:20.651Z |
+| 最近更新 | 2026-10-07T20:16:51.514Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本段起点86bbdd5eaeb076dc29b6733be437c9ff40ab723a = origin clean；仅独审回执与本status/review封存，实验源和原件零改动。 |
+| 工作树dirty状态 | Namespace字面量源码3dffa3f0c344767eccc58716343fa1b0a3e0369d已固定；当前只封未来候选input/单一准备记录和status，起点6494b35b clean。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 |
-| 实现范围 | experiments/runner-capacity/mixed/channel.ts, experiments/runner-capacity/mixed/child.ts, experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-bridge.ts, experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts |
+| 实现目标 | 3dffa3f0c344767eccc58716343fa1b0a3e0369d |
+| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, experiments/runner-capacity/mixed/queue-probe.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 观察交付背压修复已通过独立源码与局部结果审查，主线尚未接收；原容量运行仍失败，活动资源已归还，两个未知目录继续保留。 |
-| 下一可用交付 | 先确定基于完整观察交付的有限时延诊断，再按真实证据推进容量验收；当前不准备或启动新的PG运行。 |
-| 当前阻塞 | ACTIVE: 原128同步负载的完整ACK窗口验收仍未通过；背压修复已审且未集成，无实际资源holder或待启动检查。 |
+| 当前产出 | 背压修复已审；保留原负载与完整断言的新诊断候选已绑定，窗口及输出独立，待有限字面量复核。原128容量验收仍失败。 |
+| 下一可用交付 | 复核候选绑定后单独协调一次实际诊断；本段不申请或启动运行，诊断可得仍不等于容量通过。 |
+| 当前阻塞 | ACTIVE: 原ACK窗口完整验收未过；新候选CLOSED且未获实际窗口，原FAIL和两个KEEP保留，无holder或待launch。 |
 | 需用户决定 | NONE |
-| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 / packet 86bbdd5eaeb076dc29b6733be437c9ff40ab723a，db_transaction_owner 2026-10-07T19:49:27Z，0P1/P2（root转达）；原actual仅失败忠实性获准，不是容量通过。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T19:52:20.392Z fresh本人/WT/branch/六scope相符；本段0take/amend/release，继续保留。 |
-| 架构影响 | 本次在私有observer/reporter边界增加有限异步结束交付与首错事实；保持packing/字节上限及driver完整receipt权威。原offline main范围不扩大。 |
+| Review | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 source/local已db19:49:27 APPROVED；新namespace 3dffa3f0c344767eccc58716343fa1b0a3e0369d 及input绑定待root限定复核，不继承性能或main批准。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T20:08:05.994Z本人/WT/branch/scope fresh相符。 |
+| 架构影响 | 不新增Interface/调度器；仅已有caller与recipe六个namespace/input路径字面量绑定新候选，原guard/预算/完整proof保持。私有observer本修复未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -384,3 +384,9 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 质量：复用本地find-skills/codebase-design/固定clean-code，区分源码批准、局部实证、实际FAIL、main事实与未来诊断；首屏已去掉陈旧“修复待审”，不勾开放容量TODO。原交审ready/manifest按86bb固定历史保留，当前批准以本status/review和独审回执为准。
 
 本段封存前计量：三metadata文件新增逻辑增长3533B，计此说明后仍<4KiB/128KiB；旧manifest SHA925a2f4ccfef42c1db0552ae97c6b200efc069d30a02467b42546583f8ce3330不变。主线parseStatus errors/human.missing均[]；唯一timing issue仍为历史task开工未记录，未补造。当前无源码/工程动作，commit/push后STOP并保claim。
+
+## 2026-10-07T20:16:51.514Z 回调诊断候选封存
+
+本段20:07:39Z起12min/2MiB，0工程child/PG/HTTP/performance/TMP访问/编译。原input-only因固定旧namespace已消费不可执行；root在同段明确授权两leaf六字面量更新，固定3dffa3f0c344767eccc58716343fa1b0a3e0369d，未改控制流。当前[唯一候选入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)与input SHAcd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9：123bindings/12617081B，六替换117不变；675固定Git对象/223runtime/33SQL含017/019内存核符，无source导出。新五输出及root仅lstat absent，不创建任何运行nonce或资源。CLOSED_REVIEW_PENDING_NOT_OPEN；完整验收/ACK4s/6s/128/四cancel与原FAIL/2KEEP不变，任务TODO保持开放。futurefloor由经理重算，不把本段source预算当runtime准入。
+
+本段growth封存前63722B，含三新候选文件62670B及两字面量/状态增量；加本说明仍<65KiB/2MiB。parseStatus errors/human.missing=[]，历史开工UNKNOWN是唯一timing issue。0工程测试，fixedGit/hash静态核对不称实际运行或性能通过。commit/push后STOP保claim。

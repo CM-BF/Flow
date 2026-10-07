@@ -1,5 +1,9 @@
 # S01 独立审查
 
+## 当前候选：诊断namespace字面量待root复核
+
+SOURCE_INPUT_REVIEW_PENDING，source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`；[入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)。严格两leaf六字面量与六输入binding替换，无控制流/预算/proof变化；0新工程检查/实际运行。84b5既有独审范围独立保持。
+
 ## 当前：回调背压修复已独审，主线未接收
 
 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0P1/P2，db_transaction_owner/gpt-6-astra，2026-10-07T19:49:27Z（root转达）。固定packet `86bbdd5eaeb076dc29b6733be437c9ff40ab723a` / 源码 `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。[正式独审回执](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-independent-review.json)。20bindings186154B/四run76sourcehash与有限旧变体核符；单500ms绝对deadline、回调背压、1MiB上限和远端receipt语义成立。baseline1、修后16/strict0、existing child2分轮可信；0审者工程/PG，不改原actualFAIL/2KEEP，未批准性能或main。

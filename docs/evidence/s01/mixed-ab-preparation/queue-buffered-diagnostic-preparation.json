@@ -1,0 +1,213 @@
+{
+  "preparedAt": "2026-10-07T20:13:22.995Z",
+  "startedAt": "2026-10-07T20:07:39Z",
+  "deadline": "2026-10-07T20:19:39Z",
+  "writerClaim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 3,
+    "scopeCount": 6,
+    "freshAt": "2026-10-07T20:08:05.994Z"
+  },
+  "namespaceSource": "3dffa3f0c344767eccc58716343fa1b0a3e0369d",
+  "observerSource": "84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2",
+  "oldInputSHA": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2",
+  "input": {
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-input.json",
+    "bytes": 47945,
+    "sha256": "cd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9"
+  },
+  "currentBindings": {
+    "count": 123,
+    "bytes": 12617081,
+    "changed": 6,
+    "unchanged": 117,
+    "errors": []
+  },
+  "changed": [
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "oldBytes": 1909,
+      "oldSha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c",
+      "bytes": 4130,
+      "sha256": "b96401022911b7d4c6d75424dbaf2b868dd84035842a680386fbf23b1cd0e501"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "oldBytes": 15831,
+      "oldSha256": "a85b170dd6e06bc20e87e2867de74b7db0d6e796252c311cc6b39ead222b60c4",
+      "bytes": 16484,
+      "sha256": "ee3639e0f09b58484330fe9a6e352ae7c912fda8306f620beb471d3013023fcf"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "oldBytes": 4597,
+      "oldSha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e",
+      "bytes": 5367,
+      "sha256": "e5d46ccae8820398c5bceec8465a5074d70c4e31774f24b577035b6c4985cb82"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "oldBytes": 7920,
+      "oldSha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2",
+      "bytes": 8714,
+      "sha256": "5871faea12a4752b1f00dff5b6234dc70eb517521e01ea3a7eadcacb58a4c14c"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+      "oldBytes": 1945,
+      "oldSha256": "8be200677e37266448fe8cc588091765e5f9ec38e0456b30b23497b661095ba6",
+      "bytes": 1960,
+      "sha256": "d91734fb69e76206dbd5ee5d83a4f579e3e696bb5df3bef4779158d4a9a4ac04"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+      "oldBytes": 7592,
+      "oldSha256": "24bdb6cd60d0b5b5f558db13487e58514c8beaf90f82e6e79fdb828b9bf9518c",
+      "bytes": 7620,
+      "sha256": "7b9810f1f720150e77b54ed485ca1c65ea026f0871ea76ad3491ae8c45873573"
+    }
+  ],
+  "production": {
+    "base": "4fdd856293a502209d7509ea37da901bbfd89f72",
+    "tree": "54f1f73b365e65f4bf29f9bb1bb4a076f88e30e6",
+    "gitBlobsInMemoryVerified": 675,
+    "gitBlobBytes": 4931265,
+    "runtimePaths": 223,
+    "dynamicSQL": 33,
+    "sql017And019": true,
+    "exportedFiles": 0,
+    "closureReferences": [
+      {
+        "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-closure.json",
+        "bytes": 372224,
+        "sha256": "fead3242f962f85915ee4635f79c5636002fc6a24ab99e9ab9e4c4b1a5eeb20f",
+        "unchangedFrom": "c7519722ea8464558b74183b888e934350b7ac83"
+      },
+      {
+        "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-inputs.json",
+        "bytes": 199290,
+        "sha256": "a6b1e0d44269199324b9f91cb5ab9d3bbe7d574f65b51dcf278c46a11c0b96c7",
+        "unchangedFrom": "c7519722ea8464558b74183b888e934350b7ac83"
+      },
+      {
+        "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-environment.json",
+        "bytes": 13787,
+        "sha256": "67641e811ea841c2a086f2f633c6b8cd467cc46995d9aab4c44bc35bc2d2ab0b",
+        "unchangedFrom": "c7519722ea8464558b74183b888e934350b7ac83"
+      }
+    ],
+    "unresolvedDynamicImport": [
+      {
+        "owner": "apps/runner/src/plugins/host.ts",
+        "at": 74,
+        "classification": "INACTIVE_FOR_RECIPE",
+        "evidence": "runtime pluginExecution opt-in absent in child.ts runRunner options; claim v2 only, fixture adapter only. No plugin runtime authority supplied."
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "path": "docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-reservation.json",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-spawn.json",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-stdout.raw",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-stderr.raw",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-outer.json",
+      "state": "ENOENT",
+      "observedAt": "2026-10-07T20:13:22.995Z"
+    }
+  ],
+  "state": "CLOSED_REVIEW_PENDING_NOT_OPEN",
+  "actualNonceReserved": false,
+  "processesStarted": 0,
+  "PGQueries": 0,
+  "TMPAccess": false,
+  "compiledReplayAccess": false,
+  "resourcePlan": {
+    "basis": "intrinsic_candidate_lower_bound_only_not_complete_admission_floor",
+    "experimentLogicalIncrement": 536870912,
+    "additionalDbWalSchedulingHeadroom": 1073741824,
+    "globalCleanupReserveIncludedOnce": 1073741824,
+    "managerMustCombineRemainingGrowthAndUnknownsOnce": true,
+    "futureManagerCompleteSumRequired": true,
+    "schedulingHeadroomNotDbWalHardCap": true,
+    "reserveCombination": "The manager counts this same global cleanup reserve once; do not add a second reserve."
+  },
+  "preparationBudget": {
+    "logicalMaxBytes": 2097152,
+    "managerHistoricalCombinedFloorBytes": 18632540160,
+    "floorPurpose": "source-only preparation growth accounted once; not future runtime admission"
+  },
+  "literalDelta": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+      "oldCommit": "6494b35b1876ece4b7b0c37c41f84cbd99f07579",
+      "oldBytes": 7592,
+      "oldSha256": "24bdb6cd60d0b5b5f558db13487e58514c8beaf90f82e6e79fdb828b9bf9518c",
+      "sourceCommit": "3dffa3f0c344767eccc58716343fa1b0a3e0369d",
+      "bytes": 7620,
+      "sha256": "7b9810f1f720150e77b54ed485ca1c65ea026f0871ea76ad3491ae8c45873573",
+      "onlyLiteralReplacements": [
+        {
+          "old": "s01-queue-buffered-once",
+          "new": "s01-queue-buffered-diagnostic-once"
+        },
+        {
+          "old": "buffered-single-v1",
+          "new": "buffered-diagnostic-v1"
+        },
+        {
+          "old": "queue-buffered-operator-input.json",
+          "new": "queue-buffered-diagnostic-input.json"
+        },
+        {
+          "old": "queue-buffered-actual-",
+          "new": "queue-buffered-diagnostic-actual-"
+        }
+      ]
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+      "oldCommit": "6494b35b1876ece4b7b0c37c41f84cbd99f07579",
+      "oldBytes": 1945,
+      "oldSha256": "8be200677e37266448fe8cc588091765e5f9ec38e0456b30b23497b661095ba6",
+      "sourceCommit": "3dffa3f0c344767eccc58716343fa1b0a3e0369d",
+      "bytes": 1960,
+      "sha256": "d91734fb69e76206dbd5ee5d83a4f579e3e696bb5df3bef4779158d4a9a4ac04",
+      "onlyLiteralReplacements": [
+        {
+          "old": "s01-queue-buffered-once",
+          "new": "s01-queue-buffered-diagnostic-once"
+        },
+        {
+          "old": "buffered-single-v1",
+          "new": "buffered-diagnostic-v1"
+        }
+      ]
+    }
+  ],
+  "literalOnlyComparisonErrors": [],
+  "guardsChanged": false,
+  "reviewState": "ROOT_INCREMENTAL_REVIEW_PENDING",
+  "verifiedAt": "2026-10-07T20:16:51.514Z"
+}
