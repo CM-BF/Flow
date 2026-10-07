@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T22:08:20.657Z",
+  "state": "FAILED_RESULT_FIDELITY_REVIEW_PENDING",
+  "result": "5ac3fbe1f70997c0404380df565ee8396ca192a5",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "7620f18405d13d0dae47ab6b9b38ebd2496b85bc",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/result-manifest-r2.json",
+  "manifestSha256": "729b5219f83946d00aa0cd276ee2c1461b867c45e77dcb2df7529b196f443123",
+  "manifestBytes": 8943,
+  "bindings": {
+    "resultFiles": 22,
+    "resultBytes": 59442,
+    "requiredFiles": 9,
+    "requiredBytes": 265738
+  },
+  "selected": 5,
+  "passed": 0,
+  "failedAssertions": 5,
+  "skipped": 0,
+  "suiteFailed": 2,
+  "firstFailure": "Expected23514 but invalid JSON; next four failed to parse URL from /api/runners",
+  "resourceReturn": "2026-10-07T22:06:17.330Z FULL_RETURN",
+  "actualRetry": false,
+  "reviewer": "db_transaction_owner independent limited result/source cause",
+  "scope": "Failed real five-case result fidelity, exact fixed inputs and observed lifecycle closure. No PG success/repair/newOPEN.",
+  "main": "NOT_INTEGRATION_READY_PG_REQUIRED",
+  "next": "Source repair requires a separate bounded grant; no writes to source in result segment."
+}
