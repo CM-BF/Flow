@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:42:53.228342+00:00 |
+| 最近更新时间 | 2026-10-07T08:56:07.189458+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v18 ACTIVE48scope](../../docs/evidence/x01/runtime-public-amend-v18.json)；已正式取得runtime/server出口与domain leaf，client/index仍属LAZY |
+| Claim | [v20 ACTIVE51scope](../../docs/evidence/x01/runtime-recovery-amend-v20.json)；已正式接收LAZY client/index和generic retry保护范围 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 原base60ca；本片固定main2a7六入口于28e8317e接收；产品source9b639f79367a118562da4fe7c8d977173a488200/result65d61744/交审packetc178d067；当前metadata仅review字段 |
-| 工作树 dirty 状态 | 源码/输入/结果固定并push；当前metadata收口后clean；无实际local/PG或待launch |
+| 工作基线 / HEAD | 新段起点7fe6fc02；固定main b768+LAZY294；当前source2ea5adfe，旧runtime9b已独审 |
+| 工作树 dirty 状态 | 7产品源已固定；4child实际闭合，98源输入与结果本次固定交审 |
 | 工作分支状态 | review |
-| 检查状态 | 新接缝strict首2→修后0；11/11直接行为，3child/7fixture+3TMP收尾；0PG/真实package/网络 |
-| Review | 新runtime/domain接缝待独审；旧来源六源+真实5PG仍APPROVED/READY独立intake |
+| 检查状态 | 首strict2原件保留→修后0；6/6新直接行为，最终错误文案只复测2/2（共6distinct）；4child/2109Braw/5exact根absent；server factory仅静态，0PG |
+| Review | 旧runtime9b/c178于08:43:58独审APPROVED；新7源2ea5adfe与有限local结果PENDING |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
-| 实现目标 | 9b639f79367a118562da4fe7c8d977173a488200 |
-| 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/plugins/runtime.test.ts, packages/client/src/plugin-runner.ts, packages/client/src/plugin-runner.test.ts |
+| 实现目标 | 2ea5adfedfe0187a49cde13c769823be753a1496 |
+| 实现范围 | packages/client/src/index.ts, apps/runner/src/runtime.ts, apps/server/src/index.ts, apps/server/src/reconciliation.ts, packages/client/src/plugin-runner.test.ts, apps/runner/src/plugins/runtime.test.ts, apps/server/src/plugin-runtime/recovery.test.ts |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现有runner已具备持久插件领取和逐阶段执行接缝，直接行为验证完成 |
-| 下一可用交付 | 独审该运行时增量；共享client入口交回后接入同一认证传输，再补显式中心挂载 |
-| 当前阻塞 | ACTIVE: 完整公开链还需LAZY交回client/index、中心显式policy与generic retry绑定保护；本次运行时片已可独立审查 |
+| 当前产出 | 客户端与可信中心入口已接好，定向检查通过；普通重试明确保护插件的固定版本与配置 |
+| 下一可用交付 | 独审本片接线后验证真实公开运行链；完整插件恢复与CLI受信配置仍开放 |
+| 当前阻塞 | NONE：本片等待独立审查，真实HTTP与完整恢复尚待后继验收 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -313,3 +313,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:40:13.443686+00:00：本段source `9b639f79367a118562da4fe7c8d977173a488200`，11/11和types0，初始TS2741红原件保留。3进程/3ownTMP与7journal fixture已闭合，08:38:40.949344Z local直接归还LAZY。详见[runtime结果](../../docs/evidence/x01/runtime-public-result.json)、[Interface](../../docs/evidence/x01/runtime-public-interface.md)。整个X01未Done；source readonly待审，v18保留修复期。
 
 2026-10-07T08:42:53.228342+00:00：交审packet c178d067已push、chatui已followup且running；其先审LAZY再审本片。review首行已切为当前9b639f79/PENDING，不借旧六源APPROVED覆盖。status parser首调用误置参数产生SyntaxError（0项目修改），按实际签名复核errors[]/branchState review；未计为工程测试或产品证据。无新检查/运行，v18保留。
+
+2026-10-07T08:51:05.934001+00:00：旧runtime/domain固定独审08:43:58 APPROVED已录[runtime独审](../../docs/evidence/x01/runtime-public-independent-review.json)。新的20min段从08:44:47开始，不延长旧段；LAZY STOP/amend后本v19于08:45:17.758领取index，v20于08:47:45.538追加retry保护。此时实际3child已终态，新6/6和strict0，0PG/HTTP监听/tar/provider。后继guard是防降级保护，不是已实现透明恢复；旧版本pin/副作用未知仍保持，原六源intake仍独立。
+
+2026-10-07T08:56:07.189458+00:00：新source2ea5adfe固定；[Interface](../../docs/evidence/x01/runtime-wiring-interface.md)和[有限结果](../../docs/evidence/x01/runtime-wiring-result.json)记录实际边界。四child于08:51:32.386169Z全部闭合/本队local归还，6distinct通过+2定向重复，0PG/HTTP监听/tar/provider；首types失败保留。完整factory挂载仅静态、实际公共链和pin恢复未验；旧runtime正式批准与来源六源READY不被本片覆盖。架构新增同FlowClient领域消费与可信factory opt-in，main基线待Lead受控更新。v20ACTIVE51保留review/repair。

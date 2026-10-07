@@ -1,3 +1,19 @@
+状态：PENDING（七源公开接线与有限直接结果，0真实PG）
+
+Review target commit: 2ea5adfedfe0187a49cde13c769823be753a1496
+
+[固定入口](../../docs/evidence/x01/runtime-wiring-review-ready.json)。实际6distinct/6通过、strict修后0、最终错误文案2项复测；server factory挂载本片只有静态证据。完整public npm/CLI/recovery不在本批准范围。
+
+---
+
+状态：APPROVED（仅旧runtime/domain四源与11直接行为）
+
+Review target commit: 9b639f79367a118562da4fe7c8d977173a488200
+
+chatui01_owner于2026-10-07T08:43:58Z独审0P1/P2，[正式回执](../../docs/evidence/x01/runtime-public-independent-review.json)。不自动批准随后mount/client/retry增量。
+
+---
+
 状态：PENDING（runtime/domain四源与11直接行为待独审）
 
 Review target commit: 9b639f79367a118562da4fe7c8d977173a488200

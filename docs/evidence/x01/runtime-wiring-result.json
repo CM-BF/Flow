@@ -1,0 +1,80 @@
+{
+  "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+  "record": "docs/evidence/x01/runtime-wiring-local.json",
+  "recordSha256": "1b30f9825e6fe09a81a294dc393f5558f89ffbdd33140b65a86fa6ffbde8fa27",
+  "segmentStartedAt": "2026-10-07T08:44:47Z",
+  "actualFirstChildAt": "2026-10-07T08:49:36.902634+00:00",
+  "actualLastChildEndedAt": "2026-10-07T08:51:32.386169+00:00",
+  "distinctSelected": 6,
+  "distinctPassed": 6,
+  "targetedRetestSelected": 2,
+  "targetedRetestPassed": 2,
+  "testsFirstUnselected": 11,
+  "targetedUnselected": 15,
+  "initialTypesExit": 2,
+  "types": 0,
+  "typesSourceCommit": "ab23ecbb8684b4c7703dd5960131f2b9c8debb37",
+  "afterTypesDelta": "Only recovery HttpError user-facing message plus its existing assertion; final two recovery cases rerun. No assertion removed.",
+  "initialFailure": "Reconciliation evidence fixture shape and absent LAZY assistant-stream DTO in fixed main support. Corrected fixture; support from exact approved2949569b, no shared contract edit.",
+  "topLevelChildren": 4,
+  "rawBytes": 2109,
+  "childElapsedSeconds": 5.883300209068693,
+  "actualResourceReceiptsComplete": true,
+  "exactAbsentObservedAt": "2026-10-07T08:56:07.189458+00:00",
+  "exactRoots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-wiring-58i53fy6",
+      "dev": 16777234,
+      "ino": 123676022,
+      "absent": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-wiring-u3wu6gnk",
+      "dev": 16777234,
+      "ino": 123676266,
+      "absent": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-wiring-vxsu_ahl",
+      "dev": 16777234,
+      "ino": 123676375,
+      "absent": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-wiring-ustvsqo0",
+      "dev": 16777234,
+      "ino": 123676929,
+      "absent": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-wiring-vxsu_ahl/tmp/flow-plugin-runtime-Rj6nT0",
+      "dev": 16777234,
+      "ino": 123676455,
+      "absent": true
+    }
+  ],
+  "wholeExternalWall": null,
+  "peakTemporaryBytes": null,
+  "PG": 0,
+  "realHTTP": 0,
+  "tar": 0,
+  "provider": 0,
+  "realNpmInvocation": 0,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 1048576
+  },
+  "scope": "Actual FlowClient transport using injected fetch and actual store-only runRunner/journal/outbox with injected package host; recovery direct SQL/command fake. Server factory mount only statically reviewed, excluded from focused compiler closure.",
+  "notCovered": [
+    "real authenticated HTTP / transaction rollback",
+    "full createServer compiler closure / mount behavior",
+    "CLI trusted startup configuration",
+    "exact-pin recovery of remaining work",
+    "public runRunner actual semver package journey",
+    "latest main combination"
+  ]
+}
