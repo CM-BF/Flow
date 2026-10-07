@@ -4,7 +4,6 @@ import { FlowClient } from '@flow/client';
 import { PluginManagement, type PluginRegistryReader } from '../../../src/plugin-management/PluginManagement';
 import { createRuntimeCommandController } from '../../../src/plugin-management/runtime-command';
 import { PluginHost } from '../../../src/plugins/host';
-import { createStore } from '../../../src/plugin-integration/session';
 import type { NavigationSnapshot, PluginContext, ThemeSnapshot } from '../../../src/plugins/types';
 import '../../../src/assistant-ui.css';
 import '../../../src/styles.css';
@@ -17,10 +16,14 @@ declare global {
   }
 }
 window.__X03_TEST__ = { runtimeReadCount: 0, aborted: 0, contextKeys: [], holdNextDetail: false };
+/** Constant read ports for this fixture; no production App session or mutable draft store. */
+function constantSnapshot<T>(snapshot: T) {
+  return { getSnapshot: () => snapshot, subscribe: () => () => {} };
+}
 function makeHost() {
   const host = new PluginHost({
-    navigation: createStore<NavigationSnapshot>({ activeTaskId: null, workspaceTab: 'files', workspaceOpen: false }),
-    theme: createStore<ThemeSnapshot>({ themeId: 'light', scheme: 'light', availableThemes: [] }),
+    navigation: constantSnapshot<NavigationSnapshot>({ activeTaskId: null, workspaceTab: 'files', workspaceOpen: false }),
+    theme: constantSnapshot<ThemeSnapshot>({ themeId: 'light', scheme: 'light', availableThemes: [] }),
     getContext: () => ({ kind: 'global' }), authorize: () => true, execute: async () => {},
   });
   for (const id of ['trusted.example', 'broken.example']) host.register({
