@@ -4,11 +4,10 @@ import type { PgBoss } from 'pg-boss';
 import { PLUGIN_RUNTIME_PROTOCOL, pluginGrantReceiptSchema, type PluginGrantRequest, type PluginGrantReceipt, type PluginRuntimeCommand, type PluginToolTaskRequest } from '../../../../packages/contracts/src/plugin-runtime.js';
 import type { PluginSnapshot } from '../../../../packages/contracts/src/plugins.js';
 import { canonical, HttpError, sha256, transaction } from '../database.js';
-import { loadInstall } from '../plugin-installations/store.js';
 import { appendPluginRevision, loadInstallation, readSnapshot } from '../plugins/storage.js';
 import { ownedAttempt } from '../runners.js';
 import { acceptTask, command, commandInTransaction } from '../tasks.js';
-import { assertPluginHost, latestRuntimeRevision, readBinding, readRuntime, recordBinding } from './store.js';
+import { assertPluginHost, assertTrustedPluginHost, installedMaterial, type TrustedPluginHostPolicy, latestRuntimeRevision, readBinding, readRuntime, recordBinding } from './store.js';
 
 function requireToolPermission(snapshot: PluginSnapshot): void {
   if (!snapshot.grants.includes('tool')) throw new HttpError(403, 'plugin_tool_grant_required', 'Current tool permission is required.');
@@ -16,27 +15,14 @@ function requireToolPermission(snapshot: PluginSnapshot): void {
 function requireRevision(actual: number, expected: number): void {
   if (actual !== expected) throw new HttpError(409, 'plugin_revision_conflict', 'Plugin registration changed.');
 }
-async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId: string) {
-  const row = await loadInstall(client, operationId);
-  const receipt = row.receipt;
-  if (row.registration_id !== snapshot.installation.id || row.version_id !== snapshot.version.id || row.store_id !== storeId
-    || row.status !== 'installed' || !receipt || receipt.schemaVersion !== 1 || receipt.storeId !== storeId
-    || !/^[a-f0-9]{64}$/.test(receipt.installationId) || !/^[a-f0-9]{64}$/.test(receipt.treeDigest)
-    || receipt.manifest?.kind !== 'tool' || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
-    || receipt.artifact.artifactId !== row.artifact_id || receipt.artifact.sha256 !== snapshot.version.declaredSha256
-    || receipt.artifact.name !== snapshot.version.packageName || receipt.artifact.version !== snapshot.version.packageVersion
-    || receipt.artifact.bytes !== row.artifact.bytes || receipt.artifact.integrity !== row.artifact.integrity
-    || receipt.artifact.sha256 !== row.artifact.sha256 || receipt.artifact.artifactId !== row.artifact.artifactId
-    || receipt.artifact.name !== row.artifact.name || receipt.artifact.version !== row.artifact.version) {
-    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed tool material.');
-  }
-  return receipt;
-}
 
-export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string) {
+export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string, policy?: TrustedPluginHostPolicy) {
   const result = await command(pool, `plugin.runtime.command:${registrationId}`, key, input, async client => {
     // Never acquire a runner lock after the registration lock.
-    if (input.change.kind === 'enable') await assertPluginHost(client, input.change.targetRunnerId, input.change.storeId);
+    if (input.change.kind === 'enable') {
+      await assertPluginHost(client, input.change.targetRunnerId, input.change.storeId);
+      assertTrustedPluginHost(policy, { protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: input.change.targetRunnerId, storeId: input.change.storeId, hostApiMajor: 1 });
+    }
     const installation = await loadInstallation(client, registrationId, true);
     requireRevision(installation.revision, input.expectedRevision);
     const current = await readSnapshot(client, registrationId);
@@ -52,17 +38,18 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
       material_install_operation_id,target_runner_id,store_id,host_api_major) VALUES($1,$2,$3,$4,$5,$6,$7,$8)`,
     [registrationId, changed.snapshot.revision, current.version.id, enabled !== null, enabled?.materialInstallOperationId ?? null,
       enabled?.targetRunnerId ?? null, enabled?.storeId ?? null, enabled ? 1 : null]);
-    return { ...changed, runtime: await readRuntime(client, registrationId) };
+    return { ...changed, runtime: await readRuntime(client, registrationId, policy) };
   });
   return { ...result.value, replayed: result.replayed };
 }
 
 /** Unmounted until the claim reader filters bindings and trusted runtime dispatch/recovery are integrated. */
-export async function admitPluginToolTask(pool: Pool, boss: PgBoss, registrationId: string, input: PluginToolTaskRequest, key: string) {
+export async function admitPluginToolTask(pool: Pool, boss: PgBoss, registrationId: string, input: PluginToolTaskRequest, key: string, policy?: TrustedPluginHostPolicy) {
   const result = await command(pool, `plugin.tool-task:${registrationId}`, key, input, async client => {
     const candidate = await latestRuntimeRevision(client, registrationId);
     if (!candidate?.desired_enabled || !candidate.target_runner_id || !candidate.store_id) throw new HttpError(409, 'plugin_not_enabled', 'Enable this plugin before binding a new task.');
     await assertPluginHost(client, candidate.target_runner_id, candidate.store_id);
+    assertTrustedPluginHost(policy, { protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: candidate.target_runner_id, storeId: candidate.store_id, hostApiMajor: 1 });
     const installation = await loadInstallation(client, registrationId, true);
     requireRevision(installation.revision, input.expectedRevision);
     const runtime = await latestRuntimeRevision(client, registrationId);

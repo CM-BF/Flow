@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+  "manifest": "docs/evidence/x01-plugin-command-acks/revision-fix-manifest.json",
+  "manifestSha256": "c836559927bb8c6c185d238398241def36f7f9db182738c0d8f1c48c3471fec5",
+  "bindings": 106,
+  "bytes": 485603,
+  "delta": "Shared mutation envelope parses computed revision with existing pluginRevisionSchema after receiving ACK; two real runCli/FlowClient tests distinguish max fake success UNKNOWN4 from max-1 legitimate success. Existing source and raw unchanged except the two source leaves and exact local selector.",
+  "actual": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 42,
+    "typesExit": 0,
+    "newRawBytes": 564,
+    "newSupervisionMs": 2614,
+    "totalRawBytes": 49358,
+    "totalSupervisionMs": 9799,
+    "children": 8,
+    "closedAt": "2026-10-07T10:47:57.524585Z"
+  },
+  "review": "PENDING_DELTA_REVIEW",
+  "boundary": "No old41/PG rerun; mock Fetch, not real server authorization; old raw/manifests remain fixed."
+}

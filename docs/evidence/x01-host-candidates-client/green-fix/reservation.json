@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T11:02:09.757576+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/vitest.config.mjs",
+    "--no-cache",
+    "packages/client/src/plugin-host-candidates.test.ts",
+    "apps/cli/src/plugin-host-candidates.test.ts",
+    "-t",
+    "rejects invalid input before transport and accepts a full escaped-name page"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates",
+  "free": 22335799296,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/green-fix/tmp",
+    "dev": 16777234,
+    "ino": 124067951
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

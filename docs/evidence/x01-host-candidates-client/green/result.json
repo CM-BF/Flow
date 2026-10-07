@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-07T11:01:40.919875+00:00",
+  "finishedAt": "2026-10-07T11:01:41.859616+00:00",
+  "wallBeforePersistenceSeconds": 0.9394143340177834,
+  "supervision": {
+    "pid": 77077,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 1,
+    "elapsed_ms": 907,
+    "observed_bytes": 3034,
+    "retained_bytes": 3034,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 3034,
+    "sha256": "a044d78d31a8753f30c9b6442fa41170f1126e75536aff90eebf57e9a1ee688d"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-host-candidates-client/run-local.py": "94d22eaadcf7062c942e9baee7343841ca94437030420d73184d6e385b00543d",
+    "packages/client/src/index.ts": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba",
+    "packages/client/src/plugin-management.ts": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6",
+    "apps/cli/src/index.ts": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93",
+    "packages/client/src/plugin-host-candidates.test.ts": "451083e77d9359c80158bf89f7c9974c8d8bd6434229f59c07e430c30601828e",
+    "apps/cli/src/plugin-host-candidates.test.ts": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0"
+  }
+}

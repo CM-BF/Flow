@@ -1,0 +1,122 @@
+{
+  "taskId": "X01-HOST-CANDIDATES-CLIENT01",
+  "parentTaskId": "X01",
+  "coLead": "Mika",
+  "owner": "db_transaction_owner",
+  "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+  "base": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+  "reviewState": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewPacket": "c5da46ee97db907c5da1dbb39e243cd841322f07",
+  "reviewManifestSha256": "6d0e75303fbfa601fb9d3b024146877d33fdad9d745f08de52a25dd129cdcb73",
+  "productAndRequiredTestSupport": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 68285,
+      "sha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": true,
+        "bytes": 67291,
+        "sha256": "0a2ae1315646ef0b5a8de79cc22b35398258e396fb8981182ac659812b9e27f0"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 9257,
+      "sha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": true,
+        "bytes": 8466,
+        "sha256": "f2c8635347fcf76c09074ff5ecd5c7eb35c2d8a7e3b611092d790b488f492a11"
+      }
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 29194,
+      "sha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": true,
+        "bytes": 28398,
+        "sha256": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-host-candidates.test.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 5598,
+      "sha256": "b7526ef8d8ceba99ebad4eea7599dcfe11bbc7423d0c878b76134c11a65ad0d7",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/cli/src/plugin-host-candidates.test.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 1834,
+      "sha256": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "docs/evidence/x01-host-candidates-client/fixtures.ts",
+      "sourceCommit": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "bytes": 1037,
+      "sha256": "2760fb6d1b9a0710047b447dc10af15ecb8dd1b66d1c6de8689f8db2ce2b09e6",
+      "preimage": {
+        "commit": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    }
+  ],
+  "requiredBackendContract": {
+    "sourceCommit": "7672090bed43f28f88f16bcbd0d0cfa04a0667ac",
+    "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+    "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+    "owner": "architecture_read",
+    "instruction": "Require these exact contract bytes, already in main or same controlled intake. The backend may use its later approved current-policy fix (a298), whose contract hash was independently checked equal by chatui; do not require main to remain at the earlier backend commit. This consumer supplies no contracts product."
+  },
+  "requiredAckSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+  "evidencePlanScope": [
+    "docs/evidence/x01-host-candidates-client",
+    "plans/x01-host-candidates-client"
+  ],
+  "preserveMain": [
+    "new ACK configure/set-grants and all previous runtime owner methods",
+    "READBOUND bounded reader",
+    "X01 pluginRunner/terminal and other client/CLI methods"
+  ],
+  "publicInterface": "pluginHostCandidates(id, {materialInstallOperationId, cursor?}, signal?) reads exactly one strict, bounded advisory page; CLI runtime-hosts PLUGIN MATERIAL_INSTALL_OPERATION [--after CURSOR]",
+  "validation": "15 distinct across green14pass1testfailure and narrow1pass14unselected; finaltypes0. Red15 and synchronous-test assertion failure retained. Actual mock Fetch public client and runCli; no real server/PG/Web/provider acceptance.",
+  "integrationState": "READY_NOT_YET_MAIN",
+  "ownership": {
+    "claimId": "3f0e3404-8415-4cc6-8b8f-88b8f7317dc9",
+    "version": 1,
+    "state": "ACTIVE",
+    "scopeCount": 7,
+    "handoff": "Product leaves frozen for review/intake, not released. Old ACK/CLI preimages stay fixed."
+  },
+  "registration": "task-intake.json; originalLead owns registry",
+  "architecture": "One bounded owner GET client method and CLI consumer; existing auth/transport/paging contract. Mika coordinates D06 on main receipt.",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T11:06:37Z",
+  "readyAt": "2026-10-07T11:08:09.723Z",
+  "remainingFindings": "0 P1/P2",
+  "cleanCode": {
+    "checkedAt": "2026-10-07T11:08:09.723Z",
+    "result": "Small pure decoder with single transport, no cursor decoder/cache/poller, strict finite input/output, existing UNKNOWN/typed-conflict separation; no remaining local finding."
+  }
+}

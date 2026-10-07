@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T10:47:56.218588+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/tsconfig.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks",
+  "free": 22722490368,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/types-revision/tmp",
+    "dev": 16777234,
+    "ino": 124061528
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

@@ -1,0 +1,60 @@
+import { afterEach, expect, it, vi } from 'vitest';
+import { FlowApiError, FlowClient, UnknownPluginAcknowledgementError } from './index.js';
+import { id, material, query, page, candidate, runner, response } from '../../../docs/evidence/x01-host-candidates-client/fixtures.js';
+afterEach(() => vi.restoreAllMocks());
+const client = () => new FlowClient({ baseUrl: 'https://flow.example', token: 'owner-fixture' });
+it('reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts', async () => {
+  const body = page(); body.candidates.push({ ...candidate(2), selectable: false, reason: 'maintenance' });
+  const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(response(body));
+  expect(await client().pluginHostCandidates(id, query)).toEqual(body);
+  expect(fetch).toHaveBeenCalledTimes(1);
+  const [url, init] = fetch.mock.calls[0]!;
+  expect(String(url)).toBe(`https://flow.example/api/plugins/${id}/runtime/hosts?materialInstallOperationId=${material}`);
+  expect(new Headers(init?.headers).get('Authorization')).toBe('Bearer owner-fixture');
+  expect(init?.method).toBeUndefined(); expect(init?.body).toBeUndefined();
+});
+it('preserves an empty scanned page and follows its opaque cursor only on a separate caller request', async () => {
+  const empty = { ...page(), candidates: [], nextCursor: 'Opaque_page_2' };
+  const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(response(empty)).mockResolvedValueOnce(response(page()));
+  expect(await client().pluginHostCandidates(id, query)).toEqual(empty); expect(fetch).toHaveBeenCalledTimes(1);
+  await client().pluginHostCandidates(id, { ...query, cursor: empty.nextCursor });
+  expect(String(fetch.mock.calls[1]![0])).toContain('&cursor=Opaque_page_2'); expect(fetch).toHaveBeenCalledTimes(2);
+});
+it('freezes the requested material before awaiting and uses the existing cookie GET transport', async () => {
+  const options = { ...query }; const fetch = vi.spyOn(globalThis, 'fetch').mockImplementationOnce(async () => { options.materialInstallOperationId = runner(9); return response(page()); });
+  const value = await new FlowClient({ baseUrl: 'https://flow.example', browserSession: { csrfToken: () => undefined } }).pluginHostCandidates(id, options);
+  expect(value.materialInstallOperationId).toBe(material); expect(fetch.mock.calls[0]![1]?.credentials).toBe('include');
+  const headers = new Headers(fetch.mock.calls[0]![1]?.headers); expect(headers.has('Authorization')).toBe(false); expect(headers.has('X-Flow-CSRF')).toBe(false);
+});
+it.each([
+  ['registration', (p: ReturnType<typeof page>) => { p.registrationId = runner(8); }],
+  ['material', (p: ReturnType<typeof page>) => { p.materialInstallOperationId = runner(8); }],
+  ['duplicate identity', (p: ReturnType<typeof page>) => { p.candidates.push(candidate()); }],
+  ['reversed identity order', (p: ReturnType<typeof page>) => { p.candidates = [candidate(2), candidate(1)]; }],
+  ['selection reason', (p: ReturnType<typeof page>) => { p.candidates[0]!.selectable = false; }],
+  ['unknown reason', (p: ReturnType<typeof page>) => { p.candidates[0]!.reason = 'online'; }],
+  ['repeated cursor', (p: ReturnType<typeof page>) => { p.nextCursor = 'Cursor_1'; }],
+  ['page count', (p: ReturnType<typeof page>) => { p.candidates = Array.from({ length: 41 }, (_, i) => candidate(i)); }],
+] as const)('rejects an unverified candidate %s without retry or inferred state', async (_, mutate) => {
+  const body = page(); mutate(body); const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(response(body));
+  await expect(client().pluginHostCandidates(id, { ...query, cursor: 'Cursor_1' })).rejects.toBeInstanceOf(UnknownPluginAcknowledgementError);
+  expect(fetch).toHaveBeenCalledTimes(1);
+});
+it('rejects malformed and over-budget success while preserving trusted rejection and cancellation', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(new Response('{')).mockResolvedValueOnce(new Response(' '.repeat(65_537)))
+    .mockResolvedValueOnce(response({ error: { code: 'plugin_host_cursor_changed', message: 'restart explicitly' } }, 409));
+  await expect(client().pluginHostCandidates(id, query)).rejects.toBeInstanceOf(UnknownPluginAcknowledgementError);
+  await expect(client().pluginHostCandidates(id, query)).rejects.toBeInstanceOf(UnknownPluginAcknowledgementError);
+  await expect(client().pluginHostCandidates(id, query)).rejects.toMatchObject({ status: 409, code: 'plugin_host_cursor_changed' });
+  const controller = new AbortController(); controller.abort(new Error('closed panel'));
+  fetch.mockImplementationOnce(async (_, init) => { init!.signal!.throwIfAborted(); return response(page()); });
+  await expect(client().pluginHostCandidates(id, query, controller.signal)).rejects.toBeInstanceOf(UnknownPluginAcknowledgementError);
+  expect(fetch).toHaveBeenCalledTimes(4);
+});
+it('rejects invalid input before transport and accepts a full escaped-name page within its finite budget', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch');
+  for (const bad of [{ ...query, cursor: '' }, { ...query, cursor: 'x'.repeat(513) }, { ...query, limit: 40 }]) await expect(client().pluginHostCandidates(id, bad)).rejects.toThrow();
+  await expect(client().pluginHostCandidates('not-a-uuid', query)).rejects.toThrow(); expect(fetch).not.toHaveBeenCalled();
+  const body = page(); body.candidates = Array.from({ length: 40 }, (_, i) => ({ ...candidate(i), runnerName: '\b'.repeat(120) }));
+  fetch.mockResolvedValueOnce(response(body)); expect(await client().pluginHostCandidates(id, query)).toEqual(body);
+});

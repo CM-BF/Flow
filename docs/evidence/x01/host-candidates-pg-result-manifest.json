@@ -1,0 +1,170 @@
+{
+  "resultCommit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+  "executionHead": "0bf7e6c7b040494d26bfb6d0a2b44c750ed68e1c",
+  "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+  "preparedPacket": "82cca2124bd7c234f21088cca53adc46f50751f6",
+  "preparedManifestSha256": "8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1",
+  "preparedBindingsUnchanged": 376,
+  "createdAt": "2026-10-07T11:20:53.836740+00:00",
+  "status": "RESULT_REVIEW_PENDING",
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "a963095a23f6544810cd62bc3a57663126e990a4",
+      "bytes": 26717,
+      "sha256": "80b9179f142deb26ee2017b266620e6e9db62dbf92e056df8334c923129c2bae"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-independent-review.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "d4d611bf193885d9ccf96af685a4b09fc26d5031",
+      "bytes": 2209,
+      "sha256": "43d958d4296357eb4fb0d1cc93c484c8601cb4279c71b1176c837a70eb2824b5"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-input.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "ee925daabf3c9a71bc4984574329690db2ffd6fe",
+      "bytes": 1309,
+      "sha256": "ec49a795cc8968d41a89c60814c9078ea528099ab2a67dae6dbb3ac0fef3e437"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-manifest.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "4d3239c7aa579d0564e3e1101d04bdf2515543f1",
+      "bytes": 156922,
+      "sha256": "8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-once.py",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "172831c2d8b7784480bd361d6df2b54da08bf4a3",
+      "bytes": 17276,
+      "sha256": "438535183bd5da479750b479b98e4bdc2c023bcbda7ab8c8a879114e5e5dcd30"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-owner-close.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "13b5409e51bf2f94792b2fe2019e6e987e2d86eb",
+      "bytes": 2002,
+      "sha256": "e8a2724e14c77c131058ad2df7cf345bb57a5a889bf4c46110f3f87323351340"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/admission.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "88820fd190286f441a6cbd0e6964a3902428e49e",
+      "bytes": 4695,
+      "sha256": "6f70115789705b4added8949adb2e6007d45856591a20ccf29a8a87006c764f3"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/launch.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "b7285c5741930e8f36cf82073fca3e444839b63d",
+      "bytes": 186,
+      "sha256": "30b9010aa29ddc743894dc56c4d717a393bff28a742a95ad0fa28606c35ca6fa"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/output.log",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "c64ba54e91c82c0bf7c1027fdde46824b6ce6399",
+      "bytes": 113,
+      "sha256": "95d6c02f09ae0f4a5c9f3b9374744400c0209f5770d2c4717471327e95ead9e7"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/preflight.stdout",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "43c43f31d0d3f7e8e859f6f86db64ba2ccb9ff33",
+      "bytes": 291,
+      "sha256": "f10324783e4669b9186cd8cbd680283c0d2ccbfc3641d1e4af35d7f66e88588a"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/reservation.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "22e56f7735106c7a2336ae83bd3f7ad5805a5b14",
+      "bytes": 283,
+      "sha256": "0ed0494a217e3cf376a42d978881a135c11accf73b21e1ae2d7da6729060bdbb"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/result.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "c3cd71690e3c134912255a37ebde3b08dc954f58",
+      "bytes": 5822,
+      "sha256": "3f3bb1cfebfe8afabd806afc47370323a0260e399598b8672e529c1a7b7c2601"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/runtime-create-request.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "62690b0b237869ab49d9bdb87b39720d399342f7",
+      "bytes": 353,
+      "sha256": "ddcd5c647450e36b8001c58554580c75b0fc00b657698fd7c943db069a979452"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/runtime-created.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "27d322fbe0fe0c3f1292f6c969410e8a4e94da8b",
+      "bytes": 402,
+      "sha256": "2dee0bd8dde2f69e3eee6d6191470a635121807d64752b77e0c932ccf03a6662"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/runtime-reservation.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "020e62c521af34d6bade6baef1eb2e1b66908671",
+      "bytes": 449,
+      "sha256": "c2f1f2a0878f7e596c48cc7f36f2e2effef68f6ab90ef5167fc260193c87a6db"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/runtime-result.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "9fdd03216feb2c7f674fb339f6e691efa3748dcb",
+      "bytes": 1301,
+      "sha256": "7eb7083e1d203aa6abf48f28310a7fa73a35f228b963f30ba97a32615f473e2a"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-run-r1/vitest.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "b568ae4401a7430b2994018bd5b36779c1aeeb99",
+      "bytes": 4030,
+      "sha256": "85d13dfacca4dc1e31c7e85d0f8625363374893dfaa860ceb67fb618bbea06c8"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-tool-output.log",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "c9811b33829a0681c030e7ecaf96dae47a5a8983",
+      "bytes": 650,
+      "sha256": "a761fb2c6e216c019947e924053ad3d8e0a83f1f98c80308a5bbb154d2b87278"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-tool.json",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "6d5988edb5082f18f8d89654ab7f4ed6838e0bd0",
+      "bytes": 1731,
+      "sha256": "dbd6c2393cfa6545ab81dac6a41b953809bac8e9e5c839b8f17e9f338245a53b"
+    },
+    {
+      "path": "docs/evidence/x01/host-candidates-pg-vitest.config.mjs",
+      "commit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+      "blob": "26a5d25c416613b240501e5bdde0ab28c4594022",
+      "bytes": 1402,
+      "sha256": "bb4c66c7492544c356b940a0ecc4f9908a826363df3642f90607c895b3cec305"
+    }
+  ],
+  "summary": {
+    "bindings": 20,
+    "bytes": 228143,
+    "rawFiles": 14,
+    "rawBytes": 22308
+  },
+  "selected": 1,
+  "passed": 1,
+  "unselected": 10,
+  "PG": 1,
+  "resourceReturnedAt": "2026-10-07T11:19:02.617209+00:00",
+  "limitations": [
+    "Synthetic installed material seed; no npm or OS runner execution",
+    "Only one new candidate case, not the ten unselected historical cases",
+    "Whole active TMP peak and physical DB/WAL bytes UNKNOWN",
+    "Historical EPERM observations retained, final owned state absent",
+    "External time3.55s and pre-save/post-save/tool wait measurements have different meanings"
+  ]
+}

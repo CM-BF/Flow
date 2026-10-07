@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-07T10:39:42.311801+00:00",
+  "finishedAt": "2026-10-07T10:39:43.561905+00:00",
+  "wallBeforePersistenceSeconds": 1.2498980419477448,
+  "supervision": {
+    "pid": 64730,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1241,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-plugin-command-acks/run-local.py": "ad704d3737b4107f505a097792add79a48d0cad5eebe0be425dd921c959170b0",
+    "packages/client/src/index.ts": "0a2ae1315646ef0b5a8de79cc22b35398258e396fb8981182ac659812b9e27f0",
+    "packages/client/src/plugin-management.ts": "8fd3f006e930d4e6e5de3e5d6cebc029b463660c29c18e6ecb543cbc2c425ab5",
+    "apps/cli/src/index.ts": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b",
+    "packages/client/src/plugin-command-ack.test.ts": "5391443d6bc2cb7ebfe002b719267a432ca447a155eb4a48d90296262bf09622",
+    "apps/cli/src/plugin-command-ack.test.ts": "d065bc363e3980d3daa3b1fd1527778c3b08a3c3fbaca57e7018ea59721bb093",
+    "packages/client/src/plugin-runtime.test.ts": "561da6f1debd90d3d6e4870ae8a8c3002dcd9c3f6a91c8a096a6d28f4f794d34",
+    "apps/cli/src/plugin-runtime.test.ts": "a2f28112571f7c700e25b75ee39ae3456489d2ba5f8b7fd04211d7e41a2c8f4d"
+  }
+}

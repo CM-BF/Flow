@@ -256,3 +256,52 @@ test.each(['registration-first', 'command-first', 'command-replay'] as const)('l
     expect(rolledBack).toBe(true);
   }
 });
+
+test('owner host candidates use real SQL pagination and current policy for enable and admission', async () => {
+  const f = await fixture();
+  const hosts: { runnerId: string; token: string; storeId: string }[] = [{ runnerId: f.runnerId, token: f.token, storeId: 'test-material' }];
+  for (let index = 0; index < 44; index++) {
+    const runner = await request('/api/runners', { name: 'Readable candidate host', harnesses: index === 2 ? ['claude'] : ['fixture'], capacity: 1 });
+    expect(runner.status).toBe(200);
+    const value = { runnerId: runner.body.runnerId as string, token: runner.body.token as string, storeId: index === 1 ? 'other-material' : 'test-material' };
+    trustedHosts.add(hostKey(value.runnerId, value.storeId, 1));
+    expect((await request('/api/runner/plugin-host', { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: value.storeId, hostApiMajor: 1 }, randomUUID(), value.token)).status).toBe(200);
+    hosts.push(value);
+  }
+  const endpoint = `/api/plugins/${f.registrationId}/runtime/hosts?materialInstallOperationId=${f.materialId}`;
+  expect((await request(endpoint, undefined, randomUUID(), f.token)).status).toBe(403);
+  expect((await databaseFixture.request(base + endpoint, {})).status).toBe(401);
+  const last = [...hosts].sort((a, b) => a.runnerId.localeCompare(b.runnerId)).at(-1)!;
+  trustedHosts.clear(); trustedHosts.add(hostKey(last.runnerId, last.storeId, 1));
+  const first = await request(endpoint);
+  expect(first.status).toBe(200); expect(first.body.candidates).toEqual([]); expect(first.body.nextCursor).toEqual(expect.any(String));
+  const second = await request(endpoint + '&cursor=' + first.body.nextCursor);
+  expect(second.status).toBe(200); expect(second.body.candidates.map((x: { runnerId: string }) => x.runnerId)).toEqual([last.runnerId]);
+  expect(second.body.nextCursor).toBeNull();
+  for (const host of hosts) trustedHosts.add(hostKey(host.runnerId, host.storeId, 1));
+  const draining = hosts[1]!;
+  expect((await request(`/api/runners/${draining.runnerId}/maintenance/drain`, { version: 0, operationId: randomUUID(), reason: 'Candidate maintenance' })).status).toBe(200);
+  const revoked = hosts[4]!;
+  expect((await request(`/api/runners/${revoked.runnerId}/revoke`, {})).status).toBe(200);
+  const a = await request(endpoint); const b = await request(endpoint + '&cursor=' + a.body.nextCursor);
+  const candidates = [...a.body.candidates, ...b.body.candidates];
+  expect(candidates).toHaveLength(44);
+  expect(candidates.some(x => x.runnerId === revoked.runnerId)).toBe(false);
+  for (const [host, reason] of [[draining, 'maintenance'], [hosts[2]!, 'material-store-mismatch'], [hosts[3]!, 'harness-unsupported']] as const) {
+    expect(candidates.find(x => x.runnerId === host.runnerId)).toMatchObject({ selectable: false, reason, online: 'unknown', loaded: 'unknown', callable: 'unknown' });
+  }
+  const before = (await pool.query('SELECT revision FROM flow.plugin_installations WHERE id=$1', [f.registrationId])).rows;
+  trustedHosts.delete(hostKey(f.runnerId, 'test-material', 1));
+  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable)).status).toBe(403);
+  expect((await pool.query('SELECT revision FROM flow.plugin_installations WHERE id=$1', [f.registrationId])).rows).toEqual(before);
+  trustedHosts.add(hostKey(f.runnerId, 'test-material', 1));
+  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable)).status).toBe(200);
+  expect((await request(endpoint + '&cursor=' + a.body.nextCursor)).status).toBe(409);
+  trustedHosts.delete(hostKey(f.runnerId, 'test-material', 1));
+  expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ desiredEnabled: true, bindingAllowed: false, reason: 'host-unavailable' });
+  const taskCount = (await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows;
+  expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, { expectedRevision: 4, title: 'Trust removed', input: 'text' })).status).toBe(403);
+  expect((await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows).toEqual(taskCount);
+  expect((await pool.query('SELECT 1 FROM flow.plugin_tool_bindings WHERE registration_id=$1', [f.registrationId])).rowCount).toBe(0);
+  facts.push({ kind: 'host-candidates', registrations: 1, runners: hosts.length, material: 'synthetic-terminal-source-only', tasks: 0 });
+});

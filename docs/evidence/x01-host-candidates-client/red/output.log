@@ -1,0 +1,146 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates
+
+ ❯ packages/client/src/plugin-host-candidates.test.ts (13 tests | 13 failed) 17ms
+   × reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts 13ms
+   × preserves an empty scanned page and follows its opaque cursor only on a separate caller request 0ms
+   × freezes the requested material before awaiting and uses the existing cookie GET transport 0ms
+   × rejects an unverified candidate registration without retry or inferred state 0ms
+   × rejects an unverified candidate material without retry or inferred state 0ms
+   × rejects an unverified candidate duplicate identity without retry or inferred state 0ms
+   × rejects an unverified candidate reversed identity order without retry or inferred state 0ms
+   × rejects an unverified candidate selection reason without retry or inferred state 0ms
+   × rejects an unverified candidate unknown reason without retry or inferred state 0ms
+   × rejects an unverified candidate repeated cursor without retry or inferred state 0ms
+   × rejects an unverified candidate page count without retry or inferred state 0ms
+   × rejects malformed and over-budget success while preserving trusted rejection and cancellation 0ms
+   × rejects invalid input before transport and accepts a full escaped-name page within its finite budget 0ms
+ ❯ apps/cli/src/plugin-host-candidates.test.ts (2 tests | 2 failed) 16ms
+   × prints one checked host page through real CLI and FlowClient without following its cursor 14ms
+   × separates unsupported pagination usage from failed reads and stale-cursor conflict 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts
+TypeError: client(...).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:9:25
+      7|   const body = page(); body.candidates.push({ ...candidate(2), selecta…
+      8|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(re…
+      9|   expect(await client().pluginHostCandidates(id, query)).toEqual(body);
+       |                         ^
+     10|   expect(fetch).toHaveBeenCalledTimes(1);
+     11|   const [url, init] = fetch.mock.calls[0]!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > preserves an empty scanned page and follows its opaque cursor only on a separate caller request
+TypeError: client(...).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:19:25
+     17|   const empty = { ...page(), candidates: [], nextCursor: 'Opaque_page_…
+     18|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(re…
+     19|   expect(await client().pluginHostCandidates(id, query)).toEqual(empty…
+       |                         ^
+     20|   await client().pluginHostCandidates(id, { ...query, cursor: empty.ne…
+     21|   expect(String(fetch.mock.calls[1]![0])).toContain('&cursor=Opaque_pa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > freezes the requested material before awaiting and uses the existing cookie GET transport
+TypeError: (intermediate value).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:25:123
+     23| it('freezes the requested material before awaiting and uses the existi…
+     24|   const options = { ...query }; const fetch = vi.spyOn(globalThis, 'fe…
+     25|   const value = await new FlowClient({ baseUrl: 'https://flow.example'…
+       |                                                                                                                           ^
+     26|   expect(value.materialInstallOperationId).toBe(material); expect(fetc…
+     27|   const headers = new Headers(fetch.mock.calls[0]![1]?.headers); expec…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate registration without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate material without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate duplicate identity without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate reversed identity order without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate selection reason without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate unknown reason without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate repeated cursor without retry or inferred state
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects an unverified candidate page count without retry or inferred state
+TypeError: client(...).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:40:25
+     38| ] as const)('rejects an unverified candidate %s without retry or infer…
+     39|   const body = page(); mutate(body); const fetch = vi.spyOn(globalThis…
+     40|   await expect(client().pluginHostCandidates(id, { ...query, cursor: '…
+       |                         ^
+     41|   expect(fetch).toHaveBeenCalledTimes(1);
+     42| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects malformed and over-budget success while preserving trusted rejection and cancellation
+TypeError: client(...).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:46:25
+     44|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(ne…
+     45|     .mockResolvedValueOnce(response({ error: { code: 'plugin_host_curs…
+     46|   await expect(client().pluginHostCandidates(id, query)).rejects.toBeI…
+       |                         ^
+     47|   await expect(client().pluginHostCandidates(id, query)).rejects.toBeI…
+     48|   await expect(client().pluginHostCandidates(id, query)).rejects.toMat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects invalid input before transport and accepts a full escaped-name page within its finite budget
+TypeError: client(...).pluginHostCandidates is not a function
+ ❯ packages/client/src/plugin-host-candidates.test.ts:56:135
+     54| it('rejects invalid input before transport and accepts a full escaped-…
+     55|   const fetch = vi.spyOn(globalThis, 'fetch');
+     56|   for (const bad of [{ ...query, cursor: '' }, { ...query, cursor: 'x'…
+       |                                                                                                                                       ^
+     57|   await expect(client().pluginHostCandidates('not-a-uuid', query)).rej…
+     58|   const body = page(); body.candidates = Array.from({ length: 40 }, (_…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  apps/cli/src/plugin-host-candidates.test.ts > prints one checked host page through real CLI and FlowClient without following its cursor
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ apps/cli/src/plugin-host-candidates.test.ts:8:79
+      6| it('prints one checked host page through real CLI and FlowClient witho…
+      7|   const body = { ...page(), candidates: [], nextCursor: 'Another_page'…
+      8|   const result = await cli(['--after', 'Previous_page']); expect(resul…
+       |                                                                               ^
+      9|   expect(String(fetch.mock.calls[0]![0])).toContain('&cursor=Previous_…
+     10| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+ FAIL  apps/cli/src/plugin-host-candidates.test.ts > separates unsupported pagination usage from failed reads and stale-cursor conflict
+AssertionError: expected 2 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 2
+
+ ❯ apps/cli/src/plugin-host-candidates.test.ts:15:45
+     13|   for (const args of [['--limit', '40'], ['--before', 'cursor'], ['une…
+     14|   expect(fetch).not.toHaveBeenCalled();
+     15|   const bad = await cli(); expect(bad.code).toBe(4); expect(bad.out).t…
+       |                                             ^
+     16|   const conflict = await cli(); expect(conflict.code).toBe(3); expect(…
+     17| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/15]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  15 failed (15)
+   Start at  04:01:19
+   Duration  644ms (transform 218ms, setup 0ms, import 414ms, tests 32ms, environment 0ms)
+

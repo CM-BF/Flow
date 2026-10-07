@@ -1,0 +1,1530 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks
+
+ ❯ packages/client/src/plugin-command-ack.test.ts (19 tests | 17 failed) 28ms
+   × sends parsed configure and validates granted incomplete configuration without guessing current state 16ms
+   ✓ freezes parsed values and accepts an old replay without a current GET 1ms
+   × rejects malformed configure ACK replayed 2ms
+   × rejects malformed configure ACK installation 1ms
+   × rejects malformed configure ACK operation 1ms
+   × rejects malformed configure ACK kind 1ms
+   × rejects malformed configure ACK before 1ms
+   × rejects malformed configure ACK after 1ms
+   × rejects malformed configure ACK snapshot-revision 1ms
+   × rejects malformed configure ACK installation-revision 1ms
+   × rejects malformed configure ACK extra-value 1ms
+   × rejects malformed configure ACK wrong-type 0ms
+   × rejects malformed configure ACK missing-required 0ms
+   × rejects malformed configure ACK range 0ms
+   × rejects malformed configure ACK enum 0ms
+   × rejects malformed configure ACK status 0ms
+   × checks grant exact values, declared capabilities and derived incomplete status 0ms
+   × distinguishes trusted conflicts from lost, malformed, oversized and cancelled ACKs without retry 1ms
+   ✓ keeps register-version and select-version on their existing unvalidated response behavior 0ms
+ ❯ apps/cli/src/plugin-command-ack.test.ts (2 tests | 1 failed) 21ms
+   ✓ uses unchanged real CLI for configuration and grants with checked FlowClient receipts 16ms
+   × keeps malformed ACK unknown4 distinct from request usage2 and trusted conflict3 4ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 18 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/cli/src/plugin-command-ack.test.ts > keeps malformed ACK unknown4 distinct from request usage2 and trusted conflict3
+AssertionError: expected +0 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 0
+
+ ❯ apps/cli/src/plugin-command-ack.test.ts:18:101
+     16| it('keeps malformed ACK unknown4 distinct from request usage2 and trus…
+     17|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(re…
+     18|   await writeFile(file, JSON.stringify(configure)); const result = awa…
+       |                                                                                                     ^
+     19|   expect((await cli()).code).toBe(3); await writeFile(file, '{}'); exp…
+     20| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > sends parsed configure and validates granted incomplete configuration without guessing current state
+AssertionError: expected { expectedRevision: 2, …(2) } to deeply equal { expectedRevision: 2, …(2) }
+
+- Expected
++ Received
+
+@@ -6,7 +6,7 @@
+        "enabled": true,
+        "mode": "balanced",
+      },
+    },
+    "expectedRevision": 2,
+-   "reason": "configure",
++   "reason": " configure ",
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:10:61
+      8|   expect(await client().commandPlugin(id, configure, 'config-key')).to…
+      9|   expect(await client().commandPlugin(id, grant, 'grant-key')).toEqual…
+     10|   expect(JSON.parse(String(fetch.mock.calls[0]![1]?.body))).toEqual({ …
+       |                                                             ^
+     11|   expect(fetch.mock.calls.map(([url]) => new URL(String(url)).pathname…
+     12|   expect(new Headers(fetch.mock.calls[1]![1]?.headers).get('idempotenc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK replayed
+AssertionError: promise resolved "{ replayed: [], …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": [],
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK installation
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000020",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK operation
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000020",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK kind
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "set-grants",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK before
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 1,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK after
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 4,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK snapshot-revision
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 4,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK installation-revision
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 4,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK extra-value
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "extra": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK wrong-type
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": "true",
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK missing-required
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {},
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK range
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 6,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK enum
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "unknown",
++     },
++     "configurationStatus": "ready",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > rejects malformed configure ACK status
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "configure",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {
++       "count": 3,
++       "enabled": true,
++       "mode": "balanced",
++     },
++     "configurationStatus": "incomplete",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:34:60
+     32|   };
+     33|   changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(re…
+     34|   await expect(client().commandPlugin(id, configure, 'key')).rejects.t…
+       |                                                            ^
+     35| });
+     36| it('checks grant exact values, declared capabilities and derived incom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > checks grant exact values, declared capabilities and derived incomplete status
+AssertionError: promise resolved "{ replayed: false, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "operation": {
++     "actor": "owner",
++     "afterRevision": 3,
++     "beforeRevision": 2,
++     "createdAt": "2026-10-07T10:00:00.000Z",
++     "id": "00000000-0000-4000-8000-000000000009",
++     "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
++     "installationId": "00000000-0000-4000-8000-000000000001",
++     "kind": "set-grants",
++     "status": "succeeded",
++   },
++   "replayed": false,
++   "snapshot": {
++     "configuration": {},
++     "configurationStatus": "incomplete",
++     "grants": [
++       "tool",
++     ],
++     "installation": {
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "id": "00000000-0000-4000-8000-000000000001",
++       "packageName": "test-tool",
++       "registrationStatus": "registered",
++       "revision": 3,
++       "runtimeReason": "package_not_verified_or_loaded",
++       "runtimeStatus": "unavailable",
++       "scope": {
++         "projectId": null,
++         "workspaceId": "personal",
++       },
++       "updatedAt": "2026-10-07T10:00:00.000Z",
++     },
++     "revision": 3,
++     "version": {
++       "capabilities": [
++         "tool",
++         "context",
++       ],
++       "createdAt": "2026-10-07T10:00:00.000Z",
++       "declaredSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
++       "hostApiMajor": 1,
++       "id": "00000000-0000-4000-8000-000000000007",
++       "license": "MIT",
++       "packageName": "test-tool",
++       "packageVersion": "1.0.0",
++       "publicConfiguration": [
++         {
++           "key": "enabled",
++           "kind": "boolean",
++           "required": true,
++         },
++         {
++           "key": "count",
++           "kind": "integer",
++           "max": 5,
++           "min": 1,
++           "required": true,
++         },
++         {
++           "key": "mode",
++           "kind": "enum",
++           "required": false,
++           "values": [
++             "balanced",
++             "fast",
++           ],
++         },
++       ],
++       "source": "npm",
++     },
++   },
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:39:58
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/18]⎯
+
+ FAIL  packages/client/src/plugin-command-ack.test.ts > distinguishes trusted conflicts from lost, malformed, oversized and cancelled ACKs without retry
+AssertionError: expected Error: lost to match object { code: 'plugin_ack_unknown', …(1) }
+
+- Expected
++ Received
+
+- {
+-   "code": "plugin_ack_unknown",
+-   "request": {
+-     "body": "{\"expectedRevision\":2,\"reason\":\"configure\",\"change\":{\"kind\":\"configure\",\"values\":{\"enabled\":true,\"count\":3,\"mode\":\"balanced\"}}}",
+-     "key": "same-key",
+-     "path": "/api/plugins/00000000-0000-4000-8000-000000000001/commands",
+-   },
++ Error {
++   "message": "lost",
+  }
+
+ ❯ packages/client/src/plugin-command-ack.test.ts:46:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/18]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  18 failed | 3 passed (21)
+   Start at  03:37:57
+   Duration  657ms (transform 232ms, setup 0ms, import 438ms, tests 49ms, environment 0ms)
+

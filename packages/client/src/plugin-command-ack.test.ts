@@ -1,0 +1,85 @@
+import { afterEach, expect, it, vi } from 'vitest';
+import { FlowClient } from './index.js';
+import { configure, grant, configured, granted, id, response, uuid } from '../../../docs/evidence/x01-plugin-command-acks/fixtures.js';
+const client = () => new FlowClient({ baseUrl: 'http://127.0.0.1:1', token: 'fixture-owner' });
+afterEach(() => vi.restoreAllMocks());
+it('sends parsed configure and validates granted incomplete configuration without guessing current state', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(response(configured())).mockResolvedValueOnce(response(granted()));
+  expect(await client().commandPlugin(id, configure, 'config-key')).toEqual(configured());
+  expect(await client().commandPlugin(id, grant, 'grant-key')).toEqual(granted());
+  expect(JSON.parse(String(fetch.mock.calls[0]![1]?.body))).toEqual({ ...configure, reason: 'configure' });
+  expect(fetch.mock.calls.map(([url]) => new URL(String(url)).pathname)).toEqual([`/api/plugins/${id}/commands`, `/api/plugins/${id}/commands`]);
+  expect(new Headers(fetch.mock.calls[1]![1]?.headers).get('idempotency-key')).toBe('grant-key');
+});
+it('freezes parsed values and accepts an old replay without a current GET', async () => {
+  const input = structuredClone(configure); let resolve!: (r: Response) => void;
+  const fetch = vi.spyOn(globalThis, 'fetch').mockImplementation(() => new Promise(r => { resolve = r; }));
+  const pending = client().commandPlugin(id, input, 'same-key'); input.change.values.count = 5; input.expectedRevision = 77;
+  resolve(response({ ...configured(), replayed: true }));
+  expect((await pending).snapshot.revision).toBe(3);
+  expect(JSON.parse(String(fetch.mock.calls[0]![1]?.body)).change.values.count).toBe(3); expect(fetch).toHaveBeenCalledOnce();
+});
+it.each(['replayed', 'installation', 'operation', 'kind', 'before', 'after', 'snapshot-revision', 'installation-revision', 'extra-value', 'wrong-type', 'missing-required', 'range', 'enum', 'status'] as const)('rejects malformed configure ACK %s', async field => {
+  const value = configured();
+  const changes: Record<typeof field, () => void> = {
+    replayed: () => Object.assign(value, { replayed: [] }), installation: () => { value.snapshot.installation.id = uuid(20); },
+    operation: () => { value.operation.installationId = uuid(20); }, kind: () => { value.operation.kind = 'set-grants'; },
+    before: () => { value.operation.beforeRevision = 1; }, after: () => { value.operation.afterRevision = 4; },
+    'snapshot-revision': () => { value.snapshot.revision = 4; }, 'installation-revision': () => { value.snapshot.installation.revision = 4; },
+    'extra-value': () => Object.assign(value.snapshot.configuration, { extra: true }), 'wrong-type': () => Object.assign(value.snapshot.configuration, { enabled: 'true' }),
+    'missing-required': () => { value.snapshot.configuration = {}; }, range: () => Object.assign(value.snapshot.configuration, { count: 6 }),
+    enum: () => Object.assign(value.snapshot.configuration, { mode: 'unknown' }), status: () => { value.snapshot.configurationStatus = 'incomplete'; },
+  };
+  changes[field](); vi.spyOn(globalThis, 'fetch').mockResolvedValue(response(value));
+  await expect(client().commandPlugin(id, configure, 'key')).rejects.toMatchObject({ code: 'plugin_ack_unknown' });
+});
+it('checks grant exact values, declared capabilities and derived incomplete status', async () => {
+  for (const mutate of [(v: ReturnType<typeof granted>) => { v.snapshot.grants = ['tool']; }, (v: ReturnType<typeof granted>) => { v.snapshot.version.capabilities = ['tool']; }, (v: ReturnType<typeof granted>) => { v.snapshot.configurationStatus = 'ready'; }]) {
+    const value = granted(); mutate(value); vi.spyOn(globalThis, 'fetch').mockResolvedValue(response(value));
+    await expect(client().commandPlugin(id, grant, 'key')).rejects.toMatchObject({ code: 'plugin_ack_unknown' }); vi.restoreAllMocks();
+  }
+});
+it('distinguishes trusted conflicts from lost, malformed, oversized and cancelled ACKs without retry', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch').mockRejectedValueOnce(new Error('lost'))
+    .mockResolvedValueOnce(new Response('{')).mockResolvedValueOnce(new Response(' '.repeat(65537)))
+    .mockResolvedValueOnce(response({ error: { code: 'plugin_revision_conflict', message: 'changed' } }, 409));
+  for (let i = 0; i < 3; i++) await expect(client().commandPlugin(id, configure, 'same-key')).rejects.toMatchObject({ code: 'plugin_ack_unknown', request: { path: `/api/plugins/${id}/commands`, key: 'same-key', body: JSON.stringify({ ...configure, reason: 'configure' }) } });
+  await expect(client().commandPlugin(id, configure, 'same-key')).rejects.toMatchObject({ status: 409 }); expect(fetch).toHaveBeenCalledTimes(4);
+  const controller = new AbortController(); fetch.mockImplementationOnce(async (_url, init) => { controller.abort(); init?.signal?.throwIfAborted(); return response(configured()); });
+  await expect(client().commandPlugin(id, configure, 'same-key', controller.signal)).rejects.toMatchObject({ code: 'plugin_ack_unknown' }); expect(fetch).toHaveBeenCalledTimes(5);
+});
+it('keeps register-version and select-version on their existing unvalidated response behavior', async () => {
+  const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValue(response({ legacy: true }));
+  expect(await client().commandPlugin(id, { expectedRevision: 2, reason: 'select', change: { kind: 'select-version', versionId: uuid(7) } }, 'key')).toEqual({ legacy: true });
+  expect(fetch).toHaveBeenCalledOnce();
+});
+it('accepts a complete maximum-cardinality schema and escaped snapshot inside the server byte cap', async () => {
+  const value = configured();
+  const keys = Array.from({ length: 16 }, (_, i) => `k${String(i).padStart(2, '0')}${'a'.repeat(45)}`);
+  const options = Array.from({ length: 16 }, (_, i) => `${String(i).padStart(2, '0')}${'a'.repeat(62)}`);
+  const values = Object.fromEntries(keys.map(key => [key, options[0]!]));
+  Object.assign(value.snapshot.version, {
+    packageName: 'a'.repeat(214), packageVersion: `1.0.0+${'a'.repeat(122)}`, license: '\u0001'.repeat(80),
+    capabilities: ['tool', 'renderer', 'verifier', 'context'],
+    publicConfiguration: keys.map(key => ({ key, kind: 'enum', required: true, values: options })),
+  });
+  value.snapshot.installation.packageName = value.snapshot.version.packageName;
+  value.snapshot.configuration = values; value.snapshot.grants = ['tool', 'renderer', 'verifier', 'context'];
+  const bytes = new TextEncoder().encode(JSON.stringify(value)).byteLength;
+  expect(bytes).toBeGreaterThan(20000); expect(bytes).toBeLessThanOrEqual(65536);
+  vi.spyOn(globalThis, 'fetch').mockResolvedValue(response(value));
+  expect(await client().commandPlugin(id, { expectedRevision: 2, reason: 'large legal schema', change: { kind: 'configure', values } }, 'key')).toEqual(value);
+});
+
+it('rejects matching but semantically impossible configuration ACKs', async () => {
+  const invalidValues: Array<Record<string, boolean | number | string>> = [
+    { enabled: 'true', count: 3 }, { enabled: true, count: 6 },
+    { enabled: true, count: 3, mode: 'unknown' }, {}, { enabled: true, count: 3, extra: true },
+  ];
+  for (const values of invalidValues) {
+    const value = configured(); value.snapshot.configuration = values;
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(response(value));
+    await expect(client().commandPlugin(id, { expectedRevision: 2, reason: 'invalid matching ACK', change: { kind: 'configure', values } }, 'key')).rejects.toMatchObject({ code: 'plugin_ack_unknown' });
+    vi.restoreAllMocks();
+  }
+});

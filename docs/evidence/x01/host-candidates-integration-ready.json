@@ -1,0 +1,117 @@
+{
+  "state": "READY_FOR_CONTROLLED_INTAKE",
+  "createdAt": "2026-10-07T11:23:46.463409+00:00",
+  "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+  "reviewPacket": "82cca2124bd7c234f21088cca53adc46f50751f6",
+  "sourceReview": "docs/evidence/x01/host-candidates-independent-review.json",
+  "resultCommit": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+  "resultReview": "docs/evidence/x01/host-candidates-pg-independent-review.json",
+  "resultManifest": {
+    "path": "docs/evidence/x01/host-candidates-pg-result-manifest.json",
+    "sha256": "193269f5eae416b20daabaa831f6c02fd34d5e450ffa872a8520fd8708230214"
+  },
+  "changes": [
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": "2f32f6b27fc79151cd1e9d26e7fb5af70a791505",
+      "blob": "48c1332ec2eaff61c1d2e5b3b8aae7d2812e333a",
+      "bytes": 9868,
+      "sha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": "2f32f6b27fc79151cd1e9d26e7fb5af70a791505",
+      "blob": "2b703d0a5202c24b94d9a281da6c7a826604b1c9",
+      "bytes": 9647,
+      "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": "2f32f6b27fc79151cd1e9d26e7fb5af70a791505",
+      "blob": "68f614babb80479d9c8b68b8f73dbd971637bab4",
+      "bytes": 5142,
+      "sha256": "01e653c45aab17c60e5894b8674b170aacf431895afb7a0ff1e39aa1e9dffd6f",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/host-candidates.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": null,
+      "blob": "ca10b3d04b5cf8a90bf85dd55c694db54731fe00",
+      "bytes": 3820,
+      "sha256": "7f67d72a7dc5fbb7475a6bd1e328b6e6c963c7031a376a9abb7efa3d94f3e774",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/host-candidates.test.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": null,
+      "blob": "ee49ebbc4b0711aa70225374c565fc849cf6d7a3",
+      "bytes": 11748,
+      "sha256": "f2c5502710d0766f034ea8b2f6e8c3cc2e5df36b6f8774235760ce56adc826b4",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": "2f32f6b27fc79151cd1e9d26e7fb5af70a791505",
+      "blob": "a963095a23f6544810cd62bc3a57663126e990a4",
+      "bytes": 26717,
+      "sha256": "80b9179f142deb26ee2017b266620e6e9db62dbf92e056df8334c923129c2bae",
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+      "baseCommit": null,
+      "blob": "6955292888b9961b866895030841c502faabefd6",
+      "bytes": 1708,
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+      "mainPreimageMatches": true
+    }
+  ],
+  "sourceBytes": 68650,
+  "patch": {
+    "path": "docs/evidence/x01/host-candidates-intake.patch",
+    "bytes": 39330,
+    "sha256": "aff680fc244305411b0c4fa8e185448da2b3ab42549ac17c626f5becb886a74f"
+  },
+  "preimageObservation": {
+    "main": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+    "at": "2026-10-07T11:23:46.463409+00:00",
+    "allSevenPreimagesMatch": true,
+    "alreadyIntegrated": false
+  },
+  "application": "Apply exact seven-path narrow delta only. Preserve all other main/client/Web changes; no full-tree/mirror overlay. Fresh preimage drift requires owner coordination. Main operator runs necessary direct composition checks, not old PG/whole suite.",
+  "necessaryEvidence": [
+    "docs/evidence/x01/host-candidates-interface.md",
+    "docs/evidence/x01/host-candidates-independent-review.json",
+    "docs/evidence/x01/host-candidates-pg-independent-review.json",
+    "docs/evidence/x01/host-candidates-pg-result-manifest.json",
+    "docs/evidence/x01/host-candidates-pg-result-ready.md",
+    "docs/evidence/x01/host-candidates-pg-owner-close.json",
+    "docs/evidence/x01/host-candidates-pg-tool.json",
+    "docs/evidence/x01/host-candidates-pg-tool-output.log",
+    "docs/evidence/x01/host-candidates-pg-run-r1"
+  ],
+  "preparedClosure": "376 bindings remain fixedGit in originalmanifest; no full mirror overlay needed for productintake",
+  "consumerDependency": {
+    "owner": "db_transaction_owner",
+    "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/main-intake.json",
+    "contract": "767 SHA59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa unchanged at current source",
+    "order": "This exact contract must precede or accompany the separately reviewed client/CLI consumer"
+  },
+  "mainState": "NOT_YET_RECEIVED",
+  "completeX01": false,
+  "intakeValidation": {
+    "mainApplyCheckExit": 0,
+    "isMainCombinationTest": false,
+    "metadataDiffCheck": "Patch artifact has six context-blank lines with significant single-space diff prefixes; retained exact git diff bytes, not product trailing whitespace edits."
+  }
+}

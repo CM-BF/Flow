@@ -1,5 +1,7 @@
+import { pluginCommandSchema } from '../../contracts/src/plugins.js';
+import { pluginHostCandidatesQuerySchema, pluginHostCandidatesPageSchema, type PluginHostCandidatesQuery, type PluginHostCandidatesPage } from '../../contracts/src/plugin-runtime-hosts.js';
 import { PLUGIN_RUNTIME_LIMITS, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolTaskRequest, type PluginToolBinding } from '../../contracts/src/plugin-runtime.js';
-import { pluginRequestIdentity, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
+import { pluginRequestIdentity, decodePluginHostCandidates, decodePluginRegistryChanged, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
 export { UnknownPluginAcknowledgementError } from './plugin-management.js';
 import { readBoundedJson } from './response-json.js';
 import { PluginRunnerClient } from './plugin-runner.js';
@@ -529,6 +531,15 @@ export class FlowClient {
     return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
+  /** Advisory candidates only; each call reads one page and never authorizes enable. */
+  pluginHostCandidates(id: string, input: PluginHostCandidatesQuery, signal?: AbortSignal): Promise<PluginHostCandidatesPage> {
+    const registrationId = pluginHostCandidatesPageSchema.shape.registrationId.parse(id);
+    const frozen = pluginHostCandidatesQuerySchema.parse(input);
+    const query = new URLSearchParams({ materialInstallOperationId: frozen.materialInstallOperationId });
+    if (frozen.cursor !== undefined) query.set('cursor', frozen.cursor);
+    return this.pluginAcknowledgement(pluginRequestIdentity(`/api/plugins/${encodeURIComponent(registrationId)}/runtime/hosts?${query}`),
+      value => decodePluginHostCandidates(value, registrationId, frozen), signal);
+  }
   pluginRuntime(id: string, signal?: AbortSignal): Promise<PluginRuntimeView> {
     return this.pluginAcknowledgement(pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/runtime`),
       value => decodePluginRuntime(value, id), signal);
@@ -566,6 +577,15 @@ export class FlowClient {
     return this.request('/api/plugins', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
   commandPlugin(id: string, input: PluginCommand, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {
+    if (input.change.kind === 'configure' || input.change.kind === 'set-grants') {
+      const parsed = pluginCommandSchema.parse(input);
+      // Parsing detaches nested values and normalizes the exact body the center also parses.
+      if (parsed.change.kind === 'configure' || parsed.change.kind === 'set-grants') {
+        const frozen = { ...parsed, change: parsed.change };
+        const identity = pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/commands`, key, frozen);
+        return this.pluginAcknowledgement(identity, value => decodePluginRegistryChanged(value, id, frozen), signal);
+      }
+    }
     return this.request(`/api/plugins/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
   plugins(options: { projectId?: string; after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginList> {
