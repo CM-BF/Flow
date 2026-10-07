@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:52:51 UTC；构建结果已main，后继host入口待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:55:39 UTC；构建结果已main，后继host入口待审；产品scope已交回 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
-| 工作树dirty状态 | host入口已固定；仅manifest与状态收口metadata |
+| 工作树dirty状态 | 交付23596f2d已固定并推送；当前仅scope正式交回metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
@@ -25,7 +25,7 @@
 | 当前阻塞 | ACTIVE: 实际宿主旅程等待入口独审及共享运行窗口；当前不占窗口。 |
 | 需用户决定 | NONE |
 | Review | 构建结果APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS；新host入口PENDING Execution Lead，完整生命周期仍open |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v6，7 literal scopes；[四宿主共享文件正式交回](../../docs/evidence/svc06/host-scope-return-receipt.json) |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -113,3 +113,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:52:51 UTC：原产物后继宿主入口
 
 [短方案](../../docs/evidence/svc06/artifact-host-smoke/PROPOSAL.md) / [固定入口manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。已有e5产物不改不重建；限定纯检查实证四开发路径/别名均EPERM、自有tmp可读、child继承，138ms/exit0/两EOF/组absent且原unknown观察保留。这里只验证本机机制，实际center/runner/Web、PG、maintenance与App仍NOT_RUN。主线56672已接构建结果，03/04继续保留真实host和恢复/旧数据兼容验收。
+
+## 2026-10-07 03:55:39 UTC：共享产品范围正式交回
+
+后继真实host验证只写自身plan/evidence，原子amend v7已交回backend-release完整目录及package/lock/maintenance两文件；不预留未来产品写权。[固定host来源](../../docs/evidence/svc06/product-scope-return-source.json)记录当前main与产物3230同blob。新entry e6ff与e5产物保持原字节，实际host/PG仍NOT_RUN，无运行窗口占用。仅metadata检查，不重复已过局部检查。

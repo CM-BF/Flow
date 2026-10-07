@@ -1,6 +1,6 @@
 # SVC06 固定后台发布产物
 
-创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v6；真实固定产物构建/import已审并main，后继真实宿主/checkout不可读仍未验，个人服务不在当前操作范围。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v7，仅own plan/evidence；共享产品已停写交回；真实固定产物构建/import已审并main，后继真实宿主/checkout不可读仍未验，个人服务不在当前操作范围。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
