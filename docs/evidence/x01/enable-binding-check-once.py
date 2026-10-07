@@ -17,7 +17,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[3]
 EVIDENCE = ROOT / 'docs/evidence/x01'
-RUN = EVIDENCE / 'enable-binding-local-run'
+RUN = EVIDENCE / 'enable-binding-stage-a-run-r2'
 SUPERVISOR = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py')
 SUPERVISOR_SHA = '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
 FLOOR = 1_107_296_256
@@ -182,7 +182,7 @@ def main():
         sys.modules[spec.name] = ops
         spec.loader.exec_module(ops)
         inputs = json.loads(read_regular(EVIDENCE / 'enable-binding-validation-input.json', 65_536)[0])
-        support = json.loads(read_regular(EVIDENCE / 'enable-binding-caller-manifest.json', 32_768)[0])
+        support = json.loads(read_regular(EVIDENCE / 'enable-binding-stage-a-input-r2.json', 32_768)[0])
         if str(Path(sys.executable).resolve(strict=True)) != support['pythonRealpath']:
             raise ValueError('Python launch interpreter differs')
         for row in [*inputs['stageA']['inputs'], *inputs['productReview']['inputs'], *inputs['fixedPackageAndConfiguration'], *inputs['preparedArtifacts'], *support['files']]:

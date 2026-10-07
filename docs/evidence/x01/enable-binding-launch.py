@@ -7,7 +7,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[3]
-RUN = ROOT / 'docs/evidence/x01/enable-binding-local-run'
+RUN = ROOT / 'docs/evidence/x01/enable-binding-stage-a-run-r2'
 NODE = '/opt/homebrew/opt/node@24/bin/node'
 COMMANDS = {
     'strict': [NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--noEmit', '-p',
