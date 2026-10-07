@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T22:25:02.763Z",
+  "state": "ABSENT_CONFIRMED",
+  "processes": [
+    {
+      "pidNumber": 27562,
+      "pgidNumber": 27562,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    },
+    {
+      "pidNumber": 27726,
+      "pgidNumber": 27726,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    },
+    {
+      "pidNumber": 27777,
+      "pgidNumber": 27777,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    }
+  ],
+  "note": "Initial owner-close.json accidentally overwrote numeric pid field with state; original preserved. Exact numeric identities are also in unchanged tool-result and result processes; this independent followup verifies them without changing prior receipt."
+}

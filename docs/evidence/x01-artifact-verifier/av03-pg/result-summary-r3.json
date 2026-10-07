@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T22:25:02.763Z",
+  "state": "PASSED_RESULT_REVIEW_PENDING",
+  "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+  "manifest": "pg-isolated-manifest-r3.json",
+  "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+  "preparedInputs": 281,
+  "preparedChanged": [],
+  "external": 191,
+  "links": 16,
+  "sql": 34,
+  "actualStartedAt": "2026-10-07T22:23:41.256Z",
+  "terminalAt": "2026-10-07T22:23:45.076Z",
+  "fullReturnedAt": "2026-10-07T22:24:16.952Z",
+  "outerExit": 0,
+  "selected": 5,
+  "passed": 5,
+  "failedAssertions": 0,
+  "skipped": 0,
+  "suiteFailed": 0,
+  "callerState": "PASSED",
+  "callerUnknown": false,
+  "completeAccounting": true,
+  "resources": "FULL_RETURN no retained DB/TMP/listener/groups",
+  "http": {
+    "appTotal": {
+      "requests": 36,
+      "bytes": 30905
+    },
+    "fixtureRequestSubset": {
+      "requests": 27,
+      "bytes": 16670
+    }
+  },
+  "counts": {
+    "tasks": 14,
+    "attempts": 9,
+    "runners": 5,
+    "registrations": 6
+  },
+  "times": {
+    "outerWallSeconds": 3.8200875830370933,
+    "callerBeforePersistenceSeconds": 3.7386051670182496,
+    "callerAfterPersistenceSeconds": 3.7388358750613406,
+    "supervisorMilliseconds": 3648
+  },
+  "raw": {
+    "files": 26,
+    "bytes": 23371
+  },
+  "unknowns": [
+    "Initial EPERM preserved",
+    "Physical DB/WAL peak UNKNOWN",
+    "TMP end sample not peak",
+    "First count0 does not explain earlier teardown race"
+  ],
+  "history": "R1 beforeAll0selected5skipped and R2 fiveFAIL unchanged; no reusedbudget/retry.",
+  "scope": "036 real migration/backfill/rollback/ref and v1-v4 SQL/HTTP receipt/fence matrix with synthetic installed materials. No public verifier admission, independent verdict terminal gate, OS worker/provider or full X01.",
+  "next": "Independent result fidelity review then narrow integration, current index owner must merge migration entry without wholeblob overwrite; VAR current owner supplies fixed old verification prerequisite. No self merge or deployment.",
+  "skills": "Existing local find-skills/codebase-design/clean-code: bounded sole lifecycle, immutable history, explicit evidence level and direct consumer boundaries."
+}

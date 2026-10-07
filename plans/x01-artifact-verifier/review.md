@@ -81,3 +81,7 @@ root于2026-10-07T18:30:02.000Z批准result2f32/packet77d失败忠实性，0P1P2
 ## R3 窄独审批准
 
 2026-10-07T22:16:41.000Z，b01 SOURCE_LOCAL_AND_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2，sourceead8/targetd37/packet653。只证明两处修复源码、strict0及7row准备绑定；五例SQL修后NOT_RUN。非阻断invocation人读namespace字样已于本metadata纠正，argv/input/manifest不变。详见av03-pg/r3-approval.json；R1/R2失败不改。
+
+## R3实际结果待审
+
+2026-10-07T22:25:02.763Z：execution326a/sourceead8，5/5实际PG、FULL_RETURN22:24:16.952Z；仅请求本次结果忠实性与固定输入/收尾增量审，不重审全部既准源码，不扩公开producer/worker或main批准。旧失败与原raw保留。

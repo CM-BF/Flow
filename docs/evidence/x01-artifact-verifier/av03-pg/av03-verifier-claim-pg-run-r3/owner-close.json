@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-07T22:24:16.952Z",
+  "processes": [
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    }
+  ],
+  "listeners": [
+    {
+      "port": 52074,
+      "connect": "ECONNREFUSED"
+    },
+    {
+      "port": 52082,
+      "connect": "ECONNREFUSED"
+    },
+    {
+      "port": 52097,
+      "connect": "ECONNREFUSED"
+    }
+  ],
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-h4r6yda_",
+    "dev": 16777234,
+    "ino": 124612291,
+    "removed": true,
+    "sampleBytes": 7884,
+    "sampleEntries": 20
+  },
+  "outerExitCode": 0,
+  "temporaryAbsence": "EXACT_LSTAT_ENOENT",
+  "externalOutputCleanup": [
+    {
+      "path": "/tmp/flow-av03-pg-r3-61fa50e50d42489b8f9b39455507d9e1-tool.json",
+      "dev": 16777234,
+      "ino": 124612550,
+      "bytes": 877,
+      "sha256": "3d1059b9010a8afca4e556f04acc8ff6ea9ed9c983f8c6d1ff152f9c4955bb06",
+      "state": "ARCHIVED_SAME_BYTES_UNLINKED_LSTAT_ENOENT"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r3-61fa50e50d42489b8f9b39455507d9e1.stdout",
+      "dev": 16777234,
+      "ino": 124612284,
+      "bytes": 550,
+      "sha256": "f0e019f990cdf4723f9ed411d6e3bd6c9cf4f017ab5cb4669a0cb226c2e77d14",
+      "state": "ARCHIVED_SAME_BYTES_UNLINKED_LSTAT_ENOENT"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r3-61fa50e50d42489b8f9b39455507d9e1.stderr",
+      "dev": 16777234,
+      "ino": 124612285,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "state": "ARCHIVED_SAME_BYTES_UNLINKED_LSTAT_ENOENT"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r3-61fa50e50d42489b8f9b39455507d9e1-admission.json",
+      "dev": 16777234,
+      "ino": 124612283,
+      "bytes": 2752,
+      "sha256": "0277d132f18f439b47d69ee615eeb02aa57b1bd38887eb1674ea7945a83adfa9",
+      "state": "ARCHIVED_SAME_BYTES_UNLINKED_LSTAT_ENOENT"
+    }
+  ],
+  "state": "FULL_RETURN"
+}
