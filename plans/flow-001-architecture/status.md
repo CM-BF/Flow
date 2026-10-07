@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 00:14 UTC / main c3ba1adfe9374b80a955d45e20310f000fed0310（个人运行源单列） |
+| 最近更新 / 最近main同步核验 | 2026-10-07 01:16 UTC / 只读输入main 05cdc51e9668d8e3b5219440361ee6b8f1b3a549（个人运行源未采样） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -15,7 +15,7 @@
 | 已集成main状态 / HEAD | main c3ba1adf已接同af51中心恢复/独立保留核对与X01供给协调；个人af51/accepting v18、Web d629 v3按既有回执保留，本轮未重新采样。准备候选尚缺的运行验证不改绿。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人后台恢复记录已接收；X01依赖链接已齐。已有候选保持原证据，执行worker已结束重复等待。 |
+| 当前产出 | 已补高并发时插件下载/安装与聊天控制共用连接的组合验收条件；目前仅规划，原候选与恢复证据保持。 |
 | 下一可用交付 | 资源恢复后优先SVC07必要HTTP检查与聊天关键路径，随后按ready队列补局部验证；远程最小片等待原用户选择。 |
 | 当前阻塞 | ACTIVE: GO于00:08:27观测主卷783,925,248B，低于现有运行门槛；CI唯一用户选择PENDING。已归并恢复顺序，不循环采样或占用worker等待。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
@@ -31,6 +31,7 @@
 | FLOW-001-T02 | completed | Execution Lead | [M1系统旅程](../../docs/evidence/i01/m1-system.md)与独立review已通过，main14fea3d已集成 |
 | FLOW-001-T03 | in-progress | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
+| FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 
 ## 已完成证据与检查
 
@@ -40,7 +41,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前用户授权配额为本队4 + Web4 + Mika4，总上限12；实际工具threadlimit仍须服从，不声称12个正在运行；历史单树cap4失败记录不再描述当前全队能力。这与产品runner真实并发分别计量。
+- 4+4+4/12是历史授权，不代表当前人数；本次heartbeat用户上限10，实际服从工具cap及ready工作。工程agent槽与产品runner容量分别计量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -160,3 +161,8 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 | FLOW-001-T04-LIFECYCLE-01 | pending | Execution Lead / 后继assignment_review | 长期服务监督职责已登记，当前仅只读设计；真实主机策略未改，自有0模型验收未运行。 |
 
 2026-10-07 00:14 UTC：现有共享执行阻塞已作一次有界收口，[恢复顺序与解除条件](../../docs/quality/execution-recovery-order-2026-10-07.md)。native_center_owner确认无未完成检查后结束本段；X01七链接既有回执PROVISIONED，未重复供给。各候选原失败/NOT_RUN/限定独审不变，Mika原REQ10/K01规划保持独立。本次无资源或服务探针、测试、清理、CI或新功能。
+
+
+### 2026-10-07 01:16 UTC REQ-18插件宿主组合验收规划
+
+固定只读输入05cdc51e9668d8e3b5219440361ee6b8f1b3a549。新增FLOW-001-T04-POOL-01，四种host启用组合、连接占用/checkout等待、心跳/取消/交互响应与资源释放；保留session advisory fence和unknown恢复。新条件尚未运行，不称饥饿/泄漏，也不扩大S01原128fixture证据；SCAN-01沿原项处理。仅计划/状态/质量记录，独立文档review待固定target，产品/负载/服务0改动。[本段交付记录](../../docs/quality/req18-plugin-pool-acceptance-2026-10-07.json)。

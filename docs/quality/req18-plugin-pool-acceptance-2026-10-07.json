@@ -1,0 +1,78 @@
+{
+  "task": "FLOW-001 / REQ-18 / FLOW-001-T04-POOL-01",
+  "at": "2026-10-07T01:16:54.125416+00:00",
+  "kind": "planning-only; new combination NOT_RUN",
+  "inputMain": "05cdc51e9668d8e3b5219440361ee6b8f1b3a549",
+  "sourceBindings": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/report.md",
+      "bytes": 5670,
+      "sha256": "54e1dff9c6b9e9d338c25d2d4396a949196b5bb9f4d6fff58e5d0b371fec0de3"
+    },
+    {
+      "path": "docs/evidence/lab02/README.md",
+      "bytes": 6770,
+      "sha256": "cd082f63d49d8cb5c9a0d22f1bda96da333a42bdfa95869cc402448ecf569f39"
+    }
+  ],
+  "claim": {
+    "id": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+    "version": 3,
+    "state": "active",
+    "freshObservedAt": "2026-10-07T01:15:39.075Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+    "branch": "codex/plan-status-review"
+  },
+  "scope": [
+    "plans/flow-001-architecture/plan.md",
+    "plans/flow-001-architecture/status.md",
+    "docs/quality/req18-plugin-pool-acceptance-2026-10-07.json"
+  ],
+  "skills": {
+    "find-skills": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "codebase-design": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "clean-code": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "application": "Installed local methods read; explicit lifecycle/responsibility table, reuse S01/SCAN, no new framework or dependency."
+  },
+  "limits": {
+    "netNewMetadataBytesMax": 65536,
+    "engineeringChecks": 0,
+    "pgLoads": 0,
+    "providerQueries": 0,
+    "personalServiceActions": 0,
+    "newRunBudget": false,
+    "resourceGatesLowered": false
+  },
+  "independentReview": "PENDING fixed source target",
+  "mainIntegration": "PENDING"
+}
