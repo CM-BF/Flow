@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T16:30:26.498Z",
-  "state": "SVC09A_R3_UNIQUE_NEXT_WEB_I01_SOURCE_DIAGNOSIS",
-  "groupWindowOwnership": "I01 exact owned RETURN confirmed. Original R3 now formally approved READY while Web c3 diagnosis and K01 final metadata are not READY. Grant only Original R3 one reviewed 217.5s outer host window after fresh claim/pins/newnamespace/PG availability/fullfloor/no other holder. No current actual START yet; source/ordinary isolated local remain permitted under existing grants; no other PG/Chrome/build/performance launch.",
+  "recordedAt": "2026-10-07T16:47:10.325Z",
+  "state": "K01_ACTUAL_W01_STRICT_RETURNED_MEASUREMENT_OVERLAP_RECORDED",
+  "groupWindowOwnership": "K01 started16:44:58.670157, unique actual measurement holder; exactRETURN required. W01 previously authorized ordinary strict second child overlapped16:45:35.498477–16:45:37.148418; fully returned16:45:54.467272. Both leads notified; no hidden retry or isolated-measurement assertion. I01 and Release diagnostic wait.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T15:48:15.161Z",
+    "at": "2026-10-07T16:47:10.325Z",
     "record": "host-i01-newpair-queue-20261007/current.json",
-    "event": "Original215shostrequest/current0;Mikaactualreturns/new16MiB;I01candidate corrected14,708,572,160;allcandidate fullsum15,927,017,472,no runtime grant"
+    "event": "K01 started16:44:58.670157, unique actual measurement holder; exactRETURN required. W01 previously authorized ordinary strict second child overlapped16:45:35.498477–16:45:37.148418; fully returned16:45:54.467272. Both leads notified; no hidden retry or isolated-measurement assertion. I01 and Release diagnostic wait."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1374,7 +1374,29 @@
         "state": "HTTP_CLIENT_ERROR_FAMILY_NOT_EXACT_CAUSE",
         "finding": "65B response matches fixed Fastify5.12.5 defaultClientErrorHandler; err.code not recorded, no precise cause claimed",
         "dispatch": "Original exact4 source segment prepares bounded passive clientError metadata diagnosticOnly/newCookie chain; no rawPacket/headers/token/listener replacement/no report import/no legacy3 rerun",
-        "runtime": "NO_GRANT"
+        "runtime": "NO_GRANT",
+        "potentialAccounting": "Diagnostic candidate not fixed or formally budgeted; no guessed new201MiB addition."
+      },
+      "diagnosticStrict": {
+        "state": "GRANTED_ORDINARY_NOT_STARTED",
+        "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+        "execution": "4f7606c81e3416414e76186aa635aae44a9febd3",
+        "grantAt": "2026-10-07T16:42:23.921Z",
+        "phaseMs": 20000,
+        "cleanupMs": 5000,
+        "Node": 1,
+        "scratchBytes": 8388608,
+        "rawBytes": 1048576,
+        "network": 0,
+        "PG": 0,
+        "HTTP": 0,
+        "Chrome": 0,
+        "build": 0,
+        "install": 0,
+        "callerSha256": "339e89f56fe8c68fc4c5b2a2b4c7d9f567beacdb0f06db2233e79bc3591facb0",
+        "proposal": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
+        "futureFloorBytes": 18129092608,
+        "limits": "Necessary affected twoharness types only, continuous bounded fixes/rechecks if needed; previous green not repeated, final single result review. Diagnostic90s has no grant."
       }
     },
     "I01": {
@@ -1519,6 +1541,33 @@
         "finding": "Actual two attachment draft means Change connection may open Leave attachment drafts? guard; test omitted public retain records confirmation. Static inference, no failed DOM root cause proof.",
         "dispatch": "Original exact8 continuous source segment fixes public confirmation and bounded passive failure UI diagnostics; preserves4groups/productguard, no types rerun needed",
         "runtime": "THIRD_PHASE_PROPOSAL_ONLY_NO_GRANT"
+      },
+      "thirdCandidate": {
+        "state": "SOURCE_AND_PREPARATION_APPROVED_READY_NO_GRANT",
+        "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "delta": "browser+4 public attachment leave-confirmation lines only",
+        "freshClaimAt": "2026-10-07T16:32:04.032Z",
+        "claim": "61ab v1 exact8 overlap[]",
+        "failedResultSealReportedPrefix": "cf13",
+        "runtime": "No actual, no NEXT, prior two60s closed; next independent60s proposal under preparation",
+        "next": "Owner normal metadata and independent third-phase proposal, root focused source review; no types rerun",
+        "sourceReview": "i01-protected-leave-source-review.json",
+        "sourceReviewSha256": "3bccb60a207ee7b0c1773549841b6b32afc503a01fef420e9ea75598b39c2b7e",
+        "ownerStatusUpdatedAt": "2026-10-07T16:32:52.342Z",
+        "potentialAccounting": "Next candidate own peak only. Do not add to legacy historical global floor; after R3 RETURN apply still-grow+candidate+once-reserve method from verified classification.",
+        "execution": "b447e357eeac82aef19be488d806e898b0c30439",
+        "gitState": "Owner confirmed remote equal clean",
+        "packet": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k",
+        "manifestSha256": "de5f3f948003f1e1d3b7360cc4871540ef3fe5d488be961f40ea43c951f10ad0",
+        "manifestBytes": 4093,
+        "phaseMs": 60000,
+        "workMs": 45000,
+        "cleanupMs": 15000,
+        "PG": 0,
+        "ownedHTTP": 2,
+        "Chrome": 1,
+        "ownCandidatePeakBytes": 276824064,
+        "preparationReview": "i01-leave-confirmation-preparation-review.json"
       }
     }
   },
@@ -2028,27 +2077,63 @@
     }
   },
   "externalCurrentAdmission": {
-    "state": "APPROVED_UNIQUE_NEXT_NOT_STARTED",
-    "sourceReportedPrefix": "c6b9",
-    "deliveryReportedPrefix": "40e92",
-    "local": "6distinct/7selected355ms; original fixed results only, no manager rerun",
-    "newPotentialBytes": 1243611136,
-    "queue": "Sole NEXT. K01 still final metadata, Web c3 diagnosis notready, I01 source correction notready; no second heavy reservation.",
-    "historicalR2ReviewMain": "f0aa5c50e reportedprefix",
-    "limits": "R1/R2 KEEP preserved; future sum corrected from Original olderbase",
-    "rawReportedPrefix": "2d293",
-    "review": "APPROVED_FIXED_R3_HOST_PREPARATION0P1P2",
-    "pins": "19execution/6runtime/2inherit/17new evidence all match per original independent review",
-    "grantAt": "2026-10-07T16:30:26.498Z",
-    "outerMs": 217500,
-    "PGConfiguredMax": 26,
-    "managementAllowance": 16,
+    "state": "ACTUAL_RUNNING_AWAIT_EXACT_RETURN",
+    "execution": "969b25b49",
+    "gitState": "Reported origin equal and clean by Mika",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+    "canonical": "docs/evidence/k01/query-pg-ready.md",
+    "inputs": "docs/evidence/k01/query-pg-runtime-inputs.json",
+    "inputsSha256": "fe3db09342fe10dae55b5d95a86e7fd4af8a2a3b364d0e35ea005a1d1acec8bf",
+    "source": "a82e44be17a7a31b051bf98400d9553513600542",
+    "productBase": "3c9345",
+    "review": "db16:22:26 query-entry-owned-independent-review; P2 closed0",
+    "fixedCoverage": "17source+27runtime; last4/noEmit reviewed; no manager repeated source audit",
+    "phaseMs": 120000,
+    "workMs": 70000,
+    "cleanupMs": 40000,
+    "receiptMs": 10000,
+    "configuredPGConnections": 18,
+    "PGBreakdown": [
+      6,
+      8,
+      3,
+      1
+    ],
+    "markedDB": 1,
+    "dynamicHTTP": 1,
     "Chrome": 0,
     "provider": 0,
-    "personal": 0,
+    "install": 0,
     "build": 0,
-    "futureFloorBytes": 19363266560,
-    "conditions": "Original native owner immediately fresh exact source/caller/pins/claim/newnamespace/rootidentity/unique heavy idle/complete floor at least19363266560 or higher; PG26 configured+16management with observation pool closed. Any mismatch/UNKNOWN stops. One new phase, no earlier remaining credit, exact START/terminal/FULLRETURN separate."
+    "personal": 0,
+    "potentialBytes": 142606336,
+    "alreadyIncludedInFloor": 19363266560,
+    "storageMeaning": "DB128MiB last sample not peak; localTMP/evidence8MiB includes raw2MiB",
+    "permit": "CLOSED/expired; no namespace",
+    "privateBoundary": "Admin supplied privately by original fixed fixture entry; no values in records",
+    "cleanupBoundary": "Unknown CREATE or closure => KEEP; no forced drop",
+    "queue": "Actual unique K01 measurement phase; no other heavy NEXT until exact RETURN",
+    "grant": true,
+    "actualStart": "2026-10-07T16:44:58.670157Z",
+    "grantAt": "2026-10-07T16:42:23.921Z",
+    "futureFloorBytes": 18129092608,
+    "conditions": "Original Mika owner fresh exactclaim/head/fixed inputs/native/newnamespace/PG18 plus shared headroom/noother heavy/ownordinarydrained/freshfree≥18129092608 or latercurrentbound. Single120s70work40cleanup10receipt. UnknownCREATEorclosureKEEP/noforcedDROP; exactSTART/terminal/FULLRETURN; no time credit/retry.",
+    "measurementIsolation": "10EXPLAIN ANALYZE+30timedSELECT. I01Chrome serialized for this measurement phase; unrelated ordinary strict allowed as granted, not universalPG/Chrome mutual exclusion.",
+    "executionShaStatus": "Prefix reported; full SHA pending receipt; permit metadata only, fixed a82 source unchanged",
+    "consumedFloorBytes": 18129092608,
+    "fresh": "17source/27runtime/245product/alias match; PGavailable88>=18+16 and preflightpoolclosed; exact freshfree sample pending receipt",
+    "observedOrdinaryOverlap": {
+      "observedAt": "2026-10-07T16:47:10.325Z",
+      "K01StartedAt": "2026-10-07T16:44:58.670157Z",
+      "strictStart": "2026-10-07T16:45:35.498477Z",
+      "strictTerminal": "2026-10-07T16:45:37.148418Z",
+      "strictFullReturn": "2026-10-07T16:45:54.467272Z",
+      "outerPid": 5981,
+      "compilerPid": 6181,
+      "chargeMs": 1650,
+      "notification": "Manager directly relayed exact interval to Mika after receiving K01 measurement hold; already-ended child not interrupted or rerun",
+      "interpretation": "Real ordinary CPU overlap must remain in K01 measurement limitations; do not assert an isolated measurement or silently repeat."
+    }
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -2058,9 +2143,9 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "SVC09A_R3_UNIQUE_NEXT_GRANTED_NOT_STARTED",
-    "grantAt": "2026-10-07T16:30:26.498Z",
-    "futureFloorBytes": 19363266560
+    "state": "NO_NEW_HEAVY_NEXT_WHILE_K01_ACTUAL",
+    "I01": "READY_AFTER_EXACT_K01_RETURN",
+    "ReleaseDiagnostic": "STRICT_PASSED_RESULT_SEAL_PENDING_NO_GRANT"
   },
   "currentIntake": "Approved Web779/c231 + backendcd27/04da fixed artifact pair. Both compatibility attempts FAILED with null reports; complete resources returned. I01 second reviewed browser phase is sole NEXT. No deployment authorization.",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
@@ -2079,55 +2164,73 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "COMPLETE_RETURN_SOURCE_LOCAL_REVIEW_PENDING",
-    "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
-    "metadata": "769416a9a7e9f514bf0a2b85ef1cb221d4fad653 actualremoteequalclean",
-    "claim": "61abce36v1exact8",
-    "totalMs": 30000,
-    "perChildMs": 15000,
-    "cleanupMinMs": 5000,
-    "tmpBytes": 8388608,
+    "state": "CLOSED_PASSED_WITH_FIRST_CONFIG_FAILURE_RETAINED",
+    "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+    "execution": "4f7606c81e3416414e76186aa635aae44a9febd3",
+    "grantAt": "2026-10-07T16:42:23.921Z",
+    "phaseMs": 20000,
+    "cleanupMs": 5000,
+    "Node": 1,
+    "scratchBytes": 8388608,
     "rawBytes": 1048576,
-    "planningAddedOnce": 9437184,
-    "selected": "4newAppsessionauthoritydirect;old10unselected;affected6source/staticimports noEmit",
-    "boundary": "Same30s cumulative/each15s including5cleanup, direct4 then affected6source noEmit,0networkPGHTTPChromeproviderinstallbuild; actualSTART not yet reported",
-    "spentMs": 10834,
-    "ownerReport": "Actual0child/no gate,30s unusedheldpendingWebactualRETURN;source-only/metadataallowed",
-    "releaseDrainAt": "2026-10-07T15:38:16.213Z",
-    "remainingMs": 19166,
-    "actual": [
-      {
-        "check": "direct-1",
-        "start": "2026-10-07T15:38:02.776650Z",
-        "pid": 60940,
-        "exit": 0,
-        "selected": 4,
-        "passed": 4,
-        "notSelected": 10,
-        "chargeMs": 1596,
-        "closed": "group/scratch absent; regular log not dualEOF"
-      },
-      {
-        "check": "types-1",
-        "start": "2026-10-07T15:38:30.895286Z",
-        "pid": 75571,
-        "exit": 2,
-        "chargeMs": 4556,
-        "failure": "fixture imports two symbols not exported from contracts root; owner narrow fixed module import, no shared export change",
-        "closed": "group/scratch absent"
-      },
-      {
-        "check": "types-2",
-        "start": "2026-10-07T15:39:10.798627Z",
-        "pid": 1759,
-        "exit": 0,
-        "chargeMs": 4682,
-        "closed": "group/scratch absent, empty regular log, errors[]",
-        "delta": "fixture2+/1- imports fixed contract module, other5sources unchanged"
-      }
-    ],
-    "phaseState": "CLOSED_NO_UNUSED_CREDIT",
-    "localEvidence": "/private/tmp/i01-runtime-app-local-f8672ie0/segment.json"
+    "network": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "Chrome": 0,
+    "build": 0,
+    "install": 0,
+    "callerSha256": "339e89f56fe8c68fc4c5b2a2b4c7d9f567beacdb0f06db2233e79bc3591facb0",
+    "proposal": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
+    "futureFloorBytes": 18129092608,
+    "limits": "Necessary affected twoharness types only, continuous bounded fixes/rechecks if needed; previous green not repeated, final single result review. Diagnostic90s has no grant.",
+    "actualStart": "2026-10-07T16:43:18.535379Z",
+    "outerPid": 17450,
+    "path": "/private/tmp/release01-parser-types-v3l5i371",
+    "freshFreeBytes": 20098768896,
+    "consumedFloorBytes": 18129092608,
+    "spentMs": 2775,
+    "remainingMs": 17225,
+    "firstAttempt": {
+      "outerExit": 1,
+      "compilerExit": 2,
+      "chargeMs": 1125,
+      "failure": "Prepared config pointed zod to nonexistent donor root; installed zod4.6.5 contracts package path exists. Not a harness type finding.",
+      "closure": "17450/17704 PID+PGID ESRCH;scratch absent;inner+outer dualEOF/drop0",
+      "rawBytes": 22856,
+      "retained": true
+    },
+    "next": "Owner normal seal then root scoped result intake; no diagnostic runtimegrant",
+    "actualReturn": "2026-10-07T16:45:54.467272Z",
+    "unusedTransferred": false,
+    "retryAllowed": false,
+    "secondAttempt": {
+      "actualStart": "2026-10-07T16:45:35.498477Z",
+      "terminal": "2026-10-07T16:45:37.148418Z",
+      "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x",
+      "outerPid": 5981,
+      "compilerPid": 6181,
+      "outerExit": 0,
+      "compilerExit": 0,
+      "chargeMs": 1650,
+      "stdoutBytes": 0,
+      "freeBeforeBytes": 20039659520,
+      "consumedFloorBytes": 18129092608,
+      "pins": 342,
+      "closure": "AllPID/PGID ESRCH,scratchabsent,inner+outerEOF/drop0",
+      "configDelta": "Only exact installed readonly zod4.6.5 path/declaration pins; product fc291 unchanged; caller second duration18.7s incl5cleanup within original20s"
+    },
+    "observedMeasurementOverlap": {
+      "observedAt": "2026-10-07T16:47:10.325Z",
+      "K01StartedAt": "2026-10-07T16:44:58.670157Z",
+      "strictStart": "2026-10-07T16:45:35.498477Z",
+      "strictTerminal": "2026-10-07T16:45:37.148418Z",
+      "strictFullReturn": "2026-10-07T16:45:54.467272Z",
+      "outerPid": 5981,
+      "compilerPid": 6181,
+      "chargeMs": 1650,
+      "notification": "Manager directly relayed exact interval to Mika after receiving K01 measurement hold; already-ended child not interrupted or rerun",
+      "interpretation": "Real ordinary CPU overlap must remain in K01 measurement limitations; do not assert an isolated measurement or silently repeat."
+    }
   },
   "externalPreviousReturn": {
     "state": "PRE_IO_FAILED_FULL_RUNTIME_RETURN_KEEP",
@@ -2292,42 +2395,164 @@
     "postCleanup": "i01-browser-second-post-cleanup.json",
     "automaticRetry": false
   },
-  "futureCompleteFreshFloorBytes": 19363266560,
-  "futureFloorEvidence": "host-i01-newpair-queue-20261007/current.json#floor",
+  "futureCompleteFreshFloorBytes": 18129092608,
+  "futureFloorEvidence": "host-i01-newpair-queue-20261007/current.json#forwardAdmission",
   "externalOrdinaryCurrent": {
-    "heavyHolder": "NONE",
-    "readyPG": "NONE",
+    "heavyHolder": "K01",
+    "readyPG": "K01_ACTUAL",
     "pendingLaunch": "NONE",
     "AV02Return": "2026-10-07T15:42:55.342Z;types0+10/10;2groups/TMP/6fixture/tarclosed",
     "K01Return": "2026-10-07T15:45:17.411812Z;last3listeners+types0;4childrenclosed;11distinctpure;newscratchENOENT;oldKEEPuntouched",
     "S01": "ABBAactualFULLRETURN16:10:32.815;semanticsPASS/resultreviewpending",
     "futureK01": {
-      "state": "CANDIDATE_PREPARING_NO_NEXT",
+      "state": "ACTUAL_RUNNING_AWAIT_EXACT_RETURN",
+      "execution": "969b25b49",
+      "gitState": "Reported origin equal and clean by Mika",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+      "canonical": "docs/evidence/k01/query-pg-ready.md",
+      "inputs": "docs/evidence/k01/query-pg-runtime-inputs.json",
+      "inputsSha256": "fe3db09342fe10dae55b5d95a86e7fd4af8a2a3b364d0e35ea005a1d1acec8bf",
       "source": "a82e44be17a7a31b051bf98400d9553513600542",
-      "packetReportedPrefix": "db7e0351",
-      "review": "db16:22:26 source+delta local approved",
+      "productBase": "3c9345",
+      "review": "db16:22:26 query-entry-owned-independent-review; P2 closed0",
+      "fixedCoverage": "17source+27runtime; last4/noEmit reviewed; no manager repeated source audit",
       "phaseMs": 120000,
       "workMs": 70000,
       "cleanupMs": 40000,
       "receiptMs": 10000,
       "configuredPGConnections": 18,
+      "PGBreakdown": [
+        6,
+        8,
+        3,
+        1
+      ],
+      "markedDB": 1,
       "dynamicHTTP": 1,
       "Chrome": 0,
       "provider": 0,
+      "install": 0,
+      "build": 0,
+      "personal": 0,
       "potentialBytes": 142606336,
-      "queue": "After I01 exact RETURN and fixed READY receipt; current PG CLOSED",
-      "limits": "DB last sample 128MiB not peak; local TMP/evidence 8MiB includes raw2MiB"
+      "alreadyIncludedInFloor": 19363266560,
+      "storageMeaning": "DB128MiB last sample not peak; localTMP/evidence8MiB includes raw2MiB",
+      "permit": "CLOSED/expired; no namespace",
+      "privateBoundary": "Admin supplied privately by original fixed fixture entry; no values in records",
+      "cleanupBoundary": "Unknown CREATE or closure => KEEP; no forced drop",
+      "queue": "Actual unique K01 measurement phase; no other heavy NEXT until exact RETURN",
+      "grant": true,
+      "actualStart": "2026-10-07T16:44:58.670157Z",
+      "grantAt": "2026-10-07T16:42:23.921Z",
+      "futureFloorBytes": 18129092608,
+      "conditions": "Original Mika owner fresh exactclaim/head/fixed inputs/native/newnamespace/PG18 plus shared headroom/noother heavy/ownordinarydrained/freshfree≥18129092608 or latercurrentbound. Single120s70work40cleanup10receipt. UnknownCREATEorclosureKEEP/noforcedDROP; exactSTART/terminal/FULLRETURN; no time credit/retry.",
+      "measurementIsolation": "10EXPLAIN ANALYZE+30timedSELECT. I01Chrome serialized for this measurement phase; unrelated ordinary strict allowed as granted, not universalPG/Chrome mutual exclusion.",
+      "executionShaStatus": "Prefix reported; full SHA pending receipt; permit metadata only, fixed a82 source unchanged",
+      "consumedFloorBytes": 18129092608,
+      "fresh": "17source/27runtime/245product/alias match; PGavailable88>=18+16 and preflightpoolclosed; exact freshfree sample pending receipt",
+      "observedOrdinaryOverlap": {
+        "observedAt": "2026-10-07T16:47:10.325Z",
+        "K01StartedAt": "2026-10-07T16:44:58.670157Z",
+        "strictStart": "2026-10-07T16:45:35.498477Z",
+        "strictTerminal": "2026-10-07T16:45:37.148418Z",
+        "strictFullReturn": "2026-10-07T16:45:54.467272Z",
+        "outerPid": 5981,
+        "compilerPid": 6181,
+        "chargeMs": 1650,
+        "notification": "Manager directly relayed exact interval to Mika after receiving K01 measurement hold; already-ended child not interrupted or rerun",
+        "interpretation": "Real ordinary CPU overlap must remain in K01 measurement limitations; do not assert an isolated measurement or silently repeat."
+      }
     },
     "AV03": "ActualFULLRETURN2026-10-07T16:02:02.838Z",
-    "K01": "P2sourcefixnew1MiBonce,<=4serial/cum35sordinary0PGHTTPChrome;actualchildnotreported",
+    "K01": "Current query runtime candidate fully READY and granted NEXT; historical ordinary fixes returned.",
     "CLIENT": "Parser0.050465exit0/STOP16:07:08.577;claim10826605v2released16:07:08.637;finalf8902ebbe32a592b9b619a02a17aa945619036cb clean=origin;4timefieldsnormalized/historyprecisionkept;no liveclaim",
-    "ordinary": "ALL_RETURNED_NO_CHILD_OR_PENDING",
-    "S01Q01": "New source-only 16MiB once; promotion.ts/queue.test.ts+own records; no child/PG/Chrome reported"
+    "ordinary": "AV03 last sixth pure child returned exit0/1343ms/6782B; full segment6children10418ms/raw115319B/ownedTMP sameidentityremoved/allclosed; originallead now ordinary drained.",
+    "S01Q01": {
+      "state": "SOURCE_APPROVED_NOT_RUNTIME_READY",
+      "task": "S01Q01",
+      "claim": "a8a3b2d7v1exact4",
+      "source": "42c6c8cf81d3d648fc3477109e66db6c843aefe3",
+      "final": "96c5523843efa4cb1664cb24a1f6dda8e914ce92",
+      "D05Request": "visual-source-switch-request.json#sameBatchAdditionalRegistration",
+      "potentialAlreadyCounted": 16777216
+    },
+    "S01Intake": {
+      "state": "READY_SOURCE_INTAKE_NO_NEW_RUNTIME",
+      "execution": "a8f2945624b43d36a873d0411c17230340745c78",
+      "worktree": "runner-capacity-probe",
+      "entry": "docs/evidence/s01/mixed-ab-preparation/MAIN_INTAKE.md",
+      "manifest": "docs/evidence/s01/mixed-ab-preparation/main-intake-packing.json",
+      "bytes": 34914,
+      "sha256": "d3bae45a4bd8eb42f50f9e8b1d2a2484ee902b15d49a52271c9b07335cf75c2f",
+      "scope": "primary12 source +4direct tests;optional26 old wiring separate;3 stale contracts HOLD no overwrite;support/raw from fixedGit not whole93closure",
+      "before": "38ec8fd80",
+      "review": "db16:18:22 result0P1P2",
+      "claim": "508fv3 STOP retained",
+      "main": "NOT_INTEGRATED"
+    }
   },
   "externalPreparedCandidate": {
     "state": "SVC09A_R2_FAILURE_SOURCE_DIAGNOSIS_NO_NEXT"
   },
-  "currentActual": null,
+  "currentActual": {
+    "state": "ACTUAL_RUNNING_AWAIT_EXACT_RETURN",
+    "execution": "969b25b49",
+    "gitState": "Reported origin equal and clean by Mika",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+    "canonical": "docs/evidence/k01/query-pg-ready.md",
+    "inputs": "docs/evidence/k01/query-pg-runtime-inputs.json",
+    "inputsSha256": "fe3db09342fe10dae55b5d95a86e7fd4af8a2a3b364d0e35ea005a1d1acec8bf",
+    "source": "a82e44be17a7a31b051bf98400d9553513600542",
+    "productBase": "3c9345",
+    "review": "db16:22:26 query-entry-owned-independent-review; P2 closed0",
+    "fixedCoverage": "17source+27runtime; last4/noEmit reviewed; no manager repeated source audit",
+    "phaseMs": 120000,
+    "workMs": 70000,
+    "cleanupMs": 40000,
+    "receiptMs": 10000,
+    "configuredPGConnections": 18,
+    "PGBreakdown": [
+      6,
+      8,
+      3,
+      1
+    ],
+    "markedDB": 1,
+    "dynamicHTTP": 1,
+    "Chrome": 0,
+    "provider": 0,
+    "install": 0,
+    "build": 0,
+    "personal": 0,
+    "potentialBytes": 142606336,
+    "alreadyIncludedInFloor": 19363266560,
+    "storageMeaning": "DB128MiB last sample not peak; localTMP/evidence8MiB includes raw2MiB",
+    "permit": "CLOSED/expired; no namespace",
+    "privateBoundary": "Admin supplied privately by original fixed fixture entry; no values in records",
+    "cleanupBoundary": "Unknown CREATE or closure => KEEP; no forced drop",
+    "queue": "Actual unique K01 measurement phase; no other heavy NEXT until exact RETURN",
+    "grant": true,
+    "actualStart": "2026-10-07T16:44:58.670157Z",
+    "grantAt": "2026-10-07T16:42:23.921Z",
+    "futureFloorBytes": 18129092608,
+    "conditions": "Original Mika owner fresh exactclaim/head/fixed inputs/native/newnamespace/PG18 plus shared headroom/noother heavy/ownordinarydrained/freshfree≥18129092608 or latercurrentbound. Single120s70work40cleanup10receipt. UnknownCREATEorclosureKEEP/noforcedDROP; exactSTART/terminal/FULLRETURN; no time credit/retry.",
+    "measurementIsolation": "10EXPLAIN ANALYZE+30timedSELECT. I01Chrome serialized for this measurement phase; unrelated ordinary strict allowed as granted, not universalPG/Chrome mutual exclusion.",
+    "executionShaStatus": "Prefix reported; full SHA pending receipt; permit metadata only, fixed a82 source unchanged",
+    "consumedFloorBytes": 18129092608,
+    "fresh": "17source/27runtime/245product/alias match; PGavailable88>=18+16 and preflightpoolclosed; exact freshfree sample pending receipt",
+    "observedOrdinaryOverlap": {
+      "observedAt": "2026-10-07T16:47:10.325Z",
+      "K01StartedAt": "2026-10-07T16:44:58.670157Z",
+      "strictStart": "2026-10-07T16:45:35.498477Z",
+      "strictTerminal": "2026-10-07T16:45:37.148418Z",
+      "strictFullReturn": "2026-10-07T16:45:54.467272Z",
+      "outerPid": 5981,
+      "compilerPid": 6181,
+      "chargeMs": 1650,
+      "notification": "Manager directly relayed exact interval to Mika after receiving K01 measurement hold; already-ended child not interrupted or rerun",
+      "interpretation": "Real ordinary CPU overlap must remain in K01 measurement limitations; do not assert an isolated measurement or silently repeat."
+    }
+  },
   "releaseCandidateCurrent": {
     "state": "APPROVED_FIXED_ARTIFACT_RESULT_AND_FULL_RETURN",
     "source": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
@@ -2421,5 +2646,242 @@
       "uid": 501,
       "mode": "0700"
     }
+  },
+  "admissionBudgetMethodTransition": {
+    "state": "APPLIED_AFTER_EXPLICIT_R3_RETURN",
+    "requestedBy": "GO budget correction relayed by Original/root",
+    "recordedAt": "2026-10-07T16:37:40.505Z",
+    "consumedR3FloorUnchanged": 19363266560,
+    "historicalLedgerRule": "All prior gates, elapsed/write expenditure, failures and raw bytes remain immutable. This is no time credit transfer, physical deletion or refund event.",
+    "afterReturnMethod": "Fresh free compared against still-possible growth plus selected next candidate peak plus one reserve, and each retained genuine single-item minimum. Fixed sealed KEEP bytes already consume fresh free and are not added again as original full caps. Unknown growth remains conservative.",
+    "ownedConsumedPhaseClassifications": [
+      {
+        "task": "I01_FIRST",
+        "phase": "i01-browser-20261007-160438-84ee0c",
+        "historicalPhaseCapBytes": 276824064,
+        "historicalTimeMs": 8540,
+        "closedUnusedMs": 51460,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "i01-browser-first-post-cleanup.json",
+          "sha256": "f489d1c1f08f0b4b81417611ef91bc94995733c58be9bcef48bd22335108ed03"
+        },
+        "fixedRawReview": {
+          "file": "i01-first-failure-locator-fix-review.json",
+          "sha256": "5b0026d12efc5026310c5d5d8ead1c59e2a4c54ec0976f2b297cba53d0a22c55",
+          "fixedFiles": 16,
+          "fixedLogicalBytes": 19009
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "I01_SECOND",
+        "phase": "i01-files-20261007-162618-5fbf4e",
+        "historicalPhaseCapBytes": 276824064,
+        "historicalTimeMs": 13436,
+        "closedUnusedMs": 46564,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "i01-browser-second-post-cleanup.json",
+          "sha256": "b1aaad1befbb3bdf900a4baa0c1a7f18002b1fb3f51e42444edbd460b3278fbe"
+        },
+        "fixedRawReview": {
+          "file": "i01-second-failure-return-review.json",
+          "sha256": "3bfd06da272717922eeb55ebbfbe01a77f779d4ad13261b520bb9eab61f8a87a",
+          "fixedFiles": 16,
+          "fixedLogicalBytes": 25778
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "RELEASE_C1",
+        "phase": "release-first-779a-cd27",
+        "historicalPhaseCapBytes": 210763776,
+        "historicalTimeMs": 56504,
+        "closedUnusedMs": 123496,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "compatibility-c1-return-receipt.json",
+          "sha256": "e4e6da2515b4617cc94b8ae2db0d3613635eb931eb9f9a6f9d8405eff25944f0"
+        },
+        "fixedRawReview": {
+          "file": "compatibility-c1-failed-result-review.json",
+          "sha256": "ad5d7acd5d799cc947a0152674bc1652c9b787492f6fc05fd805e12a861127b8",
+          "fixedFiles": 18,
+          "fixedLogicalBytes": 504218
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "RELEASE_C2",
+        "phase": "release-recovery-20261007-162201-90ab93",
+        "historicalPhaseCapBytes": 210763776,
+        "historicalTimeMs": 26554,
+        "closedUnusedMs": 153446,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "compatibility-c2-return-receipt.json",
+          "sha256": "1b47b89668aa47c8e375fe84e3395f02da931e1a36b3de78cd5908ea95238fd9"
+        },
+        "fixedRawReview": {
+          "file": "compatibility-c2-failed-result-review.json",
+          "sha256": "8ddcff6de15e117222b73fe7cb6ff2674eaaa842d7343a623f946f07dfdbb085",
+          "fixedFiles": 18,
+          "fixedLogicalBytes": 719707
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "WEB_ARTIFACT_BUILD",
+        "historicalPhaseCapBytes": 268435456,
+        "historicalTimeMs": 25241,
+        "closedUnusedMs": 124759,
+        "timeCreditTransfer": false,
+        "temporaryResources": "29links/scopeddirs/node_modules/scratch ABSENT, exact2PIDgroups absent",
+        "sealedKEEP": "779 manifest10assets1700569B/store identity dev16777234ino124271607; fixed no builder remains; bytes already included in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "review": "docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/web-artifact-result-review.json",
+        "reviewSha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b",
+        "limits": "Source/metadata successor writes accounted separately; no KEEP deletion"
+      }
+    ],
+    "activeOrUnknown": [
+      {
+        "item": "Original R1/R2/R3 consumed host phases",
+        "classification": "RETURN; original owner sealed clone/private namespaces and no further writes. Existing sealed bytes already occupy fresh free; retained databases may still grow in PostgreSQL background, keep original bounded DB uncertainty. R3 old ACTIVE was a historical pre-return observation.",
+        "source": "Root relay: R3 fixed42c181 result review;13PIDgroupsabsent;R1/R2 namespaces not reused; no new scans"
+      },
+      {
+        "item": "Original persistent personal services and retained DB background growth",
+        "classification": "POSSIBLE_GROWTH_BOUND_NOT_ZERO; retained within interim conservative bound pending exact existing-ledger term reconciliation"
+      },
+      {
+        "item": "Mika old ordinary, fixed compiled/source/raw and S01 closed KEEP",
+        "classification": "Original lead confirmed all old children/drivers/listeners/pending launch drained, all owners STOP. Fixed compiled/source/raw sealed; S01 O1 DB/port/process closed14:08:08.536 and no namespace writes. Prior ordinary16/4/2/1MiB caps do not permanently become new growth."
+      },
+      {
+        "item": "Mika K01 historical .local HOLD",
+        "classification": "UNKNOWN_IDENTITY_OR_CLEANUP; only process closure confirmed15:25, original owner will not reuse/write. No size guessed/no deletion; retain conservative unknown bound."
+      },
+      {
+        "item": "Current Web source/metadata and W01 strict local",
+        "classification": "Bounded legal preparation; W01 new20s affected strict uses9MiB once. Diagnostic90s and I01third are READY/proposed candidate peaks, not runtime or accumulated spent caps."
+      }
+    ],
+    "nextCandidatePeaks": [
+      {
+        "task": "K01",
+        "bytes": 142606336,
+        "state": "ACTUAL_RUNNING",
+        "boundary": "DB last sample128MiB not verified peak; preserve original single-item admission boundary and unknown conservatism",
+        "measurementIsolation": "10 EXPLAIN ANALYZE plus30 timed SELECT; I01Chrome waits exactRETURN for this measurement phase, not a universal PG/browser exclusion rule."
+      },
+      {
+        "task": "I01_THIRD",
+        "bytes": 276824064,
+        "state": "READY_NO_GRANT",
+        "boundary": "scratch256MiB+evidence8MiB for next phase only"
+      },
+      {
+        "task": "RELEASE_DIAGNOSTIC",
+        "bytes": 210763776,
+        "state": "SOURCE_NATIVE_APPROVED_STRICT_PASSED_NO_HEAVY_GRANT",
+        "boundary": "90s incl30cleanup proposed;1DB12conn/1Chrome. Independent necessary strict20s/9MiB granted; no heavy grant or report inference."
+      }
+    ],
+    "externalInputsPending": true,
+    "newForwardNumericFloor": 18129092608,
+    "keepExistingLedgerOnly": true,
+    "noFullDiskScanOrExtraRun": true,
+    "mikaLatestClosure": "S01 replay15:18:44.466, packing15:41:49, ABBAprep15:54:53.480, ABBAactual16:10:32.815; K01repair15:45:17.411812, budget16:05:57.909881, P2fix16:17:20.190555; AV02 15:42:55.342; journal16:02:02.838; AV03sixth16:32:23.773 allchildren/TMP closed per originallead.",
+    "R3ReturnEvidence": "svc09a-r3-host-window-return.json",
+    "appliedAt": "2026-10-07T16:42:23.921Z",
+    "interimUnknownGrowthBoundBytes": 16903307264,
+    "selectedCandidatePeakBytes": 142606336,
+    "selectedCandidate": "K01",
+    "singleReserveBytes": 1073741824,
+    "parallelOrdinaryGrowthBytes": 9437184,
+    "formula": "16903307264 unknown/active conservative bound +142606336 selectedK01 planning increment +1073741824 one reserve +9437184 isolatedWebstrict =18129092608",
+    "derivation": "Unknown/active interim bound = legacy19363266560 - provenclosed(2*276824064+2*210763776+268435456) - alreadyincludedK01(142606336) - oneexistingreserve(1073741824). This is a temporary conservative bound for unclassified remaining original entries, not an intrinsic legacy floor or claimed actual use.",
+    "knownNoFutureGrowthCapBytes": 1243611136,
+    "unknownRule": "Remaining Original/Mika source/service/DB/KEEP growth not assumed zero. Replace interim upper bound with original-lead evidence when provided; no full-history audit required before this conservative, isolated admission.",
+    "singleItemMinima": "Keep actual executor/cleanup and candidate single-item minima; K01 DB128MiB is a last sample, not peak enforcement; opaque DB/WAL growth remains within conservative uncertainty and one reserve. Old global sum copied into a proposal is not intrinsic.",
+    "physicalMeaning": "Sealed existing bytes occupy fresh free once. Removing obsolete full caps from future equation is neither deleting KEEP nor refunding prior time/write expenditure.",
+    "externalLeadClassifications": {
+      "receivedVia": "root exact lead relay",
+      "at": "2026-10-07T16:46:16.063Z",
+      "Original": "R1/R2/R3 clone/private sealed no owner writes; retained DB possible background growth bounded, not absolute zero",
+      "Mika": "All old ordinary drained; source/compiled/raw sealed STOP. K01 historical .local HOLD cleanup UNKNOWN kept. Current selected K01142606336 planning increment only; AV03/queue next PG not ready.",
+      "numericTreatment": "Current K01 grant remains approved conservative18129092608; reconciliation of original individual uncertain terms will refine future admissions without rewriting consumed gates or delaying already-ready phase."
+    },
+    "methodAuthority": "Original approved docs main17ac5917c; docs/quality/local-validation.md#future-disk-budget",
+    "nextAdmissionReconciliation": {
+      "state": "FOR_NEXT_ADMISSION_ONLY_NOT_A_NEW_GRANT",
+      "historicalConsumedR3Floor": 19363266560,
+      "currentConsumedK01Floor": 18129092608,
+      "previousInterimUnknownUpperBoundBytes": 16903307264,
+      "newlyClassifiedNoFutureGrowthTerms": [
+        {
+          "term": "R1 sealed clone/private/raw",
+          "bytes": 1109393408,
+          "arithmetic": "1073741824+33554432+2097152",
+          "evidence": "svc09a-host-window-return.json; root relayed original owner sealed namespace/no future writes",
+          "DBRetainedPossibleGrowthBytes": 134217728
+        },
+        {
+          "term": "R2 sealed pre-IO rejected namespace",
+          "bytes": 1243611136,
+          "arithmetic": "full candidate cap: clone1073741824+private33554432+PG134217728+raw2097152",
+          "evidence": "svc09a-r2-host-window-return.json explicitly fixtureDatabaseCreated=false/setup before services; original owner no further namespace writes",
+          "DBRetainedPossibleGrowthBytes": 0
+        },
+        {
+          "term": "R3 sealed clone/private/raw",
+          "bytes": 1109393408,
+          "arithmetic": "1073741824+33554432+2097152",
+          "evidence": "svc09a-r3-host-window-return.json; fixed42c181 original result review; sealed namespace/no further writes",
+          "DBRetainedPossibleGrowthBytes": 134217728
+        }
+      ],
+      "newlyClassifiedNoFutureGrowthBytes": 3462397952,
+      "remainingConservativeUnknownUpperBoundBytes": 13440909312,
+      "retainedR1R3DBGrowthBoundInsideUnknownBytes": 268435456,
+      "closedW01StrictAdditionalPeakNoLongerFutureBytes": 9437184,
+      "pendingCurrentK01": "Still actual; before next launch require exact RETURN and classify DB/TMP/possibleKEEP growth from original owner. No clock-based release.",
+      "illustrativeI01AfterConfirmedZeroK01ResidualGrowth": {
+        "unknownBoundBytes": 13440909312,
+        "selectedCandidateBytes": 276824064,
+        "oneReserveBytes": 1073741824,
+        "sumBytes": 14791475200,
+        "condition": "Only if K01 exact closure proves no additional future growth; otherwise add original owner bound. This is not a grant or a fresh-free sample."
+      },
+      "limits": "No KEEP deletion/refund/old-time credit. Exact currently consumed K01 gate remains immutable. Old Mika individual ordinary cap numeric reconciliation is not guessed; residual conservative upper bound remains."
+    }
+  },
+  "forwardAdmission": {
+    "state": "CONSUMED_K01_GATE_18129092608_IMMUTABLE",
+    "at": "2026-10-07T16:42:23.921Z",
+    "selectedHeavyCandidate": "K01",
+    "unknownOrActivePossibleGrowthBytes": 16903307264,
+    "candidatePlannedIncrementBytes": 142606336,
+    "parallelW01StrictPeakBytes": 9437184,
+    "singleReserveBytes": 1073741824,
+    "minimumFreshFreeBytes": 18129092608,
+    "freshFreeSample": "Owner must measure immediately before launch; manager does not reuse old samples",
+    "historicalR3ConsumedFloor": 19363266560,
+    "unresolved": "Forward classifications continue for subsequent candidates; no rewrite of consumed K01 gate. Strict ordinary now CLOSED, not carried as future growth when next admission is calculated.",
+    "authority": "GO/Original method correction relayed via root; existing sole resource ledger"
   }
 }

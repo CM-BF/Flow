@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:30:26.498Z；两项网页检查失败均已完整归还；已审隔离宿主候选按ready-first获下一窗口，网页原作者继续窄修。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:47:10.325Z；查询验证已实际启动，网页诊断所需类型检查已完成；短暂检查重叠如实记录。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 修正新网页资源观测与插件连接切换检查的具体问题，再按固定候选验收；正式兼容通过后才应用用户网页。共享浮层按安全空档完成局部与代表界面检查。 |
 | 当前阻塞 | ACTIVE: 新网页正式四版本兼容未通过，第二次失败停在资源观测，reports=null；个人真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：当前无actual holder；Original已审R3独立217.5s唯一NEXT，紧前fresh后START。futurefloor至少19,363,266,560B，已计R3不重复加。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：知识查询测量运行中，浏览器等待其明确归还。网页局部检查已归还，重叠区间已交原负责人；新准入只计仍可能增长、所选检查峰值与一次reserve。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

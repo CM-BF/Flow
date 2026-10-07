@@ -1,0 +1,95 @@
+{
+  "reviewer": "workspace_panels_owner / gpt-6-astra",
+  "observedAt": "2026-10-07T16:38:53.353Z",
+  "decision": "APPROVED_SCOPED_DIAGNOSTIC_SOURCE_DELTA_NOT_RUNTIME",
+  "target": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+  "parent": "016ead68cd142fecf0edbb36cf35ea779b563130",
+  "findings": [],
+  "blockingP1P2": 0,
+  "scope": "Independent read-only fixed 95+/15- two-harness delta: passive clientError observation, bounded/candid correlation, diagnostic-only result segregation and finally cleanup. Four fixed Git file contents plus their exact diff; no 74-pin closure reread, project mutation, Node/import/tests/PG/Chrome/HTTP/private env access.",
+  "inputs": [
+    {
+      "commit": "016ead68cd142fecf0edbb36cf35ea779b563130",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "blob": "8eccfa4c8c515bd2d81ee34dd5253c2e2f389670",
+      "bytes": 35397,
+      "sha256": "3e9e776b8926d1ab6b96e9df1c97132465430842f737a0f98bdd2707d673b1a6"
+    },
+    {
+      "commit": "016ead68cd142fecf0edbb36cf35ea779b563130",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "blob": "90899e97695da44707ee2cd65d3181555486c9d3",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d"
+    },
+    {
+      "commit": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "blob": "51edbb2e181b1ca9503e9a2afc4e13d26fb3a0d8",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "commit": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "blob": "02bbc72031acba0b9763823fd1be54574173bdc0",
+      "bytes": 40985,
+      "sha256": "b44e0e69d7b549ba8f99b49cd4d636746dcbfefcd678a0bc92e6ddc042a45f53"
+    }
+  ],
+  "diff": {
+    "bytes": 20532,
+    "sha256": "da883b8c9a0dbc86d9f1bbb6d0b18b5df59882cb4e5e65c6f7d8e59dca6c1478",
+    "numstat": "29\t10\tapps/web/test/web-release-compatibility.browser.ts\n66\t5\tapps/web/test/web-release-compatibility.fixture.ts"
+  },
+  "conclusions": [
+    {
+      "topic": "Fastify and socket ownership remains with original handlers",
+      "lines": "fixture:42–44,60–69,78–80,425–429",
+      "evidence": "Observer is installed on the actual created center server before listen, requires an existing clientError handler, appends listeners rather than replacing/removing original handlers, and removes only its own two callbacks on finish. It records primitive metadata only: no socket.write/end/destroy, rawPacket/body/header reads, prevent/default swallowing, or altered forwarding behavior. Finish checks original handler identities remain. New callback receives only a private synchronous phase/step projection from runApps; no plugin callback is invoked."
+    },
+    {
+      "topic": "Bounded metadata and fail-closed truncation",
+      "lines": "fixture:45–88;148–151",
+      "evidence": "WeakMap connection identity does not retain arbitrary sockets; error rows capped16, upstream rows128, over-cap increments dropped. Phase/step bounded allowlisted syntax; code max64; numeric port/bytesParsed validated; no error.message/rawPacket/cookie/token captured. Compact serialized result capped32KiB, excessive output returns complete:false with empty arrays and byteCapExceeded. dropped/invalidPhase/original-handler mismatch all make complete false; fixture close records that as cleanup error. Existing saveJson separately caps the pretty raw file2MiB."
+    },
+    {
+      "topic": "Association is conservative candidate metadata, not causality proof",
+      "lines": "fixture:71–84;proxy:303–305,349",
+      "evidence": "Each public proxy request fixes wireIndex immediately at records.push. Its actual upstream socket captures local/remote ports; center connection WeakMap records inverse endpoint ports plus connectionId. Only exactly one matching upstream row is labelled OWNED_PROXY with wireIndex; zero, missing ports or multiple candidates remain UNKNOWN. Error metadata does not infer a URL/token/message from the parser error itself. Interpretation must keep the endpoint-correlation limit below."
+    },
+    {
+      "topic": "Diagnostic cannot import formal reports or pass compatibility",
+      "lines": "browser:184–185,258–265,343–350,368–392",
+      "evidence": "Dedicated export validates the same exact recovery admission, sets diagnosticOnly true and selects exactly one admitted recovery artifact. Formal cookiePolicy and later compatibility/legacy/assets observations are intentionally not claimed. Early diagnostic return occurs only after real UNKNOWN reload, original request retry, delayed logout chain and succeeded verified task; it retains page errors as failure and console errors as observations. runApps still executes finally. reports starts null and its only assignment is guarded !diagnosticOnly. passed is explicitly !diagnosticOnly && ... and therefore always false for this entry; diagnosticComplete is separate and requires no errors, exactly one completed selected result and complete passive evidence."
+    },
+    {
+      "topic": "Finally cleanup remains authoritative before diagnostic completion",
+      "lines": "browser:310–314,374–392;fixture:399–420,457–458;proxy:373–379",
+      "evidence": "Early diagnostic return still executes checkApp finally: remove selected observation, close owned context, save wire/page facts. runApps then closes Chrome, calls fixture.close, separately settles pending proxy operations and saves all wire; any error is accumulated. Fixture close retains proxy destroy/close/pending settlement then center close; observer finish/save is independently caught so it cannot bypass normal marker/zero-connection/DROP path. Creation failure still calls close before rethrow. Invalid observer evidence or cleanup errors prevent diagnosticComplete, and no formal import follows. Exact process/EOF/port/DB proof still belongs to the admitted outer lifecycle and actual receipts, not this static source review."
+    },
+    {
+      "topic": "Formal compatibility entry preserves previous strictness",
+      "lines": "browser:335–342,368–389",
+      "evidence": "Existing exports leave diagnosticOnly false. They retain cookiePolicy, all3/4 App selections, original checkApp tail assertions, cleanup-first report import and result.passed assertion. New observation is enabled only for the diagnostic export, so it does not change normal server listener setup or create a new formal console-error allowance."
+    }
+  ],
+  "precisionLimits": [
+    "OWNED_PROXY is a unique observed endpoint-tuple candidate, not cryptographic/socket-generation or parser-packet causality proof. There is no interval/connection-generation join between center and client sockets; tuple reuse after closure is not independently excluded. Do not convert this diagnostic label into proof that a particular HTTP body or browser mutation caused the parser error; zero/multiple candidates stay UNKNOWN.",
+    "diagnosticEvidence.complete means bounded capture was not dropped/invalid; it does not require errors.length>0. A zero-error run may complete the diagnostic without reproducing the reported clientError.",
+    "The32KiB observer cap measures compact JSON before saveJson pretty formatting. Do not claim a strict32KiB physical output file cap; actual retained bytes are independently bounded/accounted by the outer caller and saveJson2MiB file limit.",
+    "diagnosticOnly completed page/raw facts are not formal compatibility evidence: cookiePolicy/legacy fallback/final rendered reply and full asset manifest checks are skipped by design. The formal path still performs them.",
+    "No runtime assertions, installed Node/Fastify behavior probe, parser reproduction, resolution check, native browser result, resource grant or deployment attestation was performed. Parent/worker private caller delta is under separate root review."
+  ],
+  "cleanCode": {
+    "skills": "Reused local find-skills/clean-code/codebase-design already read; no installation or new framework.",
+    "actualApplication": [
+      "Reviewed exact fixed diff plus directly adjacent event registration, per-request wire identity, result gating and teardown ordering.",
+      "Checked passive listener has one responsibility and leaves transport authority with the original server; metadata whitelist avoids secret/error-payload leakage.",
+      "Checked separate diagnosticComplete/passed/reports semantics and preservation of primary failure/cleanup failures; no swallowed formal assertion.",
+      "Checked temporary/listener ownership and bounded arrays, and recorded serialization/correlation limits rather than upgrading inferred association to observed causality."
+    ]
+  },
+  "runtime": "NOT_RUN",
+  "projectWrites": 0
+}

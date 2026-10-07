@@ -19,5 +19,32 @@
     "canonical": "573edf1dd328ba55ced78a1631d5e3764f3f8db0",
     "sourceSwitchIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/source-switch-intake.json"
   },
-  "action": "Original originalD05writer normalbatch updates same task unique source; no newtask/duplicatewriter/generatedJSONhandedit. Live source is not assumed switched before receipt."
+  "action": "Original originalD05writer normalbatch updates same task unique source; no newtask/duplicatewriter/generatedJSONhandedit. Live source is not assumed switched before receipt.",
+  "sameBatchAdditionalRegistration": {
+    "requestedAt": "2026-10-07T16:38:05.998Z",
+    "taskId": "S01Q01",
+    "title": "paused queue scan",
+    "coLead": "mika",
+    "owner": "b01_bounded_reads",
+    "model": "gpt-6-astra",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+    "branch": "codex/queue-paused-scan",
+    "status": "plans/s01q01-paused-queue/status.md",
+    "parent": "FLOW-001/S01 reported canonical parent",
+    "actualStart": "2026-10-07T16:23:07Z",
+    "phase": "M2",
+    "source": "42c6c8cf81d3d648fc3477109e66db6c843aefe3",
+    "final": "96c5523843efa4cb1664cb24a1f6dda8e914ce92",
+    "gitState": "Reported clean by original lead",
+    "claimId": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350",
+    "claimVersion": 1,
+    "scopeCount": 4,
+    "committedAt": "2026-10-07T16:26:21.161Z",
+    "review": "Mika16:34:02 source-only approved0P1P2",
+    "checks": "NOT_RUN",
+    "main": "NOT_INTEGRATED",
+    "runtime": "0child/PG/HTTP; fixture still needs markedDB/deadline/evidence adaptation, notready",
+    "budget": "16MiB already recorded once, no additional reservation",
+    "operator": "Original existing D05 writer only; manager routes source record without mapping edits or server reload"
+  }
 }

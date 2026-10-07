@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T16:42:22.244847+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "3872ee12e826c295ec498e6bc4047726621f4dbdcdf02b49db8b6dead43198c9",
+  "workerSha256": "85544966c56f42cf26701c66f696ea905a51b89d9174aaf0fe9c7573304aa30a",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "sourceReview": {
+    "path": "/private/tmp/root-release01-cookie-diagnostic-source-preparation-review-20261007.json",
+    "bytes": 5110,
+    "sha256": "22da126669f24e29598f01ba472766e7466579eb9c4a2f96fef9256477b2cc23"
+  },
+  "scope": "Fixed diagnostic source/native delta acceptance only; changed mode and90s reception, unchanged owned native lifecycle. Strict local result pending; manager fresh actual handoff remains separate.",
+  "freshManagerHandoffRequired": true,
+  "runtimeGranted": false
+}
