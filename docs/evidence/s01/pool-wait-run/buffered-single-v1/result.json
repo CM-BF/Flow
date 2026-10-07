@@ -1,0 +1,69 @@
+{
+  "windowId": "s01-queue-buffered-once",
+  "target": "c7519722ea8464558b74183b888e934350b7ac83",
+  "outcomes": [
+    {
+      "side": "A",
+      "state": "FAIL",
+      "receipt": {
+        "output": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/pool-wait-run/buffered-single-v1/buffered",
+        "success": false,
+        "errors": [
+          "insufficient_window_ack_span",
+          "child_observations_dropped",
+          "abnormal_child_cleanup",
+          "pg_delivery_unknown",
+          "admission_or_outbox_retained"
+        ],
+        "resourcesClosed": false,
+        "tasksSentOrUnknown": 129,
+        "finalElapsedMs": 22806.858,
+        "finalMeasuredBytes": 72155516
+      }
+    }
+  ],
+  "errors": [
+    "comparison_input_retained"
+  ],
+  "cleanup": {
+    "sourceRoot": "/tmp/flow-s01-ab-input-46f1cae6-a6e3-4aa8-b6f0-6b746405c8fe",
+    "removed": false,
+    "retained": true
+  },
+  "success": false,
+  "tasksSentOrUnknown": 129,
+  "finalMeasuredBytes": 88825297,
+  "categories": {
+    "common:final-evidence-cli-reserve": 4194304,
+    "common:git-preflight": 41,
+    "common:preparation": 2439592,
+    "common:dependency-bindings": 4477,
+    "common:git-output": 5032700,
+    "common:exported-input": 4931265,
+    "common:external-manifests": 67402,
+    "A:preparation-evidence": 2439592,
+    "A:final-cli-receipt-reserve": 32768,
+    "A:post-run-archive-reserve": 1048576,
+    "A:required-source-inputs": 120363,
+    "A:observation-evidence-reserved": 16163691,
+    "A:fixed-experiment-inputs": 316485,
+    "A:evidence": 245478,
+    "A:observer-sql-payload": 534793,
+    "A:observer-row-json": 8514944,
+    "A:driver-pg-node-streams": 6188540,
+    "A:ipc-out": 7353,
+    "A:ipc-in": 6643289,
+    "A:center-node-streams": 28422422,
+    "A:owner-http-request": 24136,
+    "A:owner-http-response": 101451,
+    "A:runner-http-bodies": 1351635
+  },
+  "finalEvidenceBytes": 177002,
+  "finalReserveBytes": 4194304,
+  "elapsedBeforeResultWriteMs": 23071.535666,
+  "diskBytes": 19474726912,
+  "preparationPhase": "complete",
+  "byteBasis": "visible Git/input export + Node streams + IPC + evidence with conservative duplicate charges; not all OS I/O or PG/WAL disk growth",
+  "order": "one buffered arm; no paired control or packing-only causal claim",
+  "providerCalls": 0
+}

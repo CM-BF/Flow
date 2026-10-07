@@ -1,6 +1,10 @@
 # S01 独立审查
 
-## 当前：单臂caller/input与pure结果
+## 当前：单 buffered 臂实际失败结果
+
+RESULT_FIDELITY_PENDING。Execution `c7519722ea8464558b74183b888e934350b7ac83`；[唯一结果入口](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/READY.md)。首失败3/128 ACK span不足4s，observer16chunks/无summary/center dropped1；原caller UNKNOWN_RETAIN与两个KEEP不改。独审仅忠实性/固定输入/资源与时间边界，不运行、清理或把源审批继承为容量通过。
+
+## 已审：单臂caller/input与pure结果
 
 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，root / gpt-6-astra，2026-10-07T17:19:22Z，0P1/P2，固定packet `b10cea5654990650f5a9246d6536cad9d952d693`，source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。仅新finite variant/input与5pure；129唯一绑定与103B原件核符，0PG/HTTP/性能，旧operator冻结。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-independent-review.json)。当前floor-only metadata另见[增量绑定](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-floor-delta.json)，旧a317 input由固定packet保留；不把intrinsic下限当完整运行准入。
 

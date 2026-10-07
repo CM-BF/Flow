@@ -1,0 +1,23 @@
+{
+  "schema": "s01-buffered-source-immutability-v1",
+  "observedAt": "2026-10-07T19:06:55.793Z",
+  "executionHead": "c7519722ea8464558b74183b888e934350b7ac83",
+  "inputSha256": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2",
+  "fixedInputBindings": 123,
+  "fixedInputBytes": 12612600,
+  "inputErrors": [],
+  "gitDiffPaths": [
+    "experiments/runner-capacity/mixed",
+    "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+    "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json",
+    "docs/evidence/s01/mixed-ab-preparation/queue-operator.py",
+    "docs/evidence/s01/mixed-ab-preparation/queue-operator-input-v2.json"
+  ],
+  "gitDiffEmpty": true,
+  "productionBase": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "productionTree": "54f1f73b365e65f4bf29f9bb1bb4a076f88e30e6",
+  "callerSource": "ece9241418d0f17c6ef2cfd6e32e5b868ab22273",
+  "selectionSource": "839a1614bb8429922716fb86e8a9ebe6b2972967",
+  "completeClosure": "675 source /223 runtime /33SQL verified at actual admission; not exported or rehashed a second time during seal",
+  "noProjectImportsOrEngineeringChecks": true
+}

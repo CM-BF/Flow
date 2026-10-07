@@ -1,0 +1,65 @@
+{
+  "schema": "s01-buffered-single-outer-tool-transcript-v1",
+  "provenance": "Reconstructed after RETURN from exact retained functions.exec/exec_command tool result objects in this conversation; not an automatic runtime receipt. Original output strings are unchanged.",
+  "executionHead": "c7519722ea8464558b74183b888e934350b7ac83",
+  "inputSha256": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2",
+  "authorization": {
+    "managerGrantedAt": "2026-10-07T18:47:24.211Z",
+    "rootForwarded": true,
+    "grant": "S01-QUEUE-BUFFERED-20261007-ONCE"
+  },
+  "actualFirstToolResult": {
+    "chunk_id": "8515e0",
+    "wall_time_seconds": 1.002895417,
+    "session_id": 61738,
+    "original_token_count": 420,
+    "output": "{\"preflightAt\":\"2026-10-07T18:52:36.571Z\",\"claim\":{\"lead\":\"mika\",\"next\":null,\"role\":\"writer\",\"scope\":[\"docs/evidence/s01/idle-claim-cost\",\"docs/evidence/s01/mixed-ab-preparation\",\"docs/evidence/s01/mixed-ab-run\",\"docs/evidence/s01/pool-wait-run\",\"experiments/runner-capacity/mixed\",\"plans/s01-runner-capacity\"],\"state\":\"active\",\"branch\":\"codex/runner-capacity-probe\",\"origin\":\"new\",\"taskId\":\"S01\",\"worker\":\"status_read\",\"claimId\":\"508f9c85-a27c-4382-bfe9-caca43be4b0e\",\"version\":3,\"worktree\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe\",\"createdAt\":\"2026-10-06T13:42:24.119Z\",\"updatedAt\":\"2026-10-07T13:34:26.938Z\",\"observedAt\":null,\"needsVerification\":false},\"ledgerPoolClosed\":true,\"cluster\":{\"version\":\"16.13\",\"recovery\":false,\"data_directory\":\"/var/lib/postgresql/data\",\"max_connections\":100,\"reserved\":3,\"connections\":10,\"wal_bytes\":\"67108864\"},\"poolClosed\":true,\"requiredExperimentAndManagementConnections\":29,\"holderBasis\":\"sole NEXT 2026-10-07T18:47:24.211Z; all teams STOP; personal background UNKNOWN\"}\n{\"admissionAt\": \"2026-10-07T18:52:37.155142+00:00\", \"executionHead\": \"c7519722ea8464558b74183b888e934350b7ac83\", \"rootIdentity\": {\"dev\": 16777234, \"ino\": 118589194}, \"inputBindings\": 123, \"sourceBlobs\": 675, \"runtimeClosure\": 223, \"sql\": 33, \"fixedProductionTree\": \"54f1f73b365e65f4bf29f9bb1bb4a076f88e30e6\", \"outputRootAndFiveAbsent\": true, \"hostFreeBytes\": 19474763776, \"floorBytes\": 17728536576, \"pgWalFilesystem\": [[\"/dev/vdb1\", \"37416004\", \"21389604\", \"16026400\", \"57%\", \"/etc/resolv.conf\"], [\"/dev/vdb1\", \"37416004\", \"21389604\", \"16026400\", \"57%\", \"/etc/resolv.conf\"]], \"personalBackground\": \"UNKNOWN\", \"sourceChanged\": false}\n"
+  },
+  "actualCompletionToolResult": {
+    "chunk_id": "6d6dca",
+    "wall_time_seconds": 0.00000675,
+    "exit_code": 1,
+    "original_token_count": 35,
+    "output": "{\"window\": \"s01-queue-buffered-once\", \"verdict\": \"FAIL_OR_UNKNOWN\", \"persistedElapsedMs\": 23309.265041956678}\nreal 23.36\nuser 9.48\nsys 4.11\n"
+  },
+  "postRunOwnedObservationToolResult": {
+    "chunk_id": "255de0",
+    "wall_time_seconds": 0.243123625,
+    "exit_code": 0,
+    "original_token_count": 236,
+    "output": "{\"at\":\"2026-10-07T18:54:49.982Z\",\"identity\":{\"windowId\":\"s01-queue-buffered-once\",\"target\":\"c7519722ea8464558b74183b888e934350b7ac83\",\"databaseName\":\"flow_s01_mixed_27722_3b684eca586d4909acc8dfa986c527bf\",\"oid\":1346843,\"marker\":\"90fc2d63-b56f-419c-89f6-8245898856d9\",\"createAcknowledged\":true},\"normalDropRecorded\":true,\"databases\":0,\"connections\":0,\"poolClosed\":true}\nobservationShape list 16456\n{\"resourceObservedAt\": \"2026-10-07T18:54:50.216335+00:00\", \"ownedProcesses\": [{\"pidOrGroup\": 27722, \"state\": \"absent\", \"errno\": 3}, {\"pidOrGroup\": 28188, \"state\": \"absent\", \"errno\": 3}, {\"pidOrGroup\": 30562, \"state\": \"absent\", \"errno\": 3}, {\"pidOrGroup\": -27722, \"state\": \"absent\", \"errno\": 3}], \"port\": 51778, \"connectEx\": 61, \"resourceEvents\": [{\"kind\": \"read-summary\", \"pid\": 27722, \"receivedMs\": 22509.160583, \"caseId\": \"eight-by-sixteen\", \"issued\": 19, \"skipped\": 40, \"phase\": \"eight-by-sixteen:settlement\"}], \"keepRootsNotAccessed\": true}\n"
+  },
+  "timeObservations": {
+    "spawnCheckpoint": "2026-10-07T18:52:37.342481+00:00",
+    "callerEndedAt": "2026-10-07T18:53:00.524057+00:00",
+    "toolCompletionObservedClock": "2026-10-07 18:53:09 UTC",
+    "fullActiveResourceReturn": "2026-10-07T18:54:50.216335+00:00",
+    "managerDrainReleasedAt": "2026-10-07T18:58:01.926Z",
+    "sealSegmentStartedAt": "2026-10-07T19:00:57Z",
+    "grantToSpawnSeconds": 313.131481,
+    "attribution": "Grant-to-spawn is preparation/coordination, not SQL execution. Exact whole external tool start/end clock is unavailable; query output/supervisor/caller/time-p/tool observation are separate."
+  },
+  "activeReturnDoesNotRewriteRuntimeUnknown": true,
+  "retained": {
+    "roots": [
+      {
+        "path": "/tmp/flow-s01-mixed-Y01J0h",
+        "dev": 16777234,
+        "ino": 124414051,
+        "identitySource": "runtime runner-directory.json",
+        "state": "KEEP"
+      },
+      {
+        "path": "/tmp/flow-s01-ab-input-46f1cae6-a6e3-4aa8-b6f0-6b746405c8fe",
+        "dev": null,
+        "ino": null,
+        "identitySource": "runtime entry cleanup.sourceRoot; dev/ino not in original receipt",
+        "state": "KEEP"
+      }
+    ],
+    "postRunRootVisits": 0,
+    "cleanupAttempts": 0
+  },
+  "background": "All three teams declared stopped at grant; unrelated personal user background UNKNOWN, not inspected/stopped.",
+  "scope": "One original approved single buffered arm only; no retry, no second arm, no engineering checks."
+}

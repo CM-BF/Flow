@@ -1,0 +1,27 @@
+{
+  "windowId": "s01-queue-buffered-once",
+  "target": "c7519722ea8464558b74183b888e934350b7ac83",
+  "startedAt": "2026-10-07T18:52:37.548Z",
+  "contract": {
+    "windowId": "s01-queue-buffered-once",
+    "totalMs": 300000,
+    "preparationMs": 15000,
+    "totalBytes": 536870912,
+    "softBytes": 402653184,
+    "commonBytes": 33554432,
+    "finalReserveBytes": 4194304,
+    "sideMs": 135000,
+    "sideBytes": 251658240,
+    "startRemainingMs": 150000,
+    "maximumTasks": 129,
+    "output": "docs/evidence/s01/pool-wait-run/buffered-single-v1",
+    "preparation": "docs/evidence/s01/mixed-ab-preparation",
+    "revisions": {
+      "A": "4fdd856293a502209d7509ea37da901bbfd89f72",
+      "B": "4fdd856293a502209d7509ea37da901bbfd89f72"
+    },
+    "sideTasks": 129
+  },
+  "diskBytes": 19474726912,
+  "actualWindowAuthorization": "requires separate named OPEN; this directory consumes that single attempt"
+}

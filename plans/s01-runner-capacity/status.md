@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T17:47:40.299Z |
+| 最近更新 | 2026-10-07T19:09:07.770Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 开段 b10cea5654990650f5a9246d6536cad9d952d693 = origin clean；本段仅资源元数据/独审归档，最终 HEAD 由 Git 读取。 |
+| 工作树dirty状态 | Execution c7519722ea8464558b74183b888e934350b7ac83 = origin clean启动；现仅封本次actual原件与结果metadata，最终结果HEAD由Git读取。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED ece9241418d0f17c6ef2cfd6e32e5b868ab22273：5 synthetic pure；原839a的13与types另列；本段0工程重跑、0PG。 |
+| 检查状态 | FAILED c7519722ea8464558b74183b888e934350b7ac83：单A insufficient_window_ack_span，3/128不足4s；observer未完整交付。历史5pure/13+types不当实际通过。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | ece9241418d0f17c6ef2cfd6e32e5b868ab22273 |
+| 实现目标 | c7519722ea8464558b74183b888e934350b7ac83 |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.test.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 单臂入口与运行封套已独审通过，局部5例通过；候选资源下限已纠正，真实容量实验尚未运行。 |
-| 下一可用交付 | 由 manager 合并实际剩余资源与未知保留量，完成独立窗口交接后再决定运行；原同步负载验收保持。 |
-| 当前阻塞 | ACTIVE: PG 仍 HOLD / NOT_OPEN，等待完整资源准入和正式运行窗口；本 owner 0 child、无待启动工程检查。 |
+| 当前产出 | 单臂已实际运行，持续ACK及观察交付校验未通过；活动进程、端口和专库已归还，两个临时目录保守留存。 |
+| 下一可用交付 | 独立核验失败结果与资源回执，再确定最小诊断；本窗口已消费，未授权重跑。 |
+| 当前阻塞 | ACTIVE: 原128同步负载完整验收未过，观察交付缺少最终汇总；仅结果待审，无实际资源holder或待启动检查。 |
 | 需用户决定 | NONE |
-| Review | APPROVED ece9241418d0f17c6ef2cfd6e32e5b868ab22273 / b10cea5654990650f5a9246d6536cad9d952d693，root 2026-10-07T17:19:22Z，0P1/P2；仅源码与局部结果，资源元数据增量另列。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:58Z fresh本人/WT/branch一致。 |
-| 架构影响 | 本片仅实验选择Interface：显式单次buffered复用原runMixed/centerDelivery/完整proof/final/cancel；原A/B默认顺序、产品pool/SQL和生产4fdd不改。 |
+| Review | RESULT_FIDELITY_PENDING，本次execution c7519722ea8464558b74183b888e934350b7ac83；原source ece924/839a已审，仅历史源码与pure范围。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T18:52:36.571Z实际准入核本人/WT/branch/exactscope/nooverlap，0take/amend。 |
+| 架构影响 | 本次只运行已有单buffered选择与caller，复用fixed4fdd/原同步burst/完整proof；无source或产品变化。原offline packing/replay main事实保持，真实容量验收仍未完成。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -354,3 +354,13 @@ Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APP
 [唯一候选入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)及[增量绑定](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-floor-delta.json)：当前input SHA `842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2`。仅floor两个字段更正，123files/12612600B不变。2,684,354,560B只是实验增长512MiB+DB/WAL规划1GiB+全局一次reserve1GiB的intrinsic下限；实际manager须一次合并剩余增长与unknown，不能直接启动，也不重复reserve。历史纯检查的15,927,083,008B实际gate不改。
 
 复用本地find-skills/codebase-design/固定clean-code核单一状态源、历史/当前绑定与资源职责，无新接口或实现。0工程child/PG/HTTP/build/install/KEEP访问，所有源码、compiled与原始证据不变；任务startUNKNOWN、三开放TODO/main已接边界保持。提交后STOP保claim；dashboard依本唯一status，不新增GET或猜新同步。
+
+## 2026-10-07T19:09:07.770Z 单 buffered 臂实际失败结果封存
+
+本封存段19:00:57Z开始，经理18:58:01.926Z解除drain后仅离线metadata≤1MiB；0工程检查/PG/HTTP/新probe/source修复/旧KEEP访问。唯一[结果入口](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/READY.md) / [报告与边界](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/report.md) / [manifest](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/result-manifest.json)。
+
+经理grant18:47:24.211Z→START18:52:37.342481Z为313.131481s准备/协调；caller started18:52:37.220238Z，terminal18:53:00.524057Z，time-p23.36s，精确wholetool UNKNOWN。活动资源RETURN18:54:50.216335Z：三PID/group ESRCH/双EOF、端口51778拒连、专库1346843普通DROP后独立absence/0conn并finally关闭池；这是后验活动资源事实，不改原caller processClosed=false/UNKNOWN_RETAIN。两个KEEP未访问或清理，原目录身份与UNKNOWN见transcript。
+
+首断言proof.ts:57：128attempt内3个eligible ACK span<4s，707eligible emits；后续完整final/queue/journal成功链未执行。center16个chunk、0summary、child dropped1；PG完整计量UNKNOWN，19read/4cancel ACK仅部分事实。固定123输入/源码与execution零diff，原per-query O1FAIL/O2NOT_RUN及历史raw不变。仅局部experiment结果未集成main；main8e5已接范围仍为offline packing/replay。
+
+沿本地find-skills/codebase-design/固定clean-code核命名、单一状态与错误/资源职责：runtime判定、post-run RETURN、原审批与新result明确分层，未复制原raw或新造框架。实际分类账88,825,297B含既有4MiB final reserve，byteAccountingComplete=false保留；封存新metadata和原件字节由同一manifest计量，不冒物理峰值。后继先在drain前完成可执行invocation准备，不把协调等待写成SQL耗时；当前STOP保claim、无新窗口。
