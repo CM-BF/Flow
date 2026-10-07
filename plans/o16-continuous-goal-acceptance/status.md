@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:51:37 UTC |
+| 最近更新 | 2026-10-07T08:17:45Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
-| 单一status owner / model | native_center_owner / gpt-6-astra |
+| Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974 |
@@ -19,12 +19,15 @@
 | 实现目标 | 4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 准备片已集成 aca6e89214711ef3787ac3e3ee3b2754bb40b960；138文件与924873固定交付一致，实际旅程未通过 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 目标旅程准备与接受修复已交付主线；首次完整验证未通过，原证据和资源保留。 |
-| 下一可用交付 | 本准备片段已交付；后继零模型公开旅程等待独占验证窗口。 |
-| 当前阻塞 | ACTIVE: 完整公开旅程尚未通过，等待独占验证窗口；原失败资源保留。 |
+| 当前产出 | 正在将已审目标旅程对齐当前主线；原失败证据和资源保留。 |
+| 下一可用交付 | 固定当前主线输入与实际入口，再验证从目标到独立接受的完整零模型旅程。 |
+| 当前阻塞 | ACTIVE: 等待本批主线固定输入；源码准备继续，完整旅程尚需新的数据库窗口。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -41,3 +44,12 @@
 2026-10-06 18:23:45 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
 
 2026-10-06 19:51:37 UTC：仅准备片 main 收口。[138文件逐hash回执](../../docs/evidence/o16/preparation-main-receipt.json)记录实际主线与924873固定交付相等；[CAS增量独审原件](../../docs/evidence/o16/decision-cas-validation-independent-review.json)保留1/1局部证据/0重跑。Claim继续用于已派验收证据，实验源停止写入；新0provider旅程尚未运行/授权窗口未分配，真实模型预算未授权。
+
+2026-10-07T08:17:45Z：Lead确认由原owner继续O16，fresh账本f72 v1 active/原树clean，未转assignment。[当前主线续接](../../docs/evidence/o16/current-main-resumption.md)固定职责与输入差异；29实验文件/263旧输入/39alias核对通过，43旧输入与观察主线有差，最终执行base待P02集成固定。0加载/测试/PG/provider；旧26绿不重跑，旧FAIL/KEEP/禁resume不变。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| O16-W01 | UNKNOWN | 2026-10-07T08:17:45Z | 排程/验证准备 | 旧旅程失败后阶段性暂停，开始无独立时间证据；当前原owner恢复当前主线准备，不将全间隔称资源等待 | 原status与本次Lead派工/current-main-resumption |
+| O16-W02 | 2026-10-07T08:17:45Z | NOT_ENDED | 固定输入 | 等待P02组合后的准确main；可继续差异/源码与静态准备 | current-main-resumption.json |

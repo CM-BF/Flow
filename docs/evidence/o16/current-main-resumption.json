@@ -1,0 +1,354 @@
+{
+  "at": "2026-10-07T08:17:45Z",
+  "kind": "O16_CURRENT_MAIN_RESUMPTION_PREPARATION",
+  "claim": {
+    "claimId": "f72ba7c9-52e9-4037-aed0-27af9ed1aae6",
+    "version": 1,
+    "state": "active",
+    "worker": "native_center_owner",
+    "freshLedgerRead": "2026-10-07 this work segment; owner unchanged"
+  },
+  "fixedExperimentSource": "4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa",
+  "ownHeadBefore": "ccecf233a861ebe541ca447d65f2e4ce76f415ed",
+  "historicalProductBase": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
+  "observedMainForAnalysisOnly": "c5dbdb712e4fae078ddd4bbdbc51c653d77a3192",
+  "executionBase": "PENDING_LEAD_FIXED_MAIN_AFTER_P02",
+  "restoredInputs": 0,
+  "oldBoundInputs": 263,
+  "changedOldBoundInputs": [
+    {
+      "path": "AGENTS.md",
+      "oldSha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "observedSha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348",
+      "oldBytes": 17226,
+      "observedBytes": 18655
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "oldSha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "observedSha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3",
+      "oldBytes": 5175,
+      "observedBytes": 10960
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "oldSha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792",
+      "observedSha256": "20c09e60f43395a61a68c3cc4a3b8460f40525fe78b233b92b391e398f9dc2fd",
+      "oldBytes": 9939,
+      "observedBytes": 9218
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "oldSha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "observedSha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "oldBytes": 24363,
+      "observedBytes": 24739
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "oldSha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e",
+      "observedSha256": "db7d993cfa67d130429bc889f76e130308076af0ad3add824d67cacd5076305e",
+      "oldBytes": 4127,
+      "observedBytes": 5178
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "oldSha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "observedSha256": "f54045f6965bd3b0d2223ce5ed84ac026531f60ff6c16f22f1a8074dc5f801aa",
+      "oldBytes": 1064,
+      "observedBytes": 1213
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "oldSha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "observedSha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac",
+      "oldBytes": 5640,
+      "observedBytes": 8740
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldSha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+      "observedSha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583",
+      "oldBytes": 14698,
+      "observedBytes": 15713
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "oldSha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244",
+      "observedSha256": "1c8ea750132e6ed58cf076a5a4e0bb1e8cdee426ce3a59f10b147987f41336ff",
+      "oldBytes": 2196,
+      "observedBytes": 1937
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "oldSha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "observedSha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7",
+      "oldBytes": 2061,
+      "observedBytes": 2339
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "oldSha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5",
+      "observedSha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43",
+      "oldBytes": 5368,
+      "observedBytes": 6114
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "oldSha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13",
+      "observedSha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8",
+      "oldBytes": 5126,
+      "observedBytes": 5744
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "oldSha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498",
+      "observedSha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37",
+      "oldBytes": 5662,
+      "observedBytes": 5750
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "oldSha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3",
+      "observedSha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+      "oldBytes": 1620,
+      "observedBytes": 1710
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "oldSha256": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15",
+      "observedSha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+      "oldBytes": 12390,
+      "observedBytes": 14117
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "oldSha256": "a77004b33ef72ec5e036e6bddcc95947b116ded0b10d66f043502dc3c3f36f88",
+      "observedSha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889",
+      "oldBytes": 3774,
+      "observedBytes": 3786
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "oldSha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "observedSha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe",
+      "oldBytes": 5515,
+      "observedBytes": 5731
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "oldSha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "observedSha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc",
+      "oldBytes": 3834,
+      "observedBytes": 3418
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "oldSha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "observedSha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "oldBytes": 3366,
+      "observedBytes": 4764
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "oldSha256": "c197d278a3f662cc5d8fabe906b637fe27ef91df9492678f2fc2b36b091a37f0",
+      "observedSha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1",
+      "oldBytes": 3585,
+      "observedBytes": 3660
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "oldSha256": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab",
+      "observedSha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98",
+      "oldBytes": 8395,
+      "observedBytes": 11704
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "oldSha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+      "observedSha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e",
+      "oldBytes": 4173,
+      "observedBytes": 3319
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "oldSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "observedSha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+      "oldBytes": 6424,
+      "observedBytes": 7789
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "oldSha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02",
+      "observedSha256": "01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d",
+      "oldBytes": 8529,
+      "observedBytes": 8925
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "oldSha256": "682246b4e4a52e8312cbf97cda981b596beb019c53ef6e79dd49f6d7282b0b42",
+      "observedSha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "oldBytes": 2845,
+      "observedBytes": 3046
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "oldSha256": "90acdc1b0c34b242f31db8ba4ba99a3d0998b3cf00f01a127dfb56794bb06d9d",
+      "observedSha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "oldBytes": 13611,
+      "observedBytes": 15414
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "oldSha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "observedSha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071",
+      "oldBytes": 14578,
+      "observedBytes": 14801
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "oldSha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5",
+      "observedSha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a",
+      "oldBytes": 6407,
+      "observedBytes": 5748
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "oldSha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd",
+      "observedSha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9",
+      "oldBytes": 3153,
+      "observedBytes": 4657
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "oldSha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3",
+      "observedSha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67",
+      "oldBytes": 12580,
+      "observedBytes": 20183
+    },
+    {
+      "path": "package.json",
+      "oldSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "observedSha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "oldBytes": 729,
+      "observedBytes": 750
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "oldSha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "observedSha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "oldBytes": 14330,
+      "observedBytes": 15496
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "oldSha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "observedSha256": "bf2716c67e6d0cba75959c90ed31053c11bde3969da91fd1d0b6a6ed823352ba",
+      "oldBytes": 53156,
+      "observedBytes": 56010
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "oldSha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382",
+      "observedSha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b",
+      "oldBytes": 4993,
+      "observedBytes": 6713
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "oldSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "observedSha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "oldBytes": 6621,
+      "observedBytes": 7382
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "oldSha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "observedSha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "oldBytes": 12150,
+      "observedBytes": 15006
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "oldSha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "observedSha256": "3cfe7b2c55ad67fe81d1a21e6538133e14bcaea0c21fdc57bb5cc1211eaf919d",
+      "oldBytes": 1512,
+      "observedBytes": 1591
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "oldSha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "observedSha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8",
+      "oldBytes": 1134,
+      "observedBytes": 1173
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "oldSha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747",
+      "observedSha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+      "oldBytes": 4885,
+      "observedBytes": 4908
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "oldSha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+      "observedSha256": "cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918",
+      "oldBytes": 7285,
+      "observedBytes": 7753
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "oldSha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+      "observedSha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "oldBytes": 6428,
+      "observedBytes": 6390
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "oldSha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "observedSha256": "2a2c768af0a62e6cd7ef7500cbbeadc42eb435d41d29eb8e806142a0072e819e",
+      "oldBytes": 15077,
+      "observedBytes": 17734
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "oldSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "observedSha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "oldBytes": 279163,
+      "observedBytes": 279429
+    }
+  ],
+  "newMigrationCandidates": [
+    "packages/storage/migrations/033-native-activity-bodies.sql",
+    "packages/storage/migrations/034-plugin-runtime.sql",
+    "packages/storage/migrations/035-codex-conversations.sql"
+  ],
+  "preservedChecks": "26 different preparation checks across rounds; no reruns",
+  "oldRun": "rehearsal-502e3607-0657-484d-8fa2-ef3761f84889",
+  "retainedResources": "KEEP; no fresh DB/directory/process probes, resume or cleanup",
+  "sourceChecks": "29 experiment files match 4ae and observed main; old 223 source+30SQL+10config current hashes match historical manifest; 39 alias/name/version anchors match, installed payload not exhaustively read",
+  "execution": {
+    "imports": 0,
+    "tests": 0,
+    "pg": 0,
+    "provider": 0
+  },
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "bytes": 5472
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "bytes": 6446
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "bytes": 4835
+    }
+  ],
+  "method": "Reuse installed local skills and prior approved Interface; no new framework or domain authority. Separate actual-main input binding from experiment behavior. No installation."
+}
