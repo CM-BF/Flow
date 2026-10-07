@@ -1,5 +1,5 @@
 {
-  "state": "CLOSED_PENDING_PREPARATION_REVIEW",
+  "state": "PREPARED_CLOSED_WAIT_AV_R2",
   "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
   "argv": [
     "/usr/bin/env",
@@ -38,5 +38,6 @@
     "fresh complete inputs, external links, claim, root identity, no namespace, current whole resource floor"
   ],
   "outerEvidence": "Use existing OPS14 operator; record outer PID/PGID/exit/EOF and wall separately; no additional supervisor logic.",
-  "failure": "Preserve actual result and raw; no retry or forced DROP; unknown KEEP."
+  "failure": "Preserve actual result and raw; no retry or forced DROP; unknown KEEP.",
+  "reviewAssembly": "candidate.json and root-guard-approval.json; no actual permission or admission generated"
 }

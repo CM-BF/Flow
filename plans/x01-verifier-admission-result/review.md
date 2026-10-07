@@ -33,3 +33,7 @@ db_transaction_owner / gpt-6-astra：SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED，�
 672ce38：db 21:30:22 SOURCE_CHANGES_REQUESTED（1P2/0P1），末尾409可能早拒绝假通过；57b188f5两相同test只增加project_limit，21:31:21 SOURCE_DELTA_REVIEW_APPROVED（case/fixture0P1P2），增量NOT_RUN。原types/list结果不重绑最终行为。
 
 b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承remove_sample根身份检查太晚，可能换根symlink先删原子项。尚未修复，整体PARTIAL/NOT_READY，不授PG；详见transaction-pg/reviews.json。新manifest仅固定准备输入，不将输入哈希一致当资源行为安全批准。
+
+## Guard副本与输入重绑结论
+
+2026-10-07T21:43:37.054Z归档b01 21:41:41 COPY_AND_BINDING_DELTA_REVIEW_APPROVED：227/51cc+405d，原operatorP2 CLOSED，0P1P2；295本地固定文件hash符，2变293原样，191external/16links数据不变。parent1d85四pureFS有独立批准；本审不替db五case/fixture，不称实际PG。owner按分项批准和固定输入核验封CLOSED候选，须先AV R2通过再申请独立窗口。原caseP2/--json误写/types失败/所有raw保持，最后project_limit仍NOT_RUN。

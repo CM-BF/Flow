@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:32:52.281Z |
+| 最近更新时间 | 2026-10-07T21:43:37.054Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,7 +14,7 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v1 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
-| 工作树 dirty 状态 | 本准备源码和检查STOP；metadata封包后clean |
+| 工作树 dirty 状态 | 所有源和工程检查STOP；封包push后clean，claim保留 |
 | 工作分支状态 | in-progress（核心已审，真实事务准备） |
 | 实现目标 | 53d50dddcefb5b1e060f45b5a7addd429aa6ec81 |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
@@ -24,9 +24,9 @@
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实事务验收用例已完成类型检查和收集，清理安全问题待修复 |
-| 下一可用交付 | 修复清理根目录身份门禁，再完成真实事务验收 |
-| 当前阻塞 | ACTIVE |
+| 当前产出 | 真实事务验收用例与清理门禁已完成局部审查，数据库验收尚未运行 |
+| 下一可用交付 | 前置中心资格验收通过后，在独立窗口验证受理与事件整批回滚 |
+| 当前阻塞 | ACTIVE: 等待前置数据库验收通过及独立运行窗口 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | types2→0/list精确5（0执行）；case断言P2已静态关闭，operator换根P2待修，PARTIAL/NOT_READY |
+| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；候选PREPARED_CLOSED_WAIT_AV_R2 |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -68,3 +68,5 @@ VAR-04准备封存：2026-10-07T21:32:52.281Z。测试source57b188f5ee9fce658916
 | VAR-W03 | UNKNOWN | 2026-10-07T21:31:21.000Z | 审查 | 五case唯一断言P2静态关闭；operator另有清理P2 | transaction-pg/reviews.json；21:28仅dispatch分钟粒度记录 |
 
 本准备实际未申请/消费PG；AV R2前置亦受同helper风险影响，不能因旧READY启动。源检查已STOP，保留claim；完整VAR/父X01均未完成，main/部署事实不变。
+
+2026-10-07T21:43:37.054Z：清理guard parent1d85/result0b9a 4/4纯FS已获独审；本树227/51cc/405d精确副本、2row和invocation于21:41:41通过b01窄审。合并db case/fixture及owner完整输入核验后封PREPARED_CLOSED_WAIT_AV_R2，不把分项review伪称某位审者整包批准。当前0child/PG/待launch；本段未追加VAR types/list或真实5case。新helper与原manifest/raw各有固定历史，详见transaction-pg/candidate.json。任务20:31:27首次开工及NOT_COMPLETED不变；main/公开挂载/runtime worker仍未验。

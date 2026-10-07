@@ -1,6 +1,6 @@
 {
-  "state": "NOT_READY_CLEANUP_DELTA_REVIEW_PENDING",
-  "at": "2026-10-07T21:36:30.771Z",
+  "state": "PREPARED_CLOSED_WAIT_AV_R2",
+  "at": "2026-10-07T21:43:37.054Z",
   "testSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
   "productSource": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
   "pendingAV": "ea3c4599b00505c950cc34ada8a350082fe76747",
@@ -15,15 +15,13 @@
     "links": 16
   },
   "caseReview": "APPROVED_LIMITED_STATIC_DELTA",
-  "operatorReview": "REPAIRED_REVIEW_PENDING",
+  "operatorReview": "APPROVED_LIMITED_CALLER_AND_COPY_BINDINGS",
   "actual": "NOT_OPEN_NOT_RUN",
   "futureNamespace": "docs/evidence/x01-verifier-admission-result/transaction-pg/var-transaction-pg-run-r1",
   "namespaceCreated": false,
   "requiredBeforeReady": [
-    "Close cleanup root-swap P2 and necessary pure FS regression",
-    "Bind reviewed helper/caller inputs in a new immutable manifest",
-    "AV R2 pass and approved prerequisite intake",
-    "Independent preparation review and manager unique NEXT plus fresh claim/resource/input gates"
+    "AV R2 true PG success and prerequisite acceptance",
+    "Future manager unique NEXT and fresh whole claim/head/source/external/resource/namespace gates"
   ],
   "scope": "Real domain transactions; no mounted verifier producer, HTTP authorization journey or v4 worker evidence",
   "limits": {
@@ -84,5 +82,12 @@
     "metadataRunners": 4,
     "providerCalls": 0,
     "registrationsMax": 2
-  }
+  },
+  "reviewAssembly": {
+    "caseFixture": "db67221:30:22 with onlyP2; db57b18821:31:21 closed literal P2, finaldelta NOT_RUN",
+    "operator": "b01672 thin caller with rootP2; parent1d85 pureFS approval21:36:02; exactowncopy227 and2row/invocation approval21:41:41",
+    "binding": "Owner21:32 fixedGit/WT all295 and streamed191external/16links errors[]; b0121:41 independently hashed295 and checked2row data delta. Inherited runtime rows unchanged; no new PG interpretation.",
+    "scope": "Owner assembled closed candidate from separate limited reviews; no reviewer is attributed a broader standalone whole-preparation approval."
+  },
+  "manifestStateSnapshot": "Pinned manifest retains pre-review label; separate approvals/candidate provide current state without rewriting that reviewed manifest."
 }
