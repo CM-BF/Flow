@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-07T08:27:51.289312+00:00",
+  "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "sameSegmentClaim": "complete-draft-local-preflight.json",
+  "change": "object(record.data) JSON narrowing only; observer unchanged",
+  "rootAdditionalMs": 4000,
+  "totalLocalBudgetMs": 24000,
+  "spentMs": 12103,
+  "remainingMs": 11897,
+  "sourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "393b963317d23cb3cc0248d69945e842dca661f960c04c849f4059191174b822"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "394984fd1c26b12046d1a4936f165f9b186fb3023c560a86eaf4f5b0ae7f1618"
+    }
+  ],
+  "tmp": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p",
+  "networkAndProjectWrites": "sandbox denied"
+}

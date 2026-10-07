@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-07 08:29:19 UTC",
+  "target": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "base": "109922a5d4c44216a56f7bc9e025e9b89dcc1ca2",
+  "changed": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 36504,
+      "sha256": "394984fd1c26b12046d1a4936f165f9b186fb3023c560a86eaf4f5b0ae7f1618",
+      "blob": "0ec4408a1d52c71a5cb5fdc8ead000ab3a45381b"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 88334,
+      "sha256": "393b963317d23cb3cc0248d69945e842dca661f960c04c849f4059191174b822",
+      "blob": "97165ea3f6451310916ffa10ab0ab03d7e469602"
+    }
+  ],
+  "unchangedSources": {
+    "count": 17,
+    "reference": "sse-delivery-checkpoint.json",
+    "sha256": "cd02f85f73fdc6d743044b4296eb05237b1b4832d177eb558b045edc7e158423",
+    "target": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5"
+  },
+  "selection": {
+    "journey": "complete-draft",
+    "required": [
+      "cookieRead",
+      "completeDraft"
+    ],
+    "originalFullAndSelectionsUnchanged": true
+  },
+  "types": "PASS exit0 on fixed4a; original fea exit2 retained",
+  "browser": "NOT_RUN",
+  "syntheticActor": "One public registerRunner profile publisher only; no runner process/claim/heartbeat/native/provider; token worker memory only",
+  "resources": {
+    "segmentSpentMs": 81002,
+    "segmentRemainingMs": 68998,
+    "singleMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupEvidenceBytes": 4194304,
+    "perRunReserveBytes": 5242880
+  },
+  "localRemainingMs": 6353,
+  "review": "SOURCE_AND_LOCAL_ACCEPTED_SCOPED_NOT_BROWSER",
+  "localChecks": {
+    "first": "complete-draft-local-first/manifest.json",
+    "fixed": "complete-draft-local-fixed/manifest.json",
+    "totalBudgetMs": 24000,
+    "chargedMs": 17647,
+    "remainingMs": 6353,
+    "firstTypesExit": 2,
+    "fixedTypesExit": 0,
+    "priorSseChargeMs": 6284,
+    "sameObserverNotRerun": true
+  },
+  "sourceReview": {
+    "path": "complete-draft-root-review.json",
+    "target": "fea37b408f6bf9d9fcde38afa760b903f38e5cf9",
+    "sha256": "8bc92c7dfea10354ce0aed16524267d8e3d2c52df844e65104b4d98f8c62acba",
+    "findings": 0,
+    "laterChange": "JSON data narrowing only, 5 insertions/2 deletions; no observer/authority behavior change"
+  },
+  "localIndependentReview": {
+    "path": "complete-draft-local-root-review.json",
+    "sha256": "6d9e6f4a44e4b9a37de0915fbeaa387c1a4c993a579585d22109f8dd31f6ca4d",
+    "state": "ACCEPTED_SCOPED_FIRST_RED_FIXED_NOEMIT_AND_CLEANUP"
+  }
+}

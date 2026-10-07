@@ -1,14 +1,14 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前targetd68b6bc；原full7/choice/CREATE两故障点/Queue enqueue各有固定源与实际限定独审。Queue 2/2及owned清理已由root接受，promotion/Steer/完整材料组合/二中心未验；SSE任务详情本次2/2实际待独审；不自评整体feature通过。
+状态：IN_PROGRESS。当前target4a60980b6dc756d46a720a9cbcb157a549555010；complete-draft新增准备链/一个synthetic publisher已获聚焦源码及fixed noEmit限定接受，真实browser尚未运行。原full7/choice/CREATE两点/Queue/SSE任务详情各有固定限定独审；promotion/Steer/完整材料组合/二中心未验，不自评整体feature通过。
 
-Review target commit：`d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`4a60980b6dc756d46a720a9cbcb157a549555010`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者检查：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature正式0141结论CHANGES_REQUESTED；当前55b修复供复审，main未接。
+早期0141作者检查（历史）：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature正式0141结论CHANGES_REQUESTED；当前55b修复供复审，main未接。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -249,3 +249,13 @@ Root [本轮实际独审](../../docs/evidence/wpf-conversation-recovery/continuo
 ## 2026-10-07 08:05:48 UTC — d68任务详情真实SSE（作者实际）
 
 [原件](../../docs/evidence/wpf-conversation-recovery/continuous-seventh-validation.md)2/2且owned清理完整；无REST补读/观察页POST，单stream新cursor与App取消timeline，非assistant流。已有source/12local审不冒本轮独立actual结论；当前等一次结果独审，完整featureIN_PROGRESS。
+
+## 2026-10-07 08:22:57 UTC — complete-draft 源码固定，未实际运行
+
+[边界与更正](../../docs/evidence/wpf-conversation-recovery/complete-draft-source.md)落实在原两test；新actor不运行runner/provider。17源/旧旅程及raw不变。类型首红两TS2339原件保留，4a JSON窄读取修后noEmit0；DPERF归还后两实际检查/清理已完成，无PG/Chrome或新gate。SSE actual34af原文同自然批归档，0blocking仅TaskProjection选组。
+
+### 2026-10-07 08:29:19 UTC — 本段固定交付
+
+[Root聚焦源审](../../docs/evidence/wpf-conversation-recovery/complete-draft-root-review.json)绑定fea37，new synthetic publisher/真实Prepare链0blocking；其后4a只修新增筛选的JSON窄读取，原observer/17源不变。[19源引用、首红/后绿、有限budget](../../docs/evidence/wpf-conversation-recovery/complete-draft-checkpoint.json)是本次唯一增量入口。current target `4a60980b6dc756d46a720a9cbcb157a549555010`，types exit0，completeDraft browser **NOT_RUN**。不把受控声明profile当native/runner在线或model通过；原SSE实际限定接受完整原文已自然归档。
+
+[首红+fixed noEmit独立原文](../../docs/evidence/wpf-conversation-recovery/complete-draft-local-root-review.json)已随本批收录：原件/类型修正/PID-group与TMP清理核同，source接受延续；不是completeDraft实际通过。

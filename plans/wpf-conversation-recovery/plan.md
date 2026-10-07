@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:55:58 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 08:30:29 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -212,3 +212,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-07 08:05:48 UTC — 原RECOVERY01-03/05任务SSE实证安全点
 
 复用原single-file parent+public cancel，实际2/2与清理完整，见continuous-seventh-validation；非conversation/assistant流。无源码修复/重跑旧绿检查，新段charge10844/累计81002/余68998。clean-code复核旁路职责、错误/资源边界和因果断言，没有以握手/POST回包/REST刷新冒delivery。当前仅自然记录/待结果独审，后继完整草稿/Steer/二中心保开放。
+
+### 2026-10-07 08:13:44 UTC — RECOVERY01-03/05 completeDraft（NOT_RUN）
+
+按complete-draft-boundary-root及prepare-correction-root：真实公开准备CREATE先于材料选择，恢复后的业务POSTbaseline从Prepare后算；profile在Prepare CREATE验证，材料在restore后的首turn验证，不声称CREATE携带恢复材料。只两test+ownrecords，不改生产合同。synthetic publisher为新身份而非native执行，令牌仅内存；所有records随原ownedDB清理。剩余局部类型13716ms，actualPG段仍68998ms待窗口。

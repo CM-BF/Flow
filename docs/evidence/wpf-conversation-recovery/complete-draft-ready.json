@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07 08:30:29 UTC",
+  "state": "SOURCE_LOCAL_READY_BROWSER_NOT_RUN",
+  "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "parentWorkerEntry": "apps/web/test/conversation-recovery.browser.ts",
+  "fixture": "apps/web/test/conversation-recovery.fixture.ts",
+  "journey": "complete-draft",
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "executionMetadataHead": "Final seal HEAD supplied by actual Git receipt; this preparation does not create a gate",
+  "actorBoundary": "One public synthetic profile publisher in original markedDB; zero runner processes/claims/heartbeats/native/provider",
+  "budget": {
+    "segmentTotalMs": 150000,
+    "spentMs": 81002,
+    "remainingMs": 68998,
+    "perAttemptMaxMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchMaxBytes": 67108864,
+    "retainedMaxBytes": 9437184,
+    "startRetainedMaxBytes": 4194304,
+    "perRunReserveBytes": 5242880,
+    "existingCombinedFreshFloorBytes": 4054056960
+  },
+  "evidenceObservation": {
+    "regularFiles": 642,
+    "bytesBeforeThisReport": 3260017,
+    "startHeadroomBeforeThisReport": 934287,
+    "method": "Own evidence only; no disk-free or process sampling for this preparation"
+  },
+  "requiresActualBeforeLaunch": [
+    "Explicit unique shared-PG and Chrome handback; fresh compatible concurrent budgets",
+    "Current exact21 claim, branch/HEAD/clean and source/dependency pins",
+    "Fresh disk resource observation, new unique run input, 0600 admin env from approved fixed test endpoint; never output its value",
+    "Original parent/outer collector, owned group/DB/scratch/env cleanup and conservative max elapsed charge"
+  ],
+  "currentRuntimeHolder": "No Web holder or reservation",
+  "existingPassedChecksNotRepeated": [
+    "full7",
+    "choice",
+    "CREATE two fault points",
+    "queue enqueue",
+    "task SSE delivery",
+    "50 controlled",
+    "12 observer"
+  ]
+}

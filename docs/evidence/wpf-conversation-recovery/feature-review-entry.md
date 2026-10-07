@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5`；17其他源同344f，只原两harness增加有界SSE旁路与选择。完整featureIN_PROGRESS。[增量源码/17源引用](sse-delivery-checkpoint.json)、[source审](sse-delivery-root-review.json)、[12pure+WebnoEmit实证](sse-local/manifest.json)及[独立local审](sse-local-root-review.json)；[本次任务详情SSE实际2/2](continuous-seventh-validation.md)待结果独审。原full7/choice/CREATE两点/Queue入队各保持绑定和通过，旧FAIL不改。
+当前组合target `4a60980b6dc756d46a720a9cbcb157a549555010`；仅原两harness新增真实Prepare后的完整草稿恢复选组，17其他源同d68。完整feature IN_PROGRESS。[最小delta/17源引用](complete-draft-checkpoint.json)、[真实准备顺序与synthetic publisher边界](complete-draft-source.md)。本次complete-draft浏览器 NOT_RUN；新actor源审0blocking、类型首红修正后exit0；[原任务详情SSE实际2/2](continuous-seventh-validation.md)已独立限定接受。原full7/choice/CREATE两点/Queue入队各保持固定绑定，旧FAIL不改。
 
 ## 55b已审基线与原证据（历史固定）
 

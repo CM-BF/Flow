@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T08:28:16.048075+00:00",
+  "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "state": "PASS_TYPES_NOT_BROWSER",
+  "parentExit": 0,
+  "noEmitExit": 0,
+  "actualElapsedMs": 5543.0334160337225,
+  "chargedMs": 5544,
+  "previousLocalChargedMs": 12103,
+  "cumulativeLocalChargedMs": 17647,
+  "remainingMs": 6353,
+  "observations": [
+    {
+      "kind": "pid",
+      "id": 57437,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "group",
+      "id": 57437,
+      "state": "ESRCH"
+    }
+  ],
+  "tmpAbsent": true,
+  "files": [
+    {
+      "path": "parent.stderr.log",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/parent.stdout.jsonl",
+      "bytes": 980,
+      "sha256": "d58af7e00356cbdd0823612a449d7c2427b16c2778b2936c4cd943e926820401"
+    },
+    {
+      "path": "run.py",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/run.py",
+      "bytes": 3594,
+      "sha256": "ca409fd9bdd3e26e598ab3e2cedf6081c3902e11d975b39251dd09322633e662"
+    },
+    {
+      "path": "sandbox.sb",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/sandbox.sb",
+      "bytes": 175,
+      "sha256": "a010356b85b71fab3bd23a211604ec70e2b9b917066b42c4c3659c1c713cb992"
+    },
+    {
+      "path": "segment.json",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/segment.json",
+      "bytes": 1152,
+      "sha256": "22a20527684a0e27c31cb678a42869ab13397d172e941c1010ed996e67670962"
+    },
+    {
+      "path": "types.log",
+      "original": "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "logTransport": "file redirect, no dual-pipe EOF claim",
+  "observerRerun": false,
+  "errors": []
+}

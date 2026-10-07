@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "SSE_DELIVERY_SELECTED_ACTUAL_PASS_PENDING_INDEPENDENT_REVIEW",
+  "state": "COMPLETE_DRAFT_SOURCE_TYPES_READY_BROWSER_NOT_RUN",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -156,7 +156,17 @@
       "adminEnvDeleted": true
     }
   ],
-  "nextSelection": null,
+  "nextSelection": {
+    "journey": "complete-draft",
+    "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+    "state": "NOT_RUN",
+    "requiredGroups": [
+      "cookieRead",
+      "completeDraft"
+    ],
+    "sourceReview": "complete-draft-root-review.json",
+    "localValidation": "complete-draft-checkpoint.json"
+  },
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
   "sourceTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",

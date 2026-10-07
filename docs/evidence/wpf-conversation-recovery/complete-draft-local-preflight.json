@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-07T08:26:18.551453+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "head": "fea37b408f6bf9d9fcde38afa760b903f38e5cf9",
+  "dirtyOnlyOwnMetadata": [
+    "docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+    "docs/evidence/wpf-conversation-recovery/continuous-seventh-manifest.json",
+    "docs/evidence/wpf-conversation-recovery/continuous-seventh-validation.md",
+    "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+    "docs/evidence/wpf-conversation-recovery/quality.md",
+    "plans/wpf-conversation-recovery/plan.md",
+    "plans/wpf-conversation-recovery/review.md",
+    "plans/wpf-conversation-recovery/status.md"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 36504,
+      "sha256": "394984fd1c26b12046d1a4936f165f9b186fb3023c560a86eaf4f5b0ae7f1618",
+      "blob": "0ec4408a1d52c71a5cb5fdc8ead000ab3a45381b"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 88285,
+      "sha256": "b4e356c03f7a9a8b7a0a1307578d0082cfbcc2df829d753de882642a4033dce2",
+      "blob": "ca8f6ac2b28bb870b0c07c0797a9cc2714f883ed"
+    }
+  ],
+  "tools": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/tsconfig.json",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/tsconfig.json",
+      "sha256": "af4bdc0413d25d7cc3ce81a6f2bd2d5488719e8434d155c4abd2427a24273b59"
+    }
+  ],
+  "freeBytes": 24084111360,
+  "additionalMaximumBytes": 10485760,
+  "previousLocalChargedMs": 6284,
+  "remainingMs": 13716,
+  "maxWorkMs": 8716,
+  "cleanupReserveMs": 5000,
+  "PG": false,
+  "Chrome": false
+}

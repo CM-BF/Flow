@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-07T08:08:04.957099+00:00",
+  "reviewer": "/root gpt-6-astra ultra",
+  "decision": "ACCEPTED_SELECTED_TASK_SSE_ACTUAL_AND_OWNED_CLEANUP_NOT_ASSISTANT_STREAM_OR_FULL_FEATURE_PASS",
+  "blockingFindings": [],
+  "run": "recsse-20261007-080319-408f68",
+  "executionHead": "1357d2faad03ac21cdd373c7791c6e1d4de91331",
+  "sourceTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "actual": {
+    "run": "recsse-20261007-080319-408f68",
+    "startedAt": "2026-10-07T08:03:40.903729+00:00",
+    "endedAt": "2026-10-07T08:03:51.747236+00:00",
+    "actualExit": 0,
+    "outerElapsedMs": 10843.4401670238,
+    "parentPid": 82815,
+    "outerPid": 82759,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "streamBytes": {
+      "stdout": {
+        "eof": true,
+        "bytes": 600
+      },
+      "stderr": {
+        "eof": true,
+        "bytes": 0
+      }
+    }
+  },
+  "accounting": {
+    "priorMs": 70158,
+    "chargeMs": 10844,
+    "spentMs": 81002,
+    "remainingMs": 68998,
+    "outerMs": 10843.4401670238,
+    "lateParentMs": 10229.626375,
+    "serializedParentMs": 10219.564792,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "verification": {
+    "rawFiles": 11,
+    "rawBytes": 16450,
+    "archiveOriginalPairs": 11,
+    "sourcePinsAgainstBothGitTargetsAndCurrent": 19,
+    "priorRawGitPaths": 122,
+    "priorRawBytes": 416104,
+    "manifestSha256": "78b6db7cafffe7e7efcd86481e56ca93b0a5ce188060184147a9e5c82b8d590d"
+  },
+  "causalEvidence": {
+    "groups": [
+      "cookieRead",
+      "sseDelivery"
+    ],
+    "frames": [
+      {
+        "nextCursor": 0,
+        "status": "queued",
+        "dataSha256": "de5d0e6ac06e949cbbfffa533ab4d314b3621d50409803dec5f805a0e3565695",
+        "entries": []
+      },
+      {
+        "nextCursor": 1,
+        "status": "cancelled",
+        "dataSha256": "50868e1ed1c04c522a90b15e2bd43d26635857a2a20852abce0c4f90ebcc9ecc",
+        "entries": [
+          {
+            "id": "87af3e4c-2753-4dbc-af3a-fac9342fab9e",
+            "cursor": 1,
+            "text": "Cancelled before execution."
+          }
+        ]
+      }
+    ],
+    "connections": 1,
+    "bytes": 1031,
+    "passiveObserverDetached": true,
+    "onlyInitialTaskRead": [
+      "GET /api/tasks/abe056e4-dbb8-42cd-99c5-a5169fea4549"
+    ],
+    "noObservingPageBusinessPost": true,
+    "appTimelineVisible": "assertion independently read in pinned browser source lines514-525; actual selected group PASS",
+    "cookieOnlyStream": true
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_11b0835a63db4fb39c4d580c74fa0d81",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.5976250000003347,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.8658750000013242,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 177,
+      "wireBytes": 1586,
+      "providerQueries": 0
+    },
+    "freshOwnedProcessObservations": [
+      {
+        "pid": 82815,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 82831,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 82837,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    ],
+    "scratchAbsent": true,
+    "envReceiptSha256": "581d7da3919c86c68e79840b4c480ea7730e14279ceebfa2936ebc68d5ab9910",
+    "envAbsent": true,
+    "dualEof": true,
+    "noRootDatabaseOrCredentialQueries": true
+  },
+  "limits": [
+    "Public queued task cancellation from second consumer, not observing-page Cancel action",
+    "Task details timeline SSE, not conversation assistant patch stream",
+    "No reconnect/replay-stream comprehensive coverage, no new screenshot",
+    "No full Recovery feature or main/deployment acceptance"
+  ],
+  "cleanCode": {
+    "scope": "read-only focused test/receipt review",
+    "findings": "Single passive observer preserved existing source pipe; bounded observer and listener cleanup; causal assertion rejects REST refill; no further source change required."
+  }
+}

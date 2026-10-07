@@ -259,3 +259,17 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 ### 2026-10-07 08:05:48 UTC — 原RECOVERY01-03/05任务SSE实证安全点
 
 复用原single-file parent+public cancel，实际2/2与清理完整，见continuous-seventh-validation；非conversation/assistant流。无源码修复/重跑旧绿检查，新段charge10844/累计81002/余68998。clean-code复核旁路职责、错误/资源边界和因果断言，没有以握手/POST回包/REST刷新冒delivery。当前仅自然记录/待结果独审，后继完整草稿/Steer/二中心保开放。
+
+
+## 2026-10-07 08:24:37 UTC — complete-draft 源码安全点
+
+- Stack：TypeScript fixture / public FlowClient / React App 的 Playwright 黑盒消费者。复用本地 find-skills、clean-code（原固定 sickn33 来源）、codebase-design、webapp-testing 与已授权 bounded brainstorming 设计；无安装。技能基线见 skills.json。
+- Scope：仅 fixture/browser，固定 fea37b408f6bf9d9fcde38afa760b903f38e5cf9；17其他源及旧选组不变。保持公开Prepare/目录/材料/原controller authority，不加入产品测试开关或第二HTTP fault系统。
+- 实际清理发现：最初recipe不允许未prepared稿选择材料；已落实root更正。写测试时进一步移除无效 knowledge.citations 第二DTO假设，严格复用现有citation数组；准备对话框仍打开时不能用ARIA-hidden背景role断言，先等待CREATE ACK及原dialog关闭/回焦。accepted检查绑定该turn原key，避免原prepare accepted记录提前满足。
+- 命名/职责：seedCompleteDraft仅一次synthetic publisher+微小knowledge seed；局部search/close helpers只处理真实语义控件。注册token不返回、不落wire；配置metadata未冒provider可用。无通用调度/缓存或新registry。
+- 有意义的断言：Prepare的CREATE身份；复原后无额外POST/正文；B→A metadata验证并保A/B冻结顺序；未验证knowledge阻止Send；显式搜索后首turn完整refs与下一稿分离。
+- 未解决/限度：当前NOT_RUN，聚焦新actor源审待root；新完整材料组不覆盖真实Steer/二中心/assistant流。受影响noEmit待本队DPERF实际结束，复用余13716ms含5s清理；不重跑已通过观察器/50。
+
+### 2026-10-07 08:29:19 UTC — 本段类型结果与清理
+
+原fea37 noEmit实际exit2，5818.783ms；观察器records()的窄返回type不含knowledge，错误仅在新selector读取。fixed4a用现object(record.data)先验证对象再读，不扩大observer输出接口或用any掩盖；行为assertions不变。复测5543.033ms/exit0/log0B，root只批准的有限4000ms追加已记。local累计17647/24000；首97540与后57437 PID/group分别freshESRCH、两ownTMP均已原样归档后删除；日志为文件而非pipes，不宣称双EOF。无PG/Chrome/HTTP/provider/observer重测，旧浏览器段81002/剩68998不变。新synthetic actorroot固定fea审0blocking，后4a只类型读取修正；完整feature仍IN_PROGRESS。

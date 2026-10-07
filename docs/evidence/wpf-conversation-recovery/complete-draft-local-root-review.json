@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-07T08:29:33.607899+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent read-only",
+  "decision": "ACCEPTED_NARROW_TEST_TYPE_FIX_AND_AFFECTED_NOEMIT_ACTUAL_NOT_BROWSER_PASS",
+  "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "blockingFindings": [],
+  "reviewedDiff": "Only selectedDrafts observer data object narrowing; actual selection criteria, shared read-only observer, product source and browser/fixture lifecycle unchanged from reviewed fea37.",
+  "sourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "393b963317d23cb3cc0248d69945e842dca661f960c04c849f4059191174b822"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "394984fd1c26b12046d1a4936f165f9b186fb3023c560a86eaf4f5b0ae7f1618"
+    }
+  ],
+  "actuals": [
+    {
+      "phase": "first",
+      "source": "fea37b408f6bf9d9fcde38afa760b903f38e5cf9",
+      "archivedFilesVerified": 6,
+      "logHashVerified": true,
+      "startedAt": "2026-10-07T08:26:26.619114+00:00",
+      "parentExitReportedByActualOwner": 1,
+      "childExitRecorded": 2,
+      "elapsedMs": 5818.782832939178,
+      "chargeMs": 5819,
+      "freshPidAndGroupAbsent": [
+        {
+          "kind": "pid",
+          "id": 97540,
+          "state": "ESRCH"
+        },
+        {
+          "kind": "group",
+          "id": 97540,
+          "state": "ESRCH"
+        }
+      ],
+      "originalScratchAbsent": [
+        "/private/tmp/recovery-complete-draft-local-yhrmn6nw"
+      ],
+      "errors": [
+        "types exit 2"
+      ]
+    },
+    {
+      "phase": "fixed",
+      "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
+      "archivedFilesVerified": 6,
+      "logHashVerified": true,
+      "startedAt": "2026-10-07T08:28:00.694628+00:00",
+      "parentExitReportedByActualOwner": 0,
+      "childExitRecorded": 0,
+      "elapsedMs": 5543.0334160337225,
+      "chargeMs": 5544,
+      "freshPidAndGroupAbsent": [
+        {
+          "kind": "pid",
+          "id": 57437,
+          "state": "ESRCH"
+        },
+        {
+          "kind": "group",
+          "id": 57437,
+          "state": "ESRCH"
+        }
+      ],
+      "originalScratchAbsent": [
+        "/private/tmp/recovery-complete-draft-local-fixed-28nh5q5p"
+      ],
+      "errors": []
+    }
+  ],
+  "localAccounting": {
+    "priorSseMs": 6284,
+    "firstRedMs": 5819,
+    "fixedPassMs": 5544,
+    "totalChargedMs": 17647,
+    "finiteTotalAfter4000msExtension": 24000,
+    "remainingMs": 6353,
+    "cleanupReserveMs": 5000
+  },
+  "history": "First red has exactly two TS2339 knowledge-property errors; preserved original 428B log. Fixed noEmit has exit0 and empty diagnostic log.",
+  "method": "Verified archive hashes, segment/stdout equality, actual owner-reported parent exit, fresh exact PID/group signal0 and original scratch absence. Regular-file redirected child output; no dual-pipe EOF claim.",
+  "browser": "NOT_RUN; original spent81002/rem68998 unchanged. Fresh fixed execution metadata, exact claim/nooverlap, combined resource check and explicit unique sharedPG handoff still required before browser start. No new source gate for ordinary in-scope fix."
+}
