@@ -1,0 +1,186 @@
+{
+  "kind": "svc06-b2b-artifact-result",
+  "recordedAt": "2026-10-07T09:04:59.436676+00:00",
+  "sourceTarget": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+  "resultTarget": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+  "artifactSource": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "manifestDigest": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "sourceHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+  },
+  "verdict": "AUTHOR_REPORTED_PASS_PENDING_INDEPENDENT_REVIEW",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 10416,
+      "sha256": "021efcca6324828760a23ed3c02ad98a3c1de5429c7cf90916209bdb0e7bfba6"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 2126,
+      "sha256": "571218639b1fea8c965b1e93004c19a46e8b364dc9d8f6e3fcabf6a0e6f95c10"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 4697,
+      "sha256": "137164f0bd8789f6ce96b095192602e4cd5eee3fb74f67ac6bf71d7651b4a4e6"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 39665,
+      "sha256": "6ea9115426c211f3ee08a324f4cdeb41b87819395d8416cf9af1157658cc46b1"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/RESULT.md",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 2868,
+      "sha256": "9b7cf8e57a22e9dc5af019bbf1e0d5afdb122d3711455fde8b834b5a351ffa22"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/build-record.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 806,
+      "sha256": "6b47e9a9b13e37d3ad75422fdf9a4a99cdddb688d499632bc19bcb4ce1812aaa"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/imports.stderr",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/imports.stdout",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 2310,
+      "sha256": "da466282f1d9d199cfdc23268346fe19bc2a63631460bb1785bf27afc34c6283"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/owned-root.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 160,
+      "sha256": "8abd3045ea04b1af49149acb803063384f7670f388564facdf76a051b158ea0e"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/reservation.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 187,
+      "sha256": "65b6c8b972821f02c355567e1841295b08588785bf6f8a0777145475bc496291"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/result-descriptor.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 275,
+      "sha256": "6ad4f441e28482dac2e730286fbc3c2f52900cf02b93ab05d1888f51e26b39fb"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/result.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 4986,
+      "sha256": "ba676af2edd7b3a79bc69cffbc28ad1227f1cd1a431b6c14260a8c818e7d70dc"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/outer-report.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 5158,
+      "sha256": "e323975f103d033402e9a7fd28d9224dd259124760a43fbfdee5180b21abb3f4"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/execution-preflight.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 1366,
+      "sha256": "f690fc730ad54f4e4dbefe7bac9d4d81bb08f1d895f96027ebcded90390dc1e4"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/independent-review.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 1689,
+      "sha256": "344470f18cf32559c647b094e335f662340f92a802e694e23ceee4a69b90b620"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/result-analysis.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 6954,
+      "sha256": "b23f3ecce7207bbe3655f339473f97696cba669a3d4035949cc8f33e23774fcf"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/result-status-check.json",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 238,
+      "sha256": "b5183d5b045b36c4bbb490e0b55bc1db3b116e1f10a2005297525cd880eae855"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 11812,
+      "sha256": "dfe676caae9d9ddf53c95fe624b4290290367adc352d505cf77fa67114319758"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "fixedRef": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+      "bytes": 25389,
+      "sha256": "39cec89d5da77274594c33031410b3a720015b605fedc398006288bcbf240561"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/manifest.json",
+      "fixedRef": "3d07e788df6d0e427ec4c28f06d231ca9ad70938",
+      "bytes": 39497,
+      "sha256": "ad112ce3894fe41072bcaff13055f1930c045a5ff3706d5d2ff29181c1599b72"
+    }
+  ],
+  "bindingCount": 20,
+  "retainedPrivateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/owner.json",
+      "bytes": 243,
+      "sha256": "3a45d38c756f5ca3d7151aa1a384db5a4b987b534b5fe947ee504d8153ba36f9",
+      "dev": 16777234,
+      "ino": 123686974,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/manifest.json",
+      "bytes": 3196239,
+      "sha256": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+      "dev": 16777234,
+      "ino": 123713756,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/stage-bd62cc22-f23b-445a-bd1f-5c3d56089269.json",
+      "bytes": 806,
+      "sha256": "6b47e9a9b13e37d3ad75422fdf9a4a99cdddb688d499632bc19bcb4ce1812aaa",
+      "dev": 16777234,
+      "ino": 123713815,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3",
+    "dev": 16777234,
+    "ino": 123686972,
+    "uid": 501,
+    "mode": "0o700",
+    "isDirectory": true
+  },
+  "preparationInheritance": {
+    "manifestPath": "docs/evidence/svc06/update-b2b-candidate/manifest.json",
+    "sha256": "ad112ce3894fe41072bcaff13055f1930c045a5ff3706d5d2ff29181c1599b72",
+    "executionFreshVerified": "69source+19runtime+20then-current records+4prior method at execution-preflight; plan/status/review now intentionally supersede preparation metadata, fixed historical blobs preserved"
+  },
+  "runSourceUnchanged": true,
+  "workload": "one real offline build and import/read-only selection proof; no factory/runRunner/native binary/provider/PG/personal operations",
+  "runtimeWindowReturned": "Immediately after completed 09:02:10.132Z / outer30975ms, group absent and both EOF; Lead acknowledged release",
+  "sourceComplete": "Claim remains own plan/evidence, products unchanged"
+}
