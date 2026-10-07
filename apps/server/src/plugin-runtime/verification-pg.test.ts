@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
-import { afterAll, beforeAll, describe, expect, test } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test } from 'vitest';
 import type { PoolClient } from 'pg';
 import { FlowClient } from '@flow/client';
 import { createServer } from '../index.js';
@@ -94,6 +94,8 @@ const makeBinding = (m: Material, o?: Parameters<typeof binding>[2]) => transact
 const v4 = (host: Host): VerifierRunnerClaimRequest => ({ protocol: 'flow.runner-claim.v4', runnerId: host.id, requestId: randomUUID(), pluginVerifierExecution: cap });
 const client = (host: Host) => new FlowClient({ baseUrl: base, token: host.token });
 const clearQueue = () => pool.query("UPDATE flow.tasks SET status='cancelled' WHERE status='queued'");
+beforeEach(() => fixture.checkWork());
+afterEach(() => fixture.checkWork());
 let old: Material, historical: PluginToolBinding;
 beforeAll(async () => {
   await fixture.create(); await fixture.stage('database-created'); await openApp(true);
