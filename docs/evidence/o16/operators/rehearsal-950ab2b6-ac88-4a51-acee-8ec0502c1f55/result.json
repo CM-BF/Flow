@@ -1,0 +1,45 @@
+{
+  "run": "rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55",
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "outcome": "rehearsal-passed",
+  "selected": 1,
+  "process": {
+    "driverPid": 90446,
+    "outcome": "processes-complete",
+    "phase": "work",
+    "samples": 189,
+    "ownedGroups": [
+      {
+        "pgid": 90446,
+        "state": "stopped"
+      },
+      {
+        "pgid": 93458,
+        "state": "stopped"
+      },
+      {
+        "pgid": 95930,
+        "state": "stopped"
+      }
+    ],
+    "reason": null,
+    "last": {
+      "freeBytes": 24050634752,
+      "rawBytes": 57397,
+      "runtimeBytes": 0,
+      "runtimeEntries": 0
+    },
+    "exitCode": 0,
+    "signalCode": null,
+    "elapsedMs": 9839
+  },
+  "capturedRawBytes": 318,
+  "retainedRawBytes": 318,
+  "finalMetrics": {
+    "freeBytes": 24050651136,
+    "rawBytes": 57889,
+    "runtimeBytes": 0,
+    "runtimeEntries": 0
+  },
+  "nativeQueryCalls": 0
+}

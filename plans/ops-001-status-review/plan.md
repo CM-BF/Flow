@@ -54,7 +54,7 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 
 - [x] **OPS-001-12** 将真实运行入口的动态资源/浏览器定位预检收进既有[局部验证方法](../../docs/quality/local-validation.md)，避免准备遗漏消耗独占窗口；不新增工具框架或重复通过检查，原失败、独审和各已消费工作段预算保留。普通0provider专库/浏览器可由co-lead按实测初始化/收尾成本另开有限段，不将旧90/60秒当feature终身限额；安全/验收语义变化按真实风险审查，详见同一方法。
 
-资源恢复后沿同一方法允许一个实际PG重旅程，加三队各最多一段无共享端点的普通有界局部检查；另允许经隔离与合计预算核对的一个离线artifact构建和一个0PG浏览器段并行，详见唯一[局部验证方法](../../docs/quality/local-validation.md)。真实PG、共享服务/源冻结、性能测量及unknown仍排他，旧packet在安全点最小修订后才采用；co-leads自治，不逐命令审批。owner先核原固定包是否需最小修订、真实隔离和全部并行段相加的新增预算，原门槛/选中数/清理保持；安装/完整build/PG/Chrome/个人服务不算普通局部段，共享资源/可写源/性能基准仍串行。TUI与X01真实tar分别计量，不以0PG抹掉进程开销。全局agent仍本次heartbeat10与工具cap，不增槽；既有成果接收不等待本管理改动。
+资源恢复后的当前并行准入只由[局部验证方法](../../docs/quality/local-validation.md#ready-validation)定义：普通专库、浏览器、本地段和完整构建各按真实隔离、合计资源与原packet核验；不在父计划复制另一份可漂移上限。co-leads自治、旧运行不追溯放宽、固定输入/选中数/清理及unknown保持，实际agent上限与工具cap不变。已审产品接收不等待管理文件。
 
 - [ ] **OPS-001-13** 提取最小test-only有限连接观察：先核TUI既有observeConnections，再以两个真实消费者验证zero/busy/unknown，不拥有DB删除或资源归属；沿[局部验证后继](../../docs/quality/local-validation.md)。
 - [ ] **OPS-001-14** ready（当前发布/F04短片收口后下一工程改进）：消除重复的operator/测试进程期限实现。先比较O16与SVC05H的两个真实消费者，结合SVC07的EPERM收尾覆盖原失败事实，固定受监督PID/自有组、独立期限、输出上限及primary failure/cleanup unknown接口；detached个人服务永不由其停止。独立scope与至少两个实际消费者验证，不合并DB删除、资源归属、源码绑定或连接观察职责；当前已固定恢复/F04候选不为迁移重开或重跑。
@@ -84,3 +84,5 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 ## OPS-001-14 的资源计量后继（2026-10-07）
 
 进程监督Module及实际caller已经交付；后续资源计量保持独立职责，不向OPS14加入callback，也不合并DB删除、身份或源码绑定。Quick b2在6.142秒、产品断言前因retained cap退出，其两次先后扫描再相减会受目录增长影响；ACCESS旧live扫描遇Chrome临时目录消失是另一失败方式，不能合并为同一已证根因。沿两个实际caller下一安全变更选最小共用计量Interface：显式排除子树、logical与allocated分列、文件/目录消失与身份变化/越界/真实I/O unknown分开；保原上限和unknown记录。只需目录增长/消失的直接验证与两consumer，不建inventory平台、不迁移全库、不阻原Quick修复、不重跑已绿产品。具体独立scope由原co-lead协调，当前仅登记待实施验收。
+
+2026-10-07资源计量准备增量：DPERF browser-lifecycle-repair仍有先扫描scratch、再扫描父目录相减的第三个真实caller，与Quick同类非原子计量；ACCESS消失语义仍分开。O16本次零模型旅程收口后的原native_center_owner准备OPS-METER01小片，拟独立tools/owned-resource-measurement；具体caller固定源与下一安全变更由Web原owner协调。SVC09发布路径不让位，不修改当前冻结运行输入；至少两个实际仍会使用caller采用后才算复用交付。

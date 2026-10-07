@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T08:35:55.597266+00:00",
+  "run": "rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55",
+  "outerTool": {
+    "sessionId": 10442,
+    "finalChunk": "6fecf3",
+    "exitCode": 0,
+    "stdout": "{\"run\":\"rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55\",\"outcome\":\"rehearsal-passed\",\"operator\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55\"}\n"
+  },
+  "selected": 1,
+  "passed": 1,
+  "elapsedMs": 9839,
+  "rawCapturedBytes": 318,
+  "sealedRunFiles": 14,
+  "sealedRunBytes": 58855,
+  "database": {
+    "name": "flow_o16_7fe4d8d62a444ce198a126a8f5b73366",
+    "marker": "41b4a02d-b92c-4b33-b1a0-6f07e6e790b9",
+    "measuredBytesBeforeDrop": 13687831,
+    "normalDrop": true,
+    "remaining": [],
+    "connections": [
+      {
+        "elapsedMs": 1,
+        "rows": []
+      }
+    ]
+  },
+  "directory": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-mY3g4f",
+    "dev": 16777234,
+    "ino": 123660056,
+    "observed": "absent",
+    "removed": true
+  },
+  "runtimeBytesBeforeCleanup": 31031,
+  "groups": [
+    {
+      "pgid": 90446,
+      "observed": "absent"
+    },
+    {
+      "pgid": 93458,
+      "observed": "absent"
+    },
+    {
+      "pgid": 95930,
+      "observed": "absent"
+    }
+  ],
+  "watchdog": {
+    "pid": 90420,
+    "observed": "absent"
+  },
+  "serverClosed": true,
+  "resourcesErrors": [],
+  "windowReturned": true,
+  "providerCalls": 0,
+  "oldRunResources": "unchanged FAIL/KEEP, never probed or reused"
+}

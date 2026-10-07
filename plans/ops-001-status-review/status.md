@@ -483,3 +483,7 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 当前普通local与独立PG按既有隔离方法连续修复，准备不预占共享窗口。P02原两次失败不是额度终身耗尽；新的有界段由co-lead按fresh实际归属协调。SVC09已有明确owner/候选，等待原片安全交付，不重复创建另一发布器。
 
 2026-10-07T08:21:18.665591+00:00：CHAT05P02原两次失败和PG03成功分别封存，真实factory/runRunner注入材料2,225,539B/9页完整一致，0provider；当前主线focused组合types0。ENG01L一次initialize/close已有记录，但原超限outerFAIL不改，后续exact清理独立成功。P02/ENG01L原owner已正式停写归还范围；SVC09由assignment_review实施，O16由原native_center_owner按f5a固定组合准备新旅程，旧FAIL/KEEP不动。证据分别在各唯一status与I02固定接收记录；共享PG于08:12:42归还Mika，本队当前无holder。
+
+2026-10-07T08:36:00Z：原O16当前主线准备已独立审查，owner按原排他120+30秒段实际启动，旧FAIL/KEEP不动。新两专库有限并行规则已落[唯一局部方法](../../docs/quality/local-validation.md#ready-validation)：最多2个普通零模型PG段，核全center/pg-boss/admin连接及集群余量、独立写资源和合计字节；浏览器总1、安装/完整构建/性能/个人服务与unknown仍排他。当前段不追溯扩权，后继ready组合由co-leads自治；未运行新负载或改变资源门槛。
+
+2026-10-07T08:35:27.281Z：O16本次当前主线零模型公开旅程1/1通过，9839ms；两个依赖child产物在机械验证后仍未接受，再由独立合成actor作准确版本CAS接受并读取统一结果。自有专库marker/连接[]/normalDROP remaining[]、3组与watchdogabsent、exact临时目录removed，实际窗口已归还Web ready Recovery；原首次FAIL/KEEP不动。原始结果待独审，不能作为真实模型规划/工程资格或恢复continuity证明。

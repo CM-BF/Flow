@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:26:21.093155+00:00 / main 2a7e004b；本批仅已交付记录与看板实际来源收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:43:57.389992+00:00 / main e528d27a；本批O16真实零模型结果与OPS方法已审受控接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a；本次仅受审17个文档/回执 |
+| 工作基线 / HEAD | main e528d27ae4d2a8a2aa7807471aa8585b81a760c2；O16 42路径与OPS 3文档精确固定输入 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | P02 13与ENG01L 6产品对固定receipt及当前main逐字一致；本次17个metadata逐diff核对，D05/FLOW/OPS由native_center_owner独立doc review，0产品复测。 |
-| 已集成main状态 / HEAD | main/origin 2a7e004b已含工具全文接线、工程宿主结果与SVC09登记；4320 08:20:31实际191来源。个人服务未随本批改变。 |
+| 检查状态 | O16新公开HTTP/PG旅程1/1、两个依赖child与独立合成actor接受通过；354绑定独核，0重测。OPS三文档独审通过。 |
+| 已集成main状态 / HEAD | main/origin e528d27a；本批固定45路径待此提交fast-forward，个人服务不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 完整正文接线与工程宿主限定结果已交主线；看板已显示新版发布工作的唯一状态。 |
-| 下一可用交付 | 当前固定版本的完整目标旅程与保留旧页面资源的新版发布接线并行推进。 |
+| 当前产出 | 目标确认、两个依赖节点后台推进、固定产物与独立接受的完整零模型旅程已通过。 |
+| 下一可用交付 | 新版发布接线正在独审；资源计量复用在本次目标旅程收口后继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -374,3 +374,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 本批证据：[工具全文结果与主线组合](../../docs/evidence/i02/chat05p02-pg03-intake.json)、[工程初始化与后续清理](../../docs/evidence/i02/eng01l-result-intake.json)。主线接收不启用真实SDK/CLI/UI，不改变个人af51/v18、d629/v3/c7b。
 
 2026-10-07T08:26:21.093155+00:00：本批受控接收P02/ENG01L限定完成回执、191来源实际部署与FLOW/OPS当前摘要；17文档的固定输入及独审见[收口记录](../../docs/evidence/i02/delivery-closeout-0828.json)。原失败、UNKNOWN时间与未部署范围保留，不重复产品检查或重启看板。
+
+2026-10-07T08:43:57.389992+00:00：[O16独审](../../docs/evidence/i02/o16-current-main-result-review.json)与[受控接收](../../docs/evidence/i02/o16-ops-intake.json)绑定实际新旅程、42自身路径和3份已审OPS文档。0产品复测/0provider/0个人服务操作；真实模型规划、工程资格与长任务恢复仍未验。

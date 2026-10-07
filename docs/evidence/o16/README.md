@@ -17,3 +17,5 @@ The fixed directory passed to reservePhase is a trusted host namespace, not a us
 ## CAS修复局部检查
 
 2026-10-06 19:34:22 UTC：固定4ae源码独审已通过。单个纯stub组首次实际运行1/1、exit0/1209ms，原25未重复；新增证据见 `decision-cas-validation-manifest.json`，等待增量独立复核。原19:15公开PG旅程1选中失败与全部red保留，独立接受未通过；数据库与目录KEEP，未重放/清理。前次局部检查资源不足NOT_RUN保持原件，此次fresh free1,430,429,696B通过1GiB+32MiB门槛。0PG/provider。
+
+2026-10-06 19:51:37 UTC：准备/CAS片已独审并受控main aca6e89214711ef3787ac3e3ee3b2754bb40b960，138文件逐字等924873交付；见 `preparation-main-receipt.json`。原PG red和KEEP未变；新公开旅程NOT_RUN，真实模型预算未授。

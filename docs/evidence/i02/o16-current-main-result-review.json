@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T08:43:57.389992+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "verdict": "APPROVED_ZERO_MODEL_PUBLIC_JOURNEY",
+  "resultTarget": "3fe343ef93cf7e6b6498ab034e95d799c355176b",
+  "delivery": "697e2b271d8b5f047a95b399a2d8f2fc2fbcfdaf",
+  "experimentSource": "343bd43691a5a179d256a2229a4db856d869a267",
+  "productBase": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "manifest": {
+    "path": "docs/evidence/o16/current-main-pg-r1/result-manifest.json",
+    "bytes": 9754,
+    "sha256": "ea14c074854fa7381e69763277fa67c504364711ce30b885bcc0657babd88abd"
+  },
+  "independentReview": [
+    "Read all actual public journey result, child artifact/verification/acceptance records, confirmation and independent decision intents, original reservation, supervisor, stdout/stderr and cleanup.",
+    "354 fixed Git/current source and evidence bindings independently hash/byte verified: 24 result and 330 unchanged preparation inputs. Prior 39 aliases and 3 runtime anchors remain unchanged.",
+    "Two dependency children are admitted by production scan; proposal/confirmation saves complete versioned inputs; mechanical passed is separate from accepted:null and deliveryCurrent:false. Separate synthetic actor accepts exact versions using observed null CAS; saved ACKs and history agree.",
+    "Old failed journey and KEEP resources unchanged. Current successful cleanup has marker, zero connections, normal DROP, absent groups and exact temporary-directory identity evidence.",
+    "Clean-code review: source delta only fixed current-base configuration/identity; no new scheduler, grant expansion or altered verification behavior."
+  ],
+  "observedEvidence": {
+    "run": "rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55",
+    "startedAt": "2026-10-07T08:35:17.433Z",
+    "cleanupAt": "2026-10-07T08:35:27.281Z",
+    "selected": 1,
+    "passed": 1,
+    "outerExitCode": 0,
+    "supervisorElapsedMs": 9839,
+    "testElapsedMs": 8147.177333,
+    "rawFiles": 14,
+    "rawBytes": 58855,
+    "providerQueries": 0
+  },
+  "blockingFindings": [],
+  "reviewerTests": 0,
+  "limitations": [
+    "Actual center/runner/HTTP/PG with injected synthetic planner/child outputs only.",
+    "No real native planning, Read, engineering writer qualification, user semantic acceptance, long-task resume or compaction continuity proved.",
+    "Original failed result/KEEP and initial unknown driver state retained; later cleanup facts do not rewrite historical records."
+  ],
+  "next": "Original owner records main receipt; O16-06 and full natural-language semantic acceptance remain open."
+}

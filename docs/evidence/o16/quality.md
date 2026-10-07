@@ -17,3 +17,9 @@
 2026-10-06 19:07:03 UTC：codebase-design/clean-code安全点复核：将总deadline从被监督operator事件循环移至小型独立进程；Interface仅register/complete，固定最多driver+两phase组，无DB/目录删除能力。pending persist与同步阻塞由真实owned Node stand-in验证，完成ACK直到实际退出前不解除，3新例通过。文件系统最终写入仍可能unknown，以开始前durable reservation保留事实；未扩大为OS/native停止证明。沿已批准bounded设计，不增加GO步骤、安装或PG。
 
 2026-10-06 19:34:22 UTC：clean-code安全点核CAS Interface与证据职责：observed accepted是CAS基线、candidate是待接受版本；单次command outcome先checkpoint再断言，业务rejected与cleanup异常分别保存。此次1纯例覆盖首次null/已有accepted/拒绝落盘与独立清理失败，不扩driver的fresh-node限定，不重跑原25。无源修改、无新增未解决产品finding；公开旅程仍失败待后继授权，不能以stub绿替代。
+
+2026-10-07T08:17:45Z 续接技能/clean-code安全点：Node24/公开HTTP/PG验收consumer沿本地find-skills→codebase-design/clean-code，路径和当前摘要见current-main-resumption.json，未安装。产品输入与实验职责分开；保单一runtime/scan/owner命令，不复制领取或活动正文领域；只更新实际主线直接闭包和必要consumer。准备与运行分别记，历史失败不改绿。
+
+2026-10-07T08:26:45.367Z 合并前clean-code复核：本次guard只覆盖实际固定闭包，仍同时核固定Git前像、工作hash与clean；动态SQL数组显式补035。仅2实验源变化，无第二调度/状态机，local薄caller复用OPS14。命令输出与资源checkpoint分离，原EPERM历史/最终absent如实，失败资源未碰。一次import绿不当完整PG绿；新manifest/独审后才排1selected新旅程。
+
+2026-10-07T08:38:29.810Z 结果封存/clean-code安全点：无产品源变化；一次真实公开组合验证既有模块责任，synthetic输入与真实协议/收据分开。normal DROP/目录删除前durable业务checkpoint、原首错和资源unknown不被本次成功覆盖。原14raw只封hash，不改写；本轮报告不把SDK声明当实际模型或只读mock当工程写权。

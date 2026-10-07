@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T08:26:45.367Z",
+  "kind": "O16_CURRENT_MAIN_PG_CANDIDATE_NOT_AUTHORIZED",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "experimentSource": "343bd43691a5a179d256a2229a4db856d869a267",
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "entry": "experiments/continuous-goal-acceptance/operator.mjs --rehearse",
+  "command": "FLOW_O16_PG_WINDOW=approved-one-shot TSX_DISABLE_CACHE=1 NODE_DISABLE_COMPILE_CACHE=1 /opt/homebrew/opt/node@24/bin/node --import tsx experiments/continuous-goal-acceptance/operator.mjs --rehearse",
+  "permission": "NOT_GRANTED_NEW_WINDOW_REQUIRED",
+  "selected": 1,
+  "provider": 0,
+  "query": 0,
+  "namespace": "Fresh rehearsal-UUID generated and exclusively reserved by operator; old rehearsal-502e3607-0657-484d-8fa2-ef3761f84889 forbidden",
+  "bounds": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentParentTotalMs": 150000,
+    "freshBaselineBytes": 1207959552,
+    "liveReserveBytes": 1073741824,
+    "rawBytes": 2097152,
+    "privateRuntimeBytes": 8388608,
+    "databases": 1,
+    "runtimeGroups": 2,
+    "driverGroups": 1,
+    "parallelBudget": "Add current other holders at fresh admission; not yet sampled or approved"
+  },
+  "inputClosure": {
+    "sourceIdentityFiles": 317,
+    "aliases": 39,
+    "fixedProductFiles": 289,
+    "sql": 33
+  },
+  "assertions": [
+    "Public goal entry and immutable proposal task/attempt identity",
+    "Owner complete-input confirmation with admissions zero",
+    "Original production scan automatically advances two dependent children",
+    "Mechanical verification succeeded while semantic acceptance remains absent",
+    "Independent actor names exact artifacts; CAS uses observed accepted delivery and records ACK/rejection before asserting",
+    "Current/history show two accepted current deliveries",
+    "No provider calls; durable evidence before normal own DB/directory cleanup; all owned groups and connections observed clear"
+  ],
+  "preserved": [
+    "Original 26 preparation checks not rerun",
+    "Original one selected zero passed PG failure and old DB/directory remain KEEP",
+    "Synthetic wording is not native/model semantic evidence"
+  ],
+  "remaining": "Unique independent delta review and explicit new shared PG window; no new products or resource action authorized here"
+}

@@ -1,0 +1,182 @@
+{
+  "at": "2026-10-07T08:38:29.810Z",
+  "kind": "O16_CURRENT_MAIN_PUBLIC_ZERO_QUERY_JOURNEY_RESULT",
+  "run": "rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55",
+  "source": "343bd43691a5a179d256a2229a4db856d869a267",
+  "executionHead": "baaf9bcb",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "outcome": "PASS_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "selected": 1,
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "outerExit": 0,
+  "nativeQueryCalls": 0,
+  "providerCalls": 0,
+  "old26Rerun": false,
+  "times": {
+    "operatorStartedAt": "2026-10-07T08:35:17.433Z",
+    "resourcesEndedAt": "2026-10-07T08:35:27.281Z",
+    "supervisorElapsedMs": 9839,
+    "testMs": 8147.177333,
+    "cleanupFreshConfirmedAt": "2026-10-07T08:35:55.597266+00:00"
+  },
+  "stages": {
+    "publicGoalId": "6d80ca30-071b-4492-852c-bb729f4e6f47",
+    "plan": {
+      "outcome": "actual-proposal-awaiting-owner",
+      "proposals": 1,
+      "applications": 0,
+      "taskAttemptIdentity": "actual center audit binds synthetic MCP proposal to current planner assignment"
+    },
+    "confirmation": {
+      "outcome": "confirmed-awaiting-separate-children-permit",
+      "admissionsBeforeScan": 0
+    },
+    "children": {
+      "outcome": "artifacts-awaiting-independent-review",
+      "admissions": 2,
+      "artifactCount": 2,
+      "mechanicallyPassedBeforeAccepted": true,
+      "dependencyCounts": [
+        0,
+        1
+      ]
+    },
+    "independentAcceptance": {
+      "actor": "synthetic-test-actor",
+      "scope": "Synthetic fixture text matches fixed material; only public acceptance wiring is tested.",
+      "acceptedCommands": 2,
+      "casBaselines": [
+        null,
+        null
+      ],
+      "currentDeliveries": 2,
+      "historyAcceptanceEntries": 2
+    }
+  },
+  "resources": {
+    "database": "flow_o16_7fe4d8d62a444ce198a126a8f5b73366",
+    "marker": "41b4a02d-b92c-4b33-b1a0-6f07e6e790b9",
+    "databaseBytesObservedBeforeDrop": 13687831,
+    "databasePeakAndWalBytes": "NOT_MEASURED_SEPARATELY",
+    "databaseDropped": true,
+    "connections": [
+      {
+        "elapsedMs": 1,
+        "rows": []
+      }
+    ],
+    "remaining": [],
+    "directory": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-mY3g4f",
+      "dev": 16777234,
+      "ino": 123660056
+    },
+    "directoryRemoved": true,
+    "runtimeObservedBeforeCleanupBytes": 31031,
+    "minimumObservedFreeBytes": 24038563840,
+    "rawCapturedBytes": 318,
+    "runEvidenceFiles": 14,
+    "runEvidenceBytes": 58855,
+    "groups": [
+      {
+        "pgid": 90446,
+        "observed": "absent"
+      },
+      {
+        "pgid": 93458,
+        "observed": "absent"
+      },
+      {
+        "pgid": 95930,
+        "observed": "absent"
+      }
+    ],
+    "watchdog": {
+      "pid": 90420,
+      "observed": "absent"
+    },
+    "errors": []
+  },
+  "rawBindings": [
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/driver.json",
+      "bytes": 58,
+      "sha256": "dc310638f4bb31cffba4b672c7422fbeb1743d7d659a1be82279cc5d5fe08180"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/reservation.json",
+      "bytes": 500,
+      "sha256": "47de32bf0e5cceb7adac23b8f1472b9793d807cabe42cb60249854d73c5dffcb"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/result.json",
+      "bytes": 966,
+      "sha256": "c869b70854d57f4763f5f16329287a47744a15b565222441e7a0f2f3cbe6295c"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/stdout.txt",
+      "bytes": 318,
+      "sha256": "6775d1c884f73496ffcdcd3ce39a9a04c68f213ebc0cf31c9e2869a3fbb9f6e1"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/supervision.json",
+      "bytes": 492,
+      "sha256": "47d917ca7e03ed6154bcbafe6e48c4b8f1d162ac75108631c20866c4314c6d65"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/watchdog.json",
+      "bytes": 68,
+      "sha256": "9c02f47b67e95cb93f3ac82ec6d48669d7e2e8f9c019e316ad10165b9d5d27ce"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/children.json",
+      "bytes": 17986,
+      "sha256": "c86b3f6ebbd0a6876a7d6fc275e5b542b9157c08a16f692da5c8cf16f1b67e5e"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/confirmation-draft.json",
+      "bytes": 1061,
+      "sha256": "72c69950da57d3e7dab78350e07231b43ab4f14517f9c1bf23e9e534913ff703"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/confirmation.json",
+      "bytes": 3239,
+      "sha256": "285dfdaf8f7cb5204eab7526ceab84d6fb5fbe2e1aa9b1d15c5a83bd0866ecf5"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/decision.json",
+      "bytes": 16929,
+      "sha256": "b568e9b5b5b28f0a9dfdb89eeabf23f80a3281a57fee37dbead53a297110c645"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/independent-decision-intent.json",
+      "bytes": 978,
+      "sha256": "2d2fc2f2abbec5f13116a8639d87c3a667365e4fbc27b396604a37b93840a19b"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/plan.json",
+      "bytes": 14787,
+      "sha256": "7b0c8d0f4c5e8041dcae21f1bc58bf4cf38f6f51a7d9099ff1156d067ad292c1"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-950ab2b6-ac88-4a51-acee-8ec0502c1f55/resources.json",
+      "bytes": 1473,
+      "sha256": "ff627ad4d98d5f798f9585d4cf0f503c700b0d1f95b08a138d5fe0995522fde6"
+    }
+  ],
+  "limitations": [
+    "Synthetic planner/child results use original SDK adapter/runtime/center plumbing with 0 provider queries; native model planning/actual Read/semantic quality not proved.",
+    "Independent acceptance is a separate synthetic actor through real public commands and exact artifact bindings, not a real human review.",
+    "Original failed run and KEEP DB/directory untouched; no resume, compaction continuity or retry claim.",
+    "No new model budget, grant, native write authority or personal service action.",
+    "Current result is author-observed and awaits independent review/main receipt."
+  ]
+}

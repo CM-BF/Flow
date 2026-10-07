@@ -1,6 +1,6 @@
 import { PHASE_LIMITS } from './permit.mjs';
 
-export const BASE = '8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974';
+export const BASE = 'f5a13cbed6b75151f34e6924ec7e10c8894acf48';
 export const MATERIAL = '项目：纸鸢。版本：0.1。新增能力：草稿预览。发布状态：内部测试，尚未正式发布。';
 export const REQUIREMENT = Object.freeze({
   originalGoal: '根据固定材料为纸鸢0.1准备一段简洁中文发布说明。先起草，再使用草稿与同一材料核对事实并给出最终修订稿；最终交付由独立用户判断。',
