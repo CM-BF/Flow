@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-07T12:07:35.954358+00:00",
+  "phase": "new independent direct-only 20000ms incl5000cleanup, prior30082 CLOSED/no credit",
+  "source": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ],
+    "state": "active",
+    "branch": "codex/web-plugin-runtime-management",
+    "origin": "new",
+    "taskId": "WPF-PLUGIN-RUNTIME01",
+    "worker": "w01_owner",
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+    "createdAt": "2026-10-07T10:50:07.619Z",
+    "updatedAt": "2026-10-07T10:50:07.619Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "live": {
+    "path": "/private/tmp/w01-plugin-r4-admission-live-20261007.json",
+    "realpath": "/private/tmp/w01-plugin-r4-admission-live-20261007.json",
+    "bytes": 173993,
+    "sha256": "5018a6e282660388c4e35f460fa69a4193d8b9ede13add012e7725a47d2c4e26"
+  },
+  "pinsVerified": 534,
+  "manifestFilesVerified": 12,
+  "sourceReview": {
+    "path": "/private/tmp/root-plugin-direct-r4-source-review-20261007.json",
+    "realpath": "/private/tmp/root-plugin-direct-r4-source-review-20261007.json",
+    "bytes": 5569,
+    "sha256": "2e3e5cbd6c50e7248f25e2e90d1bddde9350cf13f10d86fa3f5670132eb718dc"
+  },
+  "caller": {
+    "path": "/private/tmp/plugin-direct-r4/run.py",
+    "realpath": "/private/tmp/plugin-direct-r4/run.py",
+    "bytes": 15450,
+    "sha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3"
+  },
+  "binding": {
+    "path": "/private/tmp/plugin-direct-r4/binding.json",
+    "realpath": "/private/tmp/plugin-direct-r4/binding.json",
+    "bytes": 5440,
+    "sha256": "603c92ed351229fbcdb622c82f47e5d9d99e4c79c564a10bdf217cb461986862"
+  },
+  "manifest": {
+    "path": "/private/tmp/plugin-direct-r4/manifest.json",
+    "realpath": "/private/tmp/plugin-direct-r4/manifest.json",
+    "bytes": 3041,
+    "sha256": "2e74fd0922bc6b854064b7c6c93629ad26b1402bb534cc8ffb832b3313a28be7"
+  },
+  "previousPreparedPreserved": "/private/tmp/plugin-r4-before-admission-wpl2l1ol",
+  "freeBytes": 21915217920,
+  "minimumFree": 6199705600,
+  "preparedBytes": 309906,
+  "effectiveStreamBytes": 279918,
+  "outer": "/private/tmp/plugin-direct-r4-actual-j6qy99ui",
+  "holder": "Web only 0network local; Mika UPSTREAM 1PG/0Chrome separately scheduled; this9MiB already in34MiB potential locals; oldKEEP retained"
+}

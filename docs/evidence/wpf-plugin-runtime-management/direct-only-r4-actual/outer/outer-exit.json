@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T12:07:48.812128+00:00",
+  "collectorPid": 14748,
+  "pid": 14833,
+  "pgid": 14833,
+  "command": [
+    "python3",
+    "/private/tmp/plugin-direct-r4/run.py",
+    "/private/tmp/plugin-direct-r4"
+  ],
+  "finishedAt": "2026-10-07T12:07:49.693475+00:00",
+  "actualExitCode": 0,
+  "elapsedMs": 881.3574999803677,
+  "errors": [],
+  "streams": {
+    "stdout": {
+      "bytes": 741,
+      "dropped": 0,
+      "eof": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "dropped": 0,
+      "eof": true
+    }
+  },
+  "stdoutSha256": "03514674dd62e6b6e622db3ee44e615a33cee0d7846993fd041334f79177f6b8",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

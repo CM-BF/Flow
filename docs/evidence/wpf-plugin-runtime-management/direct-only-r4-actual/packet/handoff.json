@@ -1,0 +1,41 @@
+{
+  "state": "SOURCE_PREPARED_NOT_RUN",
+  "command": [
+    "python3",
+    "/private/tmp/plugin-direct-r4/run.py",
+    "/private/tmp/plugin-direct-r4"
+  ],
+  "binding": "/private/tmp/plugin-direct-r4/binding.json",
+  "report": "/private/tmp/plugin-direct-r4/preparation.json",
+  "noRuntimeAuthorization": true,
+  "expected": {
+    "file": "apps/web/test/plugin-runtime-command.test.ts",
+    "names": "/private/tmp/plugin-direct-r4/expected-tests.json",
+    "count": 15
+  },
+  "proposal": {
+    "totalMs": 20000,
+    "cleanupReserveMs": 5000,
+    "workMs": 15000,
+    "scratchCap": 8388608,
+    "retainedCap": 1048576,
+    "directJsonReserve": 262144,
+    "terminalReserve": 131072,
+    "outerReserve": 65536,
+    "processes": "1 Node + 1 Vitest worker thread; only required esbuild helper in same owned PGID; Python supervisor and bounded Git preflight",
+    "network": false,
+    "pg": false,
+    "chrome": false,
+    "strictRerun": false,
+    "runtimeAuthorized": false
+  },
+  "acceptance": "Handlers cover work/cleanup; restored before terminal sealing. Acceptance requires actual outer exit0, complete matching unique terminal, sealed result/budget/direct hashes, child exit0, exact15/onefile, dual EOF/drop0, known owned absence, elapsed and retained within bounds. Disk PASSED alone never sufficient.",
+  "metadataHead": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+  "bindingSha256": "f118f4f33a38f71d89bfa3a8dffdc6810c9b5810ad775d254ef51ef85719db8a",
+  "parent": {
+    "path": "/private/tmp/plugin-direct-r4/run.py",
+    "realpath": "/private/tmp/plugin-direct-r4/run.py",
+    "bytes": 15450,
+    "sha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3"
+  }
+}

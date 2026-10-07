@@ -1,0 +1,271 @@
+{
+  "at": "2026-10-07T12:09:25.157411+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "decision": "APPROVED_DIRECT15_ACTUAL_AND_COMPLETE_RETURN",
+  "blockingFindings": [],
+  "target": {
+    "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "launchHead": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+    "branch": "codex/web-plugin-runtime-management",
+    "claim": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1 / seven scopes",
+    "callerSha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3",
+    "admittedBindingSha256": "603c92ed351229fbcdb622c82f47e5d9d99e4c79c564a10bdf217cb461986862",
+    "admittedManifestSha256": "2e74fd0922bc6b854064b7c6c93629ad26b1402bb534cc8ffb832b3313a28be7"
+  },
+  "actual": {
+    "start": "2026-10-07T12:07:48.812128+00:00",
+    "end": "2026-10-07T12:07:49.693475+00:00",
+    "outerExit": 0,
+    "childExit": 0,
+    "files": 1,
+    "exactCases": [
+      "validates before HTTP and does not create an unknown command for invalid input",
+      "rejects an invalid generated key before HTTP (0)",
+      "rejects an invalid generated key before HTTP (1)",
+      "uses a later same-revision GET but prevents a pre-ACK delayed GET from overwriting that ACK",
+      "does not regress a higher acknowledged revision to a lower read revision",
+      "accepts real public enable and disable ACK codecs without claiming loaded or callable",
+      "freezes one command before await and blocks duplicate submission",
+      "keeps a first typed409 as a rejection with the exact submitted draft",
+      "keeps prior UNKNOWN after retry status 403 and a successful GET until exact original ACK",
+      "keeps prior UNKNOWN after retry status 404 and a successful GET until exact original ACK",
+      "keeps prior UNKNOWN after retry status 409 and a successful GET until exact original ACK",
+      "does not turn a malformed read ACK into a pending mutation or write retry",
+      "ignores an old accepted response after live authority changes even when transport ignores abort",
+      "rejects a retained retry callback for a different unresolved command",
+      "observer failure cannot swallow transmission or turn accepted ACK into UNKNOWN"
+    ],
+    "passed": 15,
+    "failed": 0,
+    "pending": 0,
+    "todo": 0,
+    "strictRerun": false,
+    "elapsedMs": {
+      "outer": 881.3574999803677,
+      "lateTerminal": 842.639,
+      "budget": 842.301
+    },
+    "chargeMs": 882,
+    "newLimitMs": 20000,
+    "cleanupReserveMs": 5000,
+    "phaseState": "CLOSED",
+    "unusedMsNotNewCredit": 19118
+  },
+  "independentChecks": {
+    "uniqueStdoutTerminalExactlyMatchesDisk": true,
+    "resultBudgetDirectHashesMatchTerminalAndReceipt": true,
+    "outerStdoutSha256": "03514674dd62e6b6e622db3ee44e615a33cee0d7846993fd041334f79177f6b8",
+    "outerStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "innerStreams": {
+      "direct-stdout": {
+        "eof": true,
+        "bytes": 73,
+        "dropped": 0
+      },
+      "direct-stderr": {
+        "eof": true,
+        "bytes": 0,
+        "dropped": 0
+      }
+    },
+    "outerStreams": {
+      "stdout": {
+        "bytes": 741,
+        "dropped": 0,
+        "eof": true
+      },
+      "stderr": {
+        "bytes": 0,
+        "dropped": 0,
+        "eof": true
+      }
+    },
+    "errors": [],
+    "freshOwnedIdentities": [
+      {
+        "identity": 14748,
+        "state": "ESRCH"
+      },
+      {
+        "identity": -14748,
+        "state": "ESRCH"
+      },
+      {
+        "identity": 14833,
+        "state": "ESRCH"
+      },
+      {
+        "identity": -14833,
+        "state": "ESRCH"
+      },
+      {
+        "identity": 15068,
+        "state": "ESRCH"
+      },
+      {
+        "identity": -15068,
+        "state": "ESRCH"
+      }
+    ],
+    "freshScratchAbsent": true,
+    "scratchOwnedIdentity": [
+      16777234,
+      124114770
+    ],
+    "totalCurrentRetainedBytesAcrossBothRoots": 336921,
+    "retainedFiles": [
+      {
+        "path": "/private/tmp/plugin-direct-r4/README.md",
+        "bytes": 2703,
+        "sha256": "fed3c25bee6f2469221fc1f3b90b469104e933e230dec37d943c1d4aad61e8c3"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/STOP-DRAFT.json",
+        "bytes": 1220,
+        "sha256": "0168a6685c887a445734335b81659c7f0deb3fb91940f0477b30944f7691d730"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/binding.json",
+        "bytes": 5440,
+        "sha256": "603c92ed351229fbcdb622c82f47e5d9d99e4c79c564a10bdf217cb461986862"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/budget.json",
+        "bytes": 387,
+        "sha256": "633a6227df3e315edc432b5878c2b2282b2be43053148ec3de2bde22b691a8ad"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/consumed.json",
+        "bytes": 136,
+        "sha256": "3a75e30e475afe02b98e34ba7d8dfb01a966c630c41b9fb4e7e2c1aada37e1ab"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/direct-stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/direct-stdout.txt",
+        "bytes": 73,
+        "sha256": "2f2736e42049d98ee610cad06665a8788af1ea1d369b9b47c27ce07bcb95ddab"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/direct.json",
+        "bytes": 4885,
+        "sha256": "dc20131de7e0c1a4a2b86799ae68441428c7be6710f6c9f3e510e661939b1944"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/expected-tests.json",
+        "bytes": 1225,
+        "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/handoff.json",
+        "bytes": 1686,
+        "sha256": "02e4a6d26bfd898f0da165ed736994402af25068c27b482009935434ee272a6f"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/manifest.json",
+        "bytes": 3041,
+        "sha256": "2e74fd0922bc6b854064b7c6c93629ad26b1402bb534cc8ffb832b3313a28be7"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/pins.json",
+        "bytes": 224484,
+        "sha256": "957848c26bce76fda79ec235933b8953b6a1071e8375cdd3dcc72007d150934e"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/preparation.json",
+        "bytes": 6129,
+        "sha256": "cfa7e8488b1b06a2f95c34ac967d994dddfadb247d9aa7d229bcdc1eb346c5ca"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/repair.diff",
+        "bytes": 24176,
+        "sha256": "d55a2d5ef59b84dd90dfadcfce5db2f20c37301e19e594c41e2f784f2c991c68"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/result.json",
+        "bytes": 13574,
+        "sha256": "65abdc78f606d0f8dca097a04596c52cbda16f2efdc20dabc69bbaca55cc9897"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/resume.diff",
+        "bytes": 23068,
+        "sha256": "079da797838c32177922ce1c8f61069b5e59e23fb2dea9e5f6787014ed2861c3"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/run.py",
+        "bytes": 15450,
+        "sha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/sandbox.sb",
+        "bytes": 155,
+        "sha256": "ea7d6c99f56d305c09ff698886d8d42993b2dc6bc8705bc2c8483d82214a06ff"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/started.json",
+        "bytes": 1022,
+        "sha256": "a3965c871de0f471ffa5cc7d72de337dc29a3c50267dc27f86d29fc4f8581ebc"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/terminal.json",
+        "bytes": 723,
+        "sha256": "9c2a7ca58e3aced8e9fd4dc0ac9a25a2472df89e6cda5c58166265d7b8adf39f"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4/vitest.config.mjs",
+        "bytes": 1129,
+        "sha256": "faba2539f6afae692ee628dca2392ffebfe2807f148cc1f012a732746b5cc48c"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/admission.json",
+        "bytes": 2902,
+        "sha256": "8a682d8f3aacba9ae927ee9c6c659d49d9f6dabee70671df1842f629d5ce8451"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/cleanup-accounting.json",
+        "bytes": 1642,
+        "sha256": "50705245ce868536f1201d613de4c7a8bb0ceddb480b352cbe023668765ca6d3"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/outer-exit.json",
+        "bytes": 703,
+        "sha256": "3c931ac537e010cae22e2fbcc3cf77587feb3b8a7edf62ffa2bffd6b1f0b7714"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/outer-start.json",
+        "bytes": 227,
+        "sha256": "9a3c79b50558d6a6514b651abd6998b1b4b1a800b4b477d939940be60a7d5379"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/outer-stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/outer-stdout.txt",
+        "bytes": 741,
+        "sha256": "03514674dd62e6b6e622db3ee44e615a33cee0d7846993fd041334f79177f6b8"
+      }
+    ],
+    "sourceUnchangedSince6544AndCallerUnchangedSinceReview": true
+  },
+  "meaning": [
+    "Confirms exact runtime-command tests with real public client codecs and controlled/mock transport: input/key preflight, original command freezing, duplicate suppression, UNKNOWN preservation through403/404/409 retry and GET, exact original ACK, stale same-revision reads, authority changes, retained stale callback, observer error handling.",
+    "This is one direct test file; no live center HTTP, PG, provider or browser was invoked. Module browser matrix and actual Settings host integration remain required separate evidence.",
+    "Fresh child/outer exits and complete dual streams repair the prior incomplete execution evidence; prior30082/30000 FAILED,93B loss and51raw remain historical failures and do not get rewritten."
+  ],
+  "receipt": {
+    "path": "/private/tmp/plugin-direct-r4-actual-j6qy99ui/cleanup-accounting.json",
+    "sha256": "50705245ce868536f1201d613de4c7a8bb0ceddb480b352cbe023668765ca6d3",
+    "completeReturnAt": "2026-10-07T12:08:23.129744+00:00"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-plugin-direct-r4-source-review-20261007.json",
+    "sha256": "2e3e5cbd6c50e7248f25e2e90d1bddde9350cf13f10d86fa3f5670132eb718dc"
+  },
+  "cleanCode": "Reviewed actual assertions against fixed behavior, failure/unknown separation, output ownership and no duplicate runtime state. No further fixes identified in this direct-only segment.",
+  "next": "Owner natural status/evidence archival; manager assigns fixed module-browser/actual-host followups according to existing scopes and unique resource window. Parent mapping is a separate cross-lead factual correction, not a gate on direct results."
+}

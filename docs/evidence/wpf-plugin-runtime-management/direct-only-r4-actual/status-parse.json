@@ -1,0 +1,30 @@
+{
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web / root；external_web_d01_owner",
+      "value": "Web / root；external_web_d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "record": "PASSED 6544b66b9b711ba861c67547417c3eb5c5bca074；限定既有strict和本次direct15完整实际，browser6 NOT_RUN；旧父FAILED保留"
+  }
+}

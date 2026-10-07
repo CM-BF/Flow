@@ -1,0 +1,327 @@
+--- /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/run.py
++++ /private/tmp/plugin-direct-r4/run.py
+@@ -1,119 +1,227 @@
+-"""Bounded sequential compiler/direct checks, adapted from the owned Release local caller."""
++"""Direct-only bounded revision of the existing plugin caller. PREPARED rejects launch."""
+ import datetime,errno,hashlib,json,os,selectors,shutil,signal,stat,subprocess,sys,time
+ from pathlib import Path
+-BASE=Path(sys.argv[1]).resolve(); SCRATCH=BASE/'scratch'; started=time.monotonic(); errors=[]; process=None; stopped=False
+-b=json.loads((BASE/'binding.json').read_text()); pinfile=Path(b['pinSet']['path']); assert hashlib.sha256(pinfile.read_bytes()).hexdigest()==b['pinSet']['sha256']; b['pins']=json.loads(pinfile.read_text())['pins']+b['extraPins']; limit=b['limitMs']/1000; work=limit-b['cleanupReserveMs']/1000
++BASE=Path(sys.argv[1]).resolve(); SCRATCH=BASE/'scratch'; started=time.monotonic(); errors=[]; process=None; stopped=False; scratch_identity=None
++b=json.loads((BASE/'binding.json').read_text()); assert b['state']=='ADMITTED_LOCAL' and len(b['steps'])==1 and b['steps'][0]['name']=='direct'; pinfile=Path(b['pinSet']['path']); assert hashlib.sha256(pinfile.read_bytes()).hexdigest()==b['pinSet']['sha256']; b['pins']=json.loads(pinfile.read_text())['pins']+b['extraPins']; limit=b['limitMs']/1000; work=limit-b['cleanupReserveMs']/1000
+ now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ def save(n,v):(BASE/n).write_text(json.dumps(v,indent=2)+'\n')
++# Refuse reuse before any output mutation, including dangling paths.
++output_names=('consumed.json','started.json','result.json','budget.json','terminal.json','direct.json','direct-stdout.txt','direct-stderr.txt')
++assert not any(os.path.lexists(BASE/name) for name in output_names), 'output already exists; original evidence kept'
++assert not os.path.lexists(SCRATCH), 'preexisting scratch; kept'
++with (BASE/'consumed.json').open('x') as consumed:
++ consumed.write(json.dumps({'consumedAt':now(),'bindingSha256':sha(BASE/'binding.json')})+'\n')
++
+ def scan_error(e):
+  if e.errno!=errno.ENOENT:raise e
+-def sizes(root):
+- logical=allocated=0
+- for directory,dirs,files in os.walk(root,followlinks=False,onerror=scan_error):
+-  dirs[:]=[n for n in dirs if not (Path(directory)/n).is_symlink()]
+-  for n in files:
+-   try:s=(Path(directory)/n).lstat()
++def partition():
++ # One traversal and mutually exclusive path categories; no moving-tree subtraction.
++ result={k:{'logical':0,'allocated':0}for k in ('prepared','scratch','raw','terminal')}
++ for directory,dirs,files in os.walk(BASE,followlinks=False,onerror=scan_error):
++  for name in dirs:
++   if (Path(directory)/name).is_symlink():raise RuntimeError('symlink directory; measurement UNKNOWN')
++  for name in files:
++   path=Path(directory)/name;relative=path.relative_to(BASE)
++   try:info=path.lstat()
+    except FileNotFoundError:continue
+-   if stat.S_ISREG(s.st_mode):logical+=s.st_size;allocated+=s.st_blocks*512
+- return logical,allocated
+-def alive():
+- if process is None:return False
+- try:os.killpg(process.pid,0);return True
+- except ProcessLookupError:return False
++   if not stat.S_ISREG(info.st_mode):raise RuntimeError('nonregular file; measurement UNKNOWN')
++   key='scratch'if relative.parts[0]=='scratch'else 'prepared'if str(relative)in b['preparedFiles']else 'terminal'if str(relative)in ('consumed.json','started.json','result.json','budget.json','terminal.json')else 'raw'
++   result[key]['logical']+=info.st_size;result[key]['allocated']+=info.st_blocks*512
++ return result
++
++def note(value):
++ if value not in errors:errors.append(value)
++
++def presence(kind,identity):
++ try:(os.killpg if kind=='group'else os.kill)(identity,0);return 'PRESENT'
++ except ProcessLookupError:return 'ABSENT'
++ except BaseException as e:note(kind+' probe '+str(identity)+':'+type(e).__name__);return 'UNKNOWN'
++
++def poll_child():
++ if process is None:return None
++ try:return process.poll()
++ except BaseException as e:note('child poll:'+type(e).__name__);return None
++
++def scratch_state():
++ try:SCRATCH.lstat();return 'PRESENT'
++ except FileNotFoundError:return 'ABSENT'
++ except BaseException as e:note('scratch probe:'+type(e).__name__);return 'UNKNOWN'
++
++def alive():return process is not None and presence('group',process.pid)!='ABSENT'
+ def stop(sig):
+  if process:
+   try:os.killpg(process.pid,sig)
+   except ProcessLookupError:pass
++  except BaseException as e:note('signal '+str(sig)+':'+type(e).__name__)
+ def request_stop(sig,frame):
+  global stopped
+- stopped=True;errors.append('soft-stop:'+str(sig));stop(signal.SIGTERM)
+-handlers={s:signal.signal(s,request_stop) for s in (signal.SIGTERM,signal.SIGINT)}
+-report={'startedAt':now(),'state':'FAILED','head':b['head'],'steps':[],'samples':[],'cleanup':{},'ownedGroups':[]};selector=selectors.DefaultSelector();streams={};received=0
+-# raw cap includes the prepared packet, direct JSON and all caller logs, with terminal reserve.
+-raw_cap=b['rawCap']-sizes(BASE)[0]-131072
+-
+-def sample():
+- free=shutil.disk_usage(BASE).free;logical,allocated=sizes(SCRATCH);report['samples'].append({'elapsedMs':round((time.monotonic()-started)*1000,3),'free':free,'scratchLogical':logical,'scratchAllocated':allocated})
+- if free<=b['stopFreeBytes'] or max(logical,allocated)>b['tmpCap']:raise RuntimeError('resource stop')
+- return free
++ stopped=True;note('soft-stop:'+str(sig))
++handlers={}
++report={'startedAt':now(),'state':'FAILED','head':b['head'],'steps':[],'samples':[],'cleanup':{},'ownedGroups':[]};selector=selectors.DefaultSelector();streams={};received=0;raw_cap=0
++
++def sample(phase):
++ try:parts=partition()
++ except BaseException:
++  report['measurementUnknown']=True;raise
++ free=shutil.disk_usage(BASE).free;retained=sum(parts[k]['logical']for k in ('prepared','raw','terminal'))
++ observation={'phase':phase,'elapsedMs':round((time.monotonic()-started)*1000,3),'free':free,'partitions':parts,'retained':retained}
++ if phase!='work' or len(report['samples'])<64:report['samples'].append(observation)
++ else:report['omittedWorkSamples']=report.get('omittedWorkSamples',0)+1
++ if free<=b['stopFreeBytes'] or max(parts['scratch'].values())>b['tmpCap'] or retained>b['rawCap']:raise RuntimeError('resource stop')
++ return free,parts
+ 
+ def drain(timeout):
+  global received
+- for key,_ in selector.select(timeout):
+-  data=os.read(key.fileobj.fileno(),65536);s=streams[key.data]
+-  if not data:s['eof']=True;selector.unregister(key.fileobj);continue
+-  s['bytes']+=len(data);keep=data[:max(0,raw_cap-received)];s['file'].write(keep);received+=len(keep);s['dropped']+=len(data)-len(keep)
+-  if s['dropped']:raise RuntimeError('raw cap')
++ for key,_ in selector.select(max(0,timeout)):
++  stream=streams[key.data]
++  try:data=os.read(key.fileobj.fileno(),65536)
++  except BlockingIOError:continue
++  except BaseException as e:
++   note(key.data+' read:'+type(e).__name__);selector.unregister(key.fileobj);continue
++  if not data:
++   stream['eof']=True;selector.unregister(key.fileobj);key.fileobj.close();continue
++  stream['bytes']+=len(data);keep=data[:max(0,raw_cap-received)]
++  try:
++   if stream['file'] is None:raise OSError('output stream unavailable')
++   stream['file'].write(keep);stream['file'].flush();received+=len(keep)
++  except BaseException as e:note(key.data+' write:'+type(e).__name__);keep=b''
++  stream['dropped']+=len(data)-len(keep)
++  # A cap marks FAIL but never interrupts wait/EOF collection in cleanup.
++  if stream['dropped']:note(key.data+' raw cap')
+ try:
+- root=Path(b['worktree'])
+- def git(*a):return subprocess.check_output(['git',*a],cwd=root,text=True).strip()
+- assert git('rev-parse','HEAD')==b['head'] and git('branch','--show-current')==b['branch'] and git('status','--porcelain')==b['expectedDirty']
+- live=json.loads(Path(b['live']).read_text());assert live['state']=='available'
+- c=next(x for x in live['claims'] if x['claimId']==b['claim']);assert c['state']=='active' and c['version']==b['claimVersion'] and c['worker']=='w01_owner' and c['worktree']==str(root) and c['branch']==b['branch'] and sorted(c['scope'])==sorted(b['expectedScope'])
+- for other in live['claims']:
+-  if other['claimId']==c['claimId'] or other['state']=='released':continue
+-  assert not any(a==z or a.startswith(z+'/') or z.startswith(a+'/') for a in c['scope'] for z in other['scope']), 'scope conflict'
+- for p in b['pins']:
+-  path=Path(p['path']);assert str(path.resolve(strict=True))==p['realpath'] and path.stat().st_size==p['bytes'] and sha(path)==p['sha256'],p['path']
+- assert not SCRATCH.exists();SCRATCH.mkdir(mode=0o700);assert sample()>=b['startFreeBytes']
+- env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+- env.update(TMPDIR=str(SCRATCH),TMP=str(SCRATCH),TEMP=str(SCRATCH),NODE_DISABLE_COMPILE_CACHE='1',TSX_DISABLE_CACHE='1',NO_COLOR='1')
+- for step in b['steps']:
+-  assert time.monotonic()-started<work and not stopped
+-  process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(BASE/'sandbox.sb'),*step['command']],cwd=root,env=env,start_new_session=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+-  item={'name':step['name'],'startedAt':now(),'pid':process.pid,'pgid':process.pid};report['steps'].append(item);report['ownedGroups'].append(process.pid);save('started.json',report);print(json.dumps({'step':item,'base':str(BASE)}),flush=True)
+-  for n,pipe in [('stdout',process.stdout),('stderr',process.stderr)]:
+-   name=step['name']+'-'+n;os.set_blocking(pipe.fileno(),False);selector.register(pipe,selectors.EVENT_READ,name);streams[name]={'file':open(BASE/(name+'.txt'),'wb'),'eof':False,'bytes':0,'dropped':0}
+-  while selector.get_map() or process.poll() is None:
+-   if time.monotonic()-started>=work or stopped:raise RuntimeError('work deadline or stop')
+-   sample();drain(.03)
+-  item['exitCode']=process.wait();item['finishedAt']=now();item['groupAbsent']=not alive()
+-  if item['exitCode']!=0:errors.append(step['name']+' exit '+str(item['exitCode']));break
+-  if alive():raise RuntimeError('owned helper remains after step')
+- if len(report['steps'])==1 and not errors:
+-  path=SCRATCH/'direct.json';assert path.stat().st_size<=262144;raw=json.loads(path.read_text());shutil.copyfile(path,BASE/'direct.json')
+-  expected=json.loads((BASE/'expected-tests.json').read_text());suites=raw.get('testResults',[]);assert len(suites)==1
+-  assertions=suites[0]['assertionResults'];assert sorted(x['fullName'].strip() for x in assertions)==expected and all(x['status']=='passed' for x in assertions)
+-  assert raw['success'] is True and raw['numTotalTests']==15 and raw['numPassedTests']==15 and raw['numFailedTests']==0 and raw['numPendingTests']==0 and raw.get('numTodoTests',0)==0
+-  report['direct']={'files':1,'passed':15,'failed':0,'pending':0,'todo':0,'exactNames':True}
+-except BaseException as e:errors.append(type(e).__name__+':'+str(e))
+-finally:
++ for sig in (signal.SIGTERM,signal.SIGINT):handlers[sig]=signal.signal(sig,request_stop)
+  try:
+-  if alive():
+-   stop(signal.SIGTERM)
+-   while alive() and time.monotonic()-started<limit-2:
+-    process.poll();time.sleep(.02)
++  root=Path(b['worktree'])
++  def git(*a):return subprocess.check_output(['git',*a],cwd=root,text=True,timeout=2).strip()
++  assert git('rev-parse','HEAD')==b['head'] and git('branch','--show-current')==b['branch'] and git('status','--porcelain')==b['expectedDirty']
++  live=json.loads(Path(b['live']).read_text());assert sha(b['live'])==b['liveSha256'] and live['state']=='available'
++  c=next(x for x in live['claims'] if x['claimId']==b['claim']);assert c['state']=='active' and c['version']==b['claimVersion'] and c['worker']=='w01_owner' and c['worktree']==str(root) and c['branch']==b['branch'] and sorted(c['scope'])==sorted(b['expectedScope'])
++  for other in live['claims']:
++   if other['claimId']==c['claimId'] or other['state']=='released':continue
++   assert not any(a==z or a.startswith(z+'/') or z.startswith(a+'/') for a in c['scope'] for z in other['scope']), 'scope conflict'
++  for p in b['pins']:
++   path=Path(p['path']);assert str(path.resolve(strict=True))==p['realpath'] and path.stat().st_size==p['bytes'] and sha(path)==p['sha256'],p['path']
++  assert not SCRATCH.exists()
++  available,parts=sample('before-spawn')
++  assert parts['raw']['logical']==0 and parts['terminal']['logical']==(BASE/'consumed.json').stat().st_size,'unexpected output exists'
++  raw_cap=b['rawCap']-parts['prepared']['logical']-b['directJsonCap']-b['terminalReserveBytes']-b['outerReserveBytes']
++  report['outputAllowance']={'preparedBytes':parts['prepared']['logical'],'directJsonReserve':b['directJsonCap'],'terminalReserve':b['terminalReserveBytes'],'outerReserve':b['outerReserveBytes'],'effectiveStreamBytes':raw_cap}
++  assert raw_cap>0,'nonpositive effective raw; NOT_RUN'
++  assert available>=b['startFreeBytes'];SCRATCH.mkdir(mode=0o700)
++  scratch_stat=SCRATCH.stat();scratch_identity=(scratch_stat.st_dev,scratch_stat.st_ino)
++  assert all(step['name']=='direct'for step in b['steps'])
++  env={k:os.environ[k]for k in ('PATH','HOME','USER','LOGNAME','LANG','LC_ALL','LC_CTYPE','TZ')if k in os.environ}
++  env.update(TMPDIR=str(SCRATCH),TMP=str(SCRATCH),TEMP=str(SCRATCH),NODE_DISABLE_COMPILE_CACHE='1',TSX_DISABLE_CACHE='1',NO_COLOR='1')
++  for step in b['steps']:
++   assert time.monotonic()-started<work and not stopped
++   process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(BASE/'sandbox.sb'),*step['command']],cwd=root,env=env,start_new_session=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
++   item={'name':step['name'],'startedAt':now(),'pid':process.pid,'pgid':process.pid};report['steps'].append(item);report['ownedGroups'].append(process.pid)
++   for n,pipe in [('stdout',process.stdout),('stderr',process.stderr)]:
++    name=step['name']+'-'+n
++    streams[name]={'file':None,'eof':False,'bytes':0,'dropped':0}
++    os.set_blocking(pipe.fileno(),False);selector.register(pipe,selectors.EVENT_READ,name)
++    try:streams[name]['file']=open(BASE/(name+'.txt'),'xb')
++    except BaseException as e:note(name+' open:'+type(e).__name__)
++   save('started.json',report);print(json.dumps({'step':item,'base':str(BASE)}),flush=True)
++   while selector.get_map() or poll_child() is None:
++    if time.monotonic()-started>=work or stopped:raise RuntimeError('work deadline or stop')
++    sample('work');drain(.03)
++    if errors:raise RuntimeError('output or owned identity failure')
++   item['exitCode']=process.wait();item['finishedAt']=now();item['groupAbsent']=not alive()
++   if item['exitCode']!=0:errors.append(step['name']+' exit '+str(item['exitCode']));break
++   if alive():raise RuntimeError('owned helper remains after step')
++  if len(report['steps'])==1 and not errors:
++   path=SCRATCH/'direct.json';info=path.lstat();assert stat.S_ISREG(info.st_mode) and info.st_nlink==1 and info.st_size<=b['directJsonCap'];raw=json.loads(path.read_text());shutil.copyfile(path,BASE/'direct.json')
++   expected=json.loads((BASE/'expected-tests.json').read_text());suites=raw.get('testResults',[]);assert len(suites)==1 and Path(suites[0]['name']).resolve()==(root/b['expectedFile']).resolve()
++   assertions=suites[0]['assertionResults'];assert sorted(x['fullName'].strip() for x in assertions)==expected and all(x['status']=='passed' for x in assertions)
++   assert raw['success'] is True and raw['numTotalTests']==15 and raw['numPassedTests']==15 and raw['numFailedTests']==0 and raw['numPendingTests']==0 and raw.get('numTodoTests',0)==0
++   report['direct']={'files':1,'passed':15,'failed':0,'pending':0,'todo':0,'exactNames':True}
++ except BaseException as e:errors.append(type(e).__name__+':'+str(e))
++ finally:
++  # Each cleanup observation is independent; EPERM never means absence.
++  if alive():stop(signal.SIGTERM)
++  term_until=min(started+limit-2,time.monotonic()+1)
++  while process and time.monotonic()<term_until and (poll_child()is None or selector.get_map()):
++   try:drain(.02)
++   except BaseException as e:note('TERM drain:'+type(e).__name__);break
+   if alive():stop(signal.SIGKILL)
+   if process:
+    try:
+-    code=process.wait(timeout=max(.01,limit-1-(time.monotonic()-started)))
+-    if report['steps']:report['steps'][-1]['exitCode']=code
+-   except subprocess.TimeoutExpired:errors.append('child wait timeout')
+-  while selector.get_map() and time.monotonic()-started<limit-1:drain(.02)
+-  absent=[]
+-  for pgid in report['ownedGroups']:
+-   try:os.killpg(pgid,0);errors.append('owned group remains:'+str(pgid))
+-   except ProcessLookupError:absent.append(pgid)
+-  report['cleanup']['groupsAbsent']=absent;report['cleanup']['allGroupsAbsent']=len(absent)==len(report['ownedGroups'])
+-  if SCRATCH.exists():
+-   try:sample()
+-   except BaseException as e:errors.append('final resource:'+str(e))
+-   if (SCRATCH/'direct.json').exists() and not (BASE/'direct.json').exists() and (SCRATCH/'direct.json').stat().st_size<=262144:shutil.copyfile(SCRATCH/'direct.json',BASE/'direct.json')
+-   if report['cleanup']['allGroupsAbsent']:shutil.rmtree(SCRATCH)
+-  report['cleanup']['scratchAbsent']=not SCRATCH.exists()
+- except BaseException as e:errors.append('cleanup:'+str(e))
+- report['streams']={}
+- for name,s in streams.items():
+-  s['file'].close();report['streams'][name]={k:v for k,v in s.items() if k!='file'}
+-  if not s['eof'] or s['dropped']:errors.append(name+' incomplete')
+- selector.close();elapsed=(time.monotonic()-started)*1000
+- if elapsed>b['limitMs']:errors.append('total deadline')
+- report.update(errors=errors,finishedAt=now(),elapsedMs=round(elapsed,3),state='PASSED' if not errors and not stopped else 'FAILED');save('result.json',report)
+- save('budget.json',{'limitMs':b['limitMs'],'previousRuntimeMs':b['previousRuntimeMs'],'cleanupReserveMs':5000,'elapsedMs':report['elapsedMs'],'tmpCap':b['tmpCap'],'rawCap':b['rawCap']})
+- if sizes(BASE)[0]>b['rawCap']-16384:errors.append('final retained cap');report['state']='FAILED';save('result.json',report)
+- # Completion boundary: OS exit and unique terminal/hash must also match; a later signal cannot count as PASS.
+- if stopped:report['state']='FAILED';save('result.json',report)
+- for s,h in handlers.items():signal.signal(s,h)
+-terminal={'state':report['state'],'resultSha256':sha(BASE/'result.json'),'budgetSha256':sha(BASE/'budget.json'),'elapsedAfterWritesMs':round((time.monotonic()-started)*1000,3),'cleanup':report['cleanup'],'stepExits':[x.get('exitCode') for x in report['steps']]}
+-save('terminal.json',terminal);print(json.dumps(terminal),flush=True);sys.exit(0 if report['state']=='PASSED' else 1)
++    code=process.wait(timeout=max(.01,min(1,started+limit-1-time.monotonic())))
++    report['steps'][-1]['exitCode']=code
++   except BaseException as e:note('child wait:'+type(e).__name__)
++  while selector.get_map() and time.monotonic()<started+limit-1:
++   try:drain(.02)
++   except BaseException as e:note('final drain:'+type(e).__name__);break
++  identities=[{'pid':pgid,'pidState':presence('pid',pgid),'pgidState':presence('group',pgid)}for pgid in report['ownedGroups']]
++  report['cleanup']['identities']=identities
++  report['cleanup']['allGroupsAbsent']=all(x['pgidState']=='ABSENT'and x['pidState']=='ABSENT'for x in identities)
++  report['cleanup']['groupsAbsent']=[x['pid']for x in identities if x['pgidState']=='ABSENT']
++  if not report['cleanup']['allGroupsAbsent']:note('owned identity remains or UNKNOWN')
++  try:sample('reaped-before-delete')
++  except BaseException as e:note('final resource:'+type(e).__name__)
++  # Preserve a bounded actual JSON even when acceptance failed; never synthesize child exit.
++  try:
++   direct=SCRATCH/'direct.json'
++   if scratch_identity is not None:
++    current=SCRATCH.lstat();assert stat.S_ISDIR(current.st_mode) and (current.st_dev,current.st_ino)==scratch_identity,'scratch identity changed; KEEP'
++   if scratch_identity is not None and direct.exists() and not (BASE/'direct.json').exists():
++    info=direct.lstat();assert stat.S_ISREG(info.st_mode)and info.st_nlink==1 and info.st_size<=b['directJsonCap']
++    shutil.copyfile(direct,BASE/'direct.json')
++  except BaseException as e:note('direct preservation:'+type(e).__name__)
++  try:
++   if scratch_identity is not None and os.path.lexists(SCRATCH)and report['cleanup']['allGroupsAbsent']and not report.get('measurementUnknown'):
++    info=SCRATCH.lstat();assert stat.S_ISDIR(info.st_mode)and not SCRATCH.is_symlink()and (info.st_dev,info.st_ino)==scratch_identity
++    shutil.rmtree(SCRATCH);report['cleanup']['scratchDisposition']='REMOVED_OWNED'
++  except BaseException as e:note('scratch cleanup:'+type(e).__name__)
++  report['cleanup']['scratchIdentity']=list(scratch_identity) if scratch_identity is not None else None
++  report['cleanup'].setdefault('scratchDisposition','NOT_CREATED' if scratch_identity is None else 'KEEP')
++  report['cleanup']['scratchState']=scratch_state()
++  report['cleanup']['scratchAbsent']=report['cleanup']['scratchState']=='ABSENT'
++  if not report['cleanup']['scratchAbsent']:note('scratch remains')
++  report['streams']={}
++  for name,stream in streams.items():
++   try:
++    if stream['file'] is not None:stream['file'].close()
++   except BaseException as e:note(name+' close:'+type(e).__name__)
++   report['streams'][name]={k:v for k,v in stream.items()if k!='file'}
++   if not stream['eof']or stream['dropped']:note(name+' incomplete')
++  try:selector.close()
++  except BaseException as e:note('selector close:'+type(e).__name__)
++finally:
++ for sig,handler in handlers.items():
++  try:signal.signal(sig,handler)
++  except BaseException as e:note('handler restore:'+type(e).__name__)
++
++# Declared completion boundary: handlers are restored. Actual outer exit and the
++# complete matching terminal are mandatory; disk PASSED alone is insufficient.
++def persist():
++ elapsed=(time.monotonic()-started)*1000
++ if elapsed>b['limitMs']:note('total deadline')
++ complete=bool(report.get('direct'))and len(report['steps'])==1 and report['steps'][0].get('exitCode')==0
++ report.update(errors=errors,finishedAt=now(),elapsedMs=round(elapsed,3),state='PASSED'if complete and not errors and not stopped else'FAILED')
++ save('result.json',report);save('budget.json',{'limitMs':b['limitMs'],'previousRuntimeMs':0,'priorClosedPhaseMs':30082,'cleanupReserveMs':b['cleanupReserveMs'],'elapsedMs':report['elapsedMs'],'tmpCap':b['tmpCap'],'rawCap':b['rawCap'],'outputAllowance':report.get('outputAllowance'),'outerReserveBytes':b['outerReserveBytes']})
++def seal():
++ terminal={'state':report['state'],'resultSha256':sha(BASE/'result.json'),'budgetSha256':sha(BASE/'budget.json'),'directSha256':sha(BASE/'direct.json')if (BASE/'direct.json').exists()else None,'elapsedAfterWritesMs':round((time.monotonic()-started)*1000,3),'cleanup':report['cleanup'],'stepExits':[x.get('exitCode') for x in report['steps']]}
++ save('terminal.json',terminal)
++ return terminal
++persist()
++try:
++ _,parts=sample('after-result-budget')
++ if parts['terminal']['logical']>b['terminalReserveBytes']-16384:note('terminal reserve exceeded')
++except BaseException as e:note('final retained:'+type(e).__name__)
++persist();terminal=seal()
++# Bounded final check includes the written seal, not a stale pre-write estimate.
++try:
++ final_parts=partition()
++ retained=sum(final_parts[k]['logical']for k in ('prepared','raw','terminal'))
++ if final_parts['terminal']['logical']>b['terminalReserveBytes'] or retained+b['outerReserveBytes']>b['rawCap']:note('sealed retained cap')
++ if max(final_parts['scratch'].values())>b['tmpCap']:note('sealed scratch cap')
++ if shutil.disk_usage(BASE).free<=b['stopFreeBytes']:note('sealed free stop')
++except BaseException as e:note('sealed measurement:'+type(e).__name__)
++if (time.monotonic()-started)*1000>b['limitMs']:note('total deadline')
++if errors or stopped:
++ persist();terminal=seal()
++print(json.dumps(terminal),flush=True)
++sys.exit(0 if terminal['state']=='PASSED'else 1)

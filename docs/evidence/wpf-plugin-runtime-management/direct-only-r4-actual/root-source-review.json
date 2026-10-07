@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-07T12:05:57.125338+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "decision": "APPROVED_DIRECT_ONLY_CALLER_SOURCE_PREPARATION",
+  "blockingFindings": [],
+  "target": {
+    "productSource": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "metadataHead": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+    "branch": "codex/web-plugin-runtime-management",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+    "claim": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "claimVersion": 1,
+    "runPySha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3",
+    "bindingSha256": "f118f4f33a38f71d89bfa3a8dffdc6810c9b5810ad775d254ef51ef85719db8a",
+    "manifestSha256": "d76413612a09155f2d462757c49e84d8e1048ba59350258302b9b05aacd44c49"
+  },
+  "verification": {
+    "readCallerCompletely": true,
+    "basePins": 530,
+    "extraPins": 4,
+    "totalPinsIndependentlyRehashed": 534,
+    "pinLogicalBytes": 28647000,
+    "allRealpathsSizesHashesMatched": true,
+    "manifestFilesVerified": 12,
+    "productDiffSince6544": "none across apps/packages",
+    "localRemoteEqualAndClean": true,
+    "pythonAstParseOnly": true,
+    "runtimePerformed": false,
+    "consumedMarkerAbsent": true,
+    "scratchAbsent": true
+  },
+  "resolvedPriorFailures": [
+    {
+      "topic": "negative output allowance",
+      "evidence": "run.py:18-31,106-110,209-225",
+      "conclusion": "Single traversal partitions prepared/scratch/raw/terminal exclusively. Prepared 309636 B leaves 280188 B streams after reserving direct JSON262144+terminal131072+outer65536 inside1048576. Nonpositive capacity refuses before child launch. Post-write result/budget/terminal cap checks retained."
+    },
+    {
+      "topic": "cleanup interrupted by stream cap or signal error",
+      "evidence": "run.py:36-59,74-91,141-195",
+      "conclusion": "Probe EPERM becomes UNKNOWN; TERM/KILL errors are recorded; output cap marks failure without aborting cleanup drain. Bounded child wait, EOF collection, fresh PID/PGID checks and stream drop accounting remain reachable. Only this run owned matching scratch inode can be removed after known owned absence and valid measurement."
+    },
+    {
+      "topic": "acceptance based only on JSON pass",
+      "evidence": "run.py:131-139,183-227; binding.completionContract; README",
+      "conclusion": "Requires actual child exit0, exact onefile/15 names/allpassed/no skip/todo, no errors/stops, matching result/budget/direct terminal hashes, dual EOF/drop0 and known cleanup. Authoritative actual outer exit and exact unique stdout terminal are explicitly required; disk PASSED alone is not sufficient."
+    }
+  ],
+  "unchangedBoundaries": {
+    "sandbox": "(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath \"/private/tmp/plugin-direct-r4/scratch\") (literal \"/dev/null\"))\n(deny network*)\n",
+    "runner": "one Node Vitest / one threads worker; required esbuild same owned process group",
+    "selectedTest": "apps/web/test/plugin-runtime-command.test.ts",
+    "testCount": 15,
+    "strictRerun": false,
+    "networkPgChromeProvider": 0,
+    "fixtureState": "no data service",
+    "sourceWriteScopes": "original seven STOP; no source expansion",
+    "expectedResourceProposal": {
+      "totalMs": 20000,
+      "cleanupMs": 5000,
+      "scratchBytes": 8388608,
+      "retainedBytesIncludingPreparedAndOuter": 1048576
+    }
+  },
+  "executionAdmissionStillRequired": [
+    "d01 grants one new phase only after fresh cross-lead holder reconciliation; no historical30s or c3 leftover credit.",
+    "Bind exact current HEAD/clean/claim/live snapshot to the admitted state and recompute affected binding/manifest digests; caller,config,sandbox,tests and product remain the reviewed hashes.",
+    "Use max(proposal6190268416, latest combined floor presently at least6199705600, any newly retained declarations); preserve external draft/prior archive KEEP accounting once, not zero.",
+    "Outer collector independently records real exit/EOF/bytes/wall time and verifies unique stdout terminal against disk with result/budget/direct digests, under64KiB reserve. Missing/wrong terminal, dropped output, residual/UNKNOWN identity, elapsed or cap overrun remains FAILED/KEEP.",
+    "Future source/dependency changes need explicit delta review; ordinary fresh metadata admission binding does not require repeating unchanged source review."
+  ],
+  "priorEvidence": {
+    "rootActualReview": "/private/tmp/root-plugin-runtime-6544-local-result-review-20261007.json",
+    "sha256": "9a48b14fb8c7d990486ae5f37c08f221393501bc98850acb5f4d314399ebf6ce",
+    "priorPhase": "FAILED30082/30000ms;15JSONpass only/93Bdropped/childExitUNKNOWN;51raw retained",
+    "unchanged": true
+  },
+  "cleanCode": {
+    "scope": "existing caller error/cleanup flow, output budget partition, ownership and fixed test selection",
+    "result": "Prior defect fixes are localized to original temporary caller; no new generic framework or product behavior. Names/one-pass accounting/explicit error retention support review. No further blocking source changes identified."
+  },
+  "limitations": [
+    "Source preparation approval is not an actual test result or runtime permission.",
+    "Full PluginManagement browser six cases and actual App host integration are unrun; shared host/ACK/client main intake does not itself complete Web integration.",
+    "Parent task mapping remains explicitly UNKNOWN until unique canonical relationship is supplied; provenance is not fabricated hierarchy."
+  ]
+}

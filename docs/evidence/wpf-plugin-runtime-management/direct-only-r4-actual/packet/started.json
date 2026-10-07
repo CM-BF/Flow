@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-10-07T12:07:48.847890+00:00",
+  "state": "FAILED",
+  "head": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+  "steps": [
+    {
+      "name": "direct",
+      "startedAt": "2026-10-07T12:07:49.022094+00:00",
+      "pid": 15068,
+      "pgid": 15068
+    }
+  ],
+  "samples": [
+    {
+      "phase": "before-spawn",
+      "elapsedMs": 173.461,
+      "free": 21914423296,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 136,
+          "allocated": 4096
+        }
+      },
+      "retained": 310042
+    }
+  ],
+  "cleanup": {},
+  "ownedGroups": [
+    15068
+  ],
+  "outputAllowance": {
+    "preparedBytes": 309906,
+    "directJsonReserve": 262144,
+    "terminalReserve": 131072,
+    "outerReserve": 65536,
+    "effectiveStreamBytes": 279918
+  }
+}

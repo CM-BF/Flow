@@ -1,0 +1,30 @@
+{
+  "state": "PASSED",
+  "resultSha256": "65abdc78f606d0f8dca097a04596c52cbda16f2efdc20dabc69bbaca55cc9897",
+  "budgetSha256": "633a6227df3e315edc432b5878c2b2282b2be43053148ec3de2bde22b691a8ad",
+  "directSha256": "dc20131de7e0c1a4a2b86799ae68441428c7be6710f6c9f3e510e661939b1944",
+  "elapsedAfterWritesMs": 842.639,
+  "cleanup": {
+    "identities": [
+      {
+        "pid": 15068,
+        "pidState": "ABSENT",
+        "pgidState": "ABSENT"
+      }
+    ],
+    "allGroupsAbsent": true,
+    "groupsAbsent": [
+      15068
+    ],
+    "scratchDisposition": "REMOVED_OWNED",
+    "scratchIdentity": [
+      16777234,
+      124114770
+    ],
+    "scratchState": "ABSENT",
+    "scratchAbsent": true
+  },
+  "stepExits": [
+    0
+  ]
+}

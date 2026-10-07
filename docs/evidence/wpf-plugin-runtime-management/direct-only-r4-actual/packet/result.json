@@ -1,0 +1,671 @@
+{
+  "startedAt": "2026-10-07T12:07:48.847890+00:00",
+  "state": "PASSED",
+  "head": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+  "steps": [
+    {
+      "name": "direct",
+      "startedAt": "2026-10-07T12:07:49.022094+00:00",
+      "pid": 15068,
+      "pgid": 15068,
+      "exitCode": 0,
+      "finishedAt": "2026-10-07T12:07:49.686338+00:00",
+      "groupAbsent": true
+    }
+  ],
+  "samples": [
+    {
+      "phase": "before-spawn",
+      "elapsedMs": 173.461,
+      "free": 21914423296,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 136,
+          "allocated": 4096
+        }
+      },
+      "retained": 310042
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 177.074,
+      "free": 21914406912,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 209.465,
+      "free": 21914406912,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 241.48,
+      "free": 21914402816,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 273.858,
+      "free": 21914402816,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 306.25,
+      "free": 21914402816,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 337.465,
+      "free": 21914398720,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 369.856,
+      "free": 21914390528,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 402.246,
+      "free": 21914599424,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 434.085,
+      "free": 21914591232,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 466.448,
+      "free": 21914587136,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 498.842,
+      "free": 21914583040,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 530.105,
+      "free": 21914574848,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 561.126,
+      "free": 21914558464,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 592.624,
+      "free": 21914550272,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 623.574,
+      "free": 21914542080,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 654.537,
+      "free": 21914521600,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 685.537,
+      "free": 21914488832,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 716.213,
+      "free": 21914484736,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 748.595,
+      "free": 21914476544,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 780.966,
+      "free": 21914464256,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 813.358,
+      "free": 21914464256,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311064
+    },
+    {
+      "phase": "work",
+      "elapsedMs": 817.781,
+      "free": 21914451968,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 4885,
+          "allocated": 8192
+        },
+        "raw": {
+          "logical": 73,
+          "allocated": 4096
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 311137
+    },
+    {
+      "phase": "reaped-before-delete",
+      "elapsedMs": 841.396,
+      "free": 21914411008,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 4885,
+          "allocated": 8192
+        },
+        "raw": {
+          "logical": 4958,
+          "allocated": 12288
+        },
+        "terminal": {
+          "logical": 1158,
+          "allocated": 8192
+        }
+      },
+      "retained": 316022
+    },
+    {
+      "phase": "after-result-budget",
+      "elapsedMs": 842.298,
+      "free": 21914398720,
+      "partitions": {
+        "prepared": {
+          "logical": 309906,
+          "allocated": 335872
+        },
+        "scratch": {
+          "logical": 0,
+          "allocated": 0
+        },
+        "raw": {
+          "logical": 4958,
+          "allocated": 12288
+        },
+        "terminal": {
+          "logical": 14611,
+          "allocated": 28672
+        }
+      },
+      "retained": 329475
+    }
+  ],
+  "cleanup": {
+    "identities": [
+      {
+        "pid": 15068,
+        "pidState": "ABSENT",
+        "pgidState": "ABSENT"
+      }
+    ],
+    "allGroupsAbsent": true,
+    "groupsAbsent": [
+      15068
+    ],
+    "scratchDisposition": "REMOVED_OWNED",
+    "scratchIdentity": [
+      16777234,
+      124114770
+    ],
+    "scratchState": "ABSENT",
+    "scratchAbsent": true
+  },
+  "ownedGroups": [
+    15068
+  ],
+  "outputAllowance": {
+    "preparedBytes": 309906,
+    "directJsonReserve": 262144,
+    "terminalReserve": 131072,
+    "outerReserve": 65536,
+    "effectiveStreamBytes": 279918
+  },
+  "direct": {
+    "files": 1,
+    "passed": 15,
+    "failed": 0,
+    "pending": 0,
+    "todo": 0,
+    "exactNames": true
+  },
+  "streams": {
+    "direct-stdout": {
+      "eof": true,
+      "bytes": 73,
+      "dropped": 0
+    },
+    "direct-stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "errors": [],
+  "finishedAt": "2026-10-07T12:07:49.688441+00:00",
+  "elapsedMs": 842.301
+}

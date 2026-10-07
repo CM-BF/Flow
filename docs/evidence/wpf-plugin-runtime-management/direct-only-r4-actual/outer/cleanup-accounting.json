@@ -1,0 +1,67 @@
+{
+  "returnedAt": "2026-10-07T12:08:23.129744+00:00",
+  "decision": "PASSED_EXACT_DIRECT15_PENDING_INDEPENDENT_REVIEW",
+  "outer": "/private/tmp/plugin-direct-r4-actual-j6qy99ui",
+  "actualOuterExit": 0,
+  "uniqueTerminalMatches": true,
+  "terminalSha256": "9c2a7ca58e3aced8e9fd4dc0ac9a25a2472df89e6cda5c58166265d7b8adf39f",
+  "resultSha256": "65abdc78f606d0f8dca097a04596c52cbda16f2efdc20dabc69bbaca55cc9897",
+  "budgetSha256": "633a6227df3e315edc432b5878c2b2282b2be43053148ec3de2bde22b691a8ad",
+  "directSha256": "dc20131de7e0c1a4a2b86799ae68441428c7be6710f6c9f3e510e661939b1944",
+  "childExit": 0,
+  "files": 1,
+  "exactNames": 15,
+  "passed": 15,
+  "failed": 0,
+  "pending": 0,
+  "todo": 0,
+  "innerDualEOF": true,
+  "outerDualEOF": true,
+  "dropBytes": 0,
+  "identities": [
+    {
+      "pid": 14748,
+      "pidState": "ABSENT",
+      "pgidState": "ABSENT"
+    },
+    {
+      "pid": 14833,
+      "pidState": "ABSENT",
+      "pgidState": "ABSENT"
+    },
+    {
+      "pid": 15068,
+      "pidState": "ABSENT",
+      "pgidState": "ABSENT"
+    }
+  ],
+  "scratch": "ABSENT",
+  "scratchRemovedIdentity": [
+    16777234,
+    124114770
+  ],
+  "errors": [],
+  "chargeMs": 882,
+  "rawElapsedMs": {
+    "outer": 881.3574999803677,
+    "lateTerminal": 842.639,
+    "budget": 842.301
+  },
+  "newPhase": {
+    "limitMs": 20000,
+    "chargeMs": 882,
+    "unusedMs": 19118,
+    "state": "CLOSED",
+    "noMoreRun": true
+  },
+  "priorPhase": {
+    "limitMs": 30000,
+    "chargeMs": 30082,
+    "state": "CLOSED_FAILED",
+    "creditMs": 0
+  },
+  "strictRerun": false,
+  "networkPgChrome": 0,
+  "retainedBaseBytes": 330706,
+  "outerBytesBeforeReceipt": 4573
+}
