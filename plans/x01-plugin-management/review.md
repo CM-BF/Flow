@@ -8,7 +8,11 @@ Review target commit: d6f52c3a0db45eb69a57c68c54ff47423a8ccb79
 
 独立review仅读固定Git/manifest，核OPS14外部固定输入、同PID checkpoint、完整Git/claim receipt准入、30s和输出账、unknown与资源身份；不要执行新代码或改owner树。任意问题交owner修复。准备批准不开放实际窗口；依赖已按固定请求供给；实际仍需fresh资源/ledger及Mika一次OPEN。Darwin如OPS14预检报告EPERM/ownership unknown应HOLD，不降门禁或假称具备完整监督能力。
 
-本次唯一实际Stage A于2026-10-07 02:20:15 UTC在OPS14预检ownership unknown/errno1处HOLD；strict/tests未启动，结果忠实性独审待接收，见[原件与结果](../../docs/evidence/x01/enable-binding-local-result.md)。这不撤回源码静审，也不产生运行通过或第二次OPEN。
+本次唯一实际Stage A于2026-10-07 02:20:15 UTC在OPS14预检ownership unknown/errno1处HOLD；strict/tests未启动，见[原件与结果](../../docs/evidence/x01/enable-binding-local-result.md)。这不撤回源码静审，也不产生运行通过或第二次OPEN。
+
+结果忠实性审查：Mika / gpt-6-astra，2026-10-07T02:23:57Z，固定target `91f86b8df59e5ec623a533e2c13509da00217353`，**HOLD_RESULT_REVIEW_APPROVED，0 P1/P2**。15bindings（6raw 6072B、4support 53936B、5fixed）逐Git/WT/blob/bytes/SHA相符；[manifest](../../docs/evidence/x01/enable-binding-local-result-manifest.json)7347B/SHA `ad2c637495ee259a6888296e537dc10836217444ba38f7bd3d44ae1cd061eba6`。原4运行文件4376B、预检PID91903 exit0/EOF/最终absent但历史unknown、tool exit1、0strict/tests/tar、selected/pass=null、TMP未创建均忠实。完整时长/总量保持null；工具wall仅等待口径，不能证明完整30s窗口。manifest内PENDING原字节保留，本条记录随后到达的审查结论。
+
+依赖与解除条件：Mika及b01只读固定OPS14 SHA725bad…定位errno1于supervise.py:234的`os.killpg(child.pid,0)`，首次查询早于finish:269/reap:275，signals[]，不是Git业务失败或TERM/KILL失败。退出未reap leader的Darwin组查询行为只是候选解释，不据此认定权限/SIP/TCC/沙箱或后代残留。由原owner native_center_owner核平台组观察Interface，必要时记录诊断阶段/exit_observed/reaped并另获有界验证；后继X01须Lead新准入。local槽已归还，当前无OPEN，禁止本树降门禁、改donor或复用本窗口。源码静审范围保持d6/ade4，不将结果忠实性批准套用于Stage A通过或完整X01。
 
 ---
 
