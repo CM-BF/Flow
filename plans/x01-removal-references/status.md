@@ -11,7 +11,7 @@
 | 优先级 | 2 |
 | 最近更新时间 | 2026-10-07T12:50:16.963910+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
-| 任务完成时间 | 2026-10-07T13:30:55.845469+00:00 |
+| 任务完成时间 | 2026-10-07T13:30:55.845Z |
 | 独立审查时间 | 2026-10-07T12:47:52Z |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；此项原准备时间记录；R1已实际执行并另收尾 |
 | 分支交付时间 | 2026-10-07T11:48:51.650207+00:00 |
@@ -73,3 +73,7 @@ local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最�
 
 | 主线集成时间 | 2026-10-07T13:30:55.845469+00:00（owner逐行核验时刻；不猜实际merge时间） |
 | 部署时间 | NOT_DEPLOYED |
+
+## 完成时间格式修正
+
+2026-10-07T13:34:04.591Z：原产品claim04e46691 v2已RELEASED。依据Mika一次明确授权，重新take仅本status精确路径，临时claim 40eafacf-d4b6-43e2-8260-5fffb1f210dc v1于2026-10-07T13:33:48.895Z COMMITTED。仅将顶层实际完成时间规范为毫秒Z格式；不改变原实际时刻、产品、检查或R1/R2结论。只读parseStatus于2026-10-07T13:34:04.638Z核对errors[]/humanMissing[]/timingIssues[]，原件/tmp/flow-removal-time-format-parse.json；无工程测试/PG/部署。提交push后STOP该路径并release，take/release回执仅外部/tmp/flow-removal-time-format-*-receipt.json；释放后不回写。CORE651/X01parent均不动。
