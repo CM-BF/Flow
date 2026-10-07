@@ -1,0 +1,125 @@
+{
+  "at": "2026-10-07T14:19:16.645Z",
+  "state": "MAIN_ACCEPTED_CORE_SLICE_DELIVERED",
+  "main": "677a93e96f228ab76edbdde9e22beb800a320156",
+  "originSame": true,
+  "mainClean": true,
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "ownerInput": "ae6a2f2ce7505d0eccb6b0d8ee29654013127545",
+  "receipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json",
+    "bytes": 5831,
+    "sha256": "95c92b43ad479db6de0aaee9e414a598c75e77b29158a1d00a6fe125c5c2e852",
+    "at": "2026-10-07T14:16:52.118Z"
+  },
+  "rows": [
+    {
+      "kind": "product",
+      "path": "apps/server/src/runners.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 20703,
+      "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+      "mainPreimage": {
+        "state": "EXACT_BASE",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      },
+      "mainMatchesSourceAndOwner": true
+    },
+    {
+      "kind": "test",
+      "path": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 12774,
+      "sha256": "7e05568b9acc3b4950df95f366e471e6ccd22312291118994ff63eef70ccb113",
+      "mainPreimage": {
+        "state": "ABSENT"
+      },
+      "mainMatchesSourceAndOwner": true
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/enable-binding-pg-fixture.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 15698,
+      "sha256": "85095bbdfa2ff54e763e8519ffebe6d6af3899a4379a0c04fe4a8f0bbbf43367",
+      "mainPreimage": {
+        "state": "ABSENT"
+      },
+      "mainMatchesSourceAndOwner": true
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-input.json",
+      "sourceCommit": "edeff973f50fdf657a3a4d3e8356bbb0db9dea00",
+      "bytes": 2240,
+      "sha256": "5190f405db59bf64157890f0a1d5417f8786f6c565a28346ffab5ade1072d7ff",
+      "mainPreimage": {
+        "state": "ABSENT"
+      },
+      "mainMatchesSourceAndOwner": true
+    },
+    {
+      "kind": "optionalConfig",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-vitest.config.mjs",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 656,
+      "sha256": "513a2a26c7bd8e44ce0507606a2626959755615e3f8fb0b8e21510d6573b6857",
+      "mainPreimage": {
+        "state": "ABSENT"
+      },
+      "mainMatchesSourceAndOwner": true
+    }
+  ],
+  "verifiedRows": 5,
+  "verifiedBytes": 52071,
+  "errors": [],
+  "integrationValidation": {
+    "original": "5 selected/5 passed/67 HTTP; independently approved; not rerun",
+    "direct": {
+      "selected": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "files": [
+        "apps/server/src/runner-claim-routes.test.ts",
+        "apps/server/src/plugin-runtime/claim.test.ts"
+      ],
+      "mode": "fake Pool plus Fastify inject, no PG or listening socket"
+    },
+    "focusedTypes": {
+      "exit": 0,
+      "config": "docs/evidence/i02/core-claim-integration.tsconfig.json"
+    },
+    "result": "docs/evidence/i02/core-claim-integration/result.json",
+    "elapsedMs": 3258,
+    "scratchRemoved": true,
+    "actualStart": "2026-10-07T14:15:50.997Z",
+    "actualEnd": "2026-10-07T14:15:54.253Z",
+    "provider": 0,
+    "personalOperations": 0
+  },
+  "registry": {
+    "target": "5c9be36a1e0e9bf9d137da5d54a3cd84ea97205e",
+    "count": 204,
+    "reviewer": "assignment_review",
+    "verdict": "APPROVED_DOCS_AND_SOURCE_NAVIGATION",
+    "P1": 0,
+    "P2": 0,
+    "paths": [
+      "apps/execution-dashboard/src/registry.mjs",
+      "docs/evidence/d05/personal-successor-registry.json",
+      "plans/d05-architecture-view/status.md"
+    ],
+    "actualReload": "NOT_YET"
+  },
+  "ownerChecks": "Read-only exact Git/main/WT/hash/bytes;no engineering/PG rerun.",
+  "completedAt": "2026-10-07T14:19:16.645Z",
+  "taskStartedAt": "UNKNOWN",
+  "parent": "WPF-MATURE-02 remains incomplete;no personal activation/provider proof.",
+  "stopAndRelease": {
+    "intent": "All four scopes STOP after metadata commit/push,then atomic release;no writes after release.",
+    "requestId": "76e42511-36bc-4004-afde-67cff04f49ee",
+    "externalReceipt": "/tmp/flow-core-claim-main-release-receipt.json"
+  }
+}

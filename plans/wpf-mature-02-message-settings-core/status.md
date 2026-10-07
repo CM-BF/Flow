@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:00:26.111Z / fixed main ae8500dd（只读前像核对，本轮产品未集成） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:19:16.645Z / main677a93e96f228ab76edbdde9e22beb800a320156，五项逐字核同 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -11,22 +11,22 @@
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
 | 工作树dirty状态 | 产品aa741/准备operator9af028冻结；source/result全部冻结；正式结果批准/窄intake元数据提交推送后clean并STOP |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
+| 任务完成时间 | 2026-10-07T14:19:16.645Z |
+| 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史；完成时间为本owner核完正式main接收与验收的clock实际时刻，见main-acceptance.json；父MATURE02未完成 |
 | 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：真实PG恰5 selected/5 passed/0skip，suitePASS/outer0；原focused types0/list5及失败均保留 |
-| 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
+| 已集成main状态 / HEAD | 历史CORE ea276已main8d84；本轮五项已main677a93e96f228ab76edbdde9e22beb800a320156，owner独核5/5同source/WT/hash |
 | 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+tests；SOURCE_REVIEW_APPROVED / PG5_PASS_RESULT_REVIEW_APPROVED |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新旧后端混合队列与旧会话归属已通过真实数据库验收及独立结果审查，等待窄范围主线接收 |
-| 下一可用交付 | 主线接收领取资格改动和必要测试支持；个人两槽激活与用户端可用性另行验收 |
+| 当前产出 | 新旧后端混合队列的正确领取与旧会话归属已验收并进入主线 |
+| 下一可用交付 | 本片段已交付；个人两槽激活与用户端可用性继续由父任务及SVC09A验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；chatui2026-10-07T13:59:19Z result a666/packet069bf独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；均非main/个人激活批准 |
+| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；chatui2026-10-07T13:59:19Z result a666/packet069bf独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；main已由I02受控接收并直接组合10/10、types0；个人激活仍未验 |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -34,9 +34,9 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
-| M02CORE-CLAIM02 | completed | architecture_read | aa74137d84cd7acc45ec23c2ff22128ce944a410固定5行SQL及5个prepared PG用例源码；没有行为执行通过 |
+| M02CORE-CLAIM02 | completed | architecture_read | aa741固定5行SQL；原source准备阶段未执行，后续真实5PG通过见CLAIM03 |
 | M02CORE-CLAIM03 | completed | architecture_read | source与actual5/5独审通过，资源完整RETURN；result a666/packet069bf/独审13:59:19Z |
-| M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
+| M02CORE-CLAIM04 | completed | architecture_read | main677a五项受控接收、I02直接10/10与types0；SVC09A可消费此接口，个人两槽激活/用户验收移交父任务继续，未冒本片证据 |
 
 ## 等待记录
 
@@ -44,7 +44,7 @@
 
 ## 权威迁移与架构影响
 
-这是同一WPF-MATURE-02-CORE的后继，非新任务。旧owner status_read已RELEASED c652 v4，旧WT3e768 clean；本轮唯一owner/WT如上。Mika已接owner-switch请求，Original登记待回执；新source在聚合登记前UNKNOWN，不能由旧WT覆盖。运行所有者/锁序/DTO/DDL不变，变化仅现有allocation的资格条件。架构基线待main接收后由Original更新，不改共享图。
+这是同一WPF-MATURE-02-CORE的后继，非新任务。旧owner status_read已RELEASED c652 v4，旧WT3e768 clean；本轮唯一owner/WT如上。Original已将registry204的CORE唯一来源迁到本WT；实际reload尚未确认，不能由旧WT覆盖当前事实。运行所有者/锁序/DTO/DDL不变，变化仅现有allocation的资格条件。main接收已确认，架构固定视图仍由Original维护；本owner不改共享图。
 
 [本轮Interface与预算](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/interface.md)；[claim receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/claim-receipt.json)。
 
@@ -160,3 +160,9 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 2026-10-07T14:00:26.111Z：chatui2026-10-07T13:59:19Z固定result a666/packet069bf RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，[正式审查](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json)。[唯一窄main intake](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)现READY：1product+1test+2requiredsupport，optionalconfig；13:58:00.716Z核main ae850 clean，runners与原base前像相同，其余新增路径absent。该快照不替接收时fresh前像/组合检查，不overlay验证镜像。
 
 本轮分支实际结果交付13:56:19.459Z，独审13:59:19Z；main NOT_INTEGRATED、部署NOT_DEPLOYED、task NOT_COMPLETED。本次仅metadata收口，0新工程check/PG；own parseStatus errors[]/humanMissing[]，历史开工UNKNOWN的timing issue保留。提交推送后STOP全部写入，保CORE claim v1供接收/repair，0actual/待launch。
+
+## 正式main接收与停写
+
+2026-10-07T14:19:16.645Z：读取main/origin677a93e96f228ab76edbdde9e22beb800a320156 clean和canonical core-claim-intake.json，五项共52071B逐main/source/WT/bytes/SHA核同，0errors。[本owner正式接收核验](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-acceptance.json)。I02原14:15:50.997–14:15:54.253Z/3258ms、fakePool+Fastify inject10/10与affectedtypes0，资源RETURN；本owner0重测/PG。原五PG及24bindings保持不改。registry204已改唯一来源，actualreload仍NOT_YET，不称已部署。
+
+CORE领取资格片段已完成，父WPF-MATURE-02完整验收未完成；SVC09A可用main源码，个人settings两槽和provider/用户端实际可用性没有由本片证明。历史开工UNKNOWN不回填。此metadata提交推送后明确STOP全部四scope，再release原651c4eb4 v1；只将实际COMMITTED回执外置`/tmp/flow-core-claim-main-release-receipt.json`，释放后不回写。0actual/待launch。

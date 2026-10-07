@@ -49,3 +49,7 @@ Owner 维护 [status](status.md) 和 [review](review.md)。首leaf验证与独�
 - M02CORE-CLAIM04：独审、受控main组合与父任务两runner个人启用接口交接；不以SQL片证明provider或个人已可用。
 
 Interface/资源/边界见 [claim-eligibility](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/interface.md)。
+
+## 2026-10-07 领取资格后继验收收口
+
+M02CORE-CLAIM01–04已完成：原task权威owner迁移、LIMIT前资格、5真实PG/独审及main677a五项接收均有固定证据，见唯一status与main-acceptance.json。CLAIM04的个人两runner接口已交父任务/SVC09A消费；其实际个人激活和完整MATURE02验收仍开放，不由CORE收口替代。原准备段“0执行”是历史边界，不改原raw或准备manifest。

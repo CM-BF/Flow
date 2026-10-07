@@ -89,3 +89,7 @@ Mika/root，2026-10-07T13:23:26Z，SOURCE_REVIEW_APPROVED，0P1/P2。固定aa741
 ## CORE mixed queue actual PG result review
 
 2026-10-07T13:59:19Z chatui01_owner / gpt-6-astra：RESULT_FIDELITY_REVIEW_APPROVED，0P1/P2。固定result `a66627678c22fc229fa085a07a07732a07e84da3` / packet `069bf1526755555220426e00c9328a6e0655ab00`，24bindings200702B / 17raw24919B，256preparedinputs不变。5/5公共claim/profile/SQL与全部已观察资源收尾成立；历史EPERM、峰值/DBWAL未知保持，0provider。详见[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json)。本审不批准个人激活、main组合或新窗口；后续intake只接精确4必需叶及可选config。作者接受结论，0重测/产品修改。
+
+## 主线正式接收
+
+2026-10-07T14:19:16.645Z owner只读核main677a93e96f228ab76edbdde9e22beb800a320156及I02 core-claim-intake.json：精确五项main/source/WT/hash同，原source与结果批准保持；I02直接consumer10/10及affectedtypes0无PG重跑。见[核验receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-acceptance.json)。CORE片段交付，不声明个人settings激活、provider资格或父MATURE02完成。全scope提交push后STOP/release，实际receipt只外置。
