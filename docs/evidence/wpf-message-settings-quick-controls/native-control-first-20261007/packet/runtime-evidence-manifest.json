@@ -1,0 +1,38 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/browser-results.json",
+      "bytes": 2123,
+      "sha256": "18155fcdcae1855c18f7fb175f18c1ef553c142f6f23afab79d2f0d38769a6b5"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/owned-chrome.json",
+      "bytes": 2314,
+      "sha256": "54cc3f6a9ebbc3491e50495c2da132a3c556664775eb95e080c3252fef3096d0"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/chrome.log",
+      "bytes": 5856,
+      "sha256": "b7f4360459933ef79e9075be388b23c51f0dc5ce325403fa16841b5128ac447d"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/select-diagnostics.json",
+      "bytes": 216,
+      "sha256": "b14004daaed818dd396b02d0f798d835e5b3c8f300fe4028dda6a5b889cb18db"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/native-control.json",
+      "bytes": 1005,
+      "sha256": "38507f4e0966a003a528739421b54de5572a48157b499d086fb4738cc1766836"
+    }
+  ],
+  "selection": "diagnostic",
+  "expectedChecks": [],
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "3460c012fb690b0eb0cdb0de76f2631cdd8800c01823e200baefb08fccbc00bc"
+  },
+  "sourceHead": "1aa73f6dba8f3536b43624659ea8a02529646c03"
+}

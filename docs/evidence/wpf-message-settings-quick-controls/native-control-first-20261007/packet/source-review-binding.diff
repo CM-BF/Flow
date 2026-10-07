@@ -1,0 +1,38 @@
+--- before/binding.json
++++ after/binding.json
+@@ -426,7 +426,10 @@
+     "cumulativeDirectMs": 5119,
+     "remainingDirectMs": 24881
+   },
+-  "sourceReview": null,
++  "sourceReview": {
++    "path": "/private/tmp/root-msgquick-native-diagnostic-source-review.json",
++    "sha256": "263ec06a322ecd0dca82835680336cdbd8e030289083814616f40088510702e8"
++  },
+   "expectedChecks": [
+     "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+     "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+@@ -448,8 +451,9 @@
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "Initial diagnostic selection/parent/worker delta needs root review; no gate/runtime/native acceptance",
+-    "New segment actual maximum90s, each maximum45s including15scleanup; historical unused29375 not credited"
++    "Source/parent/worker delta approved; exact current native runner/worker acceptance record and fresh resource/window gate still required",
++    "Mika performance window pending actual return; no Chrome/Node checks or resource sampling",
++    "New segment remains0/90000ms; max45000ms per run incl15000cleanup; historical unused29375 not credited"
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+   "selection": "diagnostic",
+@@ -463,5 +467,10 @@
+   },
+   "originalAcceptanceFunctionSha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+   "segmentMetadataBytes": 3869,
+-  "diagnosticSourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203"
++  "diagnosticSourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
++  "nativeChromeBoundaryReuseEvidence": {
++    "path": "/private/tmp/root-msgquick-b3-native-preparation-review.json",
++    "sha256": "c41d68ae35568b9dd4bfbc38004b69a39a6a622ae75c6376fb0767f41b91d9da",
++    "meaning": "Accepted unchanged native authority boundary basis; old exact parent/worker hashes are NOT current executable admission. Current independent exact-hash acceptance still required by preserved supervisor."
++  }
+ }

@@ -1,8 +1,10 @@
 # WPF-MESSAGESETTINGS02 当前证据
 
+最新[native-control首轮](native-control-first-20261007/README.md)为FAILED/INCONCLUSIVE：按键前中文选框定位失败，0/6组/0PNG；真实outerexit/seal/owned清理经root接受。新90s段保守11222、余78778；旧30625封闭。[后继最窄诊断修正](native-control-followup-preparation/README.md)已固定、尚未复验；完整feature UNKNOWN。
+
 产品固定fe6ece131c489c79cf531a184e4cf51209f9c4a0，四源限定源码已审。当前[c2实际strict/26direct](c2-actual-20261007/README.md)已由root限定接受：两个子退出0、outer actualexit0+唯一PASS seal/四hash/双EOF0drop，owned groups/scratch清理。累计5119ms/余24881ms。
 
-最新[b3实际浏览器](b3-browser-20261007/README.md)再次原生模型选择值失败；root已接受完整FAILED/trace/owned清理证据，0/6组、0PNG，累计30625/余29375ms，未授权第四次。
+历史[b3实际浏览器](b3-browser-20261007/README.md)再次原生模型选择值失败；root已接受完整FAILED/trace/owned清理证据，0/6组、0PNG，累计30625/余29375ms，未授权第四次。
 
 历史[b2实际计量中断](b2-browser-20261007/README.md)已经root接受FAILED+ownedcleanup事实：outerexit1，trace/browser-results/PNG均未生成，正常HTTP/context close NOT_CAPTURED；全部ownedgroups/EOF/scratch清理。保守累计18468/余41532；原parent预算不回填，原b1/root结论保留。完整browser尚未通过（以下为b3执行前准备事实）；[b3计量修正](b3-accounting-20261007/README.md)经root源审并实际五项helper检查PASS，actualexit0/47.222083ms/ownedTMP absent。browser预算不变，未授第三次Chrome。
 

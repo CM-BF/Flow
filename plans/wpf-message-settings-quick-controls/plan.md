@@ -65,3 +65,9 @@ MSGQUICK-04仍开放：[第三次实际失败及完整诊断](../../docs/evidenc
 ## MSGQUICK-04 新有限定位段 2026-10-07 05:47:03 UTC
 
 [明确新授权及诊断接口](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。旧三轮60s封套原样闭合；新增≤90s实际、每次≤45s含15s清理，原retained8MiB与scratch64MiB不变。先独审最小诊断delta，保持原六组与产品不动；按plain B实际native选值决定是否进入modal B。当前只source准备，未运行。后续同边界定位→修复→相关验证可在段内连续进行，未知cleanup/授权范围变化停止针对审查；不新增泛化runner或任务。
+
+## Native-control首轮与同段窄修 2026-10-07 06:16:41 UTC
+
+[完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md)：outer实际exit1，FAILED/INCONCLUSIVE；plain A按键前中文role定位计数0，0/6组/0PNG，B/modal未执行。全部EOF/0drop，fixture/context关闭，parent56904/worker57021/Chrome56911与scratch absent。root只接收失败与清理，不作产品批准。
+
+parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。

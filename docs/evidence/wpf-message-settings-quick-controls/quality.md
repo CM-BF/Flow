@@ -89,3 +89,9 @@ outeractualexit1/单一FAILEDseal/trace hash与null manifest一致；两PNG缺�
 ## 2026-10-07 05:47:03 UTC 新有限诊断段安全点
 
 读取原live领取839e v1/六scope，e42bb clean后修改。复用本地find-skills/clean-code/codebase-design/webapp-testing/brainstorming；有界9160设计已被root明确接受，不重复安装/扩大方法权限。浏览器fixture单path新增诊断，旧六组函数/其他三源逐字保持。准备时发现旧c2 prerequisite会因新增browser hash误拒，改为明确旧3源+原6组body同字节、承认新entry未验；原native批准未继承。parent计量继续exact scratch剪枝，连segment record/auth字节计入retained。Python AST仅语法、Git文本核对，不执行产品。未解决：真实键盘根因、diag/full各自运行结论和新增初始独审；不自动运行或claim通过。
+
+## 2026-10-07 06:16:41 UTC Native-control首轮与charset窄修
+
+本人live核839e v1原6/branchHEAD1aa73f6 clean与source/prepared/readonly/external+Node，沿原gate一次执行。复用已读本地find-skills/clean-code/webapp-testing，不安装：公开诊断与产品动作分离；先错误保真，原finally覆盖的顶层错误不回改原件。受控HTML显式UTF-8；预键公开字符集/label/count仅自有fixture/dialog、8select/192字符上限；保原true native键序及六组函数逐字，0selectOption/value赋值/sleep。
+
+全日志EOF/0drop、真实outerexit1与seal匹配、所有presenthash逐核；exact三PGID signal0 absent、scratch absent，原run耗时多口径保留，11222取最大向上。未把编码候选或缺定位推成Picker故障；三产品源未改、原raw完整。当前源与后继包未复验，SVC08持窗期间只离线准备。

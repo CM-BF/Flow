@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:47:03 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 06:16:41 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
@@ -87,3 +87,11 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 ## 新诊断准备候选（NOT_STARTED / NOT_RUN）
 
 Target `bdf444f13f2963235ab3f1659546d19fc8f5c203` 的browser单文件追加及 `/private/tmp/msgquick-native1` parent/worker最小delta待root独审，原fe6源码批准不能自动覆盖新增诊断。三业务文件与原六组函数字节不变；strict/26实际证据保留其原范围，新entry无执行证据。详见[准备接口/新旧预算](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。当前无gate/native接受，完整feature UNKNOWN。
+
+## Native-control首轮与同段窄修 2026-10-07 06:16:41 UTC
+
+[完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md)：outer实际exit1，FAILED/INCONCLUSIVE；plain A按键前中文role定位计数0，0/6组/0PNG，B/modal未执行。全部EOF/0drop，fixture/context关闭，parent56904/worker57021/Chrome56911与scratch absent。root只接收失败与清理，不作产品批准。
+
+parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。
+
+[root本轮actual原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/root-actual-review.json)接受失败及清理；后继源尚未复验，整体UNKNOWN。
