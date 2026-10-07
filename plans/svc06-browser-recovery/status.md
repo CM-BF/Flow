@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:29:13.634Z；一次只读现场参数已核，仍等待唯一服务操作窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:43:39.755Z；本次维护启动未确认，后继已停止，运行窗口已归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,12 +20,12 @@
 | 实现目标 | 520d3cb7bdb352a1462d83c214e63c8a47c218f4 |
 | 实现范围 | 本次仅own evidence内current-web-transfer/actions及三直接检查、current-operator参数、template和formal输入；精确8source见web-publication-preparation.json；原已审reader/产品停写 |
 | 检查状态 | 本次Web微型fixture9/9、4argv+未知拒绝/3真实Policy边界、1受限Node导入；三轮619ms/raw1251B、三组absent/双EOF/空scratchremoved；0PG/HTTP/个人/provider。旧红绿保留不重跑 |
-| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次个人更新未执行 |
+| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
+| 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
 | 下一可用交付 | 按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
-| 当前阻塞 | ACTIVE: 前一宿主已归还，等待队列交接后的独占发布窗口；调用已审，不是产品实现阻塞。历史任务错误分类仍未知。 |
+| 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需明确网页启动失败并采用受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
@@ -130,3 +130,13 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T19:29:13.634Z：Lead确认SVC09A真实RETURN19:17:35.003Z后授权一次只读现场参数具体化，不是服务操作窗口。helper固定e21d25bf6fad5cc40e059076ef6ee043052e2d90复用原bounded/durable、完整7d1 verifier/process与已安装pg，只读取六私有文件身份/marker/runner CAS/1个task-index metadata；先实际受限Node import（无个人读）通过。正式观察2026-10-07T19:27:12.063Z→2026-10-07T19:27:16.668Z，安全原件[current-readonly-parameters-observation](../../docs/evidence/svc06/browser-recovery/current-readonly-parameters-observation.json)，[监督](../../docs/evidence/svc06/browser-recovery/current-readonly-parameters-supervision.json)。
 
 当前时点仍backend7d1/source6c/独立Webhost7d1；d629/v3/3retained，六文件前后dev/ino/bytes/hash相同，原三owned PID及两个listener归属真。marker与原安装匹配；只读事务BEGIN READ ONLY→两SELECT→ROLLBACK/Pool关闭，runner accepting21/opnull，维护旧op仅观察resumed不复用。单GET完整5任务（4succeeded/1failed、hasMorefalse）；不采标题/正文/配置值或凭据，原因UNKNOWN保持。OPS14总4664ms、直属组absent/双EOF/无signals，个人三服务有意保持运行。私有准备原件0600 /private/tmp/flow-svc06b-readonly-cyeq_q1g/parameters.json 6491B/SHA1ba892d48401b9071230a8e737e6d905013355358a81653d37bc508566ce58c5；连同安全公开副本/监督本轮新增材料9751B<1MiB。只读目录KEEP作为后继输入，非actual执行namespace；ready=false，紧前须再核身份与最新CAS/队列，未迁入/创建operation/维护/publish，不以本时点授权未来动作。
+
+2026-10-07T19:43:39.755Z：唯一现场 START；紧前floor增加的原失败发生于任何START/个人副作用前，保留不改。新wx实例a064ed9155ebffb980af937672ddab8e4f2306e8f45dbb955ea41b0618a6600f，48有效pins及继承33/pg闭包、6文件身份和四报告核同，fresh 19391119360 B≥18518114304 B。原新namespace仅此一次迁入，后继逐阶段确认；见personal-current-start.json。
+
+2026-10-07T19:44:41.970Z：cd27固定迁入完成；原服务未切，owned迁入组absent/双EOF，30519ms。继续3保留报告导入，阶段原件保持。
+
+2026-10-07T19:45:26.772Z：三保留报告导入完成，13097ms/owned组absent/双EOF。现启动唯一900秒维护operator，fresh事实→新bootstrap→strictidle→refresh→paused保留checkpoint→显式resume，任一unknown即停，前两阶段禁止重放。
+
+2026-10-07T19:48:31.241Z：实际 RETURN/STOP；原迁入和三报告、新bootstrap及strictidle已消费，refresh 58210ms返回START_UNCONFIRMED_CHECK_STATUS，whole operator114242ms退出。两个监督对象absent/双EOF只证明调用进程结束，不证明detached个人服务状态；未执行paused/final检查或resume及Web阶段。全部原件KEEP，不重放；见personal-current-window-return.json。
+
+2026-10-07T19:51:09.047Z：有界只读127ms确认同operation/maintenance23；旧三组ESRCH，新三登记role均stopped/center与Web listenerfalse；原工具startCleanup三项stopped且errors[]。首错web/ready，runner/Web最后持久phase=runtime/0B stderr；不能推断完整启动首因。源码/已运行阶段均冻结，当前不可用；固定原件见personal-current-result-manifest.json。

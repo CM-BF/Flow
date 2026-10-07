@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T19:48:31.241Z",
+  "state": "RETURN_STOPPED_UNKNOWN_KEEP",
+  "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+  "window": "svc06-personal-7d1-cd27-web779-20261007-1936",
+  "completed": [
+    "cd27-import",
+    "three-retained-reports",
+    "facts-before",
+    "preflight",
+    "history-before",
+    "bootstrap",
+    "operation"
+  ],
+  "failedPhase": "refresh",
+  "primary": "START_UNCONFIRMED_CHECK_STATUS",
+  "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+  "maintenanceOperatorMs": 114242,
+  "refreshMs": 58210,
+  "operatorOwned": "absent",
+  "operatorEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "refreshOwned": "absent",
+  "refreshEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "detachedPersonalServices": "UNKNOWN_FROM_THIS_RECEIPT; not operator kill objects",
+  "laterPhases": "NOT_RUN",
+  "resumed": false,
+  "webPublication": "NOT_RUN",
+  "operatorQuery": 0,
+  "retry": false,
+  "preserve": "all source, imported artifact/reports, operation and private records"
+}

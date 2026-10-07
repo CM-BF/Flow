@@ -1,0 +1,123 @@
+{
+  "ready": true,
+  "installationDirectory": "/Users/citrine/.flow-personal",
+  "sourceDirectory": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+  "runDirectory": "/private/tmp/flow-svc06b-personal-cd27-web779-20261007-1936/migration",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "installationIdentity": {
+    "dev": "16777234",
+    "ino": "117819905"
+  },
+  "sourceDirectoryIdentity": {
+    "dev": "16777234",
+    "ino": "124198066"
+  },
+  "runIdentity": null,
+  "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "cloneDriver": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+    "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+  },
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+  },
+  "expectedBackendArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "expectedWebHostArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "expectedSource": {
+    "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "dirty": false
+  },
+  "expectedRunner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "maintenance_state": "accepting",
+    "maintenance_version": 21,
+    "maintenance_operation_id": null
+  },
+  "retainedArtifacts": [
+    {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    }
+  ],
+  "privateFiles": {
+    "config.json": {
+      "dev": "16777234",
+      "ino": "117819925",
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "claude.json": {
+      "dev": "16777234",
+      "ino": "117819909",
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+    },
+    "browser-session.json": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "bytes": 205,
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    },
+    "maintenance.json": {
+      "dev": "16777234",
+      "ino": "124171477",
+      "bytes": 590,
+      "sha256": "e869e2dbe3b10357cf6cc45588880f44391471f03d5e7427da5c324179af86ed"
+    },
+    "state.json": {
+      "dev": "16777234",
+      "ino": "124171430",
+      "bytes": 4109,
+      "sha256": "6e9e44c3ecc93187558306e26c0ae9746b1b48d779402ad9c993f40882395472"
+    },
+    "web-release.json": {
+      "dev": "16777234",
+      "ino": "123210668",
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "processDigests": {
+    "center": "279ed6574882f457378b5514c164cbb5da8ae8ca0de39f1087402d45f4e9a882",
+    "runner": "eb0b01ab57f11931232408fade5443e8171a5550814000d88416718501f4585b",
+    "web": "674dcb6fff4d5b212c590a18530528b87cbe0b42aa896f03e81c95e9553a2247"
+  },
+  "ports": {
+    "center": 61227,
+    "web": 61228
+  },
+  "artifactTotalLogicalBytes": 367045616,
+  "clone": {
+    "manifestBytes": 3196606,
+    "artifactEntries": 15628,
+    "artifactLogicalBytes": 363849010,
+    "cloneHelperSha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+  },
+  "budget": {
+    "freshBytes": 18509725696,
+    "liveBytes": 1073741824,
+    "addedBytes": 536870912,
+    "rawBytes": 2097152
+  }
+}

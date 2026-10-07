@@ -1,0 +1,1215 @@
+{
+  "format": 1,
+  "at": "2026-10-07T19:45:45.865Z",
+  "identity": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "directory": "/Users/citrine/.flow-personal"
+  },
+  "omittedColumns": {
+    "conversations": [
+      "queue_checked_at"
+    ],
+    "runners": [
+      "maintenance_state",
+      "maintenance_version",
+      "maintenance_operation_id",
+      "maintenance_updated_at"
+    ]
+  },
+  "tables": [
+    {
+      "name": "artifacts",
+      "columns": [
+        "task_id",
+        "artifact_id",
+        "version",
+        "attempt_id",
+        "detail_id"
+      ],
+      "count": 4,
+      "digest": "98b6c437b9af437790d4d36e51935c8b"
+    },
+    {
+      "name": "assistant_messages",
+      "columns": [
+        "ordinal",
+        "id",
+        "task_id",
+        "attempt_id",
+        "event_id",
+        "sequence",
+        "native_session_id",
+        "source",
+        "source_message_id",
+        "content_digest",
+        "detail_id",
+        "settings",
+        "created_at",
+        "native_source_identity"
+      ],
+      "count": 4,
+      "digest": "42d88bdc3f9ded34b57fd7871a3a5225"
+    },
+    {
+      "name": "assistant_stream_blocks",
+      "columns": [
+        "id",
+        "task_id",
+        "attempt_id",
+        "first_sequence",
+        "last_sequence",
+        "revision",
+        "bytes",
+        "header",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 2,
+      "digest": "976127235cf781ddc97c5cbe33287a45"
+    },
+    {
+      "name": "assistant_stream_markers",
+      "columns": [
+        "id",
+        "task_id",
+        "attempt_id",
+        "sequence",
+        "data",
+        "payload_digest"
+      ],
+      "count": 1,
+      "digest": "b2be6b8ed5212203053502ced0b16af8"
+    },
+    {
+      "name": "assistant_stream_patches",
+      "columns": [
+        "stream_id",
+        "revision",
+        "task_id",
+        "attempt_id",
+        "event_id",
+        "sequence",
+        "data",
+        "payload_digest",
+        "created_at"
+      ],
+      "count": 4,
+      "digest": "a1f47f9787905224997514286f518972"
+    },
+    {
+      "name": "assistant_stream_settlements",
+      "columns": [
+        "attempt_id",
+        "task_id",
+        "final_id",
+        "data",
+        "created_at"
+      ],
+      "count": 2,
+      "digest": "c963631339e82d0cc6bcdc25afb7d313"
+    },
+    {
+      "name": "attachment_namespace",
+      "columns": [
+        "singleton",
+        "recovery_scope_id"
+      ],
+      "count": 1,
+      "digest": "ecba8267147a935a00af51467231befd"
+    },
+    {
+      "name": "attachment_resources",
+      "columns": [
+        "id",
+        "project_id",
+        "version",
+        "name",
+        "media_type",
+        "content",
+        "content_digest",
+        "byte_length",
+        "created_at",
+        "expires_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "attempts",
+      "columns": [
+        "id",
+        "task_id",
+        "runner_id",
+        "owner_version",
+        "lease_expires_at",
+        "last_sequence",
+        "native_session_id",
+        "completed_at",
+        "last_heartbeat_at",
+        "last_event_at"
+      ],
+      "count": 5,
+      "digest": "18df5cbec960db25b9d2a24753a5fea6"
+    },
+    {
+      "name": "browser_identity",
+      "columns": [
+        "singleton",
+        "center_id",
+        "owner_principal_id",
+        "auth_epoch_hash"
+      ],
+      "count": 1,
+      "digest": "4b45bbdc3482379b4b5ffc1081c086d2"
+    },
+    {
+      "name": "browser_sessions",
+      "columns": [
+        "token_hash",
+        "auth_epoch_hash",
+        "cookie_origin",
+        "created_at",
+        "expires_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "commands",
+      "columns": [
+        "operation",
+        "key",
+        "digest",
+        "response"
+      ],
+      "count": 11,
+      "digest": "a8e78a7759e696c7953a8ca9b49f39fb"
+    },
+    {
+      "name": "context_observations",
+      "columns": [
+        "task_id",
+        "attempt_id",
+        "observation_id",
+        "event_sequence",
+        "wire_canonical",
+        "wire_digest",
+        "sample",
+        "detail_id",
+        "observed_at",
+        "received_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "conversation_attachment_bindings",
+      "columns": [
+        "context_id",
+        "ordinal",
+        "resource_id"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "conversation_contexts",
+      "columns": [
+        "id",
+        "conversation_id",
+        "project_id",
+        "context_digest",
+        "sources",
+        "raw_bytes",
+        "created_at",
+        "attachments"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "conversation_execution_inputs",
+      "columns": [
+        "id",
+        "context_id",
+        "user_text",
+        "template_version",
+        "execution_prompt",
+        "execution_input_digest",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "conversation_queue",
+      "columns": [
+        "id",
+        "conversation_id",
+        "sequence",
+        "state",
+        "user_text",
+        "turn_id",
+        "task_id",
+        "turn_number",
+        "created_at",
+        "updated_at",
+        "conversation_input_id",
+        "message_settings"
+      ],
+      "count": 1,
+      "digest": "e4ced5fa688ebcb1468205f2f4d560fc"
+    },
+    {
+      "name": "conversation_turns",
+      "columns": [
+        "id",
+        "conversation_id",
+        "number",
+        "task_id",
+        "user_text",
+        "created_at",
+        "conversation_input_id"
+      ],
+      "count": 5,
+      "digest": "b1d0df1a1f01639e0d407ef58573a3e8"
+    },
+    {
+      "name": "conversations",
+      "columns": [
+        "id",
+        "title",
+        "harness",
+        "requested",
+        "revision",
+        "created_at",
+        "updated_at",
+        "execution_profile",
+        "queue_paused",
+        "queue_revision",
+        "project_id"
+      ],
+      "count": 3,
+      "digest": "260d45fdfc84c11458bad296997bc490"
+    },
+    {
+      "name": "decisions",
+      "columns": [
+        "task_id",
+        "id",
+        "prompt",
+        "answer",
+        "created_at",
+        "answered_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "details",
+      "columns": [
+        "id",
+        "task_id",
+        "attempt_id",
+        "title",
+        "kind",
+        "content",
+        "media_type",
+        "artifact_version"
+      ],
+      "count": 27,
+      "digest": "a143bea8a53556ee1c3582ca7302e6de"
+    },
+    {
+      "name": "execution_profiles",
+      "columns": [
+        "id",
+        "runner_id",
+        "config_digest",
+        "configuration",
+        "created_at"
+      ],
+      "count": 1,
+      "digest": "9f265734d626049c80432b64d0ed1afb"
+    },
+    {
+      "name": "goal_acceptances",
+      "columns": [
+        "goal_id",
+        "explanation_version",
+        "binding"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_contexts",
+      "columns": [
+        "id",
+        "goal_id",
+        "node_id",
+        "input_version",
+        "project_id",
+        "context_digest",
+        "sources",
+        "raw_bytes",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_execution_inputs",
+      "columns": [
+        "id",
+        "context_id",
+        "public_prompt",
+        "template_version",
+        "execution_prompt",
+        "execution_input_digest",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_executions",
+      "columns": [
+        "id",
+        "goal_id",
+        "node_id",
+        "task_id",
+        "input_version",
+        "dependencies",
+        "project_revision",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_explanations",
+      "columns": [
+        "goal_id",
+        "version",
+        "kind",
+        "text",
+        "source",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_graph_applications",
+      "columns": [
+        "proposal_id",
+        "project_id",
+        "from_revision",
+        "to_revision",
+        "node_ids",
+        "actor",
+        "applied_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_graph_calls",
+      "columns": [
+        "run_id",
+        "sequence",
+        "runner_id",
+        "attempt_id",
+        "owner_version",
+        "command_key",
+        "digest",
+        "kind",
+        "proposal_id",
+        "proposal_digest",
+        "applied_revision",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_graph_proposals",
+      "columns": [
+        "id",
+        "goal_id",
+        "project_id",
+        "base_revision",
+        "goal_digest",
+        "proposal_digest",
+        "input",
+        "source",
+        "node_count",
+        "edge_count",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_graph_runs",
+      "columns": [
+        "id",
+        "goal_id",
+        "task_id",
+        "version",
+        "scope",
+        "mode",
+        "used_commands",
+        "created_at",
+        "revoked_at",
+        "revocation_reason"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_inputs",
+      "columns": [
+        "goal_id",
+        "node_id",
+        "version",
+        "input",
+        "project_revision",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_nodes",
+      "columns": [
+        "goal_id",
+        "node_id",
+        "input_version",
+        "latest_execution_id",
+        "accepted_binding"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_plan_confirmations",
+      "columns": [
+        "proposal_id",
+        "goal_id",
+        "project_id",
+        "progression_id",
+        "confirmation",
+        "confirmation_digest",
+        "receipt",
+        "confirmed_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_progression_executions",
+      "columns": [
+        "progression_id",
+        "node_id",
+        "execution_id",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_progressions",
+      "columns": [
+        "id",
+        "goal_id",
+        "project_id",
+        "manifest",
+        "authorization_digest",
+        "created_at",
+        "expires_at",
+        "revoked_at",
+        "revocation_reason",
+        "finished_at",
+        "halted",
+        "checked_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_tool_calls",
+      "columns": [
+        "run_id",
+        "sequence",
+        "attempt_id",
+        "owner_version",
+        "command_key",
+        "digest",
+        "kind",
+        "node_id",
+        "result",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goal_tool_runs",
+      "columns": [
+        "id",
+        "goal_id",
+        "task_id",
+        "version",
+        "scope",
+        "mode",
+        "used_commands",
+        "created_at",
+        "revoked_at",
+        "revocation_reason"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "goals",
+      "columns": [
+        "id",
+        "project_id",
+        "original",
+        "explanation_version",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "knowledge_chunks",
+      "columns": [
+        "source_id",
+        "version",
+        "ordinal",
+        "start_byte",
+        "end_byte",
+        "content",
+        "search_vector"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "knowledge_sources",
+      "columns": [
+        "id",
+        "project_id",
+        "title",
+        "current_version",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "knowledge_versions",
+      "columns": [
+        "source_id",
+        "version",
+        "content",
+        "content_digest",
+        "byte_length",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "migrations",
+      "columns": [
+        "version",
+        "applied_at"
+      ],
+      "count": 35,
+      "digest": "e94842355ca3fe4dd538e52de3dcb974",
+      "row_hashes": [
+        "0acba811e29e8e24163dbf235cdebaed",
+        "0c876627ff8f4c43729d779912ba41c7",
+        "0cdbd68200f8c37ca21ffafc5162578b",
+        "109b6602fbead4631900b8dd93ec7337",
+        "1403f78934be86c1dfc29c822b8b2694",
+        "140ba299ad3364ead7f70695fbfe877f",
+        "14d20b5dc5b3c169be142cd086a47cbd",
+        "17162a97d295dd079031411d4fd35fb8",
+        "1c218a6a2eb3e45930c5e4add5a7aca3",
+        "20df5a932b8b372623a85b61e3b132f7",
+        "3013ed1ad1fdf22f3673cdb53887cb88",
+        "3ca3a852a3ae4b8bf348e1db3002d77e",
+        "3d653abd53d93f4cb0c4a26e6fda05ef",
+        "4253493789b23e8aa2eeee29d2a64fdf",
+        "4e6a4e36299f769c8763702a7d8722b9",
+        "540997db381a093ee0467c0c38db1da2",
+        "54b4d32c8e77b5d16fcc2eaf8fe44006",
+        "6f3e4b32cd25e3c7ffc9d5b8e06ec81f",
+        "7517b6e5c6a91e94d8888839a1fe8385",
+        "8c69182c49a690208f7eb8efec5042b7",
+        "90931567844094000316eaf2ec0d47ef",
+        "982777d198d797f60d807748af1d5c05",
+        "997f07124999d9435e3619b736cc0378",
+        "a208fcf1b43fc996748e608ee36c6694",
+        "a5b1304f580e4e65a6c032f7635d5b89",
+        "a60659fac1f9c7bcaa5f7181385c889c",
+        "b209e4c0ab3c02292e62decbc0be2820",
+        "b4c5451a99b89543d4cc324e924aa6e4",
+        "c0538d61e4b9dfa3809a0cfcd464921f",
+        "ca679bcf550decf22fa8f4bb6bfb0754",
+        "cbcfe2a72a0b54adfb4710750db06b66",
+        "e557b27adb0278330e0db75a987cf2e6",
+        "e7eec7e7bcd893e9705570baafc283ab",
+        "f2be97a413075528aa7f694061bb6966",
+        "ffa25e2613fa7fc339a65fd442f3adb8"
+      ]
+    },
+    {
+      "name": "native_activities",
+      "columns": [
+        "ordinal",
+        "id",
+        "task_id",
+        "attempt_id",
+        "event_id",
+        "sequence",
+        "native_session_id",
+        "tool_use_id",
+        "parent_tool_use_id",
+        "phase",
+        "header",
+        "payload_digest",
+        "detail_id",
+        "detail_digest",
+        "created_at"
+      ],
+      "count": 3,
+      "digest": "e318a99ce381ef4b0d5f3a7a6ceef128"
+    },
+    {
+      "name": "native_activity_bodies",
+      "columns": [
+        "activity_id",
+        "task_id",
+        "attempt_id",
+        "native_session_id",
+        "bytes",
+        "sha256",
+        "media_type",
+        "received_bytes",
+        "received_chunks",
+        "complete"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "native_activity_body_chunks",
+      "columns": [
+        "activity_id",
+        "chunk_index",
+        "byte_offset",
+        "bytes",
+        "sha256",
+        "content"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_installations",
+      "columns": [
+        "id",
+        "workspace_id",
+        "project_id",
+        "package_name",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_material_install_audit",
+      "columns": [
+        "cursor",
+        "operation_id",
+        "kind",
+        "actor",
+        "reason",
+        "error",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_material_installs",
+      "columns": [
+        "id",
+        "registration_id",
+        "version_id",
+        "admitted_revision",
+        "fetch_operation_id",
+        "fetch_attempt_id",
+        "artifact_id",
+        "artifact_store_id",
+        "store_id",
+        "artifact",
+        "input_digest",
+        "status",
+        "execution_id",
+        "receipt",
+        "error",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_operations",
+      "columns": [
+        "id",
+        "installation_id",
+        "kind",
+        "actor",
+        "input_digest",
+        "before_revision",
+        "after_revision",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_package_fetch_attempts",
+      "columns": [
+        "id",
+        "operation_id",
+        "ordinal",
+        "artifact_id",
+        "status",
+        "worker_id",
+        "error",
+        "artifact",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_package_fetch_audit",
+      "columns": [
+        "cursor",
+        "operation_id",
+        "attempt_id",
+        "kind",
+        "actor",
+        "reason",
+        "error",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_package_fetches",
+      "columns": [
+        "id",
+        "installation_id",
+        "version_id",
+        "admitted_revision",
+        "package_name",
+        "package_version",
+        "expected_sha256",
+        "integrity",
+        "store_id",
+        "registry_ref",
+        "registry_url",
+        "current_attempt_id",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_revisions",
+      "columns": [
+        "installation_id",
+        "revision",
+        "version_id",
+        "configuration",
+        "grants",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_runtime_hosts",
+      "columns": [
+        "runner_id",
+        "store_id",
+        "host_api_major",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_runtime_revisions",
+      "columns": [
+        "registration_id",
+        "revision",
+        "version_id",
+        "desired_enabled",
+        "material_install_operation_id",
+        "target_runner_id",
+        "store_id",
+        "host_api_major",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_tool_authorizations",
+      "columns": [
+        "binding_id",
+        "invocation_id",
+        "phase",
+        "task_id",
+        "attempt_id",
+        "owner_version",
+        "runner_id",
+        "registration_id",
+        "authorized_revision",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_tool_bindings",
+      "columns": [
+        "id",
+        "invocation_id",
+        "task_id",
+        "registration_id",
+        "registration_revision",
+        "version_id",
+        "scope",
+        "material_install_operation_id",
+        "target_runner_id",
+        "store_id",
+        "material_id",
+        "tree_digest",
+        "host_api_major",
+        "artifact",
+        "configuration",
+        "input_digest",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "plugin_versions",
+      "columns": [
+        "id",
+        "installation_id",
+        "package_version",
+        "declaration",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "project_revisions",
+      "columns": [
+        "project_id",
+        "revision",
+        "reason",
+        "actor",
+        "nodes",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "project_task_bindings",
+      "columns": [
+        "task_id",
+        "project_id",
+        "node_id"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "projects",
+      "columns": [
+        "id",
+        "workspace_id",
+        "title",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "protocol_intents",
+      "columns": [
+        "attempt_id",
+        "task_id",
+        "owner_version",
+        "endpoint_ref",
+        "endpoint_digest",
+        "command_id",
+        "phase",
+        "remote_task_id",
+        "cancel_started",
+        "reason",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "reconciliation_audit",
+      "columns": [
+        "ordinal",
+        "id",
+        "task_id",
+        "attempt_id",
+        "actor",
+        "action",
+        "request",
+        "before_state",
+        "after_state",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "reconciliation_retries",
+      "columns": [
+        "task_id",
+        "source_task_id",
+        "source_attempt_id",
+        "resolution_id",
+        "retry_audit_id"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "runner_events",
+      "columns": [
+        "attempt_id",
+        "sequence",
+        "event_id",
+        "digest"
+      ],
+      "count": 36,
+      "digest": "86aca938133a34212b229a31402cbdef"
+    },
+    {
+      "name": "runner_maintenance_audit",
+      "columns": [
+        "ordinal",
+        "id",
+        "runner_id",
+        "request_id",
+        "digest",
+        "result"
+      ],
+      "count": 21,
+      "digest": "070f5b575beb30f963dd5e441bd01381",
+      "row_hashes": [
+        "01d6e28529aa79b3119805c69ebdc56f",
+        "367fb3815af89e3613e682ebbf379a23",
+        "3c0a8b57f30a935238ebafdef6b1d7d2",
+        "3fc61d805408225a1df58e5b2e31bab0",
+        "48fc9098baa1ad6bd85accf9b15b4a35",
+        "4f6b53c35f93055f8632d68b9f7e5b1c",
+        "52d4e7746b8dcbf225d346e167b2ccea",
+        "674b87d56951cb5c4595647b1591a2a5",
+        "6928b1c5fe1d3b73418eb4c244a1d830",
+        "77dad86ada0d75193a3fdb8073133411",
+        "77e479bbc3f8d91ac1edf242c8357353",
+        "7a7a7607e71f9ae827d1c4417228e3e3",
+        "7a93b89d9405b417a71c56f521e493e2",
+        "864ee0855238ec5fb478ed73aa092546",
+        "a577806974d96202fc48709259a02dc3",
+        "b835273731923921bb9dd9a484800a9d",
+        "b9dda06e435adab770046de3555145c4",
+        "d16b53b96239a4ca4233d2cef7ec405c",
+        "ddc228362eac5a1960582917895456e8",
+        "e9843e7e2161771c16cf148ae1cae56e",
+        "f29cfd66255e6a99a86c09a9a7ae2b5e"
+      ]
+    },
+    {
+      "name": "runners",
+      "columns": [
+        "id",
+        "name",
+        "token_hash",
+        "harnesses",
+        "capacity",
+        "revoked"
+      ],
+      "count": 1,
+      "digest": "bf2bc3cd4bf94bc0eb3c80f58c9bc26e"
+    },
+    {
+      "name": "sessions",
+      "columns": [
+        "id",
+        "harness",
+        "runner_id",
+        "active_task_id"
+      ],
+      "count": 3,
+      "digest": "6b233711428baa795bd427cb6f2973de"
+    },
+    {
+      "name": "steering_attempts",
+      "columns": [
+        "attempt_id",
+        "task_id",
+        "revision",
+        "seal"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "steering_audit",
+      "columns": [
+        "ordinal",
+        "id",
+        "task_id",
+        "attempt_id",
+        "command_id",
+        "action",
+        "actor",
+        "data",
+        "created_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "steering_commands",
+      "columns": [
+        "id",
+        "task_id",
+        "attempt_id",
+        "owner_version",
+        "native_session_id",
+        "revision",
+        "user_message_uuid",
+        "text",
+        "input_digest",
+        "status",
+        "receipt_revision",
+        "created_at",
+        "updated_at"
+      ],
+      "count": 0,
+      "digest": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "name": "tasks",
+      "columns": [
+        "id",
+        "submission",
+        "status",
+        "verification_status",
+        "created_at",
+        "updated_at",
+        "cursor",
+        "owner_version",
+        "dispatch_ready",
+        "current_attempt_id",
+        "pending_decision",
+        "latest_artifact_id",
+        "latest_artifact_version",
+        "usage",
+        "conversation_input_id",
+        "goal_input_id"
+      ],
+      "count": 5,
+      "digest": "668f35a6c93903abaa0efbffbf56204a"
+    },
+    {
+      "name": "timeline",
+      "columns": [
+        "task_id",
+        "cursor",
+        "entry"
+      ],
+      "count": 31,
+      "digest": "cad9e6b7c72f90e4fd59759557b5843e"
+    },
+    {
+      "name": "usage_samples",
+      "columns": [
+        "ordinal",
+        "task_id",
+        "stream",
+        "sample_id",
+        "digest",
+        "sample",
+        "authoritative",
+        "input_tokens",
+        "output_tokens",
+        "cost_usd",
+        "cost_kind"
+      ],
+      "count": 6,
+      "digest": "cde657e222742e2b4ee561a37f645108"
+    },
+    {
+      "name": "workspace_feed",
+      "columns": [
+        "ordinal",
+        "task_id",
+        "task_cursor",
+        "task_title",
+        "entry"
+      ],
+      "count": 33,
+      "digest": "992c3af0498b34e96b66eba258802783"
+    },
+    {
+      "name": "workspaces",
+      "columns": [
+        "id",
+        "title",
+        "created_at"
+      ],
+      "count": 1,
+      "digest": "d460701ab5e5d7a2d5d1bb4116e793e1"
+    }
+  ]
+}

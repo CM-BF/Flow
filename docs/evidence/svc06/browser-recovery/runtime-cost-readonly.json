@@ -1,0 +1,36 @@
+{
+  "pid": 52845,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 8528,
+  "stdout": "{\"kind\":\"backendRuntime\",\"startedAt\":\"2026-10-07T19:55:14.074Z\",\"finishedAt\":\"2026-10-07T19:55:18.664Z\",\"elapsedMs\":4589,\"rootMatched\":true,\"artifactMatched\":true,\"artifactId\":\"cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b\"}\n{\"kind\":\"serviceRuntime:web\",\"startedAt\":\"2026-10-07T19:55:18.664Z\",\"finishedAt\":\"2026-10-07T19:55:22.543Z\",\"elapsedMs\":3878,\"rootMatched\":true,\"artifactMatched\":true,\"artifactId\":\"7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920\"}\n",
+  "stderr": "",
+  "observed_bytes": 492,
+  "retained_bytes": 492,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "startedAt": "2026-10-07T19:55:14.021634+00:00",
+  "finishedAt": "2026-10-07T19:55:22.549514+00:00",
+  "boundary": "2 exact read-only artifact resolutions; no PG/HTTP/service/model/credentials; not retrospective root-cause proof"
+}

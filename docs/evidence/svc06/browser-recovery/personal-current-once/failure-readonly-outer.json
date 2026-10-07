@@ -1,0 +1,33 @@
+{
+  "pid": 92917,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 127,
+  "stdout": "{\"at\":\"2026-10-07T19:51:08.994Z\",\"kind\":\"BOUNDED_READONLY_AFTER_REFRESH_FAILURE\",\"statePin\":{\"path\":\"/Users/citrine/.flow-personal/state.json\",\"dev\":\"16777234\",\"ino\":\"124458345\",\"bytes\":4321,\"sha256\":\"2b7abddafb589cdd794089d5a43ac204cb83898dd0ecea6cc7b0443d3c108613\"},\"maintenancePin\":{\"path\":\"/Users/citrine/.flow-personal/maintenance.json\",\"dev\":\"16777234\",\"ino\":\"124458071\",\"bytes\":572,\"sha256\":\"f7d57609881b6cda4c106cb0741ff8850b8b27480b663c3ba853d938e5e609b4\"},\"releasePin\":{\"path\":\"/Users/citrine/.flow-personal/web-release.json\",\"dev\":\"16777234\",\"ino\":\"123210668\",\"bytes\":1332,\"sha256\":\"a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03\"},\"source\":{\"head\":\"6c0fdcda8858aac33489c48c1948e902dd6a3d7e\",\"dirty\":false},\"backendArtifact\":{\"policy\":\"flow.backend-artifact.v1\",\"artifactId\":\"cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b\",\"manifestDigest\":\"cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b\",\"sourceHead\":\"04da80692e79e2b7c3f6341c7fa76515a3f719a3\"},\"webHost\":{\"policy\":\"flow.backend-artifact.v1\",\"artifactId\":\"7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920\",\"manifestDigest\":\"7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920\",\"sourceHead\":\"6c0fdcda8858aac33489c48c1948e902dd6a3d7e\"},\"lastError\":\"START_UNCONFIRMED\",\"lastStartFailure\":{\"role\":\"web\",\"phase\":\"ready\",\"code\":\"SERVICE_START_UNCONFIRMED\",\"at\":\"2026-10-07T19:47:21.004Z\"},\"startCleanup\":[{\"role\":\"web\",\"state\":\"stopped\"},{\"role\":\"runner\",\"state\":\"stopped\"},{\"role\":\"center\",\"state\":\"stopped\"}],\"startEvidenceErrors\":[],\"maintenance\":{\"operationId\":\"35d5a7ff-5ef7-4938-9584-adb27f5357ff\",\"phase\":\"starting\",\"target\":\"04da80692e79e2b7c3f6341c7fa76515a3f719a3\",\"backendArtifact\":{\"policy\":\"flow.backend-artifact.v1\",\"artifactId\":\"cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b\",\"manifestDigest\":\"cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b\",\"sourceHead\":\"04da80692e79e2b7c3f6341c7fa76515a3f719a3\"}},\"release\":{\"version\":3,\"current\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\",\"artifacts\":[{\"artifactId\":\"461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90\",\"manifestDigest\":\"461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90\",\"sourceHead\":\"b1c2e39837c2208e6fc2c59a80e16797f26448b5\"},{\"artifactId\":\"caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe\",\"sourceHead\":\"8d8ab520a9d43c7b9dafb22911416ee799ebf665\",\"manifestDigest\":\"caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe\"},{\"artifactId\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\",\"sourceHead\":\"5069586a9f17332de526e101eca3a4250cbc8d91\",\"manifestDigest\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\"}]},\"processes\":{\"center\":{\"pid\":37026,\"group\":37026,\"nonce\":\"aec52896-ef45-48ea-aa8c-4c025ee6069f\",\"identity\":\"stopped\",\"ownsListener\":false},\"runner\":{\"pid\":39405,\"group\":39405,\"nonce\":\"0485264c-dfc7-4265-9744-6fb99dabd025\",\"identity\":\"stopped\"},\"web\":{\"pid\":39502,\"group\":39502,\"nonce\":\"8e4ce176-3d00-481c-bfc0-45f3dfdba238\",\"identity\":\"stopped\",\"ownsListener\":false}},\"oldGroups\":{\"center\":{\"pid\":46474,\"group\":46474,\"state\":\"absent\",\"code\":\"ESRCH\"},\"runner\":{\"pid\":55337,\"group\":55337,\"state\":\"absent\",\"code\":\"ESRCH\"},\"web\":{\"pid\":55432,\"group\":55432,\"state\":\"absent\",\"code\":\"ESRCH\"}},\"diagnostics\":[{\"pin\":{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/center-aec52896-ef45-48ea-aa8c-4c025ee6069f.json\",\"dev\":\"16777234\",\"ino\":\"124458343\",\"bytes\":322,\"sha256\":\"dca783122e52223a138656561dddb0902aef5414e5ba71ed609fc185308ece46\"},\"metadata\":{\"format\":1,\"role\":\"center\",\"nonce\":\"aec52896-ef45-48ea-aa8c-4c025ee6069f\",\"pid\":37026,\"phase\":\"child-exit\",\"at\":\"2026-10-07T19:47:21.110Z\",\"exit\":{\"code\":0,\"signal\":null},\"stderr\":{\"bytes\":0,\"observedBytes\":0,\"sha256\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\"truncated\":false,\"complete\":true}}},{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/center-aec52896-ef45-48ea-aa8c-4c025ee6069f.stderr\",\"dev\":\"16777234\",\"ino\":\"124458098\",\"bytes\":0,\"mode\":384,\"bodyRead\":false},{\"pin\":{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/runner-0485264c-dfc7-4265-9744-6fb99dabd025.json\",\"dev\":\"16777234\",\"ino\":\"124458329\",\"bytes\":138,\"sha256\":\"cdae80b1f72c4102a15fc89e76cedf4c27ecdfbacaaecb0baeef194766798a08\"},\"metadata\":{\"format\":1,\"role\":\"runner\",\"nonce\":\"0485264c-dfc7-4265-9744-6fb99dabd025\",\"pid\":39405,\"phase\":\"runtime\",\"at\":\"2026-10-07T19:47:15.939Z\"}},{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/runner-0485264c-dfc7-4265-9744-6fb99dabd025.stderr\",\"dev\":\"16777234\",\"ino\":\"124458325\",\"bytes\":0,\"mode\":384,\"bodyRead\":false},{\"pin\":{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/web-8e4ce176-3d00-481c-bfc0-45f3dfdba238.json\",\"dev\":\"16777234\",\"ino\":\"124458334\",\"bytes\":135,\"sha256\":\"65d004a9c2d7d1487c0c56b16ac780f03398668905c86eb07d69216387d96328\"},\"metadata\":{\"format\":1,\"role\":\"web\",\"nonce\":\"8e4ce176-3d00-481c-bfc0-45f3dfdba238\",\"pid\":39502,\"phase\":\"runtime\",\"at\":\"2026-10-07T19:47:15.991Z\"}},{\"path\":\"/Users/citrine/.flow-personal/startup-diagnostics/web-8e4ce176-3d00-481c-bfc0-45f3dfdba238.stderr\",\"dev\":\"16777234\",\"ino\":\"124458330\",\"bytes\":0,\"mode\":384,\"bodyRead\":false}],\"operatorQueries\":0,\"markerMatched\":true,\"runner\":{\"id\":\"d22f4df2-8242-49f4-a1b4-77f8f08611ef\",\"maintenance_state\":\"maintenance\",\"maintenance_version\":23,\"maintenance_operation_id\":\"35d5a7ff-5ef7-4938-9584-adb27f5357ff\"},\"poolClosed\":true,\"finishedAt\":\"2026-10-07T19:51:09.047Z\"}\n",
+  "stderr": "",
+  "observed_bytes": 5555,
+  "retained_bytes": 5555,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

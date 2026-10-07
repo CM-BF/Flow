@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-07T19:46:22.937Z",
+  "outcome": "new-operation-confirmed-idle",
+  "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+  "view": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 22,
+    "state": "draining",
+    "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-07T19:46:06.599Z",
+    "stopPermitted": false,
+    "provider": "not-probed",
+    "display": "停止接新任务"
+  },
+  "native": {
+    "dev": 16777234,
+    "ino": 117819908,
+    "uid": 501,
+    "files": [
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+        "bytes": 27,
+        "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+        "bytes": 135,
+        "sha256": "06f78044290f35248b8261fd8e91aac136718ffb5947a5af700342ad7a16b7ba"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/d784f9af8945af94d9636738d8ce68e607ffb5120087f1591af02976a907bcd8/claude-result-a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714.txt",
+        "bytes": 9,
+        "sha256": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+      }
+    ],
+    "totalBytes": 229,
+    "admission": {
+      "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+      "idle": true,
+      "bytes": 135,
+      "sha256": "06f78044290f35248b8261fd8e91aac136718ffb5947a5af700342ad7a16b7ba"
+    },
+    "observations": [
+      {
+        "attempt": 0,
+        "outcome": "idle",
+        "files": [
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+            "bytes": 29,
+            "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+            "bytes": 27,
+            "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+            "bytes": 29,
+            "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+            "bytes": 135,
+            "sha256": "06f78044290f35248b8261fd8e91aac136718ffb5947a5af700342ad7a16b7ba"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/d784f9af8945af94d9636738d8ce68e607ffb5120087f1591af02976a907bcd8/claude-result-a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714.txt",
+            "bytes": 9,
+            "sha256": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+          }
+        ],
+        "totalBytes": 229,
+        "admission": {
+          "idle": true
+        },
+        "admissionFinal": {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+          "idle": true,
+          "bytes": 135,
+          "sha256": "06f78044290f35248b8261fd8e91aac136718ffb5947a5af700342ad7a16b7ba"
+        }
+      }
+    ],
+    "retries": 0,
+    "observedEntries": 11,
+    "observedBytes": 364,
+    "nonAtomic": true
+  },
+  "admission": {
+    "completeInventory": true,
+    "admissionIdle": true,
+    "unresolvedDeliveryFiles": 0,
+    "actualClaimRecovery": "UNKNOWN"
+  },
+  "boundary": "Complete bounded non-atomic inventory; v2 opportunity is not a claim receipt. No retirement or replay."
+}

@@ -1,0 +1,113 @@
+{
+  "at": "2026-10-07T19:54:12.132772+00:00",
+  "outcome": "PARTIAL_UPDATE_FAILED_SERVICES_STOPPED",
+  "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+  "preparation": "96e8c2cf0c7faab32f010ec3ac20b83e93d7f100",
+  "start": "2026-10-07T19:43:39.755Z",
+  "operatorStop": "2026-10-07T19:47:21.167276+00:00",
+  "windowReturn": "2026-10-07T19:48:31.241Z",
+  "completed": [
+    "cd27-import",
+    "three-retained-reports",
+    "facts-before",
+    "preflight",
+    "history-before",
+    "bootstrap",
+    "operation"
+  ],
+  "failure": {
+    "phase": "refresh",
+    "code": "START_UNCONFIRMED_CHECK_STATUS",
+    "lastPredicate": "UNKNOWN",
+    "savedStartFailure": {
+      "role": "web",
+      "phase": "ready",
+      "code": "SERVICE_START_UNCONFIRMED",
+      "at": "2026-10-07T19:47:21.004Z"
+    }
+  },
+  "freshFloor": 18518114304,
+  "freshFree": 19391119360,
+  "readonly": {
+    "at": "2026-10-07T19:51:08.994Z",
+    "finishedAt": "2026-10-07T19:51:09.047Z",
+    "maintenance": {
+      "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "maintenance_state": "maintenance",
+      "maintenance_version": 23,
+      "maintenance_operation_id": "35d5a7ff-5ef7-4938-9584-adb27f5357ff"
+    },
+    "operation": {
+      "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+      "phase": "starting",
+      "target": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "backendArtifact": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+      }
+    },
+    "processes": {
+      "center": {
+        "pid": 37026,
+        "group": 37026,
+        "nonce": "aec52896-ef45-48ea-aa8c-4c025ee6069f",
+        "identity": "stopped",
+        "ownsListener": false
+      },
+      "runner": {
+        "pid": 39405,
+        "group": 39405,
+        "nonce": "0485264c-dfc7-4265-9744-6fb99dabd025",
+        "identity": "stopped"
+      },
+      "web": {
+        "pid": 39502,
+        "group": 39502,
+        "nonce": "8e4ce176-3d00-481c-bfc0-45f3dfdba238",
+        "identity": "stopped",
+        "ownsListener": false
+      }
+    },
+    "oldGroups": {
+      "center": {
+        "pid": 46474,
+        "group": 46474,
+        "state": "absent",
+        "code": "ESRCH"
+      },
+      "runner": {
+        "pid": 55337,
+        "group": 55337,
+        "state": "absent",
+        "code": "ESRCH"
+      },
+      "web": {
+        "pid": 55432,
+        "group": 55432,
+        "state": "absent",
+        "code": "ESRCH"
+      }
+    },
+    "poolClosed": true
+  },
+  "newServices": "all registered roles stopped at bounded observation; center/Web listener false",
+  "stateSource": "6c is stale final-success field; selected backend cd27 alone does not prove running04da",
+  "web": "d629/v3 unchanged;779 import/report/publication NOT_RUN",
+  "historyBefore": {
+    "tableCount": 77,
+    "postRefreshPreservation": "NOT_RUN"
+  },
+  "operatorQueries": 0,
+  "actualClaimRecovery": "NOT_VERIFIED",
+  "noRetry": true,
+  "noRollback": true,
+  "unknowns": [
+    "why web ready predicate failed",
+    "new runner/Web no child-spawn/exit observation;last persisted runtime stage not proof nothing else executed",
+    "full after-refresh preservation not reached"
+  ],
+  "diagnosticBoundary": "private stderr content not read; only 0B metadata and safe diagnostic JSON",
+  "prelaunchFailure": "latest floor changed before START;old instance retained;one actual import only"
+}
