@@ -1,0 +1,42 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "at": "2026-10-07T03:41:00.802714+00:00",
+  "main": "7b6a196da1cc8d95da09b27fc334555a119ba4bc",
+  "database": "flow_req15_http_ad5adfcf4ba1",
+  "marker": "aaeac405-3528-4635-a895-205af68a161a",
+  "adminApplication": "req15-http-admin-ad5adfcf4ba1",
+  "serverApplication": "req15-http-server-ad5adfcf4ba1",
+  "fixtureApplication": "req15-http-fixture-ad5adfcf4ba1",
+  "sourceSha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+  "selectedCases": 1,
+  "caseName": "pages immutable turns and returns long assistant content only through an owned lazy detail",
+  "workMilliseconds": 40000,
+  "cleanupMilliseconds": 15000,
+  "wholeWindowSeconds": 60,
+  "reservedDatabaseBytes": 67108864,
+  "requiredDiskBeforeBytes": 1207959552,
+  "maxHttpRequests": 64,
+  "maxResponseBytes": 131072,
+  "maxTasks": 1,
+  "maxRunners": 1,
+  "connectionBound": {
+    "server": 8,
+    "scheduler": 3,
+    "fixture": 1,
+    "admin": 1,
+    "total": 13
+  },
+  "lifecyclePatternSource": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/http-consumer.test.ts",
+    "sha256": "22cfb664f588ca141dd3ebd9734ffbe3212bbec74ee66803775432d231917832"
+  },
+  "originalCaseSource": {
+    "main": "7b6a196da1cc8d95da09b27fc334555a119ba4bc",
+    "path": "apps/server/src/conversations/conversations.test.ts",
+    "sha256": "f10b0330f2ccc71dd53193fd488d3a4612cdbebc1dbb99f025fa1009b230c9ac"
+  },
+  "additionalAssertions": [
+    "exact page path401 invalid token",
+    "exact page path403 runner token"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T03:46:02.975420+00:00",
+  "state": "LOCAL_COMPLETE_REVIEW_PENDING",
+  "startedAt": "2026-10-07T03:42:05.388211+00:00",
+  "endedAt": "2026-10-07T03:42:16.117318+00:00",
+  "budget": {
+    "segmentSeconds": 600,
+    "maxCheckChildren": 4,
+    "childSeconds": 30,
+    "tmpBytes": 8388608,
+    "rawTotalBytes": 131072,
+    "sourceBytes": 5242880,
+    "linksAndReceiptBytes": 131072,
+    "metadataBytes": 1048576
+  },
+  "actual": {
+    "children": 2,
+    "repairs": 0,
+    "reruns": 0,
+    "typesExit": 0,
+    "collectExit": 0,
+    "collected": 1,
+    "testPasses": null,
+    "pg": 0,
+    "http": 0,
+    "rawBytes": 271,
+    "internalWallSecondsSum": 3.516158542013727,
+    "elapsedBasis": "wrapper preflight through cleanup before final receipt; excludes interpreter startup and final persistence",
+    "ownerExactTmpLstat": "both absent at archival check",
+    "resourceTerminal": "both final groups absent, EOF complete, signals/secondary empty, same-inode empty TMP removal; local slot returned"
+  },
+  "outputs": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-types-1.json",
+      "bytes": 3489,
+      "sha256": "f6d7d282c96bbe94b4840342c86bb57cee2ff7b05b81fe8907e3b56c989b4894"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-types-1.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-collect-1.json",
+      "bytes": 3694,
+      "sha256": "be337737e903c2870330afbefa84b14095ae9b2d52a38e665e5301a8fb6a5521"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-collect-1.log",
+      "bytes": 271,
+      "sha256": "52b62416d1d78ee0ceac556bdc5ccd5592cc8371354dc5cd8ee06423d6aedbb5"
+    }
+  ],
+  "caller": {
+    "path": "docs/evidence/req15-turn-page-batch/run-check.py",
+    "bytes": 9413,
+    "sha256": "36886c13648c04d4a00c6f6cb18ddd6ac0cb65783f0b6852ecc629a7dd8e8c22"
+  },
+  "preparationManifest": {
+    "path": "docs/evidence/req15-turn-page-batch/http-prepared-manifest.json",
+    "bytes": 50815,
+    "sha256": "5616e4c61111a87e6586cf513ad41fd16dc77aa7626531ff24725a5f46789a5e"
+  },
+  "boundary": "Types and collection only; HTTP/PG behavior NOT_RUN. Prior26/PG2/11 not repeated. TMP is before/after sampling, not a realtime hard boundary."
+}
