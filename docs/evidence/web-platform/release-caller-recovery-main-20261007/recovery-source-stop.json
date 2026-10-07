@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07 11:33:37 UTC",
+  "state": "STOPPED_SOURCE_SCOPES_PENDING_MANAGER_ATOMIC_AMEND",
+  "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+  "expectedVersion": 4,
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "main": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "removeAfterManagerDependencyCheck": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/conversation-steering/SteeringControl.tsx",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/steering.tsx",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/recovery/journal.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "retainMetadataScopes": [
+    "docs/evidence/wpf-conversation-recovery",
+    "plans/wpf-conversation-recovery"
+  ],
+  "sourceWritesStopped": true,
+  "noClaimMutationByOwner": true,
+  "condition": "Manager fresh current-version atomic amend; no full release. New writer must take legally before changes. Old owner will not resume removed paths.",
+  "remaining": "Original MATURE06 lateLogout response-order contract and any necessary integration boundary; bounded Web03/05 received, not all-center/personal deployment approval."
+}

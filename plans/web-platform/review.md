@@ -53,3 +53,6 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 [Recovery固定2f8组合功能审](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-composed-feature-review.json)接受Web实现与原03/05证据矩阵，0源码blocking；06三中心合同来源及主线接收保留。这不是把各历史实际重标为一次全2f8运行。[插件原段最终账](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/plugin-local-summary.json)明确30082/30000、父FAILED/child exit未捕获，strict0和原JSON15/15不得升级整段PASS。
 
 [Recovery中心来源对齐后的窄接收](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/recovery-center-alignment-root-review.json)接受2f8的16生产+3test，按base84005到target的delta集成；单origin和Connect策略来源闭合，lateLogout清新cookie的中心竞态保留。Original alignment为固定hash未提交输入，非main回执；本管理不替中心改实现或新增验证。
+
+
+本次[Release caller集中源审](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/release-c1-caller-root-review.json)为CHANGES_REQUESTED，P1精确scratch身份保护/P2固定boss池3连接遗漏；没有原生或三App运行批准。Recovery[Original19源main接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)与旧03/05限定审对应，保lateLogout中心后继、types KEEP及个人未部署。新看板实际claim-only入口和数据/UI版本区别只作为原D01后继输入，不混为全UI或freshledger性能证明。

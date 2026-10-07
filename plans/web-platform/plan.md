@@ -523,3 +523,9 @@ GO实核DPERF完成时间展示缺口：作者别名字段未被现有精确三�
 本次自然收口沿原task：Recovery固定2f8/metadata15833的原03/05组合独审接受，06仍需中心既有callerOrigin/迟到Clear-Cookie/重复Connect32slot合同来源及合法main/intake；Release固定settings已供给且原owner状态纠正，下一仅自有caller完整准备。插件有限local父FAILED/超82ms完整保留，后继direct证据完善不由当前30s自动续跑。外部O16R3已实际归还但KEEP，X01唯一NEXT fresh见[单一资源来源](../../docs/evidence/web-platform/resource-window-current.json)，不新任务或重复业务status。
 
 [本次当前交接](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/current.json)收录X01真实归还后Original bootstrap唯一NEXT、ACCESS剩余三scope正式释放，以及原plugin caller最小修正设计。该设计已由root核10原输入，但未实施/未运行；W01须先完成Releasecaller安全STOP，再原7scope做direct-only后继，旧30082/30k失败不抹账。lateLogout原中心后继仅派≤6固定源/官方规范有界只读输入，不新增功能task或运行门槛。
+
+
+原D01成熟看板后继补充实际界面更新语义：root现有IAB旧JS只刷新数据时作者时间更新，但新领取标签需一次reload才显示；[观察来源](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/dashboard-claim-ui-observation.json)不是当前数据错误。后继考虑轻量“界面版本有更新”提示，严格区分数据同步时间和界面代码版本；不自动reload、不丢焦点/展开/表单/凭据状态、不引第二进度源，不新task或运行。
+
+
+原MATURE02 TODO11真实App设置接线继续采用[Mika唯一consumer合同](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)的完整draft snapshot→材料await前freeze→Send/Queue原key→Recovery/CAS链。root已读c130仅有Picker/capture定义而无App消费；组件6组通过不能冒真实App可用。Recovery原owner完成main metadata与精确App/session交权后，再为原可用owner准备独立WT、合法exactclaim和唯一来源登记；Release优先，不等待lateLogout中心窄修，不新建第二FSM/store或重复设计。当前仅后继顺序，未授新writer。

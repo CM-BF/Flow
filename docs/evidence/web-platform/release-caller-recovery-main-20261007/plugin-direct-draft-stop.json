@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T11:32:13.197805+00:00",
+  "state": "STOPPED_UNSEALED_SOURCE_DRAFT_NOT_RUN",
+  "head": "4219f9f44ad5e6c5dcfa74b230511e7417155d6d",
+  "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "reason": "manager priority Release c1 P1 repair before plugin caller completion",
+  "files": [
+    {
+      "path": "/private/tmp/plugin-direct-r4/run.py",
+      "bytes": 12564,
+      "sha256": "8a0eeef66030891da925f91e7986278c6fbc2033142cb17cec39620b3f6a0c20"
+    },
+    {
+      "path": "/private/tmp/plugin-direct-r4/repair.diff",
+      "bytes": 17748,
+      "sha256": "09aa44c5acdd742399ac6626d2dee21bff240fc184f2a686f8c6843dfaa3493a"
+    },
+    {
+      "path": "/private/tmp/plugin-direct-r4/binding.json",
+      "bytes": 4601,
+      "sha256": "2095f67a470afa5dc27d1bf52716c610035d81f2b652caccfa08affac954beea"
+    }
+  ],
+  "remaining": [
+    "recheck finalization handler restoration and single-use output guard",
+    "seal prepared-file partition and updated run.py pin; current binding extraPins still initial copied run hash",
+    "static syntax/pin/name verification and README/manifest; no readiness or runtime claim"
+  ],
+  "projectChanges": false,
+  "runtime": false,
+  "old51RawUnchanged": true
+}

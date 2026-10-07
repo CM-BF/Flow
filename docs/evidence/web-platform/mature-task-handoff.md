@@ -1,18 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T11:26:08.154Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T11:34:26.420Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
-**Original 现成接收入口：** [窄Web接收独审](x01-candidate-release-caller-20261007/recovery-center-alignment-root-review.json)已通过：固定metadata `15833e947b92ae9257848c51204bde174aba9c82` 的[唯一feature-review-entry](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md)及[19源checkpoint](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)，target `2f8cc1f61d32f518998a64d0adeec582f85481f2` / base `84005a260dfcb668cd38b09c21564d0754a0f513`，16生产+3test。可接原03/05；single-origin与Connect32/8h来源已对齐，06保留实际main和lateLogout响应仍可清新cookie的中心后继。按精确delta合入，不整blob覆盖moving App；不等三App或新Web运行。本canonical是当前可用交接，未声称受限直发已送达。
+**Recovery 主线已接收：** [Original 固定主线回执](release-caller-recovery-main-20261007/recovery-main-intake.json)绑定 `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`、target2f8/base84005的16生产+3test精确delta，原03/05已接收。原owner已bc25收口，6ff v5仅两metadata，19源码已原子移出；06保lateLogout中心响应顺序后继，个人部署/三App兼容另计。组合types6024ms通过，3项1,357,748B scratch KEEP/allocated UNKNOWN保留。
 
 ## 当前窗口与用户交付
 
-[本次当前入口](recovery-two-center-actual-20261007/current.json)：Recovery双中心所选2/2实际通过，11:03:49.666Z两库/进程/Chrome/scratch/env清理归还，[限定结果独审已接受](recovery-two-center-actual-20261007/recovery-actual-root-review.json)；late GET实际为abortedWithoutDelivery，不冒已交付拒绝或完整feature。当前无Web重holder/下一预约。插件原七scope的P2源码已审；局部段类型首红后绿、direct JSON15/15与父FAIL/drop/晚清理分层保留，最终计量30082/30000超82ms已封，七scope停止且无第四跑。Release原owner7af40已解除旧配置blocker并规范时间字段、caller准备中；Original O16 R3已实际归还（DB/TMP KEEP），Mika X01已11:19:02.617209Z实际归还，Original已审legacy→7d1 bootstrap现唯一NEXT/fresh未RUN，O16/C02历史KEEP保留。
+[本次当前入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；当前X01 VERSION LIFECYCLE唯一NEXT owner fresh，尚非RUN。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01顺序c2源与最小纯local准备，未获三App运行。插件direct调用器TMP草稿STOP，旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
-**Release输入已供给：** Original已正式提供[规范化非秘密配置](recovery-two-center-actual-20261007/release-public-settings-supply.json)：cookieOrigin与唯一trustedOrigins均为 `http://127.0.0.1:61228`，authEpoch为 `svc09-b2b-20261007`，目标policySHA为81a8abe。此前缺字段与被拒直发是历史；当前不再等待同输入。W01在插件局部段安全STOP后准备自有fixed Chrome/lifetime caller与完整输入/资源包，尚无重资源预约，不重编已有三App或backend。
+**Release输入已供给：** [固定公开配置](recovery-two-center-actual-20261007/release-public-settings-supply.json)、final7d1/source6c与三App均已绑定；当前阻点是[c1生命周期/连接预算审查](release-caller-recovery-main-20261007/release-c1-caller-root-review.json)的两项修复，不再等待同字段。c1原件保留，c2仅原owner同scope；兼容实际仍NOT_RUN，无重预约。
 
-**新来源待中央登记：** [WPF-PLUGIN-RUNTIME01精确登记请求](recovery-second-center-preparation-20261007/plugin-registration-request.json)绑定已COMMITTED的0a9a9b2c v1/7scope与唯一owner三件套；当前main registry未找到该来源、实际加载未观察。Original负责登记，manager不写registry；用户可先由此下钻[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)。
+**新来源待中央登记：** [WPF-PLUGIN-RUNTIME01精确登记请求](recovery-second-center-preparation-20261007/plugin-registration-request.json)仍待Original登记进度source；[root现有IAB观察](release-caller-recovery-main-20261007/dashboard-claim-ui-observation.json)已确认reload后存在“已领取，进度来源待登记”卡片和0a9v1/7scope/原owner详情。领取已可见与业务进度未登记须分开，不声称没有任何看板入口。
 
 快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已b90f封存并在09:45:37.210Z完成[839e v2精确释放](svc06-return-steer-handoff-20261007/quick-release-receipt.json)，六scope停写；通用proof七个既存wrapper UNKNOWN保持，四源main接收为独立事实；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
 
@@ -101,7 +101,7 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 | --- | --- | --- |
 | Web 管理 | d01_owner；web-platform-management；codex/web-platform-management | 632a7149 v3 / 6 scopes；[status](../../../plans/web-platform/status.md) |
 | 插件运行时模块 | w01_owner；web-plugin-runtime-management；codex/web-plugin-runtime-management | 0a9a9b2c v1 ACTIVE / 7 literal scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md) · [take](recovery-second-center-preparation-20261007/plugin-take-receipt.json) · [待中央登记](recovery-second-center-preparation-20261007/plugin-registration-request.json) |
-| 草稿恢复 | workspace_panels_owner；web-conversation-recovery；codex/web-conversation-recovery | 6ff988b2 v4 / 21 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
+| 草稿恢复 | workspace_panels_owner；web-conversation-recovery；codex/web-conversation-recovery | 6ff988b2 v5 / 2 metadata scopes；19源码已[原子移出](release-caller-recovery-main-20261007/recovery-amend-receipt.json)，新writer须fresh take；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
 | 逐消息设置控件 | w01_owner；web-message-settings；codex/web-message-settings | a5b0c231 v2 RELEASED / 原8 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
 | 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v2 RELEASED / 原6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [释放receipt](svc06-return-steer-handoff-20261007/quick-release-receipt.json) |
 | 本机打开Flow/登录凭据 | workspace_panels_owner；dashboard-local-access；codex/dashboard-local-access | 57735ff7 v3 RELEASED（剩余README与own plan/evidence三scope已11:21:01.754Z释放；七产品此前已移出）；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md) · [已登记来源请求](dashboard-local-access-intake/registration-request.json) |

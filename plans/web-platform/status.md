@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**Original 现成接收入口：** [窄Web接收独审](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/recovery-center-alignment-root-review.json)已通过：固定metadata `15833e947b92ae9257848c51204bde174aba9c82` 的[唯一feature-review-entry](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md)及[19源checkpoint](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)，target `2f8cc1f61d32f518998a64d0adeec582f85481f2` / base `84005a260dfcb668cd38b09c21564d0754a0f513`，16生产+3test。可接原03/05；single-origin与Connect32/8h来源已对齐，06保留实际main和lateLogout响应仍可清新cookie的中心后继。按精确delta合入，不整blob覆盖moving App；不等三App或新Web运行。本canonical是当前可用交接，未声称受限直发已送达。
+**Recovery 主线已接收：** [Original 固定主线回执](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)绑定 `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`、target2f8/base84005的16生产+3test精确delta，原03/05已接收。原owner已bc25收口，6ff v5仅两metadata，19源码已原子移出；06保lateLogout中心响应顺序后继，个人部署/三App兼容另计。组合types6024ms通过，3项1,357,748B scratch KEEP/allocated UNKNOWN保留。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:23:25.544Z；X01实际归还、Original bootstrap唯一NEXT fresh；ACCESS剩余三scope已释放 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:36:55.539Z；Recovery19源main已核，Original bootstrap已实际归还；Release c1需c2修复，X01 lifecycle唯一NEXT fresh未RUN |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,10 +23,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 看板摘要/详情与快速设置组件已入主线；Recovery固定Web实现和原03/05矩阵已组合独审接受。插件类型修后通过、direct原JSON15/15，但父FAIL和82毫秒超额真实保留；App后继与主线/部署另计。 |
-| 下一可用交付 | Recovery exact19源窄接收已获审、等待Original合法main；06保lateLogout cookie响应顺序中心后继。Release配置已供给，caller固定准备中不占重窗；插件父FAIL与82毫秒超额仍封闭。 |
+| 下一可用交付 | Recovery已bc25收main metadata，6ff v5移出19源码；Release c2修清理身份/12连接并集中delta审，无重预约；插件direct调用器草稿安全STOP，原父失败保留。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：X01依据11:19:02.617209Z实际清理归还；Original已审legacy→7d1 bootstrap接唯一NEXT fresh，尚非RUN。Web0重/Releasecaller未READY；旧O16/C02/R3 KEEP仍保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Original bootstrap11:27:03.659Z实际归还；X01 VERSION LIFECYCLE已交Mika唯一NEXT fresh，尚非RUN。Web0重；新旧KEEP与未知allocated不置零。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
