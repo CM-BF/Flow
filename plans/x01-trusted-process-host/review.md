@@ -25,3 +25,7 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 独立sticky settlementUnknown在child/EOF/signal/response后异常exit及finish失败时优先OUTCOME_UNKNOWN，并以cause保primary；pre-spawn拒绝与clean intentional grant denial保持旧身份。真实残留反例与原clean对照2/2，types0，两child资源闭合；只有1新增distinct，原14不重跑。原13:17其余九产品/test无第二finding面继承；旧raw/首失败/EPERM保留。
 
 完整来源见implementation-review-approval.json。T7真实发布artifact、PG/center/native/provider/部署、父硬崩溃及任意后代仍未验证，无新运行授权。当前仅可以局部已审opt-in源码进入受控主线流程，不能称全X01或可部署验收完成。
+
+## Verifier extension fixed review pending
+
+Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status NOT_STARTED. Canonical [review-ready](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json). Scope four process source/test leaves and this limited local result; original 4dc approval does not grant the new kind. No PG/T7/runtime/center claim.

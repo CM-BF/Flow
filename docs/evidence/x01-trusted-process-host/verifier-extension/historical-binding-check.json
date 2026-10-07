@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-10-07T19:39:48.274Z",
+  "runtimeSourceHashErrors": [],
+  "changedSinceRun": [
+    {
+      "run": "behavior",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/run-local.py",
+      "runtimeSha256": "e9b5b82a4b2b3a1374cfc270e72e442795625ae669b5200609652b278b16bee5",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/first-run-local.py.txt"
+      ]
+    },
+    {
+      "run": "behavior",
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "b3d3a037b5afb4e93628554fd071abe9d04c91b9e7c13f9d3d218263b5014335",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/first-test.ts.txt"
+      ]
+    },
+    {
+      "run": "behavior",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "b3d3a037b5afb4e93628554fd071abe9d04c91b9e7c13f9d3d218263b5014335",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/first-test.ts.txt"
+      ]
+    },
+    {
+      "run": "behavior-fix",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/run-local.py",
+      "runtimeSha256": "e9d93693309b5c4820964e2de159f68a7f185af002a83a1621dd18e452f0a96b",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/second-run-local.py.txt"
+      ]
+    },
+    {
+      "run": "behavior-fix",
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "1f7817113aef4437eb835aafbeaf67bc4d6a24a6dcdb9767ed3a06c6c8fe840d",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/receipt-fixed-test.ts.txt"
+      ]
+    },
+    {
+      "run": "behavior-fix",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "1f7817113aef4437eb835aafbeaf67bc4d6a24a6dcdb9767ed3a06c6c8fe840d",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/receipt-fixed-test.ts.txt"
+      ]
+    },
+    {
+      "run": "types",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/run-local.py",
+      "runtimeSha256": "e9d93693309b5c4820964e2de159f68a7f185af002a83a1621dd18e452f0a96b",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/second-run-local.py.txt"
+      ]
+    },
+    {
+      "run": "types",
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "1f7817113aef4437eb835aafbeaf67bc4d6a24a6dcdb9767ed3a06c6c8fe840d",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/receipt-fixed-test.ts.txt"
+      ]
+    },
+    {
+      "run": "types",
+      "path": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts",
+      "runtimeSha256": "1f7817113aef4437eb835aafbeaf67bc4d6a24a6dcdb9767ed3a06c6c8fe840d",
+      "preservedAt": [
+        "docs/evidence/x01-trusted-process-host/verifier-extension/receipt-fixed-test.ts.txt"
+      ]
+    }
+  ],
+  "scope": "no code execution, hash consistency only"
+}

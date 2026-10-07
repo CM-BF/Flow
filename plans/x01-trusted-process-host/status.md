@@ -9,22 +9,22 @@
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 原受信工具进程源码已入主线；现补受信验证器的显式独立进程调用，保留同一取消与未知结果边界。 |
-| 下一可用交付 | 固定验证器 worker 小接口与真实子进程局部证据，交独立审查。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 受信验证器已能在独立worker执行，保留精确材料与取消/未知结果；本片局部检查结束，等待独立审查。 |
+| 下一可用交付 | 本次4叶增量及固定真实worker结果独审；随后受控集成。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | 6c881b21f0bc8838248bba7a1e2bb3c1b9f8c6ad（本段起点） |
-| 工作树dirty状态 | 本段4个自有产品/test及自身证据修改中；ordinary等待S01归还。 |
-| 实现目标 | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 |
-| 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
-| 检查状态 | NOT_RUN 本新扩展；旧4dc已验事实保留于历史，不作为新kind通过。 |
-| Review | NOT_STARTED 本扩展；旧4dc独审批准不变。 |
-| 已集成main状态 / HEAD | INTEGRATED 96b424777cd2c66e603157649e5a859ca1b914f6（包含13d本地接收且已远端同步）；NOT_DEPLOYED。 |
-| 最近更新时间 | 2026-10-07T19:26:50.000Z |
+| HEAD | abc0736dfbfe4c3dcbdd11d73e9386573ef565db（扩展source；后继仅review packet/status） |
+| 工作树dirty状态 | 仅审查manifest/status收口；五child已RETURN，0待launch。 |
+| 实现目标 | abc0736dfbfe4c3dcbdd11d73e9386573ef565db |
+| 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-host.test.ts |
+| 检查状态 | PASSED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 10distinct分轮：9pass+1fixture失败→定向1pass；typed原文定向1pass；两focusedtypes0。首次失败保留。 |
+| Review | NOT_STARTED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 本扩展已固定待独审；原4dc批准历史不变。 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED 本verifier扩展；原4dc工具进程已在main96b424777cd2c66e603157649e5a859ca1b914f6接收，T7/部署仍NOT_RUN。 |
+| 最近更新时间 | 2026-10-07T19:39:48.274Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -36,7 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
-| X01TP-06 | in-progress | db_transaction_owner | 显式 verifier worker，真实材料/kind/取消/UNKNOWN/旧工具直接验证待运行。 |
+| X01TP-06 | in-progress | db_transaction_owner | 固定abc0736dfbfe4c3dcbdd11d73e9386573ef565db；真实worker局部证据已封，待独立审查/集成。 |
 | X01TP-05 | in-progress | db_transaction_owner | 源码已入远端main96b42477；T7真实发布后继未验，完整TODO保持开放。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
@@ -54,7 +54,7 @@
 
 ## 下一步
 
-已审源码已远端主线接收，执行入口两leaf永久STOP并从claim移出，后继owner取得新claim后才能写。其余12scope保留且本段结束全写STOP。来源登记已记录，15:24:50.706Z独立live回执确认sourceCurrent/live/issues[]；该回执观察此前status，不冒称本次后继metadata已刷新。T7真实artifact仍NOT_RUN，artifact2515/cd27及历史04da/098b不含本功能；不把main接收当部署或完整任务完成。
+当前仅 verifier 扩展待独立审查；普通资源19:35:26.901Z已归还。两执行入口仍永久交回，不写AV scope。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
 
 ## 计划复审修复段
 
@@ -89,3 +89,5 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 ## Verifier 扩展段
 
 2026-10-07T19:21:26.000Z 新25分钟段开始，截止19:46:26Z；旧18:37暂停段零实现，不追溯恢复。fresh ledger19:21:57.846Z原8c2f v3 ACTIVE12，本段只4个process叶与自身metadata；resources仅必要。预算6串行child各40s/累计150s，raw2MiB及TMP/源码/证据共16MiB；freshfloor至少17950834688B并取最新组合较高。0PG/HTTP/provider/安装。main c15cdff 只读host/package-store供给在自身证据，不覆盖unclaimed叶。T7仍NOT_RUN，runtime/public producer/verdict完成链未接。
+
+2026-10-07T19:39:48.274Z 扩展source abc0736dfbfe4c3dcbdd11d73e9386573ef565db固定；普通5child累计6407ms/raw3708B，10distinct分轮与两个types0。行为首错仅fixture漏owner.json；typed字段收紧后单例重验。view五源逐字等自有source，main只读host/store3输入固定c15cdff，无unclaimed源码覆盖。真实3EOF/资源unknown原规则沿4dc，所有新测试ownedroot清理；wholewall/峰值未知。新增逻辑约200KiB远低16MiB，精确交付量见review manifest。当前源码STOP，metadata封packet后全写STOP；claim不变。

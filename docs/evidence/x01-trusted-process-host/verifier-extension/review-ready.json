@@ -1,0 +1,27 @@
+{
+  "task": "X01-TRUSTED-PROCESS-HOST01",
+  "source": "abc0736dfbfe4c3dcbdd11d73e9386573ef565db",
+  "preparedAt": "2026-10-07T19:39:48.274Z",
+  "manifest": "review-manifest.json",
+  "manifestSha256": "253d88faba3c6c06cd5eaff8ade46d1d13a33f3a13ae09c9c87ab471ef857f80",
+  "productPaths": [
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-host.test.ts"
+  ],
+  "claim": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v3 ACTIVE12",
+  "result": "segment.json",
+  "requestedReview": "source and finite local result fidelity; old4dc lifecycle inherited, only explicit verifier kind/interface and seven extension tests new",
+  "notValidated": [
+    "PG",
+    "center/currentgrant authorization",
+    "runRunner verifier dispatch",
+    "independent verdict/producer",
+    "T7 actual release",
+    "untrusted sandbox",
+    "latest main integration"
+  ],
+  "returnAt": "2026-10-07T19:35:26.901Z",
+  "sourceDirty": false
+}
