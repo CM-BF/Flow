@@ -14,11 +14,12 @@ export function coldArguments(argv) {
   return argv[0];
 }
 
-export async function main(argv) {
+export async function main(argv, { fixedInput = new URL('./recovery-cold-inputs.json', import.meta.url),
+  expectedSource = 'f37a3612068c7215994750574a7451ede841bcce' } = {}) {
   const mode = coldArguments(argv);
   // Published only after the real new artifact exists; the preparation pins its exact bytes.
-  const fixed = JSON.parse(await readFile(new URL('./recovery-cold-inputs.json', import.meta.url), 'utf8'));
-  assert.equal(fixed.sourceHead, 'f37a3612068c7215994750574a7451ede841bcce');
+  const fixed = JSON.parse(await readFile(fixedInput, 'utf8'));
+  assert.equal(fixed.sourceHead, expectedSource);
   const ports = coldPorts(fixed);
   if (mode === '--work-once') return work(argv, ports);
   const result = await ports.cleanup(await privateJson(argv[1]));
