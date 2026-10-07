@@ -94,7 +94,7 @@ export async function prepareRuntimeInstallation({ root, seed, stage, pnpmVersio
     record: { policy: plan.policy, parser: { name: 'yaml', version: '2.9.0', buildOnly: true },
       sourceLockDigest: digest(originalLock), installationLockDigest: digest(view.lock),
       sourceManifestDigest: digest(originals['package.json']), installationSemanticDigest: plan.installationSemanticDigest,
-      importers: plan.importers, snapshots: plan.snapshots, cacheFiles: cache.files.length, cacheLogicalBytes: cache.logicalBytes } };
+      hostTools: plan.hostTools, importers: plan.importers, snapshots: plan.snapshots, cacheFiles: cache.files.length, cacheLogicalBytes: cache.logicalBytes } };
 }
 
 /** A successful frozen install must preserve the projection before original source bytes return. */

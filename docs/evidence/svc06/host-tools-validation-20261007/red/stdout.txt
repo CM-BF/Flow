@@ -1,0 +1,39 @@
+✖ host tool selection keeps Vite peer context and platform optional closure without UI packages (2.059791ms)
+✖ host tool selection rejects missing, mismatched, aliased or ambiguous fixed tool sources (0.5725ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12.242334
+
+✖ failing tests:
+
+test at tools/personal-preview/backend-release/dependency-plan.test.mjs:54:1
+✖ host tool selection keeps Vite peer context and platform optional closure without UI packages (2.059791ms)
+  TypeError: Cannot read properties of undefined (reading 'version')
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.test.mjs:61:71)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tools/personal-preview/backend-release/dependency-plan.test.mjs:70:1
+✖ host tool selection rejects missing, mismatched, aliased or ambiguous fixed tool sources (0.5725ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.test.mjs:79:88)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: [Object],
+    operator: 'throws',
+    diff: 'simple'
+  }

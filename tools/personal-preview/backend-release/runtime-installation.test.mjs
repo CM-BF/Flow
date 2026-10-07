@@ -23,16 +23,16 @@ async function fixture() {
     '.': { devDependencies: { tsx: entry('4.23.15') } },
     'apps/server': { dependencies: { server: entry('1.0.0') } },
     'apps/runner': { dependencies: { sdk: entry('1.0.0') } },
-    'apps/web': { dependencies: { browser: entry('1.0.0') } },
+    'apps/web': { dependencies: { browser: entry('1.0.0') }, devDependencies: { vite: entry('8.3.2') } },
   }, packages: {}, snapshots: {} };
   const manifests = {
     '.': { name: 'flow', packageManager: 'pnpm@9.15.4', devDependencies: { tsx: '4.23.15' } },
     'apps/server': { name: '@flow/server', dependencies: { server: '1.0.0' } },
     'apps/runner': { name: '@flow/runner', dependencies: { sdk: '1.0.0' } },
-    'apps/web': { name: '@flow/web', dependencies: { browser: '1.0.0' } },
+    'apps/web': { name: '@flow/web', dependencies: { browser: '1.0.0' }, devDependencies: { vite: '8.3.2' } },
   };
   const indexes = [];
-  for (const [name, version] of [['server', '1.0.0'], ['sdk', '1.0.0'], ['tsx', '4.23.15'], ['browser', '1.0.0']]) {
+  for (const [name, version] of [['server', '1.0.0'], ['sdk', '1.0.0'], ['tsx', '4.23.15'], ['vite', '8.3.2'], ['browser', '1.0.0']]) {
     const integrity = sri(`tarball identity: ${name}`), hex = Buffer.from(integrity.slice(7), 'base64').toString('hex');
     lock.packages[`${name}@${version}`] = { resolution: { integrity } };
     lock.snapshots[`${name}@${version}`] = {};
@@ -62,20 +62,26 @@ test('formal YAML parser accepts lock text and rejects ambiguous or executable-l
   }
 });
 
-test('staging selects backend cache only and restores exact source bytes after a semantically unchanged frozen install', async () => {
+test('staging selects backend and host tool cache without UI packages and restores exact source bytes', async () => {
   const input = await fixture();
   try {
-    const before = await Promise.all(['package.json', 'pnpm-lock.yaml'].map(path => readFile(join(input.root, path), 'utf8')));
+    const sourcePaths = ['package.json', 'pnpm-lock.yaml', 'apps/web/package.json'];
+    const before = await Promise.all(sourcePaths.map(path => readFile(join(input.root, path), 'utf8')));
     const prepared = await prepareRuntimeInstallation(input);
-    assert.deepEqual(prepared.plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'tsx@4.23.15']);
-    assert.equal(prepared.cache.files.length, 6);
+    assert.deepEqual(prepared.plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
+    assert.equal(prepared.cache.files.length, 8);
     assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).dependencies.tsx, '4.23.15');
+    assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).dependencies.vite, '8.3.2');
+    assert.ok(!prepared.record.importers.includes('apps/web'));
+    assert.equal(await readFile(join(input.root, 'apps/web/package.json'), 'utf8'), before[2]);
+    assert.deepEqual(prepared.record.hostTools, prepared.plan.hostTools);
     // The package manager may render JSON-as-YAML with different whitespace.
     await writeFile(join(input.root, 'pnpm-lock.yaml'), JSON.stringify(JSON.parse(prepared.view.lock)));
     const result = await restoreRuntimeSource(prepared);
     assert.equal(result.sourceBytesRestored, true);
     assert.equal(result.installedProjectionVerified, true);
-    assert.deepEqual(await Promise.all(['package.json', 'pnpm-lock.yaml'].map(path => readFile(join(input.root, path), 'utf8'))), before);
+    assert.deepEqual(result.hostTools, prepared.plan.hostTools);
+    assert.deepEqual(await Promise.all(sourcePaths.map(path => readFile(join(input.root, path), 'utf8'))), before);
   } finally { await rm(input.stage, { recursive: true }); }
 });
 
@@ -111,7 +117,7 @@ test('selected clone verifies exact content and ignores unrelated cache paths wi
     await symlink('/does-not-exist', join(input.seed, 'unrelated'));
     const target = join(input.stage, 'copy');
     const result = JSON.parse((await clone(input.seed, target, prepared.cloneManifest)).stdout);
-    assert.equal(result.selectedFiles, 6);
+    assert.equal(result.selectedFiles, 8);
     assert.equal(result.integrityVerified, true);
     assert.deepEqual(await readdir(target), ['files']);
     for (const file of prepared.cache.files) {

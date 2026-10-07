@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:58:16 UTC；本次限定独审收口，主线接收待完成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:10:25 UTC；host工具限定独审完成，主线接收待Lead |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,30 +10,30 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 本片base 1b41f58816341f77e69a64d1cb5cfe7650c01b49；正式parser/builder源码 b21890799fe11b8f1937e4b08382c997877f6d53 |
-| 工作树dirty状态 | 仅独审metadata归档；本次提交后全源停写供受控接收 |
+| 工作基线 / HEAD | 本片base 59c0fccb41e33076d50c5f782683c9f3fd25061e；宿主工具源码 2affec4cc7a899082cbf48fce5bbd0f77293676c |
+| 工作树dirty状态 | 源码已固定；本轮仅metadata封存，交付后源码停写 |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | integration |
-| 实现目标 | b21890799fe11b8f1937e4b08382c997877f6d53 |
-| 实现范围 | package.json, pnpm-lock.yaml, tools/personal-preview/backend-release/artifact.test.mjs, tools/personal-preview/backend-release/build.mjs, tools/personal-preview/backend-release/clone-store.py, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
-| 检查状态 | PASSED b21890799fe11b8f1937e4b08382c997877f6d53；6新模块+1直接消费者分轮7 distinct；原红保留，完整产物NOT_RUN |
-| 已集成main状态 / HEAD | 纯模块87dc经受控等价提交fcf59接收 main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c，6source与固定target及工作树逐字相同；原target并非main祖先，[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)。旧保护6d276接收cbd3保留；个人runtime/Web未操作 |
+| 实现目标 | 2affec4cc7a899082cbf48fce5bbd0f77293676c |
+| 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
+| 检查状态 | PASSED 2affec4cc7a899082cbf48fce5bbd0f77293676c；selector7与staging1分轮8 distinct，固定main纯选择额外1次；完整产物NOT_RUN |
+| 已集成main状态 / HEAD | parser/builder b218七源及59c记录已接收 main/origin a2e7803161ffb7e2158eaf3c13531448d2a777b0，七源逐字相同；[接收事实](../../docs/evidence/svc06/parser-builder-main-receipt.json)。本次宿主工具增量尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台构建已接入固定解析器和按需依赖复制，局部检查与独立审查通过。 |
-| 下一可用交付 | 接收已审改动后，准备真实固定后台产物的安装、启动及隔离性验证。 |
+| 当前产出 | 静态网页宿主需要的固定工具已纳入依赖选择，局部选择与暂存还原及独立审查通过。 |
+| 下一可用交付 | 接收宿主工具闭包后，以固定主线准备真实产物的安装与启动验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED_LIMITED_PARSER_BUILDER b21890799fe11b8f1937e4b08382c997877f6d53；native_center_owner独审，43绑定/7源无P1/P2，完整产物未验 |
+| Review | APPROVED_LIMITED_HOST_TOOL_CLOSURE 2affec4cc7a899082cbf48fce5bbd0f77293676c；Execution Lead唯一独审，无P1/P2；真实产物仍待验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
-| 架构影响 | build-only惰性YAML正式接入，复用原选择/投影/缓存纯规则；单文件fd clone不进入旧递归。公开host接口不变，完整artifact后继仍需集成点验证。 |
+| 架构影响 | 私有host工具来源表声明tsx与固定Web Vite，沿原图遍历/根staging投影；不装Web workspace，不改公开host/FSM。真实产物仍待集成验收。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 正式parser/builder接线局部已固定；完整产物与checkout隔离未验 |
-| SVC06-04 | in-progress | assignment_review / 独立reviewer | [本轮7不同检查](../../docs/evidence/svc06/parser-builder-checks.md)通过，独审待完成；完整运行后继open |
+| SVC06-04 | in-progress | assignment_review / 独立reviewer | [本轮7不同检查](../../docs/evidence/svc06/parser-builder-checks.md)通过且独审完成；完整运行后继open |
 | SVC06-05 | pending | 独立operator | 无个人操作许可 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
@@ -79,3 +79,15 @@ Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`�
 native_center_owner 于 `2026-10-07T02:55:46.413702+00:00`（review原件时间）独立 APPROVED_LIMITED_PARSER_BUILDER，source `b21890799fe11b8f1937e4b08382c997877f6d53`、deliverya1f2，43 fixed/current绑定与11不变直接输入均核。原selected递归疑点关闭，7 distinct/4轮/1684ms与原红/清理事实保持；reviewer0重跑。原始run首次记录时间 `2026-10-07T02:51:08.145877+00:00`，最后更新 `2026-10-07T02:52:16.551813+00:00`，两者为记录落盘时间；未另保存各轮真实startedAt/finishedAt，故为UNKNOWN，不从目录标签或elapsed推算。
 
 [唯一review](../../docs/evidence/svc06/parser-builder-independent-review.json) / [绑定](../../docs/evidence/svc06/parser-builder-review-bindings.json)。本片integration，全源码停写；下一完整artifact仍先固定一致Git target/原资源门槛与共享窗口，不启动build/PG/个人服务。
+
+## 2026-10-07 03:04:57 UTC：静态宿主工具闭包
+
+Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与apps/web Vite；保持server/runner prod+optional、完整peer锁身份，Web workspace不参与安装。已审b218七源原检查保留；本次仅选择器及受影响暂存直接消费者，累计≤120s/每命令≤30s/tmp≤16MiB/raw总≤128KiB，fresh≥2.5GiB与共享保1GiB不降；0安装/fullbuild/PG/provider/个人操作。[小Interface](../../docs/evidence/svc06/host-tools-interface.md)。实现目标待固定，本次尚NOT_RUN。
+
+## 2026-10-07 03:07:14 UTC：宿主工具闭包固定待审
+
+[Interface](../../docs/evidence/svc06/host-tools-interface.md) / [检查](../../docs/evidence/svc06/host-tools-checks.md)：固定4源，2 red→7+1绿、8 distinct与固定a2e选择另记。7importers/271 snapshots是当前main实际选择，无cache完整性/物理收益或启动声明。旧b218已main，新target待独审与main；源码全停写，完整产物输入/总期限/清理只读准备，0新运行。
+
+## 2026-10-07 03:10:25 UTC：宿主工具限定独审批准
+
+[批准转录](../../docs/evidence/svc06/host-tools-independent-review.json)来源本次Execution Lead派工，完整4文件diff/51 fixed-current绑定及8 distinct与4组清理已由唯一review核实，0重跑，无P1/P2。本次integration，产品保持固定停写；下一0PG真实产物仅原prepare+verify/OPS14入口准备，尚无完整构建执行。原2.5GiB/live1GiB、clone/install180s不变；新外层420s+.5TERM/2reap、raw2MiB待固定输入/合计空间窗口。
