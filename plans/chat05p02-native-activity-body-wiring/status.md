@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 更新时间 | 2026-10-07 07:46:30 UTC |
+| 更新时间 | 2026-10-07 07:52:15 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T07:02:57.381Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring |
 | Branch | codex/native-activity-body-wiring |
 | Base | 9f0e916d38f4615dd5f15103701d188c1f0e60ca |
-| HEAD | 4142adfdbbbc1a4bce0908343674bce7f99eb9d0；固定源/准备，原PG01结果封存中 |
-| 工作树dirty状态 | 仅自有证据/状态准备中；产品已停写 |
+| HEAD | f73534fb8f5d4af9def063863b9551a7217280dc；测试构造/诊断窄修固定，证据封存后停写 |
+| 工作树dirty状态 | 仅末次自有证据/status封存；产品/入口已停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 真实组合检查发现测试材料标识错误；数据库与自有进程已清理，原失败完整保留 |
-| 下一可用交付 | 修正测试构造并补足最早错误观察，定向验证后再排两项组合检查 |
-| 当前阻塞 | NONE |
+| 当前产出 | 测试材料标识已按现有协议修正，最早错误与收尾错误分别保留；定向检查通过 |
+| 下一可用交付 | 独审修正后再运行两项真实组合检查，确认公开正文链路 |
+| 当前阻塞 | ACTIVE: 定向修正待独审及新的共享数据库窗口；本轮资源已归还 |
 | 需用户决定 | NONE |
-| 实现目标 | 1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46 |
+| 实现目标 | f73534fb8f5d4af9def063863b9551a7217280dc |
 | 实现范围 | packages/contracts/src/native-activity-body.ts, packages/contracts/src/index.ts, packages/client/src/native-activity-body.ts, packages/client/src/native-activity-body.test.ts, packages/client/src/index.ts, apps/server/src/native-activity-body/index.ts, apps/server/src/native-activity-body/fixture.ts, apps/server/src/native-activity-body/production.test.ts, apps/server/src/index.ts, apps/runner/src/runtime.ts, apps/runner/src/native-activity-body/host.ts, apps/runner/src/native-activity-body/host.test.ts, apps/runner/src/native-activity-body/host-production.test.ts |
-| 检查状态 | 原41 distinct分轮最终通过/3轮focused0；新PG01为0/2、suite exit1，caller UNKNOWN_RETAIN，独立资源清理CONFIRMED |
-| Review | APPROVED_PREPARATION（固定1bb/4b/4142）；PG01失败结果待独立核，非领域通过 |
+| 检查状态 | 原41不同局部已绿保持；PG01 0/2/suite1、caller UNKNOWN_RETAIN/cleanup CONFIRMED；新增2不同纯例/2轮affectedtypes0，PG02 NOT_RUN |
+| Review | 原1bb/4b/4142 APPROVED_PREPARATION；f735测试/诊断与新PG02入口待增量独审，原PG失败未改 |
 | 已集成main状态 / HEAD | 本片未集成；P01领域已在f39并包含于本base |
 | claim | f51cc458-ced9-48ff-a033-97f42483dcf4 v4，15literal；13产品+2自有metadata，三共享出口和fixture均正式amend后写入 |
 | 架构影响 | 共享reader/专用中心确认/显式单attempt host开通及033真实factory挂载；固定target待独审/main后由Lead登记架构 |
@@ -58,3 +58,5 @@
 2026-10-07T07:41:52.403458+00:00：fresh claim v4、285固定输入/21alias与余量24226480128B通过合计1287651328B门槛，唯一PG窗口收到；即将调用原pg-run-01。真实开始以exclusive reservation.startedAt为准，不以本记录预报成功。只原2case、0provider/Chrome/个人操作；同组ENG01L独立local与Quick独立浏览器预算已合计。
 
 2026-10-07T07:42:01.684056Z：原PG01结束exit1/0of2/9110ms；组33832 absent且双EOF，专库marker/OID核对后零连接→普通DROP、remaining[]、listener关闭、同inode目录正常移除。132B Vitest缓存KEEP。已立即归还共享窗口；不重试原namespace。最早活动ID构造不符合同，第二项500/257请求的先前因果未观测；仅源码定位与后继局部修复，不改原raw。
+
+2026-10-07T07:50:46.948253Z：定向local段结束，2不同纯例+2次受影响types均通过，5606ms/raw1121B；四组absent/双EOF、四tmp正常移除。local05验证ID与实际mapper相同，local06注入work/cleanup两错误保primary。原41不重跑，PG02仅准备等待独审/实际窗口。

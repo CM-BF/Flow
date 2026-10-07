@@ -1,0 +1,147 @@
+{
+  "startedAt": "2026-10-07T07:50:44.104400+00:00",
+  "priorSupervisedMs": 16584,
+  "priorRawBytes": 8379,
+  "commands": [
+    {
+      "name": "settlement",
+      "startedAt": "2026-10-07T07:50:44.104697+00:00",
+      "freeBefore": 24219729920,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/chat05p02/pg-repair/config.mjs",
+        "-t",
+        "preserves the primary work error"
+      ],
+      "supervision": {
+        "pid": 52212,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 735,
+        "observed_bytes": 592,
+        "retained_bytes": 592,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 592,
+      "finishedAt": "2026-10-07T07:50:44.840035+00:00",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123640337
+      },
+      "finalSample": {
+        "bytes": 134,
+        "files": [
+          {
+            "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+            "bytes": 134,
+            "dev": 16777234,
+            "ino": 123640356
+          }
+        ],
+        "directories": [
+          "vite",
+          "vite/vitest",
+          "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        ],
+        "free": 24219688960,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T07:50:44.841913+00:00",
+      "freeBefore": 24219688960,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/chat05p02/focused-tsconfig.json",
+        "--pretty",
+        "false"
+      ],
+      "supervision": {
+        "pid": 52221,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 2105,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 0,
+      "finishedAt": "2026-10-07T07:50:46.947488+00:00",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123640360
+      },
+      "finalSample": {
+        "bytes": 0,
+        "files": [],
+        "directories": [],
+        "free": 24220303360,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "finishedAt": "2026-10-07T07:50:46.948253+00:00",
+  "supervisedTotalMs": 2840,
+  "cumulativeSupervisedMs": 19424,
+  "cumulativeRawBytes": 8971,
+  "observationLimit": "Final metadata sample only, not instantaneous disk peak; pure cases allocate bounded in-memory buffers. OPS14 bounds actual processes and raw."
+}

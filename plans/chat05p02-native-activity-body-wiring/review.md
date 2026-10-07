@@ -9,3 +9,5 @@ APPROVED_PREPARATION（Lead唯一独审，实际PG结果仍待验证）。Base9f
 [原派工批准转录](../../docs/evidence/chat05p02/preparation-review-transcript.json)记录来源和限定范围。未声明独审已运行任何检查；本次PG一旦完成须另核原始结果。
 
 原PG01在已审输入上0/2、suite exit1；caller UNKNOWN_RETAIN与DB/fixture CONFIRMED清理分别保留。见[原结果分析](../../docs/evidence/chat05p02/pg-run-01/analysis.json)与[结果清单](../../docs/evidence/chat05p02/pg01-result-manifest.json)。后继只修测试构造和必要诊断，不放宽生产验证。
+
+增量source f73534fb8f5d4af9def063863b9551a7217280dc待Lead唯一只读复审；[窄修与局部证据](../../docs/evidence/chat05p02/pg-repair/README.md)，[delta绑定](../../docs/evidence/chat05p02/pg-repair/delta-manifest.json)。两个test-only路径不放宽生产；原caller只增加显式新namespace，已消费原入口仍不可重复。

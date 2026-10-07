@@ -1,0 +1,69 @@
+{
+  "name": "material",
+  "startedAt": "2026-10-07T07:47:23.593643+00:00",
+  "freeBefore": 24212488192,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p02/pg-repair/config.mjs"
+  ],
+  "supervision": {
+    "pid": 33461,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 715,
+    "observed_bytes": 529,
+    "retained_bytes": 529,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 529,
+  "finishedAt": "2026-10-07T07:47:24.308975+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123639222
+  },
+  "finalSample": {
+    "bytes": 135,
+    "files": [
+      {
+        "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 135,
+        "dev": 16777234,
+        "ino": 123639242
+      }
+    ],
+    "directories": [
+      "vite",
+      "vite/vitest",
+      "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ],
+    "free": 24212484096,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}
