@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
-完整feature状态 **IN_PROGRESS**；当前组合 target **61185e5fa8a0a55e83c2196355249e6f4359a19e** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /17源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；材料旅程四次实际FAIL、消息设置旅程NOT_RUN、当前取消持久B隔离待修复、主线/个人部署未验。
+完整feature状态 **IN_PROGRESS**；当前组合 target **b92470377349dea17a12d0abc244f0fed7992e33** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /18源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；材料旅程四次实际FAIL、消息设置旅程NOT_RUN、当前取消持久B投影已修复并经定向局部验证，集中source/local审已通过；页面复验待完成、主线/个人部署未验。
 
 旧[37166 CHANGES_REQUESTED](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-37166-source-review-20261007.json)、[9fc0两P2修复批准](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9fc0-source-local-review-20261007.json)及失败原件保留，旧十一direct不能替新mountedApp。root撤回exact File attachment readiness猜测，不记已证bug；保留有效B身份加强。单一[feature-review-entry](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)和[当前manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)指明源码/实际/未验范围。
 
@@ -35,3 +35,11 @@
 执行head35dcec / source61185，2026-10-07T14:03:13.343425+00:00封存。第四次[24原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-fourth/manifest.json)保outer/parent1、worker/Chrome0、双EOF/drop0、无signals；cookieRead PASS，材料组FAIL。真实Files公开激活与官方chooser已进入，failure子分支记录完整A显式恢复和0turn/queue POST；cancel子分支可见B正文/设置/单个B附件断言已过，但持久B附件精确比对出现A两文件+B，尚未放行迟到adapter。不能将该子分支、后续cancel恢复/success/navigation或全旅程写PASS；无PNG。
 
 父budget complete、markedDB0conn正常DROP/remaining[]、fixturecomplete/errors[]、scratch与0600env exact清理；14:01:00.037466Z outer10474/parent10544/worker10862/Chrome13878 PID+PGID均ESRCH。首post-cleanup误复用pid键丢数值，原件保留，独立exact-process-identity-observation补充了真实新观察；不补造端口探针。ceil(max含outer终态写入17343.143917ms)=17344；本90秒段累计51110/余38890<45000，**CLOSED / NO_NEXT**。前三FAIL及第三fixture graceful UNKNOWN不改。源码保持61185，仅静态归因，未运行新检查。
+
+## 当前 b924 共享成员投影修复集中审通过
+
+审查仅899146→b924两产品+一test；完整范围见当前manifest。实际第四持久B含held A为P2；初次d576虽direct/types通过，root进一步发现未discard held A时unmount丢已恢复A。b924复用已有restoredDraftIds修无port语义，新增partial/full release回归实际通过。
+
+局部14原件见[manifest](../../docs/evidence/wpf-message-settings-app/held-projection-local-20261007/manifest.json)，本段14680/20000，最后1PASS/68未选、types0；不继承旧mounted PASS或推新browser。原20scope、四FAIL和90phase CLOSED保留。集中审者请核单一draftItems/current优先、input removal不复活、旧port释放不误清新port、旧7272最小两文件补丁。
+
+[root b924集中source/local审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-b924-membership-source-local-review-20261007.json) APPROVED，0 remaining blocking；d576未覆盖unmount的初次绿结果保持历史，b924修复后实际direct2+types2已核。本20s关闭14680/未用5320不挪。仅source/local，mounted两journey与wholefeature/main仍未通过。

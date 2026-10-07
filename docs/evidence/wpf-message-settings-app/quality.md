@@ -41,3 +41,7 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:03:13.343425+00:00 第四actual安全点
 
 复用find-skills本地匹配和clean-code错误/职责方法；无安装/新框架。原chooser双Promise错误已进入run/finally，真实fixture正常收尾；材料failure子分支和cancel持久B失败分开，未删断言/延时或重跑。初步源码读取：App材料快照来自session input全items，held A与可见composer B分属不同用途；根因与修复待固定分析。原24件、独立精确PID补观、阶段CLOSED保真，源码17保持61185。
+
+## 2026-10-07T14:16:16.432872+00:00 共享附件投影修复安全点
+
+沿本地find-skills/clean-code，未重新安装。真实职责复用原draftItems，不在session复制exclude-held规则；guarded composer只携公开getState，无第二editable store。复用restoredDraftIds解决root独审unmount反例；测试走真实Session/Journal受控边界而非镜像过滤。18源中仅2产品+1test改变，单一方法/错误路径/默认兼容已复核。1PASS/68未选+noEmit0绑定b924，20s实际14680；旧原件保持，browser未重跑。7272供给仅两文件最小patch，禁止复制整个MSG session。待集中独审，不自评完整PASS。

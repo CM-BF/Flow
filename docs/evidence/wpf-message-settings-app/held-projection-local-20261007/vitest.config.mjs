@@ -1,0 +1,1 @@
+export default {"root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app", "cacheDir": "/private/tmp/msg03-held-projection-local-go1nlwgu/scratch/cache", "test": {"include": ["apps/web/test/conversation-recovery.test.ts"], "pool": "forks", "maxWorkers": 1, "fileParallelism": false, "cache": false, "testTimeout": 1500, "hookTimeout": 1500}};

@@ -1,0 +1,34 @@
+{
+  "requestId": "00b2e8c9-75ca-4aca-95c4-053f36a650b1",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "taskId": "WPF-MESSAGESETTINGS03",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "branch": "codex/web-message-settings-app",
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversation-context/receipts.ts",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/conversations/queue/projection.ts",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/src/plugin-integration/message-settings.tsx",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.test.ts",
+    "docs/evidence/wpf-message-settings-app",
+    "plans/wpf-message-settings-app",
+    "apps/web/src/plugin-integration/attachments.tsx"
+  ],
+  "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+  "version": 2
+}

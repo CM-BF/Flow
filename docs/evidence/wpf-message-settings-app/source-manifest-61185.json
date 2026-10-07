@@ -1,10 +1,10 @@
 {
   "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
-  "implementationTarget": "b92470377349dea17a12d0abc244f0fed7992e33",
+  "implementationTarget": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
   "scopeClaim": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
-  "scopeVersion": 3,
-  "sourceCount": 18,
-  "product": 15,
+  "scopeVersion": 2,
+  "sourceCount": 17,
+  "product": 14,
   "test": 3,
   "sources": [
     {
@@ -68,12 +68,6 @@
       "blob": "341d8b9a28dff1b6d02714920fed372879495b58"
     },
     {
-      "path": "apps/web/src/plugin-integration/attachments.tsx",
-      "bytes": 23456,
-      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
-      "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474"
-    },
-    {
       "path": "apps/web/src/plugin-integration/message-settings.tsx",
       "bytes": 15566,
       "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
@@ -87,9 +81,9 @@
     },
     {
       "path": "apps/web/src/plugin-integration/session.ts",
-      "bytes": 25841,
-      "sha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2",
-      "blob": "fea4381f15dd9e7a7e74511efe9dd306a2590087"
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab",
+      "blob": "59609085c43531ababd0c745d2efca91ea506376"
     },
     {
       "path": "apps/web/src/recovery/binding.tsx",
@@ -111,9 +105,9 @@
     },
     {
       "path": "apps/web/test/conversation-recovery.test.ts",
-      "bytes": 95881,
-      "sha256": "65249d1197f87f35e38c60d64a33f128442e0eb6a4149a7c579ae8fa2f4b52ce",
-      "blob": "089f201a77a8b2246dfd0482b6978d56f0ebd71f"
+      "bytes": 88159,
+      "sha256": "7a1c14398c7445ba8583abd2a876d927d2c0cd39848ceafbda4e12d47b2ac73d",
+      "blob": "d2a369d287d8dda9bcbf4ae9d7da29538d4330c9"
     }
   ],
   "numstat": [
@@ -127,13 +121,12 @@
     "4\t3\tapps/web/src/conversations/queue/projection.ts",
     "29\t7\tapps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
     "12\t0\tapps/web/src/execution-profiles/execution-profiles.css",
-    "11\t3\tapps/web/src/plugin-integration/attachments.tsx",
     "240\t0\tapps/web/src/plugin-integration/message-settings.tsx",
     "6\t2\tapps/web/src/plugin-integration/react.tsx",
-    "19\t2\tapps/web/src/plugin-integration/session.ts",
+    "18\t1\tapps/web/src/plugin-integration/session.ts",
     "5\t2\tapps/web/src/recovery/binding.tsx",
-    "248\t12\tapps/web/test/conversation-recovery.browser.ts",
-    "95\t5\tapps/web/test/conversation-recovery.fixture.ts",
-    "226\t1\tapps/web/test/conversation-recovery.test.ts"
+    "241\t12\tapps/web/test/conversation-recovery.browser.ts",
+    "94\t4\tapps/web/test/conversation-recovery.fixture.ts",
+    "152\t1\tapps/web/test/conversation-recovery.test.ts"
   ]
 }

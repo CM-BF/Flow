@@ -1,63 +1,32 @@
-# MSG03 固定源码独审入口
+# MSG03 当前固定审查入口
 
-当前实现 **61185e5fa8a0a55e83c2196355249e6f4359a19e**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
+当前实现 **b92470377349dea17a12d0abc244f0fed7992e33**，base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；唯一WT/branch web-message-settings-app / codex/web-message-settings-app；claim7e3f v3 exact20（15产品+3test+2metadata）。原MATURE02 TODO11，完整feature **IN_PROGRESS / NOT_INTEGRATED**。[18固定源码](source-manifest.json)。
 
-固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / material-return 四次FAIL / message-settings-app NOT_RUN / cancel持久B隔离FAIL / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
+本次899146→b924只有 `attachments.tsx`、`session.ts`、原direct test：Recovery复用真实Send的同一draftItems成员选择。current优先held/inTransit，已卸载端口不读；无port复用现restoredDraftIds，保部分恢复的A，不纳尚未恢复held余项。输入移除不复活，unverified项保持顺序，旧port cleanup不能清新port。没有第二草稿store或重复过滤规则。
 
-App每view唯一C与opaque ownership；P01现action/context私有port复用Picker同步CAS。发送前冻结A并同步换新稿ownership，官方text通知不抹C；原key/body的Send与Queue收据、历史turn和Queueitem各自显示frozen requested。Recovery完整draft含可选设置、兼容旧缺省、非法值拒绝，沿原revision/CAS和namespace/lifetime。材料await期间同正文/settings-only B独立，旧opening不写新B。
+实际第四材料组暴露 durable B含A两文件+B。[第四actual](browser-attempts/material-fourth/manifest.json) / [root失败与RETURN独审](source-research/root-msg03-fourth-actual-failure-review-20261007.json)保持FAIL：cookieRead PASS，failure子分支恢复事实，cancel尚未late settle，后续未跑，无PNG。第三fixture gracefulclose UNKNOWN仍保真。
 
-官方core失败/取消自动return由公开ComposerRuntime订阅/getState/setText/remove隔离：保heldA与当前B，不改core、不新增editable store/FSM。显式Restore使用本次点击时的完整目的地lease，不永久绑send旧generation；B非空拒绝，用户清空/omit后可完整恢复A。每await复查。**本次新产品修复**是在完整A恢复成功后才discardFailedSubmission，释放旧failed hold且不删当前draft文件，使不同IDs下一准备合法；冲突/部分恢复不清A。真实取消入口只在binding preparing且官方submission存在时显示，点击时再次双guard再公开cancel；默认consumer无入口变化。
+## 当前修复和局部证据
 
-## 实际局部与证据归因
+[修复索引及旧7272最小补丁](held-draft-repair.json)、[新局部14原件](held-projection-local-20261007/manifest.json)。初次d576 1direct+types通过后，root提出held A未discard的unmount反例；b924修复后direct-2 **1PASS/68NOT_SELECTED**，types-2 **exit0/空log**，18sourcepins绑定b924。真实Session→RecoveryWorkspace→Journal受控IDB端口；覆盖B-only持久化、unverified顺序、partial/full current A释放端口仍保留、replacement旧port失效。无真实browser或旧7272 actual重现。
 
-旧[25原件](local-20261007/manifest.json)/[9fc批准](source-research/root-msg03-9fc0-source-local-review-20261007.json)保留：direct6十一PASS/57未选，真实installed core与生产guard/helper受控检查；不外推完整mountedThread。37166两P2历史审查与所有首红原件不改。
+本独立20s local累计14680ms、余5320封存；4精确PID/PGID fresh ESRCH、scratch absent。regular-file日志不称双EOF。当前不再跑局部绿检查。
 
-本次[13新增原件](mounted-local-20261007/manifest.json)、[摘要](mounted-local-summary.json)、[终态](mounted-local-20261007/terminal.json)记录probe1/2与types6/7/8。最后probe2对**实际fixture String.raw**提取代码进行6项VM行为检查：失败、取消忽略abort后迟到settle、成功、3hold/8identity界限、dispose及timer；不代浏览器。types8明确files传递noEmit exit0，全部17源码hash=9c46；后继只有browser参数白名单、fixture公开header透传和browser chooser错误观察变化，各限定审查分列；独立假sentinel验证只归c4bee，非wholeWeb。此段实际累计 **53579/60000ms，余6421ms**；0network/PG/Chrome/provider，regular-file logs，不称双EOF。五个新PID/PGID fresh ESRCH、scratch absent；旧9fc局部历史保持。
+## 既有实现与原件
 
-原floor提升前probe1/types6真实free已高于两线，未追改原记录；types7/probe2/types8用新6914834432线。local余量不作browser信用。当前没有活动检查。
+App每view唯一C/opaque ownership、P01动作/context、同步CAS；材料await前冻结A/更新新稿ownership，B同正文异settings不被抹。原key/body Send/Queue重试、历史turn/Queue显示自身frozen requested；完整Recovery沿namespace/CAS。官方core自动return用公开port保护B，显式restore使用本次目的地lease；恢复完整A才释放failed hold。
 
-## 两条 mounted 候选与真实边界
+[9c46 source/local批准](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json)仅旧17源/probe/types；旧37166、9fc、首红均保原文件。c4bee worker参数白名单与[caller集中准备批准](source-research/root-msg03-c4bee-browser-preparation-review-20261007.json)；[61185 public Files前置审](source-research/root-msg03-61185-files-precondition-review-20261007.json)。当前两产品新增修复已获root b92e4c集中source/local批准，不继承历史mounted通过。
 
-`message-settings-material-return` = cookieRead + messageSettingsMaterialReturn。实际File upload→原adapter.add ready→原adapter.send验证后有界fixture-only await，官方core仍等材料而未onNew；并非HTTP ACK hold。failure/settings-only B、cancel/同正文B+真实文件，取消后旧promise实际settle，前后B完整持久data与真实id/name/ref一致、无旧A命令；显式清空/omit B后完整A准确恢复一次。恢复区消失、真实remove不DELETE中心资源、下一不同材料能继续准备；成功A期间B保留。最后同document切view使旧opening失效。
+## 未完成的真实验收
 
-`message-settings-app` = cookieRead + messageSettingsApp。保首mount P01、Apply/Cancel合法回焦点、reload/re-auth/显式nativeIDB restore零auto业务POST、原key/request A丢ACK重试、Queue B相对liveC、历史requested与真实theme390/180字符同前缀目录/每PNG≤512KiB。
+material-return：取消后B完整refs/ids保持、late adapter settle不派旧A、明确清空/omit B再恢复A、下一不同材料可准备、成功/导航边界仍待修复后实际。
+message-settings-app：首mount P01/ApplyCancel焦点、reload/reauth/显式恢复0自动POST、A丢ACK原key/body重试、Queue frozen B相对live C、历史requested、真实双主题390/180字符同前缀/每PNG≤512KiB，仍NOT_RUN。
 
-两个selector各独立markedDB/Chrome/public syntheticpublisher，**共享唯一90000ms**新phase，每attempt≤60000含30000cleanup、remaining<45000停。源内parent只准这两selector；旧Recovery选择保留参考却不可在新入口运行。每次保守ceil(max outer/late/serialized)扣账；不重置/不借Recovery/local。probe只fixture启动可达，≤3hold、每hold10s、≤8身份，每项≤1024chars，dispose/pagehide清timer/listener。B观测只读，不能造IDB或业务响应。
+旧两个selector唯一90s phase已CLOSED（spent51110/rem38890<45000），无新gate/env/holder。1DB/1Chrome/14配置连接位、64MiBscratch9MiBretained边界仅历史运行来源，不授权下一launch。
 
-配置连接保守14（8center+3boss+1fixture+1admin+1cleanupmarker），非实测峰值；一DB/Chrome，64MiB scratch，9MiB retained、启动<4/run reserve5，1GiBreserve只计一份；第四actual组合floor7686258688且实际更高值优先。真实启动仍需要经理共享资源交接/freshinputs/env/uniquegate。当前没有gate/adminenv/PG/Chrome预约。
+真实个人目录由共享TODO08/11 owner发布turnSettings能力后交付，fixture syntheticpublisher不冒个人可用/provider有效。本次不改发布候选、main或用户服务；旧7272只有源码可达性和最小修复供给，实际集成归Release owner。
 
-## 未完成交付与质量
+[clean-code记录](quality.md)与原TODO保持，不新建任务或扩大门槛。
 
-源码和局部通过不等两条页面、视觉或主线；原runtime/native包已审并实际运行；固定SQL供给缺项已补，材料旅程仍FAIL，当前修复未复验。真实个人目录另依赖受信opt-in profile/runner发布turnSettings→Web/TUI目录→个人配置发布（原TODO08/11共享owner）；fixture synthetic目录不冒个人可用或provider有效。
-
-[clean-code](quality.md)：soleauthority、默认兼容、真实故障/重试、错误和cleanup分离。root撤回“exact File attachment未排uploading”的先前猜测（官方label已排除），不记为bug；本次仅有意义加强B完整身份和已有Send前置，无扩新场景/超时。
-
-本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture已获root475e限定准备批准；首次初始化FAIL见实际记录。
-
-## 2026-10-07 首次实际安全点
-
-当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](browser-attempts/material-first/manifest.json)，[SQL供给](runtime-sql-supply.json)。
-
-## 历史424c差量与第二actual
-
-该轮target 424c6466bd28a838b91cc490a7b52021202b4d17 仅fixture公开目录header一行透传；16其余源码不变，c4bee/root475e原批准与两FAIL均保持历史绑定。第二actual cookieRead PASS、material选择FAIL未进入hold，无PNG；当前phase18962/71038，清理闭合。源码链与实际限制见 fixture-protocol-fix.json；不改原count/timeout或把准备当通过。
-
-424c一行差量已获root dfe8限定源码批准/0finding，原件保存在own source-research；并非related actual已通过。
-
-## 历史chooser错误观察差量与第三红
-
-当前target 6a258a3886f0491b8487738c19c09dc631b98f2c 只browser4+/2-：真实Add Attachment enabled前置+同时await选择事件/click。第三actual worker因选择事件unhandled rejection提前exit1，缺browser/fixture结果；不把partial log当组通过。原父DB/groups/EOF/scratch/env清理有证，fixture优雅关闭UNKNOWN；phase33766/余56234，actual HOLD；本差量已审，下一资源交接未提供。旧各source批准/FAIL原件保原归因。
-
-[6a258 root审](source-research/root-msg03-6a258-chooser-error-review-20261007.json)已接受此错误观察差量；三次actual仅绑定各自executionHead。当前17源码manifest绑定6a；phase33766/56234，NO_NEXT。fixture graceful close UNKNOWN、材料恢复/第二消息设置旅程及双主题截图尚未通过；物理DB/process/scratch/env收尾与此区分。
-
-## 历史公开Files前置差量
-
-目标 61185e5fa8a0a55e83c2196355249e6f4359a19e：fresh goto后公开Files→精确对话框可见→Escape→隐藏/回焦点，原material循环前仅5行。16其余源码逐字不变，6a错误观察审仍属历史固定目标；本差量已获root09907限定源码APPROVED，actual NOT_RUN。无产品自动激活或绕官方chooser。phase33766/56234/三FAIL原件保持，当前NO_NEXT。
-
-61185审查原件：[root](source-research/root-msg03-61185-files-precondition-review-20261007.json)；decision APPROVED_PUBLIC_FILES_ACTIVATION_PRECONDITION_FIX_NOT_BROWSER_PASS。没有继承原浏览器PASS，旧第三缺报告保持。
-
-## 第四次实际：取消后持久B附件隔离失败
-
-执行head35dcec / source61185，2026-10-07T14:03:13.343425+00:00封存。第四次[24原件](browser-attempts/material-fourth/manifest.json)保outer/parent1、worker/Chrome0、双EOF/drop0、无signals；cookieRead PASS，材料组FAIL。真实Files公开激活与官方chooser已进入，failure子分支记录完整A显式恢复和0turn/queue POST；cancel子分支可见B正文/设置/单个B附件断言已过，但持久B附件精确比对出现A两文件+B，尚未放行迟到adapter。不能将该子分支、后续cancel恢复/success/navigation或全旅程写PASS；无PNG。
-
-父budget complete、markedDB0conn正常DROP/remaining[]、fixturecomplete/errors[]、scratch与0600env exact清理；14:01:00.037466Z outer10474/parent10544/worker10862/Chrome13878 PID+PGID均ESRCH。首post-cleanup误复用pid键丢数值，原件保留，独立exact-process-identity-observation补充了真实新观察；不补造端口探针。ceil(max含outer终态写入17343.143917ms)=17344；本90秒段累计51110/余38890<45000，**CLOSED / NO_NEXT**。前三FAIL及第三fixture graceful UNKNOWN不改。源码保持61185，仅静态归因，未运行新检查。
+[root b924集中审](source-research/root-msg03-b924-membership-source-local-review-20261007.json)已批准本次两产品修复与定向local，0 blocking；新mounted phase仍待经理有限预算/资源交接。Release最终backend改为Original准备04da80692e79e2b7c3f6341c7fa76515a3f719a3（来源root通知），不要求与7272整树同源；本补丁应用后需准确Webconsumer/组合验证，不能冒用MSG检查。

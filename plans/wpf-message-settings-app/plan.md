@@ -11,21 +11,21 @@
 
 ## TODO
 
-- [x] **MSGAPP-01** 固定供给、原18scope领取（后续合法amend为19）和canonical；[原件](../../docs/evidence/wpf-message-settings-app/receipt.json)。
+- [x] **MSGAPP-01** 固定供给、原18scope领取（后续合法amend为19，再为共享附件投影amend为20）和canonical；[原件](../../docs/evidence/wpf-message-settings-app/receipt.json)。
 - [x] **MSGAPP-02** App ownership/P01宿主接线与紧凑消息设置入口。
 - [x] **MSGAPP-03** Send/Queue材料await前完整freeze、同正文异设置保留、原key重试及历史requested显示。
-- [ ] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A，重新进入修复。
+- [ ] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A；b924共享selector修复已过定向局部，页面复验待。
 - [ ] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
 - [ ] **MSGAPP-06** 独立review与合法main接收；本分支通过不冒主线/部署。
 
 ## 验证与边界
 
-本段local累计60,000ms，每次≤20,000ms含≥5,000ms cleanup；1Node顺序，TMP16MiB/raw2MiB，0network/PG/Chrome/provider/install/build。当前futurefresh组合门槛≥7,515,275,264B或最新完整组合更高值；旧执行门槛保历史。只明确files noEmit与新增/直接受影响选组，不以稀疏include冒wholeWeb。不自动运行旧Recovery browser或旧全绿。
+历史首段local累计60,000ms，每次≤20,000ms含≥5,000ms cleanup；1Node顺序，TMP16MiB/raw2MiB，0network/PG/Chrome/provider/install/build。当前futurefresh组合门槛≥7,515,275,264B或最新完整组合更高值；旧执行门槛保历史。只明确files noEmit与新增/直接受影响选组，不以稀疏include冒wholeWeb。不自动运行旧Recovery browser或旧全绿。
 真实Browser/HTTP/PG后续另按实际资源交接，不读取个人凭据。原Recovery记录只读不改、新输出归本evidence。具体scope见[request](../../docs/evidence/wpf-message-settings-app/request.json)。常规source operator旧等待已由e029现规则与d01授权解除；不新增审批链。
 
 ## 本段固定实现与未验边界
 
-MSGAPP-02/03/04 勾选指源码实现，当前组合绑定 61185e5fa8a0a55e83c2196355249e6f4359a19e，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
+MSGAPP-02/03 勾选指源码实现；当前组合绑定 b92470377349dea17a12d0abc244f0fed7992e33，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
 
 历史11定向通过/57未选保留；新probe2六PASS/affected types8通过当时9c46的17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。首次PG初始化已实际FAIL并清理，材料旅程随后两次FAIL，消息设置旅程仍NOT_RUN，MSGAPP-06合法main仍pending。
 
@@ -52,3 +52,7 @@ MSGAPP-05同scope前置修复：仅实际Files命令初始化后再用official A
 61185源码聚焦审通过（root09907），仍原MSGAPP-05真实材料/消息设置验收未完成；无本批工程检查或运行。
 
 MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式恢复有原件，cancel可见B保留但持久B附件混入held A，组FAIL。当前实现61185未变；90s实际51110、余38890低于min45s封闭，不启动下一旅程。后继须修持久完整草稿隔离，不能用可见chip数量代持久身份。原MSGAPP-03/04勾选为源码交付，不表示该实际缺陷已解决。
+
+## 当前 MSGAPP-04 修复安全点
+
+共享Attachment成员选择由原draftItems统一：Recovery不得把held inventory当当前稿；已returned/restored当前A优先、unbind后复用既有restoredDraftIds，未验证选择和顺序不丢。原20scope下两产品+1test完成，1 PASS/68未选、受影响noEmit0；本新20s局部14680已耗，余5320封存。旧mounted90s51110/38890 CLOSED，无新browser。当前源审/真实页面验证仍需完成，不能把局部结果勾成MSGAPP-04/05全部完成。
