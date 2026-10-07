@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:04:28 UTC；main62e9首次采用已收，C3 actual独审已收到；本轮只读个人基线已固定 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 12:25:24 UTC；C3已main e029，迁入准备已独审；本次只读预检漏参停止、个人未改 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,11 +23,11 @@
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，迁入调用已补齐并通过定向检查，待独立审查。 |
-| 下一可用交付 | 审定一次后台与网页宿主更新清单，在明确运行窗口按原维护流程执行。 |
-| 当前阻塞 | ACTIVE: 迁入调用修复待独立审查与真实运行窗口；未操作个人服务。 |
+| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，迁入调用已独审通过；启动前只读核验因漏传输出路径停止，个人安装未改动。 |
+| 下一可用交付 | 修正只读核验调用，重新取得实际窗口后执行原更新清单。 |
+| 当前阻塞 | ACTIVE: 启动前核验调用遗漏输出路径，已停止并归还窗口；个人更新尚未执行。 |
 | 需用户决定 | NONE |
-| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；修复source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 待独立增量审；未操作个人服务。 |
+| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；修复source5c29已获native APPROVED_MIGRATION_ADAPTER_AND_PERSONAL_PREPARATION；实际预检漏参停止，无个人动作。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -348,3 +348,7 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 本段封定：2026-10-07T12:19:49.916445+00:00；[migration-manifest](../../docs/evidence/svc06/update-diagnostics-candidate/migration-manifest.json) 保留 e4cd P2 与 source 30ce7eac3405e654007abdf7a7a2ff05854200d6、53runtime/原44闭包、9项纯检查。C3资料已main e0295747200d7f0616779a712fdfd06691c3708f，个人迁入/维护未执行；实际启动和窗口待定，不能用准备时间冒部署时间。
 
 2026-10-07T12:21:09.313131+00:00：独审静态P2（30ce只读SQL无schema）已限定修为flow.runners，source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc；1项受影响Pool port纯例1/1/103ms，原9不重跑，总10different/206ms、两组absent/双EOF/两empty scratchremoved；无个人/PG/HTTP。原raw01/02与旧P2均保留，准备修复待native最终增量审。status parser errors/human missing=[]，历史任务开工UNKNOWN不补猜。
+
+## 2026-10-07T12:25:24.759749+00:00：个人窗口启动前停止
+
+窗口svc06-personal-7d1-20261007-1224，fixed source5c29/delivery8825及native唯一准备批准。12:24:20.540207Z原53runtime/3input/4alias/978file/claim9核符，free21,806,919,680B。随后facts主入口遗漏必需output参数，2026-10-07T12:24:35.608129+00:00→2026-10-07T12:24:35.659519+00:00，51ms/exit1 OUTPUT_REQUIRED，在snapshot前停止；owned组absent/双EOF，0个人读写/SQL/迁入/服务/provider。原run和迁入outer未创建，窗口已告Lead归还，未自动重试。此为本operator调用错误，不推断固定artifact/产品失败。证据：[stop](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/stop.json) / [原始外层](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/fresh-before-outer.json)。

@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-07T12:25:42.367022+00:00",
+  "outcome": "PRECONDITION_CALLER_FAILURE_BEFORE_PERSONAL_ACCESS",
+  "bindings": [
+    {
+      "path": "STOP.md",
+      "bytes": 1002,
+      "sha256": "5eba79518340d6be1246580acf90b3ffb99ee72f1daa6e8b3d6ea9af14b1f722"
+    },
+    {
+      "path": "fresh-before-outer.json",
+      "bytes": 1437,
+      "sha256": "cd30db187226b5f1c7f2cd17403b5f9bfc644b8a4e63b2940a95543a6dc464aa"
+    },
+    {
+      "path": "preflight-bindings.json",
+      "bytes": 1349,
+      "sha256": "90517a54f177c57def371e752b5ee2860b55a25339a8c8bb601077d76cb62bfb"
+    },
+    {
+      "path": "stop.json",
+      "bytes": 1143,
+      "sha256": "5befd44787626d6ffe47c4dd90f8a22bb1b55f01798bd59084739fc7ef474d13"
+    },
+    {
+      "path": "window.json",
+      "bytes": 2499,
+      "sha256": "3e60d56010c6a80f2b9a3f598d7ee41d2fe10ddbbb61287b4ddcac72dda24a4e"
+    }
+  ],
+  "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "delivery": "8825109e3f016553ff3750f94ec26bd1a26de9a3",
+  "affectedProduct": false,
+  "personalChange": false,
+  "retry": false
+}

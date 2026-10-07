@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-07T12:24:35.608129+00:00",
+  "finishedAt": "2026-10-07T12:24:35.659519+00:00",
+  "report": {
+    "pid": 52928,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 51,
+    "stdout": "",
+    "stderr": "file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs:112\n  if (!output) throw Error('OUTPUT_REQUIRED');\n                     ^\n\nError: OUTPUT_REQUIRED\n    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs:112:22\n\nNode.js v24.20.0\n",
+    "observed_bytes": 456,
+    "retained_bytes": 456,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": []
+  },
+  "helper": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "bytes": 8740,
+    "sha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca"
+  }
+}
