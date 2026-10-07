@@ -61,10 +61,12 @@ def environment(tmp,started,permit,admin_url=None):
         env['FLOW_K01_QUERY_ADMIN_URL']=admin_url;env['FLOW_K01_QUERY_PG_OPEN']='reviewed'
     return env
 
-def create_scratch(parent):
+def create_scratch(parent,name=None):
     parent.mkdir(exist_ok=True)
     if not parent.is_dir() or parent.is_symlink() or parent.resolve()!=parent:raise ValueError('scratch parent identity')
-    path=parent/('k01-'+uuid.uuid4().hex);path.mkdir(mode=0o700)
+    name=name or 'k01-'+uuid.uuid4().hex
+    if not name.startswith('k01-') or len(name)!=36 or any(c not in '0123456789abcdef' for c in name[4:]):raise ValueError('scratch name')
+    path=parent/name;path.mkdir(mode=0o700)
     info=path.lstat();identity={'dev':info.st_dev,'ino':info.st_ino,'marker':uuid.uuid4().hex,'path':str(path)}
     write_new(path/'.owner.json',identity);sync_directory(parent)
     return path,identity
@@ -141,13 +143,15 @@ def main():
             p=ROOT/row['path']
             if p.parent!=ROOT or p.stat().st_size!=row['bytes'] or sha(p)!=row['sha256']:raise ValueError('PG binding mismatch')
     source_files=[{'path':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(ROOT.iterdir()) if p.is_file() and p.suffix in ('.py','.ts','.mjs','.json')]
-    tmp,identity=create_scratch(ROOT/'.scratch')
+    scratch_name='k01-'+uuid.uuid4().hex
     if args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
     elif args.mode=='pg':argv=[str(NODE),'--import','tsx',str(ROOT/'run.ts')]
     else:
         argv=[str(NODE),str(ROOT/'node_modules'/('vitest/vitest.mjs' if args.mode=='pure' else 'typescript/bin/tsc'))]
         argv+=['run','--config',str(ROOT/'vitest.config.mjs'),'--no-cache'] if args.mode=='pure' else ['--noEmit','--project',str(ROOT/'types.tsconfig.json')]
-    label=f'check-{len(finished)+1:02d}';append_record(ledger,{'event':'started','label':label,'mode':args.mode,'startedAt':now.isoformat(),'sourceHead':permit['sourceHead'],'argv':argv,'freeBytes':free_bytes,'sourceFiles':source_files,'scratch':identity})
+    label=f'check-{len(finished)+1:02d}';append_record(ledger,{'event':'started','label':label,'mode':args.mode,'startedAt':now.isoformat(),'sourceHead':permit['sourceHead'],'argv':argv,'freeBytes':free_bytes,'sourceFiles':source_files,'scratchPlanned':str(ROOT/'.scratch'/scratch_name)})
+    tmp,identity=create_scratch(ROOT/'.scratch',scratch_name)
+    append_record(ledger,{'event':'namespace-created','label':label,'identity':identity})
     sys.dont_write_bytecode=True
     spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     env=environment(tmp,started,permit,os.environ.get('FLOW_K01_QUERY_ADMIN_URL') if args.mode=='pg' else None)
