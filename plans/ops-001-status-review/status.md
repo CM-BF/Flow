@@ -23,7 +23,7 @@
 | 优先级 | 1 |
 | 当前产出 | 已审插件与会话差量及时进入主线；共享入口按原子交权转交后继，看板实际加载188来源并保留登录与计时。隔离局部检查与浏览器/PG按现规则并行。 |
 | 下一可用交付 | 收口工具全文共享出口及工程工具pump交接，持续接收已审成果；原owner维护真实开工/完成和等待来源。 |
-| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING；[ENG01J资格决定](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)由GO向用户提出，答复前维持原授写拒绝。其他源码、受控验收与集成继续，不等待旧磁盘或槽位条件。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)启用待用户；[ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)授写资格待用户答复；其余工作继续。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）

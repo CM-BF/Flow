@@ -20,7 +20,7 @@
 | 优先级 | 3 |
 | 当前产出 | 插件领取与Codex普通会话的公共协议已进入主线；工具全文领域可恢复大材料，网页保持原已部署版本。完整原生工程和实际跨端旅程仍未关闭。 |
 | 下一可用交付 | 把工具全文公共读取接入宿主；独立推进受信单文件写工具与实际聊天恢复/设置验收。 |
-| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING；[ENG01J资格决定](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)由GO向用户提出，答复前维持原授写拒绝。其他源码、受控验收与集成继续，不等待旧磁盘或槽位条件。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)启用待用户；[ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)授写资格待用户答复；其余工作继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
