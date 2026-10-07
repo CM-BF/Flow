@@ -12,6 +12,14 @@ export type OwnedBrowserLifetime = Lifetime & {
     close(): Promise<void>;
   }>;
 };
+type Phase = "not-started" | "fixture" | "chrome" | "canary" | "cookie-connect" | "cookie-flags" | "cookie-csrf"
+  | "app-connect" | "profile" | "ack-loss" | "task-completion" | "explicit-retry" | "legacy-read" | "asset-observation" | "reports" | "done";
+type Progress = { phase: Phase; app: string | null; completed: Array<{ phase: Phase; app: string | null }> };
+function advance(progress: Progress, phase: Phase, app: string | null = progress.app) {
+  assert.ok(progress.completed.length < 64);
+  if (progress.phase !== "not-started") progress.completed.push({ phase: progress.phase, app: progress.app });
+  progress.phase = phase; progress.app = app;
+}
 const inputBox = (page: Page) => page.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
 async function connect(page: Page, fixture: ReleaseFixture) {
   await page.goto(fixture.input.context.publicOrigin, { waitUntil: "domcontentloaded" });
@@ -44,12 +52,13 @@ function observeFault(page: Page, bodyText: string, life: Lifetime) {
     stop() { page.off("request", requested); page.off("response", responded); page.off("requestfailed", failed); },
   };
 }
-async function cookiePolicy(browser: Browser, fixture: ReleaseFixture, life: Lifetime) {
+async function cookiePolicy(browser: Browser, fixture: ReleaseFixture, life: Lifetime, progress: Progress) {
   const context = await browser.newContext({ serviceWorkers: "block" }); const page = await context.newPage();
   try {
     // Dedicated non-product page on the same exact public origin. No scripts are injected into an App.
     await page.goto(fixture.input.context.publicOrigin + "/__flow_compat_probe", { waitUntil: "domcontentloaded" });
     assert.equal(await page.evaluate(() => location.origin), fixture.input.context.publicOrigin);
+    advance(progress, "cookie-connect", null);
     const connection = await page.evaluate(async token => {
       const initial = await fetch("/api/browser-session"); const before = await initial.json();
       const connected = await fetch("/api/browser-session/connect", { method: "POST", headers: { authorization: `Bearer ${token}`, "content-type": "application/json" }, body: "{}" });
@@ -57,9 +66,11 @@ async function cookiePolicy(browser: Browser, fixture: ReleaseFixture, life: Lif
       return { initial: initial.status, before: before.state, connect: connected.status, ready: ready.state, protocol: ready.protocol };
     }, fixture.token);
     assert.deepEqual(connection, { initial: 200, before: "unauthenticated", connect: 200, ready: "ready", protocol: "flow.browser-session.v1" });
+    advance(progress, "cookie-flags");
     const cookies = (await context.cookies()).filter(cookie => cookie.name.startsWith("flow-session-")); assert.equal(cookies.length, 1);
     const cookie = cookies[0]!; const flags = { domain: cookie.domain, path: cookie.path, httpOnly: cookie.httpOnly, secure: cookie.secure, sameSite: cookie.sameSite };
     assert.deepEqual(flags, { domain: "127.0.0.1", path: "/", httpOnly: true, secure: false, sameSite: "Strict" });
+    advance(progress, "cookie-csrf");
     const result = await page.evaluate(async () => {
       const reading = await fetch("/api/browser-session"); const ready = await reading.json();
       const noCsrf = await fetch("/api/browser-session/logout", { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
@@ -76,7 +87,7 @@ async function cookiePolicy(browser: Browser, fixture: ReleaseFixture, life: Lif
       scope: "Independent real public Cookie/CSRF probe; retained Apps remain native Bearer clients", secretsPersisted: false });
   } finally { await context.close(); }
 }
-async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedApp, life: Lifetime) {
+async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedApp, life: Lifetime, progress: Progress) {
   fixture.proxy.select(app); const start = fixture.proxy.records.length;
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce", serviceWorkers: "block" });
   const page = await context.newPage(); page.setDefaultTimeout(10_000);
@@ -96,14 +107,17 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
   });
   let completed: Record<string, unknown> | undefined;
   try {
+    advance(progress, "app-connect", app.label);
     await life.checkpoint(); await connect(page, fixture);
     // This is Chrome page fetch, never page.request/context.request/route.fetch/Node fetch(publicOrigin).
     const index = await page.evaluate(async () => Array.from(new Uint8Array(await (await fetch("/", { cache: "no-store" })).arrayBuffer())));
     assert.equal(hash(Buffer.from(index)), app.files.find(file => file.path === "index.html")!.sha256);
+    advance(progress, "profile");
     await page.getByRole("button", { name: "Execution profile: Runner default", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "Execution profile", exact: true });
     const profile = dialog.getByRole("radio", { name: /release-synthetic/ }); await expect(profile).toHaveCount(1); await profile.check();
     await page.keyboard.press("Escape"); await expect(dialog).toHaveCount(0);
+    advance(progress, "ack-loss");
     await inputBox(page).fill(text); selectedObservation = observeFault(page, text, life); fixture.proxy.arm();
     await page.getByRole("button", { name: "Send message", exact: true }).filter({ visible: true }).click();
     await expect(inputBox(page)).toHaveValue(""); await inputBox(page).fill(draft);
@@ -117,8 +131,9 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
     const posts = () => fixture.proxy.records.slice(start).filter(record => record.method === "POST" && record.path === first.path);
     assert.equal(posts().length, 1, "Exactly one POST before explicit Retry");
     const accepted = first.response, conversationId = accepted.conversation.id, taskId = accepted.turn.task.id;
-    assert.equal(typeof taskId, "string"); assert.ok(taskId.length); await fixture.completeTask(taskId, text);
+    assert.equal(typeof taskId, "string"); assert.ok(taskId.length); advance(progress, "task-completion"); await fixture.completeTask(taskId, text);
     const finalTask = await until(() => fixture.request(`/api/tasks/${taskId}`), value => value.status === "succeeded", life); assert.equal(finalTask.verificationStatus, "passed");
+    advance(progress, "explicit-retry");
     await page.getByRole("button", { name: "Retry same message", exact: true }).click();
     await expect(receipt).toHaveCount(0); await expect(inputBox(page)).toHaveValue(draft);
     await expect(page.getByText(`Release fixture reply: ${text}`, { exact: true })).toBeVisible();
@@ -128,6 +143,7 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
     const negotiated = await until(async () => fixture.proxy.records.slice(start).find(record => record.path === `/api/conversations/${conversationId}` && record.forwardedStream === "patch-v1" && record.response?.conversation?.id === conversationId), Boolean, life);
     assert.ok(negotiated); assert.equal(negotiated.response!.capabilities.liveAssistantText, true);
     await until(async () => fixture.proxy.records.slice(start).some(record => record.sse && record.sse.chunks > 0 && record.sse.firstChunkAt !== null && record.bearer), Boolean, life);
+    advance(progress, "legacy-read");
     fixture.proxy.setLegacy(true); await connect(page, fixture);
     const nav = page.getByRole("navigation", { name: "Conversations", exact: true }); const chats = page.getByRole("button", { name: "Chats", exact: true });
     if (!/\bactive\b/.test(await chats.getAttribute("class") ?? "")) await chats.click(); await expect(nav).toBeVisible();
@@ -143,6 +159,7 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
     }, { token: fixture.token, id: conversationId });
     assert.equal(negotiation.denied, 401); assert.equal(negotiation.status, 200);
     assert.ok(negotiation.profiles.some((value: { reference: { id: string; configDigest: string } }) => value.reference.id === fixture.profile.reference.id && value.reference.configDigest === fixture.profile.reference.configDigest));
+    advance(progress, "asset-observation");
     await Promise.all(assetReads); assert.deepEqual(pageErrors, []);
     assert.ok(consoleErrors.every(error => error.path === first.path && /ERR_CONTENT_LENGTH_MISMATCH|ERR_FAILED|ERR_CONNECTION_CLOSED/.test(error.text)
       || error.path === `/api/conversations/${conversationId}` && /401/.test(error.text) || error.path === "/favicon.ico" && /404/.test(error.text)), "Unexpected console errors");
@@ -185,32 +202,37 @@ export async function runReleaseCompatibility(admission: Admission, adminUrl: st
   const startedAt = new Date().toISOString(); await life.checkpoint();
   let fixture: ReleaseFixture | undefined, chrome: Awaited<ReturnType<OwnedBrowserLifetime["launchOwnedChrome"]>> | undefined;
   const results: Awaited<ReturnType<typeof checkApp>>[] = [], errors: string[] = []; let cleanup: unknown, reports: unknown = null;
+  const progress: Progress = { phase: "not-started", app: null, completed: [] }; let failedAt: { phase: Phase; app: string | null } | null = null;
   try {
+    advance(progress, "fixture");
     fixture = await startReleaseFixture(admission, adminUrl, life); await life.checkpoint();
+    advance(progress, "chrome");
     chrome = await life.launchOwnedChrome({ proxyUrl: fixture.proxy.url, proxyBypassList: "<-loopback>" }); await life.checkpoint();
     assert.ok(chrome.receipt.pid > 0 && chrome.receipt.pgid > 0); assert.match(chrome.receipt.executableSha256, /^[a-f0-9]{64}$/);
     assert.ok(chrome.receipt.argv.includes(`--proxy-server=${fixture.proxy.url}`) && chrome.receipt.argv.includes("--proxy-bypass-list=<-loopback>"));
     assert.ok(!chrome.receipt.argv.some(arg => /^(--no-sandbox|--proxy-pac-url|--no-proxy-server)(=|$)/.test(arg)));
     await saveJson(admission.output, "owned-chrome.json", chrome.receipt);
+    advance(progress, "canary");
     const canary = await chrome.browser.newContext({ serviceWorkers: "block" });
     try { const page = await canary.newPage(); await page.goto(fixture.proxy.canaryUrl, { waitUntil: "domcontentloaded" }); await expect(page.locator("body")).toHaveText("OWNED_PROXY_ROUTE"); fixture.proxy.assertCanary(); }
     finally { await canary.close(); }
-    await cookiePolicy(chrome.browser, fixture, life);
-    for (const app of fixture.apps) { await life.checkpoint(); results.push(await checkApp(chrome.browser, fixture, app, life)); }
+    await cookiePolicy(chrome.browser, fixture, life, progress);
+    for (const app of fixture.apps) { await life.checkpoint(); results.push(await checkApp(chrome.browser, fixture, app, life, progress)); }
     assert.equal(results.length, 3);
-  } catch (error) { errors.push(errorCode(error)); }
+  } catch (error) { failedAt = { phase: progress.phase, app: progress.app }; errors.push(errorCode(error)); }
   finally {
     if (chrome) try { await chrome.close(); } catch (error) { errors.push("chrome-cleanup:" + errorCode(error)); }
     if (fixture) {
       try { cleanup = await fixture.close(); assert.deepEqual((cleanup as { errors: string[] }).errors, []); } catch (error) { errors.push("fixture-cleanup:" + errorCode(error)); }
       try { await fixture.proxy.settle(); } catch (error) { errors.push("proxy-observation:" + errorCode(error)); }
+      try { await saveJson(admission.output, "all-wire.json", fixture.proxy.records); } catch (error) { errors.push("wire-evidence:" + errorCode(error)); }
     }
   }
   // No success reports are imported before Chrome/HTTP/DB cleanup has completed successfully.
   if (fixture && errors.length === 0 && results.length === 3) {
-    try { await life.checkpoint(); reports = await importReports(fixture, results); await life.checkpoint(); } catch (error) { errors.push("report:" + errorCode(error)); }
+    try { advance(progress, "reports", null); await life.checkpoint(); reports = await importReports(fixture, results); await life.checkpoint(); advance(progress, "done", null); } catch (error) { failedAt = { phase: progress.phase, app: progress.app }; errors.push("report:" + errorCode(error)); }
   }
-  const result = { startedAt, finishedAt: new Date().toISOString(), results, errors, reports, cleanup: cleanup ?? null,
+  const result = { startedAt, finishedAt: new Date().toISOString(), results, errors, progress, failedAt, reports, cleanup: cleanup ?? null,
     passed: errors.length === 0 && results.length === 3 && reports !== null, publicContext: admission.context, providerQueries: 0 };
   await saveJson(admission.output, "browser-results.json", result);
   assert.equal(result.passed, true, "Compatibility incomplete; preserve failed raw and owned cleanup"); return result;
