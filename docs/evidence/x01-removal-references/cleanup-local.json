@@ -1,0 +1,422 @@
+{
+  "startedAt": "2026-10-07T12:06:06.367598+00:00",
+  "startEpoch": 1791374691.0,
+  "attempts": [
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T12:06:06.369013+00:00",
+      "freeBeforeBytes": 21935398912,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-fdiip864",
+        "dev": 16777234,
+        "ino": 124114383,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 11280,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01-removal-references/cleanup-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-fdiip864/tests.json"
+      ],
+      "process": {
+        "pid": 51248,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 1,
+        "elapsed_ms": 415,
+        "observed_bytes": 109,
+        "retained_bytes": 109,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-fdiip864/tests.json\n",
+      "rawBytes": 109,
+      "rawSha256": "9fcd7dbe49dbc3cbf4425864ea388b74435d9d69dcc6162efb4cf1176d888f14",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 0,
+        "numFailedTestSuites": 1,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 6,
+        "numPassedTests": 0,
+        "numFailedTests": 6,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791374766574,
+        "success": false,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "one connection then zero preserves observations and drops only after identity recheck",
+                "status": "failed",
+                "title": "one connection then zero preserves observations and drops only after identity recheck",
+                "duration": 2.9640420000000063,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:24:41\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persistent connection is capped at twenty observations and remains KEEP",
+                "status": "failed",
+                "title": "persistent connection is capped at twenty observations and remains KEEP",
+                "duration": 0.4130839999999978,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:27:39\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "shared deadline reserves five seconds and does not reset a waiting budget",
+                "status": "failed",
+                "title": "shared deadline reserves five seconds and does not reset a waiting budget",
+                "duration": 1.053875000000005,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:30:65\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "identity drift during waiting keeps the database without another count or DROP",
+                "status": "failed",
+                "title": "identity drift during waiting keeps the database without another count or DROP",
+                "duration": 0.29291700000001697,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:33:57\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unclosed owner does not initiate connection polling or DROP",
+                "status": "failed",
+                "title": "unclosed owner does not initiate connection polling or DROP",
+                "duration": 0.20583400000001006,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:36:41\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "identity changes after zero observation still bar ordinary DROP",
+                "status": "failed",
+                "title": "identity changes after zero observation still bar ordinary DROP",
+                "duration": 0.16266600000000153,
+                "failureMessages": [
+                  "TypeError: this.pool.on is not a function\n    at new PluginDatabaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts:120:15)\n    at fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:18:11)\n    at finish (/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:22:68)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts:39:38\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37"
+                ],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791374766736,
+            "endTime": 1791374766741.2058,
+            "status": "failed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T12:06:06.784728+00:00",
+      "elapsedBeforeReceiptSeconds": 0.41541008290369064
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T12:06:17.648537+00:00",
+      "freeBeforeBytes": 21934292992,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-huvnbgkg",
+        "dev": 16777234,
+        "ino": 124114410,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 2349,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01-removal-references/cleanup-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-huvnbgkg/tests.json"
+      ],
+      "process": {
+        "pid": 59288,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 473,
+        "observed_bytes": 109,
+        "retained_bytes": 109,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-huvnbgkg/tests.json\n",
+      "rawBytes": 109,
+      "rawSha256": "9d0a75819246d40d866a1f979b05ad20f8f2df44418672c1f04c1558a6c7564d",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 6,
+        "numPassedTests": 6,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791374777891,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "one connection then zero preserves observations and drops only after identity recheck",
+                "status": "passed",
+                "title": "one connection then zero preserves observations and drops only after identity recheck",
+                "duration": 4.126999999999981,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persistent connection is capped at twenty observations and remains KEEP",
+                "status": "passed",
+                "title": "persistent connection is capped at twenty observations and remains KEEP",
+                "duration": 0.9904999999999973,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "shared deadline reserves five seconds and does not reset a waiting budget",
+                "status": "passed",
+                "title": "shared deadline reserves five seconds and does not reset a waiting budget",
+                "duration": 0.3276659999999936,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "identity drift during waiting keeps the database without another count or DROP",
+                "status": "passed",
+                "title": "identity drift during waiting keeps the database without another count or DROP",
+                "duration": 0.4513330000000053,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unclosed owner does not initiate connection polling or DROP",
+                "status": "passed",
+                "title": "unclosed owner does not initiate connection polling or DROP",
+                "duration": 0.43354200000001697,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "identity changes after zero observation still bar ordinary DROP",
+                "status": "passed",
+                "title": "identity changes after zero observation still bar ordinary DROP",
+                "duration": 0.3708340000000021,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791374778075,
+            "endTime": 1791374778081.4336,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/cleanup-wait.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T12:06:18.123291+00:00",
+      "elapsedBeforeReceiptSeconds": 0.47369112505111843
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T12:06:20.952497+00:00",
+      "freeBeforeBytes": 21934272512,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-mmo5y9al",
+        "dev": 16777234,
+        "ino": 124114436,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01-removal-references/cleanup-tsconfig.json"
+      ],
+      "process": {
+        "pid": 62940,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 546,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T12:06:21.500193+00:00",
+      "elapsedBeforeReceiptSeconds": 0.5470514589687809
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 600,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 6300000000,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T12:06:21.500206+00:00"
+}

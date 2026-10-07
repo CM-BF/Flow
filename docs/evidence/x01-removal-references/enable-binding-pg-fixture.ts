@@ -212,29 +212,45 @@ export class PluginDatabaseFixture {
     } catch (error) { this.recordError('create', error); throw error; }
   }
 
+  private matchesIdentity(current: DatabaseIdentity | undefined): boolean {
+    return this.creationReceiptSaved && !!current && !!this.identity
+      && current.oid === this.identity.oid && current.owner === this.identity.owner && current.marker === this.identity.marker;
+  }
+
   async finish(owners: OwnersClosed, facts: readonly unknown[] = []) {
     if (this.finished) throw new Error('X01 fixture cleanup already attempted');
     this.finished = true;
     const cleanup = { owners, ownersClosed: Object.values(owners).every(value => value === true), poolClosed: false, adminClosed: false,
       createRequested: this.createRequested, createAcknowledged: this.createAcknowledged, creationReceiptSaved: this.creationReceiptSaved,
       identity: this.identity ?? null, identityConfirmed: false, connections: null as number | null,
-      dropRequested: false, dropAcknowledged: false, databaseAbsent: null as boolean | null };
+      dropRequested: false, dropAcknowledged: false, databaseAbsent: null as boolean | null,
+      connectionObservations: [] as { at: string; connections: number }[] };
     cleanup.poolClosed = await this.close('pool-close', () => this.pool.end());
     try {
       if (this.createRequested && Date.now() < this.cleanupUntil) {
-        const current = await this.within(this.readIdentity(), this.cleanupUntil);
-        cleanup.identityConfirmed = this.creationReceiptSaved && !!current && !!this.identity
-          && current.oid === this.identity.oid && current.owner === this.identity.owner && current.marker === this.identity.marker;
-        if (cleanup.identityConfirmed) {
+        // Owner close promises and one pg_stat_activity sample are distinct evidence.
+        // Observe at most 20 times; retain five seconds for DROP/identity/admin closure.
+        for (let observation = 0; observation < 20; observation++) {
+          const current = await this.within(this.readIdentity(), this.cleanupUntil);
+          cleanup.identityConfirmed = this.matchesIdentity(current);
+          if (!cleanup.identityConfirmed) break;
           cleanup.connections = Number((await this.within(this.admin.query<{ count: string }>(
             'SELECT count(*) FROM pg_stat_activity WHERE datname=$1', [this.database]), this.cleanupUntil)).rows[0]!.count);
-          if (cleanup.ownersClosed && cleanup.poolClosed && cleanup.connections === 0) {
-            if (Date.now() >= this.cleanupUntil) throw new Error('X01 cleanup deadline reached');
-            cleanup.dropRequested = true;
-            await this.within(this.admin.query(`DROP DATABASE ${this.database}`), this.cleanupUntil);
-            cleanup.dropAcknowledged = true;
-            cleanup.databaseAbsent = (await this.within(this.readIdentity(), this.cleanupUntil)) === undefined;
-          }
+          cleanup.connectionObservations.push({ at: new Date().toISOString(), connections: cleanup.connections });
+          if (!cleanup.ownersClosed || !cleanup.poolClosed || cleanup.connections === 0) break;
+          const remaining = this.cleanupUntil - Date.now() - 5000;
+          if (observation === 19 || remaining <= 0) break;
+          await this.within(new Promise<void>(resolve => setTimeout(resolve, Math.min(100, remaining))), this.cleanupUntil);
+          if (Date.now() + 5000 >= this.cleanupUntil) break;
+        }
+        if (cleanup.identityConfirmed && cleanup.ownersClosed && cleanup.poolClosed && cleanup.connections === 0) {
+          cleanup.identityConfirmed = this.matchesIdentity(await this.within(this.readIdentity(), this.cleanupUntil));
+          if (!cleanup.identityConfirmed) throw new Error('X01 identity changed before ordinary DROP');
+          if (Date.now() >= this.cleanupUntil) throw new Error('X01 cleanup deadline reached');
+          cleanup.dropRequested = true;
+          await this.within(this.admin.query(`DROP DATABASE ${this.database}`), this.cleanupUntil);
+          cleanup.dropAcknowledged = true;
+          cleanup.databaseAbsent = (await this.within(this.readIdentity(), this.cleanupUntil)) === undefined;
         }
       }
     } catch (error) { this.recordError('database-cleanup', error); }

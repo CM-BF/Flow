@@ -1,0 +1,28 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@flow/contracts": [
+        "../../../packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "../../../packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "../../../packages/plugin-runtime/src/package-store.ts"
+      ],
+      "@flow/protocols": [
+        "../../../packages/protocols/src/index.ts"
+      ]
+    },
+    "rootDirs": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/support"
+    ]
+  },
+  "include": [
+    "cleanup-wait.test.ts",
+    "enable-binding-pg-fixture.ts"
+  ]
+}

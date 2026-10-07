@@ -1,0 +1,9 @@
+# Bounded connection observation after owner closure
+
+New authorized segment 2026-10-07T12:04:51Z to12:14:51Z, including wait; 0PG/Chrome/provider. Skills reuse local find-skills/codebase-design/clean-code baseline already recorded. Sole changed lifecycle owner is this task evidence copy of PluginDatabaseFixture; old shared/X01 helper and original run are immutable.
+
+Observed R1: owner close promises resolved, first admin sample count1, no backend identity captured; after process exit authorized cleanup later found0. Installed PgBoss stop defaults close=true and awaits its db.close/pool.end path. This establishes intended close ownership, not original backend cause or guaranteed instantaneous pg_stat_activity visibility. We do not label the cause as proven race or pool leak.
+
+finish now records at most20 bounded identity+count observations, spacing retries100ms and stopping between retries with5s left before the same cleanupUntil. No reset/extension; existing query deadlines and caller170/180 boundaries remain. Owner/pool unclosed, identity drift, persistent connections, query error or deadline keep the DB. Zero is followed by another exact OID/owner/marker recheck before a single ordinary DROP/absence; no terminate/FORCE. The5s reserve gates new polls, not a claim that an in-flight DB operation is preemptible.
+
+Six pure fixture regressions cover1→0,20 persistent observations, same-origin remaining reserve, identity drift while waiting, unclosed owner, and drift after zero beforeDROP. Mock Pool first lacked .on (all6 fail before exercising lifecycle), fixed fake then6pass; focused types0. No old product8/realPG1 rerun. New evidence proves bounded logic, not actual future teardown. R1 raw/UNKNOWN/afterAll FAIL and separatecleanup RETURN stay unchanged. If another actual is required, it needs new preparation binding/namespace and a new authorized window; consumedR1 cannot reopen.

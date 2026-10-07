@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T12:04:43Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "target": "951b40dcd411bf0827e0453211d42b6cf2df5a44",
+  "verdict": "FAILED_RESULT_FIDELITY_AND_SEPARATE_CLEANUP_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "bindings": {
+    "original": 19,
+    "bytes": 150622,
+    "extra": 4,
+    "extraBytes": 15725,
+    "rawFiles": 13,
+    "rawBytes": 13342
+  },
+  "scope": "1 functional case passed but suite failed afterAll, child exit1, original caller UNKNOWN/KEEP preserved. Separate expressly authorized same-identity cleanup proves RETURN; no attribution of original one connection. Not approval of physical removal/npm/full-store coverage or complete X01."
+}
