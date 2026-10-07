@@ -1,3 +1,4 @@
+import { pluginRuntimeCommandSchema, type PluginRuntimeCommand } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { execFileSync } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import { mkdir, lstat, writeFile } from 'node:fs/promises';
@@ -5,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { chromium, expect, type Page } from '@playwright/test';
 import { createServer as createVite } from 'vite';
 import { FlowClient } from '@flow/client';
-import { pluginRuntimeCommandSchema, type PluginCommand, type PluginRuntimeCommand, type PluginSnapshot, type PluginVersionDeclaration } from '@flow/contracts';
+import { type PluginCommand, type PluginSnapshot, type PluginVersionDeclaration } from '@flow/contracts';
 import { createServer as createHttpServer } from 'node:http';
 
 const fixtureUuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
@@ -168,7 +169,7 @@ const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf
 const adminConnection = new URL('postgresql://flow:flow-local-only@127.0.0.1:55432/postgres');
 const admin = new Pool({ connectionString: adminConnection.href, max: 1 });
 const created: string[] = [];
-const pools: Pool[] = [];
+const pools: import('pg').Pool[] = [];
 const servers: Awaited<ReturnType<typeof createCenter>>[] = [];
 const token = randomUUID();
 const checks: string[] = [];

@@ -1,6 +1,7 @@
+import type { PluginRuntimeView } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { useCallback, useId, useState, useSyncExternalStore } from 'react';
 import type { FlowClient } from '@flow/client';
-import type { PluginMaterialInstall, PluginRuntimeView, PluginScope, PluginSnapshot, PluginVersion } from '@flow/contracts';
+import type { PluginMaterialInstall, PluginScope, PluginSnapshot, PluginVersion } from '@flow/contracts';
 import type { PluginHost } from '../plugins/host';
 import { readRuntimeForView, selectRuntimeForView, type PluginRuntimeReader, type RuntimeCommandController } from './runtime-command';
 import { useRead } from './use-read';

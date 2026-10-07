@@ -1,5 +1,5 @@
 import { FlowApiError, type FlowClient } from '@flow/client';
-import { pluginRuntimeCommandSchema, type PluginRuntimeCommand, type PluginRuntimeView } from '@flow/contracts';
+import { pluginRuntimeCommandSchema, type PluginRuntimeCommand, type PluginRuntimeView } from '../../../../packages/contracts/src/plugin-runtime.js';
 
 export type PluginRuntimeReader = Pick<FlowClient, 'pluginRuntime' | 'pluginMaterialInstalls'>;
 type RuntimeWriter = Pick<FlowClient, 'commandPluginRuntime'>;

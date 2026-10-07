@@ -1,6 +1,6 @@
 import { afterEach, expect, it, vi } from 'vitest';
 import { FlowClient } from '@flow/client';
-import type { PluginRuntimeCommand } from '@flow/contracts';
+import type { PluginRuntimeCommand } from '../../../packages/contracts/src/plugin-runtime.js';
 import { createRuntimeCommandController, readRuntimeForView, selectRuntimeForView } from '../src/plugin-management/runtime-command';
 
 const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
