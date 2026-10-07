@@ -7,13 +7,13 @@ import { readThreadReceipt, resumeThreadRequest, startThreadRequest, startTurnRe
 import { runCodexExchange, type CodexTransportFactory, type CodexExchangeInput } from './exchange.js';
 export type { CodexTransportFactory } from './exchange.js';
 
-export interface OrdinaryCodexTurnInput extends CodexExchangeInput { readonly prompt: string; readonly resumeSessionId?: string; onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void> }
+export interface OrdinaryCodexTurnInput extends CodexExchangeInput { readonly prompt: string; readonly resumeSessionId?: string; onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>; onStreamComplete?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void> }
 /** Runs one ordinary turn without host events, persistence or admission authority. */
 export async function runOrdinaryCodexTurn(profile: CodexExecutionProfileConfiguration, createTransport: CodexTransportFactory, input: OrdinaryCodexTurnInput) {
   const resumedId = input.resumeSessionId;
   if (resumedId !== undefined && profile.sessionPersistence !== 'host-owned') throw new NativeExecutionError('settled');
   const { thread, observation } = await runCodexExchange(createTransport, input, profile.hostLimits, {
-    evidence: new OrdinaryTurnEvidence(), onStream: input.onStream,
+    evidence: new OrdinaryTurnEvidence(), onStream: input.onStream, onStreamComplete: input.onStreamComplete,
     threadMethod: resumedId === undefined ? 'thread/start' : 'thread/resume',
     startThread: resumedId === undefined ? startThreadRequest(profile, input.workingDirectory) : resumeThreadRequest(profile, input.workingDirectory, resumedId),
     startTurn: threadId => startTurnRequest(profile, input.workingDirectory, threadId, input.prompt),

@@ -10,6 +10,8 @@ export interface CodexStreamDelta {
   readonly kind: 'text' | 'reasoning-summary' | 'reasoning-text';
   readonly threadId: string; readonly turnId: string; readonly itemId: string;
   readonly index: number | null; readonly delta: string;
+  /** Full text supplied by an item/completed observation, never inferred from turn success. */
+  readonly completedText?: string;
 }
 const index = z.number().int().nonnegative().max(10_000);
 const deltaIdentity = { threadId: nativeId, turnId: nativeId, itemId: nativeId };
@@ -38,6 +40,8 @@ export class CodexTurnEvidence {
   private pendingBytes = 0;
   private stream: CodexStreamDelta[] = [];
   private streamBytes = 0;
+  private readonly streamed = new Map<string, CodexStreamDelta>();
+  private readonly completedItems = new Set<string>();
   private decodedBytes = 0;
   observation: OrdinaryFinalObservation = { state: 'pending', final: null };
 
@@ -69,7 +73,8 @@ export class CodexTurnEvidence {
 
   /** The single receive consumer drains this bounded queue before reading another frame.
    * It awaits its downstream sink; no unbounded async fire-and-forget writes. */
-  takeStreamDeltas(): readonly CodexStreamDelta[] { const items = this.stream; this.stream = []; this.streamBytes = 0; return items; }
+  takeStreamDeltas(): readonly CodexStreamDelta[] { return this.takeStreamUpdates().filter(item => item.completedText === undefined); }
+  takeStreamUpdates(): readonly CodexStreamDelta[] { const items = this.stream; this.stream = []; this.streamBytes = 0; return items; }
   private canRoute(notification: Notification) { return Boolean(this.threadId && (['thread/started', 'thread/status/changed'].includes(notification.method) || this.turnId)); }
   private drain() {
     const deferred: Notification[] = [];
@@ -112,7 +117,10 @@ export class CodexTurnEvidence {
       case 'item/completed':
         if (params.turnId !== this.turnId) throw new Error('Native turn mismatch.');
         this.checkItem(params.item, notification.method === 'item/completed' ? 'completed' : 'started');
-        if (notification.method === 'item/completed') this.observation = this.projection!.accept(notification);
+        if (notification.method === 'item/completed') {
+          this.observation = this.projection!.accept(notification);
+          this.completeStreams(nativeRecord.parse(params.item));
+        }
         return;
       default:
         if (params.turnId !== this.turnId || this.observation.state !== 'pending') throw new Error('Unsupported native notification.');
@@ -126,7 +134,25 @@ export class CodexTurnEvidence {
     else if (method === 'item/reasoning/summaryTextDelta') { const { summaryIndex, ...parsed } = summaryDelta.parse(params); value = { ...parsed, kind: 'reasoning-summary', index: summaryIndex }; }
     else if (method === 'item/reasoning/textDelta') { const { contentIndex, ...parsed } = reasoningDelta.parse(params); value = { ...parsed, kind: 'reasoning-text', index: contentIndex }; }
     else throw new Error('Unsupported native notification.');
-    this.streamBytes += Buffer.byteLength(value.delta);
+    if (this.completedItems.has(value.itemId)) throw new Error('Stream arrived after item completion.');
+    const key = JSON.stringify([value.itemId, value.kind, value.index]);
+    if (!this.streamed.has(key) && this.streamed.size >= 256) throw new Error('Native stream block limit exceeded.');
+    this.streamed.set(key, { ...value, delta: '' });
+    this.enqueue(value);
+  }
+  private completeStreams(item: Record<string, unknown>) {
+    const streams = [...this.streamed.values()].filter(value => value.itemId === item.id);
+    if (!streams.length || this.completedItems.has(String(item.id))) return;
+    for (const value of streams) {
+      const text = value.kind === 'text' ? item.text : Array.isArray(item[value.kind === 'reasoning-summary' ? 'summary' : 'content'])
+        ? (item[value.kind === 'reasoning-summary' ? 'summary' : 'content'] as unknown[])[value.index!] : undefined;
+      if (typeof text !== 'string') throw new Error('Stream completion text missing.');
+      this.enqueue({ ...value, completedText: text });
+    }
+    this.completedItems.add(String(item.id));
+  }
+  private enqueue(value: CodexStreamDelta) {
+    this.streamBytes += Buffer.byteLength(value.completedText ?? value.delta);
     if (this.stream.length >= 64 || this.streamBytes > 2 * 1024 * 1024) throw new Error('Native stream queue limit exceeded.');
     this.stream.push(value);
   }

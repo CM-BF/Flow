@@ -3,6 +3,8 @@ import { codexExecutionProfileConfigurationSchema, type CodexExecutionProfileCon
 import { textDigest, verifyText } from '../../verifier.js';
 import { NativeExecutionError } from '../settlement.js';
 import { runOrdinaryCodexTurn, type CodexTransportFactory } from './turn.js';
+import { CodexAssistantStream } from './stream.js';
+import type { CodexStreamDelta } from './evidence.js';
 import { assertCodexSessionStorage, sessionTransport, type CodexSessionStorage } from './session-storage.js';
 
 export type { CodexTransportFactory } from './turn.js';
@@ -19,13 +21,25 @@ export function createCodexAdapter(configuration: CodexExecutionProfileConfigura
       || context.steering || context.goalTools || context.goalGraphTools) throw new NativeExecutionError('settled');
     await context.assertOwnership(); context.signal.throwIfAborted();
     const factory = profile.sessionPersistence ? sessionTransport(sessionStorage!, profile, context) : createTransport!;
+    const stream = new CodexAssistantStream(); let publishedSession: string | undefined;
+    const publishStream = async (delta: CodexStreamDelta, signal: AbortSignal) => {
+      await context.assertOwnership(); signal.throwIfAborted();
+      if (publishedSession === undefined) {
+        await context.emit({ type: 'session', nativeSessionId: delta.threadId, adapterVersion: profile.adapterVersion });
+        publishedSession = delta.threadId;
+      }
+      if (publishedSession !== delta.threadId) throw new NativeExecutionError('unknown');
+      for (const patch of stream.accept(delta)) { await context.assertOwnership(); signal.throwIfAborted(); await context.emit(patch); }
+    };
     const final = await runOrdinaryCodexTurn(profile, factory, {
+      onStream: publishStream, onStreamComplete: publishStream,
       prompt: context.task.prompt, workingDirectory: context.workingDirectory, signal: context.signal, assertOwnership: () => context.assertOwnership(),
       ...(context.task.resumeSessionId !== undefined ? { resumeSessionId: context.task.resumeSessionId } : {}),
     });
+    if (publishedSession !== undefined && publishedSession !== final.nativeSessionId) throw new NativeExecutionError('unknown');
     const artifactId = `codex-${final.messageId}`;
     const events: RunnerEventData[] = [
-      { type: 'session', nativeSessionId: final.nativeSessionId, adapterVersion: profile.adapterVersion }, final,
+      ...(publishedSession === undefined ? [{ type: 'session' as const, nativeSessionId: final.nativeSessionId, adapterVersion: profile.adapterVersion }] : []), final,
       { type: 'artifact', artifactId, title: 'Native final', version: textDigest(final.content), content: final.content, mediaType: 'text/plain' },
       verifyText(artifactId, final.content, context.task.verification),
     ];

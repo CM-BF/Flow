@@ -45,7 +45,7 @@ export class FlowApiError extends Error {
 interface ClientConnectionOptions {
   baseUrl: string;
   /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
-  assistantStreamProtocol?: 'patch-v1';
+  assistantStreamProtocol?: 'patch-v1' | 'patch-v2';
 }
 
 /** Cookie authentication is explicit; the browser owns the HttpOnly session cookie. */
@@ -58,7 +58,7 @@ export class FlowClient {
   private readonly baseUrl: string;
   private readonly token: string | undefined;
   private readonly csrfToken: (() => string | undefined) | undefined;
-  private readonly assistantStreamProtocol: 'patch-v1' | undefined;
+  private readonly assistantStreamProtocol: 'patch-v1' | 'patch-v2' | undefined;
 
   constructor(options: ClientOptions) {
     if ((options.token !== undefined) === (options.browserSession !== undefined)) throw new Error('Select exactly one authentication mode.');
@@ -94,15 +94,15 @@ export class FlowClient {
   assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal });
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal, ...(this.assistantStreamProtocol === 'patch-v2' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v2' } } : {}) });
   }
   assistantStreamPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number }, signal?: AbortSignal): Promise<AssistantStreamPatchPage> {
     const query = new URLSearchParams({ attemptId: options.attemptId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal });
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal, ...(this.assistantStreamProtocol === 'patch-v2' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v2' } } : {}) });
   }
   assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal });
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal, ...(this.assistantStreamProtocol === 'patch-v2' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v2' } } : {}) });
   }
 
   fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
@@ -473,7 +473,7 @@ export class FlowClient {
   }
   conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}`, {
-      signal, ...(this.assistantStreamProtocol === 'patch-v1' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v1' } } : {}),
+      signal, ...(this.assistantStreamProtocol ? { headers: { 'X-Flow-Assistant-Stream': this.assistantStreamProtocol } } : {}),
     });
   }
   conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {

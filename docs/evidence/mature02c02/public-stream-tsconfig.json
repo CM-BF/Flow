@@ -1,0 +1,24 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../packages/contracts/src/assistant-stream.test.ts",
+    "../../../apps/runner/src/assistant-stream/patch-buffer.test.ts",
+    "../../../apps/runner/src/assistant-stream/stream.test.ts",
+    "../../../apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+    "../../../apps/runner/src/native-harness/codex/stream.test.ts",
+    "../../../apps/runner/src/native-harness/codex/evidence.test.ts",
+    "../../../apps/runner/src/native-harness/codex/adapter.test.ts",
+    "../../../apps/server/src/assistant-stream/codex.test.ts",
+    "../../../packages/client/src/assistant-stream.test.ts",
+    "../../../packages/interaction/src/stream/codex.test.ts",
+    "../../../packages/interaction/src/stream/presentation.test.ts",
+    "../../../apps/server/src/assistant-stream/index.ts",
+    "../../../apps/server/src/assistant-stream-compatibility/index.ts",
+    "../../../apps/runner/src/native-harness/codex/exchange.test.ts"
+  ],
+  "exclude": []
+}

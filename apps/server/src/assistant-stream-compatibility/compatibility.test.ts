@@ -65,7 +65,7 @@ it('requires both the explicit mounting option and readable 022 routes before ad
 });
 it('keeps missing, unknown and combined headers false while explicit opt-in is independent of a last turn', async () => {
   const path = `/api/conversations/${conversationId}`;
-  for (const value of [undefined, '', 'patch-v2', 'PATCH-V1', 'patch-v1, patch-v1', 'patch-v1, unknown']) {
+  for (const value of [undefined, '', 'patch-v3', 'PATCH-V1', 'patch-v1, patch-v1', 'patch-v1, unknown']) {
     const response = await request(enabled, path, undefined, value === undefined ? {} : { 'x-flow-assistant-stream': value });
     expect(response.capabilities.liveAssistantText).toBe(false);
   }

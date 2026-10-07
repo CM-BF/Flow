@@ -17,6 +17,7 @@ export interface CodexExchangeRecipe<Thread extends { threadId: string } = { thr
   readonly startThread: Json;
   /** Trusted sink observes cancellation; interrupted delivery has unknown effects, never terminal proof. */
   onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>;
+  onStreamComplete?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>;
   readonly threadMethod?: 'thread/start' | 'thread/resume';
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
@@ -35,18 +36,19 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
   const terminal = new Promise<void>(resolve => { wake = resolve; });
   let streamDelivery = Promise.resolve();
   async function flushStream() {
-    const deltas = evidence.takeStreamDeltas();
+    const deltas = evidence.takeStreamUpdates();
     // Binding and receive can both release evidence; serialize the one downstream sink.
     streamDelivery = streamDelivery.then(async () => {
       for (const delta of deltas) {
         signal.throwIfAborted();
-        if (recipe.onStream) await deliverStream(delta);
+        const sink = delta.completedText === undefined ? recipe.onStream : recipe.onStreamComplete;
+        if (sink) await deliverStream(delta, sink);
       }
     });
     await streamDelivery;
   }
-  async function deliverStream(delta: CodexStreamDelta) {
-    const delivery = recipe.onStream!(delta, signal);
+  async function deliverStream(delta: CodexStreamDelta, sink: NonNullable<CodexExchangeRecipe['onStream']>) {
+    const delivery = sink(delta, signal);
     let abort!: () => void;
     const interrupted = new Promise<never>((_, reject) => {
       abort = () => reject(signal.reason ?? new Error('Native stream interrupted.'));

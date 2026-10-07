@@ -1,6 +1,7 @@
 import { createHash, type Hash } from 'node:crypto';
 import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import { ASSISTANT_ATTEMPT_BYTES, ASSISTANT_PATCH_BYTES, type AssistantStreamData, type AssistantStreamMarker } from '../../../../packages/contracts/src/assistant-stream.js';
+import { sealPatches, utf8Prefix } from './patch-buffer.js';
 const hash = (text:string) => createHash('sha256').update(text).digest('hex');
 type Phase = AssistantStreamData['phase'];
 type Reason = AssistantStreamData['reason'];
@@ -134,24 +135,7 @@ export class AssistantTextAccumulator {
     return patches;
   }
   private seal(block:Block):AssistantStreamData[] {
-    if (!block.dirty) return [];
-    const patches:AssistantStreamData[]=[];
-    do {
-      const text=utf8Prefix(block.content.slice(block.sent),ASSISTANT_PATCH_BYTES);
-      const fromBytes=block.sentBytes;
-      block.sent+=text.length; block.sentBytes+=Buffer.byteLength(text);
-      block.prefixHash.update(text);
-      const last=block.sent===block.content.length;
-      patches.push({type:'assistant-stream',streamId:block.id,nativeSessionId:block.session,nativeMessageId:block.message,parentToolUseId:null,source:'claude.sdk.stream',sourceMessageId:block.source,
-        blockIndex:block.index,revision:++block.revision,fromBytes,text,prefixDigest:block.prefixHash.copy().digest('hex'),phase:last?block.phase:'streaming',reason:last?block.reason:null,truncated:last&&block.truncated});
-    } while(block.sent<block.content.length);
-    block.dirty=false;
-    return patches;
+    return sealPatches(block, () => ({type:'assistant-stream',streamId:block.id,nativeSessionId:block.session,
+      nativeMessageId:block.message,parentToolUseId:null,source:'claude.sdk.stream',sourceMessageId:block.source,blockIndex:block.index}));
   }
-}
-function utf8Prefix(value:string,limit:number):string {
-  if (Buffer.byteLength(value)<=limit) return value;
-  let result='',bytes=0;
-  for (const point of value) { const next=Buffer.byteLength(point); if (bytes+next>limit) break; bytes+=next; result+=point; }
-  return result;
 }
