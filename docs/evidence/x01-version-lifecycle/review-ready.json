@@ -1,11 +1,11 @@
 {
-  "source": "f037334df65333111e115cbc568255b34eeb805e",
+  "source": "4f6bc7f6be93095a1b92a78acb0e165632307e15",
   "testSource": "0ab4fcb34405db6f4697b4679445d97a1029225a",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
   "manifest": "docs/evidence/x01-version-lifecycle/pg-manifest.json",
-  "manifestSha256": "40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53",
-  "fileCount": 402,
-  "fileBytes": 1912869,
+  "manifestSha256": "cde9b5825d62417da7c6a947e088e148b9a6ab8298b8ba3e40b1fc8fdc2524ed",
+  "fileCount": 403,
+  "fileBytes": 1934326,
   "externalCount": 35,
   "links": 20,
   "local": {
@@ -21,5 +21,11 @@
   "parent": "X01",
   "claim": "5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1",
   "actualScope": "not yet authorized",
-  "oldSource": "fixture-local-v1.txt retains first types/list exact bytes"
+  "oldSource": "fixture-local-v1.txt retains first types/list exact bytes",
+  "reviewDelta": {
+    "priorPacket": "2b77ac1f305dfe2c58d39d8bb6bc55e0dc162fc6",
+    "priorManifestSha256": "40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53",
+    "finding": "P2 invalid UUID phase key; source changes to actual runtime stable64hex tuple. Same true403/no invoke/no artifact remain.",
+    "newChecks": "NOT_RUN; literal data-key fix, same import/type. Prior local sources preserved in v1/v2 txt."
+  }
 }
