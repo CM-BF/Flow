@@ -530,6 +530,34 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
     await queue.retry(blocked.key); await queue.retry(blocked.key);
     expect(calls).toHaveLength(2); expect(calls[0]).toEqual(calls[1]); expect(calls[0]!.key).toBe(blocked.key);
   });
+  it("blocks a bound late-view turn at the durable barrier and releases its next draft only after explicit retry", async () => {
+    const { port, journal: store } = journal(), { workspace: binding, setDraft } = await workspace(store);
+    const snapshot: ConversationSnapshot = { conversation: { id: "chat", title: "Late view", harness: "claude", revision: 0,
+      requested: { model: "runner-default", thinking: "disabled", tools: "configured-readonly" }, createdAt: "2026-10-06T00:00:00Z", updatedAt: "2026-10-06T00:00:00Z" },
+      nativeSession: null, lastTurn: null, capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false } };
+    const post = vi.fn(async () => { throw Error("ACK lost"); });
+    const client = { conversation: async () => snapshot, conversationTurns: async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null }),
+      createConversation: post, submitConversationTurn: post, conversationDetail: post };
+    const projection = new ConversationProjection(client, "chat"); cleanup.push(() => projection.dispose());
+    projection.configureRecovery(binding.commandPort(owner.viewKey)); await projection.refresh();
+    binding.beginHandoff(owner.viewKey); await binding.flush();
+    setDraft(draft("")); binding.changed(owner.viewKey);
+    port.holdNextCommit = true; port.failNextCommit = true;
+    const sending = projection.send("original");
+    await vi.waitFor(() => expect(port.releases).toHaveLength(1)); expect(post).not.toHaveBeenCalled();
+    port.releases.shift()!(); await sending;
+    const blocked = projection.getSnapshot().outbox!;
+    expect(blocked).toMatchObject({ state: "unknown", locallyBlocked: true, everUnknown: false });
+    expect(post).not.toHaveBeenCalled(); expect(await store.list(ns)).toMatchObject([{ kind: "draft", data: draft("original") }]);
+    const next = { ...(draft("") as Record<string, Json>), steering: [{ taskId: "task", turnId: "turn", messageId: "message", text: "next steering draft" }] };
+    setDraft(next); binding.changed(owner.viewKey);
+    await projection.retry(); await binding.flush();
+    expect(post).toHaveBeenCalledTimes(1);
+    expect(post).toHaveBeenCalledWith("chat", blocked.request, blocked.turnKey, expect.any(AbortSignal));
+    const saved = await store.list(ns);
+    expect(saved.find(record => record.kind === "command")).toMatchObject({ id: blocked.id, domain: "outbox", frozen: frozenOutbox(blocked) });
+    expect(saved.find(record => record.kind === "draft")).toMatchObject({ data: next });
+  });
 });
 
 describe("connection and original authority consumers", () => {

@@ -491,6 +491,11 @@ function Workspace({
     });
     history.replaceState(null, "", id.startsWith("conversation:") ? `#conversation=${encodeURIComponent(id.slice(13))}` : `#task=${encodeURIComponent(id)}`);
   };
+  const routeActions = useRef({ select, newChat });
+  useLayoutEffect(() => {
+    // Route listeners outlive renders; dispatch through the last committed session/actions.
+    routeActions.current = { select, newChat };
+  });
   useEffect(() => {
     void refreshChats();
     void conversations.refresh();
@@ -498,10 +503,10 @@ function Workspace({
       const params = new URLSearchParams(location.hash.slice(1));
       const conversation = params.get("conversation");
       const id = params.get("task");
-      if (conversation) select(`conversation:${conversation}`);
-      else if (id) select(id);
+      if (conversation) routeActions.current.select(`conversation:${conversation}`);
+      else if (id) routeActions.current.select(id);
       else if (location.hash === "#workspace") setOverview(true);
-      else newChat();
+      else routeActions.current.newChat();
     };
     followRoute();
     const online = () =>

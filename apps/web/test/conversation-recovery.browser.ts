@@ -74,6 +74,7 @@ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; comple
     verificationOrder: string[]; turnId: string | null; taskId: string | null };
   steeringRecovery: { profile: import("@flow/contracts").ExecutionProfileReference | null; conversationId: string | null;
     turnId: string | null; actor: Awaited<ReturnType<SteeringSeed["activate"]>> | null; draftId: string | null;
+    sameDocumentNavigation: boolean | null; originalTurnReceiptId: string | null;
     receiptId: string | null; commandId: string | null; browserPostCounts: number[];
     draftFailureObservation: { inputMatches: boolean | null; records: unknown[]; recoveryAlerts: string[]; observationErrors: string[] } | null } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
@@ -385,6 +386,7 @@ async function worker(init: Init) {
   const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
     preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
   const steeringRecovery: WorkerResult["steeringRecovery"] = { profile: null, conversationId: null, turnId: null,
+    sameDocumentNavigation: null, originalTurnReceiptId: null,
     actor: null, draftId: null, receiptId: null, commandId: null, browserPostCounts: [], draftFailureObservation: null };
   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
   const groupTimings: GroupTiming[] = [];
@@ -711,7 +713,10 @@ async function worker(init: Init) {
     await run("a synthetic protocol attempt receives the same restored steering command; its next draft stays separate", "steeringRecovery", async () => {
       const seed = await fixture!.seedSteeringConversation();
       steeringRecovery.profile = seed.profile.reference; steeringRecovery.conversationId = seed.conversationId;
+      const documentTimeOrigin = await page.evaluate(() => performance.timeOrigin);
       await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+      expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+      steeringRecovery.sameDocumentNavigation = true;
       const prompt = "Original turn for steering recovery", original = "Restored steering instruction 中文🙂", next = "Next steering draft stays separate";
       const turns = () => postRows().filter(row => row.path === `/api/conversations/${seed.conversationId}/turns`);
       await input().fill(prompt); await input().press("Enter");
@@ -719,6 +724,19 @@ async function worker(init: Init) {
       const turnRow = turns()[0]!; requireThat(turnRow.responseBody, "Original turn ACK required before claiming");
       const turn = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), seed.conversationId, conversationTurnSchema.parse(JSON.parse(turnRow.body)));
       expect(turn.replayed).toBe(false); steeringRecovery.turnId = turn.turn.id;
+      const originalTurnReceipt = async () => {
+        const matches = (await records(page)).map(parseRecoveryRecord).filter(record =>
+          record.kind === "command" && record.domain === "outbox" && object(record.frozen).turnKey === turnRow.key);
+        expect(matches).toHaveLength(1);
+        const receipt = matches[0]!; requireThat(receipt.kind === "command" && receipt.domain === "outbox", "Original turn must have its durable outbox authority");
+        return receipt;
+      };
+      await expect.poll(async () => (await originalTurnReceipt()).phase).toBe("accepted");
+      const originalReceipt = await originalTurnReceipt(), originalFrozen = object(originalReceipt.frozen);
+      expect(originalFrozen).toMatchObject({ id: originalReceipt.id, kind: "turn", conversationId: seed.conversationId, turnKey: turnRow.key });
+      expect(originalFrozen.request).toEqual(JSON.parse(turnRow.body));
+      expect(originalReceipt.checkpoint).toMatchObject({ conversationId: seed.conversationId, turnId: turn.turn.id, taskId: turn.turn.task.id });
+      steeringRecovery.originalTurnReceiptId = originalReceipt.id;
       const actor = await seed.activate(turn.turn.task.id); steeringRecovery.actor = actor;
       expect(actor.observations).toMatchObject({ registered: true, claimed: true, sessionEventRequests: 1, heartbeatRequests: 0, runnerReceiptRequests: 0, providerQueries: 0 });
       const surface = page.getByRole("region", { name: "Running task steering", exact: true });
