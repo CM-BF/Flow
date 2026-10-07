@@ -84,3 +84,8 @@ chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。�
 沿已装find-skills选择本地`/Users/citrine/.agents/skills/codebase-design/SKILL.md`与`clean-code/SKILL.md`，无安装；清晰区分registration合同、测试夹具、resource资格和business结果。原合同有限enum没有冒号；仅修fixture及新增精确schema路径反例，保27原场景。资源Module继续OPS14监督，listener资格提取为一个小predicate，允许同端口按顺序复用，拒未知/非loopback/未关闭身份；不引入第二监督或状态权威。接口未改产品，source4文件见083085f9。
 
 原R1 raw/manifest保字节；cleanup明确先核所有原副本+rootidentity、惰性inventory后正常删，UNKNOWN历史不回写。局部仅2新增影响命令，1+4通过；未跑PG或无关A/B/collect/types。错误处理复核：真实unknown仍KEEP，业务失败不等资源未知。当前无新P1/P2自查发现，独审pending；完整production调用链和真实npm bundle仍开放。
+
+
+## 2026-10-07T04:58:59.635390+00:00 R2实际失败与收尾
+
+复用原fixture、OPS14和四namespace增量执行，未创建新监督器。原27选择完整，26通过、1直接SQL夹具遗漏maintenance_operation_id触发既有CHECK；不删断言/放宽产品约束/自动重跑。业务失败与资源资格分开：caller FAILED且known完整，2DB/4listeners/2groups/TMP均闭合；原UNKNOWN失败历史不改。命名/职责/错误界限沿本地clean-code、codebase-design检查；下一仅合法维护tuple窄修待固定独审，main/生产caller仍未交付。

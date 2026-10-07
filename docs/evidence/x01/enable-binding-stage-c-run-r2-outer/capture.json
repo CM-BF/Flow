@@ -1,0 +1,77 @@
+{
+  "capturedAt": "2026-10-07T04:57:55.676591+00:00",
+  "window": "cf9d3c58d2074ad6bae7161b42c7298c",
+  "executionHead": "2f018b27b1db6a6a9b02034ca20c18ea688aeb1d",
+  "copies": [
+    {
+      "source": "/private/tmp/flow-x01-stagec-r2-1l_48dx2/start.txt",
+      "destination": "start.txt",
+      "dev": 16777234,
+      "ino": 123502680,
+      "bytes": 33,
+      "sha256": "665add7bac2f6a6f5615af10c2be62651f3b8b903b0f4d22b45262eb4bb911be"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-r2-1l_48dx2/stdout.txt",
+      "destination": "stdout.txt",
+      "dev": 16777234,
+      "ino": 123502681,
+      "bytes": 215,
+      "sha256": "f990ac83b6c48a6b730ecdd1e5a8776b824d742e3e87df012b3b86c98ad1a2bf"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-r2-1l_48dx2/stderr.txt",
+      "destination": "stderr.txt",
+      "dev": 16777234,
+      "ino": 123502682,
+      "bytes": 29,
+      "sha256": "0e1604ee6264dcc291035541f895e1393db5d65c96b50439565b7dc9a8938d6d"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-r2-1l_48dx2/exit.json",
+      "destination": "exit.json",
+      "dev": 16777234,
+      "ino": 123502920,
+      "bytes": 54,
+      "sha256": "fa8b4e7b852b550f8197b3ad11ce7d3c09f650df89c3ca5d5b75d5b14da08391"
+    }
+  ],
+  "originalAdmissionPreservedAt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-stage-c-run-r2/admission.json",
+  "tools": {
+    "initial": {
+      "chunk": "bf074d",
+      "session": 68519,
+      "waitSeconds": 1.001253292
+    },
+    "final": {
+      "chunk": "b9fca8",
+      "waitSeconds": 4.743097125,
+      "exit": 1
+    },
+    "waitIsWholeWall": false
+  },
+  "outerRoot": {
+    "path": "/private/tmp/flow-x01-stagec-r2-1l_48dx2",
+    "dev": 16777234,
+    "ino": 123502608,
+    "removed": true,
+    "sampleEntries": 6,
+    "sampleBytes": 2548
+  },
+  "temporaryExactAbsent": true,
+  "PGQueries": 0,
+  "processProbes": 0,
+  "selection": {
+    "numTotalTests": 27,
+    "numPassedTests": 26,
+    "numFailedTests": 1,
+    "numPendingTests": 0,
+    "success": false
+  },
+  "originalR1Unchanged": true,
+  "originalGeneratedBytes": 29348,
+  "outerArchivedCopyBytes": 331,
+  "observedProcessPipeBytes": 412,
+  "pipeAlreadyIncludedInRunFiles": true,
+  "outerCleanupCompletedAt": "2026-10-07T04:57:55.677700+00:00"
+}

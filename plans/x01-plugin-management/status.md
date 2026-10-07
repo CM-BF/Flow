@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T04:53:44.970838+00:00 |
+| 最近更新时间 | 2026-10-07T04:58:59.635390+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；R2 namespace source 77ed66bab3ff72513436ab936811e03f8cbb3e18，沿已审083085f9；未main |
-| 工作树 dirty 状态 | 本段只R2 namespace/输入绑定及批准归档，固定后clean；0R2运行 |
+| 工作基线 / HEAD | base60ca；R2实际执行2f018b27，新namespace源77ed66ba；结果随后固定，未main |
+| 工作树 dirty 状态 | 只新增R2原raw/outer副本和结果状态；产品与执行输入未改，封包后clean停写 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 原Stage C R1 27=18过9失败/UNKNOWN封存；新增schema1过+caller4过（2新2直接旧例），0PG重跑 |
-| Review | 083085f9/b8f5367a SOURCE_AND_TARGETED_RESULT_REVIEW_APPROVED（chatui04:50:38）；77ed namespace仅四字面按Mika条件授权，R2 NOT_OPEN |
+| 检查状态 | Stage C R2实际27=26过1失败（registry17/runtime9），资源全部闭合；R1失败/UNKNOWN原件保留，0自动R3 |
+| Review | R2结果忠实性PENDING；083085窄修及local已chatui04:50:38批准 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 77ed66bab3ff72513436ab936811e03f8cbb3e18 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已定位注册验收失败并修正夹具；收尾按实际创建的监听实例判断，遗留临时目录已按身份正常清理 |
-| 下一可用交付 | 隔离的新数据库验收R2已准备，artifact实际归还且fresh准入后单次验证原27项 |
-| 当前阻塞 | ACTIVE: SVC08离线artifact实际段与PG互斥，R2尚NOT_OPEN/0reservation；不预占窗口 |
+| 当前产出 | 数据库验收已通过26项，剩余1项被维护状态夹具的不完整字段设置挡住；实际资源已全部收尾 |
+| 下一可用交付 | 独审本轮结果并修正维护夹具的合法状态组合，再单独准入完成原27项；生产调用链仍未接 |
+| 当前阻塞 | ACTIVE: 1个maintenance_operation约束失败待窄修与下一PG准入；本次资源已归还，无待运行第三窗 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -215,3 +215,7 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 当前新PG输入尚未发布、旧run-r1已消费不可复用；下一轮只增量绑定新源/新namespace，继续180s/27case/2serialDB/416HTTP/32MiBTMP/1MiBraw/1GiB reserve+128MiB DB/WAL reserve。新ready-validation允许独立0PG浏览器配对，仍须实际资源协调与完整预算叠加；本次未OPEN。
 
 2026-10-07T04:53:44.970838+00:00：归档chatui04:50:38限定独审0P1/P2；R2 source77ed仅caller RUN/全untracked白名单及新input/manifest文件名字面，新input只runName不同，180s/27/2DB/416HTTP及全部清理/unknown门禁不变。旧R1 input/manifest/raw未改。Mika已给R2条件授权，但随后真实SVC08 artifact取得资源；当前未生成admission、run-r2 absent，明确HOLD等待实际归还。准备不占窗口，不将条件授权记录为RUN。
+
+## 2026-10-07T04:58:59.635390+00:00 Stage C R2实际终态
+
+[R2结果](../../docs/evidence/x01/enable-binding-stage-c-r2-result.md)：唯一实际27=26过1失败、199HTTP；两专库全部identity→0conn→普通DROP/absence，四listeners、两受监督进程、TMP均闭合。caller FAILED/unknown=false，业务非零不是资源未知。8.80s外部time与8.737759s内部单列。已直接归还Web；旧R1原件保持，无自动R3。唯一错误来自runtime.fixture只改maintenance_state、未给016要求的operation_id；本次尚未改源或重跑。
