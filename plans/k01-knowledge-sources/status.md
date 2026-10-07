@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:50 UTC |
+| 最近更新 | 2026-10-07 16:52 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -28,11 +28,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 首次真实检索诊断未在时限内完成；原始失败与新数据库身份已保留 |
-| 下一可用交付 | 定位本次未完成阶段并在明确授权后归还保留数据库 |
-| 当前阻塞 | ACTIVE: 本次数据库清理结果未知，必须保留；Mika协调原身份恢复与后继验证 |
+| 当前产出 | 首次检索诊断失败已封存，连接与计算资源已核归还，数据库保持只读留存 |
+| 下一可用交付 | 修复入口阶段时限与失败记录，再准备有限诊断后继 |
+| 当前阻塞 | ACTIVE: 首次查询诊断未完成；原身份数据库已核零连接并保留，待合法后继修复入口覆盖缺口 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据FIDELITY_ACCEPTED；新P2动态import生命周期待修 |
+| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据FIDELITY_ACCEPTED；新P2动态import生命周期待修；独立恢复结果待核 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -128,3 +128,5 @@
 2026-10-07T16:48:09.283948+00:00: 首次PG实际终态FAILED/HOLD，16:44:58.670157→16:46:51.872606Z/113081ms；PID82159 exit-15/finalabsent、work deadline+SIGTERM、resourceConfirmed=false，不能FULLRETURN。自有DB flow_k01_query_2d8516c466264673bb3417de0c349ec1 OID1336476有CREATE ACK/marker身份但无cleanup/result，strict KEEP；无第二探针/删除/重跑。原raw0B/ledger保留，inputafter matched/source未变。W01 ordinary actual重叠事实已记录，不称CPU排他。唯一[失败证据](../../docs/evidence/k01/query-entry-pg-first/manifest.json)；实际金样本/plan/latency/DBsize均UNKNOWN，K01-06继续开放。主体窗口已消费，提交后仅等Mika原身份处理，队列任务仍STOP。
 
 2026-10-07T16:50:50.636078+00:00: db_transaction_owner 16:49窄审核dd701原件忠实，17源/8证据12544B全部匹配，原FAIL/HOLD/raw未改。K01-PG-01新P2为动态import在DB身份后且未受work deadline约束的条件性缺口，真实卡点UNKNOWN；后继有限阶段持久事实及观察开销拆分已纳本K01，未扩task或数据。恢复方案仅静态提交，当前0新增PG/信号/drop，等待Mika明确有界恢复授权。
+
+2026-10-07T16:52:30.789426+00:00: 新授权≤10秒只读恢复段实际16:51:51.303933→16:51:51.402382Z/98ms，唯一路径1admin/1参数绑定SELECT；精确name/OID1336476/owner/marker匹配、连接0、pool.end明确完成；47277 exit0/finalabsent/MERGED EOF完整/无first-secondary-signals。与原82159已reap/finalabsent事实结合，计算+连接归还；DB及scratch继续已知KEEP，不DROP/读scratch/改原FAIL/resourceConfirmed=false。freshfloor18129354752、实际free达标，新raw/metadata3953B，原8证据hash仍匹配。唯一[恢复回执](../../docs/evidence/k01/query-entry-pg-first/recovery-manifest.json)，提交push后STOP交db只读核。

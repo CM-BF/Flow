@@ -1,0 +1,20 @@
+{
+  "kind": "one separately authorized read-only recovery observation",
+  "startedAt": "2026-10-07T16:51:51.303933+00:00",
+  "deadline": "2026-10-07T16:52:01.303933+00:00",
+  "head": "2b59a7ba971a3926deb0dfefc0b817ed8368bc47",
+  "source": "a82e44be17a7a31b051bf98400d9553513600542",
+  "claim": "30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 fresh active",
+  "requiredFreeBytes": 18129354752,
+  "freshFreeBytes": 20057260032,
+  "newLogicalBudgetBytes": 262144,
+  "expectedIdentitySource": "owned.database-identity.json at dd701f4e",
+  "nodeSource": "import pg from './node_modules/pg/lib/index.js';\nconst start=performance.now(),startedAt=new Date().toISOString();\nconst expected=JSON.parse(process.env.K01_EXPECTED_IDENTITY);\nconst pool=new pg.Pool({connectionString:process.env.FLOW_K01_QUERY_ADMIN_URL,max:1,connectionTimeoutMillis:1000,statement_timeout:1500,lock_timeout:500,query_timeout:1800,application_name:'k01-query-recovery-readonly'});\nlet rows=null,error=null,closed=false;pool.on('error',e=>{error={code:e.code??'POOL_ERROR'};});\ntry{rows=(await pool.query(\"SELECT d.datname AS name,d.oid::text AS oid,pg_get_userbyid(d.datdba) AS owner,shobj_description(d.oid,'pg_database') AS marker,(SELECT count(*)::int FROM pg_stat_activity a WHERE a.datid=d.oid) AS connections FROM pg_database d WHERE d.datname=$1\",[expected.database])).rows;}\ncatch(e){error={code:e.code??'QUERY_ERROR'};}\nfinally{await pool.end();closed=true;}\nconst row=rows?.[0],identityMatched=rows?.length===1&&row.name===expected.database&&row.oid===expected.identity.oid&&row.owner===expected.identity.owner&&row.marker===expected.identity.marker;\nconst passed=closed&&!error&&identityMatched&&row.connections===0;\nconsole.log(JSON.stringify({startedAt,endedAt:new Date().toISOString(),elapsedMs:performance.now()-start,rows,identityMatched,closed,passed,error}));if(!passed)process.exitCode=1;\n",
+  "policy": {
+    "workSeconds": 7,
+    "termGraceSeconds": 1,
+    "killGraceSeconds": 2,
+    "captureBytes": 8192
+  },
+  "mutations": "NONE: SELECT only; no scratch access/drop/signals outside own probe group"
+}

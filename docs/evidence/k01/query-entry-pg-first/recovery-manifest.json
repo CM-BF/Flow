@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-07T16:52:30.789426+00:00",
+  "source": "a82e44be17a7a31b051bf98400d9553513600542",
+  "executionHead": "2b59a7ba971a3926deb0dfefc0b817ed8368bc47",
+  "recoveryDecision": "COMPUTE_AND_CONNECTIONS_RETURNED_DATABASE_AND_SCRATCH_KEEP",
+  "originalDiagnostic": "FAILED/HOLD remains unchanged",
+  "originalEvidenceShaMatched": 8,
+  "recoveryFiles": [
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/recovery-start.json",
+      "bytes": 2098,
+      "sha256": "4324055f95e92c5dc23f0e6afba6678b208acbd977b0270d189bc005bafcd0b4"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/recovery.raw",
+      "bytes": 336,
+      "sha256": "870609f53a562374e7e675cde6cf3b0cfd167e84fef6017a11fa9899585e0a55"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/recovery-observation.json",
+      "bytes": 1519,
+      "sha256": "b076808ab7a38bc4edd99053240544f56bdef1fb1725ce5297b66edc3e4fe5f2"
+    }
+  ],
+  "pgQueries": 1,
+  "newConnectionsMaximum": 1,
+  "dropSignalsExternalMutations": 0,
+  "next": "independent read-only result confirmation; no rerun/source fix started"
+}
