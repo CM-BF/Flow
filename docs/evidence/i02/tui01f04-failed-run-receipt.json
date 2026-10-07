@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T21:05:09.569061+00:00",
+  "target": "32bc56c0bd29167e2aa29909743f87f23fa98a91",
+  "scope": "F04 one-shot failed execution, independently authorized exact cleanup, source-only diagnosis; no new product behavior approval",
+  "reviewer": "astra_ultra_execution_lead",
+  "decision": "RECEIVE_FAILED_EXECUTION_AND_CLEANUP_FACTS",
+  "fixedBindings": {
+    "oneShot": 19,
+    "cleanupOwnAndProtected": 17,
+    "allBytesAndSha256Matched": true
+  },
+  "observed": {
+    "selected": 1,
+    "passed": 0,
+    "elapsedMs": 26512,
+    "tasks": 0,
+    "providerCalls": 0,
+    "primary": "terminal-request-capture",
+    "cleanupOnly": "marker/tasks0/groupsAbsent/connectionsEmpty/devino bound; checkpoint then normal DROP and exact tmp removal",
+    "originalFailureAndKeepPreserved": true
+  },
+  "limits": [
+    "Missing shutdown PTY transcript cannot be reconstructed; bytes0 is Python events, not evidence of blank Ink screen.",
+    "Cleanup envelope original PG:0 is incorrect; separate correction retained.",
+    "Source-only diagnosis does not prove initial terminal root cause.",
+    "No full-journey retry authorized; terminal-only bounded repair is separate."
+  ],
+  "reviewActions": [
+    "Read actual one-shot and cleanup records and exact cleanup source.",
+    "Verified 36 fixed bindings without running tests, PG, Chrome or provider."
+  ],
+  "metadataCorrection": "Previous handwritten 21:07 timestamp was a labeling mistake; this recorded time replaces it. No execution evidence or result changed."
+}

@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T14:27:57.022Z",
+  "count": 159,
+  "idsUnique": true,
+  "source": {
+    "id": "O14",
+    "title": "授权后持续推进依赖任务",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression",
+    "branch": "codex/goal-persistent-progression",
+    "planDir": "plans/o14-goal-progression",
+    "evidenceDir": "docs/evidence/o14"
+  },
+  "head": "e05694883c11abedba8eb4080f614a2b1d61a1de",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已开始实现一次授权后持续推进多个依赖任务的能力。",
+    "next": "关闭客户端后，中心仍按授权和固定输入推进两个节点。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "limits": [
+    "Registration only; no product tests/architecture refresh",
+    "Original runtime source362 and Web8d8 unchanged"
+  ]
+}

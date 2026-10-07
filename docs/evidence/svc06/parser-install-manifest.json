@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T02:35:45.000421+00:00",
+  "execution": "NOT_RUN",
+  "scope": "private YAML parser preparation only; no runtime or full artifact",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/parser-install.py",
+      "bytes": 9977,
+      "sha256": "781668cf15d8d50f56a84abd4c0a7fd5bfa95516b95f0371d9dfc48980f0aa27"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-inputs.json",
+      "bytes": 2221,
+      "sha256": "88011300d180356bd16146ccda4a12e28b22f95f844720e359791f4cba2fe871"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-cache-input.json",
+      "bytes": 82524,
+      "sha256": "5dd0743b7d2aae94d532062cc54a8c04ac61bf64ad579e28fb9cc34b92f8ce33"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-package.json",
+      "bytes": 150,
+      "sha256": "eaf5420b53270d392baebadeff895339a2c6fde91c9e7515a029566b22f4d640"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-lock.json",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-official-metadata.json",
+      "bytes": 3716,
+      "sha256": "ed36bc66e2b2e87aff5274e3cb197d106add7afb1a7d680444dad667f0d3f103"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-supervise.py",
+      "bytes": 1381,
+      "sha256": "2b4feb37aa64d6b2b0fb98164da5d146a61f7f84aa1034284071cc607a10a203"
+    }
+  ],
+  "entry": "Python3.13 docs/evidence/svc06/parser-install-supervise.py",
+  "deadline": "fixed OPS14 one NEW_CHILD_SESSION; all mutable entry phases and same-group pnpm are supervised for 27s + .5s TERM + 2s reap; outer only emits bounded report after stop",
+  "success": "entry receipt is pending until outer exit0, no failure, owned absent, all EOF complete; unknown namespaces never reused"
+}

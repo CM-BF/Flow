@@ -1,0 +1,259 @@
+{
+  "mode": "offline_saved_json_only",
+  "runVerdict": "PASS",
+  "totals": {
+    "tasks": 128,
+    "attempts": 128,
+    "sessions": 128
+  },
+  "topology": {
+    "runtimeInvocations": 8,
+    "capacityEach": 16,
+    "runnerOsProcesses": 1,
+    "centerOsProcesses": 1,
+    "driverOsProcesses": 1,
+    "runnerDistribution": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ]
+  },
+  "events": {
+    "persisted": 2304,
+    "uniqueIds": 2304,
+    "perAttemptSequences": "1..18",
+    "acceptedTotal": 2304,
+    "terminalSuccess": 128
+  },
+  "activity": {
+    "clock": "one runner-child monotonic clock",
+    "logicalAdapterPeak": 128,
+    "allAdapterOverlapMs": 6413.966707999999,
+    "minAdapterEndAfterWindowStartMs": 6001.085915999999,
+    "windowTimerMarkerMs": 5999.505708,
+    "all128CommonAckEnvelopeMs": 5380.155334,
+    "perAttemptNetworkEventAckSpanMs": {
+      "n": 128,
+      "min": 5426.648457999999,
+      "median": 5610.380521000001,
+      "p95NearestRank": 5683.310708000001,
+      "max": 5709.631082999999
+    },
+    "perAttemptEmitReturnSpanMs": {
+      "n": 128,
+      "min": 5426.569666,
+      "median": 5610.2280415000005,
+      "p95NearestRank": 5683.285834000001,
+      "max": 5709.908667
+    },
+    "emitReturnCommonAckEnvelopeMs": 5380.193875000001,
+    "lastCompletedAckAfterWindowMs": 527.3804159999981,
+    "eachWindowMessageAcks": 12,
+    "windowMessageAckCount": 1536,
+    "barrierWaitingMs": {
+      "n": 128,
+      "min": 190.58812500000022,
+      "median": 676.8399165000001,
+      "p95NearestRank": 2498.3182920000004,
+      "max": 2738.6737920000005
+    },
+    "notClaimed": "ACK envelope is not uninterrupted CPU, provider execution, token throughput or capacity SLO."
+  },
+  "sampledOwnership": {
+    "samples": 30,
+    "conservativeSampleSeparationMs": 5780.707207999999,
+    "queryBoundaryExcludedAtValidation": 20,
+    "finalArchiveIneligibleSamples": 22,
+    "postValidationAdditionalSamples": 2,
+    "meaning": "Each completed query lies inside IPC-bounded window; live/fenced at sampled database instants, not continuous lock/lease proof."
+  },
+  "requests": {
+    "runnerSendCount": 3784,
+    "runnerSettledCount": 3784,
+    "runnerErrors": [],
+    "phasesByParentReceipt": {
+      "eight-by-sixteen:settlement": {
+        "requests": 136,
+        "statuses": {
+          "200": 136
+        },
+        "errors": []
+      },
+      "eight-by-sixteen:setup": {
+        "requests": 1342,
+        "statuses": {
+          "200": 1342
+        },
+        "errors": []
+      },
+      "eight-by-sixteen:window": {
+        "requests": 2306,
+        "statuses": {
+          "200": 2306
+        },
+        "errors": []
+      }
+    },
+    "sentAtOrAfterStop": 0,
+    "settledAfterStop": 0,
+    "heartbeatActions": {
+      "continue": 1344
+    },
+    "ownerStatusCounts": {
+      "200": 61,
+      "202": 128
+    },
+    "interpretation": "Request send/settle/stop use the runner child clock. Parent-receive phase is approximate. Zero recorded HTTP failures is observed here, not inferred from PASS."
+  },
+  "windowCenterMetricsMs": {
+    "poolAcquisition": {
+      "n": 4691,
+      "min": 0.0018340000005991897,
+      "median": 12.92766599999959,
+      "p95NearestRank": 203.427083999999,
+      "max": 632.2556660000009
+    },
+    "transactionElapsed": {
+      "n": 2371,
+      "min": 0.7043749999993452,
+      "median": 6.026291000000128,
+      "p95NearestRank": 22.496375000000626,
+      "max": 189.53700000000026
+    },
+    "runnerRowExclusiveElapsed": {
+      "n": 0,
+      "value": null
+    },
+    "runnerRowShareElapsed": {
+      "state": "UNKNOWN",
+      "classifiedCount": 0,
+      "reason": "Classifier expects SELECT *, but fixed P04 uses SELECT id,revoked FOR SHARE; real calls are in other. No row-specific duration can be recovered because SQL is intentionally not stored."
+    },
+    "pgActivity": {
+      "windowSamples": 31,
+      "lockOrBlockerPositiveSamples": 0,
+      "allRunSamples": 58,
+      "allRunLockOrBlockerPositiveSamples": 13,
+      "interpretation": "Positive sampled evidence only; misses do not imply no lock waits."
+    }
+  },
+  "memory": {
+    "driver": {
+      "samples": 14,
+      "peakSampledRssBytes": 219398144,
+      "peakSampledHeapUsedBytes": 49128992,
+      "maxReportedProcessMaxRssKiB": 214864
+    },
+    "center": {
+      "samples": 14,
+      "peakSampledRssBytes": 278724608,
+      "peakSampledHeapUsedBytes": 102163328,
+      "maxReportedProcessMaxRssKiB": 272192
+    },
+    "runner": {
+      "samples": 12,
+      "peakSampledRssBytes": 315080704,
+      "peakSampledHeapUsedBytes": 112755624,
+      "maxReportedProcessMaxRssKiB": 307696
+    }
+  },
+  "observations": {
+    "records": 79354,
+    "bytes": 28841267,
+    "recordCounts": {
+      "driver-query": 121,
+      "memory": 40,
+      "stream-bytes": 67,
+      "pool-acquisition": 7918,
+      "sql": 53495,
+      "transaction": 4012,
+      "ready": 2,
+      "pg-activity": 58,
+      "owner-http": 189,
+      "attempt-snapshot": 52,
+      "runner-request-send": 3784,
+      "runner-http": 3784,
+      "claim": 128,
+      "heartbeat": 1344,
+      "adapter-enter": 128,
+      "event-ack": 2304,
+      "adapter-ready": 128,
+      "window-start": 1,
+      "barrier-released": 128,
+      "emit-ack": 1536,
+      "window-end": 1,
+      "adapter-end": 128,
+      "read-summary": 1,
+      "stop-case-received": 1,
+      "case-runtime-settled": 1,
+      "child-settled": 2,
+      "center-settled": 1
+    },
+    "instrumentationOverhead": "Observer, IPC, row decoding and serialization are included; no uninstrumented comparison."
+  },
+  "background": {
+    "loadStart": [
+      4.62646484375,
+      9.30419921875,
+      14.3701171875
+    ],
+    "loadEnd": [
+      6.0732421875,
+      9.38818359375,
+      14.31103515625
+    ],
+    "otherTeamsPaused": false
+  },
+  "journals": {
+    "count": 8,
+    "inFlightNull": 8,
+    "assignmentsEmpty": 8
+  },
+  "cleanup": [
+    {
+      "pid": 12084,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 8328,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "databaseName": "flow_s01_mixed_8308_b6417dddda9d41a984fd1001326814ea",
+      "dropped": true,
+      "retained": false
+    },
+    {
+      "databaseName": "flow_s01_mixed_8308_b6417dddda9d41a984fd1001326814ea",
+      "absentConfirmed": true
+    },
+    {
+      "workdir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-9AOvcS",
+      "removed": true
+    }
+  ],
+  "byteAccountingComplete": true,
+  "finalMeasuredBytes": 88323950,
+  "providerCalls": 0,
+  "unknowns": [
+    "Exact FOR SHARE row query duration unavailable due to classifier mismatch",
+    "Pool acquisition includes connection establishment; transaction/SQL elapsed includes execution and round trips",
+    "Observed lock samples do not measure pure lock-wait duration",
+    "Process imports precede the inner main clock; complete outer time is in cli-time.stderr"
+  ]
+}

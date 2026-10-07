@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T21:07:24.209531+00:00",
+  "source": "72fde423e9451295432eaa30515b3aaca4153811",
+  "freeBefore": 1181884416,
+  "gate": 1082130432,
+  "elapsedMs": 364,
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs"
+      ],
+      "pid": 13970,
+      "group": 13970,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 922,
+      "stderrBytes": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py"
+      ],
+      "pid": 14114,
+      "group": 14114,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 146,
+      "stderrBytes": 279
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs"
+      ],
+      "pid": 14335,
+      "group": 14335,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    }
+  ],
+  "rawBytes": 4804,
+  "freeAfter": 1181835264,
+  "PG": 0,
+  "personalActions": 0,
+  "provider": 0,
+  "outcome": "completed",
+  "limits": {
+    "seconds": 10,
+    "rawAndTemporaryBytes": 1048576
+  }
+}

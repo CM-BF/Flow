@@ -1,0 +1,176 @@
+{
+  "database": "flow_o15_735607bfe87c4d7c9c2a54fd19aab402",
+  "marker": "ea49ae1a-4fe7-44c5-9c76-85888dacefaa",
+  "allowanceBytes": 67108864,
+  "reserveBeforeBytes": 1155883008,
+  "providerCalls": 0,
+  "evidencePath": "docs/evidence/o15/flow_o15_735607bfe87c4d7c9c2a54fd19aab402-facts.json",
+  "lifecycle": "module routes and explicit sweep; not production automatic integration",
+  "evidenceDirectorySynced": true,
+  "creationRequested": true,
+  "created": true,
+  "marked": true,
+  "directory": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o15-6v1mGJ",
+    "dev": 16777234,
+    "ino": 123105364
+  },
+  "errors": [
+    {
+      "name": "Error",
+      "code": "plan_already_confirmed",
+      "message": "This proposal was confirmed with different execution authority."
+    },
+    {
+      "name": "Error",
+      "code": "wrong_role",
+      "message": "An owner credential is required."
+    },
+    {
+      "name": "error",
+      "code": "P0001",
+      "message": "O15 injected final link failure"
+    },
+    {
+      "name": "Error",
+      "code": "complete_inputs_required",
+      "message": "The saved proposal must contain complete actual inputs."
+    },
+    {
+      "name": "Error",
+      "code": "stale_project_revision",
+      "message": "Refresh the graph before confirming inputs."
+    },
+    {
+      "name": "Error",
+      "code": "invalid_plan_confirmation",
+      "message": "Invalid bounded plan confirmation."
+    },
+    {
+      "name": "Error",
+      "code": "progression_expiry",
+      "message": "Expiry must be in the next 24 hours."
+    },
+    {
+      "name": "Error",
+      "code": "invalid_plan_confirmation",
+      "message": "Invalid bounded plan confirmation."
+    },
+    {
+      "name": "Error",
+      "code": "proposal_mismatch",
+      "message": "Confirm the exact saved proposal digest."
+    },
+    {
+      "name": "Error",
+      "code": "execution_profile_unavailable",
+      "message": "Refresh the configured profile selection before submitting work."
+    },
+    {
+      "name": "Error",
+      "code": "goal_knowledge_obsolete",
+      "message": "Selected knowledge must be current."
+    },
+    {
+      "name": "Error",
+      "code": "goal_profile_requires_grant",
+      "message": "This execution profile is not authorized for this task purpose."
+    },
+    {
+      "name": "Error",
+      "code": "input_version",
+      "message": "Refresh the actual input version before editing."
+    },
+    {
+      "name": "Error",
+      "code": "goal_graph_scope",
+      "message": "This grant permits graph-only proposals."
+    },
+    {
+      "name": "Error",
+      "code": "goal_graph_scope",
+      "message": "This grant permits graph-only proposals."
+    },
+    {
+      "name": "Error",
+      "code": "stale_owner",
+      "message": "Attempt ownership changed."
+    },
+    {
+      "name": "Error",
+      "code": "goal_graph_revoked",
+      "message": "Authority was revoked."
+    }
+  ],
+  "journey": {
+    "plannerCalls": 1,
+    "childCalls": 2,
+    "receipt": {
+      "graph": {
+        "actor": {
+          "kind": "owner"
+        },
+        "goalId": "f46ad0c0-70e6-4572-8f00-af5a61f8b3e6",
+        "nodeIds": {
+          "A": "309043d0-246c-4284-9ca8-56195da764a6",
+          "B": "f2d24bb5-0d14-4972-b652-f217adc67ec4"
+        },
+        "appliedAt": "2026-10-06T17:43:33.014Z",
+        "projectId": "d162146d-fefe-4f0f-a153-968b555a263d",
+        "proposalId": "61cd5b84-44d4-4e89-b16e-2774a331a8af",
+        "toRevision": 4,
+        "fromRevision": 1,
+        "proposalDigest": "ba2a0616fd249df36884d529d187991d1f3d1278f3751a14dc8e42ddfeeb00d9"
+      },
+      "goalId": "f46ad0c0-70e6-4572-8f00-af5a61f8b3e6",
+      "inputs": [
+        {
+          "key": "A",
+          "nodeId": "309043d0-246c-4284-9ca8-56195da764a6",
+          "inputVersion": 1
+        },
+        {
+          "key": "B",
+          "nodeId": "f2d24bb5-0d14-4972-b652-f217adc67ec4",
+          "inputVersion": 1
+        }
+      ],
+      "projectId": "d162146d-fefe-4f0f-a153-968b555a263d",
+      "proposalId": "61cd5b84-44d4-4e89-b16e-2774a331a8af",
+      "confirmedAt": "2026-10-06T17:43:33.034Z",
+      "progressionId": "a31caf26-b5a8-407f-ba39-4b54c02c8c0a",
+      "proposalDigest": "ba2a0616fd249df36884d529d187991d1f3d1278f3751a14dc8e42ddfeeb00d9",
+      "confirmationDigest": "ecc9a3f785455939585543d6ad9fe0c332048a57ffe6f50c3ebfd22e56e575b8",
+      "authorizationDigest": "6db7234c3c9552cb21fd72bb8f198e7959bb1ad9c78dbafa9c12b6b651fc38f5"
+    },
+    "artifact": {
+      "nodeId": "f2d24bb5-0d14-4972-b652-f217adc67ec4",
+      "executionId": "4cddf9a2-296b-455b-9858-cefec33baba1",
+      "taskId": "af0f1ee6-e1e1-4c76-b917-6a18fba0016e",
+      "artifactId": "7bb6f021-a1bb-46b0-83de-4d70a657745a",
+      "artifactVersion": "6a8ea10ffa0c109832bf1dc8aa5ac31b074df7c1f5b529ea7fda9966caf7a03e",
+      "detailId": "1a74a160-fea7-4dbd-848b-85f6455149cd"
+    },
+    "explicitOwnerRevision": true,
+    "oldArtifactStillReadable": true,
+    "modelCalls": 0
+  },
+  "runtimeCount": 2,
+  "runtimeStopped": true,
+  "appBossPoolClosed": true,
+  "databaseBytesBeforeDrop": "13163543",
+  "freeBeforeDropBytes": 1127673856,
+  "connectionObservations": [
+    {
+      "elapsedMs": 1,
+      "connections": []
+    }
+  ],
+  "connections": [],
+  "databaseDropped": true,
+  "remaining": [],
+  "directoryRemoved": true,
+  "cleanupComplete": true,
+  "adminClosed": true,
+  "phase": "cleaned"
+}

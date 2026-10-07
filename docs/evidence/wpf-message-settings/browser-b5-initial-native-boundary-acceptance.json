@@ -1,0 +1,46 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "recordedAt": "2026-10-06T20:28:16.879992+00:00",
+  "recordedBy": "Web co-lead /root, pursuant to explicit GO decision",
+  "authority": {
+    "sourceThreadId": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+    "receivedVia": "codex_delegation inbound to this Web coordination task",
+    "decision": "GO explicitly accepted this native Chrome sibling boundary after readingB3 and R01 native-launch evidence; delegated co-lead exact runner/worker binding after SCAN-ERROR/source review; DPERF04 same launch boundary accepted with its own reviewed candidate, budget and window.",
+    "furtherGOOrUserConfirmationRequired": false
+  },
+  "conditions": [
+    "Chrome keeps its own native sandbox and this attempt owned short profile/cache/tmp/crash paths, explicit environment and owned processgroup.",
+    "Node fixture keeps the reviewed custom write/localhost-network sandbox.",
+    "Chrome no longer has the prior custom outer OS write/egress restriction; this is explicitly not equivalent confinement.",
+    "No personal profile, existingtabs, credentials or provider operations are authorized.",
+    "Fresh exact originalclaim/source/head/dependency/resource checks and separately available sharedwindow remain required. This record itself is not a gate or window.",
+    "Old failures, cumulative time and existing retained/scratch/free/cleanup limits are preserved; no blind retry loop."
+  ],
+  "runtime": "NOT_RUN by this acceptance",
+  "currentWindow": "No Web holder after Recovery50 cleanup/return. New heavy runtime waits for Lead personal af51+d629 publish and serialized coordination with Mika ready native request. Neither preparation approval nor this acceptance grants a gate.",
+  "task": "WPF-MESSAGESETTINGS01",
+  "candidate": "/private/tmp/msgset-b5",
+  "runnerSha256": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "sourceReview": {
+    "path": "/tmp/root-message-settings-b5-preparation-review.json",
+    "sha256": "686e17ce70ca4e3160af0421e68a5367627a2bef5fa9dbd2e87fd54b9d460532",
+    "scope": "Fixed source/preparation review only; not runtime or product behavior PASS"
+  },
+  "budget": {
+    "totalMs": 60000,
+    "spentMs": 20609,
+    "remainingMs": 39391,
+    "workMs": 24391,
+    "cleanupReserveMs": 15000,
+    "previousRetainedBytes": 741839
+  },
+  "limits": {
+    "scratchObservedMaxBytes": 67108864,
+    "retainedMaxBytes": 8388608,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "scope": "Only this exact reviewed runner and worker boundary; any materially different boundary or launch must remain explicit. Metadata-only sourcehead rebinding does not change these executable hashes."
+}

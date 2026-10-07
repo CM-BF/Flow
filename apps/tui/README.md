@@ -24,6 +24,10 @@ pnpm --filter @flow/tui start --headless
 | `/reply` | Read the complete recorded final reply through its bound conversation/turn reference. |
 | `/page number` | Read another 2,000-character display window of the current body. |
 | `/back` | Return to assistant text and follow its latest window. |
+| `/queue [next]` | Observe one page of at most 20 waiting-item previews and the current task. No full queued text is fetched. |
+| `/pause` | Pause later queue promotion using the observed queue version; current work continues. |
+| `/resume` | Explicitly resume using the observed queue version and current task identity. This can start the next queued item. |
+| `/cancel TASK_ID` | Request cancellation of the focused/latest turn's displayed task, or the current task shown by `/queue`. The receipt is not proof of stopping. |
 | `/disconnect` | Stop local observation; center work continues. |
 | `/quit` or Ctrl-C | Exit without cancelling work or submitting the draft. |
 
@@ -39,13 +43,17 @@ Headless input uses one typed command per JSON line, for example:
 
 Each output line contains a command result and the same lightweight local snapshot used by the screen. It is a command interface, not a token stream. EOF stops observing. No automatic mutation retry is performed.
 
-Before a create/send POST, the exact request and idempotency key are saved in a private, connection-bound intent file. A lost acknowledgement remains **unknown**. Starting the terminal again does not resend it; `/recover` is explicit. New mutations and conversation switching are blocked until recovery succeeds. The token itself is never stored. The directory must be owned and mode 0700, files mode 0600. An exclusive lock rejects a second terminal on the same connection. After a process crash a stale lock is not stolen automatically: first establish that its recorded local process has stopped, then remove only that connection's `.json.lock`; preserve the `.json` request for explicit recovery. The file sync/rename journal is not a multi-device store or a proof against every power-loss/filesystem failure.
+Before a create/send/pause/resume/cancel POST, the exact request and idempotency key are saved in a private, connection-bound intent file. A lost acknowledgement remains **unknown**. Starting the terminal again does not resend it; `/recover` is explicit. New mutations and conversation switching are blocked until recovery succeeds. The token itself is never stored. The directory must be owned and mode 0700, files mode 0600. An exclusive lock rejects a second terminal on the same connection. After a process crash a stale lock is not stolen automatically: first establish that its recorded local process has stopped, then remove only that connection's `.json.lock`; preserve the `.json` request for explicit recovery. The file sync/rename journal is not a multi-device store or a proof against every power-loss/filesystem failure.
 
 When the center supports the negotiated patch protocol, assistant text grows automatically. The terminal follows one turn and shares its stream validation and final-settlement rules with the Web client. Interrupted or incomplete drafts remain visibly incomplete; only the center's explicit settlement can replace a draft with the final reply. Older centers retain the final preview path.
 
 Activity and full-reply details are read only on request. Redacted activity has no public body; truncated activity is a fragment, and the remainder cannot be recovered through this view. Activity pages become visibly stale when the task changes, until `/activity` refreshes them. Observation allows at most two concurrent reads and four waiting reads, one activity page of 20 references, four cached bodies of at most 64 KiB each, and the stream protocol's 1 MiB / 256-block / 4,096-patch bounds. Display paging leaves original text and digests unchanged.
 
-In conversation mode, older-history navigation, queue/steer/cancel/decision controls, attachments and a login manager remain separate work. No real-provider conformance is claimed. The original conversation slice used isolated HTTP/PostgreSQL fixtures; this observation slice uses real local HTTP fixtures, an owned PTY and existing Web consumers, with no model call. See [conversation evidence](../../docs/evidence/tui01a/README.md) and [observation evidence](../../docs/evidence/tui01c/README.md).
+Queue controls require both the client port and the center’s declared queue capability. Run `/queue` before `/pause` or `/resume`. A fresh version conflict preserves the draft, clears the rejected intent and refreshes observation; it never rewrites the request or retries automatically. A lost acknowledgement retains the original request even when another client changes the queue. Recovery accepts its immutable receipt and then reloads current facts. Queue previews are at most 512 UTF-8 bytes each; one page of at most 20 references is retained. This is a retained-projection bound, not a global HTTP response or total snapshot byte limit. Existing create/send version-1 journals remain readable. See [queue evidence](../../docs/evidence/tui01e/README.md).
+
+Cancellation uses the existing task-scoped endpoint. It has no attempt-version compare-and-swap and does not pause queued promotion. Supply the focused/latest task ID visible in the conversation header, or the current task shown by `/queue`; unrelated IDs and clients without cancellation transport are rejected locally. The original conversation/turn/task IDs, empty request body and key are saved before sending. On recovery, the task is never replaced by the newest one. An old receipt is followed by a fresh observation; `cancel_requested`, `uncertain`, or already-completed work is not reported as stopped. Unrelated draft text is retained. JSONL uses `{"type":"cancel","taskId":"TASK_UUID"}`. The cancellation controller and private-journal/JSONL checks have run; real HTTP/PG, PTY and browser handoff remain unverified for this slice; see [cancel evidence](../../docs/evidence/tui01f/README.md).
+
+In conversation mode, older-history navigation, enqueue/steer/decision controls, attachments and a login manager remain separate work. No real-provider conformance is claimed. The original conversation slice used isolated HTTP/PostgreSQL fixtures; this observation slice uses real local HTTP fixtures, an owned PTY and existing Web consumers, with no model call. See [conversation evidence](../../docs/evidence/tui01a/README.md) and [observation evidence](../../docs/evidence/tui01c/README.md).
 
 ## Observe and control an existing goal
 
@@ -79,3 +87,13 @@ Goal journals use a separate connection-and-goal namespace. They share private f
 Plan/history pages contain 20 references; one observation contains at most 50 nodes. Bodies are read only on explicit expansion, cached by the public controller and labelled as recorded content. Refresh `/plan` and `/observe` to check current validity. The screen shows bounded windows of at most 1,600 Unicode code points, adapted to terminal size. It does not silently truncate the stored body. Private journal and JSONL bounds remain 192 KiB.
 
 This goal slice is checked with two public clients, real local HTTP/PostgreSQL, actual JSONL and an owned terminal. It covers stale versions, lost acknowledgements, decisions, cancellation, artifacts, 57 historical references, Chinese/emoji/multiline input and resize. Browser handoff, real providers and the complete TUI→Web→TUI journey remain unverified here. See [goal evidence](../../docs/evidence/tui01d/README.md).
+
+## Claude 逐消息设置
+
+`/settings [cursor]` 读取当前公开目录的一页（最多 6 个配置），只显示受配置允许的完整 model/thinking/effort/speed 组合，不代表账户资格或 provider 可用。每个配置最多 32 项；`/settings-page <number>` 每次显示 8 项，后续目录页按显示的 cursor 显式读取。access 只读显示，不能在消息设置中改变。
+
+用 `/new --profile <id> [title]` 创建绑定配置的 Claude 会话，或 `/open <id>` 打开已有会话。当前会话明确提供逐消息能力且 profile 三元身份与目录一致后，`/setting <profile-id> <choice>` 选定下一条消息的完整组合；`/setting-clear` 清除尚未发送的选择。支持逐消息设置的会话每条消息均需显式选择。旧中心/旧会话没有该能力时设置选择明确 unsupported，原普通聊天仍可用；Codex 普通会话不支持。
+
+提交前正文、revision、messageSettings 和稳定 key 一起写入原意图日志。成功 ACK 清除该次选择；丢失或矛盾 ACK 保持 unknown，只有 `/recover` 明确重放原请求，不借新目录替换组合。过期 revision 的确定拒绝保留草稿及未发送选择，不自动重发。切换会话清除本地选择。退出仅停止观察，不取消后台工作。
+
+消息分别显示 Requested 和 Observed；Observed 只来自与当前任务/最终消息绑定的 SDK init 记录，缺失或矛盾时 unknown，实际 thinking 始终 unknown。新目录、请求的 adaptive/fast 或旧 runnerRequested 都不构成观察证明。headless 使用相同 typed `settings` / `setting` / `setting-clear` / `settings-page` 命令与 controller。

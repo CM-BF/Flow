@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T21:37:28.726462+00:00",
+  "state": "TWO_AUTHORIZED_TREES_APPLIED_STOPPED",
+  "trees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability",
+      "contentPreserved": true,
+      "configPreservation": true,
+      "observedDeltaBytes": 18587648
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
+      "contentPreserved": true,
+      "configPreservation": "UNKNOWN shared hash changed, original postcheck retained",
+      "observedDeltaBytes": 18329600
+    }
+  ],
+  "logicalDematerializedBytes": 35853616,
+  "currentObservedFreeBytes": 1062559744,
+  "runtimeGate": 1207959552,
+  "shortfallAtObservationBytes": 145399808,
+  "method": "Original exact-per-file noncone sparse method; two-phase facts preserved",
+  "noFurtherAutomaticActions": true,
+  "untouched": [
+    "all source/tests/rules/plans",
+    "own raw and actual fixture/consumer closures",
+    "d04",
+    "dependencies/donor",
+    "previews61108/55616",
+    "Git refs/objects/branches",
+    "personal data and current Codex logs"
+  ],
+  "limits": [
+    "Shared-volume delta is not exclusive attribution",
+    "Second postcheck cannot prove shared config unchanged; no mutation/rollback attempted to hide it",
+    "No new PG/Chrome/provider or product test"
+  ]
+}

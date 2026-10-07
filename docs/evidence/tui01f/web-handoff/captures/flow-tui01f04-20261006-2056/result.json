@@ -1,0 +1,58 @@
+{
+  "outcome": "unknown-retain",
+  "sourceDigest": "5063d601b7c40d1a83cfb35bf0a85d09ea069f3ada1de2d5705e558707f9e275",
+  "observedBytes": 685,
+  "retainedBytes": 685,
+  "outputLimit": 65536,
+  "overflow": false,
+  "pipeState": {
+    "code": 1,
+    "signal": null
+  },
+  "supervision": {
+    "driverPid": 18112,
+    "outcome": "unknown-retain",
+    "phase": "cleanup",
+    "samples": 503,
+    "ownedGroups": [
+      {
+        "pgid": 18112,
+        "state": "stopped"
+      }
+    ],
+    "reason": "driver-nonzero",
+    "last": {
+      "stageBytes": 24971,
+      "outerBytes": 259,
+      "capturedBytes": 685,
+      "totalBytes": 25915
+    },
+    "signal": "unknown",
+    "stopCheckpoint": "durable",
+    "exitCode": 1,
+    "signalCode": null,
+    "elapsedMs": 26512
+  },
+  "metrics": {
+    "groups": [],
+    "metrics": {
+      "stageBytes": 24971,
+      "outerBytes": 1446,
+      "capturedBytes": 0,
+      "totalBytes": 26417
+    }
+  },
+  "raw": [
+    {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 685,
+      "sha256": "d8480cd2da28c720ea0d0dab879ad28f2075156af687499cf891e1a2293672b2"
+    }
+  ],
+  "captureOwnDatabaseCalls": 0,
+  "nativeProviderCalls": 0,
+  "childResourceAuthority": "journey checkpoint"
+}

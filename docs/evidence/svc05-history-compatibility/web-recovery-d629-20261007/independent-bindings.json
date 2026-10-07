@@ -1,0 +1,328 @@
+{
+  "target": "246db0d4beb277a14bc61816999308d6cf1ecfe7",
+  "manifestSha256": "02ffecd1821e11101afba890c460681f7b72c679ed0526f7fc9b26e0b848ce62",
+  "own": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/facts-before.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/request.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/runtime-bindings.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/take-receipt.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/take-request.json",
+      "ok": true
+    }
+  ],
+  "fixedSources": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "ok": true,
+      "actualRootAtExecutionOnly": true
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "ok": true
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "ok": true
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "ok": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "ok": true
+    }
+  ],
+  "webRuntime": {
+    "name": "vite",
+    "version": "8.3.2",
+    "bindings": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+        "bytes": 2670,
+        "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7",
+        "resolutionAnchor": "/Users/citrine/Projects/AgentHarness/Flow/apps/web/package.json"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+        "bytes": 5081,
+        "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+        "resolutionAnchor": "/Users/citrine/Projects/AgentHarness/Flow/apps/web/package.json"
+      }
+    ],
+    "method": "createRequire.resolve only; no Vite import or service/network"
+  },
+  "mismatches": [],
+  "compatibility": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "compatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "reportBytes": 716,
+      "ok": true,
+      "checks": [
+        {
+          "name": "read",
+          "bytes": 292,
+          "sha256": "424845dd21d60723a899cac7c82dc5049e4c6176d033d374385d7f62b85c2bfc",
+          "ok": true
+        },
+        {
+          "name": "send",
+          "bytes": 276,
+          "sha256": "3f0d51c547dc6032e746eb35b5d46342e03d77d06b024346e6407059d8653c99",
+          "ok": true
+        },
+        {
+          "name": "recover",
+          "bytes": 274,
+          "sha256": "d4b4de097c9e83eb33f88d90db212802b5adf7360876bf97a29e3e7643883e6c",
+          "ok": true
+        },
+        {
+          "name": "negotiation",
+          "bytes": 308,
+          "sha256": "e849583f2acc6231fd8dd320b48872d8682a51fc97e59bde5713826f9b30d0b3",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "compatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "reportBytes": 716,
+      "ok": true,
+      "checks": [
+        {
+          "name": "read",
+          "bytes": 292,
+          "sha256": "38a05c6da5cfac714e80f5d0754bb1f4a980a677b33eea9d8d2ef086bac13f0a",
+          "ok": true
+        },
+        {
+          "name": "send",
+          "bytes": 276,
+          "sha256": "7a5c6f396d87b59d200a47cf5a98016e7e8917c3ee6d46d4376efe35571f475d",
+          "ok": true
+        },
+        {
+          "name": "recover",
+          "bytes": 274,
+          "sha256": "3a1d7a4fe337e3d6337b0a18f75d4f4cbd5063d0b55456a7e98fdbec5b311926",
+          "ok": true
+        },
+        {
+          "name": "negotiation",
+          "bytes": 308,
+          "sha256": "4e46b5227971a1a23543f979b5687538f5b6166f41b7fe384e97cf60cb0fd70b",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+      "reportBytes": 646,
+      "ok": true,
+      "checks": [
+        {
+          "name": "read",
+          "bytes": 249,
+          "sha256": "bbfccc446c91b11d70bae5cf93955eb49c17153a91b64e7ca583137eab19481c",
+          "ok": true
+        },
+        {
+          "name": "send",
+          "bytes": 239,
+          "sha256": "50134443cca2ab9cd04262a91b7f8de3d031a0e56dabd757607fd22481313a83",
+          "ok": true
+        },
+        {
+          "name": "recover",
+          "bytes": 231,
+          "sha256": "9dde466bc8ef9d6870a238014deb2608d98ff634b2f0f76e64fc41a05bb9e2b1",
+          "ok": true
+        },
+        {
+          "name": "negotiation",
+          "bytes": 265,
+          "sha256": "9206dcacfd63481c7d67ec7cad6e08529d01ab490c9d654715c34d55240db933",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "requestMode": "0o600",
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+    "expected": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  }
+}

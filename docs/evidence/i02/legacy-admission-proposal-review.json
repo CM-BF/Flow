@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-06T20:49:11.348880+00:00",
+  "target": "a7d37730ac8feae0faf205b06b441bd1626d5e99",
+  "fixedSourcePairsVerified": [
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/verifier.ts",
+    "apps/runner/src/admission-journal.test.ts",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "apps/server/src/runners.ts",
+    "apps/server/src/database.ts",
+    "apps/server/src/runner-maintenance/store.ts",
+    "apps/server/src/runner-maintenance/index.ts",
+    "apps/server/src/runner-maintenance/maintenance.test.ts",
+    "packages/storage/migrations/016-runner-maintenance.sql",
+    "packages/client/src/index.ts",
+    "apps/server/src/reconciliation.ts",
+    "apps/server/src/protocol-dispatch/store.ts",
+    "tools/personal-preview/maintenance-host.mjs"
+  ],
+  "count": 15,
+  "conclusion": "Schema-correct legacy nonempty admission; no wire requestId or supported existing local retirement action. Hold serializes claims but does not prove old ACK or all delayed requests ceased. Narrow proposal accepted for implementation, not evidence of actual recovery.",
+  "authorization": "GO 2026-10-06 20:48 approved this exact one-shot audited retirement after fixed independent implementation review and existing shared-window gates. No generic unknown clearing.",
+  "noNewTests": true,
+  "noNewPersonalProbe": true
+}

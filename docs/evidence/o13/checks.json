@@ -1,0 +1,78 @@
+{
+  "observedAt": "2026-10-06 13:55:49 UTC",
+  "checks": [
+    {
+      "name": "commands-bound-final",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/commands-bound-final.txt"
+    },
+    {
+      "name": "commands-first",
+      "exit": 1,
+      "stdout": "docs/evidence/o13/commands-first.txt"
+    },
+    {
+      "name": "entry-final",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/entry-final.txt"
+    },
+    {
+      "name": "entry-first",
+      "exit": 1,
+      "stdout": "docs/evidence/o13/entry-first.txt"
+    },
+    {
+      "name": "entry-red",
+      "exit": 1,
+      "stdout": "docs/evidence/o13/entry-red.txt"
+    },
+    {
+      "name": "install",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/install.txt"
+    },
+    {
+      "name": "journey-first",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/journey-first.txt"
+    },
+    {
+      "name": "list-final",
+      "exit": 1,
+      "stdout": "docs/evidence/o13/list-final.txt"
+    },
+    {
+      "name": "list-first",
+      "exit": 1,
+      "stdout": "docs/evidence/o13/list-first.txt"
+    },
+    {
+      "name": "list-fixed",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/list-fixed.txt"
+    },
+    {
+      "name": "types-final",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/types-final.txt"
+    },
+    {
+      "name": "types-first",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/types-first.txt"
+    },
+    {
+      "name": "types-second",
+      "exit": 2,
+      "stdout": "docs/evidence/o13/types-second.txt"
+    },
+    {
+      "name": "uncertain-first",
+      "exit": 0,
+      "stdout": "docs/evidence/o13/uncertain-first.txt"
+    }
+  ],
+  "differentPassingChecks": 24,
+  "counts": "6 entry + 5 new-command + 8 unchanged lifecycle + 3 public list + 2 separate public native journey = 24. Runs overlap only where explicitly noted. No original O12/O07/O09 full suite rerun.",
+  "rawLimit": "Initial entry-red and list-first are import failures with zero selected tests, not passing evidence. list-final failed during immutable-authority fixture setup; its initial cleanup JSON filename was reused by list-fixed and the original database-name record was not retained. The failed setup and afterAll result remain in original process stdout; do not assert a named database cleanup receipt for that run. Subsequent evidence filenames are per random database."
+}

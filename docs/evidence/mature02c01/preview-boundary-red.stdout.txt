@@ -1,0 +1,45 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client
+
+ ❯ packages/client/src/conversation-queue.test.ts (8 tests | 2 failed | 6 skipped) 5ms
+   ↓ opt-in queue accepts the original snapshot after the caller mutates nested fields during HTTP
+   ↓ opt-in queue freezes nested request bytes and recovers the immutable original receipt explicitly
+   ↓ opt-in queue rejects wrong identity, revisions, promotion, preview and settings without accepting current state as an ACK
+   ↓ opt-in queue preview is UTF-8 bounded and never substitutes for a full-text receipt
+   × opt-in queue rejects a shorter valid prefix of an over-limit request 4ms
+   × opt-in queue accepts only the longest complete code-point prefix at the byte boundary 1ms
+   ↓ opt-in queue malformed JSON stays unknown while abort and HTTP conflict keep their existing errors
+   ↓ preserves queue command identity, independent revisions and pause/resume semantics without retries
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-queue.test.ts > opt-in queue rejects a shorter valid prefix of an over-limit request
+AssertionError: expected function to throw an error, but it didn't
+ ❯ packages/client/src/conversation-queue.test.ts:89:91
+     87|   for (const preview of ['🙂', '🙂'.repeat(127)]) {
+     88|     receipt.item.preview = preview;
+     89|     expect(() => decodeConversationQueueAccepted(receipt, receipt.conv…
+       |                                                                                           ^
+     90|   }
+     91| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/conversation-queue.test.ts > opt-in queue accepts only the longest complete code-point prefix at the byte boundary
+AssertionError: expected function to throw an error, but it didn't
+ ❯ packages/client/src/conversation-queue.test.ts:100:89
+     98|   }
+     99|   input.text = 'a'.repeat(509) + '🙂tail'; receipt.item.preview = inpu…
+    100|   expect(() => decodeConversationQueueAccepted(receipt, receipt.conver…
+       |                                                                                         ^
+    101| });
+    102| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 skipped (8)
+   Start at  09:49:33
+   Duration  362ms (transform 155ms, setup 0ms, import 268ms, tests 5ms, environment 0ms)
+

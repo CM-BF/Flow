@@ -1,0 +1,84 @@
+{
+  "state": "COMPLETED",
+  "at": "2026-10-07T02:51:06.737267+00:00",
+  "kind": "pg-collect",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "list",
+    "docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts",
+    "--config",
+    "docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--json",
+    "--no-color"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+  "availableBeforeBytes": 26581348352,
+  "supervisorPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py",
+  "supervisorSha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0",
+  "pg": 0,
+  "http": 0,
+  "tmpBudgetBytes": 33554432,
+  "tmpMeasurement": "before/after sample, not realtime isolation",
+  "elapsedBasis": "wrapper preflight through cleanup before final receipt; excludes interpreter startup and final persistence",
+  "sources": {
+    "apps/server/src/assistant/index.ts": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+    "apps/server/src/assistant/final-preview-batch.test.ts": "ed597db77862c9a94ac64372c478ab203e2a6b7bc08beae65439202580e53846",
+    "apps/server/src/assistant/store.ts": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+    "apps/server/src/conversations/turn-read.ts": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb",
+    "apps/server/src/conversations/state.ts": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4",
+    "apps/server/src/conversations/queries.ts": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08",
+    "apps/server/src/conversations/turn-page-batch.test.ts": "a49068f7aa446cb0cce5c8e49fd506a201fd2f194fdf82e734dfcf8e68723df1",
+    "apps/server/src/conversations/replies.ts": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a"
+  },
+  "temporary": {
+    "device": 16777234,
+    "inode": 123357555,
+    "beforeBytes": 0,
+    "absentAfter": true,
+    "entriesAfter": 0,
+    "afterBytes": 0
+  },
+  "spawn": {
+    "pid": 24153,
+    "pgid": 24153,
+    "startedAt": "2026-10-07T02:51:06.742331+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 24153,
+      "pgid": 24153,
+      "startedAt": "2026-10-07T02:51:06.742331+00:00"
+    },
+    "pid": 24153,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 536,
+    "observedBytes": 536,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawBytes": 536,
+  "rawSha256": "2538049a7503e92a1f7672723666d2be0e85a99b31c1ea0a6a08cc3fc1b78851",
+  "testSummary": null,
+  "collected": 2,
+  "testPasses": null,
+  "endedAt": "2026-10-07T02:51:07.554926+00:00",
+  "wallSeconds": 0.8847114579984918
+}

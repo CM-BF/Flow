@@ -1,0 +1,50 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+
+ ✓ test/conversation-projection.test.ts (89 tests) 261ms
+stderr | test/attachment-integration.test.ts > official prepare-failure async rejection restores controller ownership and supports a fresh captured retry
+[assistant-ui] Failed to send attachments Error: Controlled preparation failure
+    at Object.send (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:161:96)
+    at AttachmentSendOperations.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js:21:32)
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:91
+    at Array.map (<anonymous>)
+    at Composer._prepareSubmission (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:49)
+    at Composer.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:234:14)
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:177:18
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+ ❯ test/attachment-integration.test.ts (14 tests | 1 failed) 5137ms
+     ✓ is lazy, uses stable view identity across CREATE aliases, and closes only its Dialog 8ms
+     ✓ checks distinct P01 upload grant, never recurses into its own port, and never borrows global focus 4ms
+     ✓ revokes hidden/offline/disabled reads, rejects late data and rechecks capability on resume 53ms
+     ✓ keeps storage errors local without erasing unknown bytes or constructing an input 1ms
+     ✓ only maps the documented absent upload receipt, not denied or malformed responses 1ms
+     ✓ propagates local upload cancellation through the P01 command to the real private client 53ms
+     ✓ preserves unknown recovery on bad 200 and expired namespace instead of treating either as absence 2ms
+     ✓ requires a new matching real local Outbox receipt, then consumes before network and leaves the next draft 2ms
+     ✓ fails before local handoff on hidden capture, preserving held recovery after items are removed 1ms
+   ✓ real QueueCommands + FlowClient retains ordered v2 materials after a malformed ACK and retries original bytes/key 3ms
+   ✓ official complete async rejection restores controller ownership and supports a fresh captured retry 2ms
+   ✓ official requires-action async rejection restores controller ownership and supports a fresh captured retry 1ms
+   ✓ official prepare-failure async rejection restores controller ownership and supports a fresh captured retry 3ms
+   × official prepare-cancel async rejection restores controller ownership and supports a fresh captured retry 5003ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/attachment-integration.test.ts > official prepare-cancel async rejection restores controller ownership and supports a fresh captured retry
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ test/attachment-integration.test.ts:154:99
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 102 passed (103)
+   Start at  05:29:45
+   Duration  6.22s (transform 440ms, setup 0ms, import 1.30s, tests 5.40s, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/attachment-integration.test.ts test/conversation-projection.test.ts

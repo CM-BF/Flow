@@ -1,0 +1,92 @@
+{
+  "reviewer": "root / independent delta review",
+  "reviewedAt": "2026-10-06T13:02:28.835730+00:00",
+  "verdict": "APPROVED",
+  "blockingFindings": [],
+  "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "priorTarget": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "priorReview": "/tmp/root-attachi02-f82-review.json",
+  "priorVerdictPreserved": "REQUEST_CHANGES / P2",
+  "closedFinding": "P2 legal long filenames overflow 390px Dialog; now short visible actions plus unchanged complete accessible names and constrained layout",
+  "reviewMethod": [
+    "Read complete production delta (Picker and CSS) and bounded browser sampler delta",
+    "Verify all 24 declared source hashes against fixed target, current tree and actual browser capture",
+    "Inspect raw geometric assertions and both 390px theme screenshots",
+    "Retain independent 191/191 functional results on unchanged f82 business source; do not claim new full browser/test matrix"
+  ],
+  "implementationDelta": [
+    "apps/web/src/attachments/AttachmentPicker.tsx",
+    "apps/web/src/attachments/attachments.css",
+    "apps/web/test/attachment-integration.browser.ts"
+  ],
+  "claim": {
+    "id": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+    "version": 3,
+    "committedAt": "2026-10-06T12:55:21.884Z",
+    "scopeCount": 26,
+    "outside": []
+  },
+  "sourceMismatches": [],
+  "protectedDiff": "",
+  "postTargetProductDiff": "",
+  "geometry": [
+    {
+      "theme": "light",
+      "dialogWidth": 388,
+      "scrollWidth": 388,
+      "buttons": 11,
+      "maxButtonWidth": 124.953125
+    },
+    {
+      "theme": "dark",
+      "dialogWidth": 388,
+      "scrollWidth": 388,
+      "buttons": 11,
+      "maxButtonWidth": 124.953125
+    }
+  ],
+  "authorBrowser": {
+    "sourceCommit": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+    "checks": [
+      "255-code-unit legal ASCII and Chinese/emoji names; actual upload, metadata, recovery Enter and Escape restore in both themes",
+      "long-name Dialog and all material action buttons stay within 390px without horizontal overflow"
+    ],
+    "failure": null,
+    "wallMs": 10325,
+    "cumulativeBudgetMs": 290133,
+    "providerQueries": 0,
+    "cleanup": {
+      "database": "flow_attachi02_dbd1209ebaee4db8abcc68ad95493c79",
+      "startedAt": "2026-10-06T12:57:36.952Z",
+      "providerQueries": 0,
+      "factory": "createServer(default modules)",
+      "fallbackMount": false,
+      "cleanupAt": "2026-10-06T12:57:47.268Z",
+      "cleanupMs": 87,
+      "remaining": [],
+      "errors": [],
+      "wireBytes": 11658
+    }
+  },
+  "priorIndependentTests": {
+    "file": "/tmp/root-attachi02-f82-tests-final.log",
+    "passed": 191,
+    "files": 7,
+    "scope": "unchanged f82 business logic"
+  },
+  "cleanCode": "Checked action naming, stable accessible names, single responsibility, bounded CSS, explicit promise ownership and readiness-based upload sequencing. No new state/permission/controller logic or dependency. No further finding in this delta.",
+  "checkout": {
+    "head": "990483c9d8f1a3db4b70c2b3f9e710b0938f4ab5",
+    "origin": "990483c9d8f1a3db4b70c2b3f9e710b0938f4ab5",
+    "dirty": "",
+    "remoteVerifiedAtReview": true
+  },
+  "limitations": [
+    "Original full author browser run had 10 passes plus failure; targeted plain retry supplies 11th behavior, with source bindings retained.",
+    "First long-name sampler interruption needed manual cleanup; original raw record retained. Subsequent sampler upload concurrency failure retained.",
+    "No repeat PG/browser/provider/personal runtime performed by reviewer.",
+    "Current main context-history producer with attachment-only must be integrated and checked by its legal owner/Execution Lead; this older fixture base does not prove that combination.",
+    "Selected ready drafts and Send/Queue unknowns are not durable across reload; cross-tab upload journal CAS, real provider, screen reader, Safari/Firefox remain unverified.",
+    "Review approval is not main integration or deployment."
+  ]
+}

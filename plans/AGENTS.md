@@ -77,7 +77,7 @@
 - 并行features的plan/status/review由各owner在自己的worktree维护；跨任务汇总和索引由Execution Lead负责，不并发编辑他人status。review者默认只读实现，若要写review记录先明确该文件唯一owner与范围；实际写入仍须模型>=Sol。
 - review.md至少包含target/scope、base/head、验收criteria/关键文件、已执行与未执行检查、证据链接、独立review步骤、severity/blocking findings、结论/限制、作者回应/修复commit和复审。新建模板明确 `NOT_STARTED`，空模板不能当approval。
 - review模板须包含可复制任务说明，先验证实际worktree/base/head，结论绑定具体commit。Claude Code或其他外部agent可只读审查；直接修改Flow文件仍受Sol以上门槛与独立worktree规则约束。
-- 当前用户授权每Lead任务1+3，三队4/4/4总上限12；实际并行度受运行时cap和ready独立任务数限制。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
+- 2026-10-06每Lead任务1+3、三队总12为历史授权；本次heartbeat用户上限10，实际并行仍受工具cap和ready独立任务数限制。以根AGENTS及OPS当前规则为准，不把局部检查并行上限当新增agent槽；拒绝后不反复唤醒或新建task绕cap。
 - 目录迁移必须更新本地相对链接、README索引与状态，并验证原始实验JSON/hash未被修改。
 
 ## Dashboard 同步
@@ -131,3 +131,16 @@ status可选枚举 `本片段交付阶段`：planning（未来计划）、implem
 所有计划（包括 WPF-MATURE-01～06）统一引用[根规则：模块化、可复用接口与性能](../AGENTS.md#modular-design)，不复制权威条款。设计与 review 按风险附简表或图：Module 的唯一职责、Interface 的输入输出/状态所有权/生命周期/错误取消、依赖方向、扩展一个实现需改的位置、已有复用或渐进重构的选择，以及有界数据/背压/资源释放与受影响场景的证据。已有明确扩展需求可以驱动小接口，但不得用宽泛框架或多层特判替代真实消费者验证。
 
 review 对照上述设计及实际 diff 检查：是否泄漏外部包或 provider 细节、重复状态规则/授权逻辑、让职责跨层、以无限缓存/队列掩盖性能成本，或在没有需求时过度泛化。合法领域分支不因存在 if/switch 被机械判错；风险和检查范围要具体，纯文档不运行无关工程测试。此门槛沿用现有独立 review / claim / 固定提交规则，不增加重复用户审批。
+
+<a id="task-timing"></a>
+## 实际任务时间与等待记录
+
+唯一owner在status顶层字段表维护 `任务开工时间`、`任务完成时间`、`任务时间来源`。时间采用完整ISO8601 UTC `YYYY-MM-DDTHH:mm:ss.sssZ`（已有秒精度可保留）；开工是首次实际开展本task，不随每轮唤醒重置；完成是本登记task既定验收全部完成，不是某个分支、子任务或review结束。来源引用既有明确事件/receipt，分别说明开工与完成，不复制原始证据。领取receipt只证明领取，只有owner明确同刻开工才能用于恢复开始时间。
+
+历史缺证据、字段缺失/非法或来源冲突写 `UNKNOWN`；尚未完成由owner明确写 `任务完成时间: NOT_COMPLETED`，不得把UNKNOWN当正在做。不能用更新时间、最近commit、文件mtime、claim touch或review日期猜实际开始。分支交付、独审、main集成、实际部署继续在原技术字段/证据分别记录其真实UTC及固定target，不合成一个Done时间，也不作为显示两项任务时间的前置。
+
+dashboard只从同一可信当前snapshot的generatedAt计算**包含等待的壁钟历时**：已完成用完成减开工；明确NOT_COMPLETED用snapshot时间减开工。时间逆序/未来、缺失、frozen/stale/missing或读取失败后的旧快照不能显示仍在推进，不用浏览器now延长旧事实。显示UTC与依据/观察时点，不称CPU、agent实际工时或自动扣掉等待。新可选时间字段缺失/异常只标该项未知，不清空原已知进度、独审/集成事实或使旧task整体失效；保留原proof判断。
+
+实际等待放同一status的 `## 等待记录` 表，列为 `ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源`；类别使用资源、接口、验证失败、审查、用户或其他，仍在等待写 `OPEN`，无证据时间写 `UNKNOWN`。真实事件发生才追加/结束，不按轮询生成记录，不从累计壁钟猜各慢因占比；重叠等待不简单相加。当前阻塞字段仍遵守ACTIVE/NONE/UNKNOWN，等待表不成为另一状态权威。
+
+先覆盖当前活跃任务与后续新任务；历史按合法owner有证据时补，不阻产品修复或批改他人status。dashboard只读这些字段，不创建第二时间账本；本规则不改变两层任务或跨层消息预算。

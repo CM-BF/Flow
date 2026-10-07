@@ -1,0 +1,139 @@
+{
+  "observedAt": "2026-10-06T14:29:38.922Z",
+  "sourceCount": 159,
+  "tasks": [
+    {
+      "id": "O14",
+      "current": true,
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:25:55.619Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/plans/o14-goal-progression/status.md",
+        "syncedAt": "2026-10-06T14:29:38.922Z",
+        "stale": false,
+        "ageHours": 0.06553388888888889
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已开始实现一次授权后持续推进多个依赖任务的能力。",
+        "next": "关闭客户端后，中心仍按授权和固定输入推进两个节点。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "COST01A",
+      "current": true,
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:12:25.979Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/plans/cost01a-usage-readout/status.md",
+        "syncedAt": "2026-10-06T14:29:38.922Z",
+        "stale": false,
+        "ageHours": 0.294145
+      },
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "任务缓存、输入、输出和估价解释已在隔离中心验证，缺测与不完整覆盖明确保留。",
+        "next": "已通过独立审查，等待主线与公开接线接收。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "OPS-001",
+      "current": true,
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:27:25.851Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+        "syncedAt": "2026-10-06T14:29:38.922Z",
+        "stale": false,
+        "ageHours": 0.06053388888888889
+      },
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 5,
+        "output": "全项目明确模块职责、复用与扩展方式、性能界限；计划和审查使用同一规则。",
+        "next": "本片段已交付；后续按真实协作问题维护规则。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "F01",
+      "current": true,
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:26:52.420Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
+        "syncedAt": "2026-10-06T14:29:38.922Z",
+        "stale": false,
+        "ageHours": 0.106645
+      },
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "用量说明已接通公开中心，并验证缓存分项、授权与重启后仍可读取。",
+        "next": "将已审公共用量说明发布到主线。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "note": "Historical actual snapshot before subsequent owner closeout; no product or architecture checks rerun."
+}

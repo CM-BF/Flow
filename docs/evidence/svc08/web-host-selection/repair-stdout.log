@@ -1,0 +1,14 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-dc9ef2ks/flow-svc08-host-xyfXNM","dev":16777234,"ino":123427921,"cleaned":true,"bytes":10531,"calls":{"marker":3,"stop":1,"spawn":1,"ready":2,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation (140.233333ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-dc9ef2ks/flow-svc08-host-ZfRUhr","dev":16777234,"ino":123427970,"cleaned":true,"bytes":94821,"calls":{"marker":3,"stop":1,"spawn":1,"ready":0,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles (160.42175ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-dc9ef2ks/flow-svc08-host-d9ms4r","dev":16777234,"ino":123428032,"cleaned":true,"bytes":94982,"calls":{"marker":3,"stop":1,"spawn":1,"ready":1,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection final receipt unknown blocks legacy mutation after pending was cleared (184.598917ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 573.231542

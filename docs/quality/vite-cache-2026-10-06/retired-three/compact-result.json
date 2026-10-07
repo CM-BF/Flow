@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-06T23:00:55.047696+00:00",
+  "state": "THREE_COMPLETE_BATCH_CLOSED",
+  "operations": [
+    {
+      "name": "web-plugin-management-integration",
+      "state": "COMPLETE",
+      "files": 60,
+      "freeBeforeBytes": 1021415424,
+      "freeAfterBytes": 1038979072,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "elapsedMs": 2183,
+      "primaryFailure": null,
+      "secondaryFailures": []
+    },
+    {
+      "name": "web-profile-integration",
+      "state": "COMPLETE",
+      "files": 60,
+      "freeBeforeBytes": 1038893056,
+      "freeAfterBytes": 1056579584,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "elapsedMs": 1666,
+      "primaryFailure": null,
+      "secondaryFailures": []
+    },
+    {
+      "name": "web-steering-control",
+      "state": "COMPLETE",
+      "files": 60,
+      "freeBeforeBytes": 1056178176,
+      "freeAfterBytes": 1073909760,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "elapsedMs": 1589,
+      "primaryFailure": null,
+      "secondaryFailures": []
+    }
+  ],
+  "selectedLogicalBytes": 52590240,
+  "firstBeforeBytes": 1021415424,
+  "lastAfterBytes": 1073909760,
+  "freshFreeBytes": 1063604224,
+  "observedNetDeltaBytes": 52494336,
+  "attribution": "Shared-volume observation; not an exclusive physical-reclamation measurement.",
+  "postgresBrowserRequiredBytes": 1207959552,
+  "postgresBrowserAdmitted": false,
+  "dependenciesTouched": false,
+  "userServicesTouched": false,
+  "furtherCandidatesAuthorized": false,
+  "next": "OPS-CI01 reviewed documentation candidate; activation requires user action, remote execution NOT_RUN."
+}

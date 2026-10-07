@@ -2,26 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:01:19 UTC / main9d6bd45abdf5149bc44f1e9dc534454e7403f7d7（本次发布前） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:13.319076+00:00 / main451bf2ed；4320 ACCESS与计时实际部署，个人仍af51/accepting v18、d629/v3 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | OPS整体首次事件缺依据，不能由最新提交推断；开放TODO11/13/15/16见本status |
+| 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
-| 工作分支状态 | delivered；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；严格两层任务与消息预算已main；模块化/复用/性能新规则固定1d36a7a已独审，本批发布。 |
-| Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
+| 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
+| 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
+| 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
+| 已集成main状态 / HEAD | main/origin451bf2ed已接SVC08同锁入口、S01P07领取恢复、ACCESS与原计时；个人未随主线自动升级。 |
+| Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
-| 优先级 | 5 |
-| 当前产出 | 全项目明确模块职责、复用与扩展方式、性能界限；计划和审查使用同一规则。 |
-| 下一可用交付 | 本片段已交付；后续按真实协作问题维护规则。 |
-| 当前阻塞 | NONE |
-| 需用户决定 | NONE |
+| 本片段交付阶段 | implementation |
+| 优先级 | 1 |
+| 当前产出 | 看板登录入口与任务计时已实际可见，按需加载、复制和关闭清除已有真实页面观察；领取恢复已进主线。固定后台产物安装/加载通过，首宿主运行失败事实已保留。 |
+| 下一可用交付 | 先收束固定后台首轮自有资源并修正身份观察边界，再验证独立宿主；网页固定宿主选择完成独审后进入受管发布。其他队伍已ready局部检查继续。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。SVC06首host运行因拒读profile也拒绝/bin/ps而无法确认center身份，精确自有中心/DB暂KEEP、正在有界收尾；不是旧空间HOLD，也未证明产物加载失败。 |
+| 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -40,7 +43,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前用户授权配额为本队4/Web4/Mika4，总上限12；不是实际运行数。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
+- 4/4/4、总12为历史授权，不是当前实际人数；本次heartbeat用户上限10，实际仍服从工具cap与ready工作。工程agent槽与产品runner容量分别计量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -84,3 +87,351 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 | OPS-001-10 | completed | Execution Lead | 根规则1d36a7a4532bbd2f29300c220d5451f755bd756c与plan/review门槛完整覆盖；runner_owner独立只读APPROVED；[质量记录](../../docs/quality/modular-design-rules-2026-10-06.md)，仅文档检查。 |
 
 2026-10-06 09:00:57 UTC：用户模块化/DRY/扩展/性能规则完整落实到根AGENTS唯一权威及plans门槛，独立文档审查无finding；与本批受控main发布绑定，实际发布SHA由Git集成事实核验。WPF-MATURE-01～06统一引用根锚点，不复制规则正文。
+
+## 2026-10-06T13:13:50.383099+00:00 共享磁盘预算
+
+13:12:37 UTC Data卷可用1,826,984 KiB（约1.74 GiB），不能视为完整安装/复制的空间限制解除。SVC06大型产物准备暂停；每次开始前核真实可用量、估计并发物理峰值，并至少保留1 GiB供数据库、证据及其他队伍收尾，当前完整准备最低门槛2.5 GiB。clone减少物理复制不等于安装/临时峰值为零，失败不扩大预算或回落普通全量复制。
+
+三队仅各自核对已结束、自有且身份明确、可重建的临时安装/测试产物；不得删除用户数据、他人worktree/node_modules、active/unknown资源或审查原始证据。本次Execution Lead未删除文件。ConnectionSession源码、小范围现有依赖检查和已授权有界诊断继续，不全局停工、不操作个人服务。共享资源观察见[固定事实](../../docs/quality/resource-space-2026-10-06.json)，SVC06具体峰值与清理记录由其唯一owner维护。纯文档核对，不跑产品测试。
+
+2026-10-06 13:37:42 UTC：旧R05可重建依赖限定清理实际只回收9,834,496B，非du553748KiB；Web旧CONTEXTI有活跃消费者不删。现资源事实见[同一记录](../../docs/quality/resource-space-2026-10-06.json)，SVC06完整准备仍保留2.5GiB gate，普通小验证继续。后续新worktree sparse-checkout仅候选，先自有≤5MiB toy核Git2.50.1每树配置/共享worktreeConfig，不转换活跃树/删除历史，未测不称节省。
+
+2026-10-06 13:49:04 UTC：实际Data available1,388,440KiB（约1.32GiB），共享消耗归因unknown。SVC06完整准备仍不达2.5GiB；小源码/局部验证继续，大字节操作先预检并保留约1GiB收尾余量。两co-lead已直接协调，无删除/大复制/个人服务操作。
+
+2026-10-06 14:08:56 UTC：Data实采可用892260KiB，已低于1GiB收尾余量。GO14:07:34观察886001664B；此前A2A“14:13”标签笔误，不作实际时间证据。新大安装/完整构建/PG与A-B负载暂停，轻量源码/审查/小metadata/已审集成继续。COST检查此前已清理，O14未建全树；未删除未知tmp或仍被使用的依赖，用户腾空间尚未回复。见同一资源记录。
+
+## 2026-10-06 14:18 UTC 可逆工作树稀疏化
+
+仅首个已释放、无进程/打开文件使用的 browser-connection-session 收起其他任务的已提交历史副本，源码/测试/规则/全部计划/实际fixture及自有完整证据保留。Git clean与固定HEAD不变，4743保留文件逐hash相同；1844历史副本仍在固定Git及当前main同blob，其他7个受保护工作树HEAD/status/index相同。共享worktreeConfig启用，只有候选树有sparse设置；disable会恢复文件但保留共享扩展。详见[实际回执](../../docs/quality/sparse-worktree-2026-10-06/browser-session-result.json)和[小仓库往返验证](../../docs/quality/sparse-worktree-2026-10-06/existing-worktree-toy.json)。
+
+本次卷可用量前后增加20,066,304B，总1,198,407,680B；共享卷观察不保证独占归因，不按du或逻辑字节夸回收。此前到本操作前的余量变化归因未知。仍未达SVC06 2.5GiB门槛；下一树逐个fresh核归属/消费者/fixture后决定，不动活跃依赖、个人服务或权威原证据。技能：已读本地find-skills；采用已验证Git2.50.1原生机制，无安装/新框架/PG实验/provider。
+
+2026-10-06 14:22 UTC：第二棵 tui-queue-controls released树也已逐项保留4572文件并收起2514个同main blob历史副本；原node_modules（COST的第三方依赖来源）未变、无运行中的openfile消费者、其他7树HEAD/status/index不变。卷前后+43,560,960B、总1,226,006,528B，[回执](../../docs/quality/sparse-worktree-2026-10-06/tui-queue-result.json)。O14新稀疏树保留全部代码/tests/rules/plans，仅自evidence，du12,568KiB、卷前后减少14,811,136B，[创建回执](../../docs/quality/sparse-worktree-2026-10-06/o14-new-worktree.json)；未安装依赖。COST一次直接PG验证在1GiB+96MiB门槛后通过并正常DROP，完成可用1,189,822,464B；无模型/个人服务变更。全构建、安装与A/B仍关闭，SVC06仍不足2.5GiB；未把首片稀疏收益解释为全部空间解阻。
+
+2026-10-06 14:26 UTC：第三棵 O13 已正式release且无openfile，初次收起3542副本后审查发现根规则链接的d04必须完整保留；即时通过sparse规则恢复22个d04文件并逐固定blob核，Git仍clean，最终3520其他历史副本收起。原始前后回执与[规则闭包更正](../../docs/quality/sparse-worktree-2026-10-06/o13-rule-correction.json)分别保留，不掩盖中间缺口。新O14也按需补d04只读材料。最终可用1,258,967,040B，SVC06仍未解阻；本次到三棵授权自有旧树为止，不继续猜删未知资源或活动树。全部原始任务证据/生产源码/依赖保留，历史副本仍在固定Git与main同blob，可逆恢复。
+
+2026-10-06T14:35:35.073416+00:00：GO补充SVC06固定0e6a99c2 lock的只读依赖闭包候选：server+runner prod/optional及显式root tsx涉及5 workspace importers、256/683 snapshots，候选缓存256/581且missing/unsupported/cache-missing=0。保留content求和321,929,020B、排除186,269,334B含共享重复，均非实测物理空间/安装峰值。待原owner只读收敛selected install/peer/SQL/相对入口验证方案；仍保持2.5GiB全准备门槛及1GiB收尾额，不据该候选启动安装或宽删。
+
+2026-10-06T14:36:54.528536Z：唯一Git owner串行建立RELEASE03 fixed362与DPERF04 fixedc837小型稀疏源码树，分别du8,800/5,484KiB；fixedblob全相同、clean/main受保护、shared worktreeConfig原true未改。正式四/九writer scope由Web管理者fresh take，未安装/构建/PG/browser/provider。回执在docs/quality/sparse-worktree-2026-10-06；最后共享卷free1,192,497,152B，后续检查按增量复核，SVC06仍未达2.5GiB。
+
+2026-10-06T15:15:18.606951+00:00：四棵已released/clean/无进程或打开文件消费者的本队工程树逐一可逆稀疏化。全部源码、tests、规则、plans、d04、自己的完整工程证据及已识别fixture闭包保留，收起项均与固定Git及main同blob。每树保留文件hash/8保护树不变，node_modules未动。实采余量1086668800B，非du预计收益；仍不够1GiB+32MiB窗口，未降低门槛。见[批次事实](../../docs/quality/sparse-worktree-2026-10-06/engineering-four-summary.json)。纯资源操作，0PG/产品测试/模型，原个人服务保持。
+
+## 2026-10-06 15:21:36 UTC 后继资源批次
+
+GO已授权最多再8棵本队已交付且released树，达到2.75GiB可用或8棵即停止；assignment_review只读准备候选/引用闭包，Execution Lead唯一执行Git变更。四树已交付证据不变；新批仍须fresh ledger/clean固定HEAD/无消费者/逐blob同main和保护树不变。所有产品源码/tests/rules/plans/自有原始证据/fixture闭包/依赖保留。小验证沿真实增量准入；Web RELEASE03先于O14/O15 PG，完整SVC仍2.5GiB+收尾余量，不因有候选降低门槛。
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| OPS-001-11 | in-progress | Execution Lead | 四树与本批七树已逐棵验证；第八planning树排除，完整SVC资源仍未达。 |
+
+2026-10-06 15:26:50 UTC：[本批实际结果](../../docs/quality/sparse-worktree-2026-10-06/next-eight-summary.json)保留每树fresh ledger、固定head、全部保留hash、同main blob与八保护树不变；最终操作可用1,132,175,360B，本文落盘前fresh 1127505920B。Web先一次history-only，O14/O15不并跑PG；不把逻辑61,286,021B当physical回收。
+
+15:31:45 UTC：网页A-only已实际失败并正常清理后，F01 fresh1,098,022,912B低于1GiB+32MiB，0测试/0PG；不借旧15:26观察开跑。新后台窄兼容候选只物化约9.3MB源码并借用精确现成依赖链接，个人服务无变；A/B仍需新tuple和实际准入。七树批次已停止，不自动扩大清理名单。
+
+2026-10-06 15:48 UTC：当前共享候选源码仍固定；TUI01F仅物化192个公共客户端/规则文件，source-only 3,051,381B，卷free从1,095,565,312到1,091,002,368B（共享卷观察，不独占归因）。保留1GiB余量，未安装依赖/启动PG/browser；完整服务器fixture闭包等运行准入再增量物化。七树可逆收起批已停止，不因新源码树重复扩大清理；F01/O15及Web仍各自fresh验资源，不复用过去通过值。
+
+2026-10-06 15:55 UTC：四棵Web交付树按明确授权逐一处理，先额外保留实验实际引用/一次性native调用标记和所有可执行evidence目录，再fresh released/clean/remote/openfile与fixed-main blobs核对。四次结果clean，保留hash/六保护树/shared config均不变，依赖未动；卷末1,118,138,368B、随后core小源码恢复后1,115,361,280B，只有实际共享观察，不把逻辑量当物理回收。[完整回执](../../docs/quality/sparse-worktree-2026-10-06/web-four-summary.json)。本批4棵到限停止；Web A2优先fresh gate，F01/O15不并跑，B/full SVC保原门槛。
+
+小源码规则校正：此前对约168KiB exact源码补齐套用1GiB+1MiB前置，确有一次NOT_RUN；该拒绝保留。GO现明确小额源码准备不套PG/build运行reserve，保留现dirty与无覆盖即可。恢复已在四树后完成21文件180224B，0install/import/tests；后续若实际写失败停止，运行验证门槛不因此降低。
+
+2026-10-06 16:01 UTC：源码物化更正：15:54 sparse add新清单时重套初始规则，导致CORE已提交的自有metadata/leaf暂时收起；15:57将四个currentScopes与新增清单一并显式恢复，HEAD5239未变，后续作者dirty保留。原经过与纠正见[回执](../../docs/quality/sparse-worktree-2026-10-06/claude-message-settings-source-expansion.json)，不把中间状态改写为一直完整。后续活跃树物化须先保留全部当前实际文件及完整已领取闭包。
+
+Web A2新tuple脚本独审已过，但15:58 fresh资源少约4MB，实际检查NOT_RUN、原3874ms预算不变；本批四树已到限，未扩大名单。TUI01F用既有精确第三方链接、仅本树workspace aliases进入一次有界纯检查（1GiB+8MiB/输出≤2MiB/≤30s），无PG或浏览器，不降低其他窗口门槛。
+
+2026-10-06T16:07:14.191175+00:00：GO已授权下一批最多12棵已结束自有树，当前3棵完成、1旧树排除；全部保留hash/保护树/shared config不变，依赖未动。最后free1,113,837,568B；首树前884,588,544到第二树前1,091,846,144的共享波动归因未知，不计回收。优先交Web A2现场重新准入，余下候选仅只读核、实际操作等该窗口归还；B/full SVC门槛不降。[本批逐树证据](../../docs/quality/sparse-worktree-2026-10-06/next12-summary.json)。
+
+## 2026-10-06T16:16:30.416314+00:00 next12第二组与窗口调整
+
+本批累计7/12：第二组ENG01A/TUI01B/TUI01A/R05B逐树fresh released/clean/remote/无进程与openfile，全部保留文件hash、main同blob及其他保护树不变。四次共享卷观察分别增加10,547,200 / 10,440,704 / 9,699,328 / 9,084,928B，不当独占物理归因。第三组精确5路径均KEEP（3不存在/2远端身份unknown），没有扩大遍历。详见[当前回执](../../docs/quality/sparse-worktree-2026-10-06/next12-summary.json)。
+
+RELEASE03 A3附件场景通过、mixed资源中断、B未启动；累计7,983/180,000ms，数据库正常删除/errors[]且自有进程终止。下一窗口争取1GiB+128MiB加共享波动余量后A→B，不只刚过A线反复启动；原脚本停止/清理门槛不降。0新产品测试/模型/个人服务操作。
+
+## 2026-10-06T16:20:35.236757+00:00 next12封存
+
+本批12/12全部完成即停止；最终可用1,143,238,656B，B启动线1,207,959,552B仍差64,720,896B，且没有额外共享波动空间。A3部分结果与累计7,983ms保持，不再仅过A最低线启动。逐树操作可用量差值合计116,363,264B仅观察，不作独占回收归因。
+
+最后5树远端feature分支不存在如实留证；按原授权逐候选核本树固定Git与实际远端main8ac4322d同blob，不增设整feature必须远端存在的门槛。自有/不同blob、所有生产源码/tests/rules/plans/依赖及真实消费闭包均KEEP。12树clean/保留hash、7保护树与共享配置不变；没有删除branch/object或用户数据，0产品测试/模型/个人服务操作。最终[唯一回执](../../docs/quality/sparse-worktree-2026-10-06/next12-summary.json)保存旧KEEP报告与修正依据。
+
+2026-10-06 16:23 UTC source-only闭包：TUI01F恢复173个固定输入/704532B，231个保留文件hash不变；CORE恢复155个固定输入/673771B。CORE操作后HEAD检查因owner并行提交metadata失败，未重试写入；随后只读核155固定hash、310个原HEAD可见文件和3份prepared配置一致，产品diff为0，未追溯补造未预先持久的4份untracked运行hash。两次均0安装/导入/测试/PG/provider，[CORE事实](../../docs/quality/sparse-worktree-2026-10-06/claude-vertical-source-materialized.json)、[TUI事实](../../docs/quality/sparse-worktree-2026-10-06/tui01f-followup-source-materialized.json)。小源码恢复不套PG运行gate；原1GiB收尾余量及运行增量门槛保持。下一批最多12棵已交付树按同一保护规则核对，准备到1GiB+160MiB或数量上限后再协调WebA→B。
+
+2026-10-06T16:39:04.569492+00:00：新授权批次8/12已操作，其余候选按同样fresh条件核验。当前free 1158901760B，目标1GiB+160MiB；不因只过A线开跑。五个有效占用/活跃预览保持原样。原始intake用可逆gzip保留逐字校验与原SHA，降低新增证据物化成本，不删除tmp原件或其他原始证据。见[本批实际汇总](../../docs/quality/sparse-worktree-2026-10-06/next12b/summary.json)。
+
+2026-10-06T16:45:42.321628+00:00：next12b累计12/12到限停止；16:44:51实际可用1,243,852,800B达到本次1GiB+160MiB准备线，网页组获原固定tuple/累计预算下A→B顺序机会，必须现场再核原门槛。所有12树clean、全部保留文件hash/同main blob/7保护树与配置不变，依赖及自有原始证据未动。过程中共享卷先降后升，差值只作观察，不能归因本操作。最终封存free 1238319104B；O14/O15/TUI/CORE PG不并跑，纯类型/HTTP小检查保各自预算，SVC06大型构建仍2.5GiB门槛。无本队新PG/产品测试/provider或个人服务变更；[完整批次](../../docs/quality/sparse-worktree-2026-10-06/next12b/summary.json)。
+
+2026-10-06T16:50:07.903872+00:00：串行PG窗口次序固定为Web RELEASE03 A→B及实际清理归还 → MATURE02 CORE既有8组专库 → O14/O15/TUI。CORE仅其固定slot请求的fresh1GiB+128MiB、120s工作+80s清理、0provider；没有当前开跑许可，不借16:44余量。两lead直接交窗口，普通小源码/类型/HTTP按原小预算继续；完整SVC门槛不变。
+
+2026-10-06T16:51:27.830936+00:00：Web16:47:43.636已实际归还：两A完整通过，B普通发送后Files同名定位失败，未生成兼容报告；专库removed、两个自有进程exit0/errors[]。下一CORE8组已交Mika，只凭其fresh原gate准入，O14/O15/TUI及Web后继B不并跑。原20,309ms累计/159,691ms剩余保持。[窗口交接](../../docs/quality/sparse-worktree-2026-10-06/next12b/web-core-window-handoff.json)。
+
+
+## 2026-10-06 16:59 UTC 入口核对与CORE新窗口
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| OPS-001-12 | completed | Execution Lead | [局部验证方法](../../docs/quality/local-validation.md)补充真实动态资源与唯一定位检查；只核文档/diff，不运行工程测试 |
+
+CORE 16:52首次专库在beforeAll缺012时失败：8例全部skipped、0HTTP；1旧合成task，所有连接关闭/普通DROP后absent，进程/cache/temp正常清理。其余三份固定数组SQL同样缺失。唯一Git operator在16:56只补四文件5,539B/名义分配16KiB，原342物化文件hash及HEAD/status不变；第一次 `add --no-cone` 用法错误未写，随后沿既有no-cone配置执行add成功。完整[源恢复回执](../../docs/quality/sparse-worktree-2026-10-06/next12b/core-dynamic-sql-materialization.json)。
+
+assignment_review 独立只读核175本地源、28SQL及10包入口均存在且fixed hash一致；静态报告已交CORE唯一证据owner归档，不代表实际初始化通过。16:58已给Mika一次CORE-PG-RETRY条件窗口：固定ea276/原8组、fresh≥1,207,959,552B、120s工作+80s清理、0provider，结束必须明确归还，不自动再试。Web B定位修复继续源码/独审，本队O14/O15/TUI不并行PG。原Web累计20,309ms与159,691ms余额不变。
+
+F01共享接线由Lead16:57:49停止全树写入并正式handoff给native_center_owner，接收accept后原树唯一维护；C01共享client/CLI563已独审，其受控CORE/O14输入未因此自动获批。Lead负责接口、独审和集成，workers处理现成生产验证与032挂载，不把两个模块串成等待Lead亲写。
+
+## 2026-10-06 17:07 UTC 精确缓存清理与窗口恢复
+
+CORE 16:58新窗口因现场1,192,939,520B低于原1,207,959,552B而NOT_RUN、0DB/进程/HTTP并已归还；没有重跑。随后较小的O14专库窗口两项生产检查2/2，专库正常DROP后remaining=[]、runtime与临时目录清理，固定73a由assignment_review独立只读审查；旧CLI/typecheck证据未重跑。
+
+依据GO对两个旧Flow Claude harness派生构建cache的明确授权，fresh核buildx0.33.0的精确id filter、两条记录均reclaimable/non-shared/non-mutable、历史终态且无活跃build，仅串行删除jqxa5j9g0ff9bfvfehufaq49t与hx1jupxwu3sw8xhiame8190so。两次exit0/精确记录消失，parent4uusk及运行中项目Postgres身份保留；无全局prune、image/container/volume操作。Docker逻辑27.5+29.11MB不当host物理回收承诺。17:07:11共享卷实际可用1,265,397,760B已过1GiB+160MiB准备线，next4c候选按条件0/4停止，未改稀疏配置。
+
+临时Pi依赖donor只读审计结论KEEP：四个已跟踪脚本仍显式引用，离线重建未证；无进程/入口symlink不等于已解除延迟消费者，不删除。完整[操作与审计](../../docs/quality/resource-space-2026-10-06/buildkit-exact/summary.json)。CORE-PG-RETRY-20261006-1707已条件交Mika：原fixed8组、fresh原gate、120s工作+80s清理；完成明确归还再到Web B。个人服务与模型调用不变，完整SVC06仍2.5GiB门槛。
+
+2026-10-06 17:11 UTC：CORE窗口已于17:09:09.484清理归还，原8/8通过、0provider、DB absent/connections0/errors[]、自有process/cache/temp清理；Mika唯一正式领域review待固定。Web获RELEASE03-B-20261006-1710条件窗口，仍fresh原gate及原剩余159,691ms，仅受影响B不重跑已过A。F01 O14五源和全部审查/原raw已精确main bd14f984，个人服务不变。
+
+CHAT06P03按已批准原CHAT06后继提供独立source-only树，44文件含完整d04治理证据与16项实际输入，2,230,403逻辑B；对Mika固定74bc的16输入零diff，主树/已有共享config不变，0依赖安装/导入/运行。新worker须fresh原子领取四scope再写，非领取回执；[source provision](../../docs/quality/sparse-worktree-2026-10-06/chat06p03-source-provision.json)。
+
+2026-10-06 17:14 UTC：Web B本次17:11:55明确归还，专库removed/errors[]与两个owned PID exit0。复用两项已过A，B plain通过后未知回执断言失败；同key/body/turn第二请求已观察，来源未诊断，不提前断言产品自动重试。累计39,935ms、余140,065ms，未生成兼容报告，个人Web不发布。
+
+TUI01F-03-20261006-1714一次窗口给原assignment_review：固定40508f三源/旧a89后台、原完整2case、fresh≥1GiB+64MiB、120s工作+60s清理、0provider；17:14:13共享卷1,238,429,696B仅调度观察，worker仍须fresh。4MiB总raw/16MiB自有tmp是观测停止阈值、不是硬保留；PG/WAL另计，1GiB剩余线不降。超限/unknown不自动重试或删库，checkpoint成功前不作不可恢复清理。Web/CORE下一运行待本次明确归还。
+
+2026-10-06 17:21 UTC：TUI01F一次窗口已归还。原两行为case通过，但afterAll连接核验unknown使整suite exit1；17:18独立操作者一次核原DB零连接、归属一致及两PGID不存在，再正常DROP，remaining=[]，无FORCE/任务重试。初始tmp inode未保存，约3MB内private tmp继续KEEP；不从后续零连接推定原失败原因，不重写原raw。唯一证据位于tui-task-cancel/docs/evidence/tui01f/journey-1714（af0ef5de）。当前无本轮自有PG/Chrome/PTY进程，下一运行仍fresh验原门槛。
+
+CORE固定ea276/packet23016已由Mika17:13独立APPROVED，29项分轮证据无需重跑；F01唯一owner消费固定输入与032生产入口，client C01补充两项矛盾回执由原owner和原reviewer收口。Web B累计39,935ms/余140,065ms保持，先诊断固定失败再排受影响运行；O15已完成206源码/28动态SQL/18包入口/10配置静态核对但PG尚未准入。静态完整不冒称运行通过。CLAIM账本17:21核本OPS与I02合法范围仍active。
+
+## 2026-10-06 17:36 UTC 串行窗口交接
+
+F01-032-PRODUCTION-20261006-1732：固定0ee2494e两源及ea276/6d114批准输入，实际生产factory单例1/1、3.00s、0provider/runtime；fresh1,196,900,352B、最低1,174,093,824B，606B原始输出、cache增量0。随机专库正常关闭后观察连接为空、checkpoint保存、正常DROP/remaining[]，自有进程组已退出。固定manifest独立窄审后才进入主线，不据绿日志跳过来源审核。
+
+下一唯一PG/Chrome窗口交Web RELEASE03-B-20261006-1736：ef458两脚本已独立审查，复用原A事实，只运行B，累计39,935/180,000ms、余140,065ms；fresh仍须原1GiB+128MiB，旧余量不构成准入。TUIcleanup-only与O15明确等待归还，不并跑。TUI457纯清理delta的71固定/current绑定已核、10项与focused types0获限定批准；原两行为通过/整suite exit1和未知inode目录KEEP不变，新单例尚未运行。
+
+## 2026-10-06 17:50 UTC 资源与收口
+
+1736网页窗口fresh不足，NOT_RUN/预算未消耗。随后TUIcleanup1740单例1/1、O15六PG6/6分别串行完成并正常清理；独审固定证据，不重跑此前已过行为。逐消息设置4015组合root类型检查发现Web深readonly与TUI旧profile两处直接消费者问题，分别由合法owner窄修；TUI ec30已独审，Web PROFILEC02在独立树实施，不能把组合red称全绿。
+
+[四候选恢复批](../../docs/quality/resource-space-2026-10-06/next4c-resumed/README.md)最终2/4；另外两棵在17:49达到准备线后未操作。所有保留hash/保护树不变，未触donor/依赖/个人服务。PG/Chrome唯一窗口已给Web B1750，仍fresh原gate及140,065ms累计剩余；TUI/O15无在跑资源。本轮main与个人runtime均未因这些验证自动更新。
+
+Donor审计口径更正：此前4条可执行文本引用中，harness-comparison snapshots及claude-harness归档3条是逐字历史来源（各README明确非运行入口），context-pi-hook/run.mjs才是条件重跑入口。原历史文件不改，donor仍KEEP；不能凭字符串引用数量称4个活跃运行消费者，也不能据此删除依赖。
+
+2026-10-06 18:06 UTC：F01 O15 单次 PG 1/1 exit0（5.652s）已正常删除自有DB/目录、process group absent，窗口归还 Web 用于原 Recovery 固定旅程；未启动新模型。RELEASE03 原 A/B 已独审并main，个人服务未操作。原 next4c 剩余两树未动，大构建门槛不因当前约1.7GB观察解除。
+
+Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 `web-message-settings` / `codex/web-message-settings` 的 source-only provision 一次移交 Web manager，自固定已合并8d84准备、上限4MiB，无安装/构建/运行，不改共享Git config或已有worktree；原563仅历史输入。本Lead不同时操作此新路径，后续由Web fresh八literal take及权威status记实际完成。小源码准备不套PG余量门槛。
+
+2026-10-06 18:20 UTC：CHAT06P03两源算法原批准＋两type引用适配已main0b8；实际root types0/9.295s，保留初始解析失败，不重跑原5项。O16仅三scope独立实施，first59249，0query/PG未运行。当前61228三次identity GET记录ECONNRESET，实际listener65263/PGID65219的一次1 LISTEN+64 CLOSED与固定maxConnections64相关但非根因；原用户服务未重启/清连接，SVC05H只做独立诊断准备。
+
+2026-10-06 18:38 UTC：短源码窗口18:34:03固定362，18:36:52恢复main ec5 clean，refs未移动、依赖未改。GO授权下唯一operator一次Web bootstrap，中心/runner/DB/pointer保持；原外层ps空白误判证据保留，正式身份helper确认后才继续。新页面发布与本次恢复分开，不重复模型或产品矩阵。源窗口见[I02记录](../../docs/evidence/i02/svc05h-same-web-source-window.json)。
+
+2026-10-06T18:43:26.218360Z：按S01唯一request固定8d84逐Git blob供应57源码+4元数据，共284,628B，供给在私有临时目录由合法owner复制归档；没有触其dirty源码、安装、import或PG。实际free1,577,123,840→1,576,652,800B仅本次共享卷观察，不作后续窗口准入。见[精确供给](../../docs/quality/sparse-worktree-2026-10-06/s01-idle-fixed-source-receipt.json)。Web仍持唯一PG/Chrome窗口，R01/O16源实现并行。
+
+2026-10-06T18:46:29.411800Z：Web以权威 web-validation-window-return-1845.json 明确归还，Recovery原浏览器专库/Chrome/worker已清理，后续受控38和设置37均无PG/Chrome且已清理；不把局部通过当浏览器修复已验。当前共享重运行窗口无holder，R01候选待固定独审，O16仍源准备。18:48:22供给DPERF05精确10固定源码79,472B，du108KiB，主树/sharedconfig不变；新leaf需Web原子take，见[记录](../../docs/quality/sparse-worktree-2026-10-06/dperf05-source-provision.json)。本供给未安装/import/test/PG，实际空间不用于后续免fresh准入。
+
+2026-10-06 18:56 UTC：共享PG/Chrome窗口交已审MessageSettings浏览器一次60s（含15s清理），原资源门槛、0PG/provider且不重复37项。R01 source25b已固定而manifest刚交，O16正在补外层监督；两项准备不占运行窗口。明确区分准备队列与已审可运行队列，空闲时先给已ready项；Web完整cleanup或NOT_RUN归还后，R01独审同源完成即下一位。DPERF05 edd4/9a876v1已核并登记173候选，本批发布；工具完整原文后继沿CHAT05-06排ready，未领产品scope。
+
+文档时间校正：上一管理提交手填的18:57/19:03为误标，实际时钟18:56:41已核，本次改为18:56；Git提交时间与原始运行回执仍为权威，未改任何运行事实。
+
+2026-10-06 18:59 UTC：Web MessageSettings 18:58:58明确归还；一次浏览器5176ms、Chrome在CDP准备前退出，0行为检查，cleanup组/fixture/tmp已确认，无重试。R01 25b/9b79准备独审4源+552绑定通过，已转唯一一次af51＋两保留App隔离窗口（90s工作/20s清理，原fresh/live资源界、0provider/个人操作）；由assignment_review先fresh后执行，未知止步不换参数。O16仅监督源码修复，不并行PG。准备队列与实际运行holder分开。
+
+2026-10-06 19:10:54 UTC：R01首次隔离运行2927ms/exit1，0页面报告，固定af51 runner缺@flow/client；marker匹配、自有DB正常DROP、进程组/端口/tmp清理已核，19:01:13窗口归还。原红封存，不冒充页面兼容失败。仅补own固定client与已装SDK两ignored links，四个实际center/runner入口的import-only exit0/1002ms、0PG/Chrome/provider，等待固定增量证据独审。O16监督准备已审：独立watchdog三项通过，实际PG尚未授权。共享重运行窗口无holder，Web修复就绪可按ready-first请求，不为准备项预占。
+
+2026-10-06 19:18:11 UTC：R01第二次14,885ms仍0完整App，临时admission.json.tmp原子rename与lstat竞态触发stopWork；实际首页面正文超时另存，不能推断全部Preview错误仅由清理造成。Chrome/CDP已真实启动，自有组/端口/DB/tmp均已清理，累计17,812/90,000ms（保守扣整次elapsed），剩余不是重试许可。原四源只做有界重采及原异常/cleanup分离的0PG局部修复。
+
+O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认→两个依赖children执行后，独立accept返回rejected。固定调用把CAS当前已接受ID误填本次待接受ID；已存accepted=null，具体HTTP code未保存仅可源码推断。5PID/3PGID已gone、中心关闭且connections[]，13,294,615B标记专库及同devino30,872B目录明确KEEP，不算cleanup全删除。原raw封存，先纯局部修驱动，不复投原run。窗口已归还并条件交已ready Settings-next-1916一次剩余原预算；R01/O16准备不占holder。
+
+## 2026-10-06 19:26 UTC 运行环境与资源
+
+19:19共享卷降至828,592,128B，R01九纯例、O16单纯例及DPERF聚合消费者均在启动前NOT_RUN，未创建测试进程或目录。19:24只读观察回到1,250,004,992B，原因未知，不归因清理。GO重新开放的两候选均clean且已有固定输入，但fresh领取查询ECONNREFUSED；达到原准备线且领取未知，因此保持原样，未执行稀疏。
+
+故障现定位为OrbStack状态Stopped、Docker socket不存在、55432无监听；不能推断PG数据损坏。已知原容器2c45767d4802/flow-f00-postgres-1与数据卷必须保留。仅恢复已有daemon并核原身份，禁止重建/删卷/全局清理。原Chrome失败与O16 KEEP库、两次R01失败证据不改；详情见[运行环境核对](../../docs/quality/resource-space-2026-10-06/daemon-recovery/preflight.json)。新PG/Chrome仍暂停，局部无PG检查只按已有门槛fresh准入，不要求GO逐条再批准。
+
+2026-10-06 19:27 UTC：OrbStack一次start返回VM启动timeout，但后续实际Running，未盲重试。原容器2c45767d4802仍是原image/volume/ports，状态exited255/restart=no；核对后仅start该完整ID一次，19:26:58 healthy、55432恢复、协调list成功。未重建/删容器/卷。其它原有autostart容器由daemon恢复；本operator未逐项操作。实际free1,089,486,848B，不把此前1.25GB当当前准入。R01九纯例已通过并清理；个人Web23631仍监听61228，旧center64904消失/61227无监听，runner wrapper65168仍存活；实际子进程及原恢复入口只读核对中。
+
+2026-10-06 19:34 UTC：原两候选在fresh领取恢复后均released，44个已知broken依赖入口补核非严格目标，0条触拟收起历史副本；19:31实际free1,436,569,600B重新过准备线，因此本次0/2操作即停止。未删除crash/core/donor，也未将未知共享卷回升归因清理。[候选停止回执](../../docs/quality/resource-space-2026-10-06/daemon-recovery/candidate-stop.json)。个人中心恢复优先于新PG/Chrome：原center已退出而runner/web保持，只准备固定362的现有受管组件单中心组合；不调用会全角色启动的入口、不改发布指针。
+
+### 2026-10-06 19:41 UTC 中心恢复优先
+
+SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator总期限；作者在原记录范围修复，尚未启动个人中心。原数据库与协调账本已恢复、原runner/Web仍在，主线22a保持不动；已审caf1候选不挤占本次固定362启动窗口。19:31实际可用1,436,569,600B触及准备线后，两树恢复核查以0/2稀疏操作收口；该观测不是后续运行准入，也不是删除带来的回收量。窗口准备与ready运行分开，恢复完成后co-leads沿原门槛直接分配，不新增GO命令审批。
+
+2026-10-06 19:45 UTC：OPS-001-13（有界连接观察）与OPS-001-14（独立进程期限）均queued/未领取，复用方向与两个真实消费者已记录到local-validation；这两项职责独立，不阻当前中心恢复。固定d66期限修复已独审通过并进入唯一执行窗口；实际恢复结果待原operator回执。
+
+### 2026-10-06 19:46 UTC 恢复窗口关闭
+
+原operator一次恢复center：19:45:46至19:45:48，外层/operator exit0、2135ms、spawn1、新owned PID/PGID74763，原61227健康。独立只读比对before/after：64业务表摘要、原四成功任务、零未完/uncertain、迁移1..27、维护accepting15、身份/配置/原runner-Web/retained/pointer均保持；没有新任务/provider或其它角色signal。锁已absent；19:46:35唯一Git owner将原checkout恢复clean main22a，运行source仍362，SVC06不可变产物后继未完成。实际canonical见SVC05H center-recovery，I02 source-window-closed记录独立比较。
+
+已将下一共享重检查交Web一项已审ready短项（Recovery准备就绪优先，否则Settings），沿原预算/fresh门槛，actual cleanup或NOT_RUN即归还；R01/O16/Mika不并跑。后继普通准入由co-leads直接协调，无逐命令GO gate。
+
+2026-10-06 20:01 UTC：R01第三次固定旅程15,794ms含清理、两份实际App→af51兼容通过；先保存checkpoint，专库/自有进程组/端口正常清理，原两次失败保留。Lead只读核53固定绑定与原始wire，未重跑PG/Chrome/provider；个人报告尚未导入、服务未更新。窗口已归还并按ready顺序交Mika既有授权诊断，后继不得预占空闲窗口。
+
+三项[最小源码供给](../../docs/quality/source-provision-2026-10-06/mika-three-result.json)已完成：SVC07 18文件364,267B，S01P07 245文件1,353,828B，REQ15 90文件693,063B，均fixed22a/clean/hash相符。19:58账本无写范围冲突，接收owner仍须fresh原子take；不复制依赖、不import/安装/测试/PG。只修改三新树的per-worktree sparse设置，main与shared Git config未变；列表覆盖已知直接闭包和人工核动态SQL，不宣称未来新测试任意闭包完备。共享卷前后差仅观察、不当独占物理增量。
+
+2026-10-06 20:08 UTC：已读Mika native-catalog-observation/run-report，19:56:50单次native按原规则停止、own根/进程收束并归还，目录未取得、未重试；下一共享PG/Chrome机会直接交Web最短已审ready检查，准备中任务不预占。SVC07五个精确既有依赖入口与TUI01F-04一个Playwright入口已校验manifest/版本并仅创建ignored链接，0安装/复制/import/测试；依赖归属仍原来源，不能清理donor。TUI01F原claim正式handoff→native_center_owner accept v4，当前只实现真实双端driver，完整运行另排。
+
+2026-10-06 20:20 UTC：S01P07直接消费者请求的33份fixed22a源码已补齐，186,913逻辑B，259份原已物化文件及两份owner dirty修改hash保持；当前head不变。TUI01F-04仅追加自有新实验目录的sparse规则，三份未跟踪新源保留，由owner提交。两项无安装/import/PG/工程测试；原请求与回执在source-provision目录。Web Settings已实际归还短窗口，SVC05H执行准备待修观察器对原子rename/未决claim的保守检查；准备不预占共享窗口。
+
+2026-10-06 20:26 UTC：OPS-001-14由queued提升为当前发布/F04短片之后的下一ready工程改进，尚无新writer。SVC07在20:23纯子进程检查出现group_exists的EPERM经finally覆盖原失败，和既有O16/SVC05H期限/组清理重复，作为两个实际消费者提取的输入；co-lead与Mika直接协调。只抽受监督PID/自有组、期限、输出界及原失败/cleanup unknown，不把DB删除、连接观察、资源所有权和源码绑定揉进同一模块。现已固定发布及F04证据保持，不为迁移重开当前检查。
+
+2026-10-06 20:29 UTC：共享重运行窗口svc05h-af51-d629-20261006-2030交assignment_review执行已有GO授权的个人固定更新。Web Recovery已归还、Mika无实际PG/Chrome/native，其他重运行等待；本组F04准备已独审但未运行。Lead已把唯一root checkout从clean main1f4731b1 detach为准确af51，main冻结到operator关闭，4320仍由独立I02树服务。按原20步逐项保存intent/result，fresh身份/工作/资源与三份兼容报告先核；drain起≤15min，unknown停止，0operator模型/任务/用户tab刷新。原运行362/v15及caa1/v2不预报改变，实际结果只由operator回执决定。OPS-001-14同时由native_center_owner只读比较现有三个消费者，尚无新实现take，不改F04候选。
+
+2026-10-06 20:32 UTC：个人窗口2030已STOP-BEFORE-MATERIALS并归还：step01只读181ms因sampler误把真实namespace/admission.json当根文件而失败，0报告导入/搬运/drain/服务/发布；root已恢复main1f4731b1，无pending launch。仅依据已有raw与固定runtime源码定位，作者原scope补真实namespace精确规则/局部小例，未重采个人状态。Web/Mika可按ready-first串行使用窗口。S01P07 main入口补供22源93,543B已完成，319原物化文件/HEAD均保持，详见[source receipt](../../docs/quality/source-provision-2026-10-06/s01p07-main-entry-source-receipt.json)；后续小源码按实际模块闭包供给的取舍已记local-validation。
+
+2026-10-06 20:36 UTC：namespace精确修正已固定5fe98并独审79绑定/3新局部例；旧8不重跑，个人未重采。当前Web已交在先45s native窗口给Mika，我组只读准备，待其实际清理归还后再开新个人窗口，F04更后单独串行。S01P07另外716B现有声明及三精确已装types链接已核并补齐，0安装/import/运行，HEAD和产品均保持；source供给不再等待PG门槛。
+
+2026-10-06 20:45 UTC：Mika在20:37:33实际清理归还后，个人2040窗口只执行step01读取172ms；正确namespace的受理记录未满足idle，按规则STOP-BEFORE-MATERIALS，0import/drain/refresh/resume/publish，无pending launch。原失败封存24887968，root已恢复clean main13f92d05，原因定位不预占窗口、不清记录。下一重窗口已明确交Mika已审SVC07 93dacd96两专库/30s/2连接，fresh原gate；实际归还后Web ready短项，再F04固定150s上限旅程，各自原预算不扩。
+
+S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补齐366B；固定22a与本树HEAD同blob、既有源码/dirty不变，0安装/import/运行。[元数据供给](../../docs/quality/source-provision-2026-10-06/s01p07-entry-metadata-receipt.json)。小额源码按已记录模块闭包方式供给，不套用PG余量线；新的运行仍fresh原gate。
+
+2026-10-06T20:53:49Z：SVC07 真实HTTP消费者准备的209个固定缺失源码/SQL共869,209B与13精确现有依赖链接已补，原7输入、HEAD及dirty保持；未安装/import/PG。[供给回执](../../docs/quality/source-provision-2026-10-06/svc07-http-receipt.json)。当前Web Recovery持有共享窗口；F04准备批准后排其清理归还，个人intent退役仅实现/临时目录小检查。
+
+2026-10-06 20:56 UTC：Web Recovery实际清理归还后，F04取得一次原150s/0provider串行窗口；实际开始仍须fresh源码/领取/空间。Mika/Web已直接协调暂停重运行，源码和审查继续。[准入](../../docs/quality/f04-window-2056.json)。
+
+2026-10-06 21:02 UTC：F04首验26,512ms失败、0task，原证据保留；独立cleanup-only于20:59:20正常完成，3自有组absent、marker/devino匹配、空连接、DB/tmp删除确认，窗口已归还Web/Mika。停止期PTY输出未持久的诊断缺口明确记录，不把清理成功当行为通过；后继先0PG/Chrome修捕获。MATURE02C02新树source-only操作按GO限定委派Mika，本Lead尚未创建；main/其它树/共享配置仍原边界。
+
+2026-10-06 21:17 UTC：SVC07在21:08因空间HOLD/0child/0PG明确归还；原SVC05H operator曾被runtime拒绝唤醒，在GO释放只读槽后一次恢复成功，未更换操作者/claim。固定0a8/7fb已独审130绑定，通过新exclusive run-retirement-release-20261006T211659Z与I02 388bb3f5 source-window启动一次已授权窗口；root准确af51，main421b冻结。09 drain起≤900秒，每步明确成功才继续，unknown保留维护与原件，0provider/用户tab。两peer已通知无新PG/Chrome；源码工作继续。
+
+2026-10-06 21:21 UTC：run211659仅01只读613ms与02比较57ms；唯一retained false为实际descriptor同三字段不同键序，原JSON.stringify误拒，0材料/维护/退役/发布。窗口已关闭，root恢复main421b后正常发布MessageSettings至c8e，operator仅原范围局部修复，不预占PG/Chrome。原失败保持；独立0a8批准与此次实际失败分开。OPS14最小独立树owned-process-supervision/codex已供给c8e、53,701B，原native_center_owner受派fresh take三scope（tools模块/自有plan/evidence），两个在用wrapper不改；完整复用需后继正式交权。
+
+2026-10-06 21:23 UTC：descriptor专用三字段比较6e7109已增量独审，146固定/145现场绑定全同；原保存反例与值/未知键/列表顺序3纯例通过116ms，旧18不重跑。新exclusive run212322、source-window34621ca0，root固定af51/main冻结c8e；原operator已获START，fresh现场/原24步/09起900秒不变，无模型许可。旧211659失败仅作为已封存反例，不改绿。
+
+## 2026-10-06 21:30 个人更新收口与下一运行窗口
+
+同一原operator完成 run-retirement-release-20261006T212322Z 的24步，25个最终check均true、166.030s/900s、0主动任务/provider/tab操作。旧80B intent先0600私有备份与持久审计，再按已批精确语义退役为46B；旧claim结果仍unknown，不造ACK/重放。af51后台accepting v18，新Web d629 v3，三保留产物和旧数据保持。Lead只读核保存回执后恢复root mainc8e2e9e clean；[源码窗口关闭记录](../../../m2-integration/docs/evidence/i02/af51-d629-retirement-source-window-2125-closed.json)。
+
+下一共享短窗口给Mika SVC07既定HTTP消费者，开始前重新核原资源线；结束后直接与Web/F04交还，不把末free1,252,483,072B当未来准入值。REQ15九个原固定依赖链接已核版本/hash并供给，未改tracked/dirty，无install/import/PG，见[供给回执](../../docs/quality/req15-dependency-provision-20261006.json)。OPS14、MATURE02C02、REQ15三来源进入正常登记批，metadata错误仍由原owner修，不改parser猜状态。
+
+## 2026-10-06 21:36 两棵历史副本的资源收尾
+
+[窄批summary](../../docs/quality/sparse-worktree-2026-10-06/readability-two/summary.json)：两棵readability树各232个与fixedGit/main同blob的非自有历史文件可逆收起。全部保留文件哈希与clean HEAD复核成立，源码/测试/计划/规则/自有raw/实际输入/依赖与旧预览均保留。首树观测卷增18,587,648B；次操作前后增18,329,600B，但共享卷持续波动，最后约1.063GB，仍缺原重运行线约145MB，不把逻辑35,853,616B当物理保证。
+
+第二树Git操作exit0之后共享/其他worktree配置hash断言失败，原APPLIED_PENDING_VERIFY不改；另次只读复核保留内容map、clean/head及精确候选缺省状态。shared config前值当时仅内存，无法归因该hash变化，明确NOT_PROVEN；未改共享配置、重试sparse或回滚掩盖。后续批次先持久化配置前hash/受保护字段，仍仅单一Git operator；原两树数量到限停。当前等待已授权项目副本的下一组候选事实，worker源码/只读审查可继续；不反复试探运行门槛。
+
+## 2026-10-06 21:45 UTC 资源回收与小验证
+
+两棵本队已结束树按原可逆稀疏方法完成，见 [own-two-next](../../docs/quality/sparse-worktree-2026-10-06/own-two-next/summary.json)：1,226项非自有历史副本、14,050,181逻辑字节；各树原源码/测试/计划/自有原始证据与依赖保留，目标树以外Git配置和保护树均不变。两次局部卷差分别7,983,104B、9,097,216B，不作排他的物理回收归因；最后观察1,152,081,920B。此前readability第二树的共享配置旧before缺失UNKNOWN保持，不追认为本次修复。
+
+第一批六处精确Vite缓存仍由保留预览使用，全部KEEP，见 [cache intake](../../docs/quality/vite-cache-2026-10-06/intake.json)。接着仅审查GO列出的另九处精确缓存；不停止预览，不删除真实npm包、全局store、用户数据或原始证据。资源观察不是未来运行准入，PG/Chrome门槛不降低。
+
+OPS14固定3097730的两项局部补验经fresh小额准入后2/2、11未选、581ms，唯一独审已核；13different来自不同轮次，原失败/NOT_RUN保留。两个真实包装器迁移尚未完成。上述资源操作0产品测试/0provider，模块验证由原owner自有范围完成。
+
+2026-10-06 21:50 UTC：沿新明确资源授权，已请原Web服务owner先核53851/63743两已交付0模型fixture的用途/保留/消费者，再保存身份与启动日志后决定正常退役。个人端口、4320与49922/55049/61108/55616不动；本Lead当前未停止任何preview。另两处无本地消费者的cache仍待外部使用确认，未执行清理。规则见本plan临时预览生命周期；不把历史delivered或tab数量当无人使用证明。
+
+2026-10-06 21:52 UTC：三棵已结束树的216项非自有历史副本可逆收起完成，全部保留tracked/hash及其他树配置相同，[summary](../../docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json)。独立审核且经原owner外部消费者确认的两处Vite cache实际清理120文件，真实dependencies与源码保留，[summary](../../docs/quality/vite-cache-2026-10-06/summary.json)；最后观察1,182,425,088B，尚差共享重验证门槛25,534,464B。原cleanup脚本P2仅空间采样异常覆盖，未执行前修复并独审关闭；两个实际操作都COMPLETE。原readability配置UNKNOWN与旧失败不变，没有个人服务/预览停止、模型或产品测试。
+
+2026-10-06 21:58 UTC：assignment_review 独立核本批21份固定记录、2cache实际仅剩原empty dirs、120删除项与3tree216副本均一致；未复采空间/进程/个人服务，[结果审查](../../docs/quality/vite-cache-2026-10-06/results-independent-review.json)。当前临时preview退役由原Webowner执行，Lead不抢操作。MESSAGESETTINGS02单一新树已明确委派Web管理者source-only Git操作（fixed c8e352、约3MB、原4MiB上限），其完成后归还；main与其它配置不在该委派范围，不等PG。
+
+## 2026-10-06 22:05 UTC 源码供给与临时预览收口
+
+MESSAGESETTINGS02 仅该新树的 Git/source-only 权限已明确委托 Web manager，并于21:59:29完成352文件/3,019,669逻辑字节，固定c8e2e9e、共享配置与main保持后正式归还；[实际回执](../../docs/quality/message-settings-quick-controls-provision.json)。无依赖复制/安装/测试。owner已fresh领取，可独立实施，不等待PG/Chrome。
+
+两旧自有fixture53851/63743由原owner仅发一次精确PID SIGTERM，原session均exit143、所属进程/端口观察已退场；不伪称exit0或完整异步清理。保留[原始退役回执](../../docs/quality/vite-cache-2026-10-06/retired-two/owner-retirement-receipt.json)。fresh缓存核对发现ActivityI PID15811/51454仍读activity树，因此该缓存KEEP；chat的60个17,530,080逻辑字节缓存文件仅本地资格成立，等待manager确认与窄审，不动真实依赖。
+
+OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实施；[供给](../../docs/quality/ops14-wrapper-source-provision.json)与[两literal sparse包括](../../docs/quality/ops14-wrapper-sparse-includes.json)保持源码/hash、共享及其他树配置。初次add误用不支持的--no-cone在解析阶段exit129，按help修正为继承已存在non-cone模式，未覆写产品。首consumer固定12c60，原2直接检查通过，独立审查中；没有实际恢复服务/PG/Chrome或模型调用。
+
+资源下一有界只读候选为workspace-cache真实依赖恢复完整性；未授权删除依赖，既有cache许可不扩大。唯一监督模块的SVC07真实consumer仍是下一版本，当前已审待运行候选不变。
+
+2026-10-06 22:07:12 UTC：已独审chat单缓存operator仅目标/审计文件名收窄，fresh全部身份/ledger/consumer/文件hash后实际COMPLETE，60文件/17,530,080逻辑字节；卷观察1,138,155,520→1,155,792,896（+17,637,376B，非独占APFS归因）。[结果](../../docs/quality/vite-cache-2026-10-06/retired-two/web-conversations-cleanup.json)与[独审](../../docs/quality/vite-cache-2026-10-06/retired-two/independent-operator-review.json)。Activity缓存因其他预览消费者仍KEEP；无真实依赖/源码/证据删除，无服务操作。距离1,207,959,552共享线仍缺52,166,656B，此结束值不作未来准入。workspace-cache的精确依赖恢复审计继续，仅已有本地固定来源，未删除或安装。
+
+2026-10-06T22:14:17.205811+00:00: 原OPS资源后继已完成workspace-cache只读内容来源审计：581包、29,606 payload逐字匹配本机CAS，无缺失/修改；26,549唯一CAS内容实读核验，未安装/恢复/删除。72生成布局和root缓存继续KEEP，外部消费者确认及精确可恢复方法尚未关闭；[审计](../../docs/quality/dependency-retirement-2026-10-06/initial-readonly-audit.json)、[最窄候选](../../docs/quality/dependency-retirement-2026-10-06/proposal.json)。逻辑508MB不等于APFS可回收量。
+
+2026-10-06T22:14:17.205811+00:00: 原CHAT05–06完整原文后继已分派assignment_review独立source-only树native-activity-body，固定fc3246，523files/3,714,128逻辑字节全部固定blob匹配，0安装/执行；[供给](../../docs/quality/chat05p01-source-provision.json)。scope/interface仍待fresh原子领取，runtime与共享exports的既有S01P07 writer不被覆盖；先源码/合同与局部传输，实际PG继续后验。
+
+2026-10-06T22:21:50.392984+00:00：已收到workspace-cache原owner限定消费者确认与3文件离线恢复样本（1473B，完整hash/mode/xattr核对，正常移除自有scratch）。全部真实依赖payload仍KEEP；下一步全映射属性核对及独立operator审查，不把样本当全树恢复证明。CHAT05P01已在fixed fc3246新树领取12scope并提交首合同7d075，资源验证与工具原文实现并行，0新PG/browser/provider。见[准备绑定](../../docs/quality/dependency-retirement-2026-10-06/preparation-bindings.json)。
+
+2026-10-06 22:32:46 UTC：原文片纯检查分轮22distinct已过，>2MiB样本完整字节相同；22:31:37 fresh 1,011,576,832B低于1GiB+8MiB，后续types明确NOT_RUN，未启动进程。29,606依赖payload的恢复属性候选已核且压缩映射可逐字重建；真实依赖仍未删除，资源operator/toy审查继续。
+
+2026-10-06 22:34:50 UTC：为解除低空间不能回收的循环，本次workspace-cache唯一候选资源恢复operator单独限额：retire只写≤10MiB持久证据、outer日志≤1MiB，fresh≥32MiB；删除前仍要求固定manifest、原owner消费者确认、fresh身份/内容/CAS属性、独审与单次许可。只用于精确可恢复payload回收，不降低PG/Chrome/types等产品检查reserve。恢复动作另需1GiB+精确restore集合logical bytes+12MiB，当前不执行restore。资源operator的3例故障toy仅≤128KiB自有fixture+≤128KiB结果、0真实依赖写入，fresh≥32MiB，独立于产品测试；实际删除仍未开始。
+
+## 2026-10-06 22:44:13 UTC 单树精确派生依赖回收
+
+唯一对象 web-workspace-cache@10ca8eef，原owner停写/claim released/无已知运行或冻结消费者，fresh kernel无命中。完整源/toy独审与薄caller独审后，固定一次操作3111a61fe8964590ae9b68ce0538f965移除29606清单内常规payload，508198354逻辑字节；41.009s，监督子进程22466 exit0且自有组absent，pending=null。全部73生成/缓存文件、4169目录、2228链接、26549 CAS身份及581包索引后置保留，目标Git clean/HEAD不变。详见[实际后置事实](../../docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json)、[独立源审查](../../docs/quality/dependency-retirement-2026-10-06/operator-independent-review.json)和[监督结果](../../docs/quality/dependency-retirement-2026-10-06/one-shot-retire-supervision.json)。
+
+实际共享卷before1077436416→after1079205888，仅+1769472B；不是独立测得的物理回收量，未达到准备线，不扩批其他node_modules。该树明确NOT_RUNTIME_READY，历史fixture再执行前须固定精确restore、layout/入口核验及新运行准入；不清marker、不自动恢复。原CAS、私有/原始记录、服务与用户资料未动。一次准备专用持有已结束；共享PG/Chrome无holder。Web原owner接最多3个已交付且非明确保留preview的用途核对/有序退役，再给精确.vite可再生缓存边界；未知KEEP。实际结果由assignment_review独立核验APPROVED；29606 before/after与completed全集一一对应、恢复map重构hash一致、15个现态元数据样本与NOT_RUNTIME_READY marker吻合。全量保留计数归原postcheck，不冒审查者重hash；[限定独审](../../docs/quality/dependency-retirement-2026-10-06/actual-independent-review.json)。
+
+## 2026-10-06T23:00:55.047696+00:00 三预览缓存收尾与远程验证准备
+
+原服务owner已确认三临时预览无当前或冻结验证消费者并分别有序停止，原始日志/启动方法/产品证据保留。唯一operator仅移除三份精确`.vite`集合共180个生成文件；每项fresh ledger/HEAD/目录身份/hash核对，真实npm包/锁/源码/用户服务未动。三个受监督子进程exit0且owned group最终absent，初始EPERM观察与原始回执保留，不把短暂unknown隐藏。见[精简事实](../../docs/quality/vite-cache-2026-10-06/retired-three/compact-result.json)及同目录原始operator/intent/supervision。最后卷观察增加52,494,336B，含共享并发变化，不声称全部可归因；仍未开放PG/Chrome。本批到3处结束，不再新增同类清理。
+
+OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`，native_center_owner四scope已原子领取，base37f75d36。源码供给377文件2,821,972逻辑B、0安装；[供给事实](../../docs/quality/ops-ci01-source-provision.json)保留初次未初始化index的准备失败及fresh空树修复。候选只修改docs/ci，两个contract+一个真实PG/Fastify.inject handler检查（非socket/runner旅程），0远程/模型。文件待独审与用户最终启用，不把准备当运行。
+
+| OPS-001-15 | in-progress | native_center_owner / Execution Lead | 远程最小验证候选及准确启用步骤；唯一子任务OPS-CI01，尚未启用/运行。 |
+
+局部status检查发现带说明的NONE不符合既有人读字段格式，原记录保留于9bff6516；已按真实最终启用动作改为REQUIRED，未改parser或运行产品测试。
+
+2026-10-06T23:05:30.238536+00:00：X01源码供给与CI启用解耦。本组仅只读核fixed60ca/384源码零diff及14literal，未创建新树；Mika获exact `plugin-enable-binding`单树source-only Git委派。正式分配034-plugin-runtime.sql给architecture_read在handoff/accept后fresh amend；033仍CHAT05P01。见[唯一分配与边界](../../docs/quality/x01-enable-binding-allocation.json)，不代表已take或PG/产品通过。
+
+## 2026-10-06 23:17 UTC 接收与唯一等待
+
+远程验证固定候选cdd96bc7已独审并在main93a92c91保持原字节；OPS-CI01原owner已release，启用决定由Goal Owner唯一收集，目前PENDING。三缓存结果已独审封存，不新增同类清理。X01的exact新树供给由Mika完成，claim6ddedc73 v8在plugin-enable-binding实际生效，034唯一DDL与17scope包含其内；[分配](../../docs/quality/x01-enable-binding-allocation.json)和[供给只读核验](../../docs/quality/x01-enable-binding-provision-review.json)保留固定输入。该实现不依赖CI用户启用；PG/产品验证未据源码准备推断通过。
+
+4320实际聚合23:14:39.075Z为181来源，X01已指唯一新树、OPS-CI01当前与需用户决定均可读，issues=[]；原始有界回执在D05唯一来源。只做管理事实与链接核对，0新增产品测试、安装、PG、浏览器或provider。历史余量只作记录，不作新运行准入。
+
+2026-10-06 23:19 UTC：一次fresh轻验证准入观察1,074,302,976B仍低于CHAT05 types 1GiB+8MiB，未启动检查。按已授权小源码规则供给TUI01G fixed93a唯一新树，207文件/3,246,155逻辑B逐Git blob匹配，76份共享/其它树配置及main index保持；0依赖复制/安装/测试，真实HTTP/PG动态闭包未作为已供给。见[供给回执](../../docs/quality/tui01g-source-provision.json)。native_center_owner将在原TUI01F共享源正式停写移交后领取，TUI完整双端验收仍开放；不将小源码操作当放宽运行门槛。
+
+## 2026-10-06 23:32 UTC 同版本环境恢复
+
+Mika协调读取失败后，Lead独立确认OrbStack Stopped、Docker socket缺失，55432与61227无监听，4320与61228保持。卷可用1,063,374,848B，不足产品验证gate。原PG完整ID与volume由19:26固定回执提供保护锚；先核既有daemon/容器身份，仅恢复既有实例，不重建、删卷、迁移、清journal或重新执行任务。个人已发布af51/v18/d629-v3与旧362/v15操作严格区分；恢复前需fresh现场和固定工具审查。新验证不占用窗口，固定源码独审继续。[本轮只读事实](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/preflight.json)。
+
+23:35追加事实：唯一orbctl start在15,118ms返回timeout1，随后只读Running；未重试。固定原容器8项身份均同19:26锚后仅一次start exit0，23:34:50 healthy/55432 listening，协调list正常。未重建容器/卷、未操作其他自启动服务；恢复cause仍unknown。实际free1,055,133,696B，仍不足产品检查余量。个人center61227仍无监听、Web61228保持；旧SVC claim已released，新owner仅准备af51/v18精确恢复，旧362/v15许可不可重用。当前共享重验证无holder，个人恢复准备优先。[实际恢复与identity](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-after.json)。
+
+2026-10-06 23:38 UTC：原daemon恢复回执已由native_center_owner独立只读限定APPROVED_RECORDED_RECOVERY_ONLY，11绑定/current同源，8项容器身份与一次启动证据一致；不证明DB业务内容或个人center恢复。[独审](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/independent-result-review.json)。新center恢复由原owner合法claim22000abe的两个精确范围准备，OPS14监督module复用，不重跑旧许可。TUI01G源审已归档，pending validation不改成产品批准。
+
+2026-10-06 23:47:36 UTC：同版本中心恢复窗口已闭合。固定d834准备、a498原始结果由独立角色核对；一次spawn/2.095s/8项检查，64表raw摘要本次全部相同，runner/Web记录、私有配置与retained产物不变。root从af51恢复main b178 clean，main/origin未漂移。未新增个人probe、模型、任务或迁移；23:32退出根因仍unknown，不将后继监督策略作为根因。唯一操作事实见personal-history-compatibility的center-recovery-af51，源窗口与独审见I02对应2343记录。
+
+2026-10-06T23:55:39.280607+00:00：X01已有成果的最小依赖供给不再等待中央operator。23:55 fresh账本核唯一owner/7目标仍缺，精确7个ignored link交给Mika组原architecture_read独占执行；本队不写其视图。原请求包metadata/realpath须fresh核对，dirty源码保留，0安装/复制/import/验证；原运行封套与余量准入保持。见[唯一交权](../../docs/quality/x01-seven-link-delegation-2026-10-06.json)，供给receipt待原owner，当前不称已完成。
+
+2026-10-06 23:59 UTC：X01首次供给被Stage A运行线提前HOLD（未创建）；保留原HOLD，已向唯一operator明确区分精确链接准备与strict/Vitest/tar执行：本次仅7链接/752B target文本与至多3父目录、含收据逻辑≤64KiB，沿既有低空间源码例外继续，写失败即停；1,107,296,256B实际运行线未降，工程检查仍NOT_RUN。
+
+2026-10-07 00:14 UTC：现有共享执行阻塞已作一次有界收口，[恢复顺序与解除条件](../../docs/quality/execution-recovery-order-2026-10-07.md)。native_center_owner确认无未完成检查后结束本段；X01七链接既有回执PROVISIONED，未重复供给。各候选原失败/NOT_RUN/限定独审不变，Mika原REQ10/K01规划保持独立。本次无资源或服务探针、测试、清理、CI或新功能。
+
+2026-10-07 00:29 UTC：计划索引小维护沿本OPS范围：fresh协调账本后，原D05 v3→v4移出plans/README.md，OPS v2→v3接收精确路径。索引只导航到权威status，旧批次明确历史；保留全部计划/验收/模板链接、FLOW完整目标与长期授权，不复制新实时状态。本次heartbeat并发上限10且受实际cap约束，未声明实际人数。仅文档/link核对，[记录](../../docs/quality/plan-index-navigation-2026-10-07.json)，原资源与CI阻塞不变。
+
+
+## 2026-10-07 02:06 UTC 资源变化后的执行恢复
+
+GO报告空间实质回升后，Lead一次fresh df观察Data Available 26,448,428 KiB（27,083,190,272 B）；本轮没有清理，变化原因未知，不作归因或未来准入保证。只读容量诊断已结束，不生成容量证据文件。原资源门槛、CI唯一PENDING问题和所有历史FAIL/UNKNOWN/NOT_RUN保留；每个operator仍在自己的入口fresh核原条件。
+
+fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输入不变；本队无PG/Chrome运行。已与Mika和Web直接协调单次 SVC07-HTTP-RESOURCE-RECOVERED-20261007：原60s封套/40s工作/15s清理、floor1,207,959,552B和67,108,864B局部预算；须Web确认无实际holder及owner fresh claim/固定inputs/依赖/输出后才launch。Mika复用原worker，准备不符即交回而非预占。SVC07→C02关键路径优先，随后按ready状态共享窗口；0新增provider、不重测旧PG/fake/无关全集，不操作个人服务。当前仅安排恢复，未声称HTTP已运行或通过。02:06:39账本确认本管理claim3cb8/v3 ACTIVE，现时范围一致。
+
+## 2026-10-07 02:12 UTC 已交付工作树收尾准备
+
+[三树固定清单](../../docs/quality/worktree-retirement-candidates-2026-10-07.md)已核clean/远端HEAD/产品接收、唯一状态与证据、claim及受限进程观察。Connection缺外部消费者与当前完整恢复证明；TUI仍是COST固定依赖来源；R05文档claim ACTIVE且根依赖已不存在。全部KEEP，本轮0删除/稀疏化/安装/产品检查/服务操作，不把旧安装记录当当前可恢复证明。只在原OPS-001-11补交付收尾条件：保留权威与原始材料，明确消费者、恢复和再次运行门槛；未执行authority迁移，不继承旧回收许可。
+
+工程验证优先：SVC07-HTTP-RESOURCE-RECOVERED-20261007 沿原packet/60秒含清理与fresh资源门槛，由Mika原owner接续；Web确认实际无重运行holder后才运行。此管理片不占PG/Chrome窗口，也不把磁盘增长归因本组。随后仍按SVC07→C02→关键用户路径ready顺序；CI原PENDING不变。
+
+另收到已复核D04测试临时worktree路径别名/清理一致性源码缺口，已直接交Web原owner协调精确scope与自有合成仓库局部修复；不清30条历史登记，不改真实协调库，普通进展仍原status。
+
+2026-10-07 02:13 UTC：三树准备文档固定a60614fe获assignment_review限定APPROVED_DOCS，无finding；4文档增量/6链接核对，0产品检查。Mika随后已回SVC07原HTTP 1选中/1通过、2.98秒，专库/两次监听/自有进程组/tmp均清理，窗口归还；只是读取原owner回执，本Lead未重跑。C02沿原packet交Mika与Web直接协调next holder，尚未在本记录宣称运行通过；TUI01G仅原小检查由原ownerfresh准入，不能借旧资源值启动。候选三树仍KEEP。
+
+02:14 UTC main接收回执：main/origin `62daa860` clean，5份固定输入逐字一致，[主线绑定](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/worktree-retirement-planning-intake.json)；4320快照02:14:19已实际读取新候选摘要，human.complete=true、missing=[]、issues=[]。此为本次有界准备收口，不代表整个OPS完成，也不执行候选回收。
+
+## 2026-10-07 02:16 UTC 局部验证与重旅程分开准入
+
+沿OPS-001-12的[同一局部方法](../../docs/quality/local-validation.md)做最小调整：一个实际PG/Chrome旅程+一个无共享端点、固定写入范围的局部项可以并行；相加声明的新增字节预算并保持原门槛/时间/选中数/清理，明确禁止并跑的原packet先由owner修订复核。共享DB/端口/服务/可写源与性能测量仍串行，不增模型费用/全局测试并行。GO新硬件/余量只作调整依据，本Lead未重新采样或归因。
+
+TUI01G原owner已接回30s/8MiB的小检查，0PG/HTTP/PTY/provider；原11pass/1Ink失败保留，确认双React依赖身份后只修本树精确ignored link到同hash I02 payload，0安装/复制/donor变化，仅失败1例补跑。X01 Stage A明确为11个tar子进程、32MiB own tmp/cache及原raw界限，由Mika在局部槽空闲后核packet，不称纯fake。SVC07固定e28/3a94结果已获Mika分层独审，Lead仅核集成输入/当前前像，不重复15fake/2PG/HTTP。
+
+有限并行规则943ffe55获assignment_review限定APPROVED_DOCS（4文件/2链接、0工程重测）。SVC07已窄接main/origin `6b531d4632b60e1a70a8183c68a98dc561e5f79c`：69文件403460B固定同delivery4a85569b，原owner接回状态/release；没有等待本规则发布或重复旧检查。TUI01G原owner固定335f402a返回12新+39直接消费者51不同分轮通过/types0、3个旧Ink失败保留，产品215未改；所有自有组/缓存已清理、局部槽归还，结果独审尚在进行，不冒main-ready。Mika已直接接X01下一局部槽、Web接重旅程协调；无个人服务/模型操作。
+
+## 2026-10-07 本轮验证与接收收口
+
+OPS规则7a7c已main；TUI01G结果335f完成限定独审，作者转录66ac后窄接main/origin `8631cafb2f2a66f3e02ef873484a7ddfa551e1b7`，12源+43自有记录525389B逐字相同，原51不同用例分轮/3失败与focused types事实保留。首intake按旧54文件数断言在写入前停止；核新增独审转录后按55固定输入完成，不改产品/原raw。原owner接回主线回执与release，完整PTY/HTTP/双端仍开放，个人服务未操作。
+
+X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复跑同包。原OPS14 owner已接≤10s/≤64KiB自有child三阶段与活descendant对照的准备，先固定范围并核局部槽归还，保真实权限/不可观察unknown与历史失败。SVC06原owner回backend-release：fresh原claim v5仅增根manifest/lock两精确路径，先将已审私有selector接正式builder/惰性YAML parser，完整产物与独立运行仍未完成；安装/小检查和完整2.5GiB构建分别准入，不抢个人服务。
+
+2026-10-07T02:49:12.685Z：用户访问恢复为当前已完成事实，唯一源为personal-history-compatibility的web-recovery-d629-20261007/run-20261007T024419Z；原始失败、旧Web退出code1和根因unknown保持。一次CLI968ms/0provider，结果独立限定批准，无用户tab刷新。普通验证窗口已归还，两co-lead按既有fresh规则继续。
+
+| OPS-001-16 | in-progress | Execution Lead / Web co-lead展示 | 时间契约与连续局部迭代规则79da82ae已获native限定文档独审；dashboard呈现和活跃owner接入未完成，不把本次docs写成完整交付。 |
+
+2026-10-07T02:52:28.328Z：OPS-001-16规则已固定79da82ae并获native独立APPROVED_DOCS；Web已收到冻结两字段Interface，登录入口独立source-only建树也已明确委派Web唯一operator。D05停写释放index/README（v6）；根/plans规则转入本管理claim v4。当前只是规则/接口交付，看板实际显示未验；6处链接及diff检查，无产品测试。
+
+2026-10-07T02:53:55.409Z：规则target79da82ae及独审记录4cc6f226已受控main18144593并推送；02:53:16.744Z实际4320读取FLOW/OPS均live、human字段完整/无missing，已显示页面恢复与验证队列。此为摘要聚合，时间UI仍由Web组实施，未冒充实际展示通过。SVC06当前仅一个隔离6+1局部段（累计120s/16MiB+128KiB），与Mika专库窗口按既有有限并行协调；完整build未开。
+
+2026-10-07T02:59:12.368Z：按GO新资源决定，普通隔离局部检查改为三队各最多一段、全队最多三段；已一次直接同步Web/Mika。共享重旅程仍唯一holder，原时间/字节/进程/cleanup/unknown边界及总agent10不变；原禁止并跑packet由owner最小修订。只改现规则/计划/状态，不运行产品检查或新资源采样。
+
+2026-10-07T03:01:19.303Z：新建本组独立树与有界模块源码物化改为co-lead常规自助；main/共享Git配置/他人树/安装/fullbuild/跨owner交权仍按原归属。此前ACCESS已由Web取得claim，不重复创建；新时间UI沿冻结合同自主供给。三队局部段与此source规则统一本批docs交付，0产品运行。
+
+2026-10-07T03:04:26.317Z：限定批准dd7538/e65628与转录d082已进入main/origin73717adb；ACCESS唯一来源同批登记，个人af51/d629未改。只是规则/登记接收，时间UI尚在实施，不宣称完整OPS完成。
+
+2026-10-07T03:31:34.693045+00:00：rootpg893三源已main3230，REQ15 source9e6/PG原结果/11主线mock直接消费者受控main7b6（HTTP后继open），185唯一源登记bf7随ACCESS部署加载。SVC06 artifact首入口4de459限定独审通过，固定3230而不追movingmain；420s工作、fresh3,391,094,784B/新增2,317,352,960B/live1GiB，0PG/Chrome/provider，当前等待两组实际重窗口归还，未启动安装。原SVC08作者已新take ba1ff3b2 v1仅plan/evidence准备Web宿主修复部署及retained3生命周期，不操作个人服务。TUI父与CHAT05当前blocker已由各合法owner修为真实验收等待，历史低空间/失败保留。
+
+2026-10-07T03:36:24.918314+00:00：SVC06固定3230产物实际离线构建/import于03:34:59.865Z结束，outer25,390ms/exit0/owned组absent/双EOF，0PG/Chrome/provider；自有artifact保留供后继host验收，不代表个人服务更新或开发checkout不可用已验。重窗口已交Web既有ACCESS/Timing，再由其按实际清理与Mika交接。离线构建+隔离0PG浏览器后继规则已一次同步两co-lead，本次运行未途中放宽。
+
+## 2026-10-07T03:51:44.749917+00:00 已审计时实际可见
+
+main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；185源与真实IAB开工UTC/含等待历时/详情来源已核。记录：[D05实际回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/task-timing-185-live.json)。未重跑原81 parser/5浏览器组，未刷新原用户tab或改个人af51/d629；ACCESS后继不再阻塞本片上线。
+
+2026-10-07T04:09:13.319076+00:00：ACCESS实际部署见D05唯一[回执](../../../dashboard-architecture/docs/evidence/d05/local-access-185-live.json)，main451bf2；S01P07 main0aa组合noEmit0及8直接检查通过，原失败保留。SVC06独立artifact首host运行0task/provider，04:04:40.248开始、work6255ms/cleanup81ms；工作/清理监督组absent，但detached center及专库仍KEEP。只读诊断确认原sandbox禁止/bin/ps，原stderr丢失不能补造根因；按原owner精确身份与先行持久记录收尾，未重跑构建或个人服务。

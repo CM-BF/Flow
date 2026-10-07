@@ -1,0 +1,43 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-07T03:25:03.421642+00:00",
+  "actualExit": 1,
+  "elapsedMs": 11211.772791924886,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 12733539,
+    "raw": 151178
+  },
+  "terminalFreeBytes": 26510368768,
+  "errors": [
+    "worker not passed"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [
+    "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+    "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+    "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+    "close aborts outstanding read; late response does not restore token; reopen needs explicit load"
+  ],
+  "limits": {
+    "totalMs": 52519,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadata": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+  "previousSpentConservativeMs": 7481,
+  "postWriteElapsedMs": 11212.474875035696,
+  "postWriteRawBytes": 152404
+}

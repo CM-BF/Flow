@@ -1,0 +1,19 @@
+(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: The following dependencies are imported but could not be resolved:
+
+  @assistant-ui/react (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/hooks/use-attachment-src.ts)
+  @radix-ui/react-tooltip (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/ui/tooltip.tsx)
+  @flow/interaction/activity (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/conversation-activity/native/projection.ts)
+  @flow/interaction/stream (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/conversation-stream/projection.ts)
+  ansi-to-react (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/workspace/ai-elements/terminal.tsx)
+  radix-ui (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx)
+  @radix-ui/react-collapsible (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/ui/collapsible.tsx)
+  @assistant-ui/react-markdown (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/assistant-ui/elements/markdown-text.tsx)
+  remark-gfm (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/assistant-ui/elements/markdown-text.tsx)
+  @assistant-ui/react-markdown/styles/dot.css (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/assistant-ui/elements/markdown-text.tsx)
+  @radix-ui/react-avatar (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/components/ui/avatar.tsx)
+  zustand/react/shallow (imported by /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/hooks/use-attachment-src.ts)
+
+Are they installed?
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:28293:33)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:35613:15)
+{"outcome":"failed","checks":[],"cleanupErrors":[]}

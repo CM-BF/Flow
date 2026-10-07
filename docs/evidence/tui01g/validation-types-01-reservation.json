@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T02:15:22.108793+00:00",
+  "group": "types",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    "docs/evidence/tui01g/tsconfig.json",
+    "--noEmit"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "freeBefore": 26750091264,
+  "rawBefore": 3375,
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "bounds": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "killSeconds": 2,
+    "combinedOutputBytes": 262144,
+    "rawAndCacheBytes": 8388608
+  },
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0
+}

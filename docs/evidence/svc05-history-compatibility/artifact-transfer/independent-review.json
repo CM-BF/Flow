@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-06T18:15:59.838358+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "status": "APPROVED",
+  "target": "91ce18d33a1edf3cd087020ab0ea761579affc63",
+  "metadata": "e9062f67db69039e0be2b898879ad8eec216bf40",
+  "manifestSha256": "984f5d7c43a7b56d1b1735ede7c9da144815f98f4e5dd3cbd61586a1df728101",
+  "verifiedEntries": 21,
+  "scope": "one fixed artifact transfer preparation and 8 tiny file-only cases; no personal operation authorization",
+  "p2": "closed: nonblocking open plus regular descriptor size/hash and expected+1 bounded reads",
+  "evidence": {
+    "red": {
+      "selected": 2,
+      "failed": 2,
+      "exitCode": 1,
+      "durationMs": 608,
+      "testFileHashCaptured": false
+    },
+    "green": {
+      "selected": 8,
+      "passed": 8,
+      "exitCode": 0,
+      "durationMs": 538
+    },
+    "cleanup": "checkpoint before own dev/ino removal; groups absent; no PG/provider/host/transfer execution"
+  },
+  "reviewChecks": [
+    "full script and test source read",
+    "fixed/source/raw hash and bytes verified",
+    "RENAME_EXCL no-replace result and retained stage checks read",
+    "FIFO no writer rejected without deadline; actual growth reads two bytes",
+    "old f183 manifest and incomplete red test binding retained honestly"
+  ],
+  "limitations": [
+    "file-only helpers tested; transferD629 and marker/lock not called",
+    "Mac RENAME_EXCL local tiny behavior only",
+    "no independent donor persistence/crash/physical peak proof",
+    "identity reset and closed sockets correlation only; no root-cause proof",
+    "original source preparation manifest stays bound to f183, not current hashes"
+  ],
+  "remainingReleaseGates": [
+    "two retained artifact compatibility reports for af51",
+    "actual Web serving identity remains unknown after ECONNRESET",
+    "fixed complete operation plan and window before personal effects"
+  ],
+  "newTestsRun": 0,
+  "provider": 0
+}

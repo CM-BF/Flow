@@ -1,0 +1,54 @@
+{
+  "window": "S01P07-PG-20261007-R1",
+  "executionHead": "03d5543cebffeffa53924addd331e65d764586ce",
+  "preflight": {
+    "at": "2026-10-07T02:52:24.598766+00:00",
+    "claimId": "9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac",
+    "claimVersion": 2,
+    "scopeCount": 18,
+    "claimState": "active",
+    "headClean": true,
+    "preparedManifestSha256": "db1364e042fee29978785f93d260504ac12e8f1e7477bcbd7e17107a445fc65f",
+    "fixedBindings": 65,
+    "sqlBindings": 30,
+    "dependencyBindings": 24,
+    "plannedOutputsAbsent": 10,
+    "resourceAvailableBytes": 26577305600,
+    "requiredPairedFloorBytes": 1242824704,
+    "errors": []
+  },
+  "coordination": {
+    "localBeforeSpawn": "Mika confirmed C02 and REQ15 terminated with group/EOF/owned-root cleanup; both only metadata <=1MiB each, donor readonly. No live local or other heavy holder.",
+    "heavyEnded": true,
+    "retainedResource": "Owned temporary root retained; fixture cleanup unknown, no PG cleanup claim."
+  },
+  "outer": {
+    "startedAt": "2026-10-07T02:53:11Z",
+    "finishedAt": "2026-10-07T02:53:12Z",
+    "timeRealSeconds": 1,
+    "timeUserSeconds": 0.63,
+    "timeSystemSeconds": 0.17,
+    "exitCode": 1,
+    "toolCompletionObservedAt": "2026-10-07 02:53:16 UTC",
+    "boundary": "Shell UTC is second precision. /usr/bin/time covers the wrapper process through exit; tool completion was read later. No sum of yielded tool wait durations is used as whole wall."
+  },
+  "toolOutput": "S01P07_OUTER_START 2026-10-07T02:53:11Z\n{\"window\": \"S01P07-PG-20261007-R1\", \"sourceHead\": \"03d5543cebffeffa53924addd331e65d764586ce\", \"startedAt\": \"2026-10-07T02:53:12.081997+00:00\", \"resourceBefore\": 26578714624, \"resourceGate\": 1207959552, \"providerCalls\": 0, \"root\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-qsnu91s5\", \"identity\": {\"dev\": 16777234, \"ino\": 123359346}, \"command\": [\"/opt/homebrew/opt/node@24/bin/node\", \"node_modules/vitest/vitest.mjs\", \"run\", \"--config\", \"docs/evidence/s01p07/pg-vitest.config.ts\", \"--configLoader\", \"native\", \"apps/server/src/runner-claim-receipts.test.ts\"], \"childStarted\": true, \"exitCode\": 143, \"primaryFault\": \"TEMP_INVENTORY_UNKNOWN\", \"faults\": [\"TEMP_INVENTORY_UNKNOWN\", \"FIXTURE_RECEIPT_UNKNOWN\"], \"processGroupGone\": true, \"stdioEnded\": true, \"process\": {\"exitCode\": 143, \"observations\": [{\"state\": \"present\", \"errno\": null}, {\"state\": \"absent\", \"errno\": null}], \"signals\": [{\"state\": \"sent\", \"errno\": null, \"signal\": 15}], \"groupState\": {\"state\": \"absent\", \"errno\": null}, \"groupAbsent\": true, \"unknown\": false}, \"fixtureCleanupConfirmed\": false, \"temporaryFinalBytes\": 1164095, \"temporarySampledPeakBytes\": 1164095, \"temporaryAbsent\": false, \"retainedRoot\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-qsnu91s5\", \"rawObservedBytes\": 90, \"rawSavedBytes\": 90, \"elapsedSeconds\": 0.8700532088987529, \"finishedAt\": \"2026-10-07T02:53:12.952049+00:00\", \"limits\": {\"totalSeconds\": 200, \"workSeconds\": 120, \"rawBytes\": 1048576, \"ownTempBytes\": 33554432}, \"boundary\": \"Sampled own logical temp bytes; shared PG/WAL growth and between-sample peak are unknown.\"}\nreal 1.00\nuser 0.63\nsys 0.17\nS01P07_OUTER_FINISH 2026-10-07T02:53:12Z\nS01P07_OUTER_EXIT 1\n",
+  "caseCounts": {
+    "planned": 8,
+    "caseResultsObserved": 0,
+    "selected": "UNKNOWN_NO_VITEST_RESULT",
+    "passed": 0,
+    "failed": "UNKNOWN_NO_VITEST_RESULT",
+    "notRun": "No case result; not reported as 8 skipped"
+  },
+  "fixtureArtifacts": {
+    "receipt": "ABSENT",
+    "reservation": "ABSENT",
+    "rootReservation": "ABSENT",
+    "createRequest": "ABSENT",
+    "databaseIdentity": "ABSENT",
+    "boundary": "Original fixture requires durable reservation before any DB operation; no CREATE evidence exists. No separate PG query/zero-connection check was run."
+  },
+  "validation": "ACTUAL_WINDOW_CONSUMED_FAILED; no retry",
+  "providerCalls": 0
+}

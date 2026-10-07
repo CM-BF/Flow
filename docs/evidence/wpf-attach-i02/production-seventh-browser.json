@@ -1,0 +1,407 @@
+{
+  "startedAt": "2026-10-06T12:36:06.708Z",
+  "endedAt": "2026-10-06T12:36:24.735Z",
+  "wallMs": 18027,
+  "priorBudgetMs": 81573,
+  "cumulativeBudgetMs": 99600,
+  "checks": [
+    "explicit project preparation preserves the text and performs zero turns",
+    "P01 Files entry loads only explicit metadata; Enter preview is lazy and cached",
+    "real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft",
+    "official upload adapter and Queue Enter use a frozen v2 receipt, never cancel the task",
+    "offline before submit prevents receipt/POST and preserves original uploaded material",
+    "disable/enable and native hidden retain materials without automatic reads; protected close is retained"
+  ],
+  "errors": [],
+  "failure": "locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-composer-view]').getByRole('button', { name: 'Files', exact: true }).visible().first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\">Files</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    15 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:105:86)\n    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:37:109)\n    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:104:5)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:140:7)",
+  "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+  "workingSourceHashes": {
+    "apps/web/src/App.tsx": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+    "apps/web/src/conversation-context/receipts.ts": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+    "apps/web/src/conversations/ConversationThread.tsx": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+    "apps/web/src/conversations/messages.ts": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350",
+    "apps/web/src/conversations/outbox.ts": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+    "apps/web/src/conversations/projection.ts": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+    "apps/web/src/conversations/queue/commands.ts": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+    "apps/web/src/conversations/queue/projection.ts": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+    "apps/web/src/plugin-integration/attachments.tsx": "32ea9c81f8a5d962d6d5a6c6394f093d72ca3add242eb5e6246f793ea19030d6",
+    "apps/web/src/plugin-integration/react.tsx": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+    "apps/web/src/plugin-integration/session.ts": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+    "apps/web/src/plugins/types.ts": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "apps/web/src/plugins/validation.ts": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+    "apps/web/test/attachment-integration.browser.ts": "a804ed43375fb13c72cc46719b9a3fa64428cd1fe514e7d71b629a37a5d5172e",
+    "apps/web/test/attachment-integration.fixture.ts": "3c89079a2dffef47285fcfc53b5a2bcc4bb01acfce7fca3f6edae52d9c581d31",
+    "apps/web/test/attachment-integration.test.ts": "66a401df83791a4ba4d6a4a087233db458a77a355c458ffd1a13414ea2704334",
+    "apps/web/test/conversation-context-receipts.test.ts": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0",
+    "apps/web/test/conversation-messages.test.ts": "301ed1d649592ce420414af12d5c5f28b4be4ba2a360a608fee01ce2a6bacc13",
+    "apps/web/test/conversation-outbox.test.ts": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15",
+    "apps/web/test/conversation-projection.test.ts": "5954973704d6eca8ebfd5d21c9dfdb46e18111e52390259e49fd2fec0a4278bf",
+    "apps/web/test/conversation-queue.test.ts": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+    "apps/web/test/plugin-host.test.ts": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+  },
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "28c31d02-5077-41ef-ba6c-58c57f07de6c:create",
+      "body": "{\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}",
+      "status": 201,
+      "response": "{\"conversation\":{\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"id\":\"5dd2a647-38d0-4a43-ac3c-ceb9158099f6\",\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":0,\"createdAt\":\"2026-10-06T12:36:13.924Z\",\"updatedAt\":\"2026-10-06T12:36:13.924Z\"},\"capabilities\":{\"attachmentContext\":false,\"knowledgeContext\":true,\"followUp\":true,\"queue\":true,\"steer\":false,\"liveAssistantText\":false,\"perTurnModel\":false,\"perTurnThinking\":false,\"perTurnTools\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/29821638-329b-4ab7-a230-1ff1d852eec1/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"protocol\":\"text-v1\",\"recoveryScopeId\":\"ddb09959-0830-4ce9-9675-1ac09df7f209\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"requiresProject\":true,\"mediaTypes\":[\"text/plain\"],\"extensions\":[\".txt\"],\"maxFileBytes\":8192,\"maxCombinedReferences\":4,\"maxCombinedBytes\":8192,\"order\":\"knowledge-then-attachments\",\"unboundTtlSeconds\":86400,\"resourcesPerProject\":128,\"retainedBytesPerProject\":1048576}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/29821638-329b-4ab7-a230-1ff1d852eec1/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"resources\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"0195aa0e-d457-4665-9ea8-5fff3946b838\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"createdAt\":\"2026-10-06T12:36:07.891Z\",\"expiresAt\":\"2026-10-07T12:36:07.891Z\",\"state\":\"ready\",\"retained\":false}],\"nextCursor\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/29821638-329b-4ab7-a230-1ff1d852eec1/attachments/0195aa0e-d457-4665-9ea8-5fff3946b838/versions/1/content?digest=7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"reference\":{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"0195aa0e-d457-4665-9ea8-5fff3946b838\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"text\":\"<script>not executed</script>\\nFixed text 中文🙂\\r\\n\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/turns",
+      "key": "826643e3-888f-4707-bc1f-9c4fb7d0b755:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send fixed attachment\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"0195aa0e-d457-4665-9ea8-5fff3946b838\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"}]}",
+      "status": 202,
+      "response": "{}",
+      "fault": "bad accepted turn acknowledgement"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/turns",
+      "key": "826643e3-888f-4707-bc1f-9c4fb7d0b755:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send fixed attachment\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"0195aa0e-d457-4665-9ea8-5fff3946b838\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"}]}",
+      "status": 202,
+      "response": "{\"turn\":{\"id\":\"defc5666-984e-4bee-ad00-95f4f5419275\",\"task\":{\"id\":\"38fb50d7-f464-4083-b6df-d18be93e004a\",\"title\":\"Attachment production conversation\",\"status\":\"queued\",\"harness\":\"claude\",\"createdAt\":\"2026-10-06T12:36:14.218Z\",\"updatedAt\":\"2026-10-06T12:36:14.218Z\",\"verificationStatus\":\"pending\"},\"user\":{\"role\":\"user\",\"text\":\"Send fixed attachment\"},\"number\":1,\"context\":{\"id\":\"b87236a2-1b73-4f7c-838f-9e66b1d2cbe0\",\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"0195aa0e-d457-4665-9ea8-5fff3946b838\",\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"byteLength\":53}],\"contextDigest\":\"7fc5b2e1abf332c7f7401c5f0579b87136a6586c8f7fd6116cd15acde87e0aa1\",\"templateVersion\":2,\"executionInputId\":\"a1db52ed-f3a2-4880-ac48-b768114ffdf5\",\"executionInputDigest\":\"8252b340cd347b52bda7c1ef86da7aaf9f6519d49ffb8b077f9836b6bedd7052\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"createdAt\":\"2026-10-06T12:36:14.224Z\",\"effective\":{\"model\":null,\"tools\":\"unknown\",\"source\":null,\"thinking\":\"unknown\"},\"telemetry\":{\"kind\":\"execution\",\"title\":\"Execution details\",\"taskId\":\"38fb50d7-f464-4083-b6df-d18be93e004a\"},\"conversationId\":\"5dd2a647-38d0-4a43-ac3c-ceb9158099f6\"},\"conversation\":{\"id\":\"5dd2a647-38d0-4a43-ac3c-ceb9158099f6\",\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"revision\":1,\"createdAt\":\"2026-10-06T12:36:13.924Z\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"updatedAt\":\"2026-10-06T12:36:14.224Z\"},\"replayed\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/38fb50d7-f464-4083-b6df-d18be93e004a",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/38fb50d7-f464-4083-b6df-d18be93e004a/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/29821638-329b-4ab7-a230-1ff1d852eec1/attachments",
+      "key": "996fd6bc-f7bb-4624-b1e4-87212f75c8cf",
+      "body": "{\"recoveryScopeId\":\"ddb09959-0830-4ce9-9675-1ac09df7f209\",\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"text\":\"Upload exact text 中文\\r\\n\",\"byteLength\":26,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}",
+      "status": 201,
+      "response": "{\"uploadKey\":\"996fd6bc-f7bb-4624-b1e4-87212f75c8cf\",\"recoveryScopeId\":\"ddb09959-0830-4ce9-9675-1ac09df7f209\",\"requestDigest\":\"81fec8c57f76e7e4c4e2d67815999f8ea3d925f224c7417d56fdc382b996392d\",\"resource\":{\"reference\":{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"56656c77-f51f-4f31-993e-c980f8684c4a\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"},\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"byteLength\":26,\"createdAt\":\"2026-10-06T12:36:14.355Z\",\"expiresAt\":\"2026-10-07T12:36:14.355Z\",\"state\":\"ready\",\"retained\":false},\"replayed\":false}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue",
+      "key": "8798df81-d561-4893-9066-8717efef38d9",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"56656c77-f51f-4f31-993e-c980f8684c4a\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}],\"text\":\"Queue the uploaded file\"}",
+      "status": 202,
+      "response": "{}",
+      "fault": "bad accepted queue acknowledgement"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue",
+      "key": "8798df81-d561-4893-9066-8717efef38d9",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"56656c77-f51f-4f31-993e-c980f8684c4a\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}],\"text\":\"Queue the uploaded file\"}",
+      "status": 202,
+      "response": "{\"item\":{\"id\":\"b76a6ae9-8da7-406f-8419-61ad5c33654c\",\"state\":\"waiting\",\"context\":{\"id\":\"27baba7b-8f4a-496b-a320-ae4a79052b85\",\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"56656c77-f51f-4f31-993e-c980f8684c4a\",\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"},\"byteLength\":26}],\"contextDigest\":\"9f78cbcc42a0a101131268d85134aabc15e1b7e00832423c5923c01d5e219861\",\"templateVersion\":2,\"executionInputId\":\"6a445b1c-70ea-40cc-99c4-8718c0e7ff36\",\"executionInputDigest\":\"5504d4ad4ff50202d487dd93b8e7b29528ca0187ebb12ba6a1240a6c943ce327\"},\"preview\":\"Queue the uploaded file\",\"promoted\":null,\"sequence\":1,\"createdAt\":\"2026-10-06T12:36:14.495Z\",\"truncated\":false,\"updatedAt\":\"2026-10-06T12:36:14.495Z\",\"conversationId\":\"5dd2a647-38d0-4a43-ac3c-ceb9158099f6\"},\"queueRevision\":1,\"conversationId\":\"5dd2a647-38d0-4a43-ac3c-ceb9158099f6\",\"replayed\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/29821638-329b-4ab7-a230-1ff1d852eec1/attachments",
+      "key": "b43ea3f8-ef01-4e1c-b15f-d391d3c7cddb",
+      "body": "{\"recoveryScopeId\":\"ddb09959-0830-4ce9-9675-1ac09df7f209\",\"name\":\"rollback.txt\",\"mediaType\":\"text/plain\",\"text\":\"rollback material\",\"byteLength\":17,\"contentDigest\":\"bde32625e21a028ba9afdfd66155d58f800426a94efdf179773c6ba0f850c750\"}",
+      "status": 201,
+      "response": "{\"uploadKey\":\"b43ea3f8-ef01-4e1c-b15f-d391d3c7cddb\",\"recoveryScopeId\":\"ddb09959-0830-4ce9-9675-1ac09df7f209\",\"requestDigest\":\"12ed2235fe0674560dc4f7cd116a94bbb1e3f1fa117212fa1c6e244208e694ea\",\"resource\":{\"reference\":{\"kind\":\"upload\",\"projectId\":\"29821638-329b-4ab7-a230-1ff1d852eec1\",\"resourceId\":\"a9c7f3a7-d4ad-4243-951d-b609a94bf24e\",\"version\":1,\"contentDigest\":\"bde32625e21a028ba9afdfd66155d58f800426a94efdf179773c6ba0f850c750\"},\"name\":\"rollback.txt\",\"mediaType\":\"text/plain\",\"byteLength\":17,\"createdAt\":\"2026-10-06T12:36:14.709Z\",\"expiresAt\":\"2026-10-07T12:36:14.709Z\",\"state\":\"ready\",\"retained\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/38fb50d7-f464-4083-b6df-d18be93e004a/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d0700501-08e3-46ee-8c6d-d10181b86aca/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d0700501-08e3-46ee-8c6d-d10181b86aca",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d0700501-08e3-46ee-8c6d-d10181b86aca/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/38fb50d7-f464-4083-b6df-d18be93e004a/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/38fb50d7-f464-4083-b6df-d18be93e004a/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/5dd2a647-38d0-4a43-ac3c-ceb9158099f6/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    }
+  ],
+  "providerQueries": 0
+}

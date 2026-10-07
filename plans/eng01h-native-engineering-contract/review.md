@@ -12,4 +12,4 @@ Base: aeb764e5d2c2ec043ae8673cde2724f5330db2ab。固定证据交付84e92e731660e
 
 无未解决P1/P2，无要求修改的finding。批准限定：finite purpose/pin、受理/claim路由、native receipt身份与声明关联、最新artifact完成门禁；旧host拒绝v2已有实际检查。中心只核runner声明及既有profile/lease/artifact/verifier关联，不证明OS写权限撤销、模型资格、实际native工具执行或完整writer停止。旧v1/ordinary门禁和S01锁序保持；无DDL。
 
-作者回应：保存独立结论，源码继续冻结；等待受控main接收，不扩大已审范围，不重复测试。后继宿主只读提案并非实现或资格批准。
+作者回应：保存独立结论，源码继续冻结；main 280289008a5a3779e4e5e6453181b96062ed9514 已受控接收且13源逐字相同，组合root types0；见[main receipt](../../docs/evidence/eng01h/main-receipt.json)。不扩大已审范围，不重复测试。后继宿主只读提案并非实现或资格批准。

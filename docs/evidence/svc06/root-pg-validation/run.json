@@ -1,0 +1,293 @@
+{
+  "kind": "svc06-root-pg-direct-checks",
+  "rounds": [
+    {
+      "pid": 46179,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 59,
+      "stdout": "red/stdout.txt",
+      "stderr": "red/stderr.txt",
+      "observed_bytes": 1236,
+      "retained_bytes": 1236,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "red",
+      "startedAt": "2026-10-07T03:20:38.103011+00:00",
+      "finishedAt": "2026-10-07T03:20:38.162382+00:00",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "--test-name-pattern=^root host pg ",
+        "tools/personal-preview/backend-release/dependency-plan.test.mjs"
+      ],
+      "freshFreeBytes": 26510315520,
+      "resourcePeak": {
+        "logicalBytes": 0,
+        "allocatedBytes": 0,
+        "minimumFreeBytes": 26510311424,
+        "samples": 3,
+        "vanishedChildren": 0,
+        "errors": []
+      },
+      "tmpRoot": "/private/tmp/flow-svc06-rootpg-sh4buv1t",
+      "tmpIdentity": [
+        16777234,
+        123371131
+      ],
+      "tmpRemaining": [],
+      "tmpRemoved": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "bytes": 10887,
+          "sha256": "1ed90368b61d4cf1854e3a592d3d12401fa0aa7ed5087ca0976dfdafb31de6de"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+          "bytes": 11836,
+          "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "bytes": 10913,
+          "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "bytes": 6646,
+          "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "bytes": 1327,
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "bytes": 3445,
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+        }
+      ],
+      "resourceThresholdsMet": true
+    },
+    {
+      "pid": 48431,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 111,
+      "stdout": "green/stdout.txt",
+      "stderr": "green/stderr.txt",
+      "observed_bytes": 465,
+      "retained_bytes": 465,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "green",
+      "startedAt": "2026-10-07T03:20:45.972117+00:00",
+      "finishedAt": "2026-10-07T03:20:46.083455+00:00",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "--test-name-pattern=^(root host pg |selects backend production|staging selects)",
+        "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+        "tools/personal-preview/backend-release/runtime-installation.test.mjs"
+      ],
+      "freshFreeBytes": 26509680640,
+      "resourcePeak": {
+        "logicalBytes": 6725,
+        "allocatedBytes": 65536,
+        "minimumFreeBytes": 26509516800,
+        "samples": 5,
+        "vanishedChildren": 0,
+        "errors": []
+      },
+      "tmpRoot": "/private/tmp/flow-svc06-rootpg-sk54yhxv",
+      "tmpIdentity": [
+        16777234,
+        123371177
+      ],
+      "tmpRemaining": [],
+      "tmpRemoved": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "bytes": 10976,
+          "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+          "bytes": 11836,
+          "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "bytes": 10913,
+          "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "bytes": 6646,
+          "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "bytes": 1327,
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "bytes": 3445,
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+        }
+      ],
+      "resourceThresholdsMet": true
+    },
+    {
+      "pid": 58546,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 507,
+      "stdout": "fixed-source/stdout.txt",
+      "stderr": "fixed-source/stderr.txt",
+      "observed_bytes": 7327,
+      "retained_bytes": 7327,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "fixed-source",
+      "startedAt": "2026-10-07T03:21:04.506008+00:00",
+      "finishedAt": "2026-10-07T03:21:05.013017+00:00",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/root-pg-validation/fixed-source-selection.mjs"
+      ],
+      "freshFreeBytes": 26509393920,
+      "resourcePeak": {
+        "logicalBytes": 0,
+        "allocatedBytes": 0,
+        "minimumFreeBytes": 26509254656,
+        "samples": 21,
+        "vanishedChildren": 0,
+        "errors": []
+      },
+      "tmpRoot": "/private/tmp/flow-svc06-rootpg-szz57tw7",
+      "tmpIdentity": [
+        16777234,
+        123371262
+      ],
+      "tmpRemaining": [],
+      "tmpRemoved": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "bytes": 10976,
+          "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+          "bytes": 11836,
+          "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "bytes": 10913,
+          "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "bytes": 6646,
+          "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "bytes": 1327,
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "bytes": 3445,
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+        }
+      ],
+      "resourceThresholdsMet": true
+    }
+  ],
+  "cumulativeLimitMs": 120000,
+  "commandLimitMs": 30000,
+  "rawLimit": 131072,
+  "tmpLimit": 16777216,
+  "freshGate": 2684354560,
+  "liveReserve": 1073741824,
+  "updatedAt": "2026-10-07T03:21:05.013017+00:00",
+  "measurement": "20ms metadata samples, not atomic peak or reservation"
+}

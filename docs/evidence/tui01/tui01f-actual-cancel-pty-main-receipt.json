@@ -1,0 +1,175 @@
+{
+  "at": "2026-10-06T20:00:56.089443+00:00",
+  "task": "TUI-001 parent management fact correction only",
+  "parent": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/plans/tui01-terminal-client/status.md",
+    "head": "c8bacf7471e023914e77994bcc3f5d3070f49a92",
+    "clean": true,
+    "staleObservation": "2026-10-06 16:10; actual HTTP/PG cancellation and PTY still shown unverified"
+  },
+  "child": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "head": "7c5a739258106a2cf9387ebf3a5e54268c122136",
+    "clean": true,
+    "statusObserved": "2026-10-06 17:57 UTC",
+    "task03": "completed/delivered",
+    "task04": "pending/not implemented or run"
+  },
+  "fixedRefs": {
+    "behavior": "40508f18432ffc20eadd638b208841a364c72bea",
+    "backend": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+    "cleanupHelper": "45709c982df080af5a71ecbd66760a76ab65cf94",
+    "cleanupConsumer": "f4f9c47c8c36d7c05614ac477f7af3bb49a31680",
+    "legacyTypeConsumer": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+    "independentFinalReviewAt": "2026-10-06T17:47:27.482310+00:00",
+    "mainReceiptAt": "2026-10-06T17:57:16.289243+00:00",
+    "receivedMain": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+    "integration": "b54973237af88b64eef1b039560fc875dbd41688",
+    "currentMainObserved": "6223c7493a3b6f392813a5d9d82c24d87312ad26"
+  },
+  "factsToPromote": [
+    "Actual public center cancel accepted for A, one ACK dropped, persisted journal reopened; recovery preserved the original A/key/body while a second public client created B.",
+    "Actual Ink PTY canceled B, observed C, retained unsent CJK/emoji multiline draft across60x20 resize and quit. C was not canceled by quit and later completed via synthetic fixture barrier; center A/B cancelled,C succeeded/verification passed.",
+    "Original behavior selected2/passed2 but whole-suite exit1 due cleanup connections unknown. That result is never rewritten as whole-suite green.",
+    "Later dedicated cleanup-only actual PG selected1/passed1/suite0 independently approved. New checkpoint before normal DROP and dev/ino-bound tmp removal; no task/runtime/PTY/provider re-execution.",
+    "Seven final test/fixture sources received byte-identically in main8d84 via controlled integration b549. Author ec30 is not an ancestor; blob equality is the integration evidence."
+  ],
+  "remainingOpen": [
+    "TUI01F-04 actual TUI\u2192real Web\u2192TUI alternating journey is only a fixed proposal, not implemented/run. Two headless clients or PTY alone are not real browser alternation.",
+    "Parent TUI001-06 remains in-progress: full steering/decision control and other remaining parent requirements are not closed by task cancel.",
+    "Parent TUI001-08 stays pending/open for full day-to-day and real cross-client/provider acceptance. Isolated real PTY cancel/quit behavior is now verified, so do not label allPTY unverified.",
+    "No native/A2A kill or model capability conclusion: behavior uses synthetic fixture and0provider.",
+    "Original whole-suite exit1 and original private temp without recorded initial inode remain KEEP. Old DB was independently normally dropped after authorized read-only observation; new cleanup case does not retroactively alter initial run.",
+    "Candidate Web artifact tuple d629+a89 is not covered by RELEASE03 af51+d629; actual future tuple must be explicitly fixed and checked."
+  ],
+  "suggestedStatusReplacements": [
+    {
+      "field": "\u68c0\u67e5\u72b6\u6001",
+      "value": "A\u2013E\u4e0eF\u63a7\u5236\u7247\u5df2\u5ba1/main\uff1bF-03\u5b9e\u9645HTTP/PG\u53d6\u6d88\u4e0eInk PTY\u4e24\u884c\u4e3a\u901a\u8fc7\uff0c\u539fsuite exit1\u4fdd\u7559\uff1b\u72ec\u7acb\u6536\u5c3e1/1\u53ca\u7c7b\u578b\u517c\u5bb9\u5df2\u5ba1\uff0c\u672c\u7236\u4e0d\u91cd\u6d4b\u3002"
+    },
+    {
+      "field": "\u5df2\u96c6\u6210main\u72b6\u6001 / HEAD",
+      "value": "TUI01F-03\u4e03\u6e90\u5df2main8d84d529a0756116bd0fc8bad969d61a6c26248e\u9010\u5b57\u63a5\u6536\uff1bTUI01F-04\u771f\u5b9e\u7f51\u9875\u4ea4\u66ff\u4ecd\u672a\u5b9e\u65bd/\u8fd0\u884c\u3002"
+    },
+    {
+      "field": "\u5f53\u524d\u4ea7\u51fa",
+      "value": "\u7ec8\u7aef\u663e\u5f0f\u53d6\u6d88\u3001\u539f\u8bf7\u6c42\u6062\u590d\u548c\u9000\u51fa\u4e0d\u53d6\u6d88\u540e\u53f0\u4efb\u52a1\u5df2\u901a\u8fc7\u771f\u5b9e\u4e2d\u5fc3\u4e0e\u7ec8\u7aef\u9a8c\u8bc1\u5e76\u8fdb\u5165\u4e3b\u7ebf\u3002"
+    },
+    {
+      "field": "\u4e0b\u4e00\u53ef\u7528\u4ea4\u4ed8",
+      "value": "\u5b9e\u65bd\u5e76\u9a8c\u8bc1\u540c\u4e00\u4f1a\u8bdd\u7684\u771f\u5b9e\u7ec8\u7aef\u2192\u7f51\u9875\u2192\u7ec8\u7aef\u63a5\u7eed\uff0c\u4fdd\u7559\u5b8c\u6574\u65e5\u7528\u9a8c\u6536\u8fb9\u754c\u3002"
+    },
+    {
+      "field": "\u5f53\u524d\u963b\u585e",
+      "value": "Remove the obsolete claim that all cancellation/PTY validation awaits disk. No new current external blocker established by this read; Lead should use NONE unless a fresh specific execution blocker exists."
+    },
+    {
+      "field": "Review",
+      "value": "F-03\u9650\u5b9a\u72ec\u5ba1APPROVED\uff08ec30/f4\u5404\u81ea\u8303\u56f4\uff09\uff1b\u5b8c\u6574\u5927task review\u4ecdopen\uff0c\u52ff\u628a\u5355\u4e00\u5b50\u7247SHA\u5f53\u6574\u4e2aapps/tui\u4e0einteraction\u6279\u51c6\u3002"
+    },
+    {
+      "field": "TUI001-06",
+      "value": "Keep in-progress; amend evidence to F-03 actualcancel/PTY delivered, F-04 + steer/decision remain successor."
+    },
+    {
+      "field": "TUI001-08",
+      "value": "Keep pending/open; explicitly acknowledge isolatedPTY and two publicclient behavior coverage while realWeb alternation/provider/full-day-to-day remain unverified."
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/main-8d84-receipt.json",
+      "bytes": 2500,
+      "sha256": "e70662eb2095dcae68233cab23e8c5e548f9c753f0c411d2ec392542c2d0b7f0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/final-two-delta-independent-review.json",
+      "bytes": 1364,
+      "sha256": "799f17e8fa58530eb9c773efb39170f3bfa1b479444d0fb28cf36424e40e0b61"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/journey-1714/README.md",
+      "bytes": 2926,
+      "sha256": "a2de853ac41f685e2c06ecd7bb15511fe37eb1075a3298269cd551c35eccec47"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/cleanup-1740/README.md",
+      "bytes": 2502,
+      "sha256": "813ec96a21439b583af47b098d6f62d948d54b4f35d23e82420ea41f275d44e0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff-preparation.md",
+      "bytes": 5607,
+      "sha256": "51d74311a5b41d19f07eb42981ee84d53feba66f1469a0fa3895264a11d7a3ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/plans/tui01f-task-cancel/status.md",
+      "bytes": 8694,
+      "sha256": "4c7e640a9bea00fabb8ccf06f8a3fb72f2237d04cf0b67a8d5de80037260b836"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/plans/tui01f-task-cancel/review.md",
+      "bytes": 7806,
+      "sha256": "79fc723fb411980ea0370ab51ecff5eaccccc22994f62d43eb455289994a93c2"
+    }
+  ],
+  "sevenSourceCheck": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 22259,
+      "sha256": "9d645418386eb5b206f438074ce39ec0fbcbab56f814908cb9d145034c61d380",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+      "bytes": 5044,
+      "sha256": "864417833cebe03eb5e71ebb41deec12ef97a8d0704937ea150eba930fdb7726",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/cleanup-journey.test.ts",
+      "bytes": 6083,
+      "sha256": "0def7b25c74f7f4aa55f785c4f011ed1283887ca178fb216c0c52403b41ce9bf",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "bytes": 4182,
+      "sha256": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "bytes": 4898,
+      "sha256": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    },
+    {
+      "path": "apps/tui/src/journey.test.ts",
+      "bytes": 10818,
+      "sha256": "c11a94780a2c7fe0d5affb112bb6cdf802e7dddc581981c0850ddb64da1f890a",
+      "sourceAndReceiptAndWorkingEqual": true,
+      "currentMainEqual": true
+    }
+  ],
+  "counts": {
+    "tests": 0,
+    "pg": 0,
+    "browser": 0,
+    "provider": 0,
+    "projectWrites": 0
+  },
+  "scope": "Management suggestion only, no new acceptance design/review or implementation. Parent claim/edits remain ExecutionLead."
+}

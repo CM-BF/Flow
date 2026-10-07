@@ -1,0 +1,30 @@
+{
+  "id": "jqxa5j9g0ff9bfvfehufaq49t",
+  "beforeFreeBytes": 1193717760,
+  "startedAt": "2026-10-06T17:06:26.285136+00:00",
+  "command": [
+    "docker",
+    "buildx",
+    "prune",
+    "--builder",
+    "orbstack",
+    "--filter",
+    "id=jqxa5j9g0ff9bfvfehufaq49t",
+    "--force"
+  ],
+  "exitCode": 0,
+  "stdout": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\njqxa5j9g0ff9bfvfehufaq49t               \ttrue \t\t27.5MB    \t17 hours ago\nTotal:\t27.5MB\n",
+  "stderr": "",
+  "completedAt": "2026-10-06T17:06:26.441292+00:00",
+  "targetAfter": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "retainedParentAfter": {
+    "exitCode": 0,
+    "stdout": "{\"CreatedAt\":\"2026-10-05 23:43:22.000627167 +0000 UTC\",\"Description\":\"from local \",\"ID\":\"4uusk43z3cgmrn0of94mx6f9k\",\"LastUsedAt\":\"17 hours ago\",\"Mutable\":false,\"Parents\":[\"krpn5m50b23ifrop44rrcfrd2\"],\"Reclaimable\":true,\"Shared\":true,\"Size\":\"0B\",\"Type\":\"regular\",\"UsageCount\":2}\n",
+    "stderr": ""
+  },
+  "afterFreeBytes": 1193304064
+}

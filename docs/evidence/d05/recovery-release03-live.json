@@ -1,0 +1,266 @@
+{
+  "observedAt": "2026-10-06T14:51:29.616Z",
+  "generatedAt": "2026-10-06T14:51:18.920Z",
+  "count": 161,
+  "source": "http://127.0.0.1:4320/api/snapshot",
+  "main": "d679444c",
+  "rows": [
+    {
+      "id": "WPF-RECOVERY01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:34:05.565Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "syncedAt": "2026-10-06T14:51:18.920Z",
+        "stale": false,
+        "ageHours": 0.30525555555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-conversation-recovery",
+        "head": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+        "dirty": true,
+        "changedFiles": 15,
+        "observedAt": "2026-10-06T14:51:19.047Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+            "id": "WPF-MATURE-06",
+            "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Web /root（执行管理 d01_owner）",
+            "value": "Web /root（执行管理 d01_owner）"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "连接观察器、IDB检查点与原命令屏障已有源码；已接完整草稿和P01真实入口；八项早期问题已有源码修正，行为尚未验证",
+          "next": "刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复",
+          "blocker": {
+            "state": "active",
+            "text": "浏览器与完整构建等待可用磁盘和中心会话语义核验；轻量实现可继续"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/attachments/controller.ts",
+            "apps/web/src/connection/session.ts",
+            "apps/web/src/conversation-context/controller.ts",
+            "apps/web/src/conversation-steering/SteeringControl.tsx",
+            "apps/web/src/conversation-steering/control.ts",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/src/plugin-integration/attachments.tsx",
+            "apps/web/src/plugin-integration/knowledge.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/plugin-integration/steering.tsx",
+            "apps/web/src/recovery/binding.tsx",
+            "apps/web/src/recovery/journal.ts",
+            "apps/web/test/conversation-recovery.browser.ts",
+            "apps/web/test/conversation-recovery.fixture.ts",
+            "apps/web/test/conversation-recovery.test.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "WPF-RECOVERY01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-conversation-recovery",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T14:33:00.000Z",
+        "updatedRecord": "2026-10-06 14:33 UTC",
+        "todos": [
+          {
+            "id": "WPF-RECOVERY01-01",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "[live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落"
+          },
+          {
+            "id": "WPF-RECOVERY01-02",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测"
+          },
+          {
+            "id": "WPF-RECOVERY01-03",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成"
+          },
+          {
+            "id": "WPF-RECOVERY01-04",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "13项直接行为测试源码已写/typecheck0，尚未执行"
+          },
+          {
+            "id": "WPF-RECOVERY01-05",
+            "state": "blocked",
+            "owner": "workspace_panels_owner",
+            "evidence": "资源与中心语义验收门槛未满足"
+          },
+          {
+            "id": "WPF-RECOVERY01-06",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "独审/main未完成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "base 84005a260dfcb668cd38b09c21564d0754a0f513；首 canonical dcaf6356a31ac21b02972c8cd5ee33ad0c06e2fb；当前安全点82d78a9d77f4f51a27dc76fdc413a63dcd88ea72 + dirty接线",
+        "declaredDirty": "恢复源码及本任务证据修改；本段提交后实际Git为准",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；直接/浏览器行为未跑；最新完整Web noEmit exit0 5.616s，源绑定app-wiring-third-types.json；类型累计28.711/60s"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513",
+        "next": "已在App接cookie观察器/P01入口，继续检查完整稿、跨tab/原key恢复及八项早期预审边界；不得孤立journal交付。当前无实现target/approval。唯一status由本owner维护。",
+        "risks": "pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当前fresh资源测量。禁止目前install/build/PG/Chrome。中心三语义不阻首代码，但最终cookie/SSE旅程仍需核。旧upload journal跨tabCAS与历史metadata隔离开放，不冒本片修复。",
+        "decisions": ""
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-RELEASE03",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:40:27.875Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "syncedAt": "2026-10-06T14:51:18.920Z",
+        "stale": false,
+        "ageHours": 0.18108888888888888
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-current-preview-compatibility",
+        "head": "422d0fba2bf6f45f61dfde3bcec99f14c62ae5e5",
+        "dirty": true,
+        "changedFiles": 5,
+        "observedAt": "2026-10-06T14:51:19.051Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+            "id": "WPF-MATURE-01",
+            "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Web /root（执行管理 d01_owner）",
+            "value": "Web /root（执行管理 d01_owner）"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "新前端的兼容验证输入已固定，正在准备可审查脚本",
+          "next": "给出新前端与现有后台的真实兼容结果",
+          "blocker": {
+            "state": "active",
+            "text": "实际运行等待依赖和资源门槛；源码可继续"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/web/test/web-current-preview.fixture.ts",
+            "apps/web/test/web-current-preview.browser.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "WPF-RELEASE03",
+        "owner": "w01_owner / gpt-6-astra / ultra",
+        "branch": "codex/web-current-preview-compatibility",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T14:40:27.000Z",
+        "updatedRecord": "2026-10-06 14:40:27 UTC",
+        "todos": [
+          {
+            "id": "RELEASE03-01",
+            "state": "in-progress",
+            "owner": "w01_owner",
+            "evidence": "[take](../../docs/evidence/wpf-release03/take-receipt.json)、[live](../../docs/evidence/wpf-release03/live-claim.json)"
+          },
+          {
+            "id": "RELEASE03-02",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "0兼容运行；180秒预算尚未使用"
+          },
+          {
+            "id": "RELEASE03-03",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "尚未固定实现/独审/交主线"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 首计划提交前",
+        "declaredDirty": "提交前仅本片计划与证据；提交回执另核实际 clean",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；仅实际领取/固定输入核验"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED；本片无实现提交",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "issues": []
+    }
+  ]
+}

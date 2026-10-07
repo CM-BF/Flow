@@ -1,0 +1,57 @@
+{
+  "state": "DIAGNOSTIC_INPUT_REVIEW_PENDING_NOT_OPEN",
+  "preparedAt": "2026-10-07T03:09:49Z",
+  "bindingsAt": "fixed delivery commit containing this manifest",
+  "historicalPrepared": {
+    "path": "docs/evidence/s01p07/pg-prepared-manifest.json",
+    "bytes": 13891,
+    "sha256": "db1364e042fee29978785f93d260504ac12e8f1e7477bcbd7e17107a445fc65f",
+    "target": "e3b9a3d5b354b75baaabac9da12a691bb5d54514",
+    "entries": 65,
+    "sourceTarget": "ac3b8532fb23a9c8549c0b32e225a31327bc85f9"
+  },
+  "unchangedHistoricalEntries": 63,
+  "replacements": [
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 17301,
+      "sha256": "ccecbeb9b9f9214d718c62b5e2b0bb0f70173459b04f2ac239dae28b2f58196a"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    }
+  ],
+  "additions": [
+    {
+      "path": "docs/evidence/s01p07/pg-diagnostic-slot-request.json",
+      "bytes": 4544,
+      "sha256": "e38ad3e89ac723d516f3f27a5d13eae8bebe72d85bab9d4829c2ffa2304bc909"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-diagnostic-window-request.md",
+      "bytes": 2653,
+      "sha256": "70180b2baa93788df671c3d2e21e3433150865bbf5febed0c98cacd6f3a736d8"
+    }
+  ],
+  "diagnosticEvidence": {
+    "path": "docs/evidence/s01p07/inventory-diagnostic-manifest.json",
+    "bytes": 1433,
+    "sha256": "4f4cbf67106068fc0fd3b1c2e9868fdc8990caeef1793f9a3f119824f5d35dc4",
+    "target": "e3b9a3d5b354b75baaabac9da12a691bb5d54514",
+    "meaning": "Historical wrapper at e3b9; four diagnostic checks remain valid, current selector is separate source-only delta."
+  },
+  "historicalResult": {
+    "path": "docs/evidence/s01p07/pg-run-r1-manifest.json",
+    "bytes": 1892,
+    "sha256": "6181be979da8e1320f51ddb25cbc6647a2a2f9abe77a9ba581d02fae1efee40c",
+    "target": "16a938a465e49dfaf8a0b1ed1d4356bcc5eaa4b8"
+  },
+  "staticBindings": {
+    "sql": 30,
+    "dependencyLinks": 24,
+    "unchangedProducts": 8
+  },
+  "validation": "No new checks/import/PG; original85 nonPG/strict5/3 lifecycle fake and diagnostic4 reused at fixed Git. Old4 capacityPG NOT_RUN. PG NOT_OPEN."
+}

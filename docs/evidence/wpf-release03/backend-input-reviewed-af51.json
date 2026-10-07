@@ -1,0 +1,195 @@
+{
+  "at": "2026-10-06T15:41:01.072823+00:00",
+  "reviewer": "root independent read-only candidate intake",
+  "decision": "FIXED_SOURCE_AND_TEN_DEPENDENCY_IDENTITIES_MATCH; NOT_RUNTIME_ADMISSION",
+  "backend": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "approvedFix": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "mode": "100644"
+    }
+  ],
+  "metadataClosure": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+      "bytes": 784,
+      "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+      "bytes": 9579,
+      "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/interface.md",
+      "bytes": 4754,
+      "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+      "bytes": 2637,
+      "sha256": "5eb1f1a5aa1bbfc15b5d45bfca48a2332b1c42b9954aed49e67aec65b5069754",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+      "bytes": 3710,
+      "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+      "bytes": 8095,
+      "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/provision.json",
+      "bytes": 659,
+      "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/quality.md",
+      "bytes": 1856,
+      "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+      "bytes": 15032,
+      "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+      "bytes": 7342,
+      "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/plan.md",
+      "bytes": 1853,
+      "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/review.md",
+      "bytes": 2023,
+      "sha256": "9d74948f5f695a1b75a434cf5845c51f99d036bd278668aa9b5f7f50e4a72c0c",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/status.md",
+      "bytes": 3517,
+      "sha256": "5256457c6b31f2690cd92a7f42537cbb7742c789962a7dd9486744191d9fae41",
+      "mode": "100644"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15",
+      "packageJsonSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1",
+      "packageJsonSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/@fastify/cors",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0",
+      "packageJsonSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/fastify",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5",
+      "packageJsonSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/npm-package-arg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "version": "13.0.2",
+      "packageJsonSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/pacote",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "version": "21.5.1",
+      "packageJsonSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/pg-boss",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0",
+      "packageJsonSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/ssri",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "version": "13.0.1",
+      "packageJsonSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/zod",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5",
+      "packageJsonSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "mode": "existing-read-only dependency, no import"
+    },
+    {
+      "path": "node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts",
+      "version": "0.1.0",
+      "packageJsonSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "mode": "existing-read-only dependency, no import"
+    }
+  ],
+  "checks": {
+    "sourceImplementationParentExactBase": true,
+    "baseDeltaExactlyTwoApprovedSourcesPlusListedMetadata": true,
+    "allMetadataRegularFixedAndCurrentEqual": true,
+    "manifestBindingsMatched": true,
+    "headAndCleanBeforeAfter": true,
+    "newImportsTestsPgBrowserServices": 0
+  },
+  "limits": [
+    "No runtime/transitive-module closure validation or additional type/tests; both actual history checks for this new tuple remain NOT_RUN.",
+    "Dependency package.json identity/realpath checks are not full package integrity or executable behavior proof; donor pnpm layout remains read-only and must be retained.",
+    "Source owner must keep this fixed HEAD/tree/source frozen through the admitted run; repeated Git observations do not create an atomic filesystem snapshot.",
+    "Old362 two failures,3874ms spent and all raw remain valid; current source approval does not modify deployed personal backend/Web.",
+    "W01 original-four harness must accept exact source+metadata closure and receive fresh scope/resource/window; no lowered gate or auto retry."
+  ],
+  "cleanCode": "Single actual backend factory authority, exact metadata boundary, no broad docs/tests exemptions, separate fixed source identity and execution proof."
+}

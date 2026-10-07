@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06 17:53:52 UTC",
+  "source": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+  "domain": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+  "settings": [
+    "ea276572c3c99fb8400808a93efc69ce530d55a4",
+    "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+    "0ee2494ed4298169c56ac3a6950fa1910ed62a7a"
+  ],
+  "state": "PG_NOT_RUN;WAIT_EXCLUSIVE_WINDOW",
+  "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run packages/client/src/goal-plan-confirmation-production.test.ts --maxWorkers=1 --no-cache --testTimeout=30000 --hookTimeout=30000",
+  "selected": 1,
+  "providerCalls": 0,
+  "topology": "One marked private DB/dynamic loopback/one owned directory/one runtime with injected two-result query; no child SDK transport. Three actual createServer starts with default scan after acknowledged confirmation.",
+  "closure": {
+    "sources": 214,
+    "sql": 30,
+    "packages": 19,
+    "configs": 11,
+    "missing": []
+  },
+  "proposedBudget": {
+    "freshAtLeastBytes": 1140850688,
+    "workSeconds": 120,
+    "cleanupSeconds": 30,
+    "rawMaxBytes": 2097152,
+    "cacheAndRuntimeMaxBytes": 8388608,
+    "retainedFloorBytes": 1073741824,
+    "PGWAL": "Separate; actual peak unmeasured, comparable O15 DB13163543B only."
+  },
+  "cleanup": "Synced marker reservation file+parent before CREATE; runtime stop/await and server/pool close; LIMIT33/at most32 connections/3s including zero-result deadline; normal DROP and dev/ino directory remove only after checkpoint. Unknown retained;no FORCE/retry."
+}

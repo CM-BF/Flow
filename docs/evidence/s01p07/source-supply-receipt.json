@@ -1,0 +1,282 @@
+{
+  "at": "2026-10-06T20:16:29Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+  "headBeforeAfter": "dde8da6e6e5d1ffd00a6a59ee400b02112d6f91f",
+  "requestSha256": "6762f0e3fbcb25dff2b2eb12c3fa7fded0c53b32af53f4fd15a4774b5267e6ad",
+  "sources": [
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/active-steering/input.ts",
+      "bytes": 1460,
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "bytes": 10069,
+      "sha256": "d81c8c0c2b975f257b0efb934fc3279633f73ef3a41c68f5634580b311c6a4fc",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "bytes": 2478,
+      "sha256": "e41dc5fba3e0017d86a6d2e1c6f8e362164059356de3c5fbacf572a3b17d95d1",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2749,
+      "sha256": "cdb38e534cb7ce5abdfb237999a6ca285cec75ed211757b225c8ea350902737c",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/index.ts",
+      "bytes": 1973,
+      "sha256": "ea7e09187645327f83ece4963a6ca3e7cfd56001c371ea65826e797285cf2af8",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/read.ts",
+      "bytes": 4353,
+      "sha256": "fe3deb991e871c34871114b1774d6aec3d6bf97d344fd39be2cd7250322c1471",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/result.ts",
+      "bytes": 1425,
+      "sha256": "8d3e748884a5d4992f9d97df8e9ad1cc5ceb90e42c7b63c2254bf5d0428501ed",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/index.ts",
+      "bytes": 287,
+      "sha256": "c7350f59ab6d4b1353f8482205e35e9a4fbe28b505584d68307f6925d884bb20",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "bytes": 4127,
+      "sha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3555,
+      "sha256": "44b0920a744c9c162f87fd479be8e87e5c3e1175b4a145d22f6a1b175d2d17de",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4754,
+      "sha256": "e4279c648a6e4519bf7f8928d3acdb5fe27ab034a8cd6a8f7a59eb625c5d0e2d",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 4520,
+      "sha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 2276,
+      "sha256": "dfe8cbe012a1708c692d99608b1d86944ec15ce9709a981ae08dd8f7752ac6f1",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 27962,
+      "sha256": "49bea6a00c209cd20d2aa85b21ff8371d23590e4dcf052454a92447bb82b096e",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "present": false,
+      "binding": "22a0806bc2465e11096949618113833f31766b19",
+      "action": "MATERIALIZE_EXACT"
+    }
+  ],
+  "materialized": 33,
+  "logicalBytes": 186913,
+  "protectedMaterializedFiles": 259,
+  "protectedUnchanged": true,
+  "statusBefore": " M apps/runner/src/admission-journal.test.ts\n M apps/runner/src/admission-journal.ts\n",
+  "statusAfter": " M apps/runner/src/admission-journal.test.ts\n M apps/runner/src/admission-journal.ts\n",
+  "availableBeforeBytes": 1331261440,
+  "availableAfterBytes": 1330470912,
+  "installImportTestsPgProvider": 0,
+  "configuration": "per-worktree sparse append only; shared config/main/other worktrees unchanged"
+}

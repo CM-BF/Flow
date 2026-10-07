@@ -2,26 +2,34 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:25:20 UTC |
+| 最近更新 | 2026-10-07 00:23 UTC |
 | Plan | [plan.md](plan.md) |
+| 任务层级 | 大task |
+| 大task ID | [K01](plan.md) |
+| 需求来源 | [REQ-10 §9：版本化知识与授权一致的混合检索](../flow-001-architecture/full-plan-matrix.md) |
+| co-lead | mika |
+| 当前claim / scope | 4be228e2-64f8-46e6-94a8-aa7eb867d730 v1最后观察ACTIVE（Mika 00:22:16.673Z）；仅两metadata scope，最终push后全部停写待root release，尚未声明released |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
-| 工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 实现已固定；最终metadata提交后clean，实时状态由Git聚合 |
-| 工作分支状态 | completed（领域片段已验收，待main） |
-| 检查状态 | PASSED ea0c4cba1792dbb498487fb5b6ae47393340b77e；31不同用例组合/noEmit；Mika独立技术review APPROVED |
-| 已集成main状态 / HEAD | 未集成；base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f |
-| 实现目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 实现范围 | apps/server/src/knowledge, packages/contracts/src/knowledge.ts, packages/storage/migrations/015-knowledge-sources.sql, docs/evidence/k01/check.mjs |
+| 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
+| 工作树dirty状态 | 设计源固定；本次仅主线接收status/receipt管理收口，commit/push后核clean并全部停写 |
+| 工作分支状态 | in-progress（旧产品与本次规划均已接收，后续产品TODO保持开放） |
+| 检查状态 | NOT_RUN：本次规划未运行产品验证；旧ea0c4cba 31不同用例/noEmit/独审记录原样保留 |
+| 已集成main状态 / HEAD | 本次规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；3设计文件=target/WT/原manifest，0产品delta；旧产品fb906接收与31检查仅历史，不外推为当前产品零差异 |
+| 实现目标 | fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
+| 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
+| 当前规划基线 / HEAD | 原权威树a837e68c419930f96ffe2fa71672eaa9c750c8ba；规划target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
+| 本次只读产品输入 | c3ba1adfe9374b80a955d45e20310f000fed0310；不merge/rebase旧branch |
+| 实现范围 | plans/k01-knowledge-sources/plan.md, docs/evidence/k01/retention-design.md, docs/evidence/k01/retention-planning-inputs.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 版本文本和原文引用可跨重启保留，搜索摘要与容量边界已验证 |
-| 下一可用交付 | 本片段已验收，等待主线接收 |
+| 当前产出 | 持续更新与历史引用保护设计已由主线接收，产品实施仍待后继 |
+| 下一可用交付 | 协调留存产品及直接消费者实施范围，落实持续发布与安全释放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e |
+| Review | [review.md](review.md)；旧实现APPROVED，新规划DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,9 +37,14 @@
 | K01-02 | completed | b01_bounded_reads | matrix-first 28绿 + capacity-fixed 1绿；首红/清理已保留 |
 | K01-03 | completed | b01_bounded_reads | 12词法样本/实际JSON预算；boundary-extra 2绿 |
 | K01-04 | completed | b01_bounded_reads / Mika | Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[] |
-| K01-05 | pending | b01_bounded_reads / Lead | 未集成 |
+| K01-05 | completed | b01_bounded_reads / Lead | [main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff |
+| K01-06 | pending | Goal Owner / 后继任务owner | REQ-10 hybrid/vector、下游grant与消费/失效后继验收仍开放 |
+| K01-07 | completed | b01_bounded_reads / Mika | 文档独审APPROVED，规划已接收cd6938；[唯一规划main receipt](../../docs/evidence/k01/retention-planning-main-receipt.json) |
+| K01-08 | pending | 后续合法product owner | 身份/留存/保护实现，当前没有产品scope |
+| K01-09 | pending | 后续合法consumer owners | 新旧协议/冻结/ACK/history兼容，需协调现owner |
+| K01-10 | pending | 后续owner / Mika / Lead | K01-R01～R12全部NOT_RUN，独审/集成待后继 |
 
-claim 76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1 ACTIVE，COMMITTED 05:10:36.101Z，[receipt](../../docs/evidence/k01/claim-receipt.json)。B03 已停止写入并由 Root release v2。本 worker 只写本 WT。本片新增 knowledge 模块/3表与 migrate/register 接口，架构待实现 target 固定后交 Lead 同步；共享 client/export/mount 由 Lead 接线，不以独立 fixture 当生产完成。
+历史claim 76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1于05:10:36.101Z COMMITTED，后已v2 RELEASED（2026-10-06T05:38:41.221Z）；[receipt](../../docs/evidence/k01/claim-receipt.json)。B03 已停止写入并由 Root release v2。本 worker 只写本 WT。本片新增 knowledge 模块/3表与 migrate/register 接口，架构 target ea0c4cba1792dbb498487fb5b6ae47393340b77e 已交 Lead 同步；共享 client/export/mount 已随 F01 集成，生产接线与CLI验证由 Lead 的独立证据承担，本owner未重跑。
 
 2026-10-06 05:18 UTC：source-red 实际501预期失败；首次green import zod缺直接依赖导致0tests，不计通过，已把schema留contracts修正。source-green-fixed 1/1通过，独立DB remaining[]。搜索首红501已保留。source标题首片固定、类型为manual text，publish仅正文。resolve新增同快照currentVersion，不替换旧引用。
 
@@ -42,3 +55,21 @@ claim 76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1 ACTIVE，COMMITTED 05:10:36.101Z�
 2026-10-06 05:25:05 UTC：Mika独立技术review APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e，核9源码/5只读基线/47raw hash、31 distinct与所有8库清理，未重跑；无blocking finding。Goal Owner接收产品范围随后进行，不再重复技术review。当前本片段integration，K01-05待Lead实际main回执；metadata提交后明确停止领域写入，保留claim76b6ae1a v1用于集成修复。
 
 2026-10-06 05:25:20 UTC：dashboard 2026-10-06T05:25:10.384Z 实采clean c95d6c9、approved/passed/unchanged/current/issues[]，delivery=integration，[回执](../../docs/evidence/k01/dashboard-receipt.json)。本metadata提交后停止K01领域写入；保留claim76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1待明确main接收或授权修复。
+
+2026-10-06 05:38:05 UTC：MAIN_RECEIPT fb906cb42391971a8b315dbd813f7633927d7265，已实核main=origin/main clean、target祖先和完整9实现文件零diff；[回执](../../docs/evidence/k01/main-receipt.json)。Mika/Lead固定范围接收证据为main docs/evidence/i02/knowledge-maintenance-fixed-scopes.json。当前delivered仅指K01本片段；后继K01-06保持pending，不据此宣称hybrid/vector或全部下游接入完成。本轮仅metadata，无测试/服务重启；最终提交后停止所有K01写入，由Mika release当前claim v1。
+
+2026-10-06 05:38:21 UTC：dashboard 2026-10-06T05:38:12.500Z 实采clean1917b91、approved/passed/unchanged/current/main.current=true/issues[]；delivery=delivered，下一可用交付“本片段已交付”，[main dashboard回执](../../docs/evidence/k01/main-dashboard-receipt.json)。当前metadata提交后明确停止所有K01写入，请Mika核claim76b6ae1a v1并release；不自行回填release。
+
+2026-10-07 00:11 UTC：原claim76b6ae1a v2已于2026-10-06T05:38:41.221Z RELEASED，原产品交付事实不变。本次以新claim4be228e2-64f8-46e6-94a8-aa7eb867d730 v1于2026-10-07T00:08:35.936Z COMMITTED恢复，仅docs/evidence/k01与plans/k01-knowledge-sources两scope；不恢复产品写权，不merge/rebase旧branch。只读固定main c3ba1adfe9374b80a955d45e20310f000fed0310，采用本地find-skills/brainstorming/codebase-design/clean-code方法；GO已授权自主细化，无重复产品审批。当前仅规划，产品检查NOT_RUN，0工程测试/PG/模型/安装/历史数据变更。新稳定TODO和消费者边界随设计交付。
+
+2026-10-07 00:14 UTC：K01-07规划checkpoint已形成；以managed协商区分preview与固定引用、旧版本legacy全保护、原子pin与受控回收、真实count/bytes容量为推荐。根与chatui01消费者只读输入已统一记录，含head17而citation1、context history v1 codec、未知ACK协议不可变化、source identity不可删。架构影响候选为knowledge留存模块/保护表/FK及freeze seam；待未来合法scope实现与Lead同步，当前无架构实现。K01-08～10均pending、产品NOT_RUN；下一步仅Mika文档review，不启产品或验证。
+
+2026-10-07 00:15 UTC：设计固定 fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，仅文档/输入记录；已按Mika预审去除终身4096 receipt上限，明确flow.commands生命周期属实施前跨模块依赖，本片有界证明不包括整个DB。独立文档review NOT_STARTED，原产品31项及历史main接收不改。本次顶表区分当前规划claim与旧released claim，历史main观察不外推为当前c3ba逐字一致。产品验证全部NOT_RUN，未取得产品scope。
+
+2026-10-07 00:16 UTC：当前固定规划target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 包含满额安全release、不可复用pin实例ID，以及release掉ACK/迟到重放不得误作用于新pin的R12验收；flow.commands生命周期不在本片有界证明范围。单次dashboard读5秒超时，聚合UNKNOWN（retention-planning-dashboard.json），不重试或服务操作。唯一status已更新；新规划待db_transaction_owner独立只读文档review，不沿原产品批准。提交后停写规划源，claim4be228e2 v1保留。
+
+2026-10-07 00:17 UTC：规划独审DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，无P1/P2，回执retention-independent-review.json。批准只覆盖3文档；K01-08～10仍pending、产品检查NOT_RUN，flow.commands生命周期与具体schema/协商由后续合法owner在实施前审定。本次仅review/status记录，无重新读取聚合/工程检查；snapshot仍单次超时UNKNOWN。最终metadata提交/推送后停止本次规划全部写入，claim4be228e2 v1保留待Lead协调。
+
+2026-10-07 00:18 UTC：Mika报告其00:17:59实际snapshot已核本任务source live/current/nonstale、21db1fc2 clean、review approved fd02/unchanged、checks not_run、10个TODO对应、claim v1 matchesSource。聚合发现REQ-10不是独立registry task，本次只将层级改为既有K01大task、REQ-10移到需求来源，co-lead保持mika；不造平行计划，不改已审3文档。此记录为Mika提供的聚合事实，本owner未再次请求dashboard或运行工程检查；提交/push后停止本次全部写入，待Mika实际读回关系字段。
+
+2026-10-07 00:23 UTC：Execution Lead已窄接规划到main/origin cd6938fdd50f297cdb4d652d3b38464d1de0b311，中央intake来源及hash、设计3文件target=main=WT=原manifest校核见唯一[retention-planning-main-receipt.json](../../docs/evidence/k01/retention-planning-main-receipt.json)。本次0产品delta、0新工程checks/PG/模型/dashboard采样。K01-08～10仍pending、R01～R12 NOT_RUN、flow.commands生命周期/具体协议与migration待未来合法范围；旧31及fb906只保留历史事实。原plan已审REQ-10文字作为需求追溯，当前大task层级仍K01，不改3设计文件。最终commit/push后停止本轮全部写入、无待写scope；claim v1为最后观察，待root原子release，结果仅/tmp，不在release后回填项目。

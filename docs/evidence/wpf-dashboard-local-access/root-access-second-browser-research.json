@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T03:28:17.351307+00:00",
+  "reviewer": "/root independent",
+  "decision": "SECOND_BROWSER_FAILURE_RETAINED_NATIVE_HIDDEN_PRECONDITION_NOT_MET",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "actual": {
+    "actualExit": 1,
+    "outerElapsedMs": 11246.743666939437,
+    "groups": 4,
+    "of": 5,
+    "error": [
+      "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"hidden\"\nReceived: \"visible\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+    ],
+    "cleanupErrors": [],
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "discardedOutputBytes": 0,
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "chromeLog": {
+      "observedBytes": 319,
+      "retainedBytes": 319,
+      "truncatedBytes": 0,
+      "finalAfterEOF": true
+    },
+    "postCleanup": {
+      "observedAt": "2026-10-07T03:26:34.040532+00:00",
+      "pids": {
+        "96582": "absent",
+        "96833": "absent"
+      },
+      "pgid": {
+        "96582": "absent"
+      },
+      "scratchExists": false,
+      "cdp52215ConnectErrno": 61
+    }
+  },
+  "budget": {
+    "totalMs": 60000,
+    "conservativeCumulativeMs": 18728,
+    "remainingMs": 41272,
+    "cleanupIncludedMs": 15000
+  },
+  "evidence": {
+    "run": "/private/tmp/access01-browser-followup-jn35famf",
+    "pins": [
+      {
+        "path": "actual-exit.json",
+        "sha256": "1c9a95db7dc750d04a1e9071beb2dcd50671b992fdb01f7d633bec6f775ba819"
+      },
+      {
+        "path": "terminal.stdout",
+        "sha256": "0989ef087c5bb3e57dc69cc29d3ca76dc334509f78a3e2b33d8622eca4178f2c"
+      },
+      {
+        "path": "raw/browser-result.json",
+        "sha256": "0ffa803a25140679009fd6ab227e0106a5589adb677f5e8c04bbe414786f57ee"
+      },
+      {
+        "path": "raw/worker-result.json",
+        "sha256": "c0642efd0e1d5a70732939afd2125baf06c3debb2e47cc4a89baba46f6a0eea9"
+      },
+      {
+        "path": "post-cleanup.json",
+        "sha256": "1fdfce9004a261f0391531e60485a3b8d92da310c8d075e2c79db907ffe05eb3"
+      }
+    ]
+  },
+  "research": {
+    "localPlaywrightSource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+    "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+    "focusOverrideByteOffset": 1901460,
+    "excerpt": "efaultOverrides = browserOptions.noDefaults && this._crPage._browserContext === this._crPage._browserContext._browser._defaultContext;\n          if (this._crPage._browserContext.needsPlaywrightBinding())\n            promises2.push(this.exposePlaywrightBinding());\n          if (this._isMainFrame() && !skipDefaultOverrides)\n            promises2.push(this._client.send(\"Emulation.setFocusEmulationEnabled\", { enabled: true }));\n          const options = this._crPage._browserContext._options;\n          if (options.bypassCSP)\n            promises2.push(this._client.send(\"Page.setBypassCSP\"",
+    "primaryReferences": [
+      "https://chromedevtools.github.io/devtools-protocol/tot/Emulation/#method-setFocusEmulationEnabled",
+      "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
+    ],
+    "finding": "Installed Playwright1.63 enables focus/active emulation on main frames. CDP documents this override; MDN distinguishes window focus from actual visibility. It is a source-supported candidate cause for the unchanged visible state, not an experimentally proven sole cause.",
+    "next": "Disable existing focus override for the owned target, then make its own native tab/window truly hidden and assert actual document.visibilityState before testing credential clear; restore/close owned CDP session/window. No property/event spoofing, no dropped assertion, no product changes. Fix only original browser fixture in existing scope, bind new test target before any native followup."
+  },
+  "limits": [
+    "No real installation, personal endpoint, credential or user tab involved.",
+    "Four native groups and two empty-token theme images do not make the whole browser run pass.",
+    "Runner lifecycle fix behaved correctly in this actual attempt; still overall exit1 because fifth precondition failed.",
+    "No third run or heavy reservation. Existing source+35direct scoped approval retained, full browser acceptance pending."
+  ]
+}

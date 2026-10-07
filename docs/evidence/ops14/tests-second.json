@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-06T21:29:28.103822+00:00",
+  "freeBeforeBytes": 1138495488,
+  "minimumFreeBytes": 1077936128,
+  "selectedExpected": 12,
+  "providerCalls": 0,
+  "PG": 0,
+  "browser": 0,
+  "reasonForRerun": "Group lifecycle and final pipe drain changed; all direct ownership/capture consumers selected",
+  "sources": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "sha256": "32222d5cf08c5064429e35259d6aeefe2086dda25d97ef17320936a98be13c8d",
+      "bytes": 11827
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "sha256": "fe8e27fc89fb25db07e5fc16491470eaac1e0d511b1f76a42f238a7fb0287421",
+      "bytes": 10318
+    }
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py"
+  ],
+  "pid": 1968,
+  "exitCode": 1,
+  "state": "COMPLETED",
+  "elapsedMs": 1817,
+  "outputBytes": 3122,
+  "supervisionFailure": null,
+  "outputSha256": "d481c6ae2c858f9921132000efc3000996b7b058a33baf6cb22085df8ba47398",
+  "freeAfterBytes": 1138221056
+}

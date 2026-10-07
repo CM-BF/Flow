@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-06 14:44:50 UTC",
+  "base": "e22abe2552d89b8b225b48bde93e1573dbe0783c",
+  "redTarget": "46f40f736098f7072d548fc41165834fc4ad143d",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "final": {
+    "selected": 21,
+    "passed": 21,
+    "distinct": 21,
+    "oldDirectConsumers": 14,
+    "new": 7,
+    "singleFinalRun": true
+  },
+  "red": {
+    "selected": 1,
+    "failed": 1,
+    "unselected": 14,
+    "reason": "old host returns success after real async import grant revoked"
+  },
+  "strict": {
+    "exitCode": 0,
+    "inherits": "../../../tsconfig.json",
+    "include": "only host source/test and TypeScript import closure",
+    "noCompilerOptionOverride": true
+  },
+  "resources": [
+    {
+      "phase": "red",
+      "roots": 1,
+      "retainedByAuthor": [],
+      "existsNow": []
+    },
+    {
+      "phase": "green",
+      "roots": 22,
+      "retainedByAuthor": [],
+      "existsNow": []
+    }
+  ],
+  "scopeLimits": "0 provider/PG/install/new runner or package target processes; real self-owned ESM runs inside Vitest. Not an OS-wide process/fd scan. No center grant or runtime retained integration."
+}

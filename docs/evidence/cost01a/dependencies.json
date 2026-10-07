@@ -1,0 +1,563 @@
+{
+  "checkedAt": "2026-10-06T14:01:49Z",
+  "method": "Own ignored symlinks; exact existing third-party versions, own-worktree workspace packages; no install or donor mutation",
+  "discoveryFailure": "initial plugin-runtime tar direct link missing; recovered by verified existing transitive tar7.5.22 without installing",
+  "freeBefore": 1219051520,
+  "freeAfter": 1219039232,
+  "reserve": 1073741824,
+  "records": [
+    {
+      "package": "@types/node",
+      "declared": "24.19.1",
+      "from": "node_modules/@types/node",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "workspace": false
+    },
+    {
+      "package": "@types/pg",
+      "declared": "8.23.1",
+      "from": "node_modules/@types/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "workspace": false
+    },
+    {
+      "package": "@playwright/test",
+      "declared": "1.63.0",
+      "from": "node_modules/@playwright/test",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "workspace": false
+    },
+    {
+      "package": "typescript",
+      "declared": "5.9.3",
+      "from": "node_modules/typescript",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "workspace": false
+    },
+    {
+      "package": "tsx",
+      "declared": "4.23.15",
+      "from": "node_modules/tsx",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "workspace": false
+    },
+    {
+      "package": "vitest",
+      "declared": "4.0.18",
+      "from": "node_modules/vitest",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "workspace": false
+    },
+    {
+      "package": "pg",
+      "declared": "8.23.1",
+      "from": "node_modules/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "workspace": false
+    },
+    {
+      "package": "pg-boss",
+      "declared": "12.37.0",
+      "from": "node_modules/pg-boss",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "workspace": false
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "apps/cli/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "apps/cli/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "pg",
+      "declared": "8.23.1",
+      "from": "apps/execution-dashboard/node_modules/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "workspace": false
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "apps/runner/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "@flow/plugin-runtime",
+      "declared": "workspace:*",
+      "from": "apps/runner/node_modules/@flow/plugin-runtime",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/plugin-runtime",
+      "workspace": true
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "apps/runner/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "@anthropic-ai/claude-agent-sdk",
+      "declared": "0.3.290",
+      "from": "apps/runner/node_modules/@anthropic-ai/claude-agent-sdk",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "workspace": false
+    },
+    {
+      "package": "@flow/protocols",
+      "declared": "workspace:*",
+      "from": "apps/runner/node_modules/@flow/protocols",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/protocols",
+      "workspace": true
+    },
+    {
+      "package": "@a2a-js/sdk",
+      "declared": "1.3.0",
+      "from": "apps/runner/node_modules/@a2a-js/sdk",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "workspace": false
+    },
+    {
+      "package": "zod",
+      "declared": "4.6.5",
+      "from": "apps/runner/node_modules/zod",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "workspace": false
+    },
+    {
+      "package": "@modelcontextprotocol/sdk",
+      "declared": "1.32.1",
+      "from": "apps/runner/node_modules/@modelcontextprotocol/sdk",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk",
+      "workspace": false
+    },
+    {
+      "package": "@fastify/cors",
+      "declared": "11.3.0",
+      "from": "apps/server/node_modules/@fastify/cors",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "workspace": false
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "apps/server/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "@flow/plugin-runtime",
+      "declared": "workspace:*",
+      "from": "apps/server/node_modules/@flow/plugin-runtime",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/plugin-runtime",
+      "workspace": true
+    },
+    {
+      "package": "fastify",
+      "declared": "5.12.5",
+      "from": "apps/server/node_modules/fastify",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "workspace": false
+    },
+    {
+      "package": "npm-package-arg",
+      "declared": "13.0.2",
+      "from": "apps/server/node_modules/npm-package-arg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "workspace": false
+    },
+    {
+      "package": "pacote",
+      "declared": "21.5.1",
+      "from": "apps/server/node_modules/pacote",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "workspace": false
+    },
+    {
+      "package": "pg",
+      "declared": "8.23.1",
+      "from": "apps/server/node_modules/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "workspace": false
+    },
+    {
+      "package": "pg-boss",
+      "declared": "12.37.0",
+      "from": "apps/server/node_modules/pg-boss",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "workspace": false
+    },
+    {
+      "package": "ssri",
+      "declared": "13.0.1",
+      "from": "apps/server/node_modules/ssri",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "workspace": false
+    },
+    {
+      "package": "zod",
+      "declared": "4.6.5",
+      "from": "apps/server/node_modules/zod",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "workspace": false
+    },
+    {
+      "package": "@types/npm-package-arg",
+      "declared": "6.1.4",
+      "from": "apps/server/node_modules/@types/npm-package-arg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "workspace": false
+    },
+    {
+      "package": "@types/pacote",
+      "declared": "11.1.8",
+      "from": "apps/server/node_modules/@types/pacote",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "workspace": false
+    },
+    {
+      "package": "@types/ssri",
+      "declared": "7.1.5",
+      "from": "apps/server/node_modules/@types/ssri",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "workspace": false
+    },
+    {
+      "package": "@flow/interaction",
+      "declared": "workspace:*",
+      "from": "apps/tui/node_modules/@flow/interaction",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/interaction",
+      "workspace": true
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "apps/tui/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "apps/tui/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "ink",
+      "declared": "8.0.0",
+      "from": "apps/tui/node_modules/ink",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink",
+      "workspace": false
+    },
+    {
+      "package": "react",
+      "declared": "19.3.0",
+      "from": "apps/tui/node_modules/react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "workspace": false
+    },
+    {
+      "package": "@assistant-ui/react-ink",
+      "declared": "0.0.46",
+      "from": "apps/tui/node_modules/@assistant-ui/react-ink",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@assistant-ui+react-ink@0.0.46_@opentelemetry+api@1.9.1_@types+react@19.3.0_ink@8.0.0_@types+_sglbrv6qzkjet2fvulnoqqrz5y/node_modules/@assistant-ui/react-ink",
+      "workspace": false
+    },
+    {
+      "package": "@types/react",
+      "declared": "19.3.0",
+      "from": "apps/tui/node_modules/@types/react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react",
+      "workspace": false
+    },
+    {
+      "package": "ink-testing-library",
+      "declared": "4.0.0",
+      "from": "apps/tui/node_modules/ink-testing-library",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/ink-testing-library@4.0.0_@types+react@19.3.0/node_modules/ink-testing-library",
+      "workspace": false
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "apps/web/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "apps/web/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "@assistant-ui/react",
+      "declared": "0.15.23",
+      "from": "apps/web/node_modules/@assistant-ui/react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react",
+      "workspace": false
+    },
+    {
+      "package": "react",
+      "declared": "19.3.0",
+      "from": "apps/web/node_modules/react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "workspace": false
+    },
+    {
+      "package": "react-dom",
+      "declared": "19.3.0",
+      "from": "apps/web/node_modules/react-dom",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom",
+      "workspace": false
+    },
+    {
+      "package": "lucide-react",
+      "declared": "1.52.0",
+      "from": "apps/web/node_modules/lucide-react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react",
+      "workspace": false
+    },
+    {
+      "package": "@assistant-ui/react-markdown",
+      "declared": "0.14.18",
+      "from": "apps/web/node_modules/@assistant-ui/react-markdown",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown",
+      "workspace": false
+    },
+    {
+      "package": "@radix-ui/react-avatar",
+      "declared": "1.2.7",
+      "from": "apps/web/node_modules/@radix-ui/react-avatar",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar",
+      "workspace": false
+    },
+    {
+      "package": "@radix-ui/react-collapsible",
+      "declared": "1.1.21",
+      "from": "apps/web/node_modules/@radix-ui/react-collapsible",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible",
+      "workspace": false
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "declared": "1.2.0",
+      "from": "apps/web/node_modules/@radix-ui/react-dialog",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog",
+      "workspace": false
+    },
+    {
+      "package": "@radix-ui/react-slot",
+      "declared": "1.4.0",
+      "from": "apps/web/node_modules/@radix-ui/react-slot",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot",
+      "workspace": false
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "declared": "1.3.0",
+      "from": "apps/web/node_modules/@radix-ui/react-tooltip",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip",
+      "workspace": false
+    },
+    {
+      "package": "ansi-to-react",
+      "declared": "6.2.6",
+      "from": "apps/web/node_modules/ansi-to-react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react",
+      "workspace": false
+    },
+    {
+      "package": "class-variance-authority",
+      "declared": "0.7.1",
+      "from": "apps/web/node_modules/class-variance-authority",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority",
+      "workspace": false
+    },
+    {
+      "package": "clsx",
+      "declared": "2.1.1",
+      "from": "apps/web/node_modules/clsx",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx",
+      "workspace": false
+    },
+    {
+      "package": "radix-ui",
+      "declared": "1.7.0",
+      "from": "apps/web/node_modules/radix-ui",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui",
+      "workspace": false
+    },
+    {
+      "package": "remark-gfm",
+      "declared": "4.0.1",
+      "from": "apps/web/node_modules/remark-gfm",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm",
+      "workspace": false
+    },
+    {
+      "package": "tailwind-merge",
+      "declared": "3.7.0",
+      "from": "apps/web/node_modules/tailwind-merge",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge",
+      "workspace": false
+    },
+    {
+      "package": "tw-animate-css",
+      "declared": "1.4.0",
+      "from": "apps/web/node_modules/tw-animate-css",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css",
+      "workspace": false
+    },
+    {
+      "package": "tw-shimmer",
+      "declared": "0.4.13",
+      "from": "apps/web/node_modules/tw-shimmer",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tw-shimmer@0.4.13_tailwindcss@4.3.3/node_modules/tw-shimmer",
+      "workspace": false
+    },
+    {
+      "package": "zustand",
+      "declared": "5.0.15",
+      "from": "apps/web/node_modules/zustand",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand",
+      "workspace": false
+    },
+    {
+      "package": "@flow/interaction",
+      "declared": "workspace:*",
+      "from": "apps/web/node_modules/@flow/interaction",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/interaction",
+      "workspace": true
+    },
+    {
+      "package": "@types/react",
+      "declared": "19.3.0",
+      "from": "apps/web/node_modules/@types/react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react",
+      "workspace": false
+    },
+    {
+      "package": "@types/react-dom",
+      "declared": "19.3.0",
+      "from": "apps/web/node_modules/@types/react-dom",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom",
+      "workspace": false
+    },
+    {
+      "package": "vite",
+      "declared": "8.3.2",
+      "from": "apps/web/node_modules/vite",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "workspace": false
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "declared": "6.1.2",
+      "from": "apps/web/node_modules/@vitejs/plugin-react",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react",
+      "workspace": false
+    },
+    {
+      "package": "@tailwindcss/vite",
+      "declared": "4.3.3",
+      "from": "apps/web/node_modules/@tailwindcss/vite",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite",
+      "workspace": false
+    },
+    {
+      "package": "tailwindcss",
+      "declared": "4.3.3",
+      "from": "apps/web/node_modules/tailwindcss",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss",
+      "workspace": false
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "packages/client/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "zod",
+      "declared": "4.6.5",
+      "from": "packages/contracts/node_modules/zod",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "workspace": false
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "packages/interaction/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "packages/interaction/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "zod",
+      "declared": "4.6.5",
+      "from": "packages/interaction/node_modules/zod",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "workspace": false
+    },
+    {
+      "package": "tar",
+      "declared": "7.5.22",
+      "from": "packages/plugin-runtime/node_modules/tar",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "workspace": false
+    },
+    {
+      "package": "@flow/client",
+      "declared": "workspace:*",
+      "from": "packages/protocols/node_modules/@flow/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/client",
+      "workspace": true
+    },
+    {
+      "package": "@flow/contracts",
+      "declared": "workspace:*",
+      "from": "packages/protocols/node_modules/@flow/contracts",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/packages/contracts",
+      "workspace": true
+    },
+    {
+      "package": "@a2a-js/sdk",
+      "declared": "1.3.0",
+      "from": "packages/protocols/node_modules/@a2a-js/sdk",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "workspace": false
+    },
+    {
+      "package": "@modelcontextprotocol/client",
+      "declared": "2.3.1",
+      "from": "packages/protocols/node_modules/@modelcontextprotocol/client",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "workspace": false
+    },
+    {
+      "package": "@modelcontextprotocol/server",
+      "declared": "2.3.1",
+      "from": "packages/protocols/node_modules/@modelcontextprotocol/server",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/node_modules/.pnpm/@modelcontextprotocol+server@2.3.1/node_modules/@modelcontextprotocol/server",
+      "workspace": false
+    }
+  ]
+}

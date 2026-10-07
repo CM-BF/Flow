@@ -1,0 +1,388 @@
+{
+  "task": "TUI01E",
+  "createdAt": "2026-10-06T13:46:01.813037+00:00",
+  "sourceTarget": "d4478653918144377696ce83ace128fcf4213961",
+  "base": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+  "scope": "conversation queue read/pause/resume through the existing durable interaction controller and real terminal; 0provider; no personal services",
+  "sources": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 9697,
+      "sha256": "a33600856143358d4909a18a1454b411e90e7eaf4f837482a1be285951c047fd",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4140,
+      "sha256": "6ab6415d302838da144eb8cc63eb28904bc7132330db7d2d664da3d541ff8946",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "apps/tui/src/queue-controls/journey.test.ts",
+      "bytes": 14151,
+      "sha256": "44d84c5e197e77cdb536ebef3929ff13a58d563beb3467d622937e9df7a9687e",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7022,
+      "sha256": "d23da46ddef077bcf19598471d15120ade5bbc6008519d55e1107150b3122831",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "apps/tui/test-fixtures/queue_driver.py",
+      "bytes": 3670,
+      "sha256": "bd6439f3da9eeb94a9a4b8369b6226bd43fc7c297b3703fcfe41393c48ad7534",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 598,
+      "sha256": "0949d2771987240f02922fb87d16d6257730d3a07b5f161fea2e8adc1bcec883",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 5840,
+      "sha256": "8045446f377ad60c9c5097f881a22c30abba781d635176f22a9e19f829128756",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 20141,
+      "sha256": "48160d95167a2f9a7807e140cbfd04b097784431bb7c305fe8446edd5bcac709",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/queue-control/controller.test.ts",
+      "bytes": 10424,
+      "sha256": "60bdc19c66bab1f62dc23647670afda65b604e6fd1e0b250a229de5453e75cd6",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "bytes": 4673,
+      "sha256": "1622c75652197569842e534d09ac3363fc0105ca276f5ba2a3056018553c4755",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2553,
+      "sha256": "b76e104f3e877172b0c52b6691366a9d6a13a58d77580cdbbd746ba1e1e7e636",
+      "commit": "d4478653918144377696ce83ace128fcf4213961"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 45195,
+      "sha256": "8f1c48b8a938c65450417064204153bfaa3d2d669354ffd0dc6aaf020c68d6dc",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/private-journal.ts",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "bytes": 1766,
+      "sha256": "723492661e0056e24e47ac909aedc18ffbb0ac661026b086d525f3fa4cfdace7",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "bytes": 2933,
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2387,
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "bytes": 3681,
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/index.ts",
+      "bytes": 3433,
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/recovery.test.ts",
+      "bytes": 14942,
+      "sha256": "5cf1af83cc6c2ce2200e9d9546df985cce0e9d871c9a7dfa4ea9e5162f2a2643",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/terminal.test.ts",
+      "bytes": 4270,
+      "sha256": "3fb22e26c3f4f3c2094e5b2c60aa6ab1a1cda51ba7cc8090621bb2e020cf8bd7",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 15628,
+      "sha256": "dc68b8763b0187b09d9e1cc61a343522e503077bb4805fe96ba036ef6f7bba56",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/interaction/src/observation/reads.ts",
+      "bytes": 970,
+      "sha256": "6e7db57ba350dba840dc0a33ff909662db5a2162ca230750c2ed77e1066e1063",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 10852,
+      "sha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.ts",
+      "bytes": 7722,
+      "sha256": "5c8eaafd8a033d89a011b683a84cf1d7daf2cec3c85f2a94ea4bc7ba6adabdbe",
+      "commit": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01e/ack-boundary-red-exit.json",
+      "bytes": 15,
+      "sha256": "f468f8bf84d59a390a40e5d5ac0291111e0e6eeb79821864810ae628cbd3507e"
+    },
+    {
+      "path": "docs/evidence/tui01e/ack-boundary-red.txt",
+      "bytes": 2716,
+      "sha256": "1b99fa6c27efd123ab374c991b69835896d42f19321b33243fbeed85b4b3cb7e"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-consumers-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-consumers.txt",
+      "bytes": 645,
+      "sha256": "be3f3b298ead1b4336771ef21de2cb2f59231e42fc83c2dd03dd11008fdb838d"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-first-green-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-first-green.txt",
+      "bytes": 329,
+      "sha256": "a1fa357893efa6316ee69379272d085b5ea30a66c856b981c4334a1adccae6d1"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-next-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-next.txt",
+      "bytes": 330,
+      "sha256": "a2c5d2fc43c51e61f21758f7f98827f41715e3994b55434ce17c7d376667bffc"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-red-exit.json",
+      "bytes": 10,
+      "sha256": "fb20e1b6868a185adca3015e702f1388b427aafacd76e04749a1826ccc75107c"
+    },
+    {
+      "path": "docs/evidence/tui01e/controller-red.txt",
+      "bytes": 1348,
+      "sha256": "9c45036b73fec84ac8df89d4d5f3b8c1b21804ed77343060ee27d2f4246a6ef1"
+    },
+    {
+      "path": "docs/evidence/tui01e/install-confirmed.txt",
+      "bytes": 118,
+      "sha256": "738669cb9615cdf0d83cde0f5c920b78815332e888784a2c49a828b20a38154b"
+    },
+    {
+      "path": "docs/evidence/tui01e/install-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "path": "docs/evidence/tui01e/install.txt",
+      "bytes": 716,
+      "sha256": "08cf249cdfc8f9bcc367c04a20393396f4bc6c2789373886e8b2ca25e3d0fdc5"
+    },
+    {
+      "path": "docs/evidence/tui01e/journey-final-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    },
+    {
+      "path": "docs/evidence/tui01e/journey-final.txt",
+      "bytes": 2331,
+      "sha256": "001fbb530a3fd2d256d83da5d4c9fa0591f41b7b8ffbfe242324b639ce4007ec"
+    },
+    {
+      "path": "docs/evidence/tui01e/journey-first-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    },
+    {
+      "path": "docs/evidence/tui01e/journey-first.txt",
+      "bytes": 2331,
+      "sha256": "f3fbc362f96579c77cbe5bf4416abeaa0953e41f2a76f809031121f764998e2f"
+    },
+    {
+      "path": "docs/evidence/tui01e/space-after.json",
+      "bytes": 222,
+      "sha256": "890051468e2001b083b6a99a99e7775317a8ab9f56381da200259a051ed66bf1"
+    },
+    {
+      "path": "docs/evidence/tui01e/space-before.json",
+      "bytes": 186,
+      "sha256": "3db3ac1f0ab947f1969596018f77e430e182becb69a1ef3c97d4f99fd4f4c931"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-final-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-first-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-first.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-next-exit.json",
+      "bytes": 15,
+      "sha256": "9f25a9311c359a3a3cdcf244b61327256fddbd4ee2e2b71b258232d8cace9eca"
+    },
+    {
+      "path": "docs/evidence/tui01e/types-next.txt",
+      "bytes": 1585,
+      "sha256": "9bcf1c5ae2d3222ba625d20a459363c089524d12b3c153e9ba028d2b01201530"
+    }
+  ],
+  "derived": [
+    {
+      "path": "docs/evidence/tui01e/protected-inputs.json",
+      "bytes": 4155,
+      "sha256": "18b8dfb8553e01515b1f5af9b76db16ef0d7f6a282f46b4d94a8f8defa53030d"
+    },
+    {
+      "path": "docs/evidence/tui01e/journey-measurements.json",
+      "bytes": 1526,
+      "sha256": "38ef0adfdb101d9edc8601daaf4fb7972c50e750a21eefd6cf0674e2b7822ec5"
+    },
+    {
+      "path": "docs/evidence/tui01e/install-wrapper-note.json",
+      "bytes": 369,
+      "sha256": "23eea66078121ef2a25d5436a0f69c11f81b39d7db28d1a4e262c25598dec3a6"
+    }
+  ],
+  "claim": {
+    "path": "docs/evidence/tui01e/claim.json",
+    "bytes": 948,
+    "sha256": "86b2457a0eb08e9efab7bbb9c43f2d10dcbcab3f06e675fd9b9de9516b0f2fb3"
+  },
+  "checks": {
+    "distinct": 41,
+    "new": 13,
+    "unchangedDirectConsumers": 28,
+    "batches": [
+      {
+        "path": "docs/evidence/tui01e/controller-consumers.txt",
+        "passed": 37,
+        "durationSeconds": 2.28
+      },
+      {
+        "path": "docs/evidence/tui01e/journey-final.txt",
+        "passed": 4,
+        "durationSeconds": 15.68
+      }
+    ],
+    "typecheck": {
+      "stdout": "docs/evidence/tui01e/types-final.txt",
+      "receipt": "docs/evidence/tui01e/types-final-exit.json",
+      "exitCode": 0
+    },
+    "historicalFailuresRetained": [
+      "controller-red.txt:1",
+      "ack-boundary-red.txt:2 selected;7 unselected",
+      "types-next.txt:2 test DTO missing explicit defaults",
+      "install-wrapper-note.json:wrapper error after installer success"
+    ],
+    "reviewerChecks": "NOT_RUN / not yet independently reviewed"
+  },
+  "limits": [
+    "No provider or actual browser alternation",
+    "Queue read retains one 20-item preview page; no claim of bounded entire HTTP download or all turn bodies",
+    "Disk journal restart is not OS hardkill/power-loss proof",
+    "Pause does not stop current task; resume may start configured execution",
+    "Main integration not performed"
+  ]
+}

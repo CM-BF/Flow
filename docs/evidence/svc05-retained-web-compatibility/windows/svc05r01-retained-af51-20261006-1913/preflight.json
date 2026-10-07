@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-06T19:12:51.340995+00:00",
+  "freeBytes": 1499856896,
+  "files": [
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 26731,
+      "sha256": "a8d30e720c1f2c73046f590a28884bc0acaf4f5f8162b0c9c2c282c730109776"
+    },
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 12523,
+      "sha256": "6887416a82758579fb87885911a2710a8131ca847cd665de850f283e6771023a"
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 5165,
+      "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46"
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 8743,
+      "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa"
+    }
+  ],
+  "sourceDigest": "984aff592623b350df3d53d6aff115994a6cb4a49775f1216aba2626fa05e71d",
+  "source": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc05-retained-web-compatibility",
+      "experiments/personal-current-release/browser.mjs",
+      "experiments/personal-current-release/fixture.mjs",
+      "experiments/personal-current-release/inventory.mjs",
+      "experiments/personal-current-release/transport.mjs",
+      "plans/svc05-retained-web-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/personal-retained-web-compatibility",
+    "origin": "new",
+    "taskId": "SVC05R01",
+    "worker": "assignment_review",
+    "claimId": "ccb8ac1a-7657-492e-98d3-fdbfd9b7a051",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+    "createdAt": "2026-10-06T18:38:12.239Z",
+    "updatedAt": "2026-10-06T18:38:12.239Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "mode": "Builtin fixed file/link reads only; no extra import/PG/Chrome",
+  "priorWorkDebitMs": 2927,
+  "remainingWorkMs": 87073,
+  "cumulativeWorkBudgetMs": 90000,
+  "dependencyDelta": "a3ad296df9fdcc9330490084353f5cc91bbcf8e2",
+  "independentReviewSha256": "e1ec48dc5fd225001673084bae42d048f4894a02353e4a41c0bc1b7419b738c6"
+}

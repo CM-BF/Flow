@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07 02:33:59 UTC",
+  "state": "NOT_RUN",
+  "change": "One deterministic regression forces EPERM only while the current own child is confirmed exited/unreaped; after actual reap delegate signal-zero to OS. The historical unknown remains and final state must be absent with no failures/signals. Shared implementation is unchanged.",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_unreaped_eperm_remains_history_after_own_reap_confirms_absence",
+    "SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent",
+    "SupervisionTests.test_signal_permission_failure_does_not_escalate",
+    "SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped"
+  ],
+  "selected": 4,
+  "unselected": 12,
+  "newCases": 1,
+  "directConsumers": 3,
+  "maximumSeconds": 10,
+  "rawBytesMax": 65536,
+  "freshFreeBytes": 1077936128,
+  "runner": "Existing OPS14 supervise with bounded capture and parent independent alarm; no new supervision loop",
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "probeReruns": 0,
+  "sourceBindings": [
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 13851,
+      "sha256": "fd56da8d02485bb1911856d0c9337c00a7e2c1ca2964efa60b0f20a0112a53ed"
+    },
+    {
+      "path": "docs/evidence/ops14/interface.md",
+      "bytes": 4182,
+      "sha256": "c535057de0a3451d817941c381315b7aed892d5ca37043dda02d99417acd9b25"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ]
+}

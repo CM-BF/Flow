@@ -1,0 +1,24 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/runtime-capacity.test.ts > settles all slots when a goal tool consumer catches its own authorization rejection
+Error: Test timed out in 8000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ apps/runner/src/runtime-capacity.test.ts:347:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/runtime-capacity.test.ts > keeps a goal permission denial local while a second known attempt continues
+Error: Expected bounded runner behavior did not occur.
+ ❯ eventually apps/runner/src/runtime-capacity.test.ts:21:62
+     19| async function eventually(condition: () => boolean | Promise<boolean>)…
+     20|   const until = Date.now() + 4000;
+     21|   while (!await condition()) { if (Date.now() > until) throw new Error…
+       |                                                              ^
+     22| }
+     23| function held(context: HarnessContext): Promise<void> {
+ ❯ apps/runner/src/runtime-capacity.test.ts:381:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

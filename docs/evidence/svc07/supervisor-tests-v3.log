@@ -1,0 +1,21 @@
+test_complete_combined_output_and_exit (__main__.SupervisionTests.test_complete_combined_output_and_exit) ... OWNED_SPAWN {"pid": 99595, "pgid": 99595, "startedAt": "2026-10-06T20:29:42.196981+00:00"}
+OWNED_RESULT {"spawn": {"pid": 99595, "pgid": 99595, "startedAt": "2026-10-06T20:29:42.196981+00:00"}, "pid": 99595, "exit": 0, "reason": null, "stdoutEof": true, "retainedBytes": 6, "observedBytes": 6, "rawComplete": true, "groupState": {"state": "absent", "errno": null}, "groupAbsent": true, "observations": [{"state": "absent", "errno": null}], "signals": [], "secondaryFailures": []}
+ok
+test_deadline_kills_a_child_ignoring_termination (__main__.SupervisionTests.test_deadline_kills_a_child_ignoring_termination) ... OWNED_SPAWN {"pid": 99624, "pgid": 99624, "startedAt": "2026-10-06T20:29:42.219268+00:00"}
+OWNED_RESULT {"spawn": {"pid": 99624, "pgid": 99624, "startedAt": "2026-10-06T20:29:42.219268+00:00"}, "pid": 99624, "exit": -9, "reason": "DEADLINE", "stdoutEof": false, "retainedBytes": 0, "observedBytes": 0, "rawComplete": false, "groupState": {"state": "absent", "errno": null}, "groupAbsent": true, "observations": [{"state": "present", "errno": null}, {"state": "present", "errno": null}, {"state": "absent", "errno": null}], "signals": [{"state": "sent", "errno": null, "signal": 15}, {"state": "sent", "errno": null, "signal": 9}], "secondaryFailures": []}
+ok
+test_leader_exit_with_descendant_is_not_success (__main__.SupervisionTests.test_leader_exit_with_descendant_is_not_success) ... OWNED_SPAWN {"pid": 391, "pgid": 391, "startedAt": "2026-10-06T20:29:42.875326+00:00"}
+OWNED_RESULT {"spawn": {"pid": 391, "pgid": 391, "startedAt": "2026-10-06T20:29:42.875326+00:00"}, "pid": 391, "exit": 0, "reason": "DEADLINE", "stdoutEof": false, "retainedBytes": 14, "observedBytes": 14, "rawComplete": false, "groupState": {"state": "unknown", "errno": 1}, "groupAbsent": false, "observations": [{"state": "present", "errno": null}, {"state": "present", "errno": null}, {"state": "unknown", "errno": 1}], "signals": [{"state": "sent", "errno": null, "signal": 15}, {"state": "unknown", "errno": 1, "signal": 9}], "secondaryFailures": []}
+ok
+test_output_overflow_is_bounded_and_unknown (__main__.SupervisionTests.test_output_overflow_is_bounded_and_unknown) ... OWNED_SPAWN {"pid": 742, "pgid": 742, "startedAt": "2026-10-06T20:29:43.026837+00:00"}
+OWNED_RESULT {"spawn": {"pid": 742, "pgid": 742, "startedAt": "2026-10-06T20:29:43.026837+00:00"}, "pid": 742, "exit": -15, "reason": "OUTPUT_LIMIT", "stdoutEof": false, "retainedBytes": 128, "observedBytes": 8192, "rawComplete": false, "groupState": {"state": "absent", "errno": null}, "groupAbsent": true, "observations": [{"state": "present", "errno": null}, {"state": "absent", "errno": null}, {"state": "absent", "errno": null}], "signals": [{"state": "sent", "errno": null, "signal": 15}], "secondaryFailures": []}
+ok
+test_permission_unknown_does_not_signal_or_replace_output_limit (__main__.SupervisionTests.test_permission_unknown_does_not_signal_or_replace_output_limit) ... OWNED_SPAWN {"pid": 784, "pgid": 784, "startedAt": "2026-10-06T20:29:43.048694+00:00"}
+OWNED_RESULT {"spawn": {"pid": 784, "pgid": 784, "startedAt": "2026-10-06T20:29:43.048694+00:00"}, "pid": 784, "exit": 0, "reason": "OUTPUT_LIMIT", "stdoutEof": false, "retainedBytes": 2, "observedBytes": 20, "rawComplete": false, "groupState": {"state": "unknown", "errno": 1}, "groupAbsent": false, "observations": [{"state": "unknown", "errno": 1}, {"state": "unknown", "errno": 1}, {"state": "unknown", "errno": 1}], "signals": [], "secondaryFailures": []}
+ok
+test_signal_permission_failure_is_explicit_unknown (__main__.SupervisionTests.test_signal_permission_failure_is_explicit_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.876s
+
+OK

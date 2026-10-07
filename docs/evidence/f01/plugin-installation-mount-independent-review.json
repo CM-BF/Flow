@@ -1,0 +1,65 @@
+{
+  "reviewer": "assignment_review / gpt-6-astra, independent from implementation author Execution Lead",
+  "reviewedAt": "2026-10-06T15:03:04.515371+00:00",
+  "decision": "APPROVED",
+  "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+  "evidenceDelivery": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "manifest": "docs/evidence/f01/plugin-installation-mount-manifest.json",
+  "manifestSha256": "eafa7f60a01172c2b9ddc8732105a2170d097ec0f2f063259d814eb0ab4b287d",
+  "binding": {
+    "path": "/tmp/flow-f01-plugin-installation-mount-bindings.json",
+    "sha256": "87c5708aded950eea09757bcea6c1fdf31c79c389a086b9e0f29a1266f689a54",
+    "counts": {
+      "sources": 10,
+      "raw": 13,
+      "approvedDomainInputs": 6
+    },
+    "mismatches": []
+  },
+  "findings": [],
+  "scope": [
+    "Complete ten-file production/configuration/CLI delta at the fixed target.",
+    "Private host configuration extraction, default-off policy, migration 029 placement and owner authentication, CLI stable key/body/error/abort transport, actual factory restart and resource cleanup.",
+    "Approved domain a578 and thin client 67fd consumed as fixed inputs; no repeated full-domain approval."
+  ],
+  "assessment": [
+    "Both real configuration consumers share a bounded owned-file reader. O_NOFOLLOW/O_NONBLOCK and descriptor fstat reject symlink/FIFO/nonregular/non-0600/unowned input; allocation/read bound remains 65537 bytes and fatal UTF-8 parsing has a generic nonsecret error.",
+    "Strict host policy allows only canonical absolute roots, bounded store IDs and at most 512 SHA256 digests. No request or JSON field can invent executionSettled proof. Missing config disables installation routes.",
+    "Factory migration 029 follows existing 028 and completes before scheduler/serving. Existing owner-auth hook governs the optional routes. Approved domain remains the sole operation, quota, lifecycle and state authority.",
+    "CLI mutation commands require the caller stable key and use bounded strict JSON input. Public client paths/auth/signal are reused without retry or replacement keys. Conflict exits 3; transport/abort exits 4; malformed/missing input exits 2.",
+    "Production test uses actual createServer and public HTTP/CLI with a loopback registry, trusted config and dedicated random PostgreSQL database. It verifies routes disabled by default, 029, static installation, denied runner/invalid credential, persisted receipt replay after factory restart, no second download, and runtime unavailable.",
+    "Teardown preserves identity checks and verifies owners closed, connections empty, database dropped and owned root removed. Installed material is never asserted enabled, loaded or callable."
+  ],
+  "authorEvidenceObserved": {
+    "configuration": "4 passing (2 new and 2 old direct consumers), initial red was missing-module/0-tests and is not counted as a behavioral pass.",
+    "cliHttp": "1 red then 1 green, green 36 ms.",
+    "productionHttpPg": "1 passing, 2069 ms test / 3.91 s suite; database 12360727 bytes; before/connections/remaining empty, root removed.",
+    "typecheck": "Empty stdout plus preserved exit file 0; not invented stdout.",
+    "providerCalls": 0
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "postgresQueries": 0,
+    "providerCalls": 0,
+    "projectWrites": 0,
+    "personalServiceOperations": 0,
+    "actions": [
+      "Read full delta and relevant direct seams",
+      "Read saved raw outputs and cleanup facts",
+      "Recompute fixed/current/source and raw SHA256/byte bindings",
+      "Write reviewer JSON only under /tmp"
+    ]
+  },
+  "limitations": [
+    "Production entry env plumbing read in source; no new standalone main child-process signal test was run by author for this delta.",
+    "Restart evidence is orderly createServer close/recreate, not OS kill, power loss or arbitrary interrupted extraction.",
+    "No personal-service activation, package load/enable/callability, dependency-closure lifecycle or new execution-settled proof.",
+    "Existing domain and thin-client reviews remain separate; this review does not expand their proven scope."
+  ],
+  "skillsApplied": [
+    "Local find-skills method reused with installed skills; no installation.",
+    "codebase-design: shared private config reader has two real consumers; domain retains state ownership.",
+    "clean-code: checked errors, bounded reads, naming, dependency direction, duplication and focused behavioral evidence."
+  ]
+}

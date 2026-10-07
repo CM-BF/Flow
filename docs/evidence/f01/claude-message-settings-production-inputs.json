@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06 17:29:14 UTC",
+  "newSource": "0ee2494ed4298169c56ac3a6950fa1910ed62a7a",
+  "controlledInputs": [
+    {
+      "receipt": "docs/evidence/f01/claude-message-settings-core-input.json",
+      "source": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "files": 34,
+      "exact": true
+    },
+    {
+      "receipt": "docs/evidence/f01/claude-message-settings-client-input.json",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "files": 9,
+      "exact": true
+    }
+  ],
+  "allMaterialized": true,
+  "sourceFiles": 179,
+  "externalSQL": 29,
+  "packageEntries": 15,
+  "configurations": 11,
+  "missing": [],
+  "focusedTypes": "first2 -> final0; original raw retained; not root",
+  "PG": "NOT_RUN",
+  "provider": 0
+}

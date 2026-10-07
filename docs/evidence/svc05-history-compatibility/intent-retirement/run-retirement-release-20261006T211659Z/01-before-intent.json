@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T21:18:27.509317+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2118",
+  "id": "01-before",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nlet value; try { value={outcome:'observed',facts:await observeLegacyIntent(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"))}; } catch(e) { value={outcome:'unknown',code:/^[A-Z0-9_]+$/.test(e.code??e.message)?e.code??e.message:'OBSERVATION_UNKNOWN'}; process.exitCode=1; }\nif(Buffer.byteLength(JSON.stringify(value))>4*1024*1024)throw Error('REPORT_BOUND'); await durable(process.argv[1],value); console.log(JSON.stringify({outcome:value.outcome,code:value.code}));",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/01-before.json"
+  ],
+  "freeBytes": 1266446336,
+  "rawBytes": 6569,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": null,
+  "state": "intended-not-a-result"
+}

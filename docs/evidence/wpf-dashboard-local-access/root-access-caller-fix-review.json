@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T03:20:43.320351+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_SCOPED_CALLER_FIX_PREPARATION_NOT_BROWSER_PASS",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadata": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+  "errors": [],
+  "scriptPins": {
+    "run.py": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f",
+    "worker.mjs": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+  },
+  "syntheticActual": {
+    "state": "PASSED",
+    "syntheticOnly": true,
+    "cases": [
+      {
+        "case": "enoent",
+        "testPassed": true,
+        "expectedParentState": "PASSED",
+        "actualParentExit": 0,
+        "bothEOF": true,
+        "groupAbsent": true,
+        "scratchRemoved": true
+      },
+      {
+        "case": "permission",
+        "testPassed": true,
+        "expectedParentState": "FAILED",
+        "actualParentExit": 1,
+        "bothEOF": true,
+        "groupAbsent": true,
+        "scratchRemoved": true
+      }
+    ],
+    "elapsedMs": 403.83262501563877,
+    "runnerSha256": "88e3ef0f47159abffc3f2ef6ad1f218ba79644c8201f93e3d45740763d5f39d8",
+    "limitations": "Actual parent code with mocked filesystem failure/statvfs and substituted bounded Python child. No Chrome/Node product/import/HTTP/PG/listener. Worker Chrome log finalization source-only, not dynamically tested."
+  },
+  "sourceOnlyPostTestDelta": "--- \n+++ \n@@ -3,6 +3,7 @@\n \n def stop(signum,frame):\n  interrupts.append(signum)\n+ if 'report' in globals():report['state']='FAILED'\n  if process and process.poll() is None:\n   signal_owned(signal.SIGTERM)\n signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)\n",
+  "reviewed": [
+    "ENOENT walk races do not abort normal transient-directory sampling; other IO failures retain FAILED.",
+    "Exceptional path drains owned output through bounded cleanup, separates primary and cleanup errors, reaps worker and requires actual group absence before scratch removal.",
+    "Final Chrome log sealed after stop/EOF and observed/retained/truncated counts disclosed.",
+    "Remaining total52519ms includes15000cleanup; previous conservative7481ms retained, original product and five assertions unchanged."
+  ],
+  "limits": [
+    "No Chrome rerun in this review; worker final logging remains source-only until native followup.",
+    "Synthetic filesystem failure/statvfs and Python child are substitutes, not product or native-browser results.",
+    "Latest two late-signal assignments are source-reviewed after synthetic tested parent hash; not claimed dynamically re-tested.",
+    "Heavy window currently S01, no ACCESS run or reservation."
+  ],
+  "next": "One original-five-group native followup after actual heavy handoff and fresh source/dependency/owned resources checks, then independent actual/visual review."
+}

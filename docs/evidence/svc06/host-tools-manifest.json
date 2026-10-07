@@ -1,0 +1,402 @@
+{
+  "at": "2026-10-07T03:07:58.428766+00:00",
+  "sourceTarget": "2affec4cc7a899082cbf48fce5bbd0f77293676c",
+  "base": "59c0fccb41e33076d50c5f782683c9f3fd25061e",
+  "evidenceRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990",
+  "review": "PENDING_EXECUTION_LEAD",
+  "implementationFiles": [
+    "tools/personal-preview/backend-release/dependency-plan.mjs",
+    "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+    "tools/personal-preview/backend-release/runtime-installation.mjs",
+    "tools/personal-preview/backend-release/runtime-installation.test.mjs"
+  ],
+  "checks": {
+    "distinct": 8,
+    "selectedExecutions": 10,
+    "rounds": 4,
+    "red": 2,
+    "selectorGreen": 7,
+    "stagingGreen": 1,
+    "fixedMainSelection": "a2e7803161ffb7e2158eaf3c13531448d2a777b0; exit0; not a test or installation",
+    "snapshots": 271,
+    "importers": 7,
+    "cumulativeSupervisorMs": 656,
+    "rawBytes": 10059,
+    "allOwnedGroupsAbsent": true,
+    "allTmpRemoved": true,
+    "install": "NOT_RUN",
+    "fullArtifact": "NOT_RUN",
+    "runtimeResolution": "NOT_RUN",
+    "unaffectedParserBuilderChecks": "NOT_RERUN"
+  },
+  "bindings": [
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10887,
+      "sha256": "1ed90368b61d4cf1854e3a592d3d12401fa0aa7ed5087ca0976dfdafb31de6de",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 10512,
+      "sha256": "8c279176e8b04ca30e3f4357e86601a7109b22081f071de204595a2fd737b0be",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10613,
+      "sha256": "0794086c527e9e8d26cdf985b59f42412b1a1a37935a3ef97bdaef4ca24cb09c",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4145,
+      "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "protectedDirectInput",
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "fixedRef": "2affec4cc7a899082cbf48fce5bbd0f77293676c"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "pnpm-lock.yaml",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/cli/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/execution-dashboard/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/runner/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/server/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/tui/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "apps/web/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "packages/client/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "packages/contracts/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "packages/interaction/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "packages/plugin-runtime/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "packages/protocols/package.json",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "tools/personal-preview/static-web.mjs",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "tools/personal-preview/preview.mjs",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "fixedMainSelectionInput",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "fixedRef": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "currentBasis": "fixed Git object; author checkout workspace manifests intentionally not used for this selection"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095"
+    },
+    {
+      "kind": "runtimeInput",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/fixed-source/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/fixed-source/stdout.txt",
+      "bytes": 6938,
+      "sha256": "999a8da4b05b7f0925a5e429737e344445f12d63901bcf7a06a117d90b6d1a00",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/fixed-source-selection.mjs",
+      "bytes": 2215,
+      "sha256": "27eac3d639d0ff8c8cbd912611ec7a847c4f82a83cc9521f6a2e780eb1cd5933",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/red/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/red/stdout.txt",
+      "bytes": 2016,
+      "sha256": "c03e495ce3c54ddd2131c5e2f0923df50c7dd8283c671f95fe444262b7571599",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/run.json",
+      "bytes": 12029,
+      "sha256": "a745683721d618a8f89c009401a877e5621f7f6d837c974714acc409d0192663",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/selector/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/selector/stdout.txt",
+      "bytes": 878,
+      "sha256": "263aa12aa1f29f889522a1e8384bc28876930209c19a513e1e9795e7a63a6657",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/staging/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-validation-20261007/staging/stdout.txt",
+      "bytes": 227,
+      "sha256": "a441f66811ad4903050dc2613670b4e279683e1f40fea053c208deb50e373144",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-checks.md",
+      "bytes": 2242,
+      "sha256": "806c316353127998da2938e8ff258fd075d46775b4ebfcd2beccfa7ba563e3b5",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-interface.md",
+      "bytes": 2079,
+      "sha256": "50cbd7e1c2a8b6e2741cf26a043ea5614ad0bf34d6f81745d8f54b6e69ce8332",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-builder-main-receipt.json",
+      "bytes": 2126,
+      "sha256": "20d43d270ab8b68c2278d0a55c1ddbc348269c5876b52e1b11f7838f1475de68",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-result.json",
+      "bytes": 2434,
+      "sha256": "84eab09d6b4becd2182057e82f3a06022cc8e6291a6c53210bb4ba56691423d4",
+      "fixedRef": "ac919444bfbd3a255fa52d3afc3b07fae340e990"
+    }
+  ]
+}

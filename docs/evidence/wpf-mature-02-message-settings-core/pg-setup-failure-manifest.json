@@ -1,0 +1,330 @@
+{
+  "kind": "faithful failed PG setup evidence; not feature approval",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "executionHead": "723d4bb153be418584f34f77dab42cb67fac8243",
+  "result": "FAILED_BEFORE_ALL",
+  "counts": {
+    "failedSuites": 1,
+    "collectedTests": 8,
+    "passedTests": 0,
+    "failedTestAssertions": 0,
+    "skippedTests": 8
+  },
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/claude-message-settings.test.ts",
+      "bytes": 8912,
+      "sha256": "d32fd813b9b006e49da500a180a173eb7f6ce16fe2d6ad36de75df89fb80d5b4",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 5186,
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3555,
+      "sha256": "44b0920a744c9c162f87fd479be8e87e5c3e1175b4a145d22f6a1b175d2d17de",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 12390,
+      "sha256": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11494,
+      "sha256": "0d203aab9ba58988d4ab7078218e9741d8ae1dbcacbaadf280d6d25212b685d5",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3774,
+      "sha256": "a77004b33ef72ec5e036e6bddcc95947b116ded0b10d66f043502dc3c3f36f88",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "bytes": 3089,
+      "sha256": "ec67151a82096f45128f9a4731f52be021968dd6f2289186e38523d6d42c8852",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/gate.ts",
+      "bytes": 2406,
+      "sha256": "2d25d14f389e264e4deee2330988d0c2ada9f8424441a20136c5a9c507b96c31",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4279,
+      "sha256": "14681d64c9809ff3059ad6014f281f25d77bcdfa83663f184299ad82b5896646",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2404,
+      "sha256": "d9c9e02017f66ddfc8b2b61c97f95c8fb933f63eb4d759d2260078eff936aba8",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "bytes": 3973,
+      "sha256": "7f53812e5cde726f5e6aaf74cd9376a4f7e8c08e0344460bced39022aecb6723",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 5515,
+      "sha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3834,
+      "sha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings-fixture.ts",
+      "bytes": 12569,
+      "sha256": "2440589ee6d89e43907236f0c966ae0c7353bd20f61da1e7927915931897c9af",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings-migration.ts",
+      "bytes": 769,
+      "sha256": "2171678ddf764ac95923ee982a1ea8b7b3635f21697da8065a0720bf60827e63",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.test.ts",
+      "bytes": 21171,
+      "sha256": "8d65be70cf7e3c239b9604b05488895bc5f0eec793a1f916ef95b7c7ed1a3db6",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3585,
+      "sha256": "c197d278a3f662cc5d8fabe906b637fe27ef91df9492678f2fc2b36b091a37f0",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 8395,
+      "sha256": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 4173,
+      "sha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2845,
+      "sha256": "682246b4e4a52e8312cbf97cda981b596beb019c53ef6e79dd49f6d7282b0b42",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 13611,
+      "sha256": "90acdc1b0c34b242f31db8ba4ba99a3d0998b3cf00f01a127dfb56794bb06d9d",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11824,
+      "sha256": "ad3184092d86c16cb2ef6e45e3ecfb98dadafd964e8180dc8971a25e080843a7",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/claude-message-settings.test.ts",
+      "bytes": 8873,
+      "sha256": "18ed77abe1a065ba936d5150b3bfcb8b17464d3b65152e98c5c22d90424b3eab",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.test.ts",
+      "bytes": 7216,
+      "sha256": "6b2f2fe959563997d2d949475d641123dadbdc70cab10f905e94cd6753e95f6a",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    },
+    {
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed",
+      "gitCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4"
+    }
+  ],
+  "configurations": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-vitest.config.ts",
+      "bytes": 2587,
+      "sha256": "edbf635e5405334ffad6e5a3d7e45d64941a4028b9277132acf84f0b2c83546c"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-vitest.config.ts",
+      "bytes": 262,
+      "sha256": "4cce7a0f8a768febc85ac2421e911cd9f4febdf4cceae7b222fb1bf238c385c6"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-tsconfig.json",
+      "bytes": 2746,
+      "sha256": "e4caee2501b166ec38bc17f3d9fdde3c5c50c5c72caaba2c5744ee53b55afbb1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/contracts-only-tsconfig.json",
+      "bytes": 257,
+      "sha256": "9aa3a7579a4cb5864ba9867812121db3d80be04aaae3c1c0162ac8e4edc82a2f"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-20261006-1649.preflight.json",
+      "bytes": 1028,
+      "sha256": "c8957603edad44e50496603ef0d20fbb335430707d12d4caa4bd07707e77e146"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-20261006-1649.stdout.log",
+      "bytes": 3239,
+      "sha256": "c1fc792c97fd1836d32fb3e3fc94e2409ed30f92a012490cf10ac5bba2c10352"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-20261006-1649.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-20261006-1649.fixture.json",
+      "bytes": 611,
+      "sha256": "60132d6b2d75c7228e1e484ddd515997b1a408844548bc25d004d1886be69272"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-20261006-1649.receipt.json",
+      "bytes": 3131,
+      "sha256": "7f9822dbf1f1415461f3acee5cb452dcd4c89c8c5710a947a54f3dc247e374b2"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json",
+      "bytes": 62383,
+      "sha256": "22be50f204f5125371c06ba1cf8b0d318b31cc04c615ca28f88d5565ddd448ad",
+      "gitCommit": "1671ed6cffed2e393f938a60f30ed75be1ffbe7b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md",
+      "bytes": 4116,
+      "sha256": "cf64f29d6c4b2e97f92287167469f9fbdb5cf19fb5ca1bf4dfd9194479feb335",
+      "gitCommit": "723d4bb153be418584f34f77dab42cb67fac8243"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-migration-read-closure-supplement.json",
+      "bytes": 2123,
+      "sha256": "f5a829f0a4d085eac718537ef4968532b91263f2271aff416571702be59b2e19"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-once-result.md",
+      "bytes": 2127,
+      "sha256": "cb16d8ae7916ee218a2a25528436b64bcc8ab814f4a0731ef656bcab15cedf98"
+    }
+  ],
+  "readonlyInputs": "194 existing fixed inputs remain bound by vertical-local-validation-manifest; four absent-at-run SQL require the separate Git-only supplement, not retroactive WT equality",
+  "cleanup": {
+    "database": "flow_message_settings_22a12ff7c14849f8be3ecae6634043e7",
+    "creationRequested": true,
+    "counts": {
+      "tasks": 1,
+      "attempts": 0
+    },
+    "requests": 0,
+    "appClosed": true,
+    "bossClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "connections": 0,
+    "absent": true,
+    "errors": [],
+    "elapsedMs": 537.2178329999999,
+    "finishedAt": "2026-10-06T16:52:30.801Z",
+    "pre032Absent": true,
+    "providerCalls": 0
+  },
+  "runtime": {
+    "elapsedMs": 1921.4143749559298,
+    "rawBytes": 3239,
+    "ownedProcessExited": true,
+    "cacheRemoved": true,
+    "ownTemporaryRootRemoved": true,
+    "freeAfterBytes": 1212690432
+  },
+  "retry": false,
+  "providerCalls": 0,
+  "windowReturned": true,
+  "pending": [
+    "Lead readonly four-SQL materialization",
+    "new separately authorized PG window",
+    "all eight case assertions",
+    "F01 production mount/shared client and UI consumers"
+  ]
+}

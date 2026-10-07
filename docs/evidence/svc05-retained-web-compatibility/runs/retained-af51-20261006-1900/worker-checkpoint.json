@@ -1,0 +1,16 @@
+{
+  "results": [],
+  "passed": false,
+  "errors": [
+    "Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@flow/client' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n    at packageResolve (node:internal/modules/esm/resolve:784:25)\n    at moduleResolve (node:internal/modules/esm/resolve:873:18)\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\n    at nextStep (node:internal/modules/customization_hooks:189:26)\n    at resolveBaseSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092)\n    at resolveDirectorySync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398)\n    at resolveTsPathsSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:13605)"
+  ],
+  "providerQueries": 0,
+  "personalActions": 0,
+  "centerUrl": "http://127.0.0.1:63896",
+  "centerPort": 63896,
+  "runnerId": "dd89b05b-0562-4e3c-b2f9-04e64d1b2050",
+  "failure": "Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@flow/client' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n    at packageResolve (node:internal/modules/esm/resolve:784:25)\n    at moduleResolve (node:internal/modules/esm/resolve:873:18)\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\n    at nextStep (node:internal/modules/customization_hooks:189:26)\n    at resolveBaseSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092)\n    at resolveDirectorySync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398)\n    at resolveTsPathsSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:13605)",
+  "runnerStopped": true,
+  "centerClosed": true,
+  "closeErrors": []
+}

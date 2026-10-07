@@ -1,0 +1,51 @@
+{
+  "mode": "startup",
+  "digest": "54f9fb67dd5157e7ae8e511f6c6dd408e69cc966df02cc6e5f737b71d0ab6a90",
+  "command": [
+    "/usr/bin/python3",
+    "experiments/tui-web-control-handoff/terminal.py",
+    "--startup-only"
+  ],
+  "selected": 1,
+  "outcome": "passed",
+  "supervision": {
+    "driverPid": 12940,
+    "outcome": "processes-complete",
+    "phase": "work",
+    "samples": 32,
+    "ownedGroups": [
+      {
+        "pgid": 12940,
+        "state": "stopped"
+      }
+    ],
+    "reason": null,
+    "last": {
+      "free": 1181827072,
+      "privateBytes": 0,
+      "observedOutputBytes": 4056
+    },
+    "exitCode": 0,
+    "signalCode": null,
+    "elapsedMs": 1602
+  },
+  "pipesClosed": true,
+  "observedBytes": 4056,
+  "retainedBytes": 4056,
+  "primaryFailure": null,
+  "privatePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/terminal-startup/private",
+  "identity": {
+    "dev": 16777234,
+    "ino": 123199985
+  },
+  "metrics": {
+    "free": 1181855744,
+    "privateBytes": 0,
+    "observedOutputBytes": 4056
+  },
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "elapsedMs": 1675,
+  "privateRemoved": true
+}

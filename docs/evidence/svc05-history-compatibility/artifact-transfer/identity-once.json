@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-06T18:03:58.098Z",
+  "method": "GET",
+  "url": "http://127.0.0.1:61228/__flow_preview_identity",
+  "requests": 1,
+  "redirectsFollowed": 0,
+  "limitMs": 2000,
+  "maxBodyBytes": 4096,
+  "owned": {
+    "pid": 65219,
+    "group": 65219,
+    "identity": "running",
+    "listener": true
+  },
+  "outcome": "request-error",
+  "error": {
+    "name": "Error",
+    "code": "ECONNRESET",
+    "errno": -54,
+    "syscall": "read",
+    "cause": null
+  }
+}

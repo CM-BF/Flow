@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/runner/src/plugins/host.ts", "../../../apps/runner/src/plugins/host.test.ts"],
+  "exclude": ["../../../node_modules"]
+}

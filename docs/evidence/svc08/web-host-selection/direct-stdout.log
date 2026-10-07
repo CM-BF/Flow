@@ -1,0 +1,14 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-uj_ydr_1/flow-svc08-host-7hdRsv","dev":16777234,"ino":123428341,"cleaned":true,"bytes":95308,"calls":{"marker":2,"stop":1,"spawn":1,"ready":2,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection persists only Web artifact and authorizes only its Web service root (153.373375ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-uj_ydr_1/flow-svc08-host-HCY8Cw","dev":16777234,"ino":123428401,"cleaned":true,"bytes":95192,"calls":{"marker":3,"stop":1,"spawn":1,"ready":0,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles (192.454834ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-uj_ydr_1/flow-svc08-host-tZysRW","dev":16777234,"ino":123428464,"cleaned":true,"bytes":95353,"calls":{"marker":3,"stop":1,"spawn":1,"ready":1,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection final receipt unknown blocks legacy mutation after pending was cleared (208.730667ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 653.876333

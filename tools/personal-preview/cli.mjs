@@ -1,10 +1,20 @@
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { baseServiceEnvironment } from './environment.mjs';
-import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson } from './preview.mjs';
+import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration, replacePreviewWebHost } from './preview.mjs';
+import { maintenanceRuntime } from './backend-release/host.mjs';
+import { join } from 'node:path';
 try {
   const [action, flag, directory, ...rest] = process.argv.slice(2);
-  if (action === 'web') {
+  if (action === 'backend') {
+    const [subcommand, ...values] = process.argv.slice(3);
+    const options = {};
+    if (subcommand !== 'prepare' || values.length !== 8) throw new Error('USAGE');
+    for (let i = 0; i < values.length; i += 2) { if (Object.hasOwn(options, values[i])) throw new Error('USAGE'); options[values[i]] = values[i + 1]; }
+    if (Object.keys(options).sort().join() !== '--directory,--offline-store,--pnpm-cli,--target') throw new Error('USAGE');
+    const result = await preparePreviewBackend({ directory: options['--directory'], target: options['--target'], offlineStore: options['--offline-store'], pnpmCli: options['--pnpm-cli'] });
+    process.stdout.write(`${JSON.stringify(result)}\n`);
+  } else if (action === 'web') {
     const [subcommand, ...values] = process.argv.slice(3);
     if (values.length % 2) throw new Error('USAGE');
     const options = {};
@@ -13,7 +23,12 @@ try {
     let result;
     if (subcommand === 'prepare' && Object.keys(options).sort().join() === '--directory,--release-id,--target') result = await preparePreviewRelease({ directory: privateDirectory, target: options['--target'], releaseId: options['--release-id'] });
     else if (subcommand === 'import-compatibility' && Object.keys(options).sort().join() === '--directory,--report-directory') result = await importPreviewCompatibility({ directory: privateDirectory, reportDirectory: options['--report-directory'] });
-    else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
+    else if (subcommand === 'replace-host' && Object.keys(options).sort().join() === '--directory,--request') {
+      const input = await readPreviewJson(options['--request']);
+      if (Object.hasOwn(input, 'directory')) throw new Error('USAGE');
+      result = await replacePreviewWebHost({ ...input, directory: privateDirectory });
+      if (result.outcome !== 'ready') process.exitCode = 1;
+    } else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
       const input = await readPreviewJson(options['--request']);
       const allowed = ['expectedVersion', 'expectedBackendHead', 'compatibilityId', ...(subcommand === 'bootstrap' ? [] : ['artifact'])];
       if (Object.keys(input).sort().join() !== allowed.sort().join()) throw new Error('USAGE');
@@ -21,9 +36,12 @@ try {
     } else throw new Error('USAGE');
     process.stdout.write(`${JSON.stringify(result)}\n`);
   } else if (action === 'maintenance') {
-    const [subcommand, directoryFlag, privateDirectory, targetFlag, target, ...extra] = process.argv.slice(3);
-    if (directoryFlag !== '--directory' || !privateDirectory || extra.length || (targetFlag && targetFlag !== '--target') || (subcommand === 'refresh' ? !target : targetFlag)) throw new Error('USAGE');
-    const child = spawn(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./maintenance-host.mjs', import.meta.url)), subcommand, privateDirectory, ...(target ? [target] : [])], { env: baseServiceEnvironment('center'), cwd: fileURLToPath(new URL('../../', import.meta.url)), stdio: 'inherit' });
+    const [subcommand, directoryFlag, privateDirectory, option, value, ...extra] = process.argv.slice(3);
+    if (directoryFlag !== '--directory' || !privateDirectory || extra.length || (subcommand === 'refresh' ? option !== '--target' || !value : subcommand === 'bootstrap' ? option && (option !== '--backend-artifact' || !value) : option)) throw new Error('USAGE');
+    const config = await loadPreviewConfiguration(privateDirectory);
+    const runtime = await maintenanceRuntime(config);
+    const host = join(runtime.root, 'tools/personal-preview/maintenance-host.mjs');
+    const child = spawn(process.execPath, ['--import', 'tsx', host, subcommand, privateDirectory, subcommand === 'refresh' ? value : '', subcommand === 'bootstrap' && option ? value : ''], { env: baseServiceEnvironment('center'), cwd: runtime.root, stdio: 'inherit' });
     process.exitCode = await new Promise(resolve => { child.once('error', () => resolve(1)); child.once('exit', code => resolve(code ?? 1)); });
   } else if (action === 'internal-service') await runService(flag, directory);
   else {

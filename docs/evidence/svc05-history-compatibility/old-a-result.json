@@ -1,0 +1,97 @@
+{
+  "run": "history-20261006-152729-727a99",
+  "sourceCommit": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
+  "implementationTarget": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "exitCode": 1,
+  "startedAt": "2026-10-06T15:27:55.348Z",
+  "cleanupFinishedAt": "2026-10-06T15:27:59.219Z",
+  "elapsedMs": 3874,
+  "previousMs": 0,
+  "cumulativeMs": 3874,
+  "cumulativeBudgetMs": 180000,
+  "results": {
+    "attachmentOnly": "FAILED: actual native context-observation POST /api/runner/events HTTP500; latest history remains null",
+    "mixed": "FAILED: HTTP200 accepted1, but history materials=known knowledge-only; expected unknown/metadata-unavailable for unsupported combined v2 metadata",
+    "phaseB": "NOT_RUN",
+    "Chrome": "NOT_RUN",
+    "compatibilityId": null,
+    "providerQueries": 0
+  },
+  "cleanup": {
+    "databaseName": "flow_release03_76a0b643c070475ea1b8",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 381,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "finishedAt": "2026-10-06T15:27:59.219Z"
+  },
+  "observations": {
+    "minimumFreeBytes": 1103908864,
+    "freeAtEnd": 1102282752,
+    "attribution": "Shared filesystem measurements, not physical allocations attributable solely to this run"
+  },
+  "rawFiles": [
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+      "bytes": 130,
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+      "bytes": 333,
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+      "bytes": 169,
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+      "bytes": 10667,
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+      "bytes": 299,
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+      "bytes": 1779,
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+      "bytes": 12802,
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+      "bytes": 42857,
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+      "bytes": 11434,
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0"
+    }
+  ],
+  "noRerun": true,
+  "recordedAt": "2026-10-06 15:29:28 UTC"
+}

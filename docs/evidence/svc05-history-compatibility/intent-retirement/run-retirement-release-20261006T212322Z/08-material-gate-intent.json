@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T21:24:27.781533+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "08-material-gate",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials.json",
+    "materials",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+    "NONE",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate.json"
+  ],
+  "freeBytes": 1256333312,
+  "rawBytes": 199254,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "07-materials",
+  "state": "intended-not-a-result"
+}

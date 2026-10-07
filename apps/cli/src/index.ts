@@ -1,9 +1,13 @@
+import { goalProgressionAuthorizationSchema, goalProgressionRevocationSchema, GOAL_PROGRESSION_MAX_BYTES } from '@flow/contracts';
+import { goalPlanConfirmationSchema, GOAL_PLAN_CONFIRMATION_MAX_BYTES } from '@flow/contracts';
 import { packageFetchRequestSchema, packageFetchCommandSchema, PACKAGE_FETCH_LIMITS } from '@flow/contracts';
+import { pluginInstallRequestSchema, pluginInstallCommandSchema, PLUGIN_INSTALL_LIMITS } from '@flow/contracts';
 import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, KNOWLEDGE_LIMITS, pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { JsonInputError, readJsonInput } from './json-input.js';
-import { FlowClient, FlowApiError } from '@flow/client';
+import { FlowClient, FlowApiError, UnknownConversationAcknowledgementError } from '@flow/client';
+import { conversationTurnSchema, conversationQueueEnqueueSchema } from '@flow/contracts';
 import { watchTask, taskLine } from './watch.js';
 import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, goalNativeExecutionSchema, type TaskSubmission } from '@flow/contracts';
 
@@ -31,6 +35,10 @@ export async function runCli(args: string[], io: CliIO = defaultIO, env: NodeJS.
     const client = new FlowClient({ baseUrl: values.url ?? env.FLOW_URL ?? 'http://127.0.0.1:4310', token: env.FLOW_TOKEN });
     return await executeCommand({ client, values, positionals, io, signal });
   } catch (error) {
+    if (error instanceof UnknownConversationAcknowledgementError) {
+      io.err('Conversation acceptance is unknown. Keep the original --key and unchanged input file; recover explicitly with that same request.');
+      return 4;
+    }
     io.err(error instanceof Error ? error.message : 'Command failed.');
     if (error instanceof FlowApiError) return error.status === 409 ? 3 : 4;
     if (error instanceof UsageError || error instanceof JsonInputError || (error instanceof Error && error.name === 'ZodError') || (typeof error === 'object' && error && 'code' in error && String(error.code).startsWith('ERR_PARSE_ARGS'))) return 2;
@@ -71,6 +79,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(task, `${taskLine(task)}\n${task.entries.map(entry => entry.kind === 'text' ? entry.text : `[${entry.reference.title}] ${entry.reference.id}`).join('\n')}${task.pendingDecision ? `\nDecision ${task.pendingDecision.id}: ${task.pendingDecision.prompt}` : ''}`);
       return 0;
     }
+    case 'usage': { print(await client.taskUsage(required(id, 'task ID'), context.signal)); return 0; }
     case 'watch': return watchTask(client, required(id, 'task ID'), { json: values.json ?? false, signal: context.signal, ...(values.timeout ? { timeoutMs: positiveNumber(values.timeout, 'timeout') } : {}) }, io);
     case 'decision': {
       const result = await client.decide(required(id, 'task ID'), decisionSchema.parse({ decisionId: required(values.decision, '--decision'), answer }), key);
@@ -95,6 +104,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       return 0;
     }
     case 'knowledge': return knowledgeCommand(context);
+    case 'conversation': return conversationCommand(context);
     case 'plugin': return pluginCommand(context);
     case 'goal': return goalCommand(context);
     case 'project': return projectCommand(context);
@@ -104,6 +114,29 @@ async function executeCommand(context: CommandContext): Promise<number> {
   }
 }
 
+
+async function conversationCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  if (action === 'profiles') {
+    if (positionals.length !== 2) throw new UsageError('Use conversation profiles [--after UUID] [--limit N].');
+    io.out(JSON.stringify(await client.claudeMessageSettingsProfiles({
+      ...(values.after !== undefined ? { after: values.after } : {}),
+      ...(values.limit !== undefined ? { limit: positiveNumber(values.limit, 'limit') } : {}),
+    }, signal)));
+    return 0;
+  }
+  if (!['send', 'enqueue'].includes(action ?? '') || positionals.length !== 3) throw new UsageError('Use conversation profiles|send CONVERSATION_ID|enqueue CONVERSATION_ID.');
+  const id = required(positionals[2], 'conversation ID');
+  const key = required(values.key, '--key (stable command identifier)');
+  const input = await readJsonInput(required(values.input, '--input JSON-file'), 131_072);
+  if (action === 'enqueue') io.out(JSON.stringify(await client.enqueueConversationTurn(id, conversationQueueEnqueueSchema.parse(input), key, signal)));
+  else {
+    const parsed = conversationTurnSchema.parse(input);
+    if (parsed.mode !== 'follow-up') throw new UsageError('conversation send requires mode follow-up. Use conversation enqueue for queued input.');
+    io.out(JSON.stringify(await client.submitConversationTurn(id, parsed, key, signal)));
+  }
+  return 0;
+}
 
 async function knowledgeCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
   const projectId = required(values.project, '--project');
@@ -139,6 +172,18 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
   const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
   let result: unknown;
   switch (action) {
+    case 'installs': result = await client.pluginMaterialInstalls(required(positionals[2], 'plugin ID'), page, signal); break;
+    case 'install-show': result = await client.pluginMaterialInstall(required(positionals[2], 'material installation ID'), signal); break;
+    case 'install-history': result = await client.pluginMaterialInstallHistory(required(positionals[2], 'material installation ID'), page, signal); break;
+    case 'install':
+    case 'install-change': {
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), PLUGIN_INSTALL_LIMITS.bodyBytes);
+      const key = required(values.key, '--key (stable command identifier)');
+      result = action === 'install'
+        ? await client.installPluginVersion(required(positionals[2], 'plugin ID'), required(positionals[3], 'version ID'), pluginInstallRequestSchema.parse(input), key, signal)
+        : await client.commandPluginMaterialInstall(required(positionals[2], 'material installation ID'), pluginInstallCommandSchema.parse(input), key, signal);
+      break;
+    }
     case 'fetches': result = await client.pluginPackageFetches(required(positionals[2], 'plugin ID'), page, signal); break;
     case 'fetch-show': result = await client.packageFetch(required(positionals[2], 'fetch operation ID'), signal); break;
     case 'fetch-history': result = await client.packageFetchHistory(required(positionals[2], 'fetch operation ID'), page, signal); break;
@@ -165,7 +210,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
         : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change. Fetch only verifies compressed bytes; it does not install or load a package.');
+    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -175,6 +220,24 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
   const action = positionals[1];
   let result: unknown;
   switch (action) {
+    case 'plan': {
+      if (positionals[2] !== 'confirm-inputs' || positionals.length !== 4) throw new UsageError('Use goal plan confirm-inputs <proposal-id> --input JSON-file --key stable-key.');
+      const key = required(values.key, '--key (stable command identifier)');
+      const input = goalPlanConfirmationSchema.parse(await readJsonInput(required(values.input, '--input JSON-file'), GOAL_PLAN_CONFIRMATION_MAX_BYTES));
+      result = await client.confirmGoalPlan(required(positionals[3], 'proposal ID'), input, key, signal);
+      break;
+    }
+    case 'progression': result = await client.goalProgression(required(positionals[2], 'goal ID'), required(positionals[3], 'progression ID'), signal); break;
+    case 'authorize-progress':
+    case 'revoke-progress': {
+      const goalId = required(positionals[2], 'goal ID');
+      const key = required(values.key, '--key (stable command identifier)');
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), GOAL_PROGRESSION_MAX_BYTES);
+      result = action === 'authorize-progress'
+        ? await client.authorizeGoalProgression(goalId, goalProgressionAuthorizationSchema.parse(input), key, signal)
+        : await client.revokeGoalProgression(goalId, required(positionals[3], 'progression ID'), goalProgressionRevocationSchema.parse(input), key, signal);
+      break;
+    }
     case 'execute-native': {
       const goalId = required(positionals[2], 'goal ID');
       const key = required(values.key, '--key (stable command identifier)');
@@ -194,7 +257,7 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
         : await client.commandGoal(required(positionals[2], 'goal ID'), goalCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use goal create|show|input|history|change|execute-native.');
+    default: throw new UsageError('Use goal create|show|input|history|change|execute-native|authorize-progress|progression|revoke-progress|plan confirm-inputs.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -276,14 +339,19 @@ function submission(values: Flags, words: string[]): TaskSubmission {
   });
 }
 
-const HELP = `Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
+const HELP = `Static material: plugin install PLUGIN VERSION --input FILE --key KEY; plugin installs PLUGIN; plugin install-show OP; plugin install-history OP; plugin install-change OP --input FILE --key KEY.
+Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
 Flow — durable work, from your terminal
 
 Commands:
+  conversation profiles [--after UUID] [--limit number] [--json]
+  conversation send <conversation-id> --input JSON-file --key stable-key [--json]
+  conversation enqueue <conversation-id> --input JSON-file --key stable-key [--json]
   submit "prompt" [--title title] [--harness fixture|claude|a2a] [--key key]
   list
   workspace [--after cursor | --before cursor] [--limit count]
   show <task-id>
+  usage <task-id>  # source/cache/coverage readout; SDK estimate is not billing
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
@@ -306,6 +374,10 @@ Commands:
   goal history <goal-id> --node node-id [--after execution-id] [--limit number]
   goal change <goal-id> --input JSON-file --key stable-key
   goal execute-native <goal-id> --input JSON-file --key stable-key
+  goal authorize-progress <goal-id> --input JSON-file --key stable-key
+  goal progression <goal-id> <progression-id>
+  goal revoke-progress <goal-id> <progression-id> --input JSON-file --key stable-key
+  goal plan confirm-inputs <proposal-id> --input JSON-file --key stable-key
   project workspaces|list
   project create --title title --key stable-key
   project show <project-id> [--revision number]

@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06T23:55:39.280607+00:00",
+  "task": "OPS-001 / X01 dependency supply",
+  "decision": "DELEGATED_EXACT_SEVEN_LINKS_ONLY",
+  "exclusiveOperator": "architecture_read / gpt-6-astra under mika",
+  "lead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "branch": "codex/plugin-enable-binding",
+  "request": "docs/evidence/x01/enable-binding-dependency-view-request.json",
+  "requestSha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878",
+  "observedHead": "d12a3d3b0b81198874a17145c2210f43fef3e2ba",
+  "ledgerObservedAt": "2026-10-06T23:55:05.251Z",
+  "claim": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "claimVersion": 8,
+  "existingDestinationCount": 0,
+  "requestedLinkCount": 7,
+  "untrackedSupportFiles": 3,
+  "dependencyCopyBytes": 0,
+  "writesByExecutionLead": 0,
+  "validation": "NOT_RUN; separate supervisor/window review and fresh resource gates remain",
+  "constraints": [
+    "Fresh check for another operator or receipt; reuse already identical result",
+    "Package metadata name/version/hash/realpath and exact nonsymlink parents",
+    "Exclusive create; existing mismatch is STOP not replacement",
+    "Own-tree @flow aliases only; preserve source and support files",
+    "No installs/import/types/tests/PG/provider/main/donor/personal changes"
+  ],
+  "receipt": "PENDING original X01 owner canonical receipt",
+  "independentRequestReview": {
+    "path": "x01-seven-link-request-review-2026-10-06.json",
+    "sha256": "0a36d10c35f80dc66ccc908d00bac892d3219d1aa114f698caa257aa37c29fb6",
+    "outcome": "APPROVED_REQUEST_ONLY",
+    "fixedMetadataEntries": 20,
+    "actualLinksProvisionedAtReview": 0,
+    "owner": "assignment_review / gpt-6-astra"
+  },
+  "preparationVsExecution": {
+    "at": "2026-10-06T23:59:15.170224+00:00",
+    "observedHold": "plugin-enable-binding/docs/evidence/x01/enable-binding-dependency-view-hold-235651.json",
+    "freeBytesAtHold": 1013399552,
+    "stageARuntimeGateUnchanged": 1107296256,
+    "decision": "Exact metadata-only supply follows existing low-space source preparation allowance; Stage A runtime floor is not its gate",
+    "metadataAndReceiptLogicalByteCap": 65536,
+    "linkTargetTextBytes": 752,
+    "parentDirectoriesMaximum": 3,
+    "onWriteError": "STOP and preserve facts; no expansions",
+    "historicalHoldRetained": true,
+    "validation": "NOT_RUN"
+  },
+  "closure": {
+    "readAt": "2026-10-07T00:14:00Z",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-dependency-view-result.json",
+    "receiptSha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9",
+    "state": "PROVISIONED",
+    "finishedAt": "2026-10-07T00:01:31.259201+00:00",
+    "createdLinkCount": 7,
+    "checks": "NOT_RUN",
+    "executionState": "HOLD",
+    "historicalDelegationAndHoldsRetained": true,
+    "repeatedProvision": false
+  }
+}

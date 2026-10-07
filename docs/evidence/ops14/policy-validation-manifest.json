@@ -1,0 +1,71 @@
+{
+  "sourceTarget": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "evidenceTarget": "bc822db3e72da502fab99943ae565c7f7e68a645",
+  "createdAt": "2026-10-06T21:41:38.664612+00:00",
+  "entries": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "commit": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+      "bytes": 11993,
+      "sha256": "eee3e06564bbc2ec5389af225d0f14bde58a8b7c907e083693e1489715f13575"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "commit": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+      "bytes": 10766,
+      "sha256": "e15034349a0ad4996186de16f75a9215350f729ad0d6ef5d86635accbba9de2a"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 1238,
+      "sha256": "d26fd3034322ddb839b59a9d5bad16179e75dbc1aff494fd2b0a4954c2d8764a"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.stdout",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 712,
+      "sha256": "c76de8f47f4cee28aef722eb951dbf4a53b9752d52729fc93c8be64afef5f121"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-cleanup.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 405,
+      "sha256": "b34e3c76631757556915a9eb2c9d5e163515268c1fc6a67f676ae22f2bc8bba1"
+    },
+    {
+      "path": "docs/evidence/ops14/fixed-manifest.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 10172,
+      "sha256": "518594c5cd2be0f69174a602ce6f24348b14bf2ffb6897b174e41a576e231846"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-delta-manifest.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 11210,
+      "sha256": "aaa150bda4fc455ef22fee2d762556f35c76f7cabded5f9041b75a0ac5aac6a6"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 4453,
+      "sha256": "0d2b299c0a4510a8b0a3178efb15c92456a049108a3f18b5442031e155da886d"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review-bindings.json",
+      "commit": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 11346,
+      "sha256": "ea27cfc821cc355a2e1ca429def3e4fb2712226becf8661769d1bd99e523faa3"
+    }
+  ],
+  "mismatches": [],
+  "selected": 2,
+  "passed": 2,
+  "unselected": 11,
+  "distinctAcrossAllRounds": 13,
+  "repeatedOldMatrix": false,
+  "PG": 0,
+  "Chrome": 0,
+  "providerCalls": 0,
+  "realConsumerMigration": false
+}

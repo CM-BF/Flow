@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-06T22:54:29.173282+00:00",
+  "state": "THREE_PREVIEWS_RETIRED_LIFECYCLE_CLOSED_ALL_METADATA_CLAIMS_RELEASED",
+  "source": "Original owner actual receipts; manager verified retained bytes/hashes, no runtime resampling",
+  "receipt": "owner-raw/receipt.json",
+  "manifest": "owner-raw/manifest.json",
+  "verifiedFiles": 35,
+  "verifiedBytes": 130667,
+  "exactCacheCandidates": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite"
+  ],
+  "requiresLeadFinalFreshIdentityAndConsumerCheck": true,
+  "webCacheOrDependencyOperation": false,
+  "lifecycleMetadata": "Each original owner status/README has explicit retirement and preserves original retention/start/URL/checks as history; all new3-scope claims RELEASEDv2.",
+  "knownConsumers": "root-frozen-consumers.json",
+  "limitations": [
+    "Session exit 143 and absence establish retirement, not full async close-handler execution.",
+    "Available session log observations are incremental, not a reconstructed complete startup transcript.",
+    "No known frozen consumer according to root bounded named-manifest audit; no global future-consumer guarantee.",
+    "No dependency readiness tested. Restart requires future explicit authorization and dependency/resource recheck; no workspace-cache donor usage."
+  ],
+  "rootReview": "root-retirement-review.json",
+  "metadataClaimIds": [
+    "741c80b3-242e-4519-b16f-0ac61737e78e",
+    "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+    "40ec6625-2a14-4033-bc26-0c223e1f7677"
+  ],
+  "services": [
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "branch": "codex/web-plugin-management-integration",
+      "finalHead": "fc838e66621d1e68531c0fd8da989921f26e4991",
+      "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-x03/README.md",
+        "docs/evidence/wpf-x03/preview-retirement",
+        "plans/wpf-x03-plugin-integration/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:43.891Z",
+      "receipt": "plugin-management-release-receipt.json",
+      "closeoutCheck": "plugin-management-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY",
+      "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/plans/wpf-x03-plugin-integration/status.md"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "branch": "codex/web-profile-integration",
+      "finalHead": "e90492d759421d153641a024ed0b6e1c42bf334e",
+      "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-profile-integration/README.md",
+        "docs/evidence/wpf-profile-integration/preview-retirement",
+        "plans/wpf-profile-integration/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:44.030Z",
+      "receipt": "profile-release-receipt.json",
+      "closeoutCheck": "profile-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY",
+      "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/plans/wpf-profile-integration/status.md"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "branch": "codex/web-steering-control",
+      "finalHead": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+      "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-steering-control/README.md",
+        "docs/evidence/wpf-steering-control/preview-retirement",
+        "plans/wpf-steering-control/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:44.173Z",
+      "receipt": "steering-release-receipt.json",
+      "closeoutCheck": "steering-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY",
+      "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md"
+    }
+  ],
+  "finalOperationCondition": "Lead alone freshly checks current claims, exact cache identity/kernel/consumer facts immediately before any cache operation; no concurrent owner metadata writing is authorized. Unknown KEEP. No resource or global consumer guarantee."
+}

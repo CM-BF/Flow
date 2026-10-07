@@ -1,0 +1,106 @@
+{
+  "label": "retained-1",
+  "artifact": {
+    "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+  },
+  "observations": {
+    "read": {
+      "ownerAuthenticated": true,
+      "conversationBound": true,
+      "taskBound": true
+    },
+    "send": {
+      "acceptedTurnBound": true,
+      "requestedProfilePreserved": true
+    },
+    "recover": {
+      "sameKey": true,
+      "sameBody": true,
+      "sameTurn": true
+    },
+    "negotiation": {
+      "legacyReadable": true,
+      "streamHeaderHandled": true,
+      "profileHeaderHandled": true
+    }
+  },
+  "faultObservation": {
+    "path": "/api/conversations/e9e43516-9481-44a7-9fbb-8604c3f16d5d/turns",
+    "key": "b7abc6a1-ed76-4248-a21b-d307804f702a:turn",
+    "bodySha256": "14a4a365bb0cded08e68ffbc8b0866accf22347465443eba454d035465dea9d3",
+    "events": [
+      "request",
+      "response-headers",
+      "requestfailed"
+    ],
+    "status": 202,
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1222",
+      "connection": "close",
+      "transfer-encoding": ""
+    },
+    "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+    "finished": false
+  },
+  "conversationId": "e9e43516-9481-44a7-9fbb-8604c3f16d5d",
+  "taskId": "a92554cb-3dbe-490f-b6a9-8b86eba4663f",
+  "assets": [
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+      "bytes": 109664,
+      "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+      "bytes": 720515,
+      "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+      "bytes": 659481,
+      "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+      "bytes": 109664,
+      "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+      "bytes": 720515,
+      "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+      "bytes": 659481,
+      "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+    }
+  ],
+  "pageErrors": [],
+  "posts": 2,
+  "sameTask": true,
+  "draftPreservedBeforeReload": true
+}

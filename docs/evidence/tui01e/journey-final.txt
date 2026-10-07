@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls
+
+stdout | apps/tui/src/queue-controls/journey.test.ts > queue pages stay bounded at twenty preview references through actual JSONL
+TUI01E bounded JSONL {"references":[20,3],"outputBytes":22483,"firstPageBytes":15530,"originalMaterialBytes":110460,"itemBodyRequests":0,"requests":["GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178","GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/turns?after=0&limit=20","GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/queue?after=0&limit=20","GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/queue?after=21&limit=20"]}
+
+stdout | apps/tui/src/queue-controls/journey.test.ts > owned PTY pauses/resumes visibly, preserves an unsent CJK multiline draft and exits without cancelling work
+TUI01E PTY {"exitCode": 0, "rawModeRestored": true, "resized": [60, 20], "transcriptBytes": 22793, "checkpoints": ["Ctrl-C disconnect and quit", "/open 8ba3be21-2810-4f9d-a97b-a5a3c118e77b", "Saved conversation opened.", "Message or /command", "/queue", "Queue references loaded", "Message or /command", "Queue \u00b7 paused", "/pause", "Queue control accepted", "Message or /command", "/resume", "Queue control accepted", "Message or /command", "Queue \u00b7 not paused", "\u4fdd\u7559\u4e2d\u6587\ud83d\ude42", "Flow", "second draft", "\u4fdd\u7559\u4e2d\u6587\ud83d\ude42", "second draft"], "unsentCjkMultilineDraft": true}
+
+
+stdout | apps/tui/src/queue-controls/journey.test.ts
+TUI01E cleanup {"database":"flow_tui01e_f7c8dd1718ea","remaining":[],"ownedRunnerStopped":true,"providerCalls":0}
+
+ ✓ apps/tui/src/queue-controls/journey.test.ts (4 tests) 14535ms
+   ✓ two real clients preserve stale draft, observe queue revision and explicitly resume the bound task  1165ms
+   ✓ lost HTTP ACK persists through journal reopening, recovers exact body/key and preserves newer queue facts  657ms
+   ✓ queue pages stay bounded at twenty preview references through actual JSONL  1539ms
+   ✓ owned PTY pauses/resumes visibly, preserves an unsent CJK multiline draft and exits without cancelling work  8194ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  06:42:48
+   Duration  15.68s (transform 489ms, setup 0ms, import 1.06s, tests 14.54s, environment 0ms)
+

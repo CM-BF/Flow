@@ -4,7 +4,7 @@ import type { ConversationList, ConversationSnapshot, ConversationTurnPage } fro
 import { HttpError, transaction } from '../database.js';
 import { loadTask } from '../tasks.js';
 import { sessionEvidence } from './replies.js';
-import { conversationCapabilities, conversationView, lastTurn, loadConversation, turnView, type ConversationRow, type TurnRow } from './state.js';
+import { conversationCapabilities, conversationView, lastTurn, loadConversation, turnView, turnViews, type ConversationRow, type TurnRow } from './state.js';
 
 export async function conversationSnapshot(pool: Pool, id: string): Promise<ConversationSnapshot> {
   return transaction(pool, async client => {
@@ -13,7 +13,7 @@ export async function conversationSnapshot(pool: Pool, id: string): Promise<Conv
     const latestExecuted = (await client.query<{ task_id: string }>(`SELECT t.task_id FROM flow.conversation_turns t JOIN flow.tasks task ON task.id=t.task_id
       JOIN flow.attempts a ON a.id=task.current_attempt_id WHERE t.conversation_id=$1 AND a.native_session_id IS NOT NULL ORDER BY t.number DESC LIMIT 1`, [id])).rows[0];
     const nativeSession = latestExecuted ? (await sessionEvidence(client, await loadTask(client, latestExecuted.task_id)))?.identity ?? null : null;
-    return { conversation, capabilities: await conversationCapabilities(client, conversation.projectId), nativeSession, lastTurn: turn ? await turnView(client, turn) : null };
+    return { conversation, capabilities: await conversationCapabilities(client, conversation.projectId, conversation.executionProfile), nativeSession, lastTurn: turn ? await turnView(client, turn) : null };
   }, true);
 }
 export async function conversationList(pool: Pool, after: string | undefined, limit: number): Promise<ConversationList> {
@@ -27,8 +27,7 @@ export async function turnPage(pool: Pool, id: string, after: number, limit: num
   return transaction(pool, async client => {
     const conversation = conversationView(await loadConversation(client, id));
     const rows = (await client.query<TurnRow>('SELECT * FROM flow.conversation_turns WHERE conversation_id=$1 AND number>$2 ORDER BY number LIMIT $3', [id, after, limit + 1])).rows;
-    const turns = [];
-    for (const row of rows.slice(0, limit)) turns.push(await turnView(client, row));
+    const turns = await turnViews(client, rows.slice(0, limit));
     return { conversation, turns, nextCursor: rows.length > limit ? turns.at(-1)!.number : null };
   }, true);
 }

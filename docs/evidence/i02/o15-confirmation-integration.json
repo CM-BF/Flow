@@ -1,0 +1,124 @@
+{
+  "at": "2026-10-06T18:02:23.662116+00:00",
+  "baseline": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+  "domainReview": "docs/evidence/o15/final-independent-review.json",
+  "productionReview": "docs/evidence/i02/o15-production-independent-review.json",
+  "entries": [
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 7674,
+      "sha256": "c29688c5dd89ae63f274c7cb8a79ef86e8a288e31600512f132752134caadf7d"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 2749,
+      "sha256": "cdb38e534cb7ce5abdfb237999a6ca285cec75ed211757b225c8ea350902737c"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 8237,
+      "sha256": "01b2abaf6729ce6fd9eabf5a4f3f51b35a8b89f24737ce1619ce548b96e09e26"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 10417,
+      "sha256": "5550bfc4296587f13348ed0833d6bc5bcb3b8820cb85e16cb6943904c551b058"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/confirmation.test.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 18885,
+      "sha256": "815a4141f3a4d5130140b38fba8043356f526fcb166e75d13b081345a1df77b1"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 11375,
+      "sha256": "df6198f7f2fb2a8d2efb6dc65cba931a6c008be8f851148eed893b75406c3fc7"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8"
+    },
+    {
+      "path": "apps/server/src/goal-progression/store.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 11079,
+      "sha256": "d307d41b2df5a5922fa3bb1a25c965d5ca4ad30585c998cc72a49e5fcc129bd0"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "ref": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "ref": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "ref": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+      "bytes": 1512,
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+    },
+    {
+      "path": "packages/client/src/goal-plan-confirmation-production.test.ts",
+      "ref": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+      "bytes": 13958,
+      "sha256": "478d168037eef6da3c1717f0438c4e82987ad19df582e80f8c6f06bcbf51e91a"
+    }
+  ],
+  "sourceCount": 17,
+  "unchangedOldConsumers": 3,
+  "rootTypes": {
+    "at": "2026-10-06T18:02:49.005218+00:00",
+    "exitCode": 0,
+    "seconds": 9.342476250021718,
+    "freeBeforeBytes": 1721724928,
+    "rawBytes": 0,
+    "sourceCount": 17,
+    "baseline": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+    "scope": "New O15 module/migration/production routes/client/export against current combined tree; no behavior/PG/provider rerun"
+  },
+  "noDomainOrPGOrProviderRerun": true,
+  "personalRuntime": "362af3/v15 unchanged"
+}

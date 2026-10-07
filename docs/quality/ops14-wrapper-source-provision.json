@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T21:59:20.768488+00:00",
+  "fixedSource": "78fb37704d708e3b3b6ea4f1810947f012666196",
+  "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision",
+  "claimId": "2e51f5cb-638b-4c6f-bd49-944581c886ad",
+  "version": 2,
+  "files": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "bytes": 2328,
+      "sha256": "cb9e20c2db02fdb590c3ac1195f96453d65b832822143f65497e89d101e44299"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "bytes": 2154,
+      "sha256": "0e4ff39a790ce469401ced881e135b8dec78040e9b8b384c8a20c89e18778c44"
+    }
+  ],
+  "logicalBytes": 4482,
+  "method": "Exclusive file materialization from fixed Git blobs matching target HEAD; no Git config/index/branch mutation. Exact sparse patterns may be extended after delegated new-tree configuration window; owner can stage owned files with git add --sparse.",
+  "sharedGitConfigurationChanges": 0,
+  "overwrites": 0,
+  "dependencies": 0,
+  "tests": 0
+}

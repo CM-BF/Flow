@@ -1,6 +1,6 @@
 # F01 公共领域接入
 
-状态：in-progress。Owner：Execution Lead / gpt-6-astra ultra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation`，branch `codex/m2-shared-foundation`，base `873738d9eb998c10bc71721d9b325fcc76ecd7b5`。
+状态：in-progress。当前Owner：native_center_owner / gpt-6-astra；历史作者与co-lead：Execution Lead。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation`，branch `codex/m2-shared-foundation`，base `873738d9eb998c10bc71721d9b325fcc76ecd7b5`。
 
 为独立G01/P02 owner解除共享入口依赖；领域合同由owner写，公共export/client/CLI/注册/usage政策由Lead统一。沿用find-skills本地优先，实际应用codebase-design/clean-code/tdd，保持小接口和真实消费者验证；不修改Web owner目录。
 
@@ -69,4 +69,28 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-34** O12公开goal session只读取消/显式command信号与独立package入口薄接线，不另建状态规则。
 
-- [ ] **F01-35** 原生工程用途配置公共薄传输与严格解码；不把runner声明当host资格或真实模型写入。
+- [x] **F01-35** 原生工程用途配置公共薄传输与严格解码；不把runner声明当host资格或真实模型写入。
+
+- [x] **F01-36** X01共享静态安装库正式workspace消费者与固定依赖lock接线；具体安装/loader独立owner，不重复实现。
+
+- [x] **F01-37** 连接会话三方法与统一HTTP/SSE Cookie传输、固定028领域接收后的生产鉴权接线；父目标为WPF-MATURE-06，旧Bearer与CLI保持，公开thinclient不先冒领域/浏览器完成。
+
+- [x] **F01-38** 为O13连续目标旅程增加按goal归属的规划运行轻列表薄传输；固定合同/原样分页与错误，不另建编排或提前批准领域。
+
+- [x] **F01-39** 复用COST01A合同公开用量client/export与生产挂载，保持旧用量含义和缺测，不在传输层另算账。
+
+- [x] **F01-40** 提供只读 `usage <task-id>` CLI，复用共享用量读口并保留来源/未知覆盖，不另算账或提交任务。
+
+- [x] **F01-41** 按已审X01中心合同接五薄client/public export及后续默认factory/CLI；只传稳定key/请求/receipt，不把accepted等同installed，不自造executionSettled。
+
+- [x] **F01-42** O14 三方法/public export 与030生产扫描生命周期接线，复用现有queue scan单生命周期；实际客户端断开/重启后持久推进，owner接受保持独立。
+
+## 2026-10-06 16:59:10 UTC 共享生产交接与本次界限
+
+F01当前owner改为native_center_owner，co-lead仍ExecutionLead。沿F01-42先做既有O14生产验证，现成73a源码不重写；032后继仅在领域APPROVED后接最薄迁移/factory与一个真实client consumer，不新增任务或transport/FSM。新test路径先amend。59literal claim只表示协调占用，不构成重写授权。验证窗口/磁盘准入由Lead串行安排，0provider。
+
+- [x] **F01-43** CORE消息设置正式独审后接032前置迁移与真实FlowClient生产直接consumer，旧目录/回执边界不变；实际PG窗口另排，0provider。
+
+- [x] **F01-44** 复用已审O15模块，补031生产迁移/owner路由、薄确认client/export及真实factory自动依赖推进直接旅程；旧settings/O14生命周期保持，0provider。
+
+- [x] **F01-45** 最薄goal plan confirm-inputs命令复用公开严格合同/原key/body/signal/error；一局部HTTP与help/types，独审后集成。

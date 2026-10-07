@@ -43,3 +43,13 @@
 ## 作者回应与复审
 
 Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+
+
+## 2026-10-07 REQ-18插件宿主组合规划：限定文档独审
+
+- Target：`d95551a06157dbd3a88891166d37c75f98800b39`；base `9cf988c42e3ab13fcbb91e5a8391be01926011a7`；canonical plan-status-review / codex/plan-status-review，审查时clean。
+- Scope：plan.md、status.md的本次增量及 `docs/quality/req18-plugin-pool-acceptance-2026-10-07.json`，三文件净增9,126B；不覆盖本页原全计划模板或产品实现。
+- 独立reviewer：assignment_review / gpt-6-astra；结论 **APPROVED_DOCS**，findings=[]。审查四host组合、session fence/unknown、无新增预算、原S01/SCAN批准范围，8份源码/报告hash字节与05cdc全部相符。
+- 链接：3个新增相对引用在固定发布base05cdc存在；历史owner树未物化两份S01输入，本地exists首检失败保留，未改为owner树PASS。
+- 未执行：工程检查、PG/负载、provider、服务探测/修改均0；组合验收NOT_RUN，不证明饥饿/泄漏或100+原生长期能力。
+- 接收：main `c919fd3f7705a3e8753b820c0bbf73002c94b949` 已推送，I02 [限定接收记录](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/req18-plugin-pool-acceptance-intake.json)。本条与后续收口metadata只记录已发生的review/main事实，不改变已审计划内容。

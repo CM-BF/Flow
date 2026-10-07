@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-06T22:24:27.267133+00:00",
+  "generatedAt": "2026-10-06T22:24:03.298Z",
+  "sourceCount": 180,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "60ca1942411634843fda14e158f138191b832d8b",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T22:24:03.377Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "oldDashboard": {
+    "pid": 30716,
+    "session": 73704,
+    "exit": 143
+  },
+  "newDashboard": {
+    "session": 25405,
+    "port": 4320,
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration"
+  },
+  "raw": {
+    "path": "/tmp/flow-dashboard-chat05p01-180.json",
+    "bytes": 2445717,
+    "sha256": "e7d401d5f49cf79f8a6fe121aeb30af1dd43fec9e02eb0ab3ff36bd790111325"
+  },
+  "tasks": [
+    {
+      "id": "CHAT05P01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T22:19:12.679Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/plans/chat05p01-native-activity-body/status.md",
+        "syncedAt": "2026-10-06T22:24:03.298Z",
+        "stale": false,
+        "ageHours": 0.08072777777777777
+      },
+      "head": "7d0751b2d22afddd1da6b25bfa9db0c32ab772f4",
+      "dirty": true,
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定工具长正文的完整保存和分页读取接口，开始实现",
+        "next": "可恢复的有界正文传输与授权读取模块",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parseErrors": [
+        "缺少单一 owner 字段",
+        "缺少工作分支状态",
+        "缺少 TODO 状态表"
+      ]
+    },
+    {
+      "id": "WPF-MESSAGESETTINGS02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T22:16:48.956Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+        "syncedAt": "2026-10-06T22:24:03.298Z",
+        "stale": false,
+        "ageHours": 0.134805
+      },
+      "head": "258c83f02e77cde4b48f8e47d9f42ebc93d68aea",
+      "dirty": false,
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "快速筛选、明确应用与草稿身份保护已实现，正在独立审查",
+        "next": "经验证的模型、思考力度与速度快速选择",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parseErrors": []
+    }
+  ],
+  "limits": "Source registry only; no product runtime or user tab changes. CHAT05P01 metadata corrections are delegated to its owner; original parse errors preserved."
+}

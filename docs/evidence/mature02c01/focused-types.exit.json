@@ -1,0 +1,18 @@
+{
+  "startedAt": "2026-10-06T16:45:31.799208+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/mature02c01/tsconfig.focused.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1241030656,
+  "exitCode": 0,
+  "timeout": false,
+  "durationSeconds": 1.0641632499173284,
+  "stdout": "focused-types.stdout.txt",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "note": "Focused strict compilation of exact owned and preserved direct consumers, not root typecheck."
+}

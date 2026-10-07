@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T22:12:01.423769+00:00",
+  "mainReceipt": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+  "entries": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "approvedTarget": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "bytes": 2740,
+      "sha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "approvedTarget": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "bytes": 3002,
+      "sha256": "86174d6d8994d06e57622b160ea56e3c43bc74c96ec6bdfaa98e087d5984d265"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "approvedTarget": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "approvedTarget": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 12306,
+      "sha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "approvedTarget": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    }
+  ],
+  "mismatches": [],
+  "rerunTests": 0,
+  "actualRecovery": false,
+  "SVC07Migrated": false
+}

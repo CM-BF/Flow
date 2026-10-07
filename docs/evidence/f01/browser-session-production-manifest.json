@@ -1,0 +1,165 @@
+{
+  "target": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
+  "observedAt": "2026-10-06T13:30:13.752347+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13155,
+      "sha256": "b88b5fbd6f898a78570c6d2cc0d57822df21b0016df3dd180703c7880e6ad798"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 2708,
+      "sha256": "1f1573c9abf9d5d3d7f7138e8985fa7bbe481c8a8707ff47e4f7debb511c67ae"
+    },
+    {
+      "path": "packages/client/src/browser-session-production.test.ts",
+      "bytes": 11336,
+      "sha256": "96525e675f91e660a0c307bc5e6709fae50f574aa6dd8da6cfc9d93e7e583803"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/browser-session-production-claim.json",
+      "bytes": 3180,
+      "sha256": "aabb72ac117d9220983e513b8237249d08cc8ad66e0e6494d6ed5598b891a7c1"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-final-facts.json",
+      "bytes": 696,
+      "sha256": "9d8e18fd8a1bae5a7dc81603ec6ed4415342fc2ffb6c325981e2be20f39b00f8"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-final-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-final.txt",
+      "bytes": 499,
+      "sha256": "4c84c1de0126408d151a78a6b7c299b40bd3f16eee8221c6e3aa8a49191d4ecc"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-green-facts.json",
+      "bytes": 344,
+      "sha256": "bee58eebfedeb3ac6a5fdfbabac48cd691dde522e6ce460735fde9dd97c41d39"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-green.txt",
+      "bytes": 2159,
+      "sha256": "e68a2191b8b7bef92ed45ea6e23b7a6bfa2664c8e8c2b388587159d241d2d261"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-green2-facts.json",
+      "bytes": 371,
+      "sha256": "affef8682ac11713e23e94f66cbd40a79b971ba6d710de58c5e52b237182e9f1"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-green2.txt",
+      "bytes": 1667,
+      "sha256": "15d2a862f46ca75c51a3453d88d21978ed30d69ff77881dcbd7b92ef46b148b7"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-red-facts.json",
+      "bytes": 320,
+      "sha256": "90b51c3585a5df16f1a726c391ede6cbcd1e5c8696f4d8a9d55be4a296c21159"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-red.txt",
+      "bytes": 3115,
+      "sha256": "3ec09190d1203e1250c306e372219972993cb94d8390a3b19e3bac47e17cc707"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-production-types.txt",
+      "bytes": 377,
+      "sha256": "130fcfe7ffc53d9ad5fc8d1215683f6091f628631eb410d5e00c0d615add32a3"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-queue-consumer.txt",
+      "bytes": 561,
+      "sha256": "35183703bf1eba69cc3d4005ba730d17404860afff510b21c848aa1d491194ac"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "bytes": 3183,
+      "sha256": "c3e5ca59bddde1f6da0e9338f8ea752d43195d0cc9a8e31f801e711fe3b042b2",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "bytes": 26902,
+      "sha256": "c6085f7179e8af66d41ab041f09d26cd9003080b864aec493a290b5c7067cbd6",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1",
+      "target": "582f41f1957709982750f5de5306738e064960ce"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 47852,
+      "sha256": "304718dfb1940cab5a60057301f9b673dcc63fa8923777bdef1d42dbe99328e3",
+      "target": "5be830e2614d45dbaa023e98923fc74f470b37ec"
+    },
+    {
+      "path": "packages/client/src/browser-session.test.ts",
+      "bytes": 6457,
+      "sha256": "2b5bafef02af850f4909c4ca8d637c9f59936031b35c95cb56d5237cb54dffd1",
+      "target": "5be830e2614d45dbaa023e98923fc74f470b37ec"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1306,
+      "sha256": "b8c49088bc8feacf60b3d5b4813fd628e0b14338bf81ade017871ff83abf8a47",
+      "target": "5be830e2614d45dbaa023e98923fc74f470b37ec"
+    }
+  ],
+  "checks": {
+    "productionDistinct": 3,
+    "counts": "2 passed in green2 plus final selected 1 (2 unselected), not one 3/3 run",
+    "queueConsumer": {
+      "passed": 3,
+      "exit": 0,
+      "toolChunk": "9b3135"
+    },
+    "typecheck": {
+      "exit": 0,
+      "toolChunk": "80fb94"
+    },
+    "providerCalls": 0,
+    "personalOperations": 0
+  },
+  "limitations": [
+    "Node explicit test cookie jar, not browser persistence acceptance",
+    "HTTP loopback only; reverse proxy HTTPS unconfigured/unsupported by this factory",
+    "028 first-upgrade original domain evidence retained; factory proves mounted migration, not repeated first-upgrade experiment"
+  ]
+}

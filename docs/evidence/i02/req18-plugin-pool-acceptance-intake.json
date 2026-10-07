@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T01:18:07.239781+00:00",
+  "kind": "REQ18_PLUGIN_POOL_ACCEPTANCE_DOCS_INTAKE",
+  "base": "05cdc51e9668d8e3b5219440361ee6b8f1b3a549",
+  "sourceTarget": "d95551a06157dbd3a88891166d37c75f98800b39",
+  "appliedCommit": "047bbec03aae48b4645629b30adbd8d1571b19ac",
+  "files": [
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "bytes": 66801,
+      "sha256": "ded4ed48fbba043cd730d2ecd6bae07a8ec0c33bfc8f8a4303dd684a86e47869"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 23505,
+      "sha256": "d68dbc2ee0684feb5a65d26e307750605a024c1a179cb1f5947c49737c13da33"
+    },
+    {
+      "path": "docs/quality/req18-plugin-pool-acceptance-2026-10-07.json",
+      "bytes": 2743,
+      "sha256": "876156941e10cb038797b59f6b54feac1df0f9a102577d8762793ffd7e8a1a17"
+    }
+  ],
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "result": "APPROVED_DOCS",
+    "findings": [],
+    "netBytes": 9126,
+    "fixedSourceBindingsVerified": 8,
+    "publishedRelativeLinksVerified": 3,
+    "limitation": "Owner sparse tree does not materialize two S01 targets; initial local-exists check failed and remains recorded."
+  },
+  "productChanges": false,
+  "engineeringChecks": 0,
+  "pgLoads": 0,
+  "providerQueries": 0,
+  "runtimeActions": 0,
+  "runBudgetChanged": false,
+  "gatesChanged": false,
+  "implementation": "FLOW-001-T04-POOL-01 pending / NOT_RUN; no implementation writer"
+}

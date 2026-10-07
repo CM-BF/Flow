@@ -1,0 +1,87 @@
+{
+  "taskId": "K01",
+  "observedAt": "2026-10-06T05:38:05.570175+00:00",
+  "implementationTarget": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+  "mainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "originMainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "mainDirty": false,
+  "implementationIsAncestor": true,
+  "fullImplementationFiles": [
+    {
+      "path": "apps/server/src/knowledge/fixture.ts",
+      "sha256": "4873445fb6634d33462a249a69062025b383621035c740a2d45aa91b719379b7",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/knowledge/index.ts",
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/knowledge/knowledge.test.ts",
+      "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/knowledge/text.ts",
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1",
+      "equal": true
+    },
+    {
+      "path": "docs/evidence/k01/check.mjs",
+      "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+      "equal": true
+    },
+    {
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1",
+      "equal": true
+    }
+  ],
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/knowledge",
+      "docs/evidence/k01",
+      "packages/contracts/src/knowledge.ts",
+      "packages/storage/migrations/015-knowledge-sources.sql",
+      "plans/k01-knowledge-sources"
+    ],
+    "state": "active",
+    "branch": "codex/knowledge-source-store",
+    "origin": "new",
+    "taskId": "K01",
+    "worker": "b01_bounded_reads",
+    "claimId": "76b6ae1a-f414-49bb-a93d-d80cead6bd61",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+    "createdAt": "2026-10-06T05:10:36.101Z",
+    "updatedAt": "2026-10-06T05:10:36.101Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "integrationEvidence": {
+    "path": "docs/evidence/i02/knowledge-maintenance-fixed-scopes.json",
+    "sha256": "cd8c1cb971ae62fba427757862f7f4228b87d98729c7c710b2767efcf1d8b18d",
+    "reportedBy": "Execution Lead / Mika",
+    "testsRepeated": false
+  },
+  "productionSourceObservation": "Fixed main imports/calls migrateKnowledge at index.ts:58 and registerKnowledgeRoutes at index.ts:121; contracts index exports knowledge. No local tests or runtime restart performed."
+}

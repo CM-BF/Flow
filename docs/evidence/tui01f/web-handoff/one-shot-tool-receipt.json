@@ -1,0 +1,17 @@
+{
+  "kind": "faithful tool result transcript, not child stdout",
+  "initial": {
+    "tool": "tools.exec_command",
+    "chunk_id": "5f3957",
+    "session_id": 23060,
+    "wall_time_seconds": 1.003173292,
+    "output": ""
+  },
+  "completion": {
+    "tool": "tools.write_stdin",
+    "chunk_id": "7df2ff",
+    "exit_code": 1,
+    "output": "{\"outcome\":\"unknown-retain\",\"directory\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/captures/flow-tui01f04-20261006-2056\"}\n"
+  },
+  "source": "current native_center_owner conversation tools"
+}

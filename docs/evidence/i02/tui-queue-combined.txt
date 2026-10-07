@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+stdout | apps/tui/src/queue-controls/journey.test.ts
+TUI01E cleanup {"database":"flow_tui01e_9b5ddfb86574","remaining":[],"ownedRunnerStopped":true,"providerCalls":0}
+
+ ✓ apps/tui/src/queue-controls/journey.test.ts (4 tests | 3 skipped) 2921ms
+   ✓ two real clients preserve stale draft, observe queue revision and explicitly resume the bound task  1178ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 3 skipped (4)
+   Start at  06:55:06
+   Duration  4.22s (transform 573ms, setup 0ms, import 1.21s, tests 2.92s, environment 0ms)
+

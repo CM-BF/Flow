@@ -35,3 +35,31 @@ Input is read with a byte bound before parsing. Knowledge text is at most 262144
 `goal execute-native <goal-id> --input JSON-file --key stable-key` is an owner-only request to execute one existing fixed node input with an already registered `configured-readonly` Claude profile. Its bounded JSON file contains `nodeId`, `expectedInputVersion`, exact `dependencies`, `previousExecutionId`, `reason`, and `executionProfile` (`id`, `runnerId`, `configDigest`). Copy the current version and pin; do not invent a prompt or add fixture/tool permissions. Input is limited to 128 KiB and validated before sending.
 
 The required stable key recovers the same receipt after a lost response; a conflict exits 3 without retry. Receipt/queued means admission only. Mechanical verification and explicit owner acceptance remain separate; this command does not certify meaning or enable engineering writes. Existing `goal change` fixture execution is unchanged. No model is called by CLI help or input validation.
+
+`pnpm cli usage TASK_ID` reads the same owner-authorized source/cache/coverage summary as the shared client. It keeps unknown quantities as `null`, retains the unchanged legacy summary, and labels SDK estimates separately from provider billing. This read-only command starts no task or model; historical producer version, phase attribution and coverage may remain unverified.
+
+## Static plugin material
+
+`plugin install PLUGIN VERSION --input FILE --key KEY` accepts an exact registered revision and successful fetch operation/attempt (`expectedRevision`, `fetchOperationId`, `fetchAttemptId`, `reason`). The required stable key recovers its original acceptance receipt; it does not report current completion. Read current state with `plugin install-show OP`, list with `plugin installs PLUGIN`, and page audit with `plugin install-history OP`; lists accept `--after` and `--limit`.
+
+`plugin install-change OP --input FILE --key KEY` accepts `{ "action": "start" | "reconcile", "reason": "..." }`. All mutation files are bounded to 4096 bytes and strictly validated. Conflicts exit 3 without retry; unknown transport outcomes keep the original key/body. Static `installed` means verified local material only, not enabled, loaded, callable or isolated. Reconciliation without proven execution settlement remains unknown.
+
+These routes are disabled until the center host sets `FLOW_PLUGIN_INSTALL_CONFIG` to an owned 0600 regular JSON file. It contains only `artifactStore: {root, storeId}` and `materialStore: {root, storeId, allowedDigests}`; roots must be canonical absolute paths and at most 512 permitted SHA-256 digests are accepted. This private configuration is capped at 65536 bytes, cannot inject credentials, URLs or a lifecycle callback, and is never a public command argument. Existing personal preview configuration is unchanged.
+
+## Bounded goal progression
+
+`goal authorize-progress GOAL --input FILE --key KEY` explicitly authorizes a finite set of existing node/input versions and registered read-only profiles, exact external dependencies, expiry and admission budget (at most 20 nodes). JSON is bounded to 65536 bytes and validated against the public authorization contract. The center continues eligible dependency work after this client exits; it never derives input from a node title.
+
+`goal progression GOAL PROGRESSION` reads the durable state and reason for waiting or stopping. `goal revoke-progress GOAL PROGRESSION --input FILE --key KEY` accepts `{ "reason": "..." }` and stops later admissions; it does not cancel already admitted tasks. Mutations require the original stable key/body for recovery and do not retry a conflict. Mechanical verification within this authorization remains distinct from independent owner acceptance.
+
+`goal plan confirm-inputs PROPOSAL_ID --input FILE --key KEY` confirms one saved complete-input proposal through the same public owner interface. The strict UTF-8 JSON file is limited to 65536 bytes and uses `flow.goal-plan-confirmation.v1`: exact `proposalDigest`, current `expectedProjectRevision`, per-key registered `executionProfile` and `externalDependencies`, finite `maxAdmissions`, `intermediatePolicy`, absolute `expiresAt`, and `reason`. Review the proposal's actual inputs and material references first; titles are not execution inputs. This command does not generate a plan or grant model permissions.
+
+The required stable key and unchanged file recover the original confirmation after an unknown response. Conflicts exit 3 without retry; invalid input exits 2 and transport cancellation/failure exits 4. Exiting the client or cancelling its HTTP request does not cancel admitted tasks. The center's existing progression lifecycle continues eligible work; a confirmation receipt is neither task completion nor semantic acceptance.
+
+## Claude message settings
+
+`conversation profiles --after UUID --limit N --json` reads the explicit `flow.claude-turn-settings.v1` catalog of complete configured choices. Configured choices do not establish account entitlement or observed execution. Legacy profile readers retain their existing protocols.
+
+`conversation send CONVERSATION_ID --input FILE --key KEY --json` accepts a full follow-up request with `expectedRevision`, `text`, optional materials and optional `messageSettings`. `conversation enqueue CONVERSATION_ID --input FILE --key KEY --json` accepts the corresponding queue request with `expectedQueueRevision`. Files must be regular UTF-8 JSON, at most 131072 bytes. Settings are a complete public snapshot; no model/effort/speed flags or defaults are merged into it.
+
+Both mutations require an explicit stable key. Output confirms acceptance only. A missing or inconsistent opt-in acknowledgement exits 4; keep the unchanged input and original key for explicit recovery. Conflicts remain exit 3 and invalid input exit 2. No command silently retries or changes the request. Requested settings and later observed initialization are distinct; absent historical fields are not filled from the request. The existing `submit` command remains a task submission command.

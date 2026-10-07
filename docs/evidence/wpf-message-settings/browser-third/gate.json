@@ -1,0 +1,36 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "message-settings-browser",
+  "bindingSha256": "6328a4846d4966c3e0a022788bfd8f5b726cff1744acf458130b382dd8ec425f",
+  "runnerSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+  "claim": {
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "expiresAt": "2026-10-06T20:09:30.103190+00:00",
+  "entry": "message-settings",
+  "run": "settings-b4-20261006-200629-5a13ef",
+  "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+  },
+  "previousRuntimeMs": 13748,
+  "totalMs": 46252,
+  "startFreeBytes": 1207959552,
+  "stopFreeBytes": 1140850688,
+  "nativeChromeBoundaryApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+    "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+  },
+  "previousBudgetSha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1",
+  "windowSource": "message-settings-b4-window-received.json"
+}

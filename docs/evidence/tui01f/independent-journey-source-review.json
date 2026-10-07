@@ -1,0 +1,159 @@
+{
+  "kind": "TUI01F-03-independent-source-review",
+  "at": "2026-10-06T16:30:08.907538+00:00",
+  "reviewer": "native_center_owner",
+  "author": "assignment_review",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "target": "da673b81c4390c2e811d1582d68a9899180d55d2",
+  "observedDelivery": "112462d240dc0f93992154f5a4f5b62f953c9135",
+  "observedWorktreeClean": true,
+  "conclusion": "SOURCE_PRECHECK_NO_P1_P2",
+  "validation": "NOT_RUN",
+  "findings": [],
+  "binding": {
+    "manifest": "docs/evidence/tui01f/journey-source-manifest.json",
+    "manifestSha256": "fff22d066a4583f15afad650722b1bdcb0f19ba31ad5894e5e7f84d4230567f4",
+    "sourceCount": 3,
+    "sourceBytes": 30577,
+    "directInputCount": 23,
+    "protectedApprovedSourceCount": 9,
+    "additionalMaterializationBindingCount": 1,
+    "bindingFile": "/tmp/flow-tui01f-journey-source-bindings.json",
+    "bindingsSha256": "9363e3ae9b5b2910a69b071883c3f3fa14d3163b5094de4d006176b9cb7eccdb",
+    "checkedEntries": 36,
+    "mismatches": []
+  },
+  "readScope": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "read": "complete"
+    },
+    {
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "read": "complete"
+    },
+    {
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "read": "complete"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "read": "factory initialization, migrations, scheduler and shutdown hooks"
+    },
+    {
+      "path": "apps/server/src/shutdown/index.ts",
+      "read": "complete"
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "read": "complete; cancel command key/body and terminal replay"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "read": "assignment execution, cancellation/settlement and emitted completion"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "read": "complete"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "read": "request deadline and used public methods"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "read": "initialization, unknown journal restoration and disposal; protected controller previously reviewed at a1f82f36a5e63f859ecdcdbd1da3575724e82101"
+    },
+    {
+      "path": "vitest.config.ts",
+      "read": "test/hook deadlines and file parallelism"
+    },
+    {
+      "path": "plans/tui01f-task-cancel/plan.md",
+      "read": "source-only scope and open journey/App acceptance"
+    },
+    {
+      "path": "plans/tui01f-task-cancel/status.md",
+      "read": "fixed target and NOT_RUN boundary"
+    }
+  ],
+  "sourceObservations": [
+    {
+      "topic": "Database and fixture ownership",
+      "locations": [
+        "apps/tui/src/task-controls/fixture.ts:41",
+        "apps/tui/src/task-controls/fixture.ts:66",
+        "apps/tui/src/task-controls/fixture.ts:84"
+      ],
+      "observation": "A random named database is reserved in a fresh explicit evidence directory before CREATE. The created flag follows the successful CREATE acknowledgement. Only the named database and mkdtemp-owned directory are cleanup targets; local admin URL is constrained to loopback /postgres. A failed/unknown start cannot enter successful cleanup because required journey facts are missing."
+    },
+    {
+      "topic": "Acknowledged cancel then dropped response",
+      "locations": [
+        "apps/tui/src/task-controls/fixture.ts:160",
+        "apps/tui/src/task-controls/fixture.ts:189"
+      ],
+      "observation": "The proxy forwards the original key and exact empty JSON body, fully reads a successful center response with matching task identity and cancellation status, durably saves ack-drop.json, then destroys the downstream response. It does not simulate acceptance merely by dropping an outbound request."
+    },
+    {
+      "topic": "Original intent recovery",
+      "locations": [
+        "apps/tui/src/task-controls/journey.test.ts:13"
+      ],
+      "observation": "The first scenario closes and reopens the same private journal after B is admitted publicly, verifies reopening sends no cancellation, and explicitly recovers the saved A key/path/body. It checks B remains running and the saved request clears only after acceptance."
+    },
+    {
+      "topic": "Actual PTY design",
+      "locations": [
+        "apps/tui/test-fixtures/cancel_driver.py:15",
+        "apps/tui/test-fixtures/cancel_driver.py:56",
+        "apps/tui/src/task-controls/journey.test.ts:43"
+      ],
+      "observation": "The driver starts the real TUI entry on a PTY, types the open/cancel commands, waits for visible cancellation, receives C identity after the parent verifies B termination and admits C, types CJK and multiline draft text, resizes, then sends Ctrl-C. The scenario checks that C remains running after terminal exit, no C cancellation was sent, and explicitly releases the synthetic C barrier to finish."
+    },
+    {
+      "topic": "Process group and settlement boundary",
+      "locations": [
+        "apps/tui/src/task-controls/fixture.ts:26",
+        "apps/tui/src/task-controls/fixture.ts:208",
+        "apps/tui/src/task-controls/fixture.ts:247"
+      ],
+      "observation": "The Python driver is a detached owned process-group leader; the TUI inherits that group. Parent cleanup checks group existence and applies bounded TERM/KILL windows, independently of the direct child exit. Unknown stop marks failure and prevents success cleanup. This is a fixture process-group check, not a claim about arbitrary native descendants or OS containment."
+    },
+    {
+      "topic": "Durable checkpoint before irreversible cleanup",
+      "locations": [
+        "apps/tui/src/task-controls/fixture.ts:262",
+        "apps/tui/src/task-controls/fixture.ts:291"
+      ],
+      "observation": "Cleanup collects task state, stops owned resources, observes no database consumers, and writes/fsyncs a checkpoint before DROP DATABASE or recursive removal. Missing journey facts, shutdown unknown, failed evidence write or test failure retain database/tmp. Each evidence file is exclusive-create and bounded to 2 MiB. The checkpoint remains available if a later cleanup/result write fails."
+    }
+  ],
+  "limits": [
+    "This is source review only, not APPROVED runtime acceptance. Tests, imports/typecheck, HTTP, PG, PTY, browser and provider were not run by this reviewer or for this new three-file target.",
+    "The previous 36 passing checks apply to the earlier controller/Ink slice and do not validate these three new files.",
+    "Fresh resource admission and the installed dependency closure must be checked by the execution owner before any run; this review does not grant a PG/PTY window.",
+    "Timeout wrappers only bound waiting; they do not prove that an arbitrary in-process operation has stopped. The source retains recovery data on unknown rather than treating timeout as settlement. Actual lifecycle and cleanup must be recorded in the eventual run.",
+    "CJK/resize/multiline/raw-mode observations are proposed assertions, not measured results. The raw-mode assertion compares ICANON/ECHO flags, not the entire termios structure.",
+    "This synthetic recognized-session adapter does not exercise an SDK/provider or prove native/A2A cancellation. No actual App/browser driver or cross-client visible App acceptance is included.",
+    "No production source, author files, dependencies, Git state or live services were modified. Only these reviewer /tmp JSON receipts were written."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "typecheck": 0,
+    "HTTP": 0,
+    "PG": 0,
+    "PTY": 0,
+    "provider": 0,
+    "installation": 0,
+    "projectWrites": 0
+  },
+  "methods": {
+    "skillsReused": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Read the finite fixture lifetime and public-consumer boundaries, follow cancellation/error paths, verify immutable source bindings, and distinguish pending behavior assertions from evidence. No new framework or source changes requested."
+  }
+}

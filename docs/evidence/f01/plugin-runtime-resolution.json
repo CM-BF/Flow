@@ -1,0 +1,21 @@
+{
+  "node": "v24.20.0",
+  "workspace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "tar": {
+    "version": "7.5.22",
+    "license": "BlueOak-1.0.0",
+    "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.min.js",
+    "manifestSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+  },
+  "consumers": [
+    {
+      "path": "apps/server",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/plugin-runtime"
+    },
+    {
+      "path": "apps/runner",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/plugin-runtime"
+    }
+  ],
+  "scope": "Resolution only; leaf source not yet part of this tree; no loader invocation/PG/provider/personal dependency install"
+}

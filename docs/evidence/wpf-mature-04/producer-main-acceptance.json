@@ -1,0 +1,42 @@
+{
+  "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "acceptedMain": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "observedMain": "bfe50bb0d152d792f6a9dead5644763f722fb345",
+  "sourceComparisons": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "bytes": 2478,
+      "sha256": "e41dc5fba3e0017d86a6d2e1c6f8e362164059356de3c5fbacf572a3b17d95d1"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.test.ts",
+      "bytes": 6632,
+      "sha256": "db87803f9350a978eb5845b95c7424b0ed4c63e666eeb1c077b83956c0577ff4"
+    },
+    {
+      "path": "apps/runner/src/claude-context-observation.test.ts",
+      "bytes": 20724,
+      "sha256": "e35da1190aebd05969179982fbf95ae99485d66d4c350c745b50a63fb7368e51"
+    }
+  ],
+  "mainDirty": false,
+  "observedAt": "2026-10-06 12:24:43 UTC",
+  "leadReceipt": "main@7cbda706632c85fc5da12a371b282419c933ab9a:docs/evidence/i02/context-producer-integration.json",
+  "reusedChecks": {
+    "authorDistinct": 121,
+    "leadRootNoEmitExit": 0,
+    "newChecks": 0,
+    "providerCalls": 0
+  },
+  "limits": [
+    "history-only; current/remaining/compression/consumed cut unknown",
+    "fake Query is not real SDK post-result control proof",
+    "deployment unknown"
+  ],
+  "sourceWriting": "stopped; four source literals removed by v9; metadata only"
+}

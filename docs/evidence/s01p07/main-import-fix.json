@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T03:55:50.792346+00:00",
+  "state": "SOURCE_REVIEW_APPROVED",
+  "target": "7d3757128fa45363c846036a96ea73346185829a",
+  "base": "2fc7d538ef8968177c1575d4cb6e433c1daff3a5",
+  "reason": "Lead main root noEmit reported four docs-layer workspace import resolution errors; branch-only ignored aliases are not a main dependency contract.",
+  "rows": [
+    {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 6333,
+      "sha256": "a69ba0be712c4197a04c68cd998b28b0b7afe7083f1c13ba7dba8d9781ae54b2",
+      "previousBytes": 6283,
+      "previousSha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62",
+      "onlyDeclaredImportReplacements": true
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 13459,
+      "sha256": "48f4844895067368156682b56e0f9c731799849d96fecb4fd56ba97f4b8482d4",
+      "previousBytes": 13409,
+      "previousSha256": "f111069487403bf585e1f742d67b7a02808127a0e655eefaffe27233122d1831",
+      "onlyDeclaredImportReplacements": true
+    }
+  ],
+  "publicEntries": [
+    {
+      "path": "packages/client/package.json",
+      "name": "@flow/client",
+      "exports": "./src/index.ts",
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "name": "@flow/contracts",
+      "exports": "./src/index.ts",
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    }
+  ],
+  "validation": "Static exact import replacement and package exports comparison only; no types/tests/PG rerun. Lead will run the current main combination checks.",
+  "history": "Original 4-PG preparation/result manifests and raw remain byte-identical and bound to their historical targets; this delta does not retroactively change them.",
+  "methods": "Existing local find-skills/clean-code/codebase-design baseline: same public entry and lifecycle, no product/assertion or dependency-manifest change.",
+  "reportedMainFailure": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/s01p07-combination-checks.json",
+    "bytes": 1862,
+    "sha256": "0b78da388524a640ddb8ee470b1a405744cd99e8aa6bbcfcee99dcefab4af9ce",
+    "typesExit": 2,
+    "diagnostics": 4,
+    "copiedOrModified": false
+  },
+  "review": {
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "at": "2026-10-07T03:59:12Z",
+    "state": "SOURCE_REVIEW_APPROVED",
+    "target": "7d3757128fa45363c846036a96ea73346185829a",
+    "P1": 0,
+    "P2": 0,
+    "scope": "Exactly four import path replacements in two fixtures; public exports unchanged. Static only, no main types or PG rerun."
+  }
+}

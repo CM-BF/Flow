@@ -1,0 +1,19 @@
+{
+  "database": "flow_o14_c3489b53c8224d0fbd12ebb0588007b6",
+  "marker": "d5e2dfe4-54fa-4e1d-a461-6546104e63b5",
+  "providerCalls": 0,
+  "reserveBeforeBytes": 1221771264,
+  "plannedMaxNewBytes": 100663296,
+  "errors": [
+    {
+      "name": "error",
+      "code": "23514",
+      "message": "new row for relation \"goal_progressions\" violates check constraint \"goal_progressions_manifest_check1\""
+    }
+  ],
+  "connections": [],
+  "remaining": [],
+  "runtimeCount": 0,
+  "runtimeStopped": true,
+  "directoryRemoved": true
+}

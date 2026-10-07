@@ -4,9 +4,9 @@ import type { PgBoss } from 'pg-boss';
 import type { FastifyInstance } from 'fastify';
 import { ownershipSchema } from '../../../../packages/contracts/src/runner.js';
 import { idSchema } from '../../../../packages/contracts/src/tasks.js';
-import { goalGraphRunAdmissionSchema, goalGraphReadCallSchema, goalGraphDetailCallSchema, goalGraphCommandCallSchema, goalGraphRevokeSchema, goalGraphAuditQuerySchema } from '../../../../packages/contracts/src/goal-graph-runs.js';
+import { goalGraphRunAdmissionSchema, goalGraphReadCallSchema, goalGraphDetailCallSchema, goalGraphCommandCallSchema, goalGraphRevokeSchema, goalGraphAuditQuerySchema, goalGraphRunListQuerySchema } from '../../../../packages/contracts/src/goal-graph-runs.js';
 import { HttpError, transaction } from '../database.js';
-import { admit, audit, getRun, revoke } from './store.js';
+import { admit, audit, getRun, revoke, listRuns } from './store.js';
 import { runnerCommand, runnerDetail, runnerGrant, runnerRead } from './runner.js';
 export async function migrateGoalGraphRuns(pool: Pool) {
   await transaction(pool, async client => {
@@ -24,6 +24,10 @@ function parse<T>(schema: { safeParse(value: unknown): { success: true; data: T 
   return result.data;
 }
 export function registerGoalGraphRunRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss) {
+  app.get<{ Params: { id: string } }>('/api/goals/:id/graph-runs', request => {
+    const query = parse(goalGraphRunListQuerySchema, request.query);
+    return listRuns(pool, parse(idSchema, request.params.id), query.after, query.limit);
+  });
   app.post<{ Params: { id: string } }>('/api/goals/:id/graph-runs', async (request, reply) => reply.code(201).send(await admit(pool, boss, parse(idSchema, request.params.id), parse(goalGraphRunAdmissionSchema, request.body), String(request.headers['idempotency-key'] ?? ''))));
   app.get<{ Params: { id: string } }>('/api/goal-graph-runs/:id', request => getRun(pool, parse(idSchema, request.params.id)));
   app.post<{ Params: { id: string } }>('/api/goal-graph-runs/:id/revoke', request => revoke(pool, parse(idSchema, request.params.id), parse(goalGraphRevokeSchema, request.body).reason, String(request.headers['idempotency-key'] ?? '')));

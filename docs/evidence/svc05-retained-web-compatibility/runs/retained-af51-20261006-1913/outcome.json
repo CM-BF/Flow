@@ -1,0 +1,122 @@
+{
+  "result": {
+    "results": [],
+    "passed": false,
+    "errors": [
+      "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed'\n+ ]\n- []\n\n    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Object.closePreview (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:93:68)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:102:301)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)",
+      "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\\n' +\n+     '+ actual - expected\\n' +\n+     '\\n' +\n+     '+ [\\n' +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed'\\n\" +\n+     '+ ]\\n' +\n+     '- []\\n' +\n+     '\\n' +\n+     '    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\\n' +\n+     '    at async Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:62:11)\\n' +\n+     '    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\\n' +\n+     '    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)'\n+ ]\n- []\n\n    at Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)"
+    ],
+    "providerQueries": 0,
+    "personalActions": 0,
+    "centerUrl": "http://127.0.0.1:64997",
+    "centerPort": 64997,
+    "runnerId": "aaaf8613-93bd-42cf-a154-18dbb6363565",
+    "browserVersion": "154.0.8037.98",
+    "previewPorts": [
+      65018
+    ],
+    "runnerStopped": true,
+    "centerClosed": true,
+    "closeErrors": [
+      "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed'\n+ ]\n- []\n\n    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\n    at async Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:62:11)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)"
+    ]
+  },
+  "errors": [
+    "Error: ENOENT: no such file or directory, lstat '/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05r01-HaXsFe/runner/7186e5bb66b41ad1bbf74befc35078bd9861c4db7b067939fbbba4e860839425/admission.json.tmp'\n    at async lstat (node:internal/fs/promises:1734:18)\n    at async visit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:25:45)\n    at async visit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:27:53)\n    at async visit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:27:53)\n    at async diskBytes (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:30:3)\n    at async sampleResources (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:153:96)\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:194:22"
+  ],
+  "groups": [
+    {
+      "pid": 49046,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    },
+    {
+      "pid": 46178,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    }
+  ],
+  "portObservations": [
+    {
+      "port": 65008,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 64997,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 65018,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "owned": {
+    "parent": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05r01-HaXsFe",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123141804
+    },
+    "databaseName": "flow_svc05r01_e5b0ce0709924db89826",
+    "marker": "aeec8210-c631-4e25-b744-111ecb829023",
+    "created": true,
+    "markerWritten": true,
+    "createAttempted": true
+  },
+  "metrics": {
+    "minimumFree": 1473245184,
+    "peakRaw": 147883,
+    "peakTemp": 8890074
+  },
+  "finalSample": {
+    "at": "2026-10-06T19:13:21.981Z",
+    "free": 1473245184,
+    "raw": {
+      "bytes": 147883,
+      "files": 13
+    },
+    "temp": {
+      "bytes": 8890074,
+      "files": 277
+    },
+    "withinThresholds": true
+  },
+  "elapsedMs": 14885,
+  "providerQueries": 0,
+  "personalActions": 0,
+  "stopWork": true,
+  "checkpoint": true,
+  "cleanup": {
+    "databaseName": "flow_svc05r01_e5b0ce0709924db89826",
+    "marker": "aeec8210-c631-4e25-b744-111ecb829023",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:13:21.997Z",
+          "elapsedMs": 5.087207999999009,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "passed": false,
+  "verifiedReports": [],
+  "finalRawBeforeReports": {
+    "bytes": 155422,
+    "files": 15
+  },
+  "limits": "Sampling thresholds are observations, not OS quotas. PG/WAL bytes are outside private temp accounting."
+}

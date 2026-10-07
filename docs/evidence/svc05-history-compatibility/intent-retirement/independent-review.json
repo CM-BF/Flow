@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06T21:14:32.623233+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "decision": "APPROVED_EXECUTABLE_PREPARATION",
+  "target": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+  "observedCleanDelivery": "7fb235ccf5f1de9bdd63ba8dd4a12d91b4b208fd",
+  "manifest": {
+    "path": "docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json",
+    "sha256": "4f8a688f98a0f314e807433d3d2342bff08ef9dd1a646d04ef4775153edfb93e",
+    "fixedBindings": 130,
+    "presentCurrentBindings": 129,
+    "mismatches": []
+  },
+  "reviewed": [
+    "Exact v1 journal identity/hash/schema guards; durable original backup and prior intent before atomic replacement; duplicate retirement rejected; unknown never replayed or turned into an ACK",
+    "Host adapter holds original installation lock and runner row lock; two zero-work/uncertain/namespace checks and whole old runner-group stopped proof; maintenance/control continues to use existing authority",
+    "Hold-stop seam persists same-operation hold receipt before TERM-only original runner stop; request obtains only operationId from definite receipt while original identity/hash remains fixed",
+    "Pre-hold read identity separated from mutation hold requirement; final read rejects frozen config/state changes; strict ordinary sampler unchanged",
+    "All 24 fixed steps, 11a-11d insertion and exact af51 refresh/resume/Web CAS; per-phase comparison preserves original raw ordinary checks and permits only documented journal/private audit changes",
+    "One shared 900-second drain deadline across all later steps through the existing independent supervisor; insufficient remaining time refuses spawn; no automatic loop/retry/rollback",
+    "Original 11 final file checks plus 5 Node and 2 deadline cases reviewed as 18 distinct across rounds; five actual inline entries syntax only, not actual PG/host proof"
+  ],
+  "findings": [],
+  "reviewerChecks": {
+    "testsRerun": 0,
+    "personalReads": 0,
+    "personalActions": 0,
+    "provider": 0
+  },
+  "approvedPolicy": "Goal Owner a7d proposal conditions 1-5: one audited retirement of the exact legacy unknown intent; not claim recovery or acknowledgement",
+  "executionConditions": [
+    "New exclusive reservation and private evidence directories; actual source window fixes original Flow checkout clean af51c621696230fbced12227670f014ca73bd8a1",
+    "Shared window returned, fresh resource gate, exact installation/source/process/config/state/artifact/compatibility facts before any action",
+    "All work/uncertain zero at required fences; old runner whole-group stopped and exact identity/hash bound; new work or unknown stops subsequent action",
+    "Backup/intent/checkpoint durable before each irreversible follow-on; any uncertain result preserves maintenance and evidence without parameter retry",
+    "Drain start total at most 900 seconds, no provider/model or user tab action; retain original failed runs and receipt semantics"
+  ],
+  "limits": [
+    "Real PG fence/hold/stop/retirement/refresh/resume/publish not exercised by these local checks",
+    "No power-loss or hard filesystem deadline proof",
+    "Actual execution still requires the new exact operator reservation and fixed source window; original 2030/2040 reservations cannot be reused"
+  ]
+}

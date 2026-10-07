@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T04:09:30.655440+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "result": "APPROVED",
+  "source": "bad019d9691499bed69ae46b6c5d23944709cfe3",
+  "delivery": "0e11ab193f89208294933028973a24d74a81bfca",
+  "base": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+  "manifestSha256": "7ebbefeb4ba2ee9e20a2ed29a4e960dec22071e1e8e846276345d07defea5785",
+  "bindingsVerified": 81,
+  "externalRuntimeBindingsVerified": 2,
+  "blockingFindings": [],
+  "readScope": [
+    "complete four-file delta including 114-line consumer test delta",
+    "original backendRuntime full qualification and sourceRepository guard unchanged",
+    "same-lock replacement/pending/save/journal/replay/legacy callers",
+    "actual first/repair/direct outputs and separate cleanup"
+  ],
+  "assessment": [
+    "Only web role selects new strict artifact descriptor; center/runner/maintenance remain original source",
+    "pending persists before signal, same-operation replay observational; unknown journal blocks new ID and old mutation/start entry",
+    "existing artifact qualification remains default; injected source-only stand-in is explicitly limited",
+    "4 preimages equal current main, preserving prior source and unrelated main changes"
+  ],
+  "evidence": {
+    "distinct": 9,
+    "newDistinct": 5,
+    "oldDirectDistinct": 4,
+    "rounds": [
+      "8/8",
+      "3/3",
+      "3/3"
+    ],
+    "supervisedMs": 2282,
+    "rawBytes": 6422,
+    "groupsAbsent": [
+      74177,
+      21524,
+      55849
+    ],
+    "dualEOF": true,
+    "fixturesRemoved": 14,
+    "scratchRemoved": 3
+  },
+  "reviewerTests": 0,
+  "reviewerProviderCalls": 0,
+  "limits": [
+    "No actual complete artifact/internal Web spawn or personal deployment covered",
+    "e5 sourceRepository remains backend-release WT; cannot relabel it for personal Flow",
+    "Historical unknown and final state/receipt unknown semantics retained",
+    "Retained Web artifact retirement remains separate open work"
+  ]
+}

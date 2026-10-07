@@ -32,6 +32,9 @@ importers:
       vitest:
         specifier: 4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.1)(@types/node@24.19.1)(jiti@2.7.0)(lightningcss@1.33.0)(tsx@4.23.15)
+      yaml:
+        specifier: 2.9.0
+        version: 2.9.0
 
   apps/cli:
     dependencies:
@@ -62,6 +65,9 @@ importers:
       '@flow/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@flow/plugin-runtime':
+        specifier: workspace:*
+        version: link:../../packages/plugin-runtime
       '@flow/protocols':
         specifier: workspace:*
         version: link:../../packages/protocols
@@ -81,6 +87,9 @@ importers:
       '@flow/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@flow/plugin-runtime':
+        specifier: workspace:*
+        version: link:../../packages/plugin-runtime
       fastify:
         specifier: 5.12.5
         version: 5.12.5
@@ -252,6 +261,12 @@ importers:
       zod:
         specifier: 4.6.5
         version: 4.6.5
+
+  packages/plugin-runtime:
+    dependencies:
+      tar:
+        specifier: 7.5.22
+        version: 7.5.22
 
   packages/protocols:
     dependencies:
@@ -3779,6 +3794,11 @@ packages:
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
+
+  yaml@2.9.0:
+    resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   yoga-layout@3.2.1:
     resolution: {integrity: sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==}
@@ -7501,6 +7521,8 @@ snapshots:
   yallist@4.0.0: {}
 
   yallist@5.0.0: {}
+
+  yaml@2.9.0: {}
 
   yoga-layout@3.2.1: {}
 

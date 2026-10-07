@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-06T20:08:37.322615+00:00",
+  "ownedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/tmp",
+  "device": 16777234,
+  "inode": 123165431,
+  "items": [
+    {
+      "path": "node-compile-cache",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "node-compile-cache/v24.20.0-arm64-964aae3f-501",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "node-compile-cache/v24.20.0-arm64-964aae3f-501/d1bae4a2",
+      "kind": "file",
+      "bytes": 1357788
+    }
+  ],
+  "logicalFileBytes": 1357788,
+  "absentAfter": true,
+  "cacheDirExists": false,
+  "scope": "Own TMPDIR created immediately before first fake; no shared cache or dependency files removed",
+  "limit": "Process wait confirmed parent exit; no independent process-group or remote socket observation was performed. No PG/native/browser target was opened."
+}

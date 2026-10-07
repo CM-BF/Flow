@@ -1,0 +1,98 @@
+{
+  "kind": "fixed-center-only-recovery-source-precheck",
+  "observedAt": "2026-10-06T19:33:02.033021+00:00",
+  "reviewer": "assignment_review",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "actualCheckoutAtRead": "22a0806bc2465e11096949618113833f31766b19",
+  "method": "Read Git blobs only; local find-skills/codebase-design/clean-code applied to ownership, reuse, lifecycle and unknown states. No credentials/private config read, service/import/test/PG/network action.",
+  "conclusion": "NO_EXISTING_PUBLIC_CENTER_ONLY_COMMAND; smallest candidate is one narrowly reviewed local procedure composing existing exported private helpers. Not an operational approval.",
+  "sources": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 26793,
+      "sha256": "95a18d8dac7a71db1841cb432b151fcf045ce59446e9a341ea5e6c263f2240e7"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 3782,
+      "sha256": "9e5de1042d649f58d322c296673728117cd09de2aa98d4d260a53937bc11fe69"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 2007,
+      "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    }
+  ],
+  "excludedEntrypoints": [
+    {
+      "name": "startPreview / CLI start",
+      "reason": "With missing/stopped center and running runner/web, previous.some(value !== stopped) rejects STOP_OR_VERIFY_EXISTING_PROCESSES. ensureDatabase runs before this gate and may save config; unsuitable even as trial recovery."
+    },
+    {
+      "name": "startPreviewServices",
+      "reason": "Clears state.processes and launches center/runner/web. Can register runner when config.runner absent; cannot retain existing live roles."
+    },
+    {
+      "name": "maintenance bootstrap/refresh/resume",
+      "reason": "bootstrap requires all three running; refresh stops all three then starts all; resume requires all running. None is center-only."
+    },
+    {
+      "name": "direct main.ts or bare CLI internal-service",
+      "reason": "main alone bypasses owned wrapper/state. internal-service requires matching private nonce/PID in state within 2s; use spawnOwnedProcess plus onSpawn persistence."
+    }
+  ],
+  "minimalComposition": {
+    "sourceWindow": "Execution Lead alone fixes original config.repository checkout to clean 362. loadPreviewConfiguration validates repository realpath and refuses arbitrary recovery worktree. Do not edit config.repository. Pin Node and dependencies; no install/upgrade.",
+    "helpers": [
+      "preview.mjs: loadPreviewConfiguration, readPreviewJson, savePreviewJson, withPreviewLock, assertPreviewMarker",
+      "process.mjs: inspectOwnedProcess, spawnOwnedProcess, ownsListener",
+      "environment.mjs: baseServiceEnvironment(center)"
+    ],
+    "spawn": {
+      "args": [
+        "<original repository>/tools/personal-preview/cli.mjs",
+        "internal-service",
+        "<existing private installation directory>",
+        "center"
+      ],
+      "cwd": "existing config.repository",
+      "env": "baseServiceEnvironment(center), with existing fixed Node process.execPath",
+      "ownership": "onSpawn saves only state.processes.center=pending; save full confirmed record on return. Retain every other original state field. runService internally derives center database/token/port/origin from existing private config."
+    },
+    "success": "Bounded inspectOwnedProcess + ownsListener on exact original centerPort + health GET only after authorized spawn. Pin original runner/web records and identities, config/maintenance/Web pointer/artifact bytes, DB marker/runner identity, source; compare after. Do not call statusPreview merely for readiness because it also probes Web/profile.",
+    "failure": "Persist pending/confirmed center record and error/checkpoint. Never restore stale center record, retry spawn, stop runner/Web, force kill, recreate DB, rotate tokens, change maintenance, or roll back source automatically. Unconfirmed spawn ownership stays unknown; any center-only stop needs explicit approved failure policy and exact owned helper. Wrapper record alive does not prove its child/role is ready."
+  },
+  "requiredFreshGates": [
+    "Existing private configuration valid; config.runner present and original identity verified without exposing token. Database marker exists and matches original installation; never ensureDatabase/create/register paths.",
+    "Previous center record is stopped by inspectOwnedProcess, which requires its entire group absent when leader absent. No listener on centerPort; a merely missing listener while old group is running/unknown must STOP.",
+    "Runner and Web recorded identities running and unchanged; fixed tools loaded from original clean362 checkout. Resolve/hash dependencies only, no constructor/query preflight.",
+    "withPreviewLock acquired once; preserve unrelated state fields and existing maintenance v15. Persist exclusive reservation/checkpoint before action; source and state identities rechecked under lock.",
+    "Current unfinished/uncertain/queue facts remain explicit; recovering center may resume previously authorized work. No operator registration/task/query, but cannot claim zero downstream work solely because only center was spawned."
+  ],
+  "runtimeCaveat": "createServer executes idempotent migrations, starts pg-boss scheduler, lease expiry/dispatch_ready sweep, and default conversation queue scan (including onReady). Startup can write operational database rows/promote already-authorized queue work; cannot promise byte-identical entire DB after center restart. Preserve user data/identities and explain allowed operational deltas. Active steering remains default false and package-fetch worker absent under existing service environment.",
+  "sourceRestoration": "Do not restore original moving checkout until readiness/checkpoint/source facts captured and Lead approves. Source read by running TSX process is not an immutable artifact; later dynamic imports and future restarts may read restored checkout. Existing same-version procedure must retain this known limit rather than call runtime hermetic.",
+  "inputsNotObservedHere": {
+    "reportedByLead": "61227 no listener; Web23631 and runner wrapper65168 alive. These are task inputs, not this source review independently sampled facts.",
+    "pending": "native_center_owner fresh factual proposal / exact owned identities / allowed write set / failure handling will be independently reviewed when fixed."
+  }
+}

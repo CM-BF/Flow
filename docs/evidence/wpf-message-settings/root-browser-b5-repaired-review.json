@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T20:34:01.543920+00:00",
+  "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "candidate": "/private/tmp/msgset-b5",
+  "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "bindingSha256": "31d5977922b16ce8560ea8e562d2f47e62f904743e3e45d13631cb6fb45ee5b6",
+  "manifestSha256": "19999d605008894f7263ae1a67ff14c8cd841d65f4f633040f7ce7d65b98e05a",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "metadataHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "closes": [
+    {
+      "id": "MSGSET-SOFT-STOP-LATE",
+      "status": "SOURCE_ADDRESSED",
+      "reason": "Handler records a cooperative-stop error once and marks stateFAILED; persist_results and exit both explicitly gate on not stopping. A stop arriving during final writes is sealed after handler restoration. Original handlers restore in outer finally even when persistence raises."
+    }
+  ],
+  "blockingFindings": [],
+  "delta": "Only owned parent stop/terminal classification and try/finally structure plus its fixed binding metadata; no Chrome launch/profile/environment/network or product worker behavior change.",
+  "validation": {
+    "pythonAST": "PASS ast.parse only",
+    "candidateManifestFilesVerified": 39,
+    "preservedBeforeFiles": 19,
+    "productSourcePinsVerified": 6,
+    "readonlySourcePinsVerified": 116,
+    "externalPinsVerified": 37,
+    "nodePinVerified": true,
+    "oldB4FilesPreserved": 26,
+    "workerAliasesRuntimeBudgetUnchanged": true,
+    "budgetSpentMs": 20609,
+    "budgetRemainingMs": 39391,
+    "cleanupReserveMs": 15000,
+    "previousRetainedBytes": 741839,
+    "noGateOrRuntimeResult": true,
+    "runtime": "NOT_RUN",
+    "projectWrites": false,
+    "resourceOrServiceSampling": false
+  },
+  "priorReports": [
+    {
+      "path": "/tmp/root-message-settings-b5-preparation-review.json",
+      "sha256": "686e17ce70ca4e3160af0421e68a5367627a2bef5fa9dbd2e87fd54b9d460532"
+    },
+    {
+      "path": "/tmp/root-message-settings-b5-soft-stop-addendum.json",
+      "sha256": "7bc4be41bdb0ab55244f9cd803e3ff8262c989a05f16b96f2a92d1fbaae7b8c4"
+    }
+  ],
+  "limitations": [
+    "Fixed preparation review, not dynamic signal injection or browser behavior PASS.",
+    "All previous product/source and dependency-pin limitations remain.",
+    "Any unexpected parent exit, late error, incomplete cleanup or discrepant final evidence remains failed/pending reconciliation; no artifact can be relabeled by arithmetic alone.",
+    "Mika native handback is pending consumption; no sharedwindow or admission is granted by this approval."
+  ],
+  "cleanCode": "Stop receipt and final outcome now agree, original cleanup ownership remains centralized, and original handlers restore at a single outer finally. No generic launcher extraction."
+}

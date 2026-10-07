@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-06T15:26:08.650755+00:00",
+  "sourceTarget": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+  "approvalMetadata": "7d3633ee7117b3e8889e8f16a8e5c690ce44954a",
+  "acceptedMain": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+  "originMainConfirmed": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+  "integratedEquivalentCommit": "fcf59b18fc4c61890c54422d78103b891b065c98",
+  "ancestorFacts": {
+    "87dc292ae2dc8c1357f074ec7bddd41de20108d8": false,
+    "7d3633ee7117b3e8889e8f16a8e5c690ce44954a": false,
+    "fcf59b18fc4c61890c54422d78103b891b065c98": true
+  },
+  "ancestryLimit": "Original feature target/metadata are not main ancestors; controlled integration uses equivalent commit. Six source byte comparisons prove product scope receipt.",
+  "sources": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 9549,
+      "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 7646,
+      "sha256": "e40fd401bb7e307dde9ba957a8c56c1c4b21d9f135d8e33ecec0705f4dadcc8f",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.test.mjs",
+      "bytes": 2790,
+      "sha256": "cf863600d4e1e5a70c876854ddef07471838452b24fe6d386d2cde6d87385f1c",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    },
+    {
+      "path": "docs/evidence/svc06/closure-observe.mjs",
+      "bytes": 2518,
+      "sha256": "d0123fb73c5aae9a71ca8a7fcc9a10e0acbc28a479954a2b348149c283762a47",
+      "mainExact": true,
+      "worktreeExact": true,
+      "integratedCommitExact": true
+    }
+  ],
+  "integrationEvidence": "docs/evidence/i02/closure-progression-client-integration.json",
+  "claim": {
+    "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 4,
+    "state": "active",
+    "observedAt": "2026-10-06T15:24:38.972Z"
+  },
+  "checks": "Source/ancestry/remote/read-only metadata verification only; no tests rerun.",
+  "scope": "Pure dependency selection, staging configuration and cache planning only.",
+  "remaining": [
+    "Formal fixed YAML parser and builder integration",
+    "Actual filtered offline/frozen install accepted by pnpm",
+    "Full artifact and fixed-runtime isolation validation",
+    "Full preparation >=2.5GiB free and >=1GiB shared reserve gates remain"
+  ],
+  "providerCalls": 0,
+  "personalServiceActions": 0,
+  "qualityCheck": {
+    "at": "2026-10-06T15:26:08.650755+00:00",
+    "scope": "metadata only: claim, scope, ancestry, six source identities, open goals and relative evidence links",
+    "findings": "Corrected original-feature ancestry assumption: original target is not ancestor, integrated equivalent commit and exact source bytes are authoritative. No product changes.",
+    "unresolved": "Parser/install/build/resource boundaries remain open."
+  }
+}

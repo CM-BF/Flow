@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T18:19:44.602Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "f8be9cccb36c55dcda9c3e8a9d9fefbc0bea650e",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T18:19:44.665Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "count": 171,
+  "task": {
+    "id": "O16",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T18:17:35.679Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md",
+      "syncedAt": "2026-10-06T18:19:44.602Z",
+      "stale": false,
+      "ageHours": 0.036000555555555556
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/continuous-native-goal-acceptance",
+      "head": "59249f900f65c7835c766afe20b78c454b93fd32",
+      "dirty": true,
+      "changedFiles": 3,
+      "observedAt": "2026-10-06T18:19:44.690Z"
+    },
+    "issues": [],
+    "current": true
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已明确规划和执行分段确认的验收路径，正在准备可恢复的零模型旅程。",
+    "next": "可核对调用预算、确认边界和中心自动推进的独立验收入口。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅只读proposal输入核对，0import/test/PG/provider"
+  },
+  "parseErrors": [],
+  "bytes": 2185516,
+  "sha256": "073dccf3e8d0ee6021d54a596a31aac8173f67e300887878220d5c63075a221c",
+  "own4320": "old38560 normalTERM/exit verified; new session1760",
+  "architecture": "unchanged",
+  "personalServicesAndTabs": "untouched",
+  "newTests": 0,
+  "provider": 0
+}

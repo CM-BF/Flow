@@ -1,3 +1,10 @@
+import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
+import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
+import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+import { migratePluginInstallations } from './plugin-installations/migration.js';
+import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
+import type { PluginInstallHost } from './plugin-installations/commands.js';
+import { createBrowserSessionAuthentication, migrateBrowserSessions, registerBrowserSessionRoutes, type BrowserSessionAuthentication, type BrowserSessionOptions } from './browser-session/index.js';
 import { migrateContextObservationHistory } from './context-transparency/migration.js';
 import { registerContextHistoryRoutes } from './context-transparency/routes.js';
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
@@ -20,16 +27,16 @@ import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
+import { migrateClaudeMessageSettings } from './conversations/message-settings-migration.js';
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { timingSafeEqual } from 'node:crypto';
 import { Pool } from 'pg';
-import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema } from '@flow/contracts';
-import { HttpError, migrate, sha256 } from './database.js';
+import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema, runnerClaimRequestSchema } from '@flow/contracts';
+import { HttpError, migrate } from './database.js';
 import { list, snapshot, submit } from './tasks.js';
 import { startScheduler } from './scheduler.js';
-import { claim, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
+import { claim, claimOpportunity, claimOpportunityStatus, runnerIdentity, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
 import { reportEvents } from './events.js';
 import { cancel, decide } from './commands.js';
 import { detail, eventPage, integerQuery } from './queries.js';
@@ -48,6 +55,10 @@ declare module 'fastify' { interface FastifyRequest { runnerId: string | null } 
 export interface ServerOptions {
   databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number;
   automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+  /** Explicit host policy for static material installation; absent keeps these routes disabled. */
+  pluginInstallHost?: PluginInstallHost;
+  /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
+  browserSession?: BrowserSessionOptions;
   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
   activeSteering?: boolean;
 }
@@ -58,10 +69,10 @@ export async function createServer(options: ServerOptions) {
   app.decorateRequest('runnerId', null);
   const leaseMs = options.leaseMs ?? 10_000;
   if (!Number.isSafeInteger(leaseMs) || leaseMs < 50 || leaseMs > 300_000) throw new Error('Invalid leaseMs.');
-  if (options.allowedOrigin) await app.register(cors, { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] });
   const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });
   pool.on('error', error => app.log.error(error));
   let packageWorker: PackageFetchWorker | undefined;
+  let authentication: BrowserSessionAuthentication;
   try {
     await migrate(pool);
     await migrateWorkspace(pool);
@@ -87,6 +98,14 @@ export async function createServer(options: ServerOptions) {
     await migrateNativeHarnessSources(pool);
     await migrateAttachments(pool);
     await migrateContextObservationHistory(pool);
+    await migrateBrowserSessions(pool);
+    await migratePluginInstallations(pool);
+    await migrateGoalProgressions(pool);
+    await migrateGoalPlanConfirmations(pool);
+    await migrateClaudeMessageSettings(pool);
+    authentication = await createBrowserSessionAuthentication(pool, options);
+    const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
+    if (corsOptions) await app.register(cors, corsOptions);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -101,21 +120,26 @@ export async function createServer(options: ServerOptions) {
     }).catch(error => app.log.error(error)).finally(() => { pendingSweep = undefined; });
   }, Math.min(1000, leaseMs));
   sweep.unref();
-  let pendingQueueScan: Promise<void> | undefined;
+  let pendingWorkScan: Promise<void> | undefined;
   let closing = false;
-  const scanQueue = () => {
+  const scanWork = () => {
     if (closing) return Promise.resolve();
-    return pendingQueueScan ??= scanConversationQueue(pool, boss).then(result => {
-      for (const error of result.errors) app.log.error(error);
-    }).catch(error => app.log.error(error)).finally(() => { pendingQueueScan = undefined; });
+    return pendingWorkScan ??= (async () => {
+      // Each module owns its durable admission rules; this lifecycle only schedules bounded sweeps.
+      for (const scan of [scanConversationQueue, scanGoalProgressions]) {
+        if (closing) break;
+        try { for (const error of (await scan(pool, boss)).errors) app.log.error(error); }
+        catch (error) { app.log.error(error); }
+      }
+    })().finally(() => { pendingWorkScan = undefined; });
   };
   // Module tests may drive promotion explicitly; the production entry always uses automatic scanning.
-  const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanQueue(); }, 1000);
+  const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanWork(); }, 1000);
   queueSweep?.unref();
-  if (options.automaticQueueScan !== false) app.addHook('onReady', scanQueue);
+  if (options.automaticQueueScan !== false) app.addHook('onReady', scanWork);
   app.addHook('preClose', async () => {
     closing = true; clearInterval(queueSweep);
-    await Promise.all([pendingQueueScan, packageWorker?.stop()]);
+    await Promise.all([pendingWorkScan, packageWorker?.stop()]);
   });
   app.addHook('onClose', async () => {
     clearInterval(sweep);
@@ -128,33 +152,26 @@ export async function createServer(options: ServerOptions) {
     const status = candidate.statusCode === 413 ? 413 : candidate.statusCode === 400 ? 400 : 500;
     return reply.code(status).send({ error: { code: status === 413 ? 'body_too_large' : status === 400 ? 'invalid_request' : 'internal_error', message: status === 500 ? 'The center could not complete this request.' : 'Invalid request.' } });
   });
-  app.addHook('preHandler', async request => {
-    if (request.routeOptions.url === '/api/health' || request.method === 'OPTIONS') return;
-    const token = request.headers.authorization?.replace(/^Bearer /, '');
-    if (!token || !request.headers.authorization?.startsWith('Bearer ')) throw new HttpError(401, 'unauthorized', 'Authentication required.');
-    const owner = timingSafeEqual(Buffer.from(sha256(token)), Buffer.from(sha256(options.ownerToken)));
-    const runnerRoute = request.routeOptions.url?.startsWith('/api/runner/');
-    if (owner && !runnerRoute) return;
-    if (owner) throw new HttpError(403, 'wrong_role', 'A runner credential is required.');
-    const runner = (await pool.query<{ id: string }>('SELECT id FROM flow.runners WHERE token_hash=$1 AND NOT revoked', [sha256(token)])).rows[0];
-    if (!runner) throw new HttpError(401, 'unauthorized', 'Authentication required.');
-    if (!runnerRoute) throw new HttpError(403, 'wrong_role', 'An owner credential is required.');
-    request.runnerId = runner.id;
-  });
+  app.addHook('preHandler', authentication.authenticate);
+  registerBrowserSessionRoutes(app, authentication);
   app.get('/api/health', async () => ({ ok: true }));
   registerWorkspaceRoutes(app, pool);
   registerTaskIndexRoutes(app, pool);
+  registerUsageReadoutRoutes(app, pool);
   registerReconciliation(app, pool, boss);
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
   registerGoalDeliveryRoutes(app, pool);
   registerGoalNativeExecutionRoutes(app, pool, boss);
+  registerGoalProgressionRoutes(app, pool);
+  registerGoalPlanConfirmationRoutes(app, pool, boss);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
   registerPluginRoutes(app, pool);
   if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
+  if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
   registerGoalContextRoutes(app, pool);
@@ -169,13 +186,24 @@ export async function createServer(options: ServerOptions) {
   registerKnowledgeRoutes(app, pool);
   registerRunnerMaintenanceRoutes(app, pool);
   registerGoalGraphRunRoutes(app, pool, boss);
-  registerStreams(app, pool);
+  registerStreams(app, pool, authentication.authorizeStream);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_runner', 'Invalid runner registration.');
     return registerRunner(pool, input.data);
   });
   app.post('/api/runner/claim', request => { requireEmptyBody(request.body); return claim(pool, request.runnerId!, leaseMs); });
+  app.get('/api/runner/identity', request => runnerIdentity(pool, request.runnerId!));
+  app.post('/api/runner/claim-opportunity', request => {
+    const input = runnerClaimRequestSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
+    return claimOpportunity(pool, request.runnerId!, input.data, leaseMs);
+  });
+  app.post('/api/runner/claim-opportunity/status', request => {
+    const input = runnerClaimRequestSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
+    return claimOpportunityStatus(pool, request.runnerId!, input.data);
+  });
   app.post<{ Params: { id: string } }>('/api/runners/:id/revoke', request => { requireEmptyBody(request.body); return revoke(pool, request.params.id); });
   app.post('/api/runner/heartbeat', request => {
     const input = ownershipSchema.safeParse(request.body);

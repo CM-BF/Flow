@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-06T18:13:01.150285+00:00",
+  "task": "O16 candidate under FLOW-001 / O01-05 / O12-05 / M02",
+  "mode": "READ_ONLY_PROPOSAL",
+  "sourceBase": "0132ac255002eb61272401bfd97b3dbb65302644",
+  "proposedWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "proposedBranch": "codex/continuous-native-goal-acceptance",
+  "literalScopes": [
+    "experiments/continuous-goal-acceptance",
+    "plans/o16-continuous-goal-acceptance",
+    "docs/evidence/o16"
+  ],
+  "newProductionScope": [],
+  "scopeState": "NOT_TAKEN; no tree creation or native invocation authorized by this proposal",
+  "bindings": [
+    {
+      "path": "packages/interaction/src/goal/entry.ts",
+      "bytes": 5709,
+      "sha256": "09aa857883c484849a4367ea2e75ac33c6d31fc750238a70a23cf937272ee7d0",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 12626,
+      "sha256": "fa77a60fee9c06513969ffa634a6e41832687157770f9894069ea7f902256741",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "bytes": 7354,
+      "sha256": "17fadb855b12a59e9c134f748f2cf0cb8400139fc66bee9ade5f2caf69d77e99",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-graph-acceptance/driver.mjs",
+      "bytes": 15469,
+      "sha256": "7a0bed2497649c10ada08f6c21f594707f9e1a0ba4f2454adeb93bb9e6666fb7",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.mjs",
+      "bytes": 7880,
+      "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-graph-acceptance/config.mjs",
+      "bytes": 4372,
+      "sha256": "1d6fd1ed97164b3f72de507c4aea66cba1645d30d87a736ecafae871ab36e039",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.mjs",
+      "bytes": 7070,
+      "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/config.mjs",
+      "bytes": 3664,
+      "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/worker.mjs",
+      "bytes": 5396,
+      "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7",
+      "fixedMainEqualsObserved": true
+    },
+    {
+      "path": "packages/client/src/goal-plan-confirmation-production.test.ts",
+      "bytes": 13958,
+      "sha256": "478d168037eef6da3c1717f0438c4e82987ad19df582e80f8c6f06bcbf51e91a",
+      "fixedMainEqualsObserved": true
+    }
+  ],
+  "skills": {
+    "discovery": "Installed local task matches; no installation/network needed",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md"
+    ],
+    "application": "Separate experiment evidence/permit lifecycle from existing center and runner authority; actual public consumers, bounded policies, no second scheduler/SDK pump."
+  },
+  "readOnlyActions": {
+    "tests": 0,
+    "imports": 0,
+    "pg": 0,
+    "provider": 0,
+    "projectWrites": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T19:26:25.556154+00:00",
+  "orbStatus": {
+    "exit": 0,
+    "stdout": "Running\n",
+    "stderr": ""
+  },
+  "dockerPs": {
+    "exit": 0,
+    "stdout": "2c45767d4802 flow-f00-postgres-1 Exited (255) 18 seconds ago 127.0.0.1:55432->5432/tcp\n2b67c5a02bf9 multica-frontend-1 Up 17 seconds 127.0.0.1:3000->3000/tcp\n6b3af86d0d02 multica-backend-1 Up 17 seconds 127.0.0.1:8080->8080/tcp\n464a63b04a6c multica-postgres-1 Up 17 seconds (healthy) 5432/tcp\n45b4a58c17c0 claude-code-session Exited (255) 6 months ago \n",
+    "stderr": ""
+  },
+  "listen": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "freeBytes": 1116876800
+}

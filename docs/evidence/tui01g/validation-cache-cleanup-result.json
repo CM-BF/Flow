@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T02:17:00.070571+00:00",
+  "cache": "/tmp/flow-tui01g-vite",
+  "before": {
+    "dev": 16777234,
+    "ino": 123328338,
+    "mode": 16877
+  },
+  "files": [
+    {
+      "path": "vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 738,
+      "sha256": "022cabcbe5aa878cc1607b1e074fd1d3b7a627b3e0b617ea26c29963d1f85551"
+    }
+  ],
+  "bytes": 738,
+  "ownedGroups": [
+    {
+      "pid": 97048,
+      "state": "absent",
+      "exitCode": 1
+    },
+    {
+      "pid": 21591,
+      "state": "absent",
+      "exitCode": 0
+    },
+    {
+      "pid": 27735,
+      "state": "absent",
+      "exitCode": 1
+    },
+    {
+      "pid": 44323,
+      "state": "absent",
+      "exitCode": 0
+    }
+  ],
+  "basis": "Cache absent in preflight, only these bounded task validation commands created it; all four groups absent and output EOF before cleanup",
+  "state": "removed",
+  "absent": true,
+  "freeAfter": 26722152448
+}

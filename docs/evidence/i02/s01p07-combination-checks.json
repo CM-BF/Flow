@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T03:53:43.794526+00:00",
+  "fixedProduct": "83a0799293057f7472f0329c61e566708b2a2381",
+  "mainBefore": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+  "results": [
+    {
+      "pid": 84036,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 2,
+      "elapsed_ms": 9408,
+      "stdout": "docs/evidence/s01p07/capacity-center.ts(3,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.\ndocs/evidence/s01p07/capacity-center.ts(4,37): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.\ndocs/evidence/s01p07/pg-fixture.ts(6,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.\ndocs/evidence/s01p07/pg-fixture.ts(7,85): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.\n",
+      "stderr": "",
+      "observed_bytes": 536,
+      "retained_bytes": 536,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "args": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ]
+    }
+  ],
+  "provider": 0,
+  "PG": 0,
+  "temporaryRemoved": true,
+  "temporaryIdentity": {
+    "dev": 16777234,
+    "ino": 123422038
+  }
+}

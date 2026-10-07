@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T21:26:48.185207+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "12-refresh",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+    "refresh",
+    "/Users/citrine/.flow-personal",
+    "af51c621696230fbced12227670f014ca73bd8a1"
+  ],
+  "freeBytes": 1256341504,
+  "rawBytes": 362034,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "11d-retirement-checkpoint",
+  "state": "intended-not-a-result"
+}

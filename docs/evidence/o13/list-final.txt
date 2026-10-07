@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey
+
+ ❯ apps/server/src/goal-graph-runs/journey.test.ts (3 tests | 3 skipped) 2019ms
+   ↓ public planning read is body-free, goal-bound and page-complete through sub-millisecond timestamps
+   ↓ rejects foreign cursors, invalid bounds and runner role; empty and unknown goals remain distinct
+   ↓ returns current task/revocation facts after restart and fails closed on inconsistent goal association
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-graph-runs/journey.test.ts [ apps/server/src/goal-graph-runs/journey.test.ts ]
+error: Goal tool authority is immutable
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ apps/server/src/goal-graph-runs/journey.test.ts:25:40
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 skipped (3)
+   Start at  06:48:43
+   Duration  3.27s (transform 532ms, setup 0ms, import 1.15s, tests 2.02s, environment 0ms)
+

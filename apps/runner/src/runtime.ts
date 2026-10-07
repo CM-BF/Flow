@@ -4,7 +4,7 @@ import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
 import { mkdir, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { setTimeout as sleep } from 'node:timers/promises';
+import { AttemptWakeup } from './attempt-wakeup.js';
 import { FlowApiError, FlowClient } from '@flow/client';
 import type { ClaimedTask, DecisionAnswer, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
@@ -33,6 +33,7 @@ export interface RunnerOptions {
 
 export async function runRunner(input: RunnerOptions): Promise<void> {
   validateOptions(input);
+  if (input.signal.aborted) return;
   const shutdown = new AbortController();
   const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
@@ -44,19 +45,15 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   await prepareDirectory(stateDirectory);
   const journal = await AdmissionJournal.open(stateDirectory);
   const active = new Map<string, Promise<void>>();
+  const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
+  let runnerId: string | undefined, queryOpportunity = true;
   function failed(error: unknown) {
     if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
     else if (!options.signal.aborted) {
       if (!disconnected) options.onNotice?.({ type: 'connection-lost' });
       disconnected = true;
     }
-  }
-  async function wait() {
-    const pause = new AbortController();
-    try {
-      await Promise.race([sleep(options.pollIntervalMs ?? 500, undefined, { signal: AbortSignal.any([options.signal, pause.signal]) }).catch(() => undefined), ...active.values()]);
-    } finally { pause.abort(); }
   }
   function start(assignment: ClaimedTask, initialLease: LeaseGrant) {
     const attemptId = assignment.attempt.id;
@@ -65,44 +62,57 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
     active.set(attemptId, completion);
+    wakeup.track(completion);
   }
   try {
     while (!options.signal.aborted) {
       try {
+        runnerId ??= (await client.runnerIdentity(requestSignal(options))).runnerId;
+        await journal.bindRunner(runnerId);
         if (recoveryPending) {
           if (active.size) {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
-            waitingNotice = true; await wait(); continue;
+            waitingNotice = true; await wakeup.wait(); continue;
           }
           await recover(stateDirectory, client, options, journal);
+          // A confirmed outbox completion may have made a legacy journal completely clean.
+          await journal.bindRunner(runnerId);
           recoveryPending = false; waitingNotice = false;
         }
         if (journal.unresolved(new Set(active.keys()))) {
           if (!blockedNotice) options.onNotice?.({ type: 'admission-blocked' });
-          blockedNotice = true; await wait(); continue;
+          blockedNotice = true; await wakeup.wait(); continue;
         }
-        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wait(); continue; }
-        await journal.begin();
-        // No request was sent if shutdown/recovery arrived while the intent was persisted.
-        if (options.signal.aborted || recoveryPending) { await journal.accept(null); continue; }
-        const requestedAt = performance.now();
-        // Preserve a definite claim response during normal stop; fatal shutdown still aborts the request.
-        const response = await client.claim(requestSignal(options, shutdown.signal));
-        if (!response || !Object.hasOwn(response, 'assignment')) throw new Error('Invalid claim response; admission intent retained.');
-        const { assignment, remainingLeaseMs } = response;
-        await journal.accept(assignment === null ? null : {
-          attemptId: assignment.attempt.id, taskId: assignment.task.id,
-          runnerId: assignment.attempt.runnerId, ownerVersion: assignment.attempt.ownerVersion,
-        });
+        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wakeup.wait(); continue; }
+        const opportunity = journal.opportunity;
+        if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
+        if (options.signal.aborted || recoveryPending) continue;
+        let requestedAt = performance.now();
+        let response = queryOpportunity ? await client.claimOpportunityStatus(opportunity, requestSignal(options)) : undefined;
+        if (!response || response.state === 'missing') {
+          if (options.signal.aborted || recoveryPending) continue;
+          requestedAt = performance.now();
+          // A sent mutation drains to its original deadline on normal stop; fatal shutdown still preempts it.
+          response = await client.claimOpportunity(opportunity, requestSignal(options, shutdown.signal));
+        }
         disconnected = false;
-        if (assignment && !options.signal.aborted) start(assignment, { requestedAt, remainingLeaseMs });
-        else await wait();
+        if (response.state === 'unavailable') {
+          queryOpportunity = true;
+          if (!blockedNotice) options.onNotice?.({ type: 'admission-blocked' });
+          blockedNotice = true; await wakeup.wait(); continue;
+        }
+        queryOpportunity = false; blockedNotice = false;
+        if (response.state === 'assigned') {
+          await journal.acceptOpportunity(opportunity, response.identity);
+          if (!options.signal.aborted) start(response.assignment, { requestedAt, remainingLeaseMs: response.remainingLeaseMs });
+        } else await wakeup.wait(); // Empty observes the same durable key without a journal write.
       } catch (error) {
-        failed(error); recoveryPending = true;
-        if (!options.signal.aborted) await wait();
+        failed(error); recoveryPending = true; queryOpportunity = true;
+        if (!options.signal.aborted) await wakeup.wait();
       }
     }
   } finally {
+    wakeup.close();
     shutdown.abort();
     await Promise.allSettled(active.values());
     await Promise.allSettled(requests);
@@ -142,6 +152,9 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
     };
   }
   client.claim = guard(client.claim.bind(client));
+  client.runnerIdentity = guard(client.runnerIdentity.bind(client));
+  client.claimOpportunity = guard(client.claimOpportunity.bind(client));
+  client.claimOpportunityStatus = guard(client.claimOpportunityStatus.bind(client));
   client.heartbeat = guard(client.heartbeat.bind(client));
   client.report = guard(client.report.bind(client));
   client.steeringMailbox = guard(client.steeringMailbox.bind(client));

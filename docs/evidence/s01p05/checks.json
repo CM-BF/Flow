@@ -1,0 +1,78 @@
+{
+  "recordedAt": "2026-10-06 12:58:10 UTC",
+  "base": "3609d8dabd3713e37d877af4f96d2daa2bd96e57",
+  "node": "24.20.0",
+  "vitest": "4.0.18",
+  "typescript": "5.9.3",
+  "pg": "8.23.1",
+  "postgresVersionNumber": "160013",
+  "checks": [
+    {
+      "name": "targeted red",
+      "command": "Node24 node_modules/vitest/vitest.mjs run --config docs/evidence/s01p05/vitest.config.ts apps/server/src/event-state.test.ts -t \"persists one task UPDATE per accepted batch with all materialized values and attempt first\"",
+      "exit": 1,
+      "selected": 1,
+      "passed": 0,
+      "failed": 1,
+      "unselected": 8,
+      "raw": "red.log",
+      "sourceTarget": "7b25946261f8092d2847493bbc63ba4d2e19281c"
+    },
+    {
+      "name": "green full local module and direct consumer behavior",
+      "command": "Node24 node_modules/vitest/vitest.mjs run --config docs/evidence/s01p05/vitest.config.ts apps/server/src/event-state.test.ts",
+      "exit": 0,
+      "selected": 9,
+      "passed": 9,
+      "failed": 0,
+      "unselected": 0,
+      "raw": "green-initial.log",
+      "taskCount": 10,
+      "cleanup": {
+        "kind": "s01p05-cleanup",
+        "databaseName": "flow_s01p05_30654e2fa2f74e53893c6d1794463eef",
+        "postgresVersionNumber": "160013",
+        "taskCount": 10,
+        "connectionsClosed": true,
+        "databaseAbsent": true,
+        "adminClosed": true
+      }
+    },
+    {
+      "name": "local strict noEmit",
+      "command": "Node24 node_modules/typescript/bin/tsc --noEmit -p docs/evidence/s01p05/tsconfig.json",
+      "exit": 0,
+      "raw": "typecheck-green-initial.log"
+    }
+  ],
+  "distinctGreen": 9,
+  "initialTypeGraphFailures": [
+    "typecheck-initial.log",
+    "typecheck-ready.log",
+    "typecheck-pre-red.log"
+  ],
+  "strictBoundary": "inherits root ES2023/strict/noUnchecked/skipLibCheck unchanged; @flow resolves this WT; fixed already-installed external declarations mapped explicitly; not root-wide typecheck",
+  "testBoundary": "actual private PG public function entrypoints, bootstrap production migrations via createServer without listening; 0 HTTP transport/native SDK/provider/capacity runs; fixture data and DB-only audit/failure triggers synthetic",
+  "sourceBindings": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "path": "apps/server/src/event-state.test.ts",
+      "bytes": 23695,
+      "sha256": "1b9737a37932fdf8837e26e953caeb9c6f6d790436700fa2a76731d77b0f50c9"
+    },
+    {
+      "path": "docs/evidence/s01p05/vitest.config.ts",
+      "bytes": 380,
+      "sha256": "a07b065884613ea9f926f1e55771d8bf4f5799ee6c6d519749eee975874e3e01"
+    },
+    {
+      "path": "docs/evidence/s01p05/tsconfig.json",
+      "bytes": 940,
+      "sha256": "908d6571d2bdda410727c050af36315c772ef6f4b460a567fead9f8241981510"
+    }
+  ]
+}

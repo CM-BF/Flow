@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-06T15:57:33.811855+00:00",
+  "run": "history2-20261006-155733-c206a1",
+  "state": "NOT_RUN_RESOURCE",
+  "gateCreated": false,
+  "checks": {
+    "claim": true,
+    "source2Runner17Backend2Metadata13Deps10": true,
+    "artifactSourceFreeze": true,
+    "budgetRawCleanup": true
+  },
+  "spaceSamples": 1,
+  "window": {
+    "source": "root relayed latest direct Lead notification plus current owner freeze receipts",
+    "Lead": "15:54:23 legal sparse complete; F01/O15 explicitly held and ONE A2 returned to this group, not old free used",
+    "W01": "0b3e metadata/source frozen, no run/free sampling",
+    "Recovery": "0eef metadata/source frozen, no direct/browser/window; prep paused",
+    "scope": "This one history attempt only; no B/Chrome/build; return after cleanup or NOT_RUN"
+  },
+  "claim": {
+    "observedAt": null,
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "needsVerification": false
+  },
+  "source": {
+    "head": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+    "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+    "files": [
+      {
+        "path": "apps/web/test/web-current-preview.fixture.ts",
+        "bytes": 28313,
+        "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+      },
+      {
+        "path": "apps/web/test/web-current-preview.browser.ts",
+        "bytes": 43464,
+        "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+      }
+    ],
+    "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086"
+  },
+  "windowDisposition": "RETURNED_TO_LEAD_NO_RUN_GATE_NO_RETRY",
+  "preflightCorrection": {
+    "preserved": "/tmp/d01-release03-history2-20261006-155733-c206a1-admission.json",
+    "reason": "Manager assumed every dependency entry had packageJsonSha256; the legitimate same-fixed362-source-only contracts entry instead binds Git source. Zero space samples or run before correction."
+  },
+  "backend": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "metadata": [
+      {
+        "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+        "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+        "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/interface.md",
+        "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+        "sha256": "5eb1f1a5aa1bbfc15b5d45bfca48a2332b1c42b9954aed49e67aec65b5069754"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+        "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+        "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/provision.json",
+        "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/quality.md",
+        "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+        "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+        "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/plan.md",
+        "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/review.md",
+        "sha256": "9d74948f5f695a1b75a434cf5845c51f99d036bd278668aa9b5f7f50e4a72c0c"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/status.md",
+        "sha256": "5256457c6b31f2690cd92a7f42537cbb7742c789962a7dd9486744191d9fae41"
+      }
+    ]
+  },
+  "artifact": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "prior": {
+    "budgets": [
+      {
+        "run": "history-20261006-152729-727a99",
+        "elapsedMs": 3874
+      }
+    ],
+    "spentMs": 3874,
+    "remainingMs": 176126,
+    "retainedBytes": 80470,
+    "cleanup": "root reviewed databaseRemoved/errors[]/workerexit0"
+  },
+  "availableBytes": 1103237120,
+  "spaceObservedAt": "2026-10-06T15:58:36.348208+00:00",
+  "requiredStartBytes": 1107296256,
+  "stopBytes": 1090519040
+}

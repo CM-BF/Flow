@@ -6,6 +6,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 待填写真实UTC时间 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 模板未执行；owner实际开工时填来源，历史无依据不猜 |
 | 单一status owner / model | 待指定（写入至少Sol） |
 | Worktree | 待填写绝对路径 |
 | Branch | 待核验 |
@@ -27,6 +30,10 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | PLAN-ID-01 | pending | 待指定 | 未执行；使用pending/in-progress/blocked/completed |
+
+## 等待记录
+
+尚无已记录等待事件；发生时使用 `ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源` 表。未知时间写UNKNOWN，未结束写OPEN；不按每轮更新制造等待。见[时间契约](../AGENTS.md#task-timing)。
 
 ## 已完成与检查
 

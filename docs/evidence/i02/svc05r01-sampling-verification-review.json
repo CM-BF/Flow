@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T19:30:20.013777+00:00",
+  "reviewer": "Execution Lead",
+  "result": "APPROVED_BOUNDED_PREPARATION",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "delivery": "eac3737efc57510d4cc9a2770dfebcb04d6db699",
+  "independentSourceReview": "native_center_owner source APPROVED_SOURCE_NOT_RUN, 11 bindings",
+  "verificationManifest": "ce0cf5d8da34f704d3fdb19100a25bb54e9aede0ed8219d0c29815347d4535ab",
+  "fixedAndCurrentBindings": 20,
+  "actualLocalChecks": {
+    "selected": 9,
+    "passed": 9,
+    "durationMs": 361.654209,
+    "exitCode": 0,
+    "oneActualInvocation": true
+  },
+  "reviewerTests": 0,
+  "raw": "stdout 909B, exit0, 9 selected/pass, owned group absent, same-inode tmp removed",
+  "limits": "No PG/Chrome/provider; prior2runs remain failed; sample accounting is observational, not OS hardquota; source-only independent approval separate from new raw review",
+  "realAppCompatibility": "NOT_PROVEN; original two red runs retained, no new journey authorization here"
+}

@@ -1,0 +1,89 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "兼容检查脚本已审查，因磁盘余量不足尚未运行",
+    "next": "给出新前端与现有后台的真实兼容结果",
+    "blocker": {
+      "state": "active",
+      "text": "当前磁盘余量未达到安全启动门槛，真实兼容检查未运行"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+    "scopes": [
+      "apps/web/test/web-current-preview.fixture.ts",
+      "apps/web/test/web-current-preview.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-RELEASE03",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-current-preview-compatibility",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T15:07:34.000Z",
+  "updatedRecord": "2026-10-06 15:07:34 UTC",
+  "todos": [
+    {
+      "id": "RELEASE03-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json)"
+    },
+    {
+      "id": "RELEASE03-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "0兼容运行；180秒预算尚未使用；依赖链接窗口20.132ms不是兼容运行"
+    },
+    {
+      "id": "RELEASE03-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "432b源码已固定/条件独审；完整兼容验收与主线交付待运行"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 46395a526ae597958cf3ba801af39e1dbb65d70e（本次metadata提交前已核）",
+  "declaredDirty": "15:07核HEAD46395为clean；随后仅记录源码批准与资源未准入，最终提交回执另核，不将此编辑时点当提交后dirty",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN（实际兼容矩阵）；定向strict noEmit PASSED，见证据"
+  },
+  "reviewRecord": "[review.md](review.md)，完整兼容审查NOT_STARTED；432b源码条件APPROVED",
+  "mainRecord": "NOT_INTEGRATED；432b仅源码条件批准，实际兼容尚未运行",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

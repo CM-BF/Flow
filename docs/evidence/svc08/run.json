@@ -1,0 +1,108 @@
+{
+  "task": "SVC08",
+  "base": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "sourceTarget": "086ba13dc0b284d04dbc3753c66471bf6012328a",
+  "sourceBeforeFix": "ee47e1b8a8ba2dc69e6ec9f87bd99d066d8c9da5",
+  "limits": {
+    "roundSeconds": 10,
+    "segmentSeconds": 30,
+    "rawBytesPerRound": 65536,
+    "segmentRawBytes": 196608,
+    "privateBytesPerRound": 1048576,
+    "segmentPrivateBytes": 3145728,
+    "requestsPerRound": 6,
+    "segmentRequests": 18
+  },
+  "rounds": [
+    {
+      "name": "original",
+      "reservation": "original-reservation.json",
+      "result": "original-result.json",
+      "checkpoint": "original-checkpoint.json",
+      "rawBytes": 6226,
+      "selected": 1,
+      "passed": 0,
+      "failed": 1,
+      "requests": 4,
+      "reportedSupervisionMs": 992,
+      "toolReceipt": {
+        "chunk_id": "26695a",
+        "exit_code": 1,
+        "wall_time_seconds": 0.978328958
+      },
+      "toolReceiptSource": "Faithful transcription of this agent exec_command response, not compiler/test stdout.",
+      "freeAtStart": 26541785088,
+      "freeAfter": 26541998080,
+      "cleanup": {
+        "state": "closed",
+        "frontendTracked": 0,
+        "upstreamTracked": 0,
+        "frontendListening": false,
+        "upstreamListening": false,
+        "directory": "removed"
+      },
+      "directoryObservedAbsentAtPackaging": true,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      }
+    },
+    {
+      "name": "fixed",
+      "reservation": "fixed-reservation.json",
+      "result": "fixed-result.json",
+      "checkpoint": "fixed-checkpoint.json",
+      "rawBytes": 4949,
+      "selected": 1,
+      "passed": 1,
+      "failed": 0,
+      "requests": 4,
+      "reportedSupervisionMs": 457,
+      "toolReceipt": {
+        "chunk_id": "30a1cf",
+        "exit_code": 0,
+        "wall_time_seconds": 0.439163042
+      },
+      "toolReceiptSource": "Faithful transcription of this agent exec_command response, not compiler/test stdout.",
+      "freeAtStart": 26542579712,
+      "freeAfter": 26544033792,
+      "cleanup": {
+        "state": "closed",
+        "frontendTracked": 0,
+        "upstreamTracked": 0,
+        "frontendListening": false,
+        "upstreamListening": false,
+        "directory": "removed"
+      },
+      "directoryObservedAbsentAtPackaging": true,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      }
+    }
+  ],
+  "scope": "self-owned synthetic loopback. No personal service/root-cause/full Web release conclusion.",
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "install": 0,
+  "build": 0,
+  "totals": {
+    "requests": 8,
+    "reportedSupervisionMs": 1449,
+    "rawBytes": 11175,
+    "distinctTests": 1,
+    "greenRoundSelected": 1,
+    "greenRoundPassed": 1,
+    "scenarioCountPerRound": 3,
+    "identityReadPerRound": 1
+  },
+  "limitations": [
+    "Original checkpoint terminal field could be populated by fixture request.destroy after the observation; settledWithin300ms=false and beforeOwnCleanup counts remain exact. Fixed test additionally freezes terminal inside beforeOwnCleanup.",
+    "Original round did not measure private byte count; finite source creates the same tiny artifact. Fixed precleanup private measurement is279B; neither is a volume peak measurement.",
+    "300ms is a bounded sample, not proof of permanent leakage. The fixed upstream aborted/error handler and unchanged same-sequence causal red/green support this path only.",
+    "The existing static-web.test uses a full Vite build and was not rerun under this tiny packet. Normal SSE/auth/Origin/identity/cap are checked by the new direct consumer."
+  ]
+}

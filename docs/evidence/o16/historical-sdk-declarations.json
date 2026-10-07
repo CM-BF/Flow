@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06 18:31:15 UTC",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance/docs/evidence/o10/native-0834/result.json",
+  "sourceSha256": "eaf4fad4eaa819437ef4d86a0ac5090643105d8ccc7018eb4e1de497e7246e91",
+  "sourceBytes": 23739,
+  "effective": {
+    "model": "claude-sonnet-5-5",
+    "permissionMode": "dontAsk",
+    "tools": [
+      "Read"
+    ],
+    "plugins": [
+      {
+        "name": "cc-plugin-agents-md",
+        "version": null
+      },
+      {
+        "name": "cc-plugin-telemetry",
+        "version": null
+      },
+      {
+        "name": "cc-plugin-plugin-authoring",
+        "version": null
+      }
+    ],
+    "skills": [
+      "design",
+      "doctor",
+      "plugin-authoring"
+    ],
+    "mcpServers": [],
+    "runtimeVersion": "2.1.290",
+    "observationKind": "sdk-init-declaration"
+  },
+  "candidateUse": "Fixed comparison baseline for future O16; not current invocation, trust proof, new grant or immutable provider qualification. A changed actual declaration fails closed within that phase, no automatic retry.",
+  "SDK": "0.3.290",
+  "MCP": "1.32.1",
+  "newProviderCalls": 0
+}

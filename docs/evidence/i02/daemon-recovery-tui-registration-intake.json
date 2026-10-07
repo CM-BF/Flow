@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-06T23:36:45.437145+00:00",
+  "inputs": [
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 66341,
+      "sha256": "16cf85294a7f10965b7be545a857a384b0efbf3ef8177066e0d06c3f6715db14"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 21564,
+      "sha256": "d76b366d884c2875c1b6f5f206193c0fd805a6fc6908185157b47390c336cbc3"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/after-start.json",
+      "bytes": 311,
+      "sha256": "c38b821f3a8ff9433c292b8b30ff7799e8ca8befbe6fc9322178b71eac9ce847"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-after.json",
+      "bytes": 431,
+      "sha256": "dd6b186bcc48b884a8e8609ae37f5d701ddbb3af4d5688f5270b5ef61666aa3c"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-before.json",
+      "bytes": 2252,
+      "sha256": "9abba3bb302eeaca48adb3fb55e91ef34076fac56b2896a3d2a1642653b961fb"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-start-reservation.json",
+      "bytes": 154,
+      "sha256": "71ade7389d8ac40a8256830e0f2db24b0c866051683d6667bec97ffcbaa2c695"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-start-result.json",
+      "bytes": 156,
+      "sha256": "d4e8d5a568b7eaa220dbdd1e1d91f9ca685880d38457405fa262d759d2577b74"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/independent-readonly.json",
+      "bytes": 9502,
+      "sha256": "b8f796c591e0c69d3368f8c43b5cebc067b4d8cb5a4ae2f97647a4cf1d9c8de8"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/ledger-restored.json",
+      "bytes": 110,
+      "sha256": "de70dd6d1ee9c80aaea3c364b74c6b0e8acf7cc15910bf25dda9ba76eab61a28"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/preflight.json",
+      "bytes": 850,
+      "sha256": "7b491924ccc5159bfa5cb52563b25e8bb443a946366b69073332a447e1f99590"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/start-reservation.json",
+      "bytes": 224,
+      "sha256": "65e09f9e7a2e82fac32913d59cecf4d0ac953f7909d32c7a8dbdc884780ff6af"
+    },
+    {
+      "source": "6916452425a135f4d697ede4516337c15d7bd4dd",
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/start-result.json",
+      "bytes": 179,
+      "sha256": "94082f7b06f88ed54e9eabed9f1f6cee826d52fded17f1519165396775e8bc73"
+    },
+    {
+      "source": "e92fc81e543ee5b27cd8e7acc93f00085f8b4f22",
+      "path": "docs/evidence/d05/tui01g-live.json",
+      "bytes": 4127,
+      "sha256": "55e05e81a50b96c71b5ab15e46f6947128f859718cafaa1985c47084561561b8"
+    },
+    {
+      "source": "e92fc81e543ee5b27cd8e7acc93f00085f8b4f22",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 28495,
+      "sha256": "c29ccc302a2ebf22a7c54a2bc5de1ba02ea349793d30bb93bdc071598708a277"
+    }
+  ],
+  "checks": "fixed Git source/current bytes; source-owner metadata only",
+  "runtime": "Database daemon restored separately under OPS; personal center pending same-af51 recovery; no runtime update by this commit",
+  "productTests": "NOT_RUN; pure records",
+  "tui01g": "source-reviewed pending validation; implementation NOT_INCLUDED"
+}

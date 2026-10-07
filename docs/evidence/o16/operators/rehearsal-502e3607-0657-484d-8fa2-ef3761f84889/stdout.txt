@@ -1,0 +1,33 @@
+{"o16Run":"rehearsal-502e3607-0657-484d-8fa2-ef3761f84889","nativeQueries":0}
+✖ public staged zero-query journey preserves actual proposal, two dependent children and separate acceptance (7851.582542ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9269.575791
+
+✖ failing tests:
+
+test at experiments/continuous-goal-acceptance/journey.test.mjs:6:1
+✖ public staged zero-query journey preserves actual proposal, two dependent children and separate acceptance (7851.582542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'rejected'
+  - 'acknowledged'
+  
+      at decide (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/driver.mjs:182:14)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/journey.test.mjs:11:20)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'rejected',
+    expected: 'acknowledged',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

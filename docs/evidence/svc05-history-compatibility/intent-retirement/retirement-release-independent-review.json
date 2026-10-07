@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T21:31:25.651342+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "verdict": "APPROVED",
+  "target": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+  "observedMetadata": "cf239ba6694b09c80726efffdf794ad27bc020d5",
+  "manifestSha256": "c48825821644463b296fe74db186d5b4187e52fd347aaff7d347d8fb8803e482",
+  "bindingChecks": {
+    "fixedAndCurrentFiles": 100,
+    "mismatches": 0
+  },
+  "scope": "Saved actual execution results only; original 0a8 source and6e descriptor delta approvals remain separate",
+  "examined": [
+    "24 command+intent pairs and phase order",
+    "hold17 whole-owned-runner-stop before exact retirement",
+    "original80B private0600 backup and exact46B retirement/checkpoint before refresh",
+    "fresh af51 ready-paused then explicit same operation resume v18",
+    "d629 Web CAS v3 after publish gate, retained3artifacts/accurate3compatibility bindings",
+    "64 tables protected summaries,27 migrations,4 native history files and old audit preservation",
+    "operation-analysis dispatch typo before command startup preserved, not retried side effect"
+  ],
+  "findings": [],
+  "counts": {
+    "actualCommands": 24,
+    "commandExitsZero": 24,
+    "finalChecksTrue": 25,
+    "drainSeconds": 166.03047013282776,
+    "drainLimitSeconds": 900,
+    "reviewerNewTests": 0,
+    "reviewerPersonalProbes": 0,
+    "providerQueries": 0
+  },
+  "limitations": [
+    "Original claim outcome remains unknown; exact approved local intent retirement is not an ACK/replay/recovery API",
+    "ordinaryNativeChecks false remain in original comparison; explicit narrow exception and private audit separate",
+    "Preservation uses predeclared protected-field row digests, not a claim of every raw field equality",
+    "No new live UI/provider verification; runtime af51 and Web5069586 artifact d629 are separate from moving main"
+  ],
+  "result": "Actual fixed release accepted; author may close status and main receive own records without further personal operation"
+}

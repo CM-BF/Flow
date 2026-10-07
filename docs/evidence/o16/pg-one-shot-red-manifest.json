@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-06 19:17:33 UTC",
+  "source": "e9319eda0189e878035c2115b9f050f35e130145",
+  "preparationManifest": {
+    "path": "docs/evidence/o16/operator-fixed-manifest.json",
+    "sha256": "e2d7e90caa6a212e01e04144e3cdcd2ad883dc3cea769023dee7ff28a7e90c4c"
+  },
+  "result": "RED_UNKNOWN_RETAIN",
+  "sourceBindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/README.md",
+      "bytes": 6953,
+      "sha256": "bd970d358a49872a77fcfba4f82e410c4cb6e3e3a3c27962b885855ca661cc16"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/assignment.mjs",
+      "bytes": 3744,
+      "sha256": "ef2f38123896adca4862a9951a8b20750c13caf49eeb05ada558a4fde7e18cfe"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/assignment.test.mjs",
+      "bytes": 3138,
+      "sha256": "4402b4394f4b5a22aadd402bc131111af55bacd5423a4bb8638d9155ec6462db"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "bytes": 2887,
+      "sha256": "e09853fea41a6bc8ce3bed8a3d3932c2d011690f3bbead72e3da91fe5a2aa9ef"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/contract.test.mjs",
+      "bytes": 4823,
+      "sha256": "2b5a9dd21323f354a48c7a4278fdb6e566ea0839ad844d56cf26aaf0e9c87636"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/decision-checkpoint.test.mjs",
+      "bytes": 1565,
+      "sha256": "10ca1b2aba2149861d9906a81171188f7992c4085dc0c68c3d8ae4490d4dd065"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 17985,
+      "sha256": "8ce36cdeaae2f6b96f345dc702937dea026a443e940bef7f26f3cd0e7af365d6"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/identity.mjs",
+      "bytes": 3131,
+      "sha256": "800a5e38bf412e77f4dede5463b57768a8cdfdbfd0e640bcebfd99f05090d34b"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/journey.test.mjs",
+      "bytes": 1302,
+      "sha256": "b516ed3a90f6da219123d0ca43484655bdd1646907586740a884ca0f24a71ff8"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 2882,
+      "sha256": "39e1ce5e1eaa1e06a1d746abe0030e90a7d8131081a042b88d4c09efa12fb216"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.test.mjs",
+      "bytes": 4713,
+      "sha256": "1c92e622a347cbdd6eb98448fae74799914bb29e59b02631d8688f6be44c5e3f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 9802,
+      "sha256": "a780db267d687ffb7a790e1150c808b0eefbda0e6635417d217cab133886d318"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.test.mjs",
+      "bytes": 2198,
+      "sha256": "3b868f40a083bdbe14bc498c1aa67db98bf4c2350d00c24dc249523b7bd55998"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 7628,
+      "sha256": "01732329f315e0213ffda1c61a4b422afdd225abe44ae328bc3390d3908831ae"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.test.mjs",
+      "bytes": 5212,
+      "sha256": "f43749bf4fb7912ae661f8380da91ea4e6b16c2f1c105a280bb538f0c1f1d5ab"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "bytes": 5230,
+      "sha256": "f36f3ec8358d96b5e6c11f920afb93995247ca71308b614d27d5adc8f965e8e3"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/proposal.mjs",
+      "bytes": 3384,
+      "sha256": "092dd765e1e92e300ccebecccd5aa79fe5ca16eadc5a39fa1233014a87c68906"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.mjs",
+      "bytes": 6784,
+      "sha256": "9065a7f0d5f917ae3dac5d36fd6dbe8a9f2cd699d09663a97231f61024424523"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.test.mjs",
+      "bytes": 3464,
+      "sha256": "39c8ee35dc3bab6006b2394d00172bd7eecc0c2fa0e550b84751f18026153e40"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "bytes": 4864,
+      "sha256": "9b586487228cd6b85d12121a61e521b3b0b5572b5dfd9a630565f7e2cf1bb256"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.test.mjs",
+      "bytes": 4931,
+      "sha256": "0d28a9a62ecf6849f451d88d10fc1411c6b07d9ac84501de9a3622d8c2e0d7ae"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/records.test.mjs",
+      "bytes": 1814,
+      "sha256": "ae5577983b2be25c76f34618602453d64137cd5ff093da4356c30963452a070b"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/rehearsal.mjs",
+      "bytes": 4899,
+      "sha256": "e8532741524a347ce091d4160ca7a5e828806d6ec9e7cea5eb9e5d14d4a2722f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 8800,
+      "sha256": "93e1ec91f3527ee7b73263028ef052fc2737b6eb86d63ad71247d2493333c358"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "bytes": 5090,
+      "sha256": "47dc8ff5da70d98c27eaa45ed7c4baf62e817ee04edccc652c2d278869a363e7"
+    }
+  ],
+  "newEvidenceBindings": [
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/STOP.json",
+      "bytes": 96,
+      "sha256": "d2055d1d58000bc0a1a130cfad037196ce90befddd1be0c45cc045c08fec5712"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/driver.json",
+      "bytes": 58,
+      "sha256": "55fb7df5e78e2c754b9322d547e2a99d181bfde1b1b7114354b68a7f4f77370c"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/reservation.json",
+      "bytes": 500,
+      "sha256": "349aebeed742abc6e329283c35c33a643f1b5659796aadf21cb4eb6d1bc59a5b"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/result.json",
+      "bytes": 1013,
+      "sha256": "3bdd82042664296d99ce3f511ba97195e582b84e5be993815af435a4efd38c3e"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/stdout.txt",
+      "bytes": 1431,
+      "sha256": "813f42ea5ba0451b1270e4c93be6473da8f627c738a1e5a55cb6c5a9e708da6e"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/supervision.json",
+      "bytes": 538,
+      "sha256": "1d268c5159296d370893f482c07070e924be4e414d027d7603d4ca67b397e3b5"
+    },
+    {
+      "path": "docs/evidence/o16/operators/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/watchdog.json",
+      "bytes": 68,
+      "sha256": "483409de392337d62944d564e5efff0fd045f260cf8575ba6b1e2927023abf27"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot-red-summary.json",
+      "bytes": 3795,
+      "sha256": "afe9774ac9a56aaf36b4bbf4a00dbc33debb4fe7bf604eabc7d6390166d04836"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot.run.json",
+      "bytes": 744,
+      "sha256": "9b10b2d62fe1a1ebb09c7ae302c800d636d7221b2600eb57177345a1028795e6"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot.stdout",
+      "bytes": 258,
+      "sha256": "e691218ccaffe23135afa25986f6cf8c8eb92a4c33f66098603ba54723076a0d"
+    },
+    {
+      "path": "docs/evidence/o16/pg-window-authorization.json",
+      "bytes": 1037,
+      "sha256": "7c61c8d6630624a77a7d13699e32128a3d279cc23aee6d8f69bf05320faf231e"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/children.json",
+      "bytes": 17984,
+      "sha256": "bfac342f10923f3f7c5f265189c7c7aa917ecbe17f27d5414d58256ba819f823"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/confirmation-draft.json",
+      "bytes": 1061,
+      "sha256": "20f9b17a54a57440aa89bfbc3b20f0c57b2c3ee67b13a959bf5bb3bbe953202e"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/confirmation.json",
+      "bytes": 3238,
+      "sha256": "f8360489afb74a061c638772e81a1526eac80809463d5665115e40e5939c6e93"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/decision.json",
+      "bytes": 1330,
+      "sha256": "8a0c2454b933edabffe2d51dee4671ade5fdc2b2948dcd2eb0fde62d18d3137f"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/independent-decision-intent.json",
+      "bytes": 978,
+      "sha256": "8f66f11c2c6dac11993a54958664e41e4eab43a84de27acc8c65d789c25e695a"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/plan.json",
+      "bytes": 14786,
+      "sha256": "c6b0483bdce939b2a528ac53176e14f7cdec11d66eba3902c33c1ddb46b8cdbf"
+    },
+    {
+      "path": "docs/evidence/o16/runs/rehearsal-502e3607-0657-484d-8fa2-ef3761f84889/resources.json",
+      "bytes": 1133,
+      "sha256": "d675f31138ab073bd4b05cc5d654fdf984fe43cddb6e2f2af5d8c1dc2ffccec7"
+    }
+  ]
+}

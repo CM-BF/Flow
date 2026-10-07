@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-10-06 13:27:13 UTC",
+  "distinctGreen": 72,
+  "composition": {
+    "newWakeupChecks": 9,
+    "capacityIncludingNewRefill": 20,
+    "readonlyShutdown": 10,
+    "readonlyRunner": 33
+  },
+  "fullConsumerRun": {
+    "passed": 72,
+    "pgNotSelected": 4,
+    "sourceCaveat": "Before test-only task.id -> executionIdentity guard correction; 71 other checks unchanged. Corrected refill rerun separately, no double count."
+  },
+  "finalRefill": {
+    "passed": 1,
+    "unselected": 23
+  },
+  "strict": {
+    "finalExit": 0,
+    "initialExit": 2,
+    "initialIssue": "New refill test read task.id absent from declared HarnessContext task type; corrected to guarded executionIdentity.taskId; no product change"
+  },
+  "red": {
+    "selected": 1,
+    "failed": 1,
+    "sourceCommit": "808bb0e3edc8b68a7c6918a1f063c52449266827",
+    "actualSubscriptions": [
+      32,
+      32
+    ],
+    "expected": [
+      1,
+      1
+    ],
+    "scope": "mechanical old wait subscription expression, not entire runtime"
+  },
+  "baselineRefill": {
+    "passed": 1,
+    "unselected": 23,
+    "runtimeBase": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "interpretation": "Existing timely refill preserved, not baseline behavior regression"
+  },
+  "focused": {
+    "passed": 10,
+    "unselected": 23,
+    "overlap": "included in distinct72; pre-type correction"
+  },
+  "notRun": [
+    "4 real PG/HTTP capacity checks",
+    "provider/native SDK/model",
+    "128 capacity",
+    "hour-long residence/RSS/heap",
+    "root-wide typecheck"
+  ],
+  "cleanup": "Owned fake timers restored; loopback fixture afterEach awaits shutdown/server close/temp removal. Readonly owned SIGKILL test passed and awaits child close. Tests exited normally; no external resource scan or shared service changes."
+}

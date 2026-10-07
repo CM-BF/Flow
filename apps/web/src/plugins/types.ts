@@ -39,6 +39,8 @@ export type Capability =
   | "reference.read"
   | "theme.write"
   | "theme.register"
+  | "attachment.read"
+  | "attachment.upload"
   | "knowledge.read"
   | "workspace.read"
   | "composer.write"

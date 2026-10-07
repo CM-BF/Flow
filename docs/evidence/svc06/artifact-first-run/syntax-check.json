@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "path": "entry.mjs",
+      "startedAt": "2026-10-07T03:27:25.408389+00:00",
+      "finishedAt": "2026-10-07T03:27:25.440832+00:00",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "path": "runtime-proof.mjs",
+      "startedAt": "2026-10-07T03:27:25.440860+00:00",
+      "finishedAt": "2026-10-07T03:27:25.471724+00:00",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "path": "freeze-inputs.mjs",
+      "startedAt": "2026-10-07T03:27:25.471750+00:00",
+      "finishedAt": "2026-10-07T03:27:25.502662+00:00",
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "path": "supervise.py",
+      "method": "ast.parse only; no import/execute",
+      "result": "parsed"
+    }
+  ],
+  "runtime": "NOT_RUN",
+  "outerFinalSyntax": {
+    "at": "2026-10-07T03:29:02.959268+00:00",
+    "path": "supervise.py",
+    "method": "ast.parse only",
+    "result": "parsed",
+    "imports": 0
+  }
+}

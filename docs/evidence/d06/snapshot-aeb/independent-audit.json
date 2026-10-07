@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-06T12:52:17.665403+00:00",
+  "reviewer": "workspace_panels_owner / gpt-6-astra ultra",
+  "base": "631173ab1c1ffa3ae7d4636f0ea8c941e2c1943f",
+  "target": "6570ef7e896d29040961247f46aa62dc4e466284",
+  "fixedSource": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "head": "e77176914fd600de2e145d2397d0614c7c268a12",
+  "branch": "codex/dashboard-architecture-runtime",
+  "dirty": "",
+  "sourcesMatched": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "sha256": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1"
+    }
+  ],
+  "readonlyMatched": [
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "baseEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "baseEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "93fd539d958ba2cbd8cbdfd5451195dd1c7f3fba740091f0d663c0fbaf15d2e9",
+      "baseEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "baseEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "baseEqual": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "baseEqual": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d",
+      "baseEqual": true
+    }
+  ],
+  "fixedSourceFiles": 106,
+  "exactEvidenceLines": 171,
+  "absent": [
+    "apps/server/src/browser-session/index.ts"
+  ],
+  "presentMigrations": [
+    "020-native-activity.sql",
+    "022-assistant-stream.sql",
+    "023-plugin-package-fetches.sql",
+    "024-active-steering.sql",
+    "025-native-harness-sources.sql",
+    "026-attachment-resources.sql",
+    "027-context-observation-history.sql"
+  ],
+  "scopeOutside": [],
+  "sourceDiffCheck": 0,
+  "postTargetProductDiff": "",
+  "helperCorrection": "First audit incorrectly required all base-to-target paths to be executable sources; corrected to permit owned canonical/evidence metadata. All source/hash/line checks had already passed before that assertion.",
+  "limits": "No browser rerun, PG, provider, personal service or 4320. Existing screenshots visually reviewed; authored browser source hashes independently checked."
+}

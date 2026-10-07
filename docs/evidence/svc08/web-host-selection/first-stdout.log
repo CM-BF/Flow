@@ -1,0 +1,24 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-4EJ4sO","dev":16777234,"ino":123426820,"cleaned":true,"bytes":10531,"calls":{"marker":3,"stop":1,"spawn":1,"ready":2,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation (147.606209ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-lmGLMQ","dev":16777234,"ino":123426869,"cleaned":true,"bytes":10406,"calls":{"marker":3,"stop":1,"spawn":0,"ready":0,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host unknown stop cannot repeat or be bypassed by a new operation id (97.710333ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-58uuOp","dev":16777234,"ino":123426914,"cleaned":true,"bytes":10415,"calls":{"marker":2,"stop":1,"spawn":1,"ready":0,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host uncertain spawn preserves pending new record and never starts a duplicate (100.491333ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-OF1QNK","dev":16777234,"ino":123426960,"cleaned":true,"bytes":10385,"calls":{"marker":2,"stop":1,"spawn":1,"ready":1,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host does not claim ready after protected data changed during launch (107.964375ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-khhX7l","dev":16777234,"ino":123427007,"cleaned":true,"bytes":94533,"calls":{"marker":2,"stop":1,"spawn":1,"ready":2,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection persists only Web artifact and authorizes only its Web service root (130.738333ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-ABGWIX","dev":16777234,"ino":123427069,"cleaned":true,"bytes":94417,"calls":{"marker":3,"stop":1,"spawn":1,"ready":0,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles (159.167708ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-KHInrp","dev":16777234,"ino":123427131,"cleaned":true,"bytes":91831,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection rejects noncanonical descriptors before marker or stop (25.685542ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa/flow-svc08-host-i9JUo8","dev":16777234,"ino":123427181,"cleaned":true,"bytes":91831,"calls":{"marker":1,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 host selection forwards source qualification failure before pending or signal (48.12ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 921.154833

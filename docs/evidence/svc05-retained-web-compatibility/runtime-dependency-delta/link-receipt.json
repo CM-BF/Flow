@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T19:08:44.790456+00:00",
+  "authorization": "Execution Lead message: exact two ignored links and one 3-entry import-only; 10s including 3s cleanup; no PG/Chrome/network/query",
+  "proposalSha256": "d6100452443c40ac9f12f8da3c09ccbe19b144c93d00d886ac2fb3acfb9c4f61",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc05-retained-web-compatibility",
+      "experiments/personal-current-release/browser.mjs",
+      "experiments/personal-current-release/fixture.mjs",
+      "experiments/personal-current-release/inventory.mjs",
+      "experiments/personal-current-release/transport.mjs",
+      "plans/svc05-retained-web-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/personal-retained-web-compatibility",
+    "origin": "new",
+    "taskId": "SVC05R01",
+    "worker": "assignment_review",
+    "claimId": "ccb8ac1a-7657-492e-98d3-fdbfd9b7a051",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+    "createdAt": "2026-10-06T18:38:12.239Z",
+    "updatedAt": "2026-10-06T18:38:12.239Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "links": [
+    {
+      "from": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client",
+      "ignored": true
+    },
+    {
+      "from": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@anthropic-ai/claude-agent-sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "ignored": true
+    }
+  ],
+  "backendTrackedStatusBefore": "",
+  "backendTrackedStatusAfter": ""
+}

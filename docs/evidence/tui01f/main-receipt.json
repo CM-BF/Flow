@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-06T16:13:18.266699+00:00",
+  "mainReceipt": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "observedOriginMain": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "sourceCommit": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+  "authorDelivery": "46d8d7cdecf007f44f433a6fcd3139353ffafeeb",
+  "sourceAndDeliveryAncestors": true,
+  "sourceComparison": [
+    {
+      "path": "packages/interaction/src/task-control/index.ts",
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb",
+      "bytes": 1122,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "packages/interaction/src/task-control/controller.test.ts",
+      "sha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5",
+      "bytes": 13386,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b",
+      "bytes": 2645,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8",
+      "bytes": 6131,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b",
+      "bytes": 22678,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892",
+      "bytes": 4161,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a",
+      "bytes": 7341,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/consumer.test.ts",
+      "sha256": "4d697e10b2b88c311cbaf949c6809e919f16376a21df4a0632d4c773204157cf",
+      "bytes": 2249,
+      "mainMatchesTargetAndOwner": true
+    },
+    {
+      "path": "apps/tui/README.md",
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3",
+      "bytes": 10768,
+      "mainMatchesTargetAndOwner": true
+    }
+  ],
+  "leadReceipt": {
+    "path": "docs/evidence/i02/tui01f-integration-receipt.json",
+    "sha256": "ec3a0fb00e04823e11349765c7c9f4b791ffb5bf7eb88166feaf5e58dde42fcd"
+  },
+  "acceptedScope": "Bounded controller task cancellation and static Ink/main wiring only. 03/04 remain open; no real HTTP/PG/PTY/App acceptance.",
+  "ownerNewTests": 0,
+  "provider": 0,
+  "claimRetained": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v1 for necessary next source preparation"
+}

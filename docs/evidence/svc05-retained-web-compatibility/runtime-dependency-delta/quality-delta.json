@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T19:10:44.525279+00:00",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "scope": "Two ignored links and one import-only observation; no product code changes",
+  "application": "Resolve actual caller module graph rather than package manifest assumptions; explicit same-tree workspace identity; narrow one-shot supervisor with bounded output/time and checkpoint before cleanup; known imports distinguished from exported execution.",
+  "unresolved": "Two retained App actual compatibility NOT_PROVEN; next PG/Chrome requires new single window; no query-time/native resource claim."
+}

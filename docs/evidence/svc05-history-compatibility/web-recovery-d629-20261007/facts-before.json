@@ -1,0 +1,242 @@
+{
+  "at": "2026-10-07T02:38:44.763Z",
+  "scope": "readonly recovery intake; no service mutation",
+  "root": {
+    "dev": 16777234,
+    "ino": 117819905
+  },
+  "files": {
+    "config.json": {
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+      "dev": 16777234,
+      "ino": 117819925,
+      "mode": 384
+    },
+    "state.json": {
+      "bytes": 1562,
+      "sha256": "060c453ea7163d3cdef95937a6513045e30deb0202f7d6c868e5b681633bd162",
+      "dev": 16777234,
+      "ino": 123288410,
+      "mode": 384
+    },
+    "maintenance.json": {
+      "bytes": 314,
+      "sha256": "2d912692cd6ba7ade5dea3d1430f74703d94549d144b08f5131fa170d88dcc7b",
+      "dev": 16777234,
+      "ino": 123210598,
+      "mode": 384
+    },
+    "claude.json": {
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af",
+      "dev": 16777234,
+      "ino": 117819909,
+      "mode": 384
+    },
+    "web-release.json": {
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03",
+      "dev": 16777234,
+      "ino": 123210668,
+      "mode": 384
+    }
+  },
+  "processes": {
+    "center": {
+      "pid": 78240,
+      "group": 78240,
+      "nonceSha256": "ba60ccb15c1589cc5bb5cbbae0f934109f4741837e761edd4c8ca3a7bdeb186c",
+      "recordSha256": "e9214718727551c871953661915538d2e984a8e528243ee7c045f40b39142562",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 78240,
+          "ppid": 1,
+          "group": 78240,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        },
+        {
+          "pid": 78272,
+          "ppid": 78240,
+          "group": 78240,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        }
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "exit": {
+        "at": "2026-10-06T23:31:26.082Z",
+        "code": 1,
+        "signal": null,
+        "nonceMatches": false,
+        "sha256": "789ad4aeff119b704f5ea40d24b61fbdfbd974ec252e92e9ce1d90eae6bc8bf9"
+      },
+      "ownsListener": true
+    },
+    "runner": {
+      "pid": 99312,
+      "group": 99312,
+      "nonceSha256": "f5dbaa6bd497274046ace4fc525f98133a08506ffd922316fc69ae7b6964e3a1",
+      "recordSha256": "251344369898c77709064c61d74f121f5cd60389b5e7e7a95eaa8698ed00254e",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 99312,
+          "ppid": 1,
+          "group": 99312,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        },
+        {
+          "pid": 99344,
+          "ppid": 99312,
+          "group": 99312,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        }
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "exit": {
+        "at": "2026-10-06T21:26:21.102Z",
+        "code": 0,
+        "signal": null,
+        "nonceMatches": false,
+        "sha256": "4facf15c7b1a2cf752bf0fc1b22dba65ec90f89edeb1dc2f03365ff12833d94e"
+      }
+    },
+    "web": {
+      "pid": 99351,
+      "group": 99351,
+      "nonceSha256": "845f08ab2fb17856a4d0c06709614a03abb962fca0d177bf73c8e989647c32e6",
+      "recordSha256": "80ec24aa142b869429420dfe2593c1389f4e589e6b5e16ef9188deb5869697fb",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 99351,
+          "ppid": 1,
+          "group": 99351,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        },
+        {
+          "pid": 99383,
+          "ppid": 99351,
+          "group": 99351,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        }
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "exit": {
+        "at": "2026-10-06T21:26:48.587Z",
+        "code": 1,
+        "signal": null,
+        "nonceMatches": false,
+        "sha256": "54b2133ff25e79777441cc57674026c84c88e34d953417a80452a8cf56ff24df"
+      },
+      "ownsListener": true
+    }
+  },
+  "http": {
+    "center-health": {
+      "status": 401,
+      "contentType": "application/json; charset=utf-8",
+      "observedBytes": 70,
+      "bodyRecorded": false
+    },
+    "web-identity": {
+      "state": "unknown",
+      "type": "TypeError",
+      "cause": {
+        "type": "SocketError",
+        "code": "UND_ERR_SOCKET"
+      },
+      "bodyRecorded": false
+    }
+  },
+  "identity": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "centerPort": 61227,
+    "webPort": 61228
+  },
+  "runtimeSource": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "release": {
+    "format": 1,
+    "policy": "flow-web-release-v1",
+    "version": 3,
+    "backendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "compatibilityIds": {
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+    },
+    "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "artifacts": [
+      {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      }
+    ],
+    "updatedAt": "2026-10-06T21:27:12.813Z"
+  },
+  "maintenance": {
+    "operationId": "4709cece-d8ba-42b1-99a9-24ca2efbe152",
+    "initialVersion": 15,
+    "drainKey": "d2c4932d-d2bc-4946-9927-8aec879e7f20",
+    "holdKey": "5f7b138c-1af0-4922-b6f2-1ad79181384d",
+    "resumeKey": "1a4cd905-61e0-413a-9603-86c0241fd651",
+    "phase": "resumed",
+    "target": "af51c621696230fbced12227670f014ca73bd8a1",
+    "resumeVersion": 17
+  },
+  "operationLock": {
+    "state": "absent",
+    "code": "ENOENT"
+  },
+  "tool": {
+    "target": "af51c621696230fbced12227670f014ca73bd8a1",
+    "processHelperSha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+  },
+  "webTcpStates": {
+    "LISTEN": 1,
+    "CLOSED": 64
+  },
+  "database": {
+    "markerMatched": true,
+    "runner": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null,
+        "maintenance_updated_at": "2026-10-06T21:27:03.063Z"
+      }
+    ],
+    "tasks": [
+      {
+        "status": "succeeded",
+        "count": 4
+      }
+    ],
+    "unfinished": 0,
+    "uncertain": 0,
+    "queue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ]
+  }
+}

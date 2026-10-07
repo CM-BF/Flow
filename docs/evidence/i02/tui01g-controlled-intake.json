@@ -1,0 +1,324 @@
+{
+  "at": "2026-10-07T02:23:32.875188+00:00",
+  "kind": "TUI01G_CONTROLLED_INTAKE",
+  "mainBase": "7a7c3f4b214c41fb740c610d810f2fc5963d25b2",
+  "delivery": "66ac9434ea62fe05c3567549e01d1c11f98ad0d8",
+  "product": "215063fb4667fc394a07417d608b075fa1188d92",
+  "reviewTarget": "335f402a63d56236b733bcf4068dcbef06dfc49b",
+  "manifestSha256": "2b090ae535727b2fd2fef14d1f1bbf360c519f677474bc9c457f33a692de14f2",
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "result": "APPROVED_LOCAL_RESULTS",
+    "findings": [],
+    "bindings": 260,
+    "preimageDrift": false
+  },
+  "files": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 12450,
+      "sha256": "1d1d205f555d9b279045f13e1df399478c651077e5c8defd42e2a1e4e7fb75ff"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4186,
+      "sha256": "4a9712e86eb8afa1931ac9374d89bba4c71e1268e531d43e16dfcf6902c2df70"
+    },
+    {
+      "path": "apps/tui/src/message-settings.test.tsx",
+      "bytes": 2034,
+      "sha256": "1d6a3bf682305408d9e1b142b3715bf44ad59c5301aef145adc9e09735a970e1"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 9043,
+      "sha256": "2fe50ccc88521a77ad28395da23f128c648f32d99722984bb4d1fb90c32c9aa6"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 7466,
+      "sha256": "e07f4a56df1226a02c62e2d1e8fab826ea9ddd21a35d74a601b7cac9db722ce4"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 27353,
+      "sha256": "84b5a5646488e6c4baf4f3bad455b182c9c6943a08beee24bd16f9f72f2a91da"
+    },
+    {
+      "path": "packages/interaction/src/message-settings/controller.test.ts",
+      "bytes": 6768,
+      "sha256": "09ee162901d8c4bed7ceb5358dbedb379f65b665367629cb08b6f4a0f4240465"
+    },
+    {
+      "path": "packages/interaction/src/message-settings/fixture.ts",
+      "bytes": 5508,
+      "sha256": "35d18cb7e0e725f7add8543b7cc04a3d1da9dde4e42a643bd3947c94e6a10581"
+    },
+    {
+      "path": "packages/interaction/src/message-settings/index.test.ts",
+      "bytes": 4353,
+      "sha256": "b4caf887014f53ec0c137d2ad7c624067ebe83f82a0f17fd28b4f7978b35601f"
+    },
+    {
+      "path": "packages/interaction/src/message-settings/index.ts",
+      "bytes": 6609,
+      "sha256": "5200eeef87190c44356f25629901180f8515413ca0ea4dcbf7e8beaa6796e37d"
+    },
+    {
+      "path": "packages/interaction/src/projection.ts",
+      "bytes": 1855,
+      "sha256": "fbc0810ecea7eb532b36d121082f29a55d2ecab1be4ce32403960f75cfb06432"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2833,
+      "sha256": "169a47a74a2b9acfe297468d3bd6cdaa8a5a576f54019997025727d64850d23b"
+    },
+    {
+      "path": "docs/evidence/tui01g/README.md",
+      "bytes": 2182,
+      "sha256": "99730fc8037a99eef5d31f47c078bd1ff267a99193b5743fe68e21ad5c7c3abe"
+    },
+    {
+      "path": "docs/evidence/tui01g/amend-receipt.json",
+      "bytes": 777,
+      "sha256": "fa2e2eb5d634a7df406d2b653a12214108ed1d4633d6deb6d5b0e7fbe7e0597c"
+    },
+    {
+      "path": "docs/evidence/tui01g/amend-request.json",
+      "bytes": 504,
+      "sha256": "11e7601632f002963fe1667eb548ebe2d76d0342f5eb5d51868b1977dfaa201e"
+    },
+    {
+      "path": "docs/evidence/tui01g/dependency-ink-repair.json",
+      "bytes": 2051,
+      "sha256": "e708dc46a8004a7c3240204a5d0412f4dfc8bfc8fa04d02c43e7d9d09cd57119"
+    },
+    {
+      "path": "docs/evidence/tui01g/dependency-receipt.json",
+      "bytes": 5366,
+      "sha256": "4cbdc1aa0c5f121d45edcddaa1cbb195d020ccdd5733db280730322c6a36c5c0"
+    },
+    {
+      "path": "docs/evidence/tui01g/independent-bindings.json",
+      "bytes": 186038,
+      "sha256": "621584d0e09fc1df1c6e57bfcc3efc8a07495aa1d7d38735047aa77718c9a08a"
+    },
+    {
+      "path": "docs/evidence/tui01g/independent-source-review.json",
+      "bytes": 3016,
+      "sha256": "027ce3c4828011001d65c66cb5b42fd85b92e79945af3251db8aca4cc089186c"
+    },
+    {
+      "path": "docs/evidence/tui01g/independent-validation-approval-receipt.json",
+      "bytes": 914,
+      "sha256": "e0fec633e85ec1b4d7b19edd158bb452da60a97199f4af43fd1e7f2e3a0a55df"
+    },
+    {
+      "path": "docs/evidence/tui01g/initial-manifest.json",
+      "bytes": 39536,
+      "sha256": "f5875f83a2f83e99a5da1a9c9e25c9ce0261419d85f831f3ed0ce8ba11e6e1cb"
+    },
+    {
+      "path": "docs/evidence/tui01g/interface.md",
+      "bytes": 2670,
+      "sha256": "46551b9027b43bfe7332ef183585f18c1e595fb7233c96097485d163950f3705"
+    },
+    {
+      "path": "docs/evidence/tui01g/manifest.json",
+      "bytes": 40153,
+      "sha256": "cb359b4795d8fd58454fcda722fe2bc570ff675196d288ca44d65dde04a3abf4"
+    },
+    {
+      "path": "docs/evidence/tui01g/quality.md",
+      "bytes": 1700,
+      "sha256": "4465005d4d63f65fbe358e6ef03cf7d5ff022907683b0e2f52cfc05cf0c7d1d7"
+    },
+    {
+      "path": "docs/evidence/tui01g/run-local-validation.py",
+      "bytes": 4335,
+      "sha256": "6d339fb702c175f206c2f2fa433a05b9cdfa739496483c9914abf3986b8d5e8a"
+    },
+    {
+      "path": "docs/evidence/tui01g/skills.json",
+      "bytes": 1312,
+      "sha256": "da3956bb491d4a58b13fa997c1b908c380e2735674c4b44f99dfc3a958e3094f"
+    },
+    {
+      "path": "docs/evidence/tui01g/take-receipt.json",
+      "bytes": 924,
+      "sha256": "7fd10b6dd5912b763fdd638f4cae35e05ed3b0f51343875ef1533ec9fe3a56d9"
+    },
+    {
+      "path": "docs/evidence/tui01g/take-request.json",
+      "bytes": 767,
+      "sha256": "3bc50264ec9bdbe152cb2505715f7f7a6941295bb280ed1875689027578be57a"
+    },
+    {
+      "path": "docs/evidence/tui01g/tsconfig.json",
+      "bytes": 407,
+      "sha256": "c6bdb9c66d4cb111d3c917c254ae29f42150a305968976526ec681db6646d8f9"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-cache-cleanup-checkpoint.json",
+      "bytes": 915,
+      "sha256": "0a4ebee1d6f3a97fd648a52e5bd1b97461795fd6f0858631e4116b26dcb2b5f0"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-cache-cleanup-result.json",
+      "bytes": 943,
+      "sha256": "b367c0dc5f46ff440635da26c23277b6a449667499c298612ba4b66bf884a10f"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-direct-01-reservation.json",
+      "bytes": 1036,
+      "sha256": "e19a8143d304f22d36eb7c3de128116a2eefb056285cd6d1fc16fe5bcc91ac24"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-direct-01-stderr.log",
+      "bytes": 4944,
+      "sha256": "0523af6c64c89ddd2030e43f8384ff12daf995e726918fd524010c0c09a44b45"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-direct-01-stdout.log",
+      "bytes": 932,
+      "sha256": "80f0bcecdb8eec9d02c77d9bc6a0794f188ae2df83c2caac4fa1372e9770d77f"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-direct-01.json",
+      "bytes": 2187,
+      "sha256": "e46c6d3e3f376c55d72b920e2d81d66f7a1bf57060b1f00ad25fb1075ad4a2b3"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-ink-02-reservation.json",
+      "bytes": 942,
+      "sha256": "41e340ed502820dd0e81a594ab1e2cdb9c3b27dfea423b98c12de028fdfd8b26"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-ink-02-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-ink-02-stdout.log",
+      "bytes": 391,
+      "sha256": "3695d1ef480c89082fbc059a7a7a9174b09bf937b9e53bdc8a7568b53317ba70"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-ink-02.json",
+      "bytes": 1938,
+      "sha256": "590475f6513222ad19b1cc107fff97d84b5f229695d2969f7b8c66c2bf276d9f"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-manifest.json",
+      "bytes": 63700,
+      "sha256": "2b090ae535727b2fd2fef14d1f1bbf360c519f677474bc9c457f33a692de14f2"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-new-01-reservation.json",
+      "bytes": 908,
+      "sha256": "dcd6d5dbf9fec962f96a3601bc76f78d61fa5bec827b1d7998ce7fabe57329f4"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-new-01-stderr.log",
+      "bytes": 2752,
+      "sha256": "caa352313b9bbe1de25f52e2cdb23f2058f479252e574786b38db44afdb27c80"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-new-01-stdout.log",
+      "bytes": 623,
+      "sha256": "52ca029c7ddd913296d7f31121c9dbb18c890dba15aa82d7b50649b17654e181"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-new-01.json",
+      "bytes": 2053,
+      "sha256": "25c07b0247232018085801b70af9a44ad166cac1237cfb4eb0f3de8131bd002a"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-readiness.json",
+      "bytes": 874,
+      "sha256": "2b488fe2c2e82fbf0f8f81db9a91e020a2898d695af04d95d1ea8218f5c2c31b"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-resume-preflight.json",
+      "bytes": 44351,
+      "sha256": "37f792e4c76a09b08f8f4c922d5c378ff7916876ecd55a9f64544c9a75a05354"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-summary.json",
+      "bytes": 1701,
+      "sha256": "51f05c9a6a355bfbb305fce1dbb71f5fb4e9848a5e936caf04bf79af5f1b11d1"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-types-01-reservation.json",
+      "bytes": 814,
+      "sha256": "21c8df0d7b360c2a793fdd1f984587a4bcab89e8f6bdf6d2a34464075cebb678"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-types-01-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-types-01-stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01g/validation-types-01.json",
+      "bytes": 1807,
+      "sha256": "5a519e5d2db45c0de1a985449e68525dcb90ef2d157c0db08bc6e17003a76de1"
+    },
+    {
+      "path": "docs/evidence/tui01g/vitest.config.mts",
+      "bytes": 510,
+      "sha256": "101c769a4c264452e584a29da53743b6fbf00d09834f7ec28ff95ec6c8c0ed3c"
+    },
+    {
+      "path": "plans/tui01g-message-settings/plan.md",
+      "bytes": 1966,
+      "sha256": "3422d7146a27eccea1b8dfa164a6968310d4c943ea2d50d41861953c8b24fcb5"
+    },
+    {
+      "path": "plans/tui01g-message-settings/review.md",
+      "bytes": 2240,
+      "sha256": "6e2c1857d85caf10dc4a00dacb6206fa4aa507faaf0b49406792d406e881be38"
+    },
+    {
+      "path": "plans/tui01g-message-settings/status.md",
+      "bytes": 3752,
+      "sha256": "69f626e8136a3f8abd52cd15d9840b8972deecefd5eb0f3ebad8c9913fc6dcc6"
+    }
+  ],
+  "checksReused": {
+    "new": {
+      "firstPass": 11,
+      "firstFail": 1
+    },
+    "direct": {
+      "firstPass": 37,
+      "firstFail": 2
+    },
+    "rerunFailedOnly": {
+      "pass": 3,
+      "notSelected": 2
+    },
+    "distinctPassedAcrossRounds": 51,
+    "focusedTypesExit": 0,
+    "ownedGroupsAbsent": 4,
+    "maxWallMs": 3356,
+    "observedRawCacheBytes": 10380,
+    "cacheRemovedAfterCheckpointBytes": 738
+  },
+  "dependencyFix": "only own ignored testing-library link changed; donor six-file bytes/hash equal, React/Ink resolved identity aligned; product unchanged",
+  "intakeNote": "Initial count54 assertion stopped before any mutation; final owner closeout adds one faithful independent-review receipt, making55; reviewed this metadata delta only.",
+  "newChecksByIntegration": 0,
+  "providerQueries": 0,
+  "runtimeChanged": false,
+  "limitations": [
+    "No HTTP/PG/real PTY/browser/provider evidence.",
+    "Full TUI-Web journey remains open.",
+    "Historical three Ink failures preserved.",
+    "Focused types is not whole-repo typecheck."
+  ]
+}

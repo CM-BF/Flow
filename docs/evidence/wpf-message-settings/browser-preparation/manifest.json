@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-06T18:46:51.154149+00:00",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "head": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "originalParent": {
+    "path": "/private/tmp/dperf04-browser-preparation/supervisor.py",
+    "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43"
+  },
+  "files": [
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/binding.json",
+      "bytes": 33421,
+      "sha256": "cc734073452a59f56b641cc89ce9434d338df8a0940b90625d438a2f0d658d3c"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/final-resource-sample.diff",
+      "bytes": 5623,
+      "sha256": "9511ae3834faca0b51a55dde414077b0d1ce8644880776cc283fd65330e1ca04"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/report.md",
+      "bytes": 6635,
+      "sha256": "df1eb435124aa8f5ca50f3d8617ba60c1d72928679645dc22fe9904c6fc04665"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor-before-final-sample.py.txt",
+      "bytes": 10939,
+      "sha256": "afb37fe499098c2146e1e18d4792bcd68386b73f41023674dceab8f63aadd61d"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor.diff",
+      "bytes": 13634,
+      "sha256": "db1881ef84a2a4b91deeceb5c2b4c4c1090a023f4b87b5e26d9bd4b85d730b01"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+      "bytes": 12268,
+      "sha256": "9f9adde0cc124a2bd27fe5b4c743472b471b9323b88a774c0b08aa67068283ff"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/worker.mjs",
+      "bytes": 8548,
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4"
+    }
+  ],
+  "staticCheck": "Python ast.parse only; no Node/HTTP/Chrome/free observation executed"
+}

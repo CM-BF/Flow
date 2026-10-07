@@ -1,0 +1,28 @@
+--- /private/tmp/access01-browser-third-2855hbyp/worker.mjs
++++ /private/tmp/access01-browser-fourth-k3zdae5a/worker.mjs
+@@ -11,7 +11,7 @@
+ let chromeBytes=0,totalChromeBytes=0;const chunks=[];
+ const stop=signal=>{process.exitCode=1;report.interrupts.push(signal);if(chrome?.pid&&chrome.exitCode===null&&chrome.signalCode===null)chrome.kill('SIGTERM');};
+ process.on('SIGTERM',stop);process.on('SIGINT',stop);
+-const workTimer=setTimeout(()=>stop('work-timeout'),26272);
++const workTimer=setTimeout(()=>stop('work-timeout'),14161);
+ async function bounded(action,ms){let timer;try{return await Promise.race([action(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('cleanup deadline')),ms);})]);}finally{clearTimeout(timer);}}
+ try {
+  const {chromium,expect}=await import('/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs');
+@@ -26,8 +26,14 @@
+  await writeFile(join(output,'owned.json'),JSON.stringify({workerPid:process.pid,chromePid:chrome.pid,profile,args,group:'inherited-worker',temp:scratch,nativeChromeSandbox:true})+'\n');
+  let port;const until=Date.now()+8000;
+  while(!port){if(launchError)throw launchError;if(report.chromeExit||report.interrupts.length||Date.now()>=until)throw new Error('Chrome readiness failed');try{port=Number((await readFile(join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0]);}catch(error){if(error.code!=='ENOENT')throw error;}if(!port)await delay(50);}
+- report.cdpPort=port;browser=await chromium.connectOverCDP(`http://127.0.0.1:${port}`,{timeout:3000});
+- report.result=await scenario.checkLocalAccessBrowser({browser,expect,outputDirectory:output});
++ report.cdpPort=port;browser=await chromium.connectOverCDP(`http://127.0.0.1:${port}`,{timeout:3000,noDefaults:true});
++ const contexts=browser.contexts();
++ if(contexts.length!==1)throw new Error('fresh owned Chrome must expose exactly one default context');
++ const ownedDefaultContext=contexts[0];
++ const initialPages=ownedDefaultContext.pages();
++ if(initialPages.some(page=>page.url()!=='about:blank'))throw new Error('fresh owned default context has unexpected initial page');
++ report.contextAdmission={chromePid:chrome.pid,profile,contextCount:contexts.length,initialPageCount:initialPages.length,onlyInitialAboutBlank:true,noDefaults:true,ownership:'fresh PID and exclusive profile created by this worker; default context transferred to fixture'};
++ report.result=await scenario.checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory:output});
+  report.state=report.result.state==='PASSED'&&report.result.checks.length===5?'PASSED':'FAILED';
+ } catch(error){report.error=String(error.stack??error).slice(0,8192);}
+ finally {

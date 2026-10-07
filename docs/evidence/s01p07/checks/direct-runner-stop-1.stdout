@@ -1,0 +1,44 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery
+
+ ❯ apps/runner/src/runner.test.ts (33 tests | 1 failed) 5149ms
+   ✓ runs a claimed fixture to a fixed artifact, verification and one completion 99ms
+   ✓ keeps a durable decision pending until a heartbeat delivers approval 86ms
+   ✓ acknowledges cancellation only after a slow adapter exits without publishing 62ms
+   ✓ interrupts on lost heartbeats without pretending cancellation or completion 43ms
+   ✓ replays the identical final event when its successful acknowledgement is lost 54ms
+   ✓ retains a failed verification separately from successful execution 55ms
+   ✓ reports fixture execution failure once without manufacturing an artifact 53ms
+   ✓ keeps ordinary failures on the normal terminal path 43ms
+   ✓ keeps settled native failures on the normal terminal path 43ms
+   ✓ keeps untrusted shape failures on the normal terminal path 44ms
+   ✓ retains unknown native execution after local cleanup and across host restart 45ms
+   ✓ keeps native settlement unknown when cancellation arrived before local cleanup 56ms
+   ✓ lets an already running slot settle while unknown native execution blocks replacement work 78ms
+   ✓ uploads large evidence separately from bounded timeline text 75ms
+   ✓ expires the local lease while a heartbeat request is still hanging 124ms
+   ✓ resolves a pending decision with reject without publishing 78ms
+   ✓ resolves a pending decision with cancel without publishing 68ms
+   ✓ stops its process loop without turning shutdown into user cancellation 44ms
+   ✓ recovers a persisted final event after restarting the runtime 69ms
+   ✓ marks resumed fixture usage with an unknown baseline rather than charging history again 66ms
+   ✓ retains rejected events for reconciliation without starting the adapter again 44ms
+   ✓ preserves cumulative sample IDs and baselines independently of delivery event IDs 47ms
+   ✓ bounds unacknowledged concurrent output and every serialized HTTP batch 67ms
+   × starts from environment configuration and stops cleanly on SIGTERM 3008ms
+   ✓ reuses a repeated decision request without emitting a second pending decision 94ms
+   ✓ persists every concurrent event before sending that exact event to the center 72ms
+   ✓ recovers an old durable prefix when the center already acknowledged later events 55ms
+   ✓ retains unacknowledged events when the center sends invalid confirmation {"accepted":1,"lastSequence":0} 33ms
+   ✓ retains unacknowledged events when the center sends invalid confirmation {"accepted":1,"lastSequence":1.5} 33ms
+   ✓ retains unacknowledged events when the center sends invalid confirmation {"accepted":2,"lastSequence":1} 32ms
+   ✓ executes an injected Claude adapter through the same runner ownership and HTTP event boundary 60ms
+   ✓ continues heartbeats while the final event sequence is frozen and completes only after confirmation 224ms
+   ✓ retains an uncertain final across runner restart without replaying the native query or inventing completion 95ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts (10 tests) 630ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 42 passed (43)
+   Start at  13:26:09
+   Duration  6.61s (transform 314ms, setup 0ms, import 635ms, tests 5.78s, environment 0ms)
+

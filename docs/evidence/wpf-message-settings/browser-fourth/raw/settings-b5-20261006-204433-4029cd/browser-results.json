@@ -1,0 +1,43 @@
+{
+  "sourceHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+  },
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "startedAt": "2026-10-06T20:45:00.573Z",
+  "workerPid": 20627,
+  "parentPid": 15993,
+  "chromePid": 16283,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [
+    "Explicit public-client read; controlled whole tuples, keyboard/Escape, independent panes and detached A/B/current snapshots; no command endpoint",
+    "Pagination does not authorize another profile; failed refresh and revoked capability keep the original choice without fallback",
+    "Existing details callback closes before host focus handoff; real controlled picker light/dark390,180-character requested model, reduced-motion and keyboard",
+    "Empty pages preserve selected intent; old locked creation remains unchanged; a new fixture connection owns fresh catalogs and drafts"
+  ],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "passed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-06T20:45:06.426Z",
+  "requests": [
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000001&limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20"
+  ],
+  "limitation": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration.",
+  "finishedAt": "2026-10-06T20:45:08.725Z",
+  "observedElapsedMs": 8152,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

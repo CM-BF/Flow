@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ packages/client/src/queue-production.test.ts (3 tests) 5000ms
+   ✓ waits for an in-flight scan before disposing its pool and does not overlap interval scans  2198ms
+   ✓ allows module tests to disable automatic scanning explicitly while the next default startup recovers the same intent  1422ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  06:28:45
+   Duration  6.21s (transform 492ms, setup 0ms, import 1.11s, tests 5.00s, environment 0ms)
+

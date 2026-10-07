@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T19:20:41.674249+00:00",
+  "state": "NOT_RUN_RESOURCE_GATE",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "rawProcessExit": 1,
+  "rawMeaning": "Python preflight exited before reservation/tmp/Node child; not test failure",
+  "sourceAssertMatched": true,
+  "firstFreeValue": "NOT_SAVED",
+  "followingReadonlyObservation": {
+    "at": "2026-10-06T19:19:42.343466+00:00",
+    "freeBytes": 827797504,
+    "requiredBytes": 1082130432,
+    "reservationExists": false
+  },
+  "testProcessesStarted": 0,
+  "tmpCreated": false,
+  "pg": 0,
+  "chrome": 0,
+  "provider": 0,
+  "retry": false,
+  "outputProvenance": "Original functions.exec exec_command output chunk b54c3c; subsequent builtin-only free/head observation chunk d250cc; no invented test stdout"
+}

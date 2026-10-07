@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-06T21:28:41.027Z",
+  "sourceCount": 178,
+  "unique": true,
+  "method": "Registry validation plus three canonical status/link reads; no engineering or provider tests",
+  "results": [
+    {
+      "task": {
+        "id": "OPS14",
+        "title": "有界进程监督与可靠收尾",
+        "role": "工程协作",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision",
+        "branch": "codex/owned-process-supervision",
+        "planDir": "plans/ops14-owned-process-supervision",
+        "evidenceDir": "docs/evidence/ops14"
+      },
+      "status": {
+        "errors": [
+          "缺少单一 owner 字段",
+          "缺少工作分支状态",
+          "缺少 TODO 状态表"
+        ],
+        "owner": "",
+        "updatedAt": "2026-10-06T21:23:00.000Z",
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "已确定只监督自有进程的小接口，现有服务包装器保持原行为。",
+          "next": "可有界退出并保留最早错误的标准库模块和局部证明。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "todos": 0
+      }
+    },
+    {
+      "task": {
+        "id": "MATURE02C02",
+        "title": "Codex会话连续性",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
+        "branch": "codex/codex-conversation-continuity",
+        "planDir": "plans/wpf-mature-02-codex-continuity",
+        "evidenceDir": "docs/evidence/mature02c02"
+      },
+      "status": {
+        "errors": [
+          "缺少工作分支状态",
+          "缺少可解析 UTC 更新时间",
+          "缺少 TODO 状态表"
+        ],
+        "owner": "chatui01_owner / gpt-6-astra",
+        "updatedAt": null,
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "已实现明确授权的持久会话接口；注入两轮能关闭并恢复同一会话，正在完成兼容检查和公开任务链路。",
+          "next": "两轮独立执行复用同一自有会话存储的公开任务接口。",
+          "blocker": {
+            "state": "unknown",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [
+            "当前阻塞"
+          ],
+          "complete": false
+        },
+        "todos": 0
+      }
+    },
+    {
+      "task": {
+        "id": "REQ15",
+        "title": "会话页面批量读取",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+        "branch": "codex/conversation-turn-page-batch",
+        "planDir": "plans/req15-conversation-turn-page-batch",
+        "evidenceDir": "docs/evidence/req15-turn-page-batch"
+      },
+      "status": {
+        "errors": [],
+        "owner": "db_transaction_owner / gpt-6-astra",
+        "updatedAt": "2026-10-06T21:03:06.000Z",
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "已确认会话分页的重复读取位置和批量化边界",
+          "next": "保持回复与分页语义的有界批量读取实现",
+          "blocker": {
+            "state": "active",
+            "text": "首次定向验证等待本树依赖入口供给，负责人Mika/Execution Lead；测试和局部配置已准备"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "todos": 4
+      }
+    }
+  ]
+}

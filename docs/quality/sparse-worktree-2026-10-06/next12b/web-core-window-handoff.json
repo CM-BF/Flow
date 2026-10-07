@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06T16:51:27.830936+00:00",
+  "previousOwner": "Web RELEASE03",
+  "nextOwner": "Mika WPF-MATURE-02-CORE",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/all-result-164711.json",
+      "sha256": "d720641dba745bb32daf20b44b24be963ab9f4110578c020ac76325c2add6f91"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/cleanup.json",
+      "sha256": "6db59c1782760399a6e5dd424f08db5fed3dcc43d68dbd476786ebb05c7010a1"
+    }
+  ],
+  "release": {
+    "databaseName": "flow_release03_8d7a4c6f5bcb45f1acd9",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 85006,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 87401,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "finishedAt": "2026-10-06T16:47:43.636Z"
+  },
+  "facts": "TwoA passed; B plain send then ambiguous Files locator stopped; no product failure inferred; compatibility NOT_VERIFIED",
+  "coreAdmission": "Fresh>=1207959552B; fixedea276 single8group PG/HTTP; work120s cleanup80s; no concurrent PG; no retry or lowered gate",
+  "providerCalls": 0
+}

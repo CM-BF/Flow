@@ -1,0 +1,108 @@
+{
+  "taskId": "MATURE02C01",
+  "reviewer": "assignment_review / gpt-6-astra (independent of author native_center_owner)",
+  "reviewedAt": "2026-10-06T16:55:18.183693+00:00",
+  "decision": "APPROVED",
+  "sourceTarget": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "controlledBase": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+  "observedDelivery": "a23883fbc595564dcb66e0030b430674b896574e",
+  "observedDirty": "",
+  "manifest": {
+    "path": "docs/evidence/mature02c01/fixed-manifest.json",
+    "sha256": "23347f1107af75427b0dd1ca269e4bdc2e31b5744437df761057a4b036f2bca8",
+    "bytes": 32783,
+    "counts": {
+      "source": 9,
+      "protected": 59,
+      "evidence": 32
+    }
+  },
+  "bindings": {
+    "path": "/tmp/flow-mature02c01-review-bindings.json",
+    "sha256": "7db0127e0941cc7c2a38f3375fda4fe30d891a3c8497bed585fd62e945a9ddda",
+    "bytes": 35112,
+    "mismatches": []
+  },
+  "scope": [
+    "apps/cli/README.md",
+    "apps/cli/src/cli.test.ts",
+    "apps/cli/src/index.ts",
+    "packages/client/src/conversation-acknowledgement.test.ts",
+    "packages/client/src/conversation-acknowledgement.ts",
+    "packages/client/src/conversation-queue.test.ts",
+    "packages/client/src/execution-profiles.test.ts",
+    "packages/client/src/index.ts",
+    "packages/contracts/src/index.ts"
+  ],
+  "findings": [],
+  "checks": [
+    {
+      "area": "Single transport and protocol negotiation",
+      "result": "New catalog method uses existing FlowClient.request/transportInit with a per-request exact X-Flow-Execution-Profile header and URLSearchParams. It parses the finite public catalog schema and rejects legacy/wrong protocol envelopes. Existing legacy/steering/native methods and publication transport remain unchanged; no fallback or retry was added."
+    },
+    {
+      "area": "Frozen send and queue identity",
+      "result": "Send retains its pre-existing single JSON serialization and comparison against parsed sent bytes. Opt-in enqueue uses the same pattern and exact settings matcher; mutation of the caller object during HTTP cannot change the receipt comparison. Legacy enqueue keeps its old request/error path. No automatic command key generation or retry is introduced by the new conversation CLI mutations."
+    },
+    {
+      "area": "Immutable acknowledgement and unknown handling",
+      "result": "Opt-in queue receipt verifies conversation identity, UUID item identity, expected revision + 1, sequence, initial waiting/unpromoted state, timestamps, exact settings and exact preview/truncation. Replayed immutable acceptance is not compared with later current queue promotion. Malformed successful JSON or mismatched acknowledgement remains unconfirmed; conflict and abort retain transport errors. Raw acknowledgement data is not echoed in the new CLI unknown message."
+    },
+    {
+      "area": "Lead P2 preview finding",
+      "result": "CLOSED at 563b1ea151d8d26a2100238d8faf26b697f38d71. The decoder now computes the longest complete code-point prefix within 512 UTF-8 bytes and requires exact equality plus exact truncated boolean. It rejects a shorter valid prefix and a half-surrogate slice of a valid input code point. The unchanged center itemView loop was inspected as a direct semantic reference. Original 2 failures and subsequent 2 selected passes (6 unselected) are preserved; no reviewer rerun."
+    },
+    {
+      "area": "Requested versus observed facts",
+      "result": "The shared schemas constrain the optional complete settings snapshot and observed initialization. The receipt matcher requires exact requested settings identity, validates observed source/fields, rejects contradictory effective.model and runnerRequested wrappers, and never fills absence/null from the requested model/effort/speed. Ordinary GET readers remain transparent and old records remain unmodified."
+    },
+    {
+      "area": "CLI boundaries and compatibility",
+      "result": "Three new conversation commands reuse existing FlowClient, readJsonInput, parseArgs, schemas and signal. Send is follow-up only; mutations require explicit stable key and bounded regular UTF-8 JSON (131072 bytes). Acceptance output does not mean execution. Missing key/invalid input are local failures; unknown receipt and HTTP errors are nonzero without hidden retries. Old CLI code is retained; O14 goalCommand, its dedicated test, and original README prefix were independently compared exactly."
+    },
+    {
+      "area": "Fixed inputs and resource lifecycle",
+      "result": "All 100 manifest entries match their fixed blobs/bytes/SHA256 and current files: 9 owned, 59 protected, 32 evidence. CORE six contracts match their exact ea276572 input, without granting CORE approval. Source changes outside the 9 owned paths are limited to this task plan/evidence. New HTTP tests use ephemeral loopback ports and close owned servers/connections; file cases remove own temporary directories. No new dependency or lock changes."
+    }
+  ],
+  "authorEvidence": {
+    "differentCases": 86,
+    "newCases": 19,
+    "existingDirectCases": 67,
+    "rounds": [
+      "Initial 2 red / 49 not selected",
+      "82-case local matrix green",
+      "Reader/queue 11 green: 9 repeated, 2 additional",
+      "Preview 2 red -> 2 green, 6 not selected"
+    ],
+    "focusedTypecheckExit0Rounds": 3,
+    "typecheckLimitation": "Focused tsconfig only, not root typecheck. Empty stdout is bound to the author process exit receipts, not treated as standalone success.",
+    "sourceBindingNote": "Earlier matrix/test-source hashes are preserved; the preview correction source hashes in its final receipt match the fixed target. 86 is distinct across rounds, not one 86-test execution."
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "typechecks": 0,
+    "PG": 0,
+    "HTTPServers": 0,
+    "provider": 0,
+    "browser": 0,
+    "installs": 0,
+    "projectWrites": 0,
+    "actions": "Read source/diffs/raw evidence; hash/blob and protected-input comparisons using standard library; wrote only temporary independent review artifacts."
+  },
+  "limitations": [
+    "Approval is only the 9-path shared-client/CLI consumer slice at the fixed target.",
+    "CORE settings domain/native execution/account qualification, production mount, Web/TUI, real PG/provider/browser and root typecheck are not established by this review.",
+    "O14 CLI input is preserved and included in author transport tests; this approval does not approve O14 automatic scan/domain behavior.",
+    "Preview confirms only the bounded prefix; full-text identity remains the original frozen body/idempotency authority.",
+    "No new runtime eligibility is inferred from configured choices or an acceptance receipt."
+  ],
+  "methods": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Reviewed interface ownership, reuse of single transport/JSON decoder, bounded protocol parsing, errors and no-retry semantics, compatibility and direct behavior evidence; no unnecessary new state machine."
+  }
+}

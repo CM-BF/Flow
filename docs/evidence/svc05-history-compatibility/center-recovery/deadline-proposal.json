@@ -1,0 +1,63 @@
+{
+  "kind": "center-only-recovery-proposal",
+  "state": "P2_FIXED_PENDING_INCREMENTAL_REVIEW",
+  "at": "2026-10-06 19:43 UTC",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "owner": "assignment_review",
+  "claim": "cd2d2e57-f633-444b-9797-f83a45624ae2 v2",
+  "command": [
+    "/usr/bin/python3",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+    "--execute-center-once"
+  ],
+  "authorizationFile": "authorization.json (not created; only after independent review and Lead source window)",
+  "binding": {
+    "baselineSha256": "7465d2d03fbfd90c0aae629e098dd3fbdcd8584574dd8ad79a0d94b75ac71a4f",
+    "runtimeBindingsSha256": "95687b4855d8c5804086626cdbdffd555bb10de5a8a9dcad4b6ee72cd2e40b7a"
+  },
+  "limits": {
+    "operatorWorkSeconds": 118,
+    "operatorExitConfirmationSeconds": 2,
+    "totalOperatorBudgetSeconds": 120,
+    "healthWaitMs": 10000,
+    "maxSpawns": 1,
+    "operatorProviderQueries": 0,
+    "operatorTaskCommands": 0
+  },
+  "entry": "Existing exported362 host helpers + spawnOwnedProcess, original cli internal-service center. No product edits or second launcher.",
+  "gates": [
+    "Lead alone fixes original Flow checkout to clean362 and freezes through checkpoint; main ref not moved.",
+    "One exclusive approval directory; source/dependency hashes; existing lock/marker; same config/identity and full preserved baseline.",
+    "Old center group stopped with matching old exit nonce, no center listener; runner/web unchanged owned/running and Web owned listener.",
+    "DB runner accepting/v15, no unfinished/uncertain/queued work, migrations1..27 and64 flow table row digests."
+  ],
+  "allowedWrites": [
+    "Own operator evidence/reservation/checkpoints",
+    "Only state.processes.center via existing atomic save; preserve every other state property",
+    "Normal center process lifecycle/exit file and existing pg-boss/background operational work; all flow row digests compared, differences report unknown rather than overwrite"
+  ],
+  "failure": "No auto retry, center/other-role kill, DB rollback, source rollback, registration, token/config mutation, task cancel or maintenance command. Persist current new/pending center identity before lock release on failure; write result even unknown. Deadline evidence then exit keeps lock unknown.",
+  "after": [
+    "Owned new center +health, same runner/Web, state-except-center and4private files exactly",
+    "Same marker/formal runner/v15/migrations/retained assets/report IDs and full64table digests; any difference kept and reported unknown, not retroactively excluded",
+    "Lead restores checkout only after receipt; TSX source not immutable runtime artifact, no claim that later imports are hermetic."
+  ],
+  "factsAt": "2026-10-06T19:34:55.866Z",
+  "scopeLimits": [
+    "Read-only baseline is instant, not future user-work guarantee.",
+    "No extra pre-operation personal HTTP; health is only inside eventual authorized operation.",
+    "Current private wrapper suppresses center child stderr; old exit1 cause remains UNKNOWN.",
+    "Native source review and our DB snapshot are provenance, not operation success."
+  ],
+  "deadline": "External Python subprocess supervisor covers reservation, startup and final fsync. Timeout SIGKILL is addressed only to its unreaped operator child PID (never killpg/services), then waits at most2s. Evidence cannot delay the stop decision; no successful termination inference when confirmation times out. Any held installation lock/new center stays unknown. Supervisor report is emitted after the stop decision; a filesystem outage can prevent caller persistence, not gate operator termination.",
+  "directProof": {
+    "checks": 2,
+    "exit": 0,
+    "blockedWrite": "anonymous pipe write stalls operator; external timeout stopped PID56050 in303ms while detached stand-in56108 survived, then own test cleaned its group",
+    "durationMs": 423,
+    "rawBytes": 519,
+    "services": 0,
+    "PG": 0,
+    "provider": 0
+  }
+}

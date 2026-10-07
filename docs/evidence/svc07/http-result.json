@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-10-07T02:11:52.340Z",
+  "endedAt": "2026-10-07T02:11:53.518Z",
+  "database": "flow_svc07_http_863a38d11959",
+  "marker": "c7280a7e-18d9-4aaf-999a-299275883087",
+  "httpRequests": 19,
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:61829",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:61838",
+      "closed": true
+    }
+  ],
+  "assertions": [
+    "concurrent-command-replay",
+    "same-db-restart-replay-and-changed-payload-rejected",
+    "two-runner-claim-exactly-once",
+    "cancellation-history-and-revoked-runner"
+  ],
+  "primaryPhases": [],
+  "secondaryFailures": [],
+  "cleanup": {
+    "startupSettled": true,
+    "appClosed": true,
+    "connectionsZero": true,
+    "databaseAbsent": true,
+    "adminClosed": true,
+    "status": "CONFIRMED"
+  },
+  "unexpectedAdminErrors": 0,
+  "creationRequested": true,
+  "creationAcknowledged": true,
+  "databaseIdentity": {
+    "oid": "1187841",
+    "marker": "c7280a7e-18d9-4aaf-999a-299275883087"
+  },
+  "primaryFailure": false
+}

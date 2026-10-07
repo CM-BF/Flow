@@ -1,0 +1,46 @@
+{
+  "outcome": "unknown",
+  "code": "RUNNER_ADMISSION_NOT_IDLE",
+  "runnerObservation": {
+    "dev": 16777234,
+    "ino": 117819908,
+    "uid": 501,
+    "observations": [
+      {
+        "attempt": 0,
+        "outcome": "unknown",
+        "files": [
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+            "bytes": 29,
+            "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+            "bytes": 27,
+            "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+            "bytes": 29,
+            "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+          },
+          {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+            "bytes": 80,
+            "sha256": "67cdfdcdbbf1d646cbfa12552b58299ec68b7ddaa70e8453ae7786ab830f590c"
+          }
+        ],
+        "totalBytes": 165,
+        "admission": {
+          "idle": false
+        },
+        "code": "RUNNER_ADMISSION_NOT_IDLE"
+      }
+    ],
+    "observedEntries": 8,
+    "observedBytes": 165,
+    "nonAtomic": true,
+    "outcome": "unknown"
+  }
+}

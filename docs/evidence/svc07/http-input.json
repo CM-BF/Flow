@@ -1,0 +1,25 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "at": "2026-10-06T20:53:03.750831+00:00",
+  "database": "flow_svc07_http_863a38d11959",
+  "marker": "c7280a7e-18d9-4aaf-999a-299275883087",
+  "adminApplication": "svc07-http-admin-863a38d11959",
+  "serverApplication": "svc07-http-server-863a38d11959",
+  "sourceTarget": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "sourceSha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+  "workMilliseconds": 40000,
+  "cleanupMilliseconds": 15000,
+  "wholeWindowSeconds": 60,
+  "reservedDatabaseBytes": 67108864,
+  "requiredDiskBeforeBytes": 1207959552,
+  "maxHttpRequests": 24,
+  "maxResponseBytes": 65536,
+  "maxTasks": 2,
+  "maxRunners": 2,
+  "connectionBound": {
+    "serverPool": 8,
+    "schedulerPool": 3,
+    "adminPool": 1,
+    "total": 12
+  }
+}

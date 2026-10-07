@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-06 20:11:18 UTC",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "files": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+    }
+  ],
+  "protectedPaths": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations",
+    "apps/web/src/conversation-context",
+    "apps/web/src/conversation-recovery",
+    "apps/web/src/plugin-integration",
+    "apps/web/src/plugins",
+    "apps/web/src/components",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/test/execution-profiles.test.ts",
+    "packages/client",
+    "packages/contracts",
+    "packages/interaction",
+    "package.json",
+    "pnpm-lock.yaml",
+    "apps/web/package.json"
+  ],
+  "protectedDiff": [],
+  "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
+  "runtimeChecks": "270c/actual0925 one permitted b5 browser run: parentPASS/exit0, 4checks/two390screenshots, pageErrors[], complete dual-group/scratch cleanup; 8267ms, cumulative28876/60000. Root APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE, 0blocking; report root-browser-b5-runtime-review.json. Historical f3 types/direct37PASS and parent countFAIL preserved; old1cd first/b2/b4 browserFAIL preserved.",
+  "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "scopedSourceReview": {
+    "verdict": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN",
+    "report": "root-270c-locator-source-review.json",
+    "blocking": 0,
+    "runtime": "NOT_RUN"
+  },
+  "browserPreparation": {
+    "report": "root-browser-b5-repaired-review.json",
+    "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+    "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+    "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+    "boundaryAcceptance": "browser-b5-repaired-native-boundary-acceptance.json",
+    "runtime": "NOT_RUN",
+    "archive": "browser-b5-preparation-archive.json"
+  },
+  "browserRuntime": {
+    "observation": "browser-fourth-observation.json",
+    "run": "settings-b5-20261006-204433-4029cd",
+    "actualSourceHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+    "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+    "checks": 4,
+    "parentExitCode": 0,
+    "outcome": "PASS",
+    "independentEvidenceReview": "APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE",
+    "scope": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration.",
+    "reviewReport": "root-browser-b5-runtime-review.json"
+  }
+}

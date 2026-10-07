@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T20:24:54Z",
+  "freeBytes": 1306460160,
+  "minimumFreeBytes": 1073741824,
+  "maxWorkMs": 10000,
+  "priorLocalRunElapsedMs": 258,
+  "maxTemporaryBytes": 5242880,
+  "maxRawBytes": 1048576,
+  "temporary": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05h-admission-0igqezh8",
+  "dev": 16777234,
+  "ino": 123172420,
+  "node": "/opt/homebrew/opt/node@24/bin/node",
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "bytes": 12016,
+      "sha256": "d73a6b8677c3c050748fe41a52be158a0441279d29074c994ab67bbdd1de735f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+      "bytes": 8733,
+      "sha256": "7cec22430405eb207667577cea6a72fe3c542dcff08304437d40711f31762d94"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "bytes": 6387,
+      "sha256": "2c69d7e0963ec5645be3a6f611f4d5f087f81e3a27c34a5b85805587002f5fd1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "bytes": 13027,
+      "sha256": "6b21b7b09ab1dadacbf50089b873b953e9cc9d79285cf535e184d9458ffad9d2"
+    }
+  ],
+  "reason": "Tighten enumerated entry identity: vanished admission.json.tmp directory must reject. Only local eight cases repeated after this new guard."
+}

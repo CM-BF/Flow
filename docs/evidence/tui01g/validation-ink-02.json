@@ -1,0 +1,74 @@
+{
+  "pid": 44323,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 2494,
+  "observed_bytes": 391,
+  "retained_bytes": 391,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "path": "docs/evidence/tui01g/validation-ink-02-stdout.log",
+    "bytes": 391,
+    "sha256": "3695d1ef480c89082fbc059a7a7a9174b09bf937b9e53bdc8a7568b53317ba70"
+  },
+  "stderr": {
+    "path": "docs/evidence/tui01g/validation-ink-02-stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "at": "2026-10-07T02:16:02.242404+00:00",
+  "group": "ink",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/tui01g/vitest.config.mts",
+    "apps/tui/src/message-settings.test.tsx",
+    "apps/tui/src/terminal.test.ts",
+    "-t",
+    "Ink|descriptor completion"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "freeBefore": 26706944000,
+  "rawBefore": 9251,
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "bounds": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "killSeconds": 2,
+    "combinedOutputBytes": 262144,
+    "rawAndCacheBytes": 8388608
+  },
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0,
+  "cacheBytesAfter": 738,
+  "combinedRawAndCacheAfter": 10380,
+  "freeAfter": 26712911872,
+  "resourceBoundMet": true
+}

@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > keeps the original default reservation and production base 1ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > selects only the fixed post-drain base and independent output 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "" 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "../mixed-run" 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "constructor" 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "after-drain-v2" 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > accepts the two exact already-reviewed P03 source inputs without starting a runtime 2ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects modified production bytes even when their length is unchanged 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects a missing required shutdown source 0ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > does not add the later source requirement to the original identity 0ms
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  03:43:27
+   Duration  124ms (transform 21ms, setup 0ms, import 30ms, tests 5ms, environment 0ms)
+

@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-10-06 13:56:52 UTC",
+  "sourceCommit": "d4a2e0a7",
+  "providerCalls": 0,
+  "records": [
+    {
+      "source": "docs/evidence/o08/native-20261006-071420.json",
+      "sha256": "af00249d20bf2715460e33f4596fd0faf7a9cb9b8b31a05fb975f1aa1098ee5a",
+      "bytes": 32735,
+      "legacyTaskUsage": {
+        "costUsd": 0.0318802,
+        "costKind": "sdk_estimate",
+        "incomplete": false,
+        "inputTokens": 1217,
+        "outputTokens": 838
+      },
+      "models": [
+        {
+          "model": "claude-haiku-4-5-20251001",
+          "inputTokens": 1209,
+          "outputTokens": 23,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "costUSD": 0.001324,
+          "costBasis": "list"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 8,
+          "outputTokens": 815,
+          "cacheReadInputTokens": 10771,
+          "cacheCreationInputTokens": 5059,
+          "costUSD": 0.0305562,
+          "costBasis": "list"
+        }
+      ]
+    },
+    {
+      "source": "docs/evidence/o10/native-0834/result.json",
+      "sha256": "eaf4fad4eaa819437ef4d86a0ac5090643105d8ccc7018eb4e1de497e7246e91",
+      "bytes": 23739,
+      "legacyTaskUsage": {
+        "costUsd": 0.0148666,
+        "costKind": "sdk_estimate",
+        "incomplete": false,
+        "inputTokens": 1403,
+        "outputTokens": 272
+      },
+      "models": [
+        {
+          "model": "claude-haiku-4-5-20251001",
+          "inputTokens": 1399,
+          "outputTokens": 24,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "costUSD": 0.0015190000000000002,
+          "costBasis": "list"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4,
+          "outputTokens": 248,
+          "cacheReadInputTokens": 2298,
+          "cacheCreationInputTokens": 2600,
+          "costUSD": 0.013347600000000001,
+          "costBasis": "list"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Saved SDK result observations, not raw provider wire or subscription bill",
+    "Legacy incomplete flag does not assert new cache coverage",
+    "No automatic phase attribution from model name"
+  ]
+}

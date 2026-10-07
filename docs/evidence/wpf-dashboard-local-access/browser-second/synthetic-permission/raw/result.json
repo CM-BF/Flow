@@ -1,0 +1,33 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-07T03:18:25.054416+00:00",
+  "actualExit": 0,
+  "elapsedMs": 28.343791025690734,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 0,
+    "raw": 98
+  },
+  "terminalFreeBytes": 34359738368,
+  "errors": [
+    "PermissionError: [Errno 13] synthetic scanner failure: '/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/scratch'"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "PASSED",
+  "chromeExit": null,
+  "checks": [],
+  "limits": {
+    "totalMs": 52519,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadata": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+  "previousSpentConservativeMs": 7481
+}

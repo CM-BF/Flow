@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--testNamePattern",
+    "refills a completed slot",
+    "--reporter=verbose"
+  ],
+  "startedAt": "2026-10-06T13:24:40.540370+00:00",
+  "endedAt": "2026-10-06T13:24:42.168215+00:00",
+  "exitCode": 0,
+  "runtimeFixedBase": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "runtimeSha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+  "restoreFinalSource": true,
+  "interpretation": "Existing prompt refill behavior preserved, not an old-product failure"
+}

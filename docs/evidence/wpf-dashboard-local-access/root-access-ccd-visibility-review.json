@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T03:30:25.765636+00:00",
+  "reviewer": "/root independent",
+  "target": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "metadata": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+  "decision": "APPROVED_SCOPED_NATIVE_VISIBILITY_TEST_PREREQUISITE_FIX",
+  "errors": [],
+  "changedApplicationPaths": [
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ],
+  "testSha256": "e151cf797bb8603a51f0849dd305015cc2ba9f5296cbe988cb6c643df9e12af4",
+  "reviewed": [
+    "Disables Playwright focus emulation for exact owned page CDP session.",
+    "Attempts real owned-tab activation; only if still visible, uses associated-target Browser.getWindowForTarget to minimize that isolated browser window.",
+    "Asserts actual document.visibilityState hidden before original token-empty assertion; no property mutation or synthesized visibility events.",
+    "Restores owned window/focus override and detaches page session/closes owned tab in finally; cleanup errors prevent PASS.",
+    "Keeps all first four groups and original fifth hidden-clear/storage assertions; adds non-secret actual-state observations.",
+    "All application code other than browser test byte-identical to08ec, including direct35 test input and visible UI."
+  ],
+  "runtime": "NOT_RUN for new fixture; previous two FAILED records remain",
+  "budget": {
+    "cumulativeConservativeMs": 18728,
+    "remainingMs": 41272,
+    "cleanupIncludedMs": 15000
+  },
+  "limits": [
+    "No real credentials/installation/personal service/user tab interactions.",
+    "Scope approval is not native browser/main/4320 acceptance.",
+    "Fresh next caller binding must use new test hash and remaining41272 rather than reset60s or previous52519."
+  ],
+  "cleanCode": "Small test-environment correction kept in existing owner fixture; explicit owned-target lifecycle and positive precondition, no new generalized abstraction or weakened assertion."
+}

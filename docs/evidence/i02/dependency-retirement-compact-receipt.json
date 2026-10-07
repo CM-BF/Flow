@@ -1,0 +1,88 @@
+{
+  "atUnix": 1791326876.3914251,
+  "kind": "metadata/public compact receipt intake only",
+  "bindings": [
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 20987,
+      "sha256": "dc89bb30767a1c32d70a7fd55f9f5a880a93294bfaea7fd131699c1681385502"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 61105,
+      "sha256": "6f50f0228693ef011896c9813f4bda1941e1a5a0ab3537b85d386fd20963312b"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "plans/ops-001-status-review/review.md",
+      "bytes": 4424,
+      "sha256": "a3fa4fb1e441a4f8d8ce56196eac227fe9dc6433f172c0c0a1f7e41b74483d6c"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json",
+      "bytes": 1721,
+      "sha256": "9060c3a4c09ee61c6440722d66294069d302e80d0d569aaea52ec85414a477a4"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/actual-independent-review.json",
+      "bytes": 8450,
+      "sha256": "97f4dc7d35b7b5c81fb56fb4943a75ba3a7e3a0fd05d61b105ab197f33e211e9"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/operator-independent-review.json",
+      "bytes": 1840,
+      "sha256": "d517cec2364c90775e47780247001283fd55d0bfdf48e7382662abf3a7826837"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/caller-review-and-final-guard.json",
+      "bytes": 464,
+      "sha256": "3e943e05846130b78ef57ca1b2f3fba665160cf4528bfe70c68efe00dccd3e5a"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/one-shot-retire-supervision.json",
+      "bytes": 629,
+      "sha256": "7f61f44a37a03b1bc7ba5e96c2414fd24422e68f39203613ff3c0dc781dea9e9"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-qualification-summary.json",
+      "bytes": 1242,
+      "sha256": "bd5cca0945a970736c0b59362466d8b2afe32d7371a1e12792ba5ce47a60507b"
+    },
+    {
+      "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+      "path": "docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-retirement-candidate-manifest.json",
+      "bytes": 8432,
+      "sha256": "d9a9963b4465180cf32e3bfa15f25759b84ceab79e17c49075c7d309d0d236c3"
+    },
+    {
+      "source": "7b82e8c1027ee983db4f5e34a3f0050549533496",
+      "path": "docs/evidence/d05/chat05p01-registry-live.json",
+      "bytes": 3184,
+      "sha256": "53274c8c0f0de41248feead2daaf66a8d15dbe38b871255c6b7f68c0f5d2f991"
+    },
+    {
+      "source": "7b82e8c1027ee983db4f5e34a3f0050549533496",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 26241,
+      "sha256": "3759a5e235dae56b9f8b77cfe7b1e9948e31f0d89417e756d780430d92be5127"
+    }
+  ],
+  "notCopiedToMain": {
+    "source": "e5dae1f9966bfac72e19502c55349afaf27360f1",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06",
+    "paths": "full fixed operator/toy/raw/recoverable manifests and exact journal",
+    "reason": "Already committed and pushed to canonical branch; avoid another roughly9MB materialized duplicate at current disk floor. All original immutable bytes remain in Git objects and owner canonical. Main compact receipts do not claim to be runnable restore input."
+  },
+  "newProductTests": 0,
+  "provider": 0,
+  "runtimeChanged": false,
+  "resourceRecoveredForPG": false
+}

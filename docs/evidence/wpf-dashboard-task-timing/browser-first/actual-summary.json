@@ -1,0 +1,169 @@
+{
+  "actual": {
+    "actualExitCode": 0,
+    "outerElapsedMs": 6410.498125012964,
+    "startedAt": "2026-10-07T03:40:44.245553+00:00",
+    "finishedAt": "2026-10-07T03:40:50.656640+00:00",
+    "stdout": "outer-stdout.json",
+    "stderr": "outer-stderr.log"
+  },
+  "terminal": {
+    "state": "PASSED",
+    "startedAtApprox": "2026-10-07T03:40:44.279115+00:00",
+    "actualExit": 0,
+    "elapsedMs": 6373.22575005237,
+    "ownedGroupAbsent": true,
+    "scratchRemoved": true,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "peakSampledLogicalBytes": {
+      "scratch": 12758056,
+      "raw": 175730
+    },
+    "terminalFreeBytes": 25867603968,
+    "errors": [],
+    "cleanupErrors": [],
+    "discardedOutputBytes": 0,
+    "interrupts": [],
+    "workerState": "PASSED",
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "checks": [
+      "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+      "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+      "Read failure marks open timing historical without replacing the dialog or stealing focus",
+      "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+      "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout"
+    ],
+    "limits": {
+      "totalMs": 60000,
+      "cleanupReserveMs": 15000,
+      "scratchBytes": 268435456,
+      "rawBytes": 8388608
+    },
+    "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
+    "metadata": "156b49d33d08a0d47521f8a231684050d648f9c2",
+    "previousSpentConservativeMs": 0,
+    "postWriteElapsedMs": 6373.962208046578,
+    "postWriteRawBytes": 177027
+  },
+  "workerCleanup": {
+    "workerPid": 39858,
+    "chromePid": 40008,
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "fixture": {
+      "url": "http://127.0.0.1:53463",
+      "kind": "isolated parser/UI synthetic snapshot",
+      "closed": true
+    },
+    "chromeStdoutEOF": true,
+    "chromeStderrEOF": true,
+    "chromeLog": {
+      "observedBytes": 168,
+      "retainedBytes": 168,
+      "truncatedBytes": 0,
+      "finalAfterEOF": true
+    },
+    "cleanupErrors": [],
+    "interrupts": []
+  },
+  "postCleanup": {
+    "worker": {
+      "pid": 39858,
+      "absent": true
+    },
+    "chrome": {
+      "pid": 40008,
+      "absent": true
+    },
+    "groupAbsent": true,
+    "cdpConnectCode": 61,
+    "scratchAbsent": true,
+    "observedAt": "2026-10-07T03:41:04.044214+00:00"
+  },
+  "checks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout"
+  ],
+  "screenshots": [
+    "task-timing-light-390.png",
+    "task-timing-dark-390.png"
+  ],
+  "rawFiles": 13,
+  "rawBytes": 178870,
+  "files": [
+    {
+      "name": "actual-exit.json",
+      "bytes": 233,
+      "sha256": "cc8f3e5c3e39ec356042f7651eeb5b7fe93e2a1386b5adc35ae2ce37e1b2efa1"
+    },
+    {
+      "name": "browser-results.json",
+      "bytes": 712,
+      "sha256": "8d5233137ff14e0f836db6c1262409166859b2f6d369fe0d1164751761c15488"
+    },
+    {
+      "name": "chrome.log",
+      "bytes": 168,
+      "sha256": "f8ee4591410f37086257b70a960695977f9072285e58e9ee372ec49602d9d414"
+    },
+    {
+      "name": "outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "outer-stdout.json",
+      "bytes": 1371,
+      "sha256": "166dc92249d51b5849b5d2014378cc4bdcf8b96e8b1f5d8c27b524c9f2eb8600"
+    },
+    {
+      "name": "owned.json",
+      "bytes": 602,
+      "sha256": "2662afb355aaf88bc25ebe492450dd538250011818406ee9c0498f2423489773"
+    },
+    {
+      "name": "parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "parent-stdout.log",
+      "bytes": 1051,
+      "sha256": "345b675584afae01b0e8ad10676a94897f4b16941819afd793adb22b3b3941e7"
+    },
+    {
+      "name": "post-cleanup.json",
+      "bytes": 239,
+      "sha256": "76edded85ce4067673d6966cba9aab71eade4e74c31b6b5ebb670250f4dcdaf9"
+    },
+    {
+      "name": "result.json",
+      "bytes": 1297,
+      "sha256": "861f002c0fdd29d7d8a2d5d5a5dd677a5c6ea7926b6eeaafa4355cea1edf575a"
+    },
+    {
+      "name": "task-timing-dark-390.png",
+      "bytes": 85025,
+      "sha256": "e20e7f5dc623d20cf61c825c32067f99f9f3541f843e8c1a070148cb4d3ef26b"
+    },
+    {
+      "name": "task-timing-light-390.png",
+      "bytes": 86923,
+      "sha256": "26b86bb43ddd6881970c308a2fa2f4f89f0d38782b765b15dbfb3afbb2222284"
+    },
+    {
+      "name": "worker-result.json",
+      "bytes": 1249,
+      "sha256": "e8c04f0bfcb5ae5d0dcac0597e5f33bdb5e486ae27473c070d250b7d62d001f7"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-06T19:23:09.172912+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "task": "SVC05R01 sampling delta",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+  "target": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "delivery": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+  "priorSource": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "conclusion": "APPROVED_SOURCE_NOT_RUN",
+  "findings": [],
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/sampling-delta/manifest.json",
+    "sha256": "fb09783ce0303c559ed8324f1abc86ddfb36288d9dad6287cd2dd7e344d658cf",
+    "bindings": 11,
+    "mismatches": []
+  },
+  "reviewed": {
+    "implementationDelta": [
+      "experiments/personal-current-release/fixture.mjs",
+      "experiments/personal-current-release/browser.mjs"
+    ],
+    "testSource": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks.test.mjs",
+    "plannedPureCases": 9,
+    "testsRun": 0,
+    "pg": 0,
+    "chrome": 0,
+    "provider": 0,
+    "projectWrites": 0
+  },
+  "sourceConclusions": [
+    "Root must initially be a non-symlink directory; every sampling attempt and completion bind root dev/ino; traversed directory identity changes fail closed.",
+    "Only lstat ENOENT for a child returned by the current readdir triggers whole-sample restart; at most two restarts, one shared250ms logical deadline and cumulative observed-entry budget. Root/directory disappearance, permission errors, path escape and persistent churn reject.",
+    "A leaf already observed as a symlink is counted by lstat size only and never deliberately traversed. Directory replacement is detected and rejected; this is not race-free descriptor-relative filesystem confinement.",
+    "Successful sample explicitly declares nonAtomic and preserves retries/vanished entries/observed count. A deadline bounds waiting, not underlying OS filesystem cancellation.",
+    "runPreviewWithCleanup retains work and close errors separately; worker records the close error independently, rethrows work error first, and only records success after both complete.",
+    "The actualApp body, including original page expectation defaults and explicit recovery/action assertions, is byte-identical to prior source. Allocation/DB cleanup code from allocateResources onward, inventory and transport are byte-identical."
+  ],
+  "notApproved": [
+    "No execution of the9 cases; no runtime correctness/real two-App success claim.",
+    "Historical failed runs remain failed; immutable prior manifest references verified but this review does not repeat their complete runtime audit.",
+    "No new PG/Chrome/personal deployment/model permission; no OS atomic snapshot or hard quota claim."
+  ],
+  "bindings": [
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "fixed": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+      "bytes": 15439,
+      "sha256": "29a1129103eb05ba29a526b2baf86500abe6bf9d2b7f60aba596e0d0b47645fd",
+      "matches": true
+    },
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "fixed": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+      "bytes": 27090,
+      "sha256": "26428e653f3c41f4c3462a5be2366eddce533337c006d05aa2da07c773610098",
+      "matches": true
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "fixed": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+      "bytes": 5165,
+      "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46",
+      "matches": true
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "fixed": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+      "bytes": 8743,
+      "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks.test.mjs",
+      "fixed": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+      "bytes": 6333,
+      "sha256": "f1351596984019b3dc9a0f9a276b3c97b993022e44c8459583919b6767f97725",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/preflight-failure.txt",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 88,
+      "sha256": "ac45f41b84f5f7903b2f0e0a971871deafcd85cb989783a139c0f536cf8179a3",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/not-run.json",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 780,
+      "sha256": "4e89f0cb32f87fab5d1fc6f60d19102b275a6af7078edfbf958d3a00338daf91",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/README.md",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 1444,
+      "sha256": "419c56b26226f62c83fa6772ad4db60e12a708e7d8a37c37bc1882f39cdb961e",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 6857,
+      "sha256": "c0a623b1e358a3ba6e0c33234580930bbc920567277fc57321ef389ee8ed531d",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 8738,
+      "sha256": "efb4ebbfd239e440adbe5c1342721d89e78131d0e2c593528091cb9d5862207c",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/manifest.json",
+      "fixed": "a6022b6eb4172a38bea97c5fbc5fde8cc5105846",
+      "bytes": 31904,
+      "sha256": "469542723f7962db03e07859498559292ca280eb7dd6cf61d09176bcd8bf43e9",
+      "matches": true
+    }
+  ]
+}

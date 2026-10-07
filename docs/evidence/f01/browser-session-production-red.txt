@@ -1,0 +1,69 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/browser-session-production.test.ts (3 tests | 3 failed) 14283ms
+   × mounts migration and the unsupported public probe by default while preserving owner/runner roles 961ms
+   × uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work 85ms
+   × starts the public entry with explicit bounded configuration and rejects malformed configuration before serving 13134ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > mounts migration and the unsupported public probe by default while preserving owner/runner roles
+AssertionError: expected 401 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ packages/client/src/browser-session-production.test.ts:50:26
+     48|     const address = await app.listen({ host: '127.0.0.1', port: 0 });
+     49|     const probe = await fetch(address + '/api/browser-session');
+     50|     expect(probe.status).toBe(200);
+       |                          ^
+     51|     expect(await probe.json()).toEqual({ protocol: 'flow.browser-sessi…
+     52|     expect(probe.headers.get('cache-control')).toBe('no-store');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work
+FlowApiError: The center returned HTTP 404.
+ ❯ assertResponse packages/client/src/index.ts:605:9
+    603|   if (response.ok) return;
+    604|   const body = await response.json().catch(() => ({})) as { error?: { …
+    605|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    606| }
+    607| 
+ ❯ FlowClient.request packages/client/src/index.ts:597:5
+ ❯ FlowClient.connectBrowserSession packages/client/src/index.ts:72:44
+ ❯ packages/client/src/browser-session-production.test.ts:86:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > starts the public entry with explicit bounded configuration and rejects malformed configuration before serving
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ packages/client/src/browser-session-production.test.ts:139:38
+    137|   }
+    138|   const invalid = run('{');
+    139|   try { expect(await invalid.exited).toBe(1); expect(invalid.stderr())…
+       |                                      ^
+    140|   finally { await stop(invalid); }
+    141|   const configured = run(JSON.stringify({ cookieOrigin: address, trust…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  06:26:14
+   Duration  16.00s (transform 755ms, setup 0ms, import 1.63s, tests 14.28s, environment 0ms)
+

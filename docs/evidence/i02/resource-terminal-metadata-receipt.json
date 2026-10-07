@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T16:17:28.029524+00:00",
+  "base": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "inputs": [
+    "10e95aad",
+    "adb12abb",
+    "9ef837fb",
+    "c8bacf74",
+    "26e21690"
+  ],
+  "onlyDocumentation": true,
+  "changedPaths": [
+    "docs/evidence/d05/tui-cancel-live-receipt.json",
+    "docs/evidence/tui01/tui01f-main-receipt.json",
+    "docs/evidence/tui01f/acceptance-receipt-manifest.json",
+    "docs/evidence/tui01f/approval.md",
+    "docs/evidence/tui01f/followup-acceptance.md",
+    "docs/evidence/tui01f/followup-source-closure.json",
+    "docs/evidence/tui01f/independent-incremental-bindings.json",
+    "docs/evidence/tui01f/independent-incremental-review.json",
+    "docs/evidence/tui01f/main-integration-receipt.json",
+    "docs/evidence/tui01f/main-receipt.json",
+    "docs/evidence/tui01f/post-approval-quality.md",
+    "docs/evidence/tui01f/review-field-correction.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-execution-profile-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-execution-profile-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-workspace-pipeline-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-workspace-pipeline-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-writer-settlement-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-engineering-writer-settlement-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-final-consumer-check.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-final-preflight.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-native-center-policy-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-native-center-policy-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-own-intake.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-own-second-intake.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-own-third-intake.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-second-final-consumer-check.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-second-final-preflight.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-shared-conversation-ack-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-shared-conversation-ack-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-summary.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-tui-conversations-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-tui-conversations-sparse-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/next12-tui-stream-activity-sparse-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/next12-tui-stream-activity-sparse-result.json",
+    "plans/d05-architecture-view/status.md",
+    "plans/ops-001-status-review/status.md",
+    "plans/tui01-terminal-client/status.md",
+    "plans/tui01f-task-cancel/plan.md",
+    "plans/tui01f-task-cancel/review.md",
+    "plans/tui01f-task-cancel/status.md"
+  ],
+  "productDiff": [],
+  "checks": "diff whitespace + input receipt consistency; no product rerun",
+  "dashboard": {
+    "runningSources": 165,
+    "observedAt": "2026-10-06T16:02:28.501687Z",
+    "restartForThisBatch": false
+  },
+  "personal": {
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "maintenanceVersion": 15,
+    "web": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "pointerVersion": 2,
+    "changed": false
+  },
+  "limits": [
+    "TUI01F controller and Ink binding approved and alreadymain; realHTTP/PG/PTY/App pending",
+    "RELEASE03 A3 attachmentOnly passed/mixed resource stop/Bnotrun",
+    "Resource next12 seven applied, remainder bounded qualification; no relaxed run gates"
+  ]
+}

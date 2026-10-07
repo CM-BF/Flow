@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T18:55:26.649467+00:00",
+  "target": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "sourceDigest": "984aff592623b350df3d53d6aff115994a6cb4a49775f1216aba2626fa05e71d",
+  "sourceFiles": [
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 26731,
+      "sha256": "a8d30e720c1f2c73046f590a28884bc0acaf4f5f8162b0c9c2c282c730109776"
+    },
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 12523,
+      "sha256": "6887416a82758579fb87885911a2710a8131ca847cd665de850f283e6771023a"
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 5165,
+      "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46"
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 8743,
+      "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa"
+    }
+  ],
+  "entry": "/opt/homebrew/opt/node@24/bin/node experiments/personal-current-release/browser.mjs --run <canonical-reviewed-gate-path>",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+  "state": "NOT_RUN",
+  "gateGenerated": false,
+  "dependencies": "Two authorized existing package links; backend owns its unchanged af51 dependencies",
+  "selectedApps": 2,
+  "providerQueries": 0,
+  "personalActions": 0,
+  "limits": {
+    "workMs": 90000,
+    "cleanupMs": 20000,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "rawObservedBytes": 8388608,
+    "tempObservedBytes": 67108864
+  },
+  "limitsMeaning": "Observed sampling/stop thresholds, not OS quotas; PG/WAL outside own temp. Final free/raw/tmp sample after whole-group stop and output capture occurs before checkpoint/DROP/rm. Hard-stop checkpoint leaves unknown resources; no retry."
+}

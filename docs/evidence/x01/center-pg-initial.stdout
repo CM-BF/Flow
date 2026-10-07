@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ apps/server/src/plugin-installations/installations.test.ts (8 tests | 8 failed) 1945ms
+   × public real npm fetch installs static material, replays without I/O and reads a bounded private-free receipt 7ms
+   × owner auth, exact source ownership, CAS, trust and strict public input reject before material writes 3ms
+   × accepted replay is read-only; only an explicit start may first prepare and restart preserves exact history 2ms
+   × official migration constraints and command rollback leave no orphan admission or audit 3ms
+   × lost preparing COMMIT acknowledgement starts zero filesystem work and persists a store gate 1ms
+   × lost completion ACK reconciles by exact read only and requires trusted prior lifecycle evidence 1ms
+   × real lost PG lock aborts pending own filesystem work; a new owner cannot overlap prepare 1ms
+   × damaged verified artifact never becomes installed and pre-aborted first start performs no I/O 1ms
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+   Start at  06:40:22
+   Duration  3.12s (transform 469ms, setup 0ms, import 1.08s, tests 1.94s, environment 0ms)
+

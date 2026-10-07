@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-06 19:09:00 UTC",
+  "source": "e9319eda0189e878035c2115b9f050f35e130145",
+  "firstAttempt": {
+    "exitCode": 1,
+    "toolChunk": "655382",
+    "failure": "Metadata builder compared a three-field file binding with a SQL binding containing the additional reader field; assertion stopped before commit/push. Bytes/hash themselves matched."
+  },
+  "correction": "Compare path/bytes/sha256 only, retain original reader metadata. All protected bytes/hashes match fixed base and current tree.",
+  "productTests": 0,
+  "pg": 0,
+  "provider": 0
+}

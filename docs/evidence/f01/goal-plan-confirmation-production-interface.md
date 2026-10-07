@@ -1,0 +1,13 @@
+# O15 production composition
+
+Approved O15 target e0c0db91d7e6c52b9bb5df890787930db8b7e91d supplies thirteen changed files as immutable controlled inputs. F01 owns only the production mount, public export, thin client and one direct test. CORE ea276 and C01 6d114 inputs remain unchanged except the owned public index receiving this new independent method/export. No whole-tree merge or domain edit.
+
+`FlowClient.confirmGoalPlan(proposalId, input: GoalPlanConfirmation, key, signal?)` POSTs the exact serialized body to `/api/goal-graph-proposals/:id/confirm-inputs`, preserving the original key, cancellation signal, errors and transport behavior. No client authority, retries or new state machine. Contract export re-exports the existing leaf.
+
+Factory awaits migration031 immediately after030 and before032/authentication/scheduler/scans. It registers the module route under the existing owner role hook. Existing queue/progression scan lifecycle remains unchanged; no extra timer or loop. Actual new production validation must call only createServer and FlowClient, never manually migrate/register/scan.
+
+One private marked database and owned runtime directory will cover migration coexistence030/031/032, one owner confirmation of two complete dependent inputs, invalid credentials/runner rejection, returned ACK then center restart with exact key/body recovery, automatic background progression without client dispatch, two injected query results and unchanged independent acceptance. Lost reply and domain rollback/grant matrices remain the already reviewed O15 module evidence and are not rerun here. This new test proves neither real model planning nor semantic acceptance.
+
+Resource fixture reserves a unique database/marker with synced0600 checkpoint plus parent sync before CREATE, owns dynamic loopback endpoints, verifies directory dev/ino, stops/awaits runtime and server/pools, observes at most32 connections within3s including query deadline, checkpoints before normal DROP/remove, and retains unknown resources. No forced cleanup, unrelated service operations or provider. Proposed run is one selected PG case,120s work+30s cleanup, raw2MiB/cache+runtime8MiB, fresh1GiB+64MiB; actual PG requires a separately assigned window. Currently source preparation only; no new PG run.
+
+Fixed authored target: `7f59daa552aa0618776468ec54b6ed4c5a6990cb`, four source files (the mount, public export, client and production test). Focused noEmit exit0; production PG remains NOT_RUN. Actual entry preflight:214 sources,30 SQL (versions2 and4..32;1/3 inline),19 package-entry checks,10 base configs plus focused config,missing=[]. Third-party packages are existing installed inputs; all @flow package links resolve to this worktree.

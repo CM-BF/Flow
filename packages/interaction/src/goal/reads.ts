@@ -3,7 +3,19 @@ import { goalArtifactBindingSchema, goalInputSchema } from '../../../contracts/s
 import { idSchema } from '../../../contracts/src/tasks.js';
 import type { GoalDeliveryRead, GoalDeliveryQuery } from '../../../contracts/src/goal-delivery.js';
 import type { Detail } from '../../../contracts/src/tasks.js';
+import type { GoalGraphRunPage } from '../../../contracts/src/goal-graph-runs.js';
 import type { GoalBodyReference, GoalSessionPort } from './types.js';
+
+export function checkPlanningPage(goalId: string, projectId: string, raw: unknown, limit: number): GoalGraphRunPage {
+  if (new TextEncoder().encode(JSON.stringify(raw)).byteLength > 65_536) throw Error('Planning page exceeds its 64 KiB bound.');
+  const summary = z.object({ id: idSchema, title: z.string().max(180), harness: z.enum(['fixture', 'claude']), status: z.enum(['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain']), verificationStatus: z.enum(['pending', 'passed', 'failed']), createdAt: z.string(), updatedAt: z.string() });
+  const page = z.object({ goalId: idSchema, projectId: idSchema, nextCursor: z.string().max(1024).nullable(), runs: z.array(z.object({
+    id: idSchema, version: z.literal(1), goalId: idSchema, projectId: idSchema, goalDigest: z.string().regex(/^[a-f0-9]{64}$/), baseRevision: z.number().int().positive(),
+    mode: z.enum(['fixture', 'claude']), task: summary, createdAt: z.string(), revokedAt: z.string().nullable(),
+  })).max(limit) }).parse(raw);
+  if (page.goalId !== goalId || page.projectId !== projectId || new Set(page.runs.map(run => run.id)).size !== page.runs.length || new Set(page.runs.map(run => run.task.id)).size !== page.runs.length || page.runs.some(run => run.goalId !== goalId || run.projectId !== projectId || run.task.harness !== run.mode)) throw Error('Planning read identity mismatch.');
+  return page;
+}
 
 const version = z.number().int().positive();
 const ref = z.object({ goalId: idSchema, nodeId: idSchema, version });

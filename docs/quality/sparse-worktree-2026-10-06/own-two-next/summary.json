@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T21:41:12.958513+00:00",
+  "state": "TWO_COMPLETE_STOPPED",
+  "trees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering",
+      "head": "eb1caeb529697c7521cb710e5441bb207d2840a0",
+      "candidateCount": 677,
+      "retainedFiles": 2168,
+      "retainedHashesUnchanged": true,
+      "sharedAndOtherWorktreeConfigsUnchanged": true,
+      "clean": true,
+      "freeBeforeBytes": 1142984704,
+      "freeAfterBytes": 1152081920,
+      "observedVolumeDeltaBytes": 9097216
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance",
+      "head": "ec2ec508b04f169bcaf1f1db169bae09558b6d63",
+      "candidateCount": 549,
+      "retainedFiles": 1808,
+      "retainedHashesUnchanged": true,
+      "sharedAndOtherWorktreeConfigsUnchanged": true,
+      "clean": true,
+      "freeBeforeBytes": 1136201728,
+      "freeAfterBytes": 1144184832,
+      "observedVolumeDeltaBytes": 7983104
+    }
+  ],
+  "logicalCandidateBytes": 14050181,
+  "observedDeltaNotExclusiveAttribution": true,
+  "priorReadabilityUnknownUnchanged": true,
+  "runtimeAdmission": "Not granted: original fresh runtime gates remain; no repeated sampling",
+  "productTests": 0,
+  "provider": 0
+}

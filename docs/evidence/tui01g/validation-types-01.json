@@ -1,0 +1,70 @@
+{
+  "pid": 21591,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 1979,
+  "observed_bytes": 0,
+  "retained_bytes": 0,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "path": "docs/evidence/tui01g/validation-types-01-stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "docs/evidence/tui01g/validation-types-01-stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "at": "2026-10-07T02:15:22.108793+00:00",
+  "group": "types",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    "docs/evidence/tui01g/tsconfig.json",
+    "--noEmit"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "freeBefore": 26750091264,
+  "rawBefore": 3375,
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "bounds": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "killSeconds": 2,
+    "combinedOutputBytes": 262144,
+    "rawAndCacheBytes": 8388608
+  },
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0,
+  "cacheBytesAfter": 342,
+  "combinedRawAndCacheAfter": 3717,
+  "freeAfter": 26750050304,
+  "resourceBoundMet": true
+}

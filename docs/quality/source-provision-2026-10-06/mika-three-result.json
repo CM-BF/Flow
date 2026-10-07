@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-06T19:59:17.711675+00:00",
+  "fixedBase": "22a0806bc2465e11096949618113833f31766b19",
+  "ledger": "/tmp/flow-lead-claims-1959.json",
+  "before": {
+    "head": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
+    "status": "",
+    "commonConfigSha256": "5f0205077f62ee0ec882f6cc01e5b1f9f44ada3a0cfb999c8e30ec930cc264ca"
+  },
+  "tasks": [
+    {
+      "taskId": "SVC07",
+      "owner": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect",
+      "branch": "codex/server-transaction-disconnect",
+      "head": "22a0806bc2465e11096949618113833f31766b19",
+      "clean": true,
+      "files": 18,
+      "logicalBytes": 364267,
+      "availableBeforeBytes": 1402961920,
+      "availableAfterBytes": 1402900480,
+      "allFixedBlobMatches": true,
+      "writeScope": [
+        "apps/server/src/database.ts",
+        "apps/server/src/database-transaction.test.ts",
+        "plans/svc07-transaction-recovery",
+        "docs/evidence/svc07"
+      ],
+      "sourceOnly": true,
+      "atomicTakeRequired": true
+    },
+    {
+      "taskId": "S01P07",
+      "owner": "status_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+      "branch": "codex/runner-claim-recovery",
+      "head": "22a0806bc2465e11096949618113833f31766b19",
+      "clean": true,
+      "files": 245,
+      "logicalBytes": 1353828,
+      "availableBeforeBytes": 1402138624,
+      "availableAfterBytes": 1398956032,
+      "allFixedBlobMatches": true,
+      "writeScope": [
+        "apps/server/src/runners.ts",
+        "apps/server/src/runner-claim-receipts.ts",
+        "apps/server/src/runner-claim-receipts.test.ts",
+        "apps/runner/src/admission-journal.ts",
+        "apps/runner/src/admission-journal.test.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/runner/src/runtime-claim-recovery.test.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner-claim.test.ts",
+        "plans/s01p07-runner-claim-recovery",
+        "docs/evidence/s01p07",
+        "packages/contracts/src/index.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/runner-claim.test.ts",
+        "apps/server/src/index.ts"
+      ],
+      "sourceOnly": true,
+      "atomicTakeRequired": true
+    },
+    {
+      "taskId": "REQ15",
+      "owner": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+      "branch": "codex/conversation-turn-page-batch",
+      "head": "22a0806bc2465e11096949618113833f31766b19",
+      "clean": true,
+      "files": 90,
+      "logicalBytes": 693063,
+      "availableBeforeBytes": 1398816768,
+      "availableAfterBytes": 1396723712,
+      "allFixedBlobMatches": true,
+      "writeScope": [
+        "apps/server/src/conversations/queries.ts",
+        "apps/server/src/conversations/state.ts",
+        "apps/server/src/conversations/replies.ts",
+        "apps/server/src/conversations/turn-read.ts",
+        "apps/server/src/conversations/turn-page-batch.test.ts",
+        "apps/server/src/assistant/store.ts",
+        "apps/server/src/assistant/index.ts",
+        "apps/server/src/assistant/final-preview-batch.test.ts",
+        "docs/evidence/req15-turn-page-batch",
+        "plans/req15-conversation-turn-page-batch"
+      ],
+      "sourceOnly": true,
+      "atomicTakeRequired": true
+    }
+  ],
+  "dependencies": "none installed, copied, or linked",
+  "providerQueries": 0,
+  "tests": 0,
+  "preparationNote": "First SVC07 no-checkout attempt needed explicit read-tree initialization; no writer or existing tree modified.",
+  "after": {
+    "head": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
+    "status": "",
+    "commonConfigSha256": "5f0205077f62ee0ec882f6cc01e5b1f9f44ada3a0cfb999c8e30ec930cc264ca"
+  },
+  "protectedMainAndSharedConfigUnchanged": true,
+  "atFinished": "2026-10-06T19:59:24.634861+00:00"
+}

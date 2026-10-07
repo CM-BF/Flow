@@ -2,27 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:52 UTC / main3609；runtime固定362/v15 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:11:27 UTC / CLI main0132ac |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
-| 单一status owner / model | Execution Lead / gpt-6-astra ultra |
+| 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v51；CLI三源已停写并amend交回，仅自身records完成本次收口；commit/push后停写并正式release，最终状态以账本回执为准 |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 已审ENG01H合同916e；共享实现79b569a14d14c218874781e2d05ae6e42e234ce2 |
-| 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
-| 工作分支状态 | in-progress |
-| 检查状态 | 真实HTTP旧/新2/2与root types0；首红保留，未跑PG/provider |
-| 已集成main状态 / HEAD | 此前O12已main；本次native工程薄传输待独审/集成，个人runtime不变 |
-| Review | APPROVED：assignment_review固定79b569；此前结论保留历史 |
-| 实现目标 | 79b569a14d14c218874781e2d05ae6e42e234ce2 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/engineering-profiles.test.ts, packages/contracts/src/index.ts |
+| 工作基线 / HEAD | CLI前置bb7bdd5e；三源固定 ccfa04b22d6027c6e7606b22708bcb485e01ae05；settings/O15生产已main |
+| 工作树dirty状态 | CLI三源固定；仅证据/status收口，提交后clean |
+| 工作分支状态 | completed |
+| 检查状态 | 新CLI真实HTTP1/1（含help/错误/边界）、focusedtypes0；0PG/provider，原领域/生产检查不重跑 |
+| 已集成main状态 / HEAD | CLI三源已main 0132ac255002eb61272401bfd97b3dbb65302644，与ccfa及working逐字一致；settings/O15生产此前已main |
+| Review | APPROVED ccfa04b22d6027c6e7606b22708bcb485e01ae05；Execution Lead唯一窄审，无P1/P2；原生产7f59已main |
+| 实现目标 | ccfa04b22d6027c6e7606b22708bcb485e01ae05 |
+| 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-plan-confirmation.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程执行配置已有明确用途和身份检查，正在接入公共客户端。 |
-| 下一可用交付 | 通过同一客户端登记与读取原生工程配置；插件安装模块的正式依赖接线并行准备。 |
+| 当前产出 | 命令行确认入口已交付，可用固定输入和稳定请求键确认计划并恢复回执。 |
+| 下一可用交付 | 本片段已交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -173,6 +174,80 @@
 
 2026-10-06T12:14:43.577454+00:00：package export adb91已由assignment_review限定只读APPROVED（1行导出/旧3入口和deps不变），60e495领域由native_center_owner独审。main362逐源一致、实际Web声明依赖的public import成功；初次CLI无interaction依赖导致import失败原样保留，不扩CLI依赖来伪装测试。完整NL/TUI UI仍后继。
 
-| F01-35 | in-progress | Lead | [原生工程薄传输](../../docs/evidence/f01/native-engineering-client-manifest.json)；2HTTP/types0待独审 |
+| F01-35 | completed | Lead | [原生工程薄传输](../../docs/evidence/f01/native-engineering-client-manifest.json)；2HTTP/types0待独审 |
 
 2026-10-06 12:52 UTC：F01 v33已交回events.ts给S01P05；[原子回执](../../docs/evidence/f01/s01p05-events-handback.json)。server/runner manifest与lock仍本owner短单写窗口处理X01正式workspace依赖，不阻其他源码领取。
+
+| F01-36 | completed | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
+
+| F01-37 | completed | Lead | 13固定源已main84005a26；三独审与当前组合检查通过，个人服务未动。 |
+
+2026-10-06 13:36:51 UTC：X01 leaf与F01依赖已main2f16e30a，F01-36完成。029-plugin-material-installs.sql正式预留X01架构owner，028会话不冲突；共享mount/export仍本owner。
+
+| F01-38 | completed | Lead | [薄client固定manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)，新1/旧1真实HTTP与types0；Mika独审APPROVED；待O13领域齐套。 |
+
+2026-10-06 14:07:02 UTC：O13/client主线接收见[receipt](../../docs/evidence/f01/goal-run-list-main-receipt.json)。usage.ts已停止写入并在F01 v36原子移交COST01A v2，共享入口仍由本owner管理；未重测原HTTP/领域。
+
+| F01-39 | completed | Lead | 域27d4/薄clientfb0/生产7150各自独审，main617已接收，十源零差。 |
+
+2026-10-06 14:23 UTC：真实生产factory唯一新1/1通过（非原领域14项重跑），默认owner hook保护读口；原样重放/重启和旧summary保持、无正文、401/403/404/no-store实际核验。随机库before[]/created=true/connections[]/remaining[]，0模型。空间门槛1GiB+96MiB前检通过；新库完成后仍保收尾余量，SVC06门槛未解除。见[生产manifest](../../docs/evidence/f01/usage-readout-production-manifest.json)。
+
+2026-10-06 14:30 UTC：生产用量读口已main617。新增只读 `usage <task-id>` 命令沿同FlowClient，不提交任务/模型，JSON保持null/coverage；真实HTTP1/1+types0，0新增PG。help/403/409/abort/缺ID与不泄synthetic token已覆盖；独审绑定[CLI manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)。
+
+| F01-40 | completed | Lead | [CLI用量manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)，只读HTTP1/1+types0，独审中。 |
+
+2026-10-06T14:35:06.228081+00:00：CLI固定0550已main59ef2134，I02五源比较零差；本次仅metadata，不重新执行HTTP/PG/types。
+
+| F01-41 | completed | Lead | 已审67fd/5e121在main7810，原分轮HTTP/PG与types证据保留；installed不等于enabled。 |
+
+2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
+
+| F01-42 | completed | native_center_owner | 73a独审APPROVED，main bd14f984e3927df139815597c4c3171af84ec4b7精确接收；本片delivered。 |
+
+2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
+
+2026-10-06T15:16:52.996330+00:00：O14生产候选已固定，见[候选绑定](../../docs/evidence/f01/goal-progression-production-candidate.json)与[Interface](../../docs/evidence/f01/goal-progression-interface.md)。两次作者测试DTO类型失败原文保留；没有运行PG或模型来补齐结果。X01已main收口，不再等待重复审查。
+
+独立源前检修复：生命周期用例自备profile/自动扫描模式，可单独选择；root types0。锁时点不证明关闭期间首次admission，重启key重放不冒lost ACK。原前检见[记录](../../docs/evidence/f01/goal-progression-production-source-precheck.json)，PG仍NOT_RUN。
+
+薄client独审已按Mika唯一canonical原文转录[批准记录](../../docs/evidence/f01/goal-progression-client-independent-review.md)，无重复复审。产品接线73aab独立源前检P2静态关闭，仍未执行PG，不借薄transport批准。
+
+## 2026-10-06 15:31 数据库准入未运行
+
+Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+32MiB。未启动测试/数据库，窗口立即交回；不降原门槛、不重跑绿项。[真实准入记录](../../docs/evidence/f01/goal-progression-production-admission-not-run.json)。薄client已审进入mainfb9，3源同target逐字相同：[main回执](../../docs/evidence/f01/goal-progression-client-main-receipt.json)。个人服务保持362/v15。
+
+2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
+
+2026-10-06T16:25:08.373523+00:00：v41短单写范围修正根/runner使用文档及恢复边界；输入main65659028，只更新并发模式/独立注册capacity/历史probe授权与现reconcile公开命令，补TUI入口。17项只读源码/文档绑定见[runtime-documentation-source-review.json](../../docs/evidence/f01/runtime-documentation-source-review.json)，无产品行为/工程测试/模型调用。原O14 PG仍NOT_RUN，不因文档交付提前批准。
+
+2026-10-06T16:30:00.517966+00:00：三份runtime使用文档已main 74bc72f0d32daebc8f89a75528f3d72002b3a29e，固定hash逐字相同；唯一共享claim v42已移出README、runnerREADME与recovery-boundaries三literal，明确停止这些路径写入。[范围交回](../../docs/evidence/f01/runtime-documentation-scope-release.json)。O14生产PG未运行边界不变。
+
+2026-10-06T16:40:25.953182+00:00：F01 v43已正式停止并移出六个public client/ACK/export literal和apps/cli目录；独立MATURE02C01 worker随后take11精确路径，接逐消息设置consumer，不等O14 PG。旧73a的CLI两源/一专测通过固定blob保留为受控输入，不扩大其批准。后续本owner只接032实际factory/PG与原O14生产检查，不能恢复已交权入口写入；[原子移交](../../docs/evidence/f01/message-settings-consumer-scope-handoff.json)。
+
+## 2026-10-06 16:59:10 UTC F01共享生产收尾交接
+
+原owner ExecutionLead全树停止写后handoff v44；本owner fresh核账本并accept v45，committedAt 2026-10-06T16:58:29.499Z。唯一claim 8470e7d2-662a-4dbe-9b0e-12ef82aac90e active，59 literal原scope保留。[handoff](../../docs/evidence/f01/native-owner-handoff-receipt.json) / [accept](../../docs/evidence/f01/native-owner-accept-receipt.json)。
+
+本次实施授权严格限于已有O14生产index/test的source+动态资源预检与一次排定PG窗口；之后仅在独占生产验证窗口通过后接032 migration与最薄真实FlowClient生产直接consumer。尚未领取新test路径，未改客户端/CLI或5个CORE非owned合同，不以59scope扩大实现。C01另一树保持固定563/独审通过/待集成。CORE资格、SDK和生产消息设置未验边界独立。
+
+O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/provider/browser/个人服务操作。现只写合法计划/证据。032新增挂载与新测试需独立固定delta并独审，任何scope新增先amend。
+
+2026-10-06 17:00:42 UTC 静态预检完成：[固定记录](../../docs/evidence/f01/goal-progression-handoff-preflight.json)核208源/28外部SQL（含动态tuple数组）/19包声明，missing=[]，工作区依赖均指本树，73a五源逐字保持。无测试/import/安装/产品PG。当前仅等待独占窗口；固定8 MiB的C01检查限制不冒充本片数据库额度，O14继续按其1 GiB+32 MiB源门槛与Lead窗口。
+
+2026-10-06 17:03:29 UTC：O14一次独占验证完成并归还窗口。73a五源未改，实际PG2/2、随机库12,958,743B、连接零/remaining=[]、runtime正常等待退出及目录清除，0provider。固定[原始交付](../../docs/evidence/f01/goal-progression-production-README.md)保留全部原未运行/红证据；此前资源等待为历史事实。当前等待独审/main，CORE032仍独立未批准，不提前挂载。
+
+2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
+
+| F01-43 | completed | native_center_owner | 0ee唯一独审APPROVED；[45源main精确回执](../../docs/evidence/f01/claude-message-settings-production-main-receipt.json)，本段delivered |
+
+2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
+
+| F01-44 | completed | native_center_owner | 7f59独审APPROVED，[main精确回执](../../docs/evidence/f01/goal-plan-confirmation-production-main-receipt.json)，本段delivered |
+
+2026-10-06 17:53:52 UTC：F01-44固定四源7f59daa552aa0618776468ec54b6ed4c5a6990cb，复用既有scan不新增timer；[真实入口预检](../../docs/evidence/f01/goal-plan-confirmation-production-preflight.json)与[下一窗口请求](../../docs/evidence/f01/goal-plan-confirmation-production-request.json)。新PG未跑，旧13领域/032不重复。
+
+2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。
+
+| F01-45 | completed | native_center_owner | [三源独审APPROVED](../../docs/evidence/f01/goal-plan-confirmation-cli-independent-review.json)；[main逐hash回执](../../docs/evidence/f01/goal-plan-confirmation-cli-main-receipt.json)，本段delivered |
+
+2026-10-06 18:11:27 UTC：CLI三源main0132ac逐字一致，组合root noEmit0由Lead完成，原HTTP不重跑；[源码范围归还](../../docs/evidence/f01/goal-plan-confirmation-cli-product-scope-closeout.json)。本owner全部产品停写，记录提交推送后释放管理范围。架构仅既有公开确认方法的CLI consumer，无新状态机/权限/依赖；真实连续模型旅程为原FLOW-001独立后继，当前未授权新query。

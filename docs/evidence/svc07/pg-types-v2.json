@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T20:18:11.813042+00:00",
+  "endedAt": "2026-10-06T20:18:12.390820+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/svc07/tsconfig.pg.json"
+  ],
+  "exit": 0,
+  "wallSeconds": 0.5769604169763625,
+  "availableBeforeBytes": 1323552768,
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pgProbeSourceSha256": "74873ae17c412b8ff7d5c5ef9ce69de1e6269490e716995af84994e4a33bca6f",
+  "runtimeImports": 0,
+  "pg": 0,
+  "probeExecution": "NOT_RUN",
+  "reason": "After bounded review: wx result and explicit secondary cleanup failure facts; product source untouched"
+}

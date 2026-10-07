@@ -1,0 +1,281 @@
+{
+  "at": "2026-10-06T19:25:47.192315+00:00",
+  "kind": "READ_ONLY_OWN_CHROME_CRASH_METADATA",
+  "pidEvidence": {
+    "chrome": {
+      "pid": 49046,
+      "group": 49046,
+      "observed": "49046 Tue Oct  6 12:13:10 2026",
+      "role": "chrome"
+    },
+    "childPid": 49108,
+    "childBasis": "chrome-output.json repeated GPU/display diagnostic prefix [49108:...] only; parent relationship was not separately captured",
+    "processEvidenceSha256": "58daaac4e6c20742eb741e83b4a51d32c03a53c572d5c704d25509b51a8a9de9",
+    "chromeOutputSha256": "9a8343b9911f5269b5acb716d1c1da564de5fba303fd94dc887712967ce60315"
+  },
+  "knownOwnPids": [
+    49046,
+    49108
+  ],
+  "runInterval": [
+    "2026-10-06T19:13:07.164179+00:00",
+    "2026-10-06T19:13:22.126230+00:00"
+  ],
+  "searchWindow": [
+    "2026-10-06T19:11:07.164179+00:00",
+    "2026-10-06T19:23:22.126230+00:00"
+  ],
+  "locations": [
+    {
+      "path": "/cores",
+      "entriesExamined": 0,
+      "state": "complete-bounded-list",
+      "candidateCount": 0
+    },
+    {
+      "path": "/Library/Logs/DiagnosticReports",
+      "entriesExamined": 30,
+      "state": "complete-bounded-list",
+      "candidateCount": 0
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports",
+      "entriesExamined": 52,
+      "state": "complete-bounded-list",
+      "candidateCount": 12
+    }
+  ],
+  "matches": [],
+  "unattributedChromeReports": [
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.0005.ips",
+      "bytes": 6709,
+      "mtime": "2026-10-06T19:18:13.285889+00:00",
+      "ctime": "2026-10-06T19:18:13.286334+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146354,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6709,
+      "declaredPids": [
+        69380
+      ],
+      "headerSha256": "509c4aee82c0eb48577fcb2db0c694f0e1da909cf40ee2520559e3e120911fba",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.0006.ips",
+      "bytes": 6707,
+      "mtime": "2026-10-06T19:18:13.305612+00:00",
+      "ctime": "2026-10-06T19:18:13.306136+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146355,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6707,
+      "declaredPids": [
+        69381
+      ],
+      "headerSha256": "78c82b8f9439a7c4b52d969ed419836fb184e55f5e318fc7bce147786ad92c87",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.0007.ips",
+      "bytes": 6709,
+      "mtime": "2026-10-06T19:18:13.312549+00:00",
+      "ctime": "2026-10-06T19:18:13.312951+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146356,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6709,
+      "declaredPids": [
+        69382
+      ],
+      "headerSha256": "2fedaf3489b994685ab60a576f3a7aa22bfe788752e228088037aae5bd22221a",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.0003.ips",
+      "bytes": 6709,
+      "mtime": "2026-10-06T19:18:13.063239+00:00",
+      "ctime": "2026-10-06T19:18:13.063686+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146267,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6709,
+      "declaredPids": [
+        69356
+      ],
+      "headerSha256": "d616dd3363f9a19c58e108772c51f688cc7b70ef035a303cc448c769a35087e7",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper (Renderer)-2026-10-06-121813.0002.ips",
+      "bytes": 6842,
+      "mtime": "2026-10-06T19:18:13.063689+00:00",
+      "ctime": "2026-10-06T19:18:13.077601+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146266,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6842,
+      "declaredPids": [
+        69359
+      ],
+      "headerSha256": "5660ac881783cd251fb81fd2ca7a4d433a0d3821a86b528173be4009df543317",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper (Renderer)-2026-10-06-121813.0004.ips",
+      "bytes": 6844,
+      "mtime": "2026-10-06T19:18:13.167797+00:00",
+      "ctime": "2026-10-06T19:18:13.172307+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146293,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6844,
+      "declaredPids": [
+        69361
+      ],
+      "headerSha256": "c5bace2fed3a44cf6ed73ebe1d9cf84abb9ea16c531d5110118032e650dac79f",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper (Renderer)-2026-10-06-121813.0008.ips",
+      "bytes": 6844,
+      "mtime": "2026-10-06T19:18:13.367035+00:00",
+      "ctime": "2026-10-06T19:18:13.368484+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146357,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6844,
+      "declaredPids": [
+        69383
+      ],
+      "headerSha256": "484f0de2d77cfe6d58509a016468a5dea2d0788f442c52793a960228c3d4b760",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.ips",
+      "bytes": 6707,
+      "mtime": "2026-10-06T19:18:13.063304+00:00",
+      "ctime": "2026-10-06T19:18:13.077416+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146268,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6707,
+      "declaredPids": [
+        69355
+      ],
+      "headerSha256": "9f487cc1ddf1f38eed28558ec2bacb0ab80f41baff653a6a6268e8ef8c8e37b6",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.000.ips",
+      "bytes": 6709,
+      "mtime": "2026-10-06T19:18:13.063965+00:00",
+      "ctime": "2026-10-06T19:18:13.078212+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146269,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6709,
+      "declaredPids": [
+        69354
+      ],
+      "headerSha256": "04dfceac5b63ceab3d86ca7e8d4803cc001f546b2c5c7c251c2c73353294efba",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome-2026-10-06-121855.ips",
+      "bytes": 91216,
+      "mtime": "2026-10-06T19:18:55.516165+00:00",
+      "ctime": "2026-10-06T19:18:55.517053+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146779,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 8192,
+      "declaredPids": [
+        67309
+      ],
+      "headerSha256": "9fc3f17260edadfb3a50e6cdcf5632ac4a55b27a8e55b44d45a6afb377e87914",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121816.ips",
+      "bytes": 6697,
+      "mtime": "2026-10-06T19:18:16.153668+00:00",
+      "ctime": "2026-10-06T19:18:16.154133+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146608,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6697,
+      "declaredPids": [
+        69396
+      ],
+      "headerSha256": "ef83fced0b44acea9e73b49af558be775a134e5fcae292b80771f866bc449533",
+      "ownership": "unconfirmed; filename/mtime only"
+    },
+    {
+      "path": "/Users/citrine/Library/Logs/DiagnosticReports/Google Chrome Helper-2026-10-06-121813.0009.ips",
+      "bytes": 6709,
+      "mtime": "2026-10-06T19:18:13.372704+00:00",
+      "ctime": "2026-10-06T19:18:13.373643+00:00",
+      "uid": 501,
+      "gid": 250,
+      "mode": "0o600",
+      "inode": 123146358,
+      "device": 16777234,
+      "symlink": false,
+      "headerBytesRead": 6709,
+      "declaredPids": [
+        69384
+      ],
+      "headerSha256": "88588fdfd606ea8e73ae79124ec2f0aac7706ec7ba82696f8ce53a9fe41ad23c",
+      "ownership": "unconfirmed; filename/mtime only"
+    }
+  ],
+  "actions": {
+    "delete": 0,
+    "daemonStart": 0,
+    "imports": 0,
+    "pg": 0,
+    "provider": 0
+  },
+  "limits": "Exact /cores, /Library/Logs/DiagnosticReports and user DiagnosticReports directory entries only; no HOME traversal, no package/install/cache/user browser-profile scan. At most1000 entries/location; file metadata and at most8192B of candidate .ips/.crash header only for pid/time/name.",
+  "conclusion": "No matching own-PID crash/core file observed in these exact locations/window",
+  "boundaries": [
+    "Absence here does not exclude Crashpad elsewhere, different naming, delayed reports or arbitrary descendants.",
+    "No raw stack/header content, unrelated process command lines, credentials or personal page content recorded.",
+    "Previously cleanly absent groups do not establish exit0 or absence of crash artifacts."
+  ]
+}

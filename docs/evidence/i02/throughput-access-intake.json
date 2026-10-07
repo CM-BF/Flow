@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T03:03:24.435Z",
+  "mainBefore": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "files": [
+    {
+      "task": "OPS",
+      "path": "AGENTS.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348"
+    },
+    {
+      "task": "OPS",
+      "path": "plans/AGENTS.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 17470,
+      "sha256": "9cbdce0d6f2cd5fc529370726fbe111bc0df416e4aad5207851879a4a26f76e8"
+    },
+    {
+      "task": "OPS",
+      "path": "docs/quality/local-validation.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 15780,
+      "sha256": "8b9e462fe8cdc1e4a434ef68931ad35d75da8881e6d6cdb226822e9a448782ad"
+    },
+    {
+      "task": "OPS",
+      "path": "plans/ops-001-status-review/plan.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 12787,
+      "sha256": "bea78350293ac2ebce3c576edf4d50f4d2ba4304fe3f39428753d8e18b157d63"
+    },
+    {
+      "task": "OPS",
+      "path": "plans/ops-001-status-review/status.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 77738,
+      "sha256": "e0736f12af56daf904a84814cfe20fa793e1bd8fa3e934e3f002b90b3bddd10e"
+    },
+    {
+      "task": "OPS",
+      "path": "plans/ops-001-status-review/review.md",
+      "source": "d082dcaded371477b568d112fac96420d5730575",
+      "bytes": 8140,
+      "sha256": "44a748d48ac96e98ee3ce93f76302a6c6f2217a9dc5658c38685e27aae1549f8"
+    },
+    {
+      "task": "D05",
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "source": "b4659ed1dbb1f8be56d7f55bbf8a14b402eb90e8",
+      "bytes": 24927,
+      "sha256": "f55c00885ca66706ec642f0af34a53d5b02f8ebf33367475db926abaf5475b81"
+    },
+    {
+      "task": "D05",
+      "path": "docs/evidence/d05/local-access-registry-intake.json",
+      "source": "b4659ed1dbb1f8be56d7f55bbf8a14b402eb90e8",
+      "bytes": 1040,
+      "sha256": "3ce7026507bc7e07c493386910571d995972ca12ba620ba37e059efeadc82b27"
+    },
+    {
+      "task": "D05",
+      "path": "plans/d05-architecture-view/status.md",
+      "source": "b4659ed1dbb1f8be56d7f55bbf8a14b402eb90e8",
+      "bytes": 28865,
+      "sha256": "a38b8b2e28d1c2549d3ffd75d272a829259608bd8b3ca6082aff54e45fb9da09"
+    }
+  ],
+  "review": "OPS dd7538 and e65628 independently APPROVED_DOCS by native_center_owner; final review transcript only. D05 canonical registration read against Web a6fb3ef first source and fresh claim57735 v1, metadata syntax/unique registry checked; no product logic altered.",
+  "registryTasks": 183,
+  "actualDashboardSource": "pending normal dashboard reload; not claimed as loaded",
+  "validation": "Source/diff/link/metadata checks only; 0 new PG/browser/provider/install/product tests. Inherited SVC06 raw trailing whitespace preserved, source/document diff check clean."
+}

@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-06T21:28:09.770612+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "operator": "assignment_review",
+  "closedByOperator": "2026-10-06T21:27:19Z",
+  "restoredMain": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "rootClean": true,
+  "commandCount": 24,
+  "allCommandsExitZero": true,
+  "gateChecks": {
+    "source": true,
+    "runtime": true,
+    "identity": true,
+    "config": true,
+    "invariantState": true,
+    "lockAbsent": true,
+    "owned": true,
+    "singleKnownRunner": true,
+    "zeroWork": true,
+    "queue": true,
+    "migrations": true,
+    "maintenance": true,
+    "dependencies": true,
+    "tableNames": true,
+    "tables": true,
+    "oldAudit": true,
+    "newAudit": true,
+    "operation": true,
+    "retained": true,
+    "materials": true,
+    "pointer": true,
+    "webOperation": true,
+    "explicitLegacyIntentPolicy": true,
+    "nativeHistory": true,
+    "waitingQueueEmpty": true
+  },
+  "retirementCheckpoint": "verified; original claim outcome remains unknown; no ACK fabricated",
+  "runtimeSource": "af51c621696230fbced12227670f014ca73bd8a1",
+  "maintenance": {
+    "state": "accepting",
+    "version": 18
+  },
+  "webArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "webVersion": 3,
+  "drainSeconds": 166.03047013282776,
+  "operatorProviderQueries": 0,
+  "reviewMethod": "readonly saved operator output; no repeated personal probes/actions",
+  "fixedEvidence": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate.json",
+      "bytes": 18446,
+      "sha256": "1fd8f49ef7e7030bd0c6e401274785e8ee2cd8a1abf13e7aa27f04a3d9cfbe57"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint.json",
+      "bytes": 1653,
+      "sha256": "62a3bb701a8d56e3d4c2653cee2aa11a1200f3f8334f371312fff0931524f072"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-command.json",
+      "bytes": 956,
+      "sha256": "162b1d49fecc7a3d5d0628ff11bcd4ae2ac42d043b9c728553f55ba01f7265f8"
+    }
+  ]
+}

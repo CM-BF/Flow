@@ -1,3 +1,61 @@
+# X01 当前host双阶段权限核验
+
+状态：APPROVED
+
+Review target commit：e6827d8a30fd103e34966a5d7298570545865057
+
+范围：apps/runner/src/plugins/host.ts、host.test.ts；base8e520b7；[Interface](../../docs/evidence/x01/host-gates-interface.md)。设计已核定，产品实现21/21与strict0已固定，Mika/gpt-6-astra于2026-10-06 14:47:23 UTC独立APPROVED，0P1/P2；[正式收据](../../docs/evidence/x01/host-gates-independent-review.json)。[固定交审packet](../../docs/evidence/x01/host-gates-review-ready.md)。只读review固定target、真实TLA/授权未知/ownership/abort行为和原14直接消费者；不运行测试或改owner树。不把历史center/leaf批准移到新host。中心a578已正式main56d90接收，详[回执](../../docs/evidence/x01/center-main-acceptance.json)。
+
+---
+
+# X01 当前中心静态安装 / 公开读回独立审查
+
+状态：APPROVED
+
+Review target commit：a578bfd977f5f8f8376cee613307f7011d8778a7
+
+- Owner：architecture_read/gpt-6-astra；WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan`；branch `codex/plugin-management-plan`；base `cb20a75dddc0bddc724b88d66437444b397391f9`；claim6ddedc73 v4，8中心源/029与两metadata。
+- [唯一manifest](../../docs/evidence/x01/center-manifest.json)，SHA `cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8`；8source +33readonly +48raw +11support，绑定targetGit/current bytes与哈希。
+- 最后14/14=11真实专库HTTP+3DTO、严格局部noEmit0；初期8fixture失败/各轮重叠原raw保留，6专库清理/49实际自有tar child关闭，无provider/旧65重测。详见[checks](../../docs/evidence/x01/center-checks.json)。
+- 核验criteria：公开source/CAS/幂等；preparing ACK前零材料写、FS事务外；相同session锁及失联unknown；trusted exact lifecycle证据+纯read reconcile；finite DTO/no paths；唯一029组合FK/不可变输入/审计；实际root owner-auth，动态端口/专库关闭。
+- 只读核Git/head/dirty/claim与manifest，实读8源/Interface/raw；不重跑PG/tests/child，不编辑owner树。发现回owner，绑定固定target。chatui01_owner/gpt-6-astra于2026-10-06 13:50:35 UTC独立APPROVED，Mika于13:51:12 UTC接收，0P1/P2；[收据](../../docs/evidence/x01/center-independent-review.json)。未重跑检查，不套旧leaf approval。
+- 不覆盖默认生产mount/client/CLI、完整enable/真实runner任务、第三方隔离、跨进程自动settlement证据。
+
+---
+
+# X01 零长度metadata修复增量复审
+
+状态：APPROVED
+
+Review target commit：bf33781450d2a5036e026ace03c1682e4d7f0f17
+
+[当前唯一增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)，delta base `2d20e35ca0019854e102cf051252675eb3f16da6`。生产仅Parser最大metadata参数及注释；测试仅扩类型与追加六种meta×前后位置12case，原53断言保持。真实12red→12green；最终65不同（51材料+14真实loader）与strict0、66own根删除。原43bindings中除两改动源码的41项逐字保持；原53不是修后65的额外累计。独立复审只读固定Git/source/raw，0新增执行；Mika/gpt-6-astra于2026-10-06 13:17:47 UTC独立APPROVED，唯一P2已关闭、0剩余P1/P2；[正式收据](../../docs/evidence/x01/leaf-independent-review.json)。
+
+---
+
+# X01 当前静态材料 / 真实 loader leaf 审查
+
+状态：CHANGES_REQUESTED
+
+Review target commit：2d20e35ca0019854e102cf051252675eb3f16da6
+
+Mika / gpt-6-astra 对固定target发现 1 P2 / 0 P1：零长度 TAR metadata 绕过全部metadata拒绝策略；[原审收据](../../docs/evidence/x01/leaf-independent-review-initial.json)。修复由owner在原v2范围进行，原53检查/manifest保持历史不改。
+
+[固定manifest](../../docs/evidence/x01/leaf-manifest.json)。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
+
+---
+
+# X01 当前纵向片设计审查
+
+状态：APPROVED（纵向方向设计；无产品实现批准）
+
+- Review target commit：3bd1add6ef7e868765b4508e88286bd62f49edd7；[ready](../../docs/evidence/x01/design-readiness.json)绑定6个文档与20固定main源码输入。
+- 当前owner architecture_read/gpt-6-astra；仅原两个metadata目录。原plan-only approval不覆盖新Interface/产品源码。
+- Mika / gpt-6-astra 于 2026-10-06 12:40:12 UTC 只读独审 APPROVED，0 P1/P2；独立核6设计绑定+20固定source。收据见 [vertical-design-review.json](../../docs/evidence/x01/vertical-design-review.json)。
+- migration、target runner/store资格、共享合同仍待Lead；依赖补充91ac13d0已获Mika独立方向批准（12:46 UTC），见[收据](../../docs/evidence/x01/dependency-design-review.json)；不是产品实施批准。实施前领取精确源码scope，0产品验证。
+
+---
+
 # X01 独立审查
 
 **状态：APPROVED（plan-only）target c21731c01f97afb450e443245b3fae0d2b0edb9b；不构成产品实现批准。**

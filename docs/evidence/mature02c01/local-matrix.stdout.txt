@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client
+
+ ✓ packages/client/src/execution-profiles.test.ts (4 tests) 61ms
+ ✓ packages/client/src/conversation-acknowledgement.test.ts (52 tests) 57ms
+ ✓ apps/cli/src/cli.test.ts (18 tests) 1065ms
+   ✓ reconnects at delivered cursor and drains terminal pages before exiting  410ms
+ ✓ packages/client/src/conversation-queue.test.ts (5 tests) 82ms
+ ✓ apps/cli/src/goal-progression.test.ts (1 test) 37ms
+ ✓ apps/cli/src/json-input.test.ts (2 tests) 124ms
+
+ Test Files  6 passed (6)
+      Tests  82 passed (82)
+   Start at  09:44:53
+   Duration  2.57s (transform 196ms, setup 0ms, import 677ms, tests 1.43s, environment 0ms)
+

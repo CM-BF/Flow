@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-10-06T22:00:26.405576+00:00",
+  "sourceTarget": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+  "sources": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "bytes": 2740,
+      "sha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "bytes": 3002,
+      "sha256": "86174d6d8994d06e57622b160ea56e3c43bc74c96ec6bdfaa98e087d5984d265"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 12306,
+      "sha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    }
+  ],
+  "freeBeforeBytes": 1158938624,
+  "minimumFreeBytes": 1077936128,
+  "selectedExpected": 2,
+  "unselected": 0,
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py"
+  ],
+  "timeoutSeconds": 10,
+  "pythonVersion": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "privateTemporaryFiles": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "providerCalls": 0,
+  "personalServices": 0,
+  "state": "COMPLETED",
+  "exitCode": 0,
+  "elapsedMs": 410,
+  "outputBytes": 1137,
+  "outputSha256": "e04ba449ce54097fd5c58be64d5a217dbb55ca568e3ba65bd9651d5e8103d32f",
+  "freeAfterBytes": 1158893568
+}

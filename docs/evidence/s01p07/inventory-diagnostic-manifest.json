@@ -1,0 +1,42 @@
+{
+  "base": "16a938a465e49dfaf8a0b1ed1d4356bcc5eaa4b8",
+  "state": "DIAGNOSTIC_FIX_REVIEW_PENDING",
+  "files": [
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 16965,
+      "sha256": "0bc4313170282bcdaf4eef973e4a86b7c4b6557c47c0bd3c105c67edc54f885a"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/inventory-diagnostic-1.json",
+      "bytes": 1306,
+      "sha256": "08c76c302a428e6459f6ee96c7871c24f82b2497432a6e8bcc605516044b8665"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/inventory-diagnostic-1.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/inventory-diagnostic-1.stderr",
+      "bytes": 734,
+      "sha256": "9b3fb5fc7e5f6bf2af1c0d06d737829f0c8a43353dd90c989808baf78105a600"
+    }
+  ],
+  "totalBytes": 25660,
+  "validation": {
+    "selected": 4,
+    "passed": 4,
+    "exitCode": 0,
+    "oldLifecycleTests": "NOT_RERUN 3",
+    "pg": "NOT_OPEN",
+    "oldFailureRoot": "KEEP_UNTOUCHED",
+    "r1Cause": "UNKNOWN"
+  },
+  "historicalInput": "Original pg-slot-request/pg-prepared-manifest remain bound to ac3b/execution03d, not current changed wrapper. Product, fixture and R1 raw unchanged."
+}

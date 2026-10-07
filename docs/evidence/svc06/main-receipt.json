@@ -1,0 +1,207 @@
+{
+  "observedAt": "2026-10-06T14:53:32.805109+00:00",
+  "sourceTarget": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d",
+  "delivery": "185e377437cbe474d208f65657871010f4fbd9be",
+  "integrationCommit": "cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8",
+  "observedMain": "d679444c4bed52bbd53d38f4944f914b30fbbd92",
+  "observedOriginMain": "d679444c4bed52bbd53d38f4944f914b30fbbd92",
+  "ancestors": {
+    "6d276baee6d3fbf14eb4b638a9ad773ffcec988d": true,
+    "185e377437cbe474d208f65657871010f4fbd9be": true,
+    "cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8": true
+  },
+  "sourceCount": 14,
+  "sourceComparison": [
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 16522,
+      "sha256": "009e619160875285fa53b0052a4fad0ce80c7c17fcd401987e51a8d8e6c985f9",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4174,
+      "sha256": "17e2a0ea136753c5342a7f624fda86e657a23fdc56b9d6c56cbde4a9cc332ebf",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build-probe.mjs",
+      "bytes": 1111,
+      "sha256": "34de6b2d49c4dbc21b9035a3c9a0499648322989c83e4441f4234beb17cad03d",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4853,
+      "sha256": "aac76a3003e14218b6084256d977158bf38a4794f5b58712f4b37fcf07d105ab",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 994,
+      "sha256": "331d79f85335f53b8f8d48bcd30bfcbf3e2d95e75c9cd2a165d0b2d0f0ac689e",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/integrity.test.mjs",
+      "bytes": 2700,
+      "sha256": "f874b0fa3535810c6bb3e69906d870829119f044bf78491dfe54da9a493bec0f",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 4881,
+      "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 11357,
+      "sha256": "b4a339cdfdd606883ff71dd5b68f3370bc3e280402e36a3a9958dce082f1d905",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "worktreeMatches": true,
+      "integrationMatches": true,
+      "observedMainMatches": true
+    }
+  ],
+  "unchangedDirectInputs": [
+    "tools/personal-preview/process.mjs",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/web-release.mjs",
+    "tools/personal-preview/web-artifact.mjs",
+    "tools/personal-preview/static-web.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "package.json",
+    "pnpm-workspace.yaml",
+    "apps/runner/src/main.ts"
+  ],
+  "changedDirectInputs": [
+    "pnpm-lock.yaml",
+    "apps/server/src/main.ts",
+    "apps/server/src/index.ts"
+  ],
+  "integrationEvidence": {
+    "path": "docs/evidence/i02/svc06-bounded-integration.json",
+    "commit": "cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8",
+    "sha256": "ba62294ea8dee6111ef04d1d3faa35793a28255f3738dc14455081edbade4677",
+    "bytes": 16874,
+    "assessment": {
+      "pnpm-lock.yaml": "Approved X01 adds two workspace links and one existing tar dependency importer; no external package resolution changed. No full build is claimed.",
+      "apps/server/src/main.ts": "Approved optional browser-session host config; personal-preview environment does not enable it. Native and existing host arguments preserved.",
+      "apps/server/src/index.ts": "Approved 028/browser auth and usage readout; default Bearer behavior retained with existing production checks. No changes to SVC process or artifact Interface."
+    }
+  },
+  "scope": "Bounded guard/legacy-compatible module received; full dependency artifact build/pinned host NOT_PROVEN.",
+  "noTestsBuildInstallOrProvider": true,
+  "personalServicesChanged": false,
+  "claimRetained": "3346a60d-0b50-4c73-bf22-9b258f8b1381 v4; no scope mutation planned.",
+  "freshClaim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc06",
+      "plans/svc06-backend-release",
+      "tools/personal-preview/README.md",
+      "tools/personal-preview/backend-release",
+      "tools/personal-preview/cli.mjs",
+      "tools/personal-preview/maintenance-host.mjs",
+      "tools/personal-preview/maintenance.test.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs"
+    ],
+    "state": "active",
+    "branch": "codex/backend-release",
+    "origin": "new",
+    "taskId": "SVC06",
+    "worker": "assignment_review",
+    "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+    "createdAt": "2026-10-06T12:42:47.489Z",
+    "updatedAt": "2026-10-06T13:00:51.589Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "recordedAt": "2026-10-06T14:54:38.785640+00:00",
+  "quality": {
+    "scope": "SVC06 canonical main receipt metadata only",
+    "skills": [
+      {
+        "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+        "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+      },
+      {
+        "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+        "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+      },
+      {
+        "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+        "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+      }
+    ],
+    "application": "Local skills reused; preserve one status owner, fixed approval scope and historical limits. Check current delivery wording, links and immutable evidence; no code, tests, install or service operations.",
+    "unresolved": "Full dependency artifact and pinned host journey remain resource-blocked and NOT_PROVEN. SVC06-03/04/05 remain open."
+  }
+}

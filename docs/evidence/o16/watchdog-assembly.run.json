@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--input-type=module",
+    "-e",
+    "await import('./experiments/continuous-goal-acceptance/operator.mjs'); console.log('operator module import only; no run');"
+  ],
+  "exitCode": 0,
+  "elapsedMs": 85,
+  "freeBytesBefore": 1512202240,
+  "rawBytes": 36,
+  "meaning": "affected operator import only; not typecheck or PG",
+  "provider": 0,
+  "postgres": 0
+}

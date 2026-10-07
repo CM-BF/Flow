@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T03:59:34.592126+00:00",
+  "mainBefore": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+  "target": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+  "delivery": "5752970d5d34af3cecd57535dffb15ff3a820073",
+  "products": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 39332,
+      "sha256": "247d89af6b70ecbabb9f574265d4c1c4b49411b51f1f5e4dc08d56722073c34e",
+      "fixed": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 43313,
+      "sha256": "e82691c7b2f9bf9b76ffe2dde4995a3756a4d17fbebabf6fc1f0ee35632333ec",
+      "fixed": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01",
+      "fixed": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 18324,
+      "sha256": "84358e3347c2f294ba521f8e070b548785e9590e36f3eeee164a738733946741",
+      "fixed": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13"
+    }
+  ],
+  "preimagesEqualFixedBase": true,
+  "independentReview": "svc08-replace-host-independent-review.json",
+  "newTests": 0,
+  "scope": "fixed same-lock Web host replacement only",
+  "notCovered": [
+    "new Web-only artifact selector",
+    "personal deployment",
+    "SVC06 actualhost smoke"
+  ],
+  "notes": [
+    "S01P07 working delta remains separately uncommitted pending fixed two-fixture review.",
+    "D05/OPS canonical deployment metadata copied by exact fixed refs; actual4320 timing source52fe/185."
+  ]
+}

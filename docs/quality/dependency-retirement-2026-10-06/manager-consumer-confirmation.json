@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-06T22:11:57.394106+00:00",
+  "state": "BOUNDED_KNOWN_CONSUMER_CONFIRMATION_ONLY",
+  "candidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+  "fixedHead": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+  "originalOwner": "workspace_panels_owner",
+  "claim": "883321bc v2 RELEASED, fresh-ledger.json",
+  "evidenceRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/ops-workspace-cache-dependency-consumers",
+  "evidence": [
+    "lead-dependency-audit.json",
+    "original-owner-context.md",
+    "root-frozen-dependency-review.json",
+    "fresh-ledger.json"
+  ],
+  "ownerSixPinsChecked": [
+    {
+      "path": "plans/wpf-workspace-cache/status.md",
+      "sha256": "5d2c06d40d5c22276b76b280a28a3b3010997d297b699d6c85ad579644e0779a",
+      "bytes": 3621
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-cache/README.md",
+      "sha256": "7cb0b74c62d2672930125ac5bd0e0c45e22287df8703e38c30d110dc6db94da4",
+      "bytes": 3032
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-cache/validation.md",
+      "sha256": "53f7f4bb780342daa8a603ceea869a8d86c87859dce3321cd92407b6d8cccd08",
+      "bytes": 7480
+    },
+    {
+      "path": "apps/web/test/workspace-retention.fixture.ts",
+      "sha256": "d46715af2f97e2441c66ceeee1726bde88438e26211d6de1ad533e273d5a8f1c",
+      "bytes": 2135
+    },
+    {
+      "path": "apps/web/test/workspace-retention.browser.ts",
+      "sha256": "394396d2df48c9fa05df6859c7bae871b69690f3dce9a2be567000383672d8a1",
+      "bytes": 15872
+    },
+    {
+      "path": "apps/web/test/workspace-retention.test.ts",
+      "sha256": "400f819269938c7bbd6ad43749f57d4364cec983cc92557d2e4d9b68022f5e84",
+      "bytes": 3049
+    }
+  ],
+  "confirmed": {
+    "originalOwnerUse": "No retained constant preview, unfinished experiment, scheduled delayed/automatic replay or original-owner-created external donor requirement for this tree dependencies.",
+    "currentFrozenInputs": "Root checked66 exact package/runtime entries in Recoverynext8ed, DPERFfinal929b and deliveredSettingsb5; actualpath/realpath/SHA no match into this tree.",
+    "externalSymlinkScope": "Lead audit examined exactly Flow,m2-integration,m2-shared-foundation,web-platform-management: no links into candidate. Manager did not repeat or widen that scan.",
+    "currentKernelScope": "Lead reported lsof/ps hits[] at22:04:02; no manager kernel or resource sample.",
+    "quickControls": "Current source-only352-file provision has no runtime dependency binding; future dependency choice must be freshly pinned and cannot silently borrow retired payloads."
+  },
+  "notConfirmed": [
+    "No global or future dynamic-consumer absence guarantee; unknown concrete dependency paths KEEP.",
+    "No exact restore or install replay performed, reviewed here or proven by CAS hashes.",
+    "No physical reclaimable-volume guarantee.",
+    "No dependency cleanup operation authority granted by this record."
+  ],
+  "keep": [
+    "All source/tests/rules/plans/ownraw/Git",
+    "Manifests/lockfiles/CAS",
+    "72 generated shims/layout metadata and root node_modules/.vite",
+    "Directory and symlink layout unless separately explicitly decided by Lead",
+    "All unrelated roots and unknown consumers"
+  ],
+  "postOperationReplay": "If Lead later retires exact approved package payloads, historical tree is NOT_RUNTIME_READY. Before any replay require separately approved exact restore-before-run and verification of pinned content/layout/entrypoints, followed by fresh runtime admission. Old test success and unused budget are not that permit.",
+  "operatorNext": "Original Execution Lead independently reviews recovery method and fresh exact identity/consumer guards, then decides any payload action. This bounded use confirmation closes only the requested Web-owner/frozen-consumer input.",
+  "operationsByManager": {
+    "dependencyWrites": 0,
+    "stop": 0,
+    "delete": 0,
+    "restore": 0,
+    "install": 0,
+    "runtime": 0,
+    "freeSample": 0,
+    "processScan": 0
+  }
+}

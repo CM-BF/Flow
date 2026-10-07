@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T19:09:31.957991+00:00",
+  "entries": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "export": "runRunner",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "export": "describeExecutionProfile",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "export": "verifyText",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "export": "createServer",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    }
+  ],
+  "attempts": 1,
+  "wallMs": 10000,
+  "workMs": 7000,
+  "cleanupMs": 3000,
+  "outputLimitBytes": 131072,
+  "temporaryLimitBytes": 8388608,
+  "exportCalls": 0,
+  "authorization": "Lead exact two aliases and import-only; subsequent message adds createServer export without invocation"
+}

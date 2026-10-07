@@ -1,0 +1,69 @@
+{
+  "observedAt": "2026-10-06 13:42:00 UTC",
+  "inputMain": "2f16e30a7e4dbeb7d4bc28e03284835764ef19a0",
+  "approvedInputs": {
+    "domain": "582f41f1957709982750f5de5306738e064960ce",
+    "client": "d6d5089c680f862e34a8e4d25f8f65d03057e70e",
+    "export": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+    "production": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e"
+  },
+  "independentReviews": {
+    "domain": "Execution Lead APPROVED fixed 582f",
+    "client": "status_read independent / Mika accepted d6 P2 CLOSED",
+    "production": "native_center_owner APPROVED fixed 9406"
+  },
+  "sourceComparison": "browser-session-source-comparison.json",
+  "checks": {
+    "production": {
+      "selected": 1,
+      "unselected": 2,
+      "passed": 1,
+      "exit": 0,
+      "toolChunk": "4b683b"
+    },
+    "rootTypes": {
+      "exit": 0,
+      "toolChunk": "777303"
+    },
+    "webTypes": {
+      "exit": 0,
+      "toolChunk": "dab628"
+    },
+    "registry": {
+      "count": 155,
+      "valid": true,
+      "newTask": "TUI01E"
+    },
+    "fullDomainReruns": 0,
+    "providerQueries": 0,
+    "personalOperations": 0
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/browser-session-combined.txt",
+      "bytes": 493,
+      "sha256": "e58686bda69ee9647109ebc272d04af28e2b594e424aa15c7c9a72cc1f21fc3b"
+    },
+    {
+      "path": "docs/evidence/i02/browser-session-combined-facts.json",
+      "bytes": 696,
+      "sha256": "c01ab345899f9a267f825bd36b20426198d975233f8927ff0236ebf6b2142dd9"
+    },
+    {
+      "path": "docs/evidence/i02/browser-session-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/browser-session-web-types.txt",
+      "bytes": 138,
+      "sha256": "867109a0443c0f5e4ee097f1840dd96e0fa65e4a5fbf43f5beca8cd9a6fbb74a"
+    }
+  ],
+  "limits": [
+    "Connection cookie trust must be explicitly configured; personal runtime 362/v15 and Web8d8/v2 unchanged",
+    "Node test jar is not Web browser persistence acceptance",
+    "Ordinary HTTP factory; trusted HTTPS proxy/TLS deployment remains open",
+    "Previous production manifest preserves original 5be client input; incremental d6 receipt and this current combination close P2 without rewriting history"
+  ]
+}

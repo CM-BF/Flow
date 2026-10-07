@@ -1,0 +1,227 @@
+{
+  "at": "2026-10-06T21:45:42.433117+00:00",
+  "source": "48e2ffe0c44cd8b05aacdc0a1986f6b8668ea40e",
+  "approvedProduct": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "sourceScopes": [
+    "tools/owned-process-supervision",
+    "docs/evidence/ops14",
+    "plans/ops14-owned-process-supervision"
+  ],
+  "manifestBindings": 9,
+  "files": [
+    {
+      "path": "docs/evidence/ops14/README.md",
+      "bytes": 3321,
+      "sha256": "e0d5c99aeff865546168a7b3703d8c8ffc166e9fa89754c6064999937dc6cdd0"
+    },
+    {
+      "path": "docs/evidence/ops14/claim-preflight.json",
+      "bytes": 218,
+      "sha256": "376a1b96547ebafcbf7373b3dd9d949f51fe8c9104b1833b2aa1fbe5fa58f0b7"
+    },
+    {
+      "path": "docs/evidence/ops14/consumer-inputs.json",
+      "bytes": 1562,
+      "sha256": "3da398a06f94a07f6edab47efd32a039a564acfd928d49b1e700da53b1dd47e8"
+    },
+    {
+      "path": "docs/evidence/ops14/fixed-manifest.json",
+      "bytes": 10172,
+      "sha256": "518594c5cd2be0f69174a602ce6f24348b14bf2ffb6897b174e41a576e231846"
+    },
+    {
+      "path": "docs/evidence/ops14/group-failure-detail-tool-receipt.json",
+      "bytes": 798,
+      "sha256": "6ed7431d3626591697897a1e1a31911b74487f3c5caecedd14b64a1e85d71b22"
+    },
+    {
+      "path": "docs/evidence/ops14/group-failure-detail.stdout",
+      "bytes": 68953,
+      "sha256": "02ff9b68b655076b889cfabb117823652725b3c7304426c2bd1a4e49088269cd"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review-bindings.json",
+      "bytes": 11346,
+      "sha256": "ea27cfc821cc355a2e1ca429def3e4fb2712226becf8661769d1bd99e523faa3"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review.json",
+      "bytes": 4453,
+      "sha256": "0d2b299c0a4510a8b0a3178efb15c92456a049108a3f18b5442031e155da886d"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-validation-review.json",
+      "bytes": 3843,
+      "sha256": "21eaed7e69417712f278e0e0c4512e1f1b48e2ad53882302329e8e3f72723c9e"
+    },
+    {
+      "path": "docs/evidence/ops14/interface.md",
+      "bytes": 3108,
+      "sha256": "d4458c830044c0b83a4860bb3502fb98689355402d02002603ec08cee72f2a1c"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-delta-manifest.json",
+      "bytes": 11210,
+      "sha256": "aaa150bda4fc455ef22fee2d762556f35c76f7cabded5f9041b75a0ac5aac6a6"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.json",
+      "bytes": 1238,
+      "sha256": "d26fd3034322ddb839b59a9d5bad16179e75dbc1aff494fd2b0a4954c2d8764a"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.stdout",
+      "bytes": 712,
+      "sha256": "c76de8f47f4cee28aef722eb951dbf4a53b9752d52729fc93c8be64afef5f121"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-cleanup.json",
+      "bytes": 405,
+      "sha256": "b34e3c76631757556915a9eb2c9d5e163515268c1fc6a67f676ae22f2bc8bba1"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final.json",
+      "bytes": 646,
+      "sha256": "692b9a536ccce221164b81d389fbb8ef24db39d0e44b612158995005e0921f1f"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-request.json",
+      "bytes": 571,
+      "sha256": "950d8cfd6e74639492a3c682ea5018256ef77d6ad20e62154f106f4599a384de"
+    },
+    {
+      "path": "docs/evidence/ops14/policy-validation-manifest.json",
+      "bytes": 2596,
+      "sha256": "82f6c2e65303812bd6d41cb8e7b11f0bcb3434d0bb7e52f9127a1a183a650ee9"
+    },
+    {
+      "path": "docs/evidence/ops14/resource-summary.json",
+      "bytes": 786,
+      "sha256": "dcd1a0d6f751120ec503221faa8d9d755fc6f3ba47c6adf6e47096c9126e04e3"
+    },
+    {
+      "path": "docs/evidence/ops14/signal-final.json",
+      "bytes": 942,
+      "sha256": "23eb1b6faf5ef40436e8609bdf185f1b62600c25c8f44ca1e4a97f8945ceed6d"
+    },
+    {
+      "path": "docs/evidence/ops14/signal-final.stdout",
+      "bytes": 528,
+      "sha256": "54e7791feaeaec350e4903e0523b6d670d4e3c98415a978ab2c4fa63ee7b0e14"
+    },
+    {
+      "path": "docs/evidence/ops14/skills.md",
+      "bytes": 1480,
+      "sha256": "d73a936c6b92e4674d196c86a115ed3a029c12db0d3f08285bc63275f1fc1608"
+    },
+    {
+      "path": "docs/evidence/ops14/status-parse.json",
+      "bytes": 2075,
+      "sha256": "e7c43a6afee14c865d9858a7d27651dec848e86e793e5c54e80b166d9b26a8d3"
+    },
+    {
+      "path": "docs/evidence/ops14/syntax.json",
+      "bytes": 475,
+      "sha256": "aea9bc924719e864e87cfa03557e57654c5d2f9f909431ffe64eb14d572c0371"
+    },
+    {
+      "path": "docs/evidence/ops14/take-receipt.json",
+      "bytes": 661,
+      "sha256": "637c1c6c14b3705f3610791ad42203bd72a7c8cc67ca922aadc91716433f8165"
+    },
+    {
+      "path": "docs/evidence/ops14/take-request.json",
+      "bytes": 421,
+      "sha256": "a0198bd8cfeca39982f9bcb6f64270df729a16a08393d5a7bdfe675ab334f293"
+    },
+    {
+      "path": "docs/evidence/ops14/tests-first.json",
+      "bytes": 929,
+      "sha256": "0f1933b6b978c09fdf4ce0649084b3f78b7e17f619418af1d4a0a3f85a5a1e3a"
+    },
+    {
+      "path": "docs/evidence/ops14/tests-first.stdout",
+      "bytes": 3524,
+      "sha256": "3f8849d789ef79706565bf04983d104ab7a6e70dce06af5bea2b4ac030c8d0d4"
+    },
+    {
+      "path": "docs/evidence/ops14/tests-second.json",
+      "bytes": 1046,
+      "sha256": "054a1e60e3a1e886571ef6625f05860a72569ca37ee54d9aef23c5cc24acbd0c"
+    },
+    {
+      "path": "docs/evidence/ops14/tests-second.stdout",
+      "bytes": 3122,
+      "sha256": "d481c6ae2c858f9921132000efc3000996b7b058a33baf6cb22085df8ba47398"
+    },
+    {
+      "path": "plans/ops14-owned-process-supervision/plan.md",
+      "bytes": 1558,
+      "sha256": "2a9e43f7dd6cbc444e8935a77f7d419fa7b79bdd6a14dc3c52808a653a9757e8"
+    },
+    {
+      "path": "plans/ops14-owned-process-supervision/review.md",
+      "bytes": 3052,
+      "sha256": "c299fd54fc3a5d22143f7e74f742e5ee662cd0b955cd17a108238ffc4e16c17f"
+    },
+    {
+      "path": "plans/ops14-owned-process-supervision/status.md",
+      "bytes": 2518,
+      "sha256": "a7709223769660a0c90de6eb3db7f75de63d1129ed630385bc31671f0970bf86"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "bytes": 2230,
+      "sha256": "737176e1fbf3d0667ac6b94fd22fa2064a6d855df361268d86d1346e067b9760"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 11993,
+      "sha256": "eee3e06564bbc2ec5389af225d0f14bde58a8b7c907e083693e1489715f13575"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 10766,
+      "sha256": "e15034349a0ad4996186de16f75a9215350f729ad0d6ef5d86635accbba9de2a"
+    }
+  ],
+  "metadataSource": "c2d26fa7",
+  "metadataPaths": [
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/intake.json",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/native-active-steering-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/native-active-steering-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/native-graph-acceptance-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/native-graph-acceptance-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/operator.py",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/preflight.json",
+    "docs/quality/sparse-worktree-2026-10-06/own-two-next/summary.json",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/operator.py",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/preflight.json",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/second-postcheck-followup.json",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/summary.json",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/web-activity-readability-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/web-activity-readability-result.json",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/web-conversation-readability-patterns.txt",
+    "docs/quality/sparse-worktree-2026-10-06/readability-two/web-conversation-readability-result.json",
+    "docs/quality/vite-cache-2026-10-06/flow-six-vite-cache-audit.json",
+    "docs/quality/vite-cache-2026-10-06/flow-six-vite-cache-processes.json",
+    "docs/quality/vite-cache-2026-10-06/intake.json",
+    "plans/flow-001-architecture/research-2026-10-05.md",
+    "plans/flow-001-architecture/status.md",
+    "plans/ops-001-status-review/status.md"
+  ],
+  "testsRerun": 0,
+  "provider": 0,
+  "limitations": [
+    "Two actual wrapper migrations remain open",
+    "13 distinct module checks across rounds; last2 only validated once",
+    "No personal service/runtime change",
+    "Historical sparse config UNKNOWN unchanged"
+  ],
+  "reviewPaths": [
+    "docs/evidence/ops14/independent-source-review-bindings.json",
+    "docs/evidence/ops14/independent-source-review.json",
+    "docs/evidence/ops14/independent-validation-review.json",
+    "plans/ops14-owned-process-supervision/review.md"
+  ]
+}

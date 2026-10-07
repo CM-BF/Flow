@@ -1,0 +1,170 @@
+{
+  "observedAt": "2026-10-06T23:51:07.765889+00:00",
+  "snapshotAt": "2026-10-06T23:50:56.148Z",
+  "snapshotBytes": 2502873,
+  "snapshotSha256": "4ad95512cb91a56cb62cf6e2d16864cca691412a2d86e2de01eab2aba6cb1f1a",
+  "sourceCount": 182,
+  "items": [
+    {
+      "id": "TUI01G",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "终端逐消息设置源码与直接用例已准备，等待局部验证。",
+        "next": "可从公开配置选择完整设置，并可靠保存下一条消息的请求。",
+        "blocker": {
+          "state": "active",
+          "text": "局部检查等待足够磁盘余量；源码与定向用例已准备。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:32:43.242Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings/plans/tui01g-message-settings/status.md",
+        "syncedAt": "2026-10-06T23:50:56.148Z",
+        "stale": false,
+        "ageHours": 0.3036522222222222
+      }
+    },
+    {
+      "id": "SVC05H01",
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "个人中心已恢复并通过独立核验；原 runner、网页、配置和用户数据保持，运行窗口已关闭。",
+        "next": "接收本次恢复记录进入主线；没有后续个人服务操作。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:47:00.794Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/plans/svc05-history-compatibility/status.md",
+        "syncedAt": "2026-10-06T23:50:56.148Z",
+        "stale": false,
+        "ageHours": 0.06559666666666666
+      }
+    },
+    {
+      "id": "FLOW-001",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "个人后台已恢复，原任务、会话、配置和网页保留；终端逐消息设置源码已审，实际验证仍待资源。",
+        "next": "按资源准入推进终端设置和完整工具原文；发布后继补长期服务监督，远程最小验证等待用户原选择。",
+        "blocker": {
+          "state": "active",
+          "text": "本地余量仍低于局部验证线，远程候选未获用户启用选择；真实双端、完整目标、工程与长期自动恢复验收仍开放。"
+        },
+        "decision": {
+          "state": "active",
+          "text": "OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。"
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:48:42.931Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/status.md",
+        "syncedAt": "2026-10-06T23:50:56.148Z",
+        "stale": false,
+        "ageHours": 0.05559666666666667
+      }
+    },
+    {
+      "id": "OPS-001",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "个人后台已按原版本恢复，原数据库、任务、配置和网页保持；开发工作区已恢复，未新增模型调用。",
+        "next": "按实际空间继续终端设置与完整工具原文验证；长期自托管服务监督已列入现有发布后继，远程验证等待用户原选择。",
+        "blocker": {
+          "state": "active",
+          "text": "23:34最后实采余量仍低于局部验证线，不能据服务恢复启动检查；远程启用仍等待用户原选择。"
+        },
+        "decision": {
+          "state": "active",
+          "text": "Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。"
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:47:36.690Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+        "syncedAt": "2026-10-06T23:50:56.148Z",
+        "stale": false,
+        "ageHours": 0.05559666666666667
+      }
+    },
+    {
+      "id": "I02",
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "个人后台已按原版本恢复并通过保留核验；恢复记录和长期服务监督后继进入本批文档接收。",
+        "next": "本片段已交付；已审但未验证的终端设置和完整工具正文保持分支，按实际空间继续。",
+        "blocker": {
+          "state": "active",
+          "text": "本地余量仍不足已声明验证门槛；远程文档候选等待用户原启用选择。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:49:28.490Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/plans/i02-integration/status.md",
+        "syncedAt": "2026-10-06T23:50:56.148Z",
+        "stale": false,
+        "ageHours": 0.024350555555555556
+      }
+    }
+  ],
+  "scope": "one read-only dashboard fetch; no service or product probe"
+}

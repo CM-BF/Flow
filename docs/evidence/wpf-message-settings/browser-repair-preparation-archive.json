@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-06 19:10:12 UTC",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "target": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "candidate": "/private/tmp/msgset-b2",
+  "previousRuntimeMs": 5197,
+  "remainingMs": 54803,
+  "files": [
+    {
+      "source": "/private/tmp/msgset-b2/aliases.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/binding.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/binding.json",
+      "bytes": 33851,
+      "sha256": "555109f2912b3ba861512a79a043a8c1b9d07f3a90aefce12c3cacf0bc06776a"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/browser-budget.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/browser-budget.json",
+      "bytes": 220,
+      "sha256": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/manifest.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/manifest.json",
+      "bytes": 3457,
+      "sha256": "19efcfbc48c03996ea14ec689aa156a5b2c97cf938f8608f27779f15bed0b5c3"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/report.md",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/report.md",
+      "bytes": 5619,
+      "sha256": "87b746f4c01b5728cd7b8a4479938bb2128c90a3cbe6833a3ab7f588aeb0a681"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/runtime-tsconfig.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/source-audit.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/source-audit.json",
+      "bytes": 3926,
+      "sha256": "157115b95d984c30ea91f84d102db604659bf2070320d05379e0c98a3ec54cbb"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/supervisor.py",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/supervisor.py",
+      "bytes": 13169,
+      "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/supervisor.py.diff",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/supervisor.py.diff",
+      "bytes": 5417,
+      "sha256": "a891740727efdc1a703aa2f7f93485ebfa350a553b5dd5645552d9d087974323"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/worker.mjs",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/worker.mjs",
+      "bytes": 10923,
+      "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/worker.mjs.diff",
+      "archive": "docs/evidence/wpf-message-settings/browser-repair-preparation/worker.mjs.diff",
+      "bytes": 7589,
+      "sha256": "ee2c29f866a763c6cac86c6874d5fffb225c2cc767107781fb72aef524b9a477"
+    }
+  ],
+  "gateCreated": false,
+  "parentBindingHead": "Implementation commit; must rebind to eventual clean metadata HEAD after review and fresh admission."
+}

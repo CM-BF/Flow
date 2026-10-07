@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { claudeTurnSettingsSchema } from './claude-turn-settings.js';
 import { harnessSchema, type HarnessName } from './harnesses.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { protocolTaskSchema } from './protocol-task.js';
@@ -35,8 +36,20 @@ export const taskSubmissionSchema = z.strictObject({
   verification: verificationRuleSchema.optional(),
   resumeSessionId: idSchema.optional(),
   executionProfile: executionProfileReferenceSchema.optional(),
+  messageSettings: claudeTurnSettingsSchema.optional(),
   engineering: z.union([engineeringIntentSchema, nativeEngineeringIntentSchema]).optional(),
 }).superRefine((task, context) => {
+  if (task.messageSettings) {
+    const profile = task.executionProfile;
+    const selected = task.messageSettings.profile;
+    if (task.harness !== 'claude' || !profile || task.fixture || task.protocol || task.engineering
+      || profile.id !== selected.id || profile.runnerId !== selected.runnerId || profile.configDigest !== selected.configDigest) {
+      context.addIssue({ code: 'custom', message: 'Message settings require an ordinary Claude task and its exact pinned execution profile.' });
+    }
+    if (task.resumeSessionId && task.messageSettings.requested.effort.kind === 'not-requested') {
+      context.addIssue({ code: 'custom', message: 'Resumed message settings require an explicit effort level.' });
+    }
+  }
   if (task.engineering && (task.harness !== (task.engineering.protocol === 'flow.engineering.v1' ? 'fixture' : 'codex') || task.resumeSessionId || task.fixture || task.executionProfile || task.verification || task.protocol)) {
     context.addIssue({ code: 'custom', message: 'Engineering intent requires its dedicated purpose profile and cannot reuse text verification or ordinary execution options.' });
   }

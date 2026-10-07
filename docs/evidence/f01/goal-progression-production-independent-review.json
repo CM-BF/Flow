@@ -1,0 +1,124 @@
+{
+  "kind": "independent-read-only-review",
+  "reviewer": {
+    "worker": "assignment_review",
+    "lead": "astra_ultra_execution_lead",
+    "model": "gpt-6-astra",
+    "independentFromProductAuthor": "Execution Lead",
+    "currentWriter": "native_center_owner"
+  },
+  "at": "2026-10-06T17:07:58.044701+00:00",
+  "decision": "APPROVED",
+  "target": "73aabff4fac96c0439817bdc72358c1385371e8d",
+  "delivery": "3f6a8a1b08cf7082f519e92ab09088550d2f1694",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "branch": "codex/m2-shared-foundation",
+  "clean": true,
+  "remoteHeadObserved": "3f6a8a1b08cf7082f519e92ab09088550d2f1694",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/goal-progression-production-fixed-manifest.json",
+    "sha256": "9c17d162c5b352f327642529f85c818831e55cd496f0e22f5d32b06009990699",
+    "entryCount": 275,
+    "counts": {
+      "source": 5,
+      "directInput": 234,
+      "configuration": 10,
+      "domainInput": 4,
+      "evidence": 22
+    },
+    "fixedAndCurrentMismatches": [],
+    "domain14ByteEquality": true,
+    "validationTreeFiveSourceEquality": true
+  },
+  "bindings": {
+    "path": "/tmp/flow-o14-production-review-bindings.json",
+    "bytes": 125434,
+    "sha256": "e93b73fea30062820cea991df5f476d575aac764f20082274670d3059398ee61"
+  },
+  "reviewedDiff": {
+    "range": "aea5536f673022482ff37bba316171e33d7ef96f^..73aabff4fac96c0439817bdc72358c1385371e8d",
+    "files": [
+      "apps/cli/README.md",
+      "apps/cli/src/index.ts",
+      "apps/cli/src/goal-progression.test.ts",
+      "apps/server/src/index.ts",
+      "packages/client/src/goal-progression-production.test.ts"
+    ],
+    "fullRead": true,
+    "directSeams": [
+      "existing browser-session authentication role hook",
+      "O14 migration/routes and bounded scan public seam",
+      "existing FlowClient three methods and CLI input/error handling",
+      "existing shutdown preClose/onClose ordering"
+    ],
+    "domainReapproval": false
+  },
+  "findings": [],
+  "reasoning": [
+    {
+      "area": "factory and authority",
+      "conclusion": "030 completes in the existing migration block before worker/scheduler readiness. Existing global authentication is registered before O14 routes: invalid bearer401, runner role403 for owner progression path. Default factory mounts authenticated routes and scans; automaticQueueScan=false remains explicit test-only opt-out."
+    },
+    {
+      "area": "lifecycle",
+      "conclusion": "One pendingWorkScan promise serializes the existing queue and new progression sweeps; interval and onReady share it. Module errors are contained separately. preClose marks closing, clears the interval, skips new module phases and awaits in-flight work before onClose pool disposal. This does not cancel already-running tasks, promise globally bounded SQL shutdown, or create a second admission authority."
+    },
+    {
+      "area": "CLI",
+      "conclusion": "Three commands use existing public FlowClient transport and strict bounded input schema. Mutations require caller stable key and preserve the schema-valid body; URL encoding, owner auth, abort and409 behavior are observed by original HTTP test. Oversize/nonregular/invalid UTF8 JSON is handled by existing bounded reader; no added retry or implicit authorization."
+    },
+    {
+      "area": "real production direct consumer",
+      "conclusion": "Test directly calls production createServer without fallback route or migration injection. Readiness resumes stored authorization and existing queue after restart. Two injected SDK executions receive frozen actual inputs and second input includes predecessor output; title is not treated as input. Progression admits exactly two and owner acceptance remains null/current delivery false. Invalid owner/runner-role reads are rejected."
+    },
+    {
+      "area": "replay and shutdown evidence",
+      "conclusion": "The first authorization ACK is received before restart/replay; preserved receipt and admission count are verified, not a simulated lost-ACK test. The second case has its own material/profile and explicitly enables default scanning; lock observation establishes at most one blocked scan and close waiting, not the timing of first admission relative to closing."
+    },
+    {
+      "area": "resource evidence",
+      "conclusion": "Current raw process receipt is one successful selected2/passed2 run, Node92822 exit0 in9.885s; test framework8.027s. Private randomized marked DB normal cleanup checks before[], zero connections and remaining[], dev/inode-checked private directory removal. Cache growth0, output568B, database12,958,743B. No forced/unknown cleanup path or crash-proof cleanup is inferred."
+    }
+  ],
+  "verifiedAuthorEvidence": {
+    "currentRun": {
+      "selected": 2,
+      "passed": 2,
+      "unselected": 0,
+      "processExit": 0,
+      "providerCalls": 0,
+      "injectedQueries": 2
+    },
+    "earlierRuns": {
+      "cli": "one red then one green33ms; not rerun this session",
+      "types": "earlier preserved errors and final exit0; no current or reviewer noEmit"
+    },
+    "distinctAcrossOldAndNew": 3,
+    "sameRunClaim": false
+  },
+  "reviewerActions": {
+    "tests": 0,
+    "typechecks": 0,
+    "PG": 0,
+    "runtimeImports": 0,
+    "providers": 0,
+    "install": 0,
+    "projectWrites": 0,
+    "serviceOperations": 0
+  },
+  "skills": {
+    "method": "Reuse locally read find-skills/codebase-design/clean-code for same stack; interface/state owner/lifecycle/error and direct behavior review, no skill install.",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ]
+  },
+  "limits": [
+    "Approval only these5 source files and their production/CLI wiring; b808 domain approval and prior thin client remain separate.",
+    "No real provider/SDK child, browser/UI, natural-language planning, arbitrary native readiness or hard-stop proof.",
+    "Successful normal-process lifecycle and restart receipts are not OS-crash/unknown-cleanup or lost-ACK proof.",
+    "Two fixed scenarios do not establish overall scheduling throughput/performance or load capacity.",
+    "Historical source-precheck NOT_RUN and previous pending manifests are retained as historical evidence; this review uses new fixed production manifest and raw facts."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T04:02:45.677759+00:00",
+  "mainBefore": "0aa1d0332e1f0472c39103d5e1758d88ad437763",
+  "approvedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "delivery": "a12defc50562251c3415f2ea344250f9afece7da",
+  "preimageTargetBindings": 12,
+  "allSame": true,
+  "review": {
+    "path": "docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json",
+    "sha256": "594b2a5e9eabf938fca6bb7ef1f46148c2b0853a09ca2d0a0edbf862d4bb95a3",
+    "decision": "APPROVED_FIXED_SOURCE_DIRECT35_AND_BROWSER5_COMPOSITION",
+    "blockingFindings": []
+  },
+  "rawFourthBindings": 26,
+  "directRawBindings": 2,
+  "existingDirectPass": 35,
+  "existingBrowserGroupsPass": 5,
+  "newTests": 0,
+  "newProvider": 0,
+  "deployment": "NOT_YET_RUN",
+  "limits": [
+    "Actual personal binding and dashboard deployment separate.",
+    "No secret body copied into evidence.",
+    "Existing product/user tabs, center/runner unchanged."
+  ]
+}

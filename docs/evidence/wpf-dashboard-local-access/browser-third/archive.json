@@ -1,0 +1,207 @@
+{
+  "state": "FAILED_PRESERVED",
+  "source": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadataAtRun": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+  "actualExit": 1,
+  "outerElapsedMs": 12110.540500027128,
+  "budget": {
+    "totalMs": 60000,
+    "previousConservativeSpentMs": 18728,
+    "thisRoundedUpMs": 12111,
+    "cumulativeConservativeMs": 30839,
+    "remainingConservativeMs": 29161,
+    "actualOuterSumMs": 30837.39104203414,
+    "nextCleanupReserveMs": 15000
+  },
+  "selectedGroups": 5,
+  "passedGroups": 4,
+  "failure": [
+    "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"hidden\"\nReceived: \"visible\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+  ],
+  "visibility": {
+    "before": "visible",
+    "focusEmulationDisabled": true,
+    "afterOwnedTabSwitch": "visible",
+    "windowId": 975387409,
+    "windowStateBefore": "normal",
+    "ownedWindowMinimized": true,
+    "windowRestored": true,
+    "focusEmulationRestored": true,
+    "sessionDetached": true,
+    "otherPageClosed": true
+  },
+  "interpretation": "Focus-disable and owned window minimize commands completed; page still reported visible and hidden assertion timed out. No observedHidden/tokenCleared assertion result. This is a failed real visibility prerequisite, not proof that the product clearing handler failed. No fourth run authorized.",
+  "cleanup": {
+    "context": "closed",
+    "http": "closed",
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "chromeStdoutEOF": true,
+    "chromeStderrEOF": true,
+    "parentStdoutEOF": true,
+    "parentStderrEOF": true,
+    "cleanupErrors": [],
+    "postCleanup": "03:38:53 exactworker69301/Chrome69332/PGID69301 absent; CDP53258 refused61; scratch absent. Owned window state/focus restored, CDP session detached, owned extra tab closed."
+  },
+  "chromeLog": {
+    "observedBytes": 319,
+    "retainedBytes": 319,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  },
+  "raw": [
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/actual-exit.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/actual-exit.json",
+      "bytes": 56,
+      "sha256": "50ff7028f77a78227f7af26b6b2e6813e5e0fa322238b12493dbe318baa34fc7"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/actual-preflight.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/actual-preflight.json",
+      "bytes": 2136,
+      "sha256": "7ae9e3e17230618eda316c2e3dec4ba7ede31233b8942d95f8f1a2d9b39f3ba5"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/manifest.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/manifest.json",
+      "bytes": 16191,
+      "sha256": "8bb5c029889c27e3a272743952ba1672ac0360d8a924e6e29454023089389074"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/post-cleanup.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/post-cleanup.json",
+      "bytes": 208,
+      "sha256": "180e1382ea6d1fd68d82ab22e97a7ac8e9d2c7afaf9d2e5cb9c050056864bc0e"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/preparation.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/preparation.json",
+      "bytes": 1950,
+      "sha256": "445825401a3f5b2cf197b4e8fc5980f016210eb34dd535fd8affcd0380054450"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/390-dark.png",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/390-dark.png",
+      "bytes": 72218,
+      "sha256": "7a45af6e7b11a881c785a12e5b5750e98b13f69b408a81dcec1d72b1d56c57ca"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/390-light.png",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/390-light.png",
+      "bytes": 75157,
+      "sha256": "c4172280c413ade97eb110464dc7f0ebdf565b3a4fec997b208cacbb774a3617"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/browser-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/browser-result.json",
+      "bytes": 1085,
+      "sha256": "d4c0fecc650c316a3e17dd4abc2f986e7aadc95cd062317c56b1fcf7b223df1a"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/chrome.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/chrome.log",
+      "bytes": 319,
+      "sha256": "5d535a8ed3aadda30fd0cd8450daac0d539da84624211379088870669f2df406"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/owned.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/owned.json",
+      "bytes": 598,
+      "sha256": "2f3cab5146def4d8fb30d4d54bf1dbad5d8430f8a4211e76ad47a35c40ce7e29"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/parent-stderr.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/parent-stdout.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/parent-stdout.log",
+      "bytes": 1240,
+      "sha256": "51b4e884892f4e2eaee15269f90da99ed09812739eaf89b83d9d1326902bdd56"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/result.json",
+      "bytes": 1227,
+      "sha256": "0487676113df6cb5b6aa88cdff93607b5d23b49f82bc18cdf606293e0d1b3601"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/raw/worker-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/raw/worker-result.json",
+      "bytes": 1523,
+      "sha256": "76ae65cda0bc44f3713e6caa241dc23ce2f9d613b037332ba671fb0036f82635"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/report.md",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/report.md",
+      "bytes": 1584,
+      "sha256": "eaae50dde1a397103dc69bfbae6c30d98050d44573f0762e912eef806d1b11dc"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/root-access-caller-fix-review.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-caller-fix-review.json",
+      "bytes": 2858,
+      "sha256": "7e8816588031ab9f2ba726c71d63f948402473a88830ad211dd91d4d080ed1ba"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/root-access-ccd-visibility-review.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-ccd-visibility-review.json",
+      "bytes": 1914,
+      "sha256": "042cae25a71c4b4442cf4791015a887b3b8893518c23f6804fdf8d55a252a65f"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/root-access-second-browser-research.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-second-browser-research.json",
+      "bytes": 4369,
+      "sha256": "e48ea66ee90c2f46ec83cc3603f5920942b4e9c6d8157c93029c1ba38b8b60e8"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/run.py",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/run.py.txt",
+      "bytes": 6238,
+      "sha256": "b3ec56e7f3d787dec031f981783ef0385df4121197d1eeec2bda60a69846992c"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/run.py.diff",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/run.py.diff",
+      "bytes": 4987,
+      "sha256": "cba9193c466c5ff2c0abca55f8cecc38a681ff5e93d77c606d1f9c8ebfe1802b"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/terminal.stderr",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/terminal.stdout",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/terminal.stdout",
+      "bytes": 1302,
+      "sha256": "da1f30a14571a5bf31f8eb0a8d0b533739a4aed0ddc59cfab280653ce228938d"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/worker.mjs",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/worker.mjs.txt",
+      "bytes": 4968,
+      "sha256": "519a76ce9695ecc77c985e006741dc74787512dd14540a1eb70655674b25f2bd"
+    },
+    {
+      "original": "/private/tmp/access01-browser-third-2855hbyp/worker.mjs.diff",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-third/worker.mjs.diff",
+      "bytes": 945,
+      "sha256": "9712b821e7da70b27b0e714df9dd61b5179c0fbeea23efa45a44f717720b1ebb"
+    }
+  ],
+  "limits": [
+    "One explicitly handed-off third run only; immediate window return after actual cleanup.",
+    "Source prerequisite and caller approval do not imply browser acceptance.",
+    "Application08ec/firstfour assertions/direct35 unchanged; no fourth run or repeated direct checks.",
+    "No personal credentials/config/service/user tab, PG, provider, install or deployment."
+  ]
+}

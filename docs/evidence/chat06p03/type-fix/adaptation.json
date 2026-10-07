@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T18:12:25.851289+00:00",
+  "source": "4c6676caf545aea1939a9b676b419cf702eed19c",
+  "bindings": [
+    {
+      "original": "docs/evidence/chat06p03/baseline/accumulator.ts",
+      "ref": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "originalSha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792",
+      "originalBytes": 9939,
+      "archive": "docs/evidence/chat06p03/baseline/accumulator.ts.txt",
+      "adaptedBytes": 10007,
+      "adaptedSha256": "f362bab2dd7b54dcd80fa0525c5553e78c57930c1c5073736764cc95a1d5ef7f",
+      "onlyDifference": "SDKMessage type import replaced by the owning public observe parameter type",
+      "reverseReplacementEqualsOriginal": true
+    },
+    {
+      "original": "docs/evidence/chat06p03/baseline/index.ts",
+      "ref": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "originalSha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "originalBytes": 3795,
+      "archive": "docs/evidence/chat06p03/baseline/index.ts.txt",
+      "adaptedBytes": 3863,
+      "adaptedSha256": "bf8f6972371438857b56c33630644ae098999629def359507aabe4c1f72d3d6b",
+      "onlyDifference": "SDKMessage type import replaced by the owning public observe parameter type",
+      "reverseReplacementEqualsOriginal": true
+    }
+  ],
+  "runtimeErasureProof": "PREPARED_NOT_RUN",
+  "behaviorRerun": false,
+  "rootConsumerTypecheck": "PENDING_LEAD_STAGED_INPUT"
+}

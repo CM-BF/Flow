@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T20:30:29.266056+00:00",
+  "verdict": "CHANGES_REQUESTED_PREPARATION_ADDENDUM",
+  "candidate": "/private/tmp/msgset-b5",
+  "runnerSha256": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586",
+  "supersedesForGate": {
+    "path": "/tmp/root-message-settings-b5-preparation-review.json",
+    "sha256": "686e17ce70ca4e3160af0421e68a5367627a2bef5fa9dbd2e87fd54b9d460532",
+    "reason": "Additional lifecycle review after initial narrow binding/delta approval; preserve original approval as history, do not use it for current runtime gate until this finding closes."
+  },
+  "finding": {
+    "id": "MSGSET-SOFT-STOP-LATE",
+    "priority": "P2",
+    "path": "/private/tmp/msgset-b5/supervisor.py",
+    "lines": [
+      89,
+      93,
+      271,
+      283,
+      295,
+      296
+    ],
+    "scenario": "Parent receives handled SIGTERM/SIGINT after its last work checkpoint, during cleanup or final evidence persistence.",
+    "observedSource": "request_stop only sets stopping/stopSignal. persist_results computes PASS from errors, cleanup, and worker exit; none reads stopping. Return reads report.state only.",
+    "impact": "A cooperatively stopped attempt can report PASS/exit0 if its work already exited successfully. Existing cleanup still runs; this is terminal evidence classification, not evidence of a leaked process or failed product behavior.",
+    "requiredRepair": [
+      "Keep stopping and report signal; make a handled soft-stop fail the terminal outcome even during cleanup/final writes.",
+      "Restore original signal handlers in an outer finally so a final persistence exception cannot bypass restoration.",
+      "Keep all original b5 preparation/binding/review artifacts, original b4 runtime files, product source, budget20609/39391 and cleanup behavior.",
+      "Rebind only changed executable preparation metadata. No new browser/runtime or native authorization request."
+    ],
+    "reference": "DPERF04 repaired supervisor already records Cooperative stop in errors and restores handlers in outer finally; do not import unrelated DP budget/paths or broaden scope."
+  },
+  "runtime": "NOT_RUN",
+  "sourceOnly": true,
+  "projectWrites": false,
+  "personalOperations": false,
+  "goBoundaryAuthorityUnchanged": true,
+  "newRunnerMustBePreciselyBound": true
+}

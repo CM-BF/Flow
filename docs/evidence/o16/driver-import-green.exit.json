@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T18:48:13.150719+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--input-type=module",
+    "-e",
+    "import * as driver from './experiments/continuous-goal-acceptance/driver.mjs'; import { sourceIdentity } from './experiments/continuous-goal-acceptance/identity.mjs'; const identity = await sourceIdentity({requireClean:false}); console.log(JSON.stringify({exports:Object.keys(driver),files:identity.files.length,dependencies:identity.dependencies.length,sourceDigest:identity.digest,pg:0,query:0,auth:0}));"
+  ],
+  "exitCode": 0,
+  "seconds": 1.312910084030591,
+  "freeBeforeBytes": 1558532096,
+  "stdoutBytes": 200,
+  "stdoutSha256": "3003faeb1f35c8033fd1b215dfd6922c3e50c0e8cf8da0fc417dd368137969ea",
+  "providerCalls": 0,
+  "pg": 0,
+  "note": "Bound workspace package versions to fixed BASE manifest, third-party to installed-version receipt. Module import is not PG journey or typecheck."
+}

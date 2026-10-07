@@ -1,3 +1,65 @@
+# F01 current review
+
+状态：APPROVED
+
+Review target commit：ccfa04b22d6027c6e7606b22708bcb485e01ae05
+
+Reviewer：astra_ultra_execution_lead / gpt-6-astra，2026-10-06 18:07:07 UTC；完整三源diff/helper/transport及原HTTP1/1、types0核对，无P1/P2，0reviewer重跑。[唯一原件](../../docs/evidence/f01/goal-plan-confirmation-cli-independent-review.json)。批准仅CLI薄入口，不扩领域或真实模型/语义验收。
+
+# F01 current review
+
+历史状态：NOT_STARTED
+
+历史 Review target commit：ccfa04b22d6027c6e7606b22708bcb485e01ae05
+
+本段仅CLI index/专测/README三源；1真实HTTP（包含help/错误/边界）+focusedtypes0，无新PG/provider。待唯一独立只读审查。原O15生产7f59/285bindings已获Lead独审并main0e4c，不继承为CLI批准。
+
+# F01 current review
+
+历史状态：APPROVED
+
+历史 Review target commit：7f59daa552aa0618776468ec54b6ed4c5a6990cb
+
+Reviewer：Execution Lead / astra_ultra_execution_lead，独立于作者native_center_owner。四源/285绑定、1/1真实生产PG及清理已核，无P1/P2。[原通信结论转录](../../docs/evidence/f01/goal-plan-confirmation-production-independent-review.json)。批准仅本O15生产接线；ACK已收后重开、注入query、语义接受独立，后继CLI不在本批准。
+
+# F01 current review
+
+历史状态：NOT_STARTED
+
+历史 Review target commit：7f59daa552aa0618776468ec54b6ed4c5a6990cb
+
+本当前段仅O15公共client/export/生产031挂载与一条factory专测，等待独立源前检和实际PG。原032 0ee独审APPROVED及O14 main结论保留下文，不能继承为本新target批准。
+
+# F01 当前032消息设置生产审查
+
+状态：APPROVED；Reviewer：astra_ultra_execution_lead / gpt-6-astra，独立于作者native_center_owner
+Review target commit：0ee2494ed4298169c56ac3a6950fa1910ed62a7a
+
+作者native_center_owner；当前范围仅apps/server/src/index.ts及packages/client/src/claude-message-settings-production.test.ts。CORE ea27634源与C01最终6d1149源均作为独审固定输入，非本片作者实现或重审范围。唯一独立review已完整读2源/原证据，249固定/current bytes+hash全符；188保护源/配置对当次main无差，无P1/P2，reviewer0重跑/provider。[原报告](../../docs/evidence/f01/claude-message-settings-production-independent-review.json)。真实生产1/1、focusedtypes最终0及首次红、正常资源清理均已核。[delivery](../../docs/evidence/f01/claude-message-settings-production-README.md)。无provider/runtime；ACK已收后重启，不是lostACK。
+
+历史O14已main bd14，下面原审查保留，不能批准032新片。
+
+# F01 当前 O14 生产收尾审查
+
+状态：APPROVED；独立 Reviewer：assignment_review / gpt-6-astra，独立于原产品作者ExecutionLead
+Review target commit：73aabff4fac96c0439817bdc72358c1385371e8d
+
+2026-10-06 17:07:58 UTC唯一独审完成。观察交付3f6a8a1b08cf7082f519e92ab09088550d2f1694 clean/pushed；完整5源及现factory/鉴权/迁移/scan/CLI/关闭直接接缝已读。275固定/current绑定一致，原O14 b808的14域输入全同；无P1/P2，reviewer0测试/types/PG/provider/写项目。
+
+原样归档[独立结论](../../docs/evidence/f01/goal-progression-production-independent-review.json)，SHA846f1fbb8dc750981c705352110514c12aa4c03f8422fbd52d8a5724b23d882c；[绑定](../../docs/evidence/f01/goal-progression-production-review-bindings.json)，SHAe93b73fea30062820cea991df5f476d575aac764f20082274670d3059398ee61。审查限定[生产原始证据](../../docs/evidence/f01/goal-progression-production-README.md)。
+
+当前一次真实PG选中2/通过2，Node退出0、随机marker库与自有目录正常清理；旧CLI1/types0未重跑。接受ACK后重启同key恢复，不是lost ACK；单scan/关闭等待不证明关闭时首次admission或OS硬停止。两次SDK注入、0provider/SDK child/UI。模块与thinclient审批独立，无整体容量/自然语言规划/032资格推断。当前owner接收仅验证并保存证据，没有修改该目标产品。
+
+032消息设置后继尚待CORE正式批准，scope新增与准备不继承本批准。main receipt待ExecutionLead。
+
+以下历史原记录保留，不代表当前target批准。
+
+# 当前连接会话共享传输审查
+
+Review target commit: 5be830e2614d45dbaa023e98923fc74f470b37ec
+
+状态 NOT_STARTED。3source/3raw/1固定DTO，见[browser-session-client-manifest](../../docs/evidence/f01/browser-session-client-manifest.json)。初始3red→新3+旧51通过与types0；仅传输，不覆盖领域或浏览器。下列批准仅其历史target。
+
 ## 当前附件清理增量独审
 
 Review target commit: f04cb29633ca678b35aa423e02a16953add0cfba
@@ -267,3 +329,96 @@ NOT_STARTED；仅3source、2HTTP与types，领域916e另已独审；不复跑PG/
 Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
 
 APPROVED — assignment_review独立只读3source/3raw/1input同源，无P1/P2；不重跑。限定薄传输，见[回执](../../docs/evidence/f01/native-engineering-client-review.json)。
+
+## Browser connection production mount
+
+2026-10-06 13:35 UTC，native_center_owner独立只读APPROVED固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e。完整3file delta/测试和25 bindings核验（3source+10输入+12raw），无P1/P2，0reviewer tests/provider；本人此前域仅作固定input hash，未自审。[正式回执](../../docs/evidence/f01/browser-session-production-independent-review.json)。新3distinct分轮2+1、旧queue3/types0、4DB正常清理；Node jar非实际浏览器、remoteTLS/proxy未验，个人服务未动。
+
+## Browser connection client P2 incremental closure
+
+Review target commit: d6d5089c680f862e34a8e4d25f8f65d03057e70e
+
+APPROVED — status_read/gpt-6-astra 2026-10-06 13:38:04 UTC独立只读，Mika13:38:16接收；2source/3raw固定hash、两行修复核验，原5be P2 CLOSED，无P1/P2。Bearer显式omit、cookie/connect仍include；原1red→3green与types0复用，0新增PG/provider/reviewer测试。[完整收据](../../docs/evidence/f01/browser-session-client-independent-review.md)。生产9406原批准继续限定三源；其历史manifest保留5be输入，不追溯改写。
+
+## O13 goal planning light list transport
+
+Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
+
+NOT_STARTED — 2source/3raw/固定O13 DTO，限定单方法传输，不重审旧graph授权或未完成领域。见[manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)。
+
+Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
+
+APPROVED — Mika/gpt-6-astra 2026-10-06 13:46:39 UTC独立只读2source/3raw/固定DTO六项同源，无P1/P2；新1+旧1 HTTP与types0原证据有效，无重跑/PG/provider。只transport，领域仍待固定。[正式回执](../../docs/evidence/f01/goal-run-list-client-independent-review.md)。
+
+## COST01A thin readout
+
+状态：NOT_STARTED
+
+Review target commit `fb0e992e8b308a987bcea273e29e883b9cf13caf`。仅client/export与一项真实HTTP直接测试；无PG/provider。独立review需核透明数量/null、覆盖、编码/auth/abort/错误无重试与固定合同27d4。
+
+
+Review target commit: fb0e992e8b308a987bcea273e29e883b9cf13caf
+
+APPROVED — assignment_review / gpt-6-astra 2026-10-06T14:13:36.619200Z 独立只读，3source/3raw/DTO七项固定同源，编码/auth/null/覆盖/错误不重试/取消符合薄transport。0 reviewer tests/PG/provider；原类型exit取manifest与tool出处，不以空输出独证通过。领域与production mount另验。见[正式回执](../../docs/evidence/f01/usage-readout-client-independent-review.json)。
+
+
+## COST public factory
+
+Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
+
+NOT_STARTED — 两file生产挂载与直接消费者，已审领域27d4五源零diff/薄clientfb0独审；1/1实际PG+HTTP、types0、单库正常清理，0provider。
+
+
+Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
+
+APPROVED — assignment_review / gpt-6-astra 2026-10-06 14:26 UTC，2source/3raw/5已审domain输入十项固定/working同源，完整factory/auth及真实HTTP/PG消费者核实，无P1/P2。原1/1、1913B、replay/restart/legacy/auth/no-store与专库正常清理成立；0 reviewer tests/PG/provider，不扩UI/计费/预算。见[独审回执](../../docs/evidence/f01/usage-readout-production-independent-review.json)。
+
+
+## COST CLI consumer
+
+Review target commit: 0550b3e7318133fb0d023fd8cc4372d8b7663e78
+
+NOT_STARTED — 3file/2raw，只读command + help +真实HTTP边界；原domain/production已main617。
+
+
+Review target commit: 0550b3e7318133fb0d023fd8cc4372d8b7663e78
+
+APPROVED — assignment_review / gpt-6-astra，2026-10-06T14:31:26Z独立只读三源/两raw及既有client输入同源，无P1/P2。原1/1真实HTTP20ms/types0有效，reviewer无测试/PG/provider；仅CLI透明读取、help和错误/取消传播，不代表UI、归因或预算完成。见[独审回执](../../docs/evidence/f01/usage-readout-cli-independent-review.json)。
+
+## X01 static installation thin client
+
+Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
+
+NOT_STARTED — 三file/六raw/已main的固定DTO；五方法/原key/body/两cursor/ACK未知/abort/403409传递，只审transport，不重跑领域PG。
+
+Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
+
+APPROVED — status_read / gpt-6-astra，Mika接收，无P1/P2；[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。0 reviewer tests。
+
+## X01 production/configuration/CLI
+
+Review target commit: 5e121041cf628817b27cbb64f00317d5d62ad1e2
+
+NOT_STARTED — 10源/6不同局部用例分轮、root types与自有随机库正常清理；只接线，不重审领域。
+
+## O14 finite progression thin transport
+
+Review target commit: deef0e484d37974171e42eee0f547ef3423ea9a6
+
+NOT_STARTED — 3source/6raw，三owner method/export，1红→1绿HTTP29ms/types0；无PG/provider，非生产自动扫描批准。
+
+Review target commit: 5e121041cf628817b27cbb64f00317d5d62ad1e2
+
+APPROVED — assignment_review / gpt-6-astra，10 source/13 raw/6已审领域输入全部 fixed/current 同源，无P1/P2；[报告](../../docs/evidence/f01/plugin-installation-mount-independent-review.json)。配置4+CLI HTTP1+生产PG/HTTP1分轮原证据有效，types0；reviewer0重跑/PG/provider。只静态安装，不授权启用、加载或个人部署。
+
+## O14 production candidate aea5536f673022482ff37bba316171e33d7ef96f
+
+NOT_STARTED; five sources, CLI1/1 andtypes0 only, realPG NOT_RUN. Source precheck cannot close production acceptance. See candidate manifest and Interface. X01 prior approval remains bound to5e121 and main7810.
+
+## O14 当前分段审查边界
+
+薄client deef0e484d37974171e42eee0f547ef3423ea9a6 已由status_read独审APPROVED/Mika接收并mainfb9；原始[审查](../../docs/evidence/f01/goal-progression-client-independent-review.md)和证据保留。
+
+Review target commit: 73aabff4fac96c0439817bdc72358c1385371e8d
+
+NOT_STARTED — 生产完整审查未启动。独立源码预检P2已关闭，CLI/types有效；15:31真实资源准入未通过，PG NOT_RUN，无数据库/模型。源码前检不代替恢复/默认扫描/关闭生命周期验收。

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T20:35:01.113749+00:00",
+  "source": "d147a636f9cb54a8c87a89a89963d13e937cee9c",
+  "metadata": "cd26abcffd21572977d9730227e73cd1316b5ef1",
+  "review": "tui01f04-preparation-review.json",
+  "state": "PREPARATION_ONLY",
+  "fourSourceComparison": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27145,
+      "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 25037,
+      "sha256": "e54159c4d669dab5426d358695f9c2f925c0e472bf9fb5bc5d5543a81e0a43a8"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/preview.ts",
+      "bytes": 11413,
+      "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/terminal.py",
+      "bytes": 7304,
+      "sha256": "7fdc85cadeb71ad2d9d88e2a463aad6651aeaaf6ecc27f41ce7cd2102e691081"
+    }
+  ],
+  "defaultFixtureInput": "main fixture before application exactly equal pre-F04 7c5a739258106a2cf9387ebf3a5e54268c122136",
+  "validation": "Existing fixed local evidence reused; no engineering rerun for zero new code delta",
+  "actualJourney": "NOT_RUN",
+  "provider": 0
+}

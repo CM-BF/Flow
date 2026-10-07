@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T04:06:27.860Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "同锁替换模块已进入主线；Web独立固定来源选择已完成局部验证，中心和runner来源保持不变，正在交独立审查。",
+    "next": "审查Web专用来源选择；之后仍需合法个人来源产物和真实运行验证，个人服务尚未切换。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "bad019d9691499bed69ae46b6c5d23944709cfe3",
+    "scopes": [
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/README.md"
+    ],
+    "errors": []
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED；当前Web-only固定宿主选择待唯一独审；前片批准不扩大为新选择/实际个人部署。",
+    "target": "bad019d9691499bed69ae46b6c5d23944709cfe3"
+  }
+}

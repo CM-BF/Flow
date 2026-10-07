@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session
+
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+ ✓ apps/server/src/browser-session/session.test.ts (18 tests) 9478ms
+   ✓ keeps unconfigured sessions unsupported while the old bearer-only HTTP and stream consumers remain usable  4045ms
+   ✓ rejects Cookie confusion across ports and centers even when local browser cookie delivery shares a hostname  861ms
+   ✓ rechecks authorization after a read and before publishing a newly fetched SSE page  303ms
+   ✓ preserves the unmodified public createServer bearer client and two-argument stream consumer  1106ms
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  06:10:39
+   Duration  10.64s (transform 501ms, setup 0ms, import 1.07s, tests 9.48s, environment 0ms)
+

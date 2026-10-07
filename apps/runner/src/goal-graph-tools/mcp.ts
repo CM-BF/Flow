@@ -2,7 +2,9 @@ import { createSdkMcpServer, tool } from '@anthropic-ai/claude-agent-sdk';
 import { z } from 'zod';
 import { idSchema } from '../../../../packages/contracts/src/tasks.js';
 import { goalGraphCommandSchema, type GoalGraphCapability } from '../../../../packages/contracts/src/goal-graph-runs.js';
+import { GOAL_INPUT_PROPOSAL_PROTOCOL } from '../../../../packages/contracts/src/goal-graph-proposals.js';
 import { failure, result } from '../goal-tools-mcp/result.js';
+import { GoalToolError } from '../goal-tools/index.js';
 
 const readSchema = z.discriminatedUnion('view', [
   z.strictObject({ view: z.literal('graph'), after: z.string().min(1).max(2_000).optional(), limit: z.number().int().min(1).max(50).default(20) }),
@@ -16,7 +18,12 @@ export function createGraphToolsMcp(capability: GoalGraphCapability) {
       catch (error) { return failure(error); }
     }, { annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false } }),
     tool('graph_command', 'Propose or apply a bounded graph within the fixed grant. Retain the same idempotencyKey for the same intent after an unknown outcome. Apply names the returned proposal id, digest and baseRevision. No child execution or engineering writes are supported. The center validates quota, current authority and versions.', { command: goalGraphCommandSchema, idempotencyKey: z.string().min(1).max(200) }, async ({ command, idempotencyKey }) => {
-      try { return result(await capability.port.commandGraph(command, idempotencyKey)); } catch (error) { return failure(error); }
+      try {
+        if (command.kind === 'propose' && command.proposal.inputProposal && capability.scope.inputProposalProtocol !== GOAL_INPUT_PROPOSAL_PROTOCOL) {
+          throw new GoalToolError('scope_denied', 'The owner did not grant complete input proposals.');
+        }
+        return result(await capability.port.commandGraph(command, idempotencyKey));
+      } catch (error) { return failure(error); }
     }, { annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: true } }),
   ] });
 }

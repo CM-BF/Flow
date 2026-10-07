@@ -1,0 +1,40 @@
+{
+  "exitCode": 0,
+  "elapsedMs": 338,
+  "priorRunElapsedMs": 258,
+  "stopReason": null,
+  "pid": 96599,
+  "ownedGroupAbsent": true,
+  "rawBytes": 920,
+  "temporaryRemoved": true,
+  "checkpointExists": true,
+  "sampledTempLogicalBytesPeak": 1022,
+  "sampledTempFilesPeak": 26,
+  "peakLimit": "10ms samples are observations, not an exact physical peak; all fixture writes are fixed tiny strings, no external resources.",
+  "freeAfterBytes": 1306435584,
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "bytes": 12016,
+      "sha256": "d73a6b8677c3c050748fe41a52be158a0441279d29074c994ab67bbdd1de735f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+      "bytes": 8733,
+      "sha256": "7cec22430405eb207667577cea6a72fe3c542dcff08304437d40711f31762d94"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "bytes": 6387,
+      "sha256": "2c69d7e0963ec5645be3a6f611f4d5f087f81e3a27c34a5b85805587002f5fd1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "bytes": 13027,
+      "sha256": "6b21b7b09ab1dadacbf50089b873b953e9cc9d79285cf535e184d9458ffad9d2"
+    }
+  ],
+  "personalOperations": 0,
+  "PG": 0,
+  "provider": 0
+}

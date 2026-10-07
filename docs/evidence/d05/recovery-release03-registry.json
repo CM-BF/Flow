@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-06T14:50:27.359Z",
+  "count": 161,
+  "rows": [
+    {
+      "id": "WPF-RECOVERY01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "branch": "codex/web-conversation-recovery",
+      "planDir": "plans/wpf-conversation-recovery",
+      "evidenceDir": "docs/evidence/wpf-conversation-recovery",
+      "head": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+      "errors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "WPF-RELEASE03",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "branch": "codex/web-current-preview-compatibility",
+      "planDir": "plans/wpf-release03-current-preview",
+      "evidenceDir": "docs/evidence/wpf-release03",
+      "head": "422d0fba2bf6f45f61dfde3bcec99f14c62ae5e5",
+      "errors": [],
+      "humanComplete": true
+    }
+  ],
+  "checks": "Registry/parser/path checks only; no product tests/provider; not live deployment."
+}

@@ -1,0 +1,201 @@
+--- /private/tmp/dperf04-node-once-kz6cfj2k/run.py
++++ /private/tmp/dperf05-node-once-iozl0vgo/run.py
+@@ -1,4 +1,4 @@
+-"""Single-use DPERF04 Node check. Never runnable without separately pinned gate."""
++"""Single-use DPERF05 pure parser check. Never runnable without separately pinned gate."""
+ import datetime
+ import hashlib
+ import json
+@@ -36,7 +36,9 @@
+ def logical_bytes(root):
+     """Count own files without traversing symlink targets."""
+     total = 0
+-    for directory, children, files in os.walk(root, followlinks=False):
++    def reject_walk_error(error):
++        raise error
++    for directory, children, files in os.walk(root, followlinks=False, onerror=reject_walk_error):
+         children[:] = [name for name in children if not (Path(directory) / name).is_symlink()]
+         for name in files:
+             try:
+@@ -76,11 +78,11 @@
+     if len(sys.argv) != 3 or sys.argv[1] != '--gate':
+         raise ValueError('An explicit external --gate path is required')
+     binding = read_json(BINDING)
+-    if binding['state'] != 'SOURCE_BOUND_NOT_RUN':
++    if binding['state'] != 'CANDIDATE_NOT_RUN':
+         raise ValueError('SOURCE_BINDING_PENDING')
+     gate = read_json(sys.argv[2])
+     assert gate.get('allowRun') is True and gate.get('mode') == 'node-direct'
+-    assert gate['taskId'] == 'WPF-DPERF04' and gate['singleUse'] is True
++    assert gate['taskId'] == 'WPF-DPERF05' and gate['singleUse'] is True
+     assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z', '+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+     assert gate['bindingSha256'] == digest(BINDING)
+     assert gate['runnerSha256'] == digest(__file__)
+@@ -102,14 +104,20 @@
+         if remaining <= 0:
+             raise TimeoutError('Setup exceeded work deadline')
+         return subprocess.check_output(['git', *args], cwd=root, text=True,
+-            timeout=min(2, remaining), env={**os.environ, 'GIT_OPTIONAL_LOCKS': '0',
+-            'GIT_CONFIG_GLOBAL': '/dev/null', 'GIT_CONFIG_SYSTEM': '/dev/null'}).strip()
++            timeout=min(2, remaining), env=child_environment()).strip()
+     assert git('rev-parse', 'HEAD') == binding['head']
+     assert git('branch', '--show-current') == binding['branch']
+     assert git('status', '--porcelain') == ''
+-    assert len(binding['sources']) == 7
++    assert len(binding['sources']) == 2
+     for filename, expected in {**binding['sources'], **binding['readOnlyDependencies']}.items():
+         assert digest(root / filename) == expected, filename
++    for filename, expected in binding['gitObjectDependencies'].items():
++        remaining = deadline - time.monotonic()
++        if remaining <= 0:
++            raise TimeoutError('Setup exceeded work deadline')
++        blob = subprocess.check_output(['git', 'show', binding['head'] + ':' + filename],
++            cwd=root, timeout=min(2, remaining), env=child_environment())
++        assert hashlib.sha256(blob).hexdigest() == expected, filename
+     node = binding['node']
+     assert str(Path(node['path']).resolve()) == node['realpath']
+     assert digest(node['realpath']) == node['sha256']
+@@ -117,16 +125,14 @@
+ 
+ 
+ def child_environment():
+-    # Preserve HOME/home/CODEX_HOME. Redirect only this command's scratch/cache.
+-    env = {key: value for key, value in os.environ.items()
+-           if not key.startswith(('FLOW_', 'PG', 'POSTGRES_', 'DPERF04_'))
+-           and key not in ('DATABASE_URL', 'NODE_OPTIONS', 'HTTP_PROXY', 'HTTPS_PROXY',
+-                           'ALL_PROXY', 'http_proxy', 'https_proxy', 'all_proxy')}
++    # Keep only mundane process identity/path; no inherited credentials or loaders.
++    env = {key: os.environ[key] for key in ('PATH', 'HOME', 'USER', 'LOGNAME', 'SHELL', 'CODEX_HOME')
++           if key in os.environ}
+     for name in ('TMPDIR', 'TMP', 'TEMP', 'XDG_CACHE_HOME', 'NODE_COMPILE_CACHE'):
+         env[name] = str(SCRATCH)
+     env.update({'NODE_DISABLE_COMPILE_CACHE': '1', 'TSX_DISABLE_CACHE': '1',
+                 'GIT_CONFIG_GLOBAL': '/dev/null', 'GIT_CONFIG_SYSTEM': '/dev/null',
+-                'GIT_OPTIONAL_LOCKS': '0', 'NO_COLOR': '1', 'NO_PROXY': '127.0.0.1'})
++                'GIT_OPTIONAL_LOCKS': '0', 'NO_COLOR': '1'})
+     return env
+ 
+ 
+@@ -177,14 +183,19 @@
+               'sourceHead': binding['head'], 'sourceHashes': binding['sources'],
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+               'sandboxSha256': digest(PROFILE), 'limits': limits,
+-              'kind': 'one Node test file; one owned loopback HTTP server; two tiny Git repositories; synthetic ledger; no PG/browser/external network',
++              'kind': 'one pure parser Node test file; no Git fixture, HTTP, PG, browser or network',
+               'samples': samples, 'previousRuntimeMs': 0}
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+-    with (BASE / 'consumed-gate.json').open('x') as target:
+-        target.write(json.dumps(gate, indent=2) + '\n')
+-    static_raw_bytes = sum(f.stat().st_size for f in BASE.glob('*.json'))
+-    log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes']
+-    try:
++    try:
++        with (BASE / 'consumed-gate.json').open('x') as target:
++            target.write(json.dumps(gate, indent=2) + '\n')
++    except BaseException as error:
++        selector.close()
++        print(json.dumps({'state': 'FAIL_GATE_CONSUMPTION', 'error': str(error), 'childStarted': False}))
++        return 2
++    try:
++        static_raw_bytes = sum(f.stat().st_size for f in BASE.glob('*.json'))
++        log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes']
+         assert log_limit > 0
+         verify_sources(binding, work_deadline)
+         report['initialFreeBytes'] = available_bytes(binding['worktree'])
+@@ -235,40 +246,75 @@
+         reason = 'SUPERVISION_ERROR'
+         report['error'] = type(error).__name__ + ': ' + str(error)
+     finally:
+-        selector.close()
++        final_errors = []
++        def capture(label, operation, fallback=None):
++            try:
++                return operation()
++            except BaseException as error:
++                final_errors.append(label + ': ' + type(error).__name__ + ': ' + str(error))
++                return fallback
++        # Check before deleting scratch: a short-lived child can exit between polls.
++        final_used = capture('exit tmp observation', lambda: logical_bytes(BASE))
++        report['exitTmpBytesBeforeCleanup'] = final_used
++        if final_used is not None and final_used > limits['tmpBytes']:
++            final_errors.append('Temporary size limit exceeded at child exit')
++        capture('selector close', selector.close)
+         cleanup_started = time.monotonic()
+-        cleanup_errors = reap_owned(process, total_deadline)
++        cleanup_errors = capture('reap owned', lambda: reap_owned(process, total_deadline), ['cleanup raised'])
+         if process and process.stdout:
+-            process.stdout.close()
++            capture('stdout close', process.stdout.close)
++        group_absent = capture('owned group observation', lambda: not group_alive(process), False)
++        scratch_absent = capture('scratch observation', lambda: not SCRATCH.exists(), False)
++        if not group_absent or not scratch_absent:
++            cleanup_errors.append('Owned group or scratch remains')
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+-                             'groupAbsent': not group_alive(process), 'scratchAbsent': not SCRATCH.exists(),
+-                             'serverClosureBasis': 'Fixed server and Git children remain within the terminated/reaped owned process group; no external service used'}
++                             'groupAbsent': group_absent, 'scratchAbsent': scratch_absent,
++                             'basis': 'Only the owned sandbox/Node process group and own scratch; no service/database created'}
+         report['exitCode'] = process.returncode if process else None
+         report['logBytes'] = log_bytes
+         report['droppedObservedLogBytes'] = dropped_bytes
++        text = capture('read Node TAP log', lambda: LOG.read_text(errors='replace') if LOG.exists() else '', '')
++        report['tap'] = {}
++        for key in ('tests', 'pass', 'fail', 'cancelled', 'skipped', 'todo'):
++            value = re.search(r'^# ' + key + r' (\d+)\s*$', text, re.MULTILINE)
++            report['tap'][key] = int(value[1]) if value else None
++        report['tap']['expectedTests'] = binding['expectedTestCount']
++        report['finalFreeBytes'] = capture('final free observation', lambda: available_bytes(binding['worktree']))
++        if report['finalFreeBytes'] is not None and report['finalFreeBytes'] <= limits['stopFreeBytes']:
++            final_errors.append('Final free space below stop threshold')
+         report['elapsedMs'] = round((time.monotonic() - started) * 1000)
+-        report['cumulativeMs'] = report['elapsedMs']
+-        report['remainingMs'] = max(0, 30000 - report['elapsedMs'])
++        report['cumulativeMs'] = binding['previousRuntimeMs'] + report['elapsedMs']
++        report['remainingMs'] = max(0, round(limits['totalSeconds'] * 1000) - report['elapsedMs'])
+         report['finishedAt'] = utc_now()
+-        text = LOG.read_text(errors='replace') if LOG.exists() else ''
+-        passed = re.search(r'^# pass (\d+)\s*$', text, re.MULTILINE)
+-        failed = re.search(r'^# fail (\d+)\s*$', text, re.MULTILINE)
+-        report['tap'] = {'passed': int(passed[1]) if passed else None,
+-                         'failed': int(failed[1]) if failed else None,
+-                         'expectedTests': binding['expectedTestCount']}
+-        okay = (not reason and report['exitCode'] == 0 and not cleanup_errors
+-                and report['elapsedMs'] <= 30000 and report['tap']['passed'] == binding['expectedTestCount']
+-                and report['tap']['failed'] == 0 and dropped_bytes == 0)
+-        report['state'] = 'PASS' if okay else reason or 'FAIL'
+-        report['sourceMeaning'] = 'A successful bounded fixture does not establish production4320 latency, realPG assignments or browser behavior.'
++        report['finalizationErrors'] = final_errors
++        tap_okay = (report['tap']['tests'] == report['tap']['pass'] == binding['expectedTestCount']
++                    and all(report['tap'][key] == 0 for key in ('fail', 'cancelled', 'skipped', 'todo')))
++        okay = (not reason and report['exitCode'] == 0 and not cleanup_errors and not final_errors
++                and report['elapsedMs'] <= limits['totalSeconds'] * 1000 and tap_okay and dropped_bytes == 0)
++        report['state'] = 'PASS' if okay else ('FAIL' if cleanup_errors or final_errors else reason or 'FAIL')
++        report['sourceMeaning'] = 'Pure parseStatus evidence only; no actual aggregate aging, deployment, registry, HTTP or browser proof.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+-        if len(encoded) > limits['finalReportReserveBytes'] or static_raw_bytes + log_bytes + len(encoded) > limits['rawBytes']:
++        tail_size = capture('final tmp quota', lambda: logical_bytes(BASE))
++        raw_size = capture('final raw quota', lambda: sum(f.stat().st_size for f in BASE.glob('*.json')) + (LOG.stat().st_size if LOG.exists() else 0))
++        if (tail_size is None or raw_size is None or len(encoded) > limits['finalReportReserveBytes']
++                or tail_size + len(encoded) > limits['tmpBytes'] or raw_size + len(encoded) > limits['rawBytes']):
++            final_errors.append('Final report or observed tmp/raw limit failure')
++        if time.monotonic() > total_deadline:
++            final_errors.append('Total deadline exceeded before report write')
++        if final_errors:
++            report['state'] = 'FAIL'
++            encoded = (json.dumps(report, indent=2) + '\n').encode()
++        if len(encoded) > limits['finalReportReserveBytes']:
+             report = {'state': 'REPORT_LIMIT_FAILURE', 'cleanup': report['cleanup'],
+                       'elapsedMs': report['elapsedMs'], 'logBytes': log_bytes,
+-                      'fullReportBytes': len(encoded), 'sourceHead': binding['head']}
++                      'sourceHead': binding['head'], 'finalizationErrors': ['Report exceeded reserved bytes']}
+             encoded = (json.dumps(report, indent=2) + '\n').encode()
+-        RESULT.write_bytes(encoded)
++        try:
++            RESULT.write_bytes(encoded)
++        except BaseException as error:
++            report['state'] = 'REPORT_WRITE_FAILURE'
++            report['reportWriteError'] = type(error).__name__ + ': ' + str(error)
+     print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup']}))
+     return 0 if report['state'] == 'PASS' else 1
+ 

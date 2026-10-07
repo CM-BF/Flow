@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-10-07T03:15:45.787322+00:00",
+  "claimObservedAt": "2026-10-07T03:15:45.728Z",
+  "donorCommit": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+  "donorPath": "apps/server/src/database.ts",
+  "donorSha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+  "donorBytes": 7789,
+  "approvedSvc07Target": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "equalsSvc07ApprovedBytes": true,
+  "localCopy": "docs/evidence/req15-turn-page-batch/main-database.ts",
+  "copyMode": "0444",
+  "runtimeMapping": "Vite pre-resolve only when relative import resolves to this worktree apps/server/src/database.js",
+  "productionDatabaseUnchanged": true,
+  "scope": "Pool mock only; EventEmitter plus callback/Promise connect; no assertion changes",
+  "window": "Mika bounded local120s/3child/raw128KiB/TMP8MiB; architecture_read explicitly yielded X01 local",
+  "notRerun": [
+    "26-test suite",
+    "PG2",
+    "types",
+    "collect"
+  ]
+}

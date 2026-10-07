@@ -1,0 +1,153 @@
+{
+  "kind": "DAEMON_RECOVERY_2332_INDEPENDENT_SAVED_EVIDENCE_REVIEW",
+  "at": "2026-10-06T23:36:20.592264+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra; independent of operator Execution Lead",
+  "target": "61f37a14c96ae534e572d75784bf77b42e4892f3",
+  "result": "APPROVED_RECORDED_RECOVERY_ONLY",
+  "findings": [],
+  "readScope": "Ten fixed recovery packet files plus prior container-before anchor. Fixed Git and current file bytes only; no new daemon/Docker/PG/port/ledger probe.",
+  "chronology": [
+    {
+      "at": "2026-10-06T23:32:30.288382Z",
+      "fact": "Recorded daemon Stopped/socket absent; 55432 and personal center 61227 refused; root cause unknown."
+    },
+    {
+      "at": "2026-10-06T23:34:11.312791+00:00",
+      "fact": "One existing-machine-set orbctl start reserved."
+    },
+    {
+      "at": "2026-10-06T23:34:26.431807+00:00",
+      "fact": "That single invocation returned exit 1 timeout after 15118 ms; original failure preserved, not relabeled command success."
+    },
+    {
+      "at": "2026-10-06T23:34:32.924065+00:00",
+      "fact": "Later recorded status returned Running/exit 0 and socket exists; exact old PostgreSQL container still exited255."
+    },
+    {
+      "at": "2026-10-06T23:34:42.723887+00:00",
+      "fact": "All eight immutable/operational identity fields equal prior saved anchor before container start."
+    },
+    {
+      "at": "2026-10-06T23:34:42.896974+00:00",
+      "fact": "One exact full-ID container start returned exit 0 and same ID."
+    },
+    {
+      "at": "2026-10-06T23:34:50.816672+00:00",
+      "fact": "Same container recorded running/healthy; 55432 listening. 61227 still refused and 61228 listening; no claim of personal center recovery."
+    },
+    {
+      "at": "2026-10-06T23:34:55.549Z",
+      "fact": "Read-only ledger list recorded available, 212 claims, zero mutations."
+    }
+  ],
+  "identityComparison": {
+    "Id": true,
+    "Name": true,
+    "Created": true,
+    "Image": true,
+    "Mounts": true,
+    "RestartPolicy": true,
+    "PortBindings": true,
+    "Labels": true
+  },
+  "containerId": "2c45767d48024581ca5c320b1dbeb3ecf0e37d5ac4333d114d008e66d93584d0",
+  "image": "sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0",
+  "volumeName": "flow-f00_flow-postgres",
+  "ports": {
+    "5432/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "55432"
+      }
+    ]
+  },
+  "boundaries": [
+    "Saved packet records exactly one daemon start and one existing-container start. No recreate/new container/delete-volume command is recorded; same Id/Created/Image/Mounts confirm reuse of the original container and volume binding.",
+    "This is not a global audit proving no unrelated process acted. Mount identity is not a table-content, WAL, backup, or data-integrity validation.",
+    "Daemon wake can restore other previously running machines; approval does not claim it affected only Flow PostgreSQL.",
+    "Personal center 61227 remained unavailable in saved after-state. af51/v18 recovery requires its own current owner/source guards; historical 362/v15 operator must not be reused.",
+    "No personal launch/stop/config/update/browser action, product test or model invocation is attributed to this recovery packet or this review.",
+    "Healthy and ledger available describe recorded times only; this review performs no fresh liveness or admission check."
+  ],
+  "bindings": [
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/after-start.json",
+      "bytes": 311,
+      "sha256": "c38b821f3a8ff9433c292b8b30ff7799e8ca8befbe6fc9322178b71eac9ce847",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-after.json",
+      "bytes": 431,
+      "sha256": "dd6b186bcc48b884a8e8609ae37f5d701ddbb3af4d5688f5270b5ef61666aa3c",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-before.json",
+      "bytes": 2252,
+      "sha256": "9abba3bb302eeaca48adb3fb55e91ef34076fac56b2896a3d2a1642653b961fb",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-start-reservation.json",
+      "bytes": 154,
+      "sha256": "71ade7389d8ac40a8256830e0f2db24b0c866051683d6667bec97ffcbaa2c695",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-start-result.json",
+      "bytes": 156,
+      "sha256": "d4e8d5a568b7eaa220dbdd1e1d91f9ca685880d38457405fa262d759d2577b74",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/independent-readonly.json",
+      "bytes": 9502,
+      "sha256": "b8f796c591e0c69d3368f8c43b5cebc067b4d8cb5a4ae2f97647a4cf1d9c8de8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/ledger-restored.json",
+      "bytes": 110,
+      "sha256": "de70dd6d1ee9c80aaea3c364b74c6b0e8acf7cc15910bf25dda9ba76eab61a28",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/preflight.json",
+      "bytes": 850,
+      "sha256": "7b491924ccc5159bfa5cb52563b25e8bb443a946366b69073332a447e1f99590",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/start-reservation.json",
+      "bytes": 224,
+      "sha256": "65e09f9e7a2e82fac32913d59cecf4d0ac953f7909d32c7a8dbdc884780ff6af",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery-2332/start-result.json",
+      "bytes": 179,
+      "sha256": "94082f7b06f88ed54e9eabed9f1f6cee826d52fded17f1519165396775e8bc73",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "path": "docs/quality/resource-space-2026-10-06/daemon-recovery/container-before.json",
+      "bytes": 1929,
+      "sha256": "8328c5f71b17bde5e613e837747d7033ad1094cc62c2ce05e1803727669ec227",
+      "fixedMatchesCurrent": true
+    }
+  ],
+  "mismatches": [],
+  "reviewerActions": {
+    "projectWrites": 0,
+    "daemonCalls": 0,
+    "dockerCalls": 0,
+    "PG": 0,
+    "ledgerCalls": 0,
+    "ports": 0,
+    "tests": 0,
+    "provider": 0,
+    "personalActions": 0,
+    "tmpReportWrites": 1
+  }
+}

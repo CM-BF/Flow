@@ -1,0 +1,85 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds
+
+ ✓ apps/runner/src/runner.test.ts > runs a claimed fixture to a fixed artifact, verification and one completion 86ms
+ ✓ apps/runner/src/runner.test.ts > keeps a durable decision pending until a heartbeat delivers approval 85ms
+ ✓ apps/runner/src/runner.test.ts > acknowledges cancellation only after a slow adapter exits without publishing 63ms
+ ✓ apps/runner/src/runner.test.ts > interrupts on lost heartbeats without pretending cancellation or completion 54ms
+ ✓ apps/runner/src/runner.test.ts > replays the identical final event when its successful acknowledgement is lost 75ms
+ ✓ apps/runner/src/runner.test.ts > retains a failed verification separately from successful execution 54ms
+ ✓ apps/runner/src/runner.test.ts > reports fixture execution failure once without manufacturing an artifact 43ms
+ ✓ apps/runner/src/runner.test.ts > keeps ordinary failures on the normal terminal path 37ms
+ ✓ apps/runner/src/runner.test.ts > keeps settled native failures on the normal terminal path 36ms
+ ✓ apps/runner/src/runner.test.ts > keeps untrusted shape failures on the normal terminal path 36ms
+ ✓ apps/runner/src/runner.test.ts > retains unknown native execution after local cleanup and across host restart 43ms
+ ✓ apps/runner/src/runner.test.ts > keeps native settlement unknown when cancellation arrived before local cleanup 56ms
+ ✓ apps/runner/src/runner.test.ts > lets an already running slot settle while unknown native execution blocks replacement work 87ms
+ ✓ apps/runner/src/runner.test.ts > uploads large evidence separately from bounded timeline text 58ms
+ ✓ apps/runner/src/runner.test.ts > expires the local lease while a heartbeat request is still hanging 123ms
+ ✓ apps/runner/src/runner.test.ts > resolves a pending decision with reject without publishing 74ms
+ ✓ apps/runner/src/runner.test.ts > resolves a pending decision with cancel without publishing 64ms
+ ✓ apps/runner/src/runner.test.ts > stops its process loop without turning shutdown into user cancellation 42ms
+ ✓ apps/runner/src/runner.test.ts > recovers a persisted final event after restarting the runtime 80ms
+ ✓ apps/runner/src/runner.test.ts > marks resumed fixture usage with an unknown baseline rather than charging history again 58ms
+ ✓ apps/runner/src/runner.test.ts > retains rejected events for reconciliation without starting the adapter again 44ms
+ ✓ apps/runner/src/runner.test.ts > preserves cumulative sample IDs and baselines independently of delivery event IDs 43ms
+ ✓ apps/runner/src/runner.test.ts > bounds unacknowledged concurrent output and every serialized HTTP batch 49ms
+ ✓ apps/runner/src/runner.test.ts > starts from environment configuration and stops cleanly on SIGTERM 641ms
+ ✓ apps/runner/src/runner.test.ts > reuses a repeated decision request without emitting a second pending decision 86ms
+ ✓ apps/runner/src/runner.test.ts > persists every concurrent event before sending that exact event to the center 49ms
+ ✓ apps/runner/src/runner.test.ts > recovers an old durable prefix when the center already acknowledged later events 57ms
+ ✓ apps/runner/src/runner.test.ts > retains unacknowledged events when the center sends invalid confirmation {"accepted":1,"lastSequence":0} 28ms
+ ✓ apps/runner/src/runner.test.ts > retains unacknowledged events when the center sends invalid confirmation {"accepted":1,"lastSequence":1.5} 27ms
+ ✓ apps/runner/src/runner.test.ts > retains unacknowledged events when the center sends invalid confirmation {"accepted":2,"lastSequence":1} 25ms
+ ✓ apps/runner/src/runner.test.ts > executes an injected Claude adapter through the same runner ownership and HTTP event boundary 53ms
+ ✓ apps/runner/src/runner.test.ts > continues heartbeats while the final event sequence is frozen and completes only after confirmation 195ms
+ ✓ apps/runner/src/runner.test.ts > retains an uncertain final across runner restart without replaying the native query or inventing completion 43ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > refills a completed slot before the long poll timer while another attempt remains active 183ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > defaults to one slot and explicitly overlaps four attempts without exceeding the local limit 220ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > honors a lower center capacity and isolates one adapter failure from other slots 131ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > cancels only the requested slot while the other attempt continues 62ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > awaits every started adapter on host abort and on swallowed heartbeat authentication rejection 216ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > stops every slot on event storage failure even if the adapter catches the rejected emit 46ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > persists an unknown claim, lets a known slot finish, and refuses another claim after restart 176ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > does not send a claim when its durable intent cannot be saved 2ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > never replays an active outbox while another slot is being admitted 86ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 0 before admission 1ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 17 before admission 1ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 1.5 before admission 0ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit NaN before admission 1ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit null before admission 0ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 4 before admission 0ms
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 1 with a local four-slot pool
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 4 with a local four-slot pool
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP preserves native-session exclusion across overlapping local slots
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle
+ ✓ apps/runner/src/runtime-capacity.test.ts > preserves authentication failure before quiescent events recovery can swallow it 29ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > preserves authentication failure before quiescent final-status recovery can swallow it 6ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > settles all slots when final submission converts an authentication failure to FinalizationUnknown 69ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > settles all slots when a goal tool consumer catches its own authorization rejection 63ms
+ ✓ apps/runner/src/runtime-capacity.test.ts > keeps a goal permission denial local while a second known attempt continues 70ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > drains a definite null claim across normal stop and can claim after same-directory restart 77ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > persists a late assignment without starting it or manufacturing completion after normal stop 25ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > uses the original request deadline during normal stop and keeps its unresolved intent across restart 14ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains the same intent on connection reset without a replacement claim 26ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains the same intent on malformed response without a replacement claim 26ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > sends no request if normal stop already happened before admission 1ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > clears only its unsent intent when normal stop occurs while real durable rename is returning 23ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > fatal host authentication 401 still preempts a pending claim and awaits the active adapter 52ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > fatal host authentication 403 still preempts a pending claim and awaits the active adapter 56ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains a real in-flight intent after killing its owned child and blocks same-directory restart 273ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > documents 32 subscriptions per pending attempt in the fixed old wait expression 4ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > keeps real Module subscriptions, timers and abort listeners bounded across 32 ticks 5ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > wakes immediately when a tracked completion resolves 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > wakes immediately when a tracked completion rejects 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > coalesces completions before waiting into one pending notification 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > abort releases a waiting loop and ignores later completion 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > close releases a waiting loop and ignores later completion 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > does not allocate resources for an already aborted signal or after close 0ms
+ ✓ apps/runner/src/attempt-wakeup.test.ts > rejects a second waiter without replacing the first or allocating another timer 0ms
+
+ Test Files  4 passed (4)
+      Tests  72 passed | 4 skipped (76)
+   Start at  06:24:42
+   Duration  6.29s (transform 611ms, setup 0ms, import 1.41s, tests 4.55s, environment 0ms)
+

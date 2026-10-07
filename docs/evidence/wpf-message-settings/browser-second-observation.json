@@ -1,0 +1,209 @@
+{
+  "at": "2026-10-06 19:19:59 UTC",
+  "run": "settings-b2-20261006-191743-60f52b",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "actualHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+  "state": "FAILED",
+  "elapsedMs": 8551,
+  "previousRuntimeMs": 5197,
+  "cumulativeMs": 13748,
+  "remainingMs": 46252,
+  "checks": [],
+  "screenshots": 0,
+  "pg": 0,
+  "workerPgid": 66244,
+  "chromePid": 67309,
+  "fixtureClosed": true,
+  "chromeExited": true,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "chromeExit": {
+    "code": null,
+    "signal": "SIGTRAP",
+    "at": "2026-10-06T19:18:13.573Z",
+    "beforeCdpReady": false
+  },
+  "chromeClose": {
+    "code": null,
+    "signal": "SIGTRAP",
+    "at": "2026-10-06T19:18:13.581Z"
+  },
+  "chromeSignalsRequested": [],
+  "chromeTemp": {
+    "TMPDIR": "/private/tmp/msgset-b2/scratch",
+    "TMP": "/private/tmp/msgset-b2/scratch",
+    "TEMP": "/private/tmp/msgset-b2/scratch",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgset-b2/scratch",
+    "XDG_CACHE_HOME": "/private/tmp/msgset-b2/scratch",
+    "NODE_COMPILE_CACHE": "/private/tmp/msgset-b2/scratch"
+  },
+  "chromeStreams": {
+    "stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "ended": true,
+      "closed": true
+    },
+    "stderr": {
+      "receivedBytes": 11145,
+      "keptBytes": 11145,
+      "droppedBytes": 0,
+      "ended": true,
+      "closed": true
+    }
+  },
+  "failure": "browserType.connectOverCDP: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:65499\u001b[22m\n\u001b[2m  - <ws connecting> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad\u001b[22m\n\u001b[2m  - <ws connected> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad\u001b[22m\n\u001b[2m  - <ws disconnected> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad code=1006 reason=\u001b[22m\n\n    at <anonymous> (/private/tmp/msgset-b2/worker.mjs:123:28)",
+  "classification": "Runtime environment/browser initialization failed before any UI assertions; no product behavior failure inferred. DevToolsActivePort and WebSocket connection observed, complete CDP connection did not finish. SIGTRAP actual Chrome exit, worker exit1 separate.",
+  "observedLogs": [
+    "Native sandbox initialization: Operation not permitted; repeated network/GPU subprocess failure; GPU process is not usable FATAL.",
+    "Crashpad personal Library writes denied; no permission broadened, no contents read.",
+    "This worker log has no repeated prior Vite whole-App unresolved dependency scan; UI not loaded, no complete runtime mapping claim."
+  ],
+  "resources": {
+    "sampleMinFreeBytes": 1409642496,
+    "sampleMaxScratchLogical": 12652882,
+    "sampleMaxScratchAllocated": 12173312,
+    "retainedBytesIncludingPrior": 360142,
+    "priorRetainedCharged": 177631,
+    "finalSamplePhases": [
+      {
+        "phase": "after-reap-before-scratch-removal",
+        "seconds": 8.52,
+        "freeBytes": 1409642496,
+        "scratchLogical": 12652882,
+        "scratchAllocated": 12173312,
+        "retainedBytes": 324576
+      },
+      {
+        "phase": "after-result-and-budget-write",
+        "seconds": 8.551,
+        "freeBytes": 1420623872,
+        "scratchLogical": 0,
+        "scratchAllocated": 0,
+        "retainedBytes": 360142
+      }
+    ],
+    "limit": "Historic observed accounting only; not hard physical peaks or exclusive attribution. No postrun free query."
+  },
+  "files": [
+    {
+      "source": "/private/tmp/msgset-b2/aliases.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/binding.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/binding.json",
+      "bytes": 33843,
+      "sha256": "c32650bb30ef7692e9f9b4fddaa6c3af57139db1a2d7dde5210b64cc89e82d29"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/manifest.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/manifest.json",
+      "bytes": 3517,
+      "sha256": "08380ec5c262fcdb60805a83898a68c4ef458e926f18f0f96edcd22008b3b711"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/browser-budget.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/browser-budget.json",
+      "bytes": 199,
+      "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/child-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/child-gate.json",
+      "bytes": 1834,
+      "sha256": "91345680a34921034275d511c66242027e08b69b72dc769775c3918bb78a4746"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/consumed-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/consumed-gate.json",
+      "bytes": 1466,
+      "sha256": "ae09ad03382b033a740f45630ed3525e41aa998facfcc43ba9ab438661505ca9"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/result.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/result.json",
+      "bytes": 35710,
+      "sha256": "c2b23e6d647dc9af5c6f088e29b5896ef793072bdb56ffc1696541c2c78a7788"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/runtime-tsconfig.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/sandbox.sb",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/sandbox.sb",
+      "bytes": 500,
+      "sha256": "5dae52587733a26362f57fc3038f421cd3fb6da8b025005fd908b94bbc2e475d"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/supervisor.py",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/supervisor.py",
+      "bytes": 13169,
+      "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/worker.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/worker.log",
+      "bytes": 52,
+      "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/worker.mjs",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/worker.mjs",
+      "bytes": 10923,
+      "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0"
+    },
+    {
+      "source": "/private/tmp/d01-settings-b2-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/gate.json",
+      "bytes": 1551,
+      "sha256": "5a10a5f2c14a6658b0f16d4a1002061f43437ee77c9c0cbad691e55a969adc90"
+    },
+    {
+      "source": "/private/tmp/d01-settings-b2-admission.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/admission.json",
+      "bytes": 3242,
+      "sha256": "0e9853c4b4af17bf4b6edef46e75794a70313261e7778a4b7c3c05e56871d34f"
+    },
+    {
+      "source": "/private/tmp/w01-settings-b2-live.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/owner-live.json",
+      "bytes": 139633,
+      "sha256": "e8034f4035624fe448cbdec508ab5bbc78618c9f59e9382f86ce92c8749f4c85"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/browser-results.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/raw/settings-b2-20261006-191743-60f52b/browser-results.json",
+      "bytes": 3770,
+      "sha256": "4c340ffa18ca1af6d3555831b21162fd681e07be52df776f2143064dcdf22fb9"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/chrome.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/raw/settings-b2-20261006-191743-60f52b/chrome.log",
+      "bytes": 11145,
+      "sha256": "130c2fbbd24db0f5a620ea6dae510a918c91cfc57cf032e618c0ad07eae13272"
+    },
+    {
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/owned-chrome.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-second/raw/settings-b2-20261006-191743-60f52b/owned-chrome.json",
+      "bytes": 1683,
+      "sha256": "654ac53b2d5def1fd8c31f694bd27f4e79303cd839925a181958342fdabd30b6"
+    }
+  ],
+  "rawBytes": 267280,
+  "automaticRetry": false,
+  "window": "Returned immediately to manager after confirmed cleanup",
+  "notVerified": [
+    "Browser UI checks, focus/keyboard/light-dark390",
+    "Production App/Send/Queue/Recovery/provider/main/deployment"
+  ]
+}

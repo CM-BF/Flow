@@ -45,6 +45,8 @@
 - [x] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
 - [ ] **TUI001-08** 日常终端与双公开客户端完整验收：同会话交替操作、过期CAS不自动重发、断线/退出后台继续；窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
 
+TUI001-08 的后继读取边界：固定 main ecc1f396 的 headless.ts 每条 JSONL 命令序列化完整 controller.snapshot()，其中 observation 含已加载正文和展开详情；Ink 的 observationPage 分页没有限制机器输出字节。此为源码事实，尚无本项运行测量，仍有现行流与缓存上限。当前 F04 双界面旅程先收口；后继复用 controller fixture 比较相同 `/help`、`/profiles` 在正文增大前后的输出字节，选择小的有界公开投影与显式正文/详情读取接口。保留原文可达、分页、旧消费者兼容和 unknown ACK，不新造命令框架，也不把字节变化称作 token 收益。
+
 ## 验收矩阵
 
 | 层 | 必须证明 | 不可替代的边界 |
@@ -70,3 +72,23 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 ## 已发布控制接口的下一终端入口（2026-10-06T12:13:55.672556+00:00）
 
 继续TUI001-06/08：后台typed contract/FlowClient/HTTP为唯一业务入口，slash/Ink/headless可替换；新能力先有可复用headless验收，Web独立消费。O12目标会话/固定历史已main，可按[小设计](../../docs/evidence/tui01/goal-session-next-design.md)接终端；不复制业务状态。完整日用和同会话双端验收保持原08，普通文本不会被自动解释为goal执行。下一执行owner候选assignment_review，待当前SVC05准备安全点由co-lead派工，不等待全部模型目录。
+
+2026-10-06 12:59 UTC：TUI01D显式goal模式已审main280289，原下一goal入口已实际交付。后继优先同一公开接口的聊天queue/steer/cancel/decision及实际TUI→Web→TUI；不等所有能力目录或视觉，但真实streaminginput受理仍按中心readiness/fence，不以终端按钮绕过。实施按空闲worker新claim，不把headless替代实际PTY/浏览器。
+
+2026-10-06执行顺序：TUI001-06先由[TUI01E](../../../tui-queue-controls/plans/tui01e-queue-controls/plan.md)交付现公共queue轻读/暂停/继续，其他聊天控制另按能力推进；完整TUI→Web→TUI归TUI001-08，不以两Node客户端或headless替代实际界面。
+
+2026-10-06 13:57:22 UTC：TUI01E的queue轻读/暂停/继续已独审进入maind4a2e0a7，当前固定证据不替代完整06/08。后继按已发布能力接聊天取消/决定/steer及真实双端操作；实现槽当前用于COST首纵向片，完整TUI验收保持开放。
+
+### 当前下一片：显式取消与同中心接续（2026-10-06 15:47 UTC）
+
+TUI001-06/08 由 TUI01F 接续，owner assignment_review，独立 tui-task-cancel / codex/tui-task-cancel，fixed base a89f42ab。只增加 `/cancel <displayed-task-id>`，共用 typed command、公开 FlowClient 与原 intent 生命周期。终端不读取任务prompt来发现取消身份，不产生第二状态机；受理、取消请求中、实际停止和unknown分别显示。设计/精确范围见[候选](../../docs/evidence/tui01/task-cancel-next-design.json)。
+
+先局部控制/回执/原key恢复；资源允许后用同一自有中心完成真实 Ink PTY→已构建生产Web→TUI 旅程，发送的过期CAS保草稿且恢复观察，取消不伪造API没有的attempt CAS。后台已发布能力可先公开contract及可重复headless/HTTP验收，Web/TUI独立并行接入；这不是所有后台功能必须等待终端或网页的串行门禁。实际浏览器/PTY尚未运行，独立provider仍须具体预算，旧A–E证据不重跑、不扩大。
+
+## TUI001-04 当前最小交付：Claude逐消息设置（2026-10-06 23:21 UTC）
+
+TUI01G由native_center_owner在独立tui-message-settings / codex/tui-message-settings实施，基线93a92c91。先消费已发布的Claude逐消息目录与完整能力tuple：共享typed command选择实际允许组合，slash只负责语法与显示；请求冻结设置、版本与原key，重连或丢ACK不替换body，矛盾ACK保持unknown。所请求值、provider已观察值和未知须分别显示，目录存在不等于账号/模型可用性。旧无能力中心继续原普通聊天并显式标记设置unsupported；Codex普通对话仍由MATURE02C02原owner负责，本片不扩大其合同。
+
+模块沿现interaction controller/commands、独立设置选择模块和TUI renderer接线，小Interface复用既有FlowClient与ACK恢复。TUI01F的已审共享源须原owner停写、原子部分移交后再take；其固定F04实验和证据仍留原树，历史1选中0通过及后续正常收尾不变。先做选择/缺能力/冻结重试/矛盾ACK/过期CAS的局部验证；实际HTTP、PTY与双界面旅程分别按资源与独立窗口验，不重跑旧F04或调用模型。完整04/06/08仍开放。
+
+使用已安装brainstorming界定现有流程内的有界扩展，复用find-skills/codebase-design/clean-code的职责与生命周期方法；沿用户已授权co-lead自主细化实施，不再增设普通实现审批。新增一个公开设置组合应只依目录与共享schema，不在各层增加harness特判或复制Web私有状态。

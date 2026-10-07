@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-07T02:55:46.413702+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "result": "APPROVED_LIMITED_PARSER_BUILDER",
+  "sourceTarget": "b21890799fe11b8f1937e4b08382c997877f6d53",
+  "delivery": "a1f2c658841b7965a128a8936840b6053456eb06",
+  "base": "1b41f58816341f77e69a64d1cb5cfe7650c01b49",
+  "manifest": {
+    "path": "docs/evidence/svc06/parser-builder-manifest.json",
+    "sha256": "67b1bb6e4d82e0eb624e6f1334ebc32478aeb8331f1d707dc0857f1fbf0c2cf8"
+  },
+  "bindingAudit": {
+    "path": "/tmp/flow-svc06-parser-builder-review-bindings.json",
+    "sha256": "8ac15f9f932764ecd427d976cd26aaf4f2c0f907db3097f4180c9a1326b6ef1f",
+    "count": 43,
+    "mismatches": [],
+    "unchangedDirectInputs": 11
+  },
+  "findings": [],
+  "closedConcern": {
+    "location": "tools/personal-preview/backend-release/clone-store.py selected_copy / clone_selected_file",
+    "prior": "Verified regular CAFS leaf could change to a directory before legacy recursive copy, copying unselected descendants before rejection.",
+    "resolution": "Selected path opens NOFOLLOW|NONBLOCK, verifies regular fd identity against hashed observation, then uses fclonefileat on the pinned fd and an opened destination directory. It never invokes recursive copy. Destination/source integrity and independent inode checks remain. Local sys/clonefile.h signature and new race test were read.",
+    "evidence": "Original red retained; 6-case green includes replacement rejection before target leaf creation. Legacy two-argument behavior is unchanged."
+  },
+  "reviewed": [
+    "Complete seven source/test diffs and implementations; build-only yaml 2.9.0 lazy public import, strict bounded YAML and read paths.",
+    "Runtime dependency/cache/projection remain the existing three pure Modules; private IO adapter writes only its archive staging and restores original source bytes only after semantic and workspace-manifest verification.",
+    "Fixed pnpm 9.15.4 prod/optional filtered offline/frozen install arguments; selected CAFS integrity, entry/logical limits and separate-inode clones. No fallback copying or external mutable store links.",
+    "Root package/lock changes: yaml exact pin; comparing lock with controlled main7a7c shows only yaml additions, preserving the existing plugin-runtime input.",
+    "Four original stdout/stderr rounds, run/source bindings, cleanup/EOF/final owned state and inherited private parser result. 43 fixed/current bindings including six external inputs match; all eleven direct inputs match base."
+  ],
+  "validation": {
+    "distinct": 7,
+    "rounds": [
+      {
+        "selected": 1,
+        "passed": 0,
+        "ms": 369,
+        "purpose": "retained clone-race red"
+      },
+      {
+        "selected": 6,
+        "passed": 6,
+        "ms": 721,
+        "purpose": "new Module checks"
+      },
+      {
+        "selected": 1,
+        "passed": 0,
+        "ms": 89,
+        "purpose": "retained in-repository TMPDIR guard failure"
+      },
+      {
+        "selected": 1,
+        "passed": 1,
+        "ms": 505,
+        "purpose": "same direct consumer with external owned temp"
+      }
+    ],
+    "executions": 9,
+    "cumulativeSupervisorMs": 1684,
+    "rawBytes": 5766,
+    "allFourOwnedStates": "absent",
+    "allFourDualEOF": true,
+    "allFourTmpRemoved": true,
+    "samplingLimit": "20ms metadata observations, not exact peak/reservation; one vanished child retained; final tmp empty.",
+    "reviewerTests": 0,
+    "reviewerBuilds": 0,
+    "reviewerInstallations": 0,
+    "reviewerPG": 0,
+    "reviewerProvider": 0
+  },
+  "limitations": [
+    "This approval covers the formal parser/builder wiring and local controlled checks, not complete SVC06 delivery.",
+    "Actual complete artifact, real filtered dependency installation, SQL/SDK dynamic import, independent artifact startup and isolation from development checkout remain NOT_RUN.",
+    "Historical owner checkout mixes old manifests with a controlled new lock input; a subsequent full build must archive a whole consistent fixed target rather than claim this working tree is a qualified runtime target.",
+    "Original selector seven tests and unaffected old matrices were not rerun. Both failures and historical unknown observations remain. No personal service, browser or model operation occurred."
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "at": "2026-10-06T16:24:08.345652+00:00",
+  "reviewer": "native_center_owner",
+  "fixedMain": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "scope": [
+    "README.md",
+    "apps/runner/README.md",
+    "docs/architecture/recovery-boundaries.md"
+  ],
+  "state": "READ_ONLY_CORRECTION_PROPOSAL",
+  "suggestions": [
+    {
+      "path": "README.md",
+      "action": "replace_sentence",
+      "line": 29,
+      "old": "Native configuration is documented in [Runner usage](apps/runner/README.md); the current runner executes one attempt at a time, even if its registration advertises a higher capacity.",
+      "new": "Native configuration and local concurrency are documented in [Runner usage](apps/runner/README.md). Ordinary fixture/Claude runners accept integer `FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS` values from `1` to `16`, defaulting to `1`; A2A and dedicated engineering hosts remain limited to `1`. The center separately enforces registered capacity. These configured ceilings are not measured throughput guarantees.",
+      "reason": "The single-attempt statement is stale after S01. Both local bound and independently enforced center capacity matter. Specialized A2A/engineering restrictions belong in the linked runner instructions."
+    },
+    {
+      "path": "README.md",
+      "action": "insert_after_sentence",
+      "line": 29,
+      "anchor": "Product Web setup is in [Web usage](apps/web/README.md).",
+      "new": "Terminal conversation and goal commands are documented in [TUI usage](apps/tui/README.md); start with `pnpm --filter @flow/tui start --help`.",
+      "reason": "Index the existing offline help entry without implying new provider calls or complete cross-client acceptance."
+    },
+    {
+      "path": "README.md",
+      "action": "replace_sentence",
+      "line": 35,
+      "old": "Native Claude requires the explicit runner materials configuration; this round’s evidence budget is exhausted, so do not rerun native probes.",
+      "new": "Native Claude requires the explicit runner materials configuration. The historical R02/I01 probe window is closed; any new real-provider validation needs its own explicit budget and evidence record.",
+      "reason": "Remove timeless this-round wording while preserving closed historical authorization. No new budget or provider eligibility is granted."
+    },
+    {
+      "path": "apps/runner/README.md",
+      "action": "insert_after_paragraph",
+      "line": 11,
+      "anchor": "`FLOW_RUNNER_TOKEN` 通过当前进程环境提供，不放进仓库或材料清单。SIGINT/SIGTERM 结束常驻循环；中心把尚未确认结束的 attempt 视为待核对，不伪装成用户取消。",
+      "new": "普通 fixture/Claude 宿主可用 `FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS` 设置本地同时执行上限，接受十进制整数 `1` 至 `16`，默认 `1`。中心仍独立限制 runner 注册时的 `capacity`；仅提高其中一项不会提高另一项。A2A 入口和专用工程 setup 目前只接受本地上限 `1`。`16` 是程序配置上限，不代表已测得的吞吐或模型并发能力；容量结论需绑定具体场景与[容量计划与证据](../../plans/s01-runner-capacity/status.md)。",
+      "reason": "Document the actual existing environment knob and exceptions, distinguishing two independent limits from measured capacity."
+    },
+    {
+      "path": "apps/runner/README.md",
+      "action": "replace_phrase",
+      "line": 38,
+      "old": "每次 query 限制为最多 4 turns、估算预算最多 USD 1、超时最多 90 秒；配置只允许降低这些上限。",
+      "new": "本节 Claude adapter 当前每次 query 限制为最多 4 turns、SDK 估算预算最多 USD 1、超时最多 90 秒；配置只允许降低这些上限。这些单次运行限制与历史 probe 的调用次数授权分别管理。",
+      "reason": "The numeric per-query bounds are still real code policy; do not remove them when correcting a historical five-call evidence budget. They are not a universal provider or billing limit."
+    },
+    {
+      "path": "apps/runner/README.md",
+      "action": "replace_signature",
+      "line": 44,
+      "old": "`runRunner({ baseUrl, token, workingDirectory, signal, adapters })`",
+      "new": "`runRunner({ baseUrl, token, workingDirectory, signal, adapters, maxConcurrentAttempts })`",
+      "reason": "Show the existing programmatic opt-in. The option is optional and defaults to 1."
+    },
+    {
+      "path": "apps/runner/README.md",
+      "action": "replace_sentence",
+      "line": 46,
+      "old": "`apps/runner/probes/native.ts` 是需要明确预算的手工证据工具，不属于测试套件；本轮 R02 3 次与 I01 2 次合计 5/5 已用完，不要再次运行任何真实 probe。",
+      "new": "`apps/runner/probes/native.ts` 是需要明确预算的手工证据工具，不属于测试套件。R02/I01 当时的单次证据窗口已用完并封存，不能重放或沿用该授权；后续真实 probe 需独立明确的预算与证据记录。历史额度不等于产品并发上限，也不改变当前 Claude adapter 的单次运行限制。",
+      "reason": "Preserve the closed historical window without presenting it as a permanent ban on all future explicitly authorized validation."
+    },
+    {
+      "path": "docs/architecture/recovery-boundaries.md",
+      "action": "replace_paragraph",
+      "line": 17,
+      "old": "3. Preserve the evidence. M1 currently has no operator reconciliation command to release the attempt/session reservation or force a replay. Do not edit database rows to manufacture a successful or resumable state. A future audited reconciliation Interface must distinguish confirming effects, confirming stop, releasing occupancy and explicitly authorized recovery.",
+      "new": "3. Preserve the evidence. M1 initially shipped without an operator reconciliation command; the current CLI provides `pnpm cli reconcile show TASK_ID` and `reconcile observe|resolve|retry TASK_ID --input JSON_FILE --key STABLE_KEY`. `observe` records evidence without releasing occupancy. `resolve` requires the exact attempt/owner version, explicit stop confirmation and side-effect evidence; it closes the attempt as `failed` or `cancelled` and releases its reservation. These are operator assertions, not an automatic proof that external effects stopped. `retry` requires the recorded resolution and an explicit safety strategy, creates a new task with recovery provenance and does not implicitly resume the old native session. Use the [public reconciliation schemas](../../packages/contracts/src/reconciliation.ts), preserve the original key/body after an unknown response, and never edit database rows to manufacture success or resumability.",
+      "reason": "Mark the M1 limitation as historical while documenting existing auditable public commands. Retain unknown-side-effect safety and distinguish recording evidence, confirming stop, releasing occupancy and starting explicit new work."
+    },
+    {
+      "path": "docs/architecture/recovery-boundaries.md",
+      "action": "replace_intro",
+      "line": 3,
+      "old": "The center owns durable task state. A client connection is only an observer. These are separate guarantees:",
+      "new": "The center owns durable task state. A client connection is only an observer. The table records the original M1 evidence boundary; the reconciliation workflow below describes the current public commands. These are separate guarantees:",
+      "reason": "The retained table includes historical W01 integration and native-evidence caveats. Label its time scope instead of silently treating all milestone notes as current limitations."
+    }
+  ],
+  "sourceFacts": [
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "lines": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "fact": "Omitted value =>1; canonical decimal integers1..16 only; a2a mode rejects value other than1."
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "lines": [
+        16,
+        25,
+        27,
+        36
+      ],
+      "fact": "Reads environment knob; dedicated engineering rejects value other than1; ordinary native path passes it to runRunner."
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "lines": [
+        80,
+        245,
+        246
+      ],
+      "fact": "Local active attempt count obeys optional limit, default1 and numeric1..16 validation; unresolved admission still blocks new claims."
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "lines": [
+        53
+      ],
+      "fact": "Center independently compares busy attempts with runner.capacity; contracts runner.ts line17 bounds registered capacity1..16/default1."
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "lines": [
+        306,
+        307,
+        308,
+        309,
+        310,
+        311
+      ],
+      "fact": "Claude actual upper bounds remain4turns/USD1estimated/90000ms; no provider qualification or process hard-stop inferred."
+    },
+    {
+      "path": "apps/runner/probes/native.ts",
+      "lines": [
+        22,
+        24
+      ],
+      "fact": "Historical probe records limits.queries5 and refuses5 recorded runs or duplicate label. Reading it does not authorize a new real call."
+    },
+    {
+      "path": "apps/tui/package.json",
+      "lines": [
+        7
+      ],
+      "fact": "start script is tsx src/main.tsx; current TUI README documents --help and goal/conversation usage."
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "lines": [
+        236,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247
+      ],
+      "fact": "reconcile show reads public state; observe/resolve/retry parse strict public schemas from bounded JSON file and require explicit stable key."
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "lines": [
+        4,
+        9,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        21
+      ],
+      "fact": "All mutations bind attemptId/ownerVersion. Resolve requires stoppedConfirmed:true, stop/effect evidence, finite sideEffects and failed/cancelled outcome. Retry requires resolutionId and explicit no-side-effects or revised-work strategy."
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "lines": [
+        81,
+        91,
+        100,
+        101,
+        109,
+        120,
+        132,
+        139,
+        152
+      ],
+      "fact": "Observe leaves state unchanged. Resolve marks exact attempt complete and clears active session. Retry links audited resolution, permits one new task, requires revised instructions after reviewed effects, and removes implicit native resumeSessionId; assertions are not automatic safety verification."
+    }
+  ],
+  "bindings": [
+    {
+      "path": "README.md",
+      "bytes": 4558,
+      "sha256": "22ba26e31ac6e35c2b5eb522e860db80a1108d1fe9c0cfc4657e4bfb39392034"
+    },
+    {
+      "path": "apps/runner/README.md",
+      "bytes": 3444,
+      "sha256": "e9789756c8dea320beaa2753b07ca5c995dcfe14ae27aa53bb339bcf59601363"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    },
+    {
+      "path": "apps/runner/probes/native.ts",
+      "bytes": 5588,
+      "sha256": "cfea361504ae00506a29ed818de6bc91d291266904f21830686aae1489329649"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 10768,
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3"
+    },
+    {
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8"
+    },
+    {
+      "path": "docs/architecture/recovery-boundaries.md",
+      "bytes": 2882,
+      "sha256": "ce2ea81a62ff57a1252a9aa5e0f49e6b7e7d232029a41a37ff4bcc1b4876529b"
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 22540,
+      "sha256": "48751b0f0f8f83a7d679b9b414d7663061a808dc5bc555779b27632f5d6a04ec"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f"
+    }
+  ],
+  "boundaries": [
+    "Only the requested three documentation files and their direct configuration/reconciliation/TUI-entry source evidence read; no product behavior or schema change proposed.",
+    "No numeric throughput/performance claim is added. Suggested links were verified to exist at the fixed main; measurements were not rerun or reinterpreted.",
+    "No new query grant; closed historical evidence remains closed.",
+    "Other root README milestone wording is outside this narrow correction request.",
+    "One initial read guessed nonexistent apps/runner/src/concurrency.ts and returned fatal path error; corrected using main.ts actual import concurrency-configuration.ts, without any write.",
+    "Initial draft linked nonexistent docs/evidence/s01/README.md. The fixed proposal instead uses the verified plans/s01-runner-capacity/status.md index; no missing link is proposed."
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "installation": 0
+  },
+  "linkChecks": [
+    {
+      "path": "apps/runner/README.md",
+      "existsAtFixedMain": true
+    },
+    {
+      "path": "apps/tui/README.md",
+      "existsAtFixedMain": true
+    },
+    {
+      "path": "plans/s01-runner-capacity/status.md",
+      "existsAtFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "existsAtFixedMain": true
+    },
+    {
+      "path": "docs/evidence/r02/README.md",
+      "existsAtFixedMain": true
+    },
+    {
+      "path": "docs/evidence/i01/m1-system.md",
+      "existsAtFixedMain": true
+    }
+  ]
+}

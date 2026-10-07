@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["pg-turn-page.test.ts"],
+  "exclude": ["../../../node_modules"]
+}

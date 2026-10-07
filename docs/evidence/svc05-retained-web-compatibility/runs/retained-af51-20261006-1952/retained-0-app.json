@@ -1,0 +1,106 @@
+{
+  "label": "retained-0",
+  "artifact": {
+    "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+    "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+  },
+  "observations": {
+    "read": {
+      "ownerAuthenticated": true,
+      "conversationBound": true,
+      "taskBound": true
+    },
+    "send": {
+      "acceptedTurnBound": true,
+      "requestedProfilePreserved": true
+    },
+    "recover": {
+      "sameKey": true,
+      "sameBody": true,
+      "sameTurn": true
+    },
+    "negotiation": {
+      "legacyReadable": true,
+      "streamHeaderHandled": true,
+      "profileHeaderHandled": true
+    }
+  },
+  "faultObservation": {
+    "path": "/api/conversations/c74d4af8-f138-44d9-88fe-99af6d6b4d66/turns",
+    "key": "c5dce57d-5738-4fa1-9b47-24a30e93b8cb:turn",
+    "bodySha256": "317de8ce253c94de1dc477d3efa12a73373fe4ed30400fadbeccf7f9934e7193",
+    "events": [
+      "request",
+      "response-headers",
+      "requestfailed"
+    ],
+    "status": 202,
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1222",
+      "connection": "close",
+      "transfer-encoding": ""
+    },
+    "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+    "finished": false
+  },
+  "conversationId": "c74d4af8-f138-44d9-88fe-99af6d6b4d66",
+  "taskId": "903cb558-8849-4c2d-8760-f24f74e30075",
+  "assets": [
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "/assets/index-5W26Yecv.css",
+      "bytes": 102548,
+      "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "/assets/index-DuzR10it.js",
+      "bytes": 663320,
+      "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+    },
+    {
+      "path": "/assets/assistant-ui-BW1JBgq4.js",
+      "bytes": 658870,
+      "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "/assets/index-5W26Yecv.css",
+      "bytes": 102548,
+      "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "/assets/index-DuzR10it.js",
+      "bytes": 663320,
+      "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+    },
+    {
+      "path": "/assets/assistant-ui-BW1JBgq4.js",
+      "bytes": 658870,
+      "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+    }
+  ],
+  "pageErrors": [],
+  "posts": 2,
+  "sameTask": true,
+  "draftPreservedBeforeReload": true
+}

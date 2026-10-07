@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T23:32:30.288382Z",
+  "state": "DAEMON_STOPPED_CENTER_UNREACHABLE",
+  "operator": "Execution Lead / gpt-6-astra",
+  "freeBytes": 1063374848,
+  "orbStatus": "Stopped",
+  "dockerSocket": "absent",
+  "ports": {
+    "4320": "listening",
+    "55432": "ECONNREFUSED",
+    "61227": "ECONNREFUSED",
+    "61228": "listening"
+  },
+  "cause": "unknown",
+  "knownContainer": "2c45767d48024581ca5c320b1dbeb3ecf0e37d5ac4333d114d008e66d93584d0",
+  "knownVolume": "flow-f00_flow-postgres",
+  "mutation": {
+    "services": 0,
+    "containers": 0,
+    "volumes": 0,
+    "tests": 0,
+    "provider": 0
+  },
+  "next": "One existing-daemon restore, then verify exact container/image/volume/port identity before existing-container start. Original personal backend af51/v18 requires fresh owner/source gates, never reuse old 362/v15 operator inputs."
+}

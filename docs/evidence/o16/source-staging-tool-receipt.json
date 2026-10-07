@@ -1,0 +1,9 @@
+{
+  "kind": "faithful-conversation-tool-receipt",
+  "source": "this worker conversation functions.exec tools.exec_command",
+  "firstChunk": "e0149b",
+  "firstObservation": "git add rejected exactly two new experiment source paths as outside sparse; command continued, so b4ecd246 contains records only. Not a source implementation target.",
+  "correctionChunk": "21929b",
+  "correction": "git add --sparse only the two owned sources; fixed62511c4b47132ca7b3065b62818eb47ff7dfdfb9; normal non-force push confirmed chunk9f1c30",
+  "boundary": "No Git config/sparse mutation by worker; Lead exact rule repair receipt archived separately; no fabricated process stdout"
+}

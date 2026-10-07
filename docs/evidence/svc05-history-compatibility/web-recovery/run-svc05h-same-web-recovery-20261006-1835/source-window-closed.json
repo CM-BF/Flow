@@ -1,0 +1,19 @@
+{
+  "id": "svc05h-same-web-recovery-20261006-1835",
+  "at": "2026-10-06T18:34:02.669992+00:00",
+  "before": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "branch": "main",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "preparation": "ce6fec38531b0a803705a8eb9cbfdb01ad7fc20e",
+  "review": "APPROVED: existing bootstrap only, same caa1/v2, backend362 unchanged",
+  "fixedBindingsVerified": 17,
+  "personal52BindingsReceipt": "/tmp/flow-svc05h-web-recovery-review-bindings.json",
+  "returnMain": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "operation": "one bootstrap; unknown stops without retry",
+  "state": "closed-main-restored",
+  "fixedAt": "2026-10-06T18:34:03.217766+00:00",
+  "closedAt": "2026-10-06T18:36:52.934776+00:00",
+  "outcome": "one bootstrap exit0/ready; same caa1/v2/backend362; preservation observed; no provider",
+  "bootstrapCalls": 1,
+  "providerQueries": 0
+}

@@ -1,6 +1,37 @@
 # S01 独立审查
 
 状态：APPROVED
+Review target commit：c259e8e53cd53830fe1bc78ce3c8dae7b34d5540
+
+当前对象：实验私有observer精确FOR SHARE分类后继，architecture_read/gpt-6-astra于2026-10-06 12:45:30 UTC只读APPROVED，0P1/P2，Mika接收。[回执](../../docs/evidence/s01/observer-share-fix/independent-review.json)。仅observe-pg.ts一处常量与一个从固定P04源码取查询的fake direct反例；[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`，2source/4readonly/8raw/2support。真实red为4选3绿1红，最终4/4（3原透传+1新），local strict0；0真实PG/HTTP/runner/SDK/provider/capacity。
+
+只读核fixed diff、SQL exact匹配不扩大、Promise/callback/receiver/error原断言保持、实际runners两列query输入绑定和所有raw；不默认重测。原64911结果70项仍按fixedGit绑定，当前WT仅两observer源码漂移；历史share-row elapsed仍UNKNOWN，不能用本fix回填历史结果或声称新容量。具体finding交owner按原S01claim修复。
+
+## 以下是历史128结果与准备独审
+
+状态：APPROVED
+Review target commit：64911a3c88488dfdebaa3a678bad659211e29209
+
+当前对象：唯一128fixture窗口如实结果，Mika/gpt-6-astra于2026-10-06 12:37:14 UTC独立只读APPROVED，0P1/P2；runVerdict=PASS。执行 `70c92414d3f0fc90b256e857acf64ba3dba35b30` / 已审source `6de928d8092ba8c22ac2222ac7c16af3660be48a` / main1c496835固定输入。[结果manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation（70项），另6runtime/172历史。当前writer status_read/gpt-6-astra claim8e4660a6 v3保留，原scope未变。
+
+只读核全量128持久fixture session/task/attempt、8runtime同1runner进程、真实adapter/ACK/DB采样区间、2304事件seq/id/digest/fence、HTTP send/settle/status/stop分类、8journal/ownchild/DB/工作目录、outer14.64秒与88,323,950B完整计量/118,431,893B归档保守上界。FOR SHARE真实查询归other是已知observer分类遗漏，share row elapsed为UNKNOWN；不准从n0推无锁或补跑。timermarker略早与实际adapter>=6s分开；network eventACK和emit返回两个口径分开。
+
+审查未运行测试/PG/HTTP/runner，未改raw/source；[独审回执](../../docs/evidence/s01/mixed-128-run/independent-review.json)。41纯检查仅准备证据，不当本次实际通过数。此结果不是128native/provider/token/SLO/整个FLOW-001完成；原ACK/browser/未知恢复仍开放。
+
+## 以下是历史准备与结果批准，不替代当前固定结果审查
+
+状态：APPROVED
+Review target commit：6de928d8092ba8c22ac2222ac7c16af3660be48a
+
+当前对象：128准备实现，仅实验代码；生产base `1c4968354dabce1e6748f3301a2e6eecd33e77d4`，唯一writer status_read / gpt-6-astra，claim8e4660a6 v3 ACTIVE。Mika于2026-10-06 12:29:56 UTC独立只读APPROVED，0P1/P2；[审批回执](../../docs/evidence/s01/mixed-128-preparation/independent-review.json)。实际window仍NOT_OPEN。
+
+[固定manifest](../../docs/evidence/s01/mixed-128-preparation/manifest.json) SHA `30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35`；26source/27readonly/42raw/10support与6runtime/172历史绑定。最新41不同纯checks（24原直接+17新）与局部strict0；全部red/中间失败保留，0真实容量预演。
+
+只读复核fixed source/diff、原raw和readonlymain输入，重点一个8×16 profile、全库128task/attempt/session独立门禁、child单调ACK/heartbeat/adapter持续证据、保守parent DB样本间隔、错误身份/强停unknown、180秒阶段清理/CLI与256MiB可见输入/流/IPC/证据计量。采样事实不作连续无间断证明；实际进程外层wall另记，0模型/SLO承诺。原172固定Git可复现，旧raw/support/manifest不变，旧保留journal不读/改。review只读不运行；发现交owner按claim修复。
+
+## 以下是历史独审，均不覆盖本次128源码
+
+状态：APPROVED
 Review target commit：2ab7967f2eb808fecd1205f7552a119eee8e0b36
 
 当前：W2准备2ab与实际结果0dac均独立APPROVED；页首target绑定实现，结果范围见下节。W2已清理，待main接收。
@@ -63,3 +94,36 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 两个非阻断P3已补在报告：首PG样本1条空application_name连接保留unknown；terminal后、runner close前一次claim HTTP failure不等于72事件ACK失败。全部12dispatch具lastFalse→firstTrue区间。原raw/manifest不改，DB/public原行集未留限制明确，不计算12/16速度比或provider容量。
 
 [结果独审回执](../../docs/evidence/s01/w2-result-independent-review.json)；[结果报告](../../docs/evidence/s01/w2-results.md)。可复制复审：固定0dac、比对manifest及5raw/support、18源码，重算sender/ACK/claim区间/分位数与清理，禁止重新运行负载。main事实另记。
+
+## S01 mixed 准备独立review（2026-10-06 10:03 UTC）
+
+状态 APPROVED，固定target `634926238f749fb1547a5973b521bc6dc5498574`，[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)绑定source/raw/readonly；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
+
+复制检查：先核codex/runner-capacity-probe真实HEAD/dirty，再核mixed-preparation/manifest.json所列target/source/raw。按1×16/4×4同child、32tasks不补跑、6秒+1500ms settlement、45+15秒与48+16MiB，以及DB权属/lease+adapter区间/ACK/心跳门禁审查。Pool装饰必须透传；PG行查询时间含执行往返，Lock采样遗漏不作零。cleanup未确认closed禁止DROP，creation unknown按唯一dbName核查，原证据冻结。默认不跑测试、DB、HTTP、runner或provider；回具体severity/行/触发，结论绑定target。
+
+作者预审修复：cleanup共用58秒尾部不足→分阶段截止/并行children；CREATE提交丢ACK→发送前creationRequested+最后自有DB核查。14纯tests、strict0；实际接线/清理/容量未知。独立结论待回填，空段不作approval。
+
+2026-10-06 10:05:50 UTC，architecture_read / gpt-6-astra独立只读APPROVED上述634 target，0 P1/P2；19source/16raw/16readonly、6runtime、78legacy全匹配。见[独审回执](../../docs/evidence/s01/mixed-preparation/independent-review.json)。Mika另独核hash与原始14/14/strict0。只批准准备实现，实际容量/取消/清理尚无实测；固定A→B顺序、共享进程/暖机/背景与IPC相位混杂，不作纯锁因果或SLO结论。未补跑。
+
+
+## S01 mixed 唯一窗口结果独审（2026-10-06 10:15 UTC）
+
+状态 pending；固定结果target由 `docs/evidence/s01/mixed-run/manifest.json` 绑定。实现634保持APPROVED，执行12154仅运行一次；本次runVerdict=FAIL不可被review批准改成PASS。独立reviewer architecture_read已领取只读复核；owner status_read/gpt-6-astra。
+
+复制步骤：核manifest对应固定target/source/raw/CLI与当前WT字节；六份原始driver文件与raw-freeze完全一致；19 mixed source保持634=execution12154=WT，78legacy保持98098354。核16个live/fenced gate和adapter区间、每attempt心跳/533event digest/终ACK、4取消阶段、12成功与verification；确认末尾claim无确定响应、inFlight保留/assignments[]、不启动B/不补跑。核最终10.6731145秒与18,660,992B（归档增量另有保守上界）、两child正常退出、自有DB DROP及唯一retained journal。A-window统计只作分层观测，median/nearest-rank定义固定，B absent，无纯锁时长或容量SLO推断。
+
+原14纯unit/strict0仅准备证据。只读saved raw/source，无新工程测试、HTTP、PG、runner或provider；具体问题交owner修报告，不允许重跑取好结果或清未知。结果批准仅证明如实失败交付可接收。
+
+2026-10-06 10:15:58 UTC结果独审 **APPROVED**，target `6a5961a0d815113bba7cea149bc08ca07fdd128a`，reviewer architecture_read / gpt-6-astra，0 P1/P2证据问题。明确仅如实失败交付，runVerdict=FAIL不变；[独审回执](../../docs/evidence/s01/mixed-run/independent-review.json)。原source/raw/analysis冻结，不补跑、不清unknown；main接收另记。
+
+## after-drain-v1 独立窗口准备
+
+Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。本准备已于2026-10-06 10:45:57 UTC经Mika独审APPROVED；之前634准备与6a596如实FAIL结果批准不替代本次审查。范围为2旧源输入适配+2新identity/test，21 source/21 fixed-main readonly/8 new raw/9 support见[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)。请只读核Git/WT/hash、固定base祖先、P03两源及client输入；确认identity只选固定目录与base，负载/观察/cleanup/proof未变。10新纯checks/strict0、初始0tests与1red保留，旧14不重跑。不得由review自行启动窗口；新windowId/execution HEAD仅由Mika最后指定。
+
+2026-10-06 10:45:57 UTC：Mika / gpt-6-astra正式只读APPROVED准备51541b0cad73dcad32c7374dc87d631f0b9a8432，59项绑定一致，0P1/P2。随后只授权并执行一次mika-s01-after-drain-20261006-104557。准备批准不预断实际结果。
+
+## after-drain-v1 真实结果独立审查
+
+Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态APPROVED，runVerdict=PASS；固定结果已于2026-10-06 10:53:39 UTC经Mika独审，见末段回执。实现51541b0c，实际execution5ea1b26f，productionBase0cee。57项manifest=21source/21readonly/8raw/7support。审查任务：只读核固定Git/WT/SHA/bytes、32真实身份及A/B各16重叠/各12成功4取消、1027事件id/seq/digest/fence/accepted、5journal清空、资源清理和含清理总预算；保留1次无类别/attemptID的heartbeat错误、略早timer标记与实际adapter区间区别、背景/观测/phase限制。核旧FAIL/raw/journal冻结。不要重审同一source设计、重跑检查/PG/HTTP/provider或追加窗口；如有发现精确定位原证据，修复不能覆盖raw。
+
+2026-10-06 10:53:39 UTC：Mika / gpt-6-astra正式只读 **APPROVED** 结果 `339147cb015fdd40ed1cedbc66aca26e736b3ee7`，0P1/P2；57项与32真实身份、1027事件绑定、5journal、资源/预算、错误/计时/背景限制均复核。详见[回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。这是本次固定零模型负载PASS证据验收，不是整体S01/FLOW-001或>100容量完成。architecture_read未重复审，未重跑任何检查/窗口。

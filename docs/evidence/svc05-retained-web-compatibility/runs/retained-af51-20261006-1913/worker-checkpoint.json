@@ -1,0 +1,22 @@
+{
+  "results": [],
+  "passed": false,
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed'\n+ ]\n- []\n\n    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Object.closePreview (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:93:68)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:102:301)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)",
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\\n' +\n+     '+ actual - expected\\n' +\n+     '\\n' +\n+     '+ [\\n' +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed',\\n\" +\n+     \"+   'Preview request failed'\\n\" +\n+     '+ ]\\n' +\n+     '- []\\n' +\n+     '\\n' +\n+     '    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\\n' +\n+     '    at async Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:62:11)\\n' +\n+     '    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\\n' +\n+     '    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)'\n+ ]\n- []\n\n    at Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:70:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)"
+  ],
+  "providerQueries": 0,
+  "personalActions": 0,
+  "centerUrl": "http://127.0.0.1:64997",
+  "centerPort": 64997,
+  "runnerId": "aaaf8613-93bd-42cf-a154-18dbb6363565",
+  "browserVersion": "154.0.8037.98",
+  "previewPorts": [
+    65018
+  ],
+  "runnerStopped": true,
+  "centerClosed": true,
+  "closeErrors": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed',\n+   'Preview request failed'\n+ ]\n- []\n\n    at Object.close (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/transport.mjs:92:321)\n    at async Object.close (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/fixture.mjs:62:11)\n    at async worker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:107:11)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release/browser.mjs:231:37)"
+  ]
+}

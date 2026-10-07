@@ -1,0 +1,11 @@
+✔ separate watchdog bounds a hanging persist and stops the registered owned group without resource deletion (913.727042ms)
+✔ completion acknowledgement does not disarm the watchdog while the parent event loop remains blocked (918.096542ms)
+✔ durable completion followed by normal parent exit releases the independent watchdog (92.031584ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1972.119334

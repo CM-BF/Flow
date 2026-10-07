@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { spawn, type ChildProcess } from 'node:child_process';
-import { mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
+import { mkdtemp, rm, mkdir, writeFile, statfs } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,7 +11,8 @@ import { createServer } from '../index.js';
 import { migrateGoals, registerGoalRoutes } from './index.js';
 import type { ProjectSnapshot } from '../../../../packages/contracts/src/projects.js';
 
-const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_o01';
+const databaseName = `flow_o01_${randomUUID().replaceAll('-', '')}`, databaseMarker = randomUUID();
+const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databaseName}`;
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const ownerToken = 'o01-local-owner';
 let lock: PoolClient | undefined;
@@ -52,10 +53,13 @@ async function stopServer() {
   await boss?.stop(); boss = undefined;
 }
 beforeAll(async () => {
+  const space = await statfs('.');
+  if (space.bavail * space.bsize < 1024 ** 3 + 96 * 1024 ** 2) throw new Error('Insufficient test resource reserve; no DB created.');
   lock = await admin.connect();
   if (!(await lock.query("SELECT pg_try_advisory_lock(hashtextextended('flow_o01_test_exclusive',0)) AS locked")).rows[0]?.locked) throw new Error('flow_o01 is in use.');
-  if ((await lock.query("SELECT 1 FROM pg_database WHERE datname='flow_o01'")).rowCount) throw new Error('Existing flow_o01 must be preserved.');
-  await lock.query('CREATE DATABASE flow_o01'); created = true;
+  if ((await lock.query('SELECT 1 FROM pg_database WHERE datname=$1', [databaseName])).rowCount) throw new Error('Existing flow_o01 must be preserved.');
+  await lock.query(`CREATE DATABASE "${databaseName}"`); created = true;
+  await lock.query(`COMMENT ON DATABASE "${databaseName}" IS '${databaseMarker}'`);
   pool = new Pool({ connectionString: databaseUrl, max: 8, statement_timeout: 5000 });
   await startServer();
 });
@@ -63,7 +67,13 @@ afterAll(async () => {
   try { await stopRunners(); await stopServer(); } finally {
     await pool?.end();
     if (runnerDirectory) await rm(runnerDirectory, { recursive: true, force: true });
-    try { if (created) await lock?.query('DROP DATABASE flow_o01'); }
+    try { if (created) {
+      expect((await lock!.query("SELECT shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1", [databaseName])).rows[0].marker).toBe(databaseMarker);
+      const connections = (await lock!.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [databaseName])).rows; expect(connections).toEqual([]);
+      await lock!.query(`DROP DATABASE "${databaseName}"`);
+      const remaining = (await lock!.query('SELECT datname FROM pg_database WHERE datname=$1', [databaseName])).rows; expect(remaining).toEqual([]);
+      await evidence('cleanup', { databaseName, marker: databaseMarker, connections, remaining, runnerDirectoryRemoved: true, runnerDiagnostics });
+    } }
     finally { lock?.release(); await admin.end(); }
   }
 });

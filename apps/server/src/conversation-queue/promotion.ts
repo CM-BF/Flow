@@ -16,7 +16,7 @@ export async function promoteReady(pool: Pool, boss: PgBoss, conversationId: str
     if (conversation.queue_paused) return { outcome: 'blocked', conversationId, reason: 'queue-paused' };
     const first = await firstWaiting(client, conversationId);
     if (!first) return { outcome: 'empty', conversationId };
-    const admission = await prepareQueueAdmission(client, conversation, first.user_text, true);
+    const admission = await prepareQueueAdmission(client, conversation, first.user_text, true, first.message_settings ?? undefined);
     if (!admission.input) return { outcome: 'blocked', conversationId, reason: admission.blocked! };
     requireQueueRevision(conversation.queue_revision, conversation.queue_revision);
     const row = await promoteItem(client, boss, conversation, first, admission.input);

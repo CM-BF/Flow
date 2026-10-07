@@ -1,0 +1,376 @@
+{
+  "at": "2026-10-06T20:21:38.920Z",
+  "count": 175,
+  "servingWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+  "mainSnapshot": "bd25e763",
+  "snapshotSha256": "4ae941c74cf8e60f2b93b81cf47c9ef1b968450b6c3d2eed3491b99876cf9cbf",
+  "sources": [
+    {
+      "id": "S01P07",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T20:14:56.576Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/plans/s01p07-runner-claim-recovery/status.md",
+        "syncedAt": "2026-10-06T20:21:38.920Z",
+        "stale": false,
+        "ageHours": 0.1160888888888889
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)",
+            "id": "FLOW-001",
+            "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "mika",
+            "value": "mika"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 3,
+          "output": "已确定空闲领取少持久化、丢响应后同一领取身份可恢复的最小方案，中心、客户端和有限协议接线已有源码草稿；runner 持久恢复接线待完成。",
+          "next": "保持领取及时性与崩溃保护的中心、客户端和 runner 完整接线。",
+          "blocker": {
+            "state": "active",
+            "text": "旧 runner 三个直接消费者测试已追加写范围，待 Lead 供应源码；实现其余已领部分可继续，验证窗口未开。"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/server/src/runners.ts",
+            "apps/server/src/runner-claim-receipts.ts",
+            "apps/server/src/index.ts",
+            "apps/runner/src/admission-journal.ts",
+            "apps/runner/src/runtime.ts",
+            "packages/contracts/src/runner-claim.ts",
+            "packages/contracts/src/index.ts",
+            "packages/client/src/index.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "S01P07",
+        "owner": "status_read / gpt-6-astra",
+        "branch": "codex/runner-claim-recovery",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T20:14:41.000Z",
+        "updatedRecord": "2026-10-06 20:14:41 UTC",
+        "todos": [
+          {
+            "id": "S01P07-01",
+            "state": "in-progress",
+            "owner": "status_read",
+            "evidence": "[接口](../../docs/evidence/s01p07/interface.md)；直接消费者已只读识别"
+          },
+          {
+            "id": "S01P07-02",
+            "state": "in-progress",
+            "owner": "status_read",
+            "evidence": "contract/client/route/中心事务源码草稿，未检查"
+          },
+          {
+            "id": "S01P07-03",
+            "state": "pending",
+            "owner": "status_read",
+            "evidence": "未实现"
+          },
+          {
+            "id": "S01P07-04",
+            "state": "pending",
+            "owner": "status_read",
+            "evidence": "NOT_RUN；不以源码审读当运行证据"
+          },
+          {
+            "id": "S01P07-05",
+            "state": "pending",
+            "owner": "status_read",
+            "evidence": "NOT_STARTED / NOT_INTEGRATED"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "22a0806bc2465e11096949618113833f31766b19；当前 contract/client/center 准备 checkpoint 待提交",
+        "declaredDirty": "本 owner 已领源码与文档待提交",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN：源码准备阶段；无 tests/types/PG/provider 窗口"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "issues": []
+    },
+    {
+      "id": "SVC07",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T20:19:23.830Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/plans/svc07-transaction-recovery/status.md",
+        "syncedAt": "2026-10-06T20:21:38.920Z",
+        "stale": false,
+        "ageHours": 0.037755555555555556
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+            "id": "FLOW-001",
+            "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "mika",
+            "value": "mika"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "integration",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "事务连接失效的保护修复已通过定向验证和独立审查",
+          "next": "完成隔离的真实连接与直接消费者验证，再将修复纳入主线",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+          "scopes": [
+            "apps/server/src/database.ts",
+            "apps/server/src/database-transaction.test.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "SVC07",
+        "owner": "db_transaction_owner / gpt-6-astra",
+        "branch": "codex/server-transaction-disconnect",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T20:19:23.000Z",
+        "updatedRecord": "2026-10-06 20:19:23 UTC；固定分支基线22a",
+        "todos": [
+          {
+            "id": "SVC07-01",
+            "state": "completed",
+            "owner": "db_transaction_owner",
+            "evidence": "固定22a输入与20:03:32.621Z原子领取"
+          },
+          {
+            "id": "SVC07-02",
+            "state": "completed",
+            "owner": "db_transaction_owner",
+            "evidence": "首红保留；[15例绿色与类型检查](../../docs/evidence/svc07/checks.md)"
+          },
+          {
+            "id": "SVC07-03",
+            "state": "completed",
+            "owner": "db_transaction_owner / Mika",
+            "evidence": "15/15+types0，固定source独审APPROVED/0 P1/P2"
+          },
+          {
+            "id": "SVC07-04",
+            "state": "in-progress",
+            "owner": "db_transaction_owner / mika / Execution Lead",
+            "evidence": "[专库探针准备](../../docs/evidence/svc07/pg-window.md)与局部types完成；待固定输入独审/共享窗口，实际PG/main未执行"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "基线22a0806bc2465e11096949618113833f31766b19；源码e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次metadata提交后核clean/push",
+        "declaredDirty": "产品源码停写；本次仅专库验收准备与metadata待提交",
+        "checks": {
+          "state": "passed",
+          "target": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+          "record": "PASSED e28c4ed0a30ec2800eeca2ca5c444c0081c38165：显式fake15/15，局部types exit0；[证据](../../docs/evidence/svc07/checks.md)"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED e28c4ed0a30ec2800eeca2ca5c444c0081c38165；真实PG/HTTP不在已审通过范围",
+        "mainRecord": "未集成；分支基线22a不含本片修复",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "issues": []
+    },
+    {
+      "id": "TUI-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T20:12:59.966Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/plans/tui01-terminal-client/status.md",
+        "syncedAt": "2026-10-06T20:21:38.920Z",
+        "stale": false,
+        "ageHours": 0.27747777777777777
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "big",
+          "reason": "",
+          "parent": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead / astra_ultra_execution_lead",
+            "value": "Execution Lead / astra_ultra_execution_lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "终端显式取消、原请求恢复和退出不取消后台任务已通过真实中心与终端验证并进入主线。",
+          "next": "由同组worker接续同一会话的真实终端→网页→终端旅程；网页呈现与后台合同继续独立交付。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/tui",
+            "packages/interaction"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "TUI-001",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/tui-client",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T20:05:00.000Z",
+        "updatedRecord": "2026-10-06 20:05 UTC / main1126ada4891dc07aff9c83e0747b66069aaf2111",
+        "todos": [
+          {
+            "id": "TUI001-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[设计](plan.md)、[研究来源](../../docs/evidence/tui01/research-provenance.json)"
+          },
+          {
+            "id": "TUI001-02",
+            "state": "completed",
+            "owner": "runner_owner / Mika独审",
+            "evidence": "[TUI01A唯一状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/status.md)；29b两项P2已闭，mainf181d84；原端到端/PTY和增量19不同用例边界保留"
+          },
+          {
+            "id": "TUI001-03",
+            "state": "completed",
+            "owner": "runner_owner / Execution Lead",
+            "evidence": "[TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json)"
+          },
+          {
+            "id": "TUI001-04",
+            "state": "pending",
+            "owner": "TUI owner / Mika合同",
+            "evidence": "真实model能力仍逐项接通"
+          },
+          {
+            "id": "TUI001-05",
+            "state": "pending",
+            "owner": "TUI owner / Web合同",
+            "evidence": "附件生命周期与context"
+          },
+          {
+            "id": "TUI001-06",
+            "state": "in-progress",
+            "owner": "native_center_owner / Execution Lead",
+            "evidence": "TUI01D/E及F-03已审/main；真实取消/Ink PTY限定验证完成，F-04真实双端与steer/decision仍后继"
+          },
+          {
+            "id": "TUI001-07",
+            "state": "pending",
+            "owner": "TUI owner",
+            "evidence": "runner/plugin管理"
+          },
+          {
+            "id": "TUI001-09",
+            "state": "completed",
+            "owner": "runner_owner / Web独立消费者",
+            "evidence": "TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08"
+          },
+          {
+            "id": "TUI001-08",
+            "state": "pending",
+            "owner": "独立review / Execution Lead",
+            "evidence": "已有独立PTY与两公开client证据；完整日用、真实TUI→Web→TUI及provider边界仍开放，不能互相替代"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "77c420cf9ee5de0291ea93014b6ea11aead6fab5 / c8bacf7471e023914e77994bcc3f5d3070f49a92；本次仅管理metadata",
+        "declaredDirty": "管理metadata提交后clean",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "A–E与F控制片已审/main；F-03真实HTTP/PG取消与Ink PTY两行为通过，原suite exit1保留；独立收尾1/1及类型兼容已审，本父不重测"
+        },
+        "reviewRecord": "[review.md](review.md)；F-03限定独审APPROVED，完整大task验收仍开放",
+        "mainRecord": "TUI01F-03七源已main8d84逐字接收，当前main1126保持；TUI01F-04真实网页交替仍未实施/运行",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "issues": []
+    }
+  ],
+  "scope": "New registry source / literal field corrections only; no product verification or personal service action."
+}

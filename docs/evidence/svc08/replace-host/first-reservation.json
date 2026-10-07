@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T03:48:05.206951+00:00",
+  "round": "first",
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-w0sx359i",
+  "scratchDev": 16777234,
+  "scratchIno": 123417521,
+  "freeBytes": 25894043648,
+  "sources": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 39312,
+      "sha256": "13165a1679b151c07399549e3836ffbed0786385da260d6c751befac9523aba9"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 42316,
+      "sha256": "8c3f2c46cf54dacd8ecdfbcf6a2fea8920fac7ce0e73019c6e0289faff041e66"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 18324,
+      "sha256": "84358e3347c2f294ba521f8e070b548785e9590e36f3eeee164a738733946741"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/run-local.py",
+      "bytes": 4526,
+      "sha256": "ee87093aefa43fd80d08342a6ed7dff868872af3c70b65fe4121131064a6093f"
+    }
+  ],
+  "selectedPlanned": 9,
+  "legacyPgNotSelected": 6,
+  "rawBytesMax": 262144,
+  "tmpBytesMax": 16777216,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "policy": {
+    "work": 20,
+    "term": 0.5,
+    "reap": 2,
+    "parent": 24.5
+  }
+}

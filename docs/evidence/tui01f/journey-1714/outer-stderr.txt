@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/task-controls/journey.test.ts [ apps/tui/src/task-controls/journey.test.ts ]
+Error: TUI01F evidence/cleanup incomplete; retain flow_tui01f_44a622c76d68 and private tmp; inspect explicit evidence directory
+ ❯ CancelJourney.close apps/tui/src/task-controls/fixture.ts:308:52
+    306|     if (checkpoint) await this.save('result.json', { at: new Date().to…
+    307|       cleanup, outcome: this.failures.length ? 'failed-or-unknown-reta…
+    308|     if (!checkpoint || this.failures.length) throw Error(`TUI01F evide…
+       |                                                    ^
+    309|   }
+    310| }
+ ❯ apps/tui/src/task-controls/journey.test.ts:11:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

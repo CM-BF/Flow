@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression
+
+ ❯ apps/server/src/goal-progression/progression.test.ts (10 tests | 1 failed | 8 skipped) 1346ms
+   ✓ bounds finite authorization, rejects duplicate nodes, excess budget, unknown policy and malformed expiry 106ms
+   × continues two fixed inputs through injected SDK, restart and lost authorization ACK without semantic acceptance 69ms
+   ↓ halts failed verification without admitting its dependent and preserves the artifact
+   ↓ keeps unknown attempts and their links through restart without admitting a new execution
+   ↓ stops for a genuine decision and revocation never cancels that running task
+   ↓ checks readonly profile revocation before any task is admitted
+   ↓ freezes graph and actual input versions and requires explicit replacement permission
+   ↓ exhausts finite admission budget without silently extending the authorized work
+   ↓ rolls back task/wake/link atomically and reuses the authorization after a transaction failure
+   ↓ preserves immutable authority and exact goal identity, while snapshots stay body-free
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-progression/progression.test.ts > continues two fixed inputs through injected SDK, restart and lost authorization ACK without semantic acceptance
+AssertionError: promise resolved "{ status: 500, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "body": {
++     "error": {
++       "code": "internal_error",
++       "message": "The center could not complete this request.",
++     },
++   },
++   "status": 500,
+  }
+
+ ❯ apps/server/src/goal-progression/progression.test.ts:41:71
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 8 skipped (10)
+   Start at  07:34:31
+   Duration  2.59s (transform 529ms, setup 0ms, import 1.15s, tests 1.35s, environment 0ms)
+

@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/node_modules/.vite",
+      "logicalBytes": 111,
+      "allocatedFileBytes": 4096,
+      "files": 1,
+      "containsSymlink": false,
+      "action": "remove confirmed own rebuildable cache"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/node_modules/.vite-temp",
+      "logicalBytes": 0,
+      "allocatedFileBytes": 0,
+      "files": 0,
+      "containsSymlink": false,
+      "action": "remove confirmed own rebuildable cache"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.vite",
+      "logicalBytes": 928,
+      "allocatedFileBytes": 4096,
+      "files": 1,
+      "containsSymlink": false,
+      "action": "remove confirmed own rebuildable cache"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.vite-temp",
+      "logicalBytes": 0,
+      "allocatedFileBytes": 0,
+      "files": 0,
+      "containsSymlink": false,
+      "action": "remove confirmed own rebuildable cache"
+    }
+  ],
+  "reclaimedLogicalBytes": 1039,
+  "reclaimedAllocatedFileBytes": 8192,
+  "recordedAt": "2026-10-06 13:17:06 UTC",
+  "scope": "Only ended own Vitest .vite/.vite-temp roots in P05 and S01; lstat/no-follow confirmed before removal",
+  "unchanged": [
+    "dependency symlink targets",
+    ".pnpm stores",
+    "published/frozen source and raw",
+    "all journals including FKye9L",
+    "other worktrees and personal files"
+  ],
+  "measurement": "Sum of removed file st_size and st_blocks*512; no claim about net volume free-space change",
+  "testOrPgOrCapacityCalls": 0
+}

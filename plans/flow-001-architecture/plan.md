@@ -494,3 +494,104 @@ GO只读固定4285182（至a7238相应文件无差）：goal-tools-mcp/read.ts�
 ### 连续入口的历史解释与共享控制器（2026-10-06 11:55:24 UTC）
 
 O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连续观察、显式命令/未知ACK恢复与断开不取消。复用immutable goal_explanations提供轻历史引用和按固定id显式正文，超过旧50条窗口仍可达；兄弟活动不能使旧解释引用失效，历史解释不代表当前状态仍有效。0模型公开旅程覆盖>50条、相关版本冲突、两个公开客户端和同key恢复。状态仍中心权威，客户端不自动调模型或调度child；owner读口不直接授予runner/MCP。公开typed入口由headless/TUI/Web并行消费，完整自然语言目标闭环不因本片通过而勾完。
+
+
+### 有界独立分支与共享预算后继（2026-10-06 15:25 UTC）
+
+归原REQ-18/22、O01-05/M02和COST001-05，不改已审O14 v1：固定70cc的goal-progression/store.ts:83–99会在同授权任一未完成执行时返回，因而独立ready节点也串行。当前首版只证明有限有序推进，不代表百agent编排。O15当前输入确认继续，不扩其writer。
+
+后继按显式版本策略允许独立分支在中心容量/共享预算内并行；依赖未满足仍等待，全局撤销停止新受理，unknown不自动重试或释放预留。0模型验收A/B独立、C依赖A：A待人时许可策略允许B实际完成，C不提前；证据须真实重叠而非只queued多行。复用现scheduler、usage账本和中心事务；原子预留、跨runner竞争、lost ACK/重启不重复占用、unknown不凭超时退款归COST001-05，次数/并发硬界与估算USD分开。资源未达不启动负载。
+
+来源：[官方SDK成本说明](https://code.claude.com/docs/en/agent-sdk/cost-tracking)，2026-10-06实际读取；当前文档说明query预算不计resume带回历史额，clear可重新起算，费用是客户端估算。仅作后继设计输入，不替代固定SDK0.3.290行为证据，也不改历史usage字段/旧grant。
+
+### P01读取取消的局部后继（2026-10-06 15:25 UTC）
+
+固定7810至本轮已审客户端增量，a2a-mapping的read包装组合signal只中断等待，flow.events/detail未收到该signal；client detail支持signal，events尚无可选signal。底层HTTP仍到自身默认15秒超时，并非无限泄漏。归原P01/REQ-08/10低优先后继：兼容地透传观察取消，实际挂起HTTP证明observer abort后events/detail关闭、没有后继页/详情读取，正常和默认超时保持；断开观察绝不cancel中心任务。0PG/provider/新依赖，仅直接模块。现reference仅id/title，不能无依据先判断artifact种类；不借本片建缓存/事件系统或重跑全库。
+
+
+### 版本化依赖原文按需读取（2026-10-06 15:28 UTC，后继输入）
+
+归REQ-08/15/22与原连续目标路径。GO只读固定fb9fe5e7：goals/commands.ts在每个child受理前读取依赖全文/hash并拼入prompt，任一依赖或最终JSON超过16,000 code units即拒绝；这是O01/K03已声明v1界限，不作新回归。多child共享大产物会重复输入，换provider窗口不自动解决。
+
+后继采用明确版本的固定artifactId/version/digest引用及受限原文读取能力，普通child只获本attempt授权依赖，不获planner广泛工具权。原文不截断、不只留摘要、不暗读latest；复用goal input/context与R05扩展点，不让Web/TUI各造状态。0模型验收同一128KiB产物给多个独立child：初始受理/输入不搬全文、显式读取有界、越权/失效拒绝、旧版本仍可追溯，并完成真实下游路径。记录请求/字节/读取次数，不称token节省。旧v1/兼容reader保持，当前O14生产与O15确认优先，不扩大其writer。
+
+### 会话页批量读取后继（2026-10-06 15:48 UTC）
+
+归REQ-15/B02→B03，当前真实兼容发布与Claude消息设置优先。固定a89f的turnPage仍逐条await turnView，各turn分别取task/context/session/preview；已有有界contextReferences可复用，queue已采用批量读。B02/B03旧无context的50turn实测252 SELECT只作为历史基线，不能称为今日所有混合页的查询量；B03只减少全文向应用搬运，没有消除N+1。
+
+下个共享读路径安全点由co-lead与Mika定精确范围，在同一有限页/只读快照内批量投影，保留逐行归属、current attempt、source、digest、版本及unknown门禁，不用同PG连接Promise.all伪并行或删除完整性核验。0模型小例复用历史口径并加入context/附件/新消息设置、无关及旧attempt拒绝；分别记录SQL数、DB解码/HTTP字节、延迟，不因批量化宣称速度或token收益。源码绑定见[研究输入](../../docs/quality/conversation-page-batch-successor-2026-10-06.json)。这只是可执行后继，无新writer/测试/负载，不扩大当前消息设置范围。
+
+### P01增量协议读取成本（2026-10-06 16:01 UTC，GO只读输入）
+
+固定a89f42ab的observe在updatedAt/watermark变化时从cursor0重新映射；seen仅避免重复发送，events/detail读取仍重做，historyLength=0也因默认artifacts要求扫描。现10k事件/200引用/2MiB界限保留，不称无界泄漏。归原P01/REQ15，与观察取消后继一起：使用真实官方SDK HTTP fixture固定1产物+多次状态/非产物变化，记录events/detail请求数及字节，并核首Task、后继status/artifact updates、重连、水位、权限与unknown可见结果一致；0PG/模型/新依赖，不以无界缓存掩盖成本。官方依据[A2A 1.0规范3.1.6/3.5.2](https://a2a-protocol.org/v1.0.0/specification/)。此为后继设计输入，当前TUI/Claude/兼容发布优先，无新writer或运行。
+
+
+2026-10-06 16:59 UTC REQ-19/SVC06（关联X01）只读研究输入：固定main9314中，server/index静态出口经package-fetch worker/artifact barrel加载pacote，安装routes/commands加载plugin-runtime/tar；只读artifact入口也依赖含resolver的barrel。因此未启用两个可选host的聊天/TUI入口仍需要这些依赖，TUI01F的真实准备清单体现此闭包。当前仅源码耦合事实，没有启动时间/RSS/物理安装节省实测。
+
+后继在CORE/RELEASE收口后的空闲小窗口，沿现SVC06/X01计划核禁用/启用host的真实import边界，再决定最小组合入口按需加载及纯artifact reader/fetcher职责分离。先0PG/0provider、有界import-only，不删功能、不造通用插件框架；迁移完整性、默认禁用、授权和启用失败清理保持。大型release的既有资源门槛不因拆分候选降低，当前writer不被打断。
+
+### CHAT05-06 完整工具原文：下一 ready 交付（2026-10-06 18:56 UTC）
+
+沿既有 CHAT05-06 / REQ-15，不新增大task。当前 mapper 截到65,536B后仅保存前缀与全文hash，不能追回余文；旧历史仍明确 truncated，不能补造可恢复性。此为已知未完成范围，不改原CHAT05批准。当前保留页面兼容与O16安全交付优先，之后由 Execution Lead 负责派工/公共接线，指定 assignment_review 在当前R01正式收口后的首个合适实施槽承担 producer→durable transfer→center immutable body 的窄纵向片；未取得新独立WT/精确claim前不写产品。若O16共用runner接缝尚未释放，先做独立body合同与reader范围，不能双writer。
+
+第一片 Interface 明确来源可公开的tool输入/结果原始bytes、body身份/固定digest/完整性状态、字节与块数上限、授权页读取以及取消/错误/资源释放。复用现有outbox、attempt fence和detail授权，受理/重报/崩溃恢复不重复正文，旧attempt不能覆盖；最终完整受理前不得称已保存全文。超过真实保存上限明确拒绝或incomplete，非公开thinking/redacted材料仍不制造正文。首屏与SSE只轻引用，展开前零正文请求。Web/TUI用同一公共引用和分页合同，呈现各自独立，不新建对象存储平台或scheduler。
+
+零模型合成超过64KiB的可公开正文，验证producer到中心完整bytes/digest、失ACK原key重报、崩溃恢复、旧attempt拒绝、授权HTTP/headless分页拼回原文、旧前缀历史不可恢复，以及超真实上限的明确状态。记录实际传输/持久bytes和有界内存/队列，按实际受影响接缝做直接消费者验证；不重跑无关全集，不把bytes称token收益。Mika已有会话页批量读取仍是另一职责，本片不占其读页实现范围。原CHAT05唯一plan保留具体子片归档，完整REQ15尚未完成。
+
+
+### 队列与目标扫描的锁隔离后继（2026-10-06 19:10:54 UTC）
+
+- [ ] **FLOW-001-T04-SCAN-01** 沿 REQ-15 / CHAT04 / O14，验证单实体锁等待不阻断无关队列和目标；后台扫描及关闭均有整轮总时限。Execution Lead负责排期，当前兼容发布/消息设置和O16先收口；未分配实施writer/未运行。
+
+GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同一pendingWorkScan串行queue→goals；queue候选轮转SKIP LOCKED提交后，第二阶段逐个promoteReady重新普通锁conversation/task；goal推进亦普通锁project/task。生产10s statement_timeout仅约束每条SQL，条数上限不等于整轮时限。既有抛错后轮转用例未证明候选选出后的锁等待隔离。这是源码推导风险，尚无实测延迟或事故。
+
+最小独立验收复用中心事务/admission/生命周期：少量ready会话与目标，受控屏障使首候选在第二阶段等待行锁；无关项应在声明局部预算内推进，释放后原项恰好一次；pause/cancel/授权/FIFO保持，关闭有界，未知事务保守。不能以Promise.race遗弃仍写SQL，不能新增scheduler框架或用128任务负载代替此因果旅程。模块各自拥有领域规则，跨模块组合入口只管有限轮次与关闭。
+
+一手语义参考（本轮已打开，网页current为PG18，生产固定版本行为仍须局部验证）：[SELECT锁定](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE)、[客户端超时配置](https://www.postgresql.org/docs/current/runtime-config-client.html)。本段纯规划，不改已审O14 v1或宣称性能提升。
+
+
+### 自托管长期服务监督（2026-10-06 23:47:36 UTC，REQ-19后继）
+
+- [ ] **FLOW-001-T04-LIFECYCLE-01** 交付每服务唯一监督职责的自托管恢复片。Execution Lead负责界面与排序；候选实施owner为assignment_review，在当前完整工具原文局部片安全点后以独立WT/精确scope领取。当前仅设计输入与只读接口核对，无新产品writer、主机持久配置或运行验证。
+
+当前b178/0da：compose只声明PG且无restart；personal-preview的runService仅spawn一次并等待退出。OPS14仅监督有界test/operator，SVC06仅固定发布产物，两者都不是长期服务监督。23:32的实际停机原因仍unknown，现主机全局监督尚未调查；不能把缺策略当根因或声称加一行即可解决。
+
+职责采用最小成熟平台接缝：Docker容器与宿主非容器服务各自选择唯一supervisor，不同时由Docker策略与宿主管理器监管同一容器。首次设计先只读核可用平台及现监督身份，不修改主机策略。固定release/config身份、依赖readiness、用户stop/drain与意外crash区分；重启次数、退避、日志量及健康状态有界。Flow仍拥有lease、durable queue、授权与unknown副作用，不因进程重启重投未知工作或产生额外探测模型请求。
+
+0模型自有环境验收：受控退出、依赖暂失后同一持久数据接续；明确stop不复活；同一服务无第二进程；旧租约/队列恢复与未知副作用保持；超限停止并给出诊断。实际本机持久配置及服务切换另提供固定、可回退的审查交付，不借本次恢复授权悄悄上线。与SVC06固定runtime/dependencies独立但互相引用，公开健康只反映已观测状态。
+
+一手依据：[Docker restart策略](https://docs.docker.com/engine/containers/start-containers-automatically/)（2026-10-06实际打开）：只约束容器，on-failure不覆盖daemon重启，不能与主机管理器重复监督同一容器。此处记录候选方向与未验证范围，不宣布自动恢复完成。遵循根模块化规则，用find-skills/codebase-design/clean-code评估生命周期、依赖方向和两个实际消费者，避免新调度平台。
+
+后继只读接口核对（native_center_owner，fixed b178，0运行）：当前start为detached+unref，internal-service要求预登记nonce/PID且归属依赖PGID=PID，不能直接塞进平台KeepAlive。候选先提取单role observe/reconcile-stopped接缝与受监督前台模式；明确supervisor、nonce身份和显式stop/maintenance的唯一控制者。只有exact-owned且确证stopped才可替换，unknown/EPERM/原组仍在/持久记录失败即止；不自动解除maintenance或清理unknown工作。整套start入口不用于单role恢复。macOS登录期LaunchAgent不承诺logout后仍运行，关Web与logout分别验收。
+
+[Apple launchd说明](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)（2026-10-06实际打开）要求受监督进程不得自行daemonize。平台适配与SVC06固定release通过小接口组合，现有短命OPS14不变；本轮未安装或修改任何launchd/Docker策略。
+
+固定只读接口核对见[生命周期后继证据](../../docs/quality/selfhost-lifecycle-2026-10-06.md)。
+
+
+### REQ-18：插件宿主组合下的连接与控制响应（2026-10-07，待测）
+
+- [ ] **FLOW-001-T04-POOL-01** 沿原 REQ-18 / S01 容量验收，确认100+实际执行扩展时，已启用的插件下载/安装不会令心跳、取消和交互控制失去预先声明的响应边界。Execution Lead负责范围与排期；实施owner未领取，当前仅补验收条件、NOT_RUN。聊天关键路径与现有恢复队列优先，不增加运行预算或降低资源门槛。
+
+**已确认事实与限制。** 只读输入为 main `05cdc51e9668d8e3b5219440361ee6b8f1b3a549`：`apps/server/src/index.ts:72` 业务池max8、获取连接5s、SQL statement_timeout10s；`scheduler.ts:5` pg-boss独立池max3、获取连接5s。这是每中心实例的配置，不是每runner的连接配额。SSE每观察者250ms读取，事务释放连接；心跳、控制与扫描仍共享业务池。`plugin-package-fetches/worker.ts:83–128`在启用host后为session advisory lock持续持有一个业务连接，含空闲及下载阶段；`plugin-installations/commands.ts:100–132`在文件准备期间也持有会话连接。这些事实不证明已发生饥饿、连接泄漏或生产事故。
+
+原[S01结果](../../docs/evidence/s01/mixed-128-run/report.md)是8个runRunner实例位于同一runner OS进程、128个实际fixture attempts、6秒窗口；业务池获取连接n4691、p95约203ms、最大632ms含连接建立，FOR SHARE分类仍UNKNOWN。它不证明128个原生模型、长时容量或本次插件组合；[LAB02](../../docs/evidence/lab02/README.md)则仅是观察者。既有固定source/raw/批准不变，S01原唯一[计划](../s01-runner-capacity/plan.md)与owner继续负责其既有容量工作，本条不复制一套实验。
+
+| Module / Interface | 组合验收责任 |
+| --- | --- |
+| 中心组合入口与业务Pool | 固定实际启用host、中心实例数、每池上限/保留用途；读出totalCount/idleCount/waitingCount并分开记录checkout等待、连接建立及SQL/事务时间。 |
+| 下载/安装宿主 | 保留session advisory fence、事务与外部I/O分界、停止与unknown恢复；记录占用开始/结束、空闲持有及资源释放，不以文件阶段的无SQL当无连接占用。 |
+| runner/公开控制调用者 | 固定真实runner进程/实例/attempt数量及身份；观测心跳、取消受理与实际停止、交互读写的请求至回执时间、错误/超时及租约/fence结果。 |
+| 原S01观测入口 | 复用已有有界计量与资源归属；观察不写业务状态、不构建第二账本/调度器，观测者数量与执行者数量分别计数。 |
+
+**最小组合与顺序。** 先在自有0模型小例核直接消费者和持有/释放因果，再按独立固定容量预算决定100+ fixture与后续原生/长期阶段；本次没有开放任何阶段。固定禁用两host、仅下载、仅安装、两者同时启用四种配置。启用后分别覆盖空闲、受控在途网络/文件阶段及正常停止；下载只用自有loopback合成材料，禁止用公共registry波动冒充受控条件。非SQL停顿必须有界、可收束，不以Promise.race遗弃仍有副作用的工作。
+
+**运行前必须冻结的判定。** 具体场景的执行/观察拓扑、持续时间、心跳间隔/lease、每类控制响应最大界限及统计口径、并发请求数、总时间/字节和清理预算均须在原S01候选中明确；未声明界限不能报告PASS。逐组合保存两池及所有中心实例的连接预算合计和管理余量、占用/排队峰值及有界样本、checkout等待分布、真实心跳/取消/交互延迟和错误。取消受理ACK不等于adapter停止；同时保留实际生效、未决与unknown。池等待、SQL时间、事务/非SQL持有时间不混算，低采样未见等待不证明无等待。
+
+正常收束须核自有宿主停止、锁/会话与连接释放、已接受工作及持久恢复事实；连接丢失、取消和错误不得跨session替换原写者或重投unknown。不能只把持锁连接还池、在另一会话接管、增大池数或删掉插件功能便宣布解决。若测得问题，再以最小Module/Interface选择修复，保持所有权与恢复不变量；不先造通用quota或隔离框架。
+
+与既有 **FLOW-001-T04-SCAN-01**（上文“队列与目标扫描的锁隔离后继”）交叉引用：该项仍负责单实体行锁、queue→goal同轮阻塞及整轮/关闭截止，本项负责可选host组合对共享连接及控制响应的影响；不得重立扫描任务或用大负载替代原因果小例。SQL语句超时不覆盖JS获取连接、外部文件/网络阶段，也不是事务或整轮总截止。
+
+一手来源（2026-10-07只读核）：[pg.Pool](https://node-postgres.com/apis/pool)的满池FIFO及totalCount/idleCount/waitingCount；[pool sizing](https://node-postgres.com/guides/pool-sizing)的跨实例总量/管理余量；[pg-boss constructor](https://pgboss.io/api/constructor)的实例max共享（本地绑定12.37.0，网页非固定包行为证明）；[PG16客户端超时](https://www.postgresql.org/docs/16/runtime-config-client.html)的服务器命令时间范围。实际安装版本与固定源码在未来候选再次绑定，网页不替代运行证据。
+
+架构影响：本条只记录现存连接生命周期及待测组合，未改产品Interface/运行图；未来实施若调整池/宿主职责，由该owner更新既有D06固定架构输入。方法采用本地find-skills发现、codebase-design的Module/Interface职责与clean-code的单一事实源/无重复；只做文档内容、链接与独立审查，不运行工程检查。

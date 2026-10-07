@@ -1,0 +1,25 @@
+{
+  "state": "PASSED",
+  "checks": [
+    "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+    "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+    "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+    "close aborts outstanding read; late response does not restore token; reopen needs explicit load",
+    "actual hidden page clears; no credential in browser storage"
+  ],
+  "fakeCredentialOnly": true,
+  "errors": [],
+  "cleanup": {
+    "context": "closed",
+    "http": "closed"
+  },
+  "visibility": {
+    "before": "visible",
+    "afterOwnedTabSwitch": "hidden",
+    "observedHidden": "hidden",
+    "tokenCleared": true,
+    "sessionDetached": true,
+    "otherPageClosed": true
+  },
+  "credentialReadCount": 4
+}

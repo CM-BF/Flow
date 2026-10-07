@@ -1,0 +1,170 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey
+
+ ✓ packages/interaction/src/goal/lifecycle.test.ts (8 tests) 15ms
+ ❯ packages/interaction/src/goal/entry.test.ts (6 tests | 6 failed) 6ms
+   × persists exact natural-language input before creating and restores the accepted goal without a second request 4ms
+   × lost ACK and recovered CAS rejection preserve original body/key through restart and explicit recovery only 0ms
+   × refuses mismatched accepted input and retains unknown when the accepted binding cannot be persisted 0ms
+   × does not dispatch before durable storage or after disconnect while storage is pending 0ms
+   × validates stored namespace and bounded input before any request 0ms
+   × clears only definite first-send rejection and never interprets abort as goal cancellation 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > persists exact natural-language input before creating and restores the accepted goal without a second request
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ entry packages/interaction/src/goal/entry.test.ts:9:10
+ ❯ packages/interaction/src/goal/entry.test.ts:13:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > lost ACK and recovered CAS rejection preserve original body/key through restart and explicit recovery only
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ create packages/interaction/src/goal/entry.test.ts:21:24
+ ❯ packages/interaction/src/goal/entry.test.ts:22:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > refuses mismatched accepted input and retains unknown when the accepted binding cannot be persisted
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ entry packages/interaction/src/goal/entry.test.ts:9:10
+ ❯ packages/interaction/src/goal/entry.test.ts:29:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > does not dispatch before durable storage or after disconnect while storage is pending
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ entry packages/interaction/src/goal/entry.test.ts:9:10
+ ❯ packages/interaction/src/goal/entry.test.ts:37:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > validates stored namespace and bounded input before any request
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ entry packages/interaction/src/goal/entry.test.ts:9:10
+ ❯ packages/interaction/src/goal/entry.test.ts:42:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > clears only definite first-send rejection and never interprets abort as goal cancellation
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "store",
+      "client",
+      "makeKey"
+    ],
+    "path": [],
+    "message": "Unrecognized keys: \"store\", \"client\", \"makeKey\""
+  }
+]
+ ❯ createGoalEntry packages/interaction/src/goal/entry.ts:30:94
+     28| /** One natural-language intake, then a stable goalId for the existing…
+     29| export function createGoalEntry(options: GoalEntryOptions) {
+     30|   const { connectionId, entryId } = recordSchema.pick({ connectionId: …
+       |                                                                                              ^
+     31|   const namespace = JSON.stringify(['flow.goal-entry.v1', connectionId…
+     32|   const lifetime = new AbortController();
+ ❯ entry packages/interaction/src/goal/entry.test.ts:9:10
+ ❯ packages/interaction/src/goal/entry.test.ts:46:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  6 failed | 8 passed (14)
+   Start at  06:46:40
+   Duration  547ms (transform 181ms, setup 0ms, import 356ms, tests 20ms, environment 0ms)
+

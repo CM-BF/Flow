@@ -1,0 +1,80 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "主线已具备基础监督模块；保持旧默认的合并输出模式已实现并完成局部验证。",
+    "next": "独立核对合并输出增量后，供两个真实包装器后继版本接入。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md)",
+      "id": "OPS-001",
+      "location": "../../../plan-status-review/plans/ops-001-status-review/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "todos": [
+    {
+      "id": "OPS14-01",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "[Interface](../../docs/evidence/ops14/interface.md)、[claim](../../docs/evidence/ops14/take-receipt.json)"
+    },
+    {
+      "id": "OPS14-02",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "[12 个不同局部检查分轮证据](../../docs/evidence/ops14/README.md)"
+    },
+    {
+      "id": "OPS14-03",
+      "state": "in-progress",
+      "owner": "native_center_owner",
+      "evidence": "唯一源码独审通过；模块与新增两例独立审查通过，main 尚未接收"
+    },
+    {
+      "id": "OPS14-04",
+      "state": "pending",
+      "owner": "native_center_owner",
+      "evidence": "两旧包装器 freeze；[精确后继提案](../../docs/evidence/ops14/consumer-migration-proposal.md)，待双方 owner 正式移交"
+    },
+    {
+      "id": "OPS14-05",
+      "state": "in-progress",
+      "owner": "native_center_owner",
+      "evidence": "Capture 增量 [3/3 原输出](../../docs/evidence/ops14/capture-tests.stdout)，待唯一独审与 main 接收"
+    }
+  ],
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED；当前 Capture 增量。历史3097730模块批准 / main接收保持。",
+    "target": "afd01a0387f8cc9d9797109be1fdead74606a4af"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-06 19:10:12 UTC",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "files": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11628,
+      "sha256": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+    }
+  ],
+  "protectedPaths": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations",
+    "apps/web/src/conversation-context",
+    "apps/web/src/conversation-recovery",
+    "apps/web/src/plugin-integration",
+    "apps/web/src/plugins",
+    "apps/web/src/components",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/test/execution-profiles.test.ts",
+    "packages/client",
+    "packages/contracts",
+    "packages/interaction",
+    "package.json",
+    "pnpm-lock.yaml",
+    "apps/web/package.json"
+  ],
+  "protectedDiff": [],
+  "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
+  "runtimeChecks": "Original f3 strict noEmit/direct37 PASS with parent count FAIL preserved. Current1cd b2 startup FAILED; b4/actual18ede reached fixture then first locator strict-mode FAILED (4 groups),0 completedchecks. Browser cumulative20609/60000ms; no fullfeature approval.",
+  "previousImplementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2"
+}

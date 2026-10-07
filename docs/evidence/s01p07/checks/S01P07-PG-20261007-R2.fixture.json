@@ -1,0 +1,70 @@
+{
+  "window": "S01P07-PG-20261007-R2",
+  "sourceHead": "44594beb1564732c00fb66721db2fd51b60b87e9",
+  "databaseName": "flow_s01p07_e2dc6c2871a2417eb9b2e697a8e18022",
+  "creationRequested": true,
+  "creationConfirmed": true,
+  "databaseIdentity": {
+    "oid": "1195575",
+    "marker": "flow-s01p07:9d969367-ac0b-4d57-9ce4-eb67e0ae6136"
+  },
+  "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-l6pxi_xd/flow-s01p07-pg-cWCZEd",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123371543
+  },
+  "tasks": 10,
+  "http": 80,
+  "elapsedMs": 2046.1182910000002,
+  "cleanup": {
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "connections": 0,
+    "databaseAbsent": true,
+    "databaseIdentityConfirmed": true,
+    "rootAbsent": true,
+    "startupSettled": true
+  },
+  "errors": [],
+  "primaryErrors": [],
+  "caseResults": [
+    {
+      "name": "binds self identity to bearer authority and persists no receipt for twelve empty observations or legacy empty claims",
+      "state": "pass"
+    },
+    {
+      "name": "serializes concurrent requests for one key into one attempt and one resume-session occupation",
+      "state": "pass"
+    },
+    {
+      "name": "separates the same request UUID by authenticated runner and cannot read a different runner receipt",
+      "state": "pass"
+    },
+    {
+      "name": "rolls allocation, session occupation and compact receipt back together after a post-insert failure",
+      "state": "pass"
+    },
+    {
+      "name": "looks up committed allocation before maintenance/capacity, preserves current lease without renewal, and rejects revoke",
+      "state": "pass"
+    },
+    {
+      "name": "returns only historical identity after expiry, completed cancellation or a stale owner, never a new attempt",
+      "state": "pass"
+    },
+    {
+      "name": "keeps the first nonempty receipt through a real server restart and reuses the original v1 allocation filters",
+      "state": "pass"
+    },
+    {
+      "name": "uses a fresh integer lease from a fractional PG remainder and fences before the public runtime executes once",
+      "state": "pass"
+    }
+  ],
+  "providerCalls": 0,
+  "retained": {
+    "database": null,
+    "root": null
+  }
+}

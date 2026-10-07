@@ -1,12 +1,12 @@
 # COST-001 可解释的执行成本与预算
 
-状态：accepted / queued。2026-10-06。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。优先级在真实Claude/Codex接通、成熟Web交互与TUI首片之后，不抢当前writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
+状态：in-progress（COST01A首纵向片）。2026-10-06。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。原依赖首片已具备；2026-10-06在TUI01E接收后提高为下一实施位，与O13及网页恢复并行，不打断现有writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与边界
 
 用户能看清一次通过验收的交付消耗了哪些token与估算费用，协调、执行、检索压缩、重试验证各阶段覆盖了多少，未测或不可归因的部分明确显示。预算由中心执行，Web/TUI/CLI消费同一合同。SDK估算不是订阅账单，也不许宣称未被验证的无超额硬保证。
 
-复用usage_samples、稳定sample去重与累计baseline，不另造账本。OpenTelemetry仅作为导出适配器。成本按验收通过的交付、质量和成功率比较；不按便宜但未完成的单调用宣称系统节省。归因来自真实task/attempt/session/阶段身份，不逐条调用模型分类。当前只计划/只读，无新provider或负载预算，不复用封存实验额度。
+复用usage_samples、稳定sample去重与累计baseline，不另造账本。OpenTelemetry仅作为导出适配器。成本按验收通过的交付、质量和成功率比较；不按便宜但未完成的单调用宣称系统节省。归因来自真实task/attempt/session/阶段身份，不逐条调用模型分类。首纵向读口已交付，后继仍无新provider或负载预算，不复用封存实验额度。
 
 ## 模块责任与接口
 
@@ -39,3 +39,11 @@
 
 
 COST001-02补充候选：稳定资料前缀结构toy及明确限制统一见[研究记录](../../docs/evidence/cost01/research.md)。只读来源与字节边界不代表token节省；具体实施待空槽fresh scope，不修改当前context或附件版本，不提高到ENG/TUI/附件前。
+
+## 当前下一可用交付：COST01A
+
+唯一子片[COST01A](../../../cost-usage-readout/plans/cost01a-usage-readout/plan.md)承担来源分解与共用轻读口，映射COST001-02/03。首片只复用usage_samples和已有baseline事实，提供普通输入/cache-read/cache-write/output/SDK估算、source语义版本与覆盖原因；不重写旧合计含义，不按模型名猜归因，不将不同provider计数直接相加。没有可核来源版本时保留unknown。共享出口/FlowClient及生产挂载由Execution Lead单写，客户端渲染仍可并行。具体只读projection与必要共享seam由该子片固定Interface后实施；不能新增第二账本。
+
+## 2026-10-06T14:35:06.228081+00:00 首纵向交付与剩余目标
+
+COST01A已独审并与公共factory、FlowClient和只读CLI进入main59ef2134。共享基线贡献函数由原写入与新投影复用，旧合计未改义；历史缺版本、resume baseline与覆盖不足仍明确unknown。COST001-02/03保留跨来源归一未完边界，04的CLI读取部分已完成，阶段归因与Web/TUI显示、05中心预算未完成。不以首读口将完整大task勾完。

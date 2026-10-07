@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T21:07:36.860Z",
+  "mode": "types",
+  "digest": "54f9fb67dd5157e7ae8e511f6c6dd408e69cc966df02cc6e5f737b71d0ab6a90",
+  "sources": [
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 28785,
+      "sha256": "11961c79fb35e89b498d3818aef8e89a7ae9190cc5c1ea09a9ab67f336c00b2b"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/terminal.py",
+      "bytes": 8928,
+      "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/terminal-observation.test.mjs",
+      "bytes": 2123,
+      "sha256": "c466d23bec5a531802b55207f3c36152eabac57a911334ca84a0a011a6505d50"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/terminal-check.mjs",
+      "bytes": 6464,
+      "sha256": "49037bafbc2883c34b08ce3f5499bf263b3c9c050b864efaf84390b8292f3ae5"
+    }
+  ],
+  "bounds": {
+    "workMs": 7000,
+    "cleanupMs": 2000
+  },
+  "freeBefore": 1180291072,
+  "outcome": "unknown-retain",
+  "rawLimit": 524288,
+  "privateLimit": 1048576,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0
+}

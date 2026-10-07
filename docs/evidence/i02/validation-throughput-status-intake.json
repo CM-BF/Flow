@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T02:33:32.668454+00:00",
+  "mainBefore": "8631cafb2f2a66f3e02ef873484a7ddfa551e1b7",
+  "source": "689677ae77348388005a779f1cf5782491043c3a",
+  "sourceWorktree": "plan-status-review",
+  "review": {
+    "reviewer": "native_center_owner/gpt-6-astra",
+    "conclusion": "APPROVED_DOCS_ONLY",
+    "scope": "Complete two-status delta against e0c8d042; checked 7a7c/6b531d/8631 refs; no P1/P2",
+    "executedTests": 0
+  },
+  "bindings": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 25768,
+      "sha256": "834c3d9d50a87f35b61501ead301a6f9633dd147c04ece357f17708fbd0640f3",
+      "preimageSameAs": "e0c8d042"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 75488,
+      "sha256": "b06ef004d11de650f085ff080fc5ec17c917a52c79762fbafbb2b5ca66c0eb20",
+      "preimageSameAs": "e0c8d042"
+    }
+  ],
+  "meaning": "Already reviewed SVC07/TUI01G intake and bounded parallel policy; SVC06/OPS14 remain successors, no personal runtime change",
+  "provider": 0,
+  "productChanges": 0
+}

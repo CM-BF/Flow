@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-06 21:49:49 UTC",
+  "state": "SOURCE_REQUEST_ONLY_NOT_EXECUTABLE_NOT_RUN",
+  "taskId": "REQ15",
+  "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+  "claimVersion": 1,
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+  "branch": "codex/conversation-turn-page-batch",
+  "fixedBase": "22a0806bc2465e11096949618113833f31766b19",
+  "reviewedTarget": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "existingSourceManifest": "validation-source-manifest.json",
+  "materializeMissing": [
+    {
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "baseBlob": "7149885ce600dc9bb762ef9710f270f4e548ad2a",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "baseBlob": "54009ca22519226c062a3777e2ffc192d766f454",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    }
+  ],
+  "preserveExistingSql": [
+    {
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "baseBlob": "a7a6e3233b994d72a73f8eeeea7501d44958e00d",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "baseBlob": "f0d6c435cf7ac88fe3a76e5a9e5975511ed7f79d",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    }
+  ],
+  "additionalDependencyLinks": [],
+  "dependencyManifest": "dependency-request.json",
+  "noInstall": true,
+  "noCopy": true,
+  "noCrossWorktreeProductImport": true,
+  "runtime": {
+    "imports": 0,
+    "tests": 0,
+    "pg": 0,
+    "http": 0
+  },
+  "schemaPlan": [
+    "database.migrate(): inline1 + canonical002",
+    "transaction: canonical007,009,025 once in owned new DB, record migration rows 7/9/25"
+  ],
+  "fullServerClosureRequested": false,
+  "limits": "Canonical schema subset for the public read functions; not full bootstrap/migration/HTTP acceptance. Context and frozen-setting write constraints remain integration checks.",
+  "counts": {
+    "missingFiles": 2,
+    "missingBytes": 2681,
+    "preservedSqlFiles": 2,
+    "newDependencyLinks": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.09499720903113484,
+  "freeBeforeBytes": 1617592320,
+  "stdoutSha256": "0cade7dcf37ea8bc6f9dee2e7ebabdc12154044f1eebf334b226ff4a04a39a4d",
+  "sourceHashes": {
+    "experiments/continuous-goal-acceptance/config.mjs": "e09853fea41a6bc8ce3bed8a3d3932c2d011690f3bbead72e3da91fe5a2aa9ef",
+    "experiments/continuous-goal-acceptance/query-policy.mjs": "68a17a36ed8c9abc4dc673b8d100a8a5c0f49eae8a51834dca73ba2b312a95ed",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs": "5722d0930e0371608128321d4a002310c7d814252b9346a10e956513bba2fa19"
+  },
+  "boundary": "Three new pure observations with synthetic SDK frames only; earlier7 not rerun; 0SDK/PG/provider"
+}

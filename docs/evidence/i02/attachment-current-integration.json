@@ -1,0 +1,161 @@
+{
+  "recordedAt": "2026-10-06T13:07:57.981857+00:00",
+  "base": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "scope": "Controlled approved attachment App + current context-history + fixed architecture snapshot; no source rewriting",
+  "sourceComparison": "attachment-current-source-comparison.json",
+  "sourceCount": 31,
+  "inputs": [
+    {
+      "taskId": "WPF-ATTACHI02",
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "metadata": "6f3b85f331f538080d8d529bd3622483fdf1d3d5",
+      "review": "Web root APPROVED/P2 CLOSED; original191 and bounded actualApp separate rounds retained"
+    },
+    {
+      "taskId": "WPF-MATURE-04",
+      "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+      "metadata": "d389fdad770c39d4bfad6ae2988111d7f14d5846",
+      "review": "Mika APPROVED; two source only"
+    },
+    {
+      "taskId": "D06",
+      "target": "6570ef7e896d29040961247f46aa62dc4e466284",
+      "metadata": "f46439c7d11293c985442d440e737715fd78fed6",
+      "review": "Independent Web owner APPROVED; five source; snapshot aeb fixed"
+    }
+  ],
+  "checks": {
+    "firstPgAndBinding": {
+      "exit": 1,
+      "executedTests": 0,
+      "reason": "ENOSPC in import transform; no beforeAll/database creation; original stdout retained"
+    },
+    "afterSpacePg": {
+      "exit": 0,
+      "passed": 2,
+      "unselected": 2,
+      "scope": "real production createServer HTTP/PG attachment-only + mixed v2 reportEvents history; current combination"
+    },
+    "afterSpaceWebBinding": {
+      "exit": 0,
+      "passed": 17,
+      "scope": "official assistant-ui core + actual App attachment module direct consumers; controlled rejection stderr expected"
+    },
+    "rootTypesExit": 0,
+    "webTypesExit": 0,
+    "registry": {
+      "sources": 154,
+      "newSources": 3,
+      "parseErrors": []
+    },
+    "repeatedOldFullMatrices": 0,
+    "newBrowserRuns": 0,
+    "providerQueries": 0
+  },
+  "cleanup": {
+    "database": "flow_wpf04_attachment_95ec4fe36092496c9d4ba6682522d2fa",
+    "startedAt": "2026-10-06T13:06:06.967Z",
+    "providerCalls": 0,
+    "manualMount": false,
+    "creationRequested": true,
+    "connections": [],
+    "remaining": [],
+    "errors": [],
+    "finishedAt": "2026-10-06T13:06:09.215Z"
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/attachment-current-pg.txt",
+      "bytes": 1104,
+      "sha256": "408ef139b6cd571fafc2ff7ec2728df2970dfc21a0a0aed95955bb54b12141c8"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-ui-binding.txt",
+      "bytes": 1250,
+      "sha256": "0616a8eb1df679f467da6cf481fce2135fb03fc3089176ed8ab8b41880ca1723"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-pg-after-space.txt",
+      "bytes": 584,
+      "sha256": "d5bb8e468e36e17ce58b965f816db9fa8e0ed06f012d3a1be717ec4ae7a63712"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-ui-binding-after-space.txt",
+      "bytes": 4362,
+      "sha256": "beabb92ce517bf524066e2d2b63dd9a0acc5a18ba2bfb29f51efaaab7843dec3"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-web-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-current-cleanup.json",
+      "bytes": 293,
+      "sha256": "d8a9ce6f84da309729717cd995dfcf506c97953859e0b8343aa47795b57b2527"
+    }
+  ],
+  "limits": [
+    "No new provider/browser or personal deployment; actual user backend362/v15,Web8d8/v2 remain",
+    "Attachment history inventory explicitly unknown; real execution digest preserved",
+    "Durable Send/Queue unknown receipts/reload drafts remain MATURE06 successor",
+    "Architecture describes fixed aeb source, not current main or runtime",
+    "Original author failures/selected checks and reviewer scope remain unchanged"
+  ],
+  "metadataInputs": [
+    [
+      "6f3b85f331f538080d8d529bd3622483fdf1d3d5",
+      [
+        "plans/wpf-attach-i02-production-binding",
+        "docs/evidence/wpf-attach-i02"
+      ]
+    ],
+    [
+      "d389fdad770c39d4bfad6ae2988111d7f14d5846",
+      [
+        "plans/wpf-mature-04-context-transparency",
+        "docs/evidence/wpf-mature-04"
+      ]
+    ],
+    [
+      "f46439c7d11293c985442d440e737715fd78fed6",
+      [
+        "plans/d06-architecture-refresh",
+        "docs/evidence/d06/snapshot-aeb"
+      ]
+    ],
+    [
+      "2fe22ac8dbcf513e7ca896bb5d871e0fb0365447",
+      [
+        "plans/eng01h-native-engineering-contract",
+        "docs/evidence/eng01h"
+      ]
+    ],
+    [
+      "5d502150d779bdf3d1cbd5045d2055ebd220c90d",
+      [
+        "plans/tui01d-goal-session",
+        "docs/evidence/tui01d"
+      ]
+    ],
+    [
+      "fbab7b9c",
+      [
+        "plans/eng01-engineering-delivery",
+        "docs/evidence/eng01"
+      ]
+    ],
+    [
+      "c6af5d13",
+      [
+        "plans/tui01-terminal-client",
+        "docs/evidence/tui01"
+      ]
+    ]
+  ]
+}

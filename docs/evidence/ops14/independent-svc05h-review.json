@@ -1,0 +1,92 @@
+{
+  "reviewer": "assignment_review",
+  "author": "native_center_owner",
+  "reviewedAt": "2026-10-06T22:05:04.295893+00:00",
+  "verdict": "APPROVED_LIMITED_SVC05H_CONSUMER",
+  "sourceTarget": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+  "deliveryTarget": "1f754100bf84633c53c88038ce8630fdccab2e56",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision",
+  "cleanAtReview": true,
+  "manifest": {
+    "path": "docs/evidence/ops14/svc05h-manifest.json",
+    "sha256": "df990646c79e46e60c4e20b03bc673aac298dff21e402d8bfd4c249aa178eac2",
+    "bytes": 9218,
+    "fixedBindings": 21,
+    "currentBindings": 18,
+    "historicalBindingsNotComparedToCurrent": 2,
+    "protectedOperatorComparedSeparately": true,
+    "mismatches": []
+  },
+  "bindings": {
+    "path": "/tmp/flow-ops14-svc05h-independent-review-bindings.json",
+    "bytes": 10558,
+    "sha256": "086338ec10495c05cbb4e7e853cb557152d784b436246c1b65f5e472a77fc880"
+  },
+  "findings": [],
+  "scope": [
+    "center-recovery/supervise.py thin delegation to previously approved afd01a shared module",
+    "center-recovery/supervision_test.py two retained direct-consumer cases and their original run evidence"
+  ],
+  "conclusions": {
+    "interface": "Original callable signature and legacy result fields remain; Launch uses explicit current cwd/environment, fixed repository-local shared module, childPidOnly ownership and default separate capture. No duplicated supervision loop. The old CLI execute flag, fixed Node/operator path and result exit mapping remain.",
+    "ownership": "Only the directly spawned unreaped operator PID is signaled. Detached services are not stopped by this wrapper. Existing standby test demonstrates a detached child survives wrapper deadline and is later stopped solely by test-owned cleanup.",
+    "deadline": "Policy maps work_seconds, zero TERM grace and exit_seconds to the previously approved childPidOnly policy. Independent stop decision does not wait on operator filesystem writes. Parent JSON printing/durable report after supervise returns is explicitly outside this deadline.",
+    "conservativeChanges": "Success additionally requires known child absence, no supervision failure and all actual pipe EOFs. New combined 65536-byte output cap is explicitly documented; overflow or incomplete/unknown termination cannot report success. Spawn failure cannot fabricate operatorStopped. Primary and secondary failures remain distinct.",
+    "protectedOperator": "operator.mjs is byte-identical to fixed 78fb37704d708e3b3b6ea4f1810947f012666196 at implementation and delivery; 8729 bytes, SHA256 2a5eee0c10604aa4df2a4fc9ee0bdf0da86f14ea154247ddeb9bff3fd960bff0. No authorization or recovery behavior changed.",
+    "sourceScope": "Implementation commit changes exactly the two declared wrapper/test paths. The two additional center-recovery metadata paths in the cumulative 78fb comparison are inherited records, not this implementation delta. Shared module source/test/README at implementation/current remain byte-identical to approved afd01a."
+  },
+  "evidence": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 0,
+    "exitCode": 0,
+    "outerElapsedMs": 410,
+    "unittestSeconds": 0.348,
+    "stdoutBytes": 1137,
+    "stdoutSha256": "e04ba449ce54097fd5c58be64d5a217dbb55ca568e3ba65bd9651d5e8103d32f",
+    "blockedOperator": {
+      "pid": 90000,
+      "exit": -9,
+      "elapsedMs": 317,
+      "firstFailure": "DEADLINE_EXCEEDED",
+      "secondaryFailure": "CHILD_EXIT_NONZERO",
+      "ownedState": "absent",
+      "signals": [
+        {
+          "signal": "SIGKILL",
+          "state": "sent"
+        }
+      ]
+    },
+    "detachedStandIn": {
+      "pid": 90011,
+      "survivedWrapper": true,
+      "testFinallyCleanup": "group-absent"
+    },
+    "freeGateFromSavedRun": {
+      "freeBeforeBytes": 1158938624,
+      "minimumFreeBytes": 1077936128
+    },
+    "rawReadOnly": true
+  },
+  "limits": [
+    "Approval covers this first actual wrapper source migration and its two stand-in direct-consumer checks. No personal recovery was executed.",
+    "Previously approved shared-module tests were not rerun or re-audited as a new matrix; do not describe combined history as a single 17/17 run.",
+    "SVC07 remains unmigrated. No assertion that both real consumers are complete.",
+    "Future personal recovery still requires a new fixed source/authorization/window. Old consumed authorization is not reopened.",
+    "No new claims of detached-service-wide isolation, OS hard deadlines for parent persistence, or physical resource reclamation."
+  ],
+  "method": {
+    "skills": [
+      "local find-skills method",
+      "clean-code: responsibility/interface/errors/no duplicate loop",
+      "codebase-design: narrow consumer/shared ownership boundary"
+    ],
+    "projectWrites": 0,
+    "testsRun": 0,
+    "importsRun": 0,
+    "PG": 0,
+    "providerCalls": 0,
+    "personalServiceActions": 0
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "task": "WPF-DASHBOARD-ACCESS01",
+  "state": "APPROVED_BRANCH_READY_FOR_LEAD_INTAKE_NOT_MAIN",
+  "at": "2026-10-07 03:56:12 UTC",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+  "branch": "codex/dashboard-local-access",
+  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "approvedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "productSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "browserSource": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "executionMetadata": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
+  "ownerHeadObservedBeforeMetadata": "366a568f2750777f683941180b665af7c4a3effb",
+  "ownerDirtyObservedBeforeMetadata": false,
+  "metadataSeal": "This intake/approval record is the subsequent metadata-only seal; final HEAD and remote equality are returned by the owner after commit/push. It is not the browser execution HEAD.",
+  "review": {
+    "path": "docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json",
+    "sha256": "594b2a5e9eabf938fca6bb7ef1f46148c2b0853a09ca2d0a0edbf862d4bb95a3",
+    "decision": "APPROVED_FIXED_SOURCE_DIRECT35_AND_BROWSER5_COMPOSITION",
+    "blockingFindings": []
+  },
+  "reviewScope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+  ],
+  "preimagesAndTargets": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "base": {
+        "exists": true,
+        "bytes": 4034,
+        "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+        "gitBlob": "e68a67a7c1214b5b3d015f45cb92585b26b1e9bc"
+      },
+      "target": {
+        "bytes": 4446,
+        "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+        "gitBlob": "acc36a5a401381da1746559ea5ff66f192783cd6"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 7687,
+        "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+        "gitBlob": "dd0b793b473b4197475c075345cb66267228fb39"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "base": {
+        "exists": true,
+        "bytes": 6397,
+        "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+        "gitBlob": "1196fb2074dc588e7e3468c13f0c4fd01dea7bd5"
+      },
+      "target": {
+        "bytes": 8840,
+        "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+        "gitBlob": "da2e4eba4f66105fa65a8f29e5206532c53a6618"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 6064,
+        "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+        "gitBlob": "1c4f53fde7249b44c36daf636a4d08ff3eaf8b40"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 1315,
+        "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+        "gitBlob": "92b932cb79a690d2e3c1f015e6b58998571bb544"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 10492,
+        "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+        "gitBlob": "24471c288447b1f9865d66244b83de3d9a80145e"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 9875,
+        "sha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0",
+        "gitBlob": "3eaabb1362e723233489a95fd4d88fb479846431"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/README.md",
+      "base": {
+        "exists": true,
+        "bytes": 10657,
+        "sha256": "068205346f4e98b1cf8e73c4daa2bd21f3054282f295b76fbba6f2a1091545a3",
+        "gitBlob": "1dbf223d0aa6790fe050db682f48119f50f5a245"
+      },
+      "target": {
+        "bytes": 14861,
+        "sha256": "5cca704df9e7897929ff6e37e894712a6d289319644fbe01e52811f00b4a7956",
+        "gitBlob": "08ed959c069cdce17fe66e40dcf1ad7b0ac7c243"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 4986,
+        "sha256": "ad33f2f1996d4e72b48bac04aa79aaad82d571f29b535c460077238857539faa",
+        "gitBlob": "b3b04b2b74e8f1fc5fba43826ac250aa2263c8b0"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 1340,
+        "sha256": "37468d8f91a256ca7e342929ef79369493bc8c002378c67cb415b12c7b16d018",
+        "gitBlob": "6eb1250b5011dd0006e555816af0ce821a009231"
+      },
+      "currentEqualsTarget": true
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "bytes": 2768,
+        "sha256": "f9a48970d7bfb9dba3b0dd3ac9370ea1af66a07b4d48941b3c0f64a46148ba52",
+        "gitBlob": "83d1732cbdce76bdf373e040a20b085ebcb8aa09"
+      },
+      "currentEqualsTarget": true
+    }
+  ],
+  "productIntakePaths": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md"
+  ],
+  "ownerRecordRoots": [
+    "plans/wpf-dashboard-local-access",
+    "docs/evidence/wpf-dashboard-local-access"
+  ],
+  "ownerChangedPathsAtApprovedTarget": [
+    "docs/evidence/wpf-dashboard-local-access/browser-first/actual-exit.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/archive.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/post-cleanup.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/preparation-actual-preflight.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/preparation-manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/preparation-report.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/390-dark.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/390-light.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/browser-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/chrome.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/owned.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-first/worker.mjs.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/actual-exit.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/archive.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/default-context-source.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/final-live.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/fresh-claim.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/fresh-resource-pins.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/post-cleanup.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/preparation.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-dark.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-light.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/browser-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/chrome.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/owned.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/report.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/root-access-third-actual-research.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/root-access-third-preparation-review.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/actual-exit.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/actual-preflight.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/archive.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/post-cleanup.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/preparation.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/390-dark.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/390-light.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/browser-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/chrome.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/owned.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-check.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/worker.mjs.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-second/worker.mjs.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/actual-exit.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/actual-preflight.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/archive.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/post-cleanup.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/preparation.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/390-dark.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/390-light.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/browser-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/chrome.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/owned.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/parent-stderr.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/parent-stdout.log",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/raw/worker-result.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/report.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-caller-fix-review.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-ccd-visibility-review.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/root-access-second-browser-research.json",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/run.py.txt",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/worker.mjs.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-third/worker.mjs.txt",
+    "docs/evidence/wpf-dashboard-local-access/default-context-source-claim.json",
+    "docs/evidence/wpf-dashboard-local-access/default-context-source.json",
+    "docs/evidence/wpf-dashboard-local-access/direct-first/audit.json",
+    "docs/evidence/wpf-dashboard-local-access/direct-first/node.log",
+    "docs/evidence/wpf-dashboard-local-access/direct-first/result.json",
+    "docs/evidence/wpf-dashboard-local-access/implementation-interface.md",
+    "docs/evidence/wpf-dashboard-local-access/initial-interface.md",
+    "docs/evidence/wpf-dashboard-local-access/input-source-manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/quality.md",
+    "docs/evidence/wpf-dashboard-local-access/root-access-caller-fix-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access-ccd-visibility-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access-first-browser-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access-second-browser-research.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access-third-actual-research.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access-third-preparation-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access3c0-default-context-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-source-direct-review.json",
+    "docs/evidence/wpf-dashboard-local-access/source-manifest-08ec-browser-second.json",
+    "docs/evidence/wpf-dashboard-local-access/source-manifest-1e4.json",
+    "docs/evidence/wpf-dashboard-local-access/source-manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/take-receipt.json",
+    "docs/evidence/wpf-dashboard-local-access/trusted-source-design.json",
+    "docs/evidence/wpf-dashboard-local-access/visibility-precondition-source.json",
+    "plans/wpf-dashboard-local-access/plan.md",
+    "plans/wpf-dashboard-local-access/review.md",
+    "plans/wpf-dashboard-local-access/status.md"
+  ],
+  "integrationPolicy": [
+    "Execution Lead alone performs controlled main intake and4320 publication. Do not overwrite unrelated newer dashboard/server/index/README changes; compare exact base preimages and target sources first. Resolve conflicts under legitimate writer authority and review changed behavior.",
+    "Keep twelve literal scope paths exactly as approved, including original fourth .diff/.stdout/.stderr; do not rename or weaken proof/metadata classification. Include owner records and this approval/intake metadata while retaining all original raw hashes.",
+    "Seven implementation/test source hashes are fixed; no runtime rerun in this metadata segment. Main and actual installation validation remain separate."
+  ],
+  "checks": {
+    "direct": {
+      "count": 35,
+      "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+      "result": "PASSED_SCOPED",
+      "rerun": false
+    },
+    "browser": {
+      "groups": 5,
+      "source": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+      "executionHead": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
+      "actualExit": 0,
+      "outerElapsedMs": 6237.586374976672,
+      "parentLateElapsedMs": 6203.291374957189,
+      "cleanup": "context/HTTPclosed; Chromeexit0; parent+Chrome dualEOF; ownedgroupabsent; scratchremoved; exactCDPrefused",
+      "fakeOnly": true
+    },
+    "previousFailures": "Three complete FAILED archives preserved",
+    "budget": {
+      "totalMs": 60000,
+      "previousConservativeSpentMs": 30839,
+      "thisRoundedUpMs": 6238,
+      "cumulativeConservativeMs": 37077,
+      "remainingConservativeMs": 22923,
+      "actualOuterSumMs": 37074.977417010814,
+      "nextCleanupReserveMs": 15000
+    }
+  },
+  "screenshots": [
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-light.png",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-dark.png"
+  ],
+  "deployment": {
+    "state": "NOT_RUN",
+    "operator": "Original Execution Lead/service operator",
+    "node": "Node24.20+",
+    "entry": "/opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/src/server.mjs",
+    "url": "http://127.0.0.1:4320/",
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerUrlMeaning": "Product Web existing /api proxy",
+    "enableFlag": "--local-installation",
+    "bindingEnvironment": "FLOW_DASHBOARD_LOCAL_INSTALLATION",
+    "nonsecretBindingFields": [
+      "directory",
+      "installationId",
+      "repository",
+      "productOrigin"
+    ],
+    "bindingSource": "Original installation operator supplies verified nonsecret fixed installation identity and actual installed repository; never substitute this feature worktree. No token/config content is recorded here.",
+    "default": "Disabled. Remote/enterprise remains disabled. No automatic login, product tab refresh, center/runner restart or arbitrary file API.",
+    "verificationBoundary": "Current proof is synthetic config/dynamic HTTP/fake token/owned browser. Actual installation credential loading/clipboard and publication remain unverified. Avoid token-visible DOM/screenshot/trace/networkbody/log capture.",
+    "tabPolicy": "Retain existing4320 tab; original operator handles necessary source update/service publication, validate in a new owned tab. No changes to user product tabs."
+  },
+  "currentBrowserInterface": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); defaultContext belongs to caller freshly spawned exclusive-profile Chrome attached via public noDefaults:true; caller retains PID/EOF cleanup. The approved README preserves its earlier {browser} test-harness paragraph as historical; use fixed3c0 fixture/current source-manifest for actual invocation.",
+  "skillsAndQuality": "Local find-skills/clean-code/codebase-design/webapp-testing reused; no install. Provider owns bounded trusted-file/error handling, UI transienttoken lifecycle, caller nativebrowser ownership. Final metadata checks exact scope/source/raw/preimage consistency; no new product execution.",
+  "unverified": [
+    "main integration",
+    "4320 publication",
+    "real installation enablement and credential flow",
+    "user login"
+  ],
+  "claim": {
+    "id": "57735ff7-d631-4538-9faf-d7ac090837a2",
+    "version": 1,
+    "state": "Active at03:56:12 narrow observation; owner stops all ten scopes after final push pending controlled handoff/release."
+  }
+}

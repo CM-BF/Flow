@@ -4,6 +4,8 @@ import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
 import { expect, it } from 'vitest';
 import type { GoalGraphCapability, GoalGraphCommand } from '../../../../packages/contracts/src/goal-graph-runs.js';
 import { createGraphToolsMcp } from './mcp.js';
+import { GOAL_INPUT_PROPOSAL_PROTOCOL, goalGraphProposalInputSchema } from '../../../../packages/contracts/src/goal-graph-proposals.js';
+import { goalGraphScopeSchema } from '../../../../packages/contracts/src/goal-graph-runs.js';
 
 function capability(): GoalGraphCapability {
   return { goalId: 'goal', runId: 'run', scope: { baseRevision: 1, allowedExistingNodes: [], maxProposals: 1, maxApplications: 1, maxNewNodes: 3, maxNewEdges: 2 }, port: {
@@ -17,6 +19,37 @@ async function connected(cap = capability()) {
   const [a, b] = InMemoryTransport.createLinkedPair(); await server.instance.connect(b); await client.connect(a);
   return { server, client, async close() { await client.close(); await server.instance.close(); } };
 }
+const completeProposal = () => ({
+  expectedProjectRevision: 1, reason: 'Propose explicit input', additions: [{ key: 'A', title: 'Display only', dependencies: [] }],
+  inputProposal: { protocol: GOAL_INPUT_PROPOSAL_PROTOCOL, nodes: [{ key: 'A', input: {
+    goal: 'Actual work differs from its title', constraints: 'Read only', acceptance: 'Owner evaluates meaning', verification: { kind: 'nonempty' as const },
+  } }] },
+});
+it('keeps legacy scope and proposal JSON unchanged while requiring complete keyed inputs', () => {
+  const old = capability().scope;
+  expect(JSON.stringify(goalGraphScopeSchema.parse(old))).toBe(JSON.stringify(old));
+  expect(goalGraphScopeSchema.parse(old)).not.toHaveProperty('inputProposalProtocol');
+  const { inputProposal, ...legacy } = completeProposal();
+  expect(JSON.stringify(goalGraphProposalInputSchema.parse(legacy))).toBe(JSON.stringify(legacy));
+  expect(goalGraphProposalInputSchema.safeParse(completeProposal()).success).toBe(true);
+  expect(goalGraphProposalInputSchema.safeParse({ ...legacy, inputProposal: { ...inputProposal, nodes: [] } }).success).toBe(false);
+  expect(goalGraphProposalInputSchema.safeParse({ ...legacy, inputProposal: { ...inputProposal, nodes: [...inputProposal.nodes, ...inputProposal.nodes] } }).success).toBe(false);
+  expect(goalGraphProposalInputSchema.safeParse({ ...legacy, inputProposal: { ...inputProposal, nodes: [{ ...inputProposal.nodes[0], key: 'foreign' }] } }).success).toBe(false);
+});
+it('requires the explicit host-bound input proposal capability without adding an SDK tool', async () => {
+  for (const permitted of [false, true]) {
+    const cap = capability(); let calls = 0;
+    if (permitted) cap.scope.inputProposalProtocol = GOAL_INPUT_PROPOSAL_PROTOCOL;
+    cap.port.commandGraph = async () => { calls++; return { kind: 'propose', proposal: {} as any, replayed: false }; };
+    const peer = await connected(cap);
+    try {
+      expect((await peer.client.listTools()).tools.map(tool => tool.name).sort()).toEqual(['graph_command', 'graph_read']);
+      const result = await peer.client.callTool({ name: 'graph_command', arguments: { command: { kind: 'propose', proposal: completeProposal() }, idempotencyKey: 'fixed-input-proposal' } });
+      expect(calls).toBe(permitted ? 1 : 0);
+      expect(Boolean(result.isError)).toBe(!permitted);
+    } finally { await peer.close(); }
+  }
+});
 it('exposes exactly two actual SDK MCP tools with bounded read and explicit write annotations', async () => {
   const peer = await connected();
   try {

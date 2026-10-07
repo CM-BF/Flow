@@ -1,14 +1,21 @@
+import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
+import { runnerIdentitySchema, runnerClaimRequestSchema, decodeRunnerClaimResponse, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimResponse } from '@flow/contracts';
+import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
+import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
+import type { TaskUsageReadout } from '@flow/contracts';
+import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
-import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { decodeConversationCreated, decodeConversationTurnAccepted, decodeConversationQueueAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogPageSchema, type ClaudeMessageSettingsCatalogPage } from '@flow/contracts';
 import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
 import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
 import { contextHistoryResponseSchema, type ContextHistoryResponse } from '@flow/contracts';
-export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+export { decodeConversationCreated, decodeConversationTurnAccepted, decodeConversationQueueAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
-import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
+import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunPage, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
 import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
 import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
@@ -36,22 +43,46 @@ export class FlowApiError extends Error {
   }
 }
 
-export interface ClientOptions {
+interface ClientConnectionOptions {
   baseUrl: string;
-  token: string;
   /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
   assistantStreamProtocol?: 'patch-v1';
 }
 
+/** Cookie authentication is explicit; the browser owns the HttpOnly session cookie. */
+export type ClientOptions = ClientConnectionOptions & (
+  | { token: string; browserSession?: never }
+  | { token?: never; browserSession: { csrfToken: () => string | undefined } }
+);
+
 export class FlowClient {
   private readonly baseUrl: string;
-  private readonly token: string;
+  private readonly token: string | undefined;
+  private readonly csrfToken: (() => string | undefined) | undefined;
   private readonly assistantStreamProtocol: 'patch-v1' | undefined;
 
   constructor(options: ClientOptions) {
+    if ((options.token !== undefined) === (options.browserSession !== undefined)) throw new Error('Select exactly one authentication mode.');
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+    this.csrfToken = options.browserSession?.csrfToken;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  async browserSession(signal?: AbortSignal): Promise<BrowserSessionRead> {
+    return browserSessionReadSchema.parse(await this.request<unknown>('/api/browser-session', { signal }));
+  }
+  /** One explicit login attempt. A lost acknowledgement is recovered by reading the current session. */
+  async connectBrowserSession(ownerToken: string, signal?: AbortSignal): Promise<BrowserSessionReady> {
+    if (!this.csrfToken) throw new Error('Connecting a browser session requires cookie authentication mode.');
+    return browserSessionReadySchema.parse(await this.request<unknown>('/api/browser-session/connect', { method: 'POST', body: '{}', signal }, ownerToken));
+  }
+  /** Revokes this browser session only; it does not cancel tasks. */
+  async logoutBrowserSession(signal?: AbortSignal): Promise<Extract<BrowserSessionRead, { state: 'unauthenticated' }>> {
+    if (!this.csrfToken) throw new Error('Logging out a browser session requires cookie authentication mode.');
+    const receipt = browserSessionReadSchema.parse(await this.request<unknown>('/api/browser-session/logout', { method: 'POST', body: '{}', signal }));
+    if (receipt.state !== 'unauthenticated') throw new Error('Unconfirmed browser session logout.');
+    return receipt;
   }
 
   async contextHistory(taskId: string, signal?: AbortSignal): Promise<ContextHistoryResponse> {
@@ -127,6 +158,10 @@ export class FlowClient {
   }
   steeringProposalStatus(input: SteeringProposalLookup, signal?: AbortSignal): Promise<SteeringProposalStatus> {
     return this.request('/api/runner/steering/proposals/status', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  taskUsage(taskId: string, signal?: AbortSignal): Promise<TaskUsageReadout> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/usage-readout`, { signal });
   }
 
   nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {
@@ -244,6 +279,16 @@ export class FlowClient {
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
   }
 
+  authorizeGoalProgression(goalId: string, input: GoalProgressionAuthorization, key: string, signal?: AbortSignal): Promise<GoalProgressionResult> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalProgression(goalId: string, progressionId: string, signal?: AbortSignal): Promise<GoalProgressionSnapshot> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions/${encodeURIComponent(progressionId)}`, { signal });
+  }
+  revokeGoalProgression(goalId: string, progressionId: string, input: GoalProgressionRevocation, key: string, signal?: AbortSignal): Promise<GoalProgressionResult> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions/${encodeURIComponent(progressionId)}/revoke`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
   createGoalGraphProposal(goalId: string, input: GoalGraphProposalInput, key: string, signal?: AbortSignal): Promise<GoalGraphProposalCreated> {
     return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
@@ -251,6 +296,9 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals${query.size ? `?${query}` : ''}`, { signal });
+  }
+  confirmGoalPlan(proposalId: string, input: GoalPlanConfirmation, key: string, signal?: AbortSignal): Promise<GoalPlanConfirmationResult> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(proposalId)}/confirm-inputs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
   goalGraphProposal(id: string, signal?: AbortSignal): Promise<GoalGraphProposal> {
     return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}`, { signal });
@@ -261,6 +309,11 @@ export class FlowClient {
 
   admitGoalGraphRun(goalId: string, input: GoalGraphRunAdmission, key: string, signal?: AbortSignal): Promise<GoalGraphRunAccepted> {
     return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-runs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphRuns(goalId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<GoalGraphRunPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-runs${query.size ? `?${query}` : ''}`, { signal });
   }
   goalGraphRun(id: string, signal?: AbortSignal): Promise<GoalGraphRun> {
     return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}`, { signal });
@@ -330,6 +383,13 @@ export class FlowClient {
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
   }
+  async claudeMessageSettingsProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ClaudeMessageSettingsCatalogPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return claudeMessageSettingsCatalogPageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: CLAUDE_TURN_SETTINGS_PROTOCOL },
+    }));
+  }
   async publishEngineeringProfile(input: { configuration: EngineeringProfileConfiguration }, signal?: AbortSignal): Promise<EngineeringProfilePublished> {
     return engineeringProfilePublishedSchema.parse(await this.request<unknown>('/api/runner/engineering-profile', {
       method: 'POST', body: JSON.stringify(input), signal,
@@ -352,6 +412,27 @@ export class FlowClient {
   }
   publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  /** Returns acceptance only; read the operation separately for its current material state. */
+  installPluginVersion(pluginId: string, versionId: string, input: PluginInstallRequest, key: string, signal?: AbortSignal): Promise<PluginInstallAccepted> {
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/versions/${encodeURIComponent(versionId)}/install`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  pluginMaterialInstall(id: string, signal?: AbortSignal): Promise<PluginMaterialInstall> {
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}`, { signal });
+  }
+  pluginMaterialInstalls(pluginId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginInstallList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/material-installs${query.size ? `?${query}` : ''}`, { signal });
+  }
+  pluginMaterialInstallHistory(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginInstallHistory> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  commandPluginMaterialInstall(id: string, input: PluginInstallCommand, key: string, signal?: AbortSignal): Promise<PluginInstallAccepted> {
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   registerPlugin(input: PluginRegistration, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {
@@ -436,8 +517,11 @@ export class FlowClient {
     return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/upload-receipt?${query}`, { signal });
   }
 
-  enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationQueueEnqueue;
+    const path = `/api/conversations/${encodeURIComponent(id)}/queue`;
+    if (frozen.messageSettings === undefined) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
+    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen);
   }
   conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
     const query = new URLSearchParams();
@@ -501,6 +585,19 @@ export class FlowClient {
   }
 
   claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
+  async runnerIdentity(signal?: AbortSignal): Promise<RunnerIdentity> {
+    return runnerIdentitySchema.parse(await this.request('/api/runner/identity', { method: 'GET', signal }));
+  }
+  async claimOpportunity(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'claim');
+  }
+  async claimOpportunityStatus(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity/status', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'status');
+  }
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
 
@@ -523,7 +620,7 @@ export class FlowClient {
   protocolState(taskId: string, signal?: AbortSignal): Promise<ProtocolState | null> { return this.request(`/api/tasks/${encodeURIComponent(taskId)}/protocol`, { signal }); }
 
   async *watch(id: string, after = 0, signal?: AbortSignal): AsyncGenerator<EventPage> {
-    const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, { headers: { Authorization: `Bearer ${this.token}`, Accept: 'text/event-stream' }, signal });
+    const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, this.transportInit({ headers: { Accept: 'text/event-stream' }, signal }));
     await assertResponse(response);
     if (!response.body) throw new Error('The center returned an empty event stream.');
     const reader = response.body.getReader();
@@ -553,11 +650,22 @@ export class FlowClient {
     catch (error) { if (error instanceof SyntaxError) throw new UnknownConversationAcknowledgementError(); throw error; }
   }
 
-  private async request<T>(path: string, init: RequestInit = {}): Promise<T> {
+  /** HTTP and SSE share authentication; no fallback, token persistence, or retry policy lives here. */
+  private transportInit(init: RequestInit, loginToken?: string): RequestInit {
     const headers = new Headers(init.headers);
-    headers.set('Authorization', `Bearer ${this.token}`);
+    const bearer = loginToken ?? this.token;
+    if (bearer !== undefined) headers.set('Authorization', `Bearer ${bearer}`);
+    else if (!['GET', 'HEAD', 'OPTIONS'].includes((init.method ?? 'GET').toUpperCase())) {
+      const csrf = this.csrfToken?.();
+      if (!csrf || !/^[a-f0-9]{64}$/.test(csrf)) throw new Error('A current browser session CSRF token is required before writing.');
+      headers.set(BROWSER_SESSION_CSRF_HEADER, csrf);
+    }
     if (init.body) headers.set('Content-Type', 'application/json');
-    const response = await fetch(`${this.baseUrl}${path}`, { ...init, headers, signal: init.signal ?? AbortSignal.timeout(15_000) });
+    return { ...init, headers, credentials: this.csrfToken ? 'include' : 'omit' };
+  }
+
+  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
+    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal: init.signal ?? AbortSignal.timeout(15_000) }, loginToken));
     await assertResponse(response);
     return response.json() as Promise<T>;
   }

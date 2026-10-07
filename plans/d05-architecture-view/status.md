@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:53 UTC / 实采main3609 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:11.734788+00:00 / main451bf2ed；本机登录入口、计时与185源实际已部署 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,8 +18,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工程看板已展示151个唯一来源，个人后台版本、工程配置和固定发布后继状态可查。 |
-| 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
+| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；185个唯一来源已加载，缺证时间保持未知。 |
+| 下一可用交付 | 本片段已交付；产品页面与后台继续按各自受管发布流程推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -103,3 +103,111 @@
 2026-10-06 12:44:20 UTC：[151源候选](../../docs/evidence/d05/fixed-release-151-registry.json)中ENG01H实施、SVC06计划均有唯一父任务/完整三件套。SVC05已关闭窗口，原开发树恢复main aeb，实际后台362/v15与Web8d8/v2区分。当前看板仍149源实采；固定架构不变，不为metadata重跑产品。
 
 2026-10-06 12:46:32 UTC 实采151来源：[发布后看板](../../docs/evidence/d05/release-close-151-live.json)。main3609 clean；架构固定f181未改。本次仅保存实际快照，不重复restart或工程测试。
+
+2026-10-06 13:10 UTC：新增ConnectionSession、事件状态优化、ENG01I准备三个真实唯一source，共154；三件套/parent与解析局部核对，未运行全量proof或产品测试。SVC06原source直接owner移交，无重复登记。D06获审固定aeb架构由I02接收，本次不改图或自动追moving main。
+
+2026-10-06T13:13:50.383099+00:00：归档13:08:38.883Z既有154来源实际快照，maincde6646 clean，新连接恢复/事件优化/原生工程准备三项live且issues为空；见[实际回执](../../docs/evidence/d05/connection-event-154-live.json)。原自有看板进程正常换载为session98309，固定架构aeb数据已部署；未刷新用户原tab，个人runtime362/v15和Web8d8/v2不变。归档不重新运行产品/架构检查。
+
+[156来源实际部署回执](../../docs/evidence/d05/dashboard-156-receipt.json)：保留固定aeb架构基线，仅本工程看板更新登记，个人产品服务/用户tab未操作。
+
+2026-10-06 14:06:31 UTC：[158来源登记](../../docs/evidence/d05/cost-wait-registry-validation.json)新增COST01A/S01P06，唯一ID、实际三件套、人读与解析通过。固定aeb架构未改，未运行产品/全量proof，实际部署另记。
+
+2026-10-06 14:10:11 UTC：[158来源真实回执](../../docs/evidence/d05/cost-wait-158-live.json)记录14:09:14.587Z，四源live/issues空，人读完整。仅替换已核自有4320，架构基线/个人服务/用户tab不变。
+
+2026-10-06 14:29 UTC：新增O14唯一source goal-persistent-progression/plans/o14-goal-progression，固定首e0569488/claimf2f8e15av1；159源候选registry校验ID唯一、Plan/status/review存在、parser0/human完整。仅注册/链接检查，未重跑产品/架构；实际4320仍158，随本批已审COST发布一次加载159。[登记](../../docs/evidence/d05/o14-registry-validation.json)。
+
+2026-10-06T14:35:06.228081+00:00：实际4320于14:29:38.922Z返回159来源，O14/COST01A/F01/OPS current且issues=[]。见[o14-159-live](../../docs/evidence/d05/o14-159-live.json)。后续owner进度由原source自动聚合，固定aeb架构未改，个人页面未刷新。
+
+2026-10-06 14:50:27 UTC：本批仅新增RECOVERY01/RELEASE03两真实writer来源，父任务分别MATURE06/MATURE01；DPERF04未take不登记实施。局部registry唯一性、实际plan/status/review存在与状态解析核验，无产品测试/模型/架构改动。实际换载回执随后更新。
+
+2026-10-06T14:56:30.979103+00:00：实际4320于2026-10-06T14:51:18.920Z显示161唯一来源；RECOVERY01/RELEASE03均live、status parser无错、人读完整、父任务关联明确。实现target尚未固定仍unknown，不冒批准；[实际回执](../../docs/evidence/d05/recovery-release03-live.json)。架构固定aeb、个人服务与原tab保持，无产品测试。
+
+2026-10-06T15:15:31.548316+00:00：O15首canonical已存在，唯一source登记至162，parser无错误、人读完整；[登记核验](../../docs/evidence/d05/o15-registry-validation.json)。RECOVERY01/RELEASE03已在161实采可见，DPERF04尚无canonical故未冒记。O15产品仍实施，PG未运行，登记不代表交付；本批不改固定架构/产品/个人入口。
+
+2026-10-06 15:21:14 UTC：实际4320返回162来源，O15/RECOVERY01/RELEASE03全部live、parser0、人读完整、issues=[]。见[实际回执](../../docs/evidence/d05/o15-registry-live.json)。只替换自有看板进程，固定架构与个人服务/页面不变；未运行产品测试。
+
+## 2026-10-06 15:37 注册维护
+
+WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人读字段，registry增至164；只核唯一ID/路径与两份真实status解析，0产品测试/PG/provider。当前4320仍上一批162源，本批部署后另记实际观察；不把注册当交付完成。[登记回执](../../docs/evidence/d05/claude-settings-history-compatibility-registration.json)。固定架构图不改。
+
+15:38:16 UTC单次真实snapshot（15:38:26响应完成）164来源；新两项与RELEASE03均live/issues=[]，独立source路径准确，原产品页面未刷新。[实采](../../docs/evidence/d05/claude-settings-history-compatibility-live.json)。仅更新4320自有dashboard进程，个人61227/61228/runner未动。
+
+2026-10-06 15:56 UTC：TUI01F首canonical d658与fresh9fe77a96 v1真实存在，登记为165来源候选；父TUI-001/Execution Lead关联及六个人读字段完整，parser0。只做registry/路径核验，当前运行实采仍164，安全换载后另记实际值；不改固定架构或个人服务，不跑产品测试。见[登记](../../docs/evidence/d05/tui-cancel-registration.json)。
+
+2026-10-06T16:02:28.501687+00:00：本次main e807登记后仅重载自有4320，单次实际GET为165来源，TUI01F live/current/issues[]；[实际回执](../../docs/evidence/d05/tui-cancel-live-receipt.json)。同期产品个人服务、用户tabs未动，10.45秒是这次聚合观察而非性能SLO。
+
+2026-10-06T16:20:03.749698+00:00：WPF-DPERF04真实独立canonical已按D01子片唯一登记，166 sources；三件套/ID唯一/状态解析与人读字段检查通过，源码仍原owner实施/未审。见[dperf04-registration.json](../../docs/evidence/d05/dperf04-registration.json)。当前实际4320仍165，候选发布后一次换载另记；本次不改架构固定snapshot/个人页面或重跑产品。
+
+2026-10-06 16:21 UTC：main65659028登记已在唯一自有4320实际加载，单次GET观察166来源，DPERF04 live/current/issues=[]且关联D01；[实际回执](../../docs/evidence/d05/dperf04-live-receipt.json)。6352ms是本次聚合观察，不作SLO结论。个人端口/用户页不变；本记录复用已采事实，不再次重启或采样。
+
+2026-10-06T16:40:10.844935+00:00：MATURE02C01真实领取8578v1/首canonical87fc已登记，167来源候选；父WPF-MATURE-02与ExecutionLead关联，只核三件套/唯一ID/状态解析。产品由native_center_owner实施，尚未审/未集成；[登记事实](../../docs/evidence/d05/mature02c01-registration.json)。当前4320实际仍166，随本正常批次换载一次；不改架构图或用户产品页。
+
+2026-10-06T16:48:32.870117+00:00：main56421f47已登记MATURE02C01；仅自有4320受控换代码后单次HTTP200实际167来源，新source实时读取合法owner/status，implementation/未审未完成均保留。[实际回执](../../docs/evidence/d05/mature02c01-live-receipt.json)。个人后台362/Web8d8及用户tabs未操作，架构固定基线不变。
+
+2026-10-06 17:25 UTC：CHAT06P03真实canonical2a333、正式e8c06a73v1与三件套已齐，新增唯一source至168；关联FLOW-001/Mika、parser0、人读完整。产品仍implementation/NOT_RUN，不借登记推断优化通过；[登记事实](../../docs/evidence/d05/chat06p03-registration.json)。固定架构/个人入口不变，仅来源核验，运行换载另记。
+
+2026-10-06 17:27 UTC：固定mainc843登记仅换载自有4320，单次HTTP200实际168来源，CHAT06P03 live/current/issues=[]、人读完整；[实采](../../docs/evidence/d05/chat06p03-live-receipt.json)。本次10,786ms聚合只作观察，不称SLO；个人服务/原tabs/固定架构均不变，0产品测试。
+
+2026-10-06 17:52 UTC：WPF-PROFILEC02独立树/合法4scope/唯一status已存在，登记第169来源，父MATURE02。只核registry与该source parser，不重跑工程或架构；实际服务尚未重载，不提前称169已可见。
+
+2026-10-06 17:54 UTC：仅重启owned4320正常TERM/exit后加载main8d84源，实际snapshot169、PROFILEC02 live/current/issues[]/human完整；6.461s为一次观察非SLO，未改个人服务或用户tabs，原架构图保留。见profilec02-live-receipt.json。
+
+2026-10-06 18:12 UTC：从9edd57938bff66f1f23fdc688c96838136d2addf唯一首canonical登记WPF-MESSAGESETTINGS01，base8d84、w01_owner/八literal claim a5b0c231 v1已提交；实现/NOT_RUN保持，source-only新树由Web独占准备，本Lead不改产品。registry候选170，当前live仍169，随本次main受控更新；架构固定基线不变。
+
+2026-10-06 18:15 UTC：main8bd02cc3已发布，唯一owned4320受控换载，单次真实snapshot170；MESSAGESETTINGS01 live/current/issues[]/人读完整，仍implementation，作者在途dirty如实显示。[实采](../../docs/evidence/d05/message-settings-live-receipt.json)。个人端口、tabs、固定架构未操作；0产品测试/模型。
+
+2026-10-06 18:19 UTC：O16首canonical59249/三literal f72ba7c9 v1已提交，唯一source登记至171候选；仅真实连续目标验收准备，0query/PG未运行，非自然语言全目标完成。仅registry/source parser核验，固定架构不变。
+
+2026-10-06 18:19:44 UTC：mainf8be来源已在唯一owned4320换载；单次snapshot171，O16 live/current/issues[]/人读完整，NOT_RUN保持。[实采](../../docs/evidence/d05/o16-live-receipt.json)。仅自身工程看板换载，个人端口/用户tab及固定架构不动。
+
+2026-10-06 18:43 UTC：新增 SVC05R01 唯一source，172来源候选。只核首canonical、六literal领取、三件套和解析；状态仍由原owner维护，原当前阻塞字段含解释导致unknown已交owner修正。见[登记回执](../../docs/evidence/d05/retained-web-registration.json)。不改架构图或个人服务，不跑产品测试。
+
+实际换载回执：2026-10-06T18:43:03.221Z，main888c clean，172来源/SVC05R01 live/current。原阻塞字段格式unknown已留实采且交原owner修正，不改渲染器猜测。见[实采](../../docs/evidence/d05/retained-web-live-receipt.json)。
+
+2026-10-06 18:56 UTC：WPF-DPERF05唯一status/claim已核，新增第173个registry来源；owner仍implementation/NOT_RUN，不把登记当修复通过。只registry/parser/链接检查，无产品测试/个人服务操作；部署后另记实际聚合。
+
+本条修正上一提交手填19:01为实际18:56管理观察，精确登记时间以timestamp-source-registration.json原始at为准，无运行重采。
+
+实际部署回执19:02:38.991Z：173源，DPERF05 human完整/errors[]、固定范围unchanged；源审查修复/NOT_RUN保留。只替换本组4320已知旧进程，个人服务/用户tabs未动。见[timestamp-source-live-receipt.json](../../docs/evidence/d05/timestamp-source-live-receipt.json)。
+
+2026-10-06 20:12 UTC：新增SVC07唯一source server-transaction-disconnect/plans/svc07-transaction-recovery，固定首源码e28c4ed0，claim3bbb8293 v1由Mika/db_transaction_owner持有。领域定向验证已由owner完成，独审与main接收尚未完成；登记不宣称功能上线。S01P07/REQ15两树仅source provision，尚无三件套canonical，不冒登记实施。架构固定图未变，不重跑图/UI。
+
+## 2026-10-06 21:29 来源登记
+
+新增 OPS14、MATURE02C02、REQ15，178个唯一来源及三件套/证据目录存在已核；[必要解析检查](../../docs/evidence/d05/ops14-codex-req15-registry-validation.json)。REQ15解析正常，另外两源metadata格式缺项已交原owner修正，不替其推断完成。仅登记维护，固定架构快照不改；个人服务窗口已关闭，main接收与4320加载回执随后记录。
+
+2026-10-06T22:09:27.889120+00:00: 新增唯一 WPF-MESSAGESETTINGS02 至179 sources，固定首canonical b8034817、worktree/source三件套存在，registry合法/唯一；[必要解析记录](../../docs/evidence/d05/message-settings-quick-registry-validation.json)保留初次owner/TODO列名两项error，已交原owner仅metadata修正。human完整；来源登记不等产品完成，不修改architecture固定图或个人服务。
+
+2026-10-06T22:12:19.059Z: 自有4320进程身份/cwd确认后正常换载I02 fc3246，实际179源；新quick设置source live/current，owner已修，TODO仍缺第4列owner已交原owner仅metadata补齐；[实际回执](../../docs/evidence/d05/message-settings-quick-registry-live.json)。其后status实时聚合无需再次重启；个人页面未操作。
+
+2026-10-06T22:21:50.207329+00:00：新增CHAT05P01唯一来源（首canonical7d0751b2，12scope原子领取已核），合计180来源。仅登记真实实现中的状态，不把合同/首提交当完整长正文或UI已交付；架构固定基线不变。
+
+2026-10-06T22:24:27.267133+00:00：4320实际换载main60ca1942并返回180来源，CHAT05P01已显示实施摘要，快速设置已显示独审阶段；新原文片owner字段/TODO格式缺口交唯一owner修正，不改parser。旧自有dashboard进程正常exit143，个人61227/61228与用户标签不动。见[实际快照](../../docs/evidence/d05/chat05p01-registry-live.json)。
+
+2026-10-06 22:58 UTC：OPS-CI01独立source6ec54b2f/claim1de78d9e v1已登记，181唯一源；registry/parser errors[]/human完整，首调用缺taskId的调用方错误已修正且记录。仅远程文档候选准备，未启用workflow/远程运行。下一正常main批与4320载入后另记live事实；本项不改架构固定快照。
+
+2026-10-06 23:03:59.082 UTC：已核唯一自有4320进程/cwd后更新来源，原进程TERM退出143，新会话35310；实际快照181 sources，OPS-CI01/OPS-001/CHAT05P01/TUI01F全部current、issues[]、human complete。见[有界实采记录](../../docs/evidence/d05/ops-ci01-live.json)，仅保存选中投影及完整响应hash/bytes，未保存2.49MB全raw。远程候选仍NOT_ENABLED/NOT_RUN；未改用户tab或61227/61228。
+
+2026-10-06 23:14 UTC：既有X01唯一source迁到plugin-enable-binding，first canonical065938bf/claim6dd v8已核；旧plugin-management-plan仅历史，不双登记。181数量不变，固定status解析errors[]/human complete；源码实施开始，PG及真实runner链未验。[迁移记录](../../docs/evidence/d05/x01-binding-source-move.json)。
+
+2026-10-06 23:14:39.075 UTC 实采：181源不变；X01已从plugin-enable-binding唯一status读取，implementation/current/issues[]/human complete；OPS-CI01 delivered且REMOTE_NOT_ENABLED与用户选择明确可见。见[有界快照](../../docs/evidence/d05/x01-binding-live.json)。只重载自有4320来源配置，无用户页面或个人服务操作，未运行产品检查。
+
+2026-10-06 23:23 UTC：TUI01G 首canonical fabc7af2/11scope原子领取已核，原TUI01F v5保留7scope、6共享源正式移交；登记单一tui-message-settings来源，候选总182。仅registry/source必要解析，不改架构固定快照、parser或运行产品测试；实际部署回执后补。[登记](../../docs/evidence/d05/tui01g-source-registration.json)。
+
+2026-10-06 23:24:44 UTC：实际4320新进程聚合182来源，TUI01G/TUI-001/OPS-CI01均current、issues=[]、human完整；[有界实际回执](../../docs/evidence/d05/tui01g-live.json)。初次只读回执脚本访问错误字段human退出1，随后按status.human核对通过，未改parser/产品。个人服务与标签未变，无产品测试。
+
+2026-10-07T03:01:58.439Z：仅新增WPF-DASHBOARD-ACCESS01唯一来源dashboard-local-access/plans/wpf-dashboard-local-access，固定首canonical a6fb3ef、fresh claim57735 v1真实实施。未复制owner状态或读凭据；[登记回执](../../docs/evidence/d05/local-access-registry-intake.json)。index/README已交Web，D05当前仅registry/自身记录写权。
+
+2026-10-07T03:04:03.308Z：实际4320 snapshot为183源，ACCESS来源live/current且路径正确；[实际读取](../../docs/evidence/d05/local-access-loaded.json)。只重载自有工程看板从73717adb读取registry，不改个人服务/用户tab，也未读取或暴露token。登录功能与时间UI尚在owner实施，不能由登记可見冒已发布。
+
+2026-10-07T03:10:35.358722+00:00：登记SVC08唯一来源，184项；仅registry/source事实，真实检查与修复以原owner为准。见[登记](../../docs/evidence/d05/svc08-registry-intake.json)。本次没有产品检查/个人服务操作，actual载入待下个看板发布安全点。
+
+2026-10-07T03:25:48.805837+00:00：TIMING01 source156b/claim9a677v1按唯一请求登记185；保留其browser未验。SVC08来源184已main，实际4320当前载入183，新增两源随ACCESS部署加载；未重启/新增产品检查。证据[登记](../../docs/evidence/d05/task-timing-registry-intake.json)。
+
+## 2026-10-07T03:49:47.232619+00:00 计时与185来源实际加载
+
+[受管重载与真实IAB核对](../../docs/evidence/d05/task-timing-185-live.json)：52fe6669已审计时，旧69115确认身份后正常结束，新43188仅持4320；已实际见任务开工UTC、完成声明、含等待壁钟与详情来源。原用户tabs、个人61227/61228未改。TIMING01父链接/组合review范围两项metadata由Web owner收口，不改renderer或重跑原检查。
+
+2026-10-07T04:09:11.734788+00:00：已审ACCESS源随main451bf2受控部署4320（启动04:04:16.630273Z，PID61730）；实际新IAB页见连接说明、按需凭据窗口及185源/时间字段。私有HTTP响应只在本机内存比对原token成功，no-store；未打印或保存token、未改剪贴板或登录产品。原中心/runner/Web进程、config/state/release摘要保持，用户原tab未刷新。见[实际部署回执](../../docs/evidence/d05/local-access-185-live.json)。不重复35项或fixture浏览器全集。
+
+Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制提示成功→关闭清空。未输出token/读取剪贴板/登录产品/发送消息；与Lead的实际部署及本机内存比对分别记载，同一回执不含凭据。

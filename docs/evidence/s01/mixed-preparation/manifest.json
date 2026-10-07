@@ -1,0 +1,304 @@
+{
+  "implementationTarget": "634926238f749fb1547a5973b521bc6dc5498574",
+  "integrationHead": "7511f5592daa6a86076fabb53d7a6fd6e8226d4b",
+  "productionBase": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "branch": "codex/runner-capacity-probe",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+  "scope": [
+    "experiments/runner-capacity/mixed",
+    "docs/evidence/s01/mixed-preparation",
+    "plans/s01-runner-capacity"
+  ],
+  "source": [
+    {
+      "path": "experiments/runner-capacity/mixed/README.md",
+      "bytes": 4953,
+      "sha256": "d61b4826b630b897146724b88f4a594a145e5c3cae2444df69ec2a6b7f4408c9"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1319,
+      "sha256": "cf7d2c7be659d81b4f9759c5755266ef1a9128a29d9f1c66fa6f0cbb17cae0a9"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 9575,
+      "sha256": "23687330c36b26ed1c1aeb8733ddd18d6ddf92d8c499dc1bd0e6885d2dd11494"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.test.ts",
+      "bytes": 1405,
+      "sha256": "ff67bea350f4232d0df3e95d165e72e930300990f29625dc9ff69ffb61cd8ff0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 1855,
+      "sha256": "b7ad13620a6ddd87770e9834dea8da5ccf973e93c79275a28e6eb86fe8ce3926"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.test.ts",
+      "bytes": 1281,
+      "sha256": "ca202a4e14121cb3a3967bc61d286a5b3395e0c24fd7169a021181bcd861524e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.ts",
+      "bytes": 1098,
+      "sha256": "3431dd41074b0ae2613bfff00c38da3c3e78fdcb2b5d5a367751f9f2ca47d76a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 25273,
+      "sha256": "1e53d410cd5acc0d245a5da1ba5a7e67e46a4b8f522b0e07bdf2d5c12d4c194a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/main.ts",
+      "bytes": 369,
+      "sha256": "255ac6fb4a825ad2fbf3c56479e9235e5afff4d813e64ff59ea57ed6eb86083f"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 4031,
+      "sha256": "dd24a6404eb68da7afd519bfe48daa068e9374c47aa915023b82cf0f00db4bb5"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5235,
+      "sha256": "d9a8abd809d7cccad587bb0500c66da27e84343fd366846e6f13b8924d727a71"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 2666,
+      "sha256": "1c5188c5b51ccc0d08689f8eb4a0f7333911c013a88280e0f67372bcb9e04630"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.test.ts",
+      "bytes": 2061,
+      "sha256": "45974063cf5feb9be4ff8e8feda611d9455bea0f92008f0ae4fb7961029494f2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 4110,
+      "sha256": "76c7273f7832e17ebc7ea177080694a2e2e88954ee5b2ec051e25a9e403df292"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.test.ts",
+      "bytes": 1789,
+      "sha256": "015221f67762c06cf484aef9bce39bed2c4a1ec285781be4278be7fe2c689122"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.ts",
+      "bytes": 1830,
+      "sha256": "6b88d05a975bf91bdec9eedb42b2a4f0c47b7c2149831a9bbb0a11c118fade2b"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01/mixed-preparation/accept.json",
+      "bytes": 607,
+      "sha256": "df6f66d1bc9369b19b7e377329699f15df9e5e1517193a5c00ec2334f499f059"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/integration-release.json",
+      "bytes": 554,
+      "sha256": "6cb04bf2b33b5266089e04f2f82d4323a86e46fcf04674c84e9df19756f4e460"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/integration-take.json",
+      "bytes": 541,
+      "sha256": "57b65d7f2c9e32666503b56226addd59fba930ae2d64e03dbfb8cdbf4c97c694"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/legacy-freeze.json",
+      "bytes": 13876,
+      "sha256": "d2aacf252dca3eaf53cc1918949f44610efabc80e19f22dc3a5068d840c348a0"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/quality.md",
+      "bytes": 2751,
+      "sha256": "ee945b88530c725a30ec567dbf6fc798ce2b82e5f71a94e391bda1d54c059252"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-cleanup.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-first.txt",
+      "bytes": 628,
+      "sha256": "cdc9612cb4cc8316c45bb1d0a6964530c7c8924ef3c480616cdbabbd18df9051"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-fixed.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-review-ready.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-second.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-target.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/typecheck-third.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/unit-final.txt",
+      "bytes": 1747,
+      "sha256": "9e8274b69a2544533b6dd979453ca0e46ee4606d0469c1df0f26ac55216a60d2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/unit-first.txt",
+      "bytes": 1443,
+      "sha256": "84f91b6b3c49144022a8c8d593c33d0aba686dd5abb6128ae9e5e01e6cc49b8d"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-preparation/unit-review-ready.txt",
+      "bytes": 2346,
+      "sha256": "8a4fdbd61869b1593e337190d1b9bcec508f8288c23666d2422797dbab10cfd0"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12863,
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10369,
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8276,
+      "sha256": "a54632c3c869f5f7c8d859d1dc3718c518883d9ebf56b429ae10718c47701fdf"
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14314,
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6544,
+      "sha256": "cb9251b9e3ffeb6d6204d200b01b8046e50dad483993f4ea6df7baf6baeae59f"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "bytes": 3570,
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "bytes": 621,
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "bytes": 6610,
+      "sha256": "14b14ddb3f64eb551f3e0f7cfa1009c10d066e66bc0310fae40a82ae18c02042"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 265530,
+      "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c"
+    }
+  ],
+  "checks": [
+    {
+      "command": "node24 node_modules/vitest/vitest.mjs run --config experiments/runner-capacity/mixed/vitest.config.ts --reporter=verbose",
+      "log": "docs/evidence/s01/mixed-preparation/unit-review-ready.txt",
+      "files": 5,
+      "selected": 14,
+      "passed": 14,
+      "exitCode": 0,
+      "kind": "pure fake Pool/socket/clock and in-memory proof checks"
+    },
+    {
+      "command": "node24 node_modules/typescript/bin/tsc --noEmit -p experiments/runner-capacity/mixed/tsconfig.json",
+      "log": "docs/evidence/s01/mixed-preparation/typecheck-target.txt",
+      "exitCode": 0,
+      "stdoutBytes": 0
+    }
+  ],
+  "history": "8,10,14 passing rounds overlap; distinct final count14. First typecheck errors preserved; first exit code not separately retained. Final source bytes equal target.",
+  "notRun": [
+    "real PostgreSQL",
+    "HTTP workload",
+    "runner workload",
+    "provider",
+    "capacity window"
+  ],
+  "runtimeCalls": {
+    "newTasks": 0,
+    "newAttempts": 0,
+    "provider": 0
+  },
+  "verdict": "PENDING_INDEPENDENT_REVIEW"
+}

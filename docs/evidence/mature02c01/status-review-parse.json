@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T16:56:26.535Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "客户端和命令行逐消息设置已通过独立审查，错误或缺失回执会保留原请求身份。",
+    "next": "与中心合同按固定版本组合后接入主线，供各客户端消费同一接口。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+    "scopes": [
+      "apps/cli/README.md",
+      "apps/cli/src/cli.test.ts",
+      "apps/cli/src/index.ts",
+      "packages/client/src/conversation-acknowledgement.test.ts",
+      "packages/client/src/conversation-acknowledgement.ts",
+      "packages/client/src/conversation-queue.test.ts",
+      "packages/client/src/execution-profiles.test.ts",
+      "packages/client/src/index.ts",
+      "packages/contracts/src/index.ts"
+    ],
+    "errors": []
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED；Reviewer：assignment_review / gpt-6-astra，独立于作者 native_center_owner",
+    "target": "563b1ea151d8d26a2100238d8faf26b697f38d71"
+  }
+}

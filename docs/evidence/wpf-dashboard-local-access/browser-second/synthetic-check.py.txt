@@ -1,0 +1,41 @@
+import pathlib,tempfile,subprocess,sys,json,os,time,hashlib,shutil
+base=pathlib.Path(__file__).parent;started=time.monotonic();results=[]
+child=r"""import signal,time,pathlib,json,sys
+raw=pathlib.Path(sys.argv[1]);done=False
+def finish(sig=None,frame=None):
+ print('TAIL_STDOUT',flush=True);print('TAIL_STDERR',file=sys.stderr,flush=True)
+ (raw/'worker-result.json').write_text(json.dumps({'state':'PASSED','interrupts':[],'cleanupErrors':[]}))
+ raise SystemExit(0)
+signal.signal(signal.SIGTERM,finish)
+print('READY',flush=True);print('READY_ERR',file=sys.stderr,flush=True)
+time.sleep(.25);finish()
+"""
+for mode in ['enoent','permission']:
+ case=base/('synthetic-'+mode);case.mkdir();(case/'scratch').mkdir();(case/'raw').mkdir();shutil.copyfile(base/'run.py',case/'run.py')
+ harness=r"""import pathlib,subprocess,os,runpy,sys,types,errno
+case=pathlib.Path(sys.argv[1]);mode=sys.argv[2];child=sys.argv[3]
+original_popen=subprocess.Popen;original_walk=os.walk;fired=False
+# Replace only the would-be Node/Chrome command with a bounded pure Python stdout/stderr producer.
+def popen(args,**kwargs):return original_popen([sys.executable,'-c',child,str(case/'raw')],**kwargs)
+def walk(directory,*args,**kwargs):
+ global fired
+ if not fired:
+  fired=True;code=errno.ENOENT if mode=='enoent' else errno.EACCES
+  kwargs['onerror'](OSError(code,'synthetic scanner failure',str(directory)))
+ yield from original_walk(directory,*args,**kwargs)
+subprocess.Popen=popen;os.walk=walk
+os.statvfs=lambda _:types.SimpleNamespace(f_bavail=2**35,f_frsize=1)
+runpy.run_path(str(case/'run.py'),run_name='__main__')
+"""
+ result=subprocess.run([sys.executable,'-c',harness,str(case),mode,child],capture_output=True,text=True,timeout=5)
+ (case/'terminal.stdout').write_text(result.stdout);(case/'terminal.stderr').write_text(result.stderr)
+ report=json.load(open(case/'raw/result.json'))
+ assert result.returncode==(0 if mode=='enoent' else 1),(mode,result.returncode,result.stderr)
+ assert report['state']==('PASSED' if mode=='enoent' else 'FAILED'),report
+ assert report['stdoutEOF'] and report['stderrEOF'] and report['ownedGroupAbsent'] and report['scratchRemoved'],report
+ assert 'TAIL_STDOUT' in (case/'raw/parent-stdout.log').read_text()
+ assert 'TAIL_STDERR' in (case/'raw/parent-stderr.log').read_text()
+ if mode=='permission':assert any('PermissionError' in item for item in report['errors']),report
+ results.append({'case':mode,'testPassed':True,'expectedParentState':report['state'],'actualParentExit':result.returncode,'bothEOF':True,'groupAbsent':True,'scratchRemoved':True})
+summary={'state':'PASSED','syntheticOnly':True,'cases':results,'elapsedMs':(time.monotonic()-started)*1000,'runnerSha256':hashlib.sha256((base/'run.py').read_bytes()).hexdigest(),'limitations':'Actual parent code with mocked filesystem failure/statvfs and substituted bounded Python child. No Chrome/Node product/import/HTTP/PG/listener. Worker Chrome log finalization source-only, not dynamically tested.'}
+(base/'synthetic-result.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))

@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey
+
+ ❯ packages/interaction/src/goal/entry.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts [ packages/interaction/src/goal/entry.test.ts ]
+Error: Cannot find module './entry.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/packages/interaction/src/goal/entry.test.ts'
+ ❯ packages/interaction/src/goal/entry.test.ts:3:1
+      1| import { expect, it } from 'vitest';
+      2| import { FlowApiError } from '@flow/client';
+      3| import { createGoalEntry, type GoalEntryStore } from './entry.js';
+       | ^
+      4| import type { GoalCreation, CreatedGoal } from '../../../contracts/src…
+      5| const input: GoalCreation = { projectId: 'project', originalGoal: '请写一…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  06:45:06
+   Duration  369ms (transform 158ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

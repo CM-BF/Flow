@@ -1,0 +1,779 @@
+{
+  "schema": "flow.sparse-preflight.v1",
+  "observedAt": "2026-10-06T14:21:16.708989+00:00",
+  "mode": "read-only proposal; only Execution Lead may mutate Flow Git",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls",
+  "branch": "codex/tui-queue-controls",
+  "fixedHead": "e5c47893b5973571ac02d55bd7b510952d59c06f",
+  "upstream": "e5c47893b5973571ac02d55bd7b510952d59c06f",
+  "remoteRefObservation": "e5c47893b5973571ac02d55bd7b510952d59c06f\trefs/heads/codex/tui-queue-controls",
+  "currentMainSnapshot": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+  "statusPorcelain": "",
+  "delivery": {
+    "task": "TUI01E",
+    "authorityStatus": "plans/tui01e-queue-controls/status.md",
+    "stage": "delivered",
+    "productTarget": "22f0e2c2b702112aa1a5d1b36874b56165cd267e",
+    "integratedAt": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+    "stoppedWriting": true
+  },
+  "ledger": {
+    "observedAt": "2026-10-06T14:19:30.131Z",
+    "source": "/tmp/flow-tui-sparse-ledger-fresh.json",
+    "ownClaims": [
+      {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/tui/README.md",
+          "apps/tui/src/main.tsx",
+          "apps/tui/src/queue-controls",
+          "apps/tui/src/screen.tsx",
+          "apps/tui/test-fixtures/queue_driver.py",
+          "docs/evidence/tui01e",
+          "packages/interaction/src/acknowledgement.ts",
+          "packages/interaction/src/commands.ts",
+          "packages/interaction/src/controller.ts",
+          "packages/interaction/src/queue-control",
+          "packages/interaction/src/types.ts",
+          "plans/tui01e-queue-controls"
+        ],
+        "state": "released",
+        "branch": "codex/tui-queue-controls",
+        "origin": "new",
+        "taskId": "TUI01E",
+        "worker": "assignment_review",
+        "claimId": "625e77c6-303a-40f2-a665-706b6df986b9",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls",
+        "createdAt": "2026-10-06T13:32:04.158Z",
+        "updatedAt": "2026-10-06T14:11:35.925Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ],
+    "activeOwnClaims": []
+  },
+  "consumers": {
+    "processSnapshot": {
+      "lsofExit": 0,
+      "matches": [],
+      "stderr": "",
+      "limits": "Current-user open-file snapshot only; no full command arguments or environment read. Dormant absolute-path consumers may not hold an open file."
+    },
+    "initialSnapshot": "/tmp/flow-tui-sparse-processes.json (one concurrent Python inspector cwd; fresh snapshot has none)",
+    "knownDependencyDonor": [
+      {
+        "consumer": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout",
+        "records": [
+          "docs/evidence/cost01a/dependencies.json",
+          "docs/evidence/cost01a/source-facts.json"
+        ],
+        "dependency": "candidate node_modules third-party symlink donor; all dependencies must remain untouched"
+      }
+    ]
+  },
+  "constraints": [
+    "No Flow sparse/config/index/worktree/dependency mutation performed by this report; no install/build/test/model/provider experiment. Read-only ledger query only.",
+    "An initial git status observation earlier in this preflight used default optional locks; later Git calls use GIT_OPTIONAL_LOCKS=0. No explicit index writes or staged changes were requested. Index-byte preservation was not independently proven in that first observation.",
+    "Sizing is logical bytes, per-file 4KiB rounding, and current stat.st_blocks. None predicts physical APFS space reclaimed due to clones/compression/snapshots/metadata. Actual filesystem free-space delta must be measured by Lead.",
+    "Process snapshot is lsof -n -P -Fpcn only, no arguments/environment/credentials; no currently open paths does not prove no future consumer.",
+    "Fresh recheck HEAD/status/ledger/consumer closure immediately before Lead mutation. No O14 take, checkout, install or PG tests performed."
+  ],
+  "checks": {
+    "clean": true,
+    "headMatchesUpstream": true,
+    "remoteHeadMatches": true,
+    "noActiveOwnClaim": true,
+    "allCandidatesMatchFixed": true,
+    "noSpecialEvidenceFiles": true,
+    "processMatches": 0,
+    "allCandidatesSameMainBlob": true
+  },
+  "retention": {
+    "allTrackedNonEvidenceFiles": true,
+    "allPlans": true,
+    "allCodeTestsScriptsExperimentsFixturesRules": true,
+    "allIgnoredAndUntrackedDependencies": true,
+    "ownEvidenceDirectory": "docs/evidence/tui01e",
+    "fullEvidenceDirectories": [
+      "b01",
+      "b02",
+      "b03",
+      "chat04",
+      "chat06p01",
+      "chatui01",
+      "ctx01",
+      "d02",
+      "d03",
+      "d04",
+      "d05-first-fit",
+      "f01",
+      "i01",
+      "k01",
+      "k02",
+      "k03",
+      "lab01",
+      "lab02",
+      "o08",
+      "o09",
+      "o10",
+      "r02",
+      "s01",
+      "svc05",
+      "tui01e",
+      "w01",
+      "web-platform",
+      "wpf-activity-i01",
+      "wpf-activity-readability",
+      "wpf-activity01",
+      "wpf-attach-i01",
+      "wpf-attach-i02",
+      "wpf-attach01",
+      "wpf-chat-readability",
+      "wpf-chat01",
+      "wpf-chat06-stream-integration",
+      "wpf-context-i01",
+      "wpf-context01",
+      "wpf-dashboard-summary",
+      "wpf-dperf03",
+      "wpf-i01",
+      "wpf-m02",
+      "wpf-p01",
+      "wpf-perf02",
+      "wpf-profile-integration",
+      "wpf-profileux",
+      "wpf-queue01",
+      "wpf-release01",
+      "wpf-renderer-i01",
+      "wpf-renderer01",
+      "wpf-steer-i01",
+      "wpf-steering-control",
+      "wpf-visual01",
+      "wpf-workspace-cache",
+      "wpf-workspace-lifecycle-baseline",
+      "wpf-x03",
+      "x03"
+    ],
+    "keepDirectoryCount": 57,
+    "keptEvidenceFiles": 3085,
+    "keptEvidenceLogicalBytes": 98847080,
+    "conservativeRule": "Keep whole directory for every literal docs/evidence directory in any non-Markdown code/config, including write targets/comments/provenance; own evidence always retained. Only other tracked, unmodified regular historical evidence copies are candidates. Additionally hold every file absent or different at currentMainSnapshot, per final Lead instruction.",
+    "specificFixtureAndGuardClosure": [
+      {
+        "directory": "d04",
+        "consumer": "apps/execution-dashboard/test/migrate-assignments.mjs",
+        "reason": "migration-inputs.json actual fixture read"
+      },
+      {
+        "directory": "b03",
+        "consumer": "experiments/bounded-preview/run.ts",
+        "reason": "baseline-reference.json and after-cleanup reference reads"
+      },
+      {
+        "directory": "s01",
+        "consumer": "experiments/runner-capacity/evidence.test.ts; protocol-gate.ts; scenario.ts",
+        "reason": "result fixtures and persistent budget/guard records"
+      },
+      {
+        "directory": "o08",
+        "consumer": "experiments/native-graph-acceptance/guard.mjs",
+        "reason": "persistent one-shot attempt markers must not disappear"
+      },
+      {
+        "directory": "o10",
+        "consumer": "experiments/native-child-acceptance/guard.mjs",
+        "reason": "persistent one-shot attempt markers must not disappear"
+      },
+      {
+        "directory": "chat06p01",
+        "consumer": "experiments/assistant-stream-cost/check.mjs",
+        "reason": "authorization/log input records"
+      },
+      {
+        "directory": "wpf-dperf03",
+        "consumer": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+        "reason": "experiment-budget.json persistent bounded opt-in guard"
+      }
+    ],
+    "fixturePathsOutsideEvidence": [
+      "apps/execution-dashboard/test/fixture.mjs",
+      "apps/runner/src/codex/fixtures/peer.mjs",
+      "apps/runner/src/fixture.ts",
+      "apps/server/src/attachments/fixture.ts",
+      "apps/server/src/conversation-context/fixture.ts",
+      "apps/server/src/goal-context/fixture.ts",
+      "apps/server/src/goal-native-executions/fixture.ts",
+      "apps/server/src/knowledge/fixture.ts",
+      "apps/tui/test-fixtures/goal_driver.py",
+      "apps/tui/test-fixtures/queue_driver.py",
+      "apps/tui/test-fixtures/stream-center.ts",
+      "apps/tui/test-fixtures/stream_driver.py",
+      "apps/tui/test-fixtures/terminal_driver.py",
+      "experiments/bounded-preview/fixture.ts",
+      "experiments/bounded-reads/fixture.ts",
+      "experiments/bounded-reads/task-projections/fixture.ts",
+      "experiments/personal-current-release/fixture.mjs",
+      "experiments/stream-ui-acceptance/fixture.mjs",
+      "packages/contracts/src/fixtures.ts",
+      "packages/protocols/test/fixtures/mcp-2026.json"
+    ],
+    "codeAndConfigTextFilesScanned": 954,
+    "dynamicReferenceLimits": [
+      "Execution-dashboard registry builds evidenceDir dynamically per registered task authority worktree; only TUI01E is this candidate authority. All plans retained. Lead must ensure live registry does not treat this tree as fallback authority for another historical evidence directory.",
+      "Environment/user-supplied arbitrary paths and dormant processes cannot be exhaustively inferred statically; no claim of complete runtime reachability. Explicit literal roots and actual fixture reads are conservatively retained.",
+      "Markdown/history references to dematerialized copies become Git-restorable references; their existence in retained Markdown does not make each historical directory an executable fixture."
+    ],
+    "heldHistoryFiles": 1
+  },
+  "dematerializationProposal": {
+    "trackedRegularFiles": 2514,
+    "logicalBytes": 36455468,
+    "roundedPerFile4KiBBytes": 42995712,
+    "currentStatAllocatedBytes": 42995712,
+    "perDirectory": {
+      "c02": {
+        "files": 2,
+        "logicalBytes": 7554,
+        "rounded4KiBBytes": 12288,
+        "currentStatAllocatedBytes": 12288
+      },
+      "chat01": {
+        "files": 8,
+        "logicalBytes": 15870,
+        "rounded4KiBBytes": 36864,
+        "currentStatAllocatedBytes": 36864
+      },
+      "chat02": {
+        "files": 17,
+        "logicalBytes": 62163,
+        "rounded4KiBBytes": 106496,
+        "currentStatAllocatedBytes": 106496
+      },
+      "chat03": {
+        "files": 12,
+        "logicalBytes": 16291,
+        "rounded4KiBBytes": 53248,
+        "currentStatAllocatedBytes": 53248
+      },
+      "chat05": {
+        "files": 25,
+        "logicalBytes": 41810,
+        "rounded4KiBBytes": 122880,
+        "currentStatAllocatedBytes": 122880
+      },
+      "chat06": {
+        "files": 29,
+        "logicalBytes": 44570,
+        "rounded4KiBBytes": 135168,
+        "currentStatAllocatedBytes": 135168
+      },
+      "chat06c02": {
+        "files": 17,
+        "logicalBytes": 45587,
+        "rounded4KiBBytes": 98304,
+        "currentStatAllocatedBytes": 98304
+      },
+      "chat06p02": {
+        "files": 31,
+        "logicalBytes": 182079,
+        "rounded4KiBBytes": 262144,
+        "currentStatAllocatedBytes": 262144
+      },
+      "chat07": {
+        "files": 15,
+        "logicalBytes": 16632,
+        "rounded4KiBBytes": 61440,
+        "currentStatAllocatedBytes": 61440
+      },
+      "chat08": {
+        "files": 24,
+        "logicalBytes": 37439,
+        "rounded4KiBBytes": 114688,
+        "currentStatAllocatedBytes": 114688
+      },
+      "chat09": {
+        "files": 21,
+        "logicalBytes": 25770,
+        "rounded4KiBBytes": 94208,
+        "currentStatAllocatedBytes": 94208
+      },
+      "chat10": {
+        "files": 15,
+        "logicalBytes": 23494,
+        "rounded4KiBBytes": 57344,
+        "currentStatAllocatedBytes": 57344
+      },
+      "cost01": {
+        "files": 2,
+        "logicalBytes": 1368,
+        "rounded4KiBBytes": 8192,
+        "currentStatAllocatedBytes": 8192
+      },
+      "ctx02": {
+        "files": 18,
+        "logicalBytes": 121720,
+        "rounded4KiBBytes": 163840,
+        "currentStatAllocatedBytes": 163840
+      },
+      "d01": {
+        "files": 9,
+        "logicalBytes": 2195018,
+        "rounded4KiBBytes": 2220032,
+        "currentStatAllocatedBytes": 2220032
+      },
+      "d05": {
+        "files": 86,
+        "logicalBytes": 449093,
+        "rounded4KiBBytes": 651264,
+        "currentStatAllocatedBytes": 651264
+      },
+      "d06": {
+        "files": 179,
+        "logicalBytes": 7656059,
+        "rounded4KiBBytes": 8036352,
+        "currentStatAllocatedBytes": 8036352
+      },
+      "d07": {
+        "files": 16,
+        "logicalBytes": 233705,
+        "rounded4KiBBytes": 274432,
+        "currentStatAllocatedBytes": 274432
+      },
+      "d08": {
+        "files": 32,
+        "logicalBytes": 890336,
+        "rounded4KiBBytes": 962560,
+        "currentStatAllocatedBytes": 962560
+      },
+      "e01": {
+        "files": 6,
+        "logicalBytes": 58998,
+        "rounded4KiBBytes": 73728,
+        "currentStatAllocatedBytes": 73728
+      },
+      "eng01": {
+        "files": 7,
+        "logicalBytes": 5126,
+        "rounded4KiBBytes": 28672,
+        "currentStatAllocatedBytes": 28672
+      },
+      "eng01a": {
+        "files": 44,
+        "logicalBytes": 49517,
+        "rounded4KiBBytes": 192512,
+        "currentStatAllocatedBytes": 192512
+      },
+      "eng01b": {
+        "files": 54,
+        "logicalBytes": 125570,
+        "rounded4KiBBytes": 274432,
+        "currentStatAllocatedBytes": 274432
+      },
+      "eng01c": {
+        "files": 23,
+        "logicalBytes": 64249,
+        "rounded4KiBBytes": 135168,
+        "currentStatAllocatedBytes": 135168
+      },
+      "eng01d": {
+        "files": 23,
+        "logicalBytes": 32911,
+        "rounded4KiBBytes": 106496,
+        "currentStatAllocatedBytes": 106496
+      },
+      "eng01e": {
+        "files": 22,
+        "logicalBytes": 57860,
+        "rounded4KiBBytes": 126976,
+        "currentStatAllocatedBytes": 126976
+      },
+      "eng01f": {
+        "files": 14,
+        "logicalBytes": 30791,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "eng01g": {
+        "files": 33,
+        "logicalBytes": 101428,
+        "rounded4KiBBytes": 192512,
+        "currentStatAllocatedBytes": 192512
+      },
+      "eng01h": {
+        "files": 30,
+        "logicalBytes": 61942,
+        "rounded4KiBBytes": 139264,
+        "currentStatAllocatedBytes": 139264
+      },
+      "f00": {
+        "files": 1,
+        "logicalBytes": 241,
+        "rounded4KiBBytes": 4096,
+        "currentStatAllocatedBytes": 4096
+      },
+      "g01": {
+        "files": 15,
+        "logicalBytes": 17501,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "i02": {
+        "files": 249,
+        "logicalBytes": 1685822,
+        "rounded4KiBBytes": 2293760,
+        "currentStatAllocatedBytes": 2293760
+      },
+      "m02": {
+        "files": 1,
+        "logicalBytes": 1981,
+        "rounded4KiBBytes": 4096,
+        "currentStatAllocatedBytes": 4096
+      },
+      "o01": {
+        "files": 14,
+        "logicalBytes": 48642,
+        "rounded4KiBBytes": 81920,
+        "currentStatAllocatedBytes": 81920
+      },
+      "o02": {
+        "files": 15,
+        "logicalBytes": 69057,
+        "rounded4KiBBytes": 114688,
+        "currentStatAllocatedBytes": 114688
+      },
+      "o03": {
+        "files": 14,
+        "logicalBytes": 32291,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "o04": {
+        "files": 28,
+        "logicalBytes": 61229,
+        "rounded4KiBBytes": 143360,
+        "currentStatAllocatedBytes": 143360
+      },
+      "o05": {
+        "files": 10,
+        "logicalBytes": 22065,
+        "rounded4KiBBytes": 49152,
+        "currentStatAllocatedBytes": 49152
+      },
+      "o06": {
+        "files": 17,
+        "logicalBytes": 46216,
+        "rounded4KiBBytes": 94208,
+        "currentStatAllocatedBytes": 94208
+      },
+      "o07": {
+        "files": 39,
+        "logicalBytes": 114518,
+        "rounded4KiBBytes": 217088,
+        "currentStatAllocatedBytes": 217088
+      },
+      "o11": {
+        "files": 35,
+        "logicalBytes": 45601,
+        "rounded4KiBBytes": 151552,
+        "currentStatAllocatedBytes": 151552
+      },
+      "o12": {
+        "files": 46,
+        "logicalBytes": 80877,
+        "rounded4KiBBytes": 212992,
+        "currentStatAllocatedBytes": 212992
+      },
+      "ops-001": {
+        "files": 1,
+        "logicalBytes": 615,
+        "rounded4KiBBytes": 4096,
+        "currentStatAllocatedBytes": 4096
+      },
+      "p01": {
+        "files": 9,
+        "logicalBytes": 22420,
+        "rounded4KiBBytes": 49152,
+        "currentStatAllocatedBytes": 49152
+      },
+      "p02": {
+        "files": 26,
+        "logicalBytes": 68184,
+        "rounded4KiBBytes": 135168,
+        "currentStatAllocatedBytes": 135168
+      },
+      "p03": {
+        "files": 17,
+        "logicalBytes": 35040,
+        "rounded4KiBBytes": 77824,
+        "currentStatAllocatedBytes": 77824
+      },
+      "r03": {
+        "files": 11,
+        "logicalBytes": 26739,
+        "rounded4KiBBytes": 53248,
+        "currentStatAllocatedBytes": 53248
+      },
+      "r04": {
+        "files": 14,
+        "logicalBytes": 29641,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "r05": {
+        "files": 14,
+        "logicalBytes": 35534,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "r05b": {
+        "files": 15,
+        "logicalBytes": 44508,
+        "rounded4KiBBytes": 81920,
+        "currentStatAllocatedBytes": 81920
+      },
+      "r05c": {
+        "files": 37,
+        "logicalBytes": 58011,
+        "rounded4KiBBytes": 163840,
+        "currentStatAllocatedBytes": 163840
+      },
+      "r05d": {
+        "files": 22,
+        "logicalBytes": 30726,
+        "rounded4KiBBytes": 90112,
+        "currentStatAllocatedBytes": 90112
+      },
+      "r06": {
+        "files": 21,
+        "logicalBytes": 36497,
+        "rounded4KiBBytes": 77824,
+        "currentStatAllocatedBytes": 77824
+      },
+      "s01p01": {
+        "files": 105,
+        "logicalBytes": 470410,
+        "rounded4KiBBytes": 729088,
+        "currentStatAllocatedBytes": 729088
+      },
+      "s01p02": {
+        "files": 17,
+        "logicalBytes": 34468,
+        "rounded4KiBBytes": 77824,
+        "currentStatAllocatedBytes": 77824
+      },
+      "s01p03": {
+        "files": 27,
+        "logicalBytes": 49355,
+        "rounded4KiBBytes": 126976,
+        "currentStatAllocatedBytes": 126976
+      },
+      "s01p04": {
+        "files": 55,
+        "logicalBytes": 90655,
+        "rounded4KiBBytes": 229376,
+        "currentStatAllocatedBytes": 229376
+      },
+      "s01p05": {
+        "files": 35,
+        "logicalBytes": 111807,
+        "rounded4KiBBytes": 208896,
+        "currentStatAllocatedBytes": 208896
+      },
+      "svc01": {
+        "files": 13,
+        "logicalBytes": 60002,
+        "rounded4KiBBytes": 98304,
+        "currentStatAllocatedBytes": 98304
+      },
+      "svc02": {
+        "files": 93,
+        "logicalBytes": 540998,
+        "rounded4KiBBytes": 778240,
+        "currentStatAllocatedBytes": 778240
+      },
+      "svc03": {
+        "files": 32,
+        "logicalBytes": 94747,
+        "rounded4KiBBytes": 176128,
+        "currentStatAllocatedBytes": 176128
+      },
+      "svc04": {
+        "files": 50,
+        "logicalBytes": 85658,
+        "rounded4KiBBytes": 212992,
+        "currentStatAllocatedBytes": 212992
+      },
+      "svc06": {
+        "files": 2,
+        "logicalBytes": 1235,
+        "rounded4KiBBytes": 8192,
+        "currentStatAllocatedBytes": 8192
+      },
+      "tui01": {
+        "files": 7,
+        "logicalBytes": 17259,
+        "rounded4KiBBytes": 32768,
+        "currentStatAllocatedBytes": 32768
+      },
+      "tui01a": {
+        "files": 42,
+        "logicalBytes": 111470,
+        "rounded4KiBBytes": 200704,
+        "currentStatAllocatedBytes": 200704
+      },
+      "tui01b": {
+        "files": 17,
+        "logicalBytes": 35080,
+        "rounded4KiBBytes": 73728,
+        "currentStatAllocatedBytes": 73728
+      },
+      "tui01c": {
+        "files": 44,
+        "logicalBytes": 108053,
+        "rounded4KiBBytes": 237568,
+        "currentStatAllocatedBytes": 237568
+      },
+      "tui01d": {
+        "files": 39,
+        "logicalBytes": 74627,
+        "rounded4KiBBytes": 188416,
+        "currentStatAllocatedBytes": 188416
+      },
+      "wpf-ack01": {
+        "files": 15,
+        "logicalBytes": 16785,
+        "rounded4KiBBytes": 65536,
+        "currentStatAllocatedBytes": 65536
+      },
+      "wpf-activity-cursor-compatibility": {
+        "files": 13,
+        "logicalBytes": 37056,
+        "rounded4KiBBytes": 69632,
+        "currentStatAllocatedBytes": 69632
+      },
+      "wpf-chat06-compatibility": {
+        "files": 11,
+        "logicalBytes": 28372,
+        "rounded4KiBBytes": 57344,
+        "currentStatAllocatedBytes": 57344
+      },
+      "wpf-chat06-stream": {
+        "files": 23,
+        "logicalBytes": 36731,
+        "rounded4KiBBytes": 102400,
+        "currentStatAllocatedBytes": 102400
+      },
+      "wpf-context-receipts": {
+        "files": 12,
+        "logicalBytes": 27531,
+        "rounded4KiBBytes": 61440,
+        "currentStatAllocatedBytes": 61440
+      },
+      "wpf-dashboard-proof-batching": {
+        "files": 35,
+        "logicalBytes": 16255394,
+        "rounded4KiBBytes": 16334848,
+        "currentStatAllocatedBytes": 16334848
+      },
+      "wpf-dperf01": {
+        "files": 6,
+        "logicalBytes": 14239,
+        "rounded4KiBBytes": 28672,
+        "currentStatAllocatedBytes": 28672
+      },
+      "wpf-k02-compatibility": {
+        "files": 13,
+        "logicalBytes": 43853,
+        "rounded4KiBBytes": 73728,
+        "currentStatAllocatedBytes": 73728
+      },
+      "wpf-mature-02": {
+        "files": 50,
+        "logicalBytes": 107259,
+        "rounded4KiBBytes": 225280,
+        "currentStatAllocatedBytes": 225280
+      },
+      "wpf-mature-04": {
+        "files": 132,
+        "logicalBytes": 310416,
+        "rounded4KiBBytes": 634880,
+        "currentStatAllocatedBytes": 634880
+      },
+      "wpf-perf01": {
+        "files": 33,
+        "logicalBytes": 2006047,
+        "rounded4KiBBytes": 2088960,
+        "currentStatAllocatedBytes": 2088960
+      },
+      "wpf-perf03": {
+        "files": 13,
+        "logicalBytes": 22291,
+        "rounded4KiBBytes": 61440,
+        "currentStatAllocatedBytes": 61440
+      },
+      "wpf-profile01": {
+        "files": 10,
+        "logicalBytes": 267117,
+        "rounded4KiBBytes": 286720,
+        "currentStatAllocatedBytes": 286720
+      },
+      "wpf-queue00": {
+        "files": 12,
+        "logicalBytes": 26061,
+        "rounded4KiBBytes": 61440,
+        "currentStatAllocatedBytes": 61440
+      },
+      "wpf-release02": {
+        "files": 10,
+        "logicalBytes": 6772,
+        "rounded4KiBBytes": 36864,
+        "currentStatAllocatedBytes": 36864
+      },
+      "x01": {
+        "files": 2,
+        "logicalBytes": 5774,
+        "rounded4KiBBytes": 12288,
+        "currentStatAllocatedBytes": 12288
+      },
+      "x02": {
+        "files": 18,
+        "logicalBytes": 22867,
+        "rounded4KiBBytes": 73728,
+        "currentStatAllocatedBytes": 73728
+      },
+      "x04": {
+        "files": 20,
+        "logicalBytes": 30707,
+        "rounded4KiBBytes": 81920,
+        "currentStatAllocatedBytes": 81920
+      },
+      "x05": {
+        "files": 23,
+        "logicalBytes": 35466,
+        "rounded4KiBBytes": 90112,
+        "currentStatAllocatedBytes": 90112
+      }
+    },
+    "allFixedBlobsAvailable": true,
+    "fixedObjectCount": 2245,
+    "objectFailures": [],
+    "workingMismatch": [],
+    "specialFilesHold": [],
+    "untrackedEvidenceFilesHold": [],
+    "preservation": "Every proposed file matches working bytes, fixedHead blob, and currentMainSnapshot blob. Both immutable commits retain it. Files whose main blob differs or is absent are held, even when fixed remote branch preserves them. Git objects and remote refs must not be deleted.",
+    "heldBecauseCurrentMainDiffersOrMissing": [
+      {
+        "path": "docs/evidence/cost01/research.md",
+        "fixedBlob": "6464de67208b054b08613b082df38b778a282275",
+        "bytes": 3589,
+        "workingBlobMatches": true,
+        "mainBlob": "c91fc4da3554290d1997e1138ffa11ac18e223b6",
+        "mainSame": false,
+        "restorableFrom": "e5c47893b5973571ac02d55bd7b510952d59c06f"
+      }
+    ]
+  },
+  "sourcePreflightSha256": "2ef74267c030b04dfad807ce8320639789275afe571a95230e2c25a6acfae802"
+}

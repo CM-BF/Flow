@@ -1,0 +1,1678 @@
+{
+  "at": "2026-10-06T17:37:23.221353+00:00",
+  "sourceTarget": "f4f9c47c8c36d7c05614ac477f7af3bb49a31680",
+  "pureApproved": "45709c982df080af5a71ecbd66760a76ab65cf94",
+  "evidenceTarget": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+  "entries": [
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/tui/src/task-controls/cleanup-journey.test.ts",
+      "ref": "f4f9c47c8c36d7c05614ac477f7af3bb49a31680",
+      "bytes": 6083,
+      "sha256": "0def7b25c74f7f4aa55f785c4f011ed1283887ca178fb216c0c52403b41ce9bf"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "ref": "45709c982df080af5a71ecbd66760a76ab65cf94",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goals/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3843,
+      "sha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goals/state.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 15446,
+      "sha256": "23365f92b07fa98eb658e6900a22edaeff336ec69ca1e11c794fdf5c806e1405"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/tasks.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/runners.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/database.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1424,
+      "sha256": "ea7f16163aaf5e07b27e420143bfea85ff1b149b31fbb303579c1656fad0af94"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-progression.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/tasks.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/harnesses.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/engineering-native.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/engineering.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/protocol-task.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/projects.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goals.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-context.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/knowledge.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/usage-readout.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/browser-session.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/context-transparency.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/attachments.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/active-steering.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/runner.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/native-activity.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/assistant.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4054,
+      "sha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/conversation-context.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5853,
+      "sha256": "2219151efc4b1daa1f76c40a2ca770c9dd587b4844914bfe7c92923ffd9f8160"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/plugins.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/conversations.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/protocol-dispatch.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/workspace.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/reconciliation.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/contracts/src/fixtures.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/engineering/profile.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3810,
+      "sha256": "e5a8ec78d2f5dc89236ab9baa64084dce8eaa3036d0c7e74d6cf36812ca85dfc"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4786,
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/engineering/native-profile.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3712,
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-context/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/attachments/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11534,
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/projects/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4093,
+      "sha256": "3f2eabe24482b36f0d79bf4d81fadd18e2e2a696b199ac60d695ce658e8c0f3e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/knowledge/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 10068,
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/knowledge/text.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 927,
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-context/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1731,
+      "sha256": "7921c324119d60f25f3ffebac1c802a4a8050f9693873e8c138c93e865b6cd5b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-context/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2196,
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/task-read-projection.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-context/freshness.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1195,
+      "sha256": "d9ea198ab18f1e13a52c933ffb1210a74b703476371370799145705e198dfcf1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-progression/provenance.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2315,
+      "sha256": "dc8558895803968862431c3ad7dea64be81981170ee5bdab7be1408868a7143f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goals/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-context/input.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 336,
+      "sha256": "2244bd1565abb1dcec2e1f1702f0582b09774a514c1e1e722667f9b8954c8d35"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/protocol-dispatch/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2345,
+      "sha256": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/protocol-dispatch/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9611,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/timeline.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/engineering/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2469,
+      "sha256": "32540a49df91dd2aef4e12c7c4c525aba215b2bf17a3331a02617b8088850574"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/projects/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2641,
+      "sha256": "41715a0a5e3868fdf2f958cf5fea19785bbcfc9da75d122c14645c58375fcf7a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/projects/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4181,
+      "sha256": "b362828aa9b8a296d46f8105fc40fcd67b0a4efa091d7070f8c13e92f64742ee"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/projects/graph.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4152,
+      "sha256": "d45ec707df3a1be05d6840abb95517aca1c842612a4c6afccdf388f207772cf1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/reconciliation-http.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2033,
+      "sha256": "b09b906b29e3f3551f56e5bdafd63ba23c16f139291747cd2f7cd9e4c5930da6"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/reconciliation.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/task-index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3733,
+      "sha256": "f2c2c472b56b660563c0fce39871af972222bf8b4d9eabe4d2775d0f12797d47"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/m2-workspace.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6752,
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/streams.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/events.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/native-activity/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 8230,
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/evidence.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/engineering/verification.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4211,
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5662,
+      "sha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5126,
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11116,
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/native-harness-policy.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2103,
+      "sha256": "b05a8eaee51ae8c0fba0dbe2183cec0289c0a3393c26dfc0576e54fa10b66cb2"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/sessions.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/usage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5768,
+      "sha256": "1382e0e3d399a41be8c0d7e0d197809f02ea7d9b71b3f24140116ccd35648cb7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/replies.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1620,
+      "sha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/results.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3660,
+      "sha256": "080082ee48e9c7df31d47c5fb24491c1bfb15b4f28e7343e7e294821f91fd86e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/admission-policy.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/scheduler.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3366,
+      "sha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3554,
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/state.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3805,
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversations/admission.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugins/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugins/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3932,
+      "sha256": "06f365f6381bd6885965a5ff31ae94a78cfced81bd7de8e37b614cdc8f20486a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugins/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3153,
+      "sha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugins/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6407,
+      "sha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/shutdown/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-tool-runs/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3343,
+      "sha256": "5a2949ef6a74ffba06c4e713282f0355ee4639bd552b5eaba7503a175e56024a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-tool-runs/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5080,
+      "sha256": "bbe531bc9752b67a03b946466e336202c88ca3f7e59e8102d5ab7e8f14e1545e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3930,
+      "sha256": "f57db1ed2bde342a0a606fca20374f4bdceaa497f415abffc32ff6b9a2ad60e8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-tool-runs/authorize.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1064,
+      "sha256": "2d725eba8915b62e775a62274a8eff7c6aae33148a6615dd9f883193c403ef5a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/attachments/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-context/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1573,
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3433,
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4242,
+      "sha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3681,
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/gate.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1849,
+      "sha256": "d6b88877c6190bd2bb026b5c6884a5916a0ea5d49fe9d9cb9f0038776405bf7d"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2387,
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2933,
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3242,
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-proposals/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2430,
+      "sha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-proposals/graph.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1989,
+      "sha256": "a7e1019cdc47d321402b1d07b402093b0bef0cd26f83629083b0db32e532d5c8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/knowledge/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3782,
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/knowledge/search.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3360,
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-runs/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3595,
+      "sha256": "0819ff52946f1281c5fcb0e02d4ed5c80a17bb4a88cd7e6207c8ea9174512726"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7935,
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 10236,
+      "sha256": "68932da87a4edf306167782954498370efb3d3eb5fb3c0d4377d64087e139ecc"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/native-activity/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1459,
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 853,
+      "sha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/host.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/package-artifacts/input.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3239,
+      "sha256": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/package-artifacts/errors.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1068,
+      "sha256": "be3220467a00447b49c750220a241121a58e3316641cfdbb75fd2b4fdf0264b2"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/package-artifacts/source.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4093,
+      "sha256": "7a21055545d84ea3bcc2f18fa5d78489404dcc06f7a3f3be1af7413db848dd2d"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/routes.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-package-fetches/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2061,
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5368,
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/admission.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/queries.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3963,
+      "sha256": "4c4dcca036da762457bd979f9e66b70453008d83ebcaf16823cfdf238a097ede"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/native-harness-migration.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 772,
+      "sha256": "171050c81a8677c145319adc51e8c542e2be26373a15262fa0d689ae600c5b98"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2120,
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/explanations.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2818,
+      "sha256": "5a36a2bae4f8bd2c7f96dd87783bafd5b81c352d614207b83ac15fd8c5eb7bfe"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/state.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3394,
+      "sha256": "964df126f6188a02fb55d0043529abb029c32cec95c4db17dfd88bc3937b0b5a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/plan.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2535,
+      "sha256": "17fe7d6fd1b49209b6fe81611ad55b0b8e564b4fcdbdba468507c6de2cbd9bbd"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5144,
+      "sha256": "3db661d56190460957f527e77ea903dd42ec7ecf91bfdab8ef7fcc45baac192b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-delivery/details.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2910,
+      "sha256": "079688da3c4095bb32e9004c6ab5e1361c22ed5dc6e6e340549f1472497a37f3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/browser-session/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/browser-session/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-installations/store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/plugin-installations/migration.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/usage-readout/index.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2391,
+      "sha256": "d4ae1559864c8aa75e5932190e736868092f4cfc2b647326fee52cde247a3336"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "apps/server/src/usage-readout/projection.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5218,
+      "sha256": "88033a13dfa1bc8c0cc188c795a089aa315d28d9b65f64ffb2d653b2220171dd"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/004-projects.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/005-protocol-dispatch.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 799,
+      "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/006-goals.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3165,
+      "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/011-conversation-queue.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1357,
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2406,
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "vitest.config.ts",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "package.json",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "kind": "fixed-entry-input",
+      "path": "pnpm-lock.yaml",
+      "ref": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/zod/index.js",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/react/package.json",
+      "bytes": 1242,
+      "sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/react/index.js",
+      "bytes": 186,
+      "sha256": "60caffdecbdc5db3bc4ec4e83df9488345ccb271d07533b9210bf5750918d97e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ink/package.json",
+      "bytes": 2805,
+      "sha256": "84612a46f4b34fa346243b7246cbd1611f16012d8a8c8902f1da2633f393fefe",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ink/build/index.js",
+      "bytes": 1501,
+      "sha256": "f74b11e2a66d5c2873a29646dc180484b45d61a107fb09abfda101948571f664",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink/build/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@assistant-ui/react-ink/package.json",
+      "bytes": 2054,
+      "sha256": "4080f72047a1ac2f30c202a214297caf2e6ba77d92500b3c399c61e2b59ef487",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react-ink@0.0.46_@opentelemetry+api@1.9.1_@types+react@19.3.0_ink@8.0.0_@types+_sglbrv6qzkjet2fvulnoqqrz5y/node_modules/@assistant-ui/react-ink/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@assistant-ui/react-ink/dist/index.js",
+      "bytes": 7366,
+      "sha256": "ace4db603714a9b06efe3c248cbc1c88762e7f0d4a20d8b227496b9752e02bea",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react-ink@0.0.46_@opentelemetry+api@1.9.1_@types+react@19.3.0_ink@8.0.0_@types+_sglbrv6qzkjet2fvulnoqqrz5y/node_modules/@assistant-ui/react-ink/dist/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/fastify/fastify.js",
+      "bytes": 34573,
+      "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@fastify/cors/package.json",
+      "bytes": 1759,
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@fastify/cors/index.js",
+      "bytes": 10039,
+      "sha256": "e28c92bd82fcbe9045c8991f8ce441fcac3541b0344c1633a30f461c1636b15b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg/esm/index.mjs",
+      "bytes": 579,
+      "sha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/esm/index.mjs"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg-boss/dist/index.js",
+      "bytes": 22927,
+      "sha256": "11487d4ee764d73b54bdd72e691a66d08ef7d1239d2c2cf44d80db869848b34f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/npm-package-arg/package.json",
+      "bytes": 1503,
+      "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/npm-package-arg/lib/npa.js",
+      "bytes": 14251,
+      "sha256": "41cd09e778c4a7588df362588dbe9146a024d5cfcdf449702feb294e6acde761",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pacote/package.json",
+      "bytes": 1956,
+      "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pacote/lib/index.js",
+      "bytes": 808,
+      "sha256": "3f4a6a8d7ae3eb72ad61e567bae8d05356cc0a7439e9f7006701728a3af95d32",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ssri/package.json",
+      "bytes": 1832,
+      "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ssri/lib/index.js",
+      "bytes": 15512,
+      "sha256": "e36be1a5e67217f423148f206bce2ea3aa04bb1271e5ea8069836c4a331f4d3b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tar/dist/esm/index.min.js",
+      "bytes": 84473,
+      "sha256": "1902a2a0b8cc2771f7e2aa0a855e9215a2d1023b1345fd504d28eb9c420c958c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json"
+    },
+    {
+      "kind": "external-public-entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/vitest/dist/index.js",
+      "bytes": 975,
+      "sha256": "af0b170bd7b3b2c8bca02dc8640ff73cbf490d640556c478bfd39820e9e1bd3a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.js"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/README.md",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 2037,
+      "sha256": "ba0649da53c7984c1e3bb40da2f51f987b06f237037a3a9a0c2ba1a7914d78bb"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/entry-closure.json",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 68848,
+      "sha256": "cc37eb254c9a2922aa741535078b0d660588b8f8bae29c047f1195fc1e6465a3"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/resources-before-cleanup.json",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 654,
+      "sha256": "d41ec1b65b30984db595fbfb8b55c8e0b84bae910877f2e2bc6fec579c5d6487"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/resources.json",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 685,
+      "sha256": "215b06cfd50711a3ca89d67f899f7ca2243dfc04567e3692a6a7a04cb4467e49"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/tsconfig.json",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 173,
+      "sha256": "16f493d7ed24a248c77af2026552eead441d5627fe86e393b3d1042535dd5768"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/types-process.json",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 783,
+      "sha256": "5f51988d3dd160db673e925100b618e02015b5019cbf1c337b987b279bca5a44"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/cleanup-pg-static/types.txt",
+      "ref": "c0f62dfad3a6050f38b10971a4bcef4c92d21b80",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "validation": {
+    "focusedNoEmitExit": 0,
+    "durationSeconds": 2.0601541670039296,
+    "newCaseTests": "NOT_RUN",
+    "PG": 0,
+    "PTY": 0,
+    "provider": 0,
+    "oldBehaviorReruns": 0
+  },
+  "scope": "PG cleanup-only source + explicit Pool options + focused types/static runtime input presence; no runtime readiness or full journey success",
+  "mismatches": []
+}

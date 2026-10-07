@@ -1,0 +1,67 @@
+{
+  "window": "S01P07-CAPACITY-20261007-R1",
+  "executionHead": "59d7ab4e7d14b9b5979221c249c0a68ba3836695",
+  "inputTarget": "68815dce87cc0a9498802de89448693215d028d6",
+  "preflight": {
+    "at": "2026-10-07T03:43:11.031742+00:00",
+    "window": "S01P07-CAPACITY-20261007-R1",
+    "executionHead": "59d7ab4e7d14b9b5979221c249c0a68ba3836695",
+    "headOriginClean": true,
+    "bindings": 22,
+    "historicalUnchangedBindings": 61,
+    "slotInputs": 13,
+    "inputSHA": "e45dee7ba1a1dca228357ecd0adcd6ed9d484af95e182ebf63f76d845e81c4a2",
+    "sqlBindings": 30,
+    "dependencies": 24,
+    "outputsAbsent": 30,
+    "outerAbsent": true,
+    "availableBytes": 25921802240,
+    "serialFloor": 1207959552,
+    "oneLocalBudgetBytes": 9568256,
+    "webLocalBudgetBytes": 9437184,
+    "combinedFloorBytes": 1226964992,
+    "claimId": "9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac",
+    "claimVersion": 2,
+    "claimState": "active",
+    "scopeCount": 18,
+    "errors": []
+  },
+  "coordination": {
+    "heavyReturned": true,
+    "heavyReturnMessageAfterActualClose": true,
+    "pairing": "Before spawn: Mika declared at most one local9568256B and conservative Web9437184B; floor1226964992B. Fresh immediate print25922850816B. No post-hoc pairing.",
+    "webPrevious": "Mika reported Timing all owned resources/EOF closed03:41:04.044Z; unique capacity OPEN."
+  },
+  "outer": {
+    "shellUtcStartedAt": "UNKNOWN",
+    "shellUtcFinishedAt": "UNKNOWN",
+    "utcMarkerFailure": "Both /usr/bin/date commands failed ENOENT. Exact output retained; no retry/backfill.",
+    "wrapperStartedAt": "2026-10-07T03:43:23.897813+00:00",
+    "wrapperFinishedAt": "2026-10-07T03:43:30.717000+00:00",
+    "wrapperElapsedSeconds": 6.819067958043888,
+    "timeRealSeconds": 6.93,
+    "timeUserSeconds": 2.19,
+    "timeSystemSeconds": 0.79,
+    "exitCode": 0,
+    "toolCompletionObservedAt": "2026-10-07T03:43:31Z",
+    "conservativeWholeObservationUpperSeconds": 21,
+    "observationBound": "Fresh preflight03:43:11.031742Z preceded shell invocation; tool completion observed03:43:31Z at whole-second precision. Rounded-up21s covers that wider envelope, not measured shell wall. /usr/bin/time covers wrapper process through exit; tool yields not summed."
+  },
+  "toolOutput": "S01P07_FRESH_COMBINED_BYTES 25922850816\nS01P07_OUTER_START zsh:8: no such file or directory: /usr/bin/date\n{\"window\": \"S01P07-CAPACITY-20261007-R1\", \"sourceHead\": \"59d7ab4e7d14b9b5979221c249c0a68ba3836695\", \"startedAt\": \"2026-10-07T03:43:23.897813+00:00\", \"inputManifest\": {\"name\": \"pg-capacity-slot-request.json\", \"sha256\": \"e45dee7ba1a1dca228357ecd0adcd6ed9d484af95e182ebf63f76d845e81c4a2\"}, \"resourceBefore\": 25922666496, \"resourceGate\": 1207959552, \"providerCalls\": 0, \"root\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-w519l048\", \"identity\": {\"dev\": 16777234, \"ino\": 123413615}, \"command\": [\"/opt/homebrew/opt/node@24/bin/node\", \"node_modules/vitest/vitest.mjs\", \"run\", \"--config\", \"docs/evidence/s01p07/capacity-vitest.config.ts\", \"--configLoader\", \"native\", \"apps/runner/src/runtime-capacity.test.ts\"], \"childStarted\": true, \"exitCode\": 0, \"primaryFault\": null, \"faults\": [], \"processGroupGone\": true, \"stdioEnded\": true, \"process\": {\"exitCode\": 0, \"observations\": [{\"state\": \"absent\", \"errno\": null}], \"signals\": [], \"groupState\": {\"state\": \"absent\", \"errno\": null}, \"groupAbsent\": true, \"unknown\": false}, \"fixtureCleanupConfirmed\": true, \"temporaryFinalBytes\": 124, \"temporarySampledPeakBytes\": 3108939, \"temporaryAbsent\": true, \"retainedRoot\": null, \"rawObservedBytes\": 8606, \"rawSavedBytes\": 8606, \"elapsedSeconds\": 6.819067958043888, \"finishedAt\": \"2026-10-07T03:43:30.717000+00:00\", \"limits\": {\"totalSeconds\": 200, \"workSeconds\": 120, \"rawBytes\": 1048576, \"ownTempBytes\": 33554432}, \"boundary\": \"Sampled own logical temp bytes; shared PG/WAL growth and between-sample peak are unknown.\"}\nreal 6.93\nuser 2.19\nsys 0.79\nS01P07_OUTER_FINISH zsh:12: no such file or directory: /usr/bin/date\nS01P07_OUTER_EXIT 0\n",
+  "caseCounts": {
+    "planned": 4,
+    "selected": 4,
+    "passed": 4,
+    "failed": 0,
+    "unselected": 20
+  },
+  "resources": {
+    "tasks": 13,
+    "http": 120,
+    "rootAbsenceChecked": "Exact known wrapper root and four receipt-named fixture roots lstat ENOENT only; no recursive scans or old unknown roots.",
+    "rootAbsenceRecordedAt": "2026-10-07 03:44:16 UTC"
+  },
+  "providerCalls": 0,
+  "state": "ACTUAL_WINDOW_CONSUMED_PASSED_UTC_MARKERS_UNKNOWN",
+  "boundary": "Four original real PG/HTTP capacity consumers only. Not a throughput/128runner benchmark. Main15847 database donor confirmed loaded, not automatic compatibility with every latest main change. R1 cause remains UNKNOWN."
+}

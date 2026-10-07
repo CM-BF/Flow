@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-06T18:42:48.132253+00:00",
+  "kind": "DPERF05 bounded design/research approval; no take/provision/runtime",
+  "parent": "D01, exactly one independent subtask WPF-DPERF05 proposed by manager",
+  "fixedSource": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 5238,
+      "sha256": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77"
+    },
+    {
+      "path": "apps/execution-dashboard/test/dashboard.test.mjs",
+      "bytes": 8992,
+      "sha256": "f259396f987bb422684b313a1ab8bb3bace0e653e7ed8f7e0e604aba470cb7ea",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77"
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77"
+    }
+  ],
+  "problem": [
+    "status.mjs41 excludes fractional seconds and explicit +00:00; the GO supplied two real UTC records that cannot match. This is source-confirmed; root did not resample4320.",
+    "status.mjs42 calls toISOString before checking whether parsing produced a valid date. Invalid matching numeric dates can throw. aggregate.mjs44 catches parser exceptions per task already; improving parser null/errors must preserve that safety and other task results.",
+    "aggregate.mjs54–56 owns staleAfterHours and future threshold(ageHours<-0.1); this leaf must not alter the aging policy or use file mtime."
+  ],
+  "interfaceDecision": [
+    "Keep exported parseStatus(markdown,taskId) shape. Add one private timestamp parse/normalization boundary inside the already authorized status.mjs; return canonical UTC ISO string or null/error through existing errors field. No new dependency/date framework/public schema.",
+    "Accept existing minute/second UTC and Z forms plus fractional seconds and +00:00. Normalize supported fractional seconds deliberately to millisecond Date representation; keep updatedRecord for source display. Never rely on arbitrary Date.parse locale heuristics.",
+    "Validate calendar and clock components, not regex alone and not only finite Date.parse: invalid calendar rollover must not become a different valid update. Guard toISOString; preserve supported UTC midnight/end-of-day semantics deliberately rather than accidentally accepting24:01. Do not introduce arbitrary timezone inference.",
+    "Use the update value, not a later main-sync timestamp in the same combined field. Malformed first update must not be rescued by a second valid timestamp. Avoid accepting partial malformed timezone suffixes.",
+    "Do not rewrite TUI/COST/MATURE02 or other owner statuses; source/live/human/check/review/integration remain independent. Root new feature scope remains status.mjs+newdirecttest+ownplans+ownevidence only."
+  ],
+  "focusedChecks": [
+    "Legacy YYYY-MM-DD HH:mm UTC; seconds UTC; T...Z; milliseconds Z; microseconds+00:00; equivalent UTC instant yields same normalized updatedAt/age input. Include both GO actual examples as fixed data, not reads from moving personal files.",
+    "Valid leap day versus invalid leap day, month00/13, day00/out-of-month, invalid hour/minute/second, missing/unknown zone, malformed fractional/offset tails. parseStatus must not throw or damage unrelated owner/TODO fields; errors remain explicit.",
+    "Combined update/main-sync field: malformed or stale first update cannot silently become current from a later valid timestamp.",
+    "True old/future parsed timestamps remain old/future inputs; existing aggregate policy unchanged. Preserve its six-minute clock-tolerance policy unless separately authorized.",
+    "At integration, the actual consumer must run its existing malformed/duplicate/stale/future regression and an equivalent fraction+offset age check. Do not copy the aggregate age formula into a test and claim actual aggregate coverage."
+  ],
+  "validationSplit": "Manager10-file/79472B source closure is sufficient for pure parser tests using Node builtins. Keep small source-only provision. Initial bounded Node proposal15s including5cleanup/tmp2MiB/raw512KiB is reasonable but requires fixedsource/runner/fresh gate. No PG/Chrome/HTTP needed for parser test. Actual aggregate consumer test imports pg statically and its old fixture makes3 tiny Gitrepos+an HTTP server; defer that distinct direct-consumer check to Lead integration in an installed tree, or supply a separately reviewed isolated harness; never accidentally use FLOW_COORDINATION_DATABASE_URL.",
+  "acceptanceAfterDeployment": "Original Lead/operator updates service and retains actual TUI-001,COST-001,WPF-MATURE-02 source/current/freshness observations; no root personal/dashboard sampling or fake deployment claim. If an owner has truly aged out meanwhile, report its actual age rather than force current.",
+  "primaryReference": {
+    "url": "https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date-time-string-format",
+    "toISOString": "https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date.prototype.toisostring",
+    "summary": "The ECMAScript interchange format uses milliseconds, explicit UTC-offset notation, and permits end-of-day24:00; toISOString throws on a NaN time value. Flow normalization of higher precision is an explicit design choice, not an assumption of portable nonstandard Date.parse behavior."
+  },
+  "methods": "Local find-skills/codebase-design/clean-code reused; inspect one parser interface, input semantics and error containment. Primary ECMAScript specification checked. Source/metadata reads only, no product import/test/space sample/project write.",
+  "dispatch": "Approve manager four-scope bounded design and panels owner after Recovery source freeze, subject to Lead unique Git provision then freshatomicCOMMITTED receipt. This document itself grants no write claim or runtime gate."
+}

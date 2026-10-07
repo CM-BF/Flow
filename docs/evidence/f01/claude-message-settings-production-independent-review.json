@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T17:34:57.651290+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "sourceTarget": "0ee2494ed4298169c56ac3a6950fa1910ed62a7a",
+  "delivery": "70168217e54dc53ded33895fecb85911f20abd71",
+  "decision": "APPROVED",
+  "scope": [
+    "apps/server/src/index.ts",
+    "packages/client/src/claude-message-settings-production.test.ts"
+  ],
+  "manifestSha256": "452b9105e255605fce730271a1069612789b7746ff348e1522d69749115df15e",
+  "bindings": 249,
+  "mismatches": [],
+  "protectedMainDelta": [],
+  "findings": [],
+  "read": [
+    "Complete two-source delta and actual production test",
+    "Factory migration before workers/queue and stable creation ACK/current GET distinction",
+    "Fresh DB marker/reservation/checkpoint, bounded connections observation and normal DROP",
+    "One actual PG case raw/run/fixture facts, original type red/final0"
+  ],
+  "reusedApprovals": [
+    "CORE ea276: Mika unique independent domain review",
+    "C01 6d114: assignment review including two supplemental P2 closures"
+  ],
+  "validation": {
+    "selected": 1,
+    "passed": 1,
+    "seconds": 3.0037337499670684,
+    "focusedTypesExit": 0,
+    "reviewerTests": 0,
+    "provider": 0,
+    "runtime": 0,
+    "cleanup": "remaining[]/connections[]/owned PGID absent"
+  },
+  "limits": [
+    "No lost ACK/native observed settings/queue promotion/UI or account qualification",
+    "No root-wide typecheck performed; exact protected input comparison to preintegration main has zero delta",
+    "Domain/client approval reused, not re-reviewed or retested"
+  ]
+}

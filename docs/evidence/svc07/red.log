@@ -1,0 +1,271 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect
+
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves result and healthy transaction mode readOnly=false 1ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves result and healthy transaction mode readOnly=true 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves acquisition failure without invoking work or releasing a missing client 0ms
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > covers fatal error immediately after checkout callback before its promise continuation 3ms
+   → expected [] to deeply equal [ true ]
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a failed borrowed client until pending work settles and never runs it twice 1ms
+   → expected [Function] to not throw an error but 'Error: idle borrowed disconnect' was thrown
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves fatal active-query failure and allows a later independent healthy transaction 1ms
+   → expected [ 'BEGIN', 'BUSINESS', 'ROLLBACK' ] to deeply equal [ 'BEGIN', 'BUSINESS' ]
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=false 0ms
+   → expected [ false ] to deeply equal [ true ]
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=true 0ms
+   → expected Error: rollback also failed to be Error: COMMIT acknowledgement lost // Object.is equality
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps an acknowledged COMMIT result when an error arrives before the await resumes 0ms
+   → disconnected after ACK
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves HttpError and reuses a healthy client after rollback 0ms
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure undefined despite rollback and release errors 0ms
+   → expected { ok: false, …(1) } to deeply equal { ok: false, error: undefined }
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure null despite rollback and release errors 0ms
+   → expected { ok: false, …(1) } to deeply equal { ok: false, error: null }
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps the business failure when connection error occurs during rollback 0ms
+   → expected Error: disconnect during rollback to be Error: Business rejected { …(2) } // Object.is equality
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > handles BEGIN rejection without running work and keeps its failure if rollback rejects 0ms
+   → expected Error: cleanup failed to be Error: BEGIN failed // Object.is equality
+ × apps/server/src/database-transaction.test.ts > public transaction connection lifetime > leaves the next borrower protected during synchronous release handoff 0ms
+   → expected [ false ] to deeply equal [ false, true ]
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > covers fatal error immediately after checkout callback before its promise continuation
+AssertionError: expected [] to deeply equal [ true ]
+
+- Expected
++ Received
+
+- [
+-   true,
+- ]
++ []
+
+ ❯ apps/server/src/database-transaction.test.ts:103:34
+    101|     expect(run).not.toHaveBeenCalled();
+    102|     expect(pool.client.statements).toEqual([]);
+    103|     expect(pool.client.releases).toEqual([true]);
+       |                                  ^
+    104|     expect(pool.client.listeners('error')).toEqual([pool.idleError]);
+    105|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a failed borrowed client until pending work settles and never runs it twice
+AssertionError: expected [Function] to not throw an error but 'Error: idle borrowed disconnect' was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+"Error: idle borrowed disconnect"
+
+ ❯ apps/server/src/database-transaction.test.ts:114:63
+    112|     const outcome = observe(transaction(pool.asPool(), run));
+    113|     await entered.promise;
+    114|     expect(() => pool.client.emit('error', firstFailure)).not.toThrow(…
+       |                                                               ^
+    115|     expect(() => pool.client.emit('error', new Error('later disconnect…
+    116|     expect(pool.client.releases).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves fatal active-query failure and allows a later independent healthy transaction
+AssertionError: expected [ 'BEGIN', 'BUSINESS', 'ROLLBACK' ] to deeply equal [ 'BEGIN', 'BUSINESS' ]
+
+- Expected
++ Received
+
+  [
+    "BEGIN",
+    "BUSINESS",
++   "ROLLBACK",
+  ]
+
+ ❯ apps/server/src/database-transaction.test.ts:137:36
+    135|     await expect(transaction(pool.asPool(), run)).rejects.toBe(failure…
+    136|     expect(run).toHaveBeenCalledTimes(1);
+    137|     expect(pool.client.statements).toEqual(['BEGIN', 'BUSINESS']);
+       |                                    ^
+    138|     expect(pool.client.releases).toEqual([true]);
+    139|     const recovered = new FakePool();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=false
+AssertionError: expected [ false ] to deeply equal [ true ]
+
+- Expected
++ Received
+
+  [
+-   true,
++   false,
+  ]
+
+ ❯ apps/server/src/database-transaction.test.ts:158:34
+    156|     expect(run).toHaveBeenCalledTimes(1);
+    157|     expect(pool.client.statements).toEqual(['BEGIN', 'COMMIT', 'ROLLBA…
+    158|     expect(pool.client.releases).toEqual([true]);
+       |                                  ^
+    159|   });
+    160| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=true
+AssertionError: expected Error: rollback also failed to be Error: COMMIT acknowledgement lost // Object.is equality
+
+- Expected
++ Received
+
+  Error {
+-   "message": "COMMIT acknowledgement lost",
++   "message": "rollback also failed",
+  }
+
+ ❯ apps/server/src/database-transaction.test.ts:154:5
+    152|     };
+    153|     const run = vi.fn(async () => 'result');
+    154|     await expect(transaction(pool.asPool(), run)).rejects.toBe(failure…
+       |     ^
+    155|     expect(applied).toBe(true); // Cleanup cannot establish whether CO…
+    156|     expect(run).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps an acknowledged COMMIT result when an error arrives before the await resumes
+Error: disconnected after ACK
+ ❯ FakeClient.pool.client.execute apps/server/src/database-transaction.test.ts:165:61
+    163|     pool.client.execute = statement => {
+    164|       const result = Promise.resolve({ rows: [] });
+    165|       if (statement === 'COMMIT') pool.client.emit('error', new Error(…
+       |                                                             ^
+    166|       return result;
+    167|     };
+ ❯ FakeClient.query apps/server/src/database-transaction.test.ts:16:17
+ ❯ transaction apps/server/src/database.ts:19:18
+ ❯ apps/server/src/database-transaction.test.ts:168:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure undefined despite rollback and release errors
+AssertionError: expected { ok: false, …(1) } to deeply equal { ok: false, error: undefined }
+
+- Expected
++ Received
+
+  {
+-   "error": undefined,
++   "error": Error {
++     "message": "release failure",
++   },
+    "ok": false,
+  }
+
+ ❯ apps/server/src/database-transaction.test.ts:191:87
+    189|     };
+    190|     pool.client.onRelease = () => { throw new Error('release failure')…
+    191|     expect(await observe(transaction(pool.asPool(), async () => { thro…
+       |                                                                                       ^
+    192|     expect(pool.client.releases).toEqual([true]);
+    193|     expect(pool.client.listeners('error')).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure null despite rollback and release errors
+AssertionError: expected { ok: false, …(1) } to deeply equal { ok: false, error: null }
+
+- Expected
++ Received
+
+  {
+-   "error": null,
++   "error": Error {
++     "message": "release failure",
++   },
+    "ok": false,
+  }
+
+ ❯ apps/server/src/database-transaction.test.ts:191:87
+    189|     };
+    190|     pool.client.onRelease = () => { throw new Error('release failure')…
+    191|     expect(await observe(transaction(pool.asPool(), async () => { thro…
+       |                                                                                       ^
+    192|     expect(pool.client.releases).toEqual([true]);
+    193|     expect(pool.client.listeners('error')).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps the business failure when connection error occurs during rollback
+AssertionError: expected Error: disconnect during rollback to be Error: Business rejected { …(2) } // Object.is equality
+
+- Expected
++ Received
+
+- HttpError {
+-   "message": "Business rejected",
+-   "status": 409,
+-   "code": "conflict",
++ Error {
++   "message": "disconnect during rollback",
+  }
+
+ ❯ apps/server/src/database-transaction.test.ts:207:5
+    205|       return { rows: [] };
+    206|     };
+    207|     await expect(transaction(pool.asPool(), async () => { throw failur…
+       |     ^
+    208|     expect(pool.client.releases).toEqual([true]);
+    209|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > handles BEGIN rejection without running work and keeps its failure if rollback rejects
+AssertionError: expected Error: cleanup failed to be Error: BEGIN failed // Object.is equality
+
+- Expected
++ Received
+
+  Error {
+-   "message": "BEGIN failed",
++   "message": "cleanup failed",
+  }
+
+ ❯ apps/server/src/database-transaction.test.ts:216:5
+    214|     pool.client.execute = async statement => { throw statement === 'BE…
+    215|     const run = vi.fn();
+    216|     await expect(transaction(pool.asPool(), run)).rejects.toBe(failure…
+       |     ^
+    217|     expect(run).not.toHaveBeenCalled();
+    218|     expect(pool.client.releases).toEqual([true]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  apps/server/src/database-transaction.test.ts > public transaction connection lifetime > leaves the next borrower protected during synchronous release handoff
+AssertionError: expected [ false ] to deeply equal [ false, true ]
+
+- Expected
++ Received
+
+  [
+    false,
+-   true,
+  ]
+
+ ❯ apps/server/src/database-transaction.test.ts:233:34
+    231|     expect(await nextOutcome).toEqual({ ok: false, error: failure });
+    232|     expect(nextRun).not.toHaveBeenCalled();
+    233|     expect(pool.client.releases).toEqual([false, true]);
+       |                                  ^
+    234|     expect(pool.client.listeners('error')).toEqual([pool.idleError]);
+    235|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  11 failed | 4 passed (15)
+   Start at  13:06:49
+   Duration  121ms (transform 16ms, setup 0ms, import 24ms, tests 11ms, environment 0ms)
+

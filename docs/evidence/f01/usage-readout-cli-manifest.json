@@ -1,0 +1,54 @@
+{
+  "target": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+  "observedAt": "2026-10-06T14:30:31.318124+00:00",
+  "sources": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 21135,
+      "sha256": "15dfc443cf60dafd1a4bcef7ef8d86eb87333a112a68b45385f77f957841ea21"
+    },
+    {
+      "path": "apps/cli/src/usage-readout.test.ts",
+      "bytes": 2443,
+      "sha256": "40fc06117a7ac8cf36d3caa6e887dcecea4eae015f9dd9d189d9f1b535584aa9"
+    },
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 4684,
+      "sha256": "08c27dda14e3a3dffb939bcb9732c1ea3111831b5935a0b5852cb10f4c9859e3"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/usage-readout-cli-green.txt",
+      "bytes": 310,
+      "sha256": "b166ed7a004f47fe4885f5675ef786abe9a56993a268691185bb018c829ae35f"
+    },
+    {
+      "path": "docs/evidence/f01/usage-readout-cli-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "inputs": {
+    "productionTarget": "7150d6ee9e1e36b69994da1977aa980139f3458f",
+    "acceptedMain": "61744371606f3ee890a9d64e21b33f52940d6e14",
+    "thinClient": "fb0e992e8b308a987bcea273e29e883b9cf13caf"
+  },
+  "checks": {
+    "http": {
+      "passed": 1,
+      "durationMs": 20,
+      "exit": 0,
+      "toolChunk": "b6383c"
+    },
+    "types": {
+      "exit": 0,
+      "toolChunk": "48889c"
+    },
+    "newPG": 0,
+    "providerCalls": 0
+  },
+  "scope": "CLI read-only usage command, one HTTP boundary consumer and help/README; forwards unchanged JSON. Partial response fixture tests CLI transparency, domain shape/PG proven by earlier route acceptance.",
+  "review": "NOT_STARTED"
+}

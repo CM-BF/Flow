@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-10-06T12:04:40.227287+00:00",
+  "change": "One explicit package subpath; root/stream/activity exports and dependencies unchanged",
+  "candidateDomainTarget": "6bd562fc260e05680f0dcedebaf392517671da59",
+  "entry": "packages/interaction/src/goal/index.ts",
+  "entrySha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135",
+  "entryRole": "readonly candidate input, pending independent domain approval",
+  "checks": "Valid package JSON, fixed entry exports createGoalSession and types. Actual combined public import and typecheck run only after approved domain intake.",
+  "providerCalls": 0
+}

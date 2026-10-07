@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-07T04:00:34.602540+00:00",
+  "product": "83a0799293057f7472f0329c61e566708b2a2381",
+  "fixtureFix": "7d3757128fa45363c846036a96ea73346185829a",
+  "mainBefore": "2f18dfe92f795e566f7779d67ebea2f556254e2a",
+  "results": [
+    {
+      "pid": 27690,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9134,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "args": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ]
+    },
+    {
+      "pid": 29476,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 885,
+      "stdout": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration\n\n ✓ packages/client/src/runner-claim.test.ts (3 tests) 40ms\n ✓ packages/contracts/src/runner-claim.test.ts (5 tests) 8ms\n\n Test Files  2 passed (2)\n      Tests  8 passed (8)\n   Start at  21:00:34\n   Duration  577ms (transform 169ms, setup 0ms, import 363ms, tests 48ms, environment 0ms)\n\n",
+      "stderr": "",
+      "observed_bytes": 374,
+      "retained_bytes": 374,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "contract-client",
+      "args": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--no-cache",
+        "packages/contracts/src/runner-claim.test.ts",
+        "packages/client/src/runner-claim.test.ts"
+      ]
+    }
+  ],
+  "provider": 0,
+  "PG": 0,
+  "temporaryBytesAtCleanup": 1357740,
+  "temporaryRemoved": true,
+  "temporaryIdentity": {
+    "dev": 16777234,
+    "ino": 123425632
+  },
+  "historicalFailure": "s01p07-combination-checks.json unchanged"
+}

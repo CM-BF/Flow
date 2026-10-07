@@ -120,3 +120,30 @@ node tools/personal-preview/cli.mjs web rollback --directory "$HOME/.flow-person
 每个静态请求核精确文件大小/hash，无目录浏览；宿主最多64连接/4个同时缓冲资产响应，另有32个FIFO等待位、每个最多5秒；等待时不读文件，每文件仍32MiB。队列满/超时503，断连及时移除。API与SSE继续代理原中心，不受资产读取计数限制。现有页面在发布/回退后仍能读取保留chunk；不承诺无限页面寿命，也不自动迁移浏览器草稿。后台整体更新若已有release集合，必须先为每个保留Web产物提供与新后台组合的报告，未知则在停止进程前拒绝；不会默默重建Web覆盖其独立source身份。
 
 本轮用自有随机PG、真实中心/stdio独占确定性runner及编译后合成Web consumer验证：Web初始化/并发发布/回退、端口冲突后的unknown与显式恢复期间，后台进程身份和原attempt不变，两个任务最终成功；0SDK/provider。另验证旧/新chunk、SSE跨发布、路径/损坏/预算与构建环境。它不替代真实产品Web浏览器验收、生产组合兼容报告或个人部署。
+
+## 固定后台产物（SVC06，Mac 构建）
+
+显式 `backend prepare --directory <private-install> --target <full-commit> --offline-store <pnpm-v3-cache> --pnpm-cli <installed-pnpm-9.15.4/bin/pnpm.cjs>` 仅准备，不停止服务。输出 `flow.backend-artifact.v1` descriptor；Git object与完整锁依赖复制到私有产物，tsx和SQL保持布局。不使用开发目录链接/外部hardlink，安装offline/frozen且禁止scripts/npmrc隐式配置。
+
+准备需要 macOS arm64、Node24、系统Python clonefile与至少2.5GiB空闲（检查不是预留），clone失败绝不普通复制回退。每产物≤1GiB/100000entries，最多2产物/2GiB；满额拒绝，工具不删除运行/未知旧产物。Node及非system动态库固定hash但不打包OS，版本漂移拒绝启动。
+
+先独立验证 retained Web compatibility，再 `maintenance bootstrap --directory <install> --backend-artifact <id>` 将选择绑定原维护操作；随后原 `refresh --target <full-commit>` 与显式 `resume`。源码与依赖全部从验证产物加载，config.repository仍是安装身份，不必detach开发HEAD。未选artifact的legacy行为保持。准备/校验失败保留旧PID，hold以后任何失败不自动resume/rollback；关闭进程不表示任务已停止。
+
+stage outcome先持久保存才清理；若发布后验证/清理/回执失败，已知artifact可能存在，结果为unknown。可以重核同ID/同source恢复，不能凭异常断言未发布。不承诺断电durability、空间预留或对恶意同uid写入的OS隔离。本片真实个人发布仍需另给窗口。
+
+
+## 单独替换 Web 宿主
+
+`web replace-host --directory /absolute/private/state --request /absolute/private/request.json` 只替换已记录的 Web 宿主，要求明确允许短暂断开连接；不更新后台、runner、页面产物或保留版本指针。请求为 owned 0600 文件，严格包含 `operationId`（UUID）、`expectedVersion`、`expectedBackendHead`、`compatibilityId`、`expectedWebRecordSha256`、`expectedPointerSha256`、`expectedHostSourceDigest`、`allowConnectionInterruption: true`。不接受脚本路径、argv、env 或任意目标版本。
+
+可信本地调用者可通过 `inspectPreviewWebHostSource({directory})` 只读获取 host 文件集合摘要。摘要明确标记 `legacy-repository` 或 `backend-artifact`；它不冻结源码目录，也不证明未来 lazy import 不受 checkout 变化影响。legacy 部署仍需固定源窗口与动态读取边界证据，不能只凭“已 import”关闭窗口。这个摘要独立于 backend `state.source` 和 Web artifact identity。
+
+一次操作在原 operation.lock 内先持久记录，再停止/启动 Web；所有权或结果未知时停止，不重试。相同 operationId+同请求只观察保存结果，改变请求拒绝；未结算旧操作阻止新 ID 绕行。最多保存32项16KiB操作记录，不自动淘汰。新 Web pending record与成功后的 `state.webHost` 独立来源记录也持久写入；不会改 backend source/center/runner/config/release pointer。
+
+健康旧 `web bootstrap` 的 alreadyReady 行为保持。新命令不会自动执行于安装或发布；实际个人切换须先固定工具来源与一次运行边界。现阶段仅自有文件与注入进程端口的0PG验证，不宣称已部署、长期稳定或旧页面无连接中断。retained3退役仍未实现。
+
+显式选择Web固定宿主时，replace-host请求可另带 `webHostArtifact`：严格四字段 `policy/artifactId/manifestDigest/sourceHead`，复用现有 `flow.backend-artifact.v1`，不接收任意路径或安装参数。`inspectPreviewWebHostSource({directory, webHostArtifact})`读取同一候选；完整验证仍核内容/Node身份和 `sourceRepository === config.repository`，不是摘要替代验证。
+
+选择先写独立 `pendingWebHost`，再停止/启动；仅 `internal-service web` 能从该产物根加载。center、runner、maintenance仍使用原来源，不能从Web descriptor获得授权；不会设置 `state.backendArtifact`。成功保存 `state.webHost.artifact`并清pending，未知则保留，旧bootstrap/publish/rollback同时核pending和同一未结算journal，最终state已保存但回执未知也不能绕过。后续Web启动复用已选来源，旧不带选择的配置默认不变。
+
+既有e5产物来自backend-release worktree，不能改manifest把它当个人Flow仓库产物。本次局部注入只证明角色选择/持久顺序/错误传播；合法个人来源的新固定产物、实际marker/服务及旧后台lazy读取边界仍待独立验证，不能把默认路径用例通过当已部署。

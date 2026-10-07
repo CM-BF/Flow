@@ -1,12 +1,13 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
-import type { GoalGraphAudit, GoalGraphAuditPage, GoalGraphRun, GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRunRevoked, GoalGraphScope } from '../../../../packages/contracts/src/goal-graph-runs.js';
+import { goalGraphScopeSchema, type GoalGraphAudit, type GoalGraphAuditPage, type GoalGraphRun, type GoalGraphRunAdmission, type GoalGraphRunAccepted, type GoalGraphRunRevoked, type GoalGraphScope, type GoalGraphRunPage } from '../../../../packages/contracts/src/goal-graph-runs.js';
 import { HttpError, transaction } from '../database.js';
 import { acceptTask, command } from '../tasks.js';
 import { goalContext } from '../goal-graph-proposals/store.js';
 import { readProject } from '../projects/storage.js';
 import { revokeAuthority, type AuthorityStore } from '../goal-run-authority/runner-project-fence.js';
+import { TASK_SUMMARY_COLUMNS, toTaskSummary, type TaskSummaryRow } from '../task-read-projection.js';
 
 export interface GraphRunRow {
   id: string; version: 1; goal_id: string; task_id: string; mode: 'fixture' | 'claude'; used_commands: number;
@@ -36,12 +37,14 @@ export async function runView(client: PoolClient, row: GraphRunRow): Promise<Goa
     createdAt: row.created_at.toISOString(), revokedAt: row.revoked_at?.toISOString() ?? null, revocationReason: row.revocation_reason };
 }
 export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: GoalGraphRunAdmission, key: string): Promise<GoalGraphRunAccepted> {
+  // Persist the explicitly admitted capability; absent legacy fields are never defaulted.
+  const scope = goalGraphScopeSchema.parse(input.scope);
   if (input.execution.harness === 'claude' && !input.execution.executionProfile) throw new HttpError(409, 'native_graph_tools_unavailable', 'Native graph tools require their dedicated execution bridge.');
   const result = await command(pool, `goal-graph-run:create:${goalId}`, key, input, async client => {
     const context = await goalContext(client, goalId, true);
-    if (context.project.revision !== input.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
-    const graph = await readProject(client, context.project.id, input.scope.baseRevision);
-    for (const ref of input.scope.allowedExistingNodes) {
+    if (context.project.revision !== scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
+    const graph = await readProject(client, context.project.id, scope.baseRevision);
+    for (const ref of scope.allowedExistingNodes) {
       if (!graph.graph.nodes.some(node => node.id === ref.nodeId && node.version === ref.expectedVersion)) throw new HttpError(409, 'goal_graph_scope', 'An allowed existing reference is not in the base graph.');
     }
     const native = input.execution.harness === 'claude';
@@ -51,12 +54,49 @@ export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: Goa
       ? { harness: 'fixture' as const, fixture: { scenario: 'success' as const } }
       : { harness: 'claude' as const, executionProfile: input.execution.executionProfile };
     const task = await acceptTask(client, boss, { title: 'Goal graph run', prompt, ...execution }, native ? 'goal-graph-tools' : 'ordinary');
-    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,$5) RETURNING *', [randomUUID(), goalId, task.id, { ...input.scope, projectId: context.project.id, goalDigest: context.goalDigest }, input.execution.harness])).rows[0]!;
+    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,$5) RETURNING *', [randomUUID(), goalId, task.id, { ...scope, projectId: context.project.id, goalDigest: context.goalDigest }, input.execution.harness])).rows[0]!;
     return { run: await runView(client, row), task };
   });
   return { ...result.value, replayed: result.replayed };
 }
 export function getRun(pool: Pool, id: string) { return transaction(pool, async client => runView(client, await runRow(client, id)), true); }
+
+type RunCursor = { version: 1; goalId: string; at: string; id: string };
+function listCursor(goalId: string, after?: string): RunCursor | null {
+  if (!after) return null;
+  try {
+    if (!/^[A-Za-z0-9_-]+$/.test(after) || after.length > 1024) throw Error();
+    const cursor = JSON.parse(Buffer.from(after, 'base64url').toString('utf8')) as RunCursor;
+    if (Object.keys(cursor).sort().join(',') !== 'at,goalId,id,version' || cursor.version !== 1 || cursor.goalId !== goalId || typeof cursor.id !== 'string' || cursor.id.length < 1 || cursor.id.length > 128 || typeof cursor.at !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$/.test(cursor.at) || new Date(cursor.at).toISOString() !== cursor.at.slice(0, 23) + 'Z') throw Error();
+    return cursor;
+  } catch { throw new HttpError(400, 'invalid_goal_graph_cursor', 'Use the cursor returned for this goal.'); }
+}
+/** Existing grant/task rows are the authority; this is a body-free live read, not another execution ledger. */
+export function listRuns(pool: Pool, goalId: string, after?: string, limit = 10): Promise<GoalGraphRunPage> {
+  const cursor = listCursor(goalId, after);
+  if (!Number.isSafeInteger(limit) || limit < 1 || limit > 20) throw new HttpError(400, 'invalid_graph_run', 'Invalid planning page size.');
+  return transaction(pool, async client => {
+    const goal = (await client.query<{ project_id: string }>('SELECT project_id FROM flow.goals WHERE id=$1', [goalId])).rows[0];
+    if (!goal) throw new HttpError(404, 'goal_not_found', 'Goal not found.');
+    const rows = (await client.query<{ id: string; version: 1; task_id: string; project_id: string; goal_digest: string; base_revision: number; mode: 'fixture' | 'claude'; created_at: Date; revoked_at: Date | null; sort_time: string }>(`SELECT id,version,task_id,scope->>'projectId' AS project_id,scope->>'goalDigest' AS goal_digest,
+      (scope->>'baseRevision')::int AS base_revision,mode,created_at,revoked_at,
+      to_char(created_at AT TIME ZONE 'UTC','YYYY-MM-DD"T"HH24:MI:SS.US"Z"') AS sort_time
+      FROM flow.goal_graph_runs WHERE goal_id=$1 AND ($2::timestamptz IS NULL OR (created_at,id)<($2::timestamptz,$3::text))
+      ORDER BY created_at DESC,id DESC LIMIT $4`, [goalId, cursor?.at ?? null, cursor?.id ?? null, limit + 1])).rows;
+    const page = rows.slice(0, limit);
+    const tasks = page.length ? (await client.query<TaskSummaryRow>(`SELECT ${TASK_SUMMARY_COLUMNS} FROM flow.tasks WHERE id=ANY($1)`, [page.map(row => row.task_id)])).rows : [];
+    const byTask = new Map(tasks.map(task => [task.id, task]));
+    const runs = page.map(row => {
+      const task = byTask.get(row.task_id);
+      if (row.project_id !== goal.project_id || !task || task.harness !== row.mode) throw new HttpError(409, 'goal_graph_run_identity', 'The planning run and task association is inconsistent.');
+      return { id: row.id, version: row.version, goalId, projectId: goal.project_id, goalDigest: row.goal_digest, baseRevision: row.base_revision,
+        mode: row.mode, task: toTaskSummary(task), createdAt: row.created_at.toISOString(), revokedAt: row.revoked_at?.toISOString() ?? null };
+    });
+    const last = page.at(-1);
+    return { goalId, projectId: goal.project_id, runs, nextCursor: rows.length > limit && last
+      ? Buffer.from(JSON.stringify({ version: 1, goalId, at: last.sort_time, id: last.id } satisfies RunCursor)).toString('base64url') : null };
+  }, true);
+}
 export async function revoke(pool: Pool, id: string, reason: string, key: string): Promise<GoalGraphRunRevoked> {
   const result = await command(pool, `goal-graph-run:revoke:${id}`, key, { reason }, async client => {
     const changed = await revokeAuthority(client, graphAuthorityStore, id, reason);

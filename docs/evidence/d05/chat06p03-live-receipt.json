@@ -1,0 +1,57 @@
+{
+  "observedAt": "2026-10-06T17:26:50.120539+00:00",
+  "main": "c84314eab96bdbc6ce19db4c8f12e1ccb9ae99b0",
+  "sourceCount": 168,
+  "snapshotGeneratedAt": "2026-10-06T17:26:17.117Z",
+  "source": {
+    "id": "CHAT06P03",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash",
+    "planDir": "plans/chat06-runner-prefix-hash",
+    "evidenceDir": "docs/evidence/chat06p03",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T17:25:36.278Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md",
+      "syncedAt": "2026-10-06T17:26:17.117Z",
+      "stale": false,
+      "ageHours": 0.011421388888888889
+    },
+    "current": true,
+    "issues": []
+  },
+  "status": {
+    "parserErrors": [],
+    "humanComplete": true,
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "links": {
+      "kind": "unknown",
+      "reason": "层级或父任务声明冲突/不完整",
+      "parent": {
+        "state": "known",
+        "record": "[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)",
+        "id": "FLOW-001",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "mika",
+        "value": "mika"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    }
+  },
+  "rawBytes": 2132695,
+  "rawSha256": "8197d16962439001036e176d6bcaa034ce806f6c7f68c01f729d64bbba4cd805",
+  "elapsedMs": 10786,
+  "process": "owned dashboard only; old PID3679 normal TERM and exit verified; new session76108",
+  "personalServicesChanged": false,
+  "architectureChanged": false,
+  "limitations": "One aggregate observation; not performance SLO or implementation approval"
+}

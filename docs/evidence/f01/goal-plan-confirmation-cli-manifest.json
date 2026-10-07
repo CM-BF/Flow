@@ -1,0 +1,272 @@
+{
+  "at": "2026-10-06 18:06:53 UTC",
+  "sourceTarget": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+  "priorProtected": "bb7bdd5e1a4c344a4ae5e2664bc6ac3c68e61691",
+  "evidenceAnchor": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+  "claim": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e v50 (CLI3+ownrecords2)",
+  "counts": {
+    "source": 3,
+    "protected-direct-input": 23,
+    "evidence": 8
+  },
+  "workspaceLinks": {
+    "apps/cli/node_modules/@flow/client": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/client",
+    "apps/cli/node_modules/@flow/contracts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/contracts"
+  },
+  "checks": {
+    "HTTPSelected": 1,
+    "HTTPPassed": 1,
+    "HTTPRequests": 2,
+    "helpAndREADME": "Same case assertions",
+    "focusedNoEmitExit": 0,
+    "PG": 0,
+    "provider": 0,
+    "oldChecksRerun": 0
+  },
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/cli/src/index.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 26573,
+      "sha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449"
+    },
+    {
+      "kind": "source",
+      "path": "apps/cli/src/goal-plan-confirmation.test.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 3908,
+      "sha256": "df168d192fa4bdb3fd1271ed2f8838571906fb5e95e98abbf07a615a2f2cbd22"
+    },
+    {
+      "kind": "source",
+      "path": "apps/cli/README.md",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 9395,
+      "sha256": "51394b9498562eb51185cbdeb45448d55ea33319537dd15690cd0e2c4bf363a3"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/cli/src/json-input.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 1194,
+      "sha256": "74dbdad09a3d5287fd11ea59be11d6da800c3b676b266bcdfc689e646804eff7"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/cli/src/watch.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 3573,
+      "sha256": "69bd0c2ac53fa795e8f8490576cf68b73a03ae56fadde2c936dc8895b328415e"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/cli/src/cli.test.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 17834,
+      "sha256": "90c50bcc6ce46dd1506926268759187a2488b9ccf522180ba12323e8ce1c25f7"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 4437,
+      "sha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/client/src/index.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 14330,
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/index.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 1512,
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/goal-progression.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/goals.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/projects.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/src/tasks.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/server/src/index.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/client/src/goal-plan-confirmation-production.test.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 13958,
+      "sha256": "478d168037eef6da3c1717f0438c4e82987ad19df582e80f8c6f06bcbf51e91a"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "package.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "pnpm-lock.yaml",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "pnpm-workspace.yaml",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "tsconfig.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "apps/cli/package.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/client/package.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "kind": "protected-direct-input",
+      "path": "packages/contracts/package.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-tsconfig.json",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 211,
+      "sha256": "9752db771dbaa2987cc92dcf7a9ccc17495d3a30f472b80465b7300b3114b419"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-http.stdout.txt",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 319,
+      "sha256": "8969b7c5dc32be3acd459522907a0f9392fc47ee45843286e5e79a9761030ea3"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-http.exit.json",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 1026,
+      "sha256": "decd33a7d675eb4883e475c07f863d028b6977163edfa2a338ffb49768d85cac"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-types.stdout.txt",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-types.exit.json",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 1018,
+      "sha256": "5ca15bde46f8438c48ca667625b251484d40216aad74887ffb6026b8a3cad9fb"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-README.md",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 2248,
+      "sha256": "f6b7342f49b1b72a75e1b09e3ea9a43fa9643efdd50267f15e8173697a83d9d0"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-scope-amend.json",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 937,
+      "sha256": "5f0bb07975ef69a5d72e4c925a6d0b22363b62623b016bf56ceb17f10e945b5d"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/f01/goal-plan-confirmation-production-main-receipt.json",
+      "ref": "6e0411d30d3d581302a71d7edd24881e46b509d2",
+      "bytes": 1567,
+      "sha256": "f8e21c62fac0f008332df32bb7d72f7d00bfa5b51a71ab56fb4f36aca43b3a44"
+    }
+  ],
+  "mismatches": [],
+  "limitations": [
+    "Thin CLI transport only; public server semantic behavior is the independently approved prior production slice.",
+    "No live natural-language planning or model budget granted.",
+    "Existing reader and old CLI tests are protected, not rerun."
+  ]
+}

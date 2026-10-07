@@ -1,0 +1,16 @@
+✔ enumerated admission temporary rename or disappearance gets a bounded fresh sample (57.607958ms)
+✔ stable idle observation retains every persistent hash, independent of sampling metadata (17.168084ms)
+✔ in-flight, assignments, malformed admission and remaining temporary file are unknown (105.435542ms)
+✔ root loss, history disappearance and directory symlink fail closed without resampling (32.629833ms)
+✔ persistent temporary churn exhausts exactly two retries; no implicit success (26.5725ms)
+✔ all explicit release phases preserve old data and accept only their maintenance changes (1.160167ms)
+✔ bad audit actor, key, versions or old row changes cannot pass (0.580958ms)
+✔ in-flight and changed history/config/task/dependency/pointer are rejected, not normalized away (23.046833ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 278.827208

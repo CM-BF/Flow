@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T23:23:38.401143+00:00",
+  "sourceCount": 182,
+  "inputs": [
+    {
+      "source": "e8998516a051cace55bb93e6f4b075b92d02917d",
+      "path": "plans/tui01-terminal-client/plan.md",
+      "bytes": 14727,
+      "sha256": "98f410acc4e1f6756eb7460fef8a56f1e7e776ad33fb6e5ec63e387dd4b5d8f0"
+    },
+    {
+      "source": "e8998516a051cace55bb93e6f4b075b92d02917d",
+      "path": "plans/tui01-terminal-client/status.md",
+      "bytes": 9445,
+      "sha256": "203dddcfef5f76fb5933cc60359892ee3ad629898fc288360e4e43579613b9d2"
+    },
+    {
+      "source": "3e5d102304ad442074ae57960c5db339dfd0c724",
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 24732,
+      "sha256": "b110b910f14df5866f39aa3f47b44162aea579be5f65ab0ca77ccedb4ca7b1a0"
+    },
+    {
+      "source": "3e5d102304ad442074ae57960c5db339dfd0c724",
+      "path": "docs/evidence/d05/tui01g-source-registration.json",
+      "bytes": 1009,
+      "sha256": "622b40a1def61f0c2c761364a5326c161fc2d8633320cd3f6195d713fa694e59"
+    },
+    {
+      "source": "3e5d102304ad442074ae57960c5db339dfd0c724",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 28140,
+      "sha256": "2824c134e057285cd6850df80bc93a4014074048f306b185419396ac8c7b1c29"
+    }
+  ],
+  "checks": "fixed source bytes/hash; registry and status parser",
+  "runtime": "unchanged",
+  "implementationNotIncluded": true,
+  "productTests": "NOT_RUN"
+}

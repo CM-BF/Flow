@@ -1,0 +1,3807 @@
+{
+  "at": "2026-10-06T21:44:54.112662+00:00",
+  "scope": [
+    "web-execution-profiles",
+    "web-plugin-integration",
+    "web-plugin-management-integration",
+    "web-profile-integration",
+    "web-steering-control",
+    "web-unified-workspace",
+    "web-visual-shell",
+    "web-workspace-cache",
+    "web-workspace-lifecycle-baseline"
+  ],
+  "ledger": {
+    "path": "/tmp/flow-nine-vite-cache-ledger.json",
+    "sha256": "69b6a514c0918d2dd552c3e8cf2e459fc66f3713630ce61fb744fbc65d8f6145"
+  },
+  "kernelSnapshot": {
+    "lsofExit": 0,
+    "psExit": 0,
+    "tcpExit": 0,
+    "scope": "one bounded kernel metadata read filtered only exact9worktree roots; no request to preview ports"
+  },
+  "items": [
+    {
+      "tree": "web-execution-profiles",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "7f10889d9cb0ce015c2d72ac4f95c57236b74995",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-PROFILE01",
+          "claimId": "17093c4c-a8fa-4e43-bc72-6bd54cab0795",
+          "version": 2,
+          "state": "released",
+          "worker": "w01_owner",
+          "scope": [
+            "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+            "apps/web/src/execution-profiles/catalog.ts",
+            "apps/web/src/execution-profiles/execution-profiles.css",
+            "apps/web/src/execution-profiles/selection.ts",
+            "apps/web/test/execution-profiles.browser.ts",
+            "apps/web/test/execution-profiles.fixture.tsx",
+            "apps/web/test/execution-profiles.test.ts",
+            "docs/evidence/wpf-profile01",
+            "plans/wpf-profile01-execution-profiles"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/plans/wpf-profile01-execution-profiles/status.md",
+          "sha256": "f6454ba8b69718b06ad644b1c46ea54dc221d5794d0c00a4491ee1d47429fc85",
+          "deliveredDeclared": false,
+          "completedLegacy": true,
+          "previewMentions": []
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles",
+          "dev": 16777234,
+          "ino": 117820126,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps",
+          "dev": 16777234,
+          "ino": 117820142,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web",
+          "dev": 16777234,
+          "ino": 117820293,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117852407,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117855945,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        117855945
+      ],
+      "processes": [
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "ppid": "33005",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-execution-profiles",
+          "pid": "32994",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33005",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33005",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages/client/src"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages/client"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages/contracts/src"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages/contracts"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/packages"
+        },
+        {
+          "tree": "web-execution-profiles",
+          "pid": "33011",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "33011",
+          "command": "node",
+          "port": 64954
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-plugin-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-I01",
+          "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+          "version": 4,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/TaskThread.tsx",
+            "apps/web/src/components/workspace/WorkspacePanels.tsx",
+            "apps/web/src/plugin-integration/slot-fixture.tsx",
+            "apps/web/src/plugin-integration/task-actions.ts",
+            "apps/web/src/themes.ts",
+            "apps/web/test/plugin-integration.browser.ts",
+            "apps/web/test/plugin-integration.config.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "docs/evidence/wpf-i01",
+            "plans/wpf-i01-plugin-integration"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md",
+          "sha256": "a55bdbb447d4d8df259646833845023cb2da5a2fd9b6f9dbd8f4b04c3eb1c73a",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "服务 owner：workspace_panels_owner；http://127.0.0.1:55049/ ，HTTP fixture 模拟、当前 moving worktree，非固定交付。长期开发进程 session 79831，启动：`PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-preview.ts --preview`（动态端口，以输出为准）。保留供独立审查的开发预览，不替换用户已打开入口；行为测试另启自有动态端口，只清理测试进程，不停止此服务。",
+            "用户保留入口仍为已审 M02 http://127.0.0.1:49922/ ，服务 owner 同上、session 17885，运行在 web-unified-workspace/codex/web-unified-workspace，HEAD c526c1c889437ee39155d669921577995195c74e；恢复法同上动态 preview 命令（在该树执行）。它也是 HTTP fixture，不是真实持续模型聊天。测试清理不得关闭此进程或改用户 tab。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+          "dev": 16777234,
+          "ino": 117144508,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps",
+          "dev": 16777234,
+          "ino": 117144523,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web",
+          "dev": 16777234,
+          "ino": 117144595,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117207163,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117265358,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        117265358
+      ],
+      "processes": [
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "ppid": "85997",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86004",
+          "ppid": "86003",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-plugin-integration",
+          "pid": "85986",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "85997",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "85997",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages/contracts/src"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages/contracts"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages/client/src"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages/client"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/packages"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86003",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86004",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration"
+        },
+        {
+          "tree": "web-plugin-integration",
+          "pid": "86004",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "86003",
+          "command": "node",
+          "port": 55048
+        },
+        {
+          "pid": "86003",
+          "command": "node",
+          "port": 55049
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-X03I01",
+          "claimId": "a1044bb0-46ed-4cc4-a39a-c3f27a67cea4",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/plugin-integration/integration.css",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/test/plugin-management-integration.browser.ts",
+            "apps/web/test/plugin-management-integration.fixture.ts",
+            "docs/evidence/wpf-x03",
+            "plans/wpf-x03-plugin-integration"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/plans/wpf-x03-plugin-integration/status.md",
+          "sha256": "9b4761a249be7e8edaa2bf78d3751f4dc6ff1834e33791e965e3e76c3ec5773a",
+          "deliveredDeclared": false,
+          "completedLegacy": false,
+          "previewMentions": [
+            "http://127.0.0.1:59473/，exec session96967，owner本agent，HTTP fixture模拟，无中心/DB/模型；固定同84源码的HTTP fixture。启动 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/plugin-management-integration.fixture.ts --app-preview`，动态端口。独有flag避免触发被复用CHAT fixture的preview分支；首次自有重复启动已清理，无旧服务受影响。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+          "dev": 16777234,
+          "ino": 117739417,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps",
+          "dev": 16777234,
+          "ino": 117739432,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web",
+          "dev": 16777234,
+          "ino": 117739583,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117800634,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117801657,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        117801657
+      ],
+      "processes": [
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "ppid": "55996",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56430",
+          "ppid": "56147",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "55402",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "55996",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "55996",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages/contracts/src"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages/contracts"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages/client/src"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages/client"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/packages"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56147",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56430",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration"
+        },
+        {
+          "tree": "web-plugin-management-integration",
+          "pid": "56430",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "56147",
+          "command": "node",
+          "port": 59473
+        },
+        {
+          "pid": "56147",
+          "command": "node",
+          "port": 59469
+        },
+        {
+          "pid": "56147",
+          "command": "node",
+          "port": 59470
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-profile-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-PROFILEI01",
+          "claimId": "7f1daa29-78e0-463e-ab88-99e295e9e648",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/execution-profile-integration.browser.ts",
+            "apps/web/test/execution-profile-integration.fixture.ts",
+            "docs/evidence/wpf-profile-integration",
+            "plans/wpf-profile-integration"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/plans/wpf-profile-integration/status.md",
+          "sha256": "c39dbef888707af73b7b0bf0dbd11f63ecb777a5b98de13c1a3ade7c57c2d217",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "预览服务owner workspace_panels_owner，http://127.0.0.1:51832/，session68857；[启动恢复](../../docs/evidence/wpf-profile-integration/README.md)。HTTP fixture模拟，0新增模型/DB/真实中心授权联调；跨刷新草稿持久化未实现。已有SVC仍旧构建不暗换，全部旧预览保留。目录与能力声明不代表在线，锁定大块展示已登记独立PROFILEUX01后继，本片不声称紧凑化完成。main已接收本实现，见[Git观察](../../docs/evidence/wpf-profile-integration/main-integration.json)。05:18 live核claim v1 active后完成本次纯metadata；本提交后全部10scope停写并执行授权release，后续状态以D04账本/原始receipt为准，不在release后追写本源。原始51832服务保留，不假称已更新至main的PROFILEUX组合。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+          "dev": 16777234,
+          "ino": 117946529,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps",
+          "dev": 16777234,
+          "ino": 117946544,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web",
+          "dev": 16777234,
+          "ino": 117946711,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117979103,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118048670,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        118048670
+      ],
+      "processes": [
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "ppid": "8685",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8694",
+          "ppid": "8693",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-profile-integration",
+          "pid": "8676",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8685",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8685",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages/client/src"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages/client"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages/contracts/src"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages/contracts"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/packages"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8693",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8694",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration"
+        },
+        {
+          "tree": "web-profile-integration",
+          "pid": "8694",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "8693",
+          "command": "node",
+          "port": 51830
+        },
+        {
+          "pid": "8693",
+          "command": "node",
+          "port": 51831
+        },
+        {
+          "pid": "8693",
+          "command": "node",
+          "port": 51832
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-steering-control",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "01842a87f768bd28ce7370681ff02d7b834765f7",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-STEER01",
+          "claimId": "2bae5026-8490-4880-8f43-74bd1b9bb863",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/conversation-steering/SteeringControl.tsx",
+            "apps/web/src/conversation-steering/control.ts",
+            "apps/web/src/conversation-steering/steering.css",
+            "apps/web/test/conversation-steering.browser.ts",
+            "apps/web/test/conversation-steering.fixture.ts",
+            "apps/web/test/conversation-steering.test.ts",
+            "docs/evidence/wpf-steering-control",
+            "plans/wpf-steering-control"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md",
+          "sha256": "3c4d31bb8120fc47448c15c5bf4e7a309a294db57e2cd19c11a247ac67175b00",
+          "deliveredDeclared": true,
+          "completedLegacy": true,
+          "previewMentions": [
+            "当前独立预览 http://127.0.0.1:63251/，session13237，owner workspace_panels_owner，固定实现HTTPfixture/0模型DB，未接App。所属大task/co-lead两字段为最新要求已写，D08负责解析/展示，不称已经完成。",
+            "2026-10-06 09:11:49 UTC：固定main/origin clean、target祖先和六source hash已独立核实；准确记录只含本模块。个人static/b1c/v12未变，preview63251保留。提交/push后全8scope停止写入，按fresh version原子release，回执交执行管理保存；释放后不追写本canonical。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+          "dev": 16777234,
+          "ino": 119572921,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps",
+          "dev": 16777234,
+          "ino": 119572936,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web",
+          "dev": 16777234,
+          "ino": 119573246,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 119619697,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 119697516,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        119697516
+      ],
+      "processes": [
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "ppid": "46236",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-steering-control",
+          "pid": "45304",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46236",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46236",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages/contracts/src"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages/contracts"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages/client/src"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages/client"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/packages"
+        },
+        {
+          "tree": "web-steering-control",
+          "pid": "46425",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "46425",
+          "command": "node",
+          "port": 63247
+        },
+        {
+          "pid": "46425",
+          "command": "node",
+          "port": 63248
+        },
+        {
+          "pid": "46425",
+          "command": "node",
+          "port": 63251
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-unified-workspace",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-M02",
+          "claimId": "dea92c6b-3450-404c-a32c-3fd007485ac6",
+          "version": 4,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/projection.ts",
+            "apps/web/src/workspace-feed/Attention.tsx",
+            "apps/web/src/workspace-feed/TaskIndex.tsx",
+            "apps/web/src/workspace-feed/projection.ts",
+            "apps/web/src/workspace-feed/task-index.ts",
+            "apps/web/test/fixture-server.ts",
+            "apps/web/test/workspace-browser.ts",
+            "apps/web/test/workspace-fixture.ts",
+            "apps/web/test/workspace-observers-browser.ts",
+            "apps/web/test/workspace-preview.ts",
+            "apps/web/test/workspace-projection.test.ts",
+            "apps/web/test/workspace-real-center.ts",
+            "docs/evidence/wpf-m02",
+            "plans/wpf-m02-web-workspace"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/plans/wpf-m02-web-workspace/status.md",
+          "sha256": "8cfbc7425b04ebde8b32780d6363f335bc5b6484b69d122f50f5c6f235d1c243",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "| 实现范围 | apps/web/src/App.tsx, apps/web/src/projection.ts, apps/web/src/TaskThread.tsx, apps/web/src/components/workspace/WorkspacePanels.tsx, apps/web/src/workspace-feed, apps/web/test/fixture-server.ts, apps/web/test/workspace-projection.test.ts, apps/web/test/workspace-fixture.ts, apps/web/test/workspace-preview.ts, apps/web/test/workspace-browser.ts, apps/web/test/workspace-observers-browser.ts, apps/web/test/workspace-real-center.ts |",
+            "[技能与质量](../../docs/evidence/wpf-m02/quality.md)。已提供动态端口预览 http://127.0.0.1:49922 （HTTP fixture模拟，非真实中心）；工作总览原地决策/取消，复用官方Thread/右面板下钻。依赖安装在本树处理，不用W01 workspace symlink冒充M02 client验证。",
+            "03:31:33 UTC只读核验：`git merge-base --is-ancestor d47c602f3bab1fe97a9be70fd37780c2918bcfbc main`退出0；4320聚合的mainHead为edee6b1c5d74c2ee46ec98bab2844579db6a00c4、method=ancestor、current=true、scopeEqual=true、dirtyScopePaths=[]，故更正之前过期的未集成记录。当前本树实现未变，本owner没有执行main merge。49922 HTTP fixture服务/session17885继续保留，不改用户tab。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+          "dev": 16777234,
+          "ino": 116782933,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps",
+          "dev": 16777234,
+          "ino": 116782948,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web",
+          "dev": 16777234,
+          "ino": 116782955,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 116824285,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 116861004,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        116861004
+      ],
+      "processes": [
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "ppid": "1874",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1752",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1874",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1874",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages/contracts/src"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages/contracts"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages/client/src"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages/client"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/packages"
+        },
+        {
+          "tree": "web-unified-workspace",
+          "pid": "1880",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "1880",
+          "command": "node",
+          "port": 49921
+        },
+        {
+          "pid": "1880",
+          "command": "node",
+          "port": 49922
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-visual-shell",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "558895d7a64e1502ac4b397e24daf7946296e0ca",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-VISUAL01",
+          "claimId": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
+          "version": 3,
+          "state": "released",
+          "worker": "d01_owner",
+          "scope": [
+            "apps/web/src/assistant-ui.css",
+            "apps/web/src/plugins/builtins.ts",
+            "apps/web/src/plugins/host.ts",
+            "apps/web/src/styles.css",
+            "apps/web/src/themes.ts",
+            "apps/web/test/visual-shell.browser.ts",
+            "apps/web/test/visual-shell.fixture.ts",
+            "docs/evidence/wpf-visual01",
+            "plans/wpf-visual01-shell"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md",
+          "sha256": "c526ebfdee6dcffbcc05304b86b846d185cc63b2b4b6337a9c39e95dbd1b89b6",
+          "deliveredDeclared": true,
+          "completedLegacy": true,
+          "previewMentions": []
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell",
+          "dev": 16777234,
+          "ino": 119750200,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps",
+          "dev": 16777234,
+          "ino": 119750215,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web",
+          "dev": 16777234,
+          "ino": 119750533,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 119786756,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 119792456,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        119792456
+      ],
+      "processes": [
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "ppid": "35496",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "ppid": "84478",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "86080",
+          "ppid": "85757",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFiles": [
+        {
+          "tree": "web-visual-shell",
+          "pid": "35487",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35496",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35496",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "35502",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "83372",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "84478",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "84478",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages/client/src"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages/client"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages/contracts/src"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages/contracts"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/packages"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "85757",
+          "command": "node",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "86080",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell"
+        },
+        {
+          "tree": "web-visual-shell",
+          "pid": "86080",
+          "command": "esbuild",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+        }
+      ],
+      "listeners": [
+        {
+          "pid": "35502",
+          "command": "node",
+          "port": 53044
+        },
+        {
+          "pid": "35502",
+          "command": "node",
+          "port": 53045
+        },
+        {
+          "pid": "35502",
+          "command": "node",
+          "port": 53047
+        },
+        {
+          "pid": "85757",
+          "command": "node",
+          "port": 65126
+        },
+        {
+          "pid": "85757",
+          "command": "node",
+          "port": 65124
+        },
+        {
+          "pid": "85757",
+          "command": "node",
+          "port": 65125
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-workspace-cache",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-WORKSPACECACHE01",
+          "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/ConversationQueue.tsx",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/conversations/read-cache.ts",
+            "apps/web/src/data-renderers/flow-reply-detail.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/workspace-retention.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "apps/web/test/workspace-retention.browser.ts",
+            "apps/web/test/workspace-retention.fixture.ts",
+            "apps/web/test/workspace-retention.test.ts",
+            "docs/evidence/wpf-workspace-cache",
+            "plans/wpf-workspace-cache"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md",
+          "sha256": "5d2c06d40d5c22276b76b280a28a3b3010997d297b699d6c85ad579644e0779a",
+          "deliveredDeclared": true,
+          "completedLegacy": true,
+          "previewMentions": [
+            "| 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/projection.ts, apps/web/src/conversations/read-cache.ts, apps/web/src/data-renderers/flow-reply-detail.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/workspace-retention.ts, apps/web/test/conversation-projection.test.ts, apps/web/test/conversation-queue.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-retention.browser.ts, apps/web/test/workspace-retention.fixture.ts, apps/web/test/workspace-retention.test.ts |",
+            "唯一source由管理集中登记，尚不声称dashboard已聚合。架构影响：App唯一views权威增加可回收判定；session增加既有binding释放；两个投影复用有界读缓存工具/读代际，命令生命周期不改。固定target后交架构更新队列，不越scope写图。实际read-only fd1322与原53ce apps/web零diff；新base包含已审附件后端/公共client，但没有附件App绑定。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+          "dev": 16777234,
+          "ino": 121438928,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps",
+          "dev": 16777234,
+          "ino": 121438943,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web",
+          "dev": 16777234,
+          "ino": 121439344,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 121489565,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 121545346,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        121545346
+      ],
+      "processes": [],
+      "openFiles": [],
+      "listeners": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK",
+      "reason": "Released claim; clean delivered canonical; no kernel consumer observed at intake; exact cache is ignored, real directory and bounded regular nlink1 files stable during hashing. Final operator must fresh-check identity and receive Web manager external/preview retirement confirmation.",
+      "fileAudit": {
+        "status": "PASSED_LOCAL_READ_ONLY",
+        "limit": {
+          "files": 10000,
+          "logicalBytesPerCache": 536870912,
+          "totalWallSeconds": 20
+        },
+        "rootBefore": [
+          16777234,
+          121545346,
+          16877,
+          501,
+          3,
+          96,
+          1791287062799649272,
+          1791287062799649272
+        ],
+        "rootAfter": [
+          16777234,
+          121545346,
+          16877,
+          501,
+          3,
+          96,
+          1791287062799649272,
+          1791287062799649272
+        ],
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 121545346,
+            "uid": 501,
+            "mode": 493
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 121545347,
+            "uid": 501,
+            "mode": 493
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 121545351,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 121545383,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 121545352,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 121545353,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 121545385,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 121545354,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 121545386,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 121545355,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 121545356,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 121545357,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 121545411,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7094,
+            "sha256": "80c8e0f6f803fc43c9c95e8fffbf9a162a47189f34cc6632ad43c3e460f18b1f"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 121545358,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 121545387,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 121545359,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 121545388,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 121545360,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 121545389,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 121545372,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 121545390,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 121545373,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 121545391,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 121545374,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 121545392,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 121545375,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 121545393,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 121545376,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 121545394,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 121545377,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 121545395,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 121545378,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 121545396,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 121545379,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 121545397,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 121545380,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 121545398,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 121545381,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 121545399,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 121545361,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 121545400,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 121545348,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 121545362,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 121545363,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 121545401,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 121545364,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 121545402,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 121545365,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 121545403,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 121545366,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 121545404,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 121545367,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 121545405,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 121545368,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 121545406,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 121545382,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 121545369,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 121545408,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 121545370,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 121545409,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 121545371,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 121545410,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          }
+        ],
+        "fileCount": 60,
+        "logicalBytes": 17530080,
+        "allocatedBlocksBytes": 17645568,
+        "tracked": {
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "ignored": {
+          "exit": 0,
+          "stdout": ".gitignore:2:node_modules/\tapps/web/node_modules/.vite\n",
+          "stderr": ""
+        },
+        "spaceMeaning": "Logical bytes and st_blocks are observations, not a guarantee of physical reclaim; shared filesystem extents and ongoing use are not proved absent."
+      },
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-workspace-lifecycle-baseline",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-WORKSPACEPERF01",
+          "claimId": "c815bc00-fd71-4652-b2c0-7affc0d7361e",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/test/workspace-lifecycle.browser.ts",
+            "apps/web/test/workspace-lifecycle.fixture.ts",
+            "docs/evidence/wpf-workspace-lifecycle-baseline",
+            "plans/wpf-workspace-lifecycle-baseline"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/plans/wpf-workspace-lifecycle-baseline/status.md",
+          "sha256": "73fea6fbc232ba40d9a5d10bc43695c5060ef0c9900e6c024296aca181020f6b",
+          "deliveredDeclared": true,
+          "completedLegacy": true,
+          "previewMentions": []
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+          "dev": 16777234,
+          "ino": 121134251,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps",
+          "dev": 16777234,
+          "ino": 121134267,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web",
+          "dev": 16777234,
+          "ino": 121134646,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 121177931,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 121180652,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        121180652
+      ],
+      "processes": [],
+      "openFiles": [],
+      "listeners": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK",
+      "reason": "Released claim; clean delivered canonical; no kernel consumer observed at intake; exact cache is ignored, real directory and bounded regular nlink1 files stable during hashing. Final operator must fresh-check identity and receive Web manager external/preview retirement confirmation.",
+      "fileAudit": {
+        "status": "PASSED_LOCAL_READ_ONLY",
+        "limit": {
+          "files": 10000,
+          "logicalBytesPerCache": 536870912,
+          "totalWallSeconds": 20
+        },
+        "rootBefore": [
+          16777234,
+          121180652,
+          16877,
+          501,
+          3,
+          96,
+          1791284431105044124,
+          1791284431105044124
+        ],
+        "rootAfter": [
+          16777234,
+          121180652,
+          16877,
+          501,
+          3,
+          96,
+          1791284431105044124,
+          1791284431105044124
+        ],
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 121180652,
+            "uid": 501,
+            "mode": 493
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 121180653,
+            "uid": 501,
+            "mode": 493
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 121180656,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 121180689,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 121180657,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 121180658,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 121180690,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 121180659,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 121180691,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 121180660,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 121180661,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 121180662,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 121180715,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7094,
+            "sha256": "87cb6327a22687943d6f300548b3a9a5884f704040e092871cf457d3020cb892"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 121180663,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 121180692,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 121180664,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 121180693,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 121180665,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 121180694,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 121180678,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 121180695,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 121180679,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 121180696,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 121180680,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 121180697,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 121180681,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 121180698,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 121180682,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 121180699,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 121180683,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 121180700,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 121180684,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 121180701,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 121180685,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 121180702,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 121180686,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 121180703,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 121180687,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 121180704,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 121180666,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 121180705,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 121180654,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 121180667,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 121180668,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 121180706,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 121180669,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 121180707,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 121180670,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 121180708,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 121180671,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 121180709,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 121180672,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 121180710,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 121180673,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 121180711,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 121180688,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 121180675,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 121180712,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 121180676,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 121180713,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 121180677,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 121180714,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          }
+        ],
+        "fileCount": 60,
+        "logicalBytes": 17530080,
+        "allocatedBlocksBytes": 17645568,
+        "tracked": {
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "ignored": {
+          "exit": 0,
+          "stdout": ".gitignore:2:node_modules/\tapps/web/node_modules/.vite\n",
+          "stderr": ""
+        },
+        "spaceMeaning": "Logical bytes and st_blocks are observations, not a guarantee of physical reclaim; shared filesystem extents and ongoing use are not proved absent."
+      },
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    }
+  ],
+  "mutations": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0,
+  "fileAuditCompletedAt": "2026-10-06T21:46:48.567927+00:00",
+  "fileAuditWallSeconds": 0.121,
+  "preservation": "All source/tests/rules/plans/raw evidence, real packages and every other node_modules path remain untouched. Active caches not scanned. No deletion/stop/installation/import/test/product DB query.",
+  "limitations": [
+    "Kernel consumer observations are bounded point-in-time snapshots, not proof that no future/external consumer exists.",
+    "Web manager external-consumer confirmation remains separate and required before deletion.",
+    "Lead is sole operator; this report authorizes no mutation."
+  ]
+}

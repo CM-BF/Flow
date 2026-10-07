@@ -1,0 +1,31 @@
+{
+  "driverPid": 41513,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 178,
+  "ownedGroups": [
+    {
+      "pgid": 41513,
+      "state": "stopped"
+    },
+    {
+      "pgid": 44722,
+      "state": "stopped"
+    },
+    {
+      "pgid": 46979,
+      "state": "stopped"
+    }
+  ],
+  "reason": "driver-nonzero",
+  "last": {
+    "freeBytes": 1464950784,
+    "rawBytes": 42567,
+    "runtimeBytes": 30872,
+    "runtimeEntries": 31
+  },
+  "stopCheckpoint": "pending",
+  "exitCode": 1,
+  "signalCode": null,
+  "elapsedMs": 9350
+}

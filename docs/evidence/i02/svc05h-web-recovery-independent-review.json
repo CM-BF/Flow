@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T18:34:23.900129+00:00",
+  "status": "APPROVED",
+  "reviewer": "astra_ultra_execution_lead",
+  "preparationTarget": "ce6fec38531b0a803705a8eb9cbfdb01ad7fc20e",
+  "manifestSha256": "bf98b5756018287543af670c1600536e3fec66ca9d3e341d6ee6f230a4dc89ba",
+  "toolsTarget": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "authorization": "GO same-version Web-only recovery delegated to execution lead after independent fixed review",
+  "scope": "one existing bootstrap, same caa1/v2; not af51 backend or d629 publication",
+  "verified": {
+    "preparationAndToolBindings": 17,
+    "liveFileArtifactReportDependencyBindings": 52,
+    "mode0600Request": true,
+    "fixedBootstrapAndStopAndLaunchRead": true,
+    "priorDirectConsumerFailurePreservationTestRead": true,
+    "reviewerTests": 0,
+    "reviewerProviderQueries": 0
+  },
+  "invariants": [
+    "center/runner processes and source unchanged",
+    "config/native configuration/maintenance/pointer bytes unchanged",
+    "both retained artifacts and old/new exact compatibility reports preserved",
+    "no DB migrations or task commands",
+    "no user tab reload or credentials output"
+  ],
+  "stop": "unknown stops; no force, retry or alternate candidate",
+  "socketDiagnostic": "Capacity failure reproduced in isolation; personal residual cause NOT_PROVEN",
+  "outcome": "one bootstrap exit0/922ms and ready; independent saved before/after comparison passed; main restored ec5 clean",
+  "outcomeObservedAt": "2026-10-06T18:37:26.248371+00:00",
+  "newWeb": {
+    "ownedGroup": 23534,
+    "listener": 23631
+  },
+  "limits": [
+    "Not proof of the personal CLOSED descriptor root cause",
+    "No complete private state snapshot retained; exact owned identity helper plus recorded process identity/source comparisons used",
+    "No af51 backend or d629 Web publication",
+    "No provider or browser UI acceptance"
+  ]
+}

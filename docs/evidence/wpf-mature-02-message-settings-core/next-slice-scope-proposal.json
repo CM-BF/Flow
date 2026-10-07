@@ -1,0 +1,255 @@
+{
+  "kind": "scope-proposal-only",
+  "taskId": "WPF-MATURE-02-CORE",
+  "owner": "status_read",
+  "lead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+  "branch": "codex/claude-message-settings-core",
+  "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+  "observedClaimVersion": 3,
+  "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
+  "readMain": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "currentScopes": [
+    "packages/contracts/src/claude-turn-settings.ts",
+    "packages/contracts/src/claude-turn-settings.test.ts",
+    "plans/wpf-mature-02-message-settings-core",
+    "docs/evidence/wpf-mature-02-message-settings-core"
+  ],
+  "proposedAdditions": [
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/conversations.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/tasks.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/assistant.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/assistant.test.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "babb342aa8c616f0477c7297fb7e6f5831aee022ce19f78d4addc2a5bea374df",
+      "baseSameBytes": true
+    },
+    {
+      "group": "contracts",
+      "path": "packages/contracts/src/claude-message-settings.test.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/message-settings-migration.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/commands.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/admission.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/state.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/replies.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/queries.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/gate.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "d6b88877c6190bd2bb026b5c6884a5916a0ea5d49fe9d9cb9f0038776405bf7d",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/execution-profiles/native-catalog.test.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "6783d35e586d38e7811e4a4197867f58fd024b8db2d76b12f622c2b6f219d478",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/assistant/store.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa",
+      "baseSameBytes": true
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/message-settings.test.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "center",
+      "path": "apps/server/src/conversations/message-settings-fixture.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "runner",
+      "path": "apps/runner/src/claude.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b",
+      "baseSameBytes": true
+    },
+    {
+      "group": "runner",
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135",
+      "baseSameBytes": true
+    },
+    {
+      "group": "runner",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "existsAtReadMain": true,
+      "readMainSha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "baseSameBytes": true
+    },
+    {
+      "group": "runner",
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "runner",
+      "path": "apps/runner/src/claude-message-settings.test.ts",
+      "existsAtReadMain": false
+    },
+    {
+      "group": "context",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "existsAtReadMain": true,
+      "handoffReceipt": "/tmp/flow-svc05h01-source-handoff-receipt.json"
+    },
+    {
+      "group": "recovery",
+      "path": "apps/server/src/reconciliation.ts",
+      "existsAtReadMain": true
+    },
+    {
+      "group": "migration",
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "existsAtReadMain": false
+    }
+  ],
+  "readonlyContextConsumer": "apps/server/src/context-transparency/attachment-history.test.ts",
+  "externalOwnedPaths": [
+    "packages/client/src/index.ts",
+    "packages/client/src/conversation-acknowledgement.ts",
+    "packages/contracts/src/index.ts",
+    "apps/server/src/index.ts"
+  ],
+  "execution": "AMEND_COMMITTED 2026-10-06T15:50:24.492Z; 39 scopes; no tests/PG/native authorized",
+  "committedReceipt": "next-slice-v3-amend-receipt.json"
+}

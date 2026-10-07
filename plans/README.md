@@ -1,50 +1,43 @@
 # Flow 计划索引
 
-当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 12:44:20 UTC：主线aeb已接O12、ENG01G和SVC05准备；个人后台现固定362/v15 accepting，Web仍8d8/caa1/v2。终端目标控制TUI01D、工程原生用途ENG01H并行；固定后台产物SVC06已排后继。主线提交、固定运行版本和真实模型验收分别记录，下文旧日期批次仅历史观察。
+本页只作稳定导航，不维护实时状态、release/SHA、来源数量或 worker 人数快照。开始工作时先读 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md)，再按 [dashboard 来源登记](../apps/execution-dashboard/src/registry.mjs) 找到相关 owner 的唯一 `status.md` 与 `review.md`。同名主线文件是受控发布副本，不能覆盖权威工作树的后续状态。
+
+运行版本、阻塞、下一交付与资源条件从 [FLOW-001 状态](flow-001-architecture/status.md)、[OPS 状态](ops-001-status-review/status.md) 及相关任务权威 status 读取；[执行 dashboard](http://127.0.0.1:4320) 只读聚合这些来源。下文历史批次仅用于追溯，不表示当前运行或实施状态。
 
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
-## 当前计划
+## 总计划导航
 
-| 编号 | 计划 | 状态 | 用途 |
+| 编号 | 计划 | 状态入口 | 用途 |
 | --- | --- | --- | --- |
-| FLOW-001 | [Flow 产品与技术架构计划](flow-001-architecture/plan.md) | `in-progress` | 汇总产品约束、候选 stack、模块边界、验证场景及分阶段落地路线 |
-| FLOW-002 | [Provider 登录与 Harness 对比计划](flow-002-provider-harness/plan.md) | `in-progress` | Hermes / T3 Code / Paseo 源码复用、已有登录、原生 SDK 与 HarnessAgent 对照及证据 |
-| FLOW-003 | [首轮执行与 Agent 分工计划](flow-003-m1-execution/plan.md) | `completed` | 个人自托管首版、Goal Owner / Execution Lead 职责、期望10槽/运行时实测容量、worktree/写入范围与端到端验收 |
+| FLOW-001 | [Flow 产品与技术架构计划](flow-001-architecture/plan.md) | [status](flow-001-architecture/status.md) | 汇总产品约束、候选 stack、模块边界、验证场景及分阶段落地路线 |
+| FLOW-002 | [Provider 登录与 Harness 对比计划](flow-002-provider-harness/plan.md) | [status](flow-002-provider-harness/status.md) | Hermes / T3 Code / Paseo 源码复用、已有登录、原生 SDK 与 HarnessAgent 对照及证据 |
+| FLOW-003 | [首轮执行与 Agent 分工计划](flow-003-m1-execution/plan.md) | [status](flow-003-m1-execution/status.md) | M1历史分工、worktree/写入范围与端到端验收；后续协作按最新用户约束 |
 
-## 当前进度
+## 长期目标与执行边界
 
-- 已将架构讨论、设计原则及常见协议支持要求整理成计划。
-- PostgreSQL、Web UI、复用现有 harness、插件扩展和低上下文切换成本是用户明确提出的方向。
-- 已确认前后端分离、正式 CLI、中心连接多个执行后端、前端断线后任务继续，以及各模块预留插件边界。
-- 已确认聊天读取分层：上层保留正文和仅含 ID/title 的折叠引用，下层内容按展开加载；具体毫秒级性能预算仍待验证。
-- 已确认需要支持 A2A 等常见协议；A2A/MCP 优先、ACP 接入及 AG-UI 展示适配的具体范围见计划第 5.3 节，协议版本和实现排期仍为建议。
-- 已审查 Hermes、T3 Code、Paseo 的固定版本源码和许可证，记录登录、凭据归属、RPC 与常驻执行的可复用模块。
-- 已使用本机已有登录运行原生 Claude、原生 Pi 与 HarnessAgent + Pi 的小任务和恢复接口冒烟；详细限制与结果见 FLOW-002。
-- Claude HarnessAgent 本地容器与 bridge 依赖已准备，创建会话时登录解析器刷新返回 HTTP 400，尚无模型调用；失败证据与后续排查已记录。
-- 已发现累计 usage 和资源发现控制差异，尚不能据此声称省 token、恢复可靠或支持 100+ 并发。
-- 已确认首版优先个人自托管：一个中心连接本机或远端 runners；原生Claude候选已通过有界系统验证，生产最终选型未定；M1 调度选择 pg-boss，范围及短验证见 F00 记录。
-- 已明确职责：Goal Owner（主 agent）负责用户沟通、总体目标、优先级协调和目标验收；Execution Lead（独立 Astra Ultra agent）负责架构、契约/骨架、client/CLI、工程检查、技术派工与集成，以及计划和索引维护。
-- 用户期望总并发上限10（含Goal Owner和Execution Lead），所有ready独立任务尽量并行；当前运行时第5worker实测被拒绝，实际cap4，暂有两个执行workers。实际并行度取用户上限、运行时cap和ready任务数的最小值。用户已授权正式开工，F00 骨架、契约和调度短验证完成；后续从同一已提交契约基线在独立 worktrees 派发功能任务。
-- F00 已建立工程 workspace、公共契约与薄 client，完成 PostgreSQL/pg-boss 短验证；中心、runner、CLI/Web均已接收，真实整浏览器退出的系统旅程与93/93检查通过；独立review和main集成已完成。
+- 完整产品与技术要求以 FLOW-001/002 和验收矩阵为基线，包括 PostgreSQL、前后端分离、正式 CLI/TUI、多个执行后端、前端断线后任务继续、可替换 harness 与插件边界。
+- 读取分层、低上下文切换成本、常见协议、容量、成本和真实工程交付均需各自证据；不把 fixture、接口检查或早期实验推广为完整能力。
+- 原生登录、候选源码/许可证、恢复与 usage 的历史实验及限制由 FLOW-002 保留；本索引不复制其最新结论。
+- 职责、领取与消息预算遵循 [项目规则](../AGENTS.md) 及用户当次指令；并行度受最新用户上限、实际运行时 cap 和 ready 工作限制。历史配额、某次拒绝或旧 worker 数不表示当前可用人数。
 
-用户已授权长期持续推进 Flow，完整 FLOW-001/002 是必须满足的基线，M1已完成只是基础，原计划完成后仍依据收益与证据迭代。[完整验收矩阵](flow-001-architecture/full-plan-matrix.md)逐项保留要求、证据和缺口；C02/P01/M02已实际启动，完成后验收/集成并领取下一ready项。不得停在单批次或降低验收。
+用户已授权长期持续推进 Flow，完整 FLOW-001/002 是必须满足的基线，M1已完成只是基础，原计划完成后仍依据收益与证据迭代。[完整验收矩阵](flow-001-architecture/full-plan-matrix.md)逐项保留要求、证据和缺口。按各任务验收与权威状态继续推进，不得停在单批次或降低验收。
 
 逐 stack 的技能发现与 clean-code 固定来源、应用记录见 [技能与质量基线](../docs/quality/skills.md)。
 
-## 活跃实施子计划
+## 实施与管理导航
 
-每行有唯一plan正文以及同目录状态、review；旧日期文件仅作跳转，不再维护副本。
+每行保留计划、status与review入口，不在本表复制完成/进行中状态。若登记来源迁移，以dashboard登记的唯一owner工作树为准；旧日期文件仅供历史跳转。
 
-| 编号 | 计划 | 状态 | 独立状态 / review |
-| --- | --- | --- | --- |
-| C01 | [中心](c01-control-plane/plan.md) | `completed`（M1已验收） | [status](c01-control-plane/status.md) / [review](c01-control-plane/review.md) |
-| R01 | [Runner](r01-runner/plan.md) | `completed`（M1已验收） | [status](r01-runner/status.md) / [review](r01-runner/review.md) |
-| L01 | [CLI](l01-cli/plan.md) | `completed`（M1已验收） | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
-| W01 | [Web与双主题](w01-web/plan.md) | `completed` | [status](w01-web/status.md) / [review](w01-web/review.md) |
-| D01 | [工程执行 dashboard](d01-execution-dashboard/plan.md) | `completed` | [status](d01-execution-dashboard/status.md) / [review](d01-execution-dashboard/review.md) |
-| I01 | [M1集成验收](i01-integration/plan.md) | `completed` | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
-| OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | `completed` | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
+| 编号 | 计划 | 独立状态 / review |
+| --- | --- | --- |
+| C01 | [中心](c01-control-plane/plan.md) | [status](c01-control-plane/status.md) / [review](c01-control-plane/review.md) |
+| R01 | [Runner](r01-runner/plan.md) | [status](r01-runner/status.md) / [review](r01-runner/review.md) |
+| L01 | [CLI](l01-cli/plan.md) | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
+| W01 | [Web与双主题](w01-web/plan.md) | [status](w01-web/status.md) / [review](w01-web/review.md) |
+| D01 | [工程执行 dashboard](d01-execution-dashboard/plan.md) | [status](d01-execution-dashboard/status.md) / [review](d01-execution-dashboard/review.md) |
+| I01 | [M1集成验收](i01-integration/plan.md) | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
+| OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
 
 总计划状态：[FLOW-001](flow-001-architecture/status.md) / [FLOW-002](flow-002-provider-harness/status.md) / [FLOW-003](flow-003-m1-execution/status.md)。
 
@@ -52,7 +45,11 @@
 
 新计划从 [plan模板](templates/plan.md)、[status模板](templates/status.md)、[review模板](templates/review.md) 建立。每个owner更新自己的status，Execution Lead维护跨任务汇总。
 
-W01与D01外部成果已接收，分别为b04df958与6783562；权威owner工作树已核验clean，不再等待派发。
+## 历史验收与登记记录
+
+以下保留早期批次的验收与来源追溯，包括当时的完成/实施状态、目录、提交和运行观察。它们不是当前派工、写权、部署、并发或授权事实；不能据此领取范围或关闭未完成验收。当前事实只读上面的权威status入口与dashboard来源登记。
+
+W01与D01外部成果的历史接收记录分别为b04df958与6783562；当时权威owner工作树已核验clean。
 
 W01与D01由用户外部执行分队完成，原冻结基线eacee76保留；[共同交接与独占范围](../docs/handoffs/external-web-dashboard.md)。
 
@@ -67,7 +64,7 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 
 [工程/管理质量台账](../docs/quality/architecture-health-2026-10-06.md)记录后续P2。M1是持久执行基础；M2优先统一跨任务解释/决策入口，不把目前task页当最终心流体验。
 
-## 当前完整目标批次（2026-10-06 02:32 UTC）
+### 历史完整目标批次（2026-10-06 02:32 UTC）
 
 | 任务 | 实际状态 | 唯一owner工作树/状态 |
 | --- | --- | --- |
@@ -80,7 +77,7 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 
 [Web平台管理 WPF-001](web-platform/plan.md) 已接收至3493088文档快照，权威外部owner后续变化按实际commit接收；其子项不与主线P01/D03重复派发。M02后端与CLI已进入main8c57f2f；真实统一Web入口由外部WPF-M02独占实现。I02集成状态见[plan](i02-integration/plan.md)/[status](i02-integration/status.md)/[review](i02-integration/review.md)。
 
-## 当前协调片段
+### 历史协调片段（2026-10-06）
 
 [D04 多 Lead 领取](d04-coordination/plan.md) 已完成并部署；[status](d04-coordination/status.md) / [review](d04-coordination/review.md)。G01 首图命令、P02 Task-based A2A 持久出站、F01共享 client/CLI/生产入口和WPF-M02统一Web已分别审查，在I02接收集成。O01目标命令和E01零模型上游probe滚动推进；自然语言完整交付/插件生命周期/容量仍未完成。
 
@@ -150,3 +147,18 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 
 - ENG01H：[原生工程用途与检查收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract/plans/eng01h-native-engineering-contract/plan.md)，ENG-001下唯一中心合同片；不把配置声明当原生资格。
 - SVC06：[固定后台发布产物](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/plan.md)，FLOW-001/REQ-19后继，开发checkout与运行依赖解耦；当前仅plan/evidence，不抢终端/原生实现。
+
+## 2026-10-06 13:10 UTC 连接与运行边界
+
+- WPF-CONNECTION01：[刷新后恢复中心连接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/plans/wpf-connection-session/plan.md)，直接归WPF-MATURE-06；native_center_owner实施中心会话、统一HTTP/流鉴权，028已唯一领取。Web恢复后继独立。
+- S01P05：[事件状态写入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/plans/s01p05-event-state/plan.md)，FLOW-001下原S01并发后继，原events范围已交唯一owner。
+- ENG01I：[受信原生宿主编排](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/plans/eng01i-native-engineering-host/plan.md)，ENG-001下已固定准备合同，当前planning且原claim释放；资格事实齐备再fresh take，不表示产品实施。
+
+SVC06已由assignment_review接收原唯一树与九scope实施固定后台产物；原条目“仅plan/evidence”是历史观察。个人backend仍362/v15 accepting，Web8d8/v2，不随本次源码与看板登记切换。
+
+### 新增来源（2026-10-06 14:50:27 UTC）
+
+- WPF-RECOVERY01：[聊天恢复唯一计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/plan.md)，归 WPF-MATURE-06。
+- WPF-RELEASE03：[当前后台网页兼容验证](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/plan.md)，归 WPF-MATURE-01。
+
+- MATURE02C01：[逐消息设置共享接口与命令行](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/plans/mature02c01-claude-message-settings-client/plan.md)，WPF-MATURE-02下的独立共享consumer；CORE合同输入与O14候选验证边界分别保留。

@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-06T16:45:42.321628+00:00",
+  "phase": "COMPLETE_TWELVE_STOPPED",
+  "maximumApplied": 12,
+  "applied": 12,
+  "fixedMain": "74bc72f0d32daebc8f89a75528f3d72002b3a29e",
+  "targetFreeBytes": 1241513984,
+  "freeObservedBytes": 1238319104,
+  "BStartGateBytes": 1207959552,
+  "missingToPreparationTargetBytes": 3194880,
+  "logicalDematerializedBytes": 95386914,
+  "observedPerOperationFreeDeltas": 125349888,
+  "physicalAttribution": "Shared volume observations only; no exclusive physical-recovery estimate.",
+  "trees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch",
+      "head": "54d5c67c40185a1fc7d66230375ddbe22cd0d894",
+      "record": "flow-next12b-codex-native-launch-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter",
+      "head": "1ca72bb4fd54f27c37426ecfd19913a70dd735e3",
+      "record": "flow-next12b-codex-native-adapter-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview",
+      "head": "bd31d5a6fc799091975728b3ebec82d0778b913d",
+      "record": "flow-next12b-static-preview-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-admission-readiness",
+      "head": "e6f5b2e40ddeb1b084d179ab82016cce24547cc3",
+      "record": "flow-next12b-steering-admission-readiness-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream",
+      "head": "594e1a912a24cad6b1c12837ea379fba12ef3a7f",
+      "record": "flow-next12b-native-assistant-stream-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "head": "9cea63212b13c624fde53981721aee116d0caeed",
+      "record": "flow-next12b-web-message-reuse-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "record": "flow-next12b-dashboard-proof-performance-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "head": "66695c6579189644ae6399dcaca80cc04487a178",
+      "record": "flow-next12b-web-context-receipts-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds",
+      "head": "aa3d23532f358958b3ce36665cf2b003c4003076",
+      "record": "flow-next12b-runner-wait-bounds-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence",
+      "head": "74af1a55985f0ab114b56d626a9694b9078b90f2",
+      "record": "flow-next12b-event-state-persistence-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence",
+      "head": "064183b984f0dd7bc6818ef84e68dbc9e4fc5de7",
+      "record": "flow-next12b-runner-read-fence-sparse-result.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop",
+      "head": "3a1e908b257bced2abdad329d7a429414f34a2e8",
+      "record": "flow-next12b-runner-graceful-stop-sparse-result.json"
+    }
+  ],
+  "archivedInputs": [
+    {
+      "file": "flow-nextbatch-own-intake.json.gz",
+      "originalFile": "flow-nextbatch-own-intake.json",
+      "bytes": 950226,
+      "sha256": "2e56fcf9051dc32f430e4900ec3ae701af6b3ce1871d6149c02cf169a3c28164",
+      "gzipBytes": 150631,
+      "gzipSha256": "2a691f4c2c1fc0b9d0ced6ed410294c294cbb07475d95b43662af4dfa0b90185"
+    },
+    {
+      "file": "flow-nextbatch-web-intake.json.gz",
+      "originalFile": "flow-nextbatch-web-intake.json",
+      "bytes": 435560,
+      "sha256": "996cae7857676f797941c1a13a2c79242181b960eab605830f62b65088b3a876",
+      "gzipBytes": 70973,
+      "gzipSha256": "20ee8a213462ca64e0898d96a844f371ba8f353accd54d7db2591fb17387e95a"
+    },
+    {
+      "file": "flow-nextbatch-extra-intake.json.gz",
+      "originalFile": "flow-nextbatch-extra-intake.json",
+      "bytes": 209140,
+      "sha256": "d2c223fd607b20f8c5b1b91746a79d8c5a70f5b7e618cb8c204efdee5dbe3d2a",
+      "gzipBytes": 41789,
+      "gzipSha256": "9c8b524ea9dfd2e150cbe4c41abefabceda45fd010e2e1458bd0b967bdb5aa62"
+    },
+    {
+      "file": "flow-next12b-own-preflight.json.gz",
+      "originalFile": "flow-next12b-own-preflight.json",
+      "bytes": 938517,
+      "sha256": "2028faffb87efeba5dda269f6eac0046c6d8f91c209b3a6eaa06ea1c38c9bd1f",
+      "gzipBytes": 147184,
+      "gzipSha256": "2f44d265cbcd1ef25d7232b7dfcc4bb7fceade52be2c965be40d8960e4694e2b"
+    },
+    {
+      "file": "flow-next12b-final-preflight.json.gz",
+      "originalFile": "flow-next12b-final-preflight.json",
+      "bytes": 1296297,
+      "sha256": "80b9686c2703c28efab8e21da80b9b34c2bba5c9854e536d2346a5544b37f1c5",
+      "gzipBytes": 211731,
+      "gzipSha256": "31a2f8bc155e45e6274335382e55aeb19b4914a03b595249641215c708fa408e"
+    },
+    {
+      "file": "mika-intake.json.gz",
+      "originalFile": "flow-nextbatch-mika-intake.json",
+      "bytes": 1269718,
+      "sha256": "84070fde33b3156c643e14c4dfcf62fc28406604cc1da0aefa1e1195f7a4fbbf",
+      "gzipBytes": 215169,
+      "gzipSha256": "12ac418204999e4dc5fc2f4b7219f6c6f7bde1764b0d3d860780f7bced4c2267"
+    },
+    {
+      "file": "twelve-preflight.json.gz",
+      "originalFile": "flow-next12b-final-preflight.json",
+      "bytes": 2497928,
+      "sha256": "0098080e2c90df95d3de74c7840ec02e3a0b8f00e867e2c11139f453900d333f",
+      "gzipBytes": 420106,
+      "gzipSha256": "d05a5f6ed0eb5e04c3fb3dfab2c69b2396c76ea5c1f1f9ea541d6e8fd8b2aa58"
+    }
+  ],
+  "keptActive": [
+    "web-artifact-release",
+    "native-harness-host",
+    "preview-refresh",
+    "center-shutdown",
+    "web-execution-profile-summary"
+  ],
+  "allRetainedHashesUnchanged": true,
+  "allProtectedTreesUnchanged": true,
+  "dependenciesUntouched": true,
+  "productTests": 0,
+  "PG": 0,
+  "provider": 0,
+  "release03ElapsedMs": 7983,
+  "release03B": "NOT_RUN",
+  "next": "Batch stopped at12. Preparation margin observed; Web RELEASE03 owns next sequential A→B opportunity, still requiring its own fresh guards. O14/O15/TUI/CORE PG wait Web cleanup; small bounded checks keep their own guards. Full SVC06 remains below2.5GiB.",
+  "preparationTargetObservedAt": "2026-10-06T16:44:51.217531+00:00",
+  "preparationTargetObservedFreeBytes": 1243852800
+}

@@ -3,19 +3,19 @@ import { mkdtemp, mkdir, readdir, readFile, writeFile, rm } from 'node:fs/promis
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
-import { afterEach, expect, it } from 'vitest';
-import type { ClaimedTask, EventBatch, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
+import { afterAll, afterEach, expect, it } from 'vitest';
+import { RUNNER_CLAIM_PROTOCOL, type ClaimedTask, type EventBatch, type HarnessAdapter, type HarnessContext, type RunnerEventData } from '@flow/contracts';
 import { FlowClient } from '@flow/client';
 import { randomUUID } from 'node:crypto';
-import { Pool } from 'pg';
-import { createServer as createFlowServer } from '../../server/src/index.js';
 import { commandRunnerMaintenance } from '../../server/src/runner-maintenance/store.js';
 import { runRunner, type RunnerOptions, type RunnerNotice } from './runtime.js';
 import { textDigest, verifyText } from './verifier.js';
 import { EventStorageError } from './outbox.js';
+import { createCapacityCenter, finishCapacityCenters, recordCapacityCase } from '../../../docs/evidence/s01p07/capacity-center.js';
 
 const cleanup: (() => Promise<unknown>)[] = [];
-afterEach(async () => { const results = await Promise.allSettled(cleanup.splice(0).reverse().map(stop => stop())); for (const result of results) if (result.status === 'rejected') throw result.reason; });
+afterAll(finishCapacityCenters, 80000);
+afterEach(async ({ task }) => { recordCapacityCase(task.name, task.result?.state ?? 'unknown'); const results = await Promise.allSettled(cleanup.splice(0).reverse().map(stop => stop())); for (const result of results) if (result.status === 'rejected') throw result.reason; });
 async function eventually(condition: () => boolean | Promise<boolean>) {
   const until = Date.now() + 4000;
   while (!await condition()) { if (Date.now() > until) throw new Error('Expected bounded runner behavior did not occur.'); await sleep(5); }
@@ -29,11 +29,14 @@ function deferred() {
   return { promise, resolve };
 }
 async function peer(total = 8, capacity = 16) {
+  const runnerId = randomUUID();
   const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-runtime-pool-'));
   const batches: EventBatch[] = [], notices: RunnerNotice[] = [];
   const running = new Set<string>(), outcomes = new Map<string, string>();
   const executions: Promise<void>[] = [], shutdowns: AbortController[] = [];
   let claims = 0, assigned = 0, peak = 0;
+  const opportunityIds: string[] = [];
+  let unavailableLookup = false;
   let claimHook: ((index: number, response: ServerResponse) => boolean) | undefined;
   let heartbeatHook: ((attemptId: string, response: ServerResponse) => boolean) | undefined;
   let assignmentHook: ((value: ClaimedTask) => ClaimedTask) | undefined;
@@ -42,16 +45,23 @@ async function peer(total = 8, capacity = 16) {
   const server = createHttpServer(async (request, response) => {
     const parts: Buffer[] = []; for await (const part of request) parts.push(part as Buffer);
     const body = JSON.parse(Buffer.concat(parts).toString() || '{}'); response.setHeader('content-type', 'application/json');
-    if (request.url === '/api/runner/claim') {
+    if (request.url === '/api/runner/identity') { response.end(JSON.stringify({ protocol: RUNNER_CLAIM_PROTOCOL, runnerId })); return; }
+    if (request.url === '/api/runner/claim-opportunity/status') {
+      opportunityIds.push(body.requestId);
+      if (unavailableLookup) response.destroy(); else response.end(JSON.stringify({ ...body, state: 'missing' })); return;
+    }
+    if (request.url === '/api/runner/claim-opportunity') {
+      opportunityIds.push(body.requestId);
       claims++; if (claimHook?.(claims, response)) return;
       let assignment: ClaimedTask | null = null;
       if (assigned < total && running.size < capacity) {
         assigned++; const id = `attempt-${assigned}`; running.add(id); peak = Math.max(peak, running.size);
-        assignment = { attempt: { id, runnerId: 'runner-test', ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10000).toISOString() },
+        assignment = { attempt: { id, runnerId, ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10000).toISOString() },
           task: { id: `task-${assigned}`, title: 'Deterministic no-model attempt', prompt: String(assigned), harness: 'fixture' } };
       }
       if (assignment && assignmentHook) assignment = assignmentHook(assignment);
-      response.end(JSON.stringify({ assignment, remainingLeaseMs: assignment ? 10000 : 0 })); return;
+      response.end(JSON.stringify(assignment ? { ...body, state: 'assigned', assignment, remainingLeaseMs: 10000,
+        identity: { taskId: assignment.task.id, attemptId: assignment.attempt.id, runnerId: assignment.attempt.runnerId, ownerVersion: assignment.attempt.ownerVersion } } : { ...body, state: 'empty' })); return;
     }
     if (request.url === '/api/runner/heartbeat') {
       if (heartbeatHook?.(body.attemptId, response)) return;
@@ -71,7 +81,8 @@ async function peer(total = 8, capacity = 16) {
   const baseUrl = `http://127.0.0.1:${address.port}`;
   cleanup.push(async () => { for (const shutdown of shutdowns) shutdown.abort(); await Promise.allSettled(executions); server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); await rm(workingDirectory, { recursive: true, force: true }); });
   return {
-    batches, notices, outcomes, workingDirectory, baseUrl, running,
+    batches, notices, outcomes, workingDirectory, baseUrl, running, opportunityIds,
+    blockLookup() { unavailableLookup = true; },
     get claims() { return claims; }, get assigned() { return assigned; }, get peak() { return peak; },
     assignment(hook: typeof assignmentHook) { assignmentHook = hook; }, route(hook: typeof routeHook) { routeHook = hook; },
     claim(hook: typeof claimHook) { claimHook = hook; }, heartbeat(hook: typeof heartbeatHook) { heartbeatHook = hook; }, report(hook: typeof reportHook) { reportHook = hook; },
@@ -84,6 +95,30 @@ async function peer(total = 8, capacity = 16) {
   };
 }
 function adapter(run: HarnessAdapter['run']): HarnessAdapter { return { name: 'fixture', version: '1', run }; }
+
+it('refills a completed slot before the long poll timer while another attempt remains active', async () => {
+  const api = await peer(3, 2), release = deferred(), replacement = deferred();
+  const entered = new Set<string>();
+  const running = api.start(adapter(async context => {
+    const identity = context.executionIdentity;
+    if (!identity) throw new Error('Runner execution identity missing.');
+    entered.add(identity.taskId);
+    if (identity.taskId === 'task-1') await Promise.race([release.promise, held(context)]);
+    else { if (identity.taskId === 'task-3') replacement.resolve(); await held(context); }
+  }), { maxConcurrentAttempts: 2, pollIntervalMs: 10_000, requestTimeoutMs: 1000 });
+  try {
+    await eventually(() => entered.size === 2);
+    release.resolve();
+    const deadline = new AbortController();
+    try {
+      await Promise.race([replacement.promise, sleep(2000, undefined, { signal: deadline.signal }).then(() => { throw new Error('Slot was not refilled before polling.'); }, () => undefined)]);
+    } finally { deadline.abort(); }
+    expect(api.outcomes.get('attempt-1')).toBe('succeeded');
+    expect(entered).toEqual(new Set(['task-1', 'task-2', 'task-3']));
+    expect(api.running).toEqual(new Set(['attempt-2', 'attempt-3']));
+    expect(api.claims).toBe(3); expect(api.peak).toBe(2);
+  } finally { release.resolve(); running.shutdown.abort(); await running.promise; }
+});
 
 it('defaults to one slot and explicitly overlaps four attempts without exceeding the local limit', async () => {
   const serial = await peer(); const release = deferred(); let active = 0, peak = 0;
@@ -133,14 +168,14 @@ it('stops every slot on event storage failure even if the adapter catches the re
   await expect(running.promise).rejects.toBeInstanceOf(EventStorageError); expect(settled).toBe(2);
 });
 
-it('persists an unknown claim, lets a known slot finish, and refuses another claim after restart', async () => {
+it('retains an unknown opportunity while status is unavailable, lets a known slot finish, and creates no replacement key after restart', async () => {
   const api = await peer(); const release = deferred(); let entered = 0;
-  api.claim((index, response) => { if (index === 2) { response.destroy(); return true; } return false; });
+  api.claim((index, response) => { if (index === 2) { api.blockLookup(); response.destroy(); return true; } return false; });
   const first = api.start(adapter(async context => { entered++; await Promise.race([release.promise, held(context)]); }), { maxConcurrentAttempts: 4 });
   await eventually(() => api.claims === 2); release.resolve(); await eventually(() => api.outcomes.size === 1);
   await sleep(50); expect(api.claims).toBe(2); first.shutdown.abort(); await first.promise;
   const restarted = api.start(adapter(async () => { entered++; })); await sleep(80);
-  expect(api.claims).toBe(2); expect(entered).toBe(1); restarted.shutdown.abort(); await restarted.promise;
+  expect(api.claims).toBe(2); expect(entered).toBe(1); expect(new Set(api.opportunityIds).size).toBe(2); restarted.shutdown.abort(); await restarted.promise;
 });
 
 it('does not send a claim when its durable intent cannot be saved', async () => {
@@ -163,53 +198,10 @@ it.each([0, 17, 1.5, NaN, null, '4'])('rejects an invalid local slot limit %s be
 });
 
 async function realCenter(capacity: number) {
-  const name = `flow_s01p01_${randomUUID().replaceAll('-', '')}`;
-  const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
-  const database = new URL(adminUrl); database.pathname = `/${name}`;
-  const admin = new Pool({ connectionString: adminUrl, max: 1 });
-  const pool = new Pool({ connectionString: database.href, max: 2, statement_timeout: 5000 });
-  let created = false, app: Awaited<ReturnType<typeof createFlowServer>> | undefined;
-  const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-real-pool-'));
-  const processes: { shutdown: AbortController; promise: Promise<void> }[] = [];
-  cleanup.push(async () => {
-    for (const process of processes) process.shutdown.abort();
-    await Promise.allSettled(processes.map(process => process.promise));
-    try { app?.server.closeIdleConnections(); await app?.close(); }
-    finally {
-      try { await pool.end(); }
-      finally {
-        try {
-          if (created) {
-            await eventually(async () => (await admin.query('SELECT 1 FROM pg_stat_activity WHERE datname=$1', [name])).rowCount === 0);
-            await admin.query(`DROP DATABASE ${name}`);
-            const remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [name])).rows;
-            console.log(JSON.stringify({ cleanup: 's01p01-own-database', name, remaining })); expect(remaining).toEqual([]);
-          }
-        } finally { await admin.end(); await rm(workingDirectory, { recursive: true, force: true }); }
-      }
-    }
-  });
-  if ((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [name])).rowCount) throw new Error('Refusing existing test database.');
-  await admin.query(`CREATE DATABASE ${name}`); created = true;
-  app = await createFlowServer({ databaseUrl: database.href, ownerToken: 'test-owner', leaseMs: 300000, automaticQueueScan: false });
-  const baseUrl = await app.listen({ host: '127.0.0.1', port: 0 });
-  const owner = new FlowClient({ baseUrl, token: 'test-owner' });
-  const identity = await owner.registerRunner({ name: 'bounded functional runner', harnesses: ['fixture'], capacity });
-  const runner = new FlowClient({ baseUrl, token: identity.token });
-  return {
-    owner, runner, pool, identity,
-    async submit(prompt: string, resumeSessionId?: string) {
-      const result = await owner.submit({ title: prompt, prompt, harness: 'fixture', ...(resumeSessionId ? { resumeSessionId } : {}) }, randomUUID());
-      await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [result.task.id]);
-      return result.task.id;
-    },
-    start(implementation: HarnessAdapter, maxConcurrentAttempts = 4) {
-      const shutdown = new AbortController();
-      const promise = runRunner({ baseUrl, token: identity.token, workingDirectory, signal: shutdown.signal, adapters: [implementation], maxConcurrentAttempts,
-        pollIntervalMs: 10, heartbeatIntervalMs: 40, requestTimeoutMs: 1500 });
-      void promise.catch(() => undefined); const process = { shutdown, promise }; processes.push(process); return process;
-    },
-  };
+  const center = createCapacityCenter(capacity);
+  cleanup.push(() => center.close());
+  await center.startCenter();
+  return center;
 }
 
 it.each([1, 4])('real PG/HTTP enforces registered capacity %s with a local four-slot pool', async capacity => {

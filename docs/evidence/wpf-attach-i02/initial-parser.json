@@ -1,0 +1,112 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+        "id": "WPF-MATURE-03",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确认附件接线边界，开始把材料接入发送与排队",
+      "next": "在聊天中添加附件并保留安全的重试和草稿",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/attachment-integration.test.ts",
+        "apps/web/test/conversation-context-receipts.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-ATTACHI02",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-attachment-production",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T12:08:00.000Z",
+    "updatedRecord": "2026-10-06 12:08 UTC",
+    "todos": [
+      {
+        "id": "ATTACHI02-01",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "[启动证据](../../docs/evidence/wpf-attach-i02/README.md)"
+      },
+      {
+        "id": "ATTACHI02-02",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "已批准接口；待实现"
+      },
+      {
+        "id": "ATTACHI02-03",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "后十二 scope 须 fresh amend；尚未写入"
+      },
+      {
+        "id": "ATTACHI02-04",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "尚无固定候选/独立 review/main 接收"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；启动 HEAD 与 base 一致",
+    "declaredDirty": "启动已实核 clean；当前仅本任务初始计划与证据待提交，提交后以 Git 回执为准",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；组合输入已在 main，本任务新增接线尚未实现",
+    "next": "先完成材料冻结和窄 P01 binding；需要 App 等路径时交管理 fresh amend。唯一 status 交管理登记，不另抓 dashboard。",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  }
+}

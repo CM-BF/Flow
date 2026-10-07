@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-06T15:27:29.897731+00:00",
+  "admitted": true,
+  "freeBytes": 1123295232,
+  "minimumFreeBytes": 1107296256,
+  "stopBytes": 1090519040,
+  "claimObservedAt": "2026-10-06T15:26:53.773Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "scopeConflicts": [],
+  "branch": "codex/web-current-preview-compatibility",
+  "head": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
+  "clean": true,
+  "fixedSource": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "sourceHashes": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee"
+    }
+  ],
+  "dependenciesVerifiedReadOnly": [
+    "node_modules/tsx",
+    "node_modules/typescript",
+    "node_modules/@types/node",
+    "node_modules/pg",
+    "node_modules/@types/pg",
+    "node_modules/@playwright/test",
+    "node_modules/@fastify/cors",
+    "node_modules/fastify",
+    "node_modules/npm-package-arg",
+    "node_modules/pacote",
+    "node_modules/pg-boss",
+    "node_modules/ssri",
+    "node_modules/zod",
+    "node_modules/@types/npm-package-arg",
+    "node_modules/@types/pacote",
+    "node_modules/@types/ssri",
+    "node_modules/@flow/contracts"
+  ],
+  "protectedBackendSourceDiff": [],
+  "previousRuntimeMs": 0,
+  "allowedRuntimeMs": 60000,
+  "cleanupReserveMs": 20000,
+  "totalBudgetMs": 180000,
+  "retainedEvidenceLimit": 8388608,
+  "leadInbound": "Root relay: Lead15:25:57 actual>=1123262464B, final seventh tree completed, one fresh A-only window offered; O14/O15 PG held until this attempt ends or admission fails. Not reused as managerfree.",
+  "groupWindow": "One W01 history-only attempt, no Recovery tests, no Chrome/all/build/model/personals. Return after actual cleanup or NOT_RUN.",
+  "review": "Root432b source delta + peer432b source review; types1.839676s separately997d",
+  "gatePath": "/tmp/d01-release03-history-20261006-152729-727a99-gate.json",
+  "run": "history-20261006-152729-727a99",
+  "noPermission": [
+    "No Chrome/phaseB",
+    "No SVC green receipt from A-only",
+    "No new install/build/personal services/provider",
+    "No automatic rerun or lowerreserve"
+  ]
+}

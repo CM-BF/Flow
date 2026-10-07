@@ -1,0 +1,121 @@
+{
+  "observedAt": "2026-10-06T15:33:42.167217+00:00",
+  "target": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+  "metadata": "b34280e8f4acb7fe31c5adb33cd0e62396ac9506",
+  "sourceBindings": [
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "target": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "bytes": 4857
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.test.ts",
+      "target": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "sha256": "6b2f2fe959563997d2d949475d641123dadbdc70cab10f905e94cd6753e95f6a",
+      "bytes": 7216
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.config.ts",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "14ed3c6e4d5d4356f1f2ed5c0ab7d097261a8f33867e93a97ab62d70138e991b",
+      "bytes": 552
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/tsconfig.json",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "8ee4bc0bdb2f90c383efeedc7b99555d1d538117988af70948b4efd0ce7fb32e",
+      "bytes": 541
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/checks.json",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "e8e6f6cbad5a07fa0019c954472de16c31b2912e337718917b56ac2aab404619",
+      "bytes": 1759
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/cleanup.json",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "6d14d028e4bd78ab3f5824dcd27075440c6700aa6ac384d47fb6111edd097fd4",
+      "bytes": 455
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.log",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "418ba4ecc87a65f932ae6413cc1027f23322c35a008322219568241b0dc1c23a",
+      "bytes": 333
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.exit",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/strict.log",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/strict.exit",
+      "target": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "bytes": 2
+    },
+    {
+      "path": "tsconfig.json",
+      "target": "70cc4e852365e974cefde30bfad75c7d233985c6",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "bytes": 614
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "target": "70cc4e852365e974cefde30bfad75c7d233985c6",
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "bytes": 168
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-receipt.json",
+      "target": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "sha256": "4a8c949f6c59f0acf8a224aee71064f878a3471365df2afbe4a8f89b77b32693",
+      "bytes": 753
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/provision.json",
+      "target": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "sha256": "af05f2940d50b4b7424ed18ef1d707bceb440e7878bc4dcbd21886aa8482e7bc",
+      "bytes": 848
+    }
+  ],
+  "independentReview": {
+    "sourceTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+    "validationTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+    "deliveryTarget": "78c73677438efec7455fc68b44109fa7da9ce5f5",
+    "manifestSHA256": "2f113f0c9b5a373c6e90907f1b1ab349d2ab76552cadf6a34fb2b64fcba2f7ce",
+    "reviews": [
+      {
+        "reviewer": "mika",
+        "model": "gpt-6-astra",
+        "at": "2026-10-06 15:31:09 UTC",
+        "verdict": "APPROVED",
+        "p1": 0,
+        "p2": 0,
+        "scope": "14 Git bindings plus 4 package metadata, 5/5 and strict0, own cache absent"
+      },
+      {
+        "reviewer": "architecture_read",
+        "model": "gpt-6-astra",
+        "at": "2026-10-06 15:31:25 UTC",
+        "verdict": "APPROVED",
+        "p1": 0,
+        "p2": 0,
+        "scope": "full source pre-read plus fixed packet, 0 review test/PG/provider/write"
+      }
+    ],
+    "limits": "plain shared contract/ACK leaf only; excludes export, product consumers, admission, SDK and resume behavior",
+    "main": "NOT_INTEGRATED",
+    "writer": "c652bc61-f8a9-4848-a709-978adbb425ed v1 retained"
+  },
+  "integrationChecks": "Exact fixed/current source/raw bindings; new leaf has no production importer/export. Existing5/5+strict0 retained; no repeated tests/PG/provider."
+}

@@ -1,12 +1,24 @@
 import { assertConversationCreationMatches } from "@flow/client";
 import {
+  CLAUDE_TURN_SETTINGS_PROTOCOL,
+  claudeMessageSettingsCatalogEntrySchema,
+  claudeTurnSettingsSchema,
+  claudeTurnSettingsChoicesSchema,
+  claudeTurnSettingsJson,
+  checkClaudeTurnSettingsAllowed,
   conversationCreationSchema,
   executionProfileConfigurationSchema,
   executionProfileReferenceSchema,
+  type ClaudeMessageSettingsExecutionProfile,
+  type ClaudeTurnSettings,
+  type ConversationCapabilities,
+  type ExecutionProfileReference,
   type ConversationCreation,
   type ConversationSummary,
   type ExecutionProfile,
 } from "@flow/contracts";
+
+import type { MessageSettingsCatalogSnapshot } from "./catalog";
 
 export type Immutable<T> = { readonly [K in keyof T]: Immutable<T[K]> };
 export type ChatAccess = "none" | "configured-readonly";
@@ -61,7 +73,7 @@ export function readDirectoryProfile(input: unknown): Immutable<DirectoryProfile
 }
 
 /** This explicit allowlist stays narrow even when the shared publication schema gains new purposes. */
-export function configuredSelection(input: DirectoryProfile): Extract<ProfileSelection, { kind: "configured" }> {
+export function configuredSelection(input: Immutable<DirectoryProfile>): Extract<ProfileSelection, { kind: "configured" }> {
   const profile = readDirectoryProfile(input);
   const access = profile.configuration.access;
   if (!isChatAccess(access)) throw new Error("This execution profile cannot be used for ordinary chat");
@@ -82,4 +94,67 @@ export function freezeConversationCreation(title: string, selection: ProfileSele
 export function assertCreationReceiptMatches(expected: ConversationCreation, received: ConversationSummary): void {
   try { assertConversationCreationMatches(expected, received); }
   catch (cause) { throw new Error("Conversation receipt does not match the frozen creation configuration", { cause }); }
+}
+
+
+/** Public codec owns this branch; it must never pass through the legacy directory decoder. */
+export function readMessageSettingsProfile(input: unknown): Immutable<ClaudeMessageSettingsExecutionProfile> {
+  return freeze(claudeMessageSettingsCatalogEntrySchema.parse(input).profile);
+}
+
+/** Supplied by the authorized conversation owner; ids and catalog visibility alone grant nothing. */
+export interface MessageSettingsContext {
+  readonly profile: Immutable<ExecutionProfileReference> | null;
+  readonly capability: Immutable<ConversationCapabilities["messageSettings"]> | null;
+}
+export type MessageSettingsAvailability =
+  | { readonly allowed: true; readonly profile: Immutable<ClaudeMessageSettingsExecutionProfile> }
+  | { readonly allowed: false; readonly reason: string };
+
+function sameProfile(a: Immutable<ExecutionProfileReference>, b: Immutable<ExecutionProfileReference>): boolean {
+  return a.id === b.id && a.runnerId === b.runnerId && a.configDigest === b.configDigest;
+}
+
+/** A local preflight, never a provider probe or permission to retry an old command. */
+export function messageSettingsAvailability(catalog: MessageSettingsCatalogSnapshot, context: MessageSettingsContext): MessageSettingsAvailability {
+  const capability = context.capability;
+  if (!capability || capability.protocol !== CLAUDE_TURN_SETTINGS_PROTOCOL || capability.choices !== "execution-profile") {
+    return { allowed: false, reason: "当前会话未提供逐条消息设置能力，保留选择并联系宿主刷新会话。" };
+  }
+  if (!context.profile || !sameProfile(context.profile, capability.profile)) {
+    return { allowed: false, reason: "会话与设置能力的配置身份不一致，请刷新会话。" };
+  }
+  if (!catalog.loaded || catalog.stale || catalog.loading) {
+    return { allowed: false, reason: "请刷新设置目录后再选择或提交；当前选择会保留。" };
+  }
+  const reference = context.profile;
+  const profile = catalog.profiles.find(item => sameProfile(item.reference, reference));
+  if (!profile) return { allowed: false, reason: "已加载目录中没有会话的完整配置，请继续加载或刷新。" };
+  if (!profile.configuration.turnSettings?.choices.length) {
+    return { allowed: false, reason: "此配置没有可选的消息设置组合；可明确选择不附加设置。" };
+  }
+  return { allowed: true, profile };
+}
+
+/** Call synchronously with the same submission's intent/material capture. The receipt owner persists it. */
+export function captureMessageSettings(
+  value: Immutable<ClaudeTurnSettings> | undefined,
+  catalog: MessageSettingsCatalogSnapshot,
+  context: MessageSettingsContext,
+): Immutable<ClaudeTurnSettings> | undefined {
+  if (value === undefined) return undefined;
+  const snapshot = claudeTurnSettingsSchema.parse(value);
+  const available = messageSettingsAvailability(catalog, context);
+  if (!available.allowed) throw new Error(available.reason);
+  const decision = checkClaudeTurnSettingsAllowed(snapshot, {
+    profile: available.profile.reference,
+    choices: claudeTurnSettingsChoicesSchema.parse(available.profile.configuration.turnSettings?.choices),
+  });
+  if (decision.decision !== "allowed") throw new Error("所选完整组合不属于当前会话配置，请重新选择；旧选择不会自动清除。");
+  return freeze(snapshot);
+}
+
+/** Equality is the public canonical snapshot, including profile identity and every requested axis. */
+export function sameMessageSettings(a: Immutable<ClaudeTurnSettings> | undefined, b: Immutable<ClaudeTurnSettings> | undefined): boolean {
+  return a === undefined || b === undefined ? a === b : claudeTurnSettingsJson(a) === claudeTurnSettingsJson(b);
 }

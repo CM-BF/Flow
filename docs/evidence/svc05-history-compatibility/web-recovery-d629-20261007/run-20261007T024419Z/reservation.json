@@ -1,0 +1,20 @@
+{
+  "approvalId": "svc05h-web-d629-20261007-0243",
+  "approvedBy": "Execution Lead EXECUTE_GO at 02:43 fixed source window",
+  "at": "2026-10-07T02:44:19.594064+00:00",
+  "preparation": "246db0d4beb277a14bc61816999308d6cf1ecfe7",
+  "manifestSha256": "02ffecd1821e11101afba890c460681f7b72c679ed0526f7fc9b26e0b848ce62",
+  "requestSha256": "e27d305939a6a1da4578432b3a6ecc10c90d3078487f14aaa682c4162ad750ed",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "expectedVersion": 3,
+  "currentArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "action": "existing CLI web bootstrap exactly once; no retry/force/pointer or backend changes",
+  "providerQueries": 0,
+  "supervision": {
+    "ownership": "childPidOnly",
+    "workSeconds": 28,
+    "termGraceSeconds": 0,
+    "killGraceSeconds": 2,
+    "outputBytes": 65536
+  }
+}

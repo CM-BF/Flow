@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-06T19:02:27.190897+00:00",
+  "state": "ACCEPTED_FAILURE_AND_CLEANUP_EVIDENCE_NO_BEHAVIOR_APPROVAL",
+  "run": "settings-20261006-185753-21f4e5",
+  "source": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "runtimeMetadataHead": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
+  "claim": {
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "worker": "w01_owner"
+  },
+  "rawFiles": [
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+      "bytes": 12268,
+      "sha256": "9f9adde0cc124a2bd27fe5b4c743472b471b9323b88a774c0b08aa67068283ff"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/worker.mjs",
+      "bytes": 8548,
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/binding.json",
+      "bytes": 33726,
+      "sha256": "353e0f7b03c767299fdaa6ef8e8c8ef6f217c678635544ece6d816d8d7854868"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/consumed-gate.json",
+      "bytes": 1398,
+      "sha256": "f325b44536a528cec486b165cf5b38b2d2469a6dffeb7ce8f01767e92595d6ad"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/child-gate.json",
+      "bytes": 1813,
+      "sha256": "b21cccb8e7e0c382546bd2ebb432ad3c4c454e3d01e100fe42e6f50394234884"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/sandbox.sb",
+      "bytes": 415,
+      "sha256": "757b652709a59b980001c68e93f7388cfdf81c634b95e8588103a07a34da140a"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/result.json",
+      "bytes": 33345,
+      "sha256": "01652e6439fefb5bd49486176fb8d7ac162f2ec5cdb865d9272dae5f2e72f513"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/browser-budget.json",
+      "bytes": 220,
+      "sha256": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/worker.log",
+      "bytes": 2649,
+      "sha256": "8666e78ad79f09a41c2cfa005f9031e35bd9d59b8bae61a8d41db4f33c408698"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/browser-results.json",
+      "bytes": 1499,
+      "sha256": "0c4a3cff32de8b35e064195c89e179b6368a3b8c899624f44a30ce05a9bdd28e"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/owned-chrome.json",
+      "bytes": 154,
+      "sha256": "8300dd9c8a843d055d8007595a9c46937c4b7bf979668dca6db257e4e3d63b43"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/chrome.log",
+      "bytes": 853,
+      "sha256": "1b519b9bf720c9a83867cba07b8820e789aa07915f9bedfef5ed11659ea61616"
+    }
+  ],
+  "bindingAudit": {
+    "runnerAndBindingMatchConsumedGate": true,
+    "sixFixedAndCurrentSourcesMatch": true,
+    "failures": []
+  },
+  "actualResult": {
+    "startedAt": "2026-10-06T18:58:11.147902+00:00",
+    "workerFinishedAt": "2026-10-06T18:58:16.323Z",
+    "elapsedMs": 5197,
+    "cumulativeMs": 5197,
+    "remainingMsArithmeticOnly": 54803,
+    "parentExitCode": 1,
+    "workerFailure": "Error: Owned Chrome exited before CDP readiness\n    at <anonymous> (/private/tmp/message-settings-browser-candidate/worker.mjs:81:25)",
+    "checks": [],
+    "screenshots": 0,
+    "pageErrors": [],
+    "PG": 0
+  },
+  "cleanup": {
+    "parent": {
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "workerFixtureClosed": true,
+    "workerChromeExited": true,
+    "workerCleanupErrors": [],
+    "pgid": 87564,
+    "chromePid": 87566,
+    "scratchAbsentAtReadonlyReview": true,
+    "minimumRecordedFreeBytes": 1541926912,
+    "maximumRecordedScratchLogical": 216586,
+    "maximumRecordedScratchAllocated": 237568,
+    "retainedBytes": 177631,
+    "logBytes": 2649,
+    "lastObservations": [
+      {
+        "phase": "after-reap-before-scratch-removal",
+        "seconds": 5.194,
+        "freeBytes": 1541939200,
+        "scratchLogical": 216586,
+        "scratchAllocated": 237568,
+        "retainedBytes": 144403
+      },
+      {
+        "phase": "after-result-and-budget-write",
+        "seconds": 5.197,
+        "freeBytes": 1542144000,
+        "scratchLogical": 0,
+        "scratchAllocated": 0,
+        "retainedBytes": 177631
+      }
+    ]
+  },
+  "chromeDiagnostics": {
+    "reportedVersion": "154.0.8037.98",
+    "stderrPath": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/chrome.log",
+    "observed": "Crashpad personal Library settings.dat writes denied twice; then ProcessSingleton failed to create socket directory and Chrome startup aborted. No DOM/behavior assertion began.",
+    "chromeExitCode": null,
+    "chromeSignalCode": null,
+    "exitCodeReason": "Worker captures only exited boolean, not actual Chrome exitCode/signalCode; parentexit1 belongs to worker. Existing raw cannot recover missing Chrome exit code; do not rerun to fabricate the old observation.",
+    "argv": [
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "--headless=new",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-sync",
+      "--remote-debugging-port=0",
+      "--user-data-dir=/private/tmp/message-settings-browser-candidate/scratch/chrome-BJP3HY",
+      "--disk-cache-dir=/private/tmp/message-settings-browser-candidate/scratch/chrome-BJP3HY/disk-cache",
+      "about:blank"
+    ],
+    "argvProvenance": "Reconstructed exactly from pinned executedworker spawnexpression plus ownedprofile receipt, not separately persisted OSexecve argv.",
+    "environmentFacts": "Reviewed supervisor sets TMPDIR/TMP/TEMP/XDG_CACHE_HOME/NODE_COMPILE_CACHE to own scratch; it does not explicitly override MAC_CHROMIUM_TMPDIR. Ambient value was not captured. HOME unchanged. Full inherited environment not dumped."
+  },
+  "research": {
+    "primary": [
+      {
+        "url": "https://chromium.googlesource.com/chromium/src/+/refs/heads/main/chrome/browser/process_singleton_posix.cc",
+        "fact": "The same socket-directory error occurs when CreateUniqueTempDir fails, before socket setup/bind."
+      },
+      {
+        "url": "https://github.com/chromium/chromium/blob/main/base/files/scoped_temp_dir.cc",
+        "fact": "CreateUniqueTempDir delegates to CreateNewTempDirectory."
+      },
+      {
+        "url": "https://github.com/chromium/chromium/blob/main/base/files/file_util_apple.mm",
+        "fact": "Apple GetTempDir first honors MAC_CHROMIUM_TMPDIR, otherwise uses NSTemporaryDirectory."
+      }
+    ],
+    "inference": "Native socket temporary directory may fall outside this runs owned-write scope despite generic TMPDIR settings; plausible harness/environment issue, not proven exactfailedpath/errno and not proven shared withR01. Exact154tag could not be retrieved; currentprimary code corroboration only. Crashpad denial is a separate observed error, not automatically the fatal cause.",
+    "next": "Compare to an existing successful ownedChrome entry; evaluate shortowned MAC_CHROMIUM_TMPDIR and neededowned UNIX socket policy without changing global/personal permissions. Preserveoriginalfailure and capture Chrome actualexitcode/signal/argv in any future reviewedrunner. No new run admitted."
+  },
+  "viteObservation": "worker.log also shows default dependency scan wandering into nonfixture App/Thread modules with unresolveddeps. This precedes pageuse but is not the ChromeProcessSingleton cause. Consider explicit actualfixture optimizeDeps.entries/noDiscovery policy through existing allowedfixture seam; do not install unrelated wholeApp dependencies. GOindependentlyprovided sameprimarydirection; no duplicate newtask.",
+  "limitations": [
+    "Run startupFAILED,0behaviorchecks,0screenshots; no functional/a11y/theme pass",
+    "No root execution or free-space/process probe; independentraw/hash/sourceinspection only",
+    "Window already returned and now LeadR01 owns it; remaining54.803s is arithmetic, never an automaticretry",
+    "Sourcef3/types/direct37 evidence unchanged; originalparentcountFAIL remains separate"
+  ],
+  "methods": "Reusedlocal find-skills/webapp-testing/clean-code, resourceownership and honestfailureclassification; wroteonly/tmp review."
+}

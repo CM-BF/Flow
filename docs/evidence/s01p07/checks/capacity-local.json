@@ -1,0 +1,252 @@
+{
+  "source": "1fa0a47cf7f135181036d7589a4e2251f32da600",
+  "startedAt": "2026-10-07T03:31:11.697964+00:00",
+  "limits": {
+    "segmentSeconds": 90,
+    "maxChildren": 2,
+    "childWorkSeconds": 30,
+    "rawBytes": 131072,
+    "temporaryBytes": 8388608,
+    "sourceMetadataBytes": 1048576
+  },
+  "ops14": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "runs": [
+    {
+      "name": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false",
+        "-p",
+        "docs/evidence/s01p07/capacity-tsconfig.json"
+      ],
+      "startedAt": "2026-10-07T03:31:11.700651+00:00",
+      "freeBefore": 26365562880,
+      "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-capacity-local-r8gpjma3",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123377754
+      },
+      "supervision": {
+        "pid": 13777,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 2,
+        "elapsed_ms": 2155,
+        "observed_bytes": 788,
+        "retained_bytes": 788,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T03:31:13.856810+00:00",
+      "rawBytes": 788,
+      "temporary": {
+        "known": true,
+        "sameIdentity": true,
+        "entries": 0,
+        "finalBytes": 0,
+        "activePeak": "UNKNOWN",
+        "limitBytes": 8388608,
+        "absent": true
+      }
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "oldRootsTouched": false,
+  "rawBytes": 1717,
+  "elapsedSeconds": 2.1592878750525415,
+  "finishedAt": "2026-10-07T03:33:38.665631+00:00",
+  "success": true,
+  "firstSegment": {
+    "startedAt": "2026-10-07T03:31:11.697964+00:00",
+    "finishedAt": "2026-10-07T03:31:13.857210+00:00",
+    "elapsedSeconds": 2.1592878750525415,
+    "success": false,
+    "wallLimitSeconds": 90,
+    "endedBeforeFollowup": true
+  },
+  "followupSegment": {
+    "startedAt": "2026-10-07T03:33:35.303913+00:00",
+    "limitSeconds": 60,
+    "maxChildren": 2,
+    "sourceDelta": {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "sha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62",
+      "change": "Registry stores only receiptPath/processSettled; remove recursive ReturnType inference."
+    },
+    "runs": [
+      {
+        "name": "types-fixed",
+        "argv": [
+          "/opt/homebrew/opt/node@24/bin/node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false",
+          "-p",
+          "docs/evidence/s01p07/capacity-tsconfig.json"
+        ],
+        "startedAt": "2026-10-07T03:33:35.305438+00:00",
+        "freeBefore": 26348326912,
+        "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-capacity-local-aeutos46",
+        "identity": {
+          "dev": 16777234,
+          "ino": 123378164
+        },
+        "supervision": {
+          "pid": 96699,
+          "ownership": "newChildSession",
+          "capture": "separate",
+          "exit_code": 0,
+          "elapsed_ms": 2004,
+          "observed_bytes": 0,
+          "retained_bytes": 0,
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "first_failure": null,
+          "secondary_failures": [],
+          "signals": [],
+          "owned_state": "absent",
+          "observations": [
+            {
+              "state": "unknown",
+              "errno": 1
+            },
+            {
+              "state": "absent",
+              "errno": null
+            },
+            {
+              "state": "absent",
+              "errno": null
+            }
+          ]
+        },
+        "rawBytes": 0,
+        "temporary": {
+          "known": true,
+          "sameIdentity": true,
+          "activePeak": "UNKNOWN",
+          "limitBytes": 8388608,
+          "absent": true,
+          "entries": 0,
+          "finalBytes": 0
+        },
+        "finishedAt": "2026-10-07T03:33:37.316770+00:00"
+      },
+      {
+        "name": "collect",
+        "argv": [
+          "/opt/homebrew/opt/node@24/bin/node",
+          "node_modules/vitest/vitest.mjs",
+          "list",
+          "--json",
+          "--config",
+          "docs/evidence/s01p07/capacity-vitest.config.ts",
+          "--configLoader",
+          "native",
+          "apps/runner/src/runtime-capacity.test.ts"
+        ],
+        "startedAt": "2026-10-07T03:33:37.320976+00:00",
+        "freeBefore": 26348339200,
+        "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-capacity-local-9jj066k2",
+        "identity": {
+          "dev": 16777234,
+          "ino": 123378167
+        },
+        "supervision": {
+          "pid": 96704,
+          "ownership": "newChildSession",
+          "capture": "separate",
+          "exit_code": 0,
+          "elapsed_ms": 1343,
+          "observed_bytes": 929,
+          "retained_bytes": 929,
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "first_failure": null,
+          "secondary_failures": [],
+          "signals": [],
+          "owned_state": "absent",
+          "observations": [
+            {
+              "state": "unknown",
+              "errno": 1
+            },
+            {
+              "state": "absent",
+              "errno": null
+            },
+            {
+              "state": "absent",
+              "errno": null
+            }
+          ]
+        },
+        "rawBytes": 929,
+        "temporary": {
+          "known": true,
+          "sameIdentity": true,
+          "activePeak": "UNKNOWN",
+          "limitBytes": 8388608,
+          "absent": true,
+          "entries": 0,
+          "finalBytes": 0
+        },
+        "finishedAt": "2026-10-07T03:33:38.665381+00:00"
+      }
+    ],
+    "finishedAt": "2026-10-07T03:33:38.665631+00:00",
+    "elapsedSeconds": 3.3864259580150247,
+    "success": true
+  },
+  "wallFromFirstStartSeconds": 146.967667,
+  "wallMeaning": "Includes stopped interval for diagnosis/source fix and coordination; first segment and separately authorized followup retain their actual limits.",
+  "collectedNames": [
+    "real PG/HTTP enforces registered capacity 1 with a local four-slot pool",
+    "real PG/HTTP enforces registered capacity 4 with a local four-slot pool",
+    "real PG/HTTP preserves native-session exclusion across overlapping local slots",
+    "real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle"
+  ],
+  "collectedCount": 4,
+  "caseExecutions": 0,
+  "toolExitCode": 0,
+  "toolCompletionObservedAt": "2026-10-07T03:34:57.772871+00:00",
+  "boundary": "First strict exit2 retained; type-only registry fix then focused strict exit0 and four test names collected. Collection does not execute their PG/HTTP bodies. Initial EPERM observations retained separately from final owned absent; active temporary peak UNKNOWN."
+}

@@ -1,0 +1,133 @@
+{
+  "reviewedAt": "2026-10-06T20:00:26.592342+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "conclusion": "APPROVED_RETAINED_WEB_AF51_COMPATIBILITY_RESULTS",
+  "target": "f74eca53aef179ebd65ea79b89863919e303db94",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "sourceDigest": "ae8b53e021b9dc6c473069e3ca189db31b6acd3dafba8633024a4cc18b0c16b3",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "manifestSha256": "5a8a9cb7ff32ffb537d8c0cd3317a67cd6031d73f9a88e019aac86ec944ef271",
+  "manifestEntries": 53,
+  "allFixedAndCurrentMatches": true,
+  "wireChecks": [
+    {
+      "label": "retained-0",
+      "checks": {
+        "sameKey": true,
+        "sameRawBody": true,
+        "firstAcceptedAckDropped": true,
+        "secondSameTurn": true,
+        "secondSameTask": true,
+        "explicitReplay": true
+      },
+      "wireSha256": "a49ef8661505dd4dfe5190ce42ecc570e36b0fce2be3f68bd284bf81e2df5316"
+    },
+    {
+      "label": "retained-1",
+      "checks": {
+        "sameKey": true,
+        "sameRawBody": true,
+        "firstAcceptedAckDropped": true,
+        "secondSameTurn": true,
+        "secondSameTask": true,
+        "explicitReplay": true
+      },
+      "wireSha256": "b08f3fb200ae8a32896cb295e56da105bb6ba8e8e7574f5bfe40956d7543547e"
+    }
+  ],
+  "reports": [
+    {
+      "label": "retained-0",
+      "compatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      }
+    },
+    {
+      "label": "retained-1",
+      "compatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    }
+  ],
+  "execution": {
+    "realBuiltApps": 2,
+    "realChromiumVersion": "154.0.8037.98",
+    "realProductionFactoryAndPG": true,
+    "runner": "deterministic injected fixture, not provider",
+    "elapsedMsIncludingCleanup": 15794,
+    "providerQueries": 0,
+    "personalActions": 0,
+    "priorFailuresPreserved": true
+  },
+  "cleanup": {
+    "databaseName": "flow_svc05r01_ec23d0bcb5244e26863a",
+    "marker": "5cef69dd-586c-4e0e-bdb0-ce2fd58c365d",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:53:08.501Z",
+          "elapsedMs": 7.200791000001118,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "groups": [
+    {
+      "pid": 83813,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    },
+    {
+      "pid": 81573,
+      "state": "absent",
+      "actions": []
+    }
+  ],
+  "ports": [
+    {
+      "port": 51829,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51814,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51841,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51871,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "limits": [
+    "Chrome PGID absent after TERM; numeric exit code NOT_OBSERVED, not claimed zero.",
+    "Resource samples are observations, not OS quotas; PG/WAL excluded from private tmp count.",
+    "Compatibility is bound to these two artifact/backend tuples; no personal report import or deployment happened.",
+    "No provider semantics, complete browser feature matrix, or all prior page-error causality asserted.",
+    "Reviewer ran no engineering tests, PG or browser. Startup before the fixed supervisor timer is not included."
+  ],
+  "findings": [],
+  "cleanCode": "Existing bounded observer/transport/factory boundaries retained. Verified accepted lost-ACK recovery against raw wire, separate primary errors and cleanup facts, no new state authority."
+}

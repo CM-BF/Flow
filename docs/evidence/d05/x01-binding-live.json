@@ -1,0 +1,78 @@
+{
+  "observedAt": "2026-10-06T23:14:50.436885+00:00",
+  "generatedAt": "2026-10-06T23:14:39.075Z",
+  "count": 181,
+  "responseBytes": 2496285,
+  "responseSha256": "bbcacce68166825ca9c360c64430f9ef5e2413a279e1c7ffb49b4b6123c8ac61",
+  "raw": "bounded selected projection only",
+  "tasks": [
+    {
+      "id": "OPS-CI01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:04:27.674Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation/plans/ops-ci01-remote-validation/status.md",
+        "syncedAt": "2026-10-06T23:14:39.075Z",
+        "stale": false,
+        "ageHours": 0.17002083333333334
+      },
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已审远程验证模板已进入主线；准备片已交付，尚未启用或远程运行。",
+        "next": "本片段已交付",
+        "blocker": {
+          "state": "active",
+          "text": "REMOTE_NOT_ENABLED；远程验证尚未启用，需用户决定是否执行已审启用步骤。"
+        },
+        "decision": {
+          "state": "active",
+          "text": "是否将已审模板原样启用为 .github/workflows/bounded-check.yml 并手动运行一次；由 Goal Owner 唯一提出。"
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "X01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:13:12.884Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/status.md",
+        "syncedAt": "2026-10-06T23:14:39.075Z",
+        "stale": false,
+        "ageHours": 0.03779861111111111
+      },
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "静态安装和双阶段权限门禁已交付；独立源码与写权已就绪，开始实现公开启用、冻结工具任务和执行适配",
+        "next": "先交可独审的领域合同、唯一DDL和持久binding；真实生产runner调用待共享资格与恢复接线",
+        "blocker": {
+          "state": "active",
+          "text": "工程检查因资源门槛尚未开放；源码实施可继续。生产挂载仍待共享claim能力/恢复guard接线"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ]
+}

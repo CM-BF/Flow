@@ -1,0 +1,594 @@
+{
+  "at": "2026-10-06T21:18:32.587Z",
+  "phase": "preflight",
+  "checks": {
+    "source": true,
+    "runtime": true,
+    "identity": true,
+    "config": true,
+    "invariantState": true,
+    "lockAbsent": true,
+    "owned": true,
+    "singleKnownRunner": true,
+    "zeroWork": true,
+    "queue": true,
+    "migrations": true,
+    "maintenance": true,
+    "dependencies": true,
+    "tableNames": true,
+    "tables": true,
+    "oldAudit": true,
+    "newAudit": true,
+    "operation": true,
+    "retained": false,
+    "materials": true,
+    "pointer": true,
+    "explicitLegacyIntentPolicy": true,
+    "nativeHistory": true,
+    "waitingQueueEmpty": true
+  },
+  "tables": {
+    "artifacts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "assistant_messages": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "assistant_stream_blocks": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "assistant_stream_markers": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "assistant_stream_patches": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "assistant_stream_settlements": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "attachment_namespace": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "attachment_resources": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "attempts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "commands": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "context_observations": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversation_attachment_bindings": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversation_contexts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversation_execution_inputs": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversation_queue": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversation_turns": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "conversations": {
+      "omitted": [
+        "queue_checked_at"
+      ],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "decisions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "details": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "execution_profiles": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_acceptances": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_contexts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_execution_inputs": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_executions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_explanations": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_graph_applications": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_graph_calls": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_graph_proposals": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_graph_runs": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_inputs": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_nodes": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_tool_calls": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goal_tool_runs": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "goals": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "knowledge_chunks": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "knowledge_sources": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "knowledge_versions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "migrations": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "native_activities": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_installations": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_operations": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_package_fetch_attempts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_package_fetch_audit": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_package_fetches": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_revisions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "plugin_versions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "project_revisions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "project_task_bindings": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "projects": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "protocol_intents": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "reconciliation_audit": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "reconciliation_retries": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "runner_events": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "runner_maintenance_audit": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "runners": {
+      "omitted": [
+        "maintenance_state",
+        "maintenance_version",
+        "maintenance_operation_id",
+        "maintenance_updated_at"
+      ],
+      "omittedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "sessions": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "steering_attempts": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "steering_audit": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "steering_commands": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "tasks": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "timeline": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "usage_samples": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "workspace_feed": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    },
+    "workspaces": {
+      "omitted": [],
+      "omittedRunnerId": null,
+      "columnsEqual": true,
+      "rawEqual": true,
+      "oldProtectedRowsPreserved": true,
+      "countExpected": true
+    }
+  },
+  "runner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "harnesses": [
+      "claude"
+    ],
+    "capacity": 1,
+    "revoked": false,
+    "maintenance_state": "accepting",
+    "maintenance_version": 15,
+    "maintenance_operation_id": null,
+    "maintenance_updated_at": "2026-10-06T12:41:11.271Z"
+  },
+  "operation": {
+    "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "initialVersion": 12,
+    "drainKey": "ece032f0-318e-4a4e-bf7f-86fd961c0b5d",
+    "holdKey": "43d2d350-b22a-4e2b-bce8-61c203272e12",
+    "resumeKey": "7469abe1-96e1-44b1-a3ec-86d6cd3e77ba",
+    "phase": "resumed",
+    "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "resumeVersion": 14
+  },
+  "addedAudit": [],
+  "passed": false,
+  "limits": [
+    "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+    "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+    "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+    "Before is explicitly non-idle; only the fixed retired journal bytes may differ. All history files remain exact.",
+    "Private retirement directory lives outside runner root; its backup/intent/result and hashes require separate checkpoint binding."
+  ],
+  "ordinaryNativeChecks": {
+    "nativeIdle": false,
+    "nativeFiles": true
+  },
+  "exception": {
+    "kind": "one-approved-legacy-intent",
+    "journal": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+    "oldSha256": "67cdfdcdbbf1d646cbfa12552b58299ec68b7ddaa70e8453ae7786ab830f590c",
+    "newSha256": null,
+    "rawObservationsModified": false,
+    "privateAuditSeparate": true
+  }
+}

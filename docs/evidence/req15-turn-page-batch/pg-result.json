@@ -1,0 +1,263 @@
+{
+  "inputSha256": "d8a2585f03b3b455e6d905744fa860f6d767f9568be8864a32c5a8ad61c0633a",
+  "database": "flow_req15_1eb15243a312",
+  "marker": "d6a146d8-98d6-42b7-808b-c24f457dde4e",
+  "startedAt": "2026-10-07T03:07:00.622Z",
+  "endedAt": "2026-10-07T03:07:00.953Z",
+  "creationRequested": true,
+  "databaseOid": 1193363,
+  "subjectIdentity": {
+    "pid": 45836,
+    "backendStart": "2026-10-07 03:07:00.700557+00",
+    "encoding": "UTF8"
+  },
+  "writerIdentity": {
+    "pid": 45837,
+    "backend_start": "2026-10-07 03:07:00.875755+00"
+  },
+  "seed": {
+    "tasks": 53,
+    "attempts": 53,
+    "sessions": 53,
+    "details": 115,
+    "messages": 42,
+    "artifacts": 17,
+    "corruptSuffixUpdates": 5,
+    "seedAndUpdateBodyUtf8Bytes": 101979
+  },
+  "cases": [
+    {
+      "id": "PG1",
+      "passed": true,
+      "assertions": [
+        "50+1/order/foreign/empty/404",
+        "paired task+attempt",
+        "per-task session/artifact LIMIT2",
+        "current owner/session runner+harness",
+        "full digest with identical prefix",
+        "typed invalid has no legacy fallback",
+        "UTF16 and UTF8 distinction",
+        "frozen/observed settings",
+        "serial query/ReadyForQuery and field-byte measurements"
+      ]
+    },
+    {
+      "id": "PG2",
+      "passed": true,
+      "assertions": [
+        "real task-row read barrier",
+        "writer COMMIT ACK precedes later subject reads",
+        "same-client RR old pair",
+        "next transaction new pair"
+      ]
+    }
+  ],
+  "barrierCalls": 1,
+  "writerCommitAcknowledged": true,
+  "cleanup": {
+    "status": "CONFIRMED",
+    "originalsSettled": true,
+    "subjectEndAcknowledged": true,
+    "writerEndAcknowledged": true,
+    "connectionsZero": true,
+    "databaseAbsent": true,
+    "adminEndAcknowledged": true,
+    "secondaryFailures": []
+  },
+  "primaryFailure": false,
+  "unexpectedPoolErrors": 0,
+  "subjectConnections": 1,
+  "measurements": [
+    {
+      "label": "mixed-first-50",
+      "queryCalls": 8,
+      "readyForQuery": 8,
+      "dataRows": 176,
+      "fieldUtf8Bytes": 115722,
+      "typedPrefixUtf8Bytes": 68123,
+      "legacyContentUtf8Bytes": 133,
+      "otherFieldUtf8Bytes": 47466,
+      "taskProjectionIds": [
+        "req15-task-0",
+        "req15-task-1",
+        "req15-task-2",
+        "req15-task-3",
+        "req15-task-4",
+        "req15-task-5",
+        "req15-task-6",
+        "req15-task-7",
+        "req15-task-8",
+        "req15-task-9",
+        "req15-task-10",
+        "req15-task-11",
+        "req15-task-12",
+        "req15-task-13",
+        "req15-task-14",
+        "req15-task-15",
+        "req15-task-16",
+        "req15-task-17",
+        "req15-task-18",
+        "req15-task-19",
+        "req15-task-20",
+        "req15-task-21",
+        "req15-task-22",
+        "req15-task-23",
+        "req15-task-24",
+        "req15-task-25",
+        "req15-task-26",
+        "req15-task-27",
+        "req15-task-28",
+        "req15-task-29",
+        "req15-task-30",
+        "req15-task-31",
+        "req15-task-32",
+        "req15-task-33",
+        "req15-task-34",
+        "req15-task-35",
+        "req15-task-36",
+        "req15-task-37",
+        "req15-task-38",
+        "req15-task-39",
+        "req15-task-40",
+        "req15-task-41",
+        "req15-task-42",
+        "req15-task-43",
+        "req15-task-44",
+        "req15-task-45",
+        "req15-task-46",
+        "req15-task-47",
+        "req15-task-48",
+        "req15-task-49"
+      ],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 96098,
+      "wallMilliseconds": 12.12033400000007,
+      "completed": true
+    },
+    {
+      "label": "last-poisoned-turn",
+      "queryCalls": 7,
+      "readyForQuery": 7,
+      "dataRows": 5,
+      "fieldUtf8Bytes": 5424,
+      "typedPrefixUtf8Bytes": 4000,
+      "legacyContentUtf8Bytes": 0,
+      "otherFieldUtf8Bytes": 1424,
+      "taskProjectionIds": [
+        "req15-task-50"
+      ],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 1036,
+      "wallMilliseconds": 2.814624999999978,
+      "completed": true
+    },
+    {
+      "label": "empty-page",
+      "queryCalls": 4,
+      "readyForQuery": 4,
+      "dataRows": 1,
+      "fieldUtf8Bytes": 152,
+      "typedPrefixUtf8Bytes": 0,
+      "legacyContentUtf8Bytes": 0,
+      "otherFieldUtf8Bytes": 152,
+      "taskProjectionIds": [],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 277,
+      "wallMilliseconds": 0.8537919999999986,
+      "completed": true
+    },
+    {
+      "label": "foreign-conversation",
+      "queryCalls": 7,
+      "readyForQuery": 7,
+      "dataRows": 5,
+      "fieldUtf8Bytes": 1356,
+      "typedPrefixUtf8Bytes": 8,
+      "legacyContentUtf8Bytes": 0,
+      "otherFieldUtf8Bytes": 1348,
+      "taskProjectionIds": [
+        "req15-task-51"
+      ],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 1808,
+      "wallMilliseconds": 2.1323750000000246,
+      "completed": true
+    },
+    {
+      "label": "snapshot-before-writer",
+      "queryCalls": 7,
+      "readyForQuery": 7,
+      "dataRows": 5,
+      "fieldUtf8Bytes": 1358,
+      "typedPrefixUtf8Bytes": 8,
+      "legacyContentUtf8Bytes": 0,
+      "otherFieldUtf8Bytes": 1350,
+      "taskProjectionIds": [
+        "req15-task-52"
+      ],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 1810,
+      "wallMilliseconds": 11.388333000000102,
+      "completed": true
+    },
+    {
+      "label": "snapshot-after-writer",
+      "queryCalls": 7,
+      "readyForQuery": 7,
+      "dataRows": 5,
+      "fieldUtf8Bytes": 1378,
+      "typedPrefixUtf8Bytes": 20,
+      "legacyContentUtf8Bytes": 0,
+      "otherFieldUtf8Bytes": 1358,
+      "taskProjectionIds": [
+        "req15-task-52"
+      ],
+      "turnLimits": [
+        51
+      ],
+      "sqlControl": [
+        "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
+        "COMMIT"
+      ],
+      "invalid": null,
+      "pageJsonUtf8Bytes": 1830,
+      "wallMilliseconds": 2.0084580000000187,
+      "completed": true
+    }
+  ]
+}

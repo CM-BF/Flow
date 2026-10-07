@@ -1,0 +1,27 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/goal-graph-runs.test.ts (2 tests | 1 failed | 1 skipped) 6ms
+   ↓ preserves bounded graph authority, fixed versions, actor receipts and replay keys without retry or role fallback
+   × lists goal-bound planning runs with opaque pagination and preserves errors and cancellation without retry 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/goal-graph-runs.test.ts > lists goal-bound planning runs with opaque pagination and preserves errors and cancellation without retry
+TypeError: client.goalGraphRuns is not a function
+ ❯ packages/client/src/goal-graph-runs.test.ts:64:25
+     62|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     63|   try {
+     64|     expect(await client.goalGraphRuns('goal/中文')).toEqual(page);
+       |                         ^
+     65|     expect(await client.goalGraphRuns('goal/中文', { after: 'opaque+/= 中…
+     66|     await expect(client.goalGraphRuns('denied')).rejects.toMatchObject…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 skipped (2)
+   Start at  06:45:17
+   Duration  338ms (transform 142ms, setup 0ms, import 246ms, tests 6ms, environment 0ms)
+

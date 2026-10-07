@@ -3,7 +3,7 @@ import { idSchema, type TaskSummary } from './tasks.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { ownershipSchema } from './runner.js';
 import { projectNodeReferenceSchema, projectVersionSchema } from './projects.js';
-import { goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt, type GoalGraphProposalInput } from './goal-graph-proposals.js';
+import { GOAL_INPUT_PROPOSAL_PROTOCOL, goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt, type GoalGraphProposalInput } from './goal-graph-proposals.js';
 
 export const goalGraphScopeSchema = z.strictObject({
   baseRevision: projectVersionSchema,
@@ -12,6 +12,8 @@ export const goalGraphScopeSchema = z.strictObject({
   maxApplications: z.number().int().min(0).max(1),
   maxNewNodes: z.number().int().min(1).max(16),
   maxNewEdges: z.number().int().min(0).max(128),
+  // Absent legacy grants retain exactly their original graph-only authority and JSON.
+  inputProposalProtocol: z.literal(GOAL_INPUT_PROPOSAL_PROTOCOL).optional(),
 });
 export type GoalGraphScope = z.infer<typeof goalGraphScopeSchema>;
 export const goalGraphRunAdmissionSchema = z.strictObject({
@@ -43,6 +45,19 @@ export interface GoalGraphRun {
   createdAt: string; revokedAt: string | null; revocationReason: string | null;
 }
 export interface GoalGraphRunAccepted { run: GoalGraphRun; task: TaskSummary; replayed: boolean }
+export const goalGraphRunListQuerySchema = z.strictObject({
+  after: z.string().min(1).max(1_024).optional(),
+  limit: z.coerce.number().int().min(1).max(20).default(10),
+});
+/** A live, body-free planning reference; task status is observed at this read, not a persisted result. */
+export interface GoalGraphRunSummary {
+  id: string; version: 1; goalId: string; projectId: string; goalDigest: string;
+  baseRevision: number; mode: 'fixture' | 'claude'; task: TaskSummary;
+  createdAt: string; revokedAt: string | null;
+}
+export interface GoalGraphRunPage {
+  goalId: string; projectId: string; runs: GoalGraphRunSummary[]; nextCursor: string | null;
+}
 export interface GoalGraphRunRevoked { run: GoalGraphRun; changed: boolean; replayed: boolean }
 /** Nodes always come from the immutable base revision, including after a successful apply. */
 export interface GoalGraphReadPage {

@@ -1,0 +1,53 @@
+{
+  "state": "APPROVED",
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewedAt": "2026-10-06 12:29:56 UTC",
+  "implementationTarget": "6de928d8092ba8c22ac2222ac7c16af3660be48a",
+  "reviewPacket": "ffee77caeeec126fd3e9b2467b50cf4f5df7e2f1",
+  "manifestSha256": "30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "scope": "128 fixed fixture preparation only; actual execution remains NOT_OPEN",
+  "verified": {
+    "source": 26,
+    "readonly": 27,
+    "raw": 42,
+    "support": 10,
+    "runtime": 6,
+    "history": 172,
+    "distinctPureChecks": 41,
+    "strictExit": 0,
+    "reviewerReexecutions": 0
+  },
+  "remainingBoundary": [
+    "Exact execution HEAD and unique window must be opened by Mika",
+    "External spawn/import-through-exit wall must be <=180 seconds",
+    "Fixture session/task/attempt proof is not native SDK/model/SLO evidence"
+  ],
+  "freshObservedAt": "2026-10-06 12:30:27 UTC",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/s01",
+      "experiments/runner-capacity",
+      "plans/s01-runner-capacity"
+    ],
+    "state": "active",
+    "branch": "codex/runner-capacity-probe",
+    "origin": "new",
+    "taskId": "S01",
+    "worker": "status_read",
+    "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+    "createdAt": "2026-10-06T06:22:33.774Z",
+    "updatedAt": "2026-10-06T09:45:53.842Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "outputAbsent": true
+}

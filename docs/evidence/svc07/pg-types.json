@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T20:16:39.828654+00:00",
+  "endedAt": "2026-10-06T20:16:40.460198+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/svc07/tsconfig.pg.json"
+  ],
+  "exit": 0,
+  "wallSeconds": 0.6310765000525862,
+  "availableBeforeBytes": 1330171904,
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pgProbeSourceSha256": "6323e42e6831dbd9b2b04ee7d6ae7e5de0047bcbcb03eb50cae13d97c5c5cfb3",
+  "runtimeImports": 0,
+  "pg": 0,
+  "probeExecution": "NOT_RUN"
+}

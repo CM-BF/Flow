@@ -1,0 +1,748 @@
+{
+  "analysisType": "Read-only derivation from saved raw; no new test, DB query, HTTP request or workload.",
+  "rawBindings": [
+    {
+      "path": "docs/evidence/s01/mixed-run/journals.json",
+      "bytes": 369,
+      "sha256": "b95e3eede00ce55ae4d27a35886f2ec135d52515f0b3d4b0e5f617826aad7139"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-run/observations.json",
+      "bytes": 6691886,
+      "sha256": "f63ac84287982000cb940efe3ca63ee25b4b98144e7a9c1b905b0d79768b5fbc"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-run/one-by-sixteen-retained-journals.json",
+      "bytes": 354,
+      "sha256": "6c8168f655927ed84c2e5008aae81a29a42850087f77907a0a6c68d4816256ab"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-run/owned-resources.json",
+      "bytes": 360,
+      "sha256": "5757a7727fbea8d5a02a4cdf1f78691db21d544220732866f9482e6f7fda25d0"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-run/reservation.json",
+      "bytes": 4539,
+      "sha256": "6b93770f050ae823652677de3468d5cf18c825cd0229b87a0abc3ec06db9950d"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-run/result.json",
+      "bytes": 159272,
+      "sha256": "d99460d61a95d494735f182ecbb48dd1c1980d65fb6ea644a84f4f4e597b5fe3"
+    }
+  ],
+  "recordCount": 15510,
+  "windowId": "mika-s01-mixed-20261006-100634",
+  "executionHead": "12154f16f6a5e480bc3de64f96d1019102d56c0d",
+  "runVerdict": "FAIL",
+  "failures": [
+    "case_admission_or_outbox_retained",
+    "admission_or_outbox_retained",
+    "both_cases_not_completed"
+  ],
+  "actualTasksSentOrUnknown": 16,
+  "tasksReserved": 32,
+  "caseB": "NOT_STARTED; no retry and no reuse of reserved tasks",
+  "caseA": {
+    "windowComplete": true,
+    "settledByDeadline": true,
+    "counts": {
+      "succeeded": 12,
+      "cancelled": 4
+    },
+    "windowDurationChildMs": 6002.126375,
+    "lastCompletedAckAfterWindowParentMs": 148.77750000000015,
+    "firstAdapterEndAfterWindowStartChildMs": 3729.4920829999996,
+    "checks": {
+      "oneCaseOnly": true,
+      "sixteenDistinctKnownTasksAndAttempts": true,
+      "allPerAttemptChecks": true,
+      "all533EventsBound": true,
+      "allKnownTasksExactlyOneDbAttempt": true,
+      "gateSnapshotAfterReadyBeforeWindow": true,
+      "sixSecondWindow": true,
+      "completedAckWithinSettlement": true
+    },
+    "attempts": [
+      {
+        "taskId": "0bd32e0a-356e-45c1-b756-a4e9292b391b",
+        "attemptId": "91147722-161d-4057-aa45-ac2c4141f7d8",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2275.215208,
+        "adapterEndChildMs": 8380.570833,
+        "adapterEndOffsetFromWindowMs": 6002.436791,
+        "completedAckChildMs": 8529.018917,
+        "completedAckReceivedMs": 10660.571833,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "0c9aadc5-103b-421f-835a-61c3ae0c281f",
+        "attemptId": "c934fb45-43ba-46ce-8330-664cdc6e9783",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "cancelled",
+        "events": 26,
+        "windowEmitAcks": 20,
+        "windowHeartbeats": 4,
+        "adapterReadyChildMs": 1467.109,
+        "adapterEndChildMs": 6293.020458,
+        "adapterEndOffsetFromWindowMs": 3914.886416,
+        "completedAckChildMs": 6334.446375,
+        "completedAckReceivedMs": 8465.96725,
+        "cancelAcceptedReceivedMs": 7538.025333,
+        "cancelHeartbeatChildMs": 6206.297833,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "23b6b872-bdde-476e-946e-9e7714417c5b",
+        "attemptId": "646a2609-5aa5-4018-baa6-c1ab41f6569e",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2117.090375,
+        "adapterEndChildMs": 8379.984458,
+        "adapterEndOffsetFromWindowMs": 6001.850416000001,
+        "completedAckChildMs": 8429.160083,
+        "completedAckReceivedMs": 10560.693916,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "27c57ebb-f596-4e3b-aa46-e2525ac82099",
+        "attemptId": "c23c8d0b-8b1d-4981-8a24-172932391d53",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 1648.853875,
+        "adapterEndChildMs": 8380.373875,
+        "adapterEndOffsetFromWindowMs": 6002.239833,
+        "completedAckChildMs": 8456.148583,
+        "completedAckReceivedMs": 10587.672125,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "3c831280-67db-49f3-aade-12813059b76c",
+        "attemptId": "249eeeaa-90cf-42de-8020-0aec21a9c7ba",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 1987.750083,
+        "adapterEndChildMs": 8380.43075,
+        "adapterEndOffsetFromWindowMs": 6002.296708,
+        "completedAckChildMs": 8467.071625,
+        "completedAckReceivedMs": 10598.59025,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "426fd5b5-0229-4081-9861-96831d6a924e",
+        "attemptId": "600e1fec-36da-47c9-8538-c9397f99ccd4",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "cancelled",
+        "events": 25,
+        "windowEmitAcks": 19,
+        "windowHeartbeats": 4,
+        "adapterReadyChildMs": 1260.552833,
+        "adapterEndChildMs": 6107.626125,
+        "adapterEndOffsetFromWindowMs": 3729.4920829999996,
+        "completedAckChildMs": 6217.555042,
+        "completedAckReceivedMs": 8349.547,
+        "cancelAcceptedReceivedMs": 7539.5325,
+        "cancelHeartbeatChildMs": 6020.720583,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "47bbcc48-6e4b-4c11-8482-8fa3eef77d4e",
+        "attemptId": "0e73c0b3-fbc8-4a4d-b1e8-47faac2a3f97",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "cancelled",
+        "events": 25,
+        "windowEmitAcks": 19,
+        "windowHeartbeats": 4,
+        "adapterReadyChildMs": 1398.803,
+        "adapterEndChildMs": 6191.068667,
+        "adapterEndOffsetFromWindowMs": 3812.9346249999994,
+        "completedAckChildMs": 6257.433667,
+        "completedAckReceivedMs": 8388.963333,
+        "cancelAcceptedReceivedMs": 7535.597,
+        "cancelHeartbeatChildMs": 6190.896458,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "9208f0e9-cde6-431e-931f-fa63da58f280",
+        "attemptId": "693d8113-a5de-428a-96e5-911acb2fa27c",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 1552.633083,
+        "adapterEndChildMs": 8380.473375,
+        "adapterEndOffsetFromWindowMs": 6002.339333,
+        "completedAckChildMs": 8506.112083,
+        "completedAckReceivedMs": 10637.647,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "9335afde-e60b-4ba0-89a7-d1266d727189",
+        "attemptId": "9d451313-ae8d-4082-beb7-9987f38b240e",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "cancelled",
+        "events": 25,
+        "windowEmitAcks": 19,
+        "windowHeartbeats": 4,
+        "adapterReadyChildMs": 1311.334667,
+        "adapterEndChildMs": 6156.40825,
+        "adapterEndOffsetFromWindowMs": 3778.2742080000003,
+        "completedAckChildMs": 6245.144542,
+        "completedAckReceivedMs": 8376.681916,
+        "cancelAcceptedReceivedMs": 7528.935541,
+        "cancelHeartbeatChildMs": 6156.161333,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "9d1f9b67-710c-4461-9d95-ef1138a2860f",
+        "attemptId": "2eaef1e5-917c-4401-8190-f0beaca99444",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 1866.089667,
+        "adapterEndChildMs": 8380.06825,
+        "adapterEndOffsetFromWindowMs": 6001.934208000001,
+        "completedAckChildMs": 8407.868375,
+        "completedAckReceivedMs": 10539.480916,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "9dcc218e-de7c-41ae-83d0-6ba7d5db7cf5",
+        "attemptId": "6ebfa994-49fa-45ae-b11d-4940de81be07",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 1750.411042,
+        "adapterEndChildMs": 8379.317708,
+        "adapterEndOffsetFromWindowMs": 6001.183666000001,
+        "completedAckChildMs": 8396.433875,
+        "completedAckReceivedMs": 10527.969208,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "c6ec6df4-ae99-4c5c-8ab1-a9f3cc1a1ee9",
+        "attemptId": "135ac968-efdd-4d9a-908d-15b32b22d61e",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2289.642042,
+        "adapterEndChildMs": 8379.682208,
+        "adapterEndOffsetFromWindowMs": 6001.5481660000005,
+        "completedAckChildMs": 8442.089875,
+        "completedAckReceivedMs": 10574.149875,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "ce63dc78-0921-4461-b110-503e14693ed7",
+        "attemptId": "ced7c05f-a82b-444b-880a-a16b3bc7f3c2",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2299.262667,
+        "adapterEndChildMs": 8380.1355,
+        "adapterEndOffsetFromWindowMs": 6002.001458000001,
+        "completedAckChildMs": 8419.127917,
+        "completedAckReceivedMs": 10551.202041,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "e0a7ff8f-9e5a-40d2-a66a-a10d0fb6b55c",
+        "attemptId": "b3c58a57-69c0-42c5-aaf0-242755c90790",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2234.93225,
+        "adapterEndChildMs": 8380.523292,
+        "adapterEndOffsetFromWindowMs": 6002.38925,
+        "completedAckChildMs": 8517.112458,
+        "completedAckReceivedMs": 10648.638166,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "ec165178-0695-47f2-95da-53f95338ce11",
+        "attemptId": "8e618fb6-9b70-4bac-be12-bd8016cb9840",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2197.268417,
+        "adapterEndChildMs": 8380.277833,
+        "adapterEndOffsetFromWindowMs": 6002.143791,
+        "completedAckChildMs": 8482.723292,
+        "completedAckReceivedMs": 10614.24175,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      },
+      {
+        "taskId": "f07f9e90-0ead-4122-8204-3b10a0ce995a",
+        "attemptId": "1c9c696f-a671-4bb6-bdcf-4232bd9e9fc7",
+        "runnerId": "665b46ef-ed7d-4117-a9de-e26c9436084e",
+        "ownerVersion": 1,
+        "outcome": "succeeded",
+        "events": 36,
+        "windowEmitAcks": 30,
+        "windowHeartbeats": 6,
+        "adapterReadyChildMs": 2259.865542,
+        "adapterEndChildMs": 8380.328667,
+        "adapterEndOffsetFromWindowMs": 6002.194625,
+        "completedAckChildMs": 8493.980625,
+        "completedAckReceivedMs": 10625.504083,
+        "cancelAcceptedReceivedMs": null,
+        "cancelHeartbeatChildMs": null,
+        "checks": {
+          "taskAttemptRunnerFenceBound": true,
+          "gateRunningLiveIncomplete": true,
+          "adapterPresentAtWindowStart": true,
+          "minimumActivityDuration": true,
+          "windowEmitAndHeartbeat": true,
+          "allHeartbeatFenceMatches": true,
+          "allEventAckFenceMatches": true,
+          "finalOutcomeAndVerification": true,
+          "contiguousSequence": true,
+          "everyDbEventMatchesAcknowledgedIdentityDigest": true,
+          "completionAcknowledged": true,
+          "cancelAcceptanceAndHeartbeat": true
+        }
+      }
+    ]
+  },
+  "dbScope": "Saved final JOIN covers every attempt of the 16 submitted task IDs and contains exactly one each; current-attempt snapshots cover those same tasks. No full-database task inventory was archived. No extra task/attempt is observed; this is not a proof that the unknown HTTP response was assignment:null.",
+  "admission": {
+    "journal": {
+      "path": "one-by-sixteen/0/174f7893c9e8e20382c5c00f4f7cd9507bdb038ad40f3a77fc53860b0b2588ce/admission.json",
+      "bytes": 80,
+      "sha256": "f11cf1330d5babb3c91d10f449e9eb1171ffaa39a2d20e0168e752788e395296",
+      "unresolved": true,
+      "value": {
+        "version": 1,
+        "inFlight": "e71367ed-18b4-4222-9dd6-6f4811095366",
+        "assignments": []
+      }
+    },
+    "claimHttpSuccessRecords": 22,
+    "claimHttpErrorRecords": 1,
+    "lastSuccessfulHttpObservation": {
+      "kind": "runner-http",
+      "caseId": "one-by-sixteen",
+      "path": "/api/runner/claim",
+      "elapsedMs": 9.918667000000823,
+      "status": 200,
+      "transferBytes": 42,
+      "childMs": 7948.200708,
+      "pid": 39879,
+      "receivedMs": 10079.917125,
+      "phase": "one-by-sixteen:window"
+    },
+    "lastClaimErrorObservation": {
+      "kind": "runner-http-error",
+      "caseId": "one-by-sixteen",
+      "path": "/api/runner/claim",
+      "elapsedMs": 117.2831669999996,
+      "transferBytes": 2,
+      "aborted": true,
+      "childMs": 8535.383417,
+      "pid": 39879,
+      "receivedMs": 10666.926791,
+      "phase": "one-by-sixteen:settlement"
+    },
+    "approximateLastFetchEntryChildMs": 8418.10025,
+    "lastCompletedAck": {
+      "kind": "event-ack",
+      "caseId": "one-by-sixteen",
+      "attemptId": "91147722-161d-4057-aa45-ac2c4141f7d8",
+      "ownerVersion": 1,
+      "acknowledgement": {
+        "accepted": 1,
+        "lastSequence": 36
+      },
+      "events": [
+        {
+          "id": "1ad43385-0064-41d6-9989-417dadf6d748",
+          "sequence": 36,
+          "type": "completed",
+          "outcome": "succeeded",
+          "digest": "8230376cfca905abe924710d05ae5bccdec21ff3b1edf1f2def8d46183a82b51"
+        }
+      ],
+      "childMs": 8529.018917,
+      "pid": 39879,
+      "receivedMs": 10660.571833,
+      "phase": "one-by-sixteen:settlement"
+    },
+    "runtimeSettledObservation": {
+      "kind": "case-runtime-settled",
+      "caseId": "one-by-sixteen",
+      "active": 0,
+      "childMs": 8540.042125,
+      "pid": 39879,
+      "receivedMs": 10671.599541,
+      "phase": "one-by-sixteen:settlement"
+    },
+    "limitations": [
+      "childMs minus elapsedMs approximates fetch-wrapper entry, not an independently captured network send time.",
+      "Exact abort and stop-case send/receive timestamps were not recorded. aborted:true describes case signal when error was caught.",
+      "The wire request has no requestId and raw HTTP observations omit journal inFlight UUID. Serial source lifecycle is consistent with final aborted call retaining intent, but exact UUID-to-call correlation is unproved.",
+      "Neither assignments:[] nor saved final DB rows authorizes accepting null, clearing intent, replaying claim or reusing the budget."
+    ]
+  },
+  "aWindowMetrics": {
+    "selection": "phase == one-by-sixteen:window, center poolRole; phase assigned on parent receipt, not synchronized cross-process clocks",
+    "quantiles": "median is arithmetic mean of middle two for even n; p95 uses nearest rank ceil(.95*n)",
+    "metrics": {
+      "poolAcquisition": {
+        "n": 1162,
+        "minMs": 0.002375000000029104,
+        "medianMs": 0.05502100000012433,
+        "p95NearestRankMs": 40.781833000000006,
+        "maxMs": 159.04849999999988,
+        "outcomes": {
+          "ok": 1162
+        }
+      },
+      "transactionElapsed": {
+        "n": 609,
+        "minMs": 0.9877500000002328,
+        "medianMs": 34.07195900000079,
+        "p95NearestRankMs": 89.35600000000068,
+        "maxMs": 165.95379200000025,
+        "outcomes": {
+          "ok": 609
+        }
+      },
+      "runnerRowQueryElapsed": {
+        "n": 534,
+        "minMs": 0.17779199999949924,
+        "medianMs": 31.811979500000234,
+        "p95NearestRankMs": 81.49187499999971,
+        "maxMs": 156.9293749999997,
+        "outcomes": {
+          "ok": 534
+        }
+      }
+    },
+    "maxObservedCenterPoolWaitingCount": 14,
+    "activitySamples": 60,
+    "lockOrBlockerPositiveSamples": 31,
+    "positiveBackendRowsIncludingRepeats": 153,
+    "observedLockWaitEvents": [
+      "transactionid",
+      "tuple"
+    ],
+    "lightReadCount": 59,
+    "lightReadStatuses": {
+      "200": 59
+    },
+    "readSummary": {
+      "kind": "read-summary",
+      "pid": 39779,
+      "receivedMs": 10662.391458,
+      "caseId": "one-by-sixteen",
+      "issued": 59,
+      "skipped": 0,
+      "phase": "one-by-sixteen:settlement"
+    },
+    "limitations": [
+      "Acquisition includes connection establishment; transaction and runner-row query elapsed include execution, wait and round trips.",
+      "Pool waiting is an observed count, not queue wait duration. Lock positive samples prove waiting existed; missing samples do not prove zero wait. Repeated backend rows are not unique wait events.",
+      "No second topology was run. Shared center/runner, fixed A-before-B design, warm-up, observer overhead and background load prevent causal or SLO claims."
+    ]
+  },
+  "cleanup": [
+    {
+      "pid": 39879,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 39843,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "databaseName": "flow_s01_mixed_39779_f8dba4e33bbd445ebe27114c00627cd6",
+      "dropped": true,
+      "retained": false
+    },
+    {
+      "workdir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-FKye9L",
+      "retained": true
+    }
+  ],
+  "cliReceipt": {
+    "output": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-run",
+    "success": false,
+    "errors": [
+      "case_admission_or_outbox_retained",
+      "admission_or_outbox_retained",
+      "both_cases_not_completed"
+    ],
+    "finalElapsedMs": 10673.1145,
+    "finalMeasuredBytes": 18660992
+  },
+  "providerCalls": 0
+}

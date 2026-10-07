@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06T13:13:15.313Z",
+  "entries": [
+    {
+      "path": "/tmp/flow-svc06-artifact-location.json",
+      "kind": "file",
+      "bytes": 91
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-artifact-Pnibpj",
+      "knownOwnRun": true,
+      "children": [
+        "stage-c64cac9d-2192-447c-9d8b-0329230662f8.json"
+      ],
+      "stageRemaining": false,
+      "keep": "failure record only"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-artifact-HBljO8",
+      "knownOwnRun": true,
+      "children": [
+        "stage-47d4134e-5a91-4224-8a8c-9c5a8956ad0a.json"
+      ],
+      "stageRemaining": false,
+      "keep": "failure record only"
+    }
+  ],
+  "noActiveBuild": true,
+  "otherWorktreesNotTouched": true
+}

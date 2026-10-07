@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-06T17:51:16.730076+00:00",
+  "fixedSource": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+  "metadata": "03a285b1afb5c2d78e32d73b588b597e382cd349",
+  "sources": [
+    {
+      "path": "apps/tui/src/journey.test.ts",
+      "bytes": 10818,
+      "sha256": "c11a94780a2c7fe0d5affb112bb6cdf802e7dddc581981c0850ddb64da1f890a"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 22259,
+      "sha256": "9d645418386eb5b206f438074ce39ec0fbcbab56f814908cb9d145034c61d380"
+    },
+    {
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "bytes": 4182,
+      "sha256": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153"
+    },
+    {
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "bytes": 4898,
+      "sha256": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+      "bytes": 5044,
+      "sha256": "864417833cebe03eb5e71ebb41deec12ef97a8d0704937ea150eba930fdb7726"
+    },
+    {
+      "path": "apps/tui/src/task-controls/cleanup-journey.test.ts",
+      "bytes": 6083,
+      "sha256": "0def7b25c74f7f4aa55f785c4f011ed1283887ca178fb216c0c52403b41ce9bf"
+    }
+  ],
+  "review": "tui01f-final-two-delta-independent-review.json",
+  "scope": "Original behavior2 passed with suite1/oldtmpKEEP; independently reviewed new bounded observer10 and cleanup-onlyPG1 passed; test-only legacyprofile narrowing. No original behavior/PG/provider rerun.",
+  "pending": "one root noEmit after Web readonly consumer fix"
+}

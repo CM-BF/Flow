@@ -1,0 +1,83 @@
+{
+  "state": "COMPLETED",
+  "at": "2026-10-06T21:30:37.447564+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/assistant/final-preview-batch.test.ts",
+    "apps/server/src/conversations/turn-page-batch.test.ts",
+    "--config",
+    "docs/evidence/req15-turn-page-batch/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+  "availableBeforeBytes": 1132982272,
+  "supervisorPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py",
+  "supervisorSha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0",
+  "pg": 0,
+  "http": 0,
+  "tmpBudgetBytes": 33554432,
+  "tmpMeasurement": "before/after sample, not realtime isolation",
+  "sources": {
+    "apps/server/src/assistant/index.ts": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3",
+    "apps/server/src/assistant/final-preview-batch.test.ts": "ed597db77862c9a94ac64372c478ab203e2a6b7bc08beae65439202580e53846",
+    "apps/server/src/assistant/store.ts": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15",
+    "apps/server/src/conversations/state.ts": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+    "apps/server/src/conversations/queries.ts": "c197d278a3f662cc5d8fabe906b637fe27ef91df9492678f2fc2b36b091a37f0",
+    "apps/server/src/conversations/turn-page-batch.test.ts": "5d4e4777eada2632bf71feec89fd2339894501a07aaa046c0f4c8707897f3ad1",
+    "apps/server/src/conversations/replies.ts": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab"
+  },
+  "temporary": {
+    "device": 16777234,
+    "inode": 123216375,
+    "beforeBytes": 0,
+    "absentAfter": true,
+    "entriesAfter": 0,
+    "afterBytes": 0
+  },
+  "spawn": {
+    "pid": 52890,
+    "pgid": 52890,
+    "startedAt": "2026-10-06T21:30:37.451838+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 52890,
+      "pgid": 52890,
+      "startedAt": "2026-10-06T21:30:37.451838+00:00"
+    },
+    "pid": 52890,
+    "exit": 1,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 10455,
+    "observedBytes": 10455,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawBytes": 10455,
+  "rawSha256": "894e5726f3522523ecb58fbeafed2336cd7df2f7b779c049c9392a6ea4182a5c",
+  "testSummary": "Tests  17 failed | 9 passed (26)",
+  "selected": 26,
+  "passed": 9,
+  "endedAt": "2026-10-06T21:30:38.274908+00:00",
+  "wallSeconds": 0.824650791939348
+}

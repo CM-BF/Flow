@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T23:14:20.217917+00:00",
+  "source": "plugin-enable-binding@065938bf100931b18a2520138c25decf1c4ab11f",
+  "claim": "6ddedc73-f019-4073-b421-d23d3dc8dedd v8 active",
+  "fixedInputs": [
+    {
+      "ref": "bc805fa7",
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 24623,
+      "sha256": "26fd5f2e56665bd7ed602262410e9840733d32061b02ea88fba9deccdb2f3374"
+    },
+    {
+      "ref": "bc805fa7",
+      "path": "docs/evidence/d05/x01-binding-source-move.json",
+      "bytes": 2927,
+      "sha256": "284024a5c2e6bb0d57d141ea2b16cdb4d663b2dce5ca9ed6a15326c8fc258bfb"
+    },
+    {
+      "ref": "bc805fa7",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 27378,
+      "sha256": "a708870af90c9aadfa1d072e4baf981d1d9a6e31f8e7eadbac7856fed8736161"
+    },
+    {
+      "ref": "76d874eb",
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 20968,
+      "sha256": "4d43e0e6330f6a87a19b546cdd32e7e6b6e7ecd4ca80a3f1e0fa4f0769823e1f"
+    },
+    {
+      "ref": "76d874eb",
+      "path": "docs/quality/x01-enable-binding-provision-review.json",
+      "bytes": 15825,
+      "sha256": "45c9845086741bcf568a98eca18df15e33d0649d9b79cf112b59bcd30fb54c03"
+    }
+  ],
+  "count": 181,
+  "tests": "NOT_RUN, source registry/metadata only",
+  "runtime": "personal unchanged, X01 domain/source under implementation"
+}

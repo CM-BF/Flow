@@ -1,0 +1,272 @@
+{
+  "observedAt": "2026-10-06T16:48:32.870117+00:00",
+  "main": "56421f474fad1fa6dbe829c09910c21ec9bd30e3",
+  "sourceCount": 167,
+  "source": {
+    "id": "MATURE02C01",
+    "title": "逐消息设置共享接口与命令行",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client",
+    "branch": "codex/claude-message-settings-client",
+    "planDir": "plans/mature02c01-claude-message-settings-client",
+    "evidenceDir": "docs/evidence/mature02c01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T16:39:08.018Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/plans/mature02c01-claude-message-settings-client/status.md",
+      "syncedAt": "2026-10-06T16:48:03.193Z",
+      "stale": false,
+      "ageHours": 0.1486647222222222
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/claude-message-settings-client",
+      "head": "8bf472e3265f0995db2c5503876859cc511a4dca",
+      "dirty": true,
+      "changedFiles": 12,
+      "observedAt": "2026-10-06T16:48:03.291Z"
+    },
+    "status": {
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-02](../../../claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+          "id": "WPF-MATURE-02",
+          "location": "../../../claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "ExecutionLead",
+          "value": "ExecutionLead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已固定逐消息设置的共享读取和回执接口，正在接入命令行。",
+        "next": "可用完整设置发送或入队，响应不确定时保留原请求继续恢复。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/cli/README.md",
+          "apps/cli/src/cli.test.ts",
+          "apps/cli/src/index.ts",
+          "packages/client/src/conversation-acknowledgement.test.ts",
+          "packages/client/src/conversation-acknowledgement.ts",
+          "packages/client/src/conversation-queue.test.ts",
+          "packages/client/src/execution-profiles.test.ts",
+          "packages/client/src/index.ts",
+          "packages/contracts/src/index.ts"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "taskId": "MATURE02C01",
+      "owner": "native_center_owner / gpt-6-astra",
+      "branch": "codex/claude-message-settings-client",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T16:39:08.000Z",
+      "updatedRecord": "2026-10-06 16:39:08 UTC",
+      "todos": [
+        {
+          "id": "MATURE02C01-01",
+          "state": "completed",
+          "owner": "native_center_owner",
+          "evidence": "[移交](../../docs/evidence/mature02c01/shared-scope-handoff.json)、[claim](../../docs/evidence/mature02c01/claim-receipt.json)、[Interface](../../docs/evidence/mature02c01/interface.md)"
+        },
+        {
+          "id": "MATURE02C01-02",
+          "state": "in-progress",
+          "owner": "native_center_owner",
+          "evidence": "复用唯一客户端/回执/CLI解析路径"
+        },
+        {
+          "id": "MATURE02C01-03",
+          "state": "pending",
+          "owner": "native_center_owner",
+          "evidence": "资源门槛下局部检查；NOT_RUN"
+        },
+        {
+          "id": "MATURE02C01-04",
+          "state": "pending",
+          "owner": "ExecutionLead",
+          "evidence": "独立审查/main接收待后续"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "main 74bc72f0d32daebc8f89a75528f3d72002b3a29e；受控组合基线 8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "declaredDirty": "本次自有计划/interface新增，源码未改",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN"
+      },
+      "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+      "mainRecord": "NOT_INTEGRATED；本片不能推断父CORE/O14待验输入已通过",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "not_started",
+      "record": "NOT_STARTED",
+      "target": null
+    },
+    "implementationProof": {
+      "target": null,
+      "head": "8bf472e3265f0995db2c5503876859cc511a4dca",
+      "scopes": [
+        "apps/cli/README.md",
+        "apps/cli/src/cli.test.ts",
+        "apps/cli/src/index.ts",
+        "packages/client/src/conversation-acknowledgement.test.ts",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/conversation-queue.test.ts",
+        "packages/client/src/execution-profiles.test.ts",
+        "packages/client/src/index.ts",
+        "packages/contracts/src/index.ts"
+      ],
+      "observedAt": "2026-10-06T16:48:03.294Z",
+      "state": "unknown",
+      "reason": "实现目标需完整 SHA"
+    },
+    "documents": [
+      {
+        "path": "plans/mature02c01-claude-message-settings-client/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/mature02c01-claude-message-settings-client/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/mature02c01-claude-message-settings-client/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/mature02c01/interface.md",
+        "title": "固定接口",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/mature02c01/shared-scope-handoff.json",
+        "title": "移交",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/mature02c01/claim-receipt.json",
+        "title": "claim",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 1,
+      "total": 4
+    },
+    "main": {
+      "record": "NOT_INTEGRATED；本片不能推断父CORE/O14待验输入已通过",
+      "recordedHead": null,
+      "target": null,
+      "mainHead": "56421f474fad1fa6dbe829c09910c21ec9bd30e3",
+      "scopes": [
+        "apps/cli/README.md",
+        "apps/cli/src/cli.test.ts",
+        "apps/cli/src/index.ts",
+        "packages/client/src/conversation-acknowledgement.test.ts",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/conversation-queue.test.ts",
+        "packages/client/src/execution-profiles.test.ts",
+        "packages/client/src/index.ts",
+        "packages/contracts/src/index.ts"
+      ],
+      "observedAt": "2026-10-06T16:48:03.265Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "unknown",
+      "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+    },
+    "assignments": [
+      {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/cli/README.md",
+          "apps/cli/src/cli.test.ts",
+          "apps/cli/src/index.ts",
+          "docs/evidence/mature02c01",
+          "packages/client/src/conversation-acknowledgement.test.ts",
+          "packages/client/src/conversation-acknowledgement.ts",
+          "packages/client/src/conversation-queue.test.ts",
+          "packages/client/src/execution-profiles.test.ts",
+          "packages/client/src/index.ts",
+          "packages/contracts/src/index.ts",
+          "plans/mature02c01-claude-message-settings-client"
+        ],
+        "state": "active",
+        "branch": "codex/claude-message-settings-client",
+        "origin": "new",
+        "taskId": "MATURE02C01",
+        "worker": "native_center_owner",
+        "claimId": "85784ec0-9695-470d-b1bd-b1a447c9805a",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client",
+        "createdAt": "2026-10-06T16:37:05.888Z",
+        "updatedAt": "2026-10-06T16:37:05.888Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ],
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "ExecutionLead",
+        "value": "ExecutionLead"
+      },
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](../../../claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "reason": "",
+        "targetId": "WPF-MATURE-02",
+        "title": "Claude与Codex执行选项"
+      }
+    }
+  },
+  "snapshotGeneratedAt": "2026-10-06T16:48:03.193Z",
+  "rawBytes": 2106428,
+  "rawSha256": "4b49200c85f553d2e67fb22dda4b5e27852fd475a9198327625658c8fefea33b",
+  "url": "http://127.0.0.1:4320/api/snapshot",
+  "process": "owned dashboard only; new session21323",
+  "personalServicesChanged": false,
+  "localRegistrationCheck": "Initial invocation used old main74 before fast-forward and found no task; fixedmain564 after receive validates167 sources and parseErrors[]; no product test"
+}

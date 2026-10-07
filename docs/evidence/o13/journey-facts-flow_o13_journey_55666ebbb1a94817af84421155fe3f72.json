@@ -1,0 +1,76 @@
+{
+  "database": "flow_o13_journey_55666ebbb1a94817af84421155fe3f72",
+  "providerCalls": 0,
+  "boundary": "Real public HTTP/PG, runtime/outbox and SDK adapter; two injected query transports. Synthetic graph content is not actual model planning.",
+  "before": [],
+  "uncertain": {
+    "taskId": "3d485b76-f370-4284-88b1-cb04c9644083",
+    "executionId": "1fad0c1a-731b-4329-9723-9c97004661bf",
+    "status": "uncertain",
+    "newTaskCount": 0,
+    "injectedQueryCalls": 0
+  },
+  "connections": [],
+  "remaining": [],
+  "directoryRemoved": true,
+  "requests": [
+    {
+      "path": "/api/goals",
+      "key": "ca8b27e0-63ad-42ef-a083-f15737574e34",
+      "body": {
+        "projectId": "6b944bee-1419-426e-84c1-d8bba64747ce",
+        "originalGoal": "Negative recovery test",
+        "constraints": "No provider execution",
+        "acceptance": "Never accept unknown work"
+      }
+    },
+    {
+      "path": "/api/goals/e1c22fb7-a4ba-4b96-848d-8c9bf5ae7207/native-executions",
+      "key": "1d0121a7-3428-48a8-997e-5670291ad11e",
+      "body": {
+        "nodeId": "9ab0aee7-ac4d-451e-b761-f8b3673afc44",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": null,
+        "reason": "One controlled admission",
+        "executionProfile": {
+          "id": "601c4eae-4a28-47dd-869b-0789dfe89e59",
+          "runnerId": "d67bf743-471f-44ab-91cf-40f6adbe028b",
+          "configDigest": "80c6bc2de9c6b9cbb89619feeab7cedcb589df62800490ca8c4426734cacd18c"
+        }
+      }
+    },
+    {
+      "path": "/api/goals/e1c22fb7-a4ba-4b96-848d-8c9bf5ae7207/native-executions",
+      "key": "730ee94d-1530-4512-b9fe-2cafb24ded1e",
+      "body": {
+        "nodeId": "9ab0aee7-ac4d-451e-b761-f8b3673afc44",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": "1fad0c1a-731b-4329-9723-9c97004661bf",
+        "reason": "One controlled admission",
+        "executionProfile": {
+          "id": "601c4eae-4a28-47dd-869b-0789dfe89e59",
+          "runnerId": "d67bf743-471f-44ab-91cf-40f6adbe028b",
+          "configDigest": "80c6bc2de9c6b9cbb89619feeab7cedcb589df62800490ca8c4426734cacd18c"
+        }
+      }
+    },
+    {
+      "path": "/api/goals/e1c22fb7-a4ba-4b96-848d-8c9bf5ae7207/native-executions",
+      "key": "a6ee8351-9cfd-402a-a87c-9e3fccb0de07",
+      "body": {
+        "nodeId": "9ab0aee7-ac4d-451e-b761-f8b3673afc44",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": "1fad0c1a-731b-4329-9723-9c97004661bf",
+        "reason": "One controlled admission",
+        "executionProfile": {
+          "id": "324df452-ada5-4134-94f3-d56b4a357694",
+          "runnerId": "c1f68030-1ef7-42dc-8479-f26ec28b2f25",
+          "configDigest": "80c6bc2de9c6b9cbb89619feeab7cedcb589df62800490ca8c4426734cacd18c"
+        }
+      }
+    }
+  ]
+}

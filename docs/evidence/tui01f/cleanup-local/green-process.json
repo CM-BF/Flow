@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "--maxWorkers",
+    "1"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.4913066669832915,
+  "pid": 14576,
+  "processGroup": "absent",
+  "freeBeforeBytes": 1203077120,
+  "rawBytes": 321,
+  "rawSha256": "54ee141ba00edba6da3cd5f5ee4147eb595e3f14ff955a73edf200bfa099811b"
+}

@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T15:48:00Z",
+  "target": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "kind": "READ_ONLY_SUCCESSOR_INPUT",
+  "requirement": "FLOW-001 REQ-15 / B02-B03",
+  "bindings": [
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2387,
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+    }
+  ],
+  "finding": "turnPage awaits turnView row by row; each asks task/context/session/preview separately. Existing contextReferences supports a bounded batch.",
+  "historicalEvidence": "B02/B03 fixed no-context 50-turn fixture:252 SELECT; not a measurement of current mixed-material/message-setting pages.",
+  "candidate": "One bounded read snapshot and batch projection, preserving row ownership/current attempt/source/digest/version/unknown. No Promise.all pseudo-parallel queries on same PG client.",
+  "validation": "Future 0-model mixed context/attachment/new message settings page; old/unrelated attempt rejection; request count, DB decoded and HTTP bytes, elapsed time reported separately.",
+  "dependency": "Mika current shared read/message-setting writer safe point; no present product edit/take",
+  "tests": 0,
+  "provider": 0
+}

@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-06 13:12:42 UTC",
+  "reviewedAt": "2026-10-06 13:02:16 UTC",
+  "target": "6336cd00b05843fb33093cf7c3157a4de9ea1815",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "verdict": "APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "acceptedBy": "Mika / root",
+  "observedHead": "964858b80341686c51588fb6c2464fc3c5d5a14b",
+  "observedDirty": false,
+  "claim": {
+    "id": "4eb31983-3bd8-415e-9898-143e28c727ef",
+    "version": 2,
+    "state": "ACTIVE"
+  },
+  "verified": {
+    "currentBindings": 53,
+    "readonlyAtBase3609": 21,
+    "historicalRedBindings": 6,
+    "distinctPgTests": 9,
+    "localStrictExit": 0,
+    "privateDatabasesClosedAndAbsent": 2
+  },
+  "reviewerExecutedTests": 0,
+  "limitations": [
+    "public function entrypoint equivalence and actual task write count, not measured performance",
+    "no actual SDK/provider/HTTP transport/capacity",
+    "main integration pending"
+  ],
+  "nonBlockingMetadataFix": "stage review-ready changed to supported integration; old process notes explicitly historical"
+}

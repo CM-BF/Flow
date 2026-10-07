@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-06T18:01:40.763784+00:00",
+  "targetBackend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "sourceRows": [
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "bytes": 12618
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "bytes": 11267
+    }
+  ],
+  "onlyProductionDelta": "context-transparency/store.ts three additive lines; second changed file is test",
+  "lockSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+  "freshObservation": {
+    "sourceAtStart": {
+      "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "dirty": false
+    },
+    "ownedProcessIdentities": {
+      "center": {
+        "pid": 64904,
+        "group": 64904,
+        "startedAt": "Tue Oct  6 05:40:26 2026",
+        "identity": "running"
+      },
+      "runner": {
+        "pid": 65168,
+        "group": 65168,
+        "startedAt": "Tue Oct  6 05:40:28 2026",
+        "identity": "running"
+      },
+      "web": {
+        "pid": 65219,
+        "group": 65219,
+        "startedAt": "Tue Oct  6 05:40:28 2026",
+        "identity": "running"
+      }
+    },
+    "operation": {
+      "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+      "phase": "resumed",
+      "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "resumeVersion": 14
+    },
+    "database": {
+      "markerMatched": true,
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "runnerIdentityMatched": true,
+      "tasks": [
+        {
+          "status": "succeeded",
+          "count": 4
+        }
+      ],
+      "unfinished": [],
+      "queue": [
+        {
+          "state": "promoted",
+          "count": 1
+        }
+      ],
+      "runners": [
+        {
+          "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "harnesses": [
+            "claude"
+          ],
+          "capacity": 1,
+          "revoked": false,
+          "maintenance_state": "accepting",
+          "maintenance_version": 15,
+          "maintenance_operation_id": null
+        }
+      ],
+      "retainedConversation": [
+        {
+          "id": "2c507833-67fe-4d10-acf5-6c97eedd05bb",
+          "revision": 1
+        }
+      ],
+      "migrations": [
+        {
+          "version": 1
+        },
+        {
+          "version": 2
+        },
+        {
+          "version": 3
+        },
+        {
+          "version": 4
+        },
+        {
+          "version": 5
+        },
+        {
+          "version": 6
+        },
+        {
+          "version": 7
+        },
+        {
+          "version": 8
+        },
+        {
+          "version": 9
+        },
+        {
+          "version": 10
+        },
+        {
+          "version": 11
+        },
+        {
+          "version": 12
+        },
+        {
+          "version": 13
+        },
+        {
+          "version": 14
+        },
+        {
+          "version": 15
+        },
+        {
+          "version": 16
+        },
+        {
+          "version": 17
+        },
+        {
+          "version": 18
+        },
+        {
+          "version": 19
+        },
+        {
+          "version": 20
+        },
+        {
+          "version": 21
+        },
+        {
+          "version": 22
+        },
+        {
+          "version": 23
+        },
+        {
+          "version": 24
+        },
+        {
+          "version": 25
+        },
+        {
+          "version": 26
+        },
+        {
+          "version": 27
+        }
+      ]
+    },
+    "webRelease": {
+      "format": 1,
+      "policy": "flow-web-release-v1",
+      "version": 2,
+      "backendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "compatibilityIds": {
+        "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+        "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06"
+      },
+      "current": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "artifacts": [
+        {
+          "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+        },
+        {
+          "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+          "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        }
+      ],
+      "updatedAt": "2026-10-06T10:54:44.580Z"
+    }
+  },
+  "candidateReport": {
+    "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    },
+    "approved": "Root scoped RELEASE03 A all12 plus B3; no rerun here"
+  },
+  "retainedMatrix": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "target": "af51c621696230fbced12227670f014ca73bd8a1",
+      "matchingReports": []
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "target": "af51c621696230fbced12227670f014ca73bd8a1",
+      "matchingReports": []
+    }
+  ],
+  "readiness": "NOT_READY_FOR_OPERATION",
+  "gaps": [
+    "Both retained personal artifacts lack af51 reports in installation and examined RELEASE03 report scope. Do not relabel old362/b1c reports.",
+    "Web identity requests unconfirmed: initial and followup errors lack cause; no third request or service operation. Process identity and listener ownership alone are not page identity proof.",
+    "config.repository remains original Flow; fixed af51 checkout/source action must be coordinated with Lead before maintenance. Current main is not af51.",
+    "d629 artifact is external retained test output, not installed personal artifact. Existing CLI has prepare but no import-artifact; require explicit exact verified transfer procedure or genuine prepare that yields exact descriptor before publish.",
+    "No new personal maintenance/publish/resume window authorized."
+  ],
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc05-history-compatibility",
+      "plans/svc05-history-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/personal-history-compatibility",
+    "origin": "new",
+    "taskId": "SVC05H01",
+    "worker": "assignment_review",
+    "claimId": "cd2d2e57-f633-444b-9797-f83a45624ae2",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "createdAt": "2026-10-06T15:33:34.893Z",
+    "updatedAt": "2026-10-06T15:42:14.145Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "operationMutations": 0,
+  "providerQueries": 0
+}

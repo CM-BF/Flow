@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-06T16:37:25.352038+00:00",
+  "base": "74bc72f0d32daebc8f89a75528f3d72002b3a29e",
+  "controlledInputs": [
+    {
+      "path": "apps/cli/README.md",
+      "ref": "bc1f3796725ebcb32e645dc11ae88b341cddf8f4",
+      "blob": "90d329b543ffe23d7ab1e314e8283ee69abceaca",
+      "bytes": 7066,
+      "sha256": "301b7980c9a00ed50b5eaf73ea2737234bd5f42e405f03adb6a5bcd4699eff11"
+    },
+    {
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "ref": "bc1f3796725ebcb32e645dc11ae88b341cddf8f4",
+      "blob": "e01e9923dc03981a4f4b32b8da87e793f3f807bb",
+      "bytes": 4437,
+      "sha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "ref": "bc1f3796725ebcb32e645dc11ae88b341cddf8f4",
+      "blob": "fa54b73c61809a0fc27a3bd42745b9fab7cd82d6",
+      "bytes": 23730,
+      "sha256": "fb15f3e7b9485ffe53124ba861ed859f490d545725d28644cf539fe820f766a2"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "blob": "5e0faf800c7dd9e5fed8504f87396337bcf9c588",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "blob": "d626d66b47fdff4f698315d8d2cfa959e65d02e3",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "blob": "1062a9758e4d03696df4e9a8c9d2760c789528a8",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "blob": "fbc1c910113bc65e980a094be0e5d0a20472e513",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "blob": "62bf5e58fa7ce4cb464c4025ba5100bba4e09be3",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    }
+  ],
+  "workerMayEditOnly": [
+    "packages/client/src/index.ts",
+    "packages/client/src/conversation-acknowledgement.ts",
+    "packages/client/src/execution-profiles.test.ts",
+    "packages/client/src/conversation-acknowledgement.test.ts",
+    "packages/client/src/conversation-queue.test.ts",
+    "packages/contracts/src/index.ts",
+    "apps/cli/src/index.ts",
+    "apps/cli/src/cli.test.ts",
+    "apps/cli/README.md",
+    "plans/mature02c01-claude-message-settings-client",
+    "docs/evidence/mature02c01"
+  ],
+  "scope": "Immutable source composition, not CORE/O14 product approval; preserve each distinct validation boundary",
+  "productTests": 0,
+  "installs": 0,
+  "PG": 0,
+  "provider": 0
+}

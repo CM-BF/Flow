@@ -1,0 +1,264 @@
+{
+  "generatedAt": "2026-10-06T05:38:12.500Z",
+  "task": {
+    "id": "K01",
+    "title": "项目知识原文与检索",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+    "branch": "codex/knowledge-source-store",
+    "planDir": "plans/k01-knowledge-sources",
+    "evidenceDir": "docs/evidence/k01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T05:38:05.880Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/plans/k01-knowledge-sources/status.md",
+      "syncedAt": "2026-10-06T05:38:12.500Z",
+      "stale": false,
+      "ageHours": 0.0020833333333333333
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/knowledge-source-store",
+      "head": "1917b91bb1ad28cc27fbe5e7da03252e5be07286",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T05:38:12.996Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "主线已接收版本文本、精确原文引用与有界词法检索",
+        "next": "本片段已交付",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "scopes": [
+          "apps/server/src/knowledge",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "docs/evidence/k01/check.mjs"
+        ],
+        "errors": []
+      },
+      "taskId": "K01",
+      "owner": "b01_bounded_reads / gpt-6-astra ultra；lead mika",
+      "branch": "codex/knowledge-source-store",
+      "branchState": "completed（本片段已由main接收）",
+      "updatedAt": "2026-10-06T05:38:05.000Z",
+      "updatedRecord": "2026-10-06 05:38:05 UTC",
+      "todos": [
+        {
+          "id": "K01-01",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "[Interface](../../docs/evidence/k01/interface.md)"
+        },
+        {
+          "id": "K01-02",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "matrix-first 28绿 + capacity-fixed 1绿；首红/清理已保留"
+        },
+        {
+          "id": "K01-03",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "12词法样本/实际JSON预算；boundary-extra 2绿"
+        },
+        {
+          "id": "K01-04",
+          "state": "completed",
+          "owner": "b01_bounded_reads / Mika",
+          "evidence": "Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[]"
+        },
+        {
+          "id": "K01-05",
+          "state": "completed",
+          "owner": "b01_bounded_reads / Lead",
+          "evidence": "[main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff"
+        },
+        {
+          "id": "K01-06",
+          "state": "pending",
+          "owner": "Goal Owner / 后继任务owner",
+          "evidence": "REQ-10 hybrid/vector、下游grant与消费/失效后继验收仍开放"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "declaredDirty": "实现已固定；最终metadata提交后clean，实时状态由Git聚合",
+      "checks": {
+        "state": "passed",
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "record": "PASSED ea0c4cba1792dbb498487fb5b6ae47393340b77e；31不同用例组合/noEmit；Mika独立技术review APPROVED"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "mainRecord": "已集成 fb906cb42391971a8b315dbd813f7633927d7265；main=origin/main clean，完整实现9文件零diff",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "proof": {
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "head": "1917b91bb1ad28cc27fbe5e7da03252e5be07286",
+        "scopes": [
+          "apps/server/src/knowledge",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "docs/evidence/k01/check.mjs"
+        ],
+        "observedAt": "2026-10-06T05:38:13.012Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/k01/README.md",
+          "docs/evidence/k01/dashboard-receipt.json",
+          "docs/evidence/k01/environment.json",
+          "docs/evidence/k01/main-receipt.json",
+          "docs/evidence/k01/manifest.json",
+          "docs/evidence/k01/quality.md",
+          "plans/k01-knowledge-sources/plan.md",
+          "plans/k01-knowledge-sources/review.md",
+          "plans/k01-knowledge-sources/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "head": "1917b91bb1ad28cc27fbe5e7da03252e5be07286",
+      "scopes": [
+        "apps/server/src/knowledge",
+        "packages/contracts/src/knowledge.ts",
+        "packages/storage/migrations/015-knowledge-sources.sql",
+        "docs/evidence/k01/check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:38:13.012Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/k01/README.md",
+        "docs/evidence/k01/dashboard-receipt.json",
+        "docs/evidence/k01/environment.json",
+        "docs/evidence/k01/main-receipt.json",
+        "docs/evidence/k01/manifest.json",
+        "docs/evidence/k01/quality.md",
+        "plans/k01-knowledge-sources/plan.md",
+        "plans/k01-knowledge-sources/review.md",
+        "plans/k01-knowledge-sources/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/k01-knowledge-sources/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k01-knowledge-sources/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k01-knowledge-sources/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/k01/interface.md",
+        "title": "Interface",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k01/main-receipt.json",
+        "title": "main receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k01/claim-receipt.json",
+        "title": "receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k01/dashboard-receipt.json",
+        "title": "回执",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 5,
+      "total": 6
+    },
+    "main": {
+      "record": "已集成 fb906cb42391971a8b315dbd813f7633927d7265；main=origin/main clean，完整实现9文件零diff",
+      "recordedHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "mainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "scopes": [
+        "apps/server/src/knowledge",
+        "packages/contracts/src/knowledge.ts",
+        "packages/storage/migrations/015-knowledge-sources.sql",
+        "docs/evidence/k01/check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:38:12.996Z",
+      "current": true,
+      "historicalIntegrated": true,
+      "method": "ancestor",
+      "scopeEqual": true,
+      "dirtyScopePaths": [],
+      "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+    },
+    "assignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/server/src/knowledge",
+          "docs/evidence/k01",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "plans/k01-knowledge-sources"
+        ],
+        "state": "active",
+        "branch": "codex/knowledge-source-store",
+        "origin": "new",
+        "taskId": "K01",
+        "worker": "b01_bounded_reads",
+        "claimId": "76b6ae1a-f414-49bb-a93d-d80cead6bd61",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+        "createdAt": "2026-10-06T05:10:36.101Z",
+        "updatedAt": "2026-10-06T05:10:36.101Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

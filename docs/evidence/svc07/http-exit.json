@@ -1,0 +1,101 @@
+{
+  "state": "PASSED",
+  "startedAt": "2026-10-07T02:11:50.770494+00:00",
+  "gate": {
+    "head": "1b3e16626c214f179640574dcd3ba93de10213ed",
+    "manifestSha256": "13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06",
+    "availableBeforeBytes": 26694959104,
+    "claimId": "3bbb8293-c36d-40c8-a133-723463801943",
+    "claimVersion": 1,
+    "claimObservedAt": "2026-10-07T02:11:50.753Z"
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "docs/evidence/svc07/http-consumer.test.ts",
+    "--config",
+    "docs/evidence/svc07/http-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "temporary": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/http-tmp",
+    "device": 16777234,
+    "inode": 123327452,
+    "absentAfter": true
+  },
+  "spawn": {
+    "pid": 2952,
+    "pgid": 2952,
+    "startedAt": "2026-10-07T02:11:50.773633+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 2952,
+      "pgid": 2952,
+      "startedAt": "2026-10-07T02:11:50.773633+00:00"
+    },
+    "pid": 2952,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 413,
+    "observedBytes": 413,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawSha256": "8779c5eccb692a7c2e1b4df1d00d5feba26bc5660fe215c471e4fda2a6b41f76",
+  "resultBytes": 1934,
+  "database": {
+    "name": "flow_svc07_http_863a38d11959",
+    "marker": "c7280a7e-18d9-4aaf-999a-299275883087",
+    "identity": {
+      "oid": "1187841",
+      "marker": "c7280a7e-18d9-4aaf-999a-299275883087"
+    },
+    "cleanup": {
+      "startupSettled": true,
+      "appClosed": true,
+      "connectionsZero": true,
+      "databaseAbsent": true,
+      "adminClosed": true,
+      "status": "CONFIRMED"
+    }
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:61829",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:61838",
+      "closed": true
+    }
+  ],
+  "assertions": [
+    "concurrent-command-replay",
+    "same-db-restart-replay-and-changed-payload-rejected",
+    "two-runner-claim-exactly-once",
+    "cancellation-history-and-revoked-runner"
+  ],
+  "httpRequests": 19,
+  "endedAt": "2026-10-07T02:11:53.535889+00:00",
+  "wallSeconds": 2.979205375071615
+}

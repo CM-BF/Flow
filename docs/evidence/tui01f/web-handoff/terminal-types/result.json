@@ -1,0 +1,54 @@
+{
+  "mode": "types",
+  "digest": "54f9fb67dd5157e7ae8e511f6c6dd408e69cc966df02cc6e5f737b71d0ab6a90",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    "docs/evidence/tui01f/web-handoff/tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "selected": null,
+  "outcome": "passed",
+  "supervision": {
+    "driverPid": 24381,
+    "outcome": "processes-complete",
+    "phase": "work",
+    "samples": 44,
+    "ownedGroups": [
+      {
+        "pgid": 24381,
+        "state": "stopped"
+      }
+    ],
+    "reason": null,
+    "last": {
+      "free": 1178931200,
+      "privateBytes": 0,
+      "observedOutputBytes": 0
+    },
+    "exitCode": 0,
+    "signalCode": null,
+    "elapsedMs": 2246
+  },
+  "pipesClosed": true,
+  "observedBytes": 0,
+  "retainedBytes": 0,
+  "primaryFailure": null,
+  "privatePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/terminal-types/private",
+  "identity": {
+    "dev": 16777234,
+    "ino": 123200101
+  },
+  "metrics": {
+    "free": 1178935296,
+    "privateBytes": 0,
+    "observedOutputBytes": 0
+  },
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "elapsedMs": 2303,
+  "privateRemoved": true
+}

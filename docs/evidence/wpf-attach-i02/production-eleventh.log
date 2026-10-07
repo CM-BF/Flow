@@ -1,0 +1,33 @@
+PASS explicit project preparation preserves the text and performs zero turns
+PASS P01 Files entry loads only explicit metadata; Enter preview is lazy and cached
+PASS real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft
+PASS official upload adapter and Queue Enter use a frozen v2 receipt, never cancel the task
+PASS offline before submit prevents receipt/POST and preserves original uploaded material
+PASS disable/enable and native hidden retain materials without automatic reads; protected close is retained
+PASS 390 light/dark keyboard and metadata-only retained material
+PASS unknown upload survives browser reload; sixth public receipt lookup recovers without a new POST or automatic attachment
+PASS @file uses the same plugin panel; official drag input uploads and explicit chip removal preserves recovery
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText(/Attachment recovery is unavailable:/)
+Expected: visible
+Error: strict mode violation: getByText(/Attachment recovery is unavailable:/) resolved to 2 elements:
+    1) <p role="alert">Attachment recovery is unavailable: Fixture stora…</p> aka getByText('Attachment recovery is').first()
+    2) <p role="alert">Attachment recovery is unavailable: Fixture stora…</p> aka getByRole('region', { name: 'New conversation' }).getByText('Attachment recovery is')
+
+Call log:
+  - Expect "toBeVisible" getByText(/Attachment recovery is unavailable:/) with timeout 5000ms
+  - waiting for getByText(/Attachment recovery is unavailable:/)
+    - locator resolved to <p role="alert">Attachment recovery is unavailable: Fixture stora…</p>
+    - unexpected value "hidden"
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toBeVisible (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:156:159)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:43:109)
+    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:152:5)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:171:7)
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-integration.browser.ts production-eleventh

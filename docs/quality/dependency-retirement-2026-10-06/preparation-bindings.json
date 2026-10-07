@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T22:21:50.391487+00:00",
+  "inputs": [
+    {
+      "source": "/tmp/flow-workspace-cache-sample-receipt.json",
+      "copy": "sample-receipt.json",
+      "bytes": 3801,
+      "sha256": "451d420d0ad0c4fee1fdb6f8cfe7d26846bb0e25352bfe65cbfee4e89d77782f"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/ops-workspace-cache-dependency-consumers/manager-confirmation.json",
+      "copy": "manager-consumer-confirmation.json",
+      "bytes": 4066,
+      "sha256": "841c8e8307effab0f41320431dd50a249832d303b6becb11c2e2dc675145ff07"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/ops-workspace-cache-dependency-consumers/root-frozen-dependency-review.json",
+      "copy": "frozen-consumer-review.json",
+      "bytes": 37754,
+      "sha256": "8b5d0943a9fe5ab1826aa6953385ed8ef3f98f113aa0437dc8ebc58e1a40dc95"
+    }
+  ],
+  "state": "KEEP_PENDING_FULL_METADATA_COMPARISON_AND_OPERATOR_REVIEW",
+  "operations": "No dependency deletion; three-file sample only; original owner known-consumer confirmation bounded"
+}

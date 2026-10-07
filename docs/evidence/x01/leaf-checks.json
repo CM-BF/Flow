@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-06T13:08:15Z",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "test": {
+    "command": "Node24 node_modules/vitest/vitest.mjs run packages/plugin-runtime/src/package-store.test.ts apps/runner/src/plugins/host.test.ts --no-cache",
+    "exitCode": 0,
+    "files": 2,
+    "selected": 53,
+    "passed": 53,
+    "distinct": 53,
+    "packageStore": 39,
+    "host": 14
+  },
+  "strict": {
+    "command": "Node24 node_modules/typescript/bin/tsc -p docs/evidence/x01/leaf-tsconfig.json --noEmit",
+    "exitCode": 0,
+    "rootOptionsInherited": true
+  },
+  "cleanup": {
+    "storeRoots": 39,
+    "hostRoots": 15,
+    "retained": [],
+    "basis": "exact created paths checked absent by afterAll; not an OS-wide fd/process scan"
+  },
+  "initialEvidence": [
+    {
+      "path": "leaf-store-red.txt",
+      "selected": 1,
+      "failed": 1,
+      "reason": "public prepare NOT_IMPLEMENTED"
+    },
+    {
+      "path": "leaf-host-red.txt",
+      "selected": 1,
+      "failed": 1,
+      "reason": "real install completed; public host NOT_IMPLEMENTED"
+    },
+    {
+      "path": "leaf-store-first-green.txt",
+      "failed": 1,
+      "reason": "test temp alias /var rejected by canonical-root contract; fixture now realpath-normalized"
+    },
+    {
+      "path": "leaf-store-behaviors-first.txt",
+      "selected": 35,
+      "passed": 34,
+      "failed": 1,
+      "reason": "tar.Header rejects unsupported type during adversarial fixture construction; fixture now encodes unknown type byte with valid checksum"
+    },
+    {
+      "path": "leaf-host-behaviors-first.txt",
+      "selected": 14,
+      "passed": 13,
+      "failed": 1,
+      "reason": "Vitest resolver revalidates removed file on new import; retained namespace behavior now tested without claiming native cache eviction/reimport evidence"
+    },
+    {
+      "path": "leaf-terminal-red.txt",
+      "selected": 2,
+      "failed": 2,
+      "unselected": 37,
+      "reason": "Parser alone accepted missing EOF/trailing nonzero; repaired with public EOF event and finite block feeds"
+    },
+    {
+      "path": "leaf-strict-first.txt",
+      "exitCode": 2,
+      "reason": "never-return control-flow narrowing; corrected function declaration, strict options unchanged"
+    }
+  ],
+  "publicVertical": "NOT_IMPLEMENTED",
+  "pgProviderNetworkChildren": 0,
+  "nativeLoaderScope": "real modules loaded inside Vitest process; fixed Node documentation backs ESM URL/cache semantics; no native runner workload",
+  "productSources": [
+    "packages/plugin-runtime/package.json",
+    "packages/plugin-runtime/src/package-store.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "apps/runner/src/plugins/host.ts",
+    "apps/runner/src/plugins/host.test.ts",
+    "fixtures/plugins/text-tool/package.json",
+    "fixtures/plugins/text-tool/index.mjs",
+    "fixtures/plugins/text-tool/flow-plugin.json"
+  ]
+}

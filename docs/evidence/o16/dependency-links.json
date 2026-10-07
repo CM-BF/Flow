@@ -1,0 +1,375 @@
+{
+  "at": "2026-10-06T18:23:45.877759+00:00",
+  "outcome": "created-and-verified",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "source": "/tmp/flow-o16-dependency-link-request.json",
+  "created": [
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/@types/node",
+      "name": "@types/node",
+      "versionFromFixedManifest": "24.19.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "24.19.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/@types/pg",
+      "name": "@types/pg",
+      "versionFromFixedManifest": "8.23.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "8.23.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/typescript",
+      "name": "typescript",
+      "versionFromFixedManifest": "5.9.3",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "5.9.3"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/tsx",
+      "name": "tsx",
+      "versionFromFixedManifest": "4.23.15",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.23.15"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/vitest",
+      "name": "vitest",
+      "versionFromFixedManifest": "4.0.18",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.0.18"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/pg",
+      "name": "pg",
+      "versionFromFixedManifest": "8.23.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "8.23.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/pg-boss",
+      "name": "pg-boss",
+      "versionFromFixedManifest": "12.37.0",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "12.37.0"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@fastify/cors",
+      "name": "@fastify/cors",
+      "versionFromFixedManifest": "11.3.0",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "11.3.0"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@flow/contracts",
+      "name": "@flow/contracts",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@flow/plugin-runtime",
+      "name": "@flow/plugin-runtime",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/plugin-runtime",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/fastify",
+      "name": "fastify",
+      "versionFromFixedManifest": "5.12.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "5.12.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/npm-package-arg",
+      "name": "npm-package-arg",
+      "versionFromFixedManifest": "13.0.2",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "13.0.2"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/pacote",
+      "name": "pacote",
+      "versionFromFixedManifest": "21.5.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "21.5.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/pg",
+      "name": "pg",
+      "versionFromFixedManifest": "8.23.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "8.23.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/pg-boss",
+      "name": "pg-boss",
+      "versionFromFixedManifest": "12.37.0",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "12.37.0"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/ssri",
+      "name": "ssri",
+      "versionFromFixedManifest": "13.0.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "13.0.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/zod",
+      "name": "zod",
+      "versionFromFixedManifest": "4.6.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.6.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@types/npm-package-arg",
+      "name": "@types/npm-package-arg",
+      "versionFromFixedManifest": "6.1.4",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "6.1.4"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@types/pacote",
+      "name": "@types/pacote",
+      "versionFromFixedManifest": "11.1.8",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "11.1.8"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/server/node_modules/@types/ssri",
+      "name": "@types/ssri",
+      "versionFromFixedManifest": "7.1.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "7.1.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@flow/contracts",
+      "name": "@flow/contracts",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@flow/plugin-runtime",
+      "name": "@flow/plugin-runtime",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/plugin-runtime",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@flow/client",
+      "name": "@flow/client",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/client",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk",
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "versionFromFixedManifest": "0.3.290",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "0.3.290"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@flow/protocols",
+      "name": "@flow/protocols",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@a2a-js/sdk",
+      "name": "@a2a-js/sdk",
+      "versionFromFixedManifest": "1.3.0",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "1.3.0"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/zod",
+      "name": "zod",
+      "versionFromFixedManifest": "4.6.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.6.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@modelcontextprotocol/sdk",
+      "name": "@modelcontextprotocol/sdk",
+      "versionFromFixedManifest": "1.32.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "1.32.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/client/node_modules/@flow/contracts",
+      "name": "@flow/contracts",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts/node_modules/zod",
+      "name": "zod",
+      "versionFromFixedManifest": "4.6.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.6.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/interaction/node_modules/@flow/client",
+      "name": "@flow/client",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/client",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/interaction/node_modules/@flow/contracts",
+      "name": "@flow/contracts",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/interaction/node_modules/zod",
+      "name": "zod",
+      "versionFromFixedManifest": "4.6.5",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "4.6.5"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/plugin-runtime/node_modules/tar",
+      "name": "tar",
+      "versionFromFixedManifest": "7.5.22",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "7.5.22"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols/node_modules/@flow/client",
+      "name": "@flow/client",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/client",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols/node_modules/@flow/contracts",
+      "name": "@flow/contracts",
+      "versionFromFixedManifest": "workspace:*",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/contracts",
+      "kind": "own-workspace",
+      "destinationExists": false
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols/node_modules/@a2a-js/sdk",
+      "name": "@a2a-js/sdk",
+      "versionFromFixedManifest": "1.3.0",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "1.3.0"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols/node_modules/@modelcontextprotocol/client",
+      "name": "@modelcontextprotocol/client",
+      "versionFromFixedManifest": "2.3.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "2.3.1"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/packages/protocols/node_modules/@modelcontextprotocol/server",
+      "name": "@modelcontextprotocol/server",
+      "versionFromFixedManifest": "2.3.1",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@modelcontextprotocol+server@2.3.1/node_modules/@modelcontextprotocol/server",
+      "kind": "existing-third-party",
+      "destinationExists": false,
+      "installedVersion": "2.3.1"
+    }
+  ],
+  "protected": {
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+    "apps/cli/package.json": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333",
+    "apps/execution-dashboard/package.json": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+    "apps/runner/package.json": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+    "apps/server/package.json": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e",
+    "apps/tui/package.json": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+    "apps/web/package.json": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+    "packages/client/package.json": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+    "packages/contracts/package.json": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+    "packages/interaction/package.json": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+    "packages/plugin-runtime/package.json": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+    "packages/protocols/package.json": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+  },
+  "sharedConfigSha256": "29cfd2ce1f172255f9863249b34c5a674c96973ac93d5fcb9214fb430a284784",
+  "gitStatusUnchanged": true,
+  "freeBeforeBytes": 1635442688,
+  "freeAfterBytes": 1635323904,
+  "logicalSymlinkBytes": 5173,
+  "cleanupBoundary": "Only listed own symlinks may be unlinked; never follow targets. No cleanup performed.",
+  "installs": 0,
+  "imports": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0
+}

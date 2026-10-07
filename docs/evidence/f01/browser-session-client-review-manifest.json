@@ -1,0 +1,57 @@
+{
+  "target": "d6d5089c680f862e34a8e4d25f8f65d03057e70e",
+  "originalTarget": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+  "reviewFinding": "P2 ambient same-origin Cookie in Bearer branch; requested omit",
+  "observedAt": "2026-10-06 13:36:51 UTC",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 47838,
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    },
+    {
+      "path": "packages/client/src/browser-session.test.ts",
+      "bytes": 6454,
+      "sha256": "db0950e3ebfbc8d7fea7201b2625728b6ed7ed4e02efc3679c6d5e2974f920f1"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/browser-session-client-review-red.txt",
+      "bytes": 1601,
+      "sha256": "df82fbedccdcd0e70897b9b0b685b5e7ce4b2f8df5f5f050a8997eef1cea97c0"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-client-review-green.txt",
+      "bytes": 320,
+      "sha256": "f565cec3485d08bc0cd7320489026d3124962a471a7c4d79f50427d3fc4c2487"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-client-review-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "red": {
+      "exit": 1,
+      "selected": 1,
+      "unselected": 2
+    },
+    "green": {
+      "exit": 0,
+      "passed": 3,
+      "durationMs": 44
+    },
+    "types": {
+      "exit": 0,
+      "toolChunk": "97cdf0"
+    },
+    "newPgRuns": 0,
+    "providerQueries": 0
+  },
+  "limits": [
+    "explicit RequestInit assertion with real Node HTTP/SSE, not browser engine cookie acceptance",
+    "cookie/include and production 9406 sources unchanged"
+  ]
+}

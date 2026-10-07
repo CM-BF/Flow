@@ -1,0 +1,382 @@
+TAP version 13
+# Subtest: normalizes legacy minute UTC
+ok 1 - normalizes legacy minute UTC
+  ---
+  duration_ms: 3.697209
+  type: 'test'
+  ...
+# Subtest: normalizes legacy second UTC
+ok 2 - normalizes legacy second UTC
+  ---
+  duration_ms: 0.524959
+  type: 'test'
+  ...
+# Subtest: normalizes legacy minute Z
+ok 3 - normalizes legacy minute Z
+  ---
+  duration_ms: 0.124667
+  type: 'test'
+  ...
+# Subtest: normalizes legacy second Z
+ok 4 - normalizes legacy second Z
+  ---
+  duration_ms: 0.109042
+  type: 'test'
+  ...
+# Subtest: normalizes space separator and Z
+ok 5 - normalizes space separator and Z
+  ---
+  duration_ms: 0.123542
+  type: 'test'
+  ...
+# Subtest: normalizes millisecond Z
+ok 6 - normalizes millisecond Z
+  ---
+  duration_ms: 0.114666
+  type: 'test'
+  ...
+# Subtest: normalizes one fractional digit UTC
+ok 7 - normalizes one fractional digit UTC
+  ---
+  duration_ms: 0.09775
+  type: 'test'
+  ...
+# Subtest: normalizes two fractional digits offset
+ok 8 - normalizes two fractional digits offset
+  ---
+  duration_ms: 0.073875
+  type: 'test'
+  ...
+# Subtest: normalizes reported TUI UTC record
+ok 9 - normalizes reported TUI UTC record
+  ---
+  duration_ms: 0.092542
+  type: 'test'
+  ...
+# Subtest: normalizes reported COST UTC record
+ok 10 - normalizes reported COST UTC record
+  ---
+  duration_ms: 0.139166
+  type: 'test'
+  ...
+# Subtest: normalizes truncate without rounding into next second
+ok 11 - normalizes truncate without rounding into next second
+  ---
+  duration_ms: 0.08825
+  type: 'test'
+  ...
+# Subtest: normalizes minute offset
+ok 12 - normalizes minute offset
+  ---
+  duration_ms: 0.073083
+  type: 'test'
+  ...
+# Subtest: normalizes Gregorian leap day
+ok 13 - normalizes Gregorian leap day
+  ---
+  duration_ms: 0.073167
+  type: 'test'
+  ...
+# Subtest: normalizes early leap year
+ok 14 - normalizes early leap year
+  ---
+  duration_ms: 0.06
+  type: 'test'
+  ...
+# Subtest: normalizes year zero is not 1900
+ok 15 - normalizes year zero is not 1900
+  ---
+  duration_ms: 0.058958
+  type: 'test'
+  ...
+# Subtest: normalizes early ordinary year
+ok 16 - normalizes early ordinary year
+  ---
+  duration_ms: 0.084833
+  type: 'test'
+  ...
+# Subtest: normalizes end-of-day minute
+ok 17 - normalizes end-of-day minute
+  ---
+  duration_ms: 0.080084
+  type: 'test'
+  ...
+# Subtest: normalizes end-of-day zero fraction crosses year
+ok 18 - normalizes end-of-day zero fraction crosses year
+  ---
+  duration_ms: 0.093083
+  type: 'test'
+  ...
+# Subtest: normalizes wrapped update followed by main sync
+ok 19 - normalizes wrapped update followed by main sync
+  ---
+  duration_ms: 0.07725
+  type: 'test'
+  ...
+# Subtest: rejects 2026-00-06T16:10Z without throwing or damaging other fields
+ok 20 - rejects 2026-00-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.166
+  type: 'test'
+  ...
+# Subtest: rejects 2026-13-06T16:10Z without throwing or damaging other fields
+ok 21 - rejects 2026-13-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.064459
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-00T16:10Z without throwing or damaging other fields
+ok 22 - rejects 2026-10-00T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.059958
+  type: 'test'
+  ...
+# Subtest: rejects 2026-04-31T16:10Z without throwing or damaging other fields
+ok 23 - rejects 2026-04-31T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.052125
+  type: 'test'
+  ...
+# Subtest: rejects 2026-02-29T16:10Z without throwing or damaging other fields
+ok 24 - rejects 2026-02-29T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.100584
+  type: 'test'
+  ...
+# Subtest: rejects 1900-02-29T16:10Z without throwing or damaging other fields
+ok 25 - rejects 1900-02-29T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.065958
+  type: 'test'
+  ...
+# Subtest: rejects 0100-02-29T16:10Z without throwing or damaging other fields
+ok 26 - rejects 0100-02-29T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.055042
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T25:00Z without throwing or damaging other fields
+ok 27 - rejects 2026-10-06T25:00Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.050041
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T24:01Z without throwing or damaging other fields
+ok 28 - rejects 2026-10-06T24:01Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.066
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T24:00:01Z without throwing or damaging other fields
+ok 29 - rejects 2026-10-06T24:00:01Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.072208
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T24:00:00.000001Z without throwing or damaging other fields
+ok 30 - rejects 2026-10-06T24:00:00.000001Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.060959
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:60Z without throwing or damaging other fields
+ok 31 - rejects 2026-10-06T16:60Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.058666
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10:60Z without throwing or damaging other fields
+ok 32 - rejects 2026-10-06T16:10:60Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.057083
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10 without throwing or damaging other fields
+ok 33 - rejects 2026-10-06T16:10 without throwing or damaging other fields
+  ---
+  duration_ms: 0.045417
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10 GMT without throwing or damaging other fields
+ok 34 - rejects 2026-10-06T16:10 GMT without throwing or damaging other fields
+  ---
+  duration_ms: 0.042959
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10+01:00 without throwing or damaging other fields
+ok 35 - rejects 2026-10-06T16:10+01:00 without throwing or damaging other fields
+  ---
+  duration_ms: 0.04875
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10-00:00 without throwing or damaging other fields
+ok 36 - rejects 2026-10-06T16:10-00:00 without throwing or damaging other fields
+  ---
+  duration_ms: 0.048333
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10+00:000 without throwing or damaging other fields
+ok 37 - rejects 2026-10-06T16:10+00:000 without throwing or damaging other fields
+  ---
+  duration_ms: 0.0505
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10+00:00:00 without throwing or damaging other fields
+ok 38 - rejects 2026-10-06T16:10+00:00:00 without throwing or damaging other fields
+  ---
+  duration_ms: 0.049
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10Z+01:00 without throwing or damaging other fields
+ok 39 - rejects 2026-10-06T16:10Z+01:00 without throwing or damaging other fields
+  ---
+  duration_ms: 0.046416
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10UTCjunk without throwing or damaging other fields
+ok 40 - rejects 2026-10-06T16:10UTCjunk without throwing or damaging other fields
+  ---
+  duration_ms: 0.056083
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10:36.Z without throwing or damaging other fields
+ok 41 - rejects 2026-10-06T16:10:36.Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.060917
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10:36.123.456Z without throwing or damaging other fields
+ok 42 - rejects 2026-10-06T16:10:36.123.456Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.052792
+  type: 'test'
+  ...
+# Subtest: rejects 2026-10-06T16:10.5Z without throwing or damaging other fields
+ok 43 - rejects 2026-10-06T16:10.5Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.061291
+  type: 'test'
+  ...
+# Subtest: rejects 2026-1-06T16:10Z without throwing or damaging other fields
+ok 44 - rejects 2026-1-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.057708
+  type: 'test'
+  ...
+# Subtest: rejects 026-10-06T16:10Z without throwing or damaging other fields
+ok 45 - rejects 026-10-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.059542
+  type: 'test'
+  ...
+# Subtest: rejects 12026-10-06T16:10Z without throwing or damaging other fields
+ok 46 - rejects 12026-10-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.046834
+  type: 'test'
+  ...
+# Subtest: rejects -0001-10-06T16:10Z without throwing or damaging other fields
+ok 47 - rejects -0001-10-06T16:10Z without throwing or damaging other fields
+  ---
+  duration_ms: 0.043833
+  type: 'test'
+  ...
+# Subtest: rejects 更新时间待确认 without throwing or damaging other fields
+ok 48 - rejects 更新时间待确认 without throwing or damaging other fields
+  ---
+  duration_ms: 0.231958
+  type: 'test'
+  ...
+# Subtest: rejects empty update without throwing or damaging other fields
+ok 49 - rejects empty update without throwing or damaging other fields
+  ---
+  duration_ms: 0.102584
+  type: 'test'
+  ...
+# Subtest: equivalent UTC representations yield one instant without changing unrelated status
+ok 50 - equivalent UTC representations yield one instant without changing unrelated status
+  ---
+  duration_ms: 0.135083
+  type: 'test'
+  ...
+# Subtest: never rescues invalid first update 2026-13-06T16:10Z with later main sync
+ok 51 - never rescues invalid first update 2026-13-06T16:10Z with later main sync
+  ---
+  duration_ms: 0.0535
+  type: 'test'
+  ...
+# Subtest: never rescues invalid first update 2026-10-06T16:10+00:000 with later main sync
+ok 52 - never rescues invalid first update 2026-10-06T16:10+00:000 with later main sync
+  ---
+  duration_ms: 0.039958
+  type: 'test'
+  ...
+# Subtest: never rescues invalid first update 2026-xx-06T16:10Z with later main sync
+ok 53 - never rescues invalid first update 2026-xx-06T16:10Z with later main sync
+  ---
+  duration_ms: 0.039333
+  type: 'test'
+  ...
+# Subtest: never rescues invalid first update 026-10-06T16:10Z with later main sync
+ok 54 - never rescues invalid first update 026-10-06T16:10Z with later main sync
+  ---
+  duration_ms: 0.038625
+  type: 'test'
+  ...
+# Subtest: main synchronization cannot supply a missing or malformed primary update: 更新时间待确认；main 同步 2026-10-07T01:00Z
+ok 55 - main synchronization cannot supply a missing or malformed primary update: 更新时间待确认；main 同步 2026-10-07T01:00Z
+  ---
+  duration_ms: 0.050375
+  type: 'test'
+  ...
+# Subtest: main synchronization cannot supply a missing or malformed primary update: 更新 2026/13/06 16:10 UTC；main 同步 2026-10-07T01:00Z
+ok 56 - main synchronization cannot supply a missing or malformed primary update: 更新 2026/13/06 16:10 UTC；main 同步 2026-10-07T01:00Z
+  ---
+  duration_ms: 0.039125
+  type: 'test'
+  ...
+# Subtest: main synchronization cannot supply a missing or malformed primary update: 更新时间待确认；`main` 同步 `2026-10-07T01:00Z`
+ok 57 - main synchronization cannot supply a missing or malformed primary update: 更新时间待确认；`main` 同步 `2026-10-07T01:00Z`
+  ---
+  duration_ms: 0.040417
+  type: 'test'
+  ...
+# Subtest: main synchronization cannot supply a missing or malformed primary update: update pending; MAIN sync 2026-10-07T01:00Z
+ok 58 - main synchronization cannot supply a missing or malformed primary update: update pending; MAIN sync 2026-10-07T01:00Z
+  ---
+  duration_ms: 0.038625
+  type: 'test'
+  ...
+# Subtest: allows a task identifier in the explanatory prefix: 任务 WPF-DPERF05-01 更新于2026-10-06T16:10:36Z
+ok 59 - allows a task identifier in the explanatory prefix: 任务 WPF-DPERF05-01 更新于2026-10-06T16:10:36Z
+  ---
+  duration_ms: 0.054625
+  type: 'test'
+  ...
+# Subtest: allows a task identifier in the explanatory prefix: 任务 `WPF-DPERF05-01` 更新于 `2026-10-06T16:10:36Z`；main 同步待确认
+ok 60 - allows a task identifier in the explanatory prefix: 任务 `WPF-DPERF05-01` 更新于 `2026-10-06T16:10:36Z`；main 同步待确认
+  ---
+  duration_ms: 0.045833
+  type: 'test'
+  ...
+# Subtest: old first update remains old even when main sync is newer
+ok 61 - old first update remains old even when main sync is newer
+  ---
+  duration_ms: 0.053583
+  type: 'test'
+  ...
+# Subtest: future timestamp is preserved for the unchanged aggregate policy to evaluate
+ok 62 - future timestamp is preserved for the unchanged aggregate policy to evaluate
+  ---
+  duration_ms: 0.047666
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 64.536708

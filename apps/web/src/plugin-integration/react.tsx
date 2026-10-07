@@ -1,3 +1,6 @@
+import { ConversationAttachments, AttachmentSurfaceProvider, ATTACHMENT_OWNER, ATTACHMENT_PANEL } from "./attachments";
+import { createExistingAttachment } from "../attachments/adapter";
+import type { AssistantRuntime } from "@assistant-ui/react";
 import { ConversationStreamHost, STREAM_OWNER, STREAM_PANEL } from "../conversation-stream/host";
 import type { PluginDefinition, PluginViewProps } from "../plugins/types";
 import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
@@ -257,3 +260,34 @@ export function PluginWorkspace({ state, activeTab, focusRequest, container, onC
 }
 
 export { ConversationSteering } from "./steering";
+
+/** Uses the existing P01 panel and Dialog. Closing this disclosure never disposes draft material. */
+export function AttachmentComposer({ binding, runtime, onAttached, children }: { binding: ConversationAttachments | null; runtime: AssistantRuntime; onAttached?(): void; children: React.ReactNode }) {
+  const session = useContext(SessionContext)!;
+  const state = useSyncExternalStore(binding?.subscribe ?? (() => () => {}), binding?.getSnapshot ?? (() => null));
+  const active = useSyncExternalStore(session.host.subscribe, () => session.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state === "active");
+  if (!binding) return <>{children}</>;
+  const add = async (id: string) => { if (!binding.input) throw Error("Attachment input is unavailable."); await runtime.thread.composer.addAttachment(createExistingAttachment(binding.input, id)); onAttached?.(); };
+  const remove = async (id: string) => {
+    const index = runtime.thread.composer.getState().attachments.findIndex(item => item.id === id);
+    if (index >= 0) await runtime.thread.composer.getAttachmentByIndex(index).remove();
+    binding.input?.remove(id);
+  };
+  const restore = async () => {
+    const held = state?.submission?.value; if (!held || runtime.thread.composer.getState().text || runtime.thread.composer.getState().attachments.length) return;
+    runtime.thread.composer.setText(held.capture.text);
+    for (const id of held.ids) { if (binding.input?.getSnapshot().items.some(item => item.id === id)) await add(id); }
+  };
+  return <AttachmentSurfaceProvider value={{ binding, onAttach: add, onRemove: remove }}>{children}
+    {state?.error && <p role="alert">{state.error}</p>}
+    {state?.submission?.state === "failed" && <section className="flow-conversation-receipt" aria-label="Unsent material recovery"><strong>Materials were not handed to a message receipt</strong><p>{state.submission.error}</p><pre>{state.submission.value.capture.text}</pre>
+      <button className="flow-link" type="button" onClick={() => void restore()}>Restore into an empty draft</button>{" "}
+      <button className="flow-link" type="button" onClick={() => binding.discardFailedSubmission()}>Discard held submission (keep draft files)</button>
+    </section>}
+    <Dialog open={!!state?.open && active && binding.input?.getSnapshot().readiness.visible !== false} onOpenChange={open => { if (!open) binding.close(); }}><DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-xl" onCloseAutoFocus={event => {
+      event.preventDefault(); const context = binding.context(); if (context.kind === "composer") [...document.querySelectorAll<HTMLButtonElement>(`[data-composer-view="${CSS.escape(context.viewId)}"] button`)].find(button => button.textContent === "Files")?.focus();
+    }}><DialogHeader><DialogTitle>Project text files</DialogTitle><DialogDescription>Upload a small text file or choose @file from this project. Preview content only when needed.</DialogDescription></DialogHeader>
+      <PluginView host={session.host} contributionId={ATTACHMENT_PANEL} context={binding.context()} />
+    </DialogContent></Dialog>
+  </AttachmentSurfaceProvider>;
+}

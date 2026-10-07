@@ -1,0 +1,157 @@
+{
+  "at": "2026-10-06 18:59:41 UTC",
+  "run": "settings-20261006-185753-21f4e5",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "actualHead": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
+  "state": "FAILED",
+  "elapsedMs": 5197,
+  "cumulativeMs": 5197,
+  "remainingMs": 54803,
+  "checks": [],
+  "screenshots": 0,
+  "pg": 0,
+  "workerPgid": 87564,
+  "chromePid": 87566,
+  "fixtureClosed": true,
+  "chromeExited": true,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "failure": "Error: Owned Chrome exited before CDP readiness\n    at <anonymous> (/private/tmp/message-settings-browser-candidate/worker.mjs:81:25)",
+  "classification": "Browser startup/fixture configuration failure before CDP or UI assertions; no product behavior failure inferred",
+  "observedLogs": [
+    "Chrome log: ProcessSingleton socket directory creation failed; Crashpad settings.dat write denied by sandbox. No write scope widened.",
+    "Vite automatic dependency scan reported unresolved imports outside the intended fixture graph. No dependencies installed."
+  ],
+  "resources": {
+    "sampleMinFreeBytes": 1541926912,
+    "sampleMaxScratchLogical": 216586,
+    "sampleMaxScratchAllocated": 237568,
+    "finalSamplePhases": [
+      {
+        "phase": "after-reap-before-scratch-removal",
+        "seconds": 5.194,
+        "freeBytes": 1541939200,
+        "scratchLogical": 216586,
+        "scratchAllocated": 237568,
+        "retainedBytes": 144403
+      },
+      {
+        "phase": "after-result-and-budget-write",
+        "seconds": 5.197,
+        "freeBytes": 1542144000,
+        "scratchLogical": 0,
+        "scratchAllocated": 0,
+        "retainedBytes": 177631
+      }
+    ],
+    "limit": "Observed accounting, not a hard quota; no new resource sample during archive"
+  },
+  "files": [
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/admission.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/admission.json",
+      "bytes": 1868,
+      "sha256": "5a3654525b7fb334489bf0cb3f9d4ebb86b1b109af57d0ec98c4cdd7fd2ecd54"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/aliases.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/binding.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/binding.json",
+      "bytes": 33726,
+      "sha256": "353e0f7b03c767299fdaa6ef8e8c8ef6f217c678635544ece6d816d8d7854868"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/browser-budget.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/browser-budget.json",
+      "bytes": 220,
+      "sha256": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/child-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/child-gate.json",
+      "bytes": 1813,
+      "sha256": "b21cccb8e7e0c382546bd2ebb432ad3c4c454e3d01e100fe42e6f50394234884"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/consumed-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/consumed-gate.json",
+      "bytes": 1398,
+      "sha256": "f325b44536a528cec486b165cf5b38b2d2469a6dffeb7ce8f01767e92595d6ad"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/gate.json",
+      "bytes": 1483,
+      "sha256": "f6b1c18d6258fdf98456e1b191f35559168aec1a687d29cc67c21f6e9545f99c"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/result.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/result.json",
+      "bytes": 33345,
+      "sha256": "01652e6439fefb5bd49486176fb8d7ac162f2ec5cdb865d9272dae5f2e72f513"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/runtime-tsconfig.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/sandbox.sb",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/sandbox.sb",
+      "bytes": 415,
+      "sha256": "757b652709a59b980001c68e93f7388cfdf81c634b95e8588103a07a34da140a"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/supervisor.py",
+      "bytes": 12268,
+      "sha256": "9f9adde0cc124a2bd27fe5b4c743472b471b9323b88a774c0b08aa67068283ff"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/worker.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/worker.log",
+      "bytes": 2649,
+      "sha256": "8666e78ad79f09a41c2cfa005f9031e35bd9d59b8bae61a8d41db4f33c408698"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/worker.mjs",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/worker.mjs",
+      "bytes": 8548,
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/browser-results.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/browser-results.json",
+      "bytes": 1499,
+      "sha256": "0c4a3cff32de8b35e064195c89e179b6368a3b8c899624f44a30ce05a9bdd28e"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/chrome.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/chrome.log",
+      "bytes": 853,
+      "sha256": "1b519b9bf720c9a83867cba07b8820e789aa07915f9bedfef5ed11659ea61616"
+    },
+    {
+      "source": "/private/tmp/message-settings-browser-candidate/raw/settings-20261006-185753-21f4e5/owned-chrome.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/owned-chrome.json",
+      "bytes": 154,
+      "sha256": "8300dd9c8a843d055d8007595a9c46937c4b7bf979668dca6db257e4e3d63b43"
+    }
+  ],
+  "rawBytes": 105282,
+  "retries": 0,
+  "window": "Returned immediately to manager/Lead R01 after confirmed cleanup",
+  "notVerified": [
+    "Browser UI assertion groups, light/dark390 screenshots, focus/keyboard",
+    "Production App/Send/Queue/Recovery; provider; main/deployment"
+  ]
+}

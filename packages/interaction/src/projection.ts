@@ -1,4 +1,5 @@
 import type { ConversationTurn } from '@flow/contracts';
+import { settingsEvidence } from './message-settings/index.js';
 import type { TurnView } from './types.js';
 export function boundedText(value: string, bytes = 8192): { text: string; truncated: boolean } {
   if (Buffer.byteLength(value, 'utf8') <= bytes) return { text: value, truncated: false };
@@ -17,5 +18,6 @@ export function turnView(turn: ConversationTurn): TurnView {
   const text = valid ? boundedText(reply.text) : null;
   return { id: turn.id, number: turn.number, taskId: turn.task.id, status: turn.task.status, userText: user.text + (user.truncated ? '\n[truncated]' : ''),
     assistant: { state: valid ? 'available' : reply.state === 'available' ? 'unavailable' : reply.state, text: text?.text ?? null,
-      truncated: Boolean(text?.truncated || valid && reply.truncated), messageId: valid ? reply.messageId : null }, effectiveModel: turn.effective.model };
+      truncated: Boolean(text?.truncated || valid && reply.truncated), messageId: valid ? reply.messageId : null }, effectiveModel: turn.effective.model,
+    ...(turn.messageSettings !== undefined || turn.effective.messageSettings !== undefined ? { messageSettings: settingsEvidence(turn) } : {}) };
 }

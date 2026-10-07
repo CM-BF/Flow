@@ -1,0 +1,96 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+        "id": "WPF-MATURE-01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "真实页面普通发送和附件发送/队列的原键恢复已通过，草稿保留",
+      "next": "独立核验完整证据并交原发布操作员受控接收",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+      "scopes": [
+        "apps/web/test/web-current-preview.fixture.ts",
+        "apps/web/test/web-current-preview.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-RELEASE03",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-current-preview-compatibility",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T17:52:11.000Z",
+    "updatedRecord": "2026-10-06 17:52:11 UTC",
+    "todos": [
+      {
+        "id": "RELEASE03-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json)"
+      },
+      {
+        "id": "RELEASE03-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[B1750通过](../../docs/evidence/wpf-release03/app-result-175014.json)：原A-all12复用，B三项PASS；累计50809/180000ms"
+      },
+      {
+        "id": "RELEASE03-03",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "[ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；完整实际证据独审/主线交付待完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7（响应正文丢失注入源码修复）",
+    "declaredDirty": "产品两源固定且未改；本段仅新增实际raw与metadata，最终normalpush/clean回执另核",
+    "checks": {
+      "state": "passed",
+      "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+      "record": "PASSED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；实际B 3项通过，复用已审all12两A；不是新类型检查/个人发布"
+    },
+    "reviewRecord": "[review.md](review.md)；UNKNOWN：源码双审通过，实际A/B证据齐备，完整结果独审待完成",
+    "mainRecord": "NOT_INTEGRATED；实际限定组合兼容通过，独立结果审查/main交接待完成",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "unknown",
+    "record": "UNKNOWN — ef458源码双独审通过，实际A/B证据已齐备，完整结果独审待完成。",
+    "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7"
+  }
+}

@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery
+
+ ❯ apps/runner/src/runtime-capacity.test.ts (24 tests | 2 failed | 19 skipped) 12138ms
+   ↓ refills a completed slot before the long poll timer while another attempt remains active
+   ↓ defaults to one slot and explicitly overlaps four attempts without exceeding the local limit
+   ↓ honors a lower center capacity and isolates one adapter failure from other slots
+   ↓ cancels only the requested slot while the other attempt continues
+   ↓ awaits every started adapter on host abort and on swallowed heartbeat authentication rejection
+   ↓ stops every slot on event storage failure even if the adapter catches the rejected emit
+   ↓ retains an unknown opportunity while status is unavailable, lets a known slot finish, and creates no replacement key after restart
+   ↓ does not send a claim when its durable intent cannot be saved
+   ↓ never replays an active outbox while another slot is being admitted
+   ↓ rejects an invalid local slot limit 0 before admission
+   ↓ rejects an invalid local slot limit 17 before admission
+   ↓ rejects an invalid local slot limit 1.5 before admission
+   ↓ rejects an invalid local slot limit NaN before admission
+   ↓ rejects an invalid local slot limit null before admission
+   ↓ rejects an invalid local slot limit 4 before admission
+   ↓ real PG/HTTP enforces registered capacity 1 with a local four-slot pool
+   ↓ real PG/HTTP enforces registered capacity 4 with a local four-slot pool
+   ↓ real PG/HTTP preserves native-session exclusion across overlapping local slots
+   ↓ real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle
+   ✓ preserves authentication failure before quiescent events recovery can swallow it 38ms
+   ✓ preserves authentication failure before quiescent final-status recovery can swallow it 22ms
+   ✓ settles all slots when final submission converts an authentication failure to FinalizationUnknown 60ms
+   × settles all slots when a goal tool consumer catches its own authorization rejection 8009ms
+   × keeps a goal permission denial local while a second known attempt continues 4008ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed | 19 skipped (24)
+   Start at  13:29:47
+   Duration  13.30s (transform 554ms, setup 0ms, import 1.07s, tests 12.14s, environment 0ms)
+

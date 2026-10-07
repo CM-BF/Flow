@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T02:14:17.709012+00:00",
+  "kind": "OPS_RETIREMENT_CANDIDATES_DOCS_INTAKE",
+  "base": "d0573c7dcf6b051a007b44e84cba4ff74fda247d",
+  "sourceTarget": "76ffcef385c86cc2b827d7ddf2a87ba65a39202e",
+  "reviewTarget": "a60614fed842df8aee89a884ca77a7394c28a41c",
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "result": "APPROVED_DOCS",
+    "findings": [],
+    "scope": "4 document delta / 6 new links; subsequent review record and actual SVC07 receipt summary only"
+  },
+  "files": [
+    {
+      "path": "docs/quality/worktree-retirement-candidates-2026-10-07.md",
+      "bytes": 8537,
+      "sha256": "cce6aa7a7fecfdb680f3cfdb3f4cdb96ebdea04769ef3a82357248be370e790c"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 25206,
+      "sha256": "a19fd9c94e450f790a4994b3499dac48500bc36d972866ea17457d94de738ce5"
+    },
+    {
+      "path": "plans/ops-001-status-review/plan.md",
+      "bytes": 11439,
+      "sha256": "f9c0858dbbc376376299e88329ae4f39ba73cb256ccdcf6504ba4d2134295c1d"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 72438,
+      "sha256": "10c5000eaeaab5c71fad415f4765fdf0cf24bd39115c357505d8f11fca7acd56"
+    },
+    {
+      "path": "plans/ops-001-status-review/review.md",
+      "bytes": 5893,
+      "sha256": "cc248a98fbd256386e56a93f4280ee263cc7afe14daf6f4e41b08f878d0b2aaf"
+    }
+  ],
+  "candidates": {
+    "browser-connection-session": "KEEP: external consumers and exact current recovery unproven",
+    "tui-queue-controls": "KEEP: COST donor not released",
+    "native-harness-host": "KEEP: documentation claim active; root dependencies already absent"
+  },
+  "authorityMigrated": false,
+  "productChanges": false,
+  "cleanupActions": 0,
+  "tests": 0,
+  "pgLoads": 0,
+  "providerQueries": 0,
+  "runtimeActions": 0,
+  "gatesChanged": false,
+  "ciUserDecision": "PENDING",
+  "resourceGrowthCause": "UNKNOWN"
+}

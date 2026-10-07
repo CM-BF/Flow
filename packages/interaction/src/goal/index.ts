@@ -2,11 +2,13 @@ import { FlowApiError } from '@flow/client';
 import { goalDeliveryQuerySchema } from '../../../contracts/src/goal-delivery.js';
 import type { GoalDeliveryPlan, GoalDeliveryState, GoalDeliveryExplanations, GoalDeliveryQuery } from '../../../contracts/src/goal-delivery.js';
 import { idSchema } from '../../../contracts/src/tasks.js';
+import { goalGraphRunListQuerySchema } from '../../../contracts/src/goal-graph-runs.js';
 import { ObservationReads } from '../observation/reads.js';
 import { checkReceipt, dispatch, parseCommand, parseIntent } from './commands.js';
-import { checkRead, readBody } from './reads.js';
+import { checkRead, readBody, checkPlanningPage } from './reads.js';
 import type { GoalBodyReference, GoalCommandOutcome, GoalIntent, GoalSessionCommand, GoalSessionOptions, GoalSessionSnapshot } from './types.js';
 export type * from './types.js';
+export { createGoalEntry, type GoalEntryOptions, type GoalEntryStore, type GoalEntryRecord, type GoalEntryOutcome } from './entry.js';
 
 /** A single explicit goal session. Center owns scheduling, CAS and task truth; this owns local observation and one durable intent. */
 export function createGoalSession(options: GoalSessionOptions) {
@@ -17,7 +19,7 @@ export function createGoalSession(options: GoalSessionOptions) {
   const pendingReads = new Set<Promise<unknown>>();
   const reads = new ObservationReads(); const lifetime = new AbortController();
   let disposed = false, epoch = 0, operation: Promise<GoalCommandOutcome> | null = null, initializing: Promise<void> | null = null;
-  const generations = { plan: 0, state: 0, history: 0, body: 0 };
+  const generations = { plan: 0, state: 0, history: 0, body: 0, planning: 0 };
   const state: GoalSessionSnapshot = { connected: true, initialized: false, plan: null, state: null, history: null, body: null, intent: null, commandState: 'idle', lastOutcome: null };
   function snapshot() { return structuredClone(state); }
   function publish() { for (const listener of listeners) { try { listener(snapshot()); } catch { /* A renderer cannot corrupt a durable command. */ } } }
@@ -74,6 +76,15 @@ export function createGoalSession(options: GoalSessionOptions) {
     if (started === epoch && mine === generations.history && state.connected) { state.history = structuredClone(result); publish(); }
     return result;
   }
+  async function planning(input: { after?: string; limit?: number } = {}) {
+    ready(); if (!options.client.goalGraphRuns) throw Error('Planning reads are not available on this client.');
+    const query = goalGraphRunListQuerySchema.parse(input), mine = ++generations.planning, started = epoch, signal = lifetime.signal;
+    const result = await runRead(signal, async () => checkPlanningPage(goalId, state.plan!.projectId,
+      await options.client.goalGraphRuns!(goalId, query, signal), query.limit));
+    if (query.after && result.nextCursor === query.after) throw Error('Planning cursor did not advance.');
+    if (started === epoch && mine === generations.planning && state.connected) { state.planning = structuredClone(result); publish(); }
+    return result;
+  }
   async function read(reference: GoalBodyReference) {
     ready(); const copy = structuredClone(reference), mine = ++generations.body, started = epoch, signal = lifetime.signal;
     if (copy.kind === 'artifact') {
@@ -85,6 +96,15 @@ export function createGoalSession(options: GoalSessionOptions) {
     return result;
   }
   function requireObservedTask(c: GoalSessionCommand) {
+    if (c.kind === 'graph-plan') {
+      if (!options.client.admitGoalGraphRun) throw Error('Goal planning is not available on this client.');
+      if (c.input.scope.baseRevision !== state.plan?.projectRevision) throw Error('Observe the planning base revision first.');
+    }
+    if (c.kind === 'native-execute') {
+      if (!options.client.executeGoalNative) throw Error('Native goal execution is not available on this client.');
+      const node = state.state?.nodes.find(n => n.nodeId === c.input.nodeId);
+      if (!node || node.inputRef?.version !== c.input.expectedInputVersion || (node.execution?.id ?? null) !== c.input.previousExecutionId) throw Error('Observe the selected actual input and previous execution first.');
+    }
     if (c.kind !== 'decision' && c.kind !== 'cancel') return;
     const execution = state.state?.nodes.find(n => n.nodeId === c.nodeId)?.execution;
     if (execution?.task.id !== c.taskId) throw Error('Observe the selected goal task before commanding it.');
@@ -136,7 +156,7 @@ export function createGoalSession(options: GoalSessionOptions) {
   }
   function disconnect() { if (!state.connected) return; state.connected = false; epoch++; lifetime.abort(); publish(); }
   async function dispose() { disposed = true; disconnect(); await Promise.allSettled([...pendingReads, ...(operation ? [operation] : []), ...(initializing ? [initializing] : [])]); listeners.clear(); }
-  return { initialize, plan, observe, history, read, command, recover, snapshot, disconnect, dispose,
+  return { initialize, plan, observe, history, planning, read, command, recover, snapshot, disconnect, dispose,
     subscribe(listener: (value: GoalSessionSnapshot) => void) { if (disposed) throw Error('Goal session is disposed.'); listeners.add(listener); return () => { listeners.delete(listener); }; } };
 }
 export type GoalSession = ReturnType<typeof createGoalSession>;

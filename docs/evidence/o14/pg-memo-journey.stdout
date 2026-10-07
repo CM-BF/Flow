@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression
+
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+ ✓ apps/server/src/goal-progression/progression.test.ts (13 tests | 12 skipped) 4586ms
+   ✓ continues two fixed inputs through injected SDK, restart and lost authorization ACK without semantic acceptance  2932ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 12 skipped (13)
+   Start at  07:42:11
+   Duration  5.87s (transform 524ms, setup 0ms, import 1.19s, tests 4.59s, environment 0ms)
+

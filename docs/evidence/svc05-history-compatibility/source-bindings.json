@@ -1,0 +1,341 @@
+{
+  "at": "2026-10-06T15:35:19.455963+00:00",
+  "mode": "source-only; no import/type/test/PG/build/install/provider/personal-service",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "target": "b29807979a5589678a61d3fb84781950cf366396",
+  "approvedInput": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "source": [
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "fixedBlob": "9db16d2c3ea0d392d632ff19a7caf6bbe287fb47",
+      "approvedInputBlob": "9db16d2c3ea0d392d632ff19a7caf6bbe287fb47"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "fixedBlob": "de497735064237b962e97c77bff64379496c09b9",
+      "approvedInputBlob": "de497735064237b962e97c77bff64379496c09b9"
+    }
+  ],
+  "unchangedInputs": [
+    {
+      "path": "apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4095,
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    }
+  ],
+  "allCommittedChangedPaths": [
+    "apps/server/src/context-transparency/attachment-history.test.ts",
+    "apps/server/src/context-transparency/store.ts"
+  ],
+  "unintendedProductChanges": [],
+  "nodeModulesPresent": false,
+  "actualExecution": "NOT_RUN",
+  "dependencyReuse": {
+    "donor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+    "verifiedPackageJsons": [
+      {
+        "path": "node_modules/tsx",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+        "version": "4.23.15",
+        "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/typescript",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+        "version": "5.9.3",
+        "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@types/node",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+        "version": "24.19.1",
+        "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/pg",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+        "version": "8.23.1",
+        "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@types/pg",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+        "version": "8.23.1",
+        "sha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@playwright/test",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+        "version": "1.63.0",
+        "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@fastify/cors",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+        "version": "11.3.0",
+        "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/fastify",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+        "version": "5.12.5",
+        "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/npm-package-arg",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+        "version": "13.0.2",
+        "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/pacote",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+        "version": "21.5.1",
+        "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/pg-boss",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+        "version": "12.37.0",
+        "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/ssri",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+        "version": "13.0.1",
+        "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/zod",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+        "version": "4.6.5",
+        "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@types/npm-package-arg",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+        "version": "6.1.4",
+        "sha256": "16a651807f0f05fce6ced63db0cd2a0e443d7807a70430ec74bbc28b6264e184",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@types/pacote",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+        "version": "11.1.8",
+        "sha256": "f301ffbda6e67dba33178aee43aa2c06dd8f533d5e99515a0eda6e8a8094569a",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      },
+      {
+        "path": "node_modules/@types/ssri",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+        "version": "7.1.5",
+        "sha256": "6c6c1bd2678420b9874942a395e49f888b552a0aeb650cd8a5c72a8ac8fb6eb2",
+        "sameDeclaredVersion": true,
+        "sameDeclaredHash": true
+      }
+    ],
+    "workspaceRule": "@flow/contracts must point at candidate packages/contracts; never donor workspace source",
+    "notProven": [
+      "candidate module resolution/transitive closure",
+      "runtime imports",
+      "Vitest availability for this candidate",
+      "artifact compatibility"
+    ]
+  },
+  "oldA": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/history-result-152729.json",
+    "outcome": {
+      "attachmentOnly": "FAILED: actual native context-observation POST /api/runner/events HTTP500; latest history remains null",
+      "mixed": "FAILED: HTTP200 accepted1, but history materials=known knowledge-only; expected unknown/metadata-unavailable for unsupported combined v2 metadata",
+      "phaseB": "NOT_RUN",
+      "Chrome": "NOT_RUN",
+      "compatibilityId": null,
+      "providerQueries": 0
+    },
+    "spentMs": 3874,
+    "remainingMs": 176126,
+    "allRawHashesMatch": true,
+    "rawBindings": [
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+        "bytes": 130,
+        "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+        "bytes": 333,
+        "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+        "bytes": 169,
+        "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+        "bytes": 10667,
+        "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+        "bytes": 299,
+        "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+        "bytes": 1779,
+        "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+        "bytes": 12802,
+        "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+        "bytes": 42857,
+        "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82"
+      },
+      {
+        "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+        "bytes": 11434,
+        "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0"
+      }
+    ]
+  },
+  "newTuple": {
+    "backendPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "backendHead": "b29807979a5589678a61d3fb84781950cf366396",
+    "backendTree": "307f9ff0b7749425fc9adebeb0ea9cc44d049358",
+    "lockSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "artifactSourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "driverOwner": "Web w01_owner",
+    "harnessObservedHead": "d83701f81d9e0ee4d6d2c000f749ba9f7ac8e83c",
+    "driverNeedsExactCandidateAllowlist": true,
+    "budgetLedger": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs",
+    "readiness": "source ready; gate/dependencies/runtime validation not authorized here"
+  }
+}

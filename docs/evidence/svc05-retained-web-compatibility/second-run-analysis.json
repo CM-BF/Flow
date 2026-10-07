@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-06T19:15:14.859890+00:00",
+  "state": "FAILED_COMPATIBILITY_NOT_PROVEN",
+  "source": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "dependencyDelta": "a3ad296df9fdcc9330490084353f5cc91bbcf8e2",
+  "run": "retained-af51-20261006-1913",
+  "approvalId": "svc05r01-retained-af51-20261006-1913",
+  "outer": {
+    "startedAt": "2026-10-06T19:13:07.164179+00:00",
+    "endedAt": "2026-10-06T19:13:22.126230+00:00",
+    "exitCode": 1,
+    "oneInvocation": true,
+    "stdoutBytes": 375,
+    "stderrBytes": 0,
+    "sourceUnmodified": true,
+    "originalWorkBudgetMs": 90000,
+    "firstRunDebitMs": 2927,
+    "thisGateWorkMs": 87073
+  },
+  "supervisorElapsedMs": 14885,
+  "conservativeCumulativeElapsedMs": 17812,
+  "remainingOriginal90000MsCandidate": 72188,
+  "remainingIsNotAuthorization": true,
+  "completedAppReports": 0,
+  "browserVersion": "154.0.8037.98",
+  "browserExitCode": "NOT_OBSERVED; group absent is not exit0",
+  "actualRunnerStarted": true,
+  "runnerPromiseSettled": true,
+  "earliestRecordedSupervisorFailure": "diskBytes lstat admission.json.tmp ENOENT; monitor sets stopWork and signals owned worker",
+  "pageFailure": "Actual retained-0 assistant reply not visible within5000ms after explicit Retry; independent failure file retained. Top-level worker error later contains preview close assertion.",
+  "orderingLimit": "No timestamp for each error; do not assert exact monitor-versus-page causal ordering.",
+  "partialRawFacts": {
+    "wireRequests": 12,
+    "turnPosts": 2,
+    "turnStatuses": [
+      202,
+      202
+    ],
+    "sameKey": true,
+    "sameBody": true,
+    "sameTurn": true,
+    "sameTask": true,
+    "replayed": true,
+    "faultEvents": [
+      "request",
+      "response-headers",
+      "requestfailed"
+    ],
+    "faultFailure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+    "pageErrors": [],
+    "assetCount": 5,
+    "notWholeAppPass": true
+  },
+  "cleanup": {
+    "databaseName": "flow_svc05r01_e5b0ce0709924db89826",
+    "marker": "aeec8210-c631-4e25-b744-111ecb829023",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:13:21.997Z",
+          "elapsedMs": 5.087207999999009,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "groups": [
+    {
+      "pid": 49046,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    },
+    {
+      "pid": 46178,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "port": 65008,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 64997,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 65018,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "checkpoint": true,
+  "metrics": {
+    "minimumFree": 1473245184,
+    "peakRaw": 147883,
+    "peakTemp": 8890074
+  },
+  "provider": 0,
+  "personalActions": 0,
+  "windowReturnedAt": "2026-10-06T19:13:22.126230+00:00",
+  "noRetry": true,
+  "fixedSourceUnchanged": true
+}

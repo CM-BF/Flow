@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel
+
+ ❯ apps/tui/src/task-controls/journey.test.ts (2 tests) 6103ms
+   ✓ accepted cancellation loses its ACK; journal reopening recovers original A after public client admits B  1033ms
+   ✓ actual PTY cancels B, observes C, preserves a narrow multiline draft and quits without cancelling C  3853ms
+
+ Test Files  1 failed (1)
+      Tests  2 passed (2)
+   Start at  10:15:36
+   Duration  7.52s (transform 615ms, setup 0ms, import 1.25s, tests 6.10s, environment 0ms)
+

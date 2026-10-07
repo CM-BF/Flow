@@ -1,0 +1,30 @@
+{
+  "kind": "ordinary-local-parser-segment",
+  "startedAt": "2026-10-07T03:12:13.917573+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "limitMs": 30000,
+  "cleanupReserveMs": 5000,
+  "segmentLimitMs": 300000,
+  "maxCorrections": 3,
+  "tmpLimitBytes": 8388608,
+  "rawLimitBytes": 1048576,
+  "sources": {
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "attempt": 1,
+  "pgid": 56167,
+  "actualExit": 0,
+  "elapsedMs": 169,
+  "failure": null,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "status": "PASS"
+}

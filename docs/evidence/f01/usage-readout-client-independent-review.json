@@ -1,0 +1,52 @@
+{
+  "reviewer": "assignment_review / gpt-6-astra",
+  "author": "Execution Lead / gpt-6-astra",
+  "observedAt": "2026-10-06T14:13:36.619200+00:00",
+  "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+  "observedMetadata": "2205be05c58c5d1e8dab13535d4c2a1bf19e0281",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "result": "APPROVED",
+  "findings": [],
+  "manifestPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/usage-readout-client-manifest.json",
+  "manifestSha256": "3c38f586105e7da88817ee0562a482900bffbcd05acbc297773c77638aeb1e6e",
+  "bindingFile": "/tmp/flow-usage-client-review-bindings.json",
+  "bindings": 7,
+  "scope": [
+    "Client TaskUsageReadout type import and taskUsage GET method",
+    "Contracts barrel export",
+    "Full new real loopback HTTP client test; existing request/transportInit/assertResponse read as direct dependency"
+  ],
+  "evidence": {
+    "authorHttpRedSelected": 1,
+    "authorHttpGreenPassed": 1,
+    "authorHttpGreenDurationMs": 24,
+    "authorTypecheckExitRecordedInManifest": 0,
+    "typecheckStdoutBytes": 0,
+    "typecheckToolChunk": "b743a1",
+    "reviewerTests": 0,
+    "reviewerPG": 0,
+    "reviewerProvider": 0
+  },
+  "conclusions": [
+    "Task ID encoded once into GET path; no body, idempotency key or query knobs added.",
+    "Existing transport supplies configured bearer/cookie authentication; thin method adds no authorization policy.",
+    "Response is transparent: null, knownSubtotal null/number, incomplete prefix/source coverage and source version remain unchanged.",
+    "403/404/409 retain FlowApiError status/code, with one call each and no retry.",
+    "AbortSignal passed unchanged into existing fetch path; pre-aborted test performs no network request.",
+    "Contract equals independently approved domain27d4 bytes; new export does not widen accounting or produce a new ledger."
+  ],
+  "limits": [
+    "Thin transport/export approval only; no production factory/PG/domain/UI approval in this review.",
+    "No runtime DTO validation added; response uses existing typed request behavior.",
+    "Existing HTTP test proves pre-aborted behavior, not all mid-response cancellation races.",
+    "Empty typecheck stdout is not standalone exit evidence; manifest references author tool chunk b743a1 and recorded exit0; reviewer did not rerun."
+  ],
+  "skills": {
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Local reuse, narrow Interface/transport ownership, no duplication of domain/accounting, error/lifecycle review. No installation."
+  }
+}

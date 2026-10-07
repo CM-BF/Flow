@@ -37,15 +37,16 @@ test('architecture static assets stay within existing read-only loopback server 
 });
 
 test('fixed snapshot separates integrated Web and center capabilities from later UI work',()=>{
-  assert.equal(baseline.commit,'f181d84b5fb3652d62e2a181acff442d42b3e066');
+  assert.equal(baseline.commit,'aeb764e5d2c2ec043ae8673cde2724f5330db2ab');
   assert.match(baseline.verifiedAt, /^2026-10-06T\d{2}:\d{2}:\d{2}Z$/);
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   const server=source('apps/server/src/index.ts');
-  for(const route of ['registerGoalRoutes','registerConversationRoutes','registerPluginRoutes','registerAssistantRoutes','registerExecutionProfileRoutes','registerConversationQueueRoutes','registerGoalToolRunRoutes','registerGoalGraphProposalRoutes','registerKnowledgeRoutes','registerConversationContextRoutes','registerGoalGraphRunRoutes','registerNativeActivityRoutes','registerAssistantStreamRoutes','registerActiveSteeringRoutes']) assert.ok(server.includes(`${route}(app,`), route);
+  for(const route of ['registerGoalRoutes','registerConversationRoutes','registerPluginRoutes','registerAssistantRoutes','registerExecutionProfileRoutes','registerConversationQueueRoutes','registerGoalToolRunRoutes','registerGoalGraphProposalRoutes','registerKnowledgeRoutes','registerConversationContextRoutes','registerGoalGraphRunRoutes','registerNativeActivityRoutes','registerAssistantStreamRoutes','registerActiveSteeringRoutes','registerAttachmentRoutes','registerContextHistoryRoutes','registerGoalDeliveryRoutes']) assert.ok(server.includes(`${route}(app,`), route);
   assert.ok(server.includes('registerShutdown(app,'));
   const modules=views.find(view=>view.id==='modules');
   for(const id of ['goals','conversations','plugins','host','profiles','queue','proposals','knowledge','context','graphruns','graphnative','packages','fetches','renderers','activity','stream','steering','nativecontrol','tui','interaction','nativehost','codexadapter']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'flow');
-  for(const id of ['nextweb','nextbackend']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'planned');
+  assert.equal(modules.nodes.find(node=>node.id==='workspace').kind,'flow');
+  for(const id of ['nextbackend']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'planned');
   assert.match(source('apps/web/src/App.tsx'),/ConversationThread/);
   assert.match(source('apps/web/src/plugin-integration/react.tsx'),/import\("\.\.\/plugin-management\/PluginManagement"\)/);
   assert.match(source('apps/web/src/conversations/ConversationThread.tsx'),/ConversationQueue projection=\{projection.queue\}/);
@@ -239,11 +240,14 @@ test('TUI and Codex source exists with explicit limits; production loader is not
   assert.match(codex,/createTransport: CodexTransportFactory/);
   assert.match(codex,/describeNativeHarness/);
   assert.match(source('apps/runner/src/configuration.ts'),/configureClaudeHarness/);
-  assert.doesNotMatch(source('apps/runner/src/configuration.ts'),/configureCodexHarness/);
+  assert.match(source('apps/runner/src/configuration.ts'),/loadSelectedRunnerConfiguration/);
+  assert.match(source('apps/runner/src/configuration.ts'),/configureCodexLaunch/);
+  assert.match(source('apps/runner/src/main.ts'),/loadRunnerConfiguration\(process.env.FLOW_CLAUDE_MATERIALS_FILE\)/);
   const modules=views.find(view=>view.id==='modules');
   assert.match(modules.nodes.find(node=>node.id==='codexadapter').locality,/真实auth\/provider验收仍后继/);
-  assert.match(modules.nodes.find(node=>node.id==='nextweb').description,/没有持久上传/);
-  assert.throws(()=>execFileSync('git',['cat-file','-e',`${baseline.commit}:tools/personal-preview/web-release.mjs`],{stdio:'pipe'}));
+  assert.match(modules.nodes.find(node=>node.id==='web').description,/真实绑定与登录\/未决恢复尚未含/);
+  assert.match(source('tools/personal-preview/web-release.mjs'),/verifyWebArtifact/);
+
 });
 
 test('task verification summary is not a per-artifact engineering approval or a deployment receipt',()=>{
@@ -253,4 +257,50 @@ test('task verification summary is not a per-artifact engineering approval or a 
   assert.match(runtime.nodes.find(node=>node.id==='verifier').description,/最新版本更新task汇总/);
   assert.match(runtime.nodes.find(node=>node.id==='center').locality,/须分别查服务owner回执/);
   assert.ok(!JSON.stringify(views).includes('个人center/runner b54'));
+});
+
+
+test('unified goal reader and shared interaction controller do not create a second scheduler',()=>{
+  const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
+  const delivery=source('apps/server/src/goal-delivery/index.ts');
+  for(const view of ['explanations','explanation','goal','input','decision','plan']) assert.ok(delivery.includes(`query.view === '${view}'`));
+  assert.match(delivery,/true\);/);
+  const goal=source('packages/interaction/src/goal/index.ts');
+  assert.match(goal,/createGoalSession/); assert.match(goal,/recover/);
+  assert.match(source('apps/web/src/conversation-stream/projection.ts'),/@flow\/interaction\/stream/);
+  assert.match(source('apps/web/src/conversation-activity/native/projection.ts'),/@flow\/interaction\/activity/);
+  assert.match(source('packages/client/src/conversation-acknowledgement.ts'),/parseAttachmentContextReceipt/);
+  const modules=views.find(view=>view.id==='modules');
+  assert.match(modules.nodes.find(node=>node.id==='interaction').locality,/goal consumer已挂载/);
+});
+
+test('attachment and context history persistence have different identities and readiness limits',()=>{
+  const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
+  assert.match(source('apps/server/src/attachments/index.ts'),/026-attachment-resources.sql/);
+  assert.match(source('apps/server/src/context-transparency/migration.ts'),/027-context-observation-history.sql/);
+  assert.match(source('apps/server/src/conversation-context/store.ts'),/templateVersion: 2/);
+  assert.match(source('apps/server/src/conversation-context/store.ts'),/freezeAttachments/);
+  const history=source('apps/server/src/context-transparency/store.ts');
+  assert.match(history,/ORDER BY c.event_sequence DESC LIMIT 1/);
+  assert.match(history,/reason: 'history-only'/);
+  // This is an explicitly recorded fixed-source gap, not a claimed passing runtime integration.
+  assert.match(history,/sources: context.sources.map/);
+  const data=views.find(view=>view.id==='data');
+  assert.match(data.nodes.find(node=>node.id==='history').locality,/attachment-only min1不兼容/);
+  assert.match(data.nodes.find(node=>node.id==='attachments').locality,/lookup404不证/);
+});
+
+test('engineering fixture, native write authority, trusted checker and center receipt are separate',()=>{
+  const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
+  assert.match(source('apps/runner/src/main.ts'),/FLOW_ENGINEERING_SETUP_FILE/);
+  assert.match(source('apps/runner/src/engineering/setup.ts'),/engineering-fixture/);
+  assert.match(source('apps/runner/src/engineering/native-writer.ts'),/NativeWriteAuthority/);
+  assert.match(source('apps/runner/src/engineering/native-writer.ts'),/locked-no-fallback/);
+  assert.match(source('apps/runner/src/engineering/calculator-receipt.ts'),/not-attested/);
+  assert.match(source('apps/server/src/engineering/verification.ts'),/engineeringReceiptSchema.parse/);
+  const modules=views.find(view=>view.id==='modules');
+  assert.match(modules.nodes.find(node=>node.id==='nativewriter').locality,/没有production NativeWriteAuthority/);
+  assert.match(modules.nodes.find(node=>node.id==='checker').locality,/尚未接中心/);
+  assert.match(modules.nodes.find(node=>node.id==='workspace').description,/默认setup仍是固定fixture writer/);
+  assert.equal(modules.height,1375); assert.equal(views.find(view=>view.id==='data').height,1415);
 });

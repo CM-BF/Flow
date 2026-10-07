@@ -1,0 +1,15 @@
+{
+  "source": "Faithful tools.exec_command receipt transcription for the single approved inline caller; not test stdout",
+  "chunkId": "93b2c0",
+  "outerExitCode": 0,
+  "wallTimeSeconds": 1.47183675,
+  "output": "{\"outerEntryExitCode\": 0, \"testExitCode\": 0, \"ownedState\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"elapsedMs\": 1299, \"stdoutBytes\": 0, \"stderrBytes\": 1324}\n",
+  "caller": "Parent SIGALRM 9.5s established before fresh source/gate/reservation. Existing shared supervise NEW_CHILD_SESSION policy8/.1/1/32768. Result/raw exclusive fsync writes after owned stop; no copied loop.",
+  "actualSelected": 4,
+  "actualPassed": 4,
+  "unselected": 12,
+  "newDistinct": 1,
+  "overlap": 3,
+  "cleanups": "New case asserts own PID absent; live-descendant asserts both absent; permanent observation/signal denial cases finally invoke existing bounded stop_test_child. All 4 passed. Outer report absent and EOF; no later PID probe.",
+  "warning": "Two original ResourceWarning lines preserved. Popen objects for deliberately unknown/signal-denied children were destroyed before their test finally cleanup; no claim of warning-free execution."
+}

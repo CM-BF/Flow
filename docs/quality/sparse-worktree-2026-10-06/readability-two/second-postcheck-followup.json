@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-06T21:35:50.749661+00:00",
+  "state": "APPLIED_CONTENT_VERIFIED_SHARED_CONFIG_CHANGE_UNATTRIBUTED",
+  "originalResult": "web-conversation-readability-result.json",
+  "originalPostcheckFailure": "operator.py line34 shared/other worktree config hash assertion; preceding retained hashes and protected main/I02/D05 snapshots passed",
+  "operationRepeated": false,
+  "retainedMapSha256": "716233dfaeb3ad18d4d7808d3d1d57d00cdf24a8485914567212284a3a04cfde",
+  "retainedFiles": 3444,
+  "sameFixedAndMainCandidates": 232,
+  "candidateFilesAbsent": true,
+  "head": "cd26404fd0a3eed6c0053ae374d198ee5e5fc4fb",
+  "clean": true,
+  "ownConfig": "core.sparseCheckout true; sparseCheckoutCone false",
+  "sharedExtensionsWorktreeConfig": "true",
+  "sharedConfigUnchanged": "NOT_PROVEN; original in-memory before map not persisted; do not infer cause or rewrite shared config",
+  "otherConfigUnchanged": "NOT_PROVEN by interrupted postcheck; no further config mutations performed",
+  "preservedRaw": "Original APPLIED_PENDING_VERIFY record remains unchanged; this is separate follow-up",
+  "freeAfterBytes": 1062559744,
+  "noMoreSparseThisBatch": true,
+  "scope": "Source/tests/rules/plans/ownraw/d04/dependencies/active previews retained; no deletion of refs/objects/user data",
+  "provider": 0,
+  "tests": 0
+}

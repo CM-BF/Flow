@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T12:53:51.491Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "固定架构图已更新，区分已接入、fixture与待接职责，独立审查通过，等待main接收",
+    "next": "由Lead接收获审固定五source，图中部署事实另查服务回执",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "6570ef7e896d29040961247f46aa62dc4e466284"
+  },
+  "proof": {
+    "target": "6570ef7e896d29040961247f46aa62dc4e466284",
+    "head": "6570ef7e896d29040961247f46aa62dc4e466284",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "docs/evidence/d06/snapshot-aeb/browser-check.mjs"
+    ],
+    "observedAt": "2026-10-06T12:53:51.374Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/d06/snapshot-aeb/README.md",
+      "docs/evidence/d06/snapshot-aeb/candidate.json",
+      "docs/evidence/d06/snapshot-aeb/quality.json",
+      "docs/evidence/d06/snapshot-aeb/validation.md",
+      "plans/d06-architecture-refresh/plan.md",
+      "plans/d06-architecture-refresh/review.md",
+      "plans/d06-architecture-refresh/status.md",
+      "docs/evidence/d06/snapshot-aeb/independent-audit.json",
+      "docs/evidence/d06/snapshot-aeb/independent-tests.log"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  }
+}

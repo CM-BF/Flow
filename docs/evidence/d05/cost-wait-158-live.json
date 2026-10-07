@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-10-06T14:09:14.587Z",
+  "count": 158,
+  "loadedSource": "3e1b1bfa7fa2e9ddd562e859520d1713ceedf27a",
+  "ownedService": {
+    "replacedPid": 92472,
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "session": 22086,
+    "port": 4320
+  },
+  "tasks": [
+    {
+      "id": "COST01A",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:08:53.911Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout/plans/cost01a-usage-readout/status.md",
+        "syncedAt": "2026-10-06T14:09:14.587Z",
+        "stale": false,
+        "ageHours": -0.06261472222222222
+      },
+      "issues": [],
+      "current": true,
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "任务缓存、输入、输出和估价解释已在隔离中心验证，缺测与不完整覆盖明确保留。",
+        "next": "完成独立审查后供各端复用同一用量解释。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "S01P06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:07:13.326Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/plans/s01p06-runner-wait/status.md",
+        "syncedAt": "2026-10-06T14:09:14.587Z",
+        "stale": false,
+        "ageHours": 0.03377416666666667
+      },
+      "issues": [],
+      "current": true,
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "有界等待修复已独审通过，保持停止、恢复与及时补槽行为",
+        "next": "本片main接收完成，停写全部scope并交回writer",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "O13",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T14:07:14.458Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/plans/o13-continuous-goal-journey/status.md",
+        "syncedAt": "2026-10-06T14:09:14.587Z",
+        "stale": false,
+        "ageHours": 0.05071861111111111
+      },
+      "issues": [],
+      "current": true,
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "同一目标的需求恢复、显式规划与只读交付已接入主线；实际模型和自动推进仍为后继",
+        "next": "本片段已交付",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "TUI01E",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T13:54:28.629Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls/plans/tui01e-queue-controls/status.md",
+        "syncedAt": "2026-10-06T14:09:14.587Z",
+        "stale": false,
+        "ageHours": 0.25405194444444446
+      },
+      "issues": [],
+      "current": true,
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "队列查看、暂停和恢复已在真实本机中心与终端验证；冲突保留草稿，退出不取消任务。",
+        "next": "终端队列控制已通过独立审查，等待主线接收；浏览器交替仍是后继。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "limits": [
+    "Fixed architecture aeb unchanged",
+    "No user tab reload, personal61227/61228 unchanged",
+    "COST target being finalized; source registration is not approval",
+    "Original snapshot status timestamps preserved including owner future-time typo, sent owner for final metadata correction"
+  ]
+}

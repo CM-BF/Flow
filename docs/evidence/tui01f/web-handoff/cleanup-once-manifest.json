@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06T21:02:10.335134+00:00",
+  "result": "NORMAL_CLEANUP_CONFIRMED",
+  "scope": "independent-cleanup-only; failed journey unchanged",
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once.mjs",
+      "bytes": 4397,
+      "sha256": "4827b3b4d0e1b9c9d4b270602052612c0185c2676b97bc4378c9d6307d7834a1"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/small-check-cleanup.py",
+      "bytes": 3357,
+      "sha256": "8b48c08928dae3e5dce4d022f17de65d6301afc087822f4523d182268b3c6869"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-reservation.json",
+      "bytes": 379,
+      "sha256": "34b54037daae34e0ea3d8357d61e0239567bd5380d67b2427b6834ee8123f7e3"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-checkpoint.json",
+      "bytes": 777,
+      "sha256": "318c64dcc9332f29efe09b70924fafc47932ee5cd29ed6aff57d28595b145a01"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-result.json",
+      "bytes": 1146,
+      "sha256": "02907ecaeefc97a3a3564f86d2717bf695d6a5c639b209fca7bbfbb5f7af9210"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-run.json",
+      "bytes": 1505,
+      "sha256": "2f761d3bca66e15372d1cc65b4e7f1c88bdf0950a604bb71d4f8806b324991e9"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-stdout.txt",
+      "bytes": 853,
+      "sha256": "9c9b6a851a6e09661eb9eb206f206fae953758276025ed15d5a91c11d1395edd"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-metadata-correction.json",
+      "bytes": 547,
+      "sha256": "1b05c005848fff16c3323cf0879f8a6151ada56e9407fc1cb82a0705b3ead4a6"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/cleanup-once-summary.md",
+      "bytes": 1859,
+      "sha256": "6c2a6ed300275835639545c8f7784941331c93667a247901ca5f8b0f3826e498"
+    }
+  ],
+  "protectedInputs": [
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27145,
+      "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 25037,
+      "sha256": "e54159c4d669dab5426d358695f9c2f925c0e472bf9fb5bc5d5543a81e0a43a8"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/preview.ts",
+      "bytes": 11413,
+      "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/terminal.py",
+      "bytes": 7304,
+      "sha256": "7fdc85cadeb71ad2d9d88e2a463aad6651aeaaf6ecc27f41ce7cd2102e691081"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/one-shot-manifest.json",
+      "bytes": 4827,
+      "sha256": "c1122073a6942d5d012a903c2c826cd8ab0583a6a95c793073cd2f730620a557"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    }
+  ],
+  "ownBytes": 14820,
+  "rawEnvelopeCorrection": "cleanup-once-metadata-correction.json"
+}

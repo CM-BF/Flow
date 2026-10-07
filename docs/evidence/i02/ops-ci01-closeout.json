@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T23:05:53.750433+00:00",
+  "reviewedDocs": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+  "metadataDelivery": "a10425e164109c698ac48d165cba1b69607a3838",
+  "fixedInputs": [
+    {
+      "source": "4b6eff9c",
+      "path": "docs/evidence/d05/ops-ci01-live.json",
+      "bytes": 3727,
+      "sha256": "833a5dfecc5c4e1aea997c1c5a0e89577097b228b59fc8704891e87b68fd83fd"
+    },
+    {
+      "source": "4b6eff9c",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 27023,
+      "sha256": "66e70720c3e930505f40fcb0d188dd1d0aa08f6e33b43e01bae545498f73bf30"
+    },
+    {
+      "source": "14da3f4b",
+      "path": "docs/quality/x01-enable-binding-allocation.json",
+      "bytes": 1559,
+      "sha256": "2ca5427806b5f232ae0dae174316475a119ad4cce4ca7976e24895e9dd5c0850"
+    },
+    {
+      "source": "14da3f4b",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 63400,
+      "sha256": "64b6226b86de2570b67e142602c397ea394f7b65facd37494aa1393176ce4c2f"
+    }
+  ],
+  "dashboard": 181,
+  "activation": "PENDING_USER_DECISION",
+  "remoteRun": "NOT_RUN",
+  "X01": "034 allocated, exact source-only operator delegated to Mika; source creation/claim require own receipts",
+  "productTests": 0,
+  "personalRuntimeChanges": 0
+}

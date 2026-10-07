@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-06T18:00:16.832Z",
+  "reason": "DB-only snapshot after read-only Web observation failed; no additional HTTP. Earlier observation error was not narrowed to non-JSON. No service retry or mutation.",
+  "personalMutations": 0,
+  "operatorProviderQueries": 0,
+  "webResponse": {
+    "state": "unknown",
+    "reason": "Both bounded requests failed before response metadata; no further request in this DB-only followup."
+  },
+  "database": {
+    "markerMatched": true,
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "runnerIdentityMatched": true,
+    "tasks": [
+      {
+        "status": "succeeded",
+        "count": 4
+      }
+    ],
+    "unfinished": [],
+    "queue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "runners": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 15,
+        "maintenance_operation_id": null
+      }
+    ],
+    "retainedConversation": [
+      {
+        "id": "2c507833-67fe-4d10-acf5-6c97eedd05bb",
+        "revision": 1
+      }
+    ],
+    "migrations": [
+      {
+        "version": 1
+      },
+      {
+        "version": 2
+      },
+      {
+        "version": 3
+      },
+      {
+        "version": 4
+      },
+      {
+        "version": 5
+      },
+      {
+        "version": 6
+      },
+      {
+        "version": 7
+      },
+      {
+        "version": 8
+      },
+      {
+        "version": 9
+      },
+      {
+        "version": 10
+      },
+      {
+        "version": 11
+      },
+      {
+        "version": 12
+      },
+      {
+        "version": 13
+      },
+      {
+        "version": 14
+      },
+      {
+        "version": 15
+      },
+      {
+        "version": 16
+      },
+      {
+        "version": 17
+      },
+      {
+        "version": 18
+      },
+      {
+        "version": 19
+      },
+      {
+        "version": 20
+      },
+      {
+        "version": 21
+      },
+      {
+        "version": 22
+      },
+      {
+        "version": 23
+      },
+      {
+        "version": 24
+      },
+      {
+        "version": 25
+      },
+      {
+        "version": 26
+      },
+      {
+        "version": 27
+      }
+    ]
+  },
+  "outcome": "observed"
+}

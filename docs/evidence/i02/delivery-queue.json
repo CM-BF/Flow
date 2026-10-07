@@ -1,52 +1,29 @@
 {
-  "recordedAt": "2026-10-06T12:54:57.136259+00:00",
-  "main": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
-  "sourceSampleAt": "2026-10-06T12:24:33.364Z",
+  "recordedAt": "2026-10-06T16:01:54.052492+00:00",
+  "main": "cc135026f8c3db809be25c81ab617dc4f65df4f2",
+  "sourceSampleAt": "2026-10-06T15:38:16.075Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
-  "reviewedQueue": [
-    {
-      "taskId": "WPF-WORKSPACEPERF01",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/plans/wpf-workspace-lifecycle-baseline/status.md",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
-      "differentPaths": []
-    },
-    {
-      "taskId": "WPF-MATURE-04",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
-      "evidence": "context-producer-integration.json",
-      "main": "7cbda706632c85fc5da12a371b282419c933ab9a"
-    },
-    {
-      "taskId": "WPF-DPERF03",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
-      "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
-      "evidence": "dperf03-integration.json"
-    }
-  ],
+  "reviewedQueue": [],
   "mainButNotUserSurface": [
     {
-      "taskId": "O12",
-      "next": "TUI01D approved explicit goal terminal accepted in this batch; Web cross-client remains open",
-      "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
+      "taskId": "X01/F01",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "note": "Installation routes/client/CLI main; installed not enabled; personal host not configured."
     },
     {
-      "taskId": "WPF-ATTACHI01",
-      "next": "Web ATTACHI02 actual Send/Queue integration",
-      "note": "Module main; no actual production App attachment journey yet"
+      "taskId": "O14",
+      "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "note": "Domain and thin transport main; production scheduler/migration not yet accepted."
     },
     {
-      "taskId": "ENG01G",
-      "next": "ENG01H declaration/receipt center contract accepted; concrete host authority and model qualification remain separate",
-      "note": "One real shared exchange pump and injected authority; actual model/enforcement/revocation not demonstrated"
+      "taskId": "WPF-ATTACHI02",
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "note": "Production source main; fixed new Web waits RELEASE03 evidence before personal publication."
     },
     {
-      "taskId": "WPF-MATURE-04",
-      "next": "Historical observation producer main; Web consumer and real SDK control evidence remain independent",
-      "note": "Historical producer main and backend deployed362; actual UI/SDK control evidence still independent"
+      "taskId": "TUI01F",
+      "target": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "note": "Reviewed controller/Ink static binding accepted; actualHTTP/PG/PTY/App acceptance open."
     }
   ],
   "releaseQueue": [
@@ -57,15 +34,57 @@
       "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
       "version": 15,
       "admission": "accepting",
-      "evidence": "svc05-live-acceptance.json",
-      "next": "Canonical close/release9daf received; no further operation"
+      "next": "No personal operation in this batch."
+    },
+    {
+      "taskId": "WPF-RELEASE03",
+      "phase": "new-script-reviewed-history-not-run-resource",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+      "next": "Newtuple af51/5069586 script reviewed; 15:58 fresh gate insufficient,0attempt/budget unchanged3874/180000ms. Wait actual resource; original failed A retained; no personal operation."
     },
     {
       "taskId": "SVC06",
-      "phase": "plan-only",
+      "phase": "pure-closure-slice-delivered",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
-      "next": "assignment_review read-only module/layout scope preparation; no personal cutover"
+      "next": "Explicit production parser and builder wiring/install/entry proof; full artifact >=2.5GiB gate remains."
+    },
+    {
+      "taskId": "SVC05H01",
+      "target": "b29807979a5589678a61d3fb84781950cf366396",
+      "metadata": "af51c621696230fbced12227670f014ca73bd8a1",
+      "phase": "fixed-source-and-dependency-view-ready",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/plans/svc05-history-compatibility/status.md",
+      "next": "Independent source precheck noP1/P2; Webmanager owns newtuple A/B after independent script delta review/fresh reserve.0provider/personal operations.",
+      "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
     }
   ],
-  "mainBeforeBatch": "3609d8dabd3713e37d877af4f96d2daa2bd96e57"
+  "mainBeforeBatch": "cc135026f8c3db809be25c81ab617dc4f65df4f2",
+  "reviewAndVerificationQueue": [
+    {
+      "taskId": "F01/O14",
+      "target": "73aabff4fac96c0439817bdc72358c1385371e8d",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
+      "next": "15:31 resource preflight1,098,022,912B below1GiB+32MiB,PGNOT_RUN; source P2 closed/thin main."
+    },
+    {
+      "taskId": "O15",
+      "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
+      "next": "Independent source precheck noP1/P2 at9fd1; PGNOT_RUN, no full approval. Fresh resource gate required."
+    }
+  ],
+  "sourceProvisionQueue": [
+    {
+      "taskId": "TUI01F",
+      "state": "044ab source precheck noP1/P2; selected tests/types in authorized bounded pure-check window; no PG/PTY/App claim; dependency-view created without install.",
+      "worktree": "tui-task-cancel",
+      "input": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5"
+    },
+    {
+      "taskId": "WPF-MATURE-02-CORE",
+      "state": "Exact source restored with recorded own-scope correction; active c652v3 includes032. Owner continuing; full domain and runtime unapproved.",
+      "worktree": "claude-message-settings-core"
+    }
+  ],
+  "batch": "OPS four-tree receipts/correction; F01 migration032 assignment; registry165 TUI01F. Product source unchanged."
 }

@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-06T18:15:17.366Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T18:15:17.415Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskCount": 170,
+  "task": {
+    "id": "WPF-MESSAGESETTINGS01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T18:13:35.008Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md",
+      "syncedAt": "2026-10-06T18:15:17.366Z",
+      "stale": false,
+      "ageHours": 0.07065722222222222
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-message-settings",
+      "head": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
+      "dirty": true,
+      "changedFiles": 6,
+      "observedAt": "2026-10-06T18:15:17.444Z"
+    },
+    "issues": [],
+    "current": true
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在实现逐条消息的完整设置组合选择，原会话配置保持独立。",
+    "next": "可复用的选择控件与校验接口，随后验证键盘和窄屏体验。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "parseErrors": [],
+  "implementation": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；目前仅源码阶段"
+  },
+  "snapshotBytes": 2178402,
+  "snapshotSha256": "93451a51e9f1e0526d6015d5e0e1e32c5dc93353db43091ff258278b4dadea7f",
+  "process": "only owned 4320 old PID25597 normal TERM and new service session20865; personal services/tabs untouched",
+  "architecture": "fixed snapshot unchanged",
+  "tests": 0,
+  "provider": 0
+}

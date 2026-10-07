@@ -1,0 +1,97 @@
+{
+  "result": {
+    "results": [],
+    "passed": false,
+    "errors": [
+      "Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@flow/client' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n    at packageResolve (node:internal/modules/esm/resolve:784:25)\n    at moduleResolve (node:internal/modules/esm/resolve:873:18)\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\n    at nextStep (node:internal/modules/customization_hooks:189:26)\n    at resolveBaseSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092)\n    at resolveDirectorySync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398)\n    at resolveTsPathsSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:13605)"
+    ],
+    "providerQueries": 0,
+    "personalActions": 0,
+    "centerUrl": "http://127.0.0.1:63896",
+    "centerPort": 63896,
+    "runnerId": "dd89b05b-0562-4e3c-b2f9-04e64d1b2050",
+    "failure": "Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@flow/client' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts\n    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n    at packageResolve (node:internal/modules/esm/resolve:784:25)\n    at moduleResolve (node:internal/modules/esm/resolve:873:18)\n    at defaultResolve (node:internal/modules/esm/resolve:1006:11)\n    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)\n    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)\n    at nextStep (node:internal/modules/customization_hooks:189:26)\n    at resolveBaseSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092)\n    at resolveDirectorySync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398)\n    at resolveTsPathsSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:13605)",
+    "runnerStopped": true,
+    "centerClosed": true,
+    "closeErrors": []
+  },
+  "errors": [],
+  "groups": [
+    {
+      "pid": 20247,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    }
+  ],
+  "portObservations": [
+    {
+      "port": 63896,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "owned": {
+    "parent": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05r01-MqGjqW",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123138276
+    },
+    "databaseName": "flow_svc05r01_654e51b51bb34f3c9dd0",
+    "marker": "27112e5d-05c0-4aa4-9783-12c6481756d7",
+    "created": true,
+    "markerWritten": true,
+    "createAttempted": true
+  },
+  "metrics": {
+    "minimumFree": 1521844224,
+    "peakRaw": 127179,
+    "peakTemp": 0
+  },
+  "finalSample": {
+    "at": "2026-10-06T19:01:13.751Z",
+    "free": 1521844224,
+    "raw": {
+      "bytes": 127179,
+      "files": 9
+    },
+    "temp": {
+      "bytes": 0,
+      "files": 0
+    },
+    "withinThresholds": true
+  },
+  "elapsedMs": 2927,
+  "providerQueries": 0,
+  "personalActions": 0,
+  "stopWork": false,
+  "checkpoint": true,
+  "cleanup": {
+    "databaseName": "flow_svc05r01_654e51b51bb34f3c9dd0",
+    "marker": "27112e5d-05c0-4aa4-9783-12c6481756d7",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:01:13.769Z",
+          "elapsedMs": 5.537249999999858,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "passed": false,
+  "verifiedReports": [],
+  "finalRawBeforeReports": {
+    "bytes": 131611,
+    "files": 11
+  },
+  "limits": "Sampling thresholds are observations, not OS quotas. PG/WAL bytes are outside private temp accounting."
+}

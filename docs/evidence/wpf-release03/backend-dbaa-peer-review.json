@@ -1,0 +1,200 @@
+{
+  "reviewedAt": "2026-10-06T15:38:16.413347+00:00",
+  "mode": "read-only source audit; no imports or checks executed",
+  "releaseTarget": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+  "backendBase": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "backendImplementation": "b29807979a5589678a61d3fb84781950cf366396",
+  "backendMetadata": "0037921d12c089e6334b001545f698db067087f8",
+  "backendTree": "1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074",
+  "implementationParent": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "implementationChangedPaths": [
+    "A\tapps/server/src/context-transparency/attachment-history.test.ts",
+    "M\tapps/server/src/context-transparency/store.ts"
+  ],
+  "metadataClosure": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+      "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/interface.md",
+      "sha256": "fc2ddc676fc5b0c12e22f264432e21419c648aa871bbd33bb40160376e436ed7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+      "sha256": "903cb4842476565d66a10688793b134c5d4a9f79818a2a2ae42db86ba150f878",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+      "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+      "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/provision.json",
+      "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/quality.md",
+      "sha256": "673fcf92f208dbefc5ff357c0f781b1c1c0469a5d29bffc9e5cc25ba5da9f194",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+      "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/plan.md",
+      "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/review.md",
+      "sha256": "338f7f8b0b47e46f421ae7fb715325166d1cc1388a90f095204b41cf8cca5336",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/status.md",
+      "sha256": "b0aafcb3e6092002a233f347b48bfdd62ce67f5db1d149f197da035907397dcb",
+      "mode": "100644"
+    }
+  ],
+  "sources": [
+    {
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "commit": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "bafbce3c48cc193fc60dd1a86f705abbcfcb9918cbf600d237eee99be24730e0",
+      "bytes": 20217,
+      "workingMatches": true
+    },
+    {
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "commit": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "785c2ef5106846825d5a0f506a18403c1b57f4d5c4709502841ae3e0c7e5ae3a",
+      "bytes": 34964,
+      "workingMatches": true
+    },
+    {
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "commit": "b29807979a5589678a61d3fb84781950cf366396",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "bytes": 11267,
+      "workingMatches": true,
+      "finalMatches": true,
+      "cdeMatches": true
+    },
+    {
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "commit": "b29807979a5589678a61d3fb84781950cf366396",
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "bytes": 12618,
+      "workingMatches": true,
+      "finalMatches": true,
+      "cdeMatches": true
+    },
+    {
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "commit": "b29807979a5589678a61d3fb84781950cf366396",
+      "path": "apps/server/src/index.ts",
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "bytes": 13507,
+      "workingMatches": true,
+      "finalMatches": true,
+      "cdeMatches": true
+    }
+  ],
+  "oldRaw": [
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0",
+      "expectedMatch": true,
+      "currentMatchesFixed": true
+    }
+  ],
+  "oldBudget": {
+    "spentMs": 3874,
+    "remainingMs": 176126
+  },
+  "releaseObserved": {
+    "head": "d83701f81d9e0ee4d6d2c000f749ba9f7ac8e83c",
+    "dirty": ""
+  },
+  "backendObserved": {
+    "head": "0037921d12c089e6334b001545f698db067087f8",
+    "dirty": ""
+  },
+  "runtimeNotProven": [
+    "candidate dependency/module-resolution closure",
+    "factory imports/startup",
+    "PG HTTP browser behavior",
+    "artifact compatibility",
+    "permission to execute"
+  ]
+}

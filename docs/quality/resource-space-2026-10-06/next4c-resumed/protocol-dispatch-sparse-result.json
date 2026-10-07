@@ -1,0 +1,64 @@
+{
+  "startedAt": "2026-10-06T17:40:58.674405+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch",
+  "head": "1e314e5e7d6e93d5f6ef100931c5aba26d47619e",
+  "ledgerObservedAt": "2026-10-06T17:39:45.583Z",
+  "openFiles": [],
+  "exit": 0,
+  "stderr": "",
+  "freeBeforeBytes": 1173798912,
+  "freeAfterBytes": 1173770240,
+  "logicalDematerializedBytes": 37674,
+  "candidateCount": 18,
+  "retainedCount": 487,
+  "preflightSha256": "fd74ccef8ced5685f9212e11b5b3a05a8e73bb6d3ee00b4c916bac4a4ab77ca3",
+  "finishedAt": "2026-10-06T17:40:59.214061+00:00",
+  "allRetainedHashesUnchanged": true,
+  "sameMainBlobForAllDematerialized": true,
+  "protectedWorktreesUnchanged": {
+    "/Users/citrine/Projects/AgentHarness/Flow": {
+      "head": "b4ab57c6349fdcc59c2d3a94f3f0b463313b4157",
+      "status": "",
+      "index": "20360837d4d6d1cafe40ff97b7ac1a72b0dd4f813b45fe73031bfeed00413569"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation": {
+      "head": "db64f92c77f2370f30ca527cdacf417a32422153",
+      "status": "",
+      "index": "b0ffddabf172912d68d08386b57a0a3d017e0a89222c0162664cfba1d34b59a8"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration": {
+      "head": "4015c667f1e2b833755b2fda6ed205fb951ec576",
+      "status": "",
+      "index": "c7225b0a5d1d84bbce97e1a5e63a914ae046529e3c6a7161c94c5f27e2ed7746"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review": {
+      "head": "2b5409256fe9ee73dc0c04776b84f1f041823d8f",
+      "status": "",
+      "index": "0922bce0e370996d9b2c38c13225d4253afa6fa72a900908653efc049409aa0e"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture": {
+      "head": "6c62425df64657284d2c7c50a36d3cbfdf8e52fb",
+      "status": "",
+      "index": "c496fabc85181c6d11332c16456d67bb1f3c3187d1bc4a70b6efe1a1d9092801"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility": {
+      "head": "af51c621696230fbced12227670f014ca73bd8a1",
+      "status": "",
+      "index": "24b49a4a1deb0e601a21a7beee0af0888b76cc48e65fb903f40eba5444a5f9e7"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation": {
+      "head": "3f08d57f890f94b350b30d1344e615e2ddab77dd",
+      "status": "",
+      "index": "cb2f1ecade10a426ce3227a51ac9da6eb71d9e77cdead2b5f178cbfa36b6555e"
+    }
+  },
+  "sharedConfigUnchanged": true,
+  "nodeModulesUntouched": true,
+  "clean": true,
+  "patternsSha256": "6e3c3fddc310c977d98155cde6e262a57d589e7bbe13f7c86e793f7e2aabe42e",
+  "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+  "providerCalls": 0,
+  "productTests": 0,
+  "observedVolumeDeltaBytes": -28672,
+  "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+}

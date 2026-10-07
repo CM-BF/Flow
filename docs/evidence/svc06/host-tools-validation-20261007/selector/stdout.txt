@@ -1,0 +1,15 @@
+✔ selects backend production workspaces and explicit host tools without selecting the Web workspace (2.812584ms)
+✔ host tool selection keeps Vite peer context and platform optional closure without UI packages (0.492542ms)
+✔ host tool selection rejects missing, mismatched, aliased or ambiguous fixed tool sources (0.449833ms)
+✔ retains distinct resolved peer contexts and only omits incompatible optional packages (0.405458ms)
+✔ rejects mismatched manifests, tools, unresolved edges and out-of-tree workspace links (0.539792ms)
+✔ handles a dependency cycle without looping and rejects oversized input before graph traversal (5.329792ms)
+✔ prepares deterministic staging bytes and detects any installer mutation before source restoration (1.377833ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21.369375

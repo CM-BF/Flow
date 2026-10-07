@@ -1,0 +1,23 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ✓ experiments/runner-capacity/mixed/observe-pg.test.ts > promise connect/query preserve promise identity, receiver, value and original rejection object 2ms
+ ✓ experiments/runner-capacity/mixed/observe-pg.test.ts > callback connect and query forward this, callback receiver/arguments, release and exact return once 0ms
+ ✓ experiments/runner-capacity/mixed/observe-pg.test.ts > callback error and synchronous throw preserve object identity; observer failure never changes behavior 0ms
+ ✓ experiments/runner-capacity/mixed/contract.test.ts > reserves exactly32 tasks with no retry allocation and both topologies have16 slots 1ms
+ ✓ experiments/runner-capacity/mixed/contract.test.ts > 45s stops work while60s remains the cleanup deadline 0ms
+ ✓ experiments/runner-capacity/mixed/contract.test.ts > shared byte categories stop at48MiB and reserve16MiB for bounded cleanup evidence 0ms
+ ✓ experiments/runner-capacity/mixed/stream-bytes.test.ts > counts connection establishment and final counters once per socket identity 1ms
+ ✓ experiments/runner-capacity/mixed/stream-bytes.test.ts > missing private pg seam, bad counters, decreasing totals and socket bound are UNKNOWN 0ms
+ ✓ experiments/runner-capacity/mixed/stream-bytes.test.ts > deadline cleanup destroys only registered owned streams and invalidates complete accounting 0ms
+ ✓ experiments/runner-capacity/mixed/proof.test.ts > sixteen observations alone do not prove actual attempts; DB ownership and live leases are required 1ms
+ ✓ experiments/runner-capacity/mixed/proof.test.ts > missing heartbeat, event ACK, adapter admission or claim identity prevents the16 gate 0ms
+ ✓ experiments/runner-capacity/mixed/deadline.test.ts > expired cleanup phase does not start another operation or label it successful 1ms
+ ✓ experiments/runner-capacity/mixed/deadline.test.ts > stalled cleanup returns unknown at its phase deadline; late completion does not rewrite it 1ms
+ ✓ experiments/runner-capacity/mixed/deadline.test.ts > a settled close and a failed operation are distinct without retaining error contents 0ms
+
+ Test Files  5 passed (5)
+      Tests  14 passed (14)
+   Start at  03:02:58
+   Duration  431ms (transform 45ms, setup 0ms, import 70ms, tests 10ms, environment 0ms)
+

@@ -1,0 +1,151 @@
+{
+  "at": "2026-10-06T18:19:38.655823+00:00",
+  "status": "READ_ONLY_PROPOSAL_NOT_EXECUTED",
+  "productRef": "af51c621696230fbced12227670f014ca73bd8a1",
+  "personalActions": 0,
+  "newHttpRequests": 0,
+  "loopbackServersStarted": 0,
+  "provider": 0,
+  "pg": 0,
+  "observedInput": "web-socket-observation.json: listener65263/PGID65219, 1 LISTEN+64 CLOSED. These are kernel fd states, not Node getConnections or established root cause.",
+  "sourceFindings": [
+    {
+      "source": "static-web.mjs:53-90",
+      "fact": "Vite preview uses fixed artifact, /api proxy to configured loopback; identity handled before proxy; maxConnections=64. Asset queue refusal/catch return503. ws=false. No proxyTimeout specified."
+    },
+    {
+      "source": "Vite8.3.2 chunks/node.js:35414-35514,19723-19826,19076-19128",
+      "fact": "preview creates node:http server; Flow middleware precedes proxy. Proxy res close destroys unfinished outbound request; normal proxy error before headers writes502. Not proof all partial/error lifecycles settle."
+    },
+    {
+      "source": "Vite8.3.2 chunks/node.js:14551-14577",
+      "fact": "clientError listener returns for ECONNRESET or nonwritable socket; other branches socket.end 4xx. This is a candidate error ownership seam, not a demonstrated leak."
+    },
+    {
+      "source": "embedded Node24.20.0 net:2691-2758 / _http_server:999-1034",
+      "fact": "At count>=maxConnections, emits drop and closes new handle before connection/HTTP. Server count decrements in Socket._destroy. HTTP default error destroy only occurs if clientError has no listener; cannot infer actual socket destroy was omitted from source alone."
+    }
+  ],
+  "entry": {
+    "proposedPath": "docs/evidence/svc05-history-compatibility/artifact-transfer/socket-loopback.mjs",
+    "permission": "not implemented/executed; needs Lead one bounded window",
+    "reuse": "Call fixed startStaticWeb unchanged, not a replacement preview server. Copy four exact git blobs into own tiny source directory. Reuse installed Vite public export, no install/build/private config/preview launcher. One node:http synthetic SSE upstream, no center/DB.",
+    "artifact": "Copy/verify only fixed d629 ten files+manifest (1,588,311 content bytes) into own0700root. Use existing five af51+d629 compatibility files and existing planWebRelease/commitWebRelease solely on ownroot to exercise real release pointer path. No personal marker or operation lock touched.",
+    "instrumentation": "Before Vite import, a process-local delegating node:http.createServer observer (syncBuiltinESMExports) captures created server identities without changing arguments. Observe public getConnections, connection/close/drop/clientError and socket lifecycle; no new production hook, no cap/timeout change. Exact listen ports captured, reject any61227/61228 and any nonloopback."
+  },
+  "stages": [
+    "Baseline: GET / verifies fixed950B index SHA; GET /__flow_preview_identity verifies d629. Observe counts after client close.",
+    "Churn: at most64 sequential connections, alternating 32 incomplete-header resetAndDestroy and32 /api/sse reads of one16B frame then client abort. Record close/error events and counts every8. Each has2s deadline. Stop immediately on unexpected status/identity or growing unexplained work beyond budgets; after group wait at most7s and one identity probe. No replay of failed requests.",
+    "Only if churn returns zero: capacity calibration holds64 own proxied SSE streams, one identity request observes Node drop/no HTTP handler vs reset/error; close those own clients, wait bounded settlement and one final identity probe. If churn retained sockets, skip calibration and checkpoint unknown/leak candidate."
+  ],
+  "limits": {
+    "maxConnectionAttempts": 136,
+    "maxConcurrentFrontendConnections": 65,
+    "maxSyntheticUpstreamConnections": 64,
+    "workMs": 35000,
+    "cleanupMs": 10000,
+    "perAttemptMs": 2000,
+    "perResponseBodyBytes": 4096,
+    "sseFrameBytes": 16,
+    "totalObservedWireBytesStop": 1048576,
+    "rawOutputStopBytes": 1048576,
+    "ownTempLogicalStopBytes": 4194304,
+    "freshFreeRequiredBytes": 1082130432,
+    "reserveBytes": 1073741824,
+    "semantics": "Count/request/body guards can stop own work; aggregate disk/wall limits are observed thresholds, not OS hard reservations. Existing dependency bytes excluded, no copies of node_modules."
+  },
+  "decisionRules": {
+    "capacityMechanism": "drop increments/getConnections64 + no request callback + client reset; after own drain identity success proves only capacity path in isolation.",
+    "retentionCandidate": "After remote abort and bounded wait, getConnections or tracked own sockets remain; preserve lifecycle traces and exact branches, do not call this personal root cause.",
+    "noReproduction": "zero stale sockets under prescribed sequences => NOT_REPRODUCED; no stronger health conclusion; do not expand load or automatically retry.",
+    "shutdown": "Stop own clients/upstream/staticWeb, save complete checkpoint/fsync before deleting own directory. Confirm owned sockets/ports and whole child PGID absent; unknown/checkpoint failure retains tmp. No personal process or connection inspection/mutation during experiment."
+  },
+  "inputs": [
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "bytes": 5081,
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "bytes": 1383675,
+      "sha256": "21d5c6b4fb1013b98b1436e9e2a3bb416c8932343ad42ec293bbf760f51a0131"
+    },
+    {
+      "path": "/tmp/flow-svc05h-net-embedded-source.js",
+      "realpath": "/private/tmp/flow-svc05h-net-embedded-source.js",
+      "bytes": 85948,
+      "sha256": "73ec9d0b5e0096b9f8daf2d9d7271920179c46d71996d85bb41a0c54d2be3eed"
+    },
+    {
+      "path": "/tmp/flow-svc05h-_http_server-embedded-source.js",
+      "realpath": "/private/tmp/flow-svc05h-_http_server-embedded-source.js",
+      "bytes": 43902,
+      "sha256": "cd81e1020a8f2b3f6731b2db28648d889ec99db4fbff45ed608821bcc4209be9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/negotiation.json",
+      "bytes": 265,
+      "sha256": "9206dcacfd63481c7d67ec7cad6e08529d01ab490c9d654715c34d55240db933"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/read.json",
+      "bytes": 249,
+      "sha256": "bbfccc446c91b11d70bae5cf93955eb49c17153a91b64e7ca583137eab19481c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/recover.json",
+      "bytes": 231,
+      "sha256": "9dde466bc8ef9d6870a238014deb2608d98ff634b2f0f76e64fc41a05bb9e2b1"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/report.json",
+      "bytes": 646,
+      "sha256": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/send.json",
+      "bytes": 239,
+      "sha256": "50134443cca2ab9cd04262a91b7f8de3d031a0e56dabd757607fd22481313a83"
+    }
+  ],
+  "nativeSourceExtraction": {
+    "node": "24.20.0",
+    "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "method": "process.binding(natives) text copied only; no application imports/server/requests",
+    "limitation": "On-disk current dependency hashes and embedded source; not a memory dump proving the personal process loaded these exact dependency bytes."
+  },
+  "designMethod": "Local find-skills, codebase-design, clean-code applied: preserve fixed production Interface; synthetic upstream varies only data/close behavior, observational seam owns evidence; no generic connection manager or guessed cap fix."
+}

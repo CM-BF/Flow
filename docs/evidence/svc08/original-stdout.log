@@ -1,0 +1,34 @@
+✖ upstream completion, truncated FIN and RST settle downstream connections (886.444792ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 951.863875
+
+✖ failing tests:
+
+test at tools/personal-preview/static-web-connections.test.mjs:40:1
+✖ upstream completion, truncated FIN and RST settle downstream connections (886.444792ms)
+  AssertionError [ERR_ASSERTION]: upstream termination must settle downstream before fixture cleanup
+  + actual - expected
+  
+  + [
+  +   'fin',
+  +   'rst'
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/tools/personal-preview/static-web-connections.test.mjs:139:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'fin', 'rst' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

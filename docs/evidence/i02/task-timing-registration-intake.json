@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T03:26:16.303845+00:00",
+  "mainBefore": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "kind": "metadata source registration and owner status correction",
+  "validation": "185 unique registrations; exact canonical/claim identity verified, no product test or dashboard restart",
+  "runtimeLoad": "pending ACCESS deployment; do not claim185loaded",
+  "files": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "fixedRef": "2ac6248a00c38c5bef3fbc61ec2555ecd832d342",
+      "bytes": 25259,
+      "sha256": "434e90dae321863fda3785169409d87f084754ac79165f17f558f6c1ca5f74fd"
+    },
+    {
+      "path": "docs/evidence/d05/task-timing-registry-intake.json",
+      "fixedRef": "2ac6248a00c38c5bef3fbc61ec2555ecd832d342",
+      "bytes": 983,
+      "sha256": "fdfc479e680fd3d3c5dafebb7f203a7a408c042f71d412f3988d375b2959a925"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "fixedRef": "2ac6248a00c38c5bef3fbc61ec2555ecd832d342",
+      "bytes": 29909,
+      "sha256": "80d1687c5b07a61f6a92a8b50778c5530764d194c1d9c75d2056c06ff5bc73ce"
+    },
+    {
+      "path": "plans/chat05p01-native-activity-body/status.md",
+      "fixedRef": "ce92122607e661051cb6f3b54a9a7c6b758cce5d",
+      "bytes": 4501,
+      "sha256": "d0f3f1297e0d16cbde020739ee79914da8da0de279509af8644faff8d3dda90c"
+    }
+  ]
+}

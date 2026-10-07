@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-10-06T21:40:41.737383+00:00",
+  "sourceTarget": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "workingHead": "0e7b2da397db159d46d91385023cb904fffe7f48",
+  "freeBeforeBytes": 1154482176,
+  "minimumFreeBytes": 1077936128,
+  "command": [
+    "python3",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_new_session_zero_term_grace_is_rejected_before_spawn",
+    "SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent"
+  ],
+  "expectedSelected": 2,
+  "expectedUnselected": 11,
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "privateFilesCreatedByTests": 0,
+  "bindings": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 11993,
+      "sha256": "eee3e06564bbc2ec5389af225d0f14bde58a8b7c907e083693e1489715f13575"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 10766,
+      "sha256": "e15034349a0ad4996186de16f75a9215350f729ad0d6ef5d86635accbba9de2a"
+    }
+  ],
+  "state": "COMPLETED",
+  "exitCode": 0,
+  "elapsedMs": 581,
+  "outputBytes": 712,
+  "outputSha256": "c76de8f47f4cee28aef722eb951dbf4a53b9752d52729fc93c8be64afef5f121",
+  "freeAfterBytes": 1154351104
+}

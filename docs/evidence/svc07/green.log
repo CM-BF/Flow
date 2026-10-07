@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect
+
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves result and healthy transaction mode readOnly=false 1ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves result and healthy transaction mode readOnly=true 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves acquisition failure without invoking work or releasing a missing client 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > covers fatal error immediately after checkout callback before its promise continuation 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a failed borrowed client until pending work settles and never runs it twice 1ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves fatal active-query failure and allows a later independent healthy transaction 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=false 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains unknown COMMIT failure when rollback also fails=true 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps an acknowledged COMMIT result when an error arrives before the await resumes 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > preserves HttpError and reuses a healthy client after rollback 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure undefined despite rollback and release errors 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > retains a non-Error work failure null despite rollback and release errors 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > keeps the business failure when connection error occurs during rollback 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > handles BEGIN rejection without running work and keeps its failure if rollback rejects 0ms
+ ✓ apps/server/src/database-transaction.test.ts > public transaction connection lifetime > leaves the next borrower protected during synchronous release handoff 0ms
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  13:07:39
+   Duration  133ms (transform 19ms, setup 0ms, import 29ms, tests 5ms, environment 0ms)
+

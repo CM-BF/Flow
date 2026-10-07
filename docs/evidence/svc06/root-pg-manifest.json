@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-07T03:22:18.780830+00:00",
+  "source": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+  "base": "82bebb856d1bdaca5bf5b9836491ef553f67df53",
+  "evidenceRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+  "review": "PENDING_EXECUTION_LEAD",
+  "bindings": [
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 11836,
+      "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 10913,
+      "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c"
+    },
+    {
+      "kind": "directInput",
+      "path": "package.json",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "kind": "directInput",
+      "path": "pnpm-lock.yaml",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/package.json",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/web/package.json",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/preview.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "fixedRef": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/check.py",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 4939,
+      "sha256": "8c661c48b572a2d43ce1e98c5d85d41e15d339c9283e2e1b53c276530a79ccb9"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source/stderr.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source/stdout.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 7327,
+      "sha256": "782d4d659eab59f4dd907553c9e6917d8d764fca8b73be85a3367f6f530f4de6"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source-selection.mjs",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 2501,
+      "sha256": "853d17ef6fbe3950abb3ca79f4cc2e16352a547aa9de5a8812e4eb92d9fd14f7"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/green/stderr.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/green/stdout.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 465,
+      "sha256": "610585582d0ef9bf3c1b93c68cf17bfbf06143d1fbe00f3bfa049bd5cfc61c9f"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/red/stderr.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/red/stdout.txt",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 1236,
+      "sha256": "88d999a6e87460b1a08263d3f85b50245bb02a6da45c9da38f506820154f6ab6"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-validation/run.json",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 9277,
+      "sha256": "9c1084eae17f4da6f855713c4b6d8c1b8cec2fbde809f007cdb163a66be822a6"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/root-pg-checks.md",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 2011,
+      "sha256": "f18654dd0f35225513659a54331df3437b8a5bece30238dab225b990c0936f8a"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/host-tools-main-receipt.json",
+      "fixedRef": "19c26e1387df97eb946824b7d4dbc2f51039aa47",
+      "bytes": 1178,
+      "sha256": "e99e15f21ec050d93f96b49451f582005e3a916891d98c9124f5e5c83adeb0f1"
+    }
+  ],
+  "checks": {
+    "distinct": 3,
+    "red": 1,
+    "green": 3,
+    "pureFixedLockSelection": "exit0;7importers/271 snapshots;no installation",
+    "supervisorMs": 677,
+    "rawBytes": 9028,
+    "groupsAbsent": 3,
+    "tmpRemoved": 3,
+    "fullArtifact": "NOT_RUN"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-10-06 12:28:34 UTC",
+  "base": "daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a",
+  "fixedMainInput": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "source": [
+    "apps/server/src/context-transparency/store.ts",
+    "apps/server/src/context-transparency/attachment-history.test.ts"
+  ],
+  "red": {
+    "selected": 1,
+    "failed": 1,
+    "unselected": 3,
+    "exitCode": 1,
+    "raw": "attachment-red.txt",
+    "failure": "public attachment-only v2 accepted/claimed; context observation runner.report rejects before completion",
+    "cleanup": "attachment-red-cleanup.json"
+  },
+  "green": {
+    "selected": 4,
+    "passed": 4,
+    "skipped": 0,
+    "exitCode": 0,
+    "raw": "attachment-green.txt",
+    "cleanup": "attachment-green-cleanup.json"
+  },
+  "direct": {
+    "selected": 17,
+    "passed": 17,
+    "skipped": 9,
+    "skipReason": "pre-existing PostgreSQL store block gated by FLOW_WPF04_PG; not run, not counted",
+    "exitCode": 0,
+    "raw": "attachment-direct.txt"
+  },
+  "distinctPassed": 21,
+  "strict": {
+    "exitCode": 0,
+    "raw": "attachment-typecheck-first.txt",
+    "config": "attachment-validation-config.json",
+    "effective": "attachment-effective-tsconfig.json",
+    "scope": "two changed source/test entries plus direct existing store/DTO test and actual server factory; all root compiler options inherited"
+  },
+  "providerCalls": 0,
+  "sdkCalls": 0,
+  "productionLinesAdded": 3,
+  "unknown": [
+    "history material DTO cannot express attachment inventory; v2 materials unknown and materialRevisionDigest null",
+    "current/remaining/cut/SDK control availability remain unproved"
+  ],
+  "oldSourcePreservation": {
+    "producer4": "same as eccb approved Git",
+    "publicDTO": "unchanged",
+    "conversationContext": "unchanged",
+    "existingTestsAssertionsRemoved": 0
+  },
+  "commands": {
+    "red": "PATH=/opt/homebrew/opt/node@24/bin:$PATH FLOW_WPF04_ATTACHMENT_EVIDENCE=<owner>/docs/evidence/wpf-mature-04/attachment-red-cleanup.json <main>/node_modules/.bin/vitest run --config /tmp/flow-04-attachment.vitest.mjs apps/server/src/context-transparency/attachment-history.test.ts -t records attachment-only",
+    "green": "same configured Vitest with explicit attachment-history.test.ts, no name filter",
+    "direct": "same configured Vitest with explicit store.test.ts and context-observation-history.test.ts",
+    "typecheck": "PATH=/opt/homebrew/opt/node@24/bin:$PATH <main>/node_modules/.bin/tsc --noEmit -p /tmp/flow-04-attachment.tsconfig.json"
+  }
+}

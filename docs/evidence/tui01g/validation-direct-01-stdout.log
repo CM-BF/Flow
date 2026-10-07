@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings
+
+ ✓ packages/interaction/src/controller.test.ts (15 tests) 15ms
+ ✓ packages/interaction/src/queue-control/controller.test.ts (12 tests) 15ms
+ ✓ packages/interaction/src/task-control/controller.test.ts (8 tests) 16ms
+ ❯ apps/tui/src/terminal.test.ts (4 tests | 2 failed) 1157ms
+   ✓ private intent survives reopen, blocks a second owner and is cleared atomically 33ms
+   ✓ headless commands use the shared handler and quit without executing provider work 3ms
+   × actual Ink and controlled TextInput render without a local assistant runtime 1089ms
+   × descriptor completion changes the controlled editor without adding a literal tab 31ms
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  2 failed | 37 passed (39)
+   Start at  19:15:29
+   Duration  3.05s (transform 267ms, setup 0ms, import 1.52s, tests 1.20s, environment 0ms)
+

@@ -1,0 +1,9 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+> tsc --noEmit -p tsconfig.json
+
+src/plugin-integration/attachments.tsx(217,74): error TS2339: Property 'viewId' does not exist on type 'ResourceContext'.
+  Property 'viewId' does not exist on type '{ readonly kind: "global"; }'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

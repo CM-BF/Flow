@@ -1,0 +1,51 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/browser-session-production.test.ts (3 tests | 2 failed) 2398ms
+   × mounts migration and the unsupported public probe by default while preserving owner/runner roles 1165ms
+   × uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work 95ms
+   ✓ starts the public entry with explicit bounded configuration and rejects malformed configuration before serving  1010ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > mounts migration and the unsupported public probe by default while preserving owner/runner roles
+AssertionError: expected { assignment: null, …(1) } to deeply equal { assignment: null }
+
+- Expected
++ Received
+
+  {
+    "assignment": null,
++   "remainingLeaseMs": 0,
+  }
+
+ ❯ packages/client/src/browser-session-production.test.ts:58:34
+     56|     const registration = await owner.registerRunner({ name: 'Legacy ro…
+     57|     const runner = new FlowClient({ baseUrl: address, token: registrat…
+     58|     expect(await runner.claim()).toEqual({ assignment: null });
+       |                                  ^
+     59|     await expect(owner.claim()).rejects.toMatchObject({ status: 403 });
+     60|     await expect(runner.list()).rejects.toMatchObject({ status: 403 });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work
+AssertionError: expected 200 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 200
+
+ ❯ packages/client/src/browser-session-production.test.ts:94:102
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  06:26:48
+   Duration  3.48s (transform 433ms, setup 0ms, import 986ms, tests 2.40s, environment 0ms)
+

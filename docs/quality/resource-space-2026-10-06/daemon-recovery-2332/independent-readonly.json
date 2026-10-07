@@ -1,0 +1,191 @@
+{
+  "kind": "ORBSTACK_EXISTING_DAEMON_PG_RECOVERY_READONLY",
+  "observedAt": "2026-10-06T23:33:56.936310+00:00",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "state": "DAEMON_STOPPED; EXISTING_CONTAINER_IDENTITY_ONLY_HISTORICAL",
+  "freshReadOnly": {
+    "orbctl": {
+      "path": "/opt/homebrew/bin/orbctl",
+      "realpath": "/Applications/OrbStack.app/Contents/MacOS/scli.app/Contents/MacOS/scli",
+      "version": "2.2.1 (2020100)",
+      "commit": "0e182b501fcd9e05b99ffb363fce03610390c400 (v2.2.1)",
+      "status": "Stopped",
+      "statusExit": 1
+    },
+    "docker": {
+      "path": "/usr/local/bin/docker",
+      "realpath": "/Applications/OrbStack.app/Contents/MacOS/xbin/docker-tools",
+      "version": "29.4.0, build 9d7ad9f",
+      "explicitContext": "orbstack",
+      "contextEndpoint": "unix:///Users/citrine/.orbstack/run/docker.sock"
+    },
+    "socket": {
+      "varRunSymlinkExists": true,
+      "varRunSymlinkTarget": "/Users/citrine/.orbstack/run/docker.sock",
+      "actualEndpointExists": false
+    },
+    "leadSuppliedNotReprobed": {
+      "at": "2026-10-06T23:32:30Z",
+      "guiPid": 6713,
+      "ports55432and61227": "ECONNREFUSED",
+      "ports61228and4320": "listening",
+      "freeBytes": 1063374848
+    }
+  },
+  "installedHelpRead": {
+    "topLevel": "orbctl start starts OrbStack or a machine; docker extension help explicitly says use Docker CLI for containers and engine is orbstack context",
+    "startUsage": "orbctl start [flags] [ID/NAME]...",
+    "noMachineArgument": "starts all machines that were running when it was last stopped",
+    "avoidAllFlag": true,
+    "statusExitCodes": {
+      "Running": 0,
+      "Starting": 2,
+      "Stopped": 1
+    },
+    "dockerStartUsage": "docker start [OPTIONS] CONTAINER [CONTAINER...]",
+    "dockerContextInspectFormatAvailable": true
+  },
+  "historicalKnownPg": {
+    "Id": "2c45767d48024581ca5c320b1dbeb3ecf0e37d5ac4333d114d008e66d93584d0",
+    "Name": "/flow-f00-postgres-1",
+    "Created": "2026-10-06T00:47:24.182121125Z",
+    "Image": "sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0",
+    "Mounts": [
+      {
+        "Type": "volume",
+        "Name": "flow-f00_flow-postgres",
+        "Source": "/var/lib/docker/volumes/flow-f00_flow-postgres/_data",
+        "Destination": "/var/lib/postgresql/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "RW": true,
+        "Propagation": ""
+      }
+    ],
+    "RestartPolicy": {
+      "Name": "no",
+      "MaximumRetryCount": 0
+    },
+    "PortBindings": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "55432"
+        }
+      ]
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "2d2a8e3baca8a689de7204d77e1a83874b0586a6297053613a29b8bd34eb0af0",
+      "com.docker.compose.container-number": "1",
+      "com.docker.compose.depends_on": "",
+      "com.docker.compose.image": "sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0",
+      "com.docker.compose.oneoff": "False",
+      "com.docker.compose.project": "flow-f00",
+      "com.docker.compose.project.config_files": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation/compose.yaml",
+      "com.docker.compose.project.working_dir": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation",
+      "com.docker.compose.service": "postgres",
+      "com.docker.compose.version": "5.1.2"
+    }
+  },
+  "historicalImageTag": "postgres:16.13-alpine",
+  "priorRecovery": {
+    "beforeAt": "2026-10-06T19:26:36.057874+00:00",
+    "afterAt": "2026-10-06T19:26:58.007081+00:00",
+    "daemonStartOutcome": "exit1 timeout, then observed Running; not retried",
+    "containerStartOutcome": "exact existing full ID once; no recreate",
+    "preserved": {
+      "Id": true,
+      "Name": true,
+      "Image": true,
+      "Created": true,
+      "Mounts": true
+    },
+    "portsPreserved": true,
+    "restartPolicyPreserved": true,
+    "pgFinalStatus": "running",
+    "pgFinalHealth": "healthy",
+    "daemonWakeSideEffects": "Historical after-start listed other already-existing multica containers up; no claim that daemon restoration affects only Flow PG. CLI no-arg semantics can restore previously running machines."
+  },
+  "minimalProposedSequenceNotExecuted": [
+    {
+      "step": 1,
+      "action": "Under explicit operator execution window, invoke existing /opt/homebrew/bin/orbctl start once with no machine names and no --all; no reset/delete/recreate/update/config changes.",
+      "guard": "This can restore previously running machines; requires daemon-restoration scope, not claimed to be PG-only."
+    },
+    {
+      "step": 2,
+      "action": "Bounded read-only orbctl status and exact socket observation after the single start. A timeout/nonzero alone is not proof of failure. If Starting/unknown, preserve and report; do not automatically invoke start a second time.",
+      "precedent": "19:26 original start exit1 timeout subsequently Running; no retry."
+    },
+    {
+      "step": 3,
+      "action": "Once daemon is Running, use docker --context orbstack inspect --type container on exact existing ID 2c45767d48024581ca5c320b1dbeb3ecf0e37d5ac4333d114d008e66d93584d0, with restricted formatted fields only: Id/Name/Created/Image/State status+Running+health status/Mounts/PortBindings/RestartPolicy/compose identity labels. Do not print Config.Env, credentials, SQL, or health log bodies.",
+      "guard": "Compare full identity, immutable image, existing volume name/destination/driver, 127.0.0.1:55432 mapping and compose project/service to saved before/after. Missing/different/unknown stops; no compose up/run/pull."
+    },
+    {
+      "step": 4,
+      "action": "If exact container already running, only observe readiness. If exact identity matches and state is stopped, start that exact full ID once with docker --context orbstack start <fixed ID>; do not attach or forward signals.",
+      "guard": "No new container, volume, image, registration, profile, task or migration; no restart-policy change. Current mutable container status cannot be known until daemon is restored."
+    },
+    {
+      "step": 5,
+      "action": "Save restricted final state/health/listener and unchanged identity/volume/port facts; future coordination read may establish ledger availability.",
+      "guard": "No product tests, SQL mutation or claim of personal center restoration from PG health. Actual finite execution deadline and resource admission belong to operator window, not this read-only report."
+    }
+  ],
+  "personalCenterBoundary": {
+    "currentExpectedBackend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "maintenanceVersion": 18,
+    "source": "Lead current direction and existing accepted release review, not a new personal probe",
+    "webArtifact": "d629 / v3 per accepted release; no tab reload or web operation",
+    "forbiddenStaleRecovery": "Old 19:45 center recovery fixed362/v15 is historical and must not be run for current center. Center recovery needs current af51/v18 owned identity/source/DB facts and separately fixed center-only entry; this task only proposes daemon+same PG container recovery.",
+    "releaseReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/svc05h-retirement-release-result-review.json",
+      "sha256": "233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae"
+    }
+  },
+  "knownUnknowns": [
+    "Why daemon stopped is NOT_PROVEN; low free space correlation is not diagnosis.",
+    "Current container and volume state inaccessible while daemon socket absent. Historical exact identifiers provide verification baseline, not current liveness proof.",
+    "Volume bytes, PG database/table retention and current unfinished tasks are not checked in this read-only CLI audit.",
+    "GUI PID presence does not establish daemon Running."
+  ],
+  "evidence": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/resource-space-2026-10-06/daemon-recovery/preflight.json",
+      "bytes": 1140,
+      "sha256": "0712d65b8540d98f467ca9fcb4e6ce6417875cf5748b58a65888353319c8456e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/resource-space-2026-10-06/daemon-recovery/after-start.json",
+      "bytes": 653,
+      "sha256": "dd8fe06692a4c7f34cd494c628f4e8d71883982cbe0a4f929a365c9c66fdbb31"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/resource-space-2026-10-06/daemon-recovery/container-before.json",
+      "bytes": 1929,
+      "sha256": "8328c5f71b17bde5e613e837747d7033ad1094cc62c2ce05e1803727669ec227"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/resource-space-2026-10-06/daemon-recovery/container-after.json",
+      "bytes": 2189,
+      "sha256": "bf178b5289517989dd194482b05f8216437cfd09dda5558b7cbdd71c4c2a7c90"
+    }
+  ],
+  "actions": {
+    "readHelpVersionStatusContext": true,
+    "daemonStarts": 0,
+    "serviceStops": 0,
+    "containerStarts": 0,
+    "containerRecreate": 0,
+    "deletions": 0,
+    "projectWrites": 0,
+    "installs": 0,
+    "tests": 0,
+    "productPg": 0,
+    "provider": 0,
+    "credentialReads": 0,
+    "homeScan": false
+  },
+  "limitations": "No automatic recovery performed. All previous recovery raw remains unchanged. Report is a minimal existing-tool method, not execution authorization."
+}

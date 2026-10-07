@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T20:45:22.956302+00:00",
+  "sourceTarget": "d147a636f9cb54a8c87a89a89963d13e937cee9c",
+  "bindingsChecked": 782,
+  "mismatches": [],
+  "inspection": [
+    "af51 createServer: Pool/migrate/scheduler/listen are only factory body operations",
+    "local runtime: runRunner exported; no top-level admission call",
+    "fixture type-only default center and optional dynamic createServer only inside start; no top-level test hook",
+    "R01 fixture/inventory/transport imports define functions/constants only",
+    "af51 artifact/release helpers guarded direct-entry CLI; environment exported functions only",
+    "O16 guard direct-entry condition does not run on import"
+  ],
+  "nonInvocations": [
+    "createServer",
+    "runRunner",
+    "CancelJourney constructor",
+    "diskBytes",
+    "verifyWebArtifact",
+    "releaseAsset",
+    "watchdog",
+    "Playwright launch/connect"
+  ],
+  "checker": "import-only.mjs blocks network/listen/application subprocess/fetch; allows only existing tsx esbuild service loader"
+}

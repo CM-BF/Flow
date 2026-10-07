@@ -1,0 +1,24 @@
+{
+  "driverPid": 42974,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 3,
+  "ownedGroups": [
+    {
+      "pgid": 42974,
+      "state": "stopped"
+    }
+  ],
+  "reason": "raw-output-bound-or-write-failed",
+  "last": {
+    "stageBytes": 0,
+    "outerBytes": 339,
+    "capturedBytes": 65536,
+    "totalBytes": 65875
+  },
+  "stopCheckpoint": "durable",
+  "signal": "unknown",
+  "exitCode": null,
+  "signalCode": "SIGTERM",
+  "elapsedMs": 103
+}

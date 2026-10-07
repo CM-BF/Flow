@@ -1,0 +1,36 @@
+{
+  "approvalId": "TUI01F-03-20261006-1714",
+  "startedAt": "2026-10-06T17:15:35.561165+00:00",
+  "source": "40508f18432ffc20eadd638b208841a364c72bea",
+  "backend": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "head": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+  "sourceHashes": {
+    "apps/tui/src/task-controls/fixture.ts": "b67b3dfeec27ca409d1ad661c49fba96498e8101e144e822135bed91e10accc2",
+    "apps/tui/src/task-controls/journey.test.ts": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153",
+    "apps/tui/test-fixtures/cancel_driver.py": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f"
+  },
+  "freeBefore": 1237680128,
+  "gate": 1140850688,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/tui/src/task-controls/journey.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "--maxWorkers",
+    "1"
+  ],
+  "evidenceDirectory": "/tmp/flow-tui01f-03-approved-window-1",
+  "temporaryRoot": "/tmp/flow-tui01f-03-20261006-1714/temporary",
+  "limits": {
+    "workSeconds": 120,
+    "cleanupSeconds": 60,
+    "observedRawThreshold": 4194304,
+    "observedTmpThreshold": 16777216,
+    "sharedFreeThreshold": 1073741824
+  },
+  "providerCalls": 0,
+  "attempt": 1
+}

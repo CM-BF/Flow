@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-06T15:01:26.795368+00:00",
+  "target": "e6827d8a30fd103e34966a5d7298570545865057",
+  "delivery": "96712f914ddb2cf4fae3b932ac48b41250a87bbd",
+  "sources": [
+    {
+      "kind": "source",
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "bytes": 16489,
+      "sha256": "b290c966c55d3c169416bd81f7e2529dd75d24436c061657dca6f29106baddcd"
+    }
+  ],
+  "review": "docs/evidence/x01/host-gates-independent-review.json",
+  "validation": "Existing 21 direct/strict original evidence accepted; two actual source blobs equal reviewed target. Existing main host baseline equaled sourceBase. No new tests/PG/provider.",
+  "limit": "Host callback gates only; no center grant endpoint/runtime retained wiring/persistent recovery or public vertical approval."
+}

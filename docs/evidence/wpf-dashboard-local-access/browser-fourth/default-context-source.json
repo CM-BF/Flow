@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07 03:46:17 UTC",
+  "state": "SOURCE_FIXED_NOT_RUN",
+  "source": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "previous": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "sourceOnlyPath": "apps/execution-dashboard/test/local-access.browser.mjs",
+  "otherSixSourcesEqual08ec": true,
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/types/types.d.ts",
+      "bytes": 1131883,
+      "sha256": "2806f6d7810fba0306066d500cd716a6d1128d90af2c3cf71723e3ea0a8904c4"
+    }
+  ],
+  "facts": [
+    "coreBundle.js37634-37638 skips focus emulation only when noDefaults and this context is browser defaultContext.",
+    "types/types.d.ts25534-25545 public noDefaults docs explicitly exclude newContext.",
+    "coreBundle.js38749-38752 default context doClose returns close-browser;51919-51921 closes the browser.",
+    "coreBundle.js62784-62795 Browser.close ignores target-already-closed errors; original worker owns process close/EOF and handles final close."
+  ],
+  "interface": "Caller launches fresh PID with exclusive newly-created profile, obtains CDP from that profile, connects noDefaults:true, requires exactly one default context and only initial about:blank pages. It passes this context explicitly. Fixture never guesses browser ownership or creates another context.",
+  "cleanup": "Fixture owns transferred context and closes it, knowingly closing only that admitted fresh browser. Original worker still tracks that exact Chrome PID and waits exit/dualEOF, and original parent owns process group/scratch. No new framework.",
+  "scenarioPreservation": "All first4 assertions and fifth real-hidden→token-empty/no-storage remain; remove only unsuccessful separate-session focus override enable/disable. Retain exact own window fallback and finally restore/detach/own tab close.",
+  "budget": {
+    "previousConservativeMs": 30839,
+    "remainingTotalMs": 29161,
+    "workMs": 14161,
+    "cleanupMs": 15000,
+    "newRuntimeMs": 0
+  },
+  "limitations": [
+    "Public/local source observation, not installed Chrome fourth-run proof.",
+    "No personal browser/config/secret/user tabs.",
+    "Prior3failures and original60s budget retained. Sharedheavy currently S01; no runtime authority."
+  ]
+}
