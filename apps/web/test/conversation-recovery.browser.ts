@@ -1523,6 +1523,7 @@ async function worker(init: Init) {
         const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
         if (init.journey === "appearance") await expect(dialog).toContainText("Saved recovery draft 中文🙂");
         const rect = await dialog.evaluate(element => {
+          if (!(element instanceof HTMLElement)) throw Error("The dialog geometry requires an HTML element.");
           const box = element.getBoundingClientRect(), css = getComputedStyle(element);
           return { client: element.clientWidth, scroll: element.scrollWidth, width: box.width, left: box.left, right: box.right, top: box.top, bottom: box.bottom,
             radius: parseFloat(css.borderTopLeftRadius), paddingEnd: parseFloat(css.paddingInlineEnd), scrollbarWidth: element.offsetWidth - element.clientWidth, gutter: css.scrollbarGutter };
