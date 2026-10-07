@@ -58,7 +58,7 @@ export function validateMigration(input) {
 }
 export function validatePlan(plan) {
   assert.equal(plan.purpose, 'SVC06B_SAME_HELD_OPERATION_CONTINUATION');
-  assert.equal(plan.runDirectory, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once');
+  assert.equal(plan.runDirectory, '/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once');
   assert.equal(plan.ready, true, 'FRESH_FACTS_AND_FOUR_REPORTS_REQUIRED');
   assert.equal(plan.operationId, OPERATION); assert.equal(plan.version, 23);
   assert.match(plan.requestId, /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/);
