@@ -1,5 +1,15 @@
 # WPF-RELEASE01 review
 
+**状态：NOT_STARTED（新版 Cookie 后继固定源码；strict通过，浏览器未运行）**
+
+Review target commit：8964dc1185f62ed8934c15416e9798929359ab89
+
+范围：apps/web/test/web-release-compatibility.fixture.ts、apps/web/test/web-release-compatibility.browser.ts。
+
+[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)交 root 集中独审。旧三份兼容证据不迁移到7272新后台；新descriptor尚未供给。作者不自行批准。
+
+## 历史：9658 三保留 App 兼容性批准及 main 接收
+
 **状态：APPROVED（固定两harness与三App实际兼容；非个人部署或新backend验收）**
 
 Review target commit：9658a6b763de69038778de1b0c16de64ff824c75

@@ -1,0 +1,179 @@
+{
+  "kind": "OWN_METADATA_ONLY",
+  "observedAt": "2026-10-07T13:17:31.307Z",
+  "statusSha256": "b0dd754226352ad3efeef6487eb4a990a9d6376660f1852b3032c0d59619d01c",
+  "parserSource": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+  "parserSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+  "parsed": {
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |\n| RELEASE01-W02 | UNKNOWN | OPEN | 产物供给 | 原发布owner提供固定7272新Web与后台descriptor及实际输入后解除；仅阻actual，不阻源码准备 | [固定后继输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json) |"
+    },
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+        "id": "WPF-MATURE-01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "新版会话网页的发布验收正在准备，保留旧三App兼容与历史证据",
+      "next": "新版Cookie验收固定源码交独审及必要局部提案；新产物待原发布负责人供应",
+      "blocker": {
+        "state": "active",
+        "text": "新Web及含迟到退出修复的后台不可变产物尚待原发布负责人供应；独立源码准备可继续"
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "8964dc1185f62ed8934c15416e9798929359ab89",
+      "scopes": [
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "apps/web/test/web-release-compatibility.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-RELEASE01",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-release-compatibility",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-07T13:16:12.934Z",
+    "updatedRecord": "2026-10-07T13:16:12.934Z",
+    "todos": [
+      {
+        "id": "RELEASE01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json)"
+      },
+      {
+        "id": "RELEASE01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史两App真实兼容](../../docs/evidence/wpf-release01/README.md)"
+      },
+      {
+        "id": "RELEASE01-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json)"
+      },
+      {
+        "id": "RELEASE01-04",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS"
+      },
+      {
+        "id": "RELEASE01-05",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；[c3唯一actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)三App各4项与独立Cookie PASS/完整cleanup，全部首红保留"
+      },
+      {
+        "id": "RELEASE01-06",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付"
+      },
+      {
+        "id": "RELEASE01-07",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "[Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED，独审/检查未完成"
+      },
+      {
+        "id": "RELEASE01-08",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "新immutable tuple实际、独审与原发布者接收；尚未供给/运行"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase",
+    "declaredDirty": "两harness已固定8964dc1；本次仅自有metadata封存，正常push后报告clean",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN 当前新App Cookie后继；旧9658/c3已交付证据保历史"
+    },
+    "reviewRecord": "[review.md](review.md)：新Cookie后继NOT_STARTED，旧9658/c3批准仅历史范围",
+    "mainRecord": "NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED（新版 Cookie 后继固定源码；检查与实际均未运行）**",
+    "target": "8964dc1185f62ed8934c15416e9798929359ab89"
+  },
+  "proof": {
+    "target": "8964dc1185f62ed8934c15416e9798929359ab89",
+    "head": "8964dc1185f62ed8934c15416e9798929359ab89",
+    "scopes": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts"
+    ],
+    "observedAt": "2026-10-07T13:17:31.220Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "plans/wpf-release01-product-compatibility/plan.md",
+      "plans/wpf-release01-product-compatibility/review.md",
+      "plans/wpf-release01-product-compatibility/status.md",
+      "docs/evidence/wpf-release01/recovery-cookie/README.md",
+      "docs/evidence/wpf-release01/recovery-cookie/claim-receipt.json",
+      "docs/evidence/wpf-release01/recovery-cookie/claim-request.json",
+      "docs/evidence/wpf-release01/recovery-cookie/design-input.json",
+      "docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json",
+      "docs/evidence/wpf-release01/recovery-cookie/previous-status.md",
+      "docs/evidence/wpf-release01/recovery-cookie/quality.md",
+      "docs/evidence/wpf-release01/recovery-cookie/skill-inputs.json",
+      "docs/evidence/wpf-release01/recovery-cookie/source-manifest.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "productChecks": "NOT_RUN"
+}

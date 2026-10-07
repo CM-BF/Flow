@@ -1,8 +1,8 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：delivered（原REQ19后继工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
+状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
 
-## 当前固定origin后继
+## 历史：三保留App固定origin片段
 
 复用原两harness及公共发布接口，三份immutable App→同一最终backend/context。实际App保持Bearer，独立Cookie/CSRF为补充来源；format1 artifact可用format2 compatibility report但不补releaseId。固定origin61228仅从受控Chrome真实页面访问，精确ownedproxy转自有动态center；Node/PW APIRequestContext不能访问61228。禁止rebuild/install/个人连接/旧tuplefallback。设计及精确输入见[报告](../../docs/evidence/wpf-release01/fixed-origin/report.md)，已审网络补充见[design-review](../../docs/evidence/wpf-release01/fixed-origin/design-review.json)。
 
@@ -41,6 +41,15 @@ c3准备source/native独审已接受，管理新独立一次180sNEXT，紧前fre
 
 c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495ms/完整清理。原失败保留，等待独立证据审及RELEASE01-06主线接收，不自动追加运行。
 
-## 当前交付
+## 历史：前片段交付
 
 [独立实际批准与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)已完成；188后继路径同c06fa。保失败、不重跑已绿检查，个人更新/后继后台不扩称。
+
+## 当前：新版Cookie网页后继（2026-10-07）
+
+- [ ] RELEASE01-07 在原fixture/browser显式加入固定7272新版App，Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
+- [ ] RELEASE01-08 原发布owner供给新Web与后台descriptor，合法有界实际与集中独审后由其发布；不借旧tuple/PASS。
+
+[已审只读设计](../../docs/evidence/wpf-release01/recovery-cookie/design-input.json)。旧3报告必须对新backend/context重新产生；新App不伪为Bearer。仅原4scope，0产品检查/PG/Chrome/build/install，缺产物失败关闭。
+
+本后继首固定源码8964dc1185f62ed8934c15416e9798929359ab89；RELEASE01-07仅源码完成，必要strict已单次通过，集中独审仍未完成，故不勾选。结构与数据输入见[本段入口](../../docs/evidence/wpf-release01/recovery-cookie/README.md)。
