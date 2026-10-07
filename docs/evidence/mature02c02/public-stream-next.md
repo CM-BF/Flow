@@ -1,6 +1,6 @@
 # C02-05 public stream seam — next implementation input
 
-Historical design baseline: main `451bf2ed1c0c3d7688073c8d060629f064044dc2`. Kernel `65c97315` is not this delivery; its pending-sink correction is `de0f3dc0`. Current implementation is now legally held by claim v8 / 51 literals; fixed public source `9e212e50`, whitespace-only source cleanup `6cbe91ff`; checks below are local, independent review pending.
+Historical design baseline: main `451bf2ed1c0c3d7688073c8d060629f064044dc2`. Kernel `65c97315` is not this delivery; its pending-sink correction is `de0f3dc0`. Current implementation is now legally held by claim v8 / 51 literals; initial public source `9e212e50`/`6cbe91ff`, coalescing `1160f60b`/`3921bec2`, final shared Host `5219ec25`; current25-source review entry is `public-stream-review-ready.json`, independent review pending.
 
 Follow-up main `422f4b15` read confirms `packages/contracts/src/assistant.ts:38–44,52–57,65–68` already has a distinct Codex final/settings/reference union. Reuse it; the Claude literals at18/50/64 are its own branches, not a missing global Codex final contract. Actual model/effort/tier remain unknown.
 
@@ -33,3 +33,5 @@ The one runner adapter publishes native session before its first patch, reuses t
 Local evidence: `public-stream-segment.json`, 89/89 actual cases across12 direct files; first strict failed only because fixed historical test baseline was absent. `public-stream-types-fix-segment.json` records input补齐后strict0. Synthetic Node JSONL32/512 and injected SQL receivers are distinguished from actual native and PG. All three checked processes/ownTMP closed; real PG, full conversation policy/catalog and UI remain pending. No public-stream source approval is claimed yet.
 
 Web消费精确补齐：shared `StreamHost.protocol` now accepts both finite versions; v2 Host enables the same projection, v1 rejects Codex metadata before patch reads, protocol change aborts in-flight projection generation and clears old data. Web `conversation-stream/host.ts` threev1 fields must move together with client opt-in, not falsely label a v2 HTTP client v1. This shared Host change is in our v8 scope; Web host/UI still original owner.
+
+Final local delivery:89 first +49 coalescing (1 new) +6 Host (3 new) =93 distinct passed across rounds; focused strict after each source delta0. Original types-first2 is retained. Final actual local closed04:46:58.696557Z; no PG/native/provider/UI execution. Final source5219ec25 supports Host protocol changes by aborting prior generation, clearing metadata/patches/final, and rejecting Codex metadata in v1. Exact live JSONL emission counters were not retained; <=16 and controlled-clock2 are assertion scopes, not HTTP measurement.

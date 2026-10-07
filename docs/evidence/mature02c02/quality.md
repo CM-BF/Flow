@@ -49,3 +49,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-07T04:19:26.622671+00:00：独审P2修复：pending sink必须收到合并signal，abort-aware等待不等于证明sink已停止；Promise.race保留原失败unknown，不新增监督器。只2新增取消反例+strict0，原104不重跑，6process/15min原段已闭合。独立import-only92d01931获status_read04:14:09批准，旧main接线可独立应用，不混stream。
 
 2026-10-07T04:40:35.501546+00:00: public-stream安全点沿find-skills已装clean-code/codebase-design；抽取真实Claude/Codex共同前缀封包，来源/完成仍各mapper负责，不复制FSM。中心复用既有事务和outbox，v1过滤在LIMIT前，v2保完整身份/频道；sourceMessageId明确generated correlation。89局部通过、types首缺baseline后补固定原件得0，保首失败；无PG/native/UI通过声明。直接新schema/动态SQL仍需独审与专用PG验收，未知thinking不伪造。
+
+2026-10-07T04:49:43.969912+00:00：公开stream交付安全点复核既有clean-code/codebase-design：共享UTF8/hash writer只封装机制，native item/频道/终态归各mapper；receive pump内8KiB/250ms接收时点合并降低碎片emit，不新增timer/FSM或关闭reasoning。shared Host有限v1/v2与代际失效统一管理旧flight，避免HTTP与投影协议错配。新增1合并反例与3Host反例，合计93 distinct，首次types缺件失败保留。CLI首次--input误用在apply前ENOENT，零stdout原件改为.stdout并独立correction，成功v8 receipt唯一。性能界限保留：实际HTTP与精确真实JSONLemit计数未测/未留；不以mapper计数冒整链性能。独审与动态SQL/界面仍未验，0额外运行。
