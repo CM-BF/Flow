@@ -12,7 +12,7 @@
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 当前产出 | Web独立宿主选择已进入主线；新产物的真实构建与内部加载已获独立批准。正在准备只启动网页角色的隔离验收，个人服务未改变。 |
 | 下一可用交付 | 交付隔离网页宿主的固定运行入口，再等待共享数据库窗口；个人采用另行验证。 |
 | 当前阻塞 | NONE |
@@ -94,3 +94,5 @@
 隔离Web宿主准备：[唯一入口及Interface](../../docs/evidence/svc08/flow-host-artifact/web-host-once/README.md)。真实PG/服务NOT_RUN；当前配置/原数据保留仅设计为自有合成哨兵，不将个人后台视为已再次验收。准备期间新路径列表曾误列不存在的manifest.mjs，未执行import/PG，已按固定index真实依赖files.mjs/node-identity修正；原工具错误保持。
 
 本次parseStatus首次调用遗漏登记taskId而返回标题不符，属调用参数错误；指定SVC08后errors/human missing均[]，不改parser/标题。仅node --check、Python ast.parse与列明输入/resolve核对，0产品运行。
+
+隔离宿主entry固定 `c8542aee8354fcfcdd6fb68aac5279d108548d4b`，[manifest](../../docs/evidence/svc08/flow-host-artifact/web-host-once/manifest.json)绑定5个entry/input、12个固定直接源与现存工具/包入口/产物/Web材料；真实host/PG仍NOT_RUN，等待唯一独审及共享窗口。实际构建结果主线回执ee98保持，未重测build/import。
