@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:40:33.000Z / main/origin53f50e069；个人只读健康事实已审接收，后继验证独立保留失败 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:43:38.000Z / main/origin17ac5917c；后继空间方法已审接收，个人只读与失败限定保持 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -37,6 +37,7 @@
 | FLOW-001-T04-DEPENDENCY-READ-01 | pending | Execution Lead排期，产品owner未领取 | 固定9a815源码推导的依赖串行读候选；当前未测，见plan同ID；个人发布/消息设置/S01当前修复优先 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
+| FLOW-001-T03-ERROR-01 | pending | Execution Lead排期 / 原runner与中心owner待领取 | 失败轻摘要类别/阶段/可选动作，当前源码与个人只读缺口已记录；发布和双槽验收后实施，0新探针/产品写入 |
 | CHAT05P01-06 | pending | Execution Lead / 原端owner | 底层P01/P02已交付；[唯一后继交接](plan.md#chat05-06-完整工具原文已交付底层与下一用户交付)明确SDK/CLI开通及两端共享reader，当前发布与SVC09A优先；无新writer/运行 |
 
 ## 已完成证据与检查
