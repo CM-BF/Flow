@@ -1,90 +1,13 @@
 {
-  "at": "2026-10-07T20:50:36.585351+00:00",
+  "at": "2026-10-07T20:51:48.437623+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-first-result-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-waiter-fix-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-runtime-preparation-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-second-result-review.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-new-claims-observation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/original-default-host-failure-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/original-personal-partial-failure-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/pending-source-registration-current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/process-review-approval-transcript.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-plugin-action-design.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/runner-main-handoff-ready.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/runner-runtime-approved-handoff.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/runner-runtime-handback-receipt.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-ready-final.json",
-    "docs/evidence/web-platform/mature-task-handoff.md",
-    "docs/evidence/web-platform/resource-window-current.json",
-    "plans/web-platform/plan.md",
-    "plans/web-platform/status.md",
-    "plans/wpf-mature-05-workspace/plan.md",
-    "plans/wpf-mature-05-workspace/status.md",
-    "plans/wpf-mature-06-chat/plan.md"
+    "plans/wpf-mature-05-workspace/status.md"
   ],
-  "links": [
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/pending-source-registration-current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/arc-source-registration-request.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/resource-window-current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-first-result-review.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-plugin-action-design.json",
-      "exists": true
-    }
-  ],
+  "links": [],
   "archiveHashes": [
     {
       "file": "i01-source-local-review.json",
@@ -480,6 +403,10 @@
     },
     {
       "file": "arc-http-waiter-fix-review.json",
+      "match": true
+    },
+    {
+      "file": "arc-http-second-result-review.json",
       "match": true
     }
   ],

@@ -1,0 +1,79 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-07T20:50:57.898908+00:00",
+  "decision": "ACCEPT_SECOND_ACTUAL_PARTIAL_FAILURE_AND_RETURN_NOT_FEATURE_PASS",
+  "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
+  "executionHead": "09e4dc4a2aee758190d22a11ff67398d77aef958",
+  "run": "ARC-FIFO-HTTP-WAITER-20261007-ONCE",
+  "startedAt": "2026-10-07T20:48:14.529496+00:00",
+  "actualExit": 1,
+  "chargeMs": 2652,
+  "totalMs": 30000,
+  "state": "CLOSED",
+  "unusedNotTransferred": true,
+  "results": [
+    {
+      "title": "Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",
+      "status": "failed",
+      "durationMs": 347.5552909999999
+    },
+    {
+      "title": "Arc removes hidden or closed FIFO waiters without retaining a reserved lease",
+      "status": "passed",
+      "durationMs": 178.5347499999998
+    }
+  ],
+  "notSelected": 11,
+  "artifacts": [
+    {
+      "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/segment.json",
+      "bytes": 3791,
+      "sha256": "1c854847cf6a73087de0a8756fcaa5112440b7666dfa22493fc440d3bd4db228"
+    },
+    {
+      "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/direct-1.json",
+      "bytes": 5507,
+      "sha256": "d3fccf6eb83876124274a5dc8a569df3addb3cb92c709281885ef6efcf3c2a2f"
+    },
+    {
+      "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/direct-1.outer.log",
+      "bytes": 3197,
+      "sha256": "024d9c2963708d5b9eb5bad11ad43437ced14ccbda1426a9cb0f17d6d026eb6f"
+    },
+    {
+      "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/post-cleanup.json",
+      "bytes": 279,
+      "sha256": "1ad3ec438e887425c3670145b2d89701e81197b0a780219c204403ffe9875bd6"
+    }
+  ],
+  "return": {
+    "at": "2026-10-07T20:48:31.490133+00:00",
+    "exactPIDAndGroup": {
+      "7418": "ESRCH",
+      "-7418": "ESRCH"
+    },
+    "scratchAbsent": true,
+    "regularFileLogs": true,
+    "dualEOFClaimed": false,
+    "independentPortProbe": false,
+    "actualToolExit": 1,
+    "PG": 0,
+    "Chrome": 0
+  },
+  "findings": [
+    "Controlled-response hidden and queued-dispose case actually passed in this run.",
+    "Backlog case failed at line65: some peer had not begun its second batch when another began its third. Raw failure only records boolean false, not task/cursor/request order.",
+    "First run passed backlog and failed removal; second passed removal and failed backlog. These cannot be combined into a whole-suite PASS."
+  ],
+  "staticDiagnosis": [
+    "Polling for >=2 patch requests does not freeze when the late third pane joins.",
+    "The strict global batch-round predicate can exceed work-conserving FIFO semantics: a still-inflight slow peer is not yet a waiter, so another free slot may continue serving actual queued work. Without saved trace this is a hypothesis, not the actual unique cause.",
+    "Next bounded source observation should retain real request order/late-join cursors and control actual response boundaries. Verify waiting participants receive released leases before a holder reacquires, complete bounded batches, repeated progress, two-lease peak and hidden/closed cleanup. Any corrected acceptance semantics must be explained and reviewed; preserve old FAIL evidence."
+  ],
+  "limits": [
+    "No product regression root cause established and no product correctness claim.",
+    "Exact recorded PID/PGID7418 ESRCH and own scratch absent. Regular-file logs are not dual pipe EOF, and no independent port probe was performed.",
+    "Root only read files/source; no additional test, process probe, browser or HTTP scenario.",
+    "Owner continues manager-assigned ordinary diagnosis; no automatic retry or transfer of old runtime. Personal restoration has priority."
+  ]
+}
