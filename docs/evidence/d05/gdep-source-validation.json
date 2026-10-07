@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T23:48:23.394Z",
+  "count": 212,
+  "task": {
+    "id": "GDEP01",
+    "title": "目标依赖材料批量读取",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+    "branch": "codex/goal-dependency-batch",
+    "planDir": "plans/gdep01-dependency-batch",
+    "evidenceDir": "docs/evidence/gdep01-dependency-batch"
+  },
+  "canonical": {
+    "errors": [],
+    "humanMissing": [
+      "当前阻塞"
+    ],
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-07T22:03:42.000Z",
+        "record": "2026-10-07T22:03:42Z"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "owner clock工具实际开始；原首段/准备段已封存，均非commit/claim反推；各实际事件见下方；本次PG22:45:32.728788Z启动"
+      },
+      "issues": [],
+      "waiting": "22:39:43Z起本次归档READY_CLOSED候选；排队/actual开始由后续真实manager事件记录，不推测此前等待或重置原任务起点。",
+      "waitingTable": {
+        "rows": [],
+        "issues": [
+          "等待记录不是约定表格；保留原文"
+        ]
+      }
+    }
+  },
+  "own": {
+    "errors": [],
+    "humanMissing": [],
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": "",
+      "waitingTable": {
+        "rows": [],
+        "issues": []
+      }
+    }
+  },
+  "limits": "Readonly registry/source/status validation only; not product test or actual dashboard reload. Owner retains canonical corrections."
+}
