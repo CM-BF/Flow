@@ -1,8 +1,12 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ConversationProjection } from "../src/conversations/projection";
 import { FlowClient } from "@flow/client";
-import type { TaskSnapshot } from "@flow/contracts";
-import { AppPluginSession, type AppActions } from "../src/plugin-integration/session";
+import type { TaskSnapshot, BrowserSessionReady } from "@flow/contracts";
+import { ConnectionSession } from "../src/connection/session";
+import { namespaceKey } from "../src/recovery/journal";
+import type { PluginRuntimeCommand } from "../../../packages/contracts/src/plugin-runtime";
+import { messageSettingsDraft } from "../src/plugin-integration/message-settings";
+import { AppPluginSession, type AppActions, type CenterRuntimePort } from "../src/plugin-integration/session";
 import { themes } from "../src/themes";
 import type { PluginDefinition } from "../src/plugins/types";
 
@@ -122,5 +126,100 @@ describe("retained view bindings", () => {
       session.releaseView("view"); expect(unsubscribe).toHaveBeenCalledTimes(2);
       session.releaseView("view"); expect(unsubscribe).toHaveBeenCalledTimes(2); expect(hostUnsubscribe).toHaveBeenCalledTimes(2);
     } finally { projection.dispose(); }
+  });
+});
+
+
+const connections: ConnectionSession[] = [];
+afterEach(() => { connections.splice(0).forEach(connection => connection.dispose()); vi.restoreAllMocks(); });
+const runtimeId = "00000000-0000-4000-8000-000000000001";
+const runtimeCommand: PluginRuntimeCommand = { expectedRevision: 3, reason: "Stop new bindings", change: { kind: "disable" } };
+async function runtimeSetup() {
+  let ready: BrowserSessionReady = { protocol: "flow.browser-session.v1", state: "ready", centerId: runtimeId,
+    ownerPrincipalId: "00000000-0000-4000-8000-000000000002", expiresAt: new Date(Date.now() + 3_600_000).toISOString(), csrfToken: "a".repeat(64) };
+  const connection = new ConnectionSession("http://127.0.0.1:1", () => ({
+    browserSession: async () => ready, connectBrowserSession: async () => ready,
+    logoutBrowserSession: async () => ({ protocol: "flow.browser-session.v1", state: "unauthenticated" }),
+  }));
+  connections.push(connection); await connection.read();
+  const namespace = connection.getSnapshot().identity!;
+  const client = new FlowClient({ baseUrl: namespace.baseUrl, browserSession: { csrfToken: connection.csrfToken } });
+  const writer = { commandPluginRuntime: vi.fn<FlowClient["commandPluginRuntime"]>() };
+  let active = true;
+  const port: CenterRuntimePort = { reader: client, writer, subscribe: connection.subscribe,
+    authorityKey: () => active && connection.authorized(namespace) ? JSON.stringify([namespaceKey(namespace), connection.getSnapshot().generation]) : null };
+  const { session, actions } = setup();
+  session.updateActions({ ...actions, centerRuntime: port });
+  return { session, actions, port, writer, connection, client,
+    changeReady: (patch: Partial<BrowserSessionReady>) => { ready = { ...ready, ...patch }; },
+    setActive(value: boolean) { active = value; session.updateActions({ ...actions, centerRuntime: port }); } };
+}
+
+describe("App session center runtime authority", () => {
+  it("retains UNKNOWN and exact key/body through observer unmount, local extension changes and unchanged session reads", async () => {
+    const current = await runtimeSetup(); const binding = current.session.centerRuntime.getSnapshot()!;
+    current.writer.commandPluginRuntime.mockRejectedValue(Error("controlled lost ACK"));
+    await binding.commands.submit(runtimeId, runtimeCommand);
+    const original = binding.commands.getSnapshot().command!;
+    const stop = binding.commands.subscribe(() => {}); stop(); // Settings reading subtree closes.
+    const draft = messageSettingsDraft(); const replace = vi.fn();
+    const settings: NonNullable<AppActions["messageSettings"]> = { read: () => ({ draft, generation: 1, editable: true, context: { profile: null, capability: null } }),
+      replace, profiles: vi.fn() };
+    current.session.updateActions({ ...current.actions, centerRuntime: current.port, messageSettings: settings });
+    const composer = current.session.messageSettingsBinding("draft-one"); composer.configure("draft-one", true);
+    await current.session.host.activate("sample.notes"); await current.session.host.deactivate("sample.notes");
+    await current.connection.read(); // Identical cookie authority does not create a new command lifetime.
+    expect(current.session.centerRuntime.getSnapshot()).toBe(binding);
+    expect(binding.commands.getSnapshot()).toMatchObject({ phase: "unknown", command: original });
+    expect(composer.authority()?.draft).toBe(draft); expect(replace).not.toHaveBeenCalled();
+    await binding.commands.retryOriginal(original);
+    const calls = current.writer.commandPluginRuntime.mock.calls;
+    expect(calls).toHaveLength(2);
+    expect(calls.map(call => [call[0], call[1], call[2]])).toEqual([[runtimeId, original.input, original.key], [runtimeId, original.input, original.key]]);
+    expect(JSON.stringify(calls[1]![1])).toBe(original.body);
+  });
+
+  it("revokes immediately on live auth generation change before a React actions update and rejects late completion", async () => {
+    const current = await runtimeSetup(); const old = current.session.centerRuntime.getSnapshot()!;
+    const response = deferred<Awaited<ReturnType<FlowClient["commandPluginRuntime"]>>>();
+    current.writer.commandPluginRuntime.mockReturnValue(response.promise);
+    const pending = old.commands.submit(runtimeId, runtimeCommand);
+    const signal = current.writer.commandPluginRuntime.mock.calls[0]![3]!;
+    current.changeReady({ csrfToken: "b".repeat(64) }); await current.connection.read();
+    expect(signal.aborted).toBe(true); expect(old.commands.getSnapshot().phase).toBe("revoked");
+    const next = current.session.centerRuntime.getSnapshot()!;
+    expect(next.sessionId).not.toBe(old.sessionId);
+    // The controller only observes completion; this deliberately unvalidated value must never publish.
+    response.resolve({} as Awaited<ReturnType<FlowClient["commandPluginRuntime"]>>); await pending;
+    expect(old.commands.getSnapshot().phase).toBe("revoked"); expect(next.commands.getSnapshot().phase).toBe("idle");
+    await old.commands.retryOriginal(old.commands.getSnapshot().command!);
+    expect(current.writer.commandPluginRuntime).toHaveBeenCalledTimes(1);
+  });
+
+  it("refuses a different principal in the same center and rejects stale runtime reads", async () => {
+    const current = await runtimeSetup(); const old = current.session.centerRuntime.getSnapshot()!;
+    const result = deferred<Awaited<ReturnType<FlowClient["pluginRuntime"]>>>();
+    vi.spyOn(current.client, "pluginRuntime").mockReturnValue(result.promise);
+    const read = old.reader.pluginRuntime(runtimeId); const rejected = expect(read).rejects.toThrow("no longer authorized");
+    current.changeReady({ ownerPrincipalId: "00000000-0000-4000-8000-000000000003" }); await current.connection.read();
+    expect(current.session.centerRuntime.getSnapshot()).toBeNull();
+    expect(old.commands.getSnapshot().phase).toBe("revoked");
+    result.resolve({} as Awaited<ReturnType<FlowClient["pluginRuntime"]>>); await rejected;
+    await old.commands.submit(runtimeId, runtimeCommand); expect(current.writer.commandPluginRuntime).not.toHaveBeenCalled();
+  });
+
+  it("inactive workspace and disposal irrevocably revoke without deactivating local extensions or disposing drafts", async () => {
+    const current = await runtimeSetup(); await current.session.host.activate("sample.notes");
+    const old = current.session.centerRuntime.getSnapshot()!;
+    current.setActive(false);
+    expect(old.commands.getSnapshot().phase).toBe("revoked"); expect(current.session.signal.aborted).toBe(false);
+    expect(current.session.host.list().find(item => item.id === "sample.notes")?.state).toBe("active");
+    current.setActive(true); const next = current.session.centerRuntime.getSnapshot()!;
+    expect(next.sessionId).not.toBe(old.sessionId); await old.commands.submit(runtimeId, runtimeCommand);
+    expect(current.writer.commandPluginRuntime).not.toHaveBeenCalled();
+    await current.session.dispose(); expect(next.commands.getSnapshot().phase).toBe("revoked");
+    expect(current.session.centerRuntime.getSnapshot()).toBeNull();
+    current.changeReady({ csrfToken: "c".repeat(64) }); await current.connection.read();
+    current.setActive(true); expect(current.session.centerRuntime.getSnapshot()).toBeNull();
   });
 });

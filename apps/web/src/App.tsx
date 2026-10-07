@@ -381,6 +381,15 @@ function Workspace({
   const connectionState = useSyncExternalStore(recovery?.session.subscribe ?? noSubscription, recovery?.session.getSnapshot ?? noSnapshot);
   const authorized = !recovery || (active && recovery.session.authorized(recovery.namespace));
   const authorizedRef = useRef(authorized); authorizedRef.current = authorized;
+  const activeRuntimeWorkspace = useRef(active);
+  useLayoutEffect(() => { activeRuntimeWorkspace.current = active; }, [active]);
+  const centerRuntime = useMemo<AppActions["centerRuntime"]>(() => recovery ? {
+    reader: client,
+    writer: client,
+    subscribe: recovery.session.subscribe,
+    authorityKey: () => activeRuntimeWorkspace.current && recovery.session.authorized(recovery.namespace)
+      ? JSON.stringify([namespaceKey(recovery.namespace), recovery.session.getSnapshot().generation]) : null,
+  } : undefined, [client, recovery?.session, recovery?.namespace]);
   const profileRef = useRef<Record<string, ProfileSelection>>({});
   const [recoveryError, setRecoveryError] = useState<string>();
   const registry = useMemo<PluginRegistryReader>(() => ({
@@ -761,6 +770,7 @@ function Workspace({
   } : undefined;
   const actions: AppActions = {
     ...(recoveryHost ? { recovery: recoveryHost } : {}),
+    ...(centerRuntime ? { centerRuntime } : {}),
     messageSettings: {
       read: key => {
         const entry = viewEntry(key), view = entry?.[1], snapshot = view?.conversation?.getSnapshot();

@@ -476,3 +476,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T17:01:40.908Z：D05唯一登记target29093a34d，经assignment_review独立APPROVED/0P1P2，精确接收registry及三份管理记录；source后续908248c只存原独审/推送失败事实。无产品测试或运行源变化。
 
 2026-10-07T17:02:58.990Z：归档D05实际208源部署回执；主线e5ecd07bc与source8e5515550均已push。历史两次500保持，不是当前blocker。个人端口/任务/凭据未操作。
+
+2026-10-07T17:05:27.267Z：I01固定5438六源独审/source local+实际浏览器通过，fresh main六前像均与3c9345声明相同；主线仅另外四个verifier合同/测试变化，与本消费面无交叉，复用已有4direct/types0/四组双主题，不重跑。按[固定接收记录](../../docs/evidence/i02/i01-runtime-app-intake.json)精确集成；原失败与raw只保留在唯一canonical/Git，不复制历史材料。新页面/个人部署另验。
