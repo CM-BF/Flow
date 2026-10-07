@@ -1,10 +1,10 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED，固定新后台输入与原四App调用器差量待独立审查；实际兼容 NOT_RUN。**
+**当前状态：APPROVED，仅固定新后台源码/输入准备及native边界；实际兼容 NOT_RUN，0 blocking。**
 
 Review target commit：203ccc2f38d45ee043838383d3ba3056e7e4a435。范围仅原两harness；fixture三字面值差量，browser原字节。
 
-[新b692固定候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md)与原779/cd27通过分列。新descriptor/producer结果已收到，但不替代四App实际；未运行检查/PG/Chrome，不转旧预算。旧原件和通过保持如下历史范围。
+[新b692固定候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md)与原779/cd27通过分列。新descriptor/producer结果已收到，但不替代四App实际；未运行检查/PG/Chrome，不转旧预算。[Root固定源码审](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/root-source-preparation-review.json)与[native接受](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/root-native-acceptance.json)已核同；审批target固定203，不追每个metadataSHA。旧原件和通过保持如下历史范围。
 
 ## 历史：d882 / 779-cd27四App限定交付
 

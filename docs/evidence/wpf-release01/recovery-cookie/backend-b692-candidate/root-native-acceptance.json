@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T21:25:41.190463+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361",
+  "workerSha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6",
+  "source": "203ccc2f38d45ee043838383d3ba3056e7e4a435",
+  "backend": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "manifestDigest": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "sourceHead": "f37a3612068c7215994750574a7451ede841bcce"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-release-b692-preparation-review-20261007.json",
+    "bytes": 5809,
+    "sha256": "f32d264d5642e0cb67917197fef3c2548f409ac41bd4fb7e89323f3447b08a06"
+  },
+  "scope": "Fixed newbackend b692/f37 plus unchanged four Web artifacts and policy. Exact oldnative caller reused; new independent180s phase including30s cleanup, configuredPG12 and own Chrome/proxy/profile. No personal/provider operation.",
+  "freshManagerHandoffRequired": true,
+  "runtimeGranted": false
+}

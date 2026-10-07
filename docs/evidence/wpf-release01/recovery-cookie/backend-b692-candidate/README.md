@@ -6,6 +6,8 @@
 
 三个原生Bearer旧App461a/caa1/d629与Cookie新App779/c231不重建、不替换。format1无releaseId仍为null。公共context/policy81a8不变；新backend实际verifier、manifest/root/sourceTree/Node、四App独立实际及cleanup后四正式report不可省略。原UNKNOWN→reload→显式同key/body→accepted turn→Cookie SSE→迟到logout/newcookie断言及400拒绝、agent:false全部原样。旧C3四报告仅对cd27有效。
 
-当前 `PREPARED / NOT_RUN / NO_GRANT`，没有gate、admin输入、raw运行目录、Chrome或PG。未来一次180s含30s清理、1markedDB/12配置连接、1Nodegroup+1Chrome、64MiB scratch+128MiB DB/WAL规划+8MiB retained含256KiB outer+1MiB metadata=201MiB仅proposal，须由经理完整组合一次计入及fresh授权。原段余额不转信用。
+当前 `REVIEWED_SOURCE_BOUND / NOT_RUN / NO_GRANT`，没有gate、admin输入、raw运行目录、Chrome或PG。未来一次180s含30s清理、1markedDB/12配置连接、1Nodegroup+1Chrome、64MiB scratch+128MiB DB/WAL规划+8MiB retained含256KiB outer+1MiB metadata=201MiB仅proposal，须由经理完整组合一次计入及fresh授权。原段余额不转信用。
 
 新claim [receipt](receipt.json) b4d7d7fd-f215-4882-b7f3-2afc133a0365 v1 exact4。当前源码段21:17:11Z开始、21:37:11Z截止，新增8MiB包涵TMP4MiB/raw512KiB；工程检查0，实际兼容0。源与metadata正常封存后四scope STOP保留claim。
+
+[Root源码/准备审](root-source-preparation-review.json)及[native边界接受](root-native-acceptance.json)已固定接受，0blocking。批准不授actual；74pins/5prepared与4执行文件未变。旧binding/manifest在私有before以lossless gzip保留原字节，避免复制整个包。下一actual必须先有manager唯一窗口/fresh完整准入。

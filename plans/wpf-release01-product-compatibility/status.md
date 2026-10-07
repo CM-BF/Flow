@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:24:19.908Z |
+| 最近更新时间 | 2026-10-07T21:26:49.910Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -21,11 +21,11 @@
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新后台与四个现有网页的固定兼容检查候选已准备，等待集中审查与独立实际窗口 |
-| 下一可用交付 | 集中审查后进行新后台的四网页兼容验收 |
+| 当前产出 | 新后台与四个现有网页的固定兼容检查候选已审通过，等待独立实际窗口 |
+| 下一可用交付 | 获得独立实际窗口后进行新后台的四网页兼容验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED 203ccc2f38d45ee043838383d3ba3056e7e4a435 新backend组合；旧d882/779-cd27独审保持历史限定 |
+| Review | [review.md](review.md)：APPROVED 203ccc2f38d45ee043838383d3ba3056e7e4a435 仅新backend源码/准备与native边界；新actual NOT_RUN，旧d882/779-cd27独审保持历史限定 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；本固定pair工程片段核齐交付 2026-10-07T18:33:46.469Z，见[主线收口](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/verification.json)；RELEASE01-10后继未实施，整体完成仍NOT_COMPLETED，不用提交/领取时间推定 |
@@ -49,7 +49,7 @@
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| RELEASE01-W06 | 2026-10-07T21:24:19.908Z | OPEN | 审查与实际准入 | root审固定b692输入差量，随后d01提供独立四App实际窗口；当前0运行，不将准备视为actual | [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md) |
+| RELEASE01-W06 | 2026-10-07T21:24:19.908Z | OPEN | 审查与实际准入 | root源码/native审已通过；待Original cold完整RETURN与d01独立四App实际窗口，当前0运行 | [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md) |
 | RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
 | RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |
 | RELEASE01-W05 | 2026-10-07T16:22:48.759Z | 2026-10-07T18:01:09.576Z | 验证失败 | 本固定pair的c3四App严格断言已通过并确认完整RETURN；历史HPE唯一根因仍UNKNOWN，不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |
@@ -217,3 +217,7 @@ Root准备源/native批准与失败实际/清理独审已原样归档。newApp�
 ## b692 source安全停点
 
 2026-10-07T21:24:19.908Z SOURCE_STOP：固定203ccc2f38d45ee043838383d3ba3056e7e4a435仅三可信后台身份字面值；候选 /private/tmp/rel01-b692-c1 保原parent/worker/measure/tsconfig，74pins/5prepared，四App与publiccontext原字节。本段0工程检查/PG/HTTP/Chrome/构建，未建gate/admin输入。所有旧FAIL、diagnostic、cd27四正式报告和预算保持历史。当前仅等待一次集中source/input复核及经理独立actual窗口，未申请重测旧绿；本批metadata正常封存后exact4全部STOP，claim保留。
+
+### b692固定批准归档尾段
+
+2026-10-07T21:26:49.910Z：[源码/准备独审](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/root-source-preparation-review.json)APPROVED/0blocking与[native边界接受](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/root-native-acceptance.json)已原样归档。仅routine state/sourceReview/native/executionHEAD绑定；203源码、4执行文件、74pins/5prepared、四App/policy原字节不变。新actual仍NOT_RUN/NO_GRANT，不创建gate或运行child。本尾段≤5min且原21:37:11截止，新增≤64KiB；封存后全4STOP保claim。
