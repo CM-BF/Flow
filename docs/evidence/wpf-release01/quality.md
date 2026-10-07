@@ -39,3 +39,6 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 
 ## 2026-10-07T11:45:48.838Z c2 首次实际失败安全点
 复用find-skills/clean-code既有方法：完整保留sandbox-exec真实145B原错，区分启动器拒绝/未进入产品/无数据库创建，不把acceptance缺失反推产品错误。outer实际与晚terminal取最大向上计410ms，runtime预算一次封闭；失败不能复用gate。21原件与generated profile逐字入索引，未知fixturecleanup原样，不造normalDROP。exact创建身份用于scratch/admin移除，所有已知PID/PGID核ESRCH。只metadata解析/链接核对，未修程序/重跑；后继最窄规则修正待管理同边界安排。
+
+## 2026-10-07T11:50:39.071Z c3 窄修与语法实际
+复用已读find-skills/clean-code。只纠正已证非法host字面，不扩大sandbox/个人网络权限、无新框架。用actual AST生成表达式而非另抄profile；唯一sandbox-exec true验证编译，47ms/exit0，网络效果未测。命名/职责/失败证据/未知语义复核：c2原错和410ms不覆写，新的语法证据不冒3App绿。独立10s已CLOSED，0PG/Chrome/Node；下一步集中delta审，不因余量自启重试。
