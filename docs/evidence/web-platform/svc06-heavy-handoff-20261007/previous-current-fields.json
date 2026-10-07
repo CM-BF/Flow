@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-07T03:19:25.748203+00:00",
+  "state": "ACCESS_FIRST_BROWSER_FAILED_CLEANED_RETURNED",
+  "groupWindowOwnership": "ACCESS first isolated Chrome attempt ended exit1; exact later owned cleanup accepted and heavy window returned to Mika. Caller local repair belongs to ACCESS owner; manager starts no checks or new reservation.",
+  "latestCoordination": {
+    "at": "2026-10-07T03:19:25.748203+00:00",
+    "kind": "CURRENT_RESULTS_AND_TIMING_SOURCE_READY",
+    "source": "current-product-checkpoint-20261007/intake.json",
+    "summary": "Timing source+81parser获审，唯一登记请求已存在待Lead正常接收；Quick c2/Recovery序列化/D04pureGit实际获审；ACCESS browser4/5后callerENOENT中断，资源清理归还，余52519ms未二跑。D04正常main接收入口已备，PG/CLI未跑。"
+  },
+  "currentWindowReturn": "local-segment-20261007/segment.json",
+  "currentWindowEvidence": "local-segment-20261007/verified-results.json",
+  "nextWebReady": {
+    "state": "SOURCE_READY_BROWSER_AND_INTEGRATION_PENDING_NO_RESERVATION",
+    "priority": "ACCESS caller repair; Timing isolated browser pending; Quick/Recovery actual local results accepted, original browser budgets preserved. D04 normal scoped main intake ready, PG/CLI not rerun. D06 follow-up deferred, no manager local run.",
+    "gate": null
+  }
+}

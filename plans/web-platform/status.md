@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:19 UTC；原owner固定记录与root独审入站，无新增页面/服务采样 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:34:01.814140+00:00；原owner与Lead/root回执，仅管理核对，无新页面或服务采样 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,9 +20,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
-| 下一可用交付 | 4320本机入口已实现并获35direct批准，首次Chrome验证4/5后被caller临时文件扫描中断，正修该caller再接剩余验证。时间展示已实现/81parser获审，唯一source待Lead正常登记和浏览器验收；D04三测试源及5pureGit已备限定主线接收。 |
-| 当前阻塞 | ACTIVE: ACCESS剩余浏览器/真实安装与发布、Timing浏览器/发布、Recovery剩余页面、Quick浏览器及D06验证仍开放。ACCESS首次失败已完整归还重窗口，manager不启动检查或预约；原失败/累计预算保留。 |
+| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，定向验证已通过，显示和主线接收待验。 |
+| 下一可用交付 | 完成本机打开Flow与凭据入口的页面和真实安装验证；任务时间展示已登记，待显示验收后随入口更新加载。架构图定向验证已完成，显示验收和主线接收仍待推进。 |
+| 当前阻塞 | 本组当前无运行占用；下一重窗口交原Lead执行SVC06现场准入，尚未收到实际启动。入口可见性修复仍待复验，时间展示、草稿恢复与快速设置的剩余页面验收保持开放；旧失败和预算保留。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -156,3 +156,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 时间显示沿已有D01/REQ16/27/37：[当前唯一source登记入口](../../docs/evidence/web-platform/dashboard-task-timing-provision/current-intake.json)已固定156b49d/72a、9a677v1六scope及81parser批准；登记请求待Lead正常接收，实际加载未知。ACCESS实际183来源live/current已确认；该登记不等入口功能已发布。
 
 [本批必要结果与登记交接](../../docs/evidence/web-platform/current-product-checkpoint-20261007/report.md)集中原独审，不新建状态权威，不向GO外发普通进度。
+
+本次运行交接与来源：[SVC06下一窗口](../../docs/evidence/web-platform/svc06-heavy-handoff-20261007/intake.json)。仅原Lead fresh准入offer，不构成Web新运行许可；Timing已登记与实际加载分开记录。

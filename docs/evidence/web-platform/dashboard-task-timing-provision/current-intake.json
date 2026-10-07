@@ -1,6 +1,6 @@
 {
-  "state": "SOURCE_READY_REGISTRY_INTAKE_READY_NOT_OBSERVED_LOADED",
-  "at": "2026-10-07T03:19:25.748203+00:00",
+  "state": "SOURCE_REGISTERED_IN_MAIN_185_NOT_OBSERVED_LOADED",
+  "at": "2026-10-07T03:34:01.814140+00:00",
   "taskId": "WPF-DASHBOARD-TIMING01",
   "parentTask": "D01",
   "owner": "w01_owner",
@@ -25,9 +25,9 @@
   "sourceProvision": "provision-actual.json",
   "take": "take-receipt.json",
   "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
-  "dispatch": "Owner completed source and parser, now idle. No additional writer or rerun requested.",
+  "dispatch": "W01 prepares bounded browser caller only; no current Web runtime holder.",
   "startTime": "2026-10-07T03:07:53.024Z",
-  "registry": "Exact owner request already present and ready for Original Lead normal canonical intake; no successful direct delivery or actual dashboard load claimed.",
+  "registry": "Original Lead inbound: main bf7eca59 registers Timing source 185 and SVC08 source 184. Actual 185 load not observed; planned once with future ACCESS controlled deployment. Actual snapshot183 remains historical.",
   "currentOwnerHead": "156b49d33d08a0d47521f8a231684050d648f9c2",
   "firstCanonical": "f23c70ce99fb3b59d0707d09d332038a3a6ec6a4",
   "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
@@ -35,5 +35,9 @@
   "completion": "NOT_COMPLETED",
   "sourceReview": "../current-product-checkpoint-20261007/timing-source-parser-review.json",
   "checks": "81/81 parser actualexit0, scoped root approved; browser/main/deployment NOT_RUN",
-  "registrationRequest": "owner-registration-request.json"
+  "registrationRequest": "owner-registration-request.json",
+  "registryMain": "bf7eca59",
+  "registeredSourceCount": 185,
+  "actualLoadedSourceCount": 183,
+  "actualLoadedAt": "2026-10-07T03:04:03.308Z"
 }

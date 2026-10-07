@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T03:31:34.693082+00:00",
+  "state": "WEB_HEAVY_RETURNED_AND_OFFERED_TO_LEAD_SVC06",
+  "currentWebHeavyHolder": null,
+  "currentWebLocalHolder": null,
+  "ACCESS": "Two actual runs ended; second parent/group/scratch/EOF and exact PID/CDP postchecks clear. No third run or reservation.",
+  "actualCleanupReceipt": "/private/tmp/access01-browser-followup-jn35famf/post-cleanup.json",
+  "offer": {
+    "owner": "Original Execution Lead SVC06",
+    "entry": "4de459",
+    "fixedArtifactInput": "3230",
+    "workMs": 420000,
+    "cleanupMs": 2500,
+    "newTemporaryBudget": "2.32GB",
+    "retainedFreeFloor": "1GiB",
+    "leadStatedFreshThreshold": "3.39GB",
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "state": "READY_FOR_LEAD_FRESH_GATE_NOT_STARTED_BY_WEB"
+  },
+  "webPreparedSuccessors": [
+    "ACCESS fixedccd885, remaining41272ms including15000cleanup; no run/hold.",
+    "Timing fixed72a/156b, browser runner preparation only,0native spent."
+  ],
+  "rules": "No overlapping Web heavy starts until Lead actual SVC06 handback. Main, service operations and publication remain original Lead.",
+  "communication": "Direct app input from this co-lead to original Lead is unavailable; canonical Web resource/status is the handoff source, not a claim of successful message delivery."
+}

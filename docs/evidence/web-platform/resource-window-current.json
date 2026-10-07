@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T03:19:25.748203+00:00",
-  "state": "ACCESS_FIRST_BROWSER_FAILED_CLEANED_RETURNED",
-  "groupWindowOwnership": "ACCESS first isolated Chrome attempt ended exit1; exact later owned cleanup accepted and heavy window returned to Mika. Caller local repair belongs to ACCESS owner; manager starts no checks or new reservation.",
+  "recordedAt": "2026-10-07T03:34:01.814140+00:00",
+  "state": "WEB_IDLE_OFFERED_TO_LEAD_SVC06_FRESH_ADMISSION",
+  "groupWindowOwnership": "Web local/heavy holders are null. Both ACCESS attempts ended with owned cleanup; next heavy window offered to original Lead SVC06 for fresh admission. Offer is not actual OPEN/start. ACCESS and Timing do not reserve or compete.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T03:19:25.748203+00:00",
-    "kind": "CURRENT_RESULTS_AND_TIMING_SOURCE_READY",
-    "source": "current-product-checkpoint-20261007/intake.json",
-    "summary": "Timing source+81parser获审，唯一登记请求已存在待Lead正常接收；Quick c2/Recovery序列化/D04pureGit实际获审；ACCESS browser4/5后callerENOENT中断，资源清理归还，余52519ms未二跑。D04正常main接收入口已备，PG/CLI未跑。"
+    "at": "2026-10-07T03:34:01.814140+00:00",
+    "kind": "SVC06_HEAVY_HANDOFF_READY_FOR_LEAD_FRESH_NOT_STARTED",
+    "source": "svc06-heavy-handoff-20261007/lead-window-offer.json",
+    "summary": "Web当前local/heavy无holder/gate/预约；下一heavy交原Lead SVC06自行fresh准入，未接收实际启动。ACCESS两次失败及清理保留，fixture窄修仅源审；Timing已登记185但未加载；旧当前字段保历史。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "local-segment-20261007/segment.json",
+  "currentWindowReturn": "svc06-heavy-handoff-20261007/lead-window-offer.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1056,9 +1056,17 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "SOURCE_READY_BROWSER_AND_INTEGRATION_PENDING_NO_RESERVATION",
-    "priority": "ACCESS caller repair; Timing isolated browser pending; Quick/Recovery actual local results accepted, original browser budgets preserved. D04 normal scoped main intake ready, PG/CLI not rerun. D06 follow-up deferred, no manager local run.",
-    "gate": null
+    "state": "HOLD_UNTIL_LEAD_ACTUAL_HANDBACK",
+    "access": {
+      "ownerHead": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+      "fixture": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+      "review": "svc06-heavy-handoff-20261007/access-visibility-source-review.json",
+      "actual": "Two attempts FAILED; second 4/5, actualexit1; owned cleanup returned. New fixture NOT_RUN; no deployment.",
+      "spentMs": 18728,
+      "remainingMs": 41272,
+      "cleanupIncludedMs": 15000
+    },
+    "timing": "Source/parser scoped approved; browser caller preparation only; no window reservation."
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1160,7 +1168,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "local-segment-20261007/verified-results.json",
+  "currentWindowEvidence": "svc06-heavy-handoff-20261007/intake.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",

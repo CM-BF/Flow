@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T03:34:43.521817+00:00",
+  "scope": "metadata within manager632a v3",
+  "paths": [
+    "docs/evidence/web-platform/dashboard-task-timing-provision/current-intake.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/status.md",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/access-visibility-source-review.json",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/d06-actual-review.json",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/fresh-selected-claims.json",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/intake.json",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/lead-window-offer.json",
+    "docs/evidence/web-platform/svc06-heavy-handoff-20261007/previous-current-fields.json"
+  ],
+  "newLinks": [
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "link": "svc06-heavy-handoff-20261007/intake.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "link": "svc06-heavy-handoff-20261007/d06-actual-review.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "link": "svc06-heavy-handoff-20261007/access-visibility-source-review.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "link": "svc06-heavy-handoff-20261007/lead-window-offer.json",
+      "exists": true
+    },
+    {
+      "file": "plans/web-platform/status.md",
+      "link": "../../docs/evidence/web-platform/svc06-heavy-handoff-20261007/intake.json",
+      "exists": true
+    }
+  ],
+  "jsonParsed": true,
+  "diffCheck": 0,
+  "errors": [],
+  "addedOrModifiedLineBytesPlusNewFiles": 18542,
+  "method": "Line-based additions for changed files plus full new files; no old history removed to reduce count.",
+  "skills": {
+    "findSkills": "Local catalog selected existing clean-code for concise metadata/evidence maintenance; no new install.",
+    "cleanCode": "Reviewed naming, single status authority, current-versus-historical evidence, exact failure and remaining budgets; no framework or duplicated functional state."
+  },
+  "runtime": "No tests, service/HTTP/PG/Chrome/4320/resource sample or third ACCESS attempt."
+}
