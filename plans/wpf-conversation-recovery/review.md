@@ -1,14 +1,12 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；第二Steer整体FAIL/有效有限观察/owned清理已获[root独立接受](../../docs/evidence/wpf-conversation-recovery/steering-second-root-review.json)，不是case或feature通过。cookieRead通过，首draft仍未保存；诊断source批准实际已执行，noEmit仍保54952绑定。只读生命周期候选见steering-second-diagnosis，未修改产品。
+状态：IN_PROGRESS。当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`（dce产品修复+5dd防御常量+1952注释+a803测试前置纠正）。[root固定源审](../../docs/evidence/wpf-conversation-recovery/stale-route-fix-root-review.json)接受current-committed callbacks及有意义的same-document/durable barrier回归准备；原source报告当时未运行；随后local实际见stale-route-local-index，不代表Steer浏览器通过。5dd一行390000仅容纳manager新90s独立阶段，不转旧信用；root已明确此边界，差量pin由其独审。
 
-Review target commit：`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；对54952仅browser变化、18源相同，见[差量checkpoint](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-checkpoint.json)。[首红实证](../../docs/evidence/wpf-conversation-recovery/steering-first-validation.md)保原source/执行头；原五秒predicate/错误、actor、parent与旧失败原件不变。
+[root最终组合/actual local独审](../../docs/evidence/wpf-conversation-recovery/stale-route-local-root-review.json)接受a803和本次实际结果，0blocking，非Steer浏览器或整feature通过。
 
-固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
+[checkpoint](../../docs/evidence/wpf-conversation-recovery/stale-route-checkpoint.json)绑定19源、3变/16不变、base84005和原21。当前新增direct修后1 PASS/54未选、Web noEmit0，首测试前置红保留；真实browser NOT_RUN；两次SteerFAIL/原诊断/owned清理独审保留。动态唯一因果仍待修复后原场景验证。
 
-可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
-
-早期0141作者检查（历史）：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature正式0141结论CHANGES_REQUESTED；当前55b修复供复审，main未接。
+[完整feature审查入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)保持固定范围/历史实证与未验项；作者不自行APPROVED整feature，main未接。
 
 ## 阶段源码预检（不是最终feature审查）
 

@@ -1,0 +1,101 @@
+{
+  "id": "RECOVERY-ROUTE-FIX-20261007",
+  "at": "2026-10-07 10:20:38 UTC",
+  "state": "SOURCE_AND_LOCAL_READY_BROWSER_NOT_RUN",
+  "sourceTarget": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "authorization": {
+    "by": "root + d01_owner",
+    "task": "Continuation of RECOVERY01/exact21; no new task or claim",
+    "budgetMs": 90000,
+    "runtimeStartAuthorized": false
+  },
+  "selection": {
+    "journey": "steering-recovery",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "fullJourney": false
+  },
+  "limits": {
+    "phaseRuntimeMs": 90000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "databases": 1,
+    "chrome": 1,
+    "syntheticProtocolActors": 1,
+    "runnerProcesses": 0,
+    "providerCalls": 0,
+    "leaseMs": 60000
+  },
+  "runtimeSpentMs": 0,
+  "runtimeRemainingMs": 90000,
+  "attempts": [],
+  "closedPriorPhases": {
+    "original90": {
+      "budgetMs": 90000,
+      "actualMs": 64134.08675,
+      "unusedCreditTransferred": false
+    },
+    "continuous150": {
+      "budgetMs": 150000,
+      "actualChargeMs": 126447,
+      "unusedMsSealed": 23553,
+      "unusedCreditTransferred": false,
+      "sourceRecord": "continuous-segment.json",
+      "sourceRecordSha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+    },
+    "steering60": {
+      "budgetMs": 60000,
+      "actualChargeMs": 34753,
+      "unusedMsSealed": 25247,
+      "state": "CLOSED",
+      "unusedCreditTransferred": false,
+      "record": {
+        "path": "steering-phase.json",
+        "bytes": 5773,
+        "sha256": "b70cf9acbaae72dad6deac3ccfc49c43883d57a1717513f07598d696eab31c8e"
+      }
+    }
+  },
+  "defensiveParentTotalMs": 390000,
+  "defensiveParentCeilingIsNotPhaseCredit": true,
+  "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); preserve all original timings",
+  "nextAttemptDerivation": {
+    "maximumTotalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "minimumAttemptMs": 30000,
+    "equation": "remaining=90000-sum(ceil(max(actualOuterMs,lateParentMs,serializedParentMs))) for this phase only; total<=min(60000,remaining); remaining<30000 stops",
+    "unknownAccountingOrCleanup": "FAIL_CLOSED"
+  },
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "remainingPrerequisites": [
+    "Actual SVC06 shared resource handback and explicit unique PG+Chrome handoff",
+    "Fresh original claim/source/runtime/combined resource and own unique input/env/cleanup"
+  ],
+  "proofLimits": [
+    "Prebuilt pinned conversation, not new-chat profile discovery",
+    "Synthetic protocol session is not a native SDK session or evidence that a model consumes/applies guidance",
+    "Center accepted/replay and browser restoration only; no received/observed-consumed/applied fabricated",
+    "Second center/principal and real runner/native application remain unverified"
+  ],
+  "localEvidence": {
+    "path": "stale-route-local-index.json",
+    "bytes": 15440,
+    "sha256": "5d8938686c9d95f95ecd743949cd02262536f3ca48292ffff72c2382f67ab168"
+  },
+  "finalSourceAndLocalReview": {
+    "path": "stale-route-local-root-review.json",
+    "bytes": 20013,
+    "sha256": "12cc44fbb18a7dae8cd5edadd7617ec334d9c0587b6b40b4e18f8a9a7a939440"
+  }
+}

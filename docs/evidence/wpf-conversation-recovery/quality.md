@@ -307,3 +307,26 @@ Root发现的command data缺失遮蔽观察在a8e已修并源码独审通过；1
 同有限段原入口运行，19源未改；失败观察三独立路径均成功，证明数据缺口而不掩盖原5秒失败。raw/outer精确保存、0SteerPOST、不继续后续；清理先归还，再归档root独审。计费取outer/late/parent最大值ceil17421，累计34753/剩25247小于原parent最小值，拒第三run，不借旧余额。
 
 本地find-skills/clean-code/codebase-design/webapp-testing复用无安装：静态检查真实controlled draft→entry→RecoveryHost→state.handoff/deferred→journal，没有observer字段过滤；App长期listener当前依赖和session闭包候选交root独核。仅提出保持同authority的current callback/ref与真实same-document导航回归，不为不足证据重写产品/添加框架。有限alerts只该时点空，不夸大全程。当前0holder，原actor/permissions/lifecycle源码全不动。
+
+## 2026-10-07 10:16:16 UTC — stale route修复clean-code安全点
+
+原10:09:11.417Z normal CLI/21scope/唯一owner/nooverlap核实，起点5886clean；开始先写原TODO/用户需求与因果准则。find-skills方法优先复用已装技能，无联网/安装；bounded brainstorming方案已有root明确授权，不新建任务或等待重复批准。App effect原本混合资源生命期与可变session闭包，现私有ref在layout commit刷新两handler，避免render中发布未提交回调，也不因deps扩大清理全部视图。命名routeActions表明职责，无新framework/store/公共Interface。
+
+回归分层：browser保真正同document时间源与原turn exactdurable权威；新增direct用真实Projection→Workspace→Journal，controlled commit abort证明0HTTP/原稿不丢和显式retry后deferred下一Steer存储，非镜像ref/非挂载App。类型结构新增两项nullable实证字段，未选时不填成功；旧五秒predicate/错误/权限/actor均保。3源54+/3-，再一行防御顶300→390按新独立90授权，旧raw与三阶段信用不动。git diff --check静态通过；本段0Node/type/direct/HTTP/PG/Chrome/free，新checks明确NOT_RUN。
+
+本地技能实际文件SHA（来源复用已有安装，不重新归因外部repo）：
+- `/Users/citrine/.agents/skills/find-skills/SKILL.md` SHA256 `c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f`
+- `/Users/citrine/.agents/skills/clean-code/SKILL.md` SHA256 `3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317`
+- `/Users/citrine/.agents/skills/codebase-design/SKILL.md` SHA256 `2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2`
+- `/Users/citrine/.agents/skills/brainstorming/SKILL.md` SHA256 `74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608`
+- `/Users/citrine/.agents/skills/webapp-testing/SKILL.md` SHA256 `51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2`
+
+## 2026-10-07 10:20:38 UTC — route-fix定向local与清理
+
+普通有限段先固定1952后actual：首direct失败于测试错误期望flush可通过进行中的handoff，未触发commit故障。保raw/2039ms；按binding.flush契约改为显式拒绝与原稿已持久断言（a803），不是删屏障或改产品。第二direct只选1/pass1，其余54 NOT_SELECTED，真正控制commit先成功put再abort，证实零HTTP直到显式retry及其后next steering保存；Web noEmit0。未重跑旧50/119，原全部失败不回写。
+
+复用steering-local file-log监督与原Vitest native单fork/no-cache配置，仅新ownTMP/两精确命令/新累计30s和每child15s含5s预留，sandbox deny network/项目写。原fresh10:17:31.781Z/v4/exact21/nooverlap，源1952三产品pin固定且dirty只own记录；修后a803是唯一test前置delta。实际ceil2039+7551=9590ms，无PG/Chrome/HTTP，outer双EOF，子进程日志为文件；10:19:24.396260Z五精确PID+PGID absent，70695B/23原件归档后ownTMP清除。source/current与工具后置读取hash明确标观察顺序，不冒未记录的preflight全闭包。
+
+clean-code复核：保持authority/错误原文，前置契约断言强化原稿保存而不掩盖真正commit失败；source回调只layout commit更新，旧effect资源生命周期不变，无新抽象/共享scope。三oldphase封账，新90仅浏览器账不扣local也不复用旧余。当前完整feature IN_PROGRESS，动态same-document/Steer因果未验。
+
+Root最终固定a803源码+本次actual local独审已接受，见[原报告](stale-route-local-root-review.json)，0blocking；仅source/direct1/noEmit，不冒真实Steer或完整feature通过。下一原选2实际仍按新90phase和共享窗口，旧local不重跑。

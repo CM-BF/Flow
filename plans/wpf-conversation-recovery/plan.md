@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:04:43 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:16:16 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -18,7 +18,7 @@
 - [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；当前新Steer独立60s段已34753/余25247（小于入口30s，不再开），按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；旧Steer独立60s段已34753/余25247封闭（小于入口30s，不再开）；新route-fix独立90s段spent0/NOT_RUN，按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
@@ -248,3 +248,17 @@ Root接受固定27f后的bounded设计：仅该selected selector允许一个synt
 ## 2026-10-07 10:04:43 UTC — 原02/03/05 Steer诊断实际收口
 
 第二run仍首draft五秒失败，但有限观察已确认实际输入与同route IDB空steering；不删除恢复断言，不称actor原始任务202为Steer通过。新phase34753/60000剩25247不足入口，资源已归还；保原红和精确清理。下游通知/捕获/保存链与App同页hash route闭包候选仅静态方案，待root集中核生命周期，不新task/不偷用封账额度。
+
+## 2026-10-07 10:11:48 UTC — 原RECOVERY01晚开视图恢复绑定修复
+
+用户需求仍为同一中心持续聊天：会话已初始化后，从同页hash打开的聊天也必须先持久化原turn再HTTP，随后Guide草稿可以保存、恢复原指令与unknown ACK原key，下一稿不受旧ACK影响。对应原TODO-02/03/05/06，不新task。
+
+[root固定源码审查](../../docs/evidence/wpf-conversation-recovery/stale-route-root-review.json)确认长期`[client]` hash监听器捕获初始session；晚来的view可能没有commandPort，Thread已beginHandoff而projection optional prepare跳过，后续changed仅defer。两次真实红的输入正确/同route空steering/无command与此一致，但唯一动态根因尚未证实。
+
+本段最窄设计：现App私有ref只在layout commit更新select/newChat，长期listener读取最近提交回调；不为回调更新触发原client资源dispose、不引入新store/框架。原controlled IDB+实际projection回归验证prepare commit失败零HTTP；实际browser先核same-document timeOrigin不变，再核精确turnKey/frozen request/accepted checkpoint，原Guide保存、reload/显式恢复、ACKloss/显式retry/nextdraft全部保留。不能以fullreload或放宽5s断言掩盖。
+
+本段source-only：类型/局部case/真实browser NOT_RUN。旧90和150封账；Steer60s已34753/余25247小于最小30s，不第三run；新的局部与actual有限段交管理供给后执行。
+
+本段固定组合 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，源审及最小验证入口见[proposal](../../docs/evidence/wpf-conversation-recovery/stale-route-validation-proposal.md)。管理新90s阶段只覆盖原Steer/same-document回归，旧额度不转；parent390000是外部防御顶而非余额。局部与actual均未运行，等待管理有限local/真实共享窗口。
+
+Root最终固定a803源码+本次actual local独审已接受，见[原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-local-root-review.json)，0blocking；仅source/direct1/noEmit，不冒真实Steer或完整feature通过。下一原选2实际仍按新90phase和共享窗口，旧local不重跑。
