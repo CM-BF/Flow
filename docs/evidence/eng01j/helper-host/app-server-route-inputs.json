@@ -1,0 +1,169 @@
+{
+  "recordedAt": "2026-10-07T07:01:23.472123+00:00",
+  "mode": "read-only design; no native/service/schema generation/test",
+  "mikaHeadObserved": "07341d4672fb3c83090e685847818b47c34f2559",
+  "mikaAuthority": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md",
+    "bytes": 7330,
+    "sha256": "044752c1b868cda4aedb8c195476dcafac10a5d21f56a9d91f3fa60447d6ef63",
+    "historicalReferencesPreserved": true
+  },
+  "schema": [
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/ClientRequest.json",
+      "bytes": 199152,
+      "sha256": "da767fedd73502ceb644f5d7974927e1a6b7f1917b092aaa029e81949abf0125",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/FsWriteFileParams.json",
+      "bytes": 970,
+      "sha256": "2167e05c7f3eb26d475f9c1ce71697ba3b635efd8761a00b22abfd6af175bd2f",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/FsWriteFileResponse.json",
+      "bytes": 172,
+      "sha256": "0e4153ee7baa5c1203c2c573504baaa40e1dd8738d78e4c1e3a179fb49df6b16",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/CommandExecParams.json",
+      "bytes": 7397,
+      "sha256": "e4f20080b92c6199cf132941840c4bd0fb9a90e3fec197ceb0e1ce9084346e18",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/CommandExecWriteParams.json",
+      "bytes": 716,
+      "sha256": "3e8e849ce321c85987bbe96ce1f913df0047696a5207bc97dfa1409b0142eda8",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/CommandExecTerminateParams.json",
+      "bytes": 404,
+      "sha256": "979ece7059c6713d0909ab1690daec27149510f4ea2ec10014600bfb1d631c97",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/ThreadStartResponse.json",
+      "bytes": 75707,
+      "sha256": "5686cd0fecf44b09c533018de90e34f74fcc92b8aaf941430941fd6d633e6621",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/TurnStartResponse.json",
+      "bytes": 54717,
+      "sha256": "6fc49c3e5d0ce11a3a109ae194619b04d6e3ff98fa29bac683fdb754608958be",
+      "matchesArchivedSchema": true
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/json/v2/ModelReroutedNotification.json",
+      "bytes": 636,
+      "sha256": "37cd3c1b3a3560b85b01d4061a07d830fc9ed93b80e4663f975f9197cdb501ef",
+      "matchesArchivedSchema": true
+    }
+  ],
+  "officialSourceCommit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "officialSources": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/src/request_processors/fs_processor.rs",
+      "bytes": 7512,
+      "sha256": "beeedd9c986442a475bac00d6ac5b23b1b1385eb674f3642e7b48bbc2a1f790e",
+      "excerpts": [
+        {
+          "startLine": 53,
+          "endLine": 57,
+          "text": "    fn file_system(&self) -> Result<Arc<dyn ExecutorFileSystem>, JSONRPCErrorError> {\n        self.environment_manager\n            .try_local_environment()\n            .map(|environment| environment.get_filesystem())\n            .ok_or_else(|| internal_error(\"local filesystem is not configured\"))"
+        },
+        {
+          "startLine": 79,
+          "endLine": 93,
+          "text": "    pub(crate) async fn write_file(\n        &self,\n        params: FsWriteFileParams,\n    ) -> Result<FsWriteFileResponse, JSONRPCErrorError> {\n        let bytes = STANDARD.decode(params.data_base64).map_err(|err| {\n            invalid_request(format!(\n                \"fs/writeFile requires valid base64 dataBase64: {err}\"\n            ))\n        })?;\n        let path = PathUri::from_abs_path(&params.path);\n        self.file_system()?\n            .write_file(&path, bytes, Default::default(), /*sandbox*/ None)\n            .await\n            .map_err(map_fs_error)?;\n        Ok(FsWriteFileResponse {})"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/exec-server/src/local_file_system.rs",
+      "bytes": 46149,
+      "sha256": "c53d89d1bd319586c9537cb0aea73ec11c7e26c62f40af87872f8c7b98bd7015",
+      "excerpts": [
+        {
+          "startLine": 95,
+          "endLine": 106,
+          "text": "    fn file_system_for<'a>(\n        &'a self,\n        sandbox: Option<&'a FileSystemSandboxContext>,\n    ) -> io::Result<(\n        &'a dyn ExecutorFileSystem,\n        Option<&'a FileSystemSandboxContext>,\n    )> {\n        if sandbox.is_some_and(FileSystemSandboxContext::should_run_in_sandbox) {\n            Ok((self.sandboxed()?, sandbox))\n        } else {\n            Ok((&self.unsandboxed, sandbox))\n        }"
+        },
+        {
+          "startLine": 150,
+          "endLine": 160,
+          "text": "    async fn write_file(\n        &self,\n        path: &PathUri,\n        contents: Vec<u8>,\n        options: WriteFileOptions,\n        sandbox: Option<&FileSystemSandboxContext>,\n    ) -> FileSystemResult<()> {\n        let (file_system, sandbox) = self.file_system_for(sandbox)?;\n        file_system\n            .write_file(path, contents, options, sandbox)\n            .await"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/src/request_processors/command_exec_processor.rs",
+      "bytes": 12108,
+      "sha256": "48588860d8a3de8c5a05206c2725fab4065321fd56aa046ace820cfcdf756e4c",
+      "excerpts": [
+        {
+          "startLine": 240,
+          "endLine": 259,
+          "text": "        } else if let Some(policy) = sandbox_policy.map(|policy| policy.to_core()) {\n            let mut permissions = self.config.permissions.clone();\n            permissions\n                .set_legacy_sandbox_policy(policy, &sandbox_cwd)\n                .map_err(|err| invalid_request(format!(\"invalid sandbox policy: {err}\")))?;\n            (\n                permissions.effective_permission_profile(),\n                self.config.permissions.network.clone(),\n                self.config.permissions.permission_profile().clone(),\n                self.config.managed_network_requirements_enabled(),\n                self.config.effective_workspace_roots(),\n            )\n        } else {\n            (\n                self.config.permissions.effective_permission_profile(),\n                self.config.permissions.network.clone(),\n                self.config.permissions.permission_profile().clone(),\n                self.config.managed_network_requirements_enabled(),\n                self.config.effective_workspace_roots(),\n            )"
+        },
+        {
+          "startLine": 312,
+          "endLine": 320,
+          "text": "        let exec_request = codex_core::exec::build_exec_request(\n            exec_params,\n            &effective_permission_profile,\n            &sandbox_cwd,\n            windows_sandbox_workspace_roots.as_slice(),\n            &codex_linux_sandbox_exe,\n            use_legacy_landlock,\n        )\n        .map_err(|err| internal_error(format!(\"exec failed: {err}\")))?;"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/src/command_exec.rs",
+      "bytes": 38489,
+      "sha256": "f305f03fdeac1a6b41cc153ead06577ba14dbac2d788f298cb93efee12212b6e",
+      "excerpts": [
+        {
+          "startLine": 355,
+          "endLine": 366,
+          "text": "    pub(crate) async fn terminate(\n        &self,\n        request_id: ConnectionRequestId,\n        params: CommandExecTerminateParams,\n    ) -> Result<CommandExecTerminateResponse, JSONRPCErrorError> {\n        let target_process_id = ConnectionProcessId {\n            connection_id: request_id.connection_id,\n            process_id: InternalProcessId::Client(params.process_id),\n        };\n        self.send_control(target_process_id, CommandControl::Terminate)\n            .await?;\n        Ok(CommandExecTerminateResponse {})"
+        },
+        {
+          "startLine": 417,
+          "endLine": 451,
+          "text": "    async fn send_control(\n        &self,\n        process_id: ConnectionProcessId,\n        control: CommandControl,\n    ) -> Result<(), JSONRPCErrorError> {\n        let session = {\n            self.sessions\n                .lock()\n                .await\n                .get(&process_id)\n                .cloned()\n                .ok_or_else(|| {\n                    invalid_request(format!(\n                        \"no active command/exec for process id {}\",\n                        process_id.process_id.error_repr(),\n                    ))\n                })?\n        };\n        let CommandExecSession::Active { control_tx } = session else {\n            return Err(invalid_request(\n                \"command/exec/write, command/exec/terminate, and command/exec/resize are not supported for windows sandbox processes\",\n            ));\n        };\n        let (response_tx, response_rx) = oneshot::channel();\n        let request = CommandControlRequest {\n            control,\n            response_tx: Some(response_tx),\n        };\n        control_tx\n            .send(request)\n            .await\n            .map_err(|_| command_no_longer_running_error(&process_id.process_id))?;\n        response_rx\n            .await\n            .map_err(|_| command_no_longer_running_error(&process_id.process_id))?"
+        },
+        {
+          "startLine": 519,
+          "endLine": 525,
+          "text": "                            CommandControl::Terminate => {\n                                session.request_terminate();\n                                Ok(())\n                            }\n                        };\n                        if let Some(response_tx) = response_tx {\n                            let _ = response_tx.send(result);"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/src/message_processor.rs",
+      "bytes": 71936,
+      "sha256": "2186e5e1ec407c66ff8627008c7f319d22aa76f68bccb6c04ed454b0b8f22fa8",
+      "excerpts": [
+        {
+          "startLine": 1102,
+          "endLine": 1106,
+          "text": "            ClientRequest::FsWriteFile { params, .. } => self\n                .fs_processor\n                .write_file(params)\n                .await\n                .map(|response| Some(response.into())),"
+        },
+        {
+          "startLine": 1656,
+          "endLine": 1675,
+          "text": "            ClientRequest::OneOffCommandExec { params, .. } => {\n                self.command_exec_processor\n                    .one_off_command_exec(&request_id, params)\n                    .await\n            }\n            ClientRequest::CommandExecWrite { params, .. } => {\n                self.command_exec_processor\n                    .command_exec_write(request_id.clone(), params)\n                    .await\n            }\n            ClientRequest::CommandExecResize { params, .. } => {\n                self.command_exec_processor\n                    .command_exec_resize(request_id.clone(), params)\n                    .await\n            }\n            ClientRequest::CommandExecTerminate { params, .. } => {\n                self.command_exec_processor\n                    .command_exec_terminate(request_id.clone(), params)\n                    .await\n            }"
+        }
+      ]
+    }
+  ],
+  "fetchNotes": "Initial fs.rs and codex_message_processor.rs paths returned 404; official fixed tree identified request_processors/fs_processor.rs and message_processor.rs. No source execution. Tag/source correspondence is not installed binary reproducibility proof.",
+  "kernelAlternativeReference": "https://docs.kernel.org/admin-guide/cgroup-v2.html#core-interface-files",
+  "runs": {
+    "native": 0,
+    "provider": 0,
+    "PG": 0,
+    "browser": 0,
+    "test": 0
+  }
+}

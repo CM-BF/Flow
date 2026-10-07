@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:45:45.308718+00:00 |
+| 最近更新 | 2026-10-07T07:03:48.337103+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,21 +13,21 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 新四源 f15dc1cc，原471为已main历史 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 实现目标 | f15dc1cca0e3ec9575a6b0dc0260e7de5725b383；ENG01J-05四源增量，原471已main历史保留 |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | 新四源5/5、4旧未选、focused types0；0stock/PG/provider，[本轮](../../docs/evidence/eng01j/helper-host/run.json)。原471四不同检查/原红与限制保持，不合并成一轮 |
-| 已集成main状态 / HEAD | de1fe7328f65182b88fdb396e617bcf26b9f0135已clean/push，f15四源与ca6记录精确接收；原bf8历史保持，本次单stock结果尚待独审接收 |
+| 已集成main状态 / HEAD | f39a5dfea0a33ef55631cb7e29291deca6d4e0d2已clean/push并接独立helper结果；产品f15原已main de1；[本次receipt](../../docs/evidence/eng01j/helper-host/stock-main-receipt.json) |
 | 任务开工时间 | 2026-10-07T05:07:35.705Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受限原生文件工具已成功完成一次独立单文件请求，原始结果待审 |
-| 下一可用交付 | 验收这次独立文件请求，再接完整原生工具链与可信停止边界 |
-| 当前阻塞 | ACTIVE: 独立单文件请求已验；完整工具派生、模型资格与全部写入者停止仍未闭合，完整工程写入未通过 |
+| 当前产出 | 独立受限文件工具的单文件写入已获审并进入主线 |
+| 下一可用交付 | 固定真实工具派生与全部写入者停止的最小接入方案 |
+| 当前阻塞 | ACTIVE: 完整工具派生仍缺可证明的进程收束边界；模型授写前保证与现接口不相符，零模型路线继续准备 |
 | 需用户决定 | NONE |
-| Review | 四源 APPROVED_LIMITED_STOCK_HELPER_PREPARATION；薄caller待审，[review.md](review.md)保留旧范围 |
+| Review | 四源/caller及实际结果均获限定批准；[最新独审](../../docs/evidence/eng01j/helper-host/stock-result-independent-review.json)，不含app-server派生或完整authority |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
 | 架构影响 | 新Darwin策略/启动层直接复用R06；G/I与C02不变，生产grant未注册。架构基线待本target独审/接收后由Execution Lead更新，分支不当main能力 |
 
@@ -37,7 +37,7 @@
 | ENG01J-02 | completed | native_center_owner | [真实syscall与FD限制](../../docs/evidence/eng01j/local/README.md)，不推断全IPC |
 | ENG01J-03 | completed | native_center_owner | [实际启动Interface](../../docs/evidence/eng01j/interface.md)，R06直接4例；完整生产grant未实现 |
 | ENG01J-04 | completed | native_center_owner | [限定独审](../../docs/evidence/eng01j/r1-re-review.json)；main bf8b已接，无新测试 |
-| ENG01J-05 | in-progress | native_center_owner | [只读收敛方案](../../docs/evidence/eng01j/stock-helper/convergence.md)，原失败与单名负例已获限定审查；真实FS helper/完整authority仍开放 |
+| ENG01J-05 | in-progress | native_center_owner | 独立stock helper已获审/main；[真实派生与停止域候选](../../docs/evidence/eng01j/helper-host/app-server-route.md)只读固定，完整authority仍开放 |
 
 继承I真实零provider组合已main，但不能提供模型身份或OS停止证明。本片不重复Mika Node/Codex诊断；tiny C只测OS行为，不充当模型写改。
 
@@ -79,3 +79,7 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T06:32:51.999568+00:00：薄caller固定d44c1bc2c48f96145a519b64f9220baf468bdee8，原4产品f15不变；[唯一实际候选入口](../../docs/evidence/eng01j/helper-host/caller-readiness.md)与22输入已封，只静态/Python AST、不import/启动。至多1stock/总10s含收尾、64KiB raw/1MiB私有、原fresh线；等待Lead新增caller边界独审与明确实际窗口，不自动运行。
 
 2026-10-07T06:45:45.308718+00:00：caller d44/d2ef 获[限定独审](../../docs/evidence/eng01j/helper-host/caller-independent-review.json)，按唯一授权执行一次stock，原run目录前不存在。实际结果06:44:31.242028Z收尾：outer0，总574ms（含固定输入核）、两子监督310+100ms，raw268B、私有末采18,923B；calculator原inode变X、baseline0，payload严格成功，writeAccess unknown。两组最终absent/双EOF/signals[]，checkpoint先于exact目录正常删除；已直接归还local。0PG/browser/provider/个人；不复跑旧probe，四产品不变。[原件/限定分析](../../docs/evidence/eng01j/helper-host/stock-result-analysis.json)待唯一结果独审。
+
+2026-10-07T07:00:49.443601+00:00：原stock结果获 APPROVED_LIMITED_STANDALONE_STOCK_HELPER_RESULT，38固定/6安装输入及原raw已由Lead核，main f39a已接。此次仅原样归档与receipt，0复跑；writeAccess unknown。后继开始只读固定公开协议/上游调度、Mika07341输入，停止于新源码权限/平台范围之前。产品与原raw/manifest保持。
+
+2026-10-07T07:03:48.337103+00:00：完成[下一路线只读候选](../../docs/evidence/eng01j/helper-host/app-server-route.md)。9份既存binary schema匹配原摘要，5份官方固定调度源码留小段；公开fs/writeFile明确sandbox=None，不安排它重复验证外层边界。command/exec可零模型桥接真实派生，但不等模型apply_patch；现Darwin fork-deny与此冲突。候选明确专属Linux内核进程域/平台LSM依赖、R06复用与两新叶子scope建议，未领取/未实施/未确认本机可用。模型写前locked-no-fallback与现公开字段的精确冲突交产品裁决，未调用资格query。0工程测试/native/PG/browser/provider/个人操作，五产品与所有原raw/manifest不变。

@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T06:48:00.217893+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+  "delivery": "b0c0270a0078150cc4dce0f3bcfb4fbae79908d0",
+  "verdict": "APPROVED_LIMITED_STANDALONE_STOCK_HELPER_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "manifestSha256": "752745872fd611b443e0e4ebde73993fe21bb2bca3b3e369c04be312b26806ac",
+  "checked": {
+    "fixedCurrentBindings": 38,
+    "installedEntries": 6,
+    "mismatches": []
+  },
+  "scope": [
+    "Read actual result/prepared/file-facts/checkpoint/raw payload and caller result analysis; same target file dev/ino confirmed.",
+    "Original executed input ae3759 archived exactly; current use-label correction only, no caller/policy/product or budget change.",
+    "One stock request succeeded, calculator0→X and baseline0; two owned groups absent/dualEOF/no signals, checkpoint before normal exact scratch removal."
+  ],
+  "actual": {
+    "outerExit": 0,
+    "stockAttempts": 1,
+    "prepareMs": 310,
+    "stockMs": 100,
+    "operatorMs": 574,
+    "rawBytes": 268,
+    "privateBytesAtEnd": 18923,
+    "finishedAt": "2026-10-07T06:44:31.242028Z",
+    "writeAccess": "unknown"
+  },
+  "limitations": [
+    "One independent initial exec helper only; no app-server delegation/model qualification/NativeWriteAuthority or all-writer revocation.",
+    "Preparation closure not carried across processes; these are caller payload/file facts.",
+    "Private bytes are final sample, not peak/quota; initial errno1 observations retained.",
+    "No reviewer test/native/provider/PG run."
+  ],
+  "reviewerRuns": 0
+}

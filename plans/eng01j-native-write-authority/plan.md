@@ -14,3 +14,5 @@
 - [ ] ENG01J-05：按[stock helper最小候选](../../docs/evidence/eng01j/stock-helper-candidate.md)核实际内部参数/受限文件操作；原段已失败并获限定结果审查，转[既有启动正例收敛](../../docs/evidence/eng01j/stock-helper/convergence.md)。不重复model/list或单名页大小负例，不自动扩权限。
 
 ENG01J-05已获Lead授权的四源后继见[准备Interface](../../docs/evidence/eng01j/helper-host/interface.md)：先5例/聚焦类型与独审，真实stock单文件另固定零provider工作段。原30s段已结束；本次为新≤60s/4MiB普通local，未追溯延长旧失败运行。
+
+独立stock单文件结果已获审/main f39a，完整ENG仍未完成。下一范围只读收敛见[真实app-server路线与停止域](../../docs/evidence/eng01j/helper-host/app-server-route.md)：不重复公开fs外层边界或目录检查；新的受信平台域/两源码路径须由Lead明确scope与固定输入后实施。旧段预算不用于新平台运行。
