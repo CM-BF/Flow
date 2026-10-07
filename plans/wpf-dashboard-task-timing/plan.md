@@ -13,13 +13,13 @@ status Module 解析顶层三字段，返回 timing（声明、规范 UTC、独�
 ## TODO
 
 - [x] TIMING01-01：严格三字段解析、异常隔离与旧记录兼容。
-- [ ] TIMING01-02：摘要/详情显示时间与同快照历时、失败旧快照降为历史。
+- [x] TIMING01-02：摘要/详情显示时间与同快照历时、失败旧快照降为历史。
 - [x] TIMING01-03：有界 parser 行为检查，原始失败保留；browser 源码准备。
-- [ ] TIMING01-04：隔离 browser 验收（另实际窗口），固定独审。
+- [x] TIMING01-04：隔离 browser 验收（另实际窗口），固定独审。
 - [ ] TIMING01-05：Lead 主线接收，本片交付；部署单独记录。
 
 ## 验证与边界
 
-普通 parser 工作段总≤5min、每命令≤30s、必要修复复测最多3次；TMP≤8MiB/raw≤1MiB，仅 Node 内置，无 PG/Chrome/安装/私人服务。真实 browser 尚未授权，不运行旧 task-links.browser 或真实 registry。旧 DPERF05 测试通过不继承新实现；浏览器未验不得冒整体通过。
+普通 parser 工作段总≤5min、每命令≤30s、必要修复复测最多3次；TMP≤8MiB/raw≤1MiB，仅 Node 内置，无 PG/Chrome/安装/私人服务。2026-10-07 已在独立窗口执行一次隔离 browser：五组与双主题390截图通过、完整清理，实际证据已root限定独审通过；不运行旧 task-links.browser 或真实 registry。原81parser未重跑，不继承旧 DPERF05 结果。后继main/部署另记。
 
 实际状态与证据以 [status](status.md) 为唯一来源；独审入口 [review](review.md)。复用本地 find-skills/codebase-design/clean-code，方法及发现记录在 own evidence。

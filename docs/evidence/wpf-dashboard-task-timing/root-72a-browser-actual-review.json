@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T03:42:17.803595+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_SCOPED_SOURCE_PARSER_AND_BROWSER_FIXTURE",
+  "target": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "scope": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs"
+  ],
+  "blockingFindings": [],
+  "priorSourceParserReview": {
+    "path": "/private/tmp/root-timing72-source-parser-review.json",
+    "sha256": "10ffbce58e66e0d1a8df5495c96ef432a00fe1034608e43061e44e1453f499a0",
+    "actualParserTests": 81
+  },
+  "browserActual": {
+    "actualExitCode": 0,
+    "outerElapsedMs": 6410.498125012964,
+    "startedAt": "2026-10-07T03:40:44.245553+00:00",
+    "finishedAt": "2026-10-07T03:40:50.656640+00:00",
+    "stdout": "outer-stdout.json",
+    "stderr": "outer-stderr.log"
+  },
+  "checks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout"
+  ],
+  "verifiedRawFiles": 13,
+  "verifiedRawBytes": 178870,
+  "actualSummarySha256": "96c778103c7c51df363463dce18bffb7eb359e948bfaa75b181bb783041aac5f",
+  "cleanupVerified": true,
+  "visualReview": {
+    "method": "root independently opened actual native390px light and dark PNGs",
+    "findings": "Both show readable sourcedUTC/start/end/inclusive-wait elapsed, snapshot provenance and raw waiting records. Visible keyboard focus, contained dialog scrolling and no horizontal clipping. Fake fixture values only.",
+    "screenshots": [
+      {
+        "name": "task-timing-dark-390.png",
+        "bytes": 85025,
+        "sha256": "e20e7f5dc623d20cf61c825c32067f99f9f3541f843e8c1a070148cb4d3ef26b"
+      },
+      {
+        "name": "task-timing-light-390.png",
+        "bytes": 86923,
+        "sha256": "26b86bb43ddd6881970c308a2fa2f4f89f0d38782b765b15dbfb3afbb2222284"
+      }
+    ]
+  },
+  "cleanCode": "Fixed input observations stay separate from browser wall time; open details retain their own snapshot and read failure marks elapsed unknown without replacing focus. Optional timing errors remain isolated. No extra architecture or duplicate fact source needed.",
+  "limits": [
+    "Fixture tests real parser/shippedUI with synthetic status/Git and no registry/PG/personal service.",
+    "Main integration, direct-consumer checks at integration and actual185 dashboard deployment remain originalLead responsibility and NOT_RUN here.",
+    "Root did not rerun tests; actual runtime and lifecycle evidence reviewed. Full registeredtask completion is not set by this scoped approval."
+  ]
+}
