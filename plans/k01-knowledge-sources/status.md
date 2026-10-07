@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 17:07 UTC |
+| 最近更新 | 2026-10-07 17:36 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,9 +16,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 本次起点81fa8160=origin clean；仅归档review及候选metadata，实验源码9c802db零diff；最终提交后STOP |
-| 工作分支状态 | integration（源与局部结果已独审；新实际诊断NOT_OPEN，未集成） |
-| 检查状态 | PASSED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；9纯行为/focused noEmit0；原首次PG FAILED，不含本修复真实PG验证 |
+| 工作树dirty状态 | 执行起点3f182ba5c clean；仅封存本次失败/阶段原件，source9c不变 |
+| 工作分支状态 | review（已审source，本次真实诊断FAILED/HOLD待结果窄审） |
+| 检查状态 | FAILED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；新PG超时/无最终result，原9纯/noEmit仅历史局部范围 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。旧首次PG FAILED，修复后真实PG未运行 |
 | 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
@@ -26,13 +26,13 @@
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 诊断启动、失败留存与计时修复已独审通过；下一次诊断输入已固定 |
-| 下一可用交付 | 在另行分配的专库窗口验证真实检索查询计划 |
-| 当前阻塞 | NONE |
+| 当前产出 | 真实检索金样本与语义阶段已有原件，规模诊断超时，数据库资源仍保留 |
+| 下一可用交付 | 独立核对失败原件，另获授权后确认保留资源状态 |
+| 当前阻塞 | ACTIVE: 诊断超时且数据库连接与清理未知；需独立恢复观测，不自动重跑 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；9c802db已独审APPROVED，限source/local；下一实际窗口NOT_OPEN |
+| Review | [review.md](review.md)；源码9c已审；新实际失败结果待窄审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -142,3 +142,5 @@
 经理后到事实：Original R4 sole NEXT217.5s，current完整forward15,927,083,008B；本组新13MiB分类提交后预计15,915,548,672B但此处未记作已接受。K01候选没有actual授权/资源实采，未来floor必须另获经理完整值，历史gate不复用；prior KEEP/backgrowth128MiB继续计入。
 
 2026-10-07T17:29:04.090046Z：新sole manager许可已收到；freshclaim30965v2/18source/27runtime/245fixed/17+3alias全部吻合，freshfree19,608,182,784≥16,065,495,040B。单独admin准入17:29:04.011154→.090046、available87≥34、poolClosed、PID90815/ownedabsent/完整EOF成立；0数据集改变。新explicit permit仅一次120s=70/40/10，actual START由新ledger定义；旧FAIL/KEEP/许可不改。配置18、0provider/Chrome，原始inputSHA f4255413。
+
+2026-10-07T17:36:21.278772+00:00：新actual17:29:31.938089→terminal17:31:25.093600Z，FAILED/HOLD、0重跑。PID7468/-15/原group absent/MERGED EOF0B；firstDEADLINE_EXCEEDED/SIGTERM sent/secondaryCHILD_EXIT_NONZERO，resourceConfirmed=false不变。[唯一结果入口](../../docs/evidence/k01/query-entry-pg-startup-actual/manifest.json)保18source/11raw/14316B及progress，12gold与semantics已完成但0scale阶段结果，原因UNKNOWN。新DB OID1340630/marker及scratch已有限封存，当前admin/连接未知，保持KEEP，旧KEEP0访问；不声称FULLRETURN。所有工程/PG/供给停止，只封证据交独审；K01-06/08～10仍开放。

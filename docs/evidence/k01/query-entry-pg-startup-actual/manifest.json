@@ -1,0 +1,167 @@
+{
+  "source": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "executionHead": "3f182ba5cf9ec083f9f537162809d51ae78c8022",
+  "candidateInput": {
+    "path": "docs/evidence/k01/query-pg-startup-runtime-inputs.json",
+    "bytes": 39206,
+    "sha256": "f42554136f32263a458c3a4820d520f6f9dbca235dff7e0954b20a2b9e6c0c8a"
+  },
+  "sources": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 15633,
+      "sha256": "d759735bfe70418841068e71b3b2982a921905b67aa51e3769c773aebcd3edb0"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 18404,
+      "sha256": "3537f2d14a0a01e499363900a20c332a840cc47671f6d61b5891421f50986f99"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 14202,
+      "sha256": "7b38ca92fd61952bd207b0568fc7ee2d08608ec430003db2121af3b90ab9c56e"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 209,
+      "sha256": "5441423d9317d0fa66633b5b341ee29f2cc518cf3d2cebc32c0f7238847d45b8"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/iterations.jsonl",
+      "bytes": 4632,
+      "sha256": "dd04cc8668b9f25583dea625adedc0e977d00482a248b1972a7613a49c6c3ca3"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/check-01.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/namespace-owner.json",
+      "bytes": 253,
+      "sha256": "883280e8566158d5d4b5b48177ca6bb3115e2738bfdec757d837ef4602149b20"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/owned.database-reservation.json",
+      "bytes": 182,
+      "sha256": "e2d10ec6d5736b9684f752d921c42b53e2778f8cf4ca5cdb7b64b61268f9a44f"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/owned.create-ack.json",
+      "bytes": 100,
+      "sha256": "a1bc8f07ccb65c8d57fa30b5a07189b4c259cf6379ed556196fe9ec5eb7fb74a"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/owned.database-identity.json",
+      "bytes": 185,
+      "sha256": "50a6ef51ef8658c012b0eb9f5fbff0aced3d93c02bac0a47f6e52818d6f49eb5"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-actual/progress.jsonl",
+      "bytes": 2595,
+      "sha256": "244d9025ca3d859a8361e9b9acdff8380e70fb4986b3e440c3c25d69c9fcf643"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-startup-admission.json",
+      "bytes": 2229,
+      "sha256": "27360d168dee3e01275b6780d043a3f7e9761325af400c8e3932f9702b331550"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-startup-admission.raw",
+      "bytes": 222,
+      "sha256": "b6d80846d2733ae2e084fde563a6d993173227b4efaae356f42cee017d24bf52"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-startup-preflight.json",
+      "bytes": 591,
+      "sha256": "01020eec347215ee3148c1b2c285cbc5b0699c8678d1b8fe7d38443baeb4ff44"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-startup-actual-permit.json",
+      "bytes": 3327,
+      "sha256": "ef41b22194420b556ef57a88bf6e0fe1c464509b2cea05f737fecda7b4b4863a"
+    }
+  ],
+  "summary": {
+    "path": "docs/evidence/k01/query-entry-pg-startup-actual/summary.json",
+    "bytes": 2852,
+    "sha256": "57b6bc7302b943673a0f155b7157756027145c83d60e851f770627604c580eb1"
+  },
+  "rawEvidenceCount": 11,
+  "rawEvidenceBytes": 14316,
+  "review": "NOT_STARTED",
+  "noNewChecks": true
+}

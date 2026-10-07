@@ -1,3 +1,10 @@
+# K01 修复后实际失败原件窄审（当前）
+
+状态：NOT_STARTED
+Review target commit：9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb
+
+固定source/runtime不变，新actual的11原件/18源码绑定见query-entry-pg-startup-actual/manifest.json。请独立核计算组终态、失败/已完成阶段保真、DB identity/未知连接及KEEP边界；不运行probe/工程/读取KEEP，不将12gold/semantics阶段当整轮通过。此次未定位具体挂起阶段；旧importP2已关闭的源码结论不改。仅结果忠实性待审，不是新PG运行审批。
+
 # K01-06 启动/有限进度/计时修复（当前）
 
 状态：APPROVED

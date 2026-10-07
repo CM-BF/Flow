@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-07T17:34:46.270947+00:00",
+  "state": "FAILED_HOLD",
+  "executionHead": "3f182ba5c",
+  "source": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "actualOwnerStart": "2026-10-07T17:29:31.938089Z",
+  "operatorStart": "2026-10-07T17:29:32.034162+00:00",
+  "terminalAt": "2026-10-07T17:31:25.093600+00:00",
+  "operatorElapsedMs": 113059,
+  "supervisionElapsedMs": 112934,
+  "pid": 7468,
+  "exitCode": -15,
+  "ownedGroupFinal": "absent",
+  "capture": "merged",
+  "eof": {
+    "stdout": true
+  },
+  "rawBytes": 0,
+  "firstFailure": {
+    "phase": "work",
+    "code": "DEADLINE_EXCEEDED",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "deadline exceeded"
+  },
+  "secondaryFailures": [
+    {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  ],
+  "signals": [
+    {
+      "signal": "SIGTERM",
+      "state": "sent",
+      "errno": null
+    }
+  ],
+  "resourceConfirmed": false,
+  "storageMeasurement": "UNKNOWN",
+  "dbIdentity": {
+    "database": "flow_k01_query_0197b9a66cbf46da91227d662bf983d0",
+    "identity": {
+      "oid": "1340630",
+      "owner": "flow",
+      "marker": "edd4a2c8-dba4-4c96-a743-293a6c439554"
+    }
+  },
+  "scratch": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-bf78ed79d4034dbb8c549e8a5fe8bc41",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124383528,
+      "marker": "6688ccc2437b4f3da07defd1137d73e7",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-bf78ed79d4034dbb8c549e8a5fe8bc41"
+    },
+    "state": "KEEP_PG_RECEIPTS",
+    "absent": false
+  },
+  "phaseFacts": {
+    "moduleFactoryListenerReady": true,
+    "completedGoldCases": 12,
+    "completedSemantics": true,
+    "lastCompletedAt": "2026-10-07T17:29:34.874Z",
+    "lastCompletedPhase": "semantics-completed",
+    "completedScaleCases": 0,
+    "finalResult": "ABSENT",
+    "firstFailureStageRecord": "ABSENT",
+    "cleanupStageRecord": "ABSENT"
+  },
+  "limitations": [
+    "Original run FAILED. Completed phase records support only their own limited assertions, not whole diagnostic acceptance.",
+    "No EXPLAIN/scale/latency samples persisted. Counts of attempted later SQL/HTTP and cause of stall are UNKNOWN.",
+    "Factory and listener did settle in this run; do not attribute failure to the earlier conditional import gap or W01.",
+    "Process group reaped/finalabsent/EOF known; admin close, current DB connections, listener-specific close and storage remain UNKNOWN. No FULLRETURN.",
+    "No repeat probe/drop/cleanup authorized or performed. Old KEEP untouched."
+  ],
+  "sourceChanged": [],
+  "fixedInputsAfter": "matched"
+}
