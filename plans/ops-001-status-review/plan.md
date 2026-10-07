@@ -80,3 +80,7 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 - [ ] **OPS-001-16** 用户任务时间与局部迭代：沿[plans时间契约](../AGENTS.md#task-timing)在当前活跃/后续新status记录可追溯开工、各交付阶段及等待，dashboard实际显示进行中壁钟耗时；历史未知不猜。普通本地修复按[有界连续迭代](../../docs/quality/local-validation.md#bounded-local-iteration)收敛记录/审批开销。规则、Web展示与实际活跃任务接入分别验收，当前规则发布不冒充看板已实现。
 
 本组新树的纯源码准备采用[常规co-lead自助职责](../../docs/quality/local-validation.md#source-operator)，沿OPS-001-12复用模块闭包；main/共享配置和跨owner范围交接保持原归属，不再以逐片供给许可阻塞ready实现。
+
+## OPS-001-14 的资源计量后继（2026-10-07）
+
+进程监督Module及实际caller已经交付；后续资源计量保持独立职责，不向OPS14加入callback，也不合并DB删除、身份或源码绑定。Quick b2在6.142秒、产品断言前因retained cap退出，其两次先后扫描再相减会受目录增长影响；ACCESS旧live扫描遇Chrome临时目录消失是另一失败方式，不能合并为同一已证根因。沿两个实际caller下一安全变更选最小共用计量Interface：显式排除子树、logical与allocated分列、文件/目录消失与身份变化/越界/真实I/O unknown分开；保原上限和unknown记录。只需目录增长/消失的直接验证与两consumer，不建inventory平台、不迁移全库、不阻原Quick修复、不重跑已绿产品。具体独立scope由原co-lead协调，当前仅登记待实施验收。
