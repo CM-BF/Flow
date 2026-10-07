@@ -1,0 +1,59 @@
+{
+  "kind": "SVC09A_FIXED_ARTIFACT_RESULT_INDEPENDENT_REVIEW",
+  "reviewedAt": "2026-10-07T15:20:05.813Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+  "manifestTarget": "d54be510da0980c1eb9b28b001d59ebf42c9fab6",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+  "canonical": "docs/evidence/svc09/message-settings-activation/host-integration/build/result-manifest.json",
+  "manifestBytes": 7819,
+  "manifestSha256": "329422ddc4a4c663c103c62834e7c19d888fe1a645cf9908971a2db648baf888",
+  "artifactSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+  "decision": "APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT",
+  "findings": [],
+  "readOnlyChecks": {
+    "fixedResultBindings": 16,
+    "inheritedInputReferences": 2,
+    "currentDifferences": 0,
+    "privateFileIdentityAndSha256": 3,
+    "privateRootIdentity": "matching dev/ino/uid/mode",
+    "mismatches": 0,
+    "reviewerTests": 0,
+    "reviewerBuilds": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "actual": {
+    "startedAt": "2026-10-07T15:14:01.726Z",
+    "finishedAt": "2026-10-07T15:14:34.219Z",
+    "returnedAt": "2026-10-07T15:14:38.558644Z",
+    "outerElapsedMs": 32570,
+    "exitCode": 0,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "firstFailure": null,
+    "sourceFiles": 81,
+    "SQL": 33,
+    "snapshots": 271,
+    "importers": 7,
+    "logicalBytesIncludingManifest": 367105165,
+    "rawBytesIncludingStage": 14888,
+    "minimumSampledFreeBytes": 20357427200
+  },
+  "assessment": [
+    "Original builder completed a fixed source artifact; manifest, SQL/source bindings and internal dependency resolution agree with original raw result.",
+    "PG, SDK, native binary metadata, Vite and tsx resolve inside artifact; SDK imported, native binary not executed.",
+    "Historical initial EPERM/unknown observation remains; final two absent observations, reap and stdout/stderr EOF establish this owned build group completion.",
+    "Private artifact/root and stage are KEEP, not refunded as physically reclaimed; sampled free is not measured physical peak."
+  ],
+  "limits": [
+    "Only full fixed artifact build/verification plus artifact-internal import and read-only selection approved.",
+    "Actual center/runner/settings host, mixed claim, maintenance, production App compatibility and personal activation remain NOT_RUN.",
+    "Excluded current source-only host-fixture/host-consumer/mixed-runner/host-entry/host-records changes are not reviewed by this result.",
+    "Remote pushes currently failed HTTP500; local fixed commits are available, no claim of remote receipt."
+  ],
+  "quality": "Reuses approved preparation/producer/supervisor; one result manifest references unchanged inputs, no second build or installer authority."
+}

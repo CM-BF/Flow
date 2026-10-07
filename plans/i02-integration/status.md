@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:12:00.000Z / mainfbad68a68；受信插件进程宿主已审范围接收，当前后台迁入模块/登记窄审完成；远端500待恢复 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:20:05.813Z / local main13d4327b1；远端仍fbad68a68，HTTP500待恢复 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,16 +12,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main3c9345df4已接MSG03实际App接线；本批已审后台保留准入工具203ec与own记录 |
+| 工作基线 / HEAD | 本批已审 PROCESS、后台迁入模块和205来源登记已进入local main13d4327b1；原始审批与精确输入见本段接收记录 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | MSG03原两App selected各2/2与集成Web noEmit已通过；本批retention5/5原raw/hash与3源前像核验，0重跑/PG/浏览器/provider |
-| 已集成main状态 / HEAD | main/origin3c9345df4已含SVC09A、SVC06B实际artifact及MSG03；retention本批受控接收。个人7d1/source6c、Webd629/v3为最后已审历史，未新操作。 |
+| 检查状态 | 本批固定输入与原raw/私有产物身份核验相符，构建结果独审批准；0重复测试/PG/浏览器/provider。 |
+| 已集成main状态 / HEAD | local main13d4327b1；origin main仍fbad68a68，推送HTTP500未完成。固定cd27/098b产物与当前个人运行分别记录，未混入PROCESS。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 消息设置与后台保留策略已合入；插件独立进程执行的已审源码正接收，固定发布候选保持不变。 |
+| 当前产出 | 插件独立进程执行的已审源码已在本地主线；消息设置的固定后台产物已构建并通过限定独审。 |
 | 下一可用交付 | 完成固定新旧网页与新后台的兼容验证，再沿受管流程发布可体验页面；消息设置双槽另做真实宿主验证。 |
 | 当前阻塞 | ACTIVE: 远端推送暂报服务错误；本地固定审查和发布准备仍可继续。 |
 | 需用户决定 | NONE |
@@ -442,3 +442,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## 2026-10-07T15:12:00.000Z 安全接收
 
 受信插件进程宿主固定4dc6的11源/55support与当前主线前像/直接依赖均核符，复用原独审与15distinct分轮结果，不重复工程测试。当前迁入Module固定7324/ac6限定独审通过，未具备个人实例/正式报告或现场调用；双槽宿主098b的独立构建准备b3ee审查已通过。登记仅唯一source，未reload。见本批 [插件接收](../../docs/evidence/i02/x01-trusted-process-host-intake.json)、[当前迁入审查](../../docs/evidence/i02/svc06b-current-import-module-review.json)、[构建准备审查](../../docs/evidence/i02/svc09a-fixed-build-preparation-review.json)。GitHub两owner推送500原错误保留，本地主线/远端状态分记，不称已push。旧个人7d1/source6c、Webd629/v3仍只是最后已审记录，本段未操作。
+
+2026-10-07T15:20:05.813Z：SVC09A固定产物构建及内部加载结果独审通过，见 [限定审查](../../docs/evidence/i02/svc09a-fixed-build-result-review.json)。实际15:14:01.726Z→15:14:34.219Z，15:14:38.558644Z完整归还；宿主/个人部署仍未验。PROCESS和当前迁入模块已local main13d，远端HTTP500单列，不重跑已审检查。
