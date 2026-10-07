@@ -748,8 +748,11 @@ async function worker(init: Init) {
       await fileDialog.getByRole("button", { name: "Use saved.txt", exact: true }).click();
       await fileDialog.getByRole("button", { name: "Use later.txt", exact: true }).click(); await closeFiles();
       await page.getByRole("radio", { name: "Queue next", exact: true }).check(); await saveDraftThroughUi(original);
-      const selectedDrafts = async () => (await records(page)).filter(record => record.kind === "draft" && record.data?.text === original
-        && Array.isArray(record.data.knowledge) && record.data.knowledge.length === 1 && Array.isArray(record.data.attachments) && record.data.attachments.length === 2 && record.data.intent === "queue");
+      const selectedDrafts = async () => (await records(page)).filter(record => {
+        if (record.kind !== "draft" || record.data?.text !== original) return false;
+        const data = object(record.data);
+        return Array.isArray(data.knowledge) && data.knowledge.length === 1 && Array.isArray(data.attachments) && data.attachments.length === 2 && data.intent === "queue";
+      });
       await expect.poll(async () => (await selectedDrafts()).length).toBe(1);
       const saved = parseRecoveryRecord((await selectedDrafts())[0]); requireThat(saved.kind === "draft", "Expected a complete saved draft");
       completeDraft.savedRecordId = saved.id;
