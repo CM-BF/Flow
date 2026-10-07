@@ -127,6 +127,29 @@ test('selected clone rejects corrupt bytes, selected symlinks and escaping manif
   try {
     const prepared = await prepareRuntimeInstallation(input), file = prepared.cache.files.find(value => value.kind === 'content');
     const path = join(input.seed, file.path), original = await readFile(path);
+    // Replace a verified CAFS leaf with a directory before the clone step.
+    // No file beneath this unselected directory may be cloned, even on failure.
+    const racingTarget = join(input.stage, 'changed-directory');
+    const replaceAfterVerification = `
+import os, runpy, sys
+module = runpy.run_path(sys.argv[1])
+verify = module['verify_file']
+def replace(path, entry):
+    result = verify(path, entry)
+    if path == sys.argv[5]:
+        os.unlink(path)
+        os.mkdir(path)
+        with open(os.path.join(path, 'unselected'), 'w') as stream:
+            stream.write('must not clone')
+    return result
+module['selected_copy'].__globals__['verify_file'] = replace
+module['selected_copy'](sys.argv[2], sys.argv[3], sys.argv[4])
+`;
+    await assert.rejects(execute('/usr/bin/python3', ['-c', replaceAfterVerification,
+      fileURLToPath(new URL('./clone-store.py', import.meta.url)), input.seed, racingTarget, prepared.cloneManifest, path],
+    { env: { PATH: '/usr/bin:/bin', PYTHONDONTWRITEBYTECODE: '1' }, timeout: 3000, maxBuffer: 4096 }), /CLONE_REGULAR_FILE_REQUIRED/);
+    await assert.rejects(stat(join(racingTarget, file.path)), { code: 'ENOENT' });
+    await rm(path, { recursive: true });
     await writeFile(path, Buffer.alloc(original.length, 120));
     await assert.rejects(clone(input.seed, join(input.stage, 'corrupt'), prepared.cloneManifest), /CLONE_SOURCE_INTEGRITY/);
     await rm(path); await symlink(input.indexes[0], path);

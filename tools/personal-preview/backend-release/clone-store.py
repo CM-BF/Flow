@@ -11,6 +11,9 @@ import sys
 clone = ctypes.CDLL(None, use_errno=True).clonefile
 clone.argtypes = [ctypes.c_char_p, ctypes.c_char_p, ctypes.c_int]
 clone.restype = ctypes.c_int
+clone_fd = ctypes.CDLL(None, use_errno=True).fclonefileat
+clone_fd.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_char_p, ctypes.c_uint32]
+clone_fd.restype = ctypes.c_int
 
 
 def copy(source, target):
@@ -28,6 +31,27 @@ def copy(source, target):
             raise RuntimeError('CLONE_NOT_INDEPENDENT')
     else:
         raise RuntimeError('CLONE_REGULAR_FILES_ONLY')
+
+
+def clone_selected_file(source, target, expected):
+    # Pin the verified regular inode: a changed path cannot enter legacy recursion.
+    descriptor = os.open(source, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    try:
+        info = os.fstat(descriptor)
+        if not stat.S_ISREG(info.st_mode):
+            raise RuntimeError('CLONE_REGULAR_FILE_REQUIRED')
+        identity = lambda value: (value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns, value.st_ctime_ns)
+        if identity(info) != identity(expected):
+            raise RuntimeError('CLONE_SOURCE_CHANGED')
+        parent = os.open(os.path.dirname(target), os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+        try:
+            if clone_fd(descriptor, parent, os.fsencode(os.path.basename(target)), 1) != 0:
+                error = ctypes.get_errno()
+                raise OSError(error, os.strerror(error))
+        finally:
+            os.close(parent)
+    finally:
+        os.close(descriptor)
 
 
 def safe_parents(root, relative):
@@ -108,7 +132,7 @@ def selected_copy(source, target, manifest_path):
         before = verify_file(original, entry)
         os.makedirs(os.path.dirname(destination), mode=0o700, exist_ok=True)
         safe_parents(target, relative)
-        copy(original, destination)
+        clone_selected_file(original, destination, before)
         after = verify_file(destination, entry)
         source_after = os.lstat(original)
         if (before.st_dev, before.st_ino, before.st_ctime_ns) != (source_after.st_dev, source_after.st_ino, source_after.st_ctime_ns):
@@ -118,7 +142,8 @@ def selected_copy(source, target, manifest_path):
     print(json.dumps({'selectedFiles': len(entries), 'logicalBytes': total, 'integrityVerified': True, 'ordinaryCopyFallback': False}))
 
 
-if len(sys.argv) == 4:
-    selected_copy(sys.argv[1], sys.argv[2], sys.argv[3])
-else:
-    copy(sys.argv[1], sys.argv[2])
+if __name__ == '__main__':
+    if len(sys.argv) == 4:
+        selected_copy(sys.argv[1], sys.argv[2], sys.argv[3])
+    else:
+        copy(sys.argv[1], sys.argv[2])
