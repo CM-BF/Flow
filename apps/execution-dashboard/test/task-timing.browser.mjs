@@ -176,6 +176,19 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
     await region.waitFor();
     assert.match(await region.locator('.task-elapsed').innerText(), /3小时/);
+    // Native close queues its event; reopen through the real button in the same task.
+    await row('T01').locator('button[data-open-task="T01"]').evaluate(button => {
+      const dialog = document.querySelector('#task-dialog');
+      if (!dialog.open) throw new Error('Expected an open timing detail before queued-close regression');
+      window.fixtureTimingReopenClose = false;
+      dialog.addEventListener('close', () => { window.fixtureTimingReopenClose = true; }, { once: true });
+      dialog.close();
+      button.click();
+    });
+    await page.waitForFunction(() => window.fixtureTimingReopenClose === true);
+    await region.waitFor();
+    assert.equal(await page.locator('#task-dialog').evaluate(node => node.open), true);
+    assert.match(await region.locator('.task-elapsed').innerText(), /3小时/);
     checks.push('New snapshot updates cards; an open detail retains its original observation until explicitly reopened');
 
     for (const theme of ['light', 'dark']) {

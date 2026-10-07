@@ -481,6 +481,8 @@ const assignmentNote = element('p', '领取状态未知：等待独立观察。'
 $('#load-error').after(assignmentNote);
 $('#close-dialog').addEventListener('click', () => $('#task-dialog').close());
 $('#task-dialog').addEventListener('close', () => {
+  // A queued close from the previous opening must not revoke a reopened detail.
+  if ($('#task-dialog').open) return;
   invalidateDetail(); selectedTask = undefined; detailSource = undefined;
   const target = returnFocus?.node?.isConnected ? returnFocus.node : [...document.querySelectorAll('[data-open-task]')].find(node => node.dataset.openTask === returnFocus?.taskId);
   target?.focus(); returnFocus = undefined;
