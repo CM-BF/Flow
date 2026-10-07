@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T14:37:41.983Z",
+  "scope": [
+    "experiments/runner-capacity/mixed/delivery-replay.ts",
+    "experiments/runner-capacity/mixed/delivery-replay-main.ts",
+    "experiments/runner-capacity/mixed/delivery-replay.test.ts",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-tsconfig.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-vitest.config.mjs"
+  ],
+  "source": "bee336a01505e42bbba0e9154f8ade75eee2f244",
+  "methods": {
+    "find-skills": {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "installedBaselineReused": true,
+      "installOrUpdate": false
+    },
+    "codebase-design": {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "installedBaselineReused": true,
+      "installOrUpdate": false
+    },
+    "clean-code": {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "installedBaselineReused": true,
+      "installOrUpdate": false
+    }
+  },
+  "findings": [
+    "Real fixed centerDelivery and childReporter are reused; replay never imports runtime PG modules.",
+    "Receiver adds exact finite semantics rather than a second delivery authority.",
+    "First failure, one summary, callback pending/dropped, stderr prefix and unknown process cleanup are distinct.",
+    "A single caller consumes OPS14; no copied TERM/KILL loop or new generic supervisor.",
+    "New test sources intentionally remain unexecuted in the source-only segment.",
+    "Individual loader-helper PID census remains unresolved for actual-ready; owned-group closure alone is not claimed as an observed PID count."
+  ],
+  "unresolved": [
+    "Independent source review pending",
+    "Pure 8 Vitest + 3 Python and focused strict pending",
+    "Real replay NOT_OPEN; current source does not prove timing, process count, cleanup or performance"
+  ],
+  "oldSourceRawChanged": false
+}

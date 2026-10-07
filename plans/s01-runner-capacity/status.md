@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T14:22:05Z |
+| 最近更新 | 2026-10-07T14:37:41.983Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 执行前67d0c84d=origin clean；已审源码/输入冻结，本次仅新增实际原件、离线结果和本metadata，提交后核clean。 |
+| 工作树dirty状态 | source bee336a01505e42bbba0e9154f8ade75eee2f244 已固定；本次收口仅preparation/status/review metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 唯一queue实际O1 FAIL/O2 NOT_RUN；旧caller5/5和3/6/9/11各target与首红保留，不相加不重跑。 |
+| 检查状态 | 本replay准备0工程执行，8语义+3caller反例仅源码；旧queue O1FAIL/O2NOT_RUN及全部旧通过/首红按原target保留。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | 375ecccc427acf59d687153903bd032fb6e684bc |
-| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-operator-env.test.py |
+| 实现目标 | bee336a01505e42bbba0e9154f8ade75eee2f244 |
+| 实现范围 | experiments/runner-capacity/mixed/delivery-replay.ts, experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-replay.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 失败结果已独审封存；正在实现固定小轨迹的观察交付策略诊断，尚未运行。 |
-| 下一可用交付 | 交付不可变2048条输入、现有交付模块的窄消费者和语义完整性反例，先独审准备再申请普通验证。 |
-| 当前阻塞 | ACTIVE：本段仅源码准备，测试与两arm replay均未授权运行；原容量失败和KEEP边界保持。 |
+| 当前产出 | 已准备固定小轨迹的两种观察交付策略及完整性反例，尚未运行；原容量失败完整保留。 |
+| 下一可用交付 | 完成窄源码独审后申请必要纯检查；补齐辅助进程身份记录，再单独申请有限诊断运行。 |
+| 当前阻塞 | ACTIVE：本片待源码独审和普通验证；诊断实际未授权，辅助进程逐PID记录尚未实现。 |
 | 需用户决定 | NONE |
-| Review | db2026-10-07T14:15:51Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，限定bf881/462失败结果；O1仍FAIL/O2NOT_RUN，新诊断设计另列。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；14:04:29.236Z fresh全身份匹配，pool-wait-run本次唯一窗口已消费。 |
-| 架构影响 | 复用OPS14、原driver/child及固定4fdd；只SQL观察投递候选O1实际、O2未启，未改生产pool/SQL；当前实验模块未main。 |
+| Review | db14:22 DESIGN_REVIEW_APPROVED376bcdb/0P1P2；当前源码bee336a01505e42bbba0e9154f8ade75eee2f244待独审，原失败fidelity批准不继承为本实验通过。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T14:22:05.264Z fresh完整身份匹配，本片未修改claim。 |
+| 架构影响 | 私有replay Module复用centerDelivery/channel/OPS14，新增有限语义receiver与顺序parent/worker，无生产pool/SQL或服务改变；新增Module尚未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -244,3 +244,7 @@ GO/Mika新方向只落小[delivery-strategy-replay设计](../../docs/evidence/s0
 ## 2026-10-07T14:22:05Z 小轨迹诊断source-only开工
 
 新20分钟至14:42:05Z；fresh HEAD376bcdb238d64bfbb95c11029d02770c86f09440=origin clean、claim508f v3/full6本人匹配。只在原mixed/preparation/plan范围新增窄recipe、必要pure反例及≤2MiB固定2048trace，source/meta≤512KiB；原queue-operator/input-v2/FAIL/raw/KEEP不改不读目录。db14:22方法独审已接收，三项phase/时钟/语义接收约束纳实现。无pure/replay/PG/HTTP/Chrome/provider/安装/服务许可，本段0工程child。
+
+## 2026-10-07 固定轨迹诊断准备
+
+2026-10-07T14:35:56.899Z，source bee336a01505e42bbba0e9154f8ade75eee2f244。本段source-only，trace一次提取，0 tests/PG/HTTP/replay/provider。唯一交审入口 [delivery-replay-ready](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-ready.md)。source/meta与trace分账；原容量验收仍开放。任务原开工UNKNOWN不补造；本次段开始14:22:05Z、截止14:42:05Z。dashboard沿本权威status，最近历史聚合证明不充当本新HEAD同步。

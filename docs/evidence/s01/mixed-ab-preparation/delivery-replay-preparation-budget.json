@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T14:37:41.983Z",
+  "source": "bee336a01505e42bbba0e9154f8ade75eee2f244",
+  "basis": "conservatively count complete current files touched/new this segment, except fixed trace separately; no copied raw",
+  "sourceMetadataBytesBeforeThisReceipt": 148437,
+  "limitBytes": 524288,
+  "traceBytes": 491756,
+  "traceLimitBytes": 2097152,
+  "engineeringChildCount": 0,
+  "pgConnections": 0,
+  "oldKeepAccessed": false,
+  "actualReplay": "NOT_OPEN",
+  "files": [
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-design-review.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-input.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-preparation-manifest.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-quality.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-ready.md",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-trace-receipt.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-trace.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-tsconfig.json",
+    "docs/evidence/s01/mixed-ab-preparation/delivery-replay-vitest.config.mjs",
+    "experiments/runner-capacity/mixed/delivery-replay-main.ts",
+    "experiments/runner-capacity/mixed/delivery-replay.test.ts",
+    "experiments/runner-capacity/mixed/delivery-replay.ts",
+    "plans/s01-runner-capacity/review.md",
+    "plans/s01-runner-capacity/status.md"
+  ]
+}
