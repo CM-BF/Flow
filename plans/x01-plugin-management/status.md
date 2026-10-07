@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 00:01:57 UTC |
+| 最近更新时间 | 2026-10-07 00:05:20 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +11,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4源码静审成立；当前支持源码043298ef2faeea63a814c2cd524489ab4abe5c73待独审，未main |
-| 工作树 dirty 状态 | 043298ef支持源码及2a4a交审包固定；本次仅供给收据/status修改，提交后clean；7个ignored链接另有排他供给收据 |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4及支持源码d6f52c3a0db45eb69a57c68c54ff47423a8ccb79均仅源码静审，未main |
+| 工作树 dirty 状态 | d6f52c3a仅checkpoint异常一致性小修固定；本次最终manifest/status/review/quality归档，提交后clean；7ignored链接供给收据冻结 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前enable/binding及新薄调用方；7个精确依赖链接已供给，0syntax/import/types/tests/build/install/PG/browser/provider；历史通过不移用 |
-| Review | NOT_STARTED 当前043298ef薄调用方及组合准备；ade4产品源码独审保留独立历史字段，0工程检查；[固定清单](../../docs/evidence/x01/enable-binding-caller-manifest.json) |
+| Review | APPROVED 仅SOURCE_REVIEW：ade4产品/043原调用方与d6f52c3a增量分别静审；所有checks NOT_RUN，无执行批准；[清单](../../docs/evidence/x01/enable-binding-caller-manifest.json) |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 043298ef2faeea63a814c2cd524489ab4abe5c73 |
+| 实现目标 | d6f52c3a0db45eb69a57c68c54ff47423a8ccb79 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件启用与冻结工具任务源码已静审；已准备复用现有进程监督模块的局部验证入口，等待独审与运行准入 |
-| 下一可用交付 | 获得独审与单次资源窗口后验证合同及真实自有包执行；中心事务与浏览器另开有界窗口，生产runner仍待共享资格与恢复接线 |
-| 当前阻塞 | ACTIVE: 依赖视图已供给，新检查入口待独审与单次执行准入；实际types/tests仍HOLD，生产挂载仍待共享claim能力/恢复guard接线 |
+| 当前产出 | 插件启用与冻结工具任务源码及局部验证入口已静审，依赖视图已准备；尚未运行验证或接入生产runner |
+| 下一可用交付 | 资源达到门槛并获得单次窗口后验证合同及真实自有包执行；中心事务与浏览器另开有界窗口 |
+| 当前阻塞 | ACTIVE: 可用空间未达既定运行门槛，types/tests仍HOLD且没有OPEN；生产挂载另待共享claim能力/恢复guard接线 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -137,3 +137,5 @@
 23:56:51.367558Z：Lead明确本owner为7ignored links唯一operator后，fresh资源1,013,399,552 B低于1,107,296,256 B，未进入供给；[HOLD事实](../../docs/evidence/x01/enable-binding-dependency-view-hold-235651.json)。精确7dest均不存在，0目录/link/依赖复制/安装；未将operator授权当工程运行窗口。保留d12原请求与当前support源码不变。
 
 2026-10-07 00:01:57 UTC：Lead明确7link仅源码准备，1,107,296,256 B仍为运行门槛。fresh23:59:35.187Z核v8/17scope；先前保守预算预检停止且0写目录/link，原1238B STOP收据保留。随后同一sole operator按精确请求exclusive创建7links/3parents，752B target文本，两个@flow均本树；[新供给收据](../../docs/evidence/x01/enable-binding-dependency-view-result.json)。0复制/安装/import/check，运行HOLD。root23:59:46核043的24Git/3external及准入门禁无P1/P2，完整lifecycle独审仍待。
+
+2026-10-07 00:05:20 UTC：fresh00:04:01.184Z核v8 ACTIVE/17scope后仅修checkpoint读取/解码/身份异常→sticky unknown，原异常透传，业务ValueError范围不变；db_transaction_owner于00:04:23对d6f52c3a增量APPROVED/0P1P2，与043于00:03:20原静审组成最终SOURCE_REVIEW_APPROVED。ade4产品、d12原输入/配置、d54供给与原STOP收据全部不改。root00:04:08观察available1,011,073,024 B，低于light1,107,296,256及PG1,207,959,552，未发OPEN。Darwin若在OPS14 Git预检报告EPERM/ownership unknown即HOLD并保留，不绕过监督门禁。0import/syntax/types/tests/PG。

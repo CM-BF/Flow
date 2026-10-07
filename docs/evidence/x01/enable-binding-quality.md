@@ -41,3 +41,7 @@ local noEmit配置继承全部根选项，server consumer明确含真实index au
 全部新代码未导入/语法执行；工程NOT_RUN。stageA原产品与输入冻结，配置boolean/integer实际传包断言缺口仍明列，未假称覆盖。30s内部phase与外部tool退出证据分离，不声称OPS14覆盖caller最终fsync/rmtree；32MiB只sample不是峰值保证。tail含所有本次raw/CLI，不把metadata指纹当依赖目录尺寸。7links/包metadata设计获独审但未供给，执行仍待正式准入。
 
 供给安全点23:56:51：sole operator已正式交回本owner，但资源未达原floor，因此在任何mkdir/link/依赖供给前停止，保存精确HOLD事实。没有反复采样、扩大缓存扫描/清理或降低门槛；0新执行。
+
+## 2026-10-07 00:05:20 UTC checkpoint未知一致性安全点
+
+沿相同clean-code错误/资源职责复核，只将checkpoint read/decode/identity这一内聚边界包入try，异常先sticky unknown再bare raise，TMP因此保留；没有把业务ValueError、非零exit或其他已确定失败改为未知。固定d6f52c3a仅6增3删；043原SOURCE_REVIEW_APPROVED与00:04:23独立增量批准保留，0实际工程checks。普通git add因sparse未stage，随后只对已领精确caller使用git add --sparse；未改sparse/config或物化更多路径。7link新供给与历史停止均冻结，不再复制/补依赖；所有运行HOLD。

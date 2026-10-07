@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "X01_CALLER_PREPARATION_NOT_RUN",
-  "createdAt": "2026-10-06T23:56:37.116585+00:00",
-  "sourceCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+  "createdAt": "2026-10-07T00:04:32.369143+00:00",
+  "sourceCommit": "d6f52c3a0db45eb69a57c68c54ff47423a8ccb79",
   "productSourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
   "dependencyViewReview": {
     "target": "d12a3d3b0b81198874a17145c2210f43fef3e2ba",
@@ -12,15 +12,15 @@
     "findings": []
   },
   "state": "NOT_OPEN",
-  "review": "PENDING",
+  "review": "SOURCE_REVIEW_APPROVED",
   "pythonRealpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
   "files": [
     {
       "path": "docs/evidence/x01/enable-binding-check-once.py",
-      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
-      "gitBlob": "936f6addc0fbe51ffa59ab2b3a8aa476de4bd1b3",
-      "bytes": 20062,
-      "sha256": "55639aec4af28b4f13b8b94752365830a85c25b035b2aa8f45679cca06a20af0"
+      "gitCommit": "d6f52c3a0db45eb69a57c68c54ff47423a8ccb79",
+      "gitBlob": "c32d87484658b2b54294a5bd2751e6d5e672cab0",
+      "bytes": 20143,
+      "sha256": "a6475cd55e6a56f31ddff0f21c03a1a4f89dbe2026682e782837b255163e5b74"
     },
     {
       "path": "docs/evidence/x01/enable-binding-launch.py",
@@ -251,5 +251,24 @@
     "No OPS14 deadline guarantee over caller persistence/rmtree or interpreter startup; external tool exit/wall required.",
     "Original finite boolean/integer configuration adaptation remains without direct package-input assertion; prefix behavior alone is not that evidence.",
     "No claimed actual cleanup, runtime peak, complete public vertical or production readiness."
-  ]
+  ],
+  "priorSourceReview": {
+    "target": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "reviewedAt": "2026-10-07T00:03:20Z",
+    "verdict": "SOURCE_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "checks": "NOT_RUN",
+    "nonBlockingNote": "Malformed launch checkpoint should retain unknown consistently; follow-up delta only."
+  },
+  "currentSourceReview": {
+    "target": "d6f52c3a0db45eb69a57c68c54ff47423a8ccb79",
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "reviewedAt": "2026-10-07T00:04:23Z",
+    "verdict": "SOURCE_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "scope": "Incremental checkpoint unknown handling; combines original 043 source review, no behavior checks or execution approval."
+  }
 }

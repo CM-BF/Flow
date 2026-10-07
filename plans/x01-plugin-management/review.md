@@ -1,12 +1,12 @@
 # X01 当前局部验证调用方组合准备
 
-状态：NOT_STARTED（043298ef源码与准备包待独审；checks NOT_RUN）
+状态：APPROVED（仅d6f52c3a SOURCE_REVIEW；checks NOT_RUN）
 
-Review target commit: 043298ef2faeea63a814c2cd524489ab4abe5c73
+Review target commit: d6f52c3a0db45eb69a57c68c54ff47423a8ccb79
 
-当前范围包含ade4的15产品源码/测试/034及3个既有验证配置、2个新Python支持源与caller Interface，详[清单](../../docs/evidence/x01/enable-binding-caller-manifest.json)。ade4产品源码静审及d12依赖设计批准分别保留，不覆盖新执行封套。仅文件/Git静态核；0import/syntax/types/tests/PG/链接。
+当前范围包含ade4的15产品源码/测试/034及3个既有验证配置、2个新Python支持源与caller Interface，详[清单](../../docs/evidence/x01/enable-binding-caller-manifest.json)。ade4产品源码静审及d12依赖设计批准分别保留。db_transaction_owner于2026-10-07 00:03:20 UTC对043298ef2faeea63a814c2cd524489ab4abe5c73作SOURCE_REVIEW_APPROVED/0P1P2；root已核其24Git/3external和准入门禁。唯一非阻断一致性提示由d6f52c3a修复，于00:04:23独立增量APPROVED/0P1P2，root接收。检查checkpoint读取/解码/身份异常都sticky unknown+原异常透传，业务错误不扩大。未运行任何新工程检查；7链接只由sole operator另行供给，不是执行通过。
 
-独立review仅读固定Git/manifest，核OPS14外部固定输入、同PID checkpoint、完整Git/claim receipt准入、30s和输出账、unknown与资源身份；不要执行新代码或改owner树。任意问题交owner修复。准备批准不开放实际窗口；实际仍需sole依赖供给与fresh资源/ledger及Mika一次OPEN。
+独立review仅读固定Git/manifest，核OPS14外部固定输入、同PID checkpoint、完整Git/claim receipt准入、30s和输出账、unknown与资源身份；不要执行新代码或改owner树。任意问题交owner修复。准备批准不开放实际窗口；依赖已按固定请求供给；实际仍需fresh资源/ledger及Mika一次OPEN。Darwin如OPS14预检报告EPERM/ownership unknown应HOLD，不降门禁或假称具备完整监督能力。
 
 ---
 
