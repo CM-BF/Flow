@@ -1,0 +1,56 @@
+{
+  "taskId": "MATURE06-READBOUND01",
+  "parentTask": "WPF-MATURE-06",
+  "statusPath": "plans/mature06-client-read-bounds/status.md",
+  "createdAt": "2026-10-07T09:50:40.393024+00:00",
+  "state": "REVIEW_APPROVED_READY_FOR_CONTROLLED_INTAKE",
+  "sourceCommit": "bc213e44db2b74130836782720728f8a59b52b99",
+  "reviewPacketCommit": "da44078aa58291ea2dc095a6b2484af7eefa4c29",
+  "review": "docs/evidence/mature06-readbound/independent-review.json",
+  "productAndTests": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 63703,
+      "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d",
+      "expectedMainPreimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "expectedMainPreimageSha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+      "expectedMainPreimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "expectedMainPreimageSha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+      "expectedMainPreimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "expectedMainPreimageSha256": null
+    },
+    {
+      "path": "packages/client/src/response-json.test.ts",
+      "bytes": 1866,
+      "sha256": "e9b57c7104f8822e87cdccc3ffa2d2e454a2960ac6b7da6bca3584bba148613c",
+      "expectedMainPreimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "expectedMainPreimageSha256": null
+    },
+    {
+      "path": "packages/client/src/assistant-stream-bounds.test.ts",
+      "bytes": 8679,
+      "sha256": "49c1c4ec1ac967ca7d70d21d33bc03d540a1b40bb7e60e9280828d15fd217891",
+      "expectedMainPreimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "expectedMainPreimageSha256": null
+    }
+  ],
+  "requiredAlreadyMain": "3811048522dcc8a896e7ccf09872389b14bccd63",
+  "dependencyEvidence": "docs/evidence/mature06-readbound/main-dependency.json",
+  "mustPreserve": "existing X01 PluginRunnerClient import, readonly binding and comment; use main plugin-runner.ts, do not submit evidence donor as another product",
+  "evidenceScope": "docs/evidence/mature06-readbound",
+  "planScope": "plans/mature06-client-read-bounds",
+  "checks": "45/45 explicit direct paths + focused types0 + pure caller12/12; old red9 remains7fail2pass",
+  "riskBoundary": "response UTF8 bytes after decompression before parsing, not heap/TCP; no new provider/PG/Chrome; actual network consumer is existing local stub HTTP test, not production server",
+  "architecture": "internal shared JSON decoder; public signatures unchanged; D06 update owner to be assigned at intake",
+  "claim": "44849884-baa7-4f09-a44b-085eb65b1220 v2 retained; no further product writing planned"
+}
