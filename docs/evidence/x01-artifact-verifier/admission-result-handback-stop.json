@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T20:32:43.113Z",
+  "state": "PERMANENT_STOP_EXACT_LEAVES",
+  "parentHead": "e32c2d9b4714500ce1ff0b298b92db2f87893693",
+  "mainBase": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+  "receiverTask": "X01-VERIFIER-ADMISSION-RESULT01",
+  "receiverWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "paths": [
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts"
+  ],
+  "sourceRows": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "bytes": 5316,
+      "sha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5",
+      "sourceCommit": "e32c2d9b4714500ce1ff0b298b92db2f87893693"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395",
+      "sourceCommit": "e32c2d9b4714500ce1ff0b298b92db2f87893693"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 9275,
+      "sha256": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+      "sourceCommit": "e32c2d9b4714500ce1ff0b298b92db2f87893693"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe",
+      "sourceCommit": "e32c2d9b4714500ce1ff0b298b92db2f87893693"
+    }
+  ]
+}
