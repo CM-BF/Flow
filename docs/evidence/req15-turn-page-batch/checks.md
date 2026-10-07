@@ -18,3 +18,20 @@
 仍待REQ15-04真实PG：相同prefix但suffix损坏的全文UTF8 hash、每task LIMIT2混合、错attempt-owner-session、RR并发snapshot及真实roundtrip/UTF8字节测量；HTTP直接消费者/main集成另在实际集成点验证。legacy仍传全body做JS hash，不能宣称全部传输有界或消除TOAST/hash。
 
 2026-10-06 21:44:23 UTC clean-code安全复核：只修测试可空对象访问，保持既有Interface、error身份与断言；保留红/strict首错，结果与静态source approval分开。无新依赖、无scope扩张。
+
+## 真实PG结果（当前）
+
+2026-10-07T03:07:00.012295Z至03:07:01.041357Z在独立专库一次执行，target `b00a181f38c261d33651368d82a040db3ab0bb18`，[原始输出manifest](pg-output-manifest.json)固定5原件10612B。2selected/2passed/exit0，wrapper wall1.150494s（解释器启动/末次持久化不含），stdout584B完整，监督group absent/EOF与fixture清理CONFIRMED分别记录。此前“仍待真实PG”为历史；现真实配对、每task LIMIT2、错attempt-owner-session、同prefix坏suffix全文digest、Unicode、51st不提前投影与RR并发均有用例通过。HTTP直接消费者/main仍未验。
+
+| 当前样本 | queryCalls / ReadyForQuery | UTF8 DataRow字段 | 页面JSON UTF8 |
+| --- | --- | --- | --- |
+| mixed-first-50 | 8 / 8（含BEGIN/COMMIT） | 115722B：typed prefix68123 / legacy full133 /其他47466 | 96098B |
+| last-poisoned-turn | 7 / 7 | 5424B | 1036B |
+| empty-page | 4 / 4 | 152B | 277B |
+| foreign-conversation | 7 / 7 | 1356B | 1808B |
+| snapshot-before-writer | 7 / 7 | 1358B | 1810B |
+| snapshot-after-writer | 7 / 7 | 1378B | 1830B |
+
+这是一个固定fixture、专属subject串行await的测量，正常query与ReadyForQuery对应；不是整个协议、TLS或socket传输字节，也没有旧实现同期性能基线，不声称吞吐增益。typed全文UTF8 hash仍在PG执行，legacy仍传完整body。实际writer COMMIT ACK在subject读屏障后已确认，原RR保持旧pair，新事务读新pair。清理为三池关闭ACK、精确OID/marker/owner核对、零连接普通DROP及absence；独审不会再连DB。
+
+2026-10-07T03:08:27Z chatui01_owner固定b00a181f结果独审APPROVED/0 P1/P2，限上述两例真实PG/已观察资源与测量忠实性；未重跑检查，HTTP/main仍开放。

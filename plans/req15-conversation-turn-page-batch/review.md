@@ -1,8 +1,8 @@
 # REQ15 独立审查
 
-状态：NOT_STARTED（局部工作段已完成，待统一独审；历史产品和PG准备批准保留）
+状态：APPROVED（b00a181f两例真实PG结果忠实性；HTTP/main未验）
 
-Review target commit: 01d798cb7f4666a738375febe7eb8bb74a1594a6
+Review target commit: b00a181f38c261d33651368d82a040db3ab0bb18
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
@@ -73,3 +73,17 @@ Owner于23:39:37.392Z重新核原claim v1 ACTIVE、身份/10scope不变，接受
 ## 局部工作段结果统一审查请求
 
 2026-10-07 02:54:01 UTC，target `01d798cb7f4666a738375febe7eb8bb74a1594a6`，caller source `2deb4b865332981fc4a184c04913313b12766ce8`。请只读核run-check固定选项/环境清除/collect判断与原95输入未变，及[单份记录](../../docs/evidence/req15-turn-page-batch/local-validation-segment.json)所绑定4个原件6449B。types exit0/1.353235s，collect2/exit0/0.884711s，raw合计536B、2次启动、无修复或重跑。own组absent/EOF与same-inode空TMP清理均有原始回执，后续owner独核TMP absent；没有真实PG/HTTP或旧26/strict复跑。结论PENDING；本次不是重复审核5dd的全部准备输入，也不是检查前批准链。未测SQL、RR、UTF8实际字节与HTTP/main边界保持。
+
+## 局部段独立结论
+
+chatui01_owner，2026-10-07T02:58:41Z，target01d798cb7f4666a738375febe7eb8bb74a1594a6/final8da3ea07e8d567583797fef3dcc42ef91564af92：**APPROVED /0 P1/P2**。独核caller最小delta/PG授权env清除/list只收集；fixture创建在beforeAll，实际collect2/testPasses=null；两child exit0/EOF/raw完整/group absent，signals/secondary空，两TMP精确lstat absent且receipt同inode清理成立。95inputs429768B、原manifest、4outputs6449B/child raw536B及segment SHA5116…19d4全符。批准限类型通过、收集2例和结果忠实性，不是当时的PG执行通过；旧26/strict未复审或重跑。wall排除解释器启动/末次持久化，非工具总wall。作者接受，无修复。
+
+## 实际PG结果独立审查请求
+
+Target `b00a181f38c261d33651368d82a040db3ab0bb18`；已审产品/fixture/封套逐字不变，仅一次实际运行原件与manifest。5原件10612B、manifest SHA `e4e6a60ad448d78efb11c2ac26f53f9f4fa0d9bcc011a84916a444c5aab274fc`。2selected2passed/exit0/1.150494s，原始stdout584B/EOF、PID/PGID72871 absent，fixture已观察专库/三池清理全部CONFIRMED，TMP owner独核absent。只读核绑定/忠实性/已观察cleanup及UTF8字段与queryCalls样本口径，不新连PG或扫描进程；HTTP/main未验。由chatui01_owner直接审查，结论PENDING，不经过root转finding。
+
+## 真实PG结果独立结论
+
+chatui01_owner / gpt-6-astra，2026-10-07T03:08:27Z，target `b00a181f38c261d33651368d82a040db3ab0bb18`，**RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2**。独核output manifest SHAe4e6a60ad448d78efb11c2ac26f53f9f4fa0d9bcc011a84916a444c5aab274fc及5原件10612B Git=WT/len/hash/0600；原95 inputs429768B/df2cd82…439e跨execution8da=target=WT全符。raw584B实际2选2过，exit/process/fixture互符；PID/PGID72871 exit0/合并EOF/group absent/signals空。专库OID1193363与marker跨3原件一致，三池关闭、零连接普通DROP+absence有源码与receipt支持；reviewer仅对精确TMP lstat absent，未重连DB/扫描进程。
+
+六measurement分项算术全符；mixed50 queryCalls=Ready8含BEGIN/COMMIT，field115722=68123+133+47466、JSON96098B；RR task结果屏障后writer COMMIT ACK、旧pair→下一事务新pair断言与receipt一致。1.150494s为wrapper preflight至cleanup、final persistence前，非解释器/工具完整wall。批准严格限两case真实PG结果/资源/测量忠实性，不批准HTTP/main、吞吐/完整wire/历史样本比较。审者0test/import/PG/cleanup/写。作者接受，无修复；转integration，原REQ15-04继续待HTTP与main。

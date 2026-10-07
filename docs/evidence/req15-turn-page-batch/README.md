@@ -35,3 +35,9 @@ chatui01_owner 23:38:54UTC fixture/SQL/observer/两case APPROVED/0 P1/P2；Mika/
 2026-10-07 02:54:01 UTC：沿本地find-skills匹配Node24/TS/pg/Vitest，应用既定clean-code/codebase-design，不安装或更新技能。固定命令注册表是唯一选择源，pg-collect只收集一个精确fixture并校验真实文件/数量，清除PG/admin/OPEN环境；复用原supervisor，不增加通用执行平台。输出独占、失败原件与进程/TMP生命周期语义保留；TMP只提供前后采样边界，wrapper时长不含解释器启动/最后持久化。没有产品改动或需要修复的本段失败。
 
 [结构化结果](local-validation-segment.json)绑定结果target `01d798cb7f4666a738375febe7eb8bb74a1594a6`中的4原件：types exit0，collect2/exit0（非测试执行），child raw共536B；2次启动、0重跑、两own组absent/EOF且TMP独核absent。原95 PG输入及d209产品逐字不变，真实PG/HTTP/main仍未验，段末独立review待完成。不将局部类型/collect作为SQL性能、事务或UTF8传输测量证据。
+
+## 真实PG段质量安全点
+
+2026-10-07 03:09:02 UTC：沿已固定find-skills/clean-code/codebase-design方法，仅执行原有2例，不改产品、fixture、封套或95输入；不加第二平台/重试或OPS迁移。检查测量名与口径、同client RR所有权、paired task/attempt、per-task LIMIT2、first failure与cleanup边界，原始stdout不改行尾。两例实际通过，原raw/marker/进程与DB closure分别保留，[checks](checks.md)报告样本字段UTF8与真实8次query/ReadyForQuery，不将fake214或旧SQL252冒充基线。当前HTTP/main尚未验，PG结果独审待回传。
+
+本段独审已由chatui01_owner于2026-10-07T03:08:27Z完成，绑定b00a181f，RESULT_FIDELITY_REVIEW_APPROVED/0 P1/P2；准确范围与未执行边界见唯一review。source未改，无需为metadata复跑任何检查。
