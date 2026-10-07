@@ -1,0 +1,19 @@
+{
+  "extends": "../../../../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "vite/client"
+    ]
+  },
+  "files": [
+    "../../../../../apps/web/src/App.tsx",
+    "../../../../../apps/web/src/plugin-integration/session.ts",
+    "../../../../../apps/web/src/plugin-integration/react.tsx",
+    "../../../../../apps/web/test/plugin-integration.test.ts",
+    "../../../../../apps/web/test/plugin-management-integration.browser.ts",
+    "../../../../../apps/web/test/plugin-management-integration.fixture.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "SOURCE_ONLY_PENDING_MANAGER_LOCAL_HANDOFF",
+  "source": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+  "totalMsProposed": 30000,
+  "perChildMsProposed": 15000,
+  "cleanupReserveMsPerChild": 5000,
+  "tmpBytes": 8388608,
+  "rawBytes": 1048576,
+  "network": false,
+  "PG": false,
+  "Chrome": false,
+  "install": false,
+  "build": false,
+  "commands": [
+    {
+      "kind": "direct",
+      "entry": "vitest/vitest.mjs",
+      "args": [
+        "run",
+        "--config",
+        "docs/evidence/wpf-i01/runtime-app/local-check/vitest.config.ts"
+      ],
+      "selected": "App session center runtime authority: 4 cases; historical tests NOT_SELECTED"
+    },
+    {
+      "kind": "types",
+      "entry": "typescript/lib/tsc.js",
+      "args": [
+        "--noEmit",
+        "-p",
+        "docs/evidence/wpf-i01/runtime-app/local-check/tsconfig.json"
+      ],
+      "scope": "six changed files plus static imports; not whole Web/root"
+    }
+  ],
+  "resolver": "/private/tmp/plugin-app-msg03-delta-f96svnbb/resolver-reuse.json",
+  "resolverPreparation": "Need own ignored node_modules bounded symlinks to pinned installed third-party package roots; @flow/{client,contracts,interaction} only this fixed WT. No install/copy/otherWT writes. Fresh manifests/entry bytes before execution.",
+  "runtimeGranted": false
+}

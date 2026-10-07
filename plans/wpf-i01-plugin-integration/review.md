@@ -1,3 +1,15 @@
+# WPF-I01 当前后继独立 review
+
+状态：NOT_STARTED
+
+Target: `dfa244744ead31cc4cd8a012284c48ccb6dfe38d`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
+
+唯一入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source；[implementation checkpoint](../../docs/evidence/wpf-i01/runtime-app/implementation-checkpoint.md)。当前4新增受控direct/六source affected noEmit均NOT_RUN；新0PG Cookie协议浏览器NOT_RUN。原I01/X03/MSG通过仅历史，不外推本App接线。
+
+审查重点：唯一session controller、live namespace/principal/generation/committedactive撤权、懒界面关闭保unknown原key/body、local/center分离、现MSG C/ordered attachment/current/held及focus不受新接线破坏。
+
+## 原始review历史（不作当前批准）
+
 # WPF-I01 运行时App接线独立review
 
 状态：NOT_STARTED
