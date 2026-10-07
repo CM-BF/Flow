@@ -1,0 +1,98 @@
+--- msgquick-full1/worker.mjs
++++ vis-picker-b1/worker.mjs
+@@ -8,12 +8,12 @@
+ 
+ const base = dirname(fileURLToPath(import.meta.url));
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+-const gatePath = process.env.MSGQUICK_BROWSER_GATE;
++const gatePath = process.env.VISUAL_PICKER_BROWSER_GATE;
+ assert.equal(gatePath, join(base, 'child-gate.json'));
+ const gateStat = await lstat(gatePath);
+ assert(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size < 65536);
+ const gate = JSON.parse(await readFile(gatePath, 'utf8'));
+-assert.equal(gate.mode, 'message-settings-quick-browser');
++assert.equal(gate.mode, 'visual-picker-browser');
+ assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
+ assert(Date.parse(gate.expiresAt) > Date.now());
+ const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
+@@ -24,11 +24,8 @@
+ assert.equal(chromePgid, chromePid);
+ assert(/^http:\/\/127\.0\.0\.1:[0-9]{1,5}$/.test(chromeEndpoint));
+ assert(Number(new URL(chromeEndpoint).port) > 0 && Number(new URL(chromeEndpoint).port) <= 65535);
+-assert([startedAtMs, workDeadlineMs, hardDeadlineMs, gate.previousRuntimeMs, gate.previousSegmentRuntimeMs, gate.totalMs].every(Number.isSafeInteger));
+-assert(gate.totalMs <= 45000 && gate.totalMs > 15000);
+-assert(gate.previousRuntimeMs + gate.totalMs <= 150000);
+-assert(gate.previousSegmentRuntimeMs + gate.totalMs <= 90000);
+-assert(['diagnostic', 'typeahead', 'full'].includes(gate.selection));
++assert([startedAtMs, workDeadlineMs, hardDeadlineMs, gate.previousRuntimeMs, gate.totalMs].every(Number.isSafeInteger));
++assert.equal(gate.previousRuntimeMs, 0); assert.equal(gate.totalMs, 90000);
+ assert.equal(hardDeadlineMs, startedAtMs + gate.totalMs);
+ assert.equal(workDeadlineMs, hardDeadlineMs - 15000);
+ assert(startedAtMs <= Date.now() && Date.now() < workDeadlineMs);
+@@ -40,12 +37,12 @@
+ const binding = JSON.parse(await readFile(join(base, 'binding.json'), 'utf8'));
+ assert.equal(hash(await readFile(join(base, 'binding.json'))), gate.bindingSha256);
+ assert.equal(binding.head, gate.sourceHead);
+-assert.equal(binding.task, 'WPF-MESSAGESETTINGS02');
++assert.equal(binding.task, 'WPF-VISUAL01');
+ assert.deepEqual(binding.sources, gate.sourceHashes);
+ const report = { sourceHead: gate.sourceHead, sourceHashes: gate.sourceHashes, implementation: binding.implementation,
+   startedAt: new Date(startedAtMs).toISOString(), workerPid: process.pid, parentPid, chromePid,
+   chromeProcessGroup: 'separate-parent-owned-session', chromeCleanupOwner: chromeOwnership, checks: [], pageErrors: [], cleanupErrors: [], outcome: 'failed', pg: 0,
+-  selection: gate.selection, diagnosticComplete: false, budgetOwner: 'external-parent', fixtureClosed: false, contextClosed: false, cdpConnectedAt: null };
++  journeys: [], budgetOwner: 'external-parent', fixtureClosed: false, contextClosed: false, cdpConnectedAt: null };
+ let stopped = false, fixture, browser, context, page;
+ const stop = () => { stopped = true; };
+ const checkpoint = () => { if (stopped || Date.now() >= workDeadlineMs) throw new Error('Absolute work deadline; cleanup required'); };
+@@ -132,24 +129,33 @@
+   page = await context.newPage(); checkpoint();
+   await page.addInitScript({ content: selectObserverSource }); checkpoint();
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+-  if (gate.selection === 'diagnostic' || gate.selection === 'typeahead') {
+-    const result = await scenario.diagnoseMessageSettingsNativeSelect(page, fixture, output, workDeadlineMs, gate.selection === 'typeahead' ? 'typeahead' : 'popup'); checkpoint();
+-    report.diagnosticComplete = result.diagnosticComplete; report.diagnosticConclusion = result.conclusion;
+-    report.outcome = result.diagnosticComplete ? 'diagnostic-complete' : 'inconclusive';
+-    report.limitation = 'Native-control measurement only; zero of the original six acceptance groups executed.';
+-    assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []);
+-  } else {
+-    const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
+-    report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
+-    assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []); assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 6);
+-    report.outcome = 'passed';
+-  }
++  const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
++  report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
++  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []);
++  assert.deepEqual(report.checks, binding.expectedChecks.slice(0, 6)); assert.equal(report.checks.length, 6);
++  // The presentation journey explicitly requires a fresh catalog/server and independent context.
++  await cleanupStep('Behavior context close', async () => { await context.close(); report.contextClosed = true; });
++  await cleanupStep('Behavior fixture close', async () => { await fixture.close(); report.fixtureClosed = true; });
++  assert(report.contextClosed && report.fixtureClosed && report.cleanupErrors.length === 0);
++  report.journeys.push({ name: 'behavior', checks: [...report.checks], contextClosed: true, fixtureClosed: true });
++  context = undefined; fixture = undefined; page = undefined;
++  report.contextClosed = false; report.fixtureClosed = false;
++  checkpoint(); fixture = await scenario.startMessageSettingsFixture({ cacheDir: join(scratch, 'vite-overlay'), aliases }); checkpoint();
++  context = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); checkpoint();
++  page = await context.newPage(); checkpoint();
++  page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
++  const overlay = await scenario.checkMessageSettingsOverlays(page, fixture, output); checkpoint();
++  report.checks.push(...overlay.checks); report.overlay = overlay;
++  report.journeys.push({ name: 'overlay', checks: overlay.checks });
++  assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 8);
++  assert.deepEqual(report.pageErrors, []); report.outcome = 'passed';
+ } catch (error) { report.failure = String(error.stack ?? error).slice(0, 16384); report.outcome = 'failed'; }
+ finally {
+   clearTimeout(workTimer);
+   // Capture before context close on both PASS and FAIL. Missing/failed observation is explicit JSON, never synthetic events.
+   let trace = { version: 1, state: 'NOT_CAPTURED', reason: 'Page was not created' };
+   await cleanupStep('Read select diagnostics', async () => {
++    if (report.journeys.some(item => item.name === 'behavior')) { trace = { version: 1, state: 'BEHAVIOR_NATIVE_RECORD_SEPARATELY_SEALED' }; return; }
+     if (!page) return;
+     try {
+       const encoded = await page.evaluate('JSON.stringify(globalThis.__msgquickSelectTrace ?? {version:1,state:"NOT_INSTALLED"})');
+@@ -177,4 +183,4 @@
+   clearTimeout(hardTimer); process.off('SIGTERM', stop);
+ }
+ console.log(JSON.stringify({ outcome: report.outcome, checks: report.checks, cleanupErrors: report.cleanupErrors }));
+-if (!['passed', 'diagnostic-complete'].includes(report.outcome)) process.exitCode = 1;
++if (report.outcome !== 'passed') process.exitCode = 1;

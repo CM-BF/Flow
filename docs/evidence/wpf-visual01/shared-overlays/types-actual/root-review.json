@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T18:31:23.795284+00:00",
+  "decision": "APPROVED_NARROW_HTML_GUARD_AND_AFFECTED_STRICT_RESULTS_NOT_BROWSER",
+  "blockingFindings": [],
+  "reviewer": "root gpt-6-astra ultra",
+  "target": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "priorPresetReview": "root-visual01-recovery-task-preset-review-20261007.json / f29a52b52383ea1b4dc5c19aba2607bc1b6b3831b60af0b830065c7a4f2927cf",
+  "source": {
+    "path": "apps/web/test/conversation-recovery.browser.ts",
+    "bytes": 141850,
+    "sha256": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "delta": "Only one explicit HTMLElement runtime precondition before offsetWidth geometry. All prior lines unchanged; existing assertions are not weakened."
+  },
+  "actualAttempts": [
+    {
+      "state": "FAILED",
+      "sourceHead": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e",
+      "childExit": 2,
+      "outerExit": 1,
+      "returnedAt": "2026-10-07T18:18:20.078708+00:00",
+      "chargeMs": 2745,
+      "pins": [
+        {
+          "path": "/private/tmp/visual01-types-first-ygw09t5t/result.json",
+          "bytes": 15584,
+          "sha256": "d31e1bc5704ae6be3f3b36aacc377e979716b1b4648bc9741799cc38c8581698"
+        },
+        {
+          "path": "/private/tmp/visual01-types-first-ygw09t5t/terminal.json",
+          "bytes": 325,
+          "sha256": "c5180b98c718e5e6ea7052c2643f0f62374a4ef079dd4b66d1961f0bbb448cdf"
+        },
+        {
+          "path": "/private/tmp/visual01-types-first-ygw09t5t/budget.json",
+          "bytes": 117,
+          "sha256": "e3e2310841d187c37cbf932a52fe7133689b797ba8d09d5794c09b6890e5207e"
+        },
+        {
+          "path": "/private/tmp/visual01-types-first-ygw09t5t/outer-exit.json",
+          "bytes": 243,
+          "sha256": "43292abd8f32642c81f57890424b808fbe7d322f6f00df3236e7d63f0fc34387"
+        },
+        {
+          "path": "/private/tmp/visual01-types-first-ygw09t5t/return.json",
+          "bytes": 612,
+          "sha256": "413c524606fe1e91c259c494d4cf76a0005da92830066ec6db88908a2a6dffbd"
+        }
+      ]
+    },
+    {
+      "state": "PASSED",
+      "sourceHead": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+      "childExit": 0,
+      "outerExit": 0,
+      "returnedAt": "2026-10-07T18:25:58.676713+00:00",
+      "chargeMs": 3020,
+      "pins": [
+        {
+          "path": "/private/tmp/visual01-types-second-df4qrklf/result.json",
+          "bytes": 17169,
+          "sha256": "2912f0a631ca0b5450b33f84b9c0434c40aef6c64ed39df8b5c4f6e1b77878bd"
+        },
+        {
+          "path": "/private/tmp/visual01-types-second-df4qrklf/terminal.json",
+          "bytes": 325,
+          "sha256": "fa86fa46cd72f23693bc3d4478c603e36c4ecf2b07d18cea7c6ed25333e2cf16"
+        },
+        {
+          "path": "/private/tmp/visual01-types-second-df4qrklf/budget.json",
+          "bytes": 118,
+          "sha256": "d946efd551cf82bc5c9a1a40a2c30dd309bc3d9e730cf8e8b316beae098fa6a2"
+        },
+        {
+          "path": "/private/tmp/visual01-types-second-df4qrklf/outer-exit.json",
+          "bytes": 244,
+          "sha256": "5ef91af893309c7ad0ba21bd5b4e44e8091fae31c921394123ee4148da2d75a6"
+        },
+        {
+          "path": "/private/tmp/visual01-types-second-df4qrklf/return.json",
+          "bytes": 1003,
+          "sha256": "e5844cdbeef73838c78b3d3784a1dcc88e703a2a8b0e1be11a4657bbf031aba1"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "first": {
+      "path": "/private/tmp/visual01-types-first-ygw09t5t/types.json",
+      "bytes": 11137,
+      "sha256": "a78fb28b0e71a9e633268254a002b817831c564e74beeab023ad87123bea32e4"
+    },
+    "second": {
+      "path": "/private/tmp/visual01-types-second-df4qrklf/types.json",
+      "bytes": 11191,
+      "sha256": "7f13534d02c6ca62defc5abda5987e09fecb57f46ffe7f23e79ddb3dbe36a695"
+    },
+    "changedAliases": [
+      "@tailwindcss/vite",
+      "@vitejs/plugin-react",
+      "vite"
+    ],
+    "change": "Exact installed declaration entries replace package-directory aliases. All other config and compiler flags byte-value equivalent. Native parent byte-identical across attempts.",
+    "flags": [
+      "strict",
+      "noUncheckedIndexedAccess",
+      "noEmit"
+    ],
+    "scope": "Four affected source entries plus Vite declarations; no whole-product or browser claim."
+  },
+  "phase": {
+    "chargedMs": 5765,
+    "declaredTotalMs": 30000,
+    "unusedMs": 24235,
+    "ownerReportedState": "CLOSED",
+    "unusedMustNotTransfer": true
+  },
+  "cleanCode": {
+    "finding": "Use a real HTML type precondition rather than an unchecked cast; geometry meanings and source authority stay unchanged. Alias repair belongs in private validation configuration rather than loosening compiler flags or adding any casts.",
+    "unresolved": "Actual light/dark appearance, scrolling, focus, narrow layout and browser lifecycle remain NOT_RUN for this source."
+  },
+  "limits": [
+    "First ten compiler diagnostics and FAILED attempt retained, including unresolved declarations and resulting implicit-any diagnostics.",
+    "Prior preset worker-byte-equivalence observation applies to2d73; this4ca target additionally contains the documented one-line guard, so do not claim its worker byte-identical to old63949.",
+    "Root only read bounded source/results/hash and exact return receipts; no product imports, rerun, PG/browser or independent process probes.",
+    "No source integration or deployment conclusion from typecheck."
+  ]
+}

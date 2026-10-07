@@ -1,0 +1,137 @@
+{
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "原task首次开工缺精确证据；本后继实际开始 2026-10-07T15:55:42.539Z，见[source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json)，不将领取时间倒当原开工"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| VISUAL-TYPES | UNKNOWN | 2026-10-07T18:17:03.101726Z | 局部验证排程 | 本段获经理有限授权并实际开始；历史等待起点未知 | [首实际](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/first/outer-start.json) |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "受影响类型与窄修已独审；Picker完整调用候选已固定待集中审，Recovery只读38链接/闭包尚未物化；两者browser NOT_RUN",
+    "next": "Picker候选先集中源/native审；Recovery补精确只读链接与运行闭包后独立准入，不等待两者同时ready",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "scopes": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-VISUAL01",
+  "owner": "w01_owner / gpt-6-astra ultra",
+  "branch": "codex/web-shared-overlays",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-07T19:16:22.642Z",
+  "updatedRecord": "2026-10-07T19:16:22.642Z",
+  "todos": [
+    {
+      "id": "WPF-VISUAL01-01",
+      "state": "completed",
+      "owner": "d01_owner（历史）",
+      "evidence": "[历史状态](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)"
+    },
+    {
+      "id": "WPF-VISUAL01-02",
+      "state": "completed",
+      "owner": "d01_owner（历史）",
+      "evidence": "原四主题/shell交付"
+    },
+    {
+      "id": "WPF-VISUAL01-03",
+      "state": "completed",
+      "owner": "d01_owner（历史）",
+      "evidence": "原 a8 检查；非当前结果"
+    },
+    {
+      "id": "WPF-VISUAL01-04",
+      "state": "completed",
+      "owner": "d01_owner（历史）",
+      "evidence": "原 main4391 接收及旧 claim v3 released"
+    },
+    {
+      "id": "WPF-VISUAL01-05",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json)"
+    },
+    {
+      "id": "WPF-VISUAL01-06",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "affected types PASSED；真实消费者/browser/visual NOT_RUN"
+    },
+    {
+      "id": "WPF-VISUAL01-07",
+      "state": "pending",
+      "owner": "root / w01_owner",
+      "evidence": "517678类型/窄guard已审；浏览器/视觉及主线接收待完成"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "3c9345df4aec85a37e8a2a155e079db260d515b1 / 当前HEAD由Git聚合",
+  "declaredDirty": "源码已固定；本批 metadata 提交后原8scope STOP，Git核验 clean/remote",
+  "checks": {
+    "state": "passed",
+    "target": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "record": "PASSED 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；仅4入口affected strict/noUnchecked/noEmit，首FAIL保留；browser/visual NOT_RUN"
+  },
+  "reviewRecord": "[review.md](review.md)，preset已f29a限定静态批准；517678已限定接受4ca guard与类型实际；browser/visual NOT_RUN",
+  "mainRecord": "新共享浮层 NOT_INTEGRATED；原 shell a8b2b22 已 INTEGRATED 4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

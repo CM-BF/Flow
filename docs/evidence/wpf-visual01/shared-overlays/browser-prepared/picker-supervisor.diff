@@ -1,0 +1,72 @@
+--- prm-b1/supervisor.py
++++ vis-picker-b1/supervisor.py
+@@ -6,11 +6,11 @@
+ from pathlib import Path
+ BASE = Path(__file__).resolve().parent
+ MiB = 1024 ** 2
+-TOTAL_MS = 60000
++TOTAL_MS = 90000
+ CLEANUP_MS = 15000
+ ENTRY = 'worker.mjs'
+ BOUNDARY = 'native-chrome-sibling-without-custom-outer-write-or-egress-sandbox'
+-TERMINAL_CONTRACT = 'plugin-runtime-browser-v1-external-exit-required'
++TERMINAL_CONTRACT = 'visual-picker-browser-v1-external-exit-required'
+ 
+ def load(p):
+     assert Path(p).is_file() and not Path(p).is_symlink() and Path(p).stat().st_size <= MiB
+@@ -54,15 +54,15 @@
+     binding = load(BASE/'binding.json')
+     assert binding['state'] == 'REVIEWED_SOURCE_BOUND', 'Independent source review and fresh admission are required'
+     gate = load(sys.argv[2])
+-    assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'plugin-runtime-browser'
+-    assert gate['taskId'] == binding['task'] == 'WPF-PLUGIN-RUNTIME01'
++    assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'visual-picker-browser'
++    assert gate['taskId'] == binding['task'] == 'WPF-VISUAL01'
+     assert gate['bindingSha256'] == sha(BASE/'binding.json') and gate['runnerSha256'] == sha(__file__)
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+     assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+-    assert gate['entry'] == 'plugin-runtime' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
++    assert gate['entry'] == 'visual-picker' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
+     assert gate['sourceHead'] == binding['head'] and gate['sourceHashes'] == binding['sources']
+     assert gate['previousRuntimeMs'] == binding['previousRuntimeMs']
+-    assert gate['previousRuntimeMs'] == 0 and binding['previousEvidenceBytes'] == 0, 'First plugin module browser packet; no prior browser budget inheritance'
++    assert gate['previousRuntimeMs'] == 0 and binding['previousEvidenceBytes'] == 0, 'First VISUAL Picker browser packet; no prior browser budget inheritance'
+     assert binding['terminalAcceptance']['contract'] == TERMINAL_CONTRACT
+     assert gate['totalMs'] == TOTAL_MS-gate['previousRuntimeMs']
+     assert gate['startFreeBytes'] >= 1024**3+128*MiB and gate['stopFreeBytes'] >= 1024**3+64*MiB
+@@ -169,7 +169,7 @@
+         try:
+             module=binding['measurementHelper']; assert sha(module['path'])==module['sha256']
+             sys.dont_write_bytecode=True
+-            spec=importlib.util.spec_from_file_location('plugin_owned_measure',module['path'])
++            spec=importlib.util.spec_from_file_location('visual_owned_measure',module['path'])
+             meter=importlib.util.module_from_spec(spec); sys.modules[spec.name]=meter; spec.loader.exec_module(meter)
+             assert git('rev-parse','HEAD')==binding['head'] and git('branch','--show-current')==binding['branch']
+             assert git('status','--porcelain')==''
+@@ -237,7 +237,7 @@
+             env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_','MESSAGE_SETTINGS_','MSGQUICK_','PLUGIN_RUNTIME_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+             for key in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
+             env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null',
+-              'GIT_OPTIONAL_LOCKS':'0','PLUGIN_RUNTIME_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
++              'GIT_OPTIONAL_LOCKS':'0','VISUAL_PICKER_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
+             checkpoint()
+             worker_log=(BASE/'worker.log').open('xb'); handles.append(worker_log)
+             process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node']['realpath'],'--import',binding['tsxLoader'],str(BASE/ENTRY)],
+@@ -306,7 +306,7 @@
+                 assert result['outcome']=='passed' and not result.get('failure') and result['cleanupErrors']==[]
+                 assert result['fixtureClosed'] is True and result['contextClosed'] is True
+                 assert result['chromeCleanupOwner']=='external-parent-native-sibling' and chrome is not None and result['chromePid']==chrome.pid
+-                assert result['pg']==0 and result['checks']==binding['expectedChecks'] and len(result['checks'])==6 and result['pageErrors']==[]
++                assert result['pg']==0 and result['checks']==binding['expectedChecks'] and len(result['checks'])==8 and result['pageErrors']==[]
+             except BaseException as e: errors.append('Browser report: '+str(e))
+             def persist_results():
+                 elapsed=round((time.monotonic()-started)*1000); cumulative=gate['previousRuntimeMs']+elapsed
+@@ -331,7 +331,7 @@
+             persist_results()
+             evidence_files = []
+             try:
+-                for name in ('browser-results.json', 'owned-chrome.json', 'chrome.log', *binding['expectedScreenshots']):
++                for name in ('browser-results.json', 'owned-chrome.json', 'chrome.log', 'native-filter-inputs.json', 'select-diagnostics.json', *binding['expectedScreenshots']):
+                     path=output/name
+                     assert path.is_file() and not path.is_symlink() and path.stat().st_size<=8*MiB, name
+                     evidence_files.append({'path':str(path), 'bytes':path.stat().st_size, 'sha256':sha(path)})

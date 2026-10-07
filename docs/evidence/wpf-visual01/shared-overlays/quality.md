@@ -11,3 +11,7 @@
 ## 2026-10-07T18:29:14.875Z affected types 段末 clean-code
 
 复用本地find-skills/clean-code及既有固定技能来源（skills.json）；无安装。核错误处理和接口：真实HTML限定前置明确失败，不用类型断言绕过offsetWidth；只把3个现有包映射到其真实声明入口，不补假export、不复制依赖。四入口strict/noUnchecked/noEmit第二次实际通过，首失败完整保留；运行器、断言及产品逻辑不改。无新通用框架。浏览器/视觉/两个OS滚动模式未验，留原TODO06。
+
+## 2026-10-07T19:16:22.642Z 浏览器准备安全复核
+
+复用本地find-skills/webapp-testing/clean-code方法（已读本地版本、不重新安装）。限定真实消费者/现有生命周期，保持命名任务化、只复用既有父/worker、顺序关闭fixture/context，修正新trace默认状态并保原异常捕获，避免诊断写失败跳过清理。六固定源没有改动；没有新store/authority/通用runner。分列Picker可审与Recovery输入HOLD，不把类型或静态包冒browser PASS。未解决：native/source集中审、Recovery链接/完整运行闭包与实际两消费者图。

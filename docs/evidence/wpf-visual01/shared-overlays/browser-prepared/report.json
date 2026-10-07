@@ -1,0 +1,64 @@
+{
+  "task": "WPF-VISUAL01",
+  "preparedAt": "2026-10-07T19:14:21.183365+00:00",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "sourceHeadBeforeMetadata": "7a8e0e8fb40816fed8dfdadc14649bc55ab278a2",
+  "claim": {
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "runtime": "NOT_AUTHORIZED_NOT_RUN",
+  "picker": {
+    "state": "SOURCE_PREPARED_AWAITING_CONCENTRATED_REVIEW",
+    "path": "/private/tmp/vis-picker-b1",
+    "bindingSha256": "4db9d8e61266112c7b26038c51a86907af5b9d1e005d9357d339528378aa4354",
+    "manifestSha256": "337307e2f946476d7a7c51cc50df0cd24eec5d2dd9d62d855f6c5867a6417a1f",
+    "parentSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+    "workerSha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+    "proposal": {
+      "totalMs": 90000,
+      "cleanupReserveMs": 15000,
+      "scratchBytes": 67108864,
+      "retainedBytes": 8388608,
+      "metadataBytes": 1048576,
+      "pg": 0,
+      "chrome": 1,
+      "nodeWorker": 1,
+      "ownedHTTP": "2 sequential Vite fixtures, never concurrent",
+      "floorBytes": 16663183360,
+      "floorMeaning": "Future complete fresh floor; no actual allocation",
+      "expectedImages": 7,
+      "newVisualImages": 5
+    },
+    "counts": {
+      "source": 6,
+      "readonly": 222,
+      "external": 37,
+      "prepared": 5,
+      "behaviorGroups": 6,
+      "overlayGroups": 2,
+      "images": 7
+    },
+    "dependencyLinksRequired": false,
+    "nativeApproval": null,
+    "sourceReview": null
+  },
+  "recovery": {
+    "state": "HOLD_READONLY_LINKS_NOT_MATERIALIZED",
+    "plan": "/private/tmp/visual01-browser-prepared-20261007/recovery-plan.json",
+    "planSha256": "6cc6e67babebf7d09115ea9acd1e1f7f35ce41bd112cc8e1ae31eb166d242318",
+    "proposedLinks": 38,
+    "missingSQL": 0,
+    "runtime": false
+  },
+  "types": {
+    "rootReviewSha256": "517678935b121f5fd582a9a6893b0487043e7c5e03f74ce6b0c7f25f995e6d5e",
+    "spentMs": 5765,
+    "budgetMs": 30000,
+    "state": "CLOSED",
+    "rerun": false
+  },
+  "sourcePreserved": true,
+  "measurement": "No free/process/resource sample taken; future floor is not admission. Latest external reserved host floor 17908891648 is a separate aggregate snapshot; manager must compute higher complete sum for actual."
+}
