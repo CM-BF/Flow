@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:06:15 UTC；宿主首次实际运行失败，原始结果已保存；未知自有资源KEEP |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:13:10 UTC；原失败保留，单次收尾入口准备待独审，资源仍KEEP |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -129,3 +129,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [本次结果](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md) / [完整监督原件](../../docs/evidence/svc06/artifact-host-smoke/host-outer.json)。主失败和独立cleanup失败分别保存；两个监督组absent，但中心detached组与DB未知，未DROP/未强停，原artifact与private run保留。执行owner已结束并立即报告Lead；没有自动重试，03/04/05不勾选。
 
 2026-10-07 04:08:16 UTC 限定只读诊断：[原件与边界](../../docs/evidence/svc06/artifact-host-smoke/DIAGNOSIS.md)。原拒读profile不允许身份命令/bin/ps执行，外部确证中心组仍活；精确专库存在/3条idle连接。0停止/删除/重新启动；实际宿主失败保持，原center stderr未记录不补造。
+
+## 2026-10-07 04:13:10 UTC：原失败资源的最窄收尾准备
+
+[固定方法与边界](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-FOLLOWUP.md)：可信身份观察留在原sandbox外，两次完整匹配后先私有持久意图，复用原一次TERM/marker/OID/零连接/checkpoint→normal DROP；原pending/UNKNOWN不覆盖，不删产物/private run。现仅source准备，执行NOT_RUN，等待Lead短独审；后继host仍open。
