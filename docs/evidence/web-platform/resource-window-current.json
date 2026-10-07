@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T12:15:19.084Z",
-  "state": "UPSTREAM_FULL_RETURN_MSG03_IMPLEMENTING_NO_HEAVY_NEXT",
-  "groupWindowOwnership": "UPSTREAM completeRETURN12:10:09.681464 exactTMPabsence/tool0/markedDB0connnormalDROP/ownedEOFclosed; current0heavy/noNEXT. Originalfixeduserupdate ready-first onceconcreteinputs, prepared alone noreservation. MSG03 has18scope andsourceimplementation/ordinarylocal authorized; noactuallocal reported. AllpriorKEEP unchanged.",
+  "recordedAt": "2026-10-07T12:24:44.228Z",
+  "state": "ORIGINAL_PERSONAL_UPDATE_RESERVED_NOT_STARTED_EXCLUSIVE",
+  "groupWindowOwnership": "Original explicitly reserved svc06-personal-7d1-20261007-1224 for assignment_review; fresh admission required, no actual START received. Personal update excludes other PG/Chrome/install/performance/service windows. Separate WT source and isolated ordinary local may continue. Web has no heavy holder or Chrome launch. Prior UPSTREAM fully returned; all old KEEP unchanged.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -1215,11 +1215,12 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "task": "WPF-RELEASE01",
-    "state": "MAIN_INTEGRATED_OWNER_METADATA_CLOSE_RELEASE_NEXT",
-    "main": "e0295747200d7f0616779a712fdfd06691c3708f",
-    "receipt": "message-settings-app-self-provision-20261007/release-main-intake-receipt.json",
-    "runtimeReservation": null
+    "task": "WPF-PLUGIN-RUNTIME01",
+    "state": "SOURCE_ONLY_BROWSER_PREPARATION_NOT_RUNTIME_READY",
+    "owner": "w01_owner",
+    "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
+    "runtimeReservation": null,
+    "previousReleaseClosure": "release-main-registry-close-20261007/current.json"
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1703,6 +1704,79 @@
     }
   },
   "externalCurrentAdmission": {
+    "task": "SVC06 personal fixed update",
+    "operator": "Original Lead / assignment_review",
+    "window": "svc06-personal-7d1-20261007-1224",
+    "state": "RESERVED_NOT_STARTED",
+    "source": "5c29 (Original supplied short source; no guessed full hash)",
+    "delivery": "8825109e (Original supplied short delivery)",
+    "nativeReview": "APPROVED per Original direct inbound via root",
+    "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "artifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "web": "Original d629 / version3; three retained artifacts and identity unchanged",
+    "actualStart": null,
+    "actualReturn": null,
+    "queryAllowance": 0,
+    "drainLimit": "15 minutes from drain per Original; not inferred runtime completion",
+    "restriction": "No other PG, Chrome, installation, performance or service run while this explicit personal window holds. Isolated ordinary local/source only may continue. Generic PG plus 0PG browser pairing does not override this window.",
+    "record": "release-main-registry-close-20261007/personal-update-reservation.json"
+  },
+  "historicalSourceOnlyProgress024613": {
+    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
+    "sourceReview": "APPROVED_SOURCE_ONLY",
+    "pureGit": "NOT_RUN",
+    "newRuntimeGrant": false
+  },
+  "nextExternalQueue": {
+    "state": "ORIGINAL_PERSONAL_UPDATE_EXCLUSIVE_RESERVED",
+    "reservation": true,
+    "window": "svc06-personal-7d1-20261007-1224",
+    "actualStart": null,
+    "removalR2": "READY_QUEUED_NO_NEXT_NO_LAUNCH until actual Original complete return",
+    "pluginBrowser": "SOURCE_ONLY_NOT_AUTHORIZED_TO_LAUNCH",
+    "oldKEEP": "Unchanged"
+  },
+  "currentIntake": "release-c3-actual-admission-20261007/main-intake.json",
+  "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
+  "readyValidationRule": {
+    "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
+    "fixedRuleCommit": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+    "path": "docs/quality/local-validation.md#ready-validation",
+    "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
+    "application": "Apply to future prepared Plugin 0PG browser after exact isolation, fixed input and complete combined budget; max1 browser, one cleanup reserve. Original packet restrictions revised at safe point only. No current Chrome grant; MSG03 source/local continues independently.",
+    "finiteSegments": {
+      "sourceCommit": "3e4362b08359433620a07b05bd034a25e2dd7c4b",
+      "source": "paired-return-owner-segment-20261007/formal-rule-source.json",
+      "rule": "Owner autonomous same-boundary fixes/relatedretests in finite existingbudget, one runner/one structured record/one independent end review. No per-round short permit or result approval. Actual resource/identity/cleanup and substantive boundary review unchanged."
+    },
+    "resourceCoordinator": "d01_owner consolidatesactualstart/end/cleanupviaMika;Rootreadonlyreview; sameownerfiniteautonomyunchanged.",
+    "ruleIntake": "release-main-registry-close-20261007/current.json"
+  },
+  "webOrdinaryLocal": {
+    "state": "MSG03_TYPES1_CONFIG_FAILED_RETURNED_SAME_FINITE_PHASE_CONTINUES",
+    "task": "WPF-MESSAGESETTINGS03",
+    "owner": "workspace_panels_owner",
+    "currentLocal": 0,
+    "totalMs": 60000,
+    "tmpBytes": 16777216,
+    "rawBytes": 2097152,
+    "sourceLogicalPlanningBytes": 4194304,
+    "minimumFreshBytes": 6237454336,
+    "spentMs": 1796,
+    "remainingMs": 58204,
+    "lastAttempt": {
+      "name": "types-1",
+      "actualStart": "2026-10-07T12:23:27.399026Z",
+      "nodePgid": 8203,
+      "exitCode": 2,
+      "chargeMs": 1796,
+      "cleanup": "Owner reports group absent and exact scratch removed",
+      "failure": "Sparse check config vite/client resolution relative to TMP; no product type conclusion",
+      "record": "release-main-registry-close-20261007/msg03-local-events.json"
+    }
+  },
+  "externalPreviousReturn": {
     "task": "X01-UPSTREAM-UPGRADE01",
     "state": "FULL_RETURN",
     "record": "message-settings-app-self-provision-20261007/upstream-resource-return-observation.json",
@@ -1713,51 +1787,8 @@
     "endedAfterPersistenceAt": "2026-10-07T12:09:40.617401+00:00",
     "toolExit": 0,
     "deliveryRecord": "message-settings-app-self-provision-20261007/upstream-outer-tool-receipt.json",
-    "resultReview": "Scoped fidelity approved283d58cd; no latestmain/provider/toolinflight proof"
-  },
-  "historicalSourceOnlyProgress024613": {
-    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
-    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
-    "sourceReview": "APPROVED_SOURCE_ONLY",
-    "pureGit": "NOT_RUN",
-    "newRuntimeGrant": false
-  },
-  "nextExternalQueue": {
-    "state": "NO_CURRENT_HEAVY_NEXT_ORIGINAL_FIXED_UPDATE_WHEN_READY",
-    "reservation": false,
-    "oldKEEP": "Unchanged"
-  },
-  "currentIntake": "release-c3-actual-admission-20261007/main-intake.json",
-  "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
-  "readyValidationRule": {
-    "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
-    "fixedRuleCommit": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
-    "path": "docs/quality/local-validation.md#ready-validation",
-    "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
-    "application": "Owner Queue finite-segment actual completed without per-run managerapproval; nextsame-boundary work retains autonomy and exactresourcecleanup. ChangedSSEobserver lifecycle/acceptance reviewedonce beforeimplementation.",
-    "finiteSegments": {
-      "sourceCommit": "3e4362b08359433620a07b05bd034a25e2dd7c4b",
-      "source": "paired-return-owner-segment-20261007/formal-rule-source.json",
-      "rule": "Owner autonomous same-boundary fixes/relatedretests in finite existingbudget, one runner/one structured record/one independent end review. No per-round short permit or result approval. Actual resource/identity/cleanup and substantive boundary review unchanged."
-    },
-    "resourceCoordinator": "d01_owner consolidatesactualstart/end/cleanupviaMika;Rootreadonlyreview; sameownerfiniteautonomyunchanged."
-  },
-  "webOrdinaryLocal": {
-    "state": "MSG03_IMPLEMENTATION_LOCAL_AUTHORIZED_NOT_ACTUAL",
-    "task": "WPF-MESSAGESETTINGS03",
-    "owner": "workspace_panels_owner",
-    "currentLocal": 0,
-    "totalMs": 60000,
-    "tmpBytes": 16777216,
-    "rawBytes": 2097152,
-    "sourceLogicalPlanningBytes": 4194304,
-    "minimumFreshBytes": 6237454336
-  },
-  "externalPreviousReturn": {
-    "task": "X01-REMOVAL-REFERENCES01",
-    "state": "RETURNED_AFTER_SEPARATE_CLEANUP_ONLY",
-    "actualReturn": "2026-10-07T12:02:47.282218+00:00",
-    "record": "release-c3-actual-admission-20261007/x01-removal-return.json"
+    "resultReview": "Scoped fidelity approved283d58cd; no latestmain/provider/toolinflight proof",
+    "mainIntake": "release-main-registry-close-20261007/upstream-main-intake.json"
   },
   "retiredNextWebReadySnapshot": "release-caller-recovery-main-20261007/historical-next-web-ready-58ef.json (historical owner/packet/budget snapshots only; no permission/currentstatus)",
   "quickAppSourceProvision": {
@@ -1784,9 +1815,11 @@
     },
     "receipt": "message-settings-app-self-provision-20261007/msg03-receipt.json",
     "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
-    "registration": "FIRST_SOURCE_READY_PENDING_REGISTRY",
+    "registration": "REGISTERED_SOURCE_CURRENT_PARENT_KNOWN",
     "firstCanonicalHead": "2efead09ed9767990cb9dadf01980f6d9200e42c",
-    "registrationRequest": "message-settings-app-self-provision-20261007/msg03-source-registration.json"
+    "registrationRequest": "message-settings-app-self-provision-20261007/msg03-source-registration.json",
+    "registrationReceipt": "release-main-registry-close-20261007/msg03-live-receipt.json",
+    "registrationObservedAt": "2026-10-07T12:18:58Z"
   },
   "recoveryFinalClosure": {
     "ownerHead": "2879477536796656227e67a0cd53641af73cb305",

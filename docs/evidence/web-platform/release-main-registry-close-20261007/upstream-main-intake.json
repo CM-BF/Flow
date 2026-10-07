@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T12:16:50.544538+00:00",
+  "base": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+  "delivery": "5e96e8ef816770238e2a5b2d216ddf1e401e6a5c",
+  "intakeSha256": "eb0b9392f17c26ad163c8493729608812174f723713cff152d3db13b5483fd49",
+  "fixedFiles": 198,
+  "fixedBytes": 872742,
+  "preimage": "all absent; native_center_owner APPROVED_PREIMAGE_AND_DIRECT_INTERFACE_COMPATIBILITY",
+  "bounds": {
+    "workSeconds": 30,
+    "termSeconds": 2,
+    "reapSeconds": 3,
+    "scratchBytes": 8388608,
+    "rawBytes": 1048576
+  },
+  "freeBytes": 21847031808,
+  "scope": "focused noEmit of two new tests against current direct public consumers; 0PG/browser/provider/service",
+  "supportResolution": "Later actualSupport quality.md takes precedence over earlier historical support; latest approved metadata only for records.",
+  "decision": "ACCEPT_FIXED_TESTS_EXPERIMENT_AND_EVIDENCE",
+  "reviews": {
+    "source": "chatui01_owner 11:47:56 local; 11:54:10 center preparation",
+    "actual": "chatui01_owner 12:12:34 RESULT_FIDELITY_REVIEW_APPROVED 283d58cd; 0P1/P2",
+    "preimage": "native_center_owner APPROVED_PREIMAGE_AND_DIRECT_INTERFACE_COMPATIBILITY; current source gate/client ACK deltas read, direct test contracts compatible"
+  },
+  "combination": {
+    "checks": "two focused test sources noEmit",
+    "exit": 0,
+    "elapsedMs": 2363,
+    "result": "result.json",
+    "PG": 0,
+    "provider": 0,
+    "browser": 0
+  },
+  "boundaries": [
+    "Actual upstream semver 7.8.4/7.8.5/7.8.4 returns false/true/false via public center/in-process runRunner",
+    "Old A held after load ACK and before import, not tool-function-in-flight upgrade",
+    "Source/local/preparation/actual approvals remain separate",
+    "No production server/runner changes; no latest-main PG, OS runner, native or capacity claim",
+    "Original license failure, excluded wrong-WT types and raw output kept"
+  ]
+}

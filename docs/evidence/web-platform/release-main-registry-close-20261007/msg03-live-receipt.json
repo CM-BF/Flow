@@ -1,0 +1,87 @@
+{
+  "startedAt": "2026-10-07T12:18:17.383712+00:00",
+  "source": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "oldPid": 46010,
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "oldConfirmedAbsent": true,
+  "newPid": 17762,
+  "log": "/tmp/flow-dashboard-202-20261007-1219.log",
+  "completedAt": "2026-10-07T12:18:17.653430+00:00",
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "publicMetadataHttp": 200,
+  "summaryHttp": 200,
+  "summaryBytes": 542515,
+  "summaryCount": 202,
+  "selected": {
+    "id": "WPF-MESSAGESETTINGS03",
+    "sourceCurrent": true,
+    "mode": null
+  },
+  "declarations": {
+    "owner": "workspace_panels_owner / gpt-6-astra",
+    "branch": "codex/web-message-settings-app",
+    "branchState": "in-progress",
+    "declaredHead": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；首canonical当前提交",
+    "declaredDirty": "仅本片新增metadata，提交后核clean",
+    "updatedRecord": "2026-10-07T12:13:29.338Z；固定base c130，未追moving main",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；已固定供给不等运行检查"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线",
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "正在把已验证的消息设置控件接入真实聊天草稿与发送入口",
+      "next": "发送和排队分别保留本条消息设置，等待材料时继续编辑下一稿",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-07T12:11:30.621Z",
+        "record": "2026-10-07T12:11:30.621Z"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "owner实际开始本登记实施子片的独立源码供给，见provision.startedAt；不把take自动当开工，未完成"
+      },
+      "issues": []
+    },
+    "truncatedFields": []
+  }
+}

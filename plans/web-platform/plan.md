@@ -544,3 +544,6 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 本次D04作者优先级4已在[12:02真实看板观察](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/root-dashboard-d04-visible-check.json)显示：首屏前三不再由D04占据；旧展开领取卡保留焦点而明确已不在未登记列表，是焦点保留行为，不当重复领取缺陷。没有修改排序/聚合器或另跑浏览器。
 
 原TODO11/MSG03沿[主线常规source-operator规则](../../docs/evidence/web-platform/message-settings-app-self-provision-20261007/rule-intake.json)已解除旧逐片供给许可前置；同一panels自助固定c130/369源、18范围原子领取，首唯一source与所属MATURE02见[登记入口](../../docs/evidence/web-platform/message-settings-app-self-provision-20261007/msg03-source-registration.json)。既有bounded-local-iteration允许原owner在段内连续修复与相关复测，保实际失败/清理/累计额度，不把ordinarysource或local改成逐命令准备批准。共享config、真实PG/Chrome、main和个人操作边界保持。
+
+
+2026-10-07 本轮[主线收口与登记回执](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)：Release e029/owner58562已完成并释放四scope，MSG03领取和唯一source登记均已确认，沿原MATURE02/TODO11实现，无新增任务层。Plugin沿X01-06准备原模块browser，真实App/session仍属MSG03。普通PG与完全独立0PG浏览器可按当前主线规则fresh组合，但Original本次个人更新明确排他，准备不冒actual。Mika REMOVAL client后继只source/ordinarylocal，接口尚未固定；REMOVAL R2 READY后置，均不新占Web写权或重窗口。

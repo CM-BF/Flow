@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-10-07T12:24:44.228Z",
+  "source": "Owner actual start and terminal reports; no manager execution",
+  "phase": {
+    "state": "MSG03_TYPES1_CONFIG_FAILED_RETURNED_SAME_FINITE_PHASE_CONTINUES",
+    "task": "WPF-MESSAGESETTINGS03",
+    "owner": "workspace_panels_owner",
+    "currentLocal": 0,
+    "totalMs": 60000,
+    "tmpBytes": 16777216,
+    "rawBytes": 2097152,
+    "sourceLogicalPlanningBytes": 4194304,
+    "minimumFreshBytes": 6237454336,
+    "spentMs": 1796,
+    "remainingMs": 58204,
+    "lastAttempt": {
+      "name": "types-1",
+      "actualStart": "2026-10-07T12:23:27.399026Z",
+      "nodePgid": 8203,
+      "exitCode": 2,
+      "chargeMs": 1796,
+      "cleanup": "Owner reports group absent and exact scratch removed",
+      "failure": "Sparse check config vite/client resolution relative to TMP; no product type conclusion",
+      "record": "release-main-registry-close-20261007/msg03-local-events.json"
+    }
+  },
+  "boundary": "Same finite 60s, per attempt20s incl5s cleanup, no network/PG/Chrome; isolated ordinary local allowed during Original personal reservation"
+}

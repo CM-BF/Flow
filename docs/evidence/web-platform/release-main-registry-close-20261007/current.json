@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-07T12:23:18.512Z",
+  "release": {
+    "main": "e0295747200d7f0616779a712fdfd06691c3708f",
+    "ownerFinal": "58562c11c15b0beb11c5b844d318e0cdf4ca25e7",
+    "cleanAndRemoteEqualObserved": true,
+    "claim": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+    "version": 2,
+    "state": "RELEASED",
+    "committedAt": "2026-10-07T12:18:30.761Z",
+    "receipt": "release-receipt.json",
+    "boundary": "Original c3 fixed 6c/7d1 actual only; no personal deployment or later backend fixes proved"
+  },
+  "msg03": {
+    "state": "REGISTERED_IMPLEMENTING",
+    "firstCanonical": "2efead09ed9767990cb9dadf01980f6d9200e42c",
+    "claim": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+    "version": 1,
+    "scopeCount": 18,
+    "registryMain": "4fdd856293a502209d7509ea37da901bbfd89f72",
+    "actualD05Receipt": "msg03-live-receipt.json",
+    "rootApiObservedAt": "2026-10-07T12:18:58Z",
+    "sourceCurrent": true,
+    "parent": "WPF-MATURE-02",
+    "claimMatchesSource": true,
+    "productChecks": "types-1 configuration FAILED; owned cleanup returned, 1796ms charged. No product type result. Same finite local phase continues."
+  },
+  "plugin": {
+    "ownerFinal": "ba221d3b19cbf71d798cfaa4707536d9cb649503",
+    "parent": "X01 / X01-06",
+    "sourceOnlyBrowserPreparation": true,
+    "browserActual": "NOT_RUN",
+    "originalLocalActual": "15 exact passed; 882ms closed; former 30082ms failed phase preserved"
+  },
+  "upstream": {
+    "state": "MAIN_INTEGRATED_NO_HOLDER",
+    "main": "4fdd856293a502209d7509ea37da901bbfd89f72",
+    "receipt": "upstream-main-intake.json",
+    "actualFullReturn": "2026-10-07T12:10:09.681464Z",
+    "mainTypesMs": 2363,
+    "newKeep": false
+  },
+  "rule": {
+    "currentMainObserved": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+    "path": "docs/quality/local-validation.md",
+    "sha256": "f1c4a26e50dc887074c6aaf5bab0cfbd824c59f9f74da5c6090f3e7f472cb8ec",
+    "section": "parallel-browser-rule.txt",
+    "application": "Future isolated 0PG Plugin browser can pair with an actual PG/heavy journey after exact isolation and complete combined budget; max one browser; original fixed packet must be minimally revised first if it forbids pairing. No runtime grant now."
+  },
+  "queue": {
+    "actualHeavyHolder": null,
+    "nextGranted": "Original explicitly reserved personal update; not START",
+    "originalSvcPriority": "Ready first for fixed user update; source preparation is not reservation",
+    "removalR2": "8060 clean ready, after SVC actual safe return; no NEXT or pending launch",
+    "mikaOrdinaryLocalBytes": 22020096,
+    "minimumNextFreshBytes": 6237454336,
+    "oldKeep": "Unchanged; no cleanup inference",
+    "currentRecord": "../resource-window-current.json"
+  },
+  "checks": "Only metadata, original receipts and exact claims; no product or aggregate execution",
+  "supersededByActualReservation": "personal-update-reservation.json"
+}
