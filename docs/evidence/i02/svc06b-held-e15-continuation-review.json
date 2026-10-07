@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T22:35:03.776Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION",
+  "blockingP1P2": 0,
+  "source": "e871d17e018461dd1288dba404930a50897b2c24",
+  "target": "0b599a9ce5b71b0ab70700cf7ddd28f9bfa705cd",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+  "manifest": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-preparation.json",
+    "bytes": 8432,
+    "sha256": "72940b492935374605583ad0727c440289396b46564e48a23b96fea10a8d114a",
+    "bindings": 27,
+    "boundBytes": 148073,
+    "effectivePins": 135,
+    "effectivePinBytes": 824217
+  },
+  "verified": [
+    "All fixed/current bindings and inherited inputs match; public runtime pins hash/realpath match.",
+    "Caller and request/fact projection now reuse the actual public database canonical; complete original state changes still reject.",
+    "Only fresh verification of already-imported e15/four reports, rebind, refresh, checkpoint, resume, final. New namespace and flags reject original replay.",
+    "Six direct checks, 299ms/733B, three groups absent and EOF, two exact scratch roots removed. First source preimage reconstructible; final dispatcher checked; later descriptive metadata was not claimed as retested."
+  ],
+  "boundaries": [
+    "Original 434482265 failure, not-written, KEEP, and possible simultaneous external changes remain.",
+    "Preparation approval does not imply personal success or a consumed execution window. Fresh resource/identity admission remains required.",
+    "No new tasks, provider calls or Web779 publication. Existing imported artifact/reports must not be replayed."
+  ],
+  "reviewerTestReruns": 0,
+  "reviewerPersonalIO": 0,
+  "reviewerPrivateBodyReads": 0
+}
