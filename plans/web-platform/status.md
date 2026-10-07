@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:31:05.641157+00:00；看板组合直接检查和完整草稿专测本地检查已独审，页面与恢复实际旅程分别待验 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:56:01.125771+00:00；看板行为检查已独审、窄屏一处视觉待补证；完整草稿第二次仍失败并已归还资源 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 已打开任务详情的实时状态与新时间线已限定通过；看板轻摘要与按需详情的组合直接检查已独审接受。快速设置组件通过保持，完整恢复、真实设置接线和部署仍未完成。 |
-| 下一可用交付 | 验证看板组合页面与准备后的完整草稿材料恢复；真实消息设置继续按已审组合基线和精确交权接入。公开工具全文接口已交付，Web展开消费沿原后继排队。 |
+| 当前产出 | 看板轻摘要、按需详情与任务链接行为检查已限定独审接受，一处窄屏截图仍待补证。完整草稿复验到达恢复与材料核对，最终回执检查仍失败；快速设置组件通过保持，真实App接线未完成。 |
+| 下一可用交付 | 定位完整草稿最终回执问题，补看板窄屏视觉证据及已有适配检查；真实消息设置继续接入统一草稿与发送流程。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无PG/Chrome占用或预约；看板直接检查已清理，恢复owner受影响本地检查也已清理归还。其它队伍资源不由本表推断空闲。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：DPERF已实际结束并清理归还，本组无PG/Chrome占用或预约；Recovery第二次实际失败已归还，等待原owner定位，不凭时钟接窗。其它队伍资源不推断空闲。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -172,4 +172,6 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 历史08:11安全点[ACCESS部分交权与SSE限定通过](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/current.json)已按原唯一status/claim事实收敛；[DPERF精确追加候选](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/dperf04-reentry.json)已由原owner v4精确amend，后续须组合当前main，不用旧server/app覆盖新功能。[真实设置接线方案](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-host-followup.json)未take，叶组件通过不等host通过。
 
-[本次组合实证与依赖收口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/current.json)保留唯一owner状态来源：DPERF七固定输入只供给不扩写权，九叶项加父项实证已限定通过、页面未验；Recovery完整草稿两tests源码和首红修后绿局部检查已获限定独审，真实Prepare旅程尚未运行，未继承旧旅程通过。[REQ19策略输入](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/release-policy-consumer-intake.json)与[CHAT05公开正文接口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/chat05p02-main-consumer-intake.json)不构成个人发布或WebUI通过。
+[历史08:31组合实证与依赖收口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/current.json)保留唯一owner状态来源：DPERF七固定输入只供给不扩写权，九叶项加父项实证已限定通过、页面未验；Recovery完整草稿两tests源码和首红修后绿局部检查已获限定独审，真实Prepare旅程尚未运行，未继承旧旅程通过。[REQ19策略输入](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/release-policy-consumer-intake.json)与[CHAT05公开正文接口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/chat05p02-main-consumer-intake.json)不构成个人发布或WebUI通过。
+
+本批[浏览器与接口接收](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/current.json)保留看板首红后绿及完整草稿两次失败；[定向document核验](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/dashboard-owner-document-check.json)只证明当时两份唯一owner源逐字可下钻，不证明全UI/实时claim/性能。新用户并发规则按原plan更新；take仍来自D04账本，不新建手填领取表。

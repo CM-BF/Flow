@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T08:35:57.871919+00:00",
+  "kind": "READ_ONLY_FIXED_CONSUMER_INTERFACE_INTAKE_NO_RUN",
+  "source": "4e9c7fd685902aec6c36a7f216f3ac47907b0b65",
+  "sourcePins": [
+    {
+      "path": "docs/evidence/svc09/interface.md",
+      "bytes": 5378,
+      "sha256": "fef09cd8215a3a81f9072e60cbd7ae0841df08b1936aa8bfc15c60d3b3c7e5c9"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    }
+  ],
+  "status": "Lead preparing final maintenance caller fix and independent review; this snapshot is not final host/backend tuple or deployment acceptance",
+  "originalTasks": "RELEASE / Recovery / SVC09 REQ19; no new task/take",
+  "callerContract": {
+    "identity": "Actual backendHead + exact retained artifact descriptor + normalized publicOrigin/nonsecret browserPolicyDigest context. Do not substitute Web artifact sourceHead for actual backend.",
+    "report": "format2/policy flow-web-api-v2; exact read/send/recover/negotiation hashes and exact same format/backendHead/artifactId/context in all four raw checks. Old format1 remains historical/legacy, not configured proof.",
+    "read": [
+      "ownerAuthenticated",
+      "conversationBound",
+      "taskBound"
+    ],
+    "send": [
+      "acceptedTurnBound",
+      "requestedProfilePreserved"
+    ],
+    "recover": [
+      "sameKey",
+      "sameBody",
+      "sameTurn"
+    ],
+    "negotiation": [
+      "legacyReadable",
+      "streamHeaderHandled",
+      "profileHeaderHandled"
+    ],
+    "evidenceMeaning": "Importer verifies bounded hash-bound attestations, not semantic behavior itself. Real App compatibility caller must produce observations from fixed full App/backend tuple. Component fixture green is insufficient.",
+    "retained": "All original three retained artifacts each need reports against new actual backend/context. The fourth actual App is not supplied yet. No deletion/retirement to make space. Count4 and declared assets192MiB plus32reports are separate policies, not proof of current disk inventory.",
+    "historicalPointer": "Existing release pointer records prior publication backend/IDs. Configured load uses expectedBackendHead/context to find reports for all retained and returns verifiedTuple; do not rewrite historical pointer or infer current runtime solely from it.",
+    "freshHost": "Final selected Webhost must contain supported fixed tool closure before configured startup/replace. Backend refresh alone does not upgrade independently selected host. Final selected backend/Webhost SHA must come from OriginalLead.",
+    "CAS": "publish/rollback use explicit expectedVersion and original operation lock. If commit fails after rename, observe status before next command; no blind retry."
+  },
+  "integrationPlan": [
+    "At original RELEASE/Recovery safe point, pin final OriginalLead backend/Webhost tuple and received normalized nonsecret context. Never read or output private policy values/tokens for this intake.",
+    "Reuse these existing verifier/reader/planner signatures; do not invent second report schema or compatibility registry.",
+    "Run actual App read/send/recover/negotiate for every retained artifact against the one fixed new backend/context only when separately authorized/prepared.",
+    "Keep old raw and failure history. Treat absent/mismatched context/report as unknown/rejected before stopping existing services.",
+    "Keep component tests, real App compatibility, source integration and personal publication separate in dashboard."
+  ],
+  "limits": [
+    "Read-only Git objects only; current WT preview.mjs was dirty and not read as fixed final source.",
+    "No preview command/import/runtime/private environment/personal browser/retained asset mutation.",
+    "No proposed moving-target rerun, no launch or publication approval."
+  ],
+  "method": "Existing find-skills/codebase-design/clean-code applied: one compatibility Module and existing immutable evidence/CAS own state; no duplicate caller authority."
+}

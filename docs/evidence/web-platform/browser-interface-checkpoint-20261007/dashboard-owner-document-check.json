@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T08:32:12.098017+00:00",
+  "kind": "READ_ONLY_CURRENT_CANONICAL_DOCUMENT_CHECK",
+  "checks": [
+    {
+      "taskId": "WPF-001",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 31582,
+      "sha256": "76e9701dfcb66c92caf6945bb92079a1a11b9f886704fe4011deb4b0fbd60694",
+      "sourceStableBeforeAfter": true,
+      "exactLiveOwnerBytes": true
+    },
+    {
+      "taskId": "WPF-RECOVERY01",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 56244,
+      "sha256": "62a551cd5f7d244b2d09fd37897cec13c674074e08859d28d8c49770d0f27682",
+      "sourceStableBeforeAfter": true,
+      "exactLiveOwnerBytes": true
+    }
+  ],
+  "meaning": "Selected document endpoint returns exact current unique owner status bytes. No full snapshot, assignment/PG read, private access endpoint, browser or performance check."
+}

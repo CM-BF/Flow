@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T08:31:05.641157+00:00",
-  "state": "DPERF_DIRECT_AND_RECOVERY_COMPLETE_DRAFT_LOCAL_ACCEPTED",
-  "groupWindowOwnership": "Web has no PG/Chrome holder or reservation. DPERF and Recovery affected local checks actually closed and independently accepted. CompleteDraft browser and DPERF browser are not run; no global idle inference.",
+  "recordedAt": "2026-10-07T08:56:01.125771+00:00",
+  "state": "DPERF_SCOPED_ACTUAL_ACCEPTED_RECOVERY_SECOND_FAILED_RETURNED",
+  "groupWindowOwnership": "DPERFsummary/links endedandownedcleanupaccepted. Recovery secondcompleteDraft failedandreturned perrootactualreceipt; no WebPG/Chromeholder, gate orreservation. No globalidle inference.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T08:31:05.641157+00:00",
-    "kind": "COMPOSED_DIRECT_ACCEPTED_COMPLETE_DRAFT_SOURCE",
-    "source": "composed-consumer-checkpoint-20261007/current.json",
-    "summary": "DPERF composed source and synthetic Node actual accepted; browser/main/deploy pending. Recovery4a609 completeDraft source and red-then-green affected local independently accepted, browserNOT_RUN/noPG. Consumer plans remain existing unclaimed successors."
+    "at": "2026-10-07T08:56:01.125771+00:00",
+    "kind": "DPERF_SCOPED_ACTUAL_ACCEPTED_RECOVERY_SECOND_FAILED_RETURNED",
+    "source": "browser-interface-checkpoint-20261007/current.json",
+    "summary": "DPERF9+6behavioraccepted,6of7visualaccepted/oneunexplainedrepeatopen; firstFAILpreserved. Recovery secondoverallFAIL17976 afterpartialrestoresteps,spent114654/rem35346, independentreviewpending."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "queue-full6-closeout-20261007/current.json",
+  "currentWindowReturn": "browser-interface-checkpoint-20261007/current.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1191,7 +1191,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "DPERF_BROWSER_PENDING_RECOVERY_COMPLETE_DRAFT_SOURCE",
+    "state": "RECOVERY_SECOND_COMPLETE_DRAFT_FAILURE_DIAGNOSIS_NO_RESERVATION",
     "access": {
       "ownerHead": "cb0dca62d20a3e4b8d91699190a94a7704ffc19b",
       "state": "PRODUCT_PATHS_PARTIALLY_HANDOFF_README_AND_RECORDS_RETAINED",
@@ -1333,9 +1333,9 @@
       "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json"
     },
     "recovery": {
-      "ownerHead": "4a60980b6dc756d46a720a9cbcb157a549555010",
-      "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
-      "state": "COMPLETE_DRAFT_SOURCE_LOCAL_ACCEPTED_BROWSER_NOT_RUN",
+      "ownerHead": "ad4a91380d045efdcc68506a041c052382a4d03c",
+      "source": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+      "state": "COMPLETE_DRAFT_SECOND_FAILED_CLEANED_DIAGNOSIS_PENDING",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1359,29 +1359,30 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "Last actual SSE selected2 accepted and closed; completeDraft has no PG/Chrome run or gate.",
-      "next": "Real App choose profile/project -> explicit Prepare CREATE (zero turn) -> add knowledge and two ordered files -> save/reload/Restore without new business POST or body prefetch -> public metadata verification without reselection -> first Send exact original refs/profile",
-      "review": "quick-native1-recovery-review-20261007/recovery-feature-review.json",
-      "actualReceipt": "access-sse-host-checkpoint-20261007/current.json",
-      "sourceReview": "access-sse-host-checkpoint-20261007/recovery-sse-local-review.json",
-      "actualReview": "access-sse-host-checkpoint-20261007/recovery-sse-actual-review.json",
+      "runtime": "TwoactualcompleteDraftattemptsoverallFAIL, ownedcleanupreturned; no currentPG/Chromeholder.",
+      "next": "Originalownerdiagnosesreceiptundefined; no newretry/resultasserted bymanagement.",
+      "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/review.md",
+      "actualReceipt": "browser-interface-checkpoint-20261007/current.json",
+      "sourceReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/complete-draft-locator-checkpoint.json",
+      "actualReview": "browser-interface-checkpoint-20261007/current.json",
       "newSegment": {
         "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
         "totalActualMs": 150000,
-        "spentMs": 81002,
-        "remainingMs": 68998,
+        "spentMs": 114654,
+        "remainingMs": 35346,
         "perRunMaximumMs": 60000,
         "cleanupMs": 15000,
         "oldEnvelopeClosed": true,
         "oldUnusedCreditTransferred": false,
         "ownerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
         "authorization": "continuous-validation-segments-20261007/recovery-segment-authorization.json",
-        "lastParentLateMs": 10229.626375,
-        "lastOuterMs": 10843.4401670238,
+        "lastParentLateMs": null,
+        "lastOuterMs": null,
         "chargeBasis": "ceil(max outer,late,parent); original raw unchanged",
-        "lastChargeMs": 10844,
+        "lastChargeMs": 17976,
         "ownerHandoff": "queue-full6-closeout-20261007/recovery-sse-scope-readiness.json",
-        "pendingLatestActualAccounting": false
+        "pendingLatestActualAccounting": false,
+        "lastAccountingSource": "Rootsecondactualreceipt charge17976; exactouter/latetimestamps pending independently archived review, oldrawunchanged."
       },
       "historicalFifthSelection": {
         "journey": "page-auth",
@@ -1393,14 +1394,14 @@
         "fullJourneyPassed": false
       },
       "currentSelection": {
-        "journey": "queue-ack-loss",
+        "journey": "complete-draft",
         "required": [
           "cookieRead",
-          "queueAckLoss"
+          "completeDraft"
         ],
-        "state": "ACTUAL_SELECTED_2_OF_2_PASS",
-        "priorOverallFAILUnchanged": true,
-        "fullFeaturePassed": false
+        "state": "SECOND_ACTUAL_FAILED_1_OF_2_REQUIRED",
+        "fullFeaturePassed": false,
+        "retry": "DIAGNOSIS_PENDING_NOT_PASSED"
       },
       "reviewHistory": {
         "0141": "CHANGES_REQUESTED_2P2",
@@ -1408,14 +1409,6 @@
         "full7": "ACCEPTED_SCOPED_ACTUAL_NOT_WHOLEFEATURE"
       },
       "fullReviewState": "IN_PROGRESS",
-      "sourceLocal": {
-        "observerPass": 12,
-        "noEmitExit": 0,
-        "elapsedMs": 6283.637208980508,
-        "segmentMs": 20000,
-        "PG": 0,
-        "Chrome": 0
-      },
       "lastConsumedAdmission": {
         "state": "CONSUMED_PASS_CLEANED_ENV_DELETED",
         "gate": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-gate.json",
@@ -1454,15 +1447,15 @@
         "revision": "queue-full6-closeout-20261007/recovery-sse-scope-readiness.json",
         "historicalRawPreserved": true,
         "nextNoDuplicateManifest": true,
-        "observationMeaning": "3157504B measured sourceprepared before latestactual; newarchivedbytes pendingownerreceipt, not resampled."
+        "observationMeaning": "Historical measured startup bytes from SSE preparation, not current retained size; fresh size belongs next owner admission."
       },
-      "sourceCandidateState": "fea37 focused source and4a609 type-narrowing/noEmit actual accepted; no completeDraft browser result",
+      "sourceCandidateState": "bc3 headerfix exercised; secondattempt partialrestorestepspassed but receiptconditionfailed.",
       "historicalCreatedTurnPreparation": {
         "packet": "/private/tmp/recovery-created-turn-344f-di09jc0_",
         "manifestSha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793",
         "preparationReview": "Root6f452 lifecycle32/noEmit accepted; 205pins fresh incl111raw, exactfailedreconciliation guarded."
       },
-      "ownerMetadataState": "Own metadata still sealing; last observed dirty, not clean",
+      "ownerMetadataState": "ad4HEAD with newsecondrun evidenceuntracked; naturalownersealpending.",
       "currentDesignReviews": [
         "composed-consumer-checkpoint-20261007/recovery-complete-draft-design-boundary.json",
         "composed-consumer-checkpoint-20261007/recovery-prepare-recipe-correction.json",
@@ -1484,7 +1477,17 @@
         "PG": 0,
         "Chrome": 0,
         "cleanup": "Owned TMP deleted; exact PID/groups absent; ordinary local returned"
-      }
+      },
+      "actualReviewMeaning": "Firstdbd743acceptedfailurecleanup; secondactual rootreceipt and ownraw observed, independentsecondreviewpending.",
+      "historicalSSESourceLocal": {
+        "observerPass": 12,
+        "noEmitExit": 0,
+        "elapsedMs": 6283.637208980508,
+        "segmentMs": 20000,
+        "PG": 0,
+        "Chrome": 0
+      },
+      "historical0141FeatureReview": "quick-native1-recovery-review-20261007/recovery-feature-review.json"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1587,11 +1590,11 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "queue-full6-closeout-20261007/current.json",
+  "currentWindowEvidence": "browser-interface-checkpoint-20261007/current.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
-  "dperf04CurrentPreparation": "Current cfd composed source and Node10 actual accepted; old544c/929b preparation historical. Original browser0/60000, new composed-source/runtime binding remains owner work; no grant created here.",
+  "dperf04CurrentPreparation": "705dnative/source accepted; summaryfirstFAIL8258 preserved, summary9PASS9085 andlinks6PASS7121 rootec29accepted, cumulative24464/rem35536. Visual6of7accepted, narrowlightrepeatcauseunproven. Current08e9Timing/ACCESSadapttestsonly NOT_RUN, no main/deployment/performanceclaim.",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
   "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
@@ -1941,15 +1944,16 @@
       "observedAt": null,
       "needsVerification": false
     },
-    "freshReceipt": "composed-consumer-checkpoint-20261007/selected-claims.json",
+    "freshReceipt": "browser-interface-checkpoint-20261007/selected-claims.json",
     "source": "cfd5a53323438709843828d74cab67502801060c",
-    "ownerHead": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
-    "next": "Original owner browser input preparation after accepted composed Node; no main or deployment claim.",
-    "readOnlySupply": "composed-consumer-checkpoint-20261007/dperf-source-supply-review.json"
+    "ownerHead": "c9269234a671c7c10d2abb60831ca966bb3d8c9a",
+    "next": "Bounded visual followup and Timing/ACCESS adaptedtestverification subjectactualownerfinitebudget; not automaticallyrunning.",
+    "readOnlySupply": "composed-consumer-checkpoint-20261007/dperf-source-supply-review.json",
+    "ownerTreeState": "clean at latestread"
   },
   "externalCurrentAdmission": {
-    "state": "WEB_SSE_CLEANED_RETURNED_NO_SUBSEQUENT_HOLDER_REPORTED",
-    "basis": "Root independent SSE review34af accepted actual08:03:40.903729–08:03:51.747236Z and exactcleanup08:04:20.506604Z; sharedPG returned to Mika. No subsequent holder reported; not global idle.",
+    "state": "OTHER_TEAMS_CURRENT_RUNTIME_UNKNOWN_NOT_SAMPLED",
+    "basis": "This batch receives Webowner actuals only; no fresh external PG/service observation. Old SSE return is history, not globalfree.",
     "retainedC02OldKeepBytes": 33685504,
     "reservation": false,
     "latestMainIntake": {
@@ -1974,7 +1978,7 @@
     "Recovery completeDraft source/local continues in original21; DPERF browser remains unrun.",
     "REQ19 SVC09 and CHAT05 body consumer follow existing dependency owners, no extra take or personal action."
   ],
-  "currentIntake": "composed-consumer-checkpoint-20261007/current.json",
+  "currentIntake": "browser-interface-checkpoint-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

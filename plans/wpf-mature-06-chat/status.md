@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:31:05.641157+00:00；准备后完整草稿专测源码与类型修正局部检查已独审，实际选组仍未运行 |
+| 最近更新 | 2026-10-07T08:56:01.125771+00:00；完整草稿第二次整体仍失败，部分恢复与材料断言已过，最终回执待定位，资源已归还 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 已打开任务详情的实时状态与新时间线、原七组恢复旅程、中心选择、两处提交丢回执与排队丢回执均有选定通过证据；Steer慢存储修复有定向证据。旧失败保留，完整恢复功能尚未通过。 |
-| 下一可用交付 | 验证真实Prepare后，profile、项目、知识与有序文件完整恢复，并以首Send确认原材料；保持无自动重投。消息设置和工具全文消费待组合基线及精确交权。 |
+| 下一可用交付 | 定位完整草稿恢复后首Send的accepted回执条件，保持原材料与身份及无自动重投；两次失败不改成通过。消息设置和工具全文消费仍待组合基线与精确交权。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -70,3 +70,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 2026-10-07T04:13:44.010Z：SVC06实际专库与服务组清理已归还，解除此前共享PG等待；本任务仍须自身fresh准入完成剩余真实浏览器验收，不继承D06窗口。来源见[中央实际回执](../../docs/evidence/web-platform/checkpoint-0413-20261007/incoming.json)。
 
 共享惰性reasoning实现仅关联[MATURE06-LAZY01唯一source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md)，Mika/status_read原11scope；本父不复制其TODO或运行进度，登记/加载由Execution Lead确认。
+
+当前完整草稿首轮及修正见[本次限定接收](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/current.json)：原cookieRead通过，profile header定位超时使整体失败且未进入CREATE/turn；bc3/ad4在首轮收口时clean；随后第二次已真实复验仍整体FAIL，恢复/B→A/knowledge部分断言通过，最后receipt accepted为undefined待定位。新run证据待原owner封存，150s累计114654/余35346，未冒完整group通过。此前已过旅程保持，完整子片仍IN_PROGRESS，不能用源码修正补PASS。

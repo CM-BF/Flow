@@ -1,18 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T08:31:05.641157+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T08:56:01.125771+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**看板轻摘要与按需详情的当前组合直接检查已通过，页面验收仍待执行。** W01唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md)对应cfd组合/最终acf8 clean；原v4十一scope保持，aa9七固定9f输入只读供给不扩写权。[组合源码审](composed-consumer-checkpoint-20261007/dperf-composition-review.json)与[九叶项加父项actual审](composed-consumer-checkpoint-20261007/dperf-node-actual-review.json)分别保范围：10/10、exit0、2866ms/新段余27134；旧3950ms独立，ownedNode/动态HTTP及scratch清理完成，不是4320性能、browser/main/部署通过。
+**看板摘要与任务链接行为检查已独审接受，自有资源已归还；窄屏一处视觉待补证。** 原W01唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md)与v4十一scope保持。首summary失败8258ms原件不改；被动等待原生close事件后，原精确焦点断言及其余九组/双390图通过，计9085ms。原source/native边界分别见[705d](browser-interface-checkpoint-20261007/dperf-native-source-review.json)与[窄绑定](browser-interface-checkpoint-20261007/dperf-focus-fix-binding.json)。task-links08:48:21.257631Z实际终态exit0、6组/5PNG，计7121ms；全部owned组/流/fixture/scratch清理归还，包含首红总24464/余35536ms。当前结果、计费和独审见[本批索引](browser-interface-checkpoint-20261007/current.json)。[root三run实际审](browser-interface-checkpoint-20261007/dperf-summary-links-actual-review.json)已接受57raw/48固定pins及清理；7张图中6张接受，narrow-light底部重复页首原因未证，不能全视觉通过。当前c926 clean，08e9仅Timing/ACCESS三test适配尚未运行。Node限定通过保持，main/4320部署及性能仍另计。
 
-**完整草稿材料恢复按真实Prepare流程补验。** Panels唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)当前fea37两test已聚焦源审，4a609为局部类型窄化后继；17源未变，ownmetadata正封存。[noEmit首红修后绿原件已独审](composed-consumer-checkpoint-20261007/recovery-complete-draft-local-review.json)，局部段累计17647/24000且清理归还；不是浏览器通过，无PG/Chrome或预约。先真实Prepare CREATE确认profile/project且0turn，再加knowledge和有序双file；reload/Restore零业务提交与正文预取，公开复验后首Send保材料。这里的[设计边界](composed-consumer-checkpoint-20261007/recovery-complete-draft-design-boundary.json)和[顺序更正](composed-consumer-checkpoint-20261007/recovery-prepare-recipe-correction.json)与[fea固定源审](composed-consumer-checkpoint-20261007/recovery-complete-draft-fea-source-review.json)分别保边界，不冒浏览器actual；150s仍81002/余68998、64MiBscratch/9MiBretained/4MiBstart。旧SSE、Queue等限定通过保持。
+**完整草稿两次均整体失败，第二次到达恢复与材料核对，最终回执仍待定位。** Panels唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)固定bc3/ad4，原21scope保留；第二次新增证据待owner自然封存，不冒当前clean。首轮cookieRead通过、header profile定位超时，尚未CREATE/turn，整体FAIL；[root实际失败和清理审](browser-interface-checkpoint-20261007/recovery-complete-draft-first-actual-review.json)保15676ms计费，150s累计96678/余53322。后续第二次已执行，完整恢复、B→A与knowledge部分断言通过，但最后accepted回执为undefined超时，整体仍1/2FAIL；root已报资源归还，第二次17976ms累计114654/余35346，独立实际审待收。两次失败原件不改，不把部分步骤或定位修正补为完整通过；旧完整七组/choice/两CREATE/Queue/SSE限定通过保持。
 
-Quick原六组与双主题图仍仅组件批准，owner7e9f/claim839e保留待受控main；[原四源接收包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json)不证明真实App/Send/Queue。已有TODO11/U19真实接线与紧凑弹层候选仍NOT_TAKEN；[T3固定外观参考](composed-consumer-checkpoint-20261007/t3-compact-reference.json)只供评估，保唯一App草稿authority、显式Apply和持久ACK/Queue/恢复。
+Quick原六组和双主题图仅组件APPROVED；[原四源main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json)不证明真实App/Send/Queue。TODO11真实接线与紧凑弹层仍NOT_TAKEN，不以叶检查替代host。
 
-[REQ19/SVC09策略输入](composed-consumer-checkpoint-20261007/release-policy-consumer-intake.json)仅原Lead固定接口待交；[CHAT05P02主线正文接口](composed-consumer-checkpoint-20261007/chat05p02-main-consumer-intake.json)可供后继展开consumer，不是WebUI/个人部署验收。本组当前无PG/Chrome holder/gate/预约，后续shared实际交接和原owner有限段自治，不逐runmanager审批。
+REQ19固定SVC09已由OriginalLead交main b2b5612；实际context是`{format:1, publicOrigin, policySha256}`。[原source研究](browser-interface-checkpoint-20261007/svc09-fixed-interface-review.json)概念用词不当字段名。待真实backend/artifact descriptor及三保留App的新证据，本组无个人操作。LAZY client2949569/packet55dc源码已chatui审，Mika唯一owner只通过原canonical关联；Web尚未接入。stream2/4MiB不变，nativebody8MiB单独并入跨pane/admission总量；复用[已归档正文研究](composed-consumer-checkpoint-20261007/chat05p02-fixed-web-research.json)，不再复制原raw。
 
-[root两条document检查](composed-consumer-checkpoint-20261007/dashboard-take-document-check.json)实际匹配management282与DPERF当时唯一owner源，不是全UI/claimfresh/性能检查。take、scope与占用继续沿权威账本，本文仅链接一次原owner事实，不创建第二进度表。
+[定向document检查](browser-interface-checkpoint-20261007/dashboard-owner-document-check.json)只证当时两份owner status逐字可下钻，不冒全UI、claimfresh或性能。take仍实时D04账本；当前[资源唯一索引](resource-window-current.json)保真实holder/未知，owner有限段自治不变。[OPS helper](browser-interface-checkpoint-20261007/ops14-resource-caller-input.json)只下一caller安全点接入，当前与历史runner不回改。
 
 ### 已结束的配对准入及更早历史
 

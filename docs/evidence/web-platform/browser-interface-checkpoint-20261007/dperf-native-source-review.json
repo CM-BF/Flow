@@ -1,0 +1,46 @@
+{
+  "decision": "ACCEPTED",
+  "recordedAt": "2026-10-07T08:37:26.500934+00:00",
+  "recordedBy": "Web co-lead root / GPT-6 Astra Ultra / independent source review",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+  "workerSha256": "63b130ab7ae12560a972ef192bc2f8c362df032f6812da0a3d71d627c71642a0",
+  "implementation": "cfd5a53323438709843828d74cab67502801060c",
+  "fixedExecutionHeadBeforeRun": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+  "preparedManifestSha256": "9ab7d9cd6a053a4a0a4db52ef7ae4b8ca6cc0eeb1b57e6d565fcac6a46de8ca7",
+  "bindingSha256AtReview": "0baa5274c8342a348a954506f07a8a58c1839549478c8a38f5bf39574d805268",
+  "verifiedPins": {
+    "sources": 16,
+    "readonly": 33,
+    "preparedFiles": 5
+  },
+  "sourceReview": {
+    "blockingFindings": [],
+    "delta": "Only sizes exact scratch child pruning and all three retained callers. Uses one retained traversal, no subtraction of asynchronously sampled scratch; arbitrary exclusion rejected. Existing non-ENOENT scan errors fail; symlinks not followed.",
+    "unchanged": "Chrome/Node sibling ownership, native Chrome sandbox, Node custom sandbox, cancellation/stop seals, limits, cleanup and actual terminal/exit acceptance. No project product change from already reviewed cfd5.",
+    "notRun": "No Python import/AST, Node, Chrome, HTTP, PG or behavioral/performance check by this read-only review."
+  },
+  "authority": {
+    "source": "Original GO explicit native Chrome sibling acceptance and delegated co-lead exact binding, preserved in browser-late-stop-repair/root-544c-native-boundary-rebind.json",
+    "furtherGOOrUserConfirmationRequired": false,
+    "permissionMeaning": "Same already accepted native Chrome without custom outer write/egress sandbox; not equivalent OS confinement. No personal profile, existing tabs, credentials or provider actions."
+  },
+  "finiteOwnerSegment": {
+    "remainingMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "retainedFinalReserveBytes": 131072,
+    "originalStartFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "conservativeCombinedStartFreeBytesProposed": 2310537216,
+    "currentHolder": "Recovery unique browser+PG; DPERF must wait explicit actual cleanup handback. This source acceptance does not claim a currently free window.",
+    "entries": "summary-detail first, task-links subject to actual remaining finite budget. Timing/ACCESS export-only still NOT_RUN.",
+    "ownerAutonomy": "After explicit handback, fresh claim/source/branch/dirty/resources and own unique run input, owner can run/fix/retest within original scope/lifetime/remaining budget without repeated short gate-approval requests. Runtime receipts remain required; any material permission/lifecycle change is separate."
+  },
+  "limits": [
+    "Not browser behavior PASS, not proof of deployed4320 performance, not main integration.",
+    "No additional current resource allocation or reservation by this review.",
+    "Metadata/head/entry data bindings may be refreshed to exact unchanged approved executable/pins; preserve failed attempts and charge actual max elapsed."
+  ]
+}
