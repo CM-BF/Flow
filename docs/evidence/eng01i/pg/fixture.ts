@@ -1,5 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { open } from 'node:fs/promises';
+import { lstatSync, readdirSync, statfsSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, isAbsolute } from 'node:path';
 import { Pool } from 'pg';
 import { FlowClient } from '../../../../packages/client/src/index.js';
@@ -17,6 +19,7 @@ export class NativeHostCenter {
   private startupSettled = true;
   private identity?: { oid: string; marker: string };
   private checkpointIndex = 0;
+  private recordedBytes = 0;
   readonly samples: unknown[] = [];
   readonly errors: string[] = [];
   pool?: Pool;
@@ -26,12 +29,24 @@ export class NativeHostCenter {
   private until = 0;
 
   async checkpoint(stage: string, detail: unknown = {}) {
-    const data = Buffer.from(JSON.stringify({ stage, at: new Date().toISOString(), database: this.database, marker: this.marker,
+    const resource = this.resources();
+    const data = Buffer.from(JSON.stringify({ resource, stage, at: new Date().toISOString(), database: this.database, marker: this.marker,
       identity: this.identity ?? null, creationRequested: this.creationRequested, samples: this.samples, errors: this.errors, detail }) + '\n');
-    if (data.length > 32768) throw Error('Fixture checkpoint exceeds limit.');
+    if (data.length > 32768 || this.recordedBytes + data.length > 524288) throw Error('Fixture checkpoint exceeds limit.');
+    this.recordedBytes += data.length;
     const file = await open(`${this.receipt}.${this.checkpointIndex++}.json`, 'wx', 0o600);
     try { await file.writeFile(data); await file.sync(); } finally { await file.close(); }
     const parent = await open(dirname(this.receipt), 'r'); try { await parent.sync(); } finally { await parent.close(); }
+  }
+  private resources() {
+    let bytes = 0, entries = 0;
+    const visit = (path: string) => { for (const name of readdirSync(path)) {
+      const item = `${path}/${name}`, info = lstatSync(item); if (++entries > 8192) throw Error('Runtime entry bound exceeded.');
+      if (info.isDirectory()) visit(item); else if (info.isFile()) bytes += info.size; else throw Error('Unknown runtime entry.');
+    } }; visit(tmpdir());
+    const disk = statfsSync(tmpdir()), freeBytes = disk.bavail * disk.bsize;
+    if (bytes > 8388608 || freeBytes < 1073741824) throw Error('Runtime/free-space observation exceeded its bound; preserve resources.');
+    return { runtimeBytes: bytes, entries, freeBytes, kind: 'checkpoint-observation-not-hard-quota' };
   }
   private async databaseIdentity() {
     return (await this.admin!.query<{ oid: string; marker: string | null }>(

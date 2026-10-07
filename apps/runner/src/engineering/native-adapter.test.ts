@@ -3,7 +3,7 @@ import { mkdtemp, writeFile, readFile, realpath, rm, lstat } from 'node:fs/promi
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
-import type { HarnessContext, RunnerEventData } from '@flow/contracts';
+import type { HarnessContext, RunnerEventData, ExecutionProfileReference } from '@flow/contracts';
 import { nativeEngineeringProfileConfigurationJson, nativeEngineeringReceiptSchema, nativeEngineeringVerificationInput, type NativeEngineeringProfileConfiguration } from '../../../../packages/contracts/src/engineering-native.js';
 import { createCodexTransport } from '../codex/index.js';
 import type { CodexTransport } from '../codex/types.js';
@@ -90,7 +90,7 @@ async function setup(mode = 'success', closeMode = 'revoked') {
     facts.push({ mode, closeMode, peers: peers.length, peersClosed: true, rootRemoved: root, counts });
   });
   return { project, configuration, reference, authority, context, events, counts, workspaces, root,
-    bind: (profile: typeof reference) => createNativeEngineeringAdapter({ project: wrapped, configuration, reference: profile, authority }),
+    bind: (profile: ExecutionProfileReference) => createNativeEngineeringAdapter({ project: wrapped, configuration, reference: profile, authority }),
     adapter: createNativeEngineeringAdapter({ project: wrapped, configuration, reference, authority }),
     changeDuringCapture() { changedDuringCapture = true; }, failRelease() { failRelease = true; } };
 }
@@ -165,6 +165,10 @@ describe.runIf(process.env.FLOW_ENG01I_PG === 'reviewed')('public native host PG
     const until = Date.now() + 8000;
     while (!await predicate()) { if (Date.now() >= until) throw Error('Public host behavior did not arrive.'); await new Promise(resolve => setTimeout(resolve, 20)); }
   }
+  async function checkpointCase(stage: string, detail: unknown, failed: boolean) {
+    try { await center.checkpoint(stage, detail); }
+    catch (error) { center.errors.push('case-checkpoint-unknown'); if (!failed) throw error; }
+  }
   async function scenario() {
     const api = await setup();
     const registration = await center.owner.registerRunner({ name: 'ENG01I owned peer host', harnesses: ['codex'], capacity: 1 });
@@ -192,7 +196,7 @@ describe.runIf(process.env.FLOW_ENG01I_PG === 'reviewed')('public native host PG
     return { ...api, task, reference, start, notices, admission: async () => JSON.parse(await readFile(join(directory, digest(center.baseUrl), 'admission.json'), 'utf8')) };
   }
   it('accepts the stopped writer and complete checked snapshot through real runtime/outbox/public readback', async () => {
-    const api = await scenario(), run = api.start();
+    const api = await scenario(), run = api.start(); let failed = false;
     try {
       await eventually(async () => (await center.owner.show(api.task.id)).status === 'succeeded');
       await eventually(async () => (await api.admission()).assignments.length === 0);
@@ -206,11 +210,12 @@ describe.runIf(process.env.FLOW_ENG01I_PG === 'reviewed')('public native host PG
       expect(receipt.result).toBe('passed'); expect(api.counts).toEqual({ opens: 1, closes: 1, snapshots: 2, releases: 1 });
       expect((await center.owner.reconciliation(api.task.id)).reservationHeld).toBe(false);
       center.samples.push({ kind: 'success', taskId: api.task.id, status: task.status, verification: task.verificationStatus, counts: api.counts, bytes: Buffer.byteLength(detail.content) });
-    } finally { await center.checkpoint('success-case-observation', { taskId: api.task.id, counts: api.counts }); }
+    } catch (error) { failed = true; center.samples.push({ kind: 'success-case-failure', name: error instanceof Error ? error.name : 'unknown' }); throw error; }
+    finally { await checkpointCase('success-case-observation', { taskId: api.task.id, counts: api.counts }, failed); }
   }, 15000);
   it('retains the original committed artifact after lost ACK and restarts without another writer or claim', async () => {
     const api = await scenario(), realFetch = globalThis.fetch, bodies: string[] = [];
-    let lost = false;
+    let lost = false, failed = false;
     const spy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input, init) => {
       const response = await realFetch(input, init);
       if (String(input) === `${center.baseUrl}/api/runner/events` && response.status === 200) {
@@ -240,6 +245,7 @@ describe.runIf(process.env.FLOW_ENG01I_PG === 'reviewed')('public native host PG
       expect((await center.owner.show(api.task.id)).verificationStatus).toBe('pending');
       expect((await center.owner.reconciliation(api.task.id)).reservationHeld).toBe(true);
       center.samples.push({ kind: 'lost-ack-restart', taskId: api.task.id, counts: api.counts, identicalBatches: bodies.length, attempts: 1, committedEvents: 1, verification: 'pending' });
-    } finally { spy.mockRestore(); await center.checkpoint('lost-ack-case-observation', { taskId: api.task.id, lost, counts: api.counts }); }
+    } catch (error) { failed = true; center.samples.push({ kind: 'lost-ack-case-failure', name: error instanceof Error ? error.name : 'unknown' }); throw error; }
+    finally { spy.mockRestore(); await checkpointCase('lost-ack-case-observation', { taskId: api.task.id, lost, counts: api.counts }, failed); }
   }, 15000);
 });
