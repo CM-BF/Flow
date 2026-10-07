@@ -41,6 +41,7 @@ class EntryTests(unittest.TestCase):
             self.assertFalse(module.cleanup_scratch(path,identity,False)['absent']);self.assertTrue(path.is_dir())
             bad=identity|{'ino':identity['ino']+1}
             self.assertFalse(module.cleanup_scratch(path,bad,True)['absent']);self.assertTrue(path.is_dir())
+            self.assertFalse(module.cleanup_scratch(path,identity,True,0)['absent']);self.assertTrue(path.is_dir())
             self.assertTrue(module.cleanup_scratch(path,identity,True)['absent'])
     def test_unexpected_symlink_is_retained_without_following(self):
         with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
@@ -51,4 +52,22 @@ class EntryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
             path,identity=module.create_scratch(Path(base));(path/'.owner.json').unlink();os.mkfifo(path/'.owner.json')
             self.assertFalse(module.cleanup_scratch(path,identity,True)['absent']);self.assertTrue(path.is_dir())
+    def test_alias_identity_and_lstat_absence_are_exact(self):
+        with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
+            root=Path(base);target=root/'external';target.mkdir();other=root/'other';other.mkdir()
+            links=root/'node_modules';links.mkdir();(links/'synthetic').symlink_to(target)
+            (links/'@flow').mkdir()
+            for name in ('contracts','client','plugin-runtime'):
+                inner=root/'source'/'packages'/name;inner.mkdir(parents=True);(links/'@flow'/name).symlink_to(inner)
+            (root/'source'/'node_modules').symlink_to(links)
+            rows=[{'name':'synthetic','target':str(target)}];module.verify_aliases(root,rows)
+            (links/'synthetic').unlink();(links/'synthetic').symlink_to(other)
+            with self.assertRaises(ValueError):module.verify_aliases(root,rows)
+            (links/'synthetic').unlink();(links/'synthetic').symlink_to(target)
+            (links/'@flow'/'contracts').unlink();(links/'@flow'/'contracts').symlink_to(other)
+            with self.assertRaises(ValueError):module.verify_aliases(root,rows)
+            missing=root/'missing';self.assertTrue(module.is_absent(missing))
+            dangling=root/'dangling';dangling.symlink_to(missing);self.assertFalse(module.is_absent(dangling))
+            with patch.object(Path,'lstat',side_effect=PermissionError(1,'synthetic')):
+                with self.assertRaises(PermissionError):module.is_absent(missing)
 if __name__=='__main__':unittest.main()

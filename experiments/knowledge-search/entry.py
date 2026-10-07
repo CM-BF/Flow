@@ -27,12 +27,27 @@ def logical_bytes(directory):
             path=Path(root)/name
             if not path.is_symlink():total+=path.stat().st_size
     return total
+def verify_aliases(root,dependencies):
+    for row in dependencies:
+        alias=root/'node_modules'/row['name'];target=Path(row['target'])
+        if alias.resolve(strict=True)!=target:raise ValueError('dependency alias mismatch '+row['name'])
+    if (root/'source'/'node_modules').resolve(strict=True)!=(root/'node_modules'):raise ValueError('source dependency root mismatch')
+    for name in ('contracts','client','plugin-runtime'):
+        alias=root/'node_modules'/'@flow'/name;target=root/'source'/'packages'/name
+        if alias.resolve(strict=True)!=target:raise ValueError('internal source alias mismatch '+name)
+
+def is_absent(path):
+    try:path.lstat()
+    except FileNotFoundError:return True
+    return False
+
 def verify_inputs():
     manifest=json.loads((ROOT/'source-inputs.json').read_text())
     for row in manifest['items']:
         p=ROOT/'source'/row['path']
         if p.stat().st_size!=row['bytes'] or sha(p)!=row['sha256']:raise ValueError('fixed source mismatch '+row['path'])
-    for row in json.loads((ROOT/'dependencies.json').read_text()):
+    dependencies=json.loads((ROOT/'dependencies.json').read_text());verify_aliases(ROOT,dependencies)
+    for row in dependencies:
         p=Path(row['target'])/'package.json'
         if p.stat().st_size!=row['packageJsonBytes'] or sha(p)!=row['packageJsonSha256']:raise ValueError('dependency metadata mismatch')
     if sha(SUPERVISOR)!=SUPERVISOR_SHA:raise ValueError('OPS14 changed')
@@ -80,27 +95,30 @@ def read_marker(path):
         if len(data)!=info.st_size or len(data)>8192:raise ValueError('marker changed')
     return json.loads(data)
 
-def cleanup_scratch(path,identity,closed):
+def cleanup_scratch(path,identity,closed,deadline=None):
     result={'path':str(path),'identity':identity,'processClosed':closed,'absent':False,'state':'KEEP'}
     if not closed:return result
+    def check_deadline():
+        if deadline is not None and time.monotonic()>=deadline:raise ValueError('cleanup deadline')
     try:
-        info=path.lstat()
+        check_deadline();info=path.lstat()
         if not stat.S_ISDIR(info.st_mode) or path.resolve()!=path or str(path)!=identity['path'] or (info.st_dev,info.st_ino)!=(identity['dev'],identity['ino']):raise ValueError('identity')
         if read_marker(path/'.owner.json')!=identity:raise ValueError('marker')
         entries=[];total=0
         for root,dirs,files in os.walk(path,followlinks=False):
             for name in dirs+files:
-                item=Path(root)/name;s=item.lstat()
+                check_deadline();item=Path(root)/name;s=item.lstat()
                 if not (stat.S_ISREG(s.st_mode) or stat.S_ISDIR(s.st_mode)):raise ValueError('unexpected entry')
                 total+=s.st_size if stat.S_ISREG(s.st_mode) else 0;entries.append((item,s.st_dev,s.st_ino,stat.S_ISDIR(s.st_mode)))
                 if total>MAX_TMP or len(entries)>10000:raise ValueError('cleanup budget')
         for item,dev,ino,directory in sorted(entries,key=lambda row:len(row[0].parts),reverse=True):
-            current=item.lstat()
+            check_deadline();current=item.lstat()
             if (current.st_dev,current.st_ino)!=(dev,ino):raise ValueError('entry changed')
             item.rmdir() if directory else item.unlink()
         current=path.lstat()
         if (current.st_dev,current.st_ino)!=(identity['dev'],identity['ino']):raise ValueError('root changed')
-        path.rmdir();sync_directory(path.parent);result.update(absent=not path.exists(),state='REMOVED',logicalBytes=total)
+        path.rmdir();sync_directory(path.parent);result.update(absent=is_absent(path),logicalBytes=total)
+        if result['absent']:result['state']='REMOVED'
     except (OSError,ValueError,KeyError,json.JSONDecodeError) as error:result['errorType']=type(error).__name__
     return result
 
@@ -120,18 +138,18 @@ def open_record(permit):
     ledger=folder/'iterations.jsonl';events=[json.loads(line) for line in ledger.read_text().splitlines()]
     if not events or events[0]['permitSha256']!=permit['_sha']:raise ValueError('unknown prior namespace')
     started=[e for e in events if e['event']=='started'];finished=[e for e in events if e['event']=='finished']
-    if len(started)!=len(finished) or any(not e['resourceConfirmed'] or not e['scratch']['absent'] for e in finished):raise ValueError('prior result unknown; HOLD')
+    if len(started)!=len(finished) or any(not e['resourceConfirmed'] or not e['scratch']['absent'] or not e['withinTimeBudget'] for e in finished):raise ValueError('prior result unknown; HOLD')
     return folder,ledger,finished
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path)
-    args=parser.parse_args();started=time.time();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
+    args=parser.parse_args();started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
     now=datetime.datetime.now(datetime.timezone.utc);deadline=datetime.datetime.fromisoformat(permit['expiresAt'].replace('Z','+00:00'))
     if args.mode not in permit.get('modes',[]) or permit.get('state')!='OPEN' or now>=deadline or not permit.get('authority'):raise ValueError('not OPEN')
     maximum=120 if args.mode=='pg' else 30
     if (deadline-now).total_seconds()<maximum:raise ValueError('insufficient absolute permit time')
     manifest=verify_inputs();folder,ledger,finished=open_record(permit)
-    if args.mode!='pg' and (len(finished)>=5 or sum(r['elapsed_ms'] for r in finished)+30000>90000):raise ValueError('local iteration budget')
+    if args.mode!='pg' and (len(finished)>=5 or sum(r['operatorElapsedMs'] for r in finished)+30000>90000):raise ValueError('local iteration budget')
     if logical_bytes(ROOT)+logical_bytes(folder)>MAX_NEW:raise ValueError('new logical budget')
     free=os.statvfs(ROOT);free_bytes=free.f_bavail*free.f_frsize
     if not isinstance(permit.get('requiredFreeBytes'),int) or free_bytes<permit['requiredFreeBytes']:raise ValueError('manager floor')
@@ -155,9 +173,9 @@ def main():
     sys.dont_write_bytecode=True
     spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     env=environment(tmp,started,permit,os.environ.get('FLOW_K01_QUERY_ADMIN_URL') if args.mode=='pg' else None)
-    work=started+(110 if args.mode=='pg' else 22)-time.time()
+    work=(110 if args.mode=='pg' else 20)-(time.monotonic()-started_mono)
     if work<=0:raise ValueError('preflight consumed work budget')
-    report=module.supervise(module.Launch(tuple(argv),str(ROOT),env,module.Ownership.NEW_CHILD_SESSION,module.Capture.MERGED),module.Policy(work,3,7 if args.mode=='pg' else 5,49152))
+    report=module.supervise(module.Launch(tuple(argv),str(ROOT),env,module.Ownership.NEW_CHILD_SESSION,module.Capture.MERGED),module.Policy(work,3 if args.mode=='pg' else 2,7 if args.mode=='pg' else 5,49152))
     raw=report.stdout+report.stderr
     with (folder/(label+'.raw')).open('xb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
     saved=(folder/(label+'.raw')).read_bytes();closed=process_closed(report,saved)
@@ -167,11 +185,13 @@ def main():
     try:verify_inputs();value['fixedInputsAfter']='matched'
     except Exception:value['fixedInputsAfter']='UNKNOWN'
     # Future PG receipts are retained regardless of process closure; no DB outcome is inferred here.
-    value['scratch']=cleanup_scratch(tmp,identity,closed) if args.mode!='pg' else {'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}
+    value['scratch']=cleanup_scratch(tmp,identity,closed,started_mono+29) if args.mode!='pg' else {'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}
     value['logicalBytes']=logical_bytes(ROOT)+logical_bytes(folder)+value['scratch'].get('logicalBytes',0)
     value['storageWithinBudget']=value['logicalBytes']<=MAX_NEW and sum(p.stat().st_size for p in folder.glob('*.raw'))<=262144
+    value['operatorElapsedMs']=round((time.monotonic()-started_mono)*1000)
+    value['withinTimeBudget']=value['operatorElapsedMs']<=maximum*1000
     value['endedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();append_record(ledger,value)
-    passed=check_passed(report,closed) and not value['sourceChanged'] and value['fixedInputsAfter']=='matched' and value['storageWithinBudget'] and (args.mode=='pg' or value['scratch']['absent'])
+    passed=check_passed(report,closed) and not value['sourceChanged'] and value['fixedInputsAfter']=='matched' and value['storageWithinBudget'] and value['withinTimeBudget'] and (args.mode=='pg' or value['scratch']['absent'])
     print(json.dumps({'mode':args.mode,'exit':report.exit_code,'closed':closed,'scratch':value['scratch']['state'],'passed':passed}))
     return 0 if passed else 1
 if __name__=='__main__':raise SystemExit(main())
