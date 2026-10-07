@@ -1,0 +1,381 @@
+{
+  "reviewedAt": "2026-10-07T09:49:04.675738+00:00",
+  "reviewer": "root / gpt-6-astra / ultra / read-only",
+  "decision": "ACCEPTED_FAILED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "run": "recsteer-20261007-094616-1ab0a4",
+  "fixedExecutionHead": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
+  "fixedProductSource": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "actual": {
+    "run": "recsteer-20261007-094616-1ab0a4",
+    "startedAt": "2026-10-07T09:46:44.379716+00:00",
+    "endedAt": "2026-10-07T09:47:01.712298+00:00",
+    "outerPid": 76320,
+    "parentPid": 76330,
+    "parentPgid": 76330,
+    "actualExit": 1,
+    "outerElapsedMs": 17331.63762500044,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 784,
+    "stderrBytes": 0
+  },
+  "checks": {
+    "outerFailure1": true,
+    "requiredSelected2CompletedCookieOnly": true,
+    "steerFailed": true,
+    "draftIdUnavailable": true,
+    "zeroSteerPost": true,
+    "noAckFaultInjected": true,
+    "exactOriginalTurn202": true,
+    "publicSyntheticActorAdmissionReady": true,
+    "noProviderCalls": true,
+    "outerDualEof": true,
+    "parentCleanupErrorsEmpty": true,
+    "budgetCompleteAndCleanup": true,
+    "fixtureClosed": true,
+    "databaseNormalCleanupReceipt": true,
+    "scratchAbsent": true,
+    "envDeletedAbsent": true,
+    "chargedMs": 17332,
+    "chargeAndRemainingExact": true,
+    "gateBindingExact": true,
+    "fixedSourceCount19": true,
+    "rawCount11": true
+  },
+  "accounting": {
+    "phase": "RECOVERY-STEERING-20261007",
+    "phaseTotalMs": 60000,
+    "previousSpentMs": 0,
+    "actualOuterMs": 17331.63762500044,
+    "lateParentMs": 16716.629125,
+    "serializedParentMs": 16703.720042,
+    "chargeMs": 17332,
+    "spentMs": 17332,
+    "remainingMs": 42668,
+    "old90ActualMs": 64134.08675,
+    "old150SpentMs": 126447,
+    "old150Unused23553Closed": true,
+    "oldCreditTransferred": false,
+    "outcome": "FAIL",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ]
+  },
+  "rawIndex": {
+    "path": "/private/tmp/recovery-steering-actual-8t56ekdk/raw-index.json",
+    "bytes": 1900,
+    "sha256": "c505a64b14a87a33503e293346ecb263174d2072271e5b0d12b01e6436bb244e"
+  },
+  "rawFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/browser.json",
+      "bytes": 12382,
+      "sha256": "80c07ff89193ffdadd4cba5f7d8421df965146dde408d87dd530c50cdb6c24b4",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/budget.json",
+      "bytes": 242,
+      "sha256": "3baf69c4b8c5fb1cab0f16aa8572f1a2fc1bf89d73dc58b6122d18c1f6b74710",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "e0a67713dea6677a209a08ee0d9332587bc5a446dea0670ff7e7479bafd0ccaa",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/database-owner.json",
+      "bytes": 164,
+      "sha256": "e9cf0588060d08ae7f69af0b5583a6bcfe6a1292c7b6a02ead4c33192ec7feee",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/fixture-cleanup.json",
+      "bytes": 313,
+      "sha256": "6e8bc765096c1ead1a172728744b7486a9da7b6a45e178ea3d9e46a833c6e8ac",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/launch-config.json",
+      "bytes": 1215,
+      "sha256": "ca84cbfa803a8cfb77eada19b5cff9f3d43b5db06620031342dfd4ffd6574785",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/process-owner.json",
+      "bytes": 29,
+      "sha256": "1beb3ebadf1ac01f307c779541d1c70ed700a31de976340f8b0d640b574d42a2",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/process.log",
+      "bytes": 5779,
+      "sha256": "5d433e254b4843f0686ae7843d2e387e382f5cc937c76619fc7bbed98798cbd0",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "94343ed3157b665bc32c1d20b7442e260ced70639efd2cf5716120b0d9eb0e44",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/sources.json",
+      "bytes": 2438,
+      "sha256": "1181d226a5c9858c13391aecffc90e31c910216d1eeab765c26e9105994dc194",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-094616-1ab0a4/supervisor.json",
+      "bytes": 2668,
+      "sha256": "31936a5d6b10281eb347eeac76d8af18eec44436024474cda0bf1d171f7d6140",
+      "matchesIndex": true
+    }
+  ],
+  "outerEvidence": [
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/accounting.json",
+      "bytes": 527,
+      "sha256": "083f98ef437521d451d569c1e87949f6097ab083336a64ab835d074752014bae"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/actual-exit.json",
+      "bytes": 355,
+      "sha256": "69fc0fb2f730645917f5370ac1876e33cfc14c7e7bd3b426f0a57c78538157be"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/admin-env-deletion-receipt.json",
+      "bytes": 320,
+      "sha256": "5ccadec14d3200e70d9df9664165c0043f0bd68dd276316d16299ded726ebc42"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/admission.json",
+      "bytes": 4390,
+      "sha256": "eeeee875cfbfb376fffea8cb8e6a37dae52b65600c99a7aa60e9577ea95d82f0"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/gate.json",
+      "bytes": 3370,
+      "sha256": "faadbad968040abf6132ea8b777222cd381970ab8600c7b4d63b373cc7ddce8b"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/parent.stdout.jsonl",
+      "bytes": 784,
+      "sha256": "dd91d2546e55c610f09a24361ca4d4fbbc5a27e67005b71e156c0cc433087d11"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/post-cleanup-observation.json",
+      "bytes": 1656,
+      "sha256": "41d5d85efb0e1575c4f38881f03737fe47709af7f30e19995e38bb7efafecdb7"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/raw-index.json",
+      "bytes": 1900,
+      "sha256": "c505a64b14a87a33503e293346ecb263174d2072271e5b0d12b01e6436bb244e"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-actual-8t56ekdk/start.json",
+      "bytes": 727,
+      "sha256": "bacb8a56effe37fe3027ed9e32e0bc736bae067caa41fb028e1f08706d1f44d5"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "393254158ec9f175e2aabbd98bc97d89690e389786dedf539aaa9d6a5c660a65",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "507d6fbbb0d1af52ac843591bb7940f20ca778814d7e17fed8ad9de95ee56fff",
+      "matchesActualFixedCommit": true
+    }
+  ],
+  "freshKnownProcesses": [
+    {
+      "id": 76320,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76330,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76330,
+      "kind": "pgid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76355,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76355,
+      "kind": "pgid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76374,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 76374,
+      "kind": "pgid",
+      "state": "ESRCH"
+    }
+  ],
+  "steerFailure": {
+    "failure": "expect(received).toBeTruthy()\n\nReceived: undefined\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "actor": {
+      "attemptId": "d20c6660-807b-4461-af79-9e647d089156",
+      "ownerVersion": 1,
+      "nativeSessionId": "94d078db-45a6-4f82-af2e-9b95330b6f94",
+      "admission": {
+        "taskId": "c9787b39-a134-45e0-8ae4-b538f386f204",
+        "attemptId": "d20c6660-807b-4461-af79-9e647d089156",
+        "ownerVersion": 1,
+        "revision": 0,
+        "state": "ready",
+        "reason": "ready"
+      },
+      "remainingLeaseMs": 59985.007874999996,
+      "leaseMs": 60000,
+      "protocolActor": "synthetic-session-event",
+      "observations": {
+        "registered": true,
+        "claimRequests": 2,
+        "claimed": true,
+        "sessionEventRequests": 1,
+        "heartbeatRequests": 0,
+        "runnerReceiptRequests": 0,
+        "providerQueries": 0
+      }
+    },
+    "postCounts": {
+      "turn": 1,
+      "steering": 0
+    },
+    "bodyLossCount": 0,
+    "screenshotCount": 0
+  },
+  "assessment": [
+    "Initial cookie-only read passed; real product Send admitted original turn202, public synthetic actor claimed once after2readiness requests and emitted1session event, admission became ready.",
+    "Failure occurred in first persisted steering-draft polling: undefined after5s. It never reached explicit draft restore, steering POST, ACK loss, receipt replay or preservation of the second steering draft.",
+    "Do not infer a product persistence bug or unique cause solely from this sample; owner should compare observed UI/IDB shape with exact public draft semantics and fix within original bounded segment.",
+    "All known owned processes/groups now absent; outer both EOF, parent complete cleanup, fixture close and marked normal0connectionDROP receipts accepted.",
+    "Conservative17332ms comes from larger actual outer. Newphase42668ms remains, historical90/150budgets closed without credit transfer."
+  ],
+  "limitations": [
+    "Database absence is established from preserved owner normal-DROP receipt, not a new reviewer connection.",
+    "HTTP closure from fixture complete/errors[]; no independent socket sample.",
+    "No whole-recovery/native/provider/second-center/queue-promotion PASS.",
+    "Actual source pinned at f82e, no implication about current owner diagnostic dirty tree."
+  ],
+  "errors": []
+}

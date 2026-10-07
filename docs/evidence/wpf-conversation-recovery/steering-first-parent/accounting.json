@@ -1,0 +1,23 @@
+{
+  "phase": "RECOVERY-STEERING-20261007",
+  "phaseTotalMs": 60000,
+  "previousSpentMs": 0,
+  "actualOuterMs": 17331.63762500044,
+  "lateParentMs": 16716.629125,
+  "serializedParentMs": 16703.720042,
+  "chargeMs": 17332,
+  "spentMs": 17332,
+  "remainingMs": 42668,
+  "old90ActualMs": 64134.08675,
+  "old150SpentMs": 126447,
+  "old150Unused23553Closed": true,
+  "oldCreditTransferred": false,
+  "outcome": "FAIL",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ]
+}

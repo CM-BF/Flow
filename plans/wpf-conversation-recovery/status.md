@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 09:41:05 UTC |
+| 最近更新 | 2026-10-07 09:56:42 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,22 +12,22 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；source54952b1011f03f8823db3744c4d1ac27e0407bc7；noEmit执行metadata0f4bbcc3578dffaef74a24732129d54d8c282ba0，后置metadata HEAD以Git回执为准 |
-| 工作树dirty状态 | 19源码保持固定；本批仅own source审查与local实证封存，最终clean以Git回执为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；sourcea8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e；首次Steer执行f82ef780/source54952；本次后置metadata HEAD以Git回执为准 |
+| 工作树dirty状态 | 本批仅一browser诊断源码与own原件/记录；封存后clean以Git回执为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | Steer恢复源码已独审、相关Web类型检查通过；真实选定旅程待资源交接 |
-| 下一可用交付 | 协调Steer单次真实选2，核指令原身份与下一稿；第二中心仍待补验 |
+| 当前产出 | Steer首轮已到真实活动任务，草稿保存验证失败；已保留清理原件并加入有限失败观察 |
+| 下一可用交付 | 接续验证Steer草稿、未知结果与原身份重试；第二中心仍待补验 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | source54952集中actor/lifecycle审0blocking；Web noEmit首跑exit0，newlocal20s计费7682/余12318，精确Node组/TMP清理。新Steer browser NOT_RUN/phase spent0，旧150s126447/unused23553已封账不转信用；无重复119/observer/50 |
-| 实现目标 | 54952b1011f03f8823db3744c4d1ac27e0407bc7 |
+| 检查状态 | 首Steer整体FAIL：cookieRead通过，首draft等待失败；0SteerPOST/ACKloss/Restore。a8e诊断源码限定批准，尚未复验；noEmit7682ms通过仅绑定54952。新60s phase spent17332/余42668含15s清理，旧账全保 |
+| 实现目标 | a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS；54952 source集中审通过，Web noEmit actual通过；browser选2未运行/完整feature未批准 |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本次normal CLI 2026-10-07T09:37:48.988Z核active/WTbranch/精确scope/overlap[]，见steering-local/preflight.json |
+| Review | [review.md](review.md)，IN_PROGRESS；首Steer FAIL及owned清理已独审接受，a8e限定观察source批准；完整feature未批准 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；normal CLI 2026-10-07T09:54:41.577Z核active/WTbranch/精确scope/overlap[]，见steering-diagnostic-claim.json |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -386,3 +386,9 @@ Root [344f本轮actual审](../../docs/evidence/wpf-conversation-recovery/continu
 ## 2026-10-07 09:41:05 UTC — 原RECOVERY01 Steer源码审与局部验证
 
 Root [集中源码审](../../docs/evidence/wpf-conversation-recovery/steering-root-source-review.json)固定54952/0f4b，0blocking；本次仍原任务/claim续段，消息标记不另造新task。[单次Web noEmit](../../docs/evidence/wpf-conversation-recovery/steering-local/manifest.json)09:39:09.002395→09:39:16.684497Z实际exit0；outer7681.562666ms、parent7594.828625ms，独立20s段保守计费7682/余12318。Node93729及组ESRCH、runner93663ESRCH，ownTMP复制逐hash后删；outer双EOF，tsc输出regularfile关闭后0B，非其pipeEOF。0源码修复，旧local账/119/observer/50不动。0PG/Chrome/HTTP/provider，无新gate/env，SVC06共享窗口优先，新60s browser phase仍0，仅后续准备。
+
+## 2026-10-07 09:56:42 UTC — Steer首红与有界诊断安全点
+
+[首实际FAIL与原件](../../docs/evidence/wpf-conversation-recovery/steering-first-validation.md)：1个cookie组通过，Steer首draft IDB等待失败，真实turn/公开actor已就绪；0SteerPOST/ACK丢失/恢复，根因仍待有限观察。Root接受失败事实和owned清理，未接受casePASS。新phase17332/60000、余42668含15秒清理，旧90/150封账不转信用；精确env已删，无holder。
+
+`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e` 仅失败处诊断，kind guard与三独立错误处理保原5秒predicate和原样throw；18其他源不变，限定source审0blocking。当前诊断NOT_RUN/noEmit未重跑；原54952 noEmit实证独审保范围。TODO02/03/05/06仍in-progress；没有产品缺陷唯一归因。

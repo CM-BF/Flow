@@ -295,3 +295,9 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 ## 2026-10-07 09:41:05 UTC — Steer affected-type工作段结束
 
 应用已读本地find-skills/clean-code/codebase-design：复核公共actor边界、单次成功claim与有限就绪轮询区别、固定frozen identity/next-draft，以及原错误/清理路径。Root集中source审0blocking，Web noEmit首跑通过未产生修复；源码19hash仍54952。复用原runner仅预算/源绑定参数变化，sandbox禁网络/项目写，实际charge7682ms/20s含5s清理；日志0B与精确Node组/TMP收尾见steering-local。只静态与类型证据，不以constant counters冒网络审计或Steer浏览器已过；SVC06共享资源不动，完整feature IN_PROGRESS。
+
+## 2026-10-07 09:56:42 UTC — Steer首红与failure-only观察clean-code
+
+按本地find-skills优先复用已有clean-code/codebase-design/webapp-testing，无安装。当前09:54:41.577Z normal CLI核原21/唯一owner/nooverlap；实际开始/结束与精确清理在steering-first-manifest，未用commit/claim猜任务起点。仅browser职责内输出有限失败证据，不新通用trace/状态authority：输入、记录和alerts分别捕获，次要观察失败不能覆盖原断言；command无data按kind守卫，owner只暴露viewKey/routeId/projectId。记录/steering/alert均限定条数，文本只长度/匹配布尔或限长错误；无全文token/IDB改写、继续失败或时间放宽。
+
+Root发现的command data缺失遮蔽观察在a8e已修并源码独审通过；18源逐Git blob不变。实际首红仅证明draft predicate未满足，无失败DOM/IDB不能预断产品或locator根因。原首红与两个早phase保真，计费取max三种实际时钟ceil17332，精确env删除归档。git diff --check静态通过，本段无新测试/types/PG/Chrome/空间采样；原noEmit绿绑定54952，诊断仅源码证据。

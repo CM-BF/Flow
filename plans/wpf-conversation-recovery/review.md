@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`54952b1011f03f8823db3744c4d1ac27e0407bc7`；两专测新增Steer草稿/未知ACK独立选组，actor/lease/lifecycle delta已获[root集中源码批准](../../docs/evidence/wpf-conversation-recovery/steering-root-source-review.json)，Web noEmit首跑exit0，browser未运行。旧target2e7203完整草稿selected2/2 actual和两红保持原范围与原件；不以新源码准备冒整体feature通过。
+状态：IN_PROGRESS。当前target`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；原actor/lifecycle source54952与noEmit限定通过，首次Steer整体FAIL/owned清理已独立接受。新诊断只在失败处采集有界事实，[root源码审](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-root-review.json)0blocking，未运行，不冒功能通过。
 
-Review target commit：`54952b1011f03f8823db3744c4d1ac27e0407bc7`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；本轮对27f仅2专测变化，其他17源逐字相同。见[固定源码包](../../docs/evidence/wpf-conversation-recovery/steering-source-checkpoint.json)与[边界/验收](../../docs/evidence/wpf-conversation-recovery/steering-source.md)。
+Review target commit：`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；对54952仅browser变化、18源相同，见[差量checkpoint](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-checkpoint.json)。[首红实证](../../docs/evidence/wpf-conversation-recovery/steering-first-validation.md)保原source/执行头；原五秒predicate/错误、actor、parent与旧失败原件不变。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
@@ -263,3 +263,7 @@ Root [本轮实际独审](../../docs/evidence/wpf-conversation-recovery/continuo
 ## 2026-10-07 09:41:05 UTC — Steer集中源码审与作者noEmit实际
 
 Root固定54952/0f4b审[原报告](../../docs/evidence/wpf-conversation-recovery/steering-root-source-review.json)，0blocking，17未变源码/10公共锚点/独立60s phase边界核同。本次作者noEmit一次PASS、原件见[local manifest](../../docs/evidence/wpf-conversation-recovery/steering-local/manifest.json)，不是root复跑或Steer真实UI通过。完整feature IN_PROGRESS，原完整草稿/各实际选组结论仍原范围，第二中心与真实runner应用未验。
+
+## 2026-10-07 09:56:42 UTC — 首Steer失败与诊断源码限定独审
+
+[1e6首实际审](../../docs/evidence/wpf-conversation-recovery/steering-first-root-review.json)只接受FAILED+ownedcleanup，1组过/Steer保存草稿前失败，0SteerPOST；[8ddd noEmit审](../../docs/evidence/wpf-conversation-recovery/steering-local-root-review.json)保54952范围；[be4诊断源码审](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-root-review.json)接受a8e的kind guard/narrow owner/独立采集和原样throw。未重复运行，未将真实草稿失败预判成唯一产品根因或locator错误。剩42668ms不是自动后继运行许可。
