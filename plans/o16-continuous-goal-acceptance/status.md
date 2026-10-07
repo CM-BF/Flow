@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:26:45.367Z |
+| 最近更新 | 2026-10-07T08:35:06.043129+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,7 +15,7 @@
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 原PG1选中/0通过/1失败保持；26不同准备绿不重跑；当前main默认加载1/1 exit0/1849ms/269B，组absent/EOF/exact tmpremoved；0新PG/provider |
-| Review | 原4ae APPROVED_BOUNDED_PREPARATION保留；f5a输入与343bd两源差量、默认加载1/1待限定独审 |
+| Review | 当前main准备 APPROVED_CURRENT_MAIN_PREPARATION，I02 882f0ada；原4ae批准保留；新完整旅程结果待实际执行与独审 |
 | 实现目标 | 343bd43691a5a179d256a2229a4db856d869a267；4ae旅程行为保持，精确主线输入差量 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 准备片已集成 aca6e89214711ef3787ac3e3ee3b2754bb40b960；138文件与924873固定交付一致，实际旅程未通过 |
@@ -25,9 +25,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 正在将已审目标旅程对齐当前主线；原失败证据和资源保留。 |
-| 下一可用交付 | 审查当前主线组合与加载证据，安排从目标到独立接受的完整零模型旅程。 |
-| 当前阻塞 | ACTIVE: 新主线入口已加载通过；完整零模型旅程等待限定审查与新的数据库窗口。 |
+| 当前产出 | 当前主线入口准备已审，正在执行新的零模型完整目标旅程；原失败及保留资源不变。 |
+| 下一可用交付 | 从公开目标入口到独立接受的真实旅程结果与资源收尾记录。 |
+| 当前阻塞 | NONE；已获一次新的独占数据库工作段，实际结果尚未产生。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -57,3 +57,5 @@
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
 2026-10-07T08:26:45.367Z：当前固定主线默认driver/operator import及sourceIdentity已通过1/1，actual digest86ace9e8，317源/资源条目与39alias；1849ms/269B，组39238最终absent/双EOF/无signals、scratch0B已removed。历史pre-reap EPERM保留。见[current-main-local/run](../../docs/evidence/o16/current-main-local/run.json)；新[current-main PG候选](../../docs/evidence/o16/current-main-pg-request.json)1selected待新窗口，未调用旅程/DB/模型。
+
+2026-10-07T08:35:06.043129+00:00：当前main准备独审已原样归档，334固定输入/39aliases/3runtime fresh一致，PG独占窗口已授；新的1选中旅程开始前记录已耐久，未复用旧许可。审查/窗口等待结束；见[current-main-pg-r1](../../docs/evidence/o16/current-main-pg-r1/operation-input.json)。

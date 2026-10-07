@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T08:35:06.043129+00:00",
+  "permissionSource": "Execution Lead explicit one new exclusive PG work segment, 2026-10-07 after I02 882f0ada preparation approval",
+  "claimId": "f72ba7c9-52e9-4037-aed0-27af9ed1aae6",
+  "claimVersion": 1,
+  "claimFreshAt": "2026-10-07T08:34:29.011Z",
+  "source": "343bd43691a5a179d256a2229a4db856d869a267",
+  "deliveryBefore": "275c28ad7bcc9b6d01cd1d6baa5be51f64eae6c4",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "manifestSha256": "0ae119cf209f23ab0b37125b2bf5b2ea35f17bdb7ec2a775663668c12db5364f",
+  "reviewSha256": "5d9df0b6a18ede69b0e883e747801cf5780182526805b43a5f02c684a4d588be",
+  "bindingsChecked": 334,
+  "aliasesChecked": 39,
+  "runtimeChecked": 3,
+  "freshFreeBytes": 24060002304,
+  "minimumBytes": 1744830464,
+  "baselineMinimumBytes": 1207959552,
+  "extraParallelReserveBytes": 536870912,
+  "parallelContext": "SVC09 own local <=16MiB private +2MiB raw; further 512MiB allowance is conservative headroom, not measured other-holder usage; parent confirms sole PG holder O16",
+  "priorOperatorNamespaces": [
+    "rehearsal-502e3607-0657-484d-8fa2-ef3761f84889"
+  ],
+  "priorEvidenceNamespaces": [
+    "rehearsal-502e3607-0657-484d-8fa2-ef3761f84889"
+  ],
+  "namespaceRule": "operator generates exclusive fresh rehearsal-UUID; never reuse old failed run",
+  "selected": 1,
+  "nativeQueryCalls": 0,
+  "bounds": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "parentTotalMs": 150000,
+    "rawBytes": 2097152,
+    "privateBytes": 8388608,
+    "liveReserveBytes": 1073741824
+  },
+  "command": "FLOW_O16_PG_WINDOW=approved-one-shot TSX_DISABLE_CACHE=1 NODE_DISABLE_COMPILE_CACHE=1 /opt/homebrew/opt/node@24/bin/node --import tsx experiments/continuous-goal-acceptance/operator.mjs --rehearse",
+  "oldRunResources": "untouched FAIL/KEEP; namespace names only, no resource read or cleanup"
+}
