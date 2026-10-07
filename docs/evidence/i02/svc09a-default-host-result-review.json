@@ -1,0 +1,74 @@
+{
+  "recordedAt": "2026-10-07T19:32:59.205Z",
+  "task": "SVC09A",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_DEFAULT_HOST_RESULT_FIDELITY",
+  "blockingFindings": [],
+  "resultTarget": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+  "resultManifestSource": "39383da94",
+  "laterReadonlyDiagnosticSource": "4bad6822e32e82aea17cc416f9c655d2cbe161e4",
+  "canonical": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-result-manifest.json",
+  "manifest": {
+    "bytes": 10092,
+    "sha256": "5b93320759ff32575728570c7ce22155bfbafb1ebdf4ace02bd454210cff161d",
+    "bindings": 28,
+    "boundBytes": 30765,
+    "allFixedAndCurrentBytesMatch": true
+  },
+  "reviewed": [
+    "All 28 bounded result bindings matched fixed039559 and current size/hash. Read primary work observation/result, actual admission, outer/clone/work/cleanup records, database creation/marker, registered stop and closure, and independent resource return.",
+    "Preparation approval remains independently fixed in svc09a-default-host-preparation-review.json; no artifact rehash, test or rerun.",
+    "Later readonly same-nonce producer projection confirms child-exit/SIGTERM and zero captured stderr. It does not reconstruct producer start time or establish module-load/listen success."
+  ],
+  "actual": {
+    "startedAt": "2026-10-07T19:16:09.120Z",
+    "returnedAt": "2026-10-07T19:17:35.003Z",
+    "operatorElapsedMs": 29140,
+    "exitCode": 1,
+    "primary": "host-consumer / START_UNCONFIRMED_CHECK_STATUS",
+    "centerPid": 48884,
+    "lastPredicate": {
+      "ownerState": "running",
+      "listenerQueryExitCode": 1,
+      "owned": false,
+      "listenerCount": null,
+      "phase": "listener-query",
+      "health": "NOT_OBSERVED"
+    },
+    "runnerAndWebStarted": false,
+    "tasks": 0,
+    "attempts": 0,
+    "providerCalls": 0
+  },
+  "closure": {
+    "registeredPidsAbsent": [
+      36049,
+      36278,
+      36374,
+      40589,
+      57566,
+      48884
+    ],
+    "cloneWorkCleanupGroups": "absent / dual EOF / no supervisor signals",
+    "centerGroup": "absent",
+    "databaseName": "flow_preview_f2e282d13ddb4d73b39652c5",
+    "databaseOid": 1348911,
+    "installationId": "42211fe8-6286-4aa4-9c36-441ff128abf9",
+    "connections": "empty bounded observation; admin closed",
+    "resourcesClosed": true,
+    "launchAccounted": true,
+    "cleanupFailures": [],
+    "database": "KEEP",
+    "privateDirectory": "KEEP",
+    "dropAuthorized": false,
+    "initialOuterUnknown": "Preserved; later independent closure/RETURN does not rewrite its original disposition.",
+    "earlyEperm": "Preserved as unknown observations, followed by actual absent observations; not reclassified as absent."
+  },
+  "limitations": [
+    "Functional default three-role journey FAILED. No settings/SQL/App/browser/personal deployment success.",
+    "Root cause remains UNKNOWN. Child spawn is not server module-load or readiness proof. Listener count null is not zero. SIGTERM is cleanup, not established original cause.",
+    "No retry, timeout increase, artifact replacement, original R1-R4 change, or KEEP deletion authorized by this review.",
+    "Reviewer performed only fixed source/evidence reads; 0 tests, PG, services, provider or personal I/O."
+  ],
+  "followup": "Original owner narrows spawn-to-listen startup boundaries using existing public source/recorded diagnostics before proposing precise scope. Personal SVC06B publication is independent."
+}

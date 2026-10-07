@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T18:44:52.319Z / 已核main/origin d669f3acb；默认三角色启动准备独审收口，实际运行待独立窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:32:59.205Z / 已核main/origin c15cdffcb；默认宿主失败原件限定审查完成，个人新版已获独立窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main d669f3acb；本批仅审查记录与自身状态，不改变任何冻结产物 |
+| 工作基线 / HEAD | main c15cdffcb；本批仅限定结果审查与自身状态，不改变任何冻结产物 |
 | 工作树dirty状态 | 本次审查接收metadata；两个原有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 既有独审、固定输入与文档差量/own-status；0产品复测/PG/浏览器/provider |
-| 已集成main状态 / HEAD | main d669f3acb 已接C3两fixture精确源和既有兼容批准；固定cd27/779尚未个人部署，2515未改 |
+| 已集成main状态 / HEAD | main c15cdffcb 已接固定Web导入/发布八源；固定cd27/779个人发布由原owner在独立窗口执行，未提前声明部署完成 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新版页面与保留页面的后台兼容已验证并接收；最小服务启动验证准备已通过独立审查。 |
-| 下一可用交付 | 完成固定新版页面的个人发布准备，并在独立窗口验证消息设置服务能启动和正常停止。 |
+| 当前产出 | 新版发布入口已审并进入主线，现场身份只读核对一致；另一条服务启动失败的证据和资源收尾已核清。 |
+| 下一可用交付 | 完成固定新版后台与页面的受控个人更新；并定位消息设置服务在监听前未就绪的原因。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -496,3 +496,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 ### 2026-10-07T19:13:10.034Z SVC06B固定Web导入与发布入口独审
 
 [限定源码/局部证据审查](../../docs/evidence/i02/svc06b-web-publication-source-review.json)批准520d3cb7b八源；真实局部9例、argv/Policy和受限import通过，619ms/1251B，三组及空目录完整归还。复用现锁/迁入顺序与公开CAS，后台三旧页报告与后继新Web发布保持分离。当前个人安装快照和唯一现场窗口仍需fresh绑定；尚无个人副作用。
+
+### 2026-10-07T19:32:59.205Z 默认宿主限定结果与发布接续
+
+[限定结果审查](../../docs/evidence/i02/svc09a-default-host-result-review.json)核039559的28项原件共30765B；实际默认启动FAILED，根因UNKNOWN，19:17:35.003Z明确归还进程/连接，DB/private KEEP且旧失败不变。固定520d八个发布源已main c15cdffcb；个人只读核对19:27:12.063—19:27:16.668Z通过，D01于19:28:11.839Z交唯一窗口，原operator尚须fresh冻结与逐段实证，不能把准备或窗口领取称实际部署。
