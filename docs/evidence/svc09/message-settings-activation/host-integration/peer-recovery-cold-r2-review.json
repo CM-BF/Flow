@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-07T22:04:00.659509+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_REAL_DEFAULT_THREE_ROLE_COLD_RESULT_FIDELITY",
+  "blocking": [],
+  "target": "81fa3974e09baab151f562074aa1f5c3f8ce4903",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json",
+    "bytes": 11840,
+    "sha256": "4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601"
+  },
+  "readback": {
+    "sourceInputs": 4,
+    "raw": 30,
+    "rawBytes": 29774,
+    "analyses": 3,
+    "totalBindings": 37,
+    "totalBindingBytes": 74798,
+    "fixedCurrentHashes": "all equal",
+    "archivedCheckpointCopyReferences": 19,
+    "privateDirectoryAccess": false,
+    "privateDiagnosticMetadata": 3,
+    "limitation": "Diagnostic source files and private original checkpoints were not reread. Their archived metadata/whitelisted fields were cross-linked to current launch identities and fixed archive bytes."
+  },
+  "artifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+  "source": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "actual": {
+    "startedAt": "2026-10-07T21:59:12.729Z",
+    "terminalAt": "2026-10-07T21:59:55.939036Z",
+    "returnedAt": "2026-10-07T22:00:23.226Z",
+    "outerMs": 43096,
+    "outerExit": 0,
+    "outerOwnership": "childPidOnly; detached roles require separate evidence",
+    "outerEOF": {
+      "stdout": true,
+      "stderr": true
+    },
+    "outerEqualsDurableResult": true,
+    "inner": {
+      "cloneMs": 4714,
+      "workMs": 38034,
+      "cleanupMs": 251,
+      "exitCodes": [
+        0,
+        0,
+        0
+      ],
+      "groups": "3 absent / dual EOF",
+      "firstFailures": null,
+      "initialEPERM": "unknown observations preserved"
+    },
+    "defaultRoles": {
+      "center": 72424,
+      "runner": 79763,
+      "web": 85488
+    },
+    "currentInitialization": {
+      "wrapperPid": 79763,
+      "childPid": 84765,
+      "nonce": "828241ec-eeef-48f7-9d77-52498b75c9fd",
+      "runnerId": "e18b90c5-329b-4cd6-b564-8354bf83da1b",
+      "initialized": true,
+      "scope": "Current launch local initialization; no user assignment inferred"
+    },
+    "taskCount": 0,
+    "attemptCount": 0,
+    "actualClaim": "NO_ASSIGNMENT_OBSERVED",
+    "exactReturn": {
+      "pidsAbsent": 8,
+      "groupsAbsent": 6,
+      "cleanupErrors": [],
+      "adminClosed": true,
+      "targetConnections": "empty",
+      "databaseOid": 1356518
+    },
+    "DB": "KEEP_NO_DROP",
+    "private": "KEEP",
+    "provider": 0,
+    "personal": 0,
+    "Chrome": 0
+  },
+  "resourceSamples": {
+    "maxPrivateLogicalBytes": 1852413,
+    "maxDatabaseBytes": 12622871,
+    "unavailableDatabaseSamples": 6,
+    "interpretation": "Only available phase observations; not atomic peaks. Original null values remain; reported metadata aggregation TypeError does not create a runtime failure or new run."
+  },
+  "boundaries": [
+    "Actual immutable artifact public controller, no shadow loader. Fixed default consumer asserts real center/marker/Web identity and this runner initialization before explicit stop.",
+    "Web is a synthetic static-loader contract, not four real App compatibility.",
+    "No settings/mixed queue/native model/task claim or personal deployment accepted.",
+    "Old b692 TypeError/null,42P01,KEEP and historical failures unchanged; no retrospective root-cause claim.",
+    "No reviewer execution/import/build/PG/service/private-directory or credentials access; read fixed source and saved raw only."
+  ]
+}

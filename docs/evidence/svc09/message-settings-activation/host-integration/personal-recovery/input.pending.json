@@ -13,7 +13,44 @@
     "publicOrigin": "http://127.0.0.1:61228",
     "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
   },
-  "reports": null,
+  "reports": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/report.json",
+      "bytes": 791,
+      "sha256": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/report.json",
+      "bytes": 791,
+      "sha256": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/report.json",
+      "bytes": 791,
+      "sha256": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+    },
+    {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/report.json",
+      "bytes": 791,
+      "sha256": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+    }
+  ],
   "publishNewWeb": false,
   "providerQueries": 0,
   "phases": [
@@ -168,8 +205,28 @@
       "manifest": "docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
       "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
     },
-    "cold": null,
-    "fourApps": null
+    "cold": {
+      "commit": "81fa3974e09baab151f562074aa1f5c3f8ce4903",
+      "manifest": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json",
+      "sha256": "4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601",
+      "review": "../peer-recovery-cold-r2-review.json",
+      "decision": "APPROVED_LIMITED_REAL_DEFAULT_THREE_ROLE_COLD_RESULT_FIDELITY",
+      "scope": "Default3/current initialization/stop only; no App/personal/task proof",
+      "returnAt": "2026-10-07T22:00:23.226Z"
+    },
+    "fourApps": {
+      "intake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "bytes": 16986,
+        "sha256": "daa56821386b6c806e96a26ccd7da8b76e502bb7f1bcb781e1278fc3c8a5ef15"
+      },
+      "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+      "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+      "actual": "PASSED_FORMAL_FOUR_APPS_COMPLETE_RETURN",
+      "independentReview": "PENDING_NO_APPROVAL_INFERRED",
+      "archiveGit": "Not yet committed at read; exact path/bytes/hash pins bind candidate and must match final reviewed target",
+      "scope": "Only report/input binding checked here, not duplicate actual/App review. 4report+16checks bytes/hash/context/artifact match."
+    }
   },
   "admission": {
     "actualWindow": null,
@@ -179,8 +236,7 @@
     "newNamespaces": "Names selected only; existence/identity check and exclusive creation belong to actual admission",
     "dispatch": "ABSENT",
     "notReady": [
-      "Final e15 cold result and independent acceptance",
-      "Four exact880060/backend-context compatibility reports and independent acceptance",
+      "Four exact880060/backend-context report independent acceptance and final sealed target",
       "Final complete effective closure/dispatch hashes",
       "Fresh resource floor/window and actual locked observations"
     ]

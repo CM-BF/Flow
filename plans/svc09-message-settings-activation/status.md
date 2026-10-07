@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:00:20.277157+00:00 |
+| 更新时间 | 2026-10-07T22:05:01.201470+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 恢复调用与现场只读结果已获限定审查，已固定不依赖新报告的恢复输入；尚未执行恢复。 |
-| 下一可用交付 | 冷启动与四份兼容报告齐备后，补齐准确报告摘要、最终执行绑定和受控窗口。 |
-| 当前阻塞 | ACTIVE: 新产物冷启动、四份兼容报告与最终执行输入尚未全部齐备，当前只读事实不能授权恢复。 |
+| 当前产出 | 新产物的默认服务冷启动与停止已通过限定独审，恢复输入已绑定现场记录和四份待审兼容报告。 |
+| 下一可用交付 | 报告接受后完成最终输入和执行绑定，交独立审查后安排同一维护操作的恢复。 |
+| 当前阻塞 | ACTIVE: 四份兼容报告尚待独立接受，最终执行绑定与受控窗口未齐；个人服务仍未恢复。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -180,3 +180,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 [单份结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-result.json)和[增量绑定](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-manifest.json)。ready:false，KEEP不删除，个人配置/服务/provider无写入或运行。实际恢复仍缺cold、四报告、dispatch及新窗口；不得沿本只读grant执行恢复。
 
 2026-10-07T22:00:20.277157+00:00：Lead已完成4e527c531限定独审，29绑定69386B固定/当前一致、0blocking；原首0child错误/initialEPERM/ready:false和pool.end边界保持。仅据已存facts与已审build固定[input.pending.json](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/input.pending.json)：六private pins、同op23、旧backend/state/Web身份、e15 root身份及clone计量全部来自原件。cold/reports/freshfloor/window仍null，ready:false、dispatch不存在；未新读个人/PG或重测。
+
+2026-10-07T22:05:01.201470+00:00：peer冷R2固定81fa获本owner独立限定APPROVED，37绑定74798B/30raw29774B全符，current initialization和实际停止/RETURN已核；[唯一own审查](../../docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-r2-review.json)明确synthetic Web不是4App，KEEP不删。input.pending已填准确4report+16check引用并核bytes/hash/tuple，只消费Web现存main-intake，实际独审仍PENDING且该archive尚待Git固定。ready:false/floor null/dispatch absent，未新现场读取或运行。
