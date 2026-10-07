@@ -170,8 +170,9 @@ export async function startPreview({ directory, adminUrl, confirmPending = false
   try { await lstat(directory); config = await load(directory); }
   catch (error) { if (error.code !== 'ENOENT') throw error; config = await initialize(directory, adminUrl); }
   return locked(config, async () => {
-    await ensureDatabase(config); await assertMarker(config);
     const state = await privateJson(join(config.directory, 'state.json'));
+    await assertWebHostSettled(config, state);
+    await ensureDatabase(config); await assertMarker(config);
     const previous = await Promise.all(Object.values(state.processes).map(inspectOwnedProcess));
     if (previous.length === 3 && previous.every(value => value === 'running')) return statusPreview({ directory });
     if (previous.some(value => value !== 'stopped')) fail('STOP_OR_VERIFY_EXISTING_PROCESSES');
@@ -275,7 +276,9 @@ export async function preparePreviewWeb(config, target) {
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
 export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact) {
+  await assertWebHostSettled(config, state);
   const runtime = await backendRuntime(config, selectedBackend);
+  const webRuntime = await serviceRuntime(config, { ...state, backendArtifact: selectedBackend }, 'web');
   const backendHead = selectedBackend?.sourceHead ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const artifact = preparedArtifact ?? await preparePreviewWeb(config, backendHead);
   const release = await readWebRelease(config.directory);
@@ -293,7 +296,8 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
           if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
         });
       }
-      const record = await spawnOwnedProcess({ args: [runtime.entry, 'internal-service', config.directory, role], cwd: runtime.root, env: baseServiceEnvironment(role),
+      const roleRuntime = role === 'web' ? webRuntime : runtime;
+      const record = await spawnOwnedProcess({ args: [roleRuntime.entry, 'internal-service', config.directory, role], cwd: roleRuntime.root, env: baseServiceEnvironment(role),
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
       await waitReady(config, role, record, artifact);
@@ -507,10 +511,13 @@ export function createWebHostReplacement({ marker = assertMarker, processes = we
 }
 export const replacePreviewWebHost = createWebHostReplacement();
 
-async function settledWebMutationState(config) {
-  const state = await privateJson(join(config.directory, 'state.json'));
+async function assertWebHostSettled(config, state) {
   if (state.pendingWebHost) fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
   await assertWebHostOperationsSettled(await webHostJournalDirectory(config.directory, false));
+}
+async function settledWebMutationState(config) {
+  const state = await privateJson(join(config.directory, 'state.json'));
+  await assertWebHostSettled(config, state);
   await assertMarker(config);
   return state;
 }
