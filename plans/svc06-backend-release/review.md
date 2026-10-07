@@ -1,6 +1,6 @@
-# 下一host smoke入口：PENDING
+# 下一host smoke入口：APPROVED_PREPARATION_ONLY
 
-Source `e6ff0f1f2e7743496f1f17144343a28716c03b38`；[manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。实际PG/三角色host未运行，局部只验证本机拒读机制及入口语法；不能沿用下面构建结果批准。完整03/04仍open。
+Source `e6ff0f1f2e7743496f1f17144343a28716c03b38`；[manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。Execution Lead唯一独审于2026-10-07T03:58:11.372402+00:00限定批准；[同bytes原回执](../../docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json)核10个fixed/current绑定、真实artifact及Web输入、helper/OPS14，完整入口已读，无P1/P2、0重跑。实际PG/三角色host未运行，局部只验证本机拒读机制及入口语法；不把准备批准当运行验收。完整03/04仍open。
 
 # 当前实际artifact结果：APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS
 

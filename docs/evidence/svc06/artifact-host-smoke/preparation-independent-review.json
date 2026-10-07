@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T03:58:11.372402+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "outcome": "APPROVED_PREPARATION_ONLY",
+  "source": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+  "delivery": "b6dddd1fde36f9fb6bcc92bdc50064b82bb3235b",
+  "manifestSha256": "f91cf2139ed49b05621b50e4b7c3b8262d4f57879f694e6933848c797497b788",
+  "scope": "SVC06 artifact-host-smoke entry, outer supervisor, fixed inputs and local isolation evidence",
+  "verification": {
+    "fixedEntryAndEvidenceBindings": 10,
+    "allCurrentAndGitBindingsEqual": true,
+    "artifactManifestBytes": 3179420,
+    "artifactManifestDigestMatched": true,
+    "webFiles": 10,
+    "webManifestMatched": true,
+    "artifactCleanupHelperMatched": true,
+    "supervisorMatched": true,
+    "originalIsolationMs": 138,
+    "originalIsolationExit": 0,
+    "reviewerNewTests": 0,
+    "reviewerPG": 0,
+    "reviewerProvider": 0
+  },
+  "assessment": [
+    "Read full launch/work/cleanup and supervisor: independent 120s work plus 30s cleanup owners; detached service identities remain separate and unknown blocks destructive cleanup.",
+    "Persistent reservation and work checkpoint precede DB/service actions. All three wrappers are artifact-root inputs, source repository remains original fixed constructor identity.",
+    "Actual denied-read mechanism and child inheritance evidence are bounded and authentic; actual service/database success is still unrun.",
+    "Web dist is fixed d629 input, never relabelled as a new backend compatibility report. No App browser or maintenance publication claim."
+  ],
+  "limits": [
+    "Actual host and PG NOT_RUN; run only after fresh shared-window and original resource conditions.",
+    "No personal service operation or new provider query.",
+    "e5 sourceRepository is backend-release worktree; cannot adopt it for personal Flow installation or change its manifest.",
+    "No rebuild/install, no product-suite rerun. Unknown ownership/cleanup remains KEEP."
+  ]
+}

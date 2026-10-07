@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:55:39 UTC；构建结果已main，后继host入口待审；产品scope已交回 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:59:40 UTC；构建结果已main，host入口准备独审通过；实际旅程待窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
-| 工作树dirty状态 | 交付23596f2d已固定并推送；当前仅scope正式交回metadata |
+| 工作树dirty状态 | 交付b6dddd1f已固定并推送；当前仅准备独审转录metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
 | 实现范围 | docs/evidence/svc06/artifact-host-smoke/entry.mjs, docs/evidence/svc06/artifact-host-smoke/supervise.py, docs/evidence/svc06/artifact-host-smoke/inputs.json |
 | 检查状态 | NOT_RUN e6ff0f1f2e7743496f1f17144343a28716c03b38；host/PG未验；本机拒读检查一次138ms通过，入口仅语法检查 |
-| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口未审/未运行/未main |
+| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；实际未运行、未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 固定后台产物的真实构建、依赖和资源解析已通过并接收；已确认本机能让自有进程拒读开发目录。 |
-| 下一可用交付 | 独审已固定的三角色启动入口，再用保留产物验证真实宿主能否在开发目录不可读时运行。 |
-| 当前阻塞 | ACTIVE: 实际宿主旅程等待入口独审及共享运行窗口；当前不占窗口。 |
+| 下一可用交付 | 共享窗口交付后，用已审入口和保留产物验证真实宿主能否在开发目录不可读时运行。 |
+| 当前阻塞 | ACTIVE: 实际宿主旅程等待共享运行窗口；入口准备已审，当前不占窗口。 |
 | 需用户决定 | NONE |
-| Review | 构建结果APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS；新host入口PENDING Execution Lead，完整生命周期仍open |
+| Review | 构建结果APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS；新host入口APPROVED_PREPARATION_ONLY Execution Lead，完整生命周期仍open |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -117,3 +117,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:55:39 UTC：共享产品范围正式交回
 
 后继真实host验证只写自身plan/evidence，原子amend v7已交回backend-release完整目录及package/lock/maintenance两文件；不预留未来产品写权。[固定host来源](../../docs/evidence/svc06/product-scope-return-source.json)记录当前main与产物3230同blob。新entry e6ff与e5产物保持原字节，实际host/PG仍NOT_RUN，无运行窗口占用。仅metadata检查，不重复已过局部检查。
+
+## 2026-10-07 03:59:40 UTC：宿主入口准备限定批准
+
+[唯一独审转录](../../docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json)核10个固定入口/证据、实际artifact manifest、cleanup helper、OPS14及d629十文件。无P1/P2、reviewer0重跑；本片仅准备通过。实际host/PG仍NOT_RUN，不重建或补测，不占窗口，原03/04与个人部署边界保持。
