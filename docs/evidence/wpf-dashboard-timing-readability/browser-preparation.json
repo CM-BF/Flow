@@ -1,5 +1,5 @@
 {
-  "state": "SOURCE_PREPARED_NOT_RUN",
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
   "preparedAt": "2026-10-07T21:02:54.648Z",
   "task": "WPF-DASHBOARD-TIMING02",
   "implementation": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
@@ -29,10 +29,13 @@
     }
   ],
   "sourceReview": {
-    "path": "/private/tmp/root-timing02-source-local-review-20261007.json",
-    "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019"
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+    "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
   },
-  "nativeApproval": null,
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+    "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+  },
   "runtimeGrant": null,
   "gateCreated": false,
   "topology": {
@@ -105,5 +108,6 @@
     "optionalLocalLimitMs": 15000,
     "usedOptionalLocalMs": 32,
     "runtimeNotAuthorized": true
-  }
+  },
+  "reviewAcceptedAt": "2026-10-07T21:15:35.315Z"
 }

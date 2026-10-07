@@ -11,3 +11,5 @@
 2026-10-07T21:01:31.914Z 浏览器准备clean-code复核：沿本地find-skills/clean-code/webapp-testing方法，复用既有监督清理而不造框架。worker只组合现fixture/check函数，去掉无关select观察器/双Vite旅程/TSX；保原六组与2000ms默认。错误不跳过finally，缺图与失败不补PASS；原pg延迟导入静态确认未调用。全部产品7pins不变，无工程import/98重跑/HTTP/PG/Chrome。需独立审实际caller差量；actual与图像目视待后继。
 
 2026-10-07T21:02:54.648Z 自有TMP语法校验exit0：parent AST/worker --check/prepared输入hash，32ms，双EOF/PGID41187 absent/空scratch精确移除。没有import产品/PG/HTTP/Chrome；不重98。闭包追加固定实际architecture三assets与Playwright utilsBundle/browsers.json；pg属于未调用延迟分支，未安装/链接。normal seal前检查metadata链接、diff范围与7产品hash。
+
+2026-10-07T21:15:35.315Z 新3min/64KiB metadata尾段：只归档独审与例行绑定state/native/最终执行HEAD；旧binding/manifest在/private/tmp/timing02-approved-before-20261007保留。parent b52/worker9744不改，无check/import/HTTP/PG/Chrome/资源采样。保持独立 source/local、调用准备批准与actual NOT_RUN分层。
