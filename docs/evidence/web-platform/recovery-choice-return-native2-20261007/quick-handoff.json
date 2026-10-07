@@ -1,0 +1,45 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T06:29:46.323945+00:00",
+  "gate": "/private/tmp/msgquick-native2-admission-9ez8egf8/gate.json",
+  "gateSha256": "9afd1ca2f7dcb0780179bd489701b6bab00960af3d733a1d5f37267022d3fe58",
+  "expiresAt": "2026-10-07T06:35:46.323945+00:00",
+  "run": "msgquick-native2-20261007-062946-51fcb2",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "head": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
+  "sourceTarget": "521a38395c4b9a38613937c83ce44215afc70280",
+  "bindingSha256": "c93e2f8617c6fab7c0fc40dd2c3a22f60ebd2787d816a14de1d5a3566b2c727a",
+  "manifestSha256": "d007ba5a4897963af29142bf3303d0439e8fb3d188c056a60ed5132b60cb886d",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-native2/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-native2-admission-9ez8egf8/gate.json"
+  ],
+  "selection": "diagnostic",
+  "singleRunMaximumMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentTotalMs": 90000,
+  "newSegmentSpentMs": 11222,
+  "oldClosedActualMs": 30625,
+  "nativeReview": {
+    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
+    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-source-review.json",
+    "sha256": "263ec06a322ecd0dca82835680336cdbd8e030289083814616f40088510702e8"
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "outerRequirements": "Unique owned outercapture; realexit/stdout/stderr/EOF/terminal hashes and ownedcleanup must agree. Chargeceilmax actualouter/late/parent. Do not infer diagnostic measurement is featurePASS. Report actualstart and terminal immediately; preserve FAIL/INCONCLUSIVE.",
+  "managerLaunch": false,
+  "remainingNewSegmentMs": 78778,
+  "chromeVersion": "154.0.8037.99",
+  "chromeProvenance": {
+    "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
+    "meaning": "Only two physical native input pins updated; original .98 preparation preserved; installed patch cause unknown.",
+    "sha256": "b824372e40de408f23f3b5b7766cf55a81eb2f615b3e63fee4e14fd668a2e29d"
+  },
+  "mustNotOverlap": "No second own Chrome/PG; panels separate local work only; fresh current external handoff authoritative",
+  "noSecretsOrPersonalInputs": true
+}

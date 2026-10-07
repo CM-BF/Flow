@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-07T06:30:31.626372+00:00",
+  "state": "QUICK_NATIVE2_DIAGNOSTIC_ADMITTED_NOT_STARTED",
+  "recovery": "return.json",
+  "recoveryActualReview": "root-choice-actual-review.json",
+  "adminDeletion": "admin-env-deletion-receipt.json",
+  "quickAdmission": "quick-handoff.json",
+  "quickInputSummary": "quick-fresh-input-summary.json",
+  "quickNativeRoutineReview": "root-native2-routine-binding-review.json",
+  "quickChromeProvenance": "chrome99-provenance.json",
+  "currentRuntime": {
+    "webActualHolder": null,
+    "gateCreated": true,
+    "managerLaunched": false,
+    "postgres": 0,
+    "chromeStarted": false
+  },
+  "ownerSources": {
+    "recovery": {
+      "head": "8c7aeb58a7ed5e99c4f0e580312dee4575979d2d",
+      "source": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "claim": "6ff988b2 v4 active21",
+      "featureReview": "IN_PROGRESS"
+    },
+    "quick": {
+      "head": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
+      "source": "521a38395c4b9a38613937c83ce44215afc70280",
+      "claim": "839e466f v1 active6",
+      "diagnosticOnly": true
+    }
+  },
+  "managementClaim": "632a7149 v3 original6",
+  "scope": "Management pointers and TMP admission only; no owner source/status edits or product checks."
+}

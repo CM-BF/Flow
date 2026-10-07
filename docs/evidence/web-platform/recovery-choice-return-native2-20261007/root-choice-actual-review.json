@@ -1,0 +1,163 @@
+{
+  "recordedAt": "2026-10-07T06:25:27.579378+00:00",
+  "decision": "ACCEPTED_SCOPED_CONNECTION_CHOICE_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE",
+  "run": "recchoice-20261007-062152-1a98e5",
+  "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "executionHead": "0a661aa558840453ed3e0646db30b1073b5398ca",
+  "checks": {
+    "selected": [
+      "cookieRead",
+      "connectionChoice"
+    ],
+    "passed": 2,
+    "required": 2,
+    "fullJourneyPassed": false,
+    "originalOtherSixGroups": "NOT_SELECTED",
+    "newScreenshots": 0,
+    "runtimeVersion": "Google Chrome154.0.8037.99; manager recorded explicit binary/plist revision from .98, no established update cause. Old full7 and prior diagnostics remain bound to prior version."
+  },
+  "behaviorVerified": [
+    "Actual HttpOnly cookie and cookie-only session GET reach the original authenticated center.",
+    "In the mounted App, Change connection candidate URL and token remain after successful background focus-triggered session read; the original retained draft returns only after explicit successful Check existing or Connect.",
+    "Wire contains two explicit browser-session connect POSTs and zero business command POSTs. This is one-center behavior, not multi-center or principal isolation acceptance."
+  ],
+  "findingResolution": {
+    "RECOVERY-FINAL-P2-SELECTING": "SOURCE_AND_TARGETED_ACTUAL_ADDRESSED",
+    "RECOVERY-FINAL-P2-STEERING-TIMEOUT": "Previously accepted source + four controlled deferred-storage cases; this browser run does not exercise Steering HTTP."
+  },
+  "accounting": {
+    "state": "SELECTED_PASS_NOT_WHOLE_FEATURE",
+    "newSegmentPriorMs": 13134,
+    "outerElapsedMs": 11454.569749999791,
+    "lateParentMs": 10806.272125,
+    "serializedParentMs": 10798.397,
+    "chargeMs": 11455,
+    "newSegmentSpentMs": 24589,
+    "newSegmentRemainingMs": 125411,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noRetry": true
+  },
+  "cleanup": {
+    "database": "flow_recovery_c3e13d75e51c4e75a6a4138485e745a6",
+    "marker": "a88568fa-27e0-4d1a-97a2-b87d883bfd34",
+    "normalDropConfirmed": true,
+    "connectionsBeforeAndAfterMarker": 0,
+    "remaining": [],
+    "fixtureClosed": true,
+    "providerQueries": 0,
+    "groupsReobservedByRoot": [
+      {
+        "pgid": 46323,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 46335,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 46337,
+        "state": "ESRCH"
+      }
+    ],
+    "scratchAbsent": true,
+    "outerDualEOF": true,
+    "supervisorErrors": [],
+    "fixtureErrors": []
+  },
+  "boundsObserved": {
+    "initializationMs": 8880.345333,
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 8880.440542,
+        "endedOffsetMs": 9914.729542,
+        "elapsedMs": 1034.2889999999989,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "connectionChoice",
+        "startedOffsetMs": 9914.741,
+        "endedOffsetMs": 10317.806708,
+        "elapsedMs": 403.0657080000001,
+        "outcome": "PASSED"
+      }
+    ],
+    "peakScratchBytes": 26338823,
+    "finalObservedRetainedBytes": 1961314,
+    "minimumFreeBytes": 24369557504,
+    "qualification": "Samples, not OS quota or exclusively attributed shared-volume usage. Initial setup is fixture/import/Chrome context work, not a product navigation benchmark."
+  },
+  "limitations": [
+    "Original CREATE two-stage lost ACK, Queue/Steer actual recovery, full profile/knowledge/steering draft, true second-center/principal isolation and SSE delivery retain their separately recorded pending scope.",
+    "No new themes or full7 run; historical raw remains immutable. Main intake and personal deployment remain separate.",
+    "Admin env exact deletion is a management follow-up; this review does not read credentials or claim that deletion before its receipt."
+  ],
+  "reviewerExecution": "Read-only 11 raw hashes, both fixed source Git bindings, exact owned group absence and scratch absence; no fresh browser/PG/service/provider execution or project writes.",
+  "bindings": [
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/start.json",
+      "bytes": 508,
+      "sha256": "41441f866cb1574d3bfe287126d9be4e11816a62f688ee4bd8b1e0178db9bc82"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/actual-exit.json",
+      "bytes": 260,
+      "sha256": "374520dc4d283440b30c07829bfdb8036dceb832d2fa7afec3d2445b5c365df0"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/parent.stdout.jsonl",
+      "bytes": 618,
+      "sha256": "0de4db7a8176aa5eedd6b5214da65d720923706c7edd5c14a4106743567e7171"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/post-cleanup-observation.json",
+      "bytes": 487,
+      "sha256": "67dad19f500528bf4b798f69f55694623d2b9519bd1592f0948f107795045e0f"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/accounting.json",
+      "bytes": 329,
+      "sha256": "c953671ed8b005b7333214a06a951682fba73b5deb5917bdc0a39b2520895264"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/raw-manifest.json",
+      "bytes": 1888,
+      "sha256": "228f16fd6526727cd5bcfe1e393f698ad6434d5d6e15dddda8fd8e6924a0897a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/browser.json",
+      "bytes": 5792,
+      "sha256": "ffa588cd3e4d331b18371522e0318ca60bb4d26b66db8112f37f1367cc2ae94f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/supervisor.json",
+      "bytes": 2475,
+      "sha256": "5839866224bda262d961e41087c98cae22ef35de623c6d1637ad42a63ffd2999"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/sources.json",
+      "bytes": 2438,
+      "sha256": "51d7fea3f6e7a7ef2e050220f9f2c91005d9a2540cb64e91d854a3132f9d4167"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "09d627b64ee661d1c076a610f2d6373d9f2548659ee39766f3d76a6743d382c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-owner.json",
+      "bytes": 164,
+      "sha256": "6421ac85e5a91129c054e2bd7e6f5cd2af0ff0858ed24e865d12433bcde9ec48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "35f722570ffc2c36e47e528f15cf137cf4bead4cbd77dd509dec688dba60094f"
+    }
+  ]
+}

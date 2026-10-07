@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T06:28:48.686492+00:00",
+  "state": "SELECTED_PASS_ACTUAL_CLEANED_RETURNED_NOT_WHOLE_FEATURE",
+  "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "executionHead": "0a661aa558840453ed3e0646db30b1073b5398ca",
+  "ownerSealedHead": "8c7aeb58a7ed5e99c4f0e580312dee4575979d2d",
+  "ownerReceipt": "panels normal push / actual remote equal / clean; original21 stopped, active claim remains; manager did not rewrite feature status",
+  "startedAt": "2026-10-07T06:23:21.546381Z",
+  "terminalAt": "2026-10-07T06:23:33.001283Z",
+  "exactCleanupAt": "2026-10-07T06:23:54.029106Z",
+  "actualExit": 0,
+  "bothEOF": true,
+  "selection": [
+    "cookieRead",
+    "connectionChoice"
+  ],
+  "selectedPassed": 2,
+  "fullJourneyPassed": false,
+  "otherGroups": "NOT_SELECTED",
+  "png": 0,
+  "provider": 0,
+  "budget": {
+    "oldClosedMs": 64134.08675,
+    "newLimitMs": 150000,
+    "priorMs": 13134,
+    "thisChargeMs": 11455,
+    "spentMs": 24589,
+    "remainingMs": 125411,
+    "basis": "ceil(max actualouter11454.56975,late10806.272125,serialized10798.397)); originals unchanged"
+  },
+  "cleanup": {
+    "markedDatabase": "flow_recovery_c3e13d75e51c4e75a6a4138485e745a6",
+    "connections": 0,
+    "normalDrop": true,
+    "remaining": [],
+    "fixtureComplete": true,
+    "errors": [],
+    "ownedGroups": [
+      46335,
+      46337
+    ],
+    "exactGroups": "ESRCH",
+    "scratchAbsent": true,
+    "adminEnv": "exact deleted without reading; separate original receipt"
+  },
+  "review": "root-choice-actual-review.json",
+  "functionalStatus": "IN_PROGRESS in original owner status; SELECTING source + selected actual addressed, STEER has four controlled local checks.",
+  "webHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "next": "Quick native2 only after fresh same-boundary inputs and resource gate; no Recovery PG reservation."
+}

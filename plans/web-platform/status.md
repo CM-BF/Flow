@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:22:49.266492+00:00；Recovery已绑定当前浏览器并准入连接选择回归，尚未启动 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:30:31.626372+00:00；Recovery连接选择回归已通过并清理归还，Quick后继已交原owner待启动 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 优先验证恢复连接选择修复；Quick原生对照首轮在按键前遇中文标签缺失，已修诊断页面编码并准备后继，尚无功能结论。 |
+| 下一可用交付 | 继续逐消息设置的原生控件对照，定位键盘选择行为；恢复连接选择修复已完成定向页面回归，原owner继续补充发送与排队故障覆盖。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC08r3已归还，Recovery连接选择两组已fresh准入，原owner待执行；Quick后继排队，未同时开第二浏览器。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：恢复验证资源已清理，临时凭据已删除；Quick独立浏览器诊断已fresh准入，尚未启动，不并开第二浏览器。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

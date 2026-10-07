@@ -1,14 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:54:50.370006+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T06:29:39.758372+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**Recovery连接选择两组已fresh准入，尚未启动；Quick首诊断失败原件保留，后继排队。** [唯一handoff](recovery-choice-quick-native1-return-20261007/recovery-handoff.json)固定55b/0a、6ffv4原21，cookieRead+connectionChoice单次60s含15s清理，新150s段已耗13134/余136866；到期06:27:52.014038Z。SVC08r3已实际归还。[Chrome运行时修订](recovery-choice-quick-native1-return-20261007/chrome-patch-provenance.json)记录同bundle/当前Google签名身份的.98→.99与两个物理pin，成因未知，旧记录保留；权限、原parent和源码未改，不推测Quick失败原因。Quicknative1 INCONCLUSIVE0/6/0PNG已清理，按键前中文标签缺失，原Picker未改；新90s已耗11222/余78778，native2仅准备，无第二Chrome。
+**Recovery连接选择修复已通过定向页面回归，自有资源已归还；Quick原生对照后继已fresh准入，尚未启动。** [本次实际回执](recovery-choice-return-native2-20261007/return.json)与[root限定审查](recovery-choice-return-native2-20261007/root-choice-actual-review.json)接受所选cookieRead+connectionChoice两项；未重跑full7、不冒完整feature通过。自有DB正常DROP/零连接、fixture与owned组/scratch闭合，[临时凭据按exact身份删除](recovery-choice-return-native2-20261007/admin-env-deletion-receipt.json)，未读值。owner8c7a双端clean、21范围停写但claim仍active；新150s段已耗24589/余125411，旧封套与失败不变。
 
-**已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。本组holder/gate/预约均无，S01性能仅排队未OPEN，不自动开后继运行。
+Quick native1按键前失败仍为INCONCLUSIVE；native2在原90s段内修正诊断页UTF8，沿[原权限边界的精确绑定](recovery-choice-return-native2-20261007/root-native2-routine-binding-review.json)与[Chrome .99来源](recovery-choice-return-native2-20261007/chrome99-provenance.json)准备下一单次诊断。只更新两个物理native pins与已接受来源指针，parent/worker/六组断言未变，旧.98结果不被改写，不推测版本变化是失败原因。[本次唯一handoff](recovery-choice-return-native2-20261007/quick-handoff.json)到期 2026-10-07T06:35:46.323945+00:00，原owner执行一次diagnostic45s含15s；fresh373输入与组合资源见[摘要](recovery-choice-return-native2-20261007/quick-fresh-input-summary.json)。manager不启动Chrome。
 
-[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
+**已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。该运行的holder/gate已消费；S01后续亦实际归还，此段仅保历史通过范围，当前调度见页首。
+
+[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，初始准备时未运行；native1随后实际失败并清理，当前native2状态以页首为准；既有新90s授权不等具体窗口。
 
 ### 已结束的前一运行段
 
@@ -84,8 +86,8 @@
 
 [远程 CI 消费研究已收口](ops-ci01-web-consumer-intake/report.md)：固定 OPS-CI01 只执行 contracts/handler，四个 Web 文件也不是 fe6；不能当作新 26 direct 或六组/双 PNG 页面验收。只关联既有 TODO11 待验项，不新建任务/runner、不阻 OPS 原独审、不开放运行窗口。
 
-- 快速设置：当前owner b44fce2889ab2b9622c45fc7a92ce2237e8507bf/产品fe6；c2严格类型和26direct已通过，c1/b1/b2实际失败分别保留。页首与[本批来源](quick-b2-return-20261007/incoming.json)记录b2清理及保守预算；原[浏览器准备](message-settings02-browser-prepared/report.md)是已消费前的历史。TMP b3计量修正未运行，不继承Settings01旧37/4。
-- Recovery：当前owner4c0852e6295e64216c8f3b34cfc626db08f06beb/源码9835，18生产源不变。rec8ed实际失败与修复来源见页首，局部序列化旧反例和新10断言已实际通过；第四次浏览器实际失败与清理见页首。后续整数总余量≤35116ms，含15000ms清理；原direct50通过范围和旧失败全部保留，不当作完整feature通过。
+- 快速设置：[唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md)当前753ccd/source521a；c2类型与26direct仅原范围通过，b1–b3与native1失败保持。native2仅诊断，单次45s含15s清理，新90s已耗11222/余78778，旧60s封套关闭。
+- Recovery：[唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)当前8c7a/source55b，完整review仍IN_PROGRESS；旧full7与本次choice2均是限定实际通过，Steer有4项定向受控检查。新150s剩125411，旧失败封套保留；下一CREATE/Queue准备不构成新的PG预约。
 - Settings：限定控件的[4 项浏览器证据已独立批准](message-settings-b5-actual/root-runtime-review.json)，
   [owner main-close 独审](message-settings-main-reception/owner-main-closeout-review.json)与正式主线接收已闭合；真实 App 发送、排队、恢复与成熟快速选择仍属后继。
   不重复已过的类型、37 项 direct 或 4 项页面检查。
