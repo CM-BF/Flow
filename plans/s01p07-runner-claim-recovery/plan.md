@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | S01P07 / in-progress |
+| 计划编号 / 状态 | S01P07 / completed |
 | 创建 / 最近更新 | 2026-10-06 20:06:48 UTC |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead / Owner / model | mika / status_read / gpt-6-astra |
@@ -20,8 +20,10 @@
 - [x] **S01P07-02** 中心复用原分配内核，非空回执与 attempt 同事务；完成 client/route 受权接线。
 - [x] **S01P07-03** runner 默认 v2：持久机会、同 key 恢复、原 fatal/drain 与 pre-adapter heartbeat 保持。
 - [x] **S01P07-04** 通过必要 contract/client/journal/runtime 与隔离 PG 事务检查，绑定真实选择数及清理证据。
-- [ ] **S01P07-05** 独立固定提交 review、直接消费者与 main 接收；唯一 status/dashboard 同步。
+- [x] **S01P07-05** 独立固定提交 review、直接消费者与 main 接收；唯一 status/dashboard 同步。
 
 ## 验收与限制
 
-当前分别完成历史85不同非PG行为、R2中心8组PG、原capacity4组PG以及各自局部strict；原失败与修后证据保留，本次4组结果待独审/main接收。无provider调用；所有实际窗口已归还，不授权重跑。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。
+当前分别完成历史85不同非PG行为、R2中心8组PG、原capacity4组PG以及各自局部strict；原失败与修后证据保留，本次4组结果已独审，main0aa1d033已接收；唯一状态事实源已同步，聚合展示一次读取超时记PENDING_SYNC。无provider调用；所有实际窗口已归还，不授权重跑。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。
+
+本子task于2026-10-07T04:10:22.418444+00:00完成验收收口：仅S01P07既定五项，不勾选父S01/FLOW-001的128真实agents、provider、性能或部署验收；原失败/未知资源与分轮证据保留。

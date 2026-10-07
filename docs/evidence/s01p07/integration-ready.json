@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T03:59:48.259902+00:00",
-  "state": "INTEGRATION_READY_NOT_INTEGRATED",
+  "at": "2026-10-07T04:10:22.418444+00:00",
+  "state": "MAIN_ACCEPTED",
   "base": "22a0806bc2465e11096949618113833f31766b19",
   "owner": "status_read",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
@@ -8,9 +8,9 @@
   "claim": {
     "claimId": "9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac",
     "version": 2,
-    "state": "ACTIVE",
+    "state": "ACTIVE_PENDING_FINAL_COMMIT_AND_RELEASE",
     "scopeCount": 18,
-    "retainedUntilMainReceipt": true
+    "retainedUntilMainReceipt": false
   },
   "production": [
     {
@@ -171,7 +171,7 @@
     "Fixtures are required by the two direct test imports. Private validation inputs describe dedicated lifecycle; they are not production runtime modules or authorization to run PG.",
     "No package/tsconfig/migration production change. Do not copy node_modules or donor installations.",
     "Fixed main15847 database donor was loaded at original module id; actual current main assembly still needs its normal narrow integration checks, no blanket latest-main claim.",
-    "Owner remains stopped on source/raw and retains writer for genuine review/integration fixes until explicit main receipt and release."
+    "All source/raw writes are stopped. After final metadata commit/push, all scope writes stop and the current claim is released with an external receipt."
   ],
   "validation": [
     {
@@ -218,7 +218,7 @@
     "Old v1 unknown/retained assignments stay conservative; no automatic old journal upgrade/replay.",
     "R1 unknown root untouched; successful later runs do not establish its cause.",
     "Two shell UTC markers failed; raw retains errors, wrapper/time/tool and21s wider observation envelope kept separate.",
-    "Main receipt still required. Task remains incomplete until integration/status handoff."
+    "Main receipt verified; this subtask acceptance is complete. Parent FLOW-001/S01 acceptance, real >100 native agents, deployment and optimization measurements are not implied."
   ],
   "mainCombinationDelta": {
     "source": "7d3757128fa45363c846036a96ea73346185829a",
@@ -234,5 +234,55 @@
       "P2": 0,
       "scope": "Exactly four import path replacements in two fixtures; public exports unchanged. Static only, no main types or PG rerun."
     }
+  },
+  "mainAcceptance": {
+    "observedAt": "2026-10-07T04:09:27.564371+00:00",
+    "main": "0aa1d0332e1f0472c39103d5e1758d88ad437763",
+    "actualIntegrationAt": "UNKNOWN",
+    "timingSource": "Execution Lead MAIN_RECEIPT plus owner fixed-Git verification; receipt at is its creation time, not inferred merge/push completion time.",
+    "currentMainAtRead": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+    "fixedMainIsAncestor": true,
+    "exactBindings": 24,
+    "ownerEvidenceAndPlanFiles": 142,
+    "errors": [],
+    "receipts": [
+      {
+        "path": "docs/evidence/i02/s01p07-intake.json",
+        "bytes": 9494,
+        "sha256": "1a3b0f27161159a32e726a55cb460491304f9352ecece390141941c1c9329d1e"
+      },
+      {
+        "path": "docs/evidence/i02/s01p07-combination-repair-checks.json",
+        "bytes": 2663,
+        "sha256": "b36fb576087b23ef1a210ed83de9f611c2cf0d1908526b58b6b4a87b500f297b"
+      },
+      {
+        "path": "docs/evidence/i02/s01p07-combination-checks.json",
+        "bytes": 1862,
+        "sha256": "0b78da388524a640ddb8ee470b1a405744cd99e8aa6bbcfcee99dcefab4af9ce"
+      }
+    ],
+    "newCombinationChecks": {
+      "typesExit": 0,
+      "typesElapsedMs": 9134,
+      "contractClientSelected": 8,
+      "contractClientPassed": 8,
+      "contractClientElapsedMs": 885,
+      "newPG": 0,
+      "provider": 0,
+      "finalGroupsAbsent": true,
+      "bothEOF": true,
+      "temporaryRemoved": true,
+      "initialObservationEpermPreserved": true
+    },
+    "dashboard": {
+      "checkedAt": "2026-10-07T04:09:26.624952+00:00",
+      "endpoint": "http://127.0.0.1:4320/api/snapshot",
+      "timeoutSeconds": 5,
+      "state": "PENDING_SYNC",
+      "errorClass": "TimeoutError",
+      "attempts": 1
+    },
+    "releaseProtocol": "After this metadata commit/push, stop all writes and release current v2 atomically. Actual committed release receipt is external /tmp; do not write returned scopes afterward."
   }
 }

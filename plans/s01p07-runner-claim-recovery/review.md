@@ -1,6 +1,6 @@
 # S01P07 独立审查
 
-**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备及实际4/4结果独审通过，NOT_INTEGRATED。R1失败与旧未知资源保持。**
+**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备及实际4/4结果独审通过，已集成main0aa1d033。R1失败与旧未知资源保持。**
 
 - Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
@@ -9,7 +9,7 @@
 - 85 不同 non-PG 行为分批通过，focused strict 修后 0；三类历史失败保留。另3个纯 fake 检查只验证外层进程 EPERM/单次信号规则，不是 PG 业务检查。
 - 原PG fixture/监督准备已获Mika 2026-10-06 20:53:17 UTC限定批准；R1实际在case结果前中止，中心8组仍无行为结果，main NOT_INTEGRATED。不得把源审范围外推为完整产品通过。
 
-## Findings / 回应
+## Findings / 回应（以下过程记录按当时固定target解释）
 
 进行中预核的当前 lease 整数兼容、旧 peer UUID 和私有资源所有权/primary 错误保留已修正并分别记源与检查。真实 PG 结果尚无，整体 review 仍待其证据；修复与复审按固定提交，不覆盖原 raw。
 
@@ -47,3 +47,9 @@ architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc0
 2026-10-07T03:55:50.792346+00:00 target `7d3757128fa45363c846036a96ea73346185829a` 仅四处package导入改相对公开入口；新绑定见 [main-import-fix.json](../../docs/evidence/s01p07/main-import-fix.json)。原source/results批准保持各固定Git范围；本次无新运行，主线组合types由Lead复验。
 
 2026-10-07T03:59:48.259902+00:00 归档db_transaction_owner/gpt-6-astra于2026-10-07T03:59:12Z的SOURCE_REVIEW_APPROVED/0P1P2。两源WT=7d375712，diff恰四行import；package exports与相对入口相同，原Bundler/相对.js→TS约定保持。审者0import/type/test/PG/写；主线实际组合复验仍待Lead，原PG结果不回填新target。
+
+## 主线验收收口
+
+2026-10-07T04:10:22.418444+00:00 owner只读核固定main0aa1d033的intake与组合修复回执：24bindings/142own文件精确，root noEmit0/9134ms、合同/客户端两文件8/8/885ms，原首组合FAIL不改；末态groups absent/双EOF/TMPremoved，初始观测EPERM历史保留。检查为Lead在main组合执行，owner未重跑。main精确合入时刻UNKNOWN，04:09:27.564371Z为实际验收核对时刻。85/8/4各自历史source/result仍独立，不推provider/真实128agents或性能。
+
+本task完成、status为唯一事实源；一次dashboard GET超时明确PENDING_SYNC。按既有find-skills/clean-code/codebase-design基线核命名/依赖/错误与未知边界、状态/来源一致性，无新实现。最后metadata提交推送后停止全部写入并release v2；receipt外置/tmp，不在release后修改项目。

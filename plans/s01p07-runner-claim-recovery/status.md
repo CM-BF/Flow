@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:59:48.259902+00:00 |
+| 最近更新 | 2026-10-07T04:10:22.418444+00:00 |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
+| 任务完成时间 | 2026-10-07T04:10:22.418444+00:00 |
+| 任务时间来源 | 开工UNKNOWN：领取不代替实际开工。完成取本owner逐项核实main回执并完成本次验收收口的实际时点；main精确合入时间UNKNOWN，04:09:27.564371Z为固定main接收核实观察，不用commit/mtime猜时。 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -13,22 +13,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品83a0799；4capacity source68815dce/packet1de742；本次execution59d7ab4e7d14b9b5979221c249c0a68ba3836695；主线fixture导入修复7d375712。 |
-| 工作树dirty状态 | 本段恢复时2fc7d538=origin clean；四import修复7d375712已push，其余产品/断言/raw/历史manifest冻结；当前仅本任务metadata收口；源已停写、claim保留至main回执。 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 工作树dirty状态 | 恢复时b7ab660c=origin clean；本段仅plan/status/review/intake收口。产品/测试/原raw/历史manifest不变；本次commit/push完成后全部停止写入，再原子release。 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 检查状态 | 分别保留：历史85 non-PG；R2中心8/8；本次原capacity4/4、20未选、13task/120HTTP。原strict5与本次局部strict修后0各有raw；没有将历史合算为新通过数。 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
+| 已集成main状态 / HEAD | INTEGRATED：0aa1d0332e1f0472c39103d5e1758d88ad437763；04:09:27.564371Z独核24bindings与142own文件全符，当前main451bf2ed包含该点。 |
 | 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源）；消费者68815dce，结果168678c3已独审通过。 |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 空闲领取与丢响应恢复已完成必要验证及独审；主线组合发现的测试入口解析问题已作四行修复并通过独审，等待主线复验接收。 |
-| 下一可用交付 | 将已审8项产品变更及必要测试接入主线，完成集成核对后交回写入范围。 |
-| 当前阻塞 | ACTIVE: 实现、分支验证及导入窄修独审已完成，等待主线定向组合复验和接收回执。无实际local/heavy holder，旧R1未知资源保留。 |
+| 当前产出 | 空闲领取复用持久身份、丢响应按同一领取机会恢复的实现与必要直接消费者已验证、独审并接入主线。 |
+| 下一可用交付 | 本片段已交付；完成本次metadata推送后停止全部写入并交回claim。 |
+| 当前阻塞 | NONE：本子task验收及main接收已完成。Dashboard展示PENDING_SYNC；旧R1未知资源仍保留，不能据后续成功清理或归因。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：产品、准备和分轮结果均已独审；capacity结果168678c3于03:48:41.637621Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；NOT_INTEGRATED。 |
-| 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
+| Review | [review.md](review.md)：产品、分轮结果、导入窄修独审0P1P2；main组合root types0/两直接文件8/8已核，原首FAIL保留。 |
+| 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 /18；本次commit/push后停止全部写入并原子release，实际回执仅/tmp保存并回Lead。 |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
 | --- | --- | --- | --- |
@@ -36,13 +36,13 @@
 | S01P07-02 | completed | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
 | S01P07-03 | completed | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
 | S01P07-04 | completed | status_read | 历史85非PG/R2中心8组/本次capacity4组各自原件，strict和资源闭合；本次结果已独审，0provider |
-| S01P07-05 | in-progress | status_read | 源/准备/分轮结果独审0P1P2；[最窄main接收清单](../../docs/evidence/s01p07/integration-ready.json)已就绪 / NOT_INTEGRATED |
+| S01P07-05 | completed | status_read | 源/分轮结果/窄修独审通过；[main回执核对](../../docs/evidence/s01p07/integration-ready.json)24+142绑定正确，main已接收；唯一事实源更新，聚合展示PENDING_SYNC |
 
 ## 架构与登记
 
-计划改变 runner admission 协议、受权自身份和本地日志格式；沿现单 admission loop 与中心 runner→task→attempt 锁序，无新 scheduler。架构视图目标待固定实现；登记与 main 集成由 Lead 负责。
+已在main0aa1d033改变 runner admission 协议、受权自身份和本地日志格式；沿现单 admission loop 与中心 runner→task→attempt 锁序，无新 scheduler。固定架构图更新target为main0aa1d033，owner Execution Lead，展示同步仍待Lead，不以此声称图已更新。
 
-唯一事实源为本 status；Lead 已登记本 WT/branch/plan 路径，尚未核实际聚合。原 S01 实验 claim/结果独立保留，不沿用其 approval 或 main 事实。已接收33源186913B并逐hash核符；24 ignored dependency links已核固定版本，4 @flow仅本WT；0install。原固定基线输入与本 owner 修改分开记录。
+唯一事实源为本 status；Lead 已登记本 WT/branch/plan 路径。本次04:09:26.624952Z对4320/api/snapshot一次5s GET超时，PENDING_SYNC、不重试；以下较早记录为历史过程。原 S01 实验 claim/结果独立保留，不沿用其 approval 或 main 事实。已接收33源186913B并逐hash核符；24 ignored dependency links已核固定版本，4 @flow仅本WT；0install。原固定基线输入与本 owner 修改分开记录。
 
 CHAT05P01 的[只读接口对照与交接边界](../../docs/evidence/s01p07/chat05p01-interface-handoff.md)已可用；当前没有 writer 移交、release 或 amend。发布入口仍由 runtime 与既有 AttemptControl/EventOutbox 持有，新增协议能力须显式协商。S01P07 v2/18 literal 占用与固定 PG 输入保持不变；此管理观察不表示产品接线或 main 集成完成。
 
@@ -83,3 +83,9 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:55:50.792346+00:00 主线组合窄修：fresh claim v2/18 ACTIVE、2fc7d538 clean后，仅两个fixture的四处import改为仓库相对public index；固定7d3757128fa45363c846036a96ea73346185829a，见[当前绑定](../../docs/evidence/s01p07/main-import-fix.json)。两包exports原指相同src/index.ts，无产品/断言/manifest依赖变化。原85/8/4及raw/result manifests均按历史Git保留；未重跑types/PG，交db_transaction_owner限定只读审，main仍NOT_INTEGRATED。
 
 2026-10-07T03:59:48.259902+00:00 四import修复限定独审接收：db_transaction_owner/gpt-6-astra，2026-10-07T03:59:12Z，SOURCE_REVIEW_APPROVED/0P1P2，绑定7d375712。仅消除docs层对ignored包链接的依赖，公开入口/行为不变；未声称本树或main重新types/PG通过。现接收映射只将两fixture更新到7d375712，原85/8/4与旧manifest逐历史target保留。Lead负责当前main root noEmit及contracts/client两直接文件；无新测试范围。
+
+## 主线验收与停止写入
+
+2026-10-07T04:10:22.418444+00:00：核实固定main0aa1d033：24交付bindings与142份own证据/计划文件均Git精确一致，errors[]；当前main/origin451bf2ed clean包含该点，不追其后继内容。Lead组合root noEmit0/9134ms、合同5+客户端3=8/8/885ms，双EOF、末态组absent、TMPremoved，原首FAIL与观测EPERM历史均保留。原85非PG、中心8PG、capacity4PG各自target独立，0owner重跑/新PG/provider；不声称128真实agents或优化性能实测。
+
+本子task五项已满足；父S01/FLOW-001原验收不改。此metadata commit/push后停止全部18scope写入，以current v2原子release；成功CLI回执放自有/tmp供Lead路由，release后不回写项目。R1旧未知根本轮0访问/清理。
