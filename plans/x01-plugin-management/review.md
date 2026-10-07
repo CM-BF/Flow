@@ -528,3 +528,7 @@ chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a93
 ## Center claim PG preparation (new, pending)
 
 2026-10-07T06:32Z: test74e187/support24c668 prepared, local types0/list6/pure2 pass. Independent review PENDING; actual PG NOT_OPEN. Canonical [ready](../../docs/evidence/x01/center-claim-pg-ready.md). Existing0224/436a source approval does not approve this new fixture/caller.
+
+## Cleanup root guard 限定独审
+
+2026-10-07T21:36:02.000Z b01 / gpt-6-astra，HELPER_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，source1d85f3d3/result0b9a4448，原根身份P2 CLOSED，0剩余P1/P2。固定新helper+4真实纯FS用例；不重审旧产品/PG、不推OS原子隔离。完整收据 docs/evidence/x01/cleanup-root-guard/approval.json；消费者副本及manifest独立重绑。

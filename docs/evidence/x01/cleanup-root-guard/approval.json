@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T21:36:02.000Z",
+  "reviewer": "b01_bounded_reads",
+  "model": "gpt-6-astra",
+  "state": "HELPER_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Root identity P2",
+  "source": "1d85f3d3ece70b6e57fbfe96f1cf2ea3538b4183",
+  "result": "0b9a444832f76e7a03fc0b1d8bd995a9bdc568a4",
+  "helperSha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5",
+  "cases": 4,
+  "passed": 4,
+  "scope": "Three AST-extracted pure resource functions and four real new-owned filesystem cases, no helper import/PG/HTTP or old root access. Cooperative pathname validation, not OS-atomic isolation.",
+  "resultFidelity": "668 raw bytes; PID21027 exit0/181ms/finalabsent/MERGED EOF; first/secondary/signals empty; initial EPERM preserved; TMP by exact receipt only.",
+  "excluded": "Consumer copies, complete PG preparation, actual PG and prior raw not reapproved"
+}
