@@ -1,0 +1,26 @@
+{
+  "source": "47354f92fed41eafbc5b03e3841ffe446dd65b61",
+  "executionHead": "be725761abc9329868eb70caf60bb33b008da34c",
+  "selectedPassed": {
+    "observer": 7,
+    "typesExit": 0
+  },
+  "startedAt": "2026-10-07T17:56:27.282866+00:00",
+  "endedAt": "2026-10-07T17:57:05.675212+00:00",
+  "supervisionMs": 2346,
+  "operatorMs": 2525,
+  "capturedRawBytes": 524,
+  "children": 2,
+  "pg": 0,
+  "http": 0,
+  "provider": 0,
+  "scratch": "both exact identities REMOVED/absent per retained receipts; no old KEEP access",
+  "newLogicalAccounting": {
+    "sourceMetadataTrackedDeltaBytes": 56798,
+    "recordBytes": 10506,
+    "retiredTmpLogicalBytes": 506,
+    "cap": 8388608
+  },
+  "noHistoricalRerun": true,
+  "limits": "synthetic pool/client and fixed real transaction only; no assertion of PG repair, root cause attribution or new runtime grant"
+}

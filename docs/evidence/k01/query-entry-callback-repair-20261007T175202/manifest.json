@@ -1,0 +1,147 @@
+{
+  "source": "47354f92fed41eafbc5b03e3841ffe446dd65b61",
+  "executionSource": "be725761abc9329868eb70caf60bb33b008da34c",
+  "sources": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 16814,
+      "sha256": "ee9e806e9e2694d5cf93e8c56e6c1019440674c44804fce4bec505e7624f733f"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 18615,
+      "sha256": "f2243df7671cb7e96dad4e54e7ce763d8edc5b5924d61b52a1e632776b928ac0"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13199,
+      "sha256": "fbdfbd8b567e53515e17e5b0288433d5649efbac4a2059cc2f43df11e2da7f54"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.test.ts",
+      "bytes": 5872,
+      "sha256": "48017536803b8a0c2565f0c3a8fec0459cbd2eea34f5220cde9e24b47905b9ab"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.ts",
+      "bytes": 2063,
+      "sha256": "007a10aa4f3bf8f730e87451447be9c25bbfc0087f3099fec227f588d369110e"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 235,
+      "sha256": "2f087bf4d56afab87c98b1fc81b3d66bddd7da6c79d5bf262442a1db77c56a6d"
+    }
+  ],
+  "readonlyConsumer": {
+    "path": "experiments/knowledge-search/source/apps/server/src/database.ts",
+    "bytes": 7789,
+    "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+  },
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-callback-repair-20261007T175202/iterations.jsonl",
+      "bytes": 9319,
+      "sha256": "aef75367093b6eb5053d62bb326cdc0853e9ad657181442263f6980a6bfd6514"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-callback-repair-20261007T175202/check-01.raw",
+      "bytes": 524,
+      "sha256": "ee9a54dc842c669ad77d69d35ac259cc53e73f051d5b78196fa3fcb02cd3c655"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-callback-repair-20261007T175202/check-02.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-callback-repair-permit.json",
+      "bytes": 663,
+      "sha256": "1ad3af9cbdcce4fcc3562d5d7ddddacdef0ef30102f137e29dc9e48efe3dc001"
+    }
+  ],
+  "summary": {
+    "path": "docs/evidence/k01/query-entry-callback-repair-20261007T175202/summary.json",
+    "bytes": 843,
+    "sha256": "15bb4f78f85e19838e44ae97433c1a72a84ec83472c62454466aeeccad8178e4"
+  },
+  "runBindings": "both start snapshots match all current executable sources/config; execution\u2192final only README plus metadata changed",
+  "originalFailureRecovery": "9c original raw/manifests remain unchanged; latest recovery separately approved by Mika at17:52:33 on01626",
+  "review": "NOT_STARTED",
+  "noNewPG": true
+}

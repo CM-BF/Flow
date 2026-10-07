@@ -1,3 +1,10 @@
+# K01 callback repair — pending independent delta review
+
+状态：NOT_STARTED
+Review target commit：47354f92fed41eafbc5b03e3841ffe446dd65b61
+
+Scope: experiment observer callback/Promise checkout plus two bounded phase-start labels, direct fake-client tests using fixed production transaction, and local caller selector/config. Canonical: docs/evidence/k01/query-entry-callback-repair-20261007T175202/manifest.json. Seven pure cases and focusednoEmit passed; actual PG remains NOT_OPEN. Original failures and readonly recovery receipts are frozen. Root preliminary source inspection found no furtherP1/P2; final source-and-result review is still pending.
+
 # K01 修复后实际失败原件窄审（当前）
 
 状态：NOT_STARTED

@@ -18,9 +18,9 @@
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
 | 工作树dirty状态 | 本段实现与局部结果已固定待独审；原产品/245供给/旧原件不变 |
 | 工作分支状态 | review（观察器局部修复与直接消费者通过，待独立增量审查；真实PG仍未重跑） |
-| 检查状态 | FAILED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；新PG超时/无最终result，原9纯/noEmit仅历史局部范围 |
+| 检查状态 | PASSED 47354f92fed41eafbc5b03e3841ffe446dd65b61；本段7纯/noEmit通过。真实PG历史两次FAILED；当前修复未实跑 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
-| 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
+| 实现目标 | 47354f92fed41eafbc5b03e3841ffe446dd65b61 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
