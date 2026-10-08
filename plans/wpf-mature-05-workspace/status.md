@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:58:23.719Z |
+| 最近更新 | 2026-10-08T03:43:18.945Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；现有功能与当前390视觉小片已获限定验收，组合、主线及真实中心旅程未完成。 |
@@ -18,13 +18,13 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | Arc8ca9：四组功能与当前390双主题视觉获独审；Close完整可见、8rem口径与滚动条压字均在本固定场景通过。18705ms单次后精确归还，全18源与记录已STOP。 |
-| 下一可用交付 | 沿唯一main-intake受控接收18叶，App/session须与当前owner及Context组合，不能整文件覆盖。其他操作系统滚动条模式与真实中心旅程另验；不重复本次绿检查。 |
-| 当前阻塞 | ACTIVE: main接收、Context组合、真实中心旅程与其他OS滚动条模式未完成；当前390 overlay模式的原视觉P2已限定关闭。 |
+| 下一可用交付 | Arc18已按固定delta受控接收；继续原Context组合、真实中心与其他OS模式，导航扩展仍原TODO。原host/test两叶已精确交回给P01，Arc其他16仍保留claim。 |
+| 当前阻塞 | ACTIVE: Context完整组合、真实中心旅程与其他OS滚动条模式未完成；当前390 overlay视觉P2已限定关闭，Arc源码main接收完成。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |
 | 检查状态 | NOT_RUN；当前为整体计划，已有子片检查只沿各canonical，不继承为全体验收 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；计划登记/大task功能验收分别记录 |
+| 已集成main状态 / HEAD | INTEGRATED 1b1428f3867a5396422f2b8d066a94f8f138030d；固定Arc18受控组合，个人部署/全Context/其他OS不继承。 |
 | Review | [review.md](review.md)，NOT_STARTED；完整大task未验收 |
 | 写权 | 管理632a7149 v3仅本计划目录；实现子task各自claim不由本表替代 |
 

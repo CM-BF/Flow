@@ -725,3 +725,7 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 
 - MSG03同段consumer审查点见[固定说明](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json)：required tuple仅管Send/Queue，Prepare不被同一reason误禁；按钮依赖目录时订阅同一catalog，提交仍以最新同源权限在detach前复核。实际三Webmain回执尚未到，新exact11条件段尚未take/写产品；现fake夹具不得外推真实认证/Queue。MATURE02父6aee两叶metadata已STOP/有限审通过，任务仍NOT_COMPLETED，不代表个人settings激活。
 - 原D01关系待办保留WPF-I01→WPF-001的父层级警告，待原权威给明确关系；不通过猜父关系或新task隐藏提示。MSG03当前无active claim与两次records释放一致，迁移后只在正常交付核一次同ID source/claim匹配。
+
+- 2026-10-08 03:39自然接收：三Web29源已在main1b1428完成[受控接收](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web29-main-reception.json)，固定tsx7/7与组合noEmit通过，旧失败/KEEP保留。原MSG03 exact11条件已满足并已派实际源阶段，不等待重复回执；旧pure仍不是独立Web验收。原WPF-P01的PLUGIN-DIAGNOSTIC-NOTIFY-01继续同任务，新独立web-plugin-diagnostics/exact7，先Arc原owner只交回host.ts和plugin-host.test.ts，保主线Arc差量；生产consumer为plugin-integration/react.tsx，真实Settings夹具复用，0新registry或浏览器许可。
+
+- 两个原任务后继已实际开工：MSG03预算/供给03:39:51.914994、exact11领取03:39:52.022，04:09:51.914994截止；P01预算/供给03:42:14.853242、exact7领取03:42:26.395，04:12:14.853242截止。P01先获Arc c34dv3精确移出host/test，原16叶保留；新WT基于已审main1b1428，生产诊断订阅与真实Settings局部夹具沿既有TODO，旧I01证据不可被默认browser入口改写。首预算写不冒首产品编辑时刻，实际浏览器均未授。

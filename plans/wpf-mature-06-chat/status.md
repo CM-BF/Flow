@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:58:23.719Z |
+| 最近更新 | 2026-10-08T03:43:18.945Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。 |
@@ -17,14 +17,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 登录cc4生产组件synthetic props六组与两390图已限定独审通过，三轮25016CLOSED/两失败保留；真实认证、完整App和main仍未验。 |
-| 下一可用交付 | 沿唯一main-intake受控合并App窄提取与登录组件；真实认证/完整App另验，不以纯props替代。 |
+| 当前产出 | 登录cc4组件六组/两390图限定通过，123c单行测试导入纠正已实际tsx7/7与组合noEmit验证；登录源码已入main1b1428。旧失败保留，真实认证/完整App仍开放。 |
+| 下一可用交付 | 继续原真实认证/完整App及个人产物验收，设置入口由原MSG03同任务接线；不重复本片组件绿矩阵。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
 | 检查状态 | NOT_RUN；当前为整体计划，已有子片检查只沿各canonical，不继承为全体验收 |
-| 已集成main状态 / HEAD | 局部STEIRI01与ACTIVITYREAD01已INTEGRATED f181d84b5fb3652d62e2a181acff442d42b3e066；整个大task尚未验收，个人产物未据此更新 |
+| 已集成main状态 / HEAD | 登录组件和窄App接线已INTEGRATED 1b1428f3867a5396422f2b8d066a94f8f138030d；局部STEIRI/ACTIVITYREAD历史仍保留，整个大task与个人产物未据此通过。 |
 | Review | [review.md](review.md)，NOT_STARTED；完整大task未验收 |
 | 写权 | 管理632a7149 v3仅本计划目录；实现子task各自claim不由本表替代 |
 

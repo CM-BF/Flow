@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-08T03:32:16.038Z",
-  "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
+  "at": "2026-10-08T03:43:18.945Z",
+  "state": "NO_ACTUAL_HOLDER_WEB29_MAIN_ACCEPTED_SOURCE_SUCCESSORS",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
   "decision": "R3selected/read byOriginal, operator slotpending afteronecaprejection; noactualSTART. WebbothfullSTOP/future0. NewX01pureoperator4M counted.",
-  "floor": 11630542848,
+  "floor": 11647320064,
   "SVC09A": {
     "state": "FAILED_ATTEMPT_RUNTIME_RETURNED_WITH_DB_PRIVATE_KEEP",
     "totalMs": 215000,
@@ -2046,8 +2046,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
-    "at": "2026-10-08T03:29:47.995Z",
+    "state": "NO_ACTUAL_HOLDER_WEB29_MAIN_ACCEPTED_SOURCE_SUCCESSORS",
+    "at": "2026-10-08T03:43:18.945Z",
     "termsBytes": {
       "residualUnknown": 8806203392,
       "priorK01Db": 134217728,
@@ -2201,9 +2201,11 @@
       "ConnectionPresentationImportCorrection": 0,
       "MikaMature02SuccessorMetadata": 0,
       "OriginalWebCombinedVerification": 8388608,
-      "MSG03UIConsumerCompositionSource": 16777216
+      "MSG03UIConsumerCompositionSource": 16777216,
+      "ArcPluginDiagnosticHandbackMetadata": 0,
+      "PluginDiagnosticNotificationSource": 16777216
     },
-    "minimumFreshFreeBytes": 11630542848,
+    "minimumFreshFreeBytes": 11647320064,
     "formula": "8806203392 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 134217728 + 538968064 + 4194304 + 1048576 + 1499463680 + 8388608 + 131072 + 8388608 + 335544320 + 134217728 + 8388608 + 12582912 + 144703488 = 13847232512",
     "method": "Active or still-unknown futuregrowth plus one reserve. Explicit sealed no-writer stock counted by freshfree only; Original oldcold retained128MiB PGbackground. Historical combinedfloors are not permanent intrinsic protection.",
     "classificationEvents": [
@@ -4180,6 +4182,27 @@
         "beforeBytes": 3145728,
         "afterBytes": 0,
         "basis": "Explicit owner allSTOP03:27:17.155, manager verified final6aee actualtracking/clean. Two metadata files only, retained2899968<3MiB; limited metadata reviews, no taskDone or stock reclamation."
+      },
+      {
+        "at": "2026-10-08T03:40:41.421Z",
+        "term": "ArcPluginDiagnosticHandbackMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 3145728,
+        "basis": "New separate authorized envelope; prior closed budgets remain0. Exact source/main/fresh ownership constraints in canonical named grant; no actual browser permission."
+      },
+      {
+        "at": "2026-10-08T03:40:41.421Z",
+        "term": "PluginDiagnosticNotificationSource",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "New separate authorized envelope; prior closed budgets remain0. Exact source/main/fresh ownership constraints in canonical named grant; no actual browser permission."
+      },
+      {
+        "at": "2026-10-08T03:43:18.945Z",
+        "term": "ArcPluginDiagnosticHandbackMetadata",
+        "beforeBytes": 3145728,
+        "afterBytes": 0,
+        "basis": "Originalowner final0dc0fff push/clean/all16STOP explicitly reported afterexact2partialamend;2614876<3MiB. No product/intake changed, no physicalstockcleanup. ExactSTOP UTC not reported, not fabricated."
       }
     ]
   },
@@ -16006,8 +16029,8 @@
     "chargedMs": 20223
   },
   "WebControlledMainIntakeQueue": {
-    "at": "2026-10-08T03:00:03.300Z",
-    "state": "FIXED_THREE_INTAKES_SOURCE_FROZEN_READY_FOR_ORIGINAL_CONTROLLED_MAIN_ACCEPTANCE",
+    "at": "2026-10-08T03:40:41.421Z",
+    "state": "MAIN_ACCEPTED_29_FIXED_PATHS",
     "login": {
       "head": "cc4bab4b499d454b11fe250e0224037deabb9b5e",
       "intake": {
@@ -16017,7 +16040,8 @@
       },
       "sourceCount": 6,
       "review": "057550 limitedmountedcomponent/source",
-      "scope": "3product+3tests;App narrowextractionmerge, no wholeblob"
+      "scope": "3product+3tests;App narrowextractionmerge, no wholeblob",
+      "main": "INTEGRATED 1b1428f3867a5396422f2b8d066a94f8f138030d"
     },
     "Arc": {
       "head": "8ca9de9825513f87af1bae4e720c7cc87b067e58",
@@ -16028,9 +16052,10 @@
       },
       "sourceCount": 18,
       "review": "3904 limited4groups+current390overlayvisual",
-      "scope": "App/session notcurrentArc18writeclaim; coordinate existingW01Connection/Context sourcepreimages. No wholeblob."
+      "scope": "App/session notcurrentArc18writeclaim; coordinate existingW01Connection/Context sourcepreimages. No wholeblob.",
+      "main": "INTEGRATED 1b1428f3867a5396422f2b8d066a94f8f138030d"
     },
-    "limits": "Mainreceipt pending; no newpreparation/test requirement from manager. Originalexistingintegrationowner controls exactintake/necessarydelta validation; sourceownersSTOP readfixedrecords. No personaldeployment/realAuth/fullCT inferred.",
+    "limits": "Scoped source integration plus7direct/noEmit only; current personal deployment/fullApp authentication/Contextfullslice not inferred. Main has unrelated untracked __pycache__; not whole-tree clean.",
     "order": [
       "Arc18fixedDelta",
       "ConnectionAppNarrowExtractionAfterArc",
@@ -16049,11 +16074,17 @@
       "sourceCount": 6,
       "review": "986f67 scoped2newoverlaygroups+5PNG; historical6behavior/d950 separatelyreused, notsingle8of8run",
       "producer": "ALL8SOURCE_AND_METADATA_STOP02:49:59.922542/actualremoteClean;intake de7d unchanged",
-      "main": "NOT_INTEGRATED",
+      "main": "INTEGRATED 1b1428f3867a5396422f2b8d066a94f8f138030d",
       "rule": "OriginalI02controlledcurrentpreimages, no newsource/testrerun onlyto repackage.",
       "finalHead": "c6050013939584c2548b17d9a995f85072ff42cc"
     },
-    "answer": "Original/I02 may proceed under its existing integration scope with fixedArc18 delta first, then Connection narrowApp extraction preserving Arc, then Picker6. No newWebpacket/review prerequisite. Contextfullslice/main remains separatelyOPEN; do not transplant its entire App/session blobs into this intake. Sourcewrite-right transfer for futurefeatures is separate current-versionCAS."
+    "answer": "Arc→Connection narrow composition with123c import correction→Picker source intake is complete; MSG03 existing conditional exact11 source may proceed now after its own fresh admission. No new source approval or repeated leaf matrix.",
+    "main": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json",
+      "bytes": 1596,
+      "sha256": "1be6a84af40e4de6212a531945aa1c7286afde39bc12fc8c7d8c4d45adfad0c6"
+    }
   },
   "VersionedProfileCreationSource": {
     "authorizedAt": "2026-10-08T02:46:55.046Z",
@@ -16978,7 +17009,7 @@
     "netGrowthBytes": 3489
   },
   "OriginalWebCombinedVerification": {
-    "state": "AUTHORIZED_ORDINARY_NOT_STARTED",
+    "state": "LOCAL_CHECKS_FULL_RETURN_MAIN_ACCEPTED_SOURCE_SEAL_STOP_NOT_REPORTED",
     "authorizedAt": "2026-10-08T03:19:25.827Z",
     "owner": "Original / I02 sole integrator",
     "planningBytes": 8388608,
@@ -17001,15 +17032,22 @@
     "personalServices": 0,
     "instructions": "Fresh own authority, controlled29 source combination and new test blob11f5fc14; preserve earlier TS5097. Exact owned groups/EOF/scratch closure for each child, all scratch/cache/raw/index/object growth within8MiB. No full browser/PG matrix, no global tsconfig change, no bare Node replay claim. Report actual start/return and STOP. O16 is ordinary PG native stage, not a diagnostic quiet benchmark; one distinct ordinary local may run under original per-team concurrency rule.",
     "latestManagerObservation": {
-      "at": "2026-10-08T03:32:16.038Z",
-      "state": "NEW_ACTUAL_START_NOT_RECEIVED",
-      "source": "Bounded read of existing public I02 combination directory",
-      "head": "748129abd1808cdf6de0ed69b984638ff54b320c",
-      "visibleReservationAt": "2026-10-08T03:11:05.458Z",
-      "visibleResultAt": "2026-10-08T03:11:38.518Z",
-      "visibleResult": "Old PID5523 / 6162ms / TS5097 failed noEmit only",
-      "limitation": "Absence of a new message/record in this bounded read is not proof of global zero children. Await owner actual START/RETURN."
-    }
+      "at": "2026-10-08T03:40:41.421Z",
+      "state": "ACTUAL_RETURN_AND_MAIN_ACCEPTANCE_CONFIRMED",
+      "evidence": "web29-main-reception.json",
+      "futureAccounting": "Runtime slot returned. Keep original all-in8MiB conservative natural seal until explicit allSTOP; no exact allocation split or physical stock reclamation inferred."
+    },
+    "exactReturn": "2026-10-08T03:33:37.339Z",
+    "actualStart": "UNKNOWN_NOT_REPORTED",
+    "runtimeChildren": 0,
+    "pending": 0,
+    "checksResult": {
+      "presentation": "Node24 --import fixed tsx: 7/7; 191ms actual child",
+      "webNoEmit": "exit0 / 6431ms",
+      "closure": "two children and owned groups absent, dual EOF; same-identity nonempty scratch KEEP",
+      "history": "Old TS5097 and initial spec/TAP interpretation failure retained; seven tests not rerun"
+    },
+    "main": "1b1428f3867a5396422f2b8d066a94f8f138030d"
   },
   "O16ContinuedChildrenV3Actual": {
     "state": "EXACT_RUNTIME_RETURN_FAILED_KEEP",
@@ -17194,7 +17232,7 @@
     "retryOrDecide": "NOT_AUTHORIZED"
   },
   "MSG03UIConsumerCompositionSource": {
-    "state": "CONDITIONAL_SOURCE_AUTHORIZED_WAIT_ACTUAL_MAIN_INTAKE",
+    "state": "SOURCE_ACTIVE_EXACT11_TAKEN_MAIN_ADOPTED",
     "authorizedAt": "2026-10-08T03:23:47.746Z",
     "task": "WPF-MESSAGESETTINGS03",
     "owner": "workspace_panels_owner",
@@ -17229,14 +17267,14 @@
     "native": 0,
     "provider": 0,
     "personalOperations": 0,
-    "startCondition": "Original actual controlled main intake receipt covers Arc18, Connection narrow App and import correction, Picker6. No partial pre-receipt adoption or standalone foundation main merge. At that point fresh same-task old claims RELEASED, all10 literal/prefix conflicts absent, owner/WT/branch/clean/source pins, current full capacity. Atomic exact10 take before feature source delta.",
+    "startCondition": "Actual29-source main receipt satisfied. Fresh same-task prior claims RELEASED, all11 literal/prefix conflicts absent, owner/WT/branch/clean/sourcepins and full capacity; atomic exact11 take before feature delta. No additional main receipt or source review gate.",
     "baseline": "Adopt only exact accepted main baseline via normal controlled Git integration in this same feature WT, preserving immutable66abb evidence/source history. Fixed support files are read-only supply pinned to that accepted main. No whole old App/Thread/Picker replacement. Resolve base changes within own claimed product delta; unexpected ownership/source conflict stops for precise manager adjustment.",
     "implementation": "Same existing MSG03 successor: explicit versioned public catalog/creation selection, real Prepare through existing projection/outbox key and trusted GET, keep draft unchanged while preparing. Full trusted tuple required only for Send/Queue; clear remains editable but blocks dispatch. Thread exhaustive union and guard after settings.capture before attachment capture/detach/send; Picker explicit versioned branch; App connection-owned public catalog lifecycle, no unauthorized reuse of opening-gated message catalog. Preserve legacy/unknown ACK original key-body, retained drafts and session authority.",
     "readonlyBoundaries": "Session, projection/outbox, catalog and public codecs only read; no relaxation/cast/shadow controller or duplicate registry. If a concrete gap requires another leaf, report exact change before fresh scope amendment.",
     "verification": "Only necessary affected consumer noEmit, focused behavior/invariant tests and fixture typing/preparation; do not rerun unchanged seven foundation cases or old browser/PG matrices. At most3 sequential supervised20s children, cumulative60 including cleanup, new namespace/owned scratch/EOF and exact closure; no actual mounted run in this grant. All fixed supply/index atomic/Gitobjects/raw copies/cache/TMP/metadata <=16MiB; recompute prior to first child and stop if plan cannot fit.",
     "evidence": "New same-task canonical plan/status/review in new feature WT after authorized handoff. Existing own evidence prefix only; preserve old66abb/108 fixed evidence and prior failures. Record first budget/provision time, claim commit and product delta separately. No duplicate authority; new exact11 claim persists until actual release. Mounted/auth/main acceptance remain separate.",
     "sourceHandoff": {
-      "state": "AUTHORIZED_PENDING_NO_NEW_SOURCE_WRITE_OR_TAKE",
+      "state": "NEW_CANONICAL_WRITTEN_SAME_TASK_REGISTRY_UPDATE_PENDING",
       "oldCanonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
       "oldCanonicalHead": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
       "oldClaims": "25b868 v2 RELEASED; 878c v2 RELEASED; fee104 v2 RELEASED",
@@ -17245,14 +17283,140 @@
       "taskId": "WPF-MESSAGESETTINGS03",
       "registryOwner": "Original / existing D05 registry authority, not this worker",
       "method": "After actual threeWeb main receipt and fresh exact11 atomic take, copy only fixed108 small plan/status/review into newWT and update current owner/worktree/branch/source while preserving historical18-leaf completion and immutable prior evidence references. Rewrite historical relative links to explicit fixed original evidence references when needed; do not copy large raw or create a second writable status. Old108 source remains frozen history. Produce one migration receipt with pins and actual handoff time; Original changes existing same-ID registry route only after new canonical source is ready. No new task or execution-source validation exception.",
-      "budget": "Within same new16MiB/30min, no extra growth or clock reset; count plan copies/index/objects. No write to old released WT."
+      "budget": "Within same new16MiB/30min, no extra growth or clock reset; count plan copies/index/objects. No write to old released WT.",
+      "receipt": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/canonical-migration.json",
+        "bytes": 1469,
+        "sha256": "590899d604b6c5ce0672a4d1b61b052177dc2f68f205fafd40f2cabbcc591621"
+      },
+      "newClaim": {
+        "claimId": "a897732d-f68f-486e-a614-73c5510e966c",
+        "version": 1,
+        "scopeCount": 11,
+        "state": "active",
+        "committedAt": "2026-10-08T03:39:52.022Z"
+      }
     },
-    "reviewInput": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json"
+    "reviewInput": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json",
+    "mainReceiptAt": "2026-10-08T03:35:18.906152Z",
+    "acceptedMain": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+    "dispatchedAt": "2026-10-08T03:40:41.421Z",
+    "firstWrite": "2026-10-08T03:39:51.914994Z",
+    "deadline": "2026-10-08T04:09:51.914994Z",
+    "claim": {
+      "claimId": "a897732d-f68f-486e-a614-73c5510e966c",
+      "version": 1,
+      "scopeCount": 11,
+      "state": "active",
+      "committedAt": "2026-10-08T03:39:52.022Z"
+    },
+    "mainAdoptionCommit": "9ee273b48e200644e52c68489575102596fa67ae",
+    "childrenStarted": 0
   },
   "D01ExistingRelationObservations": {
     "at": "2026-10-08T03:32:16.038Z",
     "source": "Root existing IAB read-only observation",
     "msg03": "Current card in-progress/6of7/owner panels/not completed; no active claim is consistent with released old scopes and new exact11 not taken. Verify same-ID source/claim once after ordinary migration publication.",
     "wpfI01": "Existing WPF-I01 -> WPF-001 parent warning says parent level unclear/conflicting. Reuse existing D01 relation TODO, preserve warning until original authority supplies explicit correct relation. No new task/implementation or inferred parent."
+  },
+  "ArcPluginDiagnosticHandbackMetadata": {
+    "state": "ALL16_SOURCE_METADATA_STOP",
+    "authorizedAt": "2026-10-08T03:40:41.421Z",
+    "owner": "workspace_panels_owner",
+    "task": "WPF-WORKSPACEARC01",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+    "branch": "codex/web-workspace-composition",
+    "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE18 fresh verify",
+    "base": "8ca9de9825513f87af1bae4e720c7cc87b067e58",
+    "planningBytes": 3145728,
+    "durationMinutes": 8,
+    "children": 0,
+    "removeLeaves": [
+      "apps/web/src/plugins/host.ts",
+      "apps/web/test/plugin-host.test.ts"
+    ],
+    "rule": "Original source alreadySTOP. Fresh branch/clean/currentclaim/allglobal overlap, account indexatomic plus records/objects within3MiB, partial-amend18→16 only these two leaves after stoppedWriting. Own plans/evidence metadata only; preserve all products/intake hashes and original results. Normal seal/push clean/allSTOP; no completeclaim release, no receiver take by proxy.",
+    "firstWrite": "2026-10-08T03:41:38Z",
+    "committedAt": "2026-10-08T03:41:39.019Z",
+    "newVersion": 3,
+    "retainedScopeCount": 16,
+    "receipt": "/private/tmp/arc-plugin-diagnostic-handback-20261008-034138/receipt.json",
+    "finalHead": "0dc0fff34425228b19cba3ad106b595b3e368933",
+    "remoteCleanReported": true,
+    "retainedBytes": 2614876,
+    "stopAt": "EXACT_UTC_NOT_REPORTED_BY_OWNER",
+    "futureBytes": 0
+  },
+  "PluginDiagnosticNotificationSource": {
+    "state": "SOURCE_ACTIVE_EXACT7_TAKEN",
+    "authorizedAt": "2026-10-08T03:40:41.421Z",
+    "task": "WPF-P01",
+    "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+    "owner": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+    "branch": "codex/web-plugin-diagnostics",
+    "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+    "planningBytes": 16777216,
+    "durationMinutes": 30,
+    "maxEngineeringChildren": 3,
+    "childMs": 20000,
+    "cumulativeMs": 60000,
+    "PG": 0,
+    "HTTPListeners": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personalOperations": 0,
+    "browserGranted": false,
+    "scope": [
+      "apps/web/src/plugins/host.ts",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "apps/web/test/plugin-integration.browser.ts",
+      "plans/wpf-p01-plugin-host",
+      "docs/evidence/wpf-p01"
+    ],
+    "startCondition": "Only after original Arc owner COMMITTED exact2leaf partialhandback, fresh all7 literal/prefix and same-task conflicts absent, original P01 released/oldcanonical frozen, new ownWT/branch exactbase1b1428/source/index/objects/TMP accounting within16MiB, atomic exact7 take before delta. Do not use stale aac0 host/test as current. No old P01 runtime credit.",
+    "implementation": "Existing host bounded100 diagnostics-specific subscription/stable snapshot plus production PluginSettings consumer. Notify without rebuilding global/slot snapshots, preserve command errors and isolation, safe unsubscription/dispose/nonrecursive listener-error policy. Reuse real AppPluginSession/PluginProvider slotfixture and production PluginSettings, no custom trace replacement or secondregistry.",
+    "verification": "Necessary bounded focused invariant tests/types/fixture preparation only, <=3 sequential20s children/cumulative60s includingcleanup, fresh completefloor and ownnamespaces/exactclosure each. Do not rerun old11-group browsermatrix. Actual mounted panel-open→isolated error→count/text update is separate future browser grant.",
+    "sourceMigration": "SameWPF-P01 only. Copy fixed small original28b70c35 plan/status/review into newWT at authorizedhandoff, preserve history/largeevidence references, oldweb-plugin-host freezes. Original legal D05 registry owner changes existing task route after newsource ready; no secondwritable status or newtask.",
+    "firstWrite": "2026-10-08T03:42:14.853242Z",
+    "deadline": "2026-10-08T04:12:14.853242Z",
+    "claim": {
+      "claimId": "c106e5aa-0d58-43a6-a326-1148c0e43490",
+      "version": 1,
+      "state": "active",
+      "scopeCount": 7,
+      "committedAt": "2026-10-08T03:42:26.395Z"
+    },
+    "supply": {
+      "files": 277,
+      "bytes": 1967767,
+      "indexBytes": 2274155,
+      "sameSizeAtomicReserve": true,
+      "sharedConfigUnchanged": true
+    },
+    "childrenStarted": 0,
+    "evidenceBoundary": "Focused newbrowser case outputs only ownP01evidence or ownedTMP; original integration browser defaultI01output/fullmatrix is not permitted. Real productionSettings only; no customtrace substitute."
+  },
+  "X01VerifierProcessR1Queue": {
+    "state": "READY_NOT_SELECTED_WAIT_ORIGINAL_ISOLATED_LOCAL_FACTS",
+    "at": "2026-10-08T03:42:29.088Z",
+    "task": "X01",
+    "owner": "Mika / architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+    "branch": "codex/plugin-enable-binding",
+    "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+    "ready": {
+      "path": "docs/evidence/x01/verifier-process/operator-ready.json",
+      "bytes": 3375,
+      "sha256": "81098b143f416c92e708217fd89a053e8d6bfaca90ea99a719bec5da0e318235"
+    },
+    "manifestSha256": "b110301971336745a05866957a9385906f7e6fb26eda0393cd480213317ecb99",
+    "inputSha256": "49039b67f227f59ba1940e6bab814e426576bdf00ec99d2d1d05ed31e3b941a0",
+    "planningBytes": 177209344,
+    "limits": "PG17 plus16 adminheadroom; existing supervised10s availability/preflightpoolclosed; exact one180s caller110work60cleanup10final;1case3tasks3main2worker;0provider/Chrome/personal/install/build;no retry;failureKEEP/T7separate",
+    "accounting": "32MiB TMP +1MiB raw +128MiB DBWAL planning +8MiB seal =169MiB; not counted as active future until selection. Reserve once already in current. pairedBytes will equal selected completeFloor minus1073741824 reserve minus168820736 caller own161MiB.",
+    "blockingQuestion": "Original reported isolated local capacity stage; need its actual selected/start/return and exclusion boundary before new sharedactual. No repeated X01source review/preparation."
   }
 }
