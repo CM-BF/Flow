@@ -8,20 +8,21 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission |
 | Branch | codex/plugin-verifier-client-admission |
-| Base / HEAD | base 0e8bfa7b385aff582a85aa211df1c854e064258c；HEAD待固定 |
+| Base / HEAD | base 0e8bfa7b385aff582a85aa211df1c854e064258c；产品HEAD 0904d72bbc3a76e2beee2db79457f996be5acc39 |
 | 工作树dirty状态 | 自有六叶/证据修改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
-| 当前产出 | 验证任务客户端与可核对回执身份已实现，正在做局部检查。 |
+| 优先级 | 2 |
+| 当前产出 | 验证任务客户端与可核对回执身份已实现，局部类型已通过，回执边界经审查修正，等待定向检查。 |
 | 下一可用交付 | 经独审的薄客户端与兼容回执接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Claim | 03b10778-27dd-4a2d-bbc1-c98c5fcfcb0e v1 ACTIVE8 |
-| Review | NOT_STARTED |
-| 实现目标 | 待固定 |
+| Review | CHANGES_REQUESTED；project revision P2已修，等待固定delta复审 |
+| 实现目标 | 0904d72bbc3a76e2beee2db79457f996be5acc39 |
 | 实现范围 | apps/server/src/plugin-runtime/verification-admission.ts, apps/server/src/plugin-runtime/verification-admission.test.ts, packages/contracts/src/plugin-verification-admission.ts, packages/client/src/index.ts, packages/client/src/plugin-management.ts, packages/client/src/plugin-verification-admission.test.ts |
-| 检查状态 | NOT_RUN |
+| 检查状态 | FAILED 0904d72bbc3a76e2beee2db79457f996be5acc39；首behavior26pass1测试失败；strict2供给缺链后0；修复定向NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；固定base已含VAR/CENTER |
 | 架构影响 | planned：既有命令回执增加规范化身份，既有FlowClient负责唯一传输；图后续由Execution Lead更新 |
 | Dashboard登记 | 等待Execution Lead登记/聚合器展示 |
@@ -37,7 +38,7 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | VCA-01 | completed | architecture_read | claim.json/segment.json |
-| VCA-02 | in-progress | architecture_read | 六叶实现，局部未运行 |
+| VCA-02 | in-progress | architecture_read | local.json；三child RETURN；修复定向待额度 |
 | VCA-03 | pending | architecture_read | 独审/main待接收 |
 
 保守截止01:19:50.953Z；8MiB总/3serial×20s累计60s/TMP512KiB/raw128KiB。0PG/HTTP/listener/provider/install/build。初receipt字段读取错误发生在COMMITTED之后，原receipt只读恢复，没有重take。FIRST_SOURCE_WRITE精确clock UNKNOWN，01:01:05前已实现；不伪造时间。

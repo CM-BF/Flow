@@ -1,0 +1,112 @@
+{
+  "state": "DRAFT_PENDING_REVIEW",
+  "taskId": "X01-VERIFIER-CLIENT-ADMISSION01",
+  "source": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+  "base": "0e8bfa7b385aff582a85aa211df1c854e064258c",
+  "observedMain": "fddde4e719c96385dd68e2a8db8154c418d9abaa",
+  "observedAt": "2026-10-08T01:05:39.429Z",
+  "rows": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "480d8cbbffccf874059df10a6175fbacfd2b21b2",
+      "bytes": 10557,
+      "sha256": "1d94c1645a43444c9f909399fb85eb79b6a13ac99a81adb93c33d1b22c8dd125",
+      "base": {
+        "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69",
+        "bytes": 7720,
+        "blob": "d72ae751a1d47b79aa3106410908d5a212743c14"
+      },
+      "observedMain": {
+        "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69",
+        "bytes": 7720,
+        "blob": "d72ae751a1d47b79aa3106410908d5a212743c14"
+      }
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "4f456ebd8f1e1338293a0e38ac297fcb37ea6e03",
+      "bytes": 7853,
+      "sha256": "3b4a18fc70a3d356a0bd03d6d96984c2626c9a693dcc5ae4d688cfd24ab4068e",
+      "base": {
+        "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+        "bytes": 7635,
+        "blob": "128d5e73f6952428ef8a4194610098ab4825993e"
+      },
+      "observedMain": {
+        "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+        "bytes": 7635,
+        "blob": "128d5e73f6952428ef8a4194610098ab4825993e"
+      }
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "7aac97171cb5cd3021a245462066596a00e1814c",
+      "bytes": 69989,
+      "sha256": "b6ae9ff026605ea3e5cd121320bc434903152cdc8f0144f3e269ba68e8f26d62",
+      "base": {
+        "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+        "bytes": 69246,
+        "blob": "045ef7a9f5fadc0587db63aa2bed6a30a6799b4e"
+      },
+      "observedMain": {
+        "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+        "bytes": 69246,
+        "blob": "045ef7a9f5fadc0587db63aa2bed6a30a6799b4e"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "e6e7ecad0033a074a868574d3b1e7887d66e0225",
+      "bytes": 11815,
+      "sha256": "dffa34fb080c33ed4741575726ff67b397b57d60b604bd88b3bb395436808fbe",
+      "base": {
+        "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+        "bytes": 10063,
+        "blob": "63e845baaa45ed9752437e9313b2cb0dde1f53e3"
+      },
+      "observedMain": {
+        "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+        "bytes": 10063,
+        "blob": "63e845baaa45ed9752437e9313b2cb0dde1f53e3"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-verification-admission.test.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "07aee2b9301080cd5607977d77ac94de5108f5f8",
+      "bytes": 8522,
+      "sha256": "8d0b4a6f3caefd4697cdef279073bd3eca2b66efa7c4fa5956d35f1cee47c654",
+      "base": "ABSENT",
+      "observedMain": "ABSENT"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "sourceGit": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+      "blob": "0cd5a05a08ab5b070e9a6b139d677faa6d3d1dfd",
+      "bytes": 1431,
+      "sha256": "0830fad87c230b0ce247fb4509d5fbeee8a86c3602cd34334bf86be6a0970a0e",
+      "base": {
+        "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+        "bytes": 655,
+        "blob": "7acd25d70ad8cd86da22cca2fce16e876bb85066"
+      },
+      "observedMain": {
+        "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+        "bytes": 655,
+        "blob": "7acd25d70ad8cd86da22cca2fce16e876bb85066"
+      }
+    }
+  ],
+  "order": "one coherent six-leaf SDK/response change on existing VAR/CENTER; no runtime or migration changes",
+  "requiredExisting": [
+    "apps/server/src/tasks.ts command digest/replay",
+    "existing FlowClient bounded request transport",
+    "existing schema runtime binding and revision bounds"
+  ],
+  "validation": "local only, no PG/HTTP server/worker or deployment",
+  "integration": "Original fresh preimages then controlled six-leaf intake; do not copy branch wholesale"
+}

@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-08T01:01:49.625Z",
+  "supervision": {
+    "pid": 18300,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 1,
+    "elapsed_ms": 946,
+    "observed_bytes": 5689,
+    "retained_bytes": 5689,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "bytes": 5689,
+    "sha256": "707e28344589c2310ed4d48d01f3648f9f13ab98dddf507cbef363b4b59fd569"
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "removed": true,
+    "retained": null,
+    "sampleEmpty": true,
+    "exactAbsenceAt": "2026-10-08T01:01:49.625Z"
+  },
+  "sourceHashes": {
+    "apps/server/src/plugin-runtime/verification-admission.ts": "e15788ed1893f93f18224657f1cda4483de9544f47e2b08a7088a473bd22c447",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts": "6deb7f2a5705ae3b64484ba92bf1659a69d5c6c97281d021a5b0c7f481064741",
+    "packages/contracts/src/plugin-verification-admission.ts": "0830fad87c230b0ce247fb4509d5fbeee8a86c3602cd34334bf86be6a0970a0e",
+    "packages/client/src/index.ts": "b6ae9ff026605ea3e5cd121320bc434903152cdc8f0144f3e269ba68e8f26d62",
+    "packages/client/src/plugin-management.ts": "92ab70f2e0dd524532535f9d2340c6989d8e4393964d2b0080c29c4ff269a7b1",
+    "packages/client/src/plugin-verification-admission.test.ts": "38b41990f00fd003ec0e8186af51fd159b130c1c20ad29c15355066419d53cc4",
+    "docs/evidence/x01-verifier-client-admission/run-local.py": "341134d17935bb226af14f0a2dfeefa34bd0cbbbc90a885be8c0516c2f66f72e",
+    "docs/evidence/x01-verifier-client-admission/tsconfig.json": "255d8078d349d18e85d66c0fc7c233328ef847153920733514b5ba6b31e1b706",
+    "docs/evidence/x01-verifier-client-admission/vitest.config.mjs": "dac569b3cdd0f38f6013a96e29b08dbc863642bc31062c8a1690f9ab2df8b094"
+  },
+  "wallBeforePersistence": 0.9764691249001771
+}

@@ -1,0 +1,76 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission
+
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR source project locks before authority recheck and uses the same transaction client 2ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR missing/conflicting/foreign authority and stale project CAS fail before creating work 1ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR admission creates exactly one task and project binding on the receipt transaction 4ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair tool phase preserves its public permission error without writing a receipt 1ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair verifier phase preserves its public permission error without writing a receipt 0ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair tool enable retains its existing permission error before revision or binding writes 0ms
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > SDK admission adds identity to an old saved receipt without reauthorizing or recreating work 36ms
+ × packages/client/src/plugin-verification-admission.test.ts > SDK verification admission freezes normalized body and forwards key, authentication and AbortSignal 24ms
+   → expected AbortSignal { aborted: false } to be AbortSignal { aborted: false } // Object.is equality
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses missing request identity without fabricating proof 2ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses registration request identity without fabricating proof 1ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses revision request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses projectRevision request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses title request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses source request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses rule request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses protocol request identity without fabricating proof 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-task acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-registration acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-revision acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent scope acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent project acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent node acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent project-revision acknowledgement linkage 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK accepts matching project scope and historical replay without a current-state GET 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK admission enforces the exact 65536-byte response boundary 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK admission enforces the exact 65537-byte response boundary 0ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK typed rejection and transport uncertainty retain distinct recovery behavior 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/plugin-verification-admission.test.ts > SDK verification admission freezes normalized body and forwards key, authentication and AbortSignal
+AssertionError: expected AbortSignal { aborted: false } to be AbortSignal { aborted: false } // Object.is equality
+
+- Expected
++ Received
+
+  AbortSignal {
+-   Symbol(kEvents): undefined,
++   Symbol(kEvents): Map {},
+    Symbol(events.maxEventTargetListeners): 0,
+    Symbol(events.maxEventTargetListenersWarned): false,
+    Symbol(kHandlers): undefined,
+    Symbol(kAborted): false,
+    Symbol(kReason): undefined,
+-   Symbol(kComposite): false,
+-   Symbol(kDependantSignals): Set {
++   Symbol(kComposite): true,
++   Symbol(kSourceSignals): Set {
+      SafeWeakRef {},
++     SafeWeakRef {},
+    },
++   Symbol(kTimeout): true,
++   Symbol(kResultSignalWeakRef): SafeWeakRef {},
++   Symbol(kFollowing): true,
+  }
+
+ ❯ packages/client/src/plugin-verification-admission.test.ts:27:24
+     25|   const [url, init] = fetch.mock.calls[0]!;
+     26|   expect(String(url)).toBe(`https://flow.example/api/plugins/${registr…
+     27|   expect(init?.signal).toBe(signal); expect(new Headers(init?.headers)…
+       |                        ^
+     28|   expect(JSON.parse(init!.body as string)).toEqual(pluginVerificationA…
+     29| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 26 passed (27)
+   Start at  18:01:48
+   Duration  665ms (transform 280ms, setup 0ms, import 426ms, tests 77ms, environment 0ms)
+
