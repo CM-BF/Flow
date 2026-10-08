@@ -1,0 +1,24 @@
+{
+  "reviewer": "root / gpt-6-astra",
+  "at": "2026-10-08T01:47:45.000Z",
+  "conclusion": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "581d38a40777efdcc4ef46c341184b2755750e83",
+  "packet": "f7621aebd9da4aa4591f8c39f05fb1bdc77dc0ce",
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "commit": "581d38a40777efdcc4ef46c341184b2755750e83",
+      "bytes": 11552,
+      "sha256": "d888dd3900c004e571193bc6b77222a01b9185afcdd7fb63b375bceab5427234"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "commit": "581d38a40777efdcc4ef46c341184b2755750e83",
+      "bytes": 28822,
+      "sha256": "19ead276a66d45dddf58e663dda6dd37c5c18242692f210011c188b391888817"
+    }
+  ],
+  "scope": "5 product/test leaves; this consumer copies only two production leaves; not worker/PG/T7 evidence"
+}

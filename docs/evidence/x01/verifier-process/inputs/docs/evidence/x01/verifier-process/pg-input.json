@@ -1,0 +1,18 @@
+{
+  "protocol": "flow.x01.verifier-claim-pg.v1",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "actual": "NOT_OPEN",
+  "tasks": 3,
+  "runnerHttpActual": null,
+  "runnerTheoreticalRequests": 4096
+}

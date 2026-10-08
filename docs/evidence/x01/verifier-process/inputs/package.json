@@ -1,0 +1,30 @@
+{
+  "name": "flow",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=24.20.0 <25"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm test",
+    "server": "tsx apps/server/src/main.ts",
+    "runner": "tsx apps/runner/src/main.ts",
+    "cli": "tsx apps/cli/src/main.ts",
+    "web": "pnpm --filter @flow/web dev",
+    "test:scheduler": "tsx scripts/scheduler-probe.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.1",
+    "@types/pg": "8.23.1",
+    "@playwright/test": "1.63.0",
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "vitest": "4.0.18",
+    "pg": "8.23.1",
+    "pg-boss": "12.37.0",
+    "yaml": "2.9.0"
+  }
+}
