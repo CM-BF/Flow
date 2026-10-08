@@ -13,6 +13,7 @@ import type { createServer } from '../../../server/src/index.js';
 import { runRunner } from '../../../runner/src/runtime.js';
 import { verifyText } from '../../../runner/src/verifier.js';
 import { cleanupAfterCheckpoint, observeConnections, type DirectoryIdentity } from './fixture-cleanup.js';
+import { FixtureObservation, observeFixtureAdapter } from './fixture-observation.js';
 
 const pause = (ms: number) => new Promise<void>(done => setTimeout(done, ms));
 async function bounded<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
@@ -50,6 +51,7 @@ export class CancelJourney {
   readonly requests: CancelRequest[] = [];
   readonly facts: Record<string, unknown> = { providerCalls: 0, fixtureOnly: true };
   readonly tasks: string[] = [];
+  private readonly observation = new FixtureObservation();
   private readonly token = `synthetic-tui01f-${randomUUID()}`;
   private readonly adminUrl = process.env.FLOW_TEST_DATABASE_URL ?? 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
   private readonly stop = new AbortController();
@@ -80,6 +82,9 @@ export class CancelJourney {
   }
   async save(name: string, value: unknown) {
     if (!/^[a-z0-9-]+\.json$/.test(name)) throw Error('Invalid evidence name');
+    if (['checkpoint.json', 'result.json', 'handoff-stages.json'].includes(name)) {
+      value = { ...value as Record<string, unknown>, fixtureObservation: this.observation.snapshot() };
+    }
     const text = JSON.stringify(value, null, 2).replaceAll(this.token, '[synthetic-token-redacted]').replaceAll(this.adminUrl, '[database-url-redacted]') + '\n';
     if (Buffer.byteLength(text) > 2 * 1024 ** 2) throw Error('Evidence bound exceeded');
     const file = await open(join(this.evidenceDirectory, name), 'wx', 0o600);
@@ -115,7 +120,8 @@ export class CancelJourney {
     const registration = await this.client.registerRunner({ name: 'TUI01F synthetic session; no SDK', harnesses: ['claude'], capacity: 1 });
     this.record('runnerId', registration.runnerId);
     this.runner = runRunner({ baseUrl: this.upstream, token: registration.token, workingDirectory: join(this.directory, 'runner'),
-      signal: this.stop.signal, adapters: [this.adapter()], pollIntervalMs: 50, heartbeatIntervalMs: 200, requestTimeoutMs: 1500 });
+      signal: this.stop.signal, adapters: [this.adapter()], pollIntervalMs: 50, heartbeatIntervalMs: 200, requestTimeoutMs: 1500,
+      onNotice: notice => this.observation.notice(notice) });
     // Attach immediately; final cleanup still observes any rejection and fails closed.
     void this.runner.catch(() => { this.failed('runner-rejected'); });
     await this.startProxy();
@@ -125,7 +131,7 @@ export class CancelJourney {
     this.record('origins', { center: this.upstream, proxy: this.proxyUrl, conversationId: this.conversationId });
   }
   private adapter(): HarnessAdapter {
-    return { name: 'claude', version: 'claude-sdk-0.3.290-v1', run: async context => {
+    return observeFixtureAdapter({ name: 'claude', version: 'claude-sdk-0.3.290-v1', run: async context => {
       const id = context.executionIdentity?.taskId;
       if (!id) throw Error('Fixture requires the runner-assigned task identity');
       this.activeAdapters.add(id);
@@ -134,12 +140,12 @@ export class CancelJourney {
         await context.emit({ type: 'session', nativeSessionId,
           adapterVersion: 'claude-sdk-0.3.290-v1', resources: ['fixture:no SDK/provider'] });
         this.sessions.add(id);
-        await new Promise<void>((done, reject) => {
+        await this.observation.run('barrier', context.executionIdentity, () => new Promise<void>((done, reject) => {
           const abort = () => finish(Error('synthetic adapter interrupted'));
           const finish = (error?: Error) => { context.signal.removeEventListener('abort', abort); this.barriers.delete(id); error ? reject(error) : done(); };
           this.barriers.set(id, () => finish()); context.signal.addEventListener('abort', abort, { once: true });
           if (context.signal.aborted) abort();
-        });
+        }));
         await context.assertOwnership();
         const content = 'Synthetic fixture completed after observer exit.', artifactId = randomUUID();
         if (this.recipe) {
@@ -153,7 +159,7 @@ export class CancelJourney {
           version: createHash('sha256').update(content).digest('hex') });
         await context.emit(verifyText(artifactId, content, context.task.verification));
       } finally { this.activeAdapters.delete(id); }
-    } };
+    } }, this.observation);
   }
   async waitTask(id: string, status: TaskSummary['status'], signal?: AbortSignal) {
     const until = performance.now() + 8000;
