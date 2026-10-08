@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/connection-ux-b4/raw/connection-loader-20261008-a075bc16/browser-results.json",
+      "bytes": 2967,
+      "sha256": "9c5d76277de6d18b0d23bb3466b93800f9e4add100f55aed3bee976212d9df57"
+    },
+    {
+      "path": "/private/tmp/connection-ux-b4/raw/connection-loader-20261008-a075bc16/owned-chrome.json",
+      "bytes": 2316,
+      "sha256": "9757a376819c45dce80c6f7f58f4e84336a9e8ef5eaea9604cbdc3f2ed2a814d"
+    },
+    {
+      "path": "/private/tmp/connection-ux-b4/raw/connection-loader-20261008-a075bc16/chrome.log",
+      "bytes": 4345,
+      "sha256": "a7e47e5632f068ca5df7e953cf44f98914786fde74d867e0f2582f47ddd243f9"
+    },
+    {
+      "path": "/private/tmp/connection-ux-b4/raw/connection-loader-20261008-a075bc16/connection-light-390.png",
+      "bytes": 49867,
+      "sha256": "466a65f243600d02c23e399c4a9473ce5da8aa7ddba436d10bd5a76305e2c190"
+    },
+    {
+      "path": "/private/tmp/connection-ux-b4/raw/connection-loader-20261008-a075bc16/connection-dark-390.png",
+      "bytes": 50711,
+      "sha256": "fcc6cf7a17bd23225207686345bfe49c2e0435351972be3bbf75c0efd578a742"
+    }
+  ],
+  "expectedChecks": [
+    "states-next-actions",
+    "checking-keyboard-guard",
+    "transient-submit",
+    "explicit-retained-actions",
+    "details-keyboard",
+    "themes-390-geometry"
+  ],
+  "sourceHashes": {
+    "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+    "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+    "apps/web/test/connection-ux.browser.ts": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d",
+    "apps/web/test/connection-ux.fixture.tsx": "646e11010cd8c8898e47b9aeca9e8c669a6b5f8335d5908a0d95300cef4f4b78"
+  },
+  "sourceHead": "44fcbcda7cb854b8e9410d6cab0931ff630061e4"
+}

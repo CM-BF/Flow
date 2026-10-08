@@ -1,0 +1,122 @@
+{
+  "logical": "MATURE06-CONNECTION-LOADER-CONTINUATION-20261008",
+  "state": "CLOSED_PASS_STOP",
+  "deadline": "2026-10-08T02:05:48.999Z",
+  "runs": [
+    {
+      "packet": "/private/tmp/connection-ux-b2",
+      "sourceHead": "5cd0157f665132cc8bd4b95f574108000d09fc10",
+      "sourceHashes": {
+        "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+        "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+        "apps/web/test/connection-ux.browser.ts": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d",
+        "apps/web/test/connection-ux.fixture.tsx": "680e5e1b93ec1284b8ac1058d0050067745b874a89cb1a66690849cb444dcc84"
+      },
+      "start": "2026-10-08T01:50:11.562129+00:00",
+      "terminal": "2026-10-08T01:50:22.208661+00:00",
+      "return": "2026-10-08T01:50:49.799985+00:00",
+      "outerExit": 1,
+      "chargeMs": 10649,
+      "outcome": "failed",
+      "checks": [],
+      "progress": {
+        "phase": "states-next-actions",
+        "completedChecks": []
+      },
+      "firstError": {
+        "phase": "states-next-actions",
+        "name": "TimeoutError",
+        "category": "CHECK_ERROR"
+      },
+      "receiptSha256": "7750aba3d97eb72dfe464291d8277b9f998f76b52d6c382e9fe16d8b26d3b729",
+      "reportedContextFixtureClosed": true
+    },
+    {
+      "packet": "/private/tmp/connection-ux-b3",
+      "sourceHead": "db160129dabcef0159507709f208c5972ce59b41",
+      "sourceHashes": {
+        "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+        "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+        "apps/web/test/connection-ux.browser.ts": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d",
+        "apps/web/test/connection-ux.fixture.tsx": "5ee148e2faf73ee21c3960a3725e25bbd78388281aa37a8e4c958725b6e9feee"
+      },
+      "start": "2026-10-08T01:55:00.784177+00:00",
+      "terminal": "2026-10-08T01:55:07.362935+00:00",
+      "return": "2026-10-08T01:55:20.832795+00:00",
+      "outerExit": 1,
+      "chargeMs": 6581,
+      "outcome": "failed",
+      "checks": [],
+      "progress": {
+        "phase": "themes-390-geometry",
+        "completedChecks": [
+          "states-next-actions",
+          "checking-keyboard-guard",
+          "transient-submit",
+          "explicit-retained-actions",
+          "details-keyboard"
+        ]
+      },
+      "firstError": {
+        "phase": "themes-390-geometry",
+        "name": "AssertionError",
+        "category": "CHECK_ERROR"
+      },
+      "receiptSha256": "d4b396207f4a3d061c460761c39a097e3ccf6648b3f4b6098602c748c368274b",
+      "reportedContextFixtureClosed": true
+    },
+    {
+      "packet": "/private/tmp/connection-ux-b4",
+      "sourceHead": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+      "sourceHashes": {
+        "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+        "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+        "apps/web/test/connection-ux.browser.ts": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d",
+        "apps/web/test/connection-ux.fixture.tsx": "646e11010cd8c8898e47b9aeca9e8c669a6b5f8335d5908a0d95300cef4f4b78"
+      },
+      "start": "2026-10-08T01:57:13.173060+00:00",
+      "terminal": "2026-10-08T01:57:20.956457+00:00",
+      "return": "2026-10-08T01:57:43.553510+00:00",
+      "outerExit": 0,
+      "chargeMs": 7786,
+      "outcome": "passed",
+      "checks": [
+        "states-next-actions",
+        "checking-keyboard-guard",
+        "transient-submit",
+        "explicit-retained-actions",
+        "details-keyboard",
+        "themes-390-geometry"
+      ],
+      "progress": {
+        "phase": "complete",
+        "completedChecks": [
+          "states-next-actions",
+          "checking-keyboard-guard",
+          "transient-submit",
+          "explicit-retained-actions",
+          "details-keyboard",
+          "themes-390-geometry"
+        ]
+      },
+      "firstError": null,
+      "receiptSha256": "883f3aa9ece1e4a35c860d5e75354f616058176df48c5afa4d403bcef659c9a9",
+      "reportedContextFixtureClosed": true
+    }
+  ],
+  "browserChargedMs": 25016,
+  "browserLimitMs": 180000,
+  "attempts": 3,
+  "unusedNotPermission": true,
+  "localChargedMs": 2480,
+  "localChildren": 2,
+  "localState": "CLOSED",
+  "oldB1": {
+    "chargeMs": 10515,
+    "state": "FAILED_CLOSED",
+    "scope": "loader initialization failure",
+    "creditTransferred": 0
+  },
+  "retainedMeasurementAdoption": "PARTIAL_RETAINED_ADOPTION",
+  "scope": "Real production component with synthetic fixture props/callbacks; no Cookie/CSRF/real session/whole App proof"
+}

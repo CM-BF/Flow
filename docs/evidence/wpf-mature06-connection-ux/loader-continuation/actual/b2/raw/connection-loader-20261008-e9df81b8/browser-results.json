@@ -1,0 +1,43 @@
+{
+  "sourceHead": "5cd0157f665132cc8bd4b95f574108000d09fc10",
+  "sourceHashes": {
+    "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+    "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+    "apps/web/test/connection-ux.browser.ts": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d",
+    "apps/web/test/connection-ux.fixture.tsx": "680e5e1b93ec1284b8ac1058d0050067745b874a89cb1a66690849cb444dcc84"
+  },
+  "implementation": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "startedAt": "2026-10-08T01:50:11.624Z",
+  "workerPid": 48191,
+  "parentPid": 43439,
+  "chromePid": 43683,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "progress": {
+    "phase": "states-next-actions",
+    "completedChecks": []
+  },
+  "firstError": {
+    "phase": "states-next-actions",
+    "name": "TimeoutError",
+    "category": "CHECK_ERROR"
+  },
+  "diagnosticErrors": [],
+  "journeys": [],
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-08T01:50:17.411Z",
+  "failure": "TimeoutError",
+  "failureObservation": {
+    "state": "CAPTURED"
+  },
+  "finishedAt": "2026-10-08T01:50:21.808Z",
+  "observedElapsedMs": 10184,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

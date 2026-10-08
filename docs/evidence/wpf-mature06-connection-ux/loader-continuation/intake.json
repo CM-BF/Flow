@@ -22,5 +22,28 @@
       "native acceptance for new exact packet pending"
     ],
     "errors": "secondary diagnostics cannot replace report.failure; safe name/category only, no exception text or credentials"
-  }
+  },
+  "finalTestSource": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+  "actualState": "APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE",
+  "actualIndex": {
+    "path": "actual-index.json",
+    "sha256": "6ab8b3fab10839607694f34a9cdaff12fe66ee3291a86d9ca33d73f3d72c069a"
+  },
+  "accounting": {
+    "path": "actual-accounting.json",
+    "sha256": "0ea5dfe052270aa373a3ab2ef16cd35dae9787fb8cca7b001fb592f9a004072c"
+  },
+  "remaining": [
+    "main integration",
+    "real Cookie/CSRF/reauth/session behavior",
+    "whole App Recovery integration"
+  ],
+  "actualReview": {
+    "path": "loader-continuation/final-acceptance-review.json",
+    "bytes": 4287,
+    "sha256": "057550e28e59fed84c8988636d38a82fe02c831aba56cae7f1fcc5de1ac83e99",
+    "decision": "APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE",
+    "blocking": 0
+  },
+  "stopAt": "2026-10-08T02:01:27.285150+00:00"
 }

@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-08T01:50:49.799985+00:00",
+  "run": "connection-loader-20261008-e9df81b8",
+  "state": "EXACT_FULL_RETURN",
+  "result": "FAILED",
+  "actualExit": 1,
+  "chargeMs": 10649,
+  "identities": [
+    {
+      "role": "parent",
+      "identity": 43439,
+      "PID": "ESRCH",
+      "PGID": "ESRCH"
+    },
+    {
+      "role": "worker",
+      "identity": 48191,
+      "PID": "ESRCH",
+      "PGID": "ESRCH"
+    },
+    {
+      "role": "chrome",
+      "identity": 43683,
+      "PID": "ESRCH",
+      "PGID": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "outerStreams": {
+    "stdout": {
+      "eof": true,
+      "receivedBytes": 661,
+      "keptBytes": 661,
+      "droppedBytes": 0
+    },
+    "stderr": {
+      "eof": true,
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0
+    }
+  },
+  "resultSha256": "8af1b9311246aa6a1413026085fa17ba2b547e441e3d19f61152637f566f2157",
+  "outerSha256": "12b752115ab5e84cef8dd107cc0c18f163e32a868b6a26abbc2e526aee4e43ad"
+}

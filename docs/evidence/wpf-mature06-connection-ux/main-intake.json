@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-08T01:59:38.522724+00:00",
+  "task": "MATURE06-04 / WPF-001-09 existingconnectionexperience",
+  "owner": "w01_owner",
+  "branch": "codex/web-connection-actionable",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+  "fixedBase": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "fixedSource": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+  "productionSource": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "sourcePaths": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71466,
+      "sha256": "9b19ca26c7a30e23ba1e820f46e4a83eb054423d12c2bd444ff8bf753fe2e0d6"
+    },
+    {
+      "path": "apps/web/src/connection/Connection.tsx",
+      "bytes": 3662,
+      "sha256": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d"
+    },
+    {
+      "path": "apps/web/src/connection/presentation.ts",
+      "bytes": 2689,
+      "sha256": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d"
+    },
+    {
+      "path": "apps/web/test/connection-presentation.test.ts",
+      "bytes": 3383,
+      "sha256": "6285a09fb9531a34893796c00bedef4dec3ae8b6eea5c542e036d1dfe1a4344a"
+    },
+    {
+      "path": "apps/web/test/connection-ux.fixture.tsx",
+      "bytes": 3035,
+      "sha256": "646e11010cd8c8898e47b9aeca9e8c669a6b5f8335d5908a0d95300cef4f4b78"
+    },
+    {
+      "path": "apps/web/test/connection-ux.browser.ts",
+      "bytes": 9415,
+      "sha256": "4d19850fd76cfb2c436b2a04bc538c7e9c7dc5302f19a02ab4de7b22bb3b566d"
+    }
+  ],
+  "sourceReview": "mounted-preparation/source-local-review.json",
+  "actualIndex": {
+    "path": "loader-continuation/actual-index.json",
+    "sha256": "6ab8b3fab10839607694f34a9cdaff12fe66ee3291a86d9ca33d73f3d72c069a"
+  },
+  "actualReview": {
+    "path": "loader-continuation/final-acceptance-review.json",
+    "bytes": 4287,
+    "sha256": "057550e28e59fed84c8988636d38a82fe02c831aba56cae7f1fcc5de1ac83e99",
+    "decision": "APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE",
+    "blocking": 0
+  },
+  "checks": "7pure+originalaffectedstrict approved; newfixturetypes, final6mountedgroups+2images, exactRETURN; failurespreserved",
+  "boundary": "Production Connection mounted with synthetic props/callbacks; notCookie/session/CSRF/realretainedstorage/wholeApp",
+  "integration": "Controlledmerge of narrowApp extraction on fixedec7; preserve movingmain unrelatedApp/session/Arc/Context work, neverwholeblob overwrite. No source path outside this exactlist.",
+  "mainState": "NOT_INTEGRATED",
+  "deploymentState": "NOT_DEPLOYED",
+  "actualState": "APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE",
+  "stopAt": "2026-10-08T02:01:27.286379+00:00"
+}

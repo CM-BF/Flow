@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-08T02:01:00.749607+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE",
+  "blockingFindings": [],
+  "implementation": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "finalTestHead": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+  "index": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/loader-continuation/actual-index.json",
+    "sha256": "6ab8b3fab10839607694f34a9cdaff12fe66ee3291a86d9ca33d73f3d72c069a",
+    "pairs": 78,
+    "bytesPerSide": 717820,
+    "verifiedFiles": 156,
+    "mismatches": []
+  },
+  "runs": [
+    {
+      "sourceHead": "5cd0157f665132cc8bd4b95f574108000d09fc10",
+      "outerExit": 1,
+      "chargeMs": 10649,
+      "outcome": "failed",
+      "checks": [],
+      "progress": {
+        "phase": "states-next-actions",
+        "completedChecks": []
+      },
+      "return": "2026-10-08T01:50:49.799985+00:00"
+    },
+    {
+      "sourceHead": "db160129dabcef0159507709f208c5972ce59b41",
+      "outerExit": 1,
+      "chargeMs": 6581,
+      "outcome": "failed",
+      "checks": [],
+      "progress": {
+        "phase": "themes-390-geometry",
+        "completedChecks": [
+          "states-next-actions",
+          "checking-keyboard-guard",
+          "transient-submit",
+          "explicit-retained-actions",
+          "details-keyboard"
+        ]
+      },
+      "return": "2026-10-08T01:55:20.832795+00:00"
+    },
+    {
+      "sourceHead": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+      "outerExit": 0,
+      "chargeMs": 7786,
+      "outcome": "passed",
+      "checks": [
+        "states-next-actions",
+        "checking-keyboard-guard",
+        "transient-submit",
+        "explicit-retained-actions",
+        "details-keyboard",
+        "themes-390-geometry"
+      ],
+      "progress": {
+        "phase": "complete",
+        "completedChecks": [
+          "states-next-actions",
+          "checking-keyboard-guard",
+          "transient-submit",
+          "explicit-retained-actions",
+          "details-keyboard",
+          "themes-390-geometry"
+        ]
+      },
+      "return": "2026-10-08T01:57:43.553510+00:00"
+    }
+  ],
+  "sourceReview": "Prior c0af32d7 product review remains applicable: unchanged product source hashes across all3. Browser3706 retains original six assertions; explicit React optimizer entries fix CJS startup. Fixture44 follow-ups only explicit label association and natural JSON wrapping. No relaxed geometry or mocked product.",
+  "finalEvidence": {
+    "checks": "6/6 exact groups",
+    "errors": "page/console/blocked/cleanup empty",
+    "geometry": "1280 and390 both themes; document width equals viewport; inputs/buttons keyboard and scrolling checked",
+    "imagesPersonallyViewed": [
+      "connection-light-390.png",
+      "connection-dark-390.png"
+    ],
+    "visual": "Unauthenticated production component readable in both390 themes, no visible horizontal clipping.",
+    "cleanup": "All3 original result inner streams plus exact-return outer streams EOFtrue/drop0, three known PID/PGID ESRCH perrun, context/fixture closed/scratch absent. b2 exact-return omits innerStreams; original result.logStreams supplies actual evidence, not backfilled."
+  },
+  "closedBudgets": {
+    "currentMs": 25016,
+    "attempts": 3,
+    "oldB1InitializationFailedMs": 10515,
+    "oldCreditTransferred": 0,
+    "localMs": 2480,
+    "typesBinding": "Local type/syntax checks apply to actual checked source. Later fixture-only label/wrap not retyped; final mounted runtime passed."
+  },
+  "limits": [
+    "Synthetic props/callbacks; no real Cookie/CSRF/session/center auth/full App recovery acceptance.",
+    "No main integration or personal publication.",
+    "Native Chrome sibling accepted boundary has no custom outer sandbox; partial resource measurement, no all-time peak claim."
+  ],
+  "nonBlockingFollowup": "Consider tighter button spacing/top whitespace in next legal design segment.",
+  "cleanCode": {
+    "scope": "Exact fixture semantics, unchanged business source, bounded diagnostics/error priority and cleanup.",
+    "result": "Single production component retained; three identified fixture faults repaired without credential stores or second product state."
+  }
+}

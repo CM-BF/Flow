@@ -1,0 +1,70 @@
+{
+  "task": "MATURE06-04",
+  "logical": "MATURE06-CONNECTION-LOADER-CONTINUATION-20261008",
+  "state": "WAIT_MANAGER_FINAL_LEASE",
+  "fixedProduction": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "testSource": "44fcbcda7cb854b8e9410d6cab0931ff630061e4",
+  "entry": [
+    "python3",
+    "/private/tmp/connection-ux-b4/supervisor.py",
+    "--gate",
+    "<fresh-gate>"
+  ],
+  "previousActual": {
+    "packet": "/private/tmp/connection-ux-b1",
+    "chargeMs": 10515,
+    "state": "CLOSED_FAILED",
+    "borrowedCreditMs": 0
+  },
+  "newBundle": {
+    "deadline": "2026-10-08T02:05:48.999Z",
+    "maxBrowserAttempts": 3,
+    "browserPerAttemptMs": 60000,
+    "browserCleanupMs": 15000,
+    "browserCumulativeMs": 180000,
+    "planningBytes": 134217728,
+    "scratchBytes": 67108864,
+    "allRetainedBytes": 67108864,
+    "perPacketRetainedCapUnchanged": 8388608,
+    "browserConsumedMs": 17230,
+    "localLimitMs": 30000,
+    "localMaxChildren": 2,
+    "browserAttemptsConsumed": 2,
+    "localConsumedMs": 2480,
+    "localChildrenConsumed": 2
+  },
+  "native": {
+    "root": "/private/tmp/connection-ux-b4",
+    "runnerSha256": "3d64c6bc080f1130dc2e91130834aaceaba20426731c12919b26c161fbf9d7ff",
+    "workerSha256": "299a0dafb8ecbecb04b9bfcf426210124d7317f54dd740e58460878ba8c80a6c",
+    "mode": "connection-ux-loader-browser",
+    "entry": "connection-ux-loader",
+    "oldSourceNativeReview": "/private/tmp/root-connection-mounted-native-boundary-20261008.json",
+    "delta": "supervisor.diff + worker.diff",
+    "authorityUnchanged": true
+  },
+  "checks": [
+    "states-next-actions",
+    "checking-keyboard-guard",
+    "transient-submit",
+    "explicit-retained-actions",
+    "details-keyboard",
+    "themes-390-geometry"
+  ],
+  "images": [
+    "connection-light-390.png",
+    "connection-dark-390.png"
+  ],
+  "resolverFix": "Existing Vite/Rolldown installed optimizer with 5 explicit React CommonJS entries, noDiscovery remains true, own cache only; no install/shim/product mutation",
+  "diagnostics": "Only remaining work time <=1500ms; NOT_CAPTURED otherwise, never uses cleanupStep. Safe phase/category/geometry and masked screenshot; secondary cannot replace originalerror.",
+  "runtimeNotAuthorized": true,
+  "freshRules": "Fresh manager lease and exact prior RETURN required before each new attempt. All own/native/dependency pins and roots, unique packet/run, D04 and current terms; metadata head routine rebind allowed; PASS stops.",
+  "previousBundleAttempt": {
+    "path": "/private/tmp/connection-ux-b3",
+    "chargeMs": 6581,
+    "state": "CLOSED_FAILED_EXACT_RETURN",
+    "receipt": "/private/tmp/connection-ux-b3/exact-return.json",
+    "sha256": "d4b396207f4a3d061c460761c39a097e3ccf6648b3f4b6098602c748c368274b"
+  },
+  "fixtureFix": "Only synthetic observation output display:block/overflowWrap:anywhere; preserve everydocumentgeometry/assertion/product byte."
+}

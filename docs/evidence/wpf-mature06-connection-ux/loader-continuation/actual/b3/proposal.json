@@ -1,0 +1,70 @@
+{
+  "task": "MATURE06-04",
+  "logical": "MATURE06-CONNECTION-LOADER-CONTINUATION-20261008",
+  "state": "WAIT_MANAGER_SECOND_LEASE",
+  "fixedProduction": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "testSource": "db160129dabcef0159507709f208c5972ce59b41",
+  "entry": [
+    "python3",
+    "/private/tmp/connection-ux-b3/supervisor.py",
+    "--gate",
+    "<fresh-gate>"
+  ],
+  "previousActual": {
+    "packet": "/private/tmp/connection-ux-b1",
+    "chargeMs": 10515,
+    "state": "CLOSED_FAILED",
+    "borrowedCreditMs": 0
+  },
+  "newBundle": {
+    "deadline": "2026-10-08T02:05:48.999Z",
+    "maxBrowserAttempts": 3,
+    "browserPerAttemptMs": 60000,
+    "browserCleanupMs": 15000,
+    "browserCumulativeMs": 180000,
+    "planningBytes": 134217728,
+    "scratchBytes": 67108864,
+    "allRetainedBytes": 67108864,
+    "perPacketRetainedCapUnchanged": 8388608,
+    "browserConsumedMs": 10649,
+    "localLimitMs": 30000,
+    "localMaxChildren": 2,
+    "browserAttemptsConsumed": 1,
+    "localConsumedMs": 2480,
+    "localChildrenConsumed": 2
+  },
+  "native": {
+    "root": "/private/tmp/connection-ux-b3",
+    "runnerSha256": "3d64c6bc080f1130dc2e91130834aaceaba20426731c12919b26c161fbf9d7ff",
+    "workerSha256": "299a0dafb8ecbecb04b9bfcf426210124d7317f54dd740e58460878ba8c80a6c",
+    "mode": "connection-ux-loader-browser",
+    "entry": "connection-ux-loader",
+    "oldSourceNativeReview": "/private/tmp/root-connection-mounted-native-boundary-20261008.json",
+    "delta": "supervisor.diff + worker.diff",
+    "authorityUnchanged": true
+  },
+  "checks": [
+    "states-next-actions",
+    "checking-keyboard-guard",
+    "transient-submit",
+    "explicit-retained-actions",
+    "details-keyboard",
+    "themes-390-geometry"
+  ],
+  "images": [
+    "connection-light-390.png",
+    "connection-dark-390.png"
+  ],
+  "resolverFix": "Existing Vite/Rolldown installed optimizer with 5 explicit React CommonJS entries, noDiscovery remains true, own cache only; no install/shim/product mutation",
+  "diagnostics": "Only remaining work time <=1500ms; NOT_CAPTURED otherwise, never uses cleanupStep. Safe phase/category/geometry and masked screenshot; secondary cannot replace originalerror.",
+  "runtimeNotAuthorized": true,
+  "freshRules": "Fresh manager lease and exact prior RETURN required before each new attempt. All own/native/dependency pins and roots, unique packet/run, D04 and current terms; metadata head routine rebind allowed; PASS stops.",
+  "previousBundleAttempt": {
+    "path": "/private/tmp/connection-ux-b2",
+    "chargeMs": 10649,
+    "state": "CLOSED_FAILED_EXACT_RETURN",
+    "receipt": "/private/tmp/connection-ux-b2/exact-return.json",
+    "sha256": "7750aba3d97eb72dfe464291d8277b9f998f76b52d6c382e9fe16d8b26d3b729"
+  },
+  "fixtureFix": "Explicit separate label htmlFor + select id; PW exactlabel previously included descendantoptiontext. Product/sixassertions unchanged."
+}

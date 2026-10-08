@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-08T01:49:46.633Z",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "3d64c6bc080f1130dc2e91130834aaceaba20426731c12919b26c161fbf9d7ff",
+  "workerSha256": "299a0dafb8ecbecb04b9bfcf426210124d7317f54dd740e58460878ba8c80a6c",
+  "rootLineageReview": {
+    "path": "/private/tmp/root-connection-loader-native-lineage-20261008.json",
+    "bytes": 2507,
+    "sha256": "3fcb0d208bd24242377d9ac5ac23e3cb6b129268b0373282b7d20b7d3294f264"
+  },
+  "routineFixes": "Final worker limits optional diagnostics to remaining work and at most1500ms; inherited90s/7image proposal removed. Same parent4literal lineage,60s/15cleanup,ownership unchanged.",
+  "scope": "Exact final runnable hash binding under root accepted lineage. Production/assertions unchanged; sixgroups/two390 not yet run.",
+  "runtimeAuthorizedByThisRecord": false,
+  "runtimeRule": "Separate explicit manager actual lease and fresh full admission required."
+}

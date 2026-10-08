@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T01:59:38.558534+00:00",
+  "allRetainedCapBytes": 67108864,
+  "scratchCapBytes": 67108864,
+  "privatePackets": {
+    "/private/tmp/connection-ux-b2": {
+      "logicalBytes": 713196,
+      "allocatedBytes": 880640,
+      "regularFiles": 70
+    },
+    "/private/tmp/connection-ux-b3": {
+      "logicalBytes": 564175,
+      "allocatedBytes": 643072,
+      "regularFiles": 34
+    },
+    "/private/tmp/connection-ux-b4": {
+      "logicalBytes": 613848,
+      "allocatedBytes": 696320,
+      "regularFiles": 35
+    }
+  },
+  "entireOwnEvidenceConservative": {
+    "logicalBytes": 1993147,
+    "allocatedBytes": 2613248,
+    "regularFiles": 253
+  },
+  "existingIndex": {
+    "bytes": 2321762,
+    "device": 16777234,
+    "inode": 124734179
+  },
+  "atomicIndexCopyUpperBytes": 2321762,
+  "newGitObjectsAndRemainingMetadataReserveBytes": 16777216,
+  "conservativeRetainedUpperBytes": 23932258,
+  "actualPeak": "NOT_OBSERVED",
+  "notes": [
+    "Entire own evidence includes prior baseline; deliberately conservative, no refunds or borrowed oldbudget",
+    "Runtime scratch observed/removed in each rawparent result; current scratch0",
+    "Perpacket8MiB retained guard, roothelperPARTIAL_RETAINED_ADOPTION preserved"
+  ]
+}
