@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T00:38:30.040Z",
+  "state": "APPROVED_DOCS_LIMITED_SOURCE_REGISTRATION",
+  "target": "22cf1c653d33fb24aa1c35a5b09bc311ff2bb72f",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "findings": [],
+  "scope": "CENTER only; original212 registry entries preserved, 213 candidate; canonical paths and unique IDs verified. No product semantics or runtime deployment claim.",
+  "rows": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "source": "22cf1c653d33fb24aa1c35a5b09bc311ff2bb72f",
+      "bytes": 29938,
+      "sha256": "ba85506f27b5b6968f6efb48f13ec3567cf122f0946d0831480ecdf6f03cbcca"
+    },
+    {
+      "path": "docs/evidence/d05/center-source-preparation.json",
+      "source": "22cf1c653d33fb24aa1c35a5b09bc311ff2bb72f",
+      "bytes": 1235,
+      "sha256": "5a5f49f3a36142bf77261d8f7f5158e4b488816093b4a30e601603dc1a072e8c"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "source": "22cf1c653d33fb24aa1c35a5b09bc311ff2bb72f",
+      "bytes": 43624,
+      "sha256": "7f750592f67e823bfe3baeb6f557b5090c76e5feec8b8ca8d63297a4d7c4f4f7"
+    }
+  ],
+  "runtime": "NOT_RELOADED",
+  "tests": 0,
+  "tokenRead": false
+}

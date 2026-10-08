@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:18:14.870Z / mainb9ea96aa2；TUI准备、RELEASE01实际兼容和SVC06B发布收口已接收；runtime单叶合法归还，VAR固定成果正在接收核对。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:38:30.040Z / main61ca12e7d；VAR/CENTER已main728d3165f；CENTER唯一来源登记独审通过，本段接收。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainb9ea96aa2013a1ccb13eed7f910d89ff7e5d302b；本段仅已审成果接收及合法单叶移交，个人发布版本不随main变动 |
+| 工作基线 / HEAD | main61ca12e7d5aa5a50038b1df4a65208d22e41b881；仅已审来源登记和自身接收记录，个人发布版本不变 |
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | AV/GDEP原独审与直接消费者证据复用；TUI新入口5不同pure/8选择及受限真实导入已审，0新增重测。实际PTY/Web接续尚未运行。 |
-| 已集成main状态 / HEAD | b9ea96aa2已含AV/GDEP、TUI准备、RELEASE01有限真实兼容及SVC06B发布收口；实际212源。个人e15/current初始化/accepting24、Web779/v4为既有部署事实，不冒当前健康或完整新聊天。 |
+| 检查状态 | PASSED: VAR/CENTER组合strict0、精确9/9已独审；TUI R2真实1选中0通过，失败原件正在独审，未重跑。 |
+| 已集成main状态 / HEAD | 728d3165f已含VAR/CENTER；61ca12e7d管理接收。CENTER新增来源尚未实际reload；个人e15/Web779部署事实保持，当前新用户领取未验。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人服务与新版网页已恢复可访问；插件验证领域与中心装配的组合检查和独立审查已通过，双端接续入口已准备完成。 |
-| 下一可用交付 | 完成真实终端与网页交替操作同一会话的验收，并及时接收已审结果。 |
-| 当前阻塞 | ACTIVE: 双端接续等待独立数据库与浏览器窗口；实际用户任务领取及工程模型资格仍按原边界开放。 |
+| 当前产出 | 插件验证领域和中心装配已进入主线；真实双端接续走通终端操作与网页取消，后续任务完成仍有失败待定位。 |
+| 下一可用交付 | 展示中心装配的权威进度，并补齐双端接续失败阶段的诊断。 |
+| 当前阻塞 | ACTIVE: 双端接续的后续任务未达到成功状态，底层原因尚未确认；失败与保留材料已封存。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -562,3 +562,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:18:14.870Z：已核原owner固定40c79五metadata、领取v9和最终接收时间语义；[单叶移交接收](../../docs/evidence/i02/svc06b-single-leaf-return-intake.json)。runtime.ts只交回一个leaf，Mika须fresh take；无产品测试/服务操作。VAR接收核对独立进行，TUI实际仍NOT_RUN，当前Context有限连续段后由资源owner选择，不凭无actual holder越过其有效reservation。
 
 2026-10-08T00:22:35.829Z：VAR领域22路径＋CENTER四叶共198692B按固定前像/后像接收，既有034→036启动前导保留；实际组合strict0与exact9factory通过，独立结果审查0P1/P2。[唯一接收记录](../../docs/evidence/i02/x01-var-center-intake.json)绑定原审批与本次3597ms监督/155B输出、两组及空scratch闭合。领域PG/旧route检查未重复，runtime后继和完整公开验收仍开放。普通局部资源已归还，不以结果审查占浏览器/PG。
+
+2026-10-08T00:38:30.040Z：CENTER唯一来源登记已获native_center_owner窄审，固定22cf1c653；见[接收依据](../../docs/evidence/i02/center-source-registration-review.json)。213仅候选，实际4320仍212，待原运行安全点部署。TUI R2原件b186及RETURN已接到，1/0真实失败与后置资源观察不冒通过；结果独审另记。

@@ -2,14 +2,14 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:53:51.946Z / mainc39c36761；212来源已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:26:13.916Z / main728d3165f；新增CENTER唯一source登记待审；实际4320仍212源 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已新增目标依赖批读的唯一进度来源，保留原负责人的开工和交付时间。 |
-| 下一可用交付 | 本次登记已交付；后续产品验收与状态修正由各原负责人继续维护。 |
+| 当前产出 | 看板原212个来源保持可用，插件验证中心装配的唯一进度来源已准备登记。 |
+| 下一可用交付 | 发布新增进度来源，让中心装配的开工、审查和主线接收时间可见。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -288,3 +288,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T23:48:23.258Z：本次来源维护实际开始；仅GDEP01独立canonical新增至212候选。fresh D05 claim3a6240d0/v6 ACTIVE，registry与main前像相同。MATURE04-05和X01-VERIFIER-CENTER-WIRING01先沿父status向原co-lead核关联，未造重复status或冒登记。GDEP四产品与fixture已mainfe26；本次0工程重测，独立登记审查/实际换载待后继。
 
 2026-10-07T23:53:51.946Z：仅原自有4320正常换载，old57950身份/cwd/监听核同后SIGTERM并确认absent，新66636；212来源与GDEP live/sourceCurrent、协调账本available及原ACCESS公开配置已核，见[gdep-source-live.json](../../docs/evidence/d05/gdep-source-live.json)。未读取token、未触个人61227/61228、未刷新用户页。登记独审native绑定a73a8fbf8已由main接收，owner格式问题不由聚合器猜补。
+
+2026-10-08T00:26:13.916Z：本次原登记范围维护开始。CENTER固定d171与26路径组合已main728d3165f；只登记原db_transaction_owner的canonical plugin-verifier-center-wiring/plans/x01-verifier-center-wiring，保原22:04:21Z开工与阶段边界，不复制status或猜完成。当前4320仍212源，新213候选待独审/main及安全重载；不在活动浏览器/PG段中重启看板。
