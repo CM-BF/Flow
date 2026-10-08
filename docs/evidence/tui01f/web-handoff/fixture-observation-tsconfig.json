@@ -1,0 +1,11 @@
+{
+  "extends": "../journey-focused-tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "files": [
+    "../../../../apps/tui/src/task-controls/fixture.ts",
+    "../../../../apps/tui/src/task-controls/fixture-observation.ts",
+    "../../../../apps/tui/src/task-controls/fixture-observation.test.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

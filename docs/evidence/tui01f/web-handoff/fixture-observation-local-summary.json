@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-08T00:46:59.356Z",
+  "sourceCommit": "25174ee40a7c1e272c64a9b413853739401cce87",
+  "initialSourceCommit": "042c6816236b9c5a26ea50f237f78eae619c1c97",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 5,
+    "observedAt": "2026-10-08T00:40:07.767Z",
+    "exactScopeCount": 7
+  },
+  "actualWorkStartedAt": "2026-10-08T00:40:07.767Z",
+  "actualRuntimeStartedAt": "2026-10-08T00:44:06.287Z",
+  "actualRuntimeReturnedAt": "2026-10-08T00:45:09.231Z",
+  "tests": {
+    "distinct": 12,
+    "selections": 13,
+    "rounds": [
+      {
+        "selected": 12,
+        "passed": 11,
+        "failed": 1,
+        "source": "042c6816236b9c5a26ea50f237f78eae619c1c97"
+      },
+      {
+        "selected": 1,
+        "passed": 1,
+        "failed": 0,
+        "source": "25174ee40a7c1e272c64a9b413853739401cce87"
+      }
+    ],
+    "finalCoverage": "12 distinct passed across original11 + affected1; not a second full12 run",
+    "originalFailure": "Node assert.rejects inspected a hostile Proxy and itself threw; direct catch now tests exact object identity. Original observer/fixture source unchanged. Raw first failure retained."
+  },
+  "types": {
+    "exitCode": 0,
+    "noEmit": true,
+    "focusedConfig": "fixture-observation-tsconfig.json",
+    "tests": 0
+  },
+  "execution": {
+    "groups": 3,
+    "elapsedMs": 2861,
+    "rawBytes": 2427,
+    "allAbsent": true,
+    "allDualEOF": true,
+    "signals": [],
+    "scratch": [
+      {
+        "scratchDisposition": "REMOVED_EXACT_EMPTY",
+        "scratchBytes": 0,
+        "scratchFiles": 0
+      },
+      {
+        "scratchDisposition": "REMOVED_EXACT_EMPTY",
+        "scratchBytes": 0,
+        "scratchFiles": 0
+      },
+      {
+        "scratchDisposition": "KEEP_NONEMPTY",
+        "scratchBytes": 1357740,
+        "scratchFiles": 1
+      }
+    ]
+  },
+  "bounds": {
+    "maximumChildren": 6,
+    "singleChildWorkSeconds": 20,
+    "aggregateRunSeconds": 60,
+    "sourceRawScratchBytes": 16777216,
+    "singleRawBytes": 262144
+  },
+  "runtimeScope": {
+    "PG": 0,
+    "HTTPServices": 0,
+    "PTY": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "installation": 0,
+    "personal": 0,
+    "oldKeepReads": 0,
+    "newFullJourney": 0
+  },
+  "inheritance": {
+    "runtimeInputs": "r2-preparation.json@43dc95fd4d1152ff506b507e4d45355fa90eb2fd, actual package/source resolver observations r2-admission.json@b1862907a",
+    "changed": "Only three fixture source leaves; no shared runner/server edits; no dependency install. Local reservation pins bind exact executed sources/runtime entry/config.",
+    "rawR2": "b1862907a1caaf40673123f86af0c8f5f5861ad8 unchanged"
+  },
+  "cleanCode": {
+    "at": "2026-10-08T00:46:59.356Z",
+    "scope": [
+      "apps/tui/src/task-controls/fixture.ts",
+      "apps/tui/src/task-controls/fixture-observation.ts",
+      "apps/tui/src/task-controls/fixture-observation.test.ts"
+    ],
+    "applied": "One bounded observation Module; fixed allowlists and safe field access; original return/rejection; reuse existing checkpoint persistence; no scheduler/supervisor/timer.",
+    "unresolved": "No retrospective cause, no runtime finalization acknowledgement, no new actual journey."
+  },
+  "independentReview": "PENDING"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:43:12.873Z；R2结果获限定独审，本轮fixture诊断实施中 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:46:59.356Z；fixture诊断源码/局部结果已固定待审，R2保真批准保持 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 原基线a89f42ab57acb53657af6a2d1b745dabd4d50aa5；本段起始196d705913afefd102b31e451baf8cfd7c4975cf；新source 8cc10177f2dfa03f89d598260f742a5befd14d29 |
-| 工作树dirty状态 | 源码/旧原件冻结；本次新增R2原始结果、受限诊断与own状态，提交后clean |
+| 工作树dirty状态 | 三源已固定25174；仅本次结果/Interface/own状态收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | R2实际1选中/0通过；真实PTY完成冲突/取消/恢复/退出，Web等待B成功失败。27,530ms/exit1，后置精确运行RETURN；原groups unknown、DB/tmp KEEP保留。局部旧5不同与首红证据未重跑。 |
+| 本片段交付阶段 | review |
+| 检查状态 | 12不同直接例分轮通过（首11/12与测试工具失败保留，定向1/1），focused types exit0；3组absent/双EOF、2861ms/raw2427B。2空scratch删、types缓存1357740B KEEP。0PG/服务/真实旅程。 |
 | 已集成main状态 / HEAD | 原c612四源已main421b2e89f10225bd37d1928ef2b627c6a375b76a；R2限定准备独审回执已main1b9eda58f，own source8cc/packet43dc由Git引用，不冒新实际能力。 |
-| 实现目标 | 8cc10177f2dfa03f89d598260f742a5befd14d29 |
-| 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r2-run.test.py, docs/evidence/tui01f/web-handoff/r2-inputs.json |
+| 实现目标 | 25174ee40a7c1e272c64a9b413853739401cce87 |
+| 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-observation.ts, apps/tui/src/task-controls/fixture-observation.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 上轮失败已获保真审查，正在补执行器事件上报的有限诊断，保留原完成与清理判定。 |
-| 下一可用交付 | 固定安全阶段记录与直接故障例，先交独审；尚不启动新的真实双端旅程。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 有限执行阶段诊断和故障例已完成，可保留下一次合成执行失败的安全分类；原双端旅程失败未改。 |
+| 下一可用交付 | 独立审查这组诊断源码与局部证据；完整旅程需另行准备和真实资源窗口。 |
+| 当前阻塞 | ACTIVE: 新fixture诊断待独审；原第二任务未完成的底层原因仍UNKNOWN，尚无下一真实旅程许可。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：b186结果APPROVED_LIMITED_R2_RESULT_FIDELITY，0P1/P2；诊断新源待检查/独审，不追认原底层原因。 |
+| Review | [review.md](review.md)：R2实际b186获APPROVED_LIMITED_R2_RESULT_FIDELITY；本次25174诊断源码/局部记录待独审，未运行新actual。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-08T00:06:46.936Z fresh核同owner/WT/branch/exact7，原scope未变 |
 | 架构影响 | 仅实验启动装配改用已审OPS14；原journey/fixture拥有任务与清理，生产controller/权限/调度不变。固定af51/d629/ec30不覆盖已发布779全设置/恢复。 |
 
@@ -116,3 +116,5 @@
 2026-10-08T00:36:29.687Z：R2 00:29:07.293Z START→00:29:34.940Z terminal exit1→00:31:28.325Z精确运行RETURN。最早web-b-final等待B succeeded失败；9协议事件/22PTY文本checkpoint/3DOM状态是观察数，不冒额外通过用例；断言总数未插桩UNKNOWN。7PID/5组ESRCH、DB连接空/admin关闭，原fixture groups unknown及DB/tmp KEEP不改、不DROP。见[唯一结果manifest](../../docs/evidence/tui01f/web-handoff/r2-result-manifest.json)、[安全摘要](../../docs/evidence/tui01f/web-handoff/r2-result-summary.json)、[有界只读诊断](../../docs/evidence/tui01f/web-handoff/r2-diagnosis.json)。未读取私有tmp/旧KEEP，0新工程检查/provider/个人；底层原因仍UNKNOWN，后继仅拟在fixture补受控阶段观察，不重试旧run。clean-code复核primary/cleanup、数据界限和单一职责，无产品源码改动。
 
 2026-10-08T00:40:07.767Z：本轮fixture-only诊断工作段实际开始，fresh b186 clean/claimv5 exact7核同。原R2 20绑定结果获assignment独立限定批准（18raw203010B、全包211141B），Lead落I02；原FAIL/KEEP及runtime最终提交UNKNOWN保留。实施3源小观察接口：64帧/32KiB、阶段/执行身份与安全name/code/status，原错误透传，runtime finalization始终NOT_OBSERVED；保存沿现checkpoint，0新监督/计时器。段内最多6child/单20s/累计60s、总新增源码/raw/tmp16MiB；0PG/HTTP/PTY/Chrome/provider/install/个人。按已装find-skills本地优先结果应用brainstorming有界已授权方案、codebase-design小Interface、clean-code单职责，不重复安装或逐命令确认。
+
+2026-10-08T00:46:59.356Z：本轮诊断源码/局部检查安全收口。runtime00:44:06.287Z→00:45:09.231Z已RETURN；12不同/13选择、types0，首轮测试工具读取hostile Proxy的失败保留，定向只修测试捕获不改observer/fixture。见[单份manifest](../../docs/evidence/tui01f/web-handoff/fixture-observation-manifest.json)、[Interface](../../docs/evidence/tui01f/web-handoff/fixture-observation-interface.md)、[原始汇总](../../docs/evidence/tui01f/web-handoff/fixture-observation-local-summary.json)。3组均absent/双EOF，已关闭本队局部执行槽；非空types自有cache1357740B KEEP，不扩大清理。无旧原件/KEEP读取，无新真实旅程。源码停写交独审；完整TUI01F-04仍open，runtime最终提交NOT_OBSERVED保持。

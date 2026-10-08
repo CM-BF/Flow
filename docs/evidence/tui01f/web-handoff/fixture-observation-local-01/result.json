@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-10-08T00:44:06.287Z",
+  "returnedAt": "2026-10-08T00:44:06.720Z",
+  "exitCode": 1,
+  "elapsedMs": 427,
+  "rawBytes": 2200,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "firstFailure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "scratchDisposition": "REMOVED_EXACT_EMPTY",
+  "scratchBytes": 0,
+  "scratchFiles": 0,
+  "PG": 0,
+  "provider": 0,
+  "services": 0
+}

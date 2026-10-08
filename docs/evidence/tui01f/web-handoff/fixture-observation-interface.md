@@ -1,0 +1,13 @@
+# Synthetic fixture observation Interface
+
+Source `25174ee40a7c1e272c64a9b413853739401cce87` (only the hostile-error test changed after initial `042c6816`). This diagnostic Module is consumed by `CancelJourney`; no shared runtime, ownership, success assertion, 8-second wait or cleanup rule changes.
+
+`FixtureObservation.run(phase, executionIdentity, operation)` records start/settled/failed and returns the exact value or throws the exact original error. `observeFixtureAdapter` wraps the actual context emit and ownership callbacks. The existing synthetic barrier is observed separately. `notice` consumes the runner's existing onNotice callback. Safe output is a fixed phase/state, UUID task/attempt/runner, positive owner version, fixed error-name/code allowlists and numeric HTTP status; missing/unrecognized fields are null. No messages, stack, original cause, body, token or configuration are serialized. Runtime notices remain separate from adapter stages.
+
+The in-memory record is bounded to 64 frames and 32KiB, with monotonic sequence/elapsed time. Overflow or unknown phase sets incomplete without suppressing the operation. Snapshot copies cannot mutate stored observations. Existing `save` persists snapshots into handoff-stages/checkpoint/result, retaining wx/fsync and its existing failure semantics. This adds no persistence retries, timers, cancellation, observer process or lifecycle authority.
+
+Adapter settled is not runtime finalization. Every snapshot explicitly retains `runtimeFinalization: NOT_OBSERVED`; subsequent completed-event acknowledgement or recovery may still be unknown. Historical R2 remains FAILED; this source does not diagnose its missing underlying error, modify old evidence or authorize another journey.
+
+Direct evidence: original 12 selected /11 passed /1 test-harness failure, then only the affected case 1/1; focused types exit0. The first failure was assert.rejects itself inspecting a hostile thrown Proxy. Source observer/fixture bytes did not change; the final test manually catches and compares identity. Total 12 different cases /13 selections, 3 supervised groups, 2861ms /2427B. Two empty exact scratch directories removed; one types-generated cache 1,357,740B retained under empty-only cleanup. No PG/HTTP/PTY/Chrome/provider/install/personal operations. No old suites or full journey rerun.
+
+The approved design used installed find-skills local discovery, brainstorming's bounded path (Lead's explicit implementation authorization), codebase-design's small Interface and clean-code's single responsibility/error preservation. No new skill installation or additional approval chain.

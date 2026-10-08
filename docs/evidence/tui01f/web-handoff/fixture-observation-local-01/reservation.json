@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-08T00:44:06.287Z",
+  "source": "042c6816236b9c5a26ea50f237f78eae619c1c97",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "--test-concurrency=1",
+    "--test-name-pattern=\\[fixture observation\\]",
+    "apps/tui/src/task-controls/fixture-observation.test.ts"
+  ],
+  "selection": "Explicit single test file, all 12 [fixture observation] cases; zero selected is not pass",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27650,
+      "sha256": "5466a02b64a5d97533ddce5992378e6eed77b082b8eb7ac53cea14fa6ee19329"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.ts",
+      "bytes": 5028,
+      "sha256": "6e7b1b9c31ec3949364d630fa935756e4b4b6d861d786450a090ea5275876280"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.test.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.test.ts",
+      "bytes": 8369,
+      "sha256": "104bda6b7f3b25df2e7f86c7da909d91cac70c28eb4b88105ebd45354aefdb7f"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    }
+  ],
+  "ledgerAt": "2026-10-08T00:43:32.229Z",
+  "floor": 13362659328,
+  "baseFloor": 13362659328,
+  "unlistedSegmentIncrement": 0,
+  "free": 14955687936,
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-observation-a9430ffy",
+    "dev": 16777234,
+    "ino": 124690195
+  },
+  "policy": {
+    "work_seconds": 20,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 262144
+  },
+  "networkServices": 0,
+  "PG": 0,
+  "provider": 0
+}

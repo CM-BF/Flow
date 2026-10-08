@@ -114,3 +114,7 @@ Findings 未评估；结论未审查。0 本片运行检查，NOT_RUN。
 ## 2026-10-06 17:57 UTC 主线接收与后继边界
 
 [main receipt](../../docs/evidence/tui01f/main-8d84-receipt.json)核七源对ec30/工作树零差；受控集成b549为main8d84祖先，原作者提交不是祖先。独审结论不变；03在两行为原证据与单独已审cleanup1/1范围内交付。原整suite exit1、旧tmp KEEP、未重跑事实保留。04只形成文档方案，真实App/PTY交替尚未实施或运行，不继承RELEASE03不同tuple批准。
+
+## 2026-10-08 fixture诊断交审
+
+目标 `25174ee40a7c1e272c64a9b413853739401cce87`，范围为fixture.ts、fixture-observation.ts及其直接test；[唯一manifest](../../docs/evidence/tui01f/web-handoff/fixture-observation-manifest.json)。12不同直接例分轮覆盖、首11/12与定向1/1原件、focused types通过；本片独审PENDING，未把局部通过当真实旅程。原b186 R2结果已由assignment独立APPROVED_LIMITED_R2_RESULT_FIDELITY/0P1P2；原FAIL/KEEP、groups unknown和后置RETURN保持。审查重点为安全字段/上限、原错透传、直接fixture消费、旧完成与清理语义无变、runtime finalization不冒通过。

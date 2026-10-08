@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-08T00:46:59.356Z",
+  "sourceCommit": "25174ee40a7c1e272c64a9b413853739401cce87",
+  "sourceBindings": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27650,
+      "sha256": "5466a02b64a5d97533ddce5992378e6eed77b082b8eb7ac53cea14fa6ee19329"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-observation.ts",
+      "bytes": 5028,
+      "sha256": "6e7b1b9c31ec3949364d630fa935756e4b4b6d861d786450a090ea5275876280"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-observation.test.ts",
+      "bytes": 8492,
+      "sha256": "4a30e32a8fc495c3d441fbfca1424bca5c3b222d0f156dcf1189cc394a572185"
+    }
+  ],
+  "inherited": [
+    {
+      "commit": "b1862907a1caaf40673123f86af0c8f5f5861ad8",
+      "path": "docs/evidence/tui01f/web-handoff/r2-result-manifest.json",
+      "bytes": 5251,
+      "sha256": "33c9afd8af8b05a97a4a220c331a191e23f4d4c80ed8e19a7ce656113eaecee2",
+      "purpose": "Immutable actual R2 failure/return; no cause backfill"
+    },
+    {
+      "commit": "43dc95fd4d1152ff506b507e4d45355fa90eb2fd",
+      "path": "docs/evidence/tui01f/web-handoff/r2-preparation.json",
+      "bytes": 7037,
+      "sha256": "9741cc703da665e7cb28a068e625fe3d97d2324988167e025f4a5aa46e23fad8",
+      "purpose": "Original runtime closure; no duplicate full input archive"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-01/outer.json",
+      "bytes": 2926,
+      "sha256": "a23f94e0a222b07b000bc6df6f3bd532a774379179c7ca64f2866460f6a625c6"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-01/reservation.json",
+      "bytes": 3064,
+      "sha256": "03fd9214f6341ca616777e910399086b4a8b738f6e15fe4371cc22fc0b7dfe6e"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-01/result.json",
+      "bytes": 548,
+      "sha256": "801c16169868d47f8aa5a5bb5b83931bff4369040f43a02860d47b38ab9e9ab3"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-02/outer.json",
+      "bytes": 783,
+      "sha256": "38e8984306e82b81d331d3d76ec813159d7bd4139c3d68322e5e473ee25540bf"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-02/reservation.json",
+      "bytes": 4531,
+      "sha256": "6bcebe9c3354dc0de6027843ba660dd975a7cba259699f8733f01518daf2743d"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-02/result.json",
+      "bytes": 402,
+      "sha256": "afd3ca24fdacc24d005372f2699375b34b00edff934ae8634e6843dcf82de2fc"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-03/outer.json",
+      "bytes": 544,
+      "sha256": "a3b6f27a3fabb1c17d23273921afcd4800ee953337b896ec1e809577bb046d82"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-03/reservation.json",
+      "bytes": 4618,
+      "sha256": "551aa7725bd231576c9373587075069f8f48a85fef83406ac14647ff3084b661"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-03/result.json",
+      "bytes": 401,
+      "sha256": "11f044d39fa28540a100443efc2fefa4a6993b9e4b01bc17cd3745cb51012806"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-tsconfig.json",
+      "bytes": 366,
+      "sha256": "f465ae3fddfcdc609e4c86561bee466ec7eeb6759cbff43adb17a215b9ff8edf"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-local-summary.json",
+      "bytes": 3224,
+      "sha256": "6984e860cd2cbb57db05b7569141d11d9d235ae61eca4c4a7c0a3c4c27ac7947"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-observation-interface.md",
+      "bytes": 2639,
+      "sha256": "de2d5a70ca898ae37be7b3eb6f97df60ffc95cf536be2a9de78022547476921f"
+    }
+  ],
+  "runtimeInputs": "Per-round reservation exact source/runtime/config hashes, no credentials",
+  "originalFailurePreserved": true,
+  "actualJourney": "NOT_RUN_NO_PERMIT",
+  "review": "PENDING"
+}

@@ -1,0 +1,39 @@
+{
+  "pid": 29316,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 427,
+  "stdout": "✔ [fixture observation] session rejection preserves the original error and exact stage (1.236125ms)\n✔ [fixture observation] assistant-final rejection preserves the original error and exact stage (0.120917ms)\n✔ [fixture observation] artifact rejection preserves the original error and exact stage (0.123041ms)\n✔ [fixture observation] verification rejection preserves the original error and exact stage (0.079583ms)\n✔ [fixture observation] ownership failure prevents later emits without changing the rejection (0.159791ms)\n✔ [fixture observation] success preserves call order and does not attest runtime completion (0.183666ms)\n✔ [fixture observation] unknown fields and fetch cause are safe without serializing private data (0.108958ms)\n✖ [fixture observation] hostile diagnostic fields do not replace primary errors or success values (0.172292ms)\n✔ [fixture observation] saturation is explicit and never suppresses later operations (0.773125ms)\n✔ [fixture observation] runner notices remain distinct and unknown values stay unknown (0.269083ms)\n✔ [fixture observation] pending barrier and its rejection remain visible without a new timer (1.694292ms)\n✔ [fixture observation] actual fixture save persists bounded evidence and keeps exclusive write failure (9.981375ms)\nℹ tests 12\nℹ suites 0\nℹ pass 11\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 380.791791\n\n✖ failing tests:\n\ntest at apps/tui/src/task-controls/fixture-observation.test.ts:1:4464\n✖ [fixture observation] hostile diagnostic fields do not replace primary errors or success values (0.172292ms)\n  Error: diagnostic getter\n      at Object.get (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.test.ts:71:90)\n      at waitForActual (node:assert:648:5)\n      at async strict.rejects (node:assert:769:25)\n      at async TestContext.<anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-observation.test.ts:72:3)\n      at async Test.run (node:internal/test_runner/test:1404:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)\n",
+  "stderr": "",
+  "observed_bytes": 2200,
+  "retained_bytes": 2200,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
