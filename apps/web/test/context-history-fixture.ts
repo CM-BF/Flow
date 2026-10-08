@@ -38,6 +38,7 @@ export async function startContextHistoryFixture(options: HistoryFixtureOptions,
     try {
       await checkpoint();
       const url = new URL(request.url ?? "/", origin), path = url.pathname;
+      if (path === "/favicon.ico" && (request.method === "GET" || request.method === "HEAD")) { response.writeHead(204).end(); return; }
       if (!path.startsWith("/api/")) { assert.ok(vite); vite.middlewares(request, response); return; }
       const row: ContextWire = { ordinal: wire.length + 1, method: request.method ?? "GET", path,
         cookie: !!request.headers.cookie, bearer: !!request.headers.authorization, status: 0, settled: false };
@@ -47,7 +48,12 @@ export async function startContextHistoryFixture(options: HistoryFixtureOptions,
       if (history || detail) {
         assert.equal(row.method, "GET");
         // Do not accept a fixture boolean, token cast, or an unauthenticated DTO request.
-        const auth = await fetch(center + "/api/browser-session", { headers: { host: new URL(origin).host, cookie: request.headers.cookie ?? "" }, signal });
+        const authHeaders: Record<string, string> = { host: new URL(origin).host, cookie: request.headers.cookie ?? "" };
+        for (const name of ["origin", "sec-fetch-site"]) {
+          const value = request.headers[name];
+          if (typeof value === "string") authHeaders[name] = value;
+        }
+        const auth = await fetch(center + "/api/browser-session", { headers: authHeaders, signal });
         const identity = browserSessionReadSchema.parse(await auth.json());
         if (!auth.ok || identity.state !== "ready" || !row.cookie || row.bearer) { row.status = 401; response.writeHead(401).end(); return; }
         if (history) assert.ok(taskIds.has(history[1]!));

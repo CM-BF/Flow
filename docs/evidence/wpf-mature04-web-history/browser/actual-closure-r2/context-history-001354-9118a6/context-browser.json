@@ -1,0 +1,243 @@
+{
+  "passed": false,
+  "phase": "decoded-read-states",
+  "checks": [
+    "cookie-no-task"
+  ],
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "failure": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..')\nExpected substring: \"0 tokens · estimate\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toContainText\" getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..') with timeout 5000ms\n  - waiting for getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..')\n",
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "path": "/favicon.ico",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "expected": false
+    },
+    {
+      "path": "/api/tasks/bfef00fc-b55c-4612-8ca8-dd7b950b2797/context/history",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "expected": false
+    }
+  ],
+  "errorOverflow": false,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "ordinal": 1,
+      "method": "GET",
+      "path": "/api/browser-session",
+      "cookie": false,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 2,
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "cookie": false,
+      "bearer": true,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 3,
+      "method": "GET",
+      "path": "/api/browser-session",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 4,
+      "method": "GET",
+      "path": "/api/tasks",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 5,
+      "method": "GET",
+      "path": "/api/conversations",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 6,
+      "method": "GET",
+      "path": "/api/workspace",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 7,
+      "method": "GET",
+      "path": "/api/conversations/3266fc57-2542-495e-abb7-7b2c6d31632f",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 8,
+      "method": "GET",
+      "path": "/api/conversations/3266fc57-2542-495e-abb7-7b2c6d31632f/turns",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 9,
+      "method": "GET",
+      "path": "/api/conversations/3266fc57-2542-495e-abb7-7b2c6d31632f/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 10,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 11,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6/turns",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 12,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 13,
+      "method": "GET",
+      "path": "/api/tasks/bfef00fc-b55c-4612-8ca8-dd7b950b2797",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 14,
+      "method": "GET",
+      "path": "/api/tasks/bfef00fc-b55c-4612-8ca8-dd7b950b2797/assistant-stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 15,
+      "method": "GET",
+      "path": "/api/tasks/bfef00fc-b55c-4612-8ca8-dd7b950b2797/stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": false
+    },
+    {
+      "ordinal": 16,
+      "method": "GET",
+      "path": "/api/tasks/bfef00fc-b55c-4612-8ca8-dd7b950b2797/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 0,
+      "settled": true
+    },
+    {
+      "ordinal": 17,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 18,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 19,
+      "method": "GET",
+      "path": "/api/workspace",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 20,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 21,
+      "method": "GET",
+      "path": "/api/conversations/fb0e4880-faad-4e35-a73e-cd24e1ed16a6/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 22,
+      "method": "GET",
+      "path": "/api/workspace",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    }
+  ],
+  "heldReads": [],
+  "timeOrigin": 1791418443297.4,
+  "scope": "b129 independent App with synthetic history DTOs behind real Cookie authentication; not Arc-combined or backend observation production",
+  "limits": {
+    "sameViewTaskReplacement": "NOT_COVERED",
+    "heldDetail": "NOT_COVERED",
+    "hiddenArcWorkspace": "NOT_COVERED",
+    "pluginDisableDuringModalRead": "NOT_COVERED",
+    "authorityRevocationDuringRead": "NOT_COVERED"
+  }
+}

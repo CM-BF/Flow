@@ -1,0 +1,148 @@
+{
+  "at": "2026-10-08T00:16:32.092949+00:00",
+  "grant": "CONTEXT-HISTORY-CONTINUOUS-ACCEPTANCE-20261008",
+  "browserUsedMs": 15603,
+  "attemptsUsed": 1,
+  "localChildrenUsed": 0,
+  "old6352CreditTransferred": false,
+  "firstResult": "FAILED;1/8cookie-no-task;0PNG",
+  "return": {
+    "at": "2026-10-08T00:15:38.462917+00:00",
+    "state": "FULL_RETURN_FAILED_ACCEPTANCE",
+    "run": "context-history-001354-9118a6",
+    "actualStart": "2026-10-08T00:13:54.982729+00:00",
+    "terminalAt": "2026-10-08T00:14:10.585130+00:00",
+    "outerExit": 1,
+    "identities": [
+      {
+        "kind": "PID",
+        "id": 38278,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 43578,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 43578,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 43916,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 43916,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 44248,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 44248,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 43257,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 43257,
+        "state": "ESRCH"
+      }
+    ],
+    "CDP": {
+      "port": 63007,
+      "listenerAbsent": true
+    },
+    "scratch": "/private/tmp/flow-recovery-browser-Yzp1UH",
+    "scratchAbsent": true,
+    "adminInputDeleted": true,
+    "adminIdentity": {
+      "path": "/private/tmp/context-history-closure-r2-20261007/admission-context-history-001354-9118a6/admin.env",
+      "dev": 16777234,
+      "ino": 124658678,
+      "uid": 501,
+      "mode": 33152,
+      "nlink": 1,
+      "bytes": 84,
+      "sourceBlobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+      "field": "adminUrl"
+    },
+    "databaseCleanup": {
+      "database": "flow_recovery_b6a202b0c89d4d8ca251370a6ee70c4c",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.5014159999991534,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.7028750000008586,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixtureCleanup": {
+      "complete": true,
+      "errors": [],
+      "pendingResponses": 0,
+      "pendingUpstreams": 0,
+      "sockets": 0,
+      "publicListening": false
+    },
+    "contextClosed": true,
+    "streams": {
+      "stdout": {
+        "file": "parent.stdout.jsonl",
+        "bytes": 1404,
+        "retainedBytes": 1404,
+        "droppedBytes": 0,
+        "EOF": true,
+        "sha256": "3bb20c82dbe72dc46c0f13e77dda0bbbe67a2373752739702cc20bc94b477b4a"
+      },
+      "stderr": {
+        "file": "parent.stderr.log",
+        "bytes": 0,
+        "retainedBytes": 0,
+        "droppedBytes": 0,
+        "EOF": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "innerStreams": "worker and Chrome stdout/stderr parent settled; no log drop or cleanup errors",
+    "chargeMs": 15603,
+    "browserCumulativeMs": 15603,
+    "browserBundleLimitMs": 270000,
+    "attemptLimitMs": 90000,
+    "attemptClosed": true,
+    "old6352Transferred": false,
+    "checks": [
+      "cookie-no-task"
+    ],
+    "png": [],
+    "actualExitSha256": "598079ee8bab4f68f74bc358b8601819fb6a7a5c157db7b4492cb29feee3ec65"
+  },
+  "diagnosis": "Auth subrequest dropped browser Origin/Sec-Fetch-Site; real browser session rejects before DTO. Forward only actual received header values, preserve center trust checks. Empty favicon204 prevents unrelated favicon404 console error. Production and eight assertions unchanged."
+}

@@ -1,0 +1,98 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "context-history",
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "completedGroups": [
+    "cookie-no-task"
+  ],
+  "initialization": null,
+  "groupTimings": null,
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..')\nExpected substring: \"0 tokens · estimate\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toContainText\" getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..') with timeout 5000ms\n  - waiting for getByRole('dialog', { name: 'Context observation', exact: true }).getByText('Last observed use', { exact: true }).locator('..')\n",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_b6a202b0c89d4d8ca251370a6ee70c4c",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.5014159999991534,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.7028750000008586,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "task": "MATURE04-05",
+  "visualAppearancePhase": {
+    "id": "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007",
+    "budgetMs": 90000,
+    "spentMs": 0,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 43916,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 44248,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 17780965376,
+  "peakScratchBytes": 27507946,
+  "logBytes": 5897,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 15052.155834,
+      "scratchBytes": 27507946,
+      "evidenceBytes": 1135221,
+      "freeBytes": 17780965376,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 15101.144291999999,
+      "scratchBytes": null,
+      "evidenceBytes": 1138058,
+      "freeBytes": 17809362944,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}
