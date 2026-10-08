@@ -5,7 +5,7 @@ E=Path(__file__).resolve().parent;ROOT=E.parents[2];name=sys.argv[1]
 assert name in ('types','behavior','behavior-repair','types-final')
 def now():return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')
 assert now()<'2026-10-08T01:19:50.953Z'
-prior=[json.loads(p.read_text()) for p in E.glob('runs/*/result.json')];assert len(prior)<3
+prior=[json.loads(p.read_text()) for p in E.glob('runs/*/result.json')];assert len(prior)<4
 seconds=min(20,(60000-sum(r['supervision']['elapsed_ms'] for r in prior))/1000);assert seconds>3
 manager=Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform')
 paths=[manager/'resource-window-current.json',manager/'host-i01-newpair-queue-20261007/current.json']
@@ -18,7 +18,7 @@ base=[node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vi
 if name.startswith('types'):cmd=[node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'tsconfig.json')]
 elif name in ('behavior','behavior-repair'):cmd=base+[str(ROOT/'apps/server/src/plugin-runtime/verification-admission.test.ts'),str(ROOT/'packages/client/src/plugin-verification-admission.test.ts')]
 else:raise AssertionError('unsupported mode')
-if name=='behavior-repair':cmd+=['-t','SDK verification admission freezes|VAR admission creates|SDK admission adds identity']
+if name=='behavior-repair':cmd+=['-t','SDK verification admission freezes|VAR admission creates|SDK admission adds identity|SDK project revision bound']
 out=E/'runs'/name;out.mkdir(parents=True);tmp=out/'tmp';tmp.mkdir();identity=tmp.lstat();start=time.monotonic()
 def save(p,value):
  with p.open('x') as f:json.dump(value,f,indent=2);f.write('\n')
