@@ -11,3 +11,5 @@ Selection requires exactly one target across all assertions, so duplicate target
 First pure archive check failed due to a test deadline exactly equal to the caller's3-second reservation. The source gate was correct; test now supplies10seconds inside20second child. Original failure/raw remain; no unsupported pass transfer.
 
 Actual still NOT_OPEN; no PG/worker/listener/provider. Source closure is not released artifact/T7. HTTP4096/512MiB remain conservative planning, runner observedCount null.
+
+2026-10-08T02:20Z safety-point review: independent source finding fixed distinct T2/T3 outcomes, each owns exactly one launched/settled pair. Positive control and duplicate T2 hiding unknown T3 regression actually passed in the final separately authorized child. OPS only policy argument tightened: same-origin170 minus2 then1+1signals, leaving10final; supervisor itself unchanged. TMP root identity durably saved before child; stage identity validated after raw archive. S01 drain02:15:39→02:19 cancellation-before-open retained; original02:27:12.962deadline unchanged. Three children exhausted; no further checks.

@@ -1,5 +1,5 @@
 {
-  "state": "PARTIAL_CHECK_PENDING_CLOSED",
+  "state": "REVIEW_PENDING_CLOSED",
   "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
   "preparedSource": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
   "preparedPacket": "c86f0a209ea355f64d714c2d5947072aebf0f250",
@@ -45,9 +45,32 @@
     "raw": 1048576,
     "DBWALPlanning": 134217728
   },
-  "checks": "selection14pass; archive failed test deadline now+3, corrected to10 NOT_RUN until separate extra-child authorization",
+  "checks": {
+    "selectionOriginal": {
+      "scenarios": 14,
+      "passed": true,
+      "source": "9ec354a35"
+    },
+    "archiveFirst": {
+      "exit": 1,
+      "cause": "test deadline equal to3second reservation",
+      "retained": true
+    },
+    "archiveFinal": {
+      "scenarios": 14,
+      "passed": true,
+      "includes": "distinct T2/T3 negative plus positive control; missing and oversized result",
+      "source": "50896fcb8c1462b4dceecabee81d60328508cec2"
+    },
+    "children": 3,
+    "supervisorMs": 154,
+    "rawBytes": 851,
+    "PG": 0,
+    "worker": 0,
+    "wholeExternalWall": "UNKNOWN"
+  },
   "requiredBeforeActual": [
-    "independent source/local review and missing archive pure outcome",
+    "independent source/local review followed by manager unique actual grant",
     "fresh402local/62external/15link source closure and9operator bindings",
     "fresh exact34claim/scope/worktree/branch/head=origin clean<=60s/nooverlap",
     "future namespace lstat ENOENT and recorded parent/root identity",
@@ -56,5 +79,6 @@
     "sameorigin180 starts before manifest verification; no retry or forcedDB cleanup"
   ],
   "preservation": "Missing/malformed/oversized receipt: archive other bounded readable raw first, retain originals and resource UNKNOWN; no PASS from assertions alone",
-  "T7": false
+  "T7": false,
+  "resourceReturn": "2026-10-08T02:19:49.709Z"
 }
