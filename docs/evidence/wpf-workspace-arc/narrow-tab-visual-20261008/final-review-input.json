@@ -1,0 +1,162 @@
+{
+  "at": "2026-10-08T01:27:14.785659+00:00",
+  "feature": "WPF-WORKSPACEARC01",
+  "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+  "executionHead": "0e5ff28b71df734c9cbffa8570249fbd6ceef7d0",
+  "base": "331d3fdb390b0b403317da8d8cdf0028eae27c19",
+  "state": "FAILED_3_OF_4_VISUAL_P2_OPEN",
+  "scope": "Only layout.css and original browser plus own records; no shared App/session/host mutations.",
+  "runs": [
+    {
+      "packet": "/private/tmp/arc-narrow-browser-hp2lfp6v",
+      "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+      "executionHead": "dd72fdf0d19836fa7f50115a3459a7c4234e5ef4",
+      "start": {
+        "run": "arc-narrow-1-20261008-011912",
+        "startedAt": "2026-10-08T01:19:12.620423+00:00",
+        "outerPid": 10563,
+        "parentPid": 11658,
+        "gateSha256": "e2417a209d5c13fc77e9b1203588acdd79331e868e409ecdfa2b953baab58c3c"
+      },
+      "accounting": {
+        "at": "2026-10-08T01:20:03.892569+00:00",
+        "logicalId": "ARC-NARROW-TAB-VISUAL-CONTINUATION-20261008",
+        "attempt": 1,
+        "outerElapsedMs": 24339.813124970533,
+        "outerPostWriteElapsedMs": 24340.153999975882,
+        "parentElapsedMs": 24298.584792064503,
+        "chargeMs": 24341,
+        "cumulativeMs": 24341,
+        "remainingMs": 155659,
+        "state": "CLOSED_ATTEMPT_ONE_REMAINS",
+        "oldCreditTransfer": false
+      },
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "failure": "Error: expect(locator).toBeInViewport() failed\n\nLocator:  getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0.019999999552965164\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeInViewport\" getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\n    14 × locator resolved to <button tabindex=\"-1\" aria-label=\"Close Conversation 4 — retained materials and independent next draft across workspace layouts\">…</button>\n       - unexpected value \"viewport ratio 0.019999999552965164\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeInViewport (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:351:96)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:88:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:298:5)\n    at async <anonymous> (/private/tmp/arc-narrow-browser-hp2lfp6v/worker.mjs:31:16)",
+      "finalScreenshots": [],
+      "earlyDesktop": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-narrow-browser-hp2lfp6v/raw/arc-desktop-ready.png",
+        "bytes": 85829,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T01:19:20.836Z"
+      },
+      "narrowTabs": null,
+      "returnReceipt": "/private/tmp/arc-narrow-browser-hp2lfp6v/post-cleanup.json"
+    },
+    {
+      "packet": "/private/tmp/arc-narrow-final-1zc8oen9",
+      "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+      "executionHead": "0e5ff28b71df734c9cbffa8570249fbd6ceef7d0",
+      "start": {
+        "run": "arc-narrow-2-20261008-012548",
+        "startedAt": "2026-10-08T01:25:48.136856+00:00",
+        "outerPid": 73975,
+        "parentPid": 73994,
+        "gateSha256": "a031214504ec5c650dc8fe17e5c6005d1bfdbfb82be43d5e983c64d1024268ed"
+      },
+      "accounting": {
+        "at": "2026-10-08T01:26:36.915398+00:00",
+        "logicalId": "ARC-NARROW-TAB-VISUAL-CONTINUATION-20261008",
+        "attempt": 2,
+        "outerElapsedMs": 24328.11804197263,
+        "outerPostWriteElapsedMs": 24328.3956249943,
+        "parentElapsedMs": 24288.552666897886,
+        "chargeMs": 24329,
+        "cumulativeMs": 48670,
+        "remainingMs": 131330,
+        "state": "CLOSED_MAX_TWO_ATTEMPTS",
+        "oldCreditTransfer": false
+      },
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "failure": "Error: expect(locator).toBeInViewport() failed\n\nLocator:  getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0.019999999552965164\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeInViewport\" getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\n    14 × locator resolved to <button tabindex=\"-1\" aria-label=\"Close Conversation 4 — retained materials and independent next draft across workspace layouts\">…</button>\n       - unexpected value \"viewport ratio 0.019999999552965164\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeInViewport (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:362:96)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:88:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:298:5)\n    at async <anonymous> (/private/tmp/arc-narrow-final-1zc8oen9/worker.mjs:31:16)",
+      "finalScreenshots": [],
+      "earlyDesktop": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-narrow-final-1zc8oen9/raw/arc-desktop-ready.png",
+        "bytes": 86336,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T01:25:56.294Z"
+      },
+      "narrowTabs": {
+        "tabGeometry": [
+          {
+            "title": "Conversation 6",
+            "titleWidth": 117,
+            "titleContentWidth": 117,
+            "titleWhiteSpace": "nowrap",
+            "actionWhiteSpace": "nowrap",
+            "actionLines": 1,
+            "actionHeight": 24.5,
+            "clippedVertically": false
+          },
+          {
+            "title": "Conversation 5",
+            "titleWidth": 117,
+            "titleContentWidth": 117,
+            "titleWhiteSpace": "nowrap",
+            "actionWhiteSpace": "nowrap",
+            "actionLines": 1,
+            "actionHeight": 24.5,
+            "clippedVertically": false
+          },
+          {
+            "title": "Conversation 4 — retained materials and independent next draft across workspace layouts",
+            "titleWidth": 173,
+            "titleContentWidth": 497,
+            "titleWhiteSpace": "nowrap",
+            "actionWhiteSpace": "nowrap",
+            "actionLines": 1,
+            "actionHeight": 24.5,
+            "clippedVertically": false
+          }
+        ],
+        "longTitle": "Conversation 4 — retained materials and independent next draft across workspace layouts",
+        "stage": "after keyboard focus reached plugin action"
+      },
+      "returnReceipt": "/private/tmp/arc-narrow-final-1zc8oen9/post-cleanup.json"
+    }
+  ],
+  "local": {
+    "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+    "check": "affected noEmit",
+    "exitCode": 0,
+    "chargeMs": 3573,
+    "later6acCheck": "NOT_RUN CSS and reorder existing typed observation only"
+  },
+  "pairManifests": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/attempt-1-manifest.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/attempt-2-manifest.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/local-manifest.json"
+  ],
+  "pairCount": 68,
+  "uniqueBytes": 1460103,
+  "allPairsHashMatch": true,
+  "limitations": [
+    "Second close viewport ratio0.02 remains; scroll-padding did not satisfy assertion.",
+    "Normal title actual117px/full content117, long title173/content497; >=128 subsequent assertion NOT_REACHED.",
+    "More actions actualnowrap1line24.5px/unclipped vertically captured, but no final390 screenshots in these2attempts.",
+    "Historical tooltip4/4 and390 P2 remain; newfunctional3/4 is not wholePASS.",
+    "ControlledHTTP fixture only; no PGcenter/native/provider/personal deployment; main/Context not integrated.",
+    "No independent port probe; actual EOF fields and exact owned disappearance retained separately."
+  ],
+  "cleanCode": {
+    "at": "2026-10-08T01:27:14.800439+00:00",
+    "review": "Scoped CSS retains controls and authority; no magic timeout/force/nth or newframework. Passive geometry before assertion preserves failure diagnosis. New actual falsified proposed scroll reserve; no additional unvalidated change after last run.",
+    "open": "ARC-VISUAL-NARROW-TAB-01 and trailing close reachability; finalvisual notaccepted."
+  }
+}

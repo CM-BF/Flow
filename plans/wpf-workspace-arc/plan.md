@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01：Arc 会话组合工作区
 
-创建2026-10-07T18:02:31.663Z / 更新2026-10-08T01:08:55.802337+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
+创建2026-10-07T18:02:31.663Z / 更新2026-10-08T01:28:00.015702+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
 
 用户目标：在一个工作区中组合最多三个可见真实会话 pane，独立焦点/滚动/草稿与上下文；分拆、交换、合并和比例调整不重建composer或复制业务状态；插件真实上下文动作可随时扩展且旧权限/调用不能复活。
 
@@ -71,3 +71,7 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 最终独审[root b514](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/root-final-review.json)限定接受功能fixture，ARC-VISUAL-NARROW-TAB-01真实视觉P2保持TODO05开放；当前无新runtime，main/Context组合及导航extension-slot另保持明确后继。
 
 2026-10-08T01:18:39.799285+00:00：TODO05原视觉P2新独立段，仅Arc layout.css及原browser组补正常/长标题可辨、More actions单行、Home/End手动焦点及横向可达，不隐去plugin/close。原功能4/4保历史，新sourceactual待条件lease；不改App/host/sharedattachment。
+
+2026-10-08T01:28:00.015702+00:00 TODO05窄屏后继：在原layout.css采用可读非收缩宽度/动作单行与横向键盘焦点，原四组新增正常/长标题和完整close可见验收。两次都3/4，第二scroll-padding未满足closefullviewport0.02；实际geometry已保，最终图未达。保持该强断言与原失败，不在用尽2次后追加修复/运行。source6acSTOP，browser48670/local3573CLOSED；仅自然独审/记录，完整窄屏UX仍OPEN。
+
+2026-10-08T01:28:58.148136+00:00 独审4f952：结果保真APPROVED，完整窄屏视觉BLOCKED。下一合法后继应先观察close/tab/strip rect、scrollLeft/clientWidth、实际font与clip祖先以及失败390图；现128px标题断言与14px root/8rem不符为静态P2，未达不冒实际失败。保真实标题可辨/动作单行/关闭可达的验收，不改全局字体或借旧额度。

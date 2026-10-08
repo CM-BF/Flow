@@ -1,9 +1,13 @@
 # Current Arc review
 
-状态: PENDING — narrow tab visual repair
+状态: APPROVED — result fidelity only; visual acceptance BLOCKED
 Review target commit: 6ac91bace38e39ade654e98e86d0d513af8255cf
 
-当前唯一组合：[窄tab入口](narrow-tab-visual-20261008/entry.json)。首3/4FAIL/closeviewport0.02保留；新CSSfocus scrollpadding待最后一次actual，原全功能4/4只属旧f6并仍有视觉P2。0runtime，O16lease等待归还；最终一次review。
+当前唯一组合：[root一次独审](narrow-tab-visual-20261008/root-final-review.json)，**RESULT_FIDELITY_APPROVED_WITH_VISUAL_ACCEPTANCE_BLOCKED**。[固定结果输入](narrow-tab-visual-20261008/final-review-input.json)与68原/归档pairs逐hash核同。两次实际均3/4 FAILED，0finalPNG/各early1；closeviewport仍0.02，视觉P2 OPEN。48670ms browser/3573ms scopedtypes全部CLOSED，0runtime/无第三次。
+
+第二geometry显示普通标题117px已完整、动作单行/无纵向clip，但关闭按钮完整可见失败；后置titleWidth>=128也有静态P2（root14px与8rem不支持固定128px），该断言未达，不能冒实际第三项失败。后继须采close/tab/strip真实rect与scrollLeft/font/clip祖先和失败390图再修，不改全局字体或盲猜scroll-padding。close为tabIndex=-1，当前验证只到More actions键盘焦点；不能宣称下一Tab可达close，既有Delete替代另保留。
+
+当前限定审不表示新视觉通过或可完整交付。main/Context、真实中心安全/native/provider/个人部署仍未集成或未验证；历史f6四组PASS不覆盖本新P2。
 
 ## 历史固定目标与原件
 

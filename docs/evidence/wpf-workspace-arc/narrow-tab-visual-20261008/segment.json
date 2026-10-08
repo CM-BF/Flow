@@ -17,7 +17,7 @@
       "maxAttempts": 2,
       "perAttemptMs": 90000,
       "totalMs": 180000,
-      "spentMs": 24341,
+      "spentMs": 48670,
       "attempts": [
         {
           "packet": "/private/tmp/arc-narrow-browser-hp2lfp6v",
@@ -27,9 +27,19 @@
           "finalPNG": 0,
           "returnAt": "2026-10-08T01:20:03.892569Z",
           "failure": "Full viewport close expected1 actual0.02 afterkeyboardfocus toMoreactions; Home/End/material already passed."
+        },
+        {
+          "packet": "/private/tmp/arc-narrow-final-1zc8oen9",
+          "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+          "executionHead": "0e5ff28b71df734c9cbffa8570249fbd6ceef7d0",
+          "chargeMs": 24329,
+          "passed": 3,
+          "finalPNG": 0,
+          "returnAt": "2026-10-08T01:26:36.915398+00:00",
+          "failure": "Error: expect(locator).toBeInViewport() failed\n\nLocator:  getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0.019999999552965164\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeInViewport\" getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 — retained materials and independent next draft across workspace layouts', exact: true })\n    14 × locator resolved to <button tabindex=\"-1\" aria-label=\"Close Conversation 4 — retained materials and independent next draft across workspace layouts\">…</button>\n       - unexpected value \"viewport ratio 0.019999999552965164\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeInViewport (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:362:96)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:88:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:298:5)\n    at async <anonymous> (/private/tmp/arc-narrow-final-1zc8oen9/worker.mjs:31:16)"
         }
       ],
-      "state": "WAIT_MANAGER_AFTER_O16"
+      "state": "CLOSED_MAX_TWO_ATTEMPTS"
     },
     "local": {
       "maxChildren": 2,
@@ -37,7 +47,7 @@
       "totalMs": 30000,
       "spentMs": 3573,
       "children": 1,
-      "state": "PASS_AFFECTED_TYPES"
+      "state": "CLOSED_ONE_CHILD_3573_NO_TRANSFER"
     }
   },
   "cause": "Arc tab shared base flex 0 1 auto/min85/max230 plus actions compresses title; More actions wraps inside29px tab/fixed36px strip. Actual390rootb514 P2.",
@@ -48,5 +58,16 @@
   "local": "One necessarybrowser typed geometry/DOMassertion noEmit0/3573; notCSS-onlygreen rerun",
   "cleanCode": "Same scopedCSS owns layout and never hides controls; test uses existing publictab roles plus realHome/End/Tab andactualfixturetitle. No arbitrary first/nth/force orproduct hooks.",
   "fix": "Arc strip scroll-padding-inline2rem reserves trailing25pxclose beyond focusedmenu action; no assertion relaxed. Move existing geometry observation before close assertion so failure retains evidence.",
-  "nextLocal": "NOT_RUN: onlyCSS/reorderexistingtypedobservation, no new typeinterface; prioraffectedtypes3573 stayslimited5c6."
+  "nextLocal": "NOT_RUN: onlyCSS/reorderexistingtypedobservation, no new typeinterface; prioraffectedtypes3573 stayslimited5c6.",
+  "productAcceptance": "FAILED_NEW_VISUAL_3_OF_4",
+  "sourceStopAt": "2026-10-08T01:27:14.781625+00:00",
+  "remainingWork": "Only natural evidence/review metadata; no source/test/runtime or third attempt.",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/root-final-review.json",
+    "original": "/private/tmp/root-arc-narrow-tab-result-review-20261008.json",
+    "bytes": 7183,
+    "sha256": "4f952ffd60e0dc1c3659b7f325862d05feb5b743d2c17eaaf15941de764daa11",
+    "state": "RESULT_FIDELITY_APPROVED_WITH_VISUAL_ACCEPTANCE_BLOCKED"
+  },
+  "staticFinding": "Post-close titleWidth>=128 conflicts with actual root14px/8rem; NOT_REACHED. Normal117px title fullyfits; keep current raw."
 }
