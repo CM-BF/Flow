@@ -14,7 +14,7 @@ resources=load('verifier_cleanup',ROOT/'docs/evidence/x01/enable-binding-pg-once
 stamp=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')
 record=json.loads(RECORD.read_text()) if RECORD.exists() else {'attempts':[],'unknown':False,'PG':0,'worker':0,'listener':0,'wholeExternalWall':None}
 label=sys.argv[1]
-if label not in ('selection','archive') or record['unknown'] or len(record['attempts'])>=2 or sum(x['supervisorMs'] for x in record['attempts'])>=20000:raise ValueError('iteration bound')
+if label not in ('selection','archive') or record['unknown'] or len(record['attempts'])>=3 or sum(x['supervisorMs'] for x in record['attempts'])>=20000:raise ValueError('iteration bound')
 ending=datetime.datetime.fromisoformat(json.loads((HERE/'operator-start.json').read_text())['deadline'].replace('Z','+00:00')).timestamp()
 if time.time()+25>=ending:raise ValueError('segment closing')
 canonical=json.loads(Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json').read_text());forward=canonical['forwardAdmission'];terms=forward['termsBytes'];floor=sum(terms.values())
@@ -31,6 +31,8 @@ if any(claim['claimId'] in str(x) for x in ledger.get('conflicts',[])):raise Val
 root=Path(tempfile.mkdtemp(prefix='flow-x01-verifier-local-')).resolve();identity=root.lstat();(root/'tmp').mkdir();(root/'cache').mkdir()
 step={'label':label,'startedAt':stamp(),'floor':floor,'terms':terms,'free':free,'canonicalAt':forward.get('at'),'frozenFloor':frozen,'claim':claim,'temporary':{'path':str(root),'dev':identity.st_dev,'ino':identity.st_ino},'sourceHashes':{}}
 for p in [HERE/'pg-once.py',HERE/'operator-pure.test.py',HERE/'pg-operator-input.json',Path(__file__)]:step['sourceHashes'][str(p.relative_to(ROOT))]=hashlib.sha256(p.read_bytes()).hexdigest()
+record['lateAuthorization']={'maxChildren':3,'scope':'last archive+distinct-worker-negative-and-positive only','source':'root02:19 D01 cancelled-before-open drain; original deadline/cum40/cap4MiB unchanged'}
+if len(record['attempts'])==2 and label!='archive':raise ValueError('third is archive only')
 record['attempts'].append(step);RECORD.write_text(json.dumps(record,indent=2)+'\n')
 argv=[sys.executable,'-I','-B',str(HERE/'operator-pure.test.py'),label]
 env={'PATH':'/usr/bin:/bin','LANG':'C','LC_ALL':'C','TZ':'UTC','TMPDIR':str(root/'tmp'),'TMP':str(root/'tmp'),'TEMP':str(root/'tmp'),'FLOW_X01_BINDING_CACHE':str(root/'cache'),'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1'}
