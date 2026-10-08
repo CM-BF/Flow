@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:23:42.026Z / main312842ab5；已审目标续接和终端限定结果已接收，新阶段获授权但尚未实际运行。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:39:53.590Z / mainb9904a63e；目标确认/资源归还与终端新入口限定审查已接收，后续实际结果另列。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main312842ab5已接收O16新阶段续接9路径和TUI R3限定结果；个人e15/Web779为此前部署事实，本段未操作服务。 |
+| 已集成main状态 / HEAD | main782f0ad09已接TUI收尾修复，d25dda8f1/b9904a63e已接O16实际确认与TUI R4入口限定审查；个人e15/Web779为此前部署事实，本段未操作服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 真实两步计划已保存并获语义认可，续接实现已审；终端与网页接续功能已实际到达，验收收尾仍未通过。 |
-| 下一可用交付 | 确认已保存的计划，执行两项受限文本任务并独立核对；同时修复终端验收的进程收尾。 |
-| 当前阻塞 | ACTIVE: 新阶段已获有限授权，仍须绑定实际资源并完成确认、执行和独立接受；终端收尾的进程组观察仍有未知。 |
+| 当前产出 | 真实两步计划已在中心确认，原材料与输入版本保持；终端收尾修复和下一轮入口已审，完整接续仍待验证。 |
+| 下一可用交付 | 完成终端与网页的真实接续验收；明确已确认目标过期后的授权接续，再形成两项文本结果并独立接受。 |
+| 当前阻塞 | ACTIVE: 目标执行窗口未在最晚启动前交接，未调用模型；已确认授权现已过期，需明确接续合同。终端新旅程等待实际资源安排。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -315,3 +315,5 @@ REQ-19跨时点备份恢复新增验收已归原T04，当前仅只读研究/NOT_
 [O16源码/局部结果接收](../../../m2-integration/docs/evidence/i02/o16-expired-plan-continuation-intake.json)与[TUI R3限定结果](../../../m2-integration/docs/evidence/i02/tui01f-r3-result-intake.json)均已main312842ab5。O16保留过期pause与原材料，新阶段沿同来源一次消费和原确认CAS；GO于02:21:47Z授权唯一renew（有效至02:36:47Z）及最多两次条件化只读child，原4次SDK封存、真实新调用当前0，独立最终语义接受尚未发生。实际grant/资源/阶段回执仅由[原owner](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)维护，不重新调用成功planner。
 
 TUI R3实际02:08:17.814Z开始、02:08:36.845Z终止、02:11:39.152Z运行归还；跨端取消、草稿、终端退出后后台继续及最终读取均到达，但唯一完整选择仍1选0过，fixture-close/groups未知、专库/private KEEP。后继由原assignment owner在既有精确scope进行0PG/Chrome的有界生命周期修复，不把后续组absent观察追认为原收尾通过。
+
+2026-10-08T02:39:53.590Z：[O16实际确认限定审查](../../../m2-integration/docs/evidence/i02/o16-renew-actual-intake.json)已main，START02:30:18.714Z/RETURN02:31:17.205Z，0新query、累计4；两节点0admission，DB及两个私有目录KEEP。children于02:33:27.236Z选中，latest02:34:17Z，Lead在上下文恢复后02:35:19Z读到，故未启动/未消耗两次额度；原确认及permit截止02:36:47Z保持，需明确新阶段合同，不能复活旧pause。不是已测资源不足，选择已撤、不冻结其他ready项。[TUI R4入口审查](../../../m2-integration/docs/evidence/i02/tui01f-r4-preparation-review.json)核13绑定/2继承与1/1直接入口检查，384ms/238B，0PG/Chrome/PTY/provider；复用原caller与已审收尾helper，不复制741源或重跑已绿检查，实际完整旅程尚未运行。

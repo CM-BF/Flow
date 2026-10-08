@@ -1,0 +1,22 @@
+{
+  "kind": "I02_CURRENT_CONFIRMATION_AND_DISPATCH_STATUS_INTAKE",
+  "at": "2026-10-08T02:41:59.769Z",
+  "source": "d52cfc6573749d3c8b738f35d2d63990c2260af9",
+  "base": "0b7009509990cc5841e6ca01b1bc3341ab4ffc0e",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "review": "APPROVED_DOCS; 0 P1/P2; exact two status14+/10-, actual I02 renew and R4 records checked",
+  "scope": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 56095,
+      "sha256": "16e5c69ab79fb8c5148f046b2766606d17565ef8811b413951e7b8ebf118e2b7"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 127838,
+      "sha256": "ed77488db49db720fbf8cdf51ddf9b4a09d63eb06c4193bdbb9497ca4544ec68"
+    }
+  ],
+  "preimage": "Both prior main byte images equal reviewed base; exact reviewed target adopted.",
+  "limits": "Only own current status and new actual history. Original UNKNOWN/full goals remain open. No product checks/provider/service operations; no new authorization."
+}
