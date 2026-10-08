@@ -217,7 +217,7 @@ afterAll(async () => {
       connections: 0, dropAcknowledged: true, databaseAbsent: true } });
 }, 60000);
 
-test('real center and runner entries execute pinned semver before and after clean ACK restart', async () => {
+test.runIf(!verifierMode)('real center and runner entries execute pinned semver before and after clean ACK restart', async () => {
   const registered = await request('/api/plugins', { scope: { workspaceId: 'personal', projectId: null }, version: {
     packageName: 'flow-semver-compare', packageVersion: '1.0.0', source: 'npm', declaredSha256: digest, license: 'ISC',
     hostApiMajor: 1, capabilities: ['tool'], publicConfiguration: [],
@@ -352,7 +352,7 @@ async function assertVerifierResult(taskId: string, binding: PluginToolBinding, 
   return { artifact, final, binding, verification, phases };
 }
 
-test('real center and trusted-process runner verify a failed source and its JSON output', async () => {
+test.runIf(verifierMode)('real center and trusted-process runner verify a failed source and its JSON output', async () => {
   expect(verifierMode).toBe(true); expect(verifierMaterial).toBeDefined();
   // These fixed preconditions are necessary for the conservative HTTP bound; no steering/native body/history recovery.
   expect(process.env.FLOW_X01_VERIFIER_PROCESS_CASE).toBe('1');
