@@ -43,6 +43,7 @@ test('VAR admission creates exactly one task and project binding on the receipt 
   state.graph.mockResolvedValue({ changedNodeId: 'node', snapshot: { project: { revision: 4 }, graph: { nodes: [{ id: 'node', taskId: 'new-task' }] }, tasks: [{ id: 'new-task' }] } });
   state.binding.mockImplementation(async (_client, binding) => binding);
   const result = await admitPluginVerification({} as never, {} as never, '11111111-1111-4111-8111-111111111111', request, 'stable-key', () => true, () => true);
+  expect(result.requestIdentity).toMatchObject({ protocol: 'flow.plugin-verification-admission.v1', registrationId: '11111111-1111-4111-8111-111111111111', ...request });
   expect(result.task.id).toBe('new-task'); expect(result.project).toEqual({ id: 'project', revision: 4, nodeId: 'node' });
   expect(state.accept).toHaveBeenCalledTimes(1); expect(state.accept.mock.calls[0]![0]).toBe(client);
   expect(state.graph.mock.calls[0]![0]).toBe(client); expect(state.graph.mock.calls[0]![2].change.taskId).toBe('new-task');
