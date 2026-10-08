@@ -20,7 +20,7 @@ export function verifySourceDelta(source, oldDigest, delta) {
   const seen = new Set();
   for (const row of delta) {
     keys(row, ['path', 'before', 'after']);
-    assert(/^experiments\/continuous-goal-acceptance\/[a-z0-9-]+\.mjs$/.test(row.path) && !seen.has(row.path)); seen.add(row.path);
+    assert(/^experiments\/continuous-goal-acceptance\/[a-z0-9-]+(?:\.test)?\.mjs$/.test(row.path) && !seen.has(row.path)); seen.add(row.path);
     assert.deepEqual(files.get(row.path), row.after, 'Current source differs from the reviewed delta.');
     if (row.before === null) files.delete(row.path);
     else { keys(row.before, ['path', 'bytes', 'sha256']); assert(row.before.path === row.path && hex(row.before.sha256)
