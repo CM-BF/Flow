@@ -560,3 +560,7 @@ chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a93
 Root02:21:53Z independently approved limited second half at source50896f/packet495039,0P1/P2; db reviewed first half and distinct T2/T3 source fix. Final three-run evidence retains archive first failure (test gave now+3 equal to3s reservation), selection originalpass and corrected archive/worker-pair pass. No PG, worker, listener or T7 run. See [fixed operator review](../../docs/evidence/x01/verifier-process/operator-review.json). No whole-task completion or main capability is inferred.
 
 Db02:22:12Z SOURCE_AND_LOCAL_RESULT_DELTA_REVIEW_APPROVED at50896f/a887/28fae,duplicate-outcomeP2closed/0remainingP1P2. Final archive direct negative/positive pass, originalFAIL remains. Source+local preparation only; notPG/worker/T7 approval.
+
+## 2026-10-08 X01 verifier R1实际结果待审
+
+2026-10-08T03:52:17.529Z：固定执行2d65f2cd，原case01b299/operator50896f不变。1真实case/3task/2worker通过并精确资源RETURN；结果忠实性尚未独审，见r1-result-summary.json。0provider/Chrome/T7；不将原准备批准当本次结果批准。preflight实际cwd与旧future示例不同、外层双EOF未独立暴露/wholewallUNKNOWN均显式保留。
