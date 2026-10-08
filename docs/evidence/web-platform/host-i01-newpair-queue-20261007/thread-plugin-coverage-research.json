@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-08T01:24:23.688796+00:00",
+  "kind": "READ_ONLY_PLUGIN_COVERAGE_RESEARCH",
+  "scope": "Existing Thread/message footer and Arc action menu; no project writes, tests, browser child or dispatch",
+  "referenceMain": "7001fab804a082aa7f2cf01b72022ea17ee80225",
+  "skillsApplied": [
+    "assistant-ui local router and official llms index",
+    "clean-code separation of host contribution rendering from built-in message-specific behavior",
+    "web interface keyboard review using W3C APG tabs"
+  ],
+  "officialReferences": [
+    {
+      "url": "https://www.assistant-ui.com/llms.txt",
+      "use": "Current index distinguishes styled elements from primitives; this research does not upgrade installed API."
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "use": "Manual activation permits arrow/Home/End focus changes without selection. Closing a tab should restore logical focus. This is guidance, not a claim of full assistive-technology conformance."
+    }
+  ],
+  "sourceObservations": [
+    {
+      "path": "apps/web/src/TaskThread.tsx",
+      "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01",
+      "mainEqual": true,
+      "finding": "Actual Thread import/render present. referenceComponents at line49 includes MessageActions and ComposerActions but no MessageFooter."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907",
+      "mainEqual": true,
+      "finding": "MessageFooter lines88-107 returns a fixed draft status early for assistant draft; otherwise requires taskId and role=user before any PluginView/AppSlot. Final assistant messages do not render this registered footer slot."
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "mainEqual": true,
+      "finding": "Actual Thread components expose MessageFooter and call it for assistant at line693 and user at line802. The coverage restriction is in host integration, not absence of the Thread seam."
+    },
+    {
+      "path": "apps/web/src/plugins/react.css",
+      "sha256": "3a7eb30450e9912f2a274366fbf2677922058c80dc7b58fe91b994004ecc1d9f",
+      "mainEqual": true,
+      "finding": "Menu uses position:absolute under position:relative; Arc tab strip has overflow:auto. Potential popup clipping/scroll interaction requires actual observation; source alone does not prove a visible defect."
+    }
+  ],
+  "interpretation": {
+    "messageFooter": "Confirmed static contribution coverage gap relative to user requirement that all relevant interface regions be extensible. Existing built-in stream/activity presentation may intentionally be user-message-specific; do not blindly remove the role gate and duplicate built-in content.",
+    "menu": "Unverified geometry risk only; do not relabel current passing split/close behavior as failed or request a new standalone browser run based on this static inference.",
+    "keyboard": "Current Arc focusTab changes focus only for arrow/Home/End; App closeNow and closeWorkspaceNow already schedule focus restoration. No new focus-loss finding from this read.",
+    "reducedMotion": "Global styles.css:590 disables animations/transitions and smooth scroll for reduced motion; local skeleton wrapper classes alone are not evidence of a motion defect."
+  },
+  "recommendedExistingPlanFollowup": [
+    "Under the original plugin integration owner and existing plan, separate general message-footer contribution rendering from built-in per-role stream/status eligibility; preserve scoped task/message identity and capability guards.",
+    "Explicitly document which task and conversation message states expose the slot; ensure generic task Thread uses the same host seam if it is part of supported coverage.",
+    "Use a small contribution visible on an assistant final and user message when an authorized affected verification segment is naturally available; built-in activity must not duplicate and revoked/unmounted context must not run actions.",
+    "Keep current Arc visual and login delivery first. Do not add another registry, arbitrary DOM injection, third task layer, or changes to the current frozen browser inputs."
+  ],
+  "limitations": [
+    "No runtime plugin activation or mounted message footer check performed.",
+    "No screenshot of an open Arc overflow menu inspected in this research.",
+    "This is a plan input, not a new implementation claim or an acceptance approval."
+  ]
+}

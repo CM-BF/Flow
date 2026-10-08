@@ -1,6 +1,8 @@
-> 当前更新 2026-10-08T01:15:03.453Z：D05已01:13:24.689Z一次从213更新215（214未单独部署），assignments.available/双env/publicaccess核符，当前无actual holder。Arc前段4/4功能接受但窄屏P2仍开放，331d已STOP；新原scope视觉连续段已授权至2026-10-08T01:40:03.453Z，source准备后samecall准入，不借旧40912ms。完整forward 13561888768B。
+> 当前 2026-10-08T01:31:23.030Z：已唯一选择登录生产组件mounted一次60s（45work+15cleanup），latestStart 2026-10-08T01:35:23.030Z，完整floor 13303021568B；W01 samecall fresh后执行，现未报START。Arc两次窄屏48670ms已CLOSED/all18STOP，视觉P2保留，不自动第三次。O16已完整归还且0query。
 
 # Web 当前交接与唯一来源
+
+**Original待分类（只需现存receipt，不新探针）：** TUI R2活动已归还，但1,499,463,680B+8MiB尾仍按KEEP/未知future保守计；请区分sealed无writer存量与真实DB增长。O16薄调用候选256KiB+TMP8MiB未证映射旧9,568,256B，先在current明确来源；不因本请求授权native/query/凭据操作、不双计或偷减。
 
 **历史调度（已由页首及current取代）2026-10-08T01:00:17.834Z：Arc新tooltip首轮00:58:57.256215完整RETURN，19006/180000ms；3/4已过（含完整材料），390浅/深两图已产生，末reload按route检查多保存记录失败。现在无active子进程，原新lease保留最后一次至01:17:41.457，按完整B exactrecord身份修正观察，不任意first/nth或减验收；旧三轮59595CLOSED不借。D05已恢复213/available272。**
 

@@ -1,0 +1,77 @@
+{
+  "reviewedAt": "2026-10-08T01:21:24.579667+00:00",
+  "reviewer": "root (GPT-6 Astra Ultra; independent, read-only project review)",
+  "decision": "APPROVED_LIMITED_SOURCE_AND_LOCAL_RESULTS",
+  "blockingFindings": [],
+  "sourceTarget": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "deliveryTarget": "07063faae1a5ee4b2618b84346838837b64b82e4",
+  "base": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+  "branch": "codex/web-connection-actionable",
+  "claim": "01103af8-051e-4282-bbbb-ba432e269ba6 v1 exact5",
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/intake.json",
+    "bytes": 4370,
+    "sha256": "579897a512e7033584641e64c4e469f7c3b1fa0f4bffb5c860f950c32b9913f6"
+  },
+  "rawIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/local-results/index.json",
+    "bytes": 7283,
+    "sha256": "4f80394b72d66fa89d9cb51e0408b6cc7eae8c6cc775bc44aed1e7d1113b4599"
+  },
+  "verified": {
+    "sourcePins": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "bytes": 71466,
+        "sha256": "9b19ca26c7a30e23ba1e820f46e4a83eb054423d12c2bd444ff8bf753fe2e0d6"
+      },
+      {
+        "path": "apps/web/src/connection/Connection.tsx",
+        "bytes": 3662,
+        "sha256": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d"
+      },
+      {
+        "path": "apps/web/src/connection/presentation.ts",
+        "bytes": 2689,
+        "sha256": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d"
+      },
+      {
+        "path": "apps/web/test/connection-presentation.test.ts",
+        "bytes": 3383,
+        "sha256": "6285a09fb9531a34893796c00bedef4dec3ae8b6eea5c542e036d1dfe1a4344a"
+      }
+    ],
+    "rawPairs": 30,
+    "originalAndArchiveFileReads": 60,
+    "uniqueRawBytes": 61950,
+    "mismatches": [],
+    "git": "## codex/web-connection-actionable...origin/codex/web-connection-actionable",
+    "appExtraction": "Independently compared full App diff and reconstructed base minus old Connection function plus one import: outside extraction BYTE_IDENTICAL.",
+    "sessionByteIdentity": "Base equals delivery; SHA256 add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "browserWorkspace": "UNCHANGED",
+    "pureBehaviorResults": "7 selected / 7 passed; actual stdout, terminal and binding reviewed",
+    "affectedTypes": "Exit 0; strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes, noEmit, skipLibCheck=false. Real installed TS/React/Radix/Button declarations; no substitute component stub. Scope is new component/presentation/test and direct Button/utils dependencies, NOT full App import graph.",
+    "cleanup": "Both children exited 0; stdout/stderr EOF true, dropped 0; fresh PID/PGID absence and scratch absence receipts read. 1526 ms total; original local segment CLOSED."
+  },
+  "sourceAssessment": [
+    "The connection form now places current sign-in state and a next action first; technical/session details remain available under native details.",
+    "Unauthenticated wording stays neutral because public contracts do not identify first sign-in versus expiry.",
+    "Local dashboard credentials guidance and remote administrator guidance do not infer a fixed port, add credential reads/storage, or modify auth/session contracts.",
+    "Existing explicit onConnect/onRead/onLogout/onDiscardRetained callbacks remain; pending read/submit handlers guard duplicate dispatch while preserving keyboard focus through aria-disabled.",
+    "The helper requests token clearing before its explicit callback. This is callback-order evidence, not proof React has synchronously committed the DOM before the callback.",
+    "App changes are an extraction/import only; original retained-work callbacks and broader BrowserWorkspace behavior are not reimplemented."
+  ],
+  "cleanCode": {
+    "scope": "Connection component, presentation policy/helper, direct behavior tests, App extraction boundary",
+    "findingsAndDisposition": "No blocking naming, responsibility, propagation, duplication or unnecessary abstraction issue identified. Presentation is separated from auth authority; callback errors propagate without hidden retry. Owner local skill/quality record reviewed."
+  },
+  "limitations": [
+    "Mounted component keyboard behavior, retained-work callback invocation, 390px geometry and both themes NOT_RUN for this source/local decision.",
+    "A subsequent mounted fixture must check token DOM after the next React commit while auth remains pending, not inside the synchronous callback stack.",
+    "No full App typecheck, cookie/CSRF/re-authentication, real center, full Recovery flow, main integration or personal deployment is approved by this result.",
+    "data-extension-slot=settings.sections remains a marker; it does not establish a functioning plugin renderer or complete plugin coverage.",
+    "No new execution allowance, resource claim, restart, or reopening of the CLOSED local budget follows from this review."
+  ],
+  "next": "D01 may coordinate the already authorized bounded mounted-component preparation under a new explicit segment; final independent review should use its actual raw results and theme screenshots."
+}

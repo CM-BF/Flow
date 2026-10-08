@@ -1,0 +1,127 @@
+{
+  "reviewedAt": "2026-10-08T01:28:15.303959+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "RESULT_FIDELITY_APPROVED_WITH_VISUAL_ACCEPTANCE_BLOCKED",
+  "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+  "executionHead": "0e5ff28b71df734c9cbffa8570249fbd6ceef7d0",
+  "base": "331d3fdb390b0b403317da8d8cdf0028eae27c19",
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/final-review-input.json",
+    "bytes": 12168,
+    "sha256": "cc3c99f528d61e1384e48a140a2889a27f8899132ea7dae3875cb6c4a3cf2e5e"
+  },
+  "verified": {
+    "pairCount": 68,
+    "fileHashChecks": 136,
+    "uniqueRawBytes": 1460103,
+    "mismatches": [],
+    "diffScope": "Compared 331d to 6ac: only scoped layout.css and original workspace-layout.browser.ts product/check delta. Shared App/session/host unchanged.",
+    "runs": [
+      {
+        "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+        "executionHead": "dd72fdf0d19836fa7f50115a3459a7c4234e5ef4",
+        "start": "2026-10-08T01:19:12.620423+00:00",
+        "returnedAt": "2026-10-08T01:20:03.892569+00:00",
+        "chargeMs": 24341,
+        "passed": [
+          "layout-navigation",
+          "three-pane-reads",
+          "prepare-await-stable"
+        ],
+        "failure": "Close button intersection ratio 0.019999999552965164 after focus reached More actions; original full-viewport assertion retained",
+        "finalScreenshots": []
+      },
+      {
+        "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+        "executionHead": "0e5ff28b71df734c9cbffa8570249fbd6ceef7d0",
+        "start": "2026-10-08T01:25:48.136856+00:00",
+        "returnedAt": "2026-10-08T01:26:36.915398+00:00",
+        "chargeMs": 24329,
+        "passed": [
+          "layout-navigation",
+          "three-pane-reads",
+          "prepare-await-stable"
+        ],
+        "failure": "Close button intersection ratio 0.019999999552965164 after focus reached More actions; original full-viewport assertion retained",
+        "finalScreenshots": []
+      }
+    ],
+    "browserTotalMs": 48670,
+    "browserState": "CLOSED_MAX_TWO_ATTEMPTS; remaining nominal milliseconds do not authorize a third run",
+    "local": "One affected noEmit exit0, 3573 ms at5c6. Later6ac CSS and observation movement not re-typechecked.",
+    "closure": "Both own 4 PID/2 PGID fresh ESRCH, scratch/cache ENOENT; context/http closed, Chrome/parent/outer dual EOF, drops0, cleanup errors empty. Independent port probe NOT_RUN."
+  },
+  "findings": [
+    {
+      "id": "ARC-VISUAL-NARROW-TAB-01",
+      "priority": "P2",
+      "state": "OPEN_EXISTING",
+      "finding": "Trailing close control remains outside the required viewport in both actual attempts. scroll-padding-inline:2rem did not satisfy the actual assertion. No final 390 screenshots were reached; cannot approve visual delivery."
+    },
+    {
+      "id": "ARC-NARROW-TITLE-UNIT-02",
+      "priority": "P2",
+      "state": "OPEN_NEW_SOURCE_FINDING",
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "line": 364,
+      "finding": "The later titleWidth>=128 assertion assumes a 16px rem, but styles.css:4 sets root14px and the scoped title minimum is8rem (=112px). Raw normal title widths117 equal their content width117 and are untruncated. The numerical assertion was NOT_REACHED because close failed first; it must not be reported as a third observed runtime failure.",
+      "recommendedFix": "At the next authorized owner segment, align the check with the intended rem-based design and actual computed root size while retaining full normal-title content visibility and a readable long-title minimum. If128 CSS px is itself the intended product requirement, explicitly choose that design and update CSS; do not silently weaken tests or change global typography just to pass."
+    }
+  ],
+  "observedProgress": {
+    "narrowTabs": {
+      "tabGeometry": [
+        {
+          "title": "Conversation 6",
+          "titleWidth": 117,
+          "titleContentWidth": 117,
+          "titleWhiteSpace": "nowrap",
+          "actionWhiteSpace": "nowrap",
+          "actionLines": 1,
+          "actionHeight": 24.5,
+          "clippedVertically": false
+        },
+        {
+          "title": "Conversation 5",
+          "titleWidth": 117,
+          "titleContentWidth": 117,
+          "titleWhiteSpace": "nowrap",
+          "actionWhiteSpace": "nowrap",
+          "actionLines": 1,
+          "actionHeight": 24.5,
+          "clippedVertically": false
+        },
+        {
+          "title": "Conversation 4 — retained materials and independent next draft across workspace layouts",
+          "titleWidth": 173,
+          "titleContentWidth": 497,
+          "titleWhiteSpace": "nowrap",
+          "actionWhiteSpace": "nowrap",
+          "actionLines": 1,
+          "actionHeight": 24.5,
+          "clippedVertically": false
+        }
+      ],
+      "longTitle": "Conversation 4 — retained materials and independent next draft across workspace layouts",
+      "stage": "after keyboard focus reached plugin action"
+    },
+    "interpretation": "Actual passive geometry supports single-line More actions,24.5px height and no vertical clipping; normal titles are full width. It does not close trailing-close, all four scenario groups, or dual-theme acceptance."
+  },
+  "nextDiagnostic": [
+    "Current raw lacks close/tab/strip bounding rectangles, scroll offsets, clipping ancestors and root computed font. Source alone cannot identify whether horizontal focus scrolling or another clipping boundary causes ratio0.02.",
+    "Before another style guess, the original owner should capture those passive metrics and a bounded screenshot at the failing point in a newly managed segment. Preserve the exact original failure and full-viewport requirement. No hidden actions, force click, nth workaround or arbitrary timeout.",
+    "App CloseChatButton currently has tabIndex=-1 and Delete is handled by the tab button; do not describe Close as reachable by the next Tab key unless its current semantics change through its legal owner. Native focus of More actions need not reveal a sibling automatically.",
+    "The current source/check segment isSTOP and browser allowanceCLOSED. Further writes/runs require a newly recorded bounded continuation managed byD01, not leftover credit."
+  ],
+  "cleanCode": {
+    "scope": "Scoped CSS/test delta, runtime data interpretation and frozen failure history",
+    "finding": "Initial narrow style improves title/menu measurements but failed scroll-reserve repair remains unaccepted. Unit mismatch is now explicit; avoid another magic width/timeout patch without geometry.",
+    "projectWritesByReviewer": false
+  },
+  "limitations": [
+    "No final390 light/dark image in this bundle. Early desktop screenshots are not substitutes.",
+    "Historical331d 4/4 fixture acceptance remains historical and does not convert this bundle3/4 toPASS.",
+    "Real center/native/provider/personal deployment/main integration/Context composition remainOPEN.",
+    "This approves faithful result sealing only, not feature completion or main integration."
+  ]
+}

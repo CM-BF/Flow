@@ -1,0 +1,128 @@
+{
+  "startedAt": "2026-10-08T01:13:24.416Z",
+  "source": "866f0a9c077df2cd51f03210d02949df17a299f5",
+  "operation": "owned dashboard registry reload213to215",
+  "safePoint": "2026-10-08T01:12:38.179Z",
+  "oldPid": 7196,
+  "publicMetadataBefore": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "coordinationBefore": {
+    "state": "available",
+    "observedAt": "2026-10-08T01:13:24.408Z",
+    "count": 273
+  },
+  "personalChanges": 0,
+  "tokenRead": false,
+  "explicitSettings": [
+    "FLOW_DASHBOARD_LOCAL_INSTALLATION",
+    "FLOW_COORDINATION_DATABASE_URL"
+  ],
+  "state": "SUMMARY_COORDINATION_ACCESS_CONFIRMED",
+  "oldConfirmedAbsent": true,
+  "newPid": 80647,
+  "log": "/tmp/flow-dashboard-215-20261008-0114.log",
+  "summaryCount": 215,
+  "entries": [
+    {
+      "id": "X01-VERIFIER-CLIENT-ADMISSION01",
+      "sourceCurrent": true,
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "验证任务客户端与可核对回执身份已实现，客户端可创建验证任务并核对回执身份，局部验证和独立审查已通过，等待主线接收。",
+        "next": "六叶受控主线接收；公开端到端与真实worker由后继验收。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "provision实际clock未落盘；可证范围00:54:50.953Z至00:55:39.223Z，首metadata00:56:40.495Z；不以claim推断开工"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ]
+      }
+    },
+    {
+      "id": "X01-VERIFIER-RUNTIME01",
+      "sourceCurrent": true,
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "验证器执行与可靠恢复已通过局部检查和独立审查，等待主线接收。",
+        "next": "四叶受控主线接收；真实中心、worker与发布链路另验。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-08T00:29:30.000Z",
+          "record": "2026-10-08T00:29:30.000Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "实际provision开段及原子receipt"
+        },
+        "issues": []
+      }
+    }
+  ],
+  "coordination": {
+    "state": "available",
+    "observedAt": "2026-10-08T01:13:24.652Z",
+    "count": 273
+  },
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "completedAt": "2026-10-08T01:13:24.689Z",
+  "elapsedMs": 582
+}

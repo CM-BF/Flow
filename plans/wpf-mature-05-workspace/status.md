@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:14:16.222Z |
+| 最近更新 | 2026-10-08T01:29:38.697Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；完整Arc验收尚未完成。 |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | Arc功能四组和最终390双主题已限定通过，331d源封存、40912ms完整归还；桌面导航灰空白已修。实际390页签标题过缩、More actions换行裁切仍需修复。 |
-| 下一可用交付 | 原Arc owner以新的有界段窄修layout.css可读宽度与单行操作并实际复验，不借已关闭两轮余量。 |
-| 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01视觉P2；Context组合/main与完整产品验收仍开放。 |
+| 当前产出 | Arc历史331d功能4组限定通过；本轮两次窄屏复验均3/4，48670ms CLOSED。More actions单行和正常标题宽度实测改善，但关闭按钮viewport ratio仍0.02，未产最终双主题图。 |
+| 下一可用交付 | 原owner下一有界段先采关闭控件/容器/裁剪祖先/scroll位置与root字号，再修焦点可见范围及rem阈值口径；旧两次额度关闭，不加第三次。 |
+| 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01关闭按钮可达性P2；ARC-NARROW-TITLE-UNIT-02为未执行到的静态单位问题。Context组合/main仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |

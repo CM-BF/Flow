@@ -191,3 +191,7 @@ URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../d
 
 - [ ] 沿原 MATURE05 工作区可读性 TODO 修复390px页签标题仅约两字、More actions 在36px栏换行裁切的实测 P2。以[末轮功能与视觉限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-tooltip-final-acceptance-review.json)为固定输入，只在原 Arc layout.css 与必要原测试范围给可读最小宽度、单行操作及横向可达；保关闭按钮和真实插件入口，不隐藏按钮、不改 shared App/host。验证正常/长标题、双主题、键盘与菜单可见不裁切。
 - [ ] 原新tooltip两轮40912ms已CLOSED、末轮4/4功能与最终双390图获限定接受，不能转余量再跑第三轮。后继用新的连续有界段同资源验证，段末独审；Context组合、main、shared附件pointer风险、Recovery旧warning各保原后继，不将功能4/4写成整体视觉Done。
+
+本轮新窄屏复验已[限定失败结果独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-narrow-tab-result-review.json)：两次3/4、48670ms CLOSED，关闭按钮viewport ratio均0.02，无最终390图；More actions单行/24.5px且无竖裁、普通标题117px完整可见，仅这些观察成立。原ARC-VISUAL-NARROW-TAB-01继续OPEN。下一原owner先有帽记录close/tab/strip矩形、scroll偏移、裁剪祖先、root计算字号和失败点图，再决定修复，不能继续猜scroll-padding或放宽完整可见性。ARC-NARROW-TITLE-UNIT-02另记静态P2：root14px使8rem=112px，而后置断言硬128；该断言尚未执行到，不能说第三实际失败。修复应统一设计单位并保普通标题完整、长标题可读最小值；不改全局字号凑绿。
+
+受控UI后继复用原message-settings有界失败诊断：第一次失败就保留必要的小截图及相关几何/状态，原错误先保存，诊断失败不得覆盖它或妨碍finally/owned cleanup。原plugin-host retain-on-failure可参考；不默认全程trace/video、不造新平台、不保存真实登录材料。当前已审冻结候选及旧结果不回写；下一原owner合法段落实，避免另开一轮仅为观察现场。

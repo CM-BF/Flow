@@ -22,9 +22,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 新版网页v4已发布。Context历史面板8组与双390图限定批准；Arc材料与持久化四组已通过并331d封存，窄屏标题/菜单视觉P2仍开放。看板已一次更新215，领取available与两来源sourceCurrent实证；K01结果保真独审完成并保116秒准入偏差。 |
-| 下一可用交付 | Arc原owner修窄屏标题与菜单可读性；可行动登录07063源码/局部已封存，集中独审后进行实际mounted验收。D05已一次更新215并核领取available。 |
-| 当前阻塞 | ACTIVE: Arc390标题与More actions裁切、Context组合/真实producer和完整聊天仍未验；无实际资源holder；D05 215已完整归还，新Arc视觉源段已派。 |
+| 当前产出 | 新版网页v4已发布，看板215来源/领取available已实证。Context历史面板8组和双390图限定批准；Arc历史功能4组通过，新窄屏复验两轮3/4，关闭按钮可达性仍失败。登录07063源码/局部已获限定独审，mounted候选729363已准备、尚未实际运行。 |
+| 下一可用交付 | 登录真实组件挂载候选完成固定准备审后排一次实际窗口；Arc窄屏先采精确几何并统一rem断言口径，再由原owner修复。 |
+| 当前阻塞 | ACTIVE: Arc关闭按钮可见区域、Context组合/真实producer和完整聊天未验；目前无实际holder。O16已完整归还且仅公开状态对照，不是query能力证明。 |
 | 需用户决定 | NONE |
 | 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)给出每次选择、真实START/RETURN、完整floor与单独历史gate；实时占用以该原件为准，准备包不表示已运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |

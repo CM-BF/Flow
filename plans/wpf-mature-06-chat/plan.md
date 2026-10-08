@@ -230,3 +230,5 @@ GO在已发布61228新tab无有效会话时实见“Check existing browser sessi
 该原 TODO 已实际实施：W01 先在 Context 原 claim25d7 v3→v4 仅交回 App，保余7与既有8819验收；01:09:13.698801Z 于独立 web-connection-actionable / codex同名开始25分钟段，claim01103af8-051e-4282-bbbb-ba432e269ba6 v1 exact5。App 仅 import 与提取原 Connection 局部组件，session/BrowserWorkspace/认证与恢复逻辑不改。唯一父status仍本计划，子片仅own evidence progress。
 
 - [ ] MATURE06-04 接收新组件的类型与必要行为不变量检查；不以逐字符串映射测试自证可行动性。后续 mounted 验实际未登录/离线/拒绝动作、显式提交前清 token、checking 不重复请求、保稿动作、键盘及390双主题；当前未运行这些 UI 验收。没有权威 first/expired 原因时始终使用中性未登录，不虚构原因。
+
+受控UI后继复用原message-settings有界失败诊断：第一次失败就保留必要的小截图及相关几何/状态，原错误先保存，诊断失败不得覆盖它或妨碍finally/owned cleanup。原plugin-host retain-on-failure可参考；不默认全程trace/video、不造新平台、不保存真实登录材料。当前已审冻结候选及旧结果不回写；下一原owner合法段落实，避免另开一轮仅为观察现场。

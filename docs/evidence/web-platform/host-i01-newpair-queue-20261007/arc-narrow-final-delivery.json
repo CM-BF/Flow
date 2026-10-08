@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-08T01:29:48.785043+00:00",
+  "state": "ALL18_STOP_NO_RUNTIME",
+  "head": "8f6174e215bdc39e86fd1acb097992e664736701",
+  "actualRemote": "8f6174e215bdc39e86fd1acb097992e664736701",
+  "dirty": false,
+  "branch": "codex/web-workspace-composition",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18",
+  "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "blob": "0c30382fc4180dad23b398308e0599577616cee6",
+      "sha256": "6132d7ad34ddbf692b9117c226b4f87850717a4d09c9b4e135fec6ee545b551f"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "blob": "915a82c9322645c30814b6320053b4261b5de67b",
+      "sha256": "735cc39ecb164d7a9161be3abfb3d8f77000f45bddbb07823925734c461b6345"
+    }
+  ],
+  "result": "FAILED_3_OF_4_VISUAL_P2_OPEN",
+  "rootReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/root-final-review.json",
+    "bytes": 7183,
+    "sha256": "4f952ffd60e0dc1c3659b7f325862d05feb5b743d2c17eaaf15941de764daa11",
+    "state": "RESULT_FIDELITY_APPROVED_WITH_VISUAL_ACCEPTANCE_BLOCKED"
+  },
+  "input": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008/final-review-input.json",
+  "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/status.md",
+  "checks": "failed same fullsource; local3573 only5c6",
+  "browserCumulativeMs": 48670,
+  "browserAttempts": 2,
+  "browserBudgetState": "CLOSED_NO_TRANSFER_NO_THIRD",
+  "localMs": 3573,
+  "localState": "CLOSED",
+  "lastOwnedReturnAt": "2026-10-08T01:26:36.915398Z",
+  "resources": {
+    "child": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "Chrome": 0
+  },
+  "main": "NOT_INTEGRATED",
+  "growth": {
+    "at": "2026-10-08T01:28:24.400400+00:00",
+    "logicalRoots": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-tab-visual-20261008",
+        "files": 75,
+        "bytes": 1503937
+      },
+      {
+        "path": "/private/tmp/arc-narrow-browser-hp2lfp6v",
+        "files": 32,
+        "bytes": 719817
+      },
+      {
+        "path": "/private/tmp/arc-narrow-final-1zc8oen9",
+        "files": 32,
+        "bytes": 720184
+      },
+      {
+        "path": "/private/tmp/arc-narrow-local-96f0c_pk",
+        "files": 4,
+        "bytes": 20102
+      }
+    ],
+    "currentSourceAndOwnMetadataBytes": 105276,
+    "ownIndexAtomicCopyBytes": 2342374,
+    "additionalObjectAndFinalMetadataReserveBytes": 8388608,
+    "conservativeTotalRetainedBytes": 13800298,
+    "capBytes": 67108864,
+    "fits": true,
+    "scope": "New segment only; original/archive copies both counted; index atomic copy counted.8MiB conservative residual for Gitobjects/finalreview/export. Not measured physicalpeak. Scratch sampled separately then absent."
+  },
+  "ownIndexAfterCommitBytes": 2348219,
+  "parser": {
+    "exit": 0,
+    "errors": [],
+    "checks": "failed",
+    "target": "6ac91bace38e39ade654e98e86d0d513af8255cf",
+    "kind": "Administrative only;62.827ms separate from engineering/no greenretest"
+  },
+  "open": [
+    "Closefullviewportratio0.02 remains; no final390s innew2runs.",
+    "Postclose titleWidth>=128 static mismatch root14px/8rem; NOT_REACHED notactualadditionalfailure.",
+    "Historicalf6 functional4/4 doesnotcovernewvisual; main/Context/realcenter/provider/personaloutofscope."
+  ]
+}

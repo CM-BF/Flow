@@ -678,3 +678,12 @@ D05发布健康必须同时验证summary来源数与`/api/assignments`载荷`sta
 - [ ] parser/model/UI 分开 task timing 与 workSegment 的问题；陈旧 snapshot 同时撤销两种 elapsed 的当前断言。原 TIMING02 全部完成记录保持通过，本项是原 D01 后继；实现仍由合法独立 owner/scope 承接。
 
 本轮原要求统一归入既有计划：[MATURE06-04 可行动登录](../wpf-mature-06-chat/plan.md)、[三真实插件挂载面](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)、[MATURE03 附件命中后继](../wpf-mature-03-attachments/plan.md)、[MATURE05 窄 tab 视觉 P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)。仅引用 Mika 的 MATURE04 唯一父计划，不生成第二份状态源。
+
+### D01 / OPS16 固定输入与等待复盘补充
+
+- [ ] 原TIMING02的纯metadata提交曾触发整HEAD绑定准备重新固定；GO本次回读报告整段87分48秒、准备审到START约19分27秒，但没有证据把全部等待归因于重绑或资源。下一原owner合法安全点区分实现/actual输入与普通status提交，仅输入字节、身份或权限约束变化时重新准备必要部分。当前监督器若仍绑定整HEAD照原合同执行，不改冻结包、不重开已完成TIMING02、不造平台/第三任务或新测试。原连续有界修复规则继续适用。
+- [ ] D01聚合/claim映射沿原任务补“明确子TODO→父唯一status”下钻：MATURE06-04对应本MATURE06，MATURE04-05对应Mika的context-transparency父计划。当前页面显示“已领取，进度来源待登记”是展示映射后继，不能要求两子片各建第二status；只有原明确关系可解析，未知关系仍未知，不按ID或标题推断。原子领取有效性与进度来源分别保真，当前产品交付优先。
+
+原WPF-001-05/plugin覆盖后继追加[Thread footer固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/thread-plugin-coverage-research.json)：TaskThread未接MessageFooter；Conversation host的通用footer贡献被user/assistant-draft门控，普通assistant-final缺入口。下一合法owner分开通用贡献渲染与内置stream/activity的role资格，保task/message身份和能力复核，不能简单移除gate造成内置重复，也不建第二registry。无runtime贡献验收；Arc overflow菜单裁剪仅静态风险，当前Arc/login交付优先。
+
+D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-verifier-sources-live.json)于01:13:24.689归还，213→215一次、214未独立部署；summary215与assignments.available/publicaccess同验，root现有IAB确认用户可见。登录[source/local限定批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-actionable-source-review.json)不覆盖后继mounted/真实认证或main。
