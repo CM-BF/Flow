@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-08T02:36:20.084646+00:00",
+  "source": "7c727306535ebdfb5e07d8bce5f9023b57daa72e",
+  "base": "d227008b43921faeab53a0ac6195e97e80fe8ecd",
+  "state": "SOURCE_PREPARED_OVERLAY_NOT_RUN",
+  "oldPacket": "/private/tmp/vis-picker-b1",
+  "newPacket": "/private/tmp/vis-overlay-b1",
+  "parentBeforeSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+  "parentAfterSha256": "a7321be9bdc3162700dc4ce9574e2927e40929cd8a6f28fc88e3b1bb82a31932",
+  "workerBeforeSha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+  "workerAfterSha256": "0afd8fc14abdaaff59b47069103592a89a9682fbd97de92508f0dc0ed8ef9753",
+  "changes": {
+    "mode": [
+      "visual-picker-browser",
+      "visual-picker-overlay-browser"
+    ],
+    "entry": [
+      "visual-picker",
+      "visual-picker-overlay"
+    ],
+    "terminalContract": [
+      "visual-picker-browser-v1-external-exit-required",
+      "visual-picker-overlay-browser-v1-external-exit-required"
+    ],
+    "output": [
+      "vis-picker-b1/raw/<exclusive-run>",
+      "vis-overlay-b1/raw/<exclusive-run>"
+    ],
+    "checks": [
+      8,
+      2
+    ],
+    "pngs": [
+      7,
+      5
+    ],
+    "journey": "Skip previous approved behavior call and intermediate close/reopen; one original overlay fixture/context with same final cleanup. Preserve owned native Chrome+Node sibling lifecycle,90s/15cleanup/scratch64/retained8, noPG/provider.",
+    "runtimeArtifacts": "Native-filter-inputs belongs to prior behavior; new exactmanifest requires select diagnostic plus five overlay PNG and result/Chrome evidence.",
+    "priorLocalEvidence": "Only unchangedfive inputs keep historical type proof. This changedfixture gets one actual publiccodec test; old6behavior separately bound as accepted prior evidence."
+  },
+  "scope": "No production or Recoverytest delta; no cleanup authority/timing relaxation; no formalPASS granted by prior6",
+  "resourceProposal": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 3145728,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "1 own Vite fixture",
+    "floorMeaning": "Proposal only; a new explicit manager lease and fresh complete canonical sum required; no historical floor authorizes runtime",
+    "expectedImages": 5,
+    "newVisualImages": 5,
+    "planningBytes": 78643200,
+    "metadataIncludes": "own Git atomic index copy + objects + small records; no runtime copying of raw",
+    "phasePeaks": {
+      "runtimeScratchRetainedMetadataBytes": 78643200,
+      "afterExactReturnOriginalArchiveGitBlobAndMetadataBytes": 28311552
+    },
+    "rawCopyOrdering": "Archive/commit raw only after exact all groups/HTTP/context/scratch RETURN. At that point64MiB scratch0: <=8MiB original +8MiB canonical copy +8MiB Git raw blobs +3MiB index/smallobjects/metadata =27MiB, below75MiB runtime peak. Compression/header slack uses smallobjects reserve. No simultaneous raw copy with active scratch."
+  },
+  "entryArgv": [
+    "/opt/homebrew/bin/python3.13",
+    "/private/tmp/vis-overlay-b1/supervisor.py",
+    "--gate",
+    "<new-exclusive-reviewed-grant>"
+  ],
+  "runtimeGrant": null,
+  "oldBudget": "15543/90000 CLOSED, no remaining credit"
+}

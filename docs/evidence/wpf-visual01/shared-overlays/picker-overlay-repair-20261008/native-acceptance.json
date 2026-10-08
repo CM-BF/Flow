@@ -1,0 +1,13 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "a7321be9bdc3162700dc4ce9574e2927e40929cd8a6f28fc88e3b1bb82a31932",
+  "workerSha256": "0afd8fc14abdaaff59b47069103592a89a9682fbd97de92508f0dc0ed8ef9753",
+  "authority": "Root explicit fixed-delta nativeBoundaryReview status APPROVED_SAME_EXISTING_NATIVE_SIBLING_BOUNDARY_FOR_THIS_FIXED_DELTA, recorded by original owner without new decision",
+  "source": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/root-delta-review.json",
+    "sha256": "add16695e52751e767a5609d9ccde8ea76501d99b8ed901df3fa2eb509c6179c"
+  },
+  "runtimeGrant": false,
+  "scope": "One owned native Chrome, one Node worker, one synthetic Vite HTTP;0PG/provider;90s15cleanup proposal;newD01lease required"
+}

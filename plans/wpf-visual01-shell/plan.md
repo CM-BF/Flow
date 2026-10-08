@@ -61,3 +61,7 @@ TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚�
 ### 2026-10-08 Picker实际与后继最小范围
 
 [单次结果](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json)保六behavior真实完成、两390图及新增展示首组失败；15543/90000ms CLOSED/完整RETURN。公共模型ID codec拒绝含空格的normal夹具输入，未改产品/契约，未放松任何验收。TODO06/07仍OPEN；后继候选是同scope合法代表ID和精确locator、必要公共codec输入验证与未完成overlay两组/五图，不重跑无关已绿矩阵。该后继尚无实际授权。主线与部署未完成。
+
+### Overlay窄修候选
+
+固定7c727306535ebdfb5e07d8bce5f9023b57daa72e仅正常fixture模型ID/同源locator；公共codecnormal与180char代表已验，旧非法名称继续拒绝。原TODO06/07保持OPEN；新overlay-only两组/五PNG接受后才能合并评估共享浮层范围。原90s失败不覆写，六behavior证据单独复用；新90s候选尚无运行许可。

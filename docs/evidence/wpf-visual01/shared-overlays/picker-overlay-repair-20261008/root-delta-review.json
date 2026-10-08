@@ -1,0 +1,73 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-08T02:37:40.411621+00:00",
+  "status": "PREPARATION_APPROVED_ACTUAL_NOT_RUN",
+  "source": "7c727306535ebdfb5e07d8bce5f9023b57daa72e",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "claim": {
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "sourceReview": "Independent bounded delta review; 0 blocking findings. The previous failed run is retained, not rewritten.",
+  "preparedManifest": {
+    "path": "/private/tmp/vis-overlay-b1/manifest.json",
+    "sha256": "9b7922f737662afb0b4ca0dbf44131695ce1833ed785cdf7cc4d47066744eb2e"
+  },
+  "preparedBinding": {
+    "path": "/private/tmp/vis-overlay-b1/binding.json",
+    "sha256": "ba8d03236a6594924e7d7e13f4bfa3905f9691f330f03b2abc504ec356859d4c",
+    "stateObserved": "PREPARED_NOT_REVIEWED"
+  },
+  "fixedOperator": {
+    "parentSha256": "a7321be9bdc3162700dc4ce9574e2927e40929cd8a6f28fc88e3b1bb82a31932",
+    "workerSha256": "0afd8fc14abdaaff59b47069103592a89a9682fbd97de92508f0dc0ed8ef9753",
+    "mode": "visual-picker-overlay-browser",
+    "entry": "visual-picker-overlay",
+    "terminalContract": "visual-picker-overlay-browser-v1-external-exit-required"
+  },
+  "verified": {
+    "sourceFiles": 6,
+    "readOnlyDependencies": 222,
+    "externalPinsPlusNode": 38,
+    "preparedFiles": 5,
+    "manifestFiles": 11,
+    "hashMismatches": 0,
+    "sourceCommitPinsMatch": true,
+    "fourProductAndRecoveryTestUnchanged": true,
+    "readOnlyDependenciesEqualPrior": true,
+    "originalSixBehaviorFunctionSuffixByteIdentical": true,
+    "measurementRootIdentityMatches": true,
+    "measurementHelperBytesUnchanged": true,
+    "priorSixBehaviorIndexAndRootD950BytesMatch": true
+  },
+  "findings": [
+    "Only test fixture normal model changes from invalid display string to legal claude-sonnet identifier; same constant drives expected locator. Public codec is unchanged.",
+    "The real public schema accepted normal and 180-character fixture entries and rejected the old spaced model. Original inner119ms receipt preserved; wrapper120ms is the charged conservative value.",
+    "Operator changes remove the already-reviewed six-group behavior journey and intermediate context/fixture reopen. Initial fixture is fresh and final cleanup/native process boundary is preserved.",
+    "New report requires exactly two overlay groups and five images, does not inject historical groups, and omits behavior-only native-filter-inputs artifact.",
+    "Parent and worker deltas preserve 90s total/15s cleanup, native sibling Chrome+Node ownership, exact exit/EOF/group checks and no PG/provider.",
+    "75MiB runtime proposal includes64scratch+8retained+3metadata; post-RETURN archive/Git phase remains27MiB. No raw archive while scratch remains active."
+  ],
+  "nativeBoundaryReview": {
+    "status": "APPROVED_SAME_EXISTING_NATIVE_SIBLING_BOUNDARY_FOR_THIS_FIXED_DELTA",
+    "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+    "limits": "One owned native Chrome, one Node worker and one controlled Vite fixture; no new isolation, performance, real-center, authentication or provider claims. D01 alone may select a fresh runtime lease and aggregate floor."
+  },
+  "authorizedNext": "Owner may seal review metadata/binding, push a clean prepared execution HEAD and STOP. No source/runtime-scope re-review loop for review-path/hash metadata alone. Actual execution remains NOT_RUN until new D01 grant, with no old90s credit.",
+  "actualAcceptance": [
+    "Actual external exit0 and exact terminal/budget/evidence bindings.",
+    "Two exact new groups plus five readable normal/long light/dark390 and normaldesktop images; root visual inspection still required.",
+    "Owned groups absent, EOF/drop0, context/HTTP/scratch closure before exact RETURN.",
+    "Retain prior failure and six-group limited acceptance separately; combine conclusions only after new visual evidence."
+  ],
+  "cleanCode": {
+    "scope": "Fixture constant and coordinator delta review",
+    "result": "One validated model identifier feeds fixture and selectors; no duplicate schema, production workaround, repeated green behavior run or cleanup authority expansion."
+  },
+  "limits": [
+    "Read-only static review and existing child output only; root launched no browser/tests/build/service/PG/provider.",
+    "Source preparation approval is not component visual acceptance, full App acceptance, real-center integration or main receipt.",
+    "Alternate OS/classic scrollbar mode and Recovery visual journey remain outside this two-group run."
+  ]
+}

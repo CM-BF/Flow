@@ -1,6 +1,6 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_FAILED**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_FAILED**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。当前候选target `7c727306535ebdfb5e07d8bce5f9023b57daa72e`，其夹具修复/overlay-only入口已获add166限定source/native批准；旧实际target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
 
 scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；Recovery appearance选定2组实际PASS及两390PNG已获root限定独立实际/视觉审；Picker整体FAILED：六行为组已返回，两图已生成；新增展示首组因夹具模型ID非法而失败，主线/部署 NOT_INTEGRATED。
 
@@ -47,3 +47,7 @@ root f3b8仅source-preparation已批准；经理明确接受固定Node24.20/Chro
 [定位](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/failure-analysis.json)：normal夹具把“Claude Sonnet”显示名称当模型ID，实际公共schema拒绝空格（worker.log的invalid_format/choices[0].model）。保codec不变，后继只需合法模型ID及同源locator；本次没有修复、实验或复跑。6behavior固定证据可独立复用，但不能签整个8组/7图通过。
 
 [root限定失败结果审](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/root-result-review.json)已独核28pairs/56files与六源码、完整RETURN，并亲看两390图（仅behavior长model）。接受本次失败事实及六行为组；overlay0/2仍OPEN，P2夹具阻塞待修。先前准备审漏此公共codec约束如实保留，不将准备批准改写为实际通过。旧affected类型与Recovery限定APPROVED保持，不能当Picker展示PASS。
+
+## Overlay-only修复准备（NOT_RUN）
+
+[source/local](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/source-local.json)记录合法模型ID与真实公共codec两代表DTO通过、旧非法名称仍拒绝；六behavior函数后缀逐字不变，四产品和Recoverytest不变。新[独立入口差量](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/lineage.json)只移除已验六行为调用及中间关闭/重开，最后fixture/context/Chrome/owned组清理合同不改。新两组/五图NOT_RUN，不以历史六组冒新overlay通过；[root add166](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/root-delta-review.json)已限定批准source/native，0blocking；真正两组/五图仍NOT_RUN。

@@ -9,7 +9,7 @@
  assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
  assert(Date.parse(gate.expiresAt) > Date.now());
  const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
-@@ -125,29 +125,14 @@
+@@ -125,29 +125,15 @@
    const { chromium } = await import(pathToFileURL(binding.playwrightModule).href); checkpoint();
    browser = await chromium.connectOverCDP(chromeEndpoint, { timeout: Math.min(3000, Math.max(1, workDeadlineMs - Date.now())) }); checkpoint();
    report.cdpConnectedAt = new Date().toISOString();
@@ -17,7 +17,7 @@
 +  context = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); checkpoint();
    page = await context.newPage(); checkpoint();
    await page.addInitScript({ content: selectObserverSource }); checkpoint();
--  page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
 -  const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
 -  report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
 -  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []);
@@ -32,9 +32,11 @@
 -  checkpoint(); fixture = await scenario.startMessageSettingsFixture({ cacheDir: join(scratch, 'vite-overlay'), aliases }); checkpoint();
 -  context = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); checkpoint();
 -  page = await context.newPage(); checkpoint();
-   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+-  page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
    const overlay = await scenario.checkMessageSettingsOverlays(page, fixture, output); checkpoint();
-   report.checks.push(...overlay.checks); report.overlay = overlay;
+-  report.checks.push(...overlay.checks); report.overlay = overlay;
++  report.checks.push(...overlay.checks); report.overlay = overlay; report.requests = [...fixture.requests];
++  report.limitation = "Overlay-only production component with synthetic HTTP catalog; no behavior rerun or actual App integration";
    report.journeys.push({ name: 'overlay', checks: overlay.checks });
 -  assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 8);
 +  assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 2);
