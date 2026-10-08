@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:02:36.270088+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:19:24.174965+00:00；本次不核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base8f617 / sourcee14e665e56ee947fa3053939fe0a9beccefd32c0；PaneTabs水平focus窄修 |
-| 工作树dirty状态 | 全部18source/checks STOP；仅本次最终metadata seal，0child/HTTP/PG/Chrome |
+| 工作基线 / HEAD | base17cfaba5e70f39732aba770656e9cab07339e90d/source67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 |
+| 工作树dirty状态 | source/local STOP；只本次metadata候选封包，0runtime |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED e14e665e56ee947fa3053939fe0a9beccefd32c0 — 最后4/4+2finalPNG；本段97234ms/3次 CLOSED，两旧FAIL与ChromeEOF差异保留；root限定功能接受/视觉P2 OPEN |
+| 检查状态 | PASSED 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — 必要affected noEmit0/3376ms一次CLOSED；新视觉browser NOT_RUN，原e14四组历史限定 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | e14e665e56ee947fa3053939fe0a9beccefd32c0 |
+| 实现目标 | 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 最后4/4+双390限定接受；横向Close与8rem P2关闭，滚动条压字视觉P2 OPEN；97234/3 CLOSED |
+| 当前产出 | 已固定底部1rem非交互留白+Range/rect与真实键盘横滚后截图候选；唯一types通过，等待browser lease |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01滚动条压文字，完整窄屏UX未达；main/Context组合未集成 |
+| 当前阻塞 | ACTIVE: 新原生scrollbar净空视觉实际待验；browser NOT_GRANTED，main/Context未集成 |
 | 需用户决定 | NONE |
-| Review | APPROVED e14e665e56ee947fa3053939fe0a9beccefd32c0 — root07673限定功能fixture接受，视觉P2 OPEN；见review.md |
+| Review | PENDING 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — 新视觉修复候选；原e14/root07673不外推 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -174,3 +174,5 @@
 2026-10-08T02:00:17.674132+00:00：第三4/4+2finalPNG/early1，22029ms→总97234/270000 CLOSED；两local6759 CLOSED。4PID2PGID与scratchcache absent、nestedcontextHTTPclosed，Chrome/parent/outerEOF均true本轮，首false不改。全部产品/检查STOP；本轮仅metadata尾。
 
 2026-10-08T02:02:36.270088+00:00：root07673最终独审原样归档，限定功能fixture4/4接受/106pairs独核一致；ARC-VISUAL-NARROW-TAB-01继续OPEN不虚称完整UX通过。全18source/checks STOP；本自然尾正常commit/push，无第四/无新local/main接收。
+
+2026-10-08T02:19:24.174965+00:00：S01 drain等待02:14:49.518393→02:17:41.864后恢复原source准备，clock未重置。唯一新types3376/15000 CLOSED；source67a4，仅CSS/browser变化。准入current12,154,830,848未取max原13,511,688,192的记录差异保留；samecallfree14,400,385,024确高于两线，不倒改。新browser候选0actual，不借旧97234。

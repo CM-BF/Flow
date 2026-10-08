@@ -1,5 +1,14 @@
 # WPF-WORKSPACEARC01 Review
 
+## 当前候选
+
+PENDING 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117。仅layout.css与原browser：保nativebar/自然height的底部留白，真实键盘横滚后两主题Range/rect和截图；一次affected noEmit0/3376ms。新browser NOT_RUN，visualP2 OPEN；旧e14功能4/4不外推。
+
+[本次入口](../../docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/entry.json)。
+
+## 历史固定目标与原件
+
+
 ## 当前组合
 
 APPROVED e14e665e56ee947fa3053939fe0a9beccefd32c0 — **APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2**。最后实际4/4/双390，97234ms三次CLOSED，首二FAIL保留。Close横向可见与8rem单位P2关闭；两图滚动条压文字的ARC-VISUAL-NARROW-TAB-01仍OPEN，阻完整窄屏UX。无新local（6759/2已闭）；e14没有新增tsc。main/Context未集成。

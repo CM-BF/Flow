@@ -1,0 +1,51 @@
+{
+  "logicalId": "ARC-SCROLLBAR-CLEARANCE-20261008",
+  "firstWrite": "2026-10-08T02:12:52.492624+00:00",
+  "deadline": "2026-10-08T02:32:52.492624+00:00",
+  "authorizedAt": "2026-10-08T02:11:29.715Z",
+  "base": "17cfaba5e70f39732aba770656e9cab07339e90d",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 active exact18",
+  "capBytes": 8388608,
+  "local": {
+    "maxChildren": 1,
+    "perChildMs": 15000,
+    "totalMs": 15000,
+    "spentMs": 3376,
+    "state": "CLOSED_MAX_ONE_CHILD",
+    "children": 1,
+    "exitCode": 0,
+    "raw": "/private/tmp/arc-scrollbar-local-vf5wv1wu"
+  },
+  "browser": {
+    "maxAttempts": 2,
+    "perAttemptMs": 90000,
+    "totalMs": 180000,
+    "spentMs": 0,
+    "state": "NOT_GRANTED"
+  },
+  "oldCreditTransfer": false,
+  "skills": "Reuse already-read local find-skills/clean-code/assistant-ui; no installs. Scope only intrinsic scrollbar clearance and bounded actual text/rect observations.",
+  "sourcePolicy": "layout.css + necessary original browser + own records; e14 focus helper/authorities unchanged",
+  "source": "67a4c981547fc0b8ea2dfcf27823f7b12f1c9117",
+  "pause": {
+    "start": "2026-10-08T02:14:49.518393Z",
+    "end": "2026-10-08T02:17:41.864Z",
+    "reason": "S01 pending measurement drain; manager cancelled unopened selection; no clock reset"
+  },
+  "admissionVariance": {
+    "actualRecordedCurrentFloor": 12154830848,
+    "initialAuthorizedFloor": 13511688192,
+    "actualFree": 14400385024,
+    "originalGateUnchanged": true,
+    "finding": "helper used latest current sum only, omitted max(initial,current); observed samecall free still exceeded both. No resampling/retest. Future admission must max frozen/current/intrinsic."
+  },
+  "cleanCode": {
+    "at": "2026-10-08T02:19:04.360114+00:00",
+    "scope": "scoped CSS bottom clearance and original browser observations",
+    "findings": "Keep native bar and auto height; Range/rect cannot prove overlay paint so retain visual review. Original error remains primary; bounded failure screenshot expanded to theme assertions. No registry/store/scroll helper changes.",
+    "localScope": "one changed browser/staticimports noEmit only, not wholeWeb/old pure/HTTP",
+    "open": "Nativebar paint/clearance actual pending, no browser grant"
+  },
+  "sourceLocalStoppedAt": "2026-10-08T02:20:17.173057+00:00",
+  "packet": "/private/tmp/arc-scrollbar-clearance-_roj0rzk"
+}
