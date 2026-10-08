@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-08T04:08:13.707Z",
+  "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+  "productionUnchangedSince": "dfba64462",
+  "distinctPassed": 6,
+  "runtimeSelections": 8,
+  "environmentSelections": 2,
+  "types": "first2 diagnostic failures preserved; fixed0",
+  "childCount": 5,
+  "elapsedMs": 4359,
+  "rawBytes": 1816,
+  "returnAt": "2026-10-08T04:07:06.220Z",
+  "groups": "5 absent/dualEOF/no signals",
+  "scratch": {
+    "exactEmptyRemoved": 3,
+    "retainedNonempty": [
+      {
+        "bytes": 135,
+        "entries": 4
+      },
+      {
+        "bytes": 135,
+        "entries": 4
+      }
+    ]
+  },
+  "limitations": "0PG/HTTP/service/native/provider/personal; direct consumers only, no build/cold/settings or center diagnostic producer claim",
+  "quality": {
+    "at": "2026-10-08T04:08:13.707Z",
+    "scope": "runtime callback, real outbox/journal consumers, exact environment opt-in",
+    "findings": "No new Module/state machine; same single durable owners; original ACK validation and failure retention preserved; focused type fixture red fixed without changing product."
+  }
+}

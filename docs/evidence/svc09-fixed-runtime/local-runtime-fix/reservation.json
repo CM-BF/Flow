@@ -1,0 +1,84 @@
+{
+  "startedAt": "2026-10-08T04:07:05.392Z",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/docs/evidence/svc09-fixed-runtime/vitest.config.mjs",
+    "apps/runner/src/runtime-terminal-admission.test.ts",
+    "--reporter=dot"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/apps/runner/src/runtime.ts",
+      "bytes": 18004,
+      "sha256": "d13c573b6b374e3d3d1ca57bdb5a68dce49d9a27eaeda42210abc7e6dd15aac1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/apps/runner/src/runtime-terminal-admission.test.ts",
+      "bytes": 6804,
+      "sha256": "3d7f7fa3d61d1fd1ccbc9081592c699b68fa3d0a637b78881659da400a7e0a8c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/apps/runner/src/outbox.ts",
+      "bytes": 8740,
+      "sha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/apps/runner/src/admission-journal.ts",
+      "bytes": 10960,
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/environment.mjs",
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/environment.test.mjs",
+      "bytes": 5202,
+      "sha256": "c6dc48b2cf542e7fe3a8c4d3682537a7af96cc13441abf2f08c5cdc5290501da"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/docs/evidence/svc09-fixed-runtime/local.py",
+      "bytes": 4824,
+      "sha256": "fdd067c8ee3a216bfa4629764d11f36b1325e66fc262e643b4e908c078cdf340"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/docs/evidence/svc09-fixed-runtime/vitest.config.mjs",
+      "bytes": 1873,
+      "sha256": "797492917ff9c84cd9bf48197c5437eb69c771d1ee8294f6610d4dc8812f78bf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    }
+  ],
+  "queueSha256": "35caac50f6e463b0728d7d2656bd02235ace0a0ea750e4f4f5baa7b87ee82c08",
+  "floorBytes": 11650465792,
+  "addedBytes": 8519680,
+  "freeBytes": 14065184768,
+  "priorChildMs": 3540,
+  "scratch": {
+    "path": "/private/tmp/flow-svc09b-local-2vgamoul",
+    "dev": 16777234,
+    "ino": 124797041
+  },
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "personal": 0
+}

@@ -1,5 +1,7 @@
 # SVC09B 独立审查
 
-NOT_STARTED。Reviewer：native_center_owner；固定target交付后由Lead协调只读审查。
+PENDING。Target `00c84910d5ba1cfd1724a996a3649b8680de0e67`；base `f9221dbdce367d1794586471991adbe7a5a98c13`。Reviewer：native_center_owner。
 
-范围：四产品/测试叶与own证据。核native ACK→journal→unlink、unknown保留和重放不重启adapter、环境只center exactv1。基底f9221可还原，outbox/journal保持不变；真实build/cold/双槽未验。绑定target、实际检查数、原失败、临时目录与进程收尾、main接收分别记录。空模板不等于通过。
+四源：runtime.ts/runtime-terminal-admission.test.ts/environment.mjs/environment.test.mjs。真实检查6不同（runtime4修正后重选4，环境2），focusedtypes首2红→0，5child4359ms/raw1816B。原始记录及限制见[结果](../../docs/evidence/svc09-fixed-runtime/result.json)。
+
+请只读核3处runtime native适配、18bf环境白名单、真实outbox/journal顺序与失败重放，source/current/pins/原件和unknown边界。无build/cold/双槽/PG/模型实证；本基底无center诊断producer。结论须target-bound，空模板非通过。Lead随后仅受控取两production差量进入新固定artifact来源，不把本分支metadata当运行能力。

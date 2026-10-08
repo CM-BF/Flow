@@ -1,0 +1,37 @@
+{
+  "production": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "before": {
+        "commit": "f9221dbdce367d1794586471991adbe7a5a98c13",
+        "bytes": 17786,
+        "sha256": "398201e036cedafc801634b50d8f43eb30eb1ef81640bc224f6eae80960d023e"
+      },
+      "after": {
+        "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+        "bytes": 18004,
+        "sha256": "d13c573b6b374e3d3d1ca57bdb5a68dce49d9a27eaeda42210abc7e6dd15aac1"
+      }
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "before": {
+        "commit": "f9221dbdce367d1794586471991adbe7a5a98c13",
+        "bytes": 2784,
+        "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+      },
+      "after": {
+        "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+        "bytes": 3005,
+        "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
+      }
+    }
+  ],
+  "runtimeOrigin": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a first3 runtime hunks adapted native signature only",
+  "environmentOrigin": "18bf17ea26cacb4a12cd89f962b455f6688f729d exact blob",
+  "unchanged": [
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/admission-journal.ts"
+  ],
+  "composition": "Lead must apply only these2 production leaves to f9221 for runtime artifact; no plugin/emitBatch/center diagnostic producer; own metadata/test additions are not product capabilities"
+}
