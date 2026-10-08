@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:26:07.128Z / main7001fab80；215来源实际部署及插件客户端接收完成；O16双HOME公开状态实际归还并获限定结果独审。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:34:18.637Z / main2b52b2355；O16最小实验环境修复与6项直接结果已独审/主线接收，实际新规划候选待独立模型额度。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main866f0a9c0含插件验证客户端与215登记，7001fab80接收实际部署原件；个人e15/Web779为既有部署，不冒当前健康或新任务领取。 |
+| 已集成main状态 / HEAD | main2b52b2355含O16实验环境修复；原插件客户端/215登记和实际部署原件已接收。个人e15/Web779仍为既有部署事实，本段未操作服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 插件验证执行、回执与客户端已进入主线，看板已显示对应进度。同一原生版本的登录环境对照已完成，正常HOME可见登录，原有失败仍保留。 |
-| 下一可用交付 | 依据已观察到的登录环境差异，完成原生规划入口的最小环境修正和零模型检查；实际新查询仍需独立额度。 |
-| 当前阻塞 | ACTIVE: 双端接续仍未完整通过；正常HOME可见登录尚不证明目标规划调用成功，下一环境修正正在准备。工程写入资格保留原待决边界。 |
+| 当前产出 | 原生规划验收入口的登录环境已完成最小修正并通过零模型检查；既有工具权限和私有材料边界保持。真实规划尚未验证成功。 |
+| 下一可用交付 | 固定候选已就绪，获得一次新模型运行额度并完成当时资源准入后，验证原始目标能否形成真实计划；其他已审交付继续接收。 |
+| 当前阻塞 | ACTIVE: 真实目标规划等待本次新模型额度决定，旧三次已封存且不可复用；双端接续仍未完整通过，工程写入资格保留原待决边界。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -296,3 +296,5 @@ TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEE
 看板00:52的213来源发布遗漏协调配置，00:56:14.690Z已保留该失败事实并恢复领取API available；没有操作个人服务。214来源已主线登记，仍待原资源owner确认普通部署安全点。O16本段00:47:28.671Z开工，01:01:10.886877Z两个纯检查child归还；12策略例与1真实环境consumer通过，原spec/TAP汇总不匹配保留。b9b7f9ef8源/纯结果正在独审，实际A/B status caller继续准备：0 SDK query、原3次费用与失败不变，不读/复制凭据，不把同环境字段对照当模型资格或根因证明。
 
 2026-10-08T01:26:07.128Z：O16原owner实际01:22:53.287Z开始、01:23:21.418Z归还；同native2.1.290仅HOME变化，A未登录/exit1且原失败保留，B公开已登录/exit0。assignment_review对23a221c0a的16绑定及2继承作限定结果忠实性APPROVED/0P1P2；5PID/3组absent、双EOF，private427B保留。正常共享认证初始化/刷新可能写入，A可能影响B，故不追认旧失败根因、不证明query资格。0新SDK，累计3不变；后继只准备显式正常HOME环境策略、保持private配置/材料/工具权限与旧许可拒绝，第四query仍NOT_GRANTED。[唯一结果](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/result-analysis.json)与[归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/window-return.json)。
+
+2026-10-08T01:34:18.637Z：O16正常HOME策略sourcee5c7fd9d6、固定候选2c121937c已获assignment限定源码/6项直接结果独审，main2b52b2355接收；只改实验环境Module及直接fixture/test，不改生产认证/服务。6/6、815ms、0native/auth/PG/SDK，原owner正常归还。新1次planner具体参数沿[固定候选](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-normal-home-candidate/candidate.json)，已向GO合并为完整自然语言路径单一运行blocker；第4query仍NOT_GRANTED，无新permit。此为有明确环境差异依据的下一候选，不称旧失败已归因或实际调用已成功。[主线接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-policy-intake.json)。
