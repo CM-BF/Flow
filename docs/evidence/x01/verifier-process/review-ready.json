@@ -1,0 +1,29 @@
+{
+  "source": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
+  "result": "46294a194344097520a8c1651d2be8c3ad6a6bf7",
+  "manifestSha256": "a66f946bd9c4c61e37e04ee41a6b30e3e01bccb3ec72dcaf65144e111e6ec1cb",
+  "manifestBytes": 7272,
+  "bindings": 28,
+  "boundBytes": 530077,
+  "executionInputs": {
+    "count": 402,
+    "manifest": "execution-inputs.json"
+  },
+  "external": "62 named pins / 15 same-tree and installed links; not hermetic artifact closure",
+  "sourceReview": "ROOT_PENDING; DB_SUCCESS_RECEIPT_APPROVED",
+  "checks": "strict0 initial760749, two collect1/0hooks, final01b collect only",
+  "actualReadiness": "NOT_READY_OPERATOR_REQUIRED",
+  "main": "NOT_INTEGRATED",
+  "remaining": [
+    "thin current allowlist/rootguard operator, exact 3main/2worker and target selection checks",
+    "bounded full log/failed or absent fixture receipt preservation",
+    "fresh future input/claim/floor/unique manager grant",
+    "T7 released artifact journey is separate"
+  ],
+  "zeroActual": [
+    "PG",
+    "worker",
+    "listener",
+    "provider"
+  ]
+}
