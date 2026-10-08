@@ -55,3 +55,5 @@ TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚�
 ### Picker最后准备绑定
 
 原候选源与native边界已分别由root/经理接受，见[ready记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)。本10min/2MiB段只固定数据批准和自然metadataHEAD，不改source/runnable或重新扫闭包，不重跑类型。原6行为+2展示组/7PNG均未实际执行，TODO06/07不变；个人恢复优先，90s提案不是运行授权。
+
+2026-10-08：Picker现成包仅刷新[READY输入与计量](../../docs/evidence/wpf-visual01/shared-overlays/picker-existing-refresh-20261008/ready.json)，source与验收不改；TODO06/07仍待Picker实际、全片独审/main。新75MiB峰值提案保90s/15cleanup，实际授权另列。

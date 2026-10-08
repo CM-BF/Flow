@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-07T20:30:22.727Z |
+| 最近更新 | 2026-10-08T02:18:25.824367Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -78,3 +78,9 @@ Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2own
 ## Picker最终routine准备
 
 [f3b8源审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)与[经理native限定接受](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)已绑定。[READY候选](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)仅数据state/head/approval变化，source4ca、parent1147944e、worker4ff84c50及五prepared保持；旧binding/manifest完整保存。90s含15cleanup仍提案，0gate/0runtime，Recovery余额不借用。全部8scope在本次正常seal后STOP、claim保留；实际前仍需经理新窗口与fresh全部输入/完整组合。
+
+## 2026-10-08 Picker现成包刷新
+
+现成source4ca与parent/worker/五prepared逐字不变；6own、222readonly、37external、Node/Chrome及原source/native批准指针重新逐hash核齐，未创建gate或启动任何工程/runtime。当前[新READY记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-existing-refresh-20261008/ready.json)保旧73MiB/旧floor历史，新增候选75MiB =64scratch+8retained+3metadata，metadata含index原子副本/objects；raw双副本归档只能在完整RETURN且scratch已删后进行。90s=75work15cleanup、6行为+2展示组/7PNG仍NOT_RUN，仅待经理新lease。Recovery结果不重跑、不转余额；主线/部署仍未完成。
+
+本准备段实际firstWrite02:12:51.611954Z、固定deadline02:32:51.611954Z；等待S01隔离02:14:30→02:17:41.864共191864ms（未OPEN选择已取消），时钟未延长。恢复后仅自然metadata封存，0工程child/0runtime；最终私有binding将指本次clean metadata HEAD，原ready快照与before字节保持。全部8scope在正常seal后STOP，claim保留。

@@ -1,0 +1,19 @@
+{
+  "scope": "Preparation only, no products/test/caller bytes changed",
+  "newEvidenceBytes": 57638,
+  "entireModifiedPlanFilesConservativeBytes": 22178,
+  "privateNewAndRewrittenMetadataConservativeBytes": 104936,
+  "indexAtomicCopyUpperBytes": 2240403,
+  "newGitSmallObjectsReserveBytes": 524288,
+  "remainingMetadataReserveBytes": 262144,
+  "sourceEnvelopeBytes": 8388608,
+  "runtimeCandidatePeakBytes": 78643200,
+  "postReturnRawOriginalArchiveGitAndMetadataPeakBytes": 28311552,
+  "actualRuntimePeak": "NOT_OBSERVED / NOT_RUN",
+  "notes": [
+    "Raw projectcopy and Git blobs occur only after exact RETURN and scratch removal",
+    "Existing payload/dependencies copied0; preparedcaller unchanged",
+    "No free-disk sample or runtime admission made during preparation"
+  ],
+  "preparationConservativeUpperBytes": 3211587
+}

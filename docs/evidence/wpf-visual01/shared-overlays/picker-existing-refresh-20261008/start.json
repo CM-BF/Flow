@@ -1,0 +1,46 @@
+{
+  "firstWrite": "2026-10-08T02:12:51.611954+00:00",
+  "deadline": "2026-10-08T02:32:51.611954+00:00",
+  "logical": "VISUAL01-PICKER-EXISTING-PREPARATION-20261008",
+  "capBytes": 8388608,
+  "scope": "Ownrecords/existing privatepacket metadata only; no source/test/caller changes",
+  "claim": {
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "base": "dcbd7a798b3cea6f2fae3ab7c7484bd2d0c56749",
+  "groups": {
+    "sources": 6,
+    "readOnlyDependencies": 222
+  },
+  "externalPins": 37,
+  "native": [
+    "node",
+    "chrome"
+  ],
+  "preparedFiles": 5,
+  "allPinsMatch": true,
+  "root": {
+    "device": 16777234,
+    "inode": 124418458,
+    "uid": 501
+  },
+  "unusedNamespace": true,
+  "index": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-shared-overlays/index",
+    "bytes": 2240403,
+    "device": 16777234,
+    "inode": 124469737
+  },
+  "engineeringChildren": 0,
+  "runtime": "NOT_GRANTED",
+  "prewriteReadErrors": "Two local read-only field-shape exceptions (chrome string, then list/items) before any firstWrite; no input mismatch or runtime",
+  "waiting": {
+    "start": "2026-10-08T02:14:30Z",
+    "end": "2026-10-08T02:17:41.864Z",
+    "durationMs": 191864,
+    "reason": "S01 drain selection canceled beforeOPEN; source preparation explicitly resumed",
+    "clockExtended": false
+  }
+}

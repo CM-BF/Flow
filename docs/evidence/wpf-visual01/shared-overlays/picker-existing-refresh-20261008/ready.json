@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-08T02:13:41.036555+00:00",
+  "state": "READY_CANDIDATE_NOT_ADMITTED",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "executionHeadBeforeSeal": "dcbd7a798b3cea6f2fae3ab7c7484bd2d0c56749",
+  "expectedFinalExecutionHead": "Privatebinding will rebind to clean metadata commit without runnable/source change",
+  "claim": {
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "scope": "Routine metadata/pins/budget only",
+  "sixSources": {
+    "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+    "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+    "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "apps/web/test/message-settings.browser.ts": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-picker-preparation-review-20261007.json",
+    "sha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7"
+  },
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json",
+    "sha256": "268fff238a5827cf98d160b3abb522266e40d47668f487d6be97a2ab5adb767d"
+  },
+  "runnable": {
+    "parent": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+    "preparedFiles": {
+      "worker.mjs": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+      "aliases.json": "251101182e1553fcdae839c4c58b45436a1e8bd7bca93eab565b3df8640f3996",
+      "runtime-tsconfig.json": "6385ce025173b2e5046cf195fef9ff524cacd688df3a1ebd132ff21ca94ff2e3",
+      "sandbox.sb": "875bf7719aac68be4470e758ca98ed08ff9ec8efa64905d3c6f6800a0ccc7020",
+      "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    }
+  },
+  "proposal": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 3145728,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "2 sequential Vite fixtures, never concurrent",
+    "floorMeaning": "Proposal only; a new explicit manager lease and fresh complete canonical sum required; no historical floor authorizes runtime",
+    "expectedImages": 7,
+    "newVisualImages": 5,
+    "planningBytes": 78643200,
+    "metadataIncludes": "own Git atomic index copy + objects + small records; no runtime copying of raw",
+    "phasePeaks": {
+      "runtimeScratchRetainedMetadataBytes": 78643200,
+      "afterExactReturnOriginalArchiveGitBlobAndMetadataBytes": 28311552
+    },
+    "rawCopyOrdering": "Archive/commit raw only after exact all groups/HTTP/context/scratch RETURN. At that point64MiB scratch0: <=8MiB original +8MiB canonical copy +8MiB Git raw blobs +3MiB index/smallobjects/metadata =27MiB, below75MiB runtime peak. Compression/header slack uses smallobjects reserve. No simultaneous raw copy with active scratch."
+  },
+  "priorActual": "Recovery10325/60000 CLOSED; no Pickerattempt/credit",
+  "inputVerification": "6own+222readonly+37external+Node/fiveprepared/root+2review exact hashes matched; no import/native execution",
+  "nativeBoundary": "Accepted Chrome native sibling no custom outer OS write/egress sandbox; fixed CDP ownership/cleanup retained",
+  "noConsumedNamespace": true,
+  "browser": "NOT_RUN / NO_GRANT",
+  "budget": {
+    "sourcePreparationCap": 8388608,
+    "indexAtomicCopyObservedBytes": 2240403,
+    "metadataRuntimeCap": 3145728,
+    "newGitObjectsReserve": 524288,
+    "otherSmallMetadataReserve": 262144,
+    "metadataConservativeBound": 3026835,
+    "rawGitBlobsAfterReturnAllowanceBytes": 8388608,
+    "archiveAndGitBlobPhaseOnlyAfterScratchAbsent": true
+  },
+  "before": {
+    "binding": "ef09360fa7f617b828c8039e430517150ed5f51b68375c043566ae29aa60df04",
+    "manifest": "6c5ad08ec2427fe5bb729b2498ea8c3db649d3ad35665a5f7e470f854197ee48"
+  },
+  "updatedAt": "2026-10-08T02:18:25.824367+00:00",
+  "sourceStoppedAt": "2026-10-08T02:18:25.824367+00:00",
+  "engineeringChildren": 0,
+  "wait": {
+    "start": "2026-10-08T02:14:30Z",
+    "end": "2026-10-08T02:17:41.864Z",
+    "durationMs": 191864,
+    "reason": "S01 drain selection canceled beforeOPEN; source preparation explicitly resumed",
+    "clockExtended": false
+  },
+  "privateBindingSha256BeforeFinalHead": "a88257770858e096d24247ad1d86e01e34f2d34d670f70fd132103fc7bc58642",
+  "privateManifestSha256BeforeFinalHead": "42ecfc35106410ce1047dad648933063335c64fbd188a9c4faf583f8bf4e6d53"
+}

@@ -35,3 +35,7 @@ Picker [f3b8限定源码准备审](../../docs/evidence/wpf-visual01/shared-overl
 ## Picker固定候选的当前边界
 
 root f3b8仅source-preparation已批准；经理明确接受固定Node24.20/Chrome154/CDP+Playwright1.63/tsx4.23.15与原prm-b1监督清理合同，[native接受记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)系其直接派工转录。parent/worker/五prepared不变，最终metadataHEAD例行重绑不重复审查。Picker实际/7图仍NOT_RUN，没有gate、额外测试或fullApp批准。
+
+## 2026-10-08 例行准备刷新
+
+原f3b8 source与268fff native接受保持；只核固定输入并调整预算/元数据执行绑定，0产品/测试/运行器差量，不产生新的行为或视觉PASS。旧1MiB metadata不足实际index已纠正为3MiB提案，raw双拷贝与scratch运行阶段分开计峰。新窗口仍由经理单独授予，旧floor和未用时间均不是许可。
