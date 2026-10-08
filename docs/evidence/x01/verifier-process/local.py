@@ -14,7 +14,7 @@ resources=load('verifier_cleanup',ROOT/'docs/evidence/x01/enable-binding-pg-once
 stamp=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')
 record=json.loads(RECORD.read_text()) if RECORD.exists() else {'attempts':[],'unknown':False,'PG':0,'worker':0,'listener':0,'wholeExternalWall':None}
 label=sys.argv[1]
-if label not in ('types','list') or record['unknown'] or len(record['attempts'])>=3 or sum(x['supervisorMs'] for x in record['attempts'])>=40000:raise ValueError('iteration bound')
+if label not in ('types','list') or (record['unknown'] and not json.loads((HERE/'first-local-separate-cleanup.json').read_text()).get('returned')) or len(record['attempts'])>=3 or sum(x['supervisorMs'] for x in record['attempts'])>=40000:raise ValueError('iteration bound')
 if time.time()>=datetime.datetime.fromisoformat('2026-10-08T02:07:44.755+00:00').timestamp():raise ValueError('segment closing')
 canonical=json.loads(Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json').read_text());forward=canonical['forwardAdmission'];terms=forward['termsBytes'];floor=sum(terms.values())
 if terms.get('MikaX01ProcessCasePreparation')!=12582912:raise ValueError('own term absent')
@@ -23,9 +23,10 @@ free=shutil.disk_usage(ROOT).free
 if free<floor:raise ValueError('free below full floor')
 claim=json.loads((HERE/'fresh-claim.json').read_text())
 if claim['version']!=34 or claim['status']!='active' or time.time()-claim['observedEpoch']>60:raise ValueError('stale claim')
-root=Path(tempfile.mkdtemp(prefix='flow-x01-verifier-local-'));identity=root.lstat();(root/'tmp').mkdir();(root/'cache').mkdir()
+root=Path(tempfile.mkdtemp(prefix='flow-x01-verifier-local-')).resolve();identity=root.lstat();(root/'tmp').mkdir();(root/'cache').mkdir()
 step={'label':label,'startedAt':stamp(),'floor':floor,'terms':terms,'free':free,'canonicalAt':forward.get('at'),'claim':claim,'temporary':{'path':str(root),'dev':identity.st_dev,'ino':identity.st_ino},'sourceHashes':{}}
 for p in [ROOT/'apps/server/src/plugin-runtime/process-runner-pg.test.ts',HERE/'inputs/apps/server/src/plugin-runtime/process-runner-pg.test.ts',HERE/'inputs/apps/runner/src/plugins/process-host.ts',HERE/'inputs/apps/runner/src/runtime.ts',HERE/'fixture.ts',HERE/'tsconfig.json',HERE/'vitest.config.mjs',Path(__file__)]:step['sourceHashes'][str(p.relative_to(ROOT))]=hashlib.sha256(p.read_bytes()).hexdigest()
+record['historicalCleanupUnknown']=record.get('historicalCleanupUnknown',False) or record['unknown']; record['unknown']=False
 record['attempts'].append(step);RECORD.write_text(json.dumps(record,indent=2)+'\n')
 node='/opt/homebrew/opt/node@24/bin/node'
 argv=[node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(HERE/'tsconfig.json')] if label=='types' else [node,str(ROOT/'node_modules/vitest/vitest.mjs'),'list','--config',str(HERE/'vitest.config.mjs'),'--configLoader','native','-t','^real center and trusted-process runner verify a failed source and its JSON output$','--json='+str(root/'list.json')]
