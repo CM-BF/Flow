@@ -15,7 +15,7 @@
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新环境6不同/6通过、815ms/1924B、1组absent/dualEOF/空scratch同身份removed；真实adapter/decorator仅注入1失败，0真实SDK/native/auth/PG/个人。旧13/8未重跑。 |
-| Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例限定批准并main2b52b2355；本次实际planner成功与归还结果待独立审查，不冒完整目标通过。 |
+| Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例限定批准并main2b52b2355；本次76a9实际planner/归还获Lead限定APPROVED，0P1/P2并main254ce9579；不冒完整目标通过。 |
 | 实现目标 | e5c7fd9d664de11ab853c55e0a01577c12530555 |
 | 实现范围 | experiments/continuous-goal-acceptance/native-environment.mjs, experiments/continuous-goal-acceptance/native-environment-fixture.mjs, experiments/continuous-goal-acceptance/native-normal-home.test.mjs |
 | 已集成main状态 | main2b52b2355精确接收正常HOME实验3源与Interface/candidate；唯一回执docs/evidence/i02/o16-normal-home-policy-intake.json时间2026-10-08T01:32:11.573Z。owner于01:34:40Z收录，0重测；历史失败/认证源码限定接收保持。 |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 新一次真实规划成功形成两步任务提案，已暂停并归还运行资源；尚未应用或执行子任务。 |
-| 下一可用交付 | 审查本次真实提案；已列明确认对象和两项后继任务的独立额度、执行能力缺口，尚不具备直接续跑条件。 |
-| 当前阻塞 | ACTIVE: 实际规划结果待独立审查；本次单次额度已消费，未获确认或子任务执行授权。 |
+| 当前产出 | 真实两步提案的运行结果已独审，提案约束已获语义接受；尚未签发确认或执行子任务。 |
+| 下一可用交付 | 审定有效暂停内的明确续接接口，再准备两项文本任务的有限执行与独立接受；当前不能直接续跑。 |
+| 当前阻塞 | ACTIVE: 续接需要明确的源码身份转换合同；旧暂停期限不延长，确认与两项子任务额度尚未授予。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -76,7 +76,7 @@
 | O16-W19 | 2026-10-08T01:30:57.830Z | 2026-10-08T01:34:40.000Z | 审查 | 最小环境与直接消费者已独审/main；结束为owner收录回执时刻，不冒review发生时间 | native-normal-home-candidate/manifest.json、main2b52b2355的I02接收回执 |
 | O16-W20 | 2026-10-08T01:34:40.000Z | 2026-10-08T01:36:06.000Z | 其他 | GO内部单次预算决定由Lead转达（非用户未答复）；结束为owner收录时刻，不冒GO决定时间，旧三次不复用 | 本次授权准备记录 |
 | O16-W21 | 2026-10-08T01:36:06.000Z | 2026-10-08T01:45:07.705Z | 资源 | D01正式选中并同次fresh后已实际START；结束为原actual-start，不用grant或提交时间代替 | native-plan-normal-home-20261008-once/actual-start.json |
-| O16-W22 | 2026-10-08T01:48:09.597Z | OPEN | 审查 | 成功planner已暂停并精确RETURN，固定本次原件待独立结果审查，无运行holder | native-plan-normal-home-20261008-once/result-manifest.json |
+| O16-W22 | 2026-10-08T01:48:09.597Z | 2026-10-08T01:54:06.221Z | 审查 | 已收Lead限定实际结果独审/main回执，结束为owner收录时刻；原真实提案与整体未完成分开 | main254ce9579的I02唯一结果回执 |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -167,3 +167,5 @@
 2026-10-08T01:48:09.597Z：本次唯一预算实际2026-10-08T01:45:07.705Z开工、2026-10-08T01:45:32.385Zterminal、2026-10-08T01:46:25.059Z精确RETURN。1selected/1passed、一次SDK/累计4；中心审计1proposal、2node1edge、0apply/0child。SDK报告USD0.0492524仅估价，账户UNKNOWN；[本次结果](../../docs/evidence/o16/native-plan-normal-home-20261008-once/RESULT.md)与manifest保留全部固定来源。5PID/3组fresh ESRCH/双EOF/DBconn[]，DB/private KEEP，pause到2026-10-08T02:00:32.316Z不构成后继许可。旧FAIL等待W11/W14按已知转段关闭为UNKNOWN结束，失败/原件不改；W08/W20仅内部GO决定改其他类别。源码无变化，O16-06与整体仍开放。
 
 2026-10-08T01:50:04.500Z：固定结果76a9已push、源码停写。仅补[后继候选](../../docs/evidence/o16/native-plan-normal-home-20261008-once/next-stage-candidate.md)：真实两步提案/完整确认版本，拟两次children预算与独立接受分开；native guard当前仅plan，修改源码又会触发pause/source绑定拒绝，合法续接合同尚缺。未创建后继许可、未确认或apply、未改private/DB/原pause。当前15min期限不自动延长。
+
+2026-10-08T01:54:06.221Z：新续接设计段仅只读固定源码和公开结果，0工程child/PG/auth/query。收到76a9结果独审/main254ce9579与GO对真实proposal约束的语义接受；不把它当confirmation或child预算。候选新增小Interface明确旧/新source反向重建、原pause先验证/一次消费、仅source字段转换及部分写UNKNOWN；该设计涉及未来旧资源恢复，按Lead边界先交方案，尚未改源或运行。
