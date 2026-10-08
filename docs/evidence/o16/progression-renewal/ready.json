@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-08T03:07:23.677Z",
+  "kind": "O16_REAUTHORIZE_NON_T_READY",
+  "authorization": "O16-GO-REAUTHORIZE-20261008 via Execution Lead",
+  "head": "bd96654b7d9af2686b58a9784a42f289198df29c",
+  "reviewMain": "8723763ff0f8bf62cbb3f80dcb2844601c0861dd",
+  "review": "docs/evidence/i02/o16-progression-renewal-review.json",
+  "claim": {
+    "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "state": "active",
+    "scope": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ]
+  },
+  "sourceObservationAt": "2026-10-08T03:06:21.483Z",
+  "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+  "sourceFiles": 329,
+  "dependencies": 39,
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "candidateSHA256": "0485d957601bf7361590855df9b1074963317da4d4c310ae03ab08a577e5c6d7",
+  "originPublicFiles": [
+    {
+      "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/confirmation.json",
+      "bytes": 4198,
+      "sha256": "fb4377446d93a3bc80f7e7f15313ddd3043e8f2cb1172289fc8b7dc15a9e3993"
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/pause-renew.json",
+      "bytes": 2039,
+      "sha256": "d9f612e761eb28fc071e8c5c32afb4a1d7ef4300650242631f68eabb6f7cfcd6"
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/pause.json",
+      "bytes": 2039,
+      "sha256": "d9f612e761eb28fc071e8c5c32afb4a1d7ef4300650242631f68eabb6f7cfcd6"
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/resources.json",
+      "bytes": 1978,
+      "sha256": "a0e5649d6dce9dc86eb5bfe5e984d0f570e5734d6887df47c99fc0e4da818333"
+    }
+  ],
+  "unusedChecks": [
+    "operator/reauthorize",
+    "pause-consumed-renew.json",
+    "execution-authorization.json",
+    "execution-origin.json",
+    "global old-confirmation reservation",
+    "progression-renewal/grant.json"
+  ],
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--reauthorize",
+    "native-children-continuation-20261008-once",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/grant.json"
+  ],
+  "T": null,
+  "grantCreated": false,
+  "actualWindow": "WAIT_D01",
+  "gateConsumed": false,
+  "nextFresh": [
+    "matching T and D01 grant/source/claim/head",
+    "current full floor and deadline",
+    "PG available>=29 then probeclosed",
+    "existing old private/DB/marker/zero target connections and records at actual entry"
+  ],
+  "actual": {
+    "PG": 0,
+    "native": 0,
+    "auth": 0,
+    "query": 0,
+    "pendingLaunch": 0
+  },
+  "limits": {
+    "queries": 0,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "PGReservation": 13,
+    "privateBytesCumulative": 8388608,
+    "runBytesCumulative": 2097152
+  },
+  "oldStateAndGrantUnchanged": true
+}

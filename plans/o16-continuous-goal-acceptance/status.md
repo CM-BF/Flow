@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:58:43.768Z |
+| 最近更新 | 2026-10-08T03:07:23.677Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,19 +15,19 @@
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新片12不同/13选择通过；两监督child/3975ms/4027B，双组absent/双EOF，无signals。第二scratch 1501866B派生cache同身份KEEP；初始EPERM保留。0PG/native/auth/query/旧private读取。 |
-| Review | Lead已读214a9bf生产差量无P1/P2；最终8b31测试增补/12不同结果与新阶段候选等待单次独立固定审查。作者未自批。 |
+| Review | Lead已独立批准最终8b31/bd966来源与12不同局部结果，0 P1/P2；单份I02 o16-progression-renewal-review.json。 |
 | 实现目标 | 8b31a1fedb0b7d8400c0ee0c997761710bc935a0 |
 | 实现范围 | experiments/continuous-goal-acceptance/driver.mjs, experiments/continuous-goal-acceptance/operator-bounds.mjs, experiments/continuous-goal-acceptance/operator.mjs, experiments/continuous-goal-acceptance/permit.mjs, experiments/continuous-goal-acceptance/phase-host.mjs, experiments/continuous-goal-acceptance/progression-renewal.mjs, experiments/continuous-goal-acceptance/progression-renewal.test.mjs, experiments/continuous-goal-acceptance/resources.mjs, experiments/continuous-goal-acceptance/stage-policy.mjs, experiments/continuous-goal-acceptance/worker.mjs |
-| 已集成main状态 | 原5cf8新阶段片main312842ab5；实际renew限定结果main d25dda8f1。当前授权替换10实验叶未集成，旧FAIL/KEEP不改。 |
+| 已集成main状态 | main/origin8723763ff已精确接收本次10实验源及直接消费者；旧renew限定结果main d25dda8f1，原FAIL/KEEP不改。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 同一已确认目标的授权替换入口已完成零模型检查，保留旧确认、材料及资源原件。 |
-| 下一可用交付 | 独审新阶段入口后，以明确有效期承接尚未消费的两步文本任务。 |
-| 当前阻塞 | ACTIVE: 新阶段有效期方案待独审与明确准入；原两次模型额度未消费，当前不操作已暂停资源。 |
+| 下一可用交付 | 在新独占窗口内替换过期执行授权，再承接尚未消费的两步文本任务。 |
+| 当前阻塞 | ACTIVE: 固定入口已审且GO已批准新阶段语义，等待D01明确窗口后一次签发准入；原两次模型额度未消费。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -39,7 +39,7 @@
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
 | O16-06 | in-progress | native_center_owner | 本次1次真实planner成功、累计SDK4；SDK估价USD0.0492524与账户费用UNKNOWN分开。1proposal/0apply/0child、15min pause，整体验收仍未完成。同2.1.290 HOME A/B结果限定独审/main214319132，正常HOME实验策略及6直接例限定独审/main2b52b2355；均不证明真实规划成功或R3根因。原[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)、FAIL/KEEP保持；已真实确认，children原两次额度未消费、新阶段准入未授 |
 
-架构影响：本片新增实验已确认授权替换Module，复用公开revoke/create、原执行循环/监督；保旧confirmationBinding并新增executionAuthorizationBinding，静态stage map区分旧/新工作state与记录。不新增private/DDL/依赖/调度器。源码与局部结果待最终独审；实验consumer边界由ExecutionLead接收时登记，生产架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
+架构影响：本片新增实验已确认授权替换Module，复用公开revoke/create、原执行循环/监督；保旧confirmationBinding并新增executionAuthorizationBinding，静态stage map区分旧/新工作state与记录。不新增private/DDL/依赖/调度器。源码与局部结果已限定独审/main872376；实验consumer边界由ExecutionLead接收时登记，生产架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
 2026-10-06 18:23:45 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
 
@@ -192,3 +192,5 @@
 2026-10-08T02:46:36.625Z：按Lead实际agent槽交接在源码安全点停写，给已选TUI R4唯一operator归还槽。本段尚未启动任何工程检查/PG/native/query/旧private读取，0child/0pending。Interface与progression-renewal新Module、stage/resource计量接缝已保存为dirty；driver/permit/host-worker实际绑定及测试未完成，NOT_READY，未commit不冒可审交付。后继原worker沿本树同claim恢复，不改旧grant/state/KEEP。
 
 2026-10-08T02:58:43.768Z：Lead已取消02:46:36短暂停写要求，本段继续，未丢dirty或新开task。生产源214a9bf、测试增补8b31固定；[单份manifest](../../docs/evidence/o16/progression-renewal/manifest.json)绑定12不同/13实际选择、3975ms/4027B，最后02:56:24.504Z RETURN。原11例不回跑，仅新增实际文件consumer+变更后的source逆算；sourceDigest d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e /329来源/39依赖。初始EPERM与第二cache KEEP保留，不改旧实际原件。现source停写、0child/0pending、0PG/native/auth/query/旧private读取，原累计SDK4及两次未消费额度不变；[具体候选](../../docs/evidence/o16/progression-renewal/candidate.md)分开总体额度、READY后准入和新中心绝对截止，原短授权不复活。
+
+2026-10-08T03:07:23.677Z：新阶段GO授权已到，非T准备于03:06:21.483Z核完329来源/39依赖、环境摘要、旧公开原件及六处未消费入口，见[唯一READY记录](../../docs/evidence/o16/progression-renewal/ready.json)。当前未创建grant/消费门、0PG/native/auth/query/pending launch；D01真正READY后由Lead一次定T，T+5min准入与T+30min中心授权独立。原累计4/两额度未消费、过期pause/旧确认/KEEP保持。
