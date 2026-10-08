@@ -676,3 +676,11 @@ GO已查一手文档：[Anthropic tool search](https://platform.claude.com/docs/
 - [ ] **FLOW-001-T03-QUEUE-ACK-01** 两端对同一矛盾队列回执都保持原key/body与unknown；正常历史replay仍可刷新当前观察。Execution Lead与Web co-lead协调，产品owner和精确scope尚未领取，排在个人新版发布、默认宿主诊断之后，不新建大task。
 - GO只读固定 `035a4dfce9cbf00691ecd432f560967abfef0044`：interaction的dispatchQueueIntent校验resume无promoted时currentTurn.taskId等于冻结expectedTaskId，并校验promoted task/turn/item绑定；Web queue/commands.ts:74–81仅核shape/revision/promoted.state，:164–167会保存accepted checkpoint，FlowClient未补同等语义。TUI controller已有无promotion却换task的UNKNOWN例；Web矛盾接受尚属源码推导、NOT_RUN，不能写成线上事故。
 - 先由原端owner用直接消费者复现差异，再提取浏览器安全的小型纯回执规则供Web和TUI共用；不让TUI引用Web私有projection、不合并两端持久化/展示FSM，也不复制两套if。覆盖无promotion换task、promoted身份矛盾、合法replay与当前观察分离、原请求恢复。0provider，本模块及两个直接消费者足够；实现前核fresh claim/接口边界，当前不新增运行预算。
+
+### REQ-17 / REQ-15：累计会话历史与取消读取（2026-10-08，既有验收补充）
+
+GO只读固定main b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b：Web conversations/projection.ts:235–249把历史持续合入turns/turnVersions并全量排序，clearReadCache:167只清正文；ConversationThread.tsx:34–37仍渲染全部已加载轮次。初始20轮分页不能证明累计常驻有界。归Web既有历史缓存验收，由Execution Lead与Web原owner在当前Arc/Context/TUI交付后协调，实施尚未领取/NOT_RUN；显式核projection条数/字节、DOM与往返恢复，同时保完整历史可追回、当前/未决回执、锚点及迟到隔离，不删历史冒充优化。
+
+同固定源server/conversations/index.ts:50–61未将浏览器abort传入只读数据库事务，已有每SQL10秒/业务池8；这是待测资源边界，不是已证泄漏或卡顿。沿现S01/POOL-01/REQ17小例核快速切换、受控持有读取、取消后连接释放与当前视图延迟，再决定有界取消/超时/排队方案；不新增扫描任务或预算。断开观察绝非取消持久任务/写命令，不按可复用backend PID杀查询。reasoning懒读仍引用原MATURE06-LAZY01的Web接线owner，不重复派工。
+
+保原50ms缓存切换目标，分别记录初始反馈、所选正文可读和中心耗时；[INP边界](https://web.dev/articles/inp)到下一帧而非后继异步正文完成，不能用骨架或rAF代替完整切换证据。本条仅吸收GO与只读审查结论，0新增产品检查/服务访问/模型调用，不干扰现有写域。

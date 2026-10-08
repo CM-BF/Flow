@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:50:19.691Z / mainfe26cc936；个人Web779/v4已发布，AV中心/client与GDEP固定已审源码已接收；TUI01F本轮准备23:43:59Z开始，未持实际浏览器/PG窗口。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:24:02.748Z / main728d3165f；VAR领域与CENTER装配已受控接收；TUI01F准备独审通过、实际双端仍待窗口；个人发布事实不变。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,7 +15,7 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main97353接收实际Web779结果及AV中心/client；fe26接收GDEP四产品叶与直接fixture。个人仍e15/880060、accepting24，Web779/v4；源码接收不自动部署或证明新用户任务领取。 |
+| 已集成main状态 / HEAD | main728d3165f接收VAR/CENTER固定26路径及组合strict＋9factory，06fbe收SVC06B完成/单叶交权；已审领域PG复用。个人e15/880060、accepting24及Web779/v4为前次实际部署观察，不冒当前健康或新用户领取。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
@@ -284,3 +284,5 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 2026-10-07T22:41:45.537Z：续接实际START22:37:56.465903Z、entry exit22:37:56.647208Z，outer51ms；真实executor窗口名前置不符，未到phase，未创建新私有namespace。22:40:21.259Z准确RETURN，四自有PID及预检组absent、EOF/signals[]/pending0，预检两pool.end完成而远端零连接NOT_OBSERVED。原作者修复、独立review核完整真实调用链；旧产物/报告迁入和FAIL/KEEP不变，0新模型/任务/服务动作。唯一原件见[恢复owner](../../../personal-message-settings/plans/svc09-message-settings-activation/status.md)，不把本次失败归作资源等待。
 
 2026-10-07T23:50:19.691Z：恢复后的安全接收已消费AV03中心/client（main97353）及GDEP01（mainfe26），没有新工程重测或个人操作。GDEP只接5必要路径44890B与单份Git来源回执，原512运行输入/历史raw仍在canonical，未复制到main；非Git峰值或APFS节省测量。TUI01F owner于23:43:59Z恢复原双端旅程准备，原首FAIL/cleanup保持，已给一个连续有界local段；未来真实PTY/浏览器与headless证据分列。登记和own-status解析只核自身字段，历史首次UNKNOWN不补猜。
+
+2026-10-08T00:24:02.748Z：本管理安全点同步实际main接收与运行资源边界；[VAR/CENTER唯一回执](../../../m2-integration/docs/evidence/i02/x01-var-center-intake.json)和[SVC06B单叶移交](../../../m2-integration/docs/evidence/i02/svc06b-single-leaf-return-intake.json)可追溯。TUI准备源8cc/独审1b9，真实PTY/Web仍NOT_RUN；当前资源由Web原owner安排，不把无actual holder当有效连续段已结束。新增REQ17只读输入归既有历史缓存/POOL验收，未新领产品scope或运行。历史首次开工UNKNOWN保持。
