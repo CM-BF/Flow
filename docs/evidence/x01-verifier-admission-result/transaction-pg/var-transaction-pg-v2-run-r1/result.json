@@ -1,0 +1,259 @@
+{
+  "startedAt": "2026-10-07T23:56:30.080673+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.verifier-admission-result-pg.v1",
+    "productCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 5,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "var-transaction-pg-v2-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "same-key concurrent admission creates one task node reference wake and receipt"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "stale CAS removed project authority revoked grant and denied trust leave no creation residue"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "artifact typed passed verdict and completion commit together and exact replay writes nothing"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "forged passed and late invalid completion roll back the whole artifact verdict event batch"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "settled failure cancellation UNKNOWN and project capacity preserve their distinct transaction gates"
+      }
+    ],
+    "tasksMax": 16,
+    "attemptsMax": 14,
+    "scope": "Real domain admission and reportEvents TX; public source setup; synthetic installed metadata only; no verifier HTTP mount or worker execution",
+    "runnersMax": 4,
+    "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+    "metadataRunners": 4,
+    "providerCalls": 0,
+    "registrationsMax": 2
+  },
+  "processes": [
+    {
+      "pid": 59617,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 56,
+      "observed_bytes": 401,
+      "retained_bytes": 401,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 59658,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 7755,
+      "observed_bytes": 69,
+      "retained_bytes": 69,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "9e7773b000454856a72371d28ce52de3",
+      "sourceHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+      "suite": "runtime",
+      "database": "flow_x01_0eedaf4ff44646a1bdee37b239d97571",
+      "facts": [
+        {
+          "kind": "five-domain-cases",
+          "publicVerifierMount": false,
+          "workerInvocation": false
+        },
+        {
+          "kind": "background-failure",
+          "firstFailure": null
+        },
+        {
+          "kind": "limits",
+          "counts": {
+            "tasks": 5,
+            "attempts": 5,
+            "runners": 1,
+            "registrations": 1
+          },
+          "http": 30,
+          "responseBytes": 5176,
+          "source": "public task/claim/events/project",
+          "material": "synthetic installed-only",
+          "transaction": "real domain functions; verifier routes not mounted"
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1363132",
+          "owner": "flow",
+          "marker": "x01:9e7773b000454856a72371d28ce52de3:runtime:e81e2610-2f4b-47ee-9b00-d13c94e52804"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true,
+        "connectionObservations": [
+          {
+            "at": "2026-10-07T23:56:37.769Z",
+            "connections": 0
+          }
+        ]
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:61230",
+          "closed": true
+        }
+      ],
+      "httpRequests": 30,
+      "responseBytes": 5176,
+      "workUntil": 1791417500080,
+      "cleanupUntil": 1791417560080,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T23:56:37.905Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "9e7773b000454856a72371d28ce52de3",
+  "executionHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+  "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-p80sgltx",
+    "dev": 16777234,
+    "ino": 124652431,
+    "removed": true,
+    "sampleBytes": 6828,
+    "sampleEntries": 15
+  },
+  "stageCount": 5,
+  "selection": {
+    "numTotalTests": 5,
+    "numPassedTests": 5,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "httpRequests": 30,
+  "responseBytes": 5176,
+  "unselectedCount": 0,
+  "selectedCount": 5,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 2552,
+    "runtime-reservation.json": 406,
+    "runtime-create-request.json": 353,
+    "output.log": 69,
+    "runtime-result.json": 1826,
+    "runtime-stage-1.json": 259,
+    "runtime-stage-2.json": 262,
+    "runtime-stage-3.json": 257,
+    "reservation.json": 285,
+    "launch.json": 188,
+    "runtime-stage-4.json": 255,
+    "preflight.stdout": 401,
+    "runtime-stage-5.json": 256,
+    "admission.json": 3027
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 10798,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 10798,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T23:56:37.964687+00:00",
+  "elapsedBeforePersistence": 7.884096959023736
+}

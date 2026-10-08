@@ -1,0 +1,34 @@
+{
+  "pid": 59441,
+  "ownership": "newChildSession",
+  "capture": "merged",
+  "exit_code": 0,
+  "elapsed_ms": 70,
+  "observed_bytes": 298,
+  "retained_bytes": 298,
+  "eof": {
+    "stdout": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "beforeAt": "2026-10-07T23:56:29.921Z",
+  "afterAt": "2026-10-07T23:56:29.992Z",
+  "outerElapsedSeconds": 0.06979649991262704,
+  "rawSha256": "276433a60b1cddbc1dedba83e50a4bb0588b676266cdbc8eb87ff83e79c24e44"
+}

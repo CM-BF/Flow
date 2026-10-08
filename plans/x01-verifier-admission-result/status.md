@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T23:35:42.175Z |
+| 最近更新时间 | 2026-10-08T00:01:18.667Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,27 +14,27 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 固定产品/295运行输入STOP；容量preflight已独审，尾包提交push后clean STOP |
-| 工作分支状态 | in-progress（固定领域PG组合已审，等待独立资源窗口） |
+| 工作树 dirty 状态 | 实际结果固定封存；产品/295运行输入STOP，提交push后clean |
+| 工作分支状态 | in-progress（五个真实领域PG通过，结果待独立审查） |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
-| 检查状态 | PASSED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：11/11 inject、focusedtypes0；0PG/listener，旧15与5domain未重跑 |
-| Review | APPROVED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：公开输入修复22:41:46已审；v2准备差量由b01于22:50:13.904235Z批准0新增P1P2；容量preflight fc1c由chatui于23:34:41批准，仅语法/准备而非5PG通过 |
-| 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV R3已实际5/5且独审通过，等待其主线前置接收 |
-| 本片段交付阶段 | implementation |
+| 检查状态 | PASSED 57b188f5ee9fce6589160bb61b75891a800bfb6b：真实领域PG5/5、suite成功；8eb输入边界11/11与types0保留；公开verifier装配/worker未验 |
+| Review | PENDING：本次真实PG结果忠实性独审；核心53d、route8eb、v2准备及独立preflight原范围均已批准 |
+| 已集成 main 状态 / HEAD | NOT_INTEGRATED（本VAR）；AV前置center/client已于97353e4f48ea515d268f6e4a6107e778b6c39abb受控接收，不代表本片main/部署 |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 数据库验证组合保持固定；容量预检引号错误已改为独立参数化源，语法检查通过 |
-| 下一可用交付 | 领取新的数据库窗口，验证受理幂等、权限拒绝与事件整批回滚 |
-| 当前阻塞 | ACTIVE: 等待新的独立数据库窗口；容量预检已独审，原未启动许可已取消 |
+| 当前产出 | 五个真实数据库事务用例已通过，覆盖幂等受理、权限拒绝和事件整批回滚；资源已归还 |
+| 下一可用交付 | 完成实际结果独审与受控集成，再验证公开装配和执行器完整链路 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
 | --- | --- | --- | --- |
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
-| VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
-| VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED；v2已独审通过，固定036/route/claimv2组合等独立PG窗口；main接收留作后续集成门槛 |
+| VAR-02 | in-progress | architecture_read | 五个真实领域PG通过，等待结果独审及受控接收 |
+| VAR-03 | in-progress | architecture_read | 领域事件原子性PG通过，等待结果独审；与受理同片接收，不先暴露producer |
+| VAR-04 | in-progress | architecture_read | 真实5/5与完整RETURN已发生；结果独审、主线和公开装配/worker仍未完成，历史准备和失败原件保留 |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -54,7 +54,7 @@
 | VAR-W06 | 2026-10-07T23:28:58.411Z | 2026-10-07T23:31:30.000Z | 验证失败 | 容量probe引号错误；新段修复独立源，不复用旧许可 | preflight-failure.json；preflight-repair-start.json |
 
 | VAR-W07 | UNKNOWN | 2026-10-07T23:34:41.000Z | 审查 | 固定capacity source与syntax限定独审通过；完整派发秒时点未预录 | v2/preflight-approval.json |
-| VAR-W08 | 2026-10-07T23:34:41.000Z | OPEN | 资源 | 等新经理grant明确接受瞬时总空位33语义及绑定该源 | v2/preflight-admission-ready.json |
+| VAR-W08 | 2026-10-07T23:34:41.000Z | 2026-10-07T23:56:30.037Z | 资源 | 新grant明确绑定瞬时总空位33语义；fixed preflight通过后一次实际启动 | v2/preflight-admission-ready.json；run-r1/admission.json |
 
 聚合登记：D05已实证2026-10-07T22:01:36.229Z live211，本sourceCurrent=true/issues[]/stale=false；不重探dashboard。
 
@@ -116,3 +116,9 @@ Mika明确允许先用本树固定组合验证五domain PG；AV main receipt移�
 新source段23:31:30.000–23:41:30.000，3MiB包含index原子副本，初规划2,816,556B。固定fc1c9e32c独立CJS参数化SQL，23:32:31.639–23:32:31.678唯一node --check0（PID30143，39ms/raw0/mergedEOF/absent，同inode空TMP删除）。没有模块执行或PG，不能作容量/五例通过。独立preflight准备入口v2/preflight-ready.json；限域review待完成。新actual仍NOT_OPEN，不自动重试旧grant。
 
 2026-10-07T23:35:42.175Z：chatui 23:34:41 SOURCE_AND_SYNTAX_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2，sourcefc1c/result8258/packet08cac；旧失败和缺失时钟/PID事实保留。available是包括本probe admin、未扣reserved slots的瞬时总空位，不是预约；33=17+16需新grant明确接受。入口[preflight-admission-ready](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/preflight-admission-ready.json)补充原队列，不改295原件。当前0engineering/PG/HTTP/待launch，提交push后全部写入STOP、未来余额0；cap3MiB归还只是规划不称物理回收。完整VAR/X01未完成。
+
+## VAR v2真实事务结果（等待独审）
+
+2026-10-08T00:01:18.667Z：独立grant下23:56:30.037Z entry START，23:56:37.965405Z caller PASSED/CONFIRMED，真实5 selected/5 passed/0fail/0pending。预检59441已关闭，maximum100/current9/available91仅瞬时总空位。59617/59658完整MERGED EOF/终态absent；23:59:27.445Z owner另核外层58488及全部组ESRCH、61230拒连、原TMP exactENOENT，独立preflight TMP五项5230B逐字归档后同identity删除。专库OID1363132同marker/owner、0conn普通DROP ACK+absence，所有owner/pool/admin关闭；retained为空。收尾后无PG/child/待launch。
+
+五例实际counts为5tasks/5attempts/1runner/1registration，fixtureHTTP30/5176B；源产物来自公开流程，安装材料metadata为synthetic，verifier HTTP未挂载/worker未执行。原取消许可、引号首错与全部旧raw/input不变。当前[结果摘要](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/result-summary.json)待独审；完整VAR/X01未完成。自然封存3MiB包含index原子副本，不借旧池。

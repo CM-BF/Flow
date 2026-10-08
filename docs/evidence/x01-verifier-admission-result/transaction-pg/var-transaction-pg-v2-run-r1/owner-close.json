@@ -1,0 +1,90 @@
+{
+  "startedAt": "2026-10-07T23:59:27.440Z",
+  "executionHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+  "window": "9e7773b000454856a72371d28ce52de3",
+  "processes": [
+    {
+      "pid": 58488,
+      "pgid": 58488,
+      "pidObservation": "ESRCH",
+      "pgidObservation": "ESRCH"
+    },
+    {
+      "pid": 59441,
+      "pgid": 59441,
+      "pidObservation": "ESRCH",
+      "pgidObservation": "ESRCH"
+    },
+    {
+      "pid": 59617,
+      "pgid": 59617,
+      "pidObservation": "ESRCH",
+      "pgidObservation": "ESRCH"
+    },
+    {
+      "pid": 59658,
+      "pgid": 59658,
+      "pidObservation": "ESRCH",
+      "pgidObservation": "ESRCH"
+    }
+  ],
+  "runtimeTemporary": {
+    "path": "/private/tmp/flow-x01-pg-p80sgltx",
+    "observation": "ENOENT",
+    "at": "2026-10-07T23:59:27.441Z"
+  },
+  "listener": {
+    "port": 61230,
+    "connectErrno": 61,
+    "refused": true
+  },
+  "externalPreflightTemporary": {
+    "path": "/private/tmp/flow-var-v2-preflight-9e7773b000454856a72371d28ce52de3-uk4s0343",
+    "dev": 16777234,
+    "ino": 124652419,
+    "files": [
+      {
+        "name": "before.json",
+        "bytes": 620,
+        "sha256": "12bd4197bceacf5e97d96d504ea767da07b61ad11b8c6717257837857586bb99",
+        "dev": 16777234,
+        "ino": 124652420
+      },
+      {
+        "name": "entry.json",
+        "bytes": 581,
+        "sha256": "0b8652f1730c301bac3388e39e4f8f2e03920cd68caed05e6f60a9587d30b4f0",
+        "dev": 16777234,
+        "ino": 124652425
+      },
+      {
+        "name": "result.json",
+        "bytes": 704,
+        "sha256": "50aaa98c6fe2435fa19acdd0f5237c47f69400f5f04b1d905e1796d6c5599004",
+        "dev": 16777234,
+        "ino": 124652422
+      },
+      {
+        "name": "output.log",
+        "bytes": 298,
+        "sha256": "276433a60b1cddbc1dedba83e50a4bb0588b676266cdbc8eb87ff83e79c24e44",
+        "dev": 16777234,
+        "ino": 124652421
+      },
+      {
+        "name": "admission.json",
+        "bytes": 3027,
+        "sha256": "bcfc9b0ad157d54e7c49adb1686cf9cc34fc7cf35524fb0837ad2fd4576bc0a6",
+        "dev": 16777234,
+        "ino": 124652424
+      }
+    ],
+    "sampleBytes": 5230,
+    "removed": true,
+    "exactLstat": "ENOENT",
+    "closedAt": "2026-10-07T23:59:27.445Z"
+  },
+  "databaseClosure": "existing four fixed receipts agree on window/head/name/OID 1363132/owner/marker; runtime-result records all owners closed, zero connections, ordinary DROP acknowledgement and absence; no new database query",
+  "finishedAt": "2026-10-07T23:59:27.445Z",
+  "fullReturn": true
+}

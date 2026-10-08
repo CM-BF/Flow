@@ -63,3 +63,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## 容量preflight源与语法独审批准
 
 2026-10-07T23:35:42.175Z归档chatui 2026-10-07T23:34:41.000Z，SOURCE_AND_SYNTAX_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2。fc1c/8258/08cac，8bindings13232B；只node --check0和源码，未执行require/PG。available瞬时总空位不扣reserved slots的边界需新grant接受；旧grant取消且缺PID/group/时钟证据保UNKNOWN。见v2/preflight-approval.json。
+
+## VAR v2实际领域PG结果待独审
+
+2026-10-08T00:01:18.667Z：execution e33b95a3，真实五例全过、caller资源闭合与独立owner观察分列。仅结果忠实性增量，295运行输入相对execution零差；不要重审业务源码或把本次domain PG扩大为verifier HTTP/worker端到端。固定原件和摘要见transaction-pg/v2/result-summary.json，旧grant失败继续保留。

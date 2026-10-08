@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-08T00:01:18.667Z",
+  "kind": "Tool-return transcription; not a replacement for supervisor raw",
+  "initial": {
+    "chunkId": "8793e4",
+    "sessionId": 9236,
+    "reportedWallSeconds": 1.002390958,
+    "entryFromPersistedFile": "external-preflight-entry.json"
+  },
+  "terminal": {
+    "chunkId": "332c17",
+    "sessionId": 9236,
+    "exitCode": 0,
+    "delivery": {
+      "state": "PASSED",
+      "elapsedBeforePersistence": 7.884096959023736,
+      "resultPersistence": "CONFIRMED",
+      "elapsedAfterPersistence": 7.884792625089176,
+      "deliveredAt": "2026-10-07T23:56:37.965405+00:00",
+      "withinTotalDeadline": true,
+      "retained": []
+    }
+  },
+  "outerCapture": "Tool completion exit0; separate dual EOF not independently recorded. Child OPS14 MERGED EOF is in result.json.",
+  "wholeExternalWall": "UNKNOWN",
+  "ownerPostcheck": "owner-close.json"
+}

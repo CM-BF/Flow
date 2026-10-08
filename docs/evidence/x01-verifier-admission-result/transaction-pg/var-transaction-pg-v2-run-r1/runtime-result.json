@@ -1,0 +1,75 @@
+{
+  "window": "9e7773b000454856a72371d28ce52de3",
+  "sourceHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+  "suite": "runtime",
+  "database": "flow_x01_0eedaf4ff44646a1bdee37b239d97571",
+  "facts": [
+    {
+      "kind": "five-domain-cases",
+      "publicVerifierMount": false,
+      "workerInvocation": false
+    },
+    {
+      "kind": "background-failure",
+      "firstFailure": null
+    },
+    {
+      "kind": "limits",
+      "counts": {
+        "tasks": 5,
+        "attempts": 5,
+        "runners": 1,
+        "registrations": 1
+      },
+      "http": 30,
+      "responseBytes": 5176,
+      "source": "public task/claim/events/project",
+      "material": "synthetic installed-only",
+      "transaction": "real domain functions; verifier routes not mounted"
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "boss": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1363132",
+      "owner": "flow",
+      "marker": "x01:9e7773b000454856a72371d28ce52de3:runtime:e81e2610-2f4b-47ee-9b00-d13c94e52804"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T23:56:37.769Z",
+        "connections": 0
+      }
+    ]
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:61230",
+      "closed": true
+    }
+  ],
+  "httpRequests": 30,
+  "responseBytes": 5176,
+  "workUntil": 1791417500080,
+  "cleanupUntil": 1791417560080,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T23:56:37.905Z"
+}

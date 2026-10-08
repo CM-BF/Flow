@@ -1,0 +1,92 @@
+{
+  "recordedAt": "2026-10-08T00:01:18.667Z",
+  "state": "RESULT_REVIEW_PENDING",
+  "executionHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+  "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+  "routeSource": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "testSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+  "migrationSource": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+  "window": "9e7773b000454856a72371d28ce52de3",
+  "managerLogicalId": "VAR-TRANSACTION-PG-V2-FIXED-PREFLIGHT-20261007-ONCE",
+  "callerStart": "2026-10-07T23:56:30.080673+00:00",
+  "entryStart": "2026-10-07T23:56:30.037Z",
+  "terminal": "2026-10-07T23:56:37.965405+00:00",
+  "fullReturn": "2026-10-07T23:59:27.445Z",
+  "selection": {
+    "numTotalTests": 5,
+    "numPassedTests": 5,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "exactSelection": true,
+  "actualCounts": {
+    "tasks": 5,
+    "attempts": 5,
+    "runners": 1,
+    "registrations": 1
+  },
+  "fixtureHTTP": {
+    "requests": 30,
+    "responseBytes": 5176,
+    "scope": "fixture request counter, not measured aggregate wire traffic"
+  },
+  "preflight": {
+    "pid": 59441,
+    "maximum": 100,
+    "current": 9,
+    "available": 91,
+    "meaning": "instantaneous max-current including probe admin, reserved slots not deducted; not reservation",
+    "poolClosed": true,
+    "adminClosed": true,
+    "elapsedSeconds": 0.06979649991262704
+  },
+  "resources": {
+    "databaseOID": 1363132,
+    "configuredConnectionUpperBound": 17,
+    "connectionsAtClose": 0,
+    "ordinaryDropAcknowledged": true,
+    "databaseAbsent": true,
+    "allOwnersClosed": true,
+    "listenerClosed": true,
+    "supervisedGroupIds": [
+      59441,
+      59617,
+      59658
+    ],
+    "outerGroupId": 58488,
+    "exactPostcheck": "owner-close.json",
+    "retained": [],
+    "runtimeTemporaryEndSampleBytes": 6828,
+    "runtimeTemporaryEndSampleEntries": 15,
+    "externalPreflightEndSampleBytes": 5230,
+    "temporaryPeak": "UNKNOWN",
+    "databaseWalPhysicalBytes": "UNKNOWN"
+  },
+  "times": {
+    "callerBeforePersistenceSeconds": 7.884096959023736,
+    "callerAfterPersistenceSeconds": 7.884792625089176,
+    "internalSupervisorMs": 7811,
+    "externalPreflightSupervisorMs": 70,
+    "wholeExternalWall": "UNKNOWN",
+    "postReturnObservation": "Separate later owner observation; not backfilled into caller deadline"
+  },
+  "fixedInputs": {
+    "manifest": "manifest-v2.json",
+    "sha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+    "files": 295,
+    "external": 191,
+    "links": 16,
+    "executionToResultFileDiff": [],
+    "externalVerification": "All external realpath/bytes/hash and links checked at actual prelaunch; not rerun after close"
+  },
+  "scope": "Five real domain transactions: same-key concurrent replay; authority/CAS/grant/trust no residue; exact artifact+independent typed verdict+completion atomicity; forged verdict and late terminal rollback; failure/cancel/UNKNOWN and late graph-capacity rollback. Source via public task/claim/events/project. Installed metadata is synthetic. Verifier routes not mounted, worker not invoked. No provider/native/browser.",
+  "preservedHistory": "Cancelled first grant and inline probe SyntaxError remain in v2/preflight-failure*.json. All old sources/manifests/raw unchanged; no retry of cancelled grant.",
+  "namespaceCorrection": "Manager corrected erroneous fixed-preflight namespace to immutable caller var-transaction-pg-v2-run-r1 before any child/admission. This actual consumed exactly the corrected new grant once.",
+  "main": "VAR NOT_INTEGRATED; AV center/client predecessor received at97353e4f per existing root receipt; no claim of deployed VAR",
+  "quality": {
+    "skills": "Installed find-skills, codebase-design and clean-code baseline reused, no install",
+    "checkedAt": "2026-10-08T00:01:18.667Z",
+    "method": "One immutable runtime/input authority; separate source and result receipts; explicit domain/HTTP/worker boundary; exact identities and no forced cleanup; no production changes or rechecks."
+  }
+}
