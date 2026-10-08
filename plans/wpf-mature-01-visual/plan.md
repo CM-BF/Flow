@@ -120,3 +120,5 @@ GO 对本次 Context 双390图的同一后继要求：首屏收敛为已知用�
 Context内部标题动作扩展沿Mika唯一MATURE04原后继：[三挂载面证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)确认入口/面板已有composer slots，Dialog标题/刷新/详情内部尚无header renderer。后继从现薄binding注入动作，复用唯一session-owned controller；ui.layout不得授历史数据，动作若引用观察必须绑定sample身份。此处仅路由引用，不复制CT矩阵或创建第二status。
 
 原 MATURE01-04 的窄屏验收继续引用[Arc视觉P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)：末轮关闭聊天drawer后的390浅深画面已实际生成，但标题过缩与 More actions 裁切仍不达标。[限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-tooltip-final-acceptance-review.json)接受功能4/4，不接受完整UX完成；最窄修复归Arc原owner，不重复派共享组件writer。
+
+当前 VISUAL01 权威迁移到 [web-shared-overlays唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md)：w01_owner/acce2727v1 exact8、dcbd7a798清洁，恢复浮层限定通过，Picker已审现成单次准备尚未实际执行，sharedoverlays未main。沿原片在两Web安全归还后接真实原scope/inputs与新有界窗口，代表旅程→独审→集成发布队列，不等完整Arc/Context、不重复实现或借旧grant。旧visual-shell已release不是此片完成。0PG/90s/7图候选须fresh全依赖与index预算，当前只排队。

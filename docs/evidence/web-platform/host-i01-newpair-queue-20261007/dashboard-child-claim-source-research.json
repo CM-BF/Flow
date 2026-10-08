@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-08T02:13:25.785348+00:00",
+  "kind": "READ_ONLY_RESEARCH_EXISTING_DASHBOARD_CLAIM_MAPPING_TODO",
+  "sourceHead": "03527839fca91c512baaa0ae89de7671d2a80d1f",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 9470,
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 30336,
+      "sha256": "410086e3d4e58604c19ba39e7ea06d0ddae8e1a30641b2009474ec2a79ea1492"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 16447,
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048"
+    }
+  ],
+  "observations": [
+    "Existing IAB dashboard shows MATURE06-04 and MATURE04-05 as active under unregistered progress sources. Observation only; no new browser or test process.",
+    "read-model.mjs matchAssignments joins exact claim.taskId to registry task.id. Both short child IDs have no registered standalone status, while their explicitly established parent status remains authoritative. This is the previously recorded mapping gap, not an additional task or an ownership failure.",
+    "Existing stale claims remain occupied and unknown observation prohibits taking. Existing byTask arrays preserve multiple role/claim records; do not replace them with a single-owner map."
+  ],
+  "designForExistingTodo": [
+    "Add an explicitly authorized child claim ID -> registered source task ID + exact TODO ID relationship in the registry/read model; do not infer from ID prefixes, title similarity, branch or owner. Do not create a new handwritten child status.",
+    "Keep claim.taskId, claimId/version, execution worktree/branch, role and exact scope unchanged. A link to parent progress does not transfer parent write ownership or imply the parent owner is implementing the child.",
+    "Separate execution-source equality from linked progress-source identity. Existing matchesSource compares claim worktree+branch to status worktree+branch; intentional cross-worktree parent links must not be falsely labeled an execution mismatch or rewritten to the parent source.",
+    "Include any new relation in registryFingerprint, or summary/assignment observations from different registry revisions could be joined even when the mapping changed. sourceKey for an unchanged status can remain stable if the overall fingerprint invalidates cross-observation joins.",
+    "Missing or ambiguous relation/target/TODO stays explicitly unknown. Released claims stay excluded; stale active/handoff_pending occupancy remains until atomic ledger transition. Multiple claims for one child remain visible."
+  ],
+  "validationForAuthorizedOwner": [
+    "Pure fixture: explicit MATURE06-04 to WPF-MATURE-06/TODO WPF-MATURE-06-04 links only to the single parent source; original short claim ID and execution scope stay intact. Same for explicit MATURE04-05 relation to WPF-MATURE-04.",
+    "Unknown, missing target/TODO, ambiguous and registry remap cases must never show free or manufacture parent completion; changed mapping must change registry fingerprint.",
+    "Focused UI fixture: child claim details link to parent status and exact TODO, expose both owner roles/worktrees, and preserve old-read notice when mapping changes during reading."
+  ],
+  "scope": "Research only. No product edits, imports, tests, claims, service restart or main merge. Existing manager plan web-platform/plan.md line685 owns the follow-up.",
+  "cleanCode": {
+    "applied": [
+      "find-skills local-first discovery",
+      "codebase-design: keep matching/progress resolution at one read-model seam",
+      "clean-code: distinguish allocation authority from progress display; avoid duplicated status and ambiguous boolean semantics"
+    ],
+    "findings": "Reuse existing claim arrays, exact registration and observation fingerprint; no duplicate registry/status or new task. No implementation fixes made."
+  }
+}

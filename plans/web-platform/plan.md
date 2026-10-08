@@ -693,3 +693,8 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 [有界首失败证据方法](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/ui-failure-evidence-research.json)复用message-settings原错优先模式：custom Arc/Connection库调用不会自动继承plugin-host Test Runner的retain-on-failure。优先原错、已报告组/phase、小图与必要几何，诊断错误单独保留，不占cleanup；原冻结失败不重写。登录首mounted[初始化失败保真审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-mounted-failure-review.json)确认CJS入口未优化、10515ms CLOSED/0图；新段仅修fixture固定依赖优化，不改产品或冒已测真实认证。
 
 - 原 WPF-001-05/plugin-host 后继 `PLUGIN-DIAGNOSTIC-NOTIFY-01`：固定源码发现 diagnostics 的100项有界数组变化未通知 PluginSettings 所订阅的接口，已激活插件孤立错误可能直到其他发布才显示；这是静态P2推断，未实测浏览器，不撤销原错误隔离结果。由原合法host owner在下一段复用现有store补稳定诊断订阅与dispose，避免为错误重建全部slots、避免通知异常递归；用已激活插件的通知/稳定snapshot/解绑不变量和既有mounted设置入口验证。无第二registry，不加当前Arc/login前置。[固定证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-diagnostic-notification-research.json)。
+
+
+登录当前组件验收已由[最终限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-mounted-final-acceptance-review.json)接受：cc4封存、末轮六组与390双主题通过，旧初始化失败和新段前两失败不改；真实认证/fullApp/main/deploy保持原MATURE06后继。Arc由[几何最终独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-geometry-final-acceptance-review.json)限定接受四组功能、Close完整可见和8rem口径，滚动条压字仍原MATURE05视觉P2；[留白研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-scrollbar-clearance-research.json)只指导下一ownedCSS窄修，不隐藏bar或等待fade掩盖现场。
+
+既有子TODO→父唯一status映射采用[固定只读研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-child-claim-source-research.json)：显式关系保原claimId/taskId/executionWT/branch/scope，跨WT进度链接不转移写权；relation参与registryFingerprint，避免不同映射版本误join。未知、歧义、stale仍保占用，多claims不压成单owner；未运行产品验证，不新增status源。

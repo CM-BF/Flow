@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-08T02:06:04.013929+00:00",
+  "researcher": "root / gpt-6-astra ultra; workspace_panels_owner bounded read-only peer",
+  "status": "READ_ONLY_FOLLOWUP_NO_NEW_WRITE_OR_RUNTIME_GRANT",
+  "finding": "ARC-VISUAL-NARROW-TAB-01 remains OPEN",
+  "fixedSource": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+  "finalDelivery": "17cfaba5e70f39732aba770656e9cab07339e90d",
+  "evidence": {
+    "strip": "height36/clientHeight35, difference1 matches border;29px tab+3px top/bottom padding+1px border leaves no dedicated scrollbar clearance.",
+    "bounds": "tab98.883..127.883;title99.883..126.883;action101.133..125.633;strip bottom131.883: about4–6px below controls.",
+    "image": "Both independently viewed390 theme images show native horizontal scrollbar over lower title/action region. Supports observed overlay behavior, not evidence for all OS scrollbar modes.",
+    "testLimit": "DOM rect containment and IntersectionObserver ratio1 do not establish absence of browser scrollbar paint over content."
+  },
+  "officialReferences": [
+    {
+      "url": "https://drafts.csswg.org/css-overflow-3/#scrollbar-gutter-property",
+      "status": "CSSWG editor draft checked2026-10-08",
+      "finding": "Gutter control applies to inline edges. This level does not control block-edge gutters; overlay scrollbars reserve no gutter even with stable."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-gutter",
+      "finding": "Mozilla documentation likewise states overlay scrollbars do not reserve layout space."
+    }
+  ],
+  "nextDesign": [
+    {
+      "priority": 1,
+      "direction": "Owned layout.css adds intentional bottom noninteractive clearance to the horizontally scrolling strip, retaining intrinsic height and current29px controls. Preserve native scrolling and current focus helper. No new DOM/store; no fixed-height clip/important/hidden-scrollbar workaround.",
+      "tradeoff": "Small deliberate increase in strip height; actual rem clearance must be verified against visible scrollbar in current mode."
+    },
+    {
+      "priority": 2,
+      "direction": "Same bottom clearance plus local thin scrollbar candidate if it materially improves compactness.",
+      "tradeoff": "UA/OS controls actual size and hit area; thin alone does not prove non-overlap."
+    }
+  ],
+  "verificationNextLegalSegment": [
+    "Keep original Home/End manual focus and selection, Tab action and Close ratio1 checks.",
+    "Observe padding/strip client-offset/controls and text Range bounds; two390 images immediately after actual scroll while bar visible, not after fade as a workaround.",
+    "Normal title full text, long title minimum8rem from actual root, action one line/min24px, close and text unobscured; no outer horizontal page scroll or focus jump.",
+    "Only claim observed scrollbar mode; other OS/classic mode remains unverified."
+  ],
+  "cleanCode": "Keep correction in existing owned scroll container; no second scroll controller, registry or general framework. Original scopes remain STOP until manager starts a new bounded continuation."
+}

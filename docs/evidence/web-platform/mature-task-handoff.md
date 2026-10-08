@@ -1,14 +1,22 @@
-**当前调度 2026-10-08T01:50:50.647Z：O16 01:45:07.705 START、01:46:25.059 exactRETURN，单planner/1proposal/0apply/0child，DB/private PAUSE_KEEP，后继未授权。登录b2已01:50:11.562129实际START，w01唯一Chrome/HTTP，60s；Arc待此exactRETURN后剩2次。O16精确原件与双current为准，封存不持运行窗。**
+**当前调度 2026-10-08T02:17:41.864Z：S01候选未OPEN、0actual，因Original明确drain未到，经理已撤销本次未开放选择，解除普通段暂停。无需因稍后收到旧请求而停新工作；下次测量另给明确准入，不自动开启。原a746/input28b保持READY，root/Web/Mika普通源按原范围/原deadline恢复；当前无holder/selection、完整forward 12154830848B。**
+
+**已撤销的历史安全停点请求 2026-10-08T02:14:57.881Z：R3已02:11:39.152Z精确RETURN（ab3f1059），当前无actual。下一 `S01BufferedDiagnosticGrant` 为 SELECTED_WAIT_TEAM_DRAIN_NOT_OPEN；原300s诊断合同须各组source/meta/工程/supply/Git/checkCLI安全STOP，仅必要经理协调/原S01执行。请Original原渠道回0child/0pending及最近安全停点，不中断正在运行的child、不新commit作门。Root已明确STOP，Mika/两Web正在最近停点。收到全组回执后经理才赋actual latest/OPEN；个人后台UNKNOWN不停止。完整forward 13765443584B，新S01 512MiB+1GiB单列，旧unknown512MiB仍保留。**
+
+**当前调度 2026-10-08T02:12:47.833Z：TUI R3已02:08:17.814Z实际START，02:08:36.846Z exit1；业务workPassed=true但suite 1选0过，fixture-close/groups UNKNOWN，经理仍保actual holder等待原operator exactRETURN。当前完整forward 13,511,688,192B，已消费R3 floor13,562,019,840B不倒改。Picker与Arc新普通源段各8MiB已计，仅准备/窄修，均无browser许可。S01 buffered READY排后继。**
+
+**历史选择记录（已消费，不可重跑）：** **Original当前可执行选择 2026-10-08T02:03:51.261Z：唯一 `current.TUI01F04R3Grant` 已SELECT，latestStart 2026-10-08T02:09:51.261Z，完整floor 13562019840B；actualHolder/currentActual均null。请沿原operator assignment_review按r3-operator-recipe同callfresh执行唯一R3，原prepared PENDING为历史，不要求再准备审。新1,499,463,680+8MiB单列，旧R2仅DB128MiB unknown保留，其余按明确0旧writer封存前向归0；不删KEEP、不改旧gate。S01 buffered尚未授actual。**
+
+**历史调度 2026-10-08T01:59:27.756Z：登录b4最后6/6+两390图、25016ms/3次CLOSED，01:57:43.553510 exactRETURN；只自然审尾。Arc第三/最后已01:58:45.184027 START，仍持唯一Chrome/HTTP至exactRETURN，02:05:48.999原截止不变。O16单planner已RETURN并PAUSE_KEEP，无后继授权。TUI R3只是READY队列，新1,499,463,680B不能冒用旧R2KEEP；请Original从现存receipt给旧R2 sealed无writer与真实unknown增长的精确拆分，无新探针或删除。**
 
 > Original/native 唯一新SELECT 2026-10-08T01:43:19.616Z：`current.O16NormalHomePlannerGrant`，logical O16-GO-PLANNER-NORMAL-HOME-20261008，latestStart 2026-10-08T01:47:19.616Z，完整floor 13847232512B。formalREADY e4b09已接，按原argv/permit3866同callfresh直接执行一次150s（120+30）、新1plannerquery，PGavailable≥28/poolclosed；旧SDK3不重用。当前无actual，Arc已01:41:11精确归还且browserlease暂停，登录首lease等O16 RETURN；源检查继续。成功持久15minpause，不进入后继phase。
 
-**Original O16新planner待最终READY（不重源审）：** 已亲读原`native-plan-normal-home-20261008-once/authorization-preparation.json` 2538B/SHA95029cbc…、`permit.json` 912B/SHA3866d12a…及原Interface。新1query GO授权与旧3已消费分开；请原唯一operator回最终READY的fixed当前HEAD/无pending与实际resource-input入口绑定，再正常SELECT。此刻无O16资源预占；不能把文件存在倒填为已START/最终READY。完整路径和hash见current.O16NormalHomePlannerCandidate。
+**历史O16准备（已由01:46:25 RETURN取代）：** 已亲读原`native-plan-normal-home-20261008-once/authorization-preparation.json` 2538B/SHA95029cbc…、`permit.json` 912B/SHA3866d12a…及原Interface。新1query GO授权与旧3已消费分开；请原唯一operator回最终READY的fixed当前HEAD/无pending与实际resource-input入口绑定，再正常SELECT。此刻无O16资源预占；不能把文件存在倒填为已START/最终READY。完整路径和hash见current.O16NormalHomePlannerCandidate。
 
 **Original/T7原owner只读请求（非执行前置）：** 核现有固定发行inventory是否包含PROCESS worker/protocol/resources及真实tsx/模块相对解析依赖，给精确缺口、原owner、可消费manifest路径，供X01三tasks/1case后继同driver使用。只读现有材料，不新task/window/build/install，不碰个人e15/779；源码镜像或cwd移出repo不能冒可重定位产物。
 
 # Web 当前交接与唯一来源
 
-**Original待分类（只需现存receipt，不新探针）：** TUI R2活动已归还，但1,499,463,680B+8MiB尾仍按KEEP/未知future保守计；请区分sealed无writer存量与真实DB增长。O16薄调用候选256KiB+TMP8MiB未证映射旧9,568,256B，先在current明确来源；不因本请求授权native/query/凭据操作、不双计或偷减。
+**历史分类请求（TUI R2已按现存原件完成前向拆分，见current）：** TUI R2活动已归还，但1,499,463,680B+8MiB尾仍按KEEP/未知future保守计；请区分sealed无writer存量与真实DB增长。O16薄调用候选256KiB+TMP8MiB未证映射旧9,568,256B，先在current明确来源；不因本请求授权native/query/凭据操作、不双计或偷减。
 
 **历史调度（已由页首及current取代）2026-10-08T01:00:17.834Z：Arc新tooltip首轮00:58:57.256215完整RETURN，19006/180000ms；3/4已过（含完整材料），390浅/深两图已产生，末reload按route检查多保存记录失败。现在无active子进程，原新lease保留最后一次至01:17:41.457，按完整B exactrecord身份修正观察，不任意first/nth或减验收；旧三轮59595CLOSED不借。D05已恢复213/available272。**
 
@@ -394,3 +402,9 @@ MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-r
 **FLOW既有O12-05待领取登记：** GO新增持续目标Web会话已在本组唯一plan两层TODO与[固定研究](host-i01-newpair-queue-20261007/continuous-goal-web-research.json)落地，归FLOW-001 REQ01/22/O12-05；请原ExecutionLead下一自然父plan/status/index/dashboard批标“待领取”并引用，保持同一权威来源，不新同义大task或手填第二status。排当前恢复/Arc/context/成熟聊天后，插件新枝前；本组未建WT/take/运行。
 
 **Original 接收/部署分层（23:47）：** main97353e4f4已接AV center/client15文件，未进入当前固定 e15/880060 + Web779/v4部署。GDEP4511四叶已审待原Original接收并同步FLOW同ID；PROCESS configuration两叶23:42:42永久STOP但未amend，runtime仍95fv8，不能从STOP猜已交权。
+
+
+**Original/T7只读接收增量：** Mika固定main035278核builder archive含apps/packages/tools，dependency-plan含server/runner/root tsx及平台optional依赖/identity/inventory/realpath guard，未见当前PROCESS worker/protocol/resources/host遗漏。既有e15发行source880060中四PROCESS叶缺失，不能充当新T7产物；这不是builder缺陷证明。原release owner在PROCESS581d五叶受控接收后，沿现有T7计划选择新审source，后续有界产物准备给descriptor/manifest及worker/tsx/平台esbuild/relative links库存，再以同driver验证真实可重定位worker load/invoke/close和缺worker/loader失败。无本消息授权build/deploy/native或触碰个人e15/779。
+
+
+**Original已审可受控接收：** 登录组件final `cc4bab4b499d454b11fe250e0224037deabb9b5e` clean/all7STOP02:01:51，唯一[main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/main-intake.json) SHA `7f5cc77954e815ab47dd53030b6b9e475aa42d9d4b5071abc49d659b8d04bda4`，精确3product+3tests；App仅受控窄merge，不整blob替换。root057550六组/双390限生产组件synthetic props验收，真实认证/wholeApp/deploy另开原验收。Arc17cf限定功能四组接受，滚动条视觉P2仍OPEN且原owner已新窄修，不以该旧包宣视觉成熟。

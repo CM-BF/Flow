@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | Arc历史功能4组已限定通过；新窄屏两轮3/4后已封存。新几何首轮3/4保留失败390图，关闭按钮ratio仍0.02；观测回调tsx序列化缺口已窄修，尚待再观测，不据此猜CSS根因。 |
-| 下一可用交付 | O16与登录实际窗口归还后，继续原有界段剩余两次，先取得准确clip几何再修；新段局部6759ms已CLOSED，不重复绿检查。 |
-| 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01关闭按钮可达性P2；ARC-NARROW-TITLE-UNIT-02为未执行到的静态单位问题。Context组合/main仍开放。 |
+| 当前产出 | Arc17cf限定功能4/4通过、Close修复和8rem口径已验；最终390滚动条压字仍为视觉P2，main/Context组合未集成。 |
+| 下一可用交付 | 原owner在新8MiB普通段给横向滚动条保留非交互底部空间，保e14焦点帮助与四组断言；待唯一实际lease后看bar仍显示的390双主题画面。旧97234ms/三次CLOSED不重用。 |
+| 当前阻塞 | ACTIVE: Arc Close完整可见与8rem口径已实际通过；滚动条覆盖文字的视觉P2仍OPEN，正进入原owner窄CSS留白段，browser未新授。main接收、Context组合及真实中心旅程仍OPEN。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |

@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T01:50:50.647Z；D05 215已于01:13:24.689Z实际发布并核assignments.available，原main固定同步记录保历史，不把本次文档更新时间冒主线同步。 |
+| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T02:18:29.158Z；D05 215已01:13:24.689Z实际发布并核assignments.available。主线同步仍以固定接收回执为准，文档更新不表示集成。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,9 +22,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 新版网页v4与看板215健康发布已确认。Context历史面板8组限定通过；Arc历史功能4组通过，当前关闭按钮窄屏可达性仍待修。登录首mounted初始化失败已封存，加载入口已窄修，新的真实组件候选准备就绪，尚未复验。 |
-| 下一可用交付 | O16一次planner完成并精确归还。登录新加载入口已越过模块错误、首组状态控件定位失败并归还；Arc正在第二轮几何观测，登录同步窄修后等待下一归还点。 |
-| 当前阻塞 | ACTIVE: Arc关闭按钮窄屏可达性未修验；登录修后六组尚未通过。Context组合/真实producer与完整聊天开放；当前实际运行以唯一current为准。 |
+| 当前产出 | 网页779/v4与看板215健康发布已确认。登录cc4六组及两390图获限定组件验收；Arc17cf功能四组与Close修复通过，滚动条压字视觉P2仍开放。两片已清洁封存并归还，等待受控main接收，未冒完整App或真实认证通过。 |
+| 下一可用交付 | 现成VISUAL01 Picker正封存新计量准备，Arc正封存滚动条留白窄修；两者尚无新browser许可。S01候选保持READY，本次因全组隔离未齐在OPEN前撤选，未执行，不重复准备审。 |
+| 当前阻塞 | ACTIVE: R3业务workPassed但suite因fixture-close/groups UNKNOWN失败，02:11:39精确归还、DB/private KEEP。Arc剩滚动条视觉P2，两Web受控main集成、登录真实认证/完整App、Context组合/producer及完整聊天仍OPEN。 |
 | 需用户决定 | NONE |
 | 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)给出每次选择、真实START/RETURN、完整floor与单独历史gate；实时占用以该原件为准，准备包不表示已运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -95,7 +95,7 @@
 | 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v2 exact7已RELEASED | [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)已实际登记、父X01/原06已确认；模块已main9f0/原7scope已释放；任何后继须合法新取权，App/session未因此接线。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
 | RELEASE01 → MATURE01 | [唯一新source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md)，w01；旧27cv2 RELEASED，新7d60v2 exact4 ACTIVE | d736/产品1cea及旧consumer6165ms获e0a28限定批准；两产品已精确交回，panels61abce36v1 exact8已正式接续原I01，余四继续artifact/兼容。D05现有task映射由Original切新WT，旧树仅历史。 |
-| VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
+| VISUAL01 → MATURE01 | [唯一视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md)，w01_owner，acce2727 v1 active exact8，dcbd7a798 clean | 恢复浮层10325ms限定通过/20:15:46实际RETURN；20:30:22仅status更新时间。Picker现成单次准备已审、7图未run，共享浮层未main；旧web-visual-shell released记录仅历史，不代表当前片交付。 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |
 | ACTIVITYREAD01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/plans/wpf-activity-readability/status.md)，原panels，6f427ac5 v3 released | 已main f181；be977 push/clean后6scope停写释放，仅展开活动区 |

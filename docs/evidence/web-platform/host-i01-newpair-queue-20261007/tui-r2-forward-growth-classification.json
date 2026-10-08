@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-08T02:03:51.261Z",
+  "scope": "Forward-only oldTUI R2 remaining growth; no physicalresourcecleanup or consumedgate change",
+  "return": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-window-return.json",
+    "bytes": 2661,
+    "sha256": "e54b422be820b8e474fc1282f82df904c67d61e3b2b5b82c4d2dda0798ea3de4"
+  },
+  "preparation": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-preparation.json",
+    "bytes": 7037,
+    "sha256": "9741cc703da665e7cb28a068e625fe3d97d2324988167e025f4a5aa46e23fad8"
+  },
+  "authorStatement": "Original via root explicitly b186 sealed independentlyreviewed and0oldresourcefollowuprun;0pending/known7PID5groupsabsent/twolayerEOF/center-runner-proxyclosed/DBconnections[].",
+  "originalPlanning": {
+    "ChromePlanningBytes": 268435456,
+    "logicalDBPlanningBytes": 134217728,
+    "WALPlanningBytes": 1073741824,
+    "privateNonChromeBytes": 16777216,
+    "innerRawBytes": 4194304,
+    "outerRecordsPlanningBytes": 2097152,
+    "totalIncrementPlanningBytes": 1499463680,
+    "liveReserveBytesCountOnce": 1073741824,
+    "combinedFloor": "ONLY_NEW_EXPLICIT_RESOURCE_GRANT",
+    "hardCapCaveat": "Chrome/DB/WAL planning only; non-atomic meter and background growth not exact peaks."
+  },
+  "classification": {
+    "sealedFutureZeroBytes": 1365245952,
+    "components": "Chrome256MiB+runtimeWAL1GiB+private16MiB+raw4MiB+outer2MiB. Old workload no livewriter or authorized continuation; existingbytes already in freshstock.",
+    "remainingDBUnknownBytes": 134217728,
+    "naturalSealFutureZeroBytes": 8388608,
+    "unknownBoundary": "Originalcleanupgroupsunknown/DBprivateKEEP unchanged. KeepDB128MiB plus globalresidual/backgroundunknown/reserveOnce; no assertion allescapeddescendants absent or sharedWALgloballyzero."
+  },
+  "newR3": "Separate full1499463680 planning plusnew8MiB resultseal; neverreuseoldR2credit."
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-08T02:13:36.418Z",
+  "window": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+  "basis": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-window-return.json",
+    "sha256": "ab3f1059cd122b95da4a1e8f29eacee04ee04cec093fa28821e698a2d9314f5c",
+    "bytes": 2723,
+    "at": "2026-10-08T02:11:39.152Z"
+  },
+  "priorPlanningBytes": 1499463680,
+  "forwardUnknownBytes": 150994944,
+  "unknownParts": {
+    "databasePlanning": 134217728,
+    "privateTemporaryPotential": 16777216
+  },
+  "closedFutureBytes": 1348468736,
+  "retainedNaturalSealBytes": 8388608,
+  "reason": "Registered runtime identities absent/center runner proxy stopped/adminclosed/0conn/0pending; no continuation authorized. Chrome and workload WAL/runtime output peak no longer future workload. Retain DB128MiB and full private16MiB because DBKEEP/tempidentity UNKNOWN; natural result/index seal8MiB remains. Background/sharedWAL/globalunknown/reserve unchanged.",
+  "noPhysicalRelease": true,
+  "originalSuiteAndCleanupUnknownImmutable": true
+}
