@@ -1,9 +1,10 @@
 import { createServer } from "node:http";
 import { afterEach, describe, expect, it } from "vitest";
 import { FlowApiError, FlowClient } from "@flow/client";
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
 import type { ConversationCreation, ConversationSummary, ExecutionProfile, ExecutionProfilePage } from "@flow/contracts";
 import { createExecutionProfileCatalog } from "../src/execution-profiles/catalog";
-import { assertCreationReceiptMatches, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
+import { assertCreationReceiptMatches, versionedSelection, messageSettingsSubmissionEligibility, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
 
 const id = (number: number) => `10000000-0000-4000-8000-${String(number).padStart(12, "0")}`;
 function profile(number = 1): ExecutionProfile {
@@ -180,4 +181,63 @@ it.each([
   const invalid = { ...profile(2), configuration: { ...profile(2).configuration, access: "goal-tools", ...policy } } as unknown as ExecutionProfile;
   const catalog = createExecutionProfileCatalog({ executionProfiles: async () => ({ profiles: [profile(), invalid], nextCursor: null }) });
   await catalog.refresh(); expect(catalog.getSnapshot().error).toBeTruthy(); expect(catalog.getSnapshot().profiles).toHaveLength(0); catalog.dispose();
+});
+
+
+describe("versioned creation invariants", () => {
+  const requested = { model: "explicit-model", thinking: "adaptive" as const, effort: { kind: "level" as const, value: "high" as const }, speed: "fast" as const };
+  function entry() {
+    const legacy = profile();
+    return claudeMessageSettingsCatalogEntrySchema.parse({ profile: {
+      ...legacy, model: { ...legacy.model, displayName: "configured-alias" },
+      configuration: { ...legacy.configuration, turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: [requested] } },
+      controls: { access: "configured-policy", queue: false, steer: false, messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: "configuration.turnSettings.choices" } },
+    }, conversation: { state: "existing-claude-contract", capabilitySource: "conversation-response" } });
+  }
+  function ready() {
+    const source = entry(), selected = versionedSelection(source), reference = source.profile.reference;
+    const catalog = { profiles: [source.profile], nextCursor: null, loading: false, error: null, loaded: true, stale: false, canLoadMore: false };
+    const context = { profile: reference, capability: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" as const } };
+    const value: ClaudeTurnSettings = { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested };
+    return { source, selected, catalog, context, value };
+  }
+  it("freezes the exact public versioned identity without defaults or a creation tuple", () => {
+    const source = entry(), selected = versionedSelection(source), creation = freezeConversationCreation("Prepared", selected);
+    const expected = structuredClone(source.profile.reference); source.profile.reference.configDigest = "c".repeat(64);
+    expect(creation.executionProfile).toEqual(expected); expect(creation).not.toHaveProperty("messageSettings");
+    expect(creation).not.toHaveProperty("projectId"); expect(creation.requested).toEqual({ model: "configured-alias", thinking: "disabled", tools: "none" });
+    expect(Object.isFrozen(selected.entry.profile.configuration.turnSettings!.choices[0]!.effort)).toBe(true);
+    expect(Object.isFrozen(creation.executionProfile)).toBe(true);
+    expect(() => configuredSelection(source.profile as never)).toThrow();
+    expect(() => versionedSelection({ ...entry(), unknown: true })).toThrow();
+    const invalid = entry(); invalid.profile.model.value = "wrong"; expect(() => versionedSelection(invalid)).toThrow();
+  });
+  it("keeps prepare independent and rejects missing or cleared tuples for either submission intent", () => {
+    const f = ready(); expect(() => freezeConversationCreation("Prepared", f.selected)).not.toThrow();
+    for (const selection of [f.selected, legacyDefaultSelection()]) {
+      expect(messageSettingsSubmissionEligibility(undefined, f.catalog, f.context, selection)).toMatchObject({ allowed: false });
+    }
+    const admitted = messageSettingsSubmissionEligibility(f.value, f.catalog, f.context, f.selected);
+    expect(admitted).toEqual({ allowed: true, value: f.value });
+    if (admitted.allowed) expect(Object.isFrozen(admitted.value!.requested.effort)).toBe(true);
+    expect(messageSettingsSubmissionEligibility(undefined, f.catalog, { profile: null, capability: null }, legacyDefaultSelection())).toEqual({ allowed: true, value: undefined });
+  });
+  it("requires trusted GET, fresh catalog and all three profile identity fields", () => {
+    const f = ready();
+    expect(messageSettingsSubmissionEligibility(f.value, f.catalog, { profile: f.context.profile, capability: null }, f.selected).allowed).toBe(false);
+    for (const field of ["id", "runnerId", "configDigest"] as const) {
+      const changed = { ...f.value, profile: { ...f.value.profile, [field]: field === "configDigest" ? "d".repeat(64) : id(900) } };
+      expect(messageSettingsSubmissionEligibility(changed, f.catalog, f.context, f.selected).allowed).toBe(false);
+      expect(messageSettingsSubmissionEligibility(f.value, f.catalog, { ...f.context, profile: changed.profile }, f.selected).allowed).toBe(false);
+    }
+    expect(messageSettingsSubmissionEligibility(f.value, { ...f.catalog, stale: true }, f.context, f.selected).allowed).toBe(false);
+    expect(messageSettingsSubmissionEligibility({ ...f.value, requested: { ...requested, speed: "standard" } }, f.catalog, f.context, f.selected).allowed).toBe(false);
+    expect(messageSettingsSubmissionEligibility({ ...f.value, requested: { model: "explicit-model" } } as never, f.catalog, f.context, f.selected).allowed).toBe(false);
+  });
+  it("preserves a valid empty choice declaration but permits neither omission nor a fabricated tuple", () => {
+    const f = ready(); f.source.profile.configuration.turnSettings!.choices = [];
+    const selected = versionedSelection(f.source), catalog = { ...f.catalog, profiles: [selected.entry.profile] };
+    for (const value of [undefined, f.value]) expect(messageSettingsSubmissionEligibility(value, catalog, f.context, selected)).toMatchObject({ allowed: false, reason: expect.stringContaining("没有可用") });
+    expect(f.value.requested).toEqual(requested);
+  });
 });

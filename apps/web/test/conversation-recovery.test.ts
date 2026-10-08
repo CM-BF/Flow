@@ -1,10 +1,11 @@
+import { versionedSelection, freezeConversationCreation, messageSettingsSubmissionEligibility } from "../src/execution-profiles/selection";
 import { bindPreparedDraftReturn, restorePreparedDraft, messageSettingsDraft, MESSAGE_SETTINGS_OWNER, type MessageSettingsDraft, type MessageSettingsPort } from "../src/plugin-integration/message-settings";
 import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createHash } from "node:crypto";
 import { createSteeringControl, type SteeringPort } from "../src/conversation-steering/control";
 import { FlowClient } from "@flow/client";
-import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
+import type { BrowserSessionReady, ConversationSnapshot, ConversationCreation } from "@flow/contracts";
 import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
 import { ConversationRecoveryJournal, RecoveryError, namespaceKey, recoveryAddress, recoveryValue, type CommandRecord, type Json, type RecoveryNamespace, type RecoveryRecord } from "../src/recovery/journal";
 import { RecoveryWorkspace, RECOVERY_OWNER, readRecoveryDraft, restoreConversationDraft, type CompleteDraft } from "../src/recovery/binding";
@@ -965,5 +966,61 @@ describe("MSG03 real App seams", () => {
     expect(requests).toHaveLength(2); expect(requests[1]).toEqual(requests[0]); expect((requests[0]!.body as { messageSettings: unknown }).messageSettings).toEqual(b); expect(current.value).toEqual(c);
     const omitted = new ConversationOutbox(); cleanup.push(() => omitted.dispose());
     expect(omitted.begin({ conversationId: "chat", text: "legacy", expectedRevision: 0 }).request).not.toHaveProperty("messageSettings");
+  });
+});
+
+
+describe("versioned creation recovery invariants", () => {
+  const reference = { id: uuid(901), runnerId: uuid(902), configDigest: "a".repeat(64) };
+  const requested = { model: "explicit-A", thinking: "adaptive" as const, effort: { kind: "level" as const, value: "high" as const }, speed: "fast" as const };
+  function selection() {
+    return versionedSelection({ profile: {
+      reference, configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "base", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+        materialScopeDigest: "b".repeat(64), limits: { maxTurns: 2, maxBudgetUsd: 1, timeoutMs: 90000 }, turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: [requested] } },
+      source: "runner-configured", availability: "not-probed", model: { value: "base", resolvedModel: null, displayName: "base", description: "Synthetic declaration", providerCapabilities: "unknown" },
+      controls: { access: "configured-policy", queue: false, steer: false, messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: "configuration.turnSettings.choices" } }, createdAt: "2026-10-08T00:00:00Z",
+    }, conversation: { state: "existing-claude-contract", capabilitySource: "conversation-response" } });
+  }
+  it("restores the explicit versioned branch with exact frozen reference and an editable omitted tuple", () => {
+    const selected = selection();
+    const saved = readRecoveryDraft(recoveryValue({ ...(draft("kept body") as object), profile: selected }));
+    expect(saved.profile).toEqual(selected); expect(saved.messageSettings).toBeUndefined(); expect(saved.text).toBe("kept body");
+    expect(saved.projectId).toBeNull(); expect(Object.isFrozen(saved.profile)).toBe(true);
+    expect(readRecoveryDraft(draft("legacy")).profile).toEqual({ kind: "legacy-default" });
+    const corrupted = { kind: "versioned", entry: claudeMessageSettingsCatalogEntrySchema.parse(selected.entry) }; corrupted.entry.profile.reference.configDigest = "invalid";
+    expect(() => readRecoveryDraft(recoveryValue({ ...(draft("") as object), profile: corrupted }))).toThrow();
+    expect(() => readRecoveryDraft(recoveryValue({ ...(draft("") as object), profile: { kind: "configured", profile: selected.entry.profile } }))).toThrow();
+  });
+  it("preserves stale saved identity without turning a current catalog into permission", () => {
+    const selected = selection(), value = { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested };
+    const saved = readRecoveryDraft(recoveryValue({ ...(draft("next") as object), profile: selected, messageSettings: value }));
+    const current = structuredClone(reference); current.configDigest = "c".repeat(64);
+    const catalog = { profiles: [selected.entry.profile], nextCursor: null, loading: false, error: null, loaded: true, stale: false, canLoadMore: false };
+    expect(messageSettingsSubmissionEligibility(saved.messageSettings, catalog, { profile: current, capability: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: current, choices: "execution-profile" } }, saved.profile).allowed).toBe(false);
+    expect(saved.profile).toEqual(selected); expect(saved.messageSettings).toEqual(value);
+  });
+  it("keeps UNKNOWN CREATE on its original key and body while a separate complete draft stays intact", async () => {
+    const selected = selection(), creation = freezeConversationCreation("Prepared", selected), calls: { key: string; body: unknown }[] = [];
+    const snapshot: ConversationSnapshot = { conversation: { ...creation, id: "prepared-chat", revision: 0, createdAt: "2026-10-08T00:00:00Z", updatedAt: "2026-10-08T00:00:00Z" }, nativeSession: null, lastTurn: null,
+      capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false,
+        messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" } } };
+    const submit = vi.fn(async () => { throw Error("No turn before explicit submission"); });
+    const client = { conversation: vi.fn(async () => snapshot), conversationTurns: vi.fn(async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null })),
+      createConversation: vi.fn(async (body: ConversationCreation, key = "") => { calls.push({ key, body: structuredClone(body) }); if (calls.length === 1) throw Error("ACK lost"); return { conversation: snapshot.conversation, capabilities: snapshot.capabilities }; }),
+      submitConversationTurn: submit, conversationDetail: submit };
+    const projection = new ConversationProjection(client, null); cleanup.push(() => projection.dispose());
+    const independent = readRecoveryDraft(recoveryValue({ ...(draft("next untouched body") as object), profile: selected }));
+    const before = structuredClone(independent);
+    await projection.prepare(creation); expect(projection.outbox.getSnapshot()).toMatchObject({ kind: "creation", state: "unknown", request: null });
+    expect(client.conversation).not.toHaveBeenCalled();
+    await expect(projection.prepare({ ...creation, title: "must not replace" })).rejects.toThrow("unresolved");
+    expect(calls).toHaveLength(1);
+    await projection.retry(); await projection.refresh();
+    expect(calls).toHaveLength(2); expect(calls[1]).toEqual(calls[0]); expect(projection.outbox.getSnapshot()).toBeNull();
+    expect(independent).toEqual(before); expect(submit).not.toHaveBeenCalled();
+    const catalog = { profiles: [selected.entry.profile], nextCursor: null, loading: false, error: null, loaded: true, stale: false, canLoadMore: false };
+    const context = { profile: snapshot.conversation.executionProfile!, capability: snapshot.capabilities.messageSettings! };
+    expect(messageSettingsSubmissionEligibility(undefined, catalog, context, selected).allowed).toBe(false);
+    expect(messageSettingsSubmissionEligibility({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested }, catalog, context, selected).allowed).toBe(true);
   });
 });

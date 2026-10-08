@@ -10,6 +10,7 @@ import {
   executionProfileConfigurationSchema,
   executionProfileReferenceSchema,
   type ClaudeMessageSettingsExecutionProfile,
+  type ClaudeMessageSettingsCatalogEntry,
   type ClaudeTurnSettings,
   type ConversationCapabilities,
   type ExecutionProfileReference,
@@ -31,7 +32,8 @@ export type ChatProfile = Omit<DirectoryProfile, "configuration"> & {
 };
 export type ProfileSelection =
   | { readonly kind: "legacy-default" }
-  | { readonly kind: "configured"; readonly profile: Immutable<ChatProfile> };
+  | { readonly kind: "configured"; readonly profile: Immutable<ChatProfile> }
+  | { readonly kind: "versioned"; readonly entry: Immutable<ClaudeMessageSettingsCatalogEntry> };
 
 const emptyMaterialScopeDigest = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945";
 export function isChatAccess(access: string): access is ChatAccess {
@@ -80,9 +82,17 @@ export function configuredSelection(input: Immutable<DirectoryProfile>): Extract
   return freeze({ kind: "configured" as const, profile: { ...profile, configuration: { ...profile.configuration, access } } });
 }
 
+/** Explicit opt-in selection. The directory declares choices, not live conversation authority. */
+export function versionedSelection(input: unknown): Extract<ProfileSelection, { kind: "versioned" }> {
+  const entry = claudeMessageSettingsCatalogEntrySchema.parse(input);
+  if (!isChatAccess(entry.profile.configuration.access)) throw new Error("This execution profile cannot be used for ordinary chat");
+  return freeze({ kind: "versioned" as const, entry });
+}
+
 /** Call once before CREATE; the caller's outbox owns this payload and its idempotency key. */
 export function freezeConversationCreation(title: string, selection: ProfileSelection): Immutable<ConversationCreation> {
-  const profile = selection.kind === "configured" ? configuredSelection(selection.profile).profile : null;
+  const profile = selection.kind === "configured" ? configuredSelection(selection.profile).profile
+    : selection.kind === "versioned" ? versionedSelection(selection.entry).entry.profile : null;
   return freeze(conversationCreationSchema.parse({
     title, harness: "claude",
     ...(profile ? { executionProfile: profile.reference } : {}),
@@ -131,7 +141,7 @@ export function messageSettingsAvailability(catalog: MessageSettingsCatalogSnaps
   const profile = catalog.profiles.find(item => sameProfile(item.reference, reference));
   if (!profile) return { allowed: false, reason: "已加载目录中没有会话的完整配置，请继续加载或刷新。" };
   if (!profile.configuration.turnSettings?.choices.length) {
-    return { allowed: false, reason: "此配置没有可选的消息设置组合；可明确选择不附加设置。" };
+    return { allowed: false, reason: "此配置没有可用的完整消息设置组合；发送和排队不可用，当前草稿会保留。" };
   }
   return { allowed: true, profile };
 }
@@ -152,6 +162,31 @@ export function captureMessageSettings(
   });
   if (decision.decision !== "allowed") throw new Error("所选完整组合不属于当前会话配置，请重新选择；旧选择不会自动清除。");
   return freeze(snapshot);
+}
+
+export type MessageSettingsSubmissionEligibility =
+  | { readonly allowed: true; readonly value: Immutable<ClaudeTurnSettings> | undefined }
+  | { readonly allowed: false; readonly reason: string };
+
+/** For Send and Queue before detaching a draft. Prepare/receipt replay do not use this gate.
+ * A saved selection remembers the requirement even before a trusted conversation GET arrives.
+ * Clearing stays editable; no tuple or profile is filled in on the user's behalf. */
+export function messageSettingsSubmissionEligibility(
+  value: Immutable<ClaudeTurnSettings> | undefined,
+  catalog: MessageSettingsCatalogSnapshot,
+  context: MessageSettingsContext,
+  selection: ProfileSelection,
+): MessageSettingsSubmissionEligibility {
+  if (selection.kind === "versioned" && (!context.profile || !sameProfile(selection.entry.profile.reference, context.profile))) {
+    return { allowed: false, reason: "请准备并刷新所选完整配置的会话；当前草稿会保留。" };
+  }
+  if (selection.kind === "versioned" || context.capability !== null) {
+    const available = messageSettingsAvailability(catalog, context);
+    if (!available.allowed) return available;
+    if (value === undefined) return { allowed: false, reason: "此会话需要完整消息设置，请明确选择 model、thinking、effort 和 speed 后再发送或排队。" };
+  }
+  try { return { allowed: true, value: captureMessageSettings(value, catalog, context) }; }
+  catch (error) { return { allowed: false, reason: error instanceof Error ? error.message : "无法确认完整消息设置；当前草稿会保留。" }; }
 }
 
 /** Equality is the public canonical snapshot, including profile identity and every requested axis. */

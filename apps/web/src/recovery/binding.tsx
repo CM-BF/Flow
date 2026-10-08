@@ -1,7 +1,7 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import type { PluginDefinition } from "../plugins/types";
 import type { AppPluginSession } from "../plugin-integration/session";
-import { configuredSelection, legacyDefaultSelection, readDirectoryProfile, type ProfileSelection } from "../execution-profiles/selection";
+import { configuredSelection, legacyDefaultSelection, readDirectoryProfile, versionedSelection, type ProfileSelection } from "../execution-profiles/selection";
 import { freezeCitation } from "../conversation-context/selection";
 import type { SelectedContext } from "../conversation-context/controller";
 import type { AttachmentItem } from "../attachments/controller";
@@ -44,8 +44,10 @@ export function readRecoveryDraft(value: Json): CompleteDraft {
   if (typeof data.text !== "string" || !["follow-up", "queue"].includes(String(data.intent)) || !Array.isArray(data.knowledge) || !Array.isArray(data.attachments) || data.knowledge.length + data.attachments.length > 4) throw Error("Invalid saved draft fields.");
   const projectId = data.projectId === null ? null : idSchema.parse(data.projectId);
   const projectTitle = data.projectTitle === null ? null : knowledgeCreateSchema.shape.title.parse(data.projectTitle);
-  const rawProfile = data.profile as { kind?: unknown; profile?: unknown } | null;
-  const profile = rawProfile?.kind === "legacy-default" ? legacyDefaultSelection() : rawProfile?.kind === "configured" ? configuredSelection(readDirectoryProfile(rawProfile.profile)) : null;
+  const rawProfile = data.profile as { kind?: unknown; profile?: unknown; entry?: unknown } | null;
+  const profile = rawProfile?.kind === "legacy-default" ? legacyDefaultSelection()
+    : rawProfile?.kind === "configured" ? configuredSelection(readDirectoryProfile(rawProfile.profile))
+    : rawProfile?.kind === "versioned" ? versionedSelection(rawProfile.entry) : null;
   if (!profile) throw Error("Invalid saved execution selection.");
   const knowledge = data.knowledge.map((value: unknown) => {
     if (!value || typeof value !== "object" || !projectId) throw Error("Saved knowledge needs its original project.");
