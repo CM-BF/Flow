@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-08T00:19:27.781090+00:00",
+  "skills": "Reused local clean-code/codebase-design/find-skills/assistant-ui methods; no installation.",
+  "source": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+  "findings": [
+    "Fixture returned paused waiting state for material follow-up, while public send guard correctly rejects it. Changed only chat4; chat1-3 exact page/detail preserved.",
+    "Auxiliary diagnostic could mask original assertion; bounded1s innerText/read catch now preserves original error."
+  ],
+  "verification": "8 actual scoped pure cases through AST actual branch, FlowClient/QueueProjection and original send guard. No browser yet. No new type interface; noEmit not rerun.",
+  "ownership": "No App/session/recovery/shared schema changed; only two owned test leaves and metadata.",
+  "cleanup": "Original owned helper reused, exact PID/group/scratch absent; regular file logs not dualEOF."
+}

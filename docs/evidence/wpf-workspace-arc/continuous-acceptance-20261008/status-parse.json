@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T00:19:42.236Z",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+      "id": "WPF-MATURE-05",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web/root；执行管理d01_owner",
+      "value": "Web/root；执行管理d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "scope": "Only own metadata parser; no product check",
+  "historicalStart": "UNKNOWN retained"
+}

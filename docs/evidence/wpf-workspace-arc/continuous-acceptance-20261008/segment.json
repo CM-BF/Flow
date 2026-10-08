@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-10-08T00:13:33.508971Z",
+  "deadline": "2026-10-08T00:47:46.922Z",
+  "base": "e82d5c0684cfd8b18631732cf3874d324a8a7aa4",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 exact18",
+  "local": {
+    "totalMs": 60000,
+    "maxChildren": 4,
+    "perChildMs": 20000,
+    "spentMs": 654,
+    "attempts": [
+      {
+        "label": "direct-1",
+        "source": "8c36f39b63d5d5621eafea616aeb532472caed3c",
+        "chargeMs": 654,
+        "actualExit": 0,
+        "passed": 8,
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/local-manifest.json"
+      }
+    ],
+    "remainingMs": 59346
+  },
+  "browser": {
+    "totalMs": 270000,
+    "maxAttempts": 3,
+    "perAttemptMs": 90000,
+    "spentMs": 0,
+    "state": "WAIT_MANAGER_LEASE",
+    "attempts": []
+  },
+  "bytes": {
+    "total": 402653184,
+    "scratch": 268435456,
+    "retained": 134217728,
+    "sourceLocalSuballocation": 8388608
+  },
+  "history": "All old source/local/browser budgets CLOSED; no transfer."
+}

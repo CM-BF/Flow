@@ -1,5 +1,9 @@
 # Current Arc review
 
+当前连续段 `6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477`：两test修chat4队列前置/有帽诊断，产品未改。8c36实际8相关purePASS/654ms，最终诊断catch小差量未重复绿检查。browser NOT_RUN/等待经理lease，最终一次独审待actual；不复用旧2/4为当前通过。[入口](continuous-acceptance-20261008/entry.json)。
+
+下文均为历史固定记录。
+
 固定 `b3f5bed1a17019d1de01117f3a510314d5ecd412` / execution `fcca6ec4c926241365c7a2cc18b6a044604e44e7` 本次真实浏览器 **FAILED2/4**。布局与六正文读取通过；导航高度37.3828px，右panel开关前后不变，早图原450px空白消失。材料组通过设置目录后停在Send disabled5s，实际prepare-await未进入，refresh/theme与最终两图未达。早桌面1PNG/85127B只observation；20654/90000 CLOSED，四PID/两PGID及scratch/cache已精确归还，parent scenarioUNKNOWN与rawclosed分列。本次Chrome/parent/outer EOF均true；前次false不改。root4467只批准source/local/preparation，[root908b实际结果/视觉独审](css-material-browser-actual-20261008/root-arc-css-material-actual-review-20261008.json) APPROVED_LIMITED/0blocking；CSS视觉P2实证修复，整体仍FAIL；main未集成。 [唯一实际审入口](css-material-browser-actual-20261008/failure-review-input.json)。
 
 以下为历史固定阶段，旧“当前/NOT_RUN”保留其当时含义。

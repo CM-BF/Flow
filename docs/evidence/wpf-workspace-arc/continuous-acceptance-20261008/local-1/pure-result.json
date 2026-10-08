@@ -1,0 +1,37 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "cases": [
+    "Original chat4 actual queue DTO validates and blocks follow-up",
+    "chat-1 paused page/full detail unchanged and follow-up blocked",
+    "chat-2 paused page/full detail unchanged and follow-up blocked",
+    "chat-3 paused page/full detail unchanged and follow-up blocked",
+    "Fixed chat4 exact DTO passes real queue validation and completed-task follow-up guard",
+    "Active task still blocks follow-up; original guard unchanged",
+    "Wrong-identity queue rejected by actual read model and cannot enable Send",
+    "Empty material queue cannot fabricate a waiting detail"
+  ],
+  "method": "AST extracts original/fixed actual fixture queue branch. Actual FlowClient JSON read via local Response only, actual ConversationQueueProjection validates page and owns cleanup. Actual ConversationProjection.sendDisabledReason invoked with explicit controlled completed/active states; not mounted App or HTTP. No duplicated guard/decoder implementation.",
+  "limitations": [
+    "Pure controlled state, not browser/recovery/attachment preparation",
+    "No claim that FlowClient itself has a standalone queue schema: current validation is the actual queue projection"
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+      "sha256": "1c053e64cffa8c7cc10f51bf722a282752ccbfdc5f8d76334c322e619ab7ad86"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/packages/client/src/index.ts",
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/conversations/projection.ts",
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/conversations/queue/projection.ts",
+      "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d"
+    }
+  ]
+}
