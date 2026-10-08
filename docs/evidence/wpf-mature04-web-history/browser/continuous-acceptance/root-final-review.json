@@ -1,0 +1,112 @@
+{
+  "reviewer": "/root / gpt-6-astra ultra",
+  "at": "2026-10-08T00:27:07.652793+00:00",
+  "decision": "APPROVED_LIMITED_SCOPED_CONTEXT_HISTORY_ACCEPTANCE",
+  "blockingFindings": [],
+  "deliveryTarget": "067f77d6d195038d7b07d28ae9d9cd3657daa8de",
+  "sourceTarget": "c7f3933c1cd815a539192823628847ac5ca6123e",
+  "reviewInput": {
+    "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/review-input.json",
+    "bytes": 7922,
+    "sha256": "42e051ad7094a409a1c46caff2af6333bd3579275d9e420446d7e5e2012a4cd2"
+  },
+  "verification": {
+    "method": "Read-only Git/source/raw/manifest inspection plus direct viewing of both existing PNGs; no root product imports, tests, network fixture, PG or new browser.",
+    "rawBindings": 76,
+    "rawBytes": 276352,
+    "additionalEntryBindings": 16,
+    "mismatches": 0,
+    "productDiffFromEd5": "empty",
+    "assertionDiffFromFfd": "empty",
+    "headEqualsOrigin": true,
+    "dirtyAtReview": false
+  },
+  "sourceReview": {
+    "fixtureDelta": "Only the fixture transport, actual incoming source metadata forwarding, bounded diagnostics and empty favicon handling changed. Existing native HTTP retains explicit public Host, validates the real browser-session schema, bounds body bytes to 8192, and uses the existing upstream set, abort signal and downstream close lifecycle. No center authentication relaxation or test assertion replacement.",
+    "hostCause": "Fixed Node v24.20.0 source deletes Host in fetch. First two captures did not contain subrequest diagnostics; source behavior is confirmed, complete original dynamic causality cannot be reconstructed from those 500s alone.",
+    "reference": "https://raw.githubusercontent.com/nodejs/node/v24.20.0/deps/undici/src/lib/web/fetch/index.js"
+  },
+  "resultReview": {
+    "attempts": [
+      {
+        "number": 1,
+        "exit": 1,
+        "groups": 1,
+        "chargedMs": 15603,
+        "startToReturnMs": 103480.188
+      },
+      {
+        "number": 2,
+        "exit": 1,
+        "groups": 1,
+        "chargedMs": 16332,
+        "startToReturnMs": 75460.462
+      },
+      {
+        "number": 3,
+        "exit": 0,
+        "groups": 8,
+        "chargedMs": 11882,
+        "startToReturnMs": 80862.11
+      }
+    ],
+    "finalRequiredGroups": [
+      "cookie-no-task",
+      "decoded-read-states",
+      "lazy-detail",
+      "close-late-read",
+      "task-and-visibility",
+      "plugin-revoke",
+      "themes-keyboard",
+      "authority-revoke"
+    ],
+    "wireRows": 35,
+    "historyReads": 12,
+    "detailReads": 1,
+    "browserTurnPosts": 0,
+    "allHistoryReadsCookieWithoutBearer": true,
+    "pageErrors": [],
+    "unexpectedConsoleErrors": [],
+    "expectedConsoleErrors": "One deliberately injected history HTTP 503",
+    "heldReadOutcomes": [
+      "abortedWithoutDelivery",
+      "abortedWithoutDelivery"
+    ],
+    "fullJourneyPassed": false
+  },
+  "visualReview": {
+    "observed": "Both actual 390x844 light and dark PNGs were viewed. Dialog, primary values, unknown/estimate qualifications and focus indicator are readable. Long model identifier wraps within the dialog.",
+    "geometryBoth": {
+      "client": 360,
+      "scroll": 360,
+      "left": 14,
+      "right": 376,
+      "viewport": 390
+    },
+    "keyboardEvidence": "Actual Enter opens, Tab remains within dialog, Escape closes and restores Context trigger focus. Reduced-motion emulation is asserted. This is not a full accessibility audit."
+  },
+  "resourceReview": {
+    "bundle": "CLOSED",
+    "chargedMs": 43817,
+    "limitMs": 270000,
+    "old6352Transferred": false,
+    "finalFullReturn": "2026-10-08T00:23:55.953373+00:00",
+    "returnSha256": "c99ca555fc66b033d6a3e6cf2765b9620cc077cfeec06360086f20118a2a5b2d",
+    "observedReceipts": "All three RETURN records report exact known PID/PGID ESRCH, DB removed with zero connections, HTTP pending responses/upstreams/sockets zero, scratch/admin input absent and complete streams. Final supervisor records selectedPassed true, allOwnedGroupsAbsent true and no cleanup errors.",
+    "timingMeaning": "43817ms is the sum of bounded parent execution charges including their cleanup. It is not grant-to-return elapsed time or sum of independently observed START-to-FULLRETURN durations listed above.",
+    "rootDidNotProbe": "No new PG session or CDP/listener/proc polling; owner retained terminal receipts are reviewed."
+  },
+  "limits": [
+    "Synthetic history/detail payloads behind real Cookie center and strict public client decoder; backend observation producer and current remaining capacity not verified.",
+    "Independent App baseline; no combined Arc workspace validation.",
+    "Both held requests aborted before delivery: no claim of successful late decoded response rejection.",
+    "Same-view task replacement, held detail, hidden Arc workspace, plugin disable during pending modal read and authority revocation during pending read remain NOT_COVERED.",
+    "Approval does not mean main integration, deployment, full Context transparency or complete user task."
+  ],
+  "cleanCode": {
+    "time": "2026-10-08T00:27:07.653116+00:00",
+    "scope": "fixture diff, source assertions, result attribution and dialog render",
+    "findings": "Existing HTTP lifecycle reused; response bounds and no-secret diagnostics explicit; no product duplicate state or dependency introduced. No blocking issue found.",
+    "futureNonBlocking": "In 390px stress screenshot the long model identifier precedes metrics and repeats in identity details. Consider compact summary plus full identity disclosure under the existing Context usability plan; preserve accessible full value, timestamps and unknown/estimate semantics. No extra task or current acceptance rerun required."
+  }
+}

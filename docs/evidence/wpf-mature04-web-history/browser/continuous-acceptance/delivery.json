@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-08T00:28:20.638014+00:00",
+  "task": "MATURE04-05",
+  "parentCanonical": "context-transparency/plans/wpf-mature-04-context-transparency (architecture_read/Mika sole owner)",
+  "state": "APPROVED_SCOPED_HISTORY_CONSUMER_AWAITING_CONTROLLED_INTEGRATION",
+  "sourceTarget": "c7f3933c1cd815a539192823628847ac5ca6123e",
+  "resultSealTarget": "067f77d6d195038d7b07d28ae9d9cd3657daa8de",
+  "fixedBase": "b1291faae260be8d86ada12ff63341d44efc2709",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/root-final-review.json",
+    "bytes": 5725,
+    "sha256": "a6306227b31bc144731cf847ac3bfb5004f3a3467451ea59b7c0ec1df08c640b"
+  },
+  "sourceFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/App.tsx",
+      "bytes": 76498,
+      "sha256": "312099f71e238537d716dfc29b0b24dbde9557ac8568effc0a0beddc19f0818c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "bytes": 7723,
+      "sha256": "583705bc6908455e3e32f92fc076f61be377b9e541179eeb804542eb99f28918"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/binding.test.ts",
+      "bytes": 5060,
+      "sha256": "a30a0a89006993468efecf454fe954a6e53c0c7d392b9f03044daabce15645ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/binding.ts",
+      "bytes": 4418,
+      "sha256": "ebbf827cfb0cdfaba94c2b19df648bd1581e363512c402eca44279cd42f46884"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.test.ts",
+      "bytes": 7915,
+      "sha256": "484400b0adeaef18940cd21fada681b84ad9ffd4f822b4d872406b77ec61ce03"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.ts",
+      "bytes": 7252,
+      "sha256": "f04b52b471825041c34c5cd7d6f3bcd805939b4b7fcb147e59bbea85835add64"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/fixture.ts",
+      "bytes": 1741,
+      "sha256": "8af698ee902f92d8a4f63fe80712a4b2ea2dac4783130a7826b728ec105ebc7d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29957,
+      "sha256": "cd59be625918652833bf125eacbe54e0598cb1a3ae4c2f66f81ec397e82de598"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/plugin-integration/context-history.tsx",
+      "bytes": 2785,
+      "sha256": "a7f1361b31331b756d8e20ef91b616a60279239158f2a9cdbe65e871daf8a649"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/plugin-integration/session.ts",
+      "bytes": 30788,
+      "sha256": "f7bf0edda9bc51e37cbdc0c4b085acf0f2e0406998648f3dc6daf0fd572d7f45"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history-fixture.ts",
+      "bytes": 13904,
+      "sha256": "574cc725980db3844daaeed6764b817e260043320ee698423cf6b42c3ded007c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history.browser.ts",
+      "bytes": 13400,
+      "sha256": "e6cb9e283bc0e666b7febedcbbb4cdc4c39195e95332ff0ef185f5d67b2608cf"
+    }
+  ],
+  "actual": "8/8 originalgroups+2PNG independently approved; 3attempts/43817msCLOSED/0localchildren; failures immutable",
+  "finalReturn": "2026-10-08T00:23:55.953373Z",
+  "startToReturnWallMs": [
+    103480.188,
+    75460.462,
+    80862.11
+  ],
+  "executionChargeVsWall": "Parent/capture consumed execution charges are distinct from delayed owner post-cleanup observation/RETURN wall spans. Do not describe43817 as total acceptance walltime.",
+  "scopeLimits": [
+    "b129 independent only; Arc controlled composition NOT_RUN",
+    "synthetic history/detail DTO producer behind realCookie; backend observation generation NOT_PROVEN",
+    "current draft use/remaining/hard model limit not supplied: unknown",
+    "both held reads abortedWithoutDelivery; not browser-decoded late delivery",
+    "same-view task replacement, helddetail, hiddenArcworkspace, plugin/authrevoke duringpendingread NOT_COVERED",
+    "fullMATURE04/CT01\u201309 remainOPEN"
+  ],
+  "integrationRequirements": [
+    "Do not whole-blob replace ArcApp/session/Thread. Preserve Arc runtime/pane/draft ownership in controlled merge.",
+    "Arc currentGroups covers hiddenworkspaces; authorize history against visibleGroups semantics. Add holdread\u2192hideworkspace\u2192abort/no latepublication\u2192explicitreopen combined proof.",
+    "Keep parent progress single-source viaD01\u2192Mika\u2192architecture_read, no duplicate status."
+  ],
+  "UXFollowup": "At390px longmodel identity wraps to8lines; readable/no horizontal overflow but compact summary vs expandable completeidentity is a future UX tradeoff, not this acceptance blocker.",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a v3 exact8 retained; all8STOP; release/handoff requiresmanager fresh transition",
+  "main": "NOT_INTEGRATED",
+  "deployment": "NOT_DEPLOYED",
+  "newRuntime": "NONE"
+}

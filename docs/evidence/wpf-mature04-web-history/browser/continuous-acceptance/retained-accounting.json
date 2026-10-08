@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-08T00:26:24.363120+00:00",
+  "state": "SOURCE_STOP_ACTUAL_RETURNED",
+  "head": "067f77d6d195038d7b07d28ae9d9cd3657daa8de",
+  "baseBeforeBundle": "59aaf811f89fc2b6ee0b830f96d985e61bf59d3d",
+  "projectAddedModifiedFullFiles": {
+    "files": 105,
+    "logicalBytes": 559488,
+    "allocatedBytes": 839680
+  },
+  "temporaryPacketsConservativeIncludingPriorBaseStock": {
+    "files": 92,
+    "logicalBytes": 2150269,
+    "allocatedBytes": 2379776
+  },
+  "attributableLooseGitObjects": {
+    "files": 129,
+    "logicalBytes": 315927,
+    "allocatedBytes": 729088
+  },
+  "indexCurrentBytes": 2330761,
+  "indexAtomicTemporaryReserveBytes": 4194304,
+  "finalReviewMetadataReserveBytes": 1048576,
+  "allRetainedEnvelopeBytes": 134217728,
+  "actualPeak": "NOT_OBSERVED; source/raw/archive/index/objects inventory plus explicit temporary/full-tail reserve; DB/WAL planning separate128MiB",
+  "browserAttempts": 3,
+  "browserChargeMs": 43817,
+  "localChildren": 0,
+  "newLinks": 0,
+  "ownedLinks38": "KEEP unchanged identities; no runtime scratch left",
+  "runtimePeakScratchBytesByAttempt": [
+    27507946,
+    27520939,
+    27524770
+  ],
+  "conservativeRetainedPlanningBytes": 9191424
+}
