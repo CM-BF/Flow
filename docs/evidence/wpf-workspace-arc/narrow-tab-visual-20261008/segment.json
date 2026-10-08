@@ -17,8 +17,19 @@
       "maxAttempts": 2,
       "perAttemptMs": 90000,
       "totalMs": 180000,
-      "spentMs": 0,
-      "attempts": []
+      "spentMs": 24341,
+      "attempts": [
+        {
+          "packet": "/private/tmp/arc-narrow-browser-hp2lfp6v",
+          "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+          "chargeMs": 24341,
+          "passed": 3,
+          "finalPNG": 0,
+          "returnAt": "2026-10-08T01:20:03.892569Z",
+          "failure": "Full viewport close expected1 actual0.02 afterkeyboardfocus toMoreactions; Home/End/material already passed."
+        }
+      ],
+      "state": "WAIT_MANAGER_AFTER_O16"
     },
     "local": {
       "maxChildren": 2,
@@ -35,5 +46,7 @@
   "checks": "Only necessary browser assertion affectedtypes ifneeded; CSS doesnottriggergreenrerun.",
   "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
   "local": "One necessarybrowser typed geometry/DOMassertion noEmit0/3573; notCSS-onlygreen rerun",
-  "cleanCode": "Same scopedCSS owns layout and never hides controls; test uses existing publictab roles plus realHome/End/Tab andactualfixturetitle. No arbitrary first/nth/force orproduct hooks."
+  "cleanCode": "Same scopedCSS owns layout and never hides controls; test uses existing publictab roles plus realHome/End/Tab andactualfixturetitle. No arbitrary first/nth/force orproduct hooks.",
+  "fix": "Arc strip scroll-padding-inline2rem reserves trailing25pxclose beyond focusedmenu action; no assertion relaxed. Move existing geometry observation before close assertion so failure retains evidence.",
+  "nextLocal": "NOT_RUN: onlyCSS/reorderexistingtypedobservation, no new typeinterface; prioraffectedtypes3573 stayslimited5c6."
 }

@@ -348,7 +348,6 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const activeTab = tabStrip.locator(".flow-tab").filter({ has: tab(4) });
       const tabAction = activeTab.getByRole("button", { name: "More actions", exact: true });
       await expect(tabAction).toBeFocused(); await expect(tabAction).toBeInViewport({ ratio: 1 });
-      await expect(activeTab.getByRole("button", { name: `Close ${longTitle}`, exact: true })).toBeInViewport({ ratio: 1 });
       const tabGeometry = await tabStrip.locator(".flow-tab").evaluateAll(nodes => nodes.map(node => {
         const title = node.querySelector<HTMLElement>('[role="tab"]')!;
         const action = node.querySelector<HTMLElement>('[aria-haspopup="menu"]')!;
@@ -359,6 +358,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
           actionLines: range.getClientRects().length, actionHeight: rect.height,
           clippedVertically: rect.top < strip.top || rect.bottom > strip.bottom };
       }));
+      result.observations.narrowTabs = { tabGeometry, longTitle, stage: "after keyboard focus reached plugin action" };
+      await expect(activeTab.getByRole("button", { name: `Close ${longTitle}`, exact: true })).toBeInViewport({ ratio: 1 });
       for (const item of tabGeometry) {
         expect(item.titleWidth).toBeGreaterThanOrEqual(128); expect(item.titleWhiteSpace).toBe("nowrap");
         if (item.title !== longTitle) expect(item.titleContentWidth).toBeLessThanOrEqual(item.titleWidth);
