@@ -14,13 +14,13 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 执行2d65f2cd5d485d2c06f430230e2d126f13eb2cf8；case01b299/operator50896f/固定输入保持原字节 |
+| 工作基线 / HEAD | 执行2d65f2cd5d485d2c06f430230e2d126f13eb2cf8；result fbc259bc51041d618f0e41bf702d650b5420d93f / packet45bc60697568067fe1689d73093bc7a29c9b02a8；case01b299/operator50896f/固定输入原字节 |
 | 工作树 dirty 状态 | 仅本次真实结果、status/review封存；产品与旧raw不变，最终push后STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | 真实三任务1case通过：T2 invalid-json/failed，T3验证其真实JSON passed；两个真实PROCESS worker闭合；0provider/Chrome/T7 |
 | Review | 准备已有root/db限定批准；本次真实结果忠实性待独立审查，不自批 |
 | 检查范围 | 03:49:53.085 caller进入，03:50:00.605755终态；03:50:50.285精确资源RETURN；原局部首红保留 |
-| 检查目标 | [本次真实结果](../../docs/evidence/x01/verifier-process/r1-result-summary.json)；原402/62/15及9operator输入未改 |
+| 检查目标 | [固定实际交审入口](../../docs/evidence/x01/verifier-process/r1-result-review-ready.json)，36bindings334471B；原402/62/15及9operator输入未改 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。  AV center/client97353e4f48ea515d268f6e4a6107e778b6c39abb；VAR+CENTER728d3165f17dfe8272c8ffce6e1eff60d9602d6b；runtime ec7e72f04b7010ab86863c8c11589c78b4588c1d；SDK866f0a9c077df2cd51f03210d02949df17a299f5。均有I02回执，不冒个人部署/真实worker全链。 |
 | 实现目标 | 真实中心与runner完成三任务正负验证旅程；结果待独审，完整X01/T7仍开放 |
 | 实现范围 | 仅固定候选一次actual与结果归档，产品源码0改动 |
@@ -448,3 +448,5 @@ Root01:20:23.274383Z四个精确dashboard读取均HTTP200/consistency matched/so
 ## 2026-10-08 X01 verifier真实窗口R1
 
 2026-10-08T03:52:17.529Z：唯一window1095cf1739f446898319a20ab5916259，actual firstWrite03:49:53.011Z，独立预检PID20327/available91、admin/poolclosed；caller entry03:49:53.085Z，fixed402/62/15+9/remote clean/claimv34/36无重叠已核。消费floor11824529408/free14127181824，原169MiB含161运行+8封存，绝对截止03:59:29.803Z。terminal03:50:00.605755Z、caller post-save7.481404875s；FULLRETURN03:50:50.285Z单列，不倒填。公开3tasks/两个PROCESS worker真实正负结果，普通DROP/0conn/监听器与全部owned资源闭合，旧KEEP不访问。worker launchedAt是父进程观察而非kernel start；runner HTTP实际计数null/4096仅理论；T7及完整X01不完成。真实结果独审待排，原首FAIL与输入不改；无新工程重测。架构无新增产品结构，仅现已审链的实际证据；dashboard架构基线后继由Lead协调。
+
+2026-10-08T03:55:15.320Z：真实结果已固定fbc259bc/packet45bc606并push，db独立限定结果审进行中。1目标通过，旧互斥semver1pending分列；原prepared ready是历史CLOSED快照，本次独立grant已消费且资源03:50:50.285Z精确RETURN。8MiB自然尾计量见[r1-seal-budget](../../docs/evidence/x01/verifier-process/r1-seal-budget.json)，index双份/全文metadata/raw副本/newstoredGit分开，非峰值。生产源码/固定inputs零改；已审observer分支在本次实际消费，不据此声称当前main或个人artifact已含该观察增量。0待launch，绝对03:59:29.803Z前STOP。

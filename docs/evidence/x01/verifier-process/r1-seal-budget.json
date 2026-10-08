@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-10-08T03:55:15.320Z",
+  "observedHead": "45bc60697568067fe1689d73093bc7a29c9b02a8",
+  "capBytes": 8388608,
+  "runtimePlanningSeparate": 168820736,
+  "newTotalPlanning": 177209344,
+  "sourceAndPriorEvidenceUnchanged": true,
+  "observedNotPeak": {
+    "indexBytes": 1472524,
+    "indexPlusAtomicCopy": 2945048,
+    "newStoredLooseObjects": 43,
+    "newStoredLooseBytes": 140246,
+    "changedFullFiles": 29,
+    "changedFullBytes": 213997,
+    "rawOriginalsWithinRuntimeCap": 49486,
+    "rawArchiveCopyConservativelyRechargedInTail": 49486,
+    "externalAdmissionOwnTmpAlreadyRemoved": 4774
+  },
+  "conservativeFinalAllocation": {
+    "indexAndAtomicGrowth": 3145728,
+    "rawOriginalAndSealCopies": 2097152,
+    "newStoredGitObjectsIncludingRemainingCommits": 1572864,
+    "fullMetadataCopiesIncludingStatusReviewAndRemainingApproval": 524288,
+    "gitAdminAndRemainingTail": 1048576
+  },
+  "finalAllocationBytes": 8388608,
+  "method": "Whole modified status/review and all new evidence charged, index plus atomic copy charged; raw is conservatively charged again. Stored Git bytes are observed on disk, no expected compression ratio or peak claim. Remaining commits/approval fit reserved allocations. Runtime DB/WAL and TMP peaks remain UNKNOWN."
+}
