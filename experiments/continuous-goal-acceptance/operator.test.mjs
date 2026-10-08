@@ -52,8 +52,8 @@ test('O16 repair: final accounting requires durable resource facts even after fa
   assert.equal(absent.metrics, null); assert.equal(absent.failure.constraint, 'directoryIdentity');
 });
 function fakeMeasurementIO() {
-  const directory = { dev: 1, ino: 2, isSymbolicLink: () => false, isDirectory: () => true, isFile: () => false };
-  return { statfs: async () => ({ bavail: BOUNDS.reserveBytes, bsize: 1 }), lstat: async () => directory, readdir: async () => [] };
+  return { statfs: async () => ({ bavail: BOUNDS.reserveBytes, bsize: 1 }),
+    measureRoots: async roots => ({ roots: roots.map(root => ({ stage: root.stage, bytes: 0, entries: 1, vanished: 0 })), elapsedMs: 1 }) };
 }
 test('O16 repair: measurement records controlled limit or IO stage and never invents runtime zero', async () => {
   const io = fakeMeasurementIO();
@@ -66,12 +66,11 @@ test('O16 repair: measurement records controlled limit or IO stage and never inv
   const lowSpace = await fail(measureRun('synthetic-run', pin, { ...io, statfs: async () => ({ bavail: 0, bsize: 1 }) }));
   assert.deepEqual(lowSpace, { state: 'unknown', stage: 'live-reserve', code: 'O16_RESOURCE_LIMIT', constraint: 'freeBytes' });
   const limit = await fail(measureRun('synthetic-run', pin, { ...io,
-    readdir: async path => path === pin.path ? ['file'] : [],
-    lstat: async path => path === pin.path + '/file' ? { isSymbolicLink: () => false, isDirectory: () => false,
-      isFile: () => true, size: BOUNDS.runtimeBytes + 1 } : io.lstat(path) }));
+    measureRoots: async roots => ({ roots: (await io.measureRoots(roots)).roots.map(root => ({ ...root,
+      bytes: root.stage === 'runtime' ? BOUNDS.runtimeBytes + 1 : 0 })) }) }));
   assert.deepEqual(limit, { state: 'unknown', stage: 'runtime', code: 'O16_RESOURCE_LIMIT', constraint: 'runtimeBytes' });
   const missing = await fail(measureRun('synthetic-run', pin, { ...io,
-    readdir: async path => { if (path === pin.path) throw Object.assign(new Error('Secret runtime path'), { code: 'EIO' }); return []; } }));
+    measureRoots: async () => { throw Object.assign(new Error('Secret runtime path'), { code: 'EIO', measurementStage: 'runtime' }); } }));
   assert.deepEqual(missing, { state: 'unknown', stage: 'runtime', code: 'EIO', constraint: null });
   assert(!JSON.stringify(missing).includes('Secret'));
 });
