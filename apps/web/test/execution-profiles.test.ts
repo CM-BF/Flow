@@ -220,7 +220,7 @@ describe("versioned creation invariants", () => {
     const admitted = messageSettingsSubmissionEligibility(f.value, f.catalog, f.context, f.selected);
     expect(admitted).toEqual({ allowed: true, value: f.value });
     if (admitted.allowed) expect(Object.isFrozen(admitted.value!.requested.effort)).toBe(true);
-    expect(messageSettingsSubmissionEligibility(undefined, f.catalog, { profile: null, capability: null }, legacyDefaultSelection())).toEqual({ allowed: true, value: undefined });
+    for (const capability of [null, undefined]) expect(messageSettingsSubmissionEligibility(undefined, f.catalog, { profile: null, capability }, legacyDefaultSelection())).toEqual({ allowed: true, value: undefined });
   });
   it("requires trusted GET, fresh catalog and all three profile identity fields", () => {
     const f = ready();

@@ -180,7 +180,7 @@ export function messageSettingsSubmissionEligibility(
   if (selection.kind === "versioned" && (!context.profile || !sameProfile(selection.entry.profile.reference, context.profile))) {
     return { allowed: false, reason: "请准备并刷新所选完整配置的会话；当前草稿会保留。" };
   }
-  if (selection.kind === "versioned" || context.capability !== null) {
+  if (selection.kind === "versioned" || context.capability != null) {
     const available = messageSettingsAvailability(catalog, context);
     if (!available.allowed) return available;
     if (value === undefined) return { allowed: false, reason: "此会话需要完整消息设置，请明确选择 model、thinking、effort 和 speed 后再发送或排队。" };
