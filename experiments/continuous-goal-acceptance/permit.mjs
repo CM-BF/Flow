@@ -23,13 +23,14 @@ function immutable(value) {
 }
 
 /** Validates a trusted operator's handoff; a JSON field is not proof of human consent. */
-export function validatePermit(input, { identity, phase, confirmation, environmentDigest, now = Date.now() }) {
+export function validatePermit(input, { identity, phase, confirmation, executionAuthorization, environmentDigest, now = Date.now() }) {
   const fields = ['kind', 'authorizedBy', 'approvalId', 'phase', 'sourceDigest', 'worktree', 'model', 'limits', 'approvedAt', 'expiresAt', 'authorizationReference'];
   if (phase === 'children') fields.push('confirmation');
   if (environmentDigest !== undefined) fields.push('environmentDigest');
+  if (executionAuthorization !== undefined) fields.push('executionAuthorization');
   check(exactKeys(input, fields) && Object.hasOwn(PHASE_LIMITS, phase), 'Invalid phase permit.');
   const approved = Date.parse(input.approvedAt), expires = Date.parse(input.expiresAt);
-  check(input.kind === (environmentDigest === undefined ? 'flow.o16.phase-permit.v1' : 'flow.o16.phase-permit.v2')
+  check(input.kind === (executionAuthorization !== undefined ? 'flow.o16.phase-permit.v3' : environmentDigest === undefined ? 'flow.o16.phase-permit.v1' : 'flow.o16.phase-permit.v2')
     && (environmentDigest === undefined || hex(environmentDigest) && input.environmentDigest === environmentDigest) && input.authorizedBy === 'Goal Owner'
     && typeof input.approvalId === 'string' && /^[A-Za-z0-9-]{8,100}$/.test(input.approvalId)
     && input.phase === phase && hex(identity.digest) && input.sourceDigest === identity.digest
@@ -44,6 +45,15 @@ export function validatePermit(input, { identity, phase, confirmation, environme
       && ['goalId', 'proposalId', 'progressionId'].every(key => label(confirmation[key]))
       && hex(confirmation.proposalDigest) && hex(confirmation.confirmationDigest)
       && isDeepStrictEqual(input.confirmation, confirmation), 'Children permit does not bind the actual confirmation.');
+  }
+  if (executionAuthorization !== undefined) {
+    check(phase === 'children' && hex(environmentDigest)
+      && exactKeys(executionAuthorization, ['goalId', 'proposalId', 'proposalDigest', 'confirmationDigest', 'oldProgressionId', 'progressionId', 'authorizationDigest', 'expiresAt'])
+      && ['goalId', 'proposalId', 'proposalDigest', 'confirmationDigest'].every(key => executionAuthorization[key] === confirmation[key])
+      && executionAuthorization.oldProgressionId === confirmation.progressionId && label(executionAuthorization.progressionId)
+      && executionAuthorization.progressionId !== executionAuthorization.oldProgressionId && hex(executionAuthorization.authorizationDigest)
+      && Date.parse(executionAuthorization.expiresAt) >= expires && isDeepStrictEqual(input.executionAuthorization, executionAuthorization),
+    'Replacement permit must bind both the unchanged confirmation and actual new authorization.');
   }
   check(Buffer.byteLength(JSON.stringify(input)) <= 8192, 'Phase permit exceeds its byte bound.');
   const result = immutable(structuredClone(input)); validated.add(result); return result;
@@ -117,7 +127,7 @@ export async function consumeSlot(reservation, slot, assignment, { now = Date.no
 
 /** Only an already validated fresh v2 handoff can open the native environment seam. */
 export function assertNativePermit(permit, environmentDigest) {
-  check(validated.has(permit) && permit.kind === 'flow.o16.phase-permit.v2' && hex(environmentDigest)
+  check(validated.has(permit) && ['flow.o16.phase-permit.v2', 'flow.o16.phase-permit.v3'].includes(permit.kind) && hex(environmentDigest)
     && (permit.phase === 'plan' || permit.phase === 'children' && permit.confirmation)
     && permit.environmentDigest === environmentDigest && Date.parse(permit.expiresAt) > Date.now(),
     'A fresh source/environment-bound native permit is required; JSON login claims are not authorization.');

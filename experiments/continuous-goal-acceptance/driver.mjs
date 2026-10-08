@@ -15,25 +15,26 @@ import { privateCenter, settleDecision } from './resources.mjs';
 import { runPhase, experimentStop } from './phase-host.mjs';
 import { confirmationDraft, validateConfirmation, expectedChildren } from './proposal.mjs';
 import { acceptObservedArtifact } from './decision.mjs';
-import { assertNativeReady, settleStage } from './stage-policy.mjs';
+import { assertNativeReady, settleStage, stageSpec } from './stage-policy.mjs';
 import { nativeEnvironmentPolicy } from './native-environment.mjs';
 import { recordQueryCount } from './query-policy.mjs';
 import { readContinuation, reserveContinuation } from './continuation.mjs';
+import { readProgressionRenewal, reserveProgressionRenewal, replaceExpiredProgression, EXECUTION_MS } from './progression-renewal.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
 function output(run) { assert(/^[a-z0-9][a-z0-9-]{3,63}$/.test(run)); return join(RUNS, run); }
 function session(center, state) { return createGoalSession({ client: center.client, goalId: state.goalId,
   connectionId: state.connectionId, intents: goalJournal(join(center.root, 'intents')) }); }
-async function permitFor(mode, path, source, phase, confirmation) {
+async function permitFor(mode, path, source, phase, confirmation, executionAuthorization) {
   if (mode === 'rehearsal') { assert(!path); return undefined; }
   assert(mode === 'native' && path, 'No real phase without a new explicit permit.');
-  const permit = validatePermit(await readPermitFile(path), { identity: source, phase, confirmation, environmentDigest: nativeEnvironmentPolicy.digest });
+  const permit = validatePermit(await readPermitFile(path), { identity: source, phase, confirmation, executionAuthorization, environmentDigest: nativeEnvironmentPolicy.digest });
   assertNativeReady(mode, permit, nativeEnvironmentPolicy.digest);
   await reservePhase(RESERVATIONS, permit); return permit;
 }
-async function stateOf(center) { return readRecord(join(center.root, 'journey.json')); }
-async function saveState(center, state) { await writeRecord(join(center.root, 'journey.json'), state); }
+async function stateOf(center) { return readRecord(center.stateFile ?? join(center.root, 'journey.json')); }
+async function saveState(center, state) { await writeRecord(center.stateFile ?? join(center.root, 'journey.json'), state); }
 async function register(center, phase, mode, materialFile) {
   const registered = await center.client.registerRunner({ name: `O16 ${mode} ${phase}`, harnesses: ['claude'], capacity: 1 });
   const options = adapterOptions(mode, phase, materialFile), configuration = describeExecutionProfile(options, createClaudeAdapter(options));
@@ -148,16 +149,54 @@ async function confirmAt(center, directory, body, phase) {
   return report;
 }
 
-export async function children(run, permitPath) {
+export async function reauthorize(run, grant) {
+  experimentStop.signal.throwIfAborted();
+  return replaceSavedAuthorization({ source: await sourceIdentity(), run, grant, runs: RUNS, reservations: RESERVATIONS, createCenter: privateCenter });
+}
+/** Only the trusted composition supplies a center; JSON cannot select resource or command implementations. */
+export async function replaceSavedAuthorization({ source, run, grant, runs, reservations, createCenter }) {
+  const directory = join(runs, run);
+  const replacement = await readProgressionRenewal(grant, { runs, source, run, environmentDigest: nativeEnvironmentPolicy.digest });
+  await reserveProgressionRenewal(reservations, replacement, source, runs);
+  const center = await createCenter(directory, source, { stage: 'reauthorize', replacement });
+  const report = { stage: 'reauthorize', outcome: 'unknown', nativeQueryCalls: 0 }; let primaryError;
+  try {
+    const state = await stateOf(center); assert.equal(state.stage, 'reauthorizing-unknown');
+    await center.start(false);
+    const accepted = await replaceExpiredProgression(center.client, replacement,
+      (name, value) => writeRecord(join(directory, `reauthorize-${name}.json`), value, { exclusive: true }));
+    state.executionAuthorizationBinding = accepted.executionAuthorizationBinding;
+    state.expected = { ...state.expected, progressionId: accepted.progression.id, authorizationDigest: accepted.progression.authorizationDigest };
+    state.stage = 'reauthorized'; await saveState(center, state);
+    Object.assign(report, { outcome: 'reauthorized-awaiting-separate-children-permit', mode: state.mode, admissions: 0,
+      confirmationBinding: state.confirmationBinding, executionAuthorizationBinding: state.executionAuthorizationBinding,
+      oldProgression: accepted.oldProgression, progression: accepted.progression, semanticAcceptance: 'not-evaluated' });
+  } catch (error) { primaryError = error; }
+  finally { await settleStage(report, { primaryError,
+    persist: value => writeRecord(join(directory, 'execution-authorization.json'), value),
+    finish: options => center.finish(options), pause: value => center.pause('reauthorize', value) }); }
+  return report;
+}
+
+export async function children(run, permitPath, stage = 'children') {
   experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), directory = output(run), confirmation = await readRecord(join(directory, 'confirmation.json'));
   assert.equal(confirmation.outcome, 'confirmed-awaiting-separate-children-permit');
-  const permit = await permitFor(confirmation.mode, permitPath, source, 'children', confirmation.confirmationBinding);
-  const center = await privateCenter(directory, source, { resume: true, stage: 'children' }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 'unknown' };
+  assert(['children', 'continued-children'].includes(stage));
+  const renewed = stage === 'continued-children' ? await readRecord(join(directory, 'execution-authorization.json')) : undefined;
+  if (renewed) { assert.equal(renewed.outcome, 'reauthorized-awaiting-separate-children-permit');
+    assert.deepEqual(renewed.confirmationBinding, confirmation.confirmationBinding);
+    assert(Date.parse(renewed.executionAuthorizationBinding.expiresAt) >= Date.now() + EXECUTION_MS); }
+  const permit = await permitFor(confirmation.mode, permitPath, source, 'children', confirmation.confirmationBinding, renewed?.executionAuthorizationBinding);
+  if (renewed) assert(Date.parse(permit.expiresAt) >= Date.now() + EXECUTION_MS);
+  const center = await privateCenter(directory, source, { resume: true, stage }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 'unknown' };
   let controller, primaryError;
   try {
-    const state = await stateOf(center); assert.equal(state.stage, 'confirmed');
+    const state = await stateOf(center); assert.equal(state.stage, renewed ? 'reauthorized' : 'confirmed');
     assert.deepEqual(state.confirmationBinding, confirmation.confirmationBinding);
+    if (renewed) { assert.deepEqual(state.executionAuthorizationBinding, renewed.executionAuthorizationBinding);
+      assert(state.expected.progressionId === renewed.executionAuthorizationBinding.progressionId
+        && state.expected.authorizationDigest === renewed.executionAuthorizationBinding.authorizationDigest); }
     state.stage = 'children-started-unknown'; await saveState(center, state);
     await center.start(true); // The existing single production scan owns both dependent admissions.
     controller = session(center, state); await controller.initialize(); await controller.dispose(); controller = undefined;
@@ -184,16 +223,17 @@ export async function children(run, permitPath) {
   finally {
     recordQueryCount(report);
     await settleStage(report, { primaryError, dispose: () => controller?.dispose(),
-      persist: value => writeRecord(join(directory, 'children.json'), value), finish: options => center.finish(options),
-      pause: value => center.pause('children', value) });
+      persist: value => writeRecord(join(directory, stageSpec(stage).file), value), finish: options => center.finish(options),
+      pause: value => center.pause(stage, value) });
   }
   return report;
 }
 
 /** The independent actor names exact observed artifact digests. Mechanical verification cannot supply this decision. */
-export async function decide(run, decision) {
+export async function decide(run, decision, stage = 'decide') {
   experimentStop.signal.throwIfAborted();
-  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true, stage: 'decide' });
+  assert(['decide', 'continued-decide'].includes(stage));
+  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true, stage });
   const report = { stage: 'independent-decision', outcome: 'unknown', nativeQueryCalls: 0 }; let controller, primaryError, destroy = false;
   try {
     const state = await stateOf(center); assert.equal(state.stage, 'awaiting-independent-review');
@@ -211,7 +251,7 @@ export async function decide(run, decision) {
     if (decision.decision === 'accept') for (const artifact of state.artifacts) {
       await acceptObservedArtifact({ controller, artifact, observed: before.nodes.find(node => node.nodeId === artifact.binding.nodeId),
         reason: decision.reason, checkpoint: async value => {
-          report.acceptanceCommands.push(value); await writeRecord(join(directory, 'decision.json'), report);
+          report.acceptanceCommands.push(value); await writeRecord(join(directory, stageSpec(stage).file), report);
         } });
     }
     const current = await controller.observe(state.expected.nodes.map(n => n.nodeId)), history = await controller.history({ limit: 20 });
@@ -224,7 +264,7 @@ export async function decide(run, decision) {
   } catch (error) {
     primaryError = error; report.decisionFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null };
   } finally {
-    await settleDecision(center, report, value => writeRecord(join(directory, 'decision.json'), value), destroy, primaryError,
+    await settleDecision(center, report, value => writeRecord(join(directory, stageSpec(stage).file), value), destroy, primaryError,
       () => controller?.dispose());
   }
   return report;
@@ -246,8 +286,11 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     else if (command === 'plan' && file) result = await plan(run, 'native', file);
     else if (command === 'confirm' && file) result = await confirm(run, await readRecord(file));
     else if (command === 'renew' && file) result = await renew(run, await readRecord(file));
+    else if (command === 'reauthorize' && file) result = await reauthorize(run, await readRecord(file));
     else if (command === 'children' && file) result = await children(run, file);
+    else if (command === 'continued-children' && file) result = await children(run, file, command);
     else if (command === 'decide' && file) result = await decide(run, await readRecord(file));
+    else if (command === 'continued-decide' && file) result = await decide(run, await readRecord(file), command);
     else throw new Error('Unknown finite stage.');
     process.stdout.write(JSON.stringify({ stage: result.stage, outcome: result.outcome, mode: result.mode }) + '\n');
   } catch { process.stderr.write('O16 refused or retained an unknown outcome; inspect fixed stage evidence. No automatic retry.\n'); process.exitCode = 1; }

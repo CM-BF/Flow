@@ -9,8 +9,9 @@ import { createServer } from '../../apps/server/src/index.ts';
 import { FlowClient } from '../../packages/client/src/index.ts';
 import { assertCleanupBudget, measureRun } from './operator-bounds.mjs';
 import { readRecord, writeRecord } from './records.mjs';
-import { stageSpec, pauseReceipt, validatePause, settleStage } from './stage-policy.mjs';
+import { stageSpec, stageRecords, pauseReceipt, validatePause, settleStage } from './stage-policy.mjs';
 import { assertContinuation, continuationState, verifyContinuationDatabase } from './continuation.mjs';
+import { assertProgressionRenewal, progressionRenewalState } from './progression-renewal.mjs';
 
 const ADMIN = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
 const LIMITS = { max: 1, connectionTimeoutMillis: 2000, statement_timeout: 5000, query_timeout: 6000 };
@@ -27,8 +28,9 @@ async function assertDirectory(value) {
 /** No database or server work before the fixed review packet is validated and exclusively consumed. */
 export async function claimPausedResources(output, source, facts, stage) {
   await assertDirectory(facts.directory);
-  const receipt = await readRecord(join(output, 'pause.json'));
-  const state = await readRecord(join(facts.directory.path, 'journey.json'));
+  const records = stageRecords(stage);
+  const receipt = await readRecord(join(output, records.pause));
+  const state = await readRecord(join(facts.directory.path, records.state));
   const report = await readRecord(join(output, stageSpec(receipt.phase).file), 262_144);
   validatePause(receipt, { run: output.split('/').at(-1), phase: stage, sourceDigest: source.digest, state, report, resources: facts });
   await writeRecord(join(output, `pause-consumed-${receipt.phase}.json`), { receipt, continuedAt: new Date().toISOString() }, { exclusive: true });
@@ -41,10 +43,13 @@ export async function allocateRuntimeDirectory(parent) {
   return { path, dev: info.dev, ino: info.ino };
 }
 /** Owns only a random marked DB and its recorded dev/ino temporary directory. No existing service is reconfigured. */
-export async function privateCenter(output, source, { resume = false, stage, temporaryParent = tmpdir(), continuation } = {}) {
+export async function privateCenter(output, source, { resume = false, stage = 'rehearse', temporaryParent = tmpdir(), continuation, replacement } = {}) {
   if (continuation) { assert(!resume && stage === 'renew'); assertContinuation(continuation, source); }
-  const gate = await resourceGate(), file = join(output, 'resources.json');
-  let facts = resume ? await readRecord(file) : { kind: 'flow.o16.private-resources.v1', database: `flow_o16_${randomUUID().replaceAll('-', '')}`,
+  if (replacement) { assert(!resume && !continuation && stage === 'reauthorize'); assertProgressionRenewal(replacement, source); }
+  const records = stageRecords(stage), gate = await resourceGate(), file = join(output, records.resources);
+  let facts = replacement ? { ...structuredClone(replacement.packet.resources), sourceDigest: source.digest,
+    startedAt: new Date().toISOString(), replacementOrigin: replacement.grant.origin, gate }
+    : resume ? await readRecord(file) : { kind: 'flow.o16.private-resources.v1', database: `flow_o16_${randomUUID().replaceAll('-', '')}`,
     marker: randomUUID(), sourceDigest: source.digest, startedAt: new Date().toISOString(), gate, creationRequested: false, created: false, marked: false };
   if (continuation) Object.assign(facts, { database: continuation.packet.resources.database, marker: continuation.packet.resources.marker,
     marked: true, origin: continuation.grant.origin, retention: continuation.grant.retention, created: false });
@@ -86,6 +91,7 @@ export async function privateCenter(output, source, { resume = false, stage, tem
     assert(!app && typeof automaticQueueScan === 'boolean'); await ownership();
     if (continuation) { assertContinuation(continuation, source); assert.equal(automaticQueueScan, false);
       await closedConnections(); await freshContinuation(); }
+    if (replacement) { assertProgressionRenewal(replacement, source); assert.equal(automaticQueueScan, false); await closedConnections(); }
     facts.serverClosed = false;
     await checkpoint('before-center-start');
     app = await createServer({ databaseUrl, ownerToken: credentials.ownerToken, leaseMs: 20000, automaticQueueScan });
@@ -131,9 +137,10 @@ export async function privateCenter(output, source, { resume = false, stage, tem
     finally { try { await pool.end(); } catch (error) { if (!first) throw error; } }
   }
   try {
-    if (resume) {
+    if (resume || replacement) {
       assert(facts.phase === 'paused-owned-resources'); await ownership(); await closedConnections(); facts.adminClosed = false;
       credentials = await readRecord(join((facts.origin?.directory ?? facts.directory).path, 'credentials.json'));
+      if (replacement) await writeRecord(join(facts.directory.path, records.state), progressionRenewalState(replacement, source), { exclusive: true });
     } else if (continuation) {
       await ownership(); await closedConnections(); await freshContinuation();
       credentials = await readRecord(join(facts.origin.directory.path, 'credentials.json')); // Existing synthetic Flow owner token, in memory only.
@@ -152,12 +159,12 @@ export async function privateCenter(output, source, { resume = false, stage, tem
       credentials = { ownerToken: randomUUID() }; await writeRecord(join(path, 'credentials.json'), credentials, { exclusive: true });
       await mkdir(join(path, 'intents'), { mode: 0o700 });
     }
-    return { root: facts.directory.path, start, stopServer, finish, checkpoint,
+    return { root: facts.directory.path, stateFile: join(facts.directory.path, records.state), start, stopServer, finish, checkpoint,
       async pause(phase, report) {
-        const state = await readRecord(join(facts.directory.path, 'journey.json'));
+        const state = await readRecord(join(facts.directory.path, records.state));
         const receipt = pauseReceipt({ run: output.split('/').at(-1), phase, sourceDigest: source.digest, state, report, resources: facts });
         await writeRecord(join(output, `pause-${phase}.json`), receipt, { exclusive: true });
-        await writeRecord(join(output, 'pause.json'), receipt);
+        await writeRecord(join(output, records.pause), receipt);
       },
       measureResources() { return measureRun(output.split('/').at(-1), facts.directory); },
       async beforeWorker() { facts.workersStopped = false; facts.workerProcess = 'allocation-unknown'; await checkpoint('before-worker-spawn'); },

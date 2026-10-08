@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-08T03:11:32.328Z",
+  "priorZeroChildError": "Policy New child session requires positive TERM grace; validation raised before spawn. First reservation retained, exact empty TMP retained until this valid call.",
+  "policy": {
+    "workSeconds": 30,
+    "termGraceSeconds": 0.25,
+    "killGraceSeconds": 1.75,
+    "totalMaximumSeconds": 32,
+    "outputBytes": 65536
+  },
+  "freshFloor": 11616976896,
+  "freshFree": 14275817472
+}

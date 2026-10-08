@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:37:51.499Z / main782f0ad09；TUI收尾源码已接收；O16确认与资源归还限定实审完成，children未运行。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:34:32.708Z / main aac0c8b6b；三项网页组合与单行修正完成限定独审及直接检查，待本次接收。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / HEAD | main312842ab5；已审九路径保持原source字节，限定结果不替代完整验收。 |
 | 工作树dirty状态 | 仅后续本任务metadata；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED: TUI R3原件忠实性限定独审；实际旅程仍1选0过，功能完成、groups未知保留。O16续接7源/15不同局部检查已独审，原两次失败保留。 |
-| 已集成main状态 / HEAD | main/origin312842ab5已接收O16九条已审路径及TUI R3限定结果；未重跑产品。 |
+| 检查状态 | PASSED: 组合独审0阻断；Connection直接入口7/7，Web类型检查通过。原类型失败和报告解释失败保留。 |
+| 已集成main状态 / HEAD | main/origin aac0c8b6b；当前Web组合748129abd及123c精确修正待本次受控接收；个人部署未改变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已接收终端收尾修复；目标的两步计划已确认，后续执行尚未开始。 |
-| 下一可用交付 | 接收终端完整接续旅程，以及目标子任务形成的固定结果与独立接受证据。 |
+| 当前产出 | 工作区布局、连接提示与设置浮层已组成同一网页版本，并通过必要组合检查。 |
+| 下一可用交付 | 将这三项已审网页能力接入主线，为新版聊天设置提供稳定基线；原生目标失败继续零模型定位。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -600,3 +600,11 @@ TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收
 2026-10-08T02:37:51.499Z：已审TUI局部生命周期源经782f0ad09进入main；[O16实际确认限定审查](../../docs/evidence/i02/o16-renew-actual-intake.json)核25绑定及2继承来源、真实中心确认与02:31:17.205Z资源归还。children选择未在最晚启动前被Lead接续，0运行/0新query，原确认截止不改；这是调度衔接过期，未归因为机器或模型失败。完整O16与TUI验收仍开放。
 
 2026-10-08T02:38:55.783Z：[TUI R4固定入口限定审查](../../docs/evidence/i02/tui01f-r4-preparation-review.json)完成，13绑定30271B与2继承原件核对；真实入口前置1/1、384ms，末端启动被截断、0PG/Chrome/PTY/provider。完整旅程需要新的资源选择，未把局部绿替代实际跨端验收。
+
+2026-10-08T02:54:46Z：[TUI R4限定实际结果](../../docs/evidence/i02/tui01f-r4-result-intake.json)核22原件/固定Git一致；真实PTY与Web同会话旅程1选1过、20.223s，02:51:19.768Z精确FULL_RETURN。19alias独立fresh核验未执行，原resolverCount0与非原子样本保留，不以PASS追认全部准入；仅接收观察行为与归还，无当前部署/native或完整TUI大task完成声明。旧失败与KEEP不改，0重跑。
+
+2026-10-08T03:00:37Z：O16原过期确认的显式新阶段实现已独立批准，十源对214a父基线/main精确前像相同，最终8b31只补真实文件consumer例。详见[唯一审查](../../docs/evidence/i02/o16-progression-renewal-review.json)。原raw/source保持canonical；只收测试直接依赖的source-delta，不复制整套输入。新阶段实际授权、PG替换、两child与最终语义接受仍未发生，四次历史调用/两次未消费额度不改。
+
+2026-10-08T03:17:31.720Z：Web29已审源组合固定748129abd，独立APPROVED_SCOPED_INTEGRATION/0P1P2；必要组合noEmit实际6162ms/exit2，只报Connection测试的TS5097。原owner修正后仅定向复测；旧FAIL、非空自有TMP KEEP、0PG/Chrome/provider事实保留。来源见[组合审查](../../docs/evidence/i02/web-arc-connection-picker-combination/source-review.json)。main仍aac，个人部署未改变。
+
+2026-10-08T03:34:32.708Z：三项网页组合完成限定接收审查；123c仅移除测试导入后缀，真实Node24+tsx 7/7、Web类型检查6431ms通过，两个owned组/双EOF均归还。新检查的报告格式解释错误已从原spec输出核正，无测试重跑、原件不改。见[最终接收审查](../../docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json)。本次0PG/Chrome/provider/个人操作；尚未部署。

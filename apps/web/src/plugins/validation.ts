@@ -10,9 +10,10 @@ export const slots: Readonly<Record<SlotId, readonly ContextKind[]>> = {
   "activityBar.primary": ["global"],
   "activityBar.bottom": ["global"],
   "sidebar.header": ["global"],
-  "sidebar.item.actions": ["task"],
+  "sidebar.item.actions": ["task", "conversation"],
   "sidebar.footer": ["global"],
   "chat.header": ["global", "task", "composer"],
+  "chat.tab.actions": ["pane"],
   "chat.task.actions": ["task"],
   "chat.message.actions": ["message"],
   "chat.message.footer": ["message"],
@@ -42,6 +43,8 @@ const capabilities: readonly Capability[] = [
   "clipboard.write",
 ];
 const contextKinds: readonly ContextKind[] = [
+  "conversation",
+  "pane",
   "global",
   "task",
   "message",
@@ -95,6 +98,8 @@ export function validateContext(value: ResourceContext): ResourceContext {
     value && contextKinds.includes(value.kind),
     "Invalid invocation context",
   );
+  if (value.kind === "conversation") assert(text(value.conversationId), "Conversation context requires its actual ID");
+  if (value.kind === "pane") assert(text(value.workspaceId) && text(value.paneId) && text(value.viewKey), "Pane context requires workspace, pane and stable view IDs");
   if (
     value.kind === "task" ||
     value.kind === "message" ||
@@ -125,6 +130,8 @@ export function validateContext(value: ResourceContext): ResourceContext {
       "Invalid workspace context",
     );
   const keys = {
+    conversation: ["kind", "conversationId"],
+    pane: ["kind", "workspaceId", "paneId", "viewKey"],
     global: ["kind"],
     task: ["kind", "taskId"],
     message: ["kind", "taskId", "messageId", "role"],

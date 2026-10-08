@@ -1,0 +1,27 @@
+.flow-arc-workspace-tabs { display:flex; align-items:center; gap:.5rem; border-bottom:1px solid var(--border); padding:.4rem .75rem; min-width:0; }
+.flow-arc-workspace-tabs [role=tablist] { display:flex; gap:.25rem; min-width:0; overflow:auto; }
+.flow-arc-workspace-tabs button, .flow-pane-order button { min-width:24px; min-height:24px; border-radius:.4rem; padding:.3rem .55rem; font-size:.8rem; white-space:nowrap; }
+.flow-arc-workspace-tabs [aria-selected=true] { background:var(--muted); color:var(--foreground); }
+.flow-arc-workspace-tabs button:focus-visible, .flow-pane-order button:focus-visible { outline:2px solid var(--ring); outline-offset:2px; }
+.flow-arc-workspace-tabs button:disabled, .flow-pane-order button:disabled { opacity:.4; cursor:not-allowed; }
+.flow-chat-groups.flow-arc-panes { display:grid; grid-template-rows:auto minmax(0,1fr); min-width:0; min-height:0; flex:1; gap:1px; background:var(--border); }
+.flow-arc-panes > [hidden] { display:none; }
+.flow-pane-header { min-width:0; background:var(--background); border-bottom:2px solid transparent; }
+.flow-pane-header.focused { border-bottom-color:var(--ring); }
+.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; padding-block-end:calc(3px + 1rem); }
+/* Keep a readable title and every control; PaneTabs reveals the whole tab on focus. */
+.flow-pane-header .flow-tab { flex:0 0 auto; min-width:16rem; max-width:20rem; }
+.flow-pane-header .flow-tab > [role=tab] { min-width:8rem; }
+.flow-pane-header .flow-tab [data-plugin-slot="chat.tab.actions"] { display:flex; flex:none; align-items:center; white-space:nowrap; }
+.flow-pane-header .flow-tab [data-plugin-slot="chat.tab.actions"] button { min-height:24px; white-space:nowrap; }
+.flow-pane-order { display:flex; justify-content:flex-end; }
+.flow-arc-panes > .flow-tab-body { min-width:0; min-height:0; background:var(--background); }
+.flow-pane-ratios { display:flex; gap:1rem; padding:.2rem .75rem; font-size:.7rem; border-bottom:1px solid var(--border); }
+.flow-pane-ratios label { display:flex; flex:1; align-items:center; gap:.4rem; }
+.flow-pane-ratios input { min-width:0; width:100%; accent-color:var(--primary); }
+@media (max-width: 760px) {
+  .flow-chat-groups.flow-arc-panes { grid-template-columns:minmax(0,1fr) !important; grid-template-rows:none; grid-auto-rows:auto minmax(24rem,1fr); overflow:auto; }
+  .flow-arc-panes > :not([hidden]) { grid-column:1 !important; grid-row:var(--pane-stack-row) !important; }
+  .flow-pane-ratios { flex-wrap:wrap; }
+  .flow-pane-ratios label { flex-basis:100%; }
+}

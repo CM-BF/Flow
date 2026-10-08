@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-08T03:20:18.858Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_REAUTHORIZE_RESULT_FIDELITY",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "delivery": "e05dd1f5e997a643b8c5b6a8cc542517e33f4639",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/actual-result-manifest.json",
+    "bytes": 7302,
+    "sha256": "b5c16fe5f67b33b6b54eec4f0ff2bae9ac230c57db8937fa867a01c882bdbf21",
+    "matched": 28,
+    "logicalBytes": 71043,
+    "inheritedMatched": 2
+  },
+  "actual": "Reauthorize0query exit0; oldconfirmation and4historyrecords unchanged; newprogression57188edb-dd7d-46fd-9129-87b29265d6a9/auth240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f; admissions0; RETURN03:12:02.961Z3PID/3PGIDESRCH,dualEOF,targetConnections empty.",
+  "limits": "DB/twoprivateKEEP; remoteprobe connection separately zero notobserved/all escaped descendants notproven. Notchildren orsemantic acceptance.",
+  "childrenReadyReview": {
+    "decision": "APPROVED_LIMITED_CHILDREN_READY_TEMPLATE",
+    "delivery": "9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-ready.json",
+    "bytes": 6494,
+    "sha256": "361a17cbe8cfedfa527b95853cd3410ba691dfe458a1af0d882953475419e0c7",
+    "actualPinsMatched": 6,
+    "source": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "environment": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "limit": "Fixedv3 template/actualargv reviewed; nulltimes notactualadmission. Leadactualpermit/D01/fresh150scoverage separately required."
+  },
+  "newTests": 0,
+  "PG": 0,
+  "providerQueries": 0,
+  "privateBodyReads": 0
+}

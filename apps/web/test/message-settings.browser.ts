@@ -12,12 +12,13 @@ import { CLAUDE_TURN_SETTINGS_PROTOCOL, EXECUTION_PROFILE_HEADER, claudeMessageS
 const root = fileURLToPath(new URL("..", import.meta.url));
 const id = (value: number) => `10000000-0000-4000-8000-${String(value).padStart(12, "0")}`;
 const model = "model-" + "x".repeat(174);
-function entry(number: number) {
+const normalModelId = "claude-sonnet";
+function entry(number: number, normalModel = false) {
   return claudeMessageSettingsCatalogEntrySchema.parse({
     profile: {
       reference: { id: id(number), runnerId: id(101), configDigest: "a".repeat(64) },
       configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "creation-base", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 }, turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: [
-        { model: number === 1 ? model : "another-profile-model", thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" },
+        { model: number === 1 ? normalModel ? normalModelId : model : "another-profile-model", thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" },
         { model: "fast-model", thinking: "disabled", effort: { kind: "not-requested" }, speed: "fast" },
       ] } },
       source: "runner-configured", availability: "not-probed", model: { value: "creation-base", resolvedModel: null, displayName: "creation-base", description: "Fixture intent only", providerCapabilities: "unknown" },
@@ -29,9 +30,9 @@ function entry(number: number) {
 /** Own HTTP fixture, not a center. The caller must close this and its separately owned browser in finally. */
 export async function startMessageSettingsFixture(options: { cacheDir: string; aliases: AliasOptions }) {
   const requests: string[] = [];
-  let nextStatus = 200, empty = false, removeStandard = false, large = false;
+  let nextStatus = 200, empty = false, removeStandard = false, large = false, normalModel = false;
   const server = await createServer({
-    root, configFile: false, cacheDir: options.cacheDir, resolve: { alias: options.aliases }, logLevel: "error", server: { host: "127.0.0.1", port: 0 },
+    root, configFile: false, envDir: false, cacheDir: options.cacheDir, resolve: { alias: options.aliases }, logLevel: "error", server: { host: "127.0.0.1", port: 0 },
     optimizeDeps: { entries: ["test/message-settings.fixture.tsx"] },
     plugins: [react(), tailwindcss(), { name: "message-settings-http-fixture", configureServer(vite) {
       vite.middlewares.use((request, response, next) => {
@@ -51,7 +52,7 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
           response.statusCode = 400; response.end('Fixture protocol mismatch'); return;
         }
         response.statusCode = status; response.setHeader("content-type", "application/json");
-        const first = entry(1);
+        const first = entry(1, normalModel);
         if (removeStandard) first.profile.configuration.turnSettings!.choices.splice(0, 1);
         if (large) first.profile.configuration.turnSettings!.choices.push(...Array.from({ length: 30 }, (_, index) => ({ model: `declared-model-${index}`, thinking: "disabled" as const, effort: { kind: "not-requested" as const }, speed: "standard" as const })));
         const after = url.searchParams.has("after");
@@ -65,7 +66,7 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
   try {
     await server.listen();
     const address = server.httpServer?.address(); assert(address && typeof address !== "string");
-    return { url: `http://127.0.0.1:${address.port}`, requests, failNext: () => { nextStatus = 401; }, showEmpty: (value: boolean) => { empty = value; }, removeStandard: (value: boolean) => { removeStandard = value; }, showLarge: () => { large = true; }, close: () => server.close() };
+    return { url: `http://127.0.0.1:${address.port}`, requests, failNext: () => { nextStatus = 401; }, showEmpty: (value: boolean) => { empty = value; }, removeStandard: (value: boolean) => { removeStandard = value; }, showLarge: () => { large = true; }, showNormalModel: (value: boolean) => { normalModel = value; }, close: () => server.close() };
   } catch (error) { await server.close(); throw error; }
 }
 
@@ -145,12 +146,95 @@ async function typeNativeFilters(page: Page, dialog: Locator, report: NativeFilt
       await expect(page.getByTestId("left-current")).toHaveText("omitted"); await expect(page.getByTestId("left-commits")).toHaveText("0");
       record.complete = true;
       await page.keyboard.press("Tab");
+      if (definition.label === "模型") {
+        // The disclosure is a real keyboard stop between the model and the extra native facets.
+        await expect(dialog.locator(".ep-extra-filters > summary")).toBeFocused();
+        await page.keyboard.press("Tab");
+      }
     }
   } catch (error) { report.failure = String(error).slice(0, 2048); throw error; }
   finally {
     try { await session.detach(); report.sessionDetached = true; }
     catch (error) { report.detachFailure = String(error).slice(0, 1024); if (!report.failure) throw error; }
   }
+}
+
+/** Same real component/HTTP catalog; presentation checks do not replace the six behavior groups. */
+export async function checkMessageSettingsOverlays(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string) {
+  const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+  const left = page.getByRole("region", { name: "Pane left", exact: true });
+  const trigger = left.getByRole("button", { name: /^消息设置：/ });
+  const observations: { sample: string; theme: string; geometry: unknown; screenshot: string }[] = [];
+  const checks: string[] = [];
+  const errors: string[] = [];
+  const onError = (error: Error) => errors.push(error.message);
+  page.on("pageerror", onError);
+  page.setDefaultTimeout(5000);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  try {
+    assert.equal(fixture.requests.length, 0, "Representative overlay journey requires a fresh HTTP fixture");
+    await page.goto(fixture.url);
+    for (const sample of ["normal", "long"] as const) {
+      fixture.showNormalModel(sample === "normal");
+      const name = sample === "normal" ? normalModelId : model;
+      for (const theme of ["Light", "Dark"] as const) {
+        await page.setViewportSize({ width: 390, height: 844 });
+        await page.getByRole("button", { name: theme, exact: true }).click();
+        await trigger.click(); await expect(dialog).toBeVisible();
+        await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+        const choice = dialog.getByRole("radio", { name: new RegExp(`^${name}`) });
+        await expect(choice).toBeEnabled();
+        await expect(dialog.getByRole("combobox", { name: "思考", exact: true })).toBeHidden();
+        await expect(dialog.locator(".ep-identities")).not.toHaveAttribute("open", "");
+        const before = await page.getByTestId("left-current").textContent();
+        const commits = await page.getByTestId("left-commits").textContent();
+        await choice.check(); await expect(page.getByTestId("left-current")).toHaveText(before!);
+        await expect(page.getByTestId("left-commits")).toHaveText(commits!);
+        await expect(dialog.getByRole("region", { name: "待应用选择", exact: true })).toContainText(name);
+        if (sample === "long") {
+          const disclosure = dialog.locator(".ep-option details > summary");
+          await disclosure.focus(); await page.keyboard.press("Enter");
+          await expect(dialog.locator(".ep-option details[open] > span")).toHaveText(model);
+          await page.keyboard.press("Enter");
+        }
+        const geometry = await dialog.evaluate(element => {
+          const body = element.querySelector<HTMLElement>(".ep-settings-body");
+          const footer = element.querySelector<HTMLElement>(".ep-settings-footer");
+          if (!body || !footer) throw Error("Missing real scrolling body/footer");
+          const rect = element.getBoundingClientRect(), actions = footer.getBoundingClientRect(), css = getComputedStyle(element), bodyCss = getComputedStyle(body);
+          return { left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom, client: element.clientWidth, scroll: element.scrollWidth,
+            footerTop: actions.top, footerBottom: actions.bottom, radius: parseFloat(css.borderTopLeftRadius),
+            bodyPaddingEnd: parseFloat(bodyCss.paddingInlineEnd), bodyClient: body.clientWidth, bodyScroll: body.scrollWidth,
+            scrollbarWidth: body.offsetWidth - body.clientWidth, gutter: bodyCss.scrollbarGutter, reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches };
+        });
+        assert(geometry.left >= 0 && geometry.right <= 390 && geometry.top >= 0 && geometry.bottom <= 844);
+        assert(geometry.scroll <= geometry.client + 1 && geometry.bodyScroll <= geometry.bodyClient + 1);
+        assert(geometry.radius >= 12 && geometry.bodyPaddingEnd >= 10 && geometry.reducedMotion);
+        assert(geometry.footerTop >= geometry.top && geometry.footerBottom <= geometry.bottom);
+        await expect(dialog.getByRole("button", { name: "应用", exact: true })).toBeInViewport({ ratio: 1 });
+        await expect(dialog.getByRole("button", { name: "取消", exact: true })).toBeInViewport({ ratio: 1 });
+        // The observed scrollbar mode is recorded; a zero-width overlay is not claimed as classic coverage.
+        const screenshot = `overlay-picker-${sample}-${theme.toLowerCase()}-390.png`;
+        await page.screenshot({ path: join(evidence, screenshot) }); observations.push({ sample, theme, geometry, screenshot });
+        await dialog.locator(".ep-settings-body").evaluate(element => { element.scrollTop = element.scrollHeight; });
+        await expect(dialog.getByRole("button", { name: "应用", exact: true })).toBeInViewport({ ratio: 1 });
+        await expect(dialog.getByRole("button", { name: "取消", exact: true })).toBeInViewport({ ratio: 1 });
+        await page.keyboard.press("Escape"); await expect(dialog).toHaveCount(0); await expect(trigger).toBeFocused();
+        await expect(page.getByTestId("left-current")).toHaveText(before!); await expect(page.getByTestId("left-commits")).toHaveText(commits!);
+      }
+    }
+    checks.push("Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus");
+    fixture.showNormalModel(true); await page.setViewportSize({ width: 1280, height: 900 });
+    await page.getByRole("button", { name: "Light", exact: true }).click(); await trigger.click();
+    await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+    const normal = dialog.getByRole("radio", { name: new RegExp(`^${normalModelId}`) }); await expect(normal).toBeEnabled();
+    await normal.check(); await page.screenshot({ path: join(evidence, "overlay-picker-normal-light-desktop.png") });
+    await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).toHaveCount(0);
+    await expect(page.getByTestId("left-commits")).toHaveText("1"); await expect(trigger).toBeFocused();
+    checks.push("Desktop normal catalog keeps exact tuple and one explicit Apply");
+    assert.deepEqual(errors, []);
+    return { checks, observations, scrollbarCoverage: "Observed modes only; alternate OS mode remains NOT_RUN unless a separate admitted run records it" };
+  } finally { page.off("pageerror", onError); }
 }
 
 /** No launcher/budget reset here. Future admitted runner invokes this once using one owned Page. */
@@ -176,6 +260,9 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
     await expect(page.getByTestId("catalog-state")).toContainText("current; 1");
     // Printable native input changes only local filters. Tab/radio Arrow/Space/Apply Enter remain real keys.
+    await expect(dialog.getByRole("combobox", { name: "思考", exact: true })).toBeHidden();
+    await dialog.locator(".ep-extra-filters > summary").focus(); await page.keyboard.press("Enter");
+    await expect(dialog.getByRole("combobox", { name: "思考", exact: true })).toBeVisible();
     await dialog.getByRole("combobox", { name: "模型", exact: true }).focus();
     assert.equal(new URL(page.url()).origin, new URL(fixture.url).origin); assert.equal(new URL(page.url()).pathname, "/");
     await typeNativeFilters(page, dialog, nativeFilters);
@@ -185,20 +272,22 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await expect(page.getByTestId("left-current")).toHaveText("omitted"); await expect(page.getByTestId("left-commits")).toHaveText("0");
     const combinations = dialog.getByRole("group", { name: "完整消息设置组合", exact: true });
     await expect(combinations).toHaveCount(1); await expect(combinations).not.toContainText("Adapter"); await expect(combinations).not.toContainText("Runner");
-    await page.keyboard.press("Tab"); await expect(apply).toBeFocused(); await page.keyboard.press("Enter");
+    // Tab through the actual disclosure/footer order; do not focus Apply programmatically.
+    for (let stops = 0; stops < 12 && !(await apply.evaluate(element => element === document.activeElement)); stops++) await page.keyboard.press("Tab");
+    await expect(apply).toBeFocused(); await page.keyboard.press("Enter");
     await expect(dialog).toHaveCount(0); await expect(page.getByTestId("left-commits")).toHaveText("1");
     await expect(left.getByRole("button", { name: /^消息设置：/ })).toBeFocused();
     await expect(left.getByRole("button", { name: /^消息设置：/ })).toHaveAccessibleName(`消息设置：${model} · 自适应思考 · 力度高 · 标准速度`);
-    await expect(right.getByRole("button", { name: /^消息设置：/ })).toContainText("不附加");
+    await expect(right.getByRole("button", { name: /^消息设置：/ })).toContainText("不单独设置");
     await left.getByRole("button", { name: "冻结 A 样本", exact: true }).click();
     const sent = await page.getByTestId("left-sent").textContent(); assert(sent?.includes(model));
     await open(); await dialog.getByRole("radio", { name: /^fast-model/ }).check();
     await expect(page.getByTestId("left-current")).toHaveText(sent!); await expect(dialog.getByRole("region", { name: "待应用选择", exact: true })).toContainText("fast-model");
     await applyAndClose(); await left.getByRole("button", { name: "冻结 B 样本", exact: true }).click();
     const queued = await page.getByTestId("left-queued").textContent(); assert(queued?.includes('"kind":"not-requested"'));
-    await open(); await dialog.getByRole("radio", { name: /^不附加消息设置/ }).check(); await dialog.getByRole("button", { name: "取消", exact: true }).click();
+    await open(); await dialog.getByRole("radio", { name: /^不单独设置/ }).check(); await dialog.getByRole("button", { name: "取消", exact: true }).click();
     await expect(page.getByTestId("left-current")).toHaveText(queued!); await expect(page.getByTestId("left-commits")).toHaveText("2");
-    await open(); await dialog.getByRole("radio", { name: /^不附加消息设置/ }).check(); await applyAndClose();
+    await open(); await dialog.getByRole("radio", { name: /^不单独设置/ }).check(); await applyAndClose();
     await expect(page.getByTestId("left-current")).toHaveText("omitted"); await expect(page.getByTestId("left-commits")).toHaveText("3");
     await expect(page.getByTestId("left-sent")).toHaveText(sent!); await expect(page.getByTestId("left-queued")).toHaveText(queued!);
     await expect(left.getByLabel("Draft left", { exact: true })).toHaveValue("新草稿仍归我");
@@ -206,6 +295,7 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
 
     await open(); await standard.check(); await applyAndClose();
     await open(); await dialog.getByRole("combobox", { name: "模型", exact: true }).selectOption(model);
+    await dialog.locator(".ep-extra-filters > summary").click();
     await dialog.getByRole("combobox", { name: "速度", exact: true }).selectOption("fast");
     await expect(dialog).toContainText("没有匹配的已声明组合"); await expect(apply).toBeDisabled();
     await expect(page.getByTestId("left-current")).toHaveText(sent!);
@@ -230,7 +320,7 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await apply.click(); await expect(dialog).toContainText("宿主草稿已更新，未应用旧选择");
     await expect(page.getByTestId("left-current")).toHaveText(sent!); await expect(page.getByTestId("left-commits")).toHaveText("4");
     await close(); await left.getByRole("button", { name: "同步宿主 props", exact: true }).click();
-    await open(); await dialog.getByRole("radio", { name: /^不附加消息设置/ }).check(); await details();
+    await open(); await dialog.getByRole("radio", { name: /^不单独设置/ }).check(); await details();
     await dialog.getByRole("button", { name: "切换视图身份", exact: true }).click(); await expect(apply).toBeDisabled(); await close();
     await open(); await details(); await dialog.getByRole("button", { name: "卸载设置控件", exact: true }).click(); await expect(dialog).toHaveCount(0);
     await expect(page.getByTestId("left-current")).toHaveText(sent!); await left.getByRole("button", { name: "恢复编辑控件", exact: true }).click();

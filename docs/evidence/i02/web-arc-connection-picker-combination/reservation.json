@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-08T03:11:05.458Z",
+  "source": "748129abd1808cdf6de0ed69b984638ff54b320c",
+  "purpose": "One necessary Web combination noEmit only; original component/browser checks reused",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/bin/tsc",
+    "-p",
+    "apps/web/tsconfig.json",
+    "--noEmit",
+    "--incremental",
+    "false",
+    "--pretty",
+    "false"
+  ],
+  "workSeconds": 30,
+  "cleanupSeconds": 2,
+  "outputLimit": 65536,
+  "scratchCapBytes": 8388608,
+  "floor": 11616976896,
+  "free": 14279004160,
+  "scratch": {
+    "path": "/private/tmp/flow-i02-web-combination-it4k_k8e",
+    "dev": 16777234,
+    "ino": 124777153
+  },
+  "PG": 0,
+  "provider": 0,
+  "Chrome": 0,
+  "personalIO": 0,
+  "initialPreflight": "Prior same segment stopped before any child/TMP/reservation because renamed ledger floor key absent; no runtime failure. Current futureCompleteFreshFloorBytes used explicitly.",
+  "independentOfO16": "Own source/TMP/process and no shared endpoint; ordinary one local segment"
+}
