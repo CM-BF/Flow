@@ -1,0 +1,23 @@
+{
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "reviewedAt": "2026-10-08T01:48:03.000Z",
+  "source": "d3c12fa6cd95c8e8b2c60ed118664bc324794bc0",
+  "packet": "1a2397ea9357e06ef805ac9a20171c1a1a062882",
+  "verdict": "SOURCE_AND_DECLARED_LOCAL_PREPARATION_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "scope": "six final source leaves and all four local check results; no actual native/runtime approval",
+  "facts": "25fixedbindings186232B; firsttypes2/19pure/clang0; raw873B/supervision2017ms; groups EOF/absent, owncleanup facts supported",
+  "limits": "No helper/libproc/native run. Driver runtime behavior untested. Actual caller/dependency admission/descendant and filesystem closure not ready. 70s/64MiB candidate NOT_OPEN. Reviewer0engineering/import/PG/TMP/KEEP/write.",
+  "fourthResultReview": {
+    "reviewedAt": "2026-10-08T01:49:02.000Z",
+    "packet": "96faf052dd72da4f9179d5c65c761096a2a36b07",
+    "verdict": "FINAL_TYPES_RESULT_FIDELITY_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "bindings": 29,
+    "bytes": 211960,
+    "facts": "all final source equal d3; types-fixed PID21909 exit0/812ms/raw0/closed EOF/ownTMPremoved; four total2829ms/raw873B; old failure retained",
+    "limitations": "types is not driver/helper/native behavior; actual NOT_READY/NOT_OPEN"
+  }
+}
