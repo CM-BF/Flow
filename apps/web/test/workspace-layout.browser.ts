@@ -237,8 +237,9 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await settings("arc-A"); await input(4).fill("Frozen A through actual material preparation"); await upload("arc-one.txt"); await upload("arc-two.txt");
       try { await expect(pane(4).getByRole("button", { name: "Send message", exact: true })).toBeEnabled(); }
       catch (error) {
-        result.observations.materialReadiness = { paneText: (await pane(4).innerText()).slice(-4096),
-          lastTaskStatus: fixture!.fixture.chats.get("chat-4")!.snapshot.lastTurn?.task.status };
+        try { result.observations.materialReadiness = { paneText: (await pane(4).innerText({ timeout: 1000 })).slice(-4096),
+          lastTaskStatus: fixture!.fixture.chats.get("chat-4")!.snapshot.lastTurn?.task.status }; }
+        catch (diagnostic) { result.observations.materialReadiness = { observationError: String(diagnostic).slice(0, 256) }; }
         throw error;
       }
       await probe("arm"); await input(4).press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
