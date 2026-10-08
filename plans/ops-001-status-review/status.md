@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T03:02:48Z / main8723763ff；终端固定真实双端已接收，目标新阶段已获GO明确授权但尚未实际启动。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:40:18.147Z / main1b1428f38；三项网页组合已接收，原生子任务首段失败已归还并进入零模型计量修复。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin eb06d5323接收TUI R4限定结果，8723763ff接收O16新阶段实现；个人e15/Web779为此前部署事实，本段未操作个人服务。 |
+| 已集成main状态 / HEAD | main/origindc694bdc6已含容量策略；1b1428f38包含Arc/Connection/Picker29路径；TUI R4及O16新阶段历史限定批准保持。个人e15/Web779是此前部署，本段没有个人操作。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 真实终端旅程结果与目标续接实现已及时接收；运行已归还，准备工作不再占用实际验证窗口。 |
-| 下一可用交付 | 按真正就绪顺序衔接目标执行与已审网页接收，并将聊天设置后台准备明确交给原负责人。 |
+| 当前产出 | 三项已审网页成果已接收，两个隔离局部段完成并归还；原生目标失败原件与后续资源归还分别保留。 |
+| 下一可用交付 | 及时接收容量策略和资源计量的定向修复，推进聊天设置后台的固定组合与真实启动验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -645,3 +645,7 @@ S01单臂诊断本轮在OPEN前因全组隔离未齐撤选，0运行。未来尚
 2026-10-08T02:39:53.590Z：[O16实际确认限定审查](../../../m2-integration/docs/evidence/i02/o16-renew-actual-intake.json)已main，START02:30:18.714Z/RETURN02:31:17.205Z，0新query、累计4；两节点0admission，DB及两个私有目录KEEP。children于02:33:27.236Z选中，latest02:34:17Z，Lead在上下文恢复后02:35:19Z读到，故未启动/未消耗两次额度；原确认及permit截止02:36:47Z保持，需明确新阶段合同，不能复活旧pause。不是已测资源不足，选择已撤、不冻结其他ready项。[TUI R4入口审查](../../../m2-integration/docs/evidence/i02/tui01f-r4-preparation-review.json)核13绑定/2继承与1/1直接入口检查，384ms/238B，0PG/Chrome/PTY/provider；复用原caller与已审收尾helper，不复制741源或重跑已绿检查，实际完整旅程尚未运行。
 
 2026-10-08T03:02:48Z：TUI01F R4实际1/1、02:51:19.768Z完整RETURN已限定独审/main eb06，19别名独立launch前核验遗漏未追认通过，旧FAIL/KEEP与非原子计量限制保留。O16新阶段十源及12不同局部检查已独审/main8723763ff；GO新阶段合同已获批，实际T只在operator/固定输入/D01窗口同时READY后签发，旧过期确认和pause永不复活。历史SDK4，原两次未消费children额度保持；此条非实际query或阶段成功。SVC09A原native_center_owner接续聊天设置后台候选，assignment作既有差量只读核对；不把779上线冒完整settings激活。
+
+2026-10-08T03:40:18.147Z：本次网页接收及O16失败/归还事实引用[FLOW当前事件](../flow-001-architecture/status.md)与其两份原件，不再复制完整技术交接。实际SDK入口累计5、完成及费用未知、无新调用授权；资源RETURN不把失败改为PASS。
+
+容量03:35:07.895Z、计量03:36:55.394Z均归还，直接复用OPS14与固定meter。本队local按归还交接，源码准备并行。新SVC09源树物化约7.94MB逻辑源码、0安装/依赖复制、112份原Git配置hash保持；正式f9221dbdc=恢复版本880060+10已审叶，容量及组合独审0阻断，尚未build/cold/个人操作。容量已main dc694bdc6；计量限定独审已过，待接收。[固定组合](../../../m2-integration/docs/evidence/i02/svc09-settings-source-composition/review.json)。历史首次开工UNKNOWN保持；这些是当前工作段事实，非整体Done。

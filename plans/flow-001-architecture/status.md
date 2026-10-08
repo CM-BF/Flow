@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T03:02:48Z / main8723763ff；终端固定真实双端已接收，目标新阶段已获GO明确授权但尚未实际启动。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:40:18.147Z / main1b1428f38；三项网页组合已接收，原生子任务首段失败已归还并进入零模型计量修复。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin eb06d5323接收TUI R4限定结果，8723763ff接收O16新阶段实现；个人e15/Web779为此前部署事实，本段未操作个人服务。 |
+| 已集成main状态 / HEAD | main/origindc694bdc6已含容量策略；1b1428f38包含Arc/Connection/Picker29路径；TUI R4及O16新阶段历史限定批准保持。个人e15/Web779是此前部署，本段没有个人操作。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 终端与网页的固定同会话接续旅程已通过；真实目标计划已保存，新阶段将沿原材料与输入继续。 |
-| 下一可用交付 | 在有效授权与实际可用窗口内完成两项文本结果并独立接受；并行准备聊天设置所需的后台版本和接收已审网页成果。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 工作区布局、连接提示与设置浮层已合入；终端与网页的固定接续旅程已通过，真实目标规划已保存。 |
+| 下一可用交付 | 验证并发布聊天设置所需的固定后台组合；原生目标子任务先修复资源观察，再决定具体续接条件。 |
+| 当前阻塞 | ACTIVE: 真实目标首个子任务进入模型后因资源观察未确认而停止，结果与费用未知；后续执行暂停，负责人先完成零模型修复。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -319,3 +319,5 @@ TUI R3实际02:08:17.814Z开始、02:08:36.845Z终止、02:11:39.152Z运行归�
 2026-10-08T02:39:53.590Z：[O16实际确认限定审查](../../../m2-integration/docs/evidence/i02/o16-renew-actual-intake.json)已main，START02:30:18.714Z/RETURN02:31:17.205Z，0新query、累计4；两节点0admission，DB及两个私有目录KEEP。children于02:33:27.236Z选中，latest02:34:17Z，Lead在上下文恢复后02:35:19Z读到，故未启动/未消耗两次额度；原确认及permit截止02:36:47Z保持，需明确新阶段合同，不能复活旧pause。不是已测资源不足，选择已撤、不冻结其他ready项。[TUI R4入口审查](../../../m2-integration/docs/evidence/i02/tui01f-r4-preparation-review.json)核13绑定/2继承与1/1直接入口检查，384ms/238B，0PG/Chrome/PTY/provider；复用原caller与已审收尾helper，不复制741源或重跑已绿检查，实际完整旅程尚未运行。
 
 2026-10-08T03:02:48Z：TUI01F R4实际1/1、02:51:19.768Z完整RETURN已限定独审/main eb06，19别名独立launch前核验遗漏未追认通过，旧FAIL/KEEP与非原子计量限制保留。O16新阶段十源及12不同局部检查已独审/main8723763ff；GO新阶段合同已获批，实际T只在operator/固定输入/D01窗口同时READY后签发，旧过期确认和pause永不复活。历史SDK4，原两次未消费children额度保持；此条非实际query或阶段成功。SVC09A原native_center_owner接续聊天设置后台候选，assignment作既有差量只读核对；不把779上线冒完整settings激活。
+
+2026-10-08T03:40:18.147Z：Arc/Connection/Picker29路径已受控进入main/origin1b1428f38；单行测试修正123c经7/7实际入口与Web类型检查通过，复用各已审leaf原件，不重新跑浏览器/PG。[唯一接收](../../../m2-integration/docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json)。当前个人部署未改变。O16新阶段0query确认成功后，03:19:54.186Z真实children启动，首slot已消耗并记录SDK入口1次，累计5；资源观察runtime/ENOENT且缺相对路径，完成/产物/费用unknown，不能归因provider/auth或追认临时文件消失。03:21:12.220Z四PID/组与连接归还，DB/private KEEP；[限定原件审查](../../../m2-integration/docs/evidence/i02/o16-continued-children-failure-intake.json)。第二slot无记录但不授权挪用重试、改run或继续decide。原owner零模型计量修复已固定待独审，原失败不改。
