@@ -1,0 +1,49 @@
+{
+  "kind": "I02_TUI01F_R4_LIMITED_ACTUAL_RESULT_REVIEW",
+  "reviewedAt": "2026-10-08T02:54:46Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_OBSERVED_FUNCTIONAL_JOURNEY_AND_RESOURCE_RETURN_WITH_ADMISSION_LIMITATION",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "executionHead": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+  "delivery": "f44ffae3604c616a07a27f2356a3867189743410",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "manifest": {
+    "path": "docs/evidence/tui01f/web-handoff/r4-result-manifest.json",
+    "bytes": 7271,
+    "sha256": "ad94f3b73f645e99250b9ed9830eb396cdd0f6ad0705e2aaf076c9c43217a247",
+    "fixedGitAndCurrentBindingsVerified": 22,
+    "boundLogicalBytes": 239882
+  },
+  "actual": {
+    "start": "2026-10-08T02:49:51.708Z",
+    "terminal": "2026-10-08T02:50:12.048Z",
+    "fullReturn": "2026-10-08T02:51:19.768Z",
+    "selected": 1,
+    "passed": 1,
+    "exit": 0,
+    "supervisedMs": 20223,
+    "provider": 0,
+    "personalOperations": 0
+  },
+  "reviewBasis": [
+    "Independently read original result, actual HTTP writes and DOM observations, real PTY events/checkpoints and transcript, fixture checkpoint/cleanup, outer supervision and exact return. All 22 bound files equal the fixed delivery and recorded byte digests.",
+    "The terminal's conflicting send received 409 and retained its Chinese/multiline draft after resize. One terminal cancellation addressed task A; Web observed cancelled. Web admitted B, terminal recovered B, exited without cancellation, and Web later observed B succeeded/verification passed.",
+    "Observed outer and terminal EOF, recorded actual child closes, eight exact PIDs and four groups absent, checkpoint preceding normal DROP and owned-directory removal, then target database/connections empty and directory absent. No inference of detached closure from outer exit alone.",
+    "Current Chrome EPERM remains in raw observations; later read-only ESRCH plus actual child close supports this run's closure. It does not establish the cause of historical R3 failure."
+  ],
+  "admissionDeviation": {
+    "state": "NOT_RETROSPECTIVELY_SATISFIED",
+    "requiredAliasCount": 19,
+    "independentlyCheckedBeforeLaunch": 0,
+    "originalField": "r4-admission.json resolverCount=0",
+    "consequence": "Accept observed behavior and return only. Do not claim every admission requirement or all dependency identities were independently fresh-verified.",
+    "verifiedSourceEvidence": "741 inherited source pins, eight own pins and four runtime pins were checked; the missing alias walk is separate and is not repaired by this result review."
+  },
+  "limitations": [
+    "Fixed af51 backend/d629 Web/ec30 terminal with fixture adapter; not current deployed 779 behavior, real provider execution or complete TUI-001 daily-use acceptance.",
+    "One selected journey, not the count of its 9 PTY events, 22 text checkpoints or 4 DOM observations. Runtime finalization was not instrumented.",
+    "Resource samples are non-atomic observations, not peaks; two negative private-byte samples remain original. This review does not validate the inherited subtraction meter.",
+    "Old FAIL/UNKNOWN/KEEP records and resources are unchanged. No retry or new runtime was performed for review; no all-escaped-descendants claim."
+  ],
+  "integration": "Receipt only; original raw remains once in canonical fixed Git. No product modification or repeated engineering check."
+}
