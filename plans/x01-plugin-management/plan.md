@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 / 状态 | X01 / in-progress；计划已交付，可信工具公共链、真实启动与管理CLI已交付main，完整生命周期未完成 |
-| 创建 / 最近更新 | 2026-10-06 / 2026-10-07 |
+| 创建 / 最近更新 | 2026-10-06 / 2026-10-08 |
 | 父计划 / 追溯 | [FLOW-001 §10](../flow-001-architecture/plan.md)、[完整矩阵 REQ-11/12/13](../flow-001-architecture/full-plan-matrix.md)；同时消费 REQ-08/09/20 |
 | 唯一计划/status owner | architecture_read / gpt-6-astra；co-lead mika（原runner_owner已释放） |
 | 后续实施协调 | Execution Lead；各实现 writer 须另行领取独立 worktree/精确 scope，不由本计划虚构已派发 |
@@ -17,6 +17,8 @@
 本计划跟踪完整X01，而非以单片通过结束目标。中心安装/授权/冻结binding、v3领取、真实runRunner/semver、来源产物、终态报告恢复、可信私有启动配置与管理CLI均已有main回执。2026-10-07真实两server/两runner进程及管理HTTP单旅程1/1独审通过，验证正常ACK后重启与旧pin不变。第三方隔离、完整升级/回滚/移除、Web/TUI生命周期和上下文扩展仍开放；逐项事实与边界见[验收差距](../../docs/evidence/x01/acceptance-gap-20261007.md)，原验收要求不降低。
 
 已只读核对 [WPF-P01 权威计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host/plans/wpf-p01-plugin-host/plan.md)：trusted Web host target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已有独立批准，范围是可信贡献与 fixture；[WPF-I01 权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) 与后继WPF-X03I01已交付主App挂载；当前事实见[owner接收](../../docs/evidence/x01/owner-acceptance.md)。这两项只是本计划 Web 前置，不能替代全 X01 验收，也不要求它们等待中心完整生命周期完成。观察时间/HEAD/dirty 见 [事实记录](../../docs/evidence/x01/README.md)，后续以各 owner 状态为准。
+
+2026-10-08当前事实：AV center/client、VAR/CENTER、verifier runtime及身份确认SDK均有受控main回执，详见唯一status与其固定来源。下一[真实verifier进程设计](../../docs/evidence/x01/verifier-real-process-design.md)复用既有driver，1case串行3tasks验证invalid-json/failed与passed；目前NOT_RUN，不改变X01-04～10开放验收。旧semver通过、领域PG/局部mock与发布工件T7范围分别保留。
 
 ## 模块与权威数据
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:45:18.570Z |
+| 最近更新时间 | 2026-10-08T01:23:43.907Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,21 +14,21 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | source a2981b71b47d254356152c505ddfff29edd76446；result d05b33a552168aadf07ec1ecabe43c29ff3e0faf / packet5c481e5d；正式批准与七源窄intake收口 |
-| 工作树 dirty 状态 | clean；仅当前main事实与部分claim交回记录，固定源码/raw/manifest保持 |
-| 工作分支状态 | integration |
-| 检查状态 | PASSED d05b33a552168aadf07ec1ecabe43c29ff3e0faf：候选真实PG1 selected/1 passed，旧10 unselected；local10 distinct分轮/types0独立保留 |
-| Review | chatui11:08:43 source/local/preparation APPROVED + 11:22:22 result忠实性APPROVED，均0P1/P2 |
-| 检查范围 | 真实SQL/owner HTTP候选新1例；synthetic材料不冒npm执行；旧10不选 |
-| 检查目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。 |
-| 实现目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
-| 实现范围 | apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/host-candidates.ts,apps/server/src/plugin-runtime/host-candidates.test.ts,apps/server/src/plugin-runtime/runtime.test.ts,packages/contracts/src/plugin-runtime-hosts.ts |
-| 本片段交付阶段 | integration |
+| 工作基线 / HEAD | metadata输入9af0b6c37d32e63d2fe1450de98bcd2ef056cc53；生产观察main7001fab804a082aa7f2cf01b72022ea17ee80225；本次只同步已验收子片与真实verifier进程设计 |
+| 工作树 dirty 状态 | 仅本段own metadata；固定设计提交后push/clean STOP，产品及所有历史raw/manifest不改 |
+| 工作分支状态 | in-progress |
+| 检查状态 | METADATA_ONLY；原实际结果保留；新真实PROCESS verifier单例NOT_RUN |
+| Review | 既有子片独审与main回执已核；本次三任务真实进程设计待固定只读独审，历史批准不扩为真实旅程通过 |
+| 检查范围 | 本次metadata一致性/来源核对；0工程/PG。子片AV5PG、VAR5领域PG、factory9、runtime25局部、SDK29distinct分轮各自限定，不累计为一组全链通过 |
+| 检查目标 | [真实进程设计](../../docs/evidence/x01/verifier-real-process-design.md)；各子片固定main回执见verifier-parent-metadata-start.json |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。  AV center/client97353e4f48ea515d268f6e4a6107e778b6c39abb；VAR+CENTER728d3165f17dfe8272c8ffce6e1eff60d9602d6b；runtime ec7e72f04b7010ab86863c8c11589c78b4588c1d；SDK866f0a9c077df2cd51f03210d02949df17a299f5。均有I02回执，不冒个人部署/真实worker全链。 |
+| 实现目标 | 已验收子片固定main；本次设计不新增产品实现 |
+| 实现范围 | 本段仅plans/x01-plugin-management与docs/evidence/x01；原产品scope写入均STOP |
+| 本片段交付阶段 | planning |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 材料引用与管理模块、受信插件进程宿主已接收主线；本地安装式验证器与显式资格恢复接缝已接收主线，中心领取和确认接口局部已审，真实数据库验收待新窗口 |
-| 下一可用交付 | 中心验证任务资格与客户端确认接口待真实数据库验收；独立校验闭环继续实施 |
+| 当前产出 | 安装式验证器的中心受理、独立结果门禁、运行器接线和公共客户端已接收主线；各片证据边界保留 |
+| 下一可用交付 | 准备真实主进程验证旅程，串行产生来源、失败验证和成功验证三个任务；尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -40,7 +40,7 @@
 | X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游7.8.4→7.8.5→回选7.8.4已真实验收并main；真正invoke函数进行中跨版本/物理卸载仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；Weba952独立管理模块已main9f0，不冒本次生产App挂载或个人部署；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；上游升级已验；[安装式verifier子片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md) AV02已main e271，journal四叶已main b791；center/v4局部已审，R1准备数据失败、R2未运行，SQL/renderer/真正invoke-inflight/完整三端仍未完成 |
+| X01-07 | in-progress | architecture_read | [AV权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md)：R3真实5PG已验/center与client已main；[VAR](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/status.md)与[CENTER](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring/plans/x01-verifier-center-wiring/status.md)已main728；[RUNTIME](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime/plans/x01-verifier-runtime/status.md)已mainec7e；[SDK](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission/plans/x01-verifier-client-admission/status.md)已main866。下一[三任务真实进程旅程](../../docs/evidence/x01/verifier-real-process-design.md)仅设计NOT_RUN；renderer/真正invoke-inflight/T7/完整三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -424,3 +424,11 @@ Cleanup root guard段：2026-10-07T21:33:00.000Z–21:48:00.000Z，firstWrite 20
 2026-10-07T21:36:02.000Z b01独审批准cleanup-root-guard parent source1d85f3d3/result0b9a4448，0P1/P2；4/4纯FS、单child181ms/raw668B/新TMP精确删除。AV/VAR两副本与binding另核，原历史PG/raw不改；不是X01功能完成或新PG授权。
 
 2026-10-07T21:45:18.570Z：cleanup guard本段收口。parent1d85/0b9a 4/4pureFS、AV副本b023/ab15及VAR227/51cc/405d经b01独审通过；db21:44:05确认VAR固定准备分项覆盖。AV恢复READY_CLOSED，VAR固定准备已审等待AV R2真实通过；两者0实际PG授权。独立entry及输入SHA在docs/evidence/x01/cleanup-root-guard/close.json；helper/两caller共2row各变、原历史raw不改。三树finalpush后全部STOP，保claims，无待launch/新增长；整体X01未完成。
+
+## 2026-10-08 verifier 主线同步与实际旅程设计
+
+2026-10-08T01:23:43.907Z：本段actualSTART/firstWrite01:20:03.431Z、deadline01:30:03.431Z，2MiB metadata cap，0工程/PG/源码供给。fresh父claim6ddedc73 v34 ACTIVE36；仅自身两metadata目录写入。四I02固定回执见[来源/预算](../../docs/evidence/x01/verifier-parent-metadata-start.json)，原taskstart UNKNOWN不回填，完整任务仍NOT_COMPLETED。独立review只审本设计，不重审子片产品/原件。
+
+Root01:20:23.274383Z四个精确dashboard读取均HTTP200/consistency matched/source live/stale=false/dirty=false/changedFiles0/issues[]：RUNTIME319abfbba/main ec7e，CENTER7ddd94b6/main728，SDKe821c683/main866，S01e0f5db4d仅设计批准。SDK/S01仅历史开工未知，不补造。此为这些head的聚合观察，不声称本父最终metadata head已读取。
+
+架构影响：本段无产品结构变化；已main的verifier独立受理/中心独算/typed event/PROCESS接缝由对应子片权威状态与I02回执描述。工程dashboard固定架构基线同步仍归Lead协调，未核新图不声称已更新。本设计复用单一fixture/OPS14/任务绑定/outbox，未建新driver。

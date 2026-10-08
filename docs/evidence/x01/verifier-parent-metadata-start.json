@@ -1,0 +1,46 @@
+{
+  "actualSTART": "2026-10-08T01:20:03.431Z",
+  "firstWriteAt": "2026-10-08T01:20:03.431Z",
+  "deadline": "2026-10-08T01:30:03.431Z",
+  "headBefore": "9af0b6c37d32e63d2fe1450de98bcd2ef056cc53",
+  "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "version": 34,
+  "scopeCount": 36,
+  "writtenScope": [
+    "plans/x01-plugin-management",
+    "docs/evidence/x01"
+  ],
+  "capBytes": 2097152,
+  "plannedUpper": 1982501,
+  "indexAtomicCopyBytes": 1399364,
+  "engineering": 0,
+  "PG": 0,
+  "sourceSupply": 0,
+  "mainObservation": "7001fab804a082aa7f2cf01b72022ea17ee80225",
+  "refs": [
+    {
+      "main": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-verifier-center-client-intake.json",
+      "bytes": 6542,
+      "sha256": "57e7d0649bdcede1c17b1f6027129c39e59ac2c1bebfc48c36047f5b7f146ed0"
+    },
+    {
+      "main": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-var-center-intake.json",
+      "bytes": 9776,
+      "sha256": "cacd53ad36dc54cde13150195f2c0fa88e0652563ab9f9fefcaab455a1692134"
+    },
+    {
+      "main": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-verifier-runtime-intake.json",
+      "bytes": 4601,
+      "sha256": "1b35f59e47382eefd1d7837b4951df225f244ad0645056fa52ee9e42b552d566"
+    },
+    {
+      "main": "866f0a9c077df2cd51f03210d02949df17a299f5",
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-verifier-client-admission-intake.json",
+      "bytes": 6250,
+      "sha256": "2d28814ce25ad22098e9105bab857c04b8e020b08e0a1a2941003781a5d60ee9"
+    }
+  ]
+}

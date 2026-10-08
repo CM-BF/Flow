@@ -1,3 +1,13 @@
+# X01 真实 verifier 进程旅程设计
+
+状态：PENDING（本次metadata/设计独立只读审，0新工程/PG）
+
+Review target commit: 待下个固定metadata提交
+
+范围：[verifier-real-process-design.md](../../docs/evidence/x01/verifier-real-process-design.md)及当前plan/status事实同步。已有四main回执不授新实际窗口；三个真实任务/一个case尚未实现或运行。原完整X01与T7未完成。
+
+---
+
 # X01 host candidates reviewed actual result
 
 状态：APPROVED（候选真实PG结果忠实性；原源码与准备批准独立保留）
