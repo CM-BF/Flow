@@ -1,0 +1,35 @@
+TAP version 13
+# Subtest: continuation-final: real child adapter and decorator preserve read-only caps and consume one failed injected entry
+ok 1 - continuation-final: real child adapter and decorator preserve read-only caps and consume one failed injected entry
+  ---
+  duration_ms: 43.278166
+  type: 'test'
+  ...
+# Subtest: continuation-final: actual complete identity reverses to the fixed planner source without copying its closure
+not ok 2 - continuation-final: actual complete identity reverses to the fixed planner source without copying its closure
+  ---
+  duration_ms: 406.504
+  type: 'test'
+  location: '/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/continuation.test.mjs:197:1'
+  failureType: 'testCodeFailure'
+  error: 'false == true'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    verifySourceDelta (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/continuation.mjs:23:5)
+    TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/continuation.test.mjs:199:3)
+    async Test.run (node:internal/test_runner/test:1404:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1817.043417

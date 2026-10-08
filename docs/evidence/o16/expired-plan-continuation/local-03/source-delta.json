@@ -1,0 +1,93 @@
+{
+  "kind": "flow.o16.reviewed-source-delta-candidate.v1",
+  "source": "6736dc712c8c02c51b8a2f15d798857bac4f6abd",
+  "oldSource": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "oldSourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+  "delta": [
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.mjs",
+      "before": null,
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/continuation.mjs",
+        "bytes": 12280,
+        "sha256": "4557de4968f459aa4f422f0fc66e85d924e829c8db017169722d35c9cab41470"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.test.mjs",
+      "before": null,
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/continuation.test.mjs",
+        "bytes": 20139,
+        "sha256": "fbc5d96fc158f36721e16eecff8b55a3f83906940280ac2fd0fe05f0ea247665"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/driver.mjs",
+        "bytes": 19264,
+        "sha256": "f350393fa4f896cc48c8f80be739dea845caa409aabdcf05c1b712c6a9b32a58"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/driver.mjs",
+        "bytes": 20664,
+        "sha256": "ff4cfba299979ecdedc5f31e598505b7177129424c79ed2778ddce6c2fef4246"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/operator.mjs",
+        "bytes": 12951,
+        "sha256": "3ab651f4024d438fb69078571485e86387449f89ce59bf11759cb815891e6c9f"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/operator.mjs",
+        "bytes": 12974,
+        "sha256": "1d6da8d4024dfffe1871063aa5a5029bcaf40a9e7f47e942d10e3216b38c2dad"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/permit.mjs",
+        "bytes": 8494,
+        "sha256": "c6f296f43224a2380a5f03be395745084da400dd232d783b6176aee11ef881d9"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/permit.mjs",
+        "bytes": 8554,
+        "sha256": "6284d8fc6e34c07697e633062d3c1a44634ff2383401461ad973263b8ffff2a6"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/resources.mjs",
+        "bytes": 11072,
+        "sha256": "959bf8215e9aefbda5e5b4f7f9f4c8d6e330a724acf3d6043ac369741bdc4369"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/resources.mjs",
+        "bytes": 13216,
+        "sha256": "e298246df4654cb3acf7b8c37d096e649ae0c018d72f815b400694bd75afa875"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+        "bytes": 6411,
+        "sha256": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+        "bytes": 6882,
+        "sha256": "6e0d33f05980b78e55a54c58e2f594d8f4496b9f68cf495ec46cb0f7bd4d1b83"
+      }
+    }
+  ],
+  "authorization": "NOT_GRANTED",
+  "scope": "experiment-only; no old files read or modified"
+}

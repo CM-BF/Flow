@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:58:09.247Z |
+| 最近更新 | 2026-10-08T02:16:41.342Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,23 +11,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | e5c7fd9d664de11ab853c55e0a01577c12530555 固定最小planner HOME策略与6直接消费者；候选无新模型许可 |
+| HEAD | 5cf8a5dd529a77f7de054c2ed476cf62213af665 新过期提案接续实验7源固定，局部证据与候选待独审 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
-| 工作分支状态 | in-progress |
-| 检查状态 | 新环境6不同/6通过、815ms/1924B、1组absent/dualEOF/空scratch同身份removed；真实adapter/decorator仅注入1失败，0真实SDK/native/auth/PG/个人。旧13/8未重跑。 |
+| 工作分支状态 | review |
+| 检查状态 | 15不同通过（3原+12新）；4监督child/6691ms/10595B，4组absent/双EOF/4exact空scratchremoved；首语法红与真实source逆算红保留。0PG/native/auth/query/旧private读取。 |
 | Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例限定批准并main2b52b2355；本次76a9实际planner/归还获Lead限定APPROVED，0P1/P2并main254ce9579；不冒完整目标通过。 |
-| 实现目标 | e5c7fd9d664de11ab853c55e0a01577c12530555 |
-| 实现范围 | experiments/continuous-goal-acceptance/native-environment.mjs, experiments/continuous-goal-acceptance/native-environment-fixture.mjs, experiments/continuous-goal-acceptance/native-normal-home.test.mjs |
-| 已集成main状态 | main2b52b2355精确接收正常HOME实验3源与Interface/candidate；唯一回执docs/evidence/i02/o16-normal-home-policy-intake.json时间2026-10-08T01:32:11.573Z。owner于01:34:40Z收录，0重测；历史失败/认证源码限定接收保持。 |
+| 实现目标 | 5cf8a5dd529a77f7de054c2ed476cf62213af665 |
+| 实现范围 | experiments/continuous-goal-acceptance/continuation.mjs, experiments/continuous-goal-acceptance/continuation.test.mjs, experiments/continuous-goal-acceptance/driver.mjs, experiments/continuous-goal-acceptance/operator.mjs, experiments/continuous-goal-acceptance/permit.mjs, experiments/continuous-goal-acceptance/resources.mjs, experiments/continuous-goal-acceptance/stage-policy.mjs |
+| 已集成main状态 | 原正常HOME策略main2b52b2355；真实planner限定结果main254ce9579，唯一I02 o16-normal-home-planner-result-intake.json。当前5cf8接续7源尚未独审/集成；旧FAIL/KEEP保持。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 真实两步提案的运行结果已独审，提案约束已获语义接受；尚未签发确认或执行子任务。 |
-| 下一可用交付 | 完成保留旧记录的新阶段确认接口，再准备两项文本任务的有限执行与独立接受；当前未授权实际续跑。 |
-| 当前阻塞 | ACTIVE: 新阶段接续实现与独审进行中；旧暂停已到期并保留，实际确认与两项子任务额度尚未授予。 |
+| 当前产出 | 已实现保留原提案和过期记录的新阶段确认接口，局部检查完成，等待独立审查。 |
+| 下一可用交付 | 获准后确认原提案，再按真实确认结果执行两项文本任务并独立核对；当前尚未运行。 |
+| 当前阻塞 | ACTIVE: 新阶段实现待独审；实际确认与两项子任务额度、资源窗口尚未授予。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -39,7 +39,7 @@
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
 | O16-06 | in-progress | native_center_owner | 本次1次真实planner成功、累计SDK4；SDK估价USD0.0492524与账户费用UNKNOWN分开。1proposal/0apply/0child、15min pause，整体验收仍未完成。同2.1.290 HOME A/B结果限定独审/main214319132，正常HOME实验策略及6直接例限定独审/main2b52b2355；均不证明真实规划成功或R3根因。原[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)、FAIL/KEEP和children未授权不变 |
 
-架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
+架构影响：本片新增实验renew授权/源转换与来源一次消费接口，复用原确认CAS/执行循环/监督；无生产DDL或新依赖。旧DB与原private仍原来源，新state/private由新阶段所有且KEEP。待独审后由ExecutionLead登记实验consumer接口，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
 2026-10-06 18:23:45 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
 
@@ -77,6 +77,7 @@
 | O16-W20 | 2026-10-08T01:34:40.000Z | 2026-10-08T01:36:06.000Z | 其他 | GO内部单次预算决定由Lead转达（非用户未答复）；结束为owner收录时刻，不冒GO决定时间，旧三次不复用 | 本次授权准备记录 |
 | O16-W21 | 2026-10-08T01:36:06.000Z | 2026-10-08T01:45:07.705Z | 资源 | D01正式选中并同次fresh后已实际START；结束为原actual-start，不用grant或提交时间代替 | native-plan-normal-home-20261008-once/actual-start.json |
 | O16-W22 | 2026-10-08T01:48:09.597Z | 2026-10-08T01:54:06.221Z | 审查 | 已收Lead限定实际结果独审/main回执，结束为owner收录时刻；原真实提案与整体未完成分开 | main254ce9579的I02唯一结果回执 |
+| O16-W23 | 2026-10-08T02:16:41.342Z | OPEN | 审查 | 新阶段源码与局部结果已封定待独审，随后仅提具体确认和两项子任务预算；当前无运行holder | expired-plan-continuation/manifest.json |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -171,3 +172,5 @@
 2026-10-08T01:54:06.221Z：新续接设计段仅只读固定源码和公开结果，0工程child/PG/auth/query。收到76a9结果独审/main254ce9579与GO对真实proposal约束的语义接受；不把它当confirmation或child预算。候选新增小Interface明确旧/新source反向重建、原pause先验证/一次消费、仅source字段转换及部分写UNKNOWN；该设计涉及未来旧资源恢复，按Lead边界先交方案，尚未改源或运行。
 
 2026-10-08T01:58:09.247Z：本轮新阶段实现实际开始，fresh账本原55c4 v1 exact3 active、本树ef9d clean。GO明确允许新版本/过期后一次续接设计；01:54旧未过期转换草案被本合同替代，未实施旧state改写。仅源码与自有合成检查（累计120s、≤4 child各≤30s、tmp8MiB），0真实native/auth/query/PG/旧private读取。实际planner76a9限定独审已main254ce9579，原pause/source/state/raw保留。
+
+2026-10-08T02:16:41.342Z：新阶段源码 `5cf8a5dd529a77f7de054c2ed476cf62213af665` 停写待独审；实际工作段01:58:09.247Z开始，局部检查最终02:12:06.112396Z RETURN，当前仅本条封存。15不同通过/两次FAIL、327输入/39alias真实逆算见[单份manifest](../../docs/evidence/o16/expired-plan-continuation/manifest.json)及[候选](../../docs/evidence/o16/expired-plan-continuation/candidate.md)。4监督child已用完，不重跑原13；实际renew/确认/PG/旧private/query均未执行，旧pause已过期仍拒绝。原真实planner结果已独审/main254ce9579，完整O16-06仍open。

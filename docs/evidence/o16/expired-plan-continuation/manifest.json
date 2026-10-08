@@ -1,0 +1,197 @@
+{
+  "kind": "O16_EXPIRED_PLAN_CONTINUATION_PREPARATION_MANIFEST",
+  "at": "2026-10-08T02:16:41.342Z",
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "oldSource": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "bindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.mjs",
+      "bytes": 12291,
+      "sha256": "157d57c0797e5e2732354171d2394f58d7ea6368ffc6a2ed9d60552d33750e37"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.test.mjs",
+      "bytes": 20139,
+      "sha256": "fbc5d96fc158f36721e16eecff8b55a3f83906940280ac2fd0fe05f0ea247665"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 20664,
+      "sha256": "ff4cfba299979ecdedc5f31e598505b7177129424c79ed2778ddce6c2fef4246"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 12974,
+      "sha256": "1d6da8d4024dfffe1871063aa5a5029bcaf40a9e7f47e942d10e3216b38c2dad"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 8554,
+      "sha256": "6284d8fc6e34c07697e633062d3c1a44634ff2383401461ad973263b8ffff2a6"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 13216,
+      "sha256": "e298246df4654cb3acf7b8c37d096e649ae0c018d72f815b400694bd75afa875"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 6882,
+      "sha256": "6e0d33f05980b78e55a54c58e2f594d8f4496b9f68cf495ec46cb0f7bd4d1b83"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/Interface.md",
+      "bytes": 4453,
+      "sha256": "17e3536c73fd74f421a93ae45f11d2f546bdfeff5768c2a023d0bc461fc89f7e"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/source-delta.json",
+      "bytes": 3489,
+      "sha256": "4d64b966ac1b8d7aecf72d251784a277f303b75ff643f1f4c120ae2acbb6fe66"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/candidate.md",
+      "bytes": 5830,
+      "sha256": "135b75ea20740b05b5ae568cd6d272be6dc2cfb21af3cca71ae0886901706c77"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/validation.json",
+      "bytes": 7902,
+      "sha256": "e0542d0f4d442a23ed2ca86e3b447052e7dd0ae91f9557f3291f141d72a71f2a"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-01/outer.json",
+      "bytes": 663,
+      "sha256": "0c909d37816177dd2c4bc7f9fb3e4855b7abfea0d749e3c418ee860e8ea62312"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-01/reservation.json",
+      "bytes": 12472,
+      "sha256": "d928a4c660dca1baeac30bc05a524be0b1509231854f72fdbfd98601f7cff1b9"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-01/result.json",
+      "bytes": 583,
+      "sha256": "89bc8af26b364cab7c16b768136666751e74ba21065dc2a531a96d424ebd8bb8"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-01/stdout.txt",
+      "bytes": 5116,
+      "sha256": "1688d6003200d7b8d66116821d9b00381baf9d683d7b9de30edb56141c614cf6"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-02/outer.json",
+      "bytes": 518,
+      "sha256": "1db072b2b01514ccbccb1c9d29f7cced7b67fad3909df662c69df6e75a82f1af"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-02/reservation.json",
+      "bytes": 12245,
+      "sha256": "5958e0050c4d55fc40be59ee17497d628cfc011930df54cdcfaa6b53c978babe"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-02/result.json",
+      "bytes": 405,
+      "sha256": "993eb10d4e023e70f34b35c521177ff75475a798abf265c0149c4543ed3c5460"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-02/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-02/stdout.txt",
+      "bytes": 3004,
+      "sha256": "143452d0d04846b8e9589baf454edf7b9e9a6aa9cb898c4202706eed5e5be42e"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/outer.json",
+      "bytes": 663,
+      "sha256": "3f70413d9a54fab82ef49f0edc5e311789cf15f3fdafe0de746d9207db320b7c"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/reservation.json",
+      "bytes": 12572,
+      "sha256": "4419447bc9f9c6149412720d805ac3b4359ea2e7a12ee6a18d47bd84a52d2087"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/result.json",
+      "bytes": 548,
+      "sha256": "4ee12fae85e7fd7ee82b810db26d6dcb69855d1e280c37768a7e65cf7d6fad9b"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/source-delta.json",
+      "bytes": 3489,
+      "sha256": "8ac03f19b61622f28a72eb1b2bc5ffb1473d0e31e41f23ef4c86711b3045a453"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-03/stdout.txt",
+      "bytes": 1552,
+      "sha256": "321a14a4a7e28800e26084da9f92a07fb16d6abbb89f9a3be158f5d8d7d4f580"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-04/outer.json",
+      "bytes": 516,
+      "sha256": "f82d7bd1a2b9bdd3613dcfd66afac8c90e843478230f0c136568d72b7ba7d3b5"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-04/reservation.json",
+      "bytes": 12590,
+      "sha256": "25c3d17def341605d1fa2f33f49da6b666cad3a5ca92992534bd662725e6ec8b"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-04/result.json",
+      "bytes": 402,
+      "sha256": "52967969eb6912e4ddcf30ec18a41f8aa8535926228f2142381b18fbf4324085"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-04/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/local-04/stdout.txt",
+      "bytes": 923,
+      "sha256": "3d25dd633378c7484b31e1e147ea817c4dcdae9623bdd828d62b7155d0dcafe2"
+    }
+  ],
+  "bindingCount": 32,
+  "bindingBytes": 184655,
+  "inherited": [
+    {
+      "commit": "76a9f36b14c3da1604ee38121f609095cf0cc997",
+      "path": "docs/evidence/o16/native-plan-normal-home-20261008-once/result-manifest.json",
+      "bytes": 6847,
+      "sha256": "99488dc2133755e93d7ea6d5b5528ebb150fb09e9803a4e58051a88ed2784776"
+    },
+    {
+      "commit": "76a9f36b14c3da1604ee38121f609095cf0cc997",
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/pause.json",
+      "bytes": 1663,
+      "sha256": "a8ee9b78b432c950228f505fc47c347c40148e83baa8fcf44a7780ebeae17603"
+    }
+  ],
+  "localResult": {
+    "distinctPassed": 15,
+    "supervisedChildren": 4,
+    "elapsedMs": 6691,
+    "rawBytes": 10595,
+    "failuresPreserved": 2,
+    "lastReturnAt": "2026-10-08T02:12:06.112396Z"
+  },
+  "scope": "Experiment source + synthetic direct evidence only. No actual renew, confirmation, PG, native, auth, old-private access, children, or semantic acceptance.",
+  "review": "PENDING",
+  "actualAuthorization": "NOT_GRANTED",
+  "provenance": "Source inputs are the individual reservation commits; local-03/source-delta.json preserves its exact preimage. Final one-line regex repair only reran actual identity and its negative direct consumer. No full old closure copied."
+}

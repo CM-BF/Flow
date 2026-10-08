@@ -1,0 +1,211 @@
+{
+  "kind": "O16_EXPIRED_PLAN_CONTINUATION_LOCAL_RESULT",
+  "recordedAt": "2026-10-08T02:16:41.342Z",
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "segmentStartedAt": "2026-10-08T01:58:09.247Z",
+  "lastRuntimeReturnAt": "2026-10-08T02:12:06.112396Z",
+  "runs": [
+    {
+      "directory": "docs/evidence/o16/expired-plan-continuation/local-01",
+      "source": "1021c3162bc7750cdde946b1698bdc9f7d9a9c47",
+      "startedAt": "2026-10-08T02:07:25.189896+00:00",
+      "returnedAt": "2026-10-08T02:07:26.547467+00:00",
+      "selected": 4,
+      "passed": 3,
+      "elapsedMs": 1337,
+      "rawBytes": 5116,
+      "exit": 1,
+      "groupAbsent": true,
+      "dualEOF": true,
+      "scratchSameIdentity": true,
+      "emptyScratchRemoved": true
+    },
+    {
+      "directory": "docs/evidence/o16/expired-plan-continuation/local-02",
+      "source": "ad61c186c4a8e3e19001c7a7cb670a10571752b1",
+      "startedAt": "2026-10-08T02:08:13.045433+00:00",
+      "returnedAt": "2026-10-08T02:08:15.039604+00:00",
+      "selected": 10,
+      "passed": 10,
+      "elapsedMs": 1971,
+      "rawBytes": 3004,
+      "exit": 0,
+      "groupAbsent": true,
+      "dualEOF": true,
+      "scratchSameIdentity": true,
+      "emptyScratchRemoved": true
+    },
+    {
+      "directory": "docs/evidence/o16/expired-plan-continuation/local-03",
+      "source": "6736dc712c8c02c51b8a2f15d798857bac4f6abd",
+      "startedAt": "2026-10-08T02:11:14.451573+00:00",
+      "returnedAt": "2026-10-08T02:11:16.327062+00:00",
+      "selected": 2,
+      "passed": 1,
+      "elapsedMs": 1856,
+      "rawBytes": 1552,
+      "exit": 1,
+      "groupAbsent": true,
+      "dualEOF": true,
+      "scratchSameIdentity": true,
+      "emptyScratchRemoved": true
+    },
+    {
+      "directory": "docs/evidence/o16/expired-plan-continuation/local-04",
+      "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+      "startedAt": "2026-10-08T02:12:04.565493+00:00",
+      "returnedAt": "2026-10-08T02:12:06.112396+00:00",
+      "selected": 2,
+      "passed": 2,
+      "elapsedMs": 1527,
+      "rawBytes": 923,
+      "exit": 0,
+      "groupAbsent": true,
+      "dualEOF": true,
+      "scratchSameIdentity": true,
+      "emptyScratchRemoved": true
+    }
+  ],
+  "distinctChecksPassed": 15,
+  "successfulSelections": 16,
+  "checks": [
+    {
+      "name": "expiry, clock reversal and wrong next phase refuse without any cleanup action",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-01"
+      ]
+    },
+    {
+      "name": "native operation refuses before source loading, permits, allocation or child startup while inputs are unresolved",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-01"
+      ]
+    },
+    {
+      "name": "the real resume packet reader refuses changed material before consuming or reconnecting",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-01"
+      ]
+    },
+    {
+      "name": "continuation: expired legacy entry stays refused while new authorization binds an unchanged archived packet",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: reverse source proof rejects unlisted changes, dependencies, duplicate delta and incomplete source",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02",
+        "docs/evidence/o16/expired-plan-continuation/local-04"
+      ]
+    },
+    {
+      "name": "continuation: actual readers reject changed private state or symlink material before reservation",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: shared legacy wx and origin reservation prevent two new runs or an existing consumed source",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: real SQL consumer proves current goal/proposal/profiles/material, no authority or inflight, then releases",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: real SQL refuses stale revisions, authority, incomplete attempts and revoked profiles with rollback",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: real driver composition consumes grant before actual confirm consumer and preserves first write failure",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: actual confirmation driver publishes only a new pause with fresh source and retained origin",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: native children require actual confirmation and consume two distinct one-shot slots",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation: explicit renew argv and adopted acceptance retain origin; ordinary decide still requires cleanup",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-02"
+      ]
+    },
+    {
+      "name": "continuation-final: real child adapter and decorator preserve read-only caps and consume one failed injected entry",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-03"
+      ]
+    },
+    {
+      "name": "continuation-final: actual complete identity reverses to the fixed planner source without copying its closure",
+      "passedIn": [
+        "docs/evidence/o16/expired-plan-continuation/local-04"
+      ]
+    }
+  ],
+  "elapsedMs": 6691,
+  "rawBytes": 10595,
+  "supervisedChildren": 4,
+  "childBudgetConsumed": true,
+  "historicalFailures": [
+    {
+      "run": "local-01",
+      "fact": "The new test module could not parse; only the three selected existing checks passed.",
+      "repair": "ad61c186c4a8e3e19001c7a7cb670a10571752b1",
+      "coverage": "Only ten new checks ran in local-02; original three were not repeated."
+    },
+    {
+      "run": "local-03",
+      "fact": "Real complete source identity rejected the explicit .test.mjs leaf in the reviewed delta. Adapter/decorator check passed.",
+      "repair": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+      "coverage": "local-04 selected the actual complete identity and the directly affected reverse-source negative case only."
+    }
+  ],
+  "sourceIdentityProof": {
+    "input": "local-04/reservation.json",
+    "output": "local-04/stdout.txt",
+    "digest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+    "files": 327,
+    "dependencyAliases": 39,
+    "deltaFiles": 7,
+    "reconstructedOriginalDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+    "local03DeltaPreimage": "local-03/source-delta.json"
+  },
+  "boundary": {
+    "actualRenew": 0,
+    "PG": 0,
+    "native": 0,
+    "auth": 0,
+    "query": 0,
+    "actualOldPrivateReads": 0,
+    "actualConfirmation": 0,
+    "pendingLaunch": 0,
+    "currentOwnedChildren": 0,
+    "tests": "Synthetic owned files, injected SQL/client ports, real driver/adapter/decorator, and public complete source identity; no real center startup or paused-resource adoption."
+  },
+  "quality": {
+    "at": "2026-10-08T02:16:41.342Z",
+    "skills": "Existing local find-skills/codebase-design/clean-code/brainstorming; no installs.",
+    "checks": "Single origin reservation, source delta is not runtime authority, original CAS/query/cleanup reused, controlled failures and retained origin; no new supervisor.",
+    "unverified": "Actual old private/DB identity and fresh SQL, genuine confirmation ACK, two native children and independent semantic acceptance.",
+    "independentReview": "PENDING"
+  }
+}

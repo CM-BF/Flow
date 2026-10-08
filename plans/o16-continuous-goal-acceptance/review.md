@@ -117,3 +117,9 @@ plan入口使用全新标记DB、动态中心端口和自有runtime，resume=fal
 ## 2026-10-08T01:48:09.597Z 正常HOME真实planner结果待独审
 
 固定执行e4b09/源e5c7；[唯一结果manifest](../../docs/evidence/o16/native-plan-normal-home-20261008-once/result-manifest.json)绑定26项原件/分析、59564B，不复制私有runtime或凭据。本次1真实SDK/累计4、SDKsuccess/3turn、中心1propose/0apply/0child、2node1edge、15min pause；2026-10-08T01:46:25.059Z精确5PID/3group返回与DB/private KEEP分别保留。SDK估价不是账户账单；semanticAcceptance未评估、原三FAIL和旧KEEP不变。作者未自批，不进入confirm/children。请核固定source/env/permit、真实工具与中心audit实际身份、单次消费、pause绑定及原独立监督/连接关闭记录，不重跑模型或探测私有材料。
+
+## 2026-10-08T02:16:41.342Z 过期提案新阶段接续待独审
+
+Target `5cf8a5dd529a77f7de054c2ed476cf62213af665`，base `e5c7fd9d664de11ab853c55e0a01577c12530555`，exact7实验路径与可逆前像见 [source-delta](../../docs/evidence/o16/expired-plan-continuation/source-delta.json)。[单份manifest](../../docs/evidence/o16/expired-plan-continuation/manifest.json)绑定15不同通过/两次FAIL、4组归还与完整source逆算；作者不自批。范围为新grant/共享原消费门、原CAS、fresh只读SQL注入与真实adapter/decorator、旧材料与DB/双目录KEEP，不冒实际暂停资源接续通过。
+
+独审请读固定source/Interface/candidate、原raw选择与两次修复，核两个newrun及旧入口不能重复消费同一来源、旧原件不改、新状态独立、fresh中心身份拒绝未知、children只绑定真实ACK且两slot、不因最终接受获取旧资源删除权。真实动态SQL/PG/server/renew/模型和独立语义接受NOT_RUN；全部实际预算尚未授。现有plan结果唯一限定独审/main254ce9579按引用继承，不重审模型原件或读private。当前无作者确认的未修复finding，结论PENDING，不称APPROVED。
