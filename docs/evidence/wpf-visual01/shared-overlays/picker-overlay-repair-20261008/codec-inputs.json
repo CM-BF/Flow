@@ -1,0 +1,16 @@
+{
+  "codeBlockSha256": "766884fda221b5b4c62690d1d592de315ea60474829dd3e39fff304f65c5b70d",
+  "fixtureSha256": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf",
+  "exactPublicSources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/contracts/src/execution-profiles.ts",
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/contracts/src/claude-turn-settings.ts",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    }
+  ],
+  "resolver": "Only exact zod and actual execution-profile ./claude-turn-settings.js resolution; Node native TS stripping, no duplicated schema or Vite import",
+  "test": "/private/tmp/vis-overlay-b1/codec-check/check.mts"
+}

@@ -1,0 +1,43 @@
+--- vis-picker-b1/worker.mjs
++++ vis-overlay-b1/worker.mjs
+@@ -13,7 +13,7 @@
+ const gateStat = await lstat(gatePath);
+ assert(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size < 65536);
+ const gate = JSON.parse(await readFile(gatePath, 'utf8'));
+-assert.equal(gate.mode, 'visual-picker-browser');
++assert.equal(gate.mode, 'visual-picker-overlay-browser');
+ assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
+ assert(Date.parse(gate.expiresAt) > Date.now());
+ const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
+@@ -125,29 +125,14 @@
+   const { chromium } = await import(pathToFileURL(binding.playwrightModule).href); checkpoint();
+   browser = await chromium.connectOverCDP(chromeEndpoint, { timeout: Math.min(3000, Math.max(1, workDeadlineMs - Date.now())) }); checkpoint();
+   report.cdpConnectedAt = new Date().toISOString();
+-  context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' }); checkpoint();
++  context = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); checkpoint();
+   page = await context.newPage(); checkpoint();
+   await page.addInitScript({ content: selectObserverSource }); checkpoint();
+-  page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+-  const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
+-  report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
+-  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []);
+-  assert.deepEqual(report.checks, binding.expectedChecks.slice(0, 6)); assert.equal(report.checks.length, 6);
+-  // The presentation journey explicitly requires a fresh catalog/server and independent context.
+-  await cleanupStep('Behavior context close', async () => { await context.close(); report.contextClosed = true; });
+-  await cleanupStep('Behavior fixture close', async () => { await fixture.close(); report.fixtureClosed = true; });
+-  assert(report.contextClosed && report.fixtureClosed && report.cleanupErrors.length === 0);
+-  report.journeys.push({ name: 'behavior', checks: [...report.checks], contextClosed: true, fixtureClosed: true });
+-  context = undefined; fixture = undefined; page = undefined;
+-  report.contextClosed = false; report.fixtureClosed = false;
+-  checkpoint(); fixture = await scenario.startMessageSettingsFixture({ cacheDir: join(scratch, 'vite-overlay'), aliases }); checkpoint();
+-  context = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' }); checkpoint();
+-  page = await context.newPage(); checkpoint();
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+   const overlay = await scenario.checkMessageSettingsOverlays(page, fixture, output); checkpoint();
+   report.checks.push(...overlay.checks); report.overlay = overlay;
+   report.journeys.push({ name: 'overlay', checks: overlay.checks });
+-  assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 8);
++  assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 2);
+   assert.deepEqual(report.pageErrors, []); report.outcome = 'passed';
+ } catch (error) { report.failure = String(error.stack ?? error).slice(0, 16384); report.outcome = 'failed'; }
+ finally {

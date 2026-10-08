@@ -1,0 +1,52 @@
+{
+  "firstWrite": "2026-10-08T02:32:57.451789+00:00",
+  "deadline": "2026-10-08T02:52:57.451789+00:00",
+  "base": "d227008b43921faeab53a0ac6195e97e80fe8ecd",
+  "branch": "codex/web-shared-overlays",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "conflicts": [],
+  "envelopeBytes": 8388608,
+  "local": {
+    "maxChildren": 1,
+    "totalMs": 10000,
+    "includesCleanup": true,
+    "runtime": "public codec only; noHTTP/PG/Chrome/provider"
+  },
+  "runtimeBrowser": "NOT_GRANTED",
+  "skills": {
+    "find-skills": {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    "clean-code": {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  }
+}

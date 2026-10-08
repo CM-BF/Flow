@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-08T02:35:00.348031+00:00",
+  "pid": 78274,
+  "pgid": 78274,
+  "floor": 11613765632,
+  "free": 14300090368,
+  "canonicalAt": "2026-10-08T02:34:27.646Z",
+  "canonicalSha256": "716dfc9226c7fb0ddb96e946e30d4dbfa33788e74587b303fb7c8ee0c9959384",
+  "forwardState": "O16_NORMAL_HOME_PLANNER_SELECTED_WEB_LEASES_SUSPENDED",
+  "termsNonzero": {
+    "residualUnknown": 8806203392,
+    "priorK01Db": 134217728,
+    "secondK01Db": 134217728,
+    "R4KeepPendingClassification": 134217728,
+    "OriginalOrdinaryKeepPendingClassification": 35651584,
+    "reserveOnce": 1073741824,
+    "OriginalRecoveryBuildLocalUnknown": 8519680,
+    "OriginalPersonalThinRecoveryOrdinary": 9568256,
+    "OriginalHeldArtifactImportOrdinary": 9568256,
+    "OriginalRecoveryColdCandidate": 134217728,
+    "selectedRecoveryColdR2": 134217728,
+    "selectedHeld23E15ContinuationR2": 538968064,
+    "OriginalWeb779LockGuardRepairOrdinary": 4194304,
+    "OriginalVARCenterIntegrationMetadata": 1048576,
+    "selectedTUI01F04R2": 134217728,
+    "selectedO16HomeFactorStatus": 131072,
+    "selectedO16NormalHomePlanner": 136314880,
+    "selectedTUI01F04R3": 150994944,
+    "TUI01F04R3NaturalResultSeal": 8388608,
+    "VisualPickerOverlayRepair": 8388608,
+    "selectedO16RenewPrivate": 8388608,
+    "O16RenewNaturalSeal": 8388608
+  },
+  "sourceSha256": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf",
+  "head": "d227008b43921faeab53a0ac6195e97e80fe8ecd",
+  "ownDirtyDeclared": [
+    "apps/web/test/message-settings.browser.ts",
+    "plans/wpf-visual01-shell/status.md",
+    "docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008"
+  ],
+  "limits": {
+    "totalMs": 10000,
+    "workMs": 5000,
+    "cleanupMs": 5000,
+    "maxChildren": 1,
+    "PG": 0,
+    "HTTP": 0,
+    "Chrome": 0
+  }
+}

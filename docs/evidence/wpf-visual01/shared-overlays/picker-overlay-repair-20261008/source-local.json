@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-08T02:35:46.807382+00:00",
+  "state": "PUBLIC_CODEC_PASS_OVERLAY_NOT_RUN",
+  "sourceDiff": {
+    "apps/web/src/assistant-ui.css": {
+      "before": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+      "after": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+      "unchanged": true
+    },
+    "apps/web/src/components/ui/dialog.tsx": {
+      "before": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+      "after": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+      "unchanged": true
+    },
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": {
+      "before": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+      "after": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+      "unchanged": true
+    },
+    "apps/web/src/execution-profiles/execution-profiles.css": {
+      "before": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+      "after": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+      "unchanged": true
+    },
+    "apps/web/test/conversation-recovery.browser.ts": {
+      "before": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+      "after": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+      "unchanged": true
+    },
+    "apps/web/test/message-settings.browser.ts": {
+      "before": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782",
+      "after": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf",
+      "unchanged": false
+    }
+  },
+  "behaviorFunctionSuffixByteIdentical": true,
+  "behaviorFunctionSuffixSha256": "3f2ec8e2d517f9a2d4b3debca9b2c8082cdee1625399e2fe254fe7b82587a16c",
+  "codecExtraction": "The test copies only id/model/entry block verbatim, then imports exact real public codec sources; native module hook only resolves pinned zod and actual .js-to-.ts entry. No cloned schema, Vite, HTTP or browser.",
+  "local": {
+    "childCount": 1,
+    "actualExit": 0,
+    "innerMs": 118.87179093901068,
+    "toolOuterMs": 119.346875,
+    "chargeMs": 120,
+    "budgetMs": 10000,
+    "state": "CLOSED",
+    "scratchAbsent": true,
+    "PIDPGID": 78274,
+    "firstResult119Preserved": true
+  },
+  "browser": {
+    "state": "NOT_RUN_NO_GRANT",
+    "totalMs": 90000,
+    "cleanupMs": 15000,
+    "checks": 2,
+    "screenshots": 5,
+    "PG": 0,
+    "node": 1,
+    "chrome": 1,
+    "ownedHTTP": 1
+  },
+  "previousBehavior": "Six approved behavior groups and two PNG remain fixed source4ca evidence; not rerun or injected into new overlay result. Old15543 CLOSED and unused not transferred."
+}

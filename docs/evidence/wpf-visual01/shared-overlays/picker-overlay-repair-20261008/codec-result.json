@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T02:35:00.466904+00:00",
+  "actualExitCode": 0,
+  "elapsedMs": 118.87179093901068,
+  "chargeMs": 119,
+  "state": "CLOSED",
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "droppedBytes": 0,
+  "stdoutBytes": 105,
+  "stderrBytes": 0,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 78274,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 78274,
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "result": {
+    "publicCodec": true,
+    "normalAccepted": true,
+    "long180Accepted": true,
+    "priorIllegalDisplayNameRejected": true
+  }
+}

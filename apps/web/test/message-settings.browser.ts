@@ -12,12 +12,13 @@ import { CLAUDE_TURN_SETTINGS_PROTOCOL, EXECUTION_PROFILE_HEADER, claudeMessageS
 const root = fileURLToPath(new URL("..", import.meta.url));
 const id = (value: number) => `10000000-0000-4000-8000-${String(value).padStart(12, "0")}`;
 const model = "model-" + "x".repeat(174);
+const normalModelId = "claude-sonnet";
 function entry(number: number, normalModel = false) {
   return claudeMessageSettingsCatalogEntrySchema.parse({
     profile: {
       reference: { id: id(number), runnerId: id(101), configDigest: "a".repeat(64) },
       configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "creation-base", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 }, turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: [
-        { model: number === 1 ? normalModel ? "Claude Sonnet" : model : "another-profile-model", thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" },
+        { model: number === 1 ? normalModel ? normalModelId : model : "another-profile-model", thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" },
         { model: "fast-model", thinking: "disabled", effort: { kind: "not-requested" }, speed: "fast" },
       ] } },
       source: "runner-configured", availability: "not-probed", model: { value: "creation-base", resolvedModel: null, displayName: "creation-base", description: "Fixture intent only", providerCapabilities: "unknown" },
@@ -175,7 +176,7 @@ export async function checkMessageSettingsOverlays(page: Page, fixture: Awaited<
     await page.goto(fixture.url);
     for (const sample of ["normal", "long"] as const) {
       fixture.showNormalModel(sample === "normal");
-      const name = sample === "normal" ? "Claude Sonnet" : model;
+      const name = sample === "normal" ? normalModelId : model;
       for (const theme of ["Light", "Dark"] as const) {
         await page.setViewportSize({ width: 390, height: 844 });
         await page.getByRole("button", { name: theme, exact: true }).click();
@@ -226,7 +227,7 @@ export async function checkMessageSettingsOverlays(page: Page, fixture: Awaited<
     fixture.showNormalModel(true); await page.setViewportSize({ width: 1280, height: 900 });
     await page.getByRole("button", { name: "Light", exact: true }).click(); await trigger.click();
     await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
-    const normal = dialog.getByRole("radio", { name: /^Claude Sonnet/ }); await expect(normal).toBeEnabled();
+    const normal = dialog.getByRole("radio", { name: new RegExp(`^${normalModelId}`) }); await expect(normal).toBeEnabled();
     await normal.check(); await page.screenshot({ path: join(evidence, "overlay-picker-normal-light-desktop.png") });
     await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).toHaveCount(0);
     await expect(page.getByTestId("left-commits")).toHaveText("1"); await expect(trigger).toBeFocused();

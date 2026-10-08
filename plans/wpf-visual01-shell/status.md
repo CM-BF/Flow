@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-08T02:26:02.133Z |
+| 最近更新 | 2026-10-08T02:32:57.451Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,7 +15,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | Picker实际FAILED：六行为组已返回、两图已生成；新增展示组首步定位失败，全部资源已归还 |
+| 当前产出 | 正在修复展示夹具的合法模型标识；已完成六行为组保留，未完成展示组独立准备 |
 | 下一可用交付 | 封存本次失败并限定定位展示夹具前置；修复/复验需经理后继明确段，随后全片独审与主线接收 |
 | 当前阻塞 | ACTIVE: Picker正常展示夹具把含空格名称当模型ID，被公共codec拒绝；当前整体FAILED，待合法窄修/复验，无运行holder |
 | 需用户决定 | NONE |
@@ -92,3 +92,7 @@ Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2own
 真实behavior六组已返回，原浅深390两PNG已生成；独立overlay旅程第一步在message-settings.browser.ts:185等待`Claude Sonnet` radio找不到，新增两展示组未返回、五张overlay图未生成，整体FAILED。不将既有六组或截图存在外推全片通过。3个PID/3个PGID fresh ESRCH、3inner+2outer EOF/drop0、context/fixtureclosed、scratch absent，0PG，cleanupErrors[]。[唯一结果/原件索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json)与[限定定位](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/failure-analysis.json)。worker.log已证实“Claude Sonnet”含空格违反模型ID公共codec；locator未找到是后果，未发现本次证据证明的产品回归。[root限定失败审](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/root-result-review.json)已核失败/六behavior及两图，新增overlay0/2仍OPEN；本轮无后续runtime。
 
 本次正常封存后exact8全STOP、claim保留。0child/0待launch；后继窄夹具修复/实际需经理新的明确段，原90s已CLOSED。
+
+## Picker夹具窄修准备
+
+新8MiB/20分钟普通段，firstWrite与固定deadline见[开工回执](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/start.json)。仅正常模型ID及同源locator，四产品与Recoverytest保持；旧15543ms CLOSED，无浏览器许可。
