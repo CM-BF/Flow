@@ -1,0 +1,233 @@
+{
+  "kind": "O16_HOME_FACTOR_FIXED_CALLER_PREPARATION",
+  "ready": false,
+  "logicalId": "O16-HOME-FACTOR-PUBLIC-STATUS-ONCE",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "argv": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run.py",
+    "--run-home-factor-once"
+  ],
+  "python": {
+    "path": "/opt/homebrew/bin/python3.13",
+    "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "bytes": 52640,
+    "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+    "uid": 501,
+    "nlink": 1
+  },
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "recipeDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "claim": {
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "worker": "native_center_owner",
+    "branch": "codex/continuous-native-goal-acceptance"
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "bytes": 4096,
+      "sha256": "cc4d0576d1f8e9ee7c3c5aa66e0f9ad0bb4104a859ada79a232af70affba5cb6",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.mjs",
+      "bytes": 2003,
+      "sha256": "8bed0ee086e2059e5d05aabcaaf993a7085407a88d39d123f450111e65f1dcb2",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "bytes": 3376,
+      "sha256": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.mjs",
+      "bytes": 8332,
+      "sha256": "c49ee75a6d5b9c79c8be651fe08eed3d6a3cf8819d703f69f034abd222731c54",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 8494,
+      "sha256": "c6f296f43224a2380a5f03be395745084da400dd232d783b6176aee11ef881d9",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 6411,
+      "sha256": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run.py",
+      "bytes": 11960,
+      "sha256": "a592d446a754e8b2598deaebc9efa4d11f442a89b4007995ce65eb1dd2e37141",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/same-runtime-auth-candidate/run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/same-runtime-auth-candidate/run.py",
+      "bytes": 9615,
+      "sha256": "425761f1c3fe1042fc2e772d9f425e5b8ee993dff5ca9bf18cb94e21f8868bd4",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/current-main-entry-preflight.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/current-main-entry-preflight.json",
+      "bytes": 68817,
+      "sha256": "ebadc9afcca5749e8ae02b4aac65736c1a2ce72130bf8bc7b114cbc87d935437",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/dependency-links.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/dependency-links.json",
+      "bytes": 20954,
+      "sha256": "3daef629400d35e6f93fbac4fea4149748677c9212f1f86b1a034b6a09800c6f",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "uid": 501,
+      "nlink": 1,
+      "hashSource": "inherited fixed recipe; rehash mandatory at execution"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "uid": 501,
+      "nlink": 1,
+      "hashSource": "inherited fixed recipe; rehash mandatory at execution"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "uid": 501,
+      "nlink": 1,
+      "hashSource": "inherited fixed recipe; rehash mandatory at execution"
+    }
+  ],
+  "sourceClosure": "Real prepare invokes fixed sourceIdentity for 324 source inputs and 39 dependency links; this preparation binds its two manifests rather than copying their entries. No SDK import or query.",
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once",
+  "grant": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/execution-grant.json",
+    "queueKey": "O16HomeFactorGrant",
+    "fields": [
+      "logicalId",
+      "state",
+      "preparationSHA256",
+      "normalAuthenticationWritesAccepted",
+      "claim",
+      "worktree",
+      "selectedAt",
+      "latestStart",
+      "minimumFreshFreeBytes"
+    ]
+  },
+  "bounds": {
+    "outerSeconds": 45,
+    "workerBeforeCleanupSeconds": 42.5,
+    "nativeCases": 2,
+    "nativeWorkSecondsEach": 10,
+    "nativeTermSecondsEach": 0.5,
+    "nativeReapSecondsEach": 2.5,
+    "memoryOutputBytesEach": 65536,
+    "privateBytes": 8388608,
+    "privateEntries": 128,
+    "safeRecordsBytes": 131072,
+    "minimumFixedResourceBytes": 1082261504,
+    "queryCalls": 0
+  },
+  "sameCallAdmission": [
+    "fresh ledger exact active claim/version/worker/worktree/branch/scope; no auth holder",
+    "Git branch and executable pins; preparation SHA is exactly selected by resource owner",
+    "selected grant current floor and freshness/latestStart; no additional implicit historical floor",
+    "unused exact namespace and both A/B consumption files; no native command until preparation/source recipe succeeds"
+  ],
+  "sharedWrites": "Normal same-account native initialization/required auth refresh may write default HOME locks/fallback or Keychain. Not bounded by private8MiB; caller never reads/copies/links/edits credentials.",
+  "interpretation": "A then B only; HOME sole environment difference. A may refresh shared auth before B. Invalid/missing required status or lifecycle UNKNOWN stops B. Exact exit1 false/none/firstParty preserves original OPS14 failure and allows optional subscriptionType absent UNKNOWN.",
+  "disposition": "private KEEP; no shared authentication cleanup; missing inner report stays UNKNOWN despite outer caller PID absent"
+}
