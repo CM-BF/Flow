@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08 00:51 UTC |
+| 最近更新 | 2026-10-08 01:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,23 +16,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 本次新结果与状态封存中；原产品/实验/245供给/旧原件不变 |
-| 工作分支状态 | integration（入口源码与局部结果已独审；候选READY/CLOSED，实际PG不沿用批准） |
-| 检查状态 | PASSED 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED；本次集成诊断PASS，结果待审 |
-| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复/诊断尚未集成。历史两次PG FAILED与本次PASS分别记录，独立恢复事实不变 |
+| 工作树dirty状态 | 当前仅本次限定审结metadata；提交后STOP，固定源码/输入/所有原raw保持不变 |
+| 工作分支状态 | integration（本次baseline测量PASS；结果忠实性附准入偏差获批，实验尚未main） |
+| 检查状态 | PASSED 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c（已审29纯用例）；本次测量PASS，RESULT_FIDELITY_APPROVED_WITH_ADMISSION_DEVIATION，非完全合规准入；历史两次FAILED保留 |
+| 已集成main状态 / HEAD | 只读main0e8bfa7b385aff582a85aa211df1c854e064258c中3c9345为祖先；knowledge/search.ts、knowledge合同、015与固定3c同字节。74934与结果9b4a非main祖先，main无实验entry；不外推其余245输入等同当前main |
 | 实现目标 | 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 知识检索真实诊断已完成，金样本与边界通过，固定计划显示当前分块先物化后过滤；结果待独立审查 |
-| 下一可用交付 | 接收本次诊断的独立审查，保留完整知识检索与留存后继 |
+| 当前产出 | 固定知识检索baseline已完成并获限定结果审查；金样本与查询计划可核，准入偏差单列保留 |
+| 下一可用交付 | 受控接收已审诊断证据；后继检索优化与完整知识库验收仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；Mika18:33:14Z限定批准74934源码及局部结果，0P1/P2；callback静态P2已关闭 |
+| Review | [review.md](review.md)；db_transaction_owner00:56:16Z RESULT_FIDELITY_APPROVED_WITH_ADMISSION_DEVIATION，target9b4a10759，0新增P1/P2；不授完全合规PASS |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@
 | K01-03 | completed | b01_bounded_reads | 12词法样本/实际JSON预算；boundary-extra 2绿 |
 | K01-04 | completed | b01_bounded_reads / Mika | Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[] |
 | K01-05 | completed | b01_bounded_reads / Lead | [main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff |
-| K01-06 | in-progress | b01_bounded_reads / 后继合法owner | [唯一入口](../../docs/evidence/k01/query-plan-diagnostic.md)；实际诊断两次FAILED，12gold/语义阶段只构成局部证据；hybrid/vector、grant/消费/失效验收仍开放 |
+| K01-06 | in-progress | b01_bounded_reads / 后继合法owner | 固定baseline 12gold+semantics/10EXPLAIN/30timed已完成，结果忠实性附准入偏差获批；历史两FAILED保留。hybrid/vector、grant/消费/失效、优化收益和失败路径实际验证仍开放 |
 | K01-07 | completed | b01_bounded_reads / Mika | 文档独审APPROVED，规划已接收cd6938；[唯一规划main receipt](../../docs/evidence/k01/retention-planning-main-receipt.json) |
 | K01-08 | pending | 后续合法product owner | 身份/留存/保护实现，当前没有产品scope |
 | K01-09 | pending | 后续合法consumer owners | 新旧协议/冻结/ACK/history兼容，需协调现owner |
@@ -164,3 +164,9 @@
 实际主体START00:47:44.772253Z，outer terminal00:47:49.282866Z，完整已知资源RETURN观察00:48:30.512887Z；任务原始开工仍UNKNOWN，不以本窗重置。执行8627f990、源码74934未变；12gold/10EXPLAIN/30timed/61HTTP通过，[唯一结果](../../docs/evidence/k01/query-entry-pg-integrated-20261008-once/results.md)与manifest绑定原件。当前结果独审NOT_STARTED，K01-06完整hybrid/vector、性能优化与留存08～10仍开放；实验结果未集成main。原两FAIL/KEEP不改。
 
 账本观察00:45:48.309Z距START116.463253秒，未实现grant要求的同call重读；如实留作准入偏差，未追加probe/重跑。HEAD/native/runtime全部pins与free在调用内核符。新许可已消费，0后续launch；新scratch仅不可变结果KEEP、无活动DB/连接/监听器。独立2MiB自然seal预算覆盖新copy/index/objects，不借旧池。
+
+## 2026-10-08 限定独审收口
+
+2026-10-08 01:01 UTC，本段01:00:24Z开始/截止01:05:24Z，仅512KiB新封套metadata；firstWrite 2026-10-08T01:01:48.975482+00:00。归档[限定独审](../../docs/evidence/k01/query-entry-pg-integrated-20261008-once/independent-review.json)，原source、input、raw/manifest/summary完全不变。测量PASS与同call账本缺失分开，不称全部准入合规。D16五plan含pkey，D128五plan无Index Name，十者均无GIN；不据此承诺优化收益。原terminal receipt .282494Z与stdout/summary .282866Z是不同观察，保原微秒不重写。
+
+K01-06本baseline诊断完成，TODO仍开放；K01-08～10/R01～12与flow.commands生命周期依赖未因此推进。3c为当前main祖先、上述三产品叶同字节；74934入口/9b4a结果未main。任务原始开始UNKNOWN、完整完成NOT_COMPLETED保持。0工程/PG/新rawcopy/旧KEEP读取，提交push后停写保claim，未用预算关闭。

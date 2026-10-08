@@ -125,3 +125,7 @@ Mika于17:41:15Z对固定7693dd641e2da67b7ec8d4cc3ecdf25525f2519a给出FAILURE_R
 ## 2026-10-08 集成诊断实际结果待审
 
 执行8627f990/source74934；结果入口docs/evidence/k01/query-entry-pg-integrated-20261008-once/manifest.json。12gold/10EXPLAIN/30timed均完成，callerPASS；结果独审NOT_STARTED。重点复核计数/计划/时钟/闭合与同call账本缺口；原两失败不改，无额外运行。
+
+## 2026-10-08 00:56:16 UTC 实际结果限定独审
+
+db_transaction_owner / gpt-6-astra：**RESULT_FIDELITY_APPROVED_WITH_ADMISSION_DEVIATION**，固定target9b4a10759e44fd6dac9334c39fcc6b3ba3f9d6f3 / manifest0b489b37b45de6bc3ff7855d3c24fb70234d701fc27f5f024fff66551382bab9，0新增P1/P2。24source/18raw逐Git/WT核符；12gold+semantics+10scale、30samples与计量/资源闭合复算通过。samecall ledger要求未满足，不授完全合规PASS，不新probe/重跑。D16五pkey/D128五无Index Name；terminal两观察分别解释，原件不改。归档[review JSON](../../docs/evidence/k01/query-entry-pg-integrated-20261008-once/independent-review.json)。本审不代表完整K01/REQ-10或main接收。

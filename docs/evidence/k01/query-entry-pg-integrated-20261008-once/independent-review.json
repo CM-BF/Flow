@@ -1,0 +1,70 @@
+{
+  "decision": "RESULT_FIDELITY_APPROVED_WITH_ADMISSION_DEVIATION",
+  "reviewedAt": "2026-10-08T00:56:16Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "target": "9b4a10759e44fd6dac9334c39fcc6b3ba3f9d6f3",
+  "manifestSha256": "0b489b37b45de6bc3ff7855d3c24fb70234d701fc27f5f024fff66551382bab9",
+  "newP1": 0,
+  "newP2": 0,
+  "scope": "Fixed actual result fidelity; not fully compliant admission, no new execution approval",
+  "verified": {
+    "sourceFiles": 24,
+    "sourceBytes": 192072,
+    "rawFiles": 18,
+    "rawBytes": 496350,
+    "golden": 12,
+    "semantics": 1,
+    "scales": 10,
+    "timedSamples": 30,
+    "http": 61,
+    "httpBytes": 157664,
+    "httpStatusCounts": {
+      "201": 19,
+      "200": 42
+    },
+    "chunks": 1644,
+    "rawSourceBytes": 5347454
+  },
+  "planEvidence": {
+    "D16": "Five plans contain knowledge_chunks_pkey",
+    "D128": "Five plans have no Index Name node",
+    "GIN": "Not used in these ten plans; no optimization benefit claim",
+    "currentMaterializedRows": [
+      80,
+      640
+    ],
+    "historicalChunksSeparate": [
+      80,
+      640
+    ]
+  },
+  "admissionDeviation": {
+    "ledgerObservedAt": "2026-10-08T00:45:48.309Z",
+    "outerStartedAt": "2026-10-08T00:47:44.772253Z",
+    "ageSeconds": 116.463253,
+    "sameCallLedgerReread": false,
+    "remedy": "No retrospective overwrite/probe/rerun; preserve measured PASS separately from noncompliant admission."
+  },
+  "timeSources": {
+    "outerTerminalReceipt": "2026-10-08T00:47:49.282494Z",
+    "outerTerminalPrintedObservation": "2026-10-08T00:47:49.282866Z",
+    "summaryOriginalOuterTerminal": "2026-10-08T00:47:49.282866Z",
+    "meaning": "Receipt field is the terminal receipt time; printed/summary observation follows. Both original files unchanged.",
+    "completeReturnOwnerObservation": "2026-10-08T00:48:30.512887Z"
+  },
+  "resourceScope": "Original OPS reports and owner follow-up observations only; DB OID1373524 absent after sameidentity0conn normalDROP. New scratchKEEP_PG_RECEIPTS; oldKEEP not accessed. No reviewer probes.",
+  "limits": [
+    "29pure/source approval distinct from actual PG",
+    "n3/n1 and unknown cache/background cannot prove performance benefit or stable tail",
+    "Actual first two failures remain with unknown precise causal root",
+    "No review tests/import/PG/HTTP/writes/TMP/KEEP access"
+  ],
+  "ownerArchive": {
+    "firstWriteAt": "2026-10-08T01:01:48.975482+00:00",
+    "segmentStart": "2026-10-08T01:00:24Z",
+    "deadline": "2026-10-08T01:05:24Z",
+    "capBytes": 524288,
+    "preWriteConservativeBytes": 440033,
+    "method": "Existing local find-skills/codebase-design/fixed clean-code; wording/source/time/ownership consistency only"
+  }
+}

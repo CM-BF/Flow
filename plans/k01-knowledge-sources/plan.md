@@ -7,7 +7,7 @@
 - [x] K01-03 实现项目当前版本词法检索、短摘要与真实 JSON 预算。
 - [x] K01-04 真实 PG/HTTP 验证并独立 review，记录生产挂载依赖。
 - [x] K01-05 接收 main 事实；真实生产入口验收由 Lead 独立完成。
-- [ ] K01-06 后继任务继续 REQ-10 hybrid/vector、下游 grant/消费与摘要失效验收；本片交付不关闭该要求。2026-10-07补当前词法查询计划诊断准备，见下节；真实PG与性能验收仍NOT_RUN。
+- [ ] K01-06 后继任务继续 REQ-10 hybrid/vector、下游 grant/消费与摘要失效验收；本片交付不关闭该要求。2026-10-07补当前词法查询计划诊断准备，见下节；2026-10-08固定baseline真实诊断完成并获附准入偏差的结果忠实性审查，完整性能/优化与REQ-10验收仍开放。
 
 原已交付片段容量（历史验收保持有效）：正文 <=256KiB；project <=128 sources；每 source <=16 retained versions；project retained raw <=64MiB。project 行锁→source 锁→命令幂等锁（operation 含 project/source），同事务插版本/chunks 后切 head；不递增 project.revision。达到容量明确拒绝，不自动删除旧版本。chunk <=4096 UTF8B/至少256B重叠，边界向前对齐、严格推进；每版本至多69块（ordinal0..68），衍生原文字节额外 <=69×4096，与原文总量分别说明。
 
@@ -46,3 +46,5 @@
 当前交付仅小诊断方案，产品/PG/工程检查NOT_RUN；后续建议G金样本+D16/D128有界baseline，独立review后再协调合法scope、单独PG窗口与完整入口生命周期。NOT MATERIALIZED/拆分分支只是假设，不调整SQL/pool、不安装扩展或embedding，不承诺提速。原K01-08～10与R01～12、flow.commands实施前依赖保持不变。
 
 2026-10-07 15:01:34 UTC进入原K01-06的20分钟入口准备段，合法amend只新增experiments/knowledge-search。实现说明及计量口径修订收敛在该目录README.md，c2ed设计保持历史原样：自有诊断/admin语句1.5s/lock0.5s，未改factory business10s/pg-boss配置，统一绝对截止与unknown KEEP独立验证。当前仅源准备；四个纯用例与noEmit待资源排他解除，PG/HTTP仍NOT_OPEN，不据此关闭K01-06/08～10。
+
+2026-10-08进展补充：原K01-06固定baseline完成12gold+语义/10EXPLAIN/30timed，限定结果独审见[当前结果入口](../../docs/evidence/k01/query-entry-pg-integrated-20261008-once/results.md)。同call账本偏差保留，不授完全合规PASS；当前SQL未优化，无速度收益结论。正常成功清理已实证，150s失败后独立observer仍仅纯行为证据；历史失败根因不由新PASS证明。此进展不勾选K01-06，不改变K01-08～10/R01～12的NOT_RUN及后继授权边界。
