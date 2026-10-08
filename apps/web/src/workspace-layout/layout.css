@@ -8,7 +8,7 @@
 .flow-arc-panes > [hidden] { display:none; }
 .flow-pane-header { min-width:0; background:var(--background); border-bottom:2px solid transparent; }
 .flow-pane-header.focused { border-bottom-color:var(--ring); }
-.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; }
+.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; padding-block-end:calc(3px + 1rem); }
 /* Keep a readable title and every control; PaneTabs reveals the whole tab on focus. */
 .flow-pane-header .flow-tab { flex:0 0 auto; min-width:16rem; max-width:20rem; }
 .flow-pane-header .flow-tab > [role=tab] { min-width:8rem; }

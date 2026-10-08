@@ -405,6 +405,48 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
           expect(item.actionHeight).toBeGreaterThanOrEqual(24); expect(item.clippedVertically).toBe(false);
         }
         result.observations.narrowTabs = { tabGeometry, keyboard: "Home/End focused offscreen tabs without selecting; Tab reached retained plugin action; close visible", longTitle };
+        await input(4).focus();
+        const scrollbarClearance: unknown[] = [];
+        result.observations.scrollbarClearance = scrollbarClearance;
+        for (const scheme of ["light", "dark"] as const) {
+          const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();
+          await expect(page.locator("html")).toHaveAttribute("data-theme", scheme);
+          // Real keyboard scrolling keeps the native bar active; do not wait for it to fade.
+          await tab(4).focus(); await page.keyboard.press("Home");
+          const fromScrollLeft = await tabStrip.evaluate(node => node.scrollLeft);
+          await page.keyboard.press("End"); await expect(tab(4)).toBeFocused();
+          const toScrollLeft = await tabStrip.evaluate(node => node.scrollLeft);
+          expect(toScrollLeft - fromScrollLeft).toBeGreaterThan(1);
+          await expect(tab(4)).toHaveAttribute("aria-selected", "true");
+          await page.keyboard.press("Tab"); await expect(tabAction).toBeFocused();
+          await expect(activeTab.getByRole("button", { name: closeName, exact: true })).toBeInViewport({ ratio: 1 });
+          const clearance = await activeTab.evaluate((node, closeName) => {
+            const strip = node.parentElement!, stripRect = strip.getBoundingClientRect(), style = getComputedStyle(strip);
+            const title = node.querySelector<HTMLElement>('[role="tab"]')!;
+            const action = node.querySelector<HTMLElement>('[aria-haspopup="menu"]')!;
+            const close = [...node.querySelectorAll("button")].find(button => button.getAttribute("aria-label") === closeName)!;
+            return { rootFontSize: parseFloat(getComputedStyle(document.documentElement).fontSize),
+              paddingBottom: parseFloat(style.paddingBottom), borderBottom: parseFloat(style.borderBottomWidth),
+              strip: { top: stripRect.top, bottom: stripRect.bottom, height: stripRect.height, clientHeight: strip.clientHeight, offsetHeight: strip.offsetHeight, scrollHeight: strip.scrollHeight, clientWidth: strip.clientWidth, scrollWidth: strip.scrollWidth, scrollLeft: strip.scrollLeft },
+              controls: [title, action, close].map(element => {
+                const rect = element.getBoundingClientRect(), range = document.createRange(); range.selectNodeContents(element);
+                return { label: element.getAttribute("aria-label") ?? element.textContent?.slice(0, 160), top: rect.top, bottom: rect.bottom, height: rect.height,
+                  textRects: [...range.getClientRects()].slice(0, 4).map(rect => ({ top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right })) };
+              }) };
+          }, closeName);
+          const observation = { scheme, fromScrollLeft, toScrollLeft, ...clearance, nativeBarPaint: "Requires screenshot review; DOM bounds do not measure overlay paint" };
+          expect(Buffer.byteLength(JSON.stringify([...scrollbarClearance, observation]))).toBeLessThanOrEqual(8 * 1024);
+          scrollbarClearance.push(observation);
+          expect(clearance.paddingBottom).toBeGreaterThanOrEqual(clearance.rootFontSize);
+          const contentBottom = clearance.strip.bottom - clearance.borderBottom - clearance.paddingBottom;
+          for (const control of clearance.controls) {
+            expect(control.bottom).toBeLessThanOrEqual(contentBottom + 1);
+            for (const text of control.textRects) expect(text.bottom).toBeLessThanOrEqual(contentBottom + 1);
+          }
+          const bytes = await page.screenshot({ fullPage: false }); expect(bytes.length).toBeLessThanOrEqual(512 * 1024);
+          const path = join(outputDirectory, `arc-${scheme}-390.png`); await writeFile(path, bytes); result.screenshots.push(path);
+          expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
+        }
       } catch (error) {
         await observeTabs("first failure");
         try {
@@ -415,14 +457,6 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
           } else observationError("Narrow failure screenshot exceeded 512KiB");
         } catch (observationFailure) { observationError(observationFailure); }
         throw error;
-      }
-      await input(4).focus();
-      for (const scheme of ["light", "dark"] as const) {
-        const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();
-        await expect(page.locator("html")).toHaveAttribute("data-theme", scheme);
-        const bytes = await page.screenshot({ fullPage: false }); expect(bytes.length).toBeLessThanOrEqual(512 * 1024);
-        const path = join(outputDirectory, `arc-${scheme}-390.png`); await writeFile(path, bytes); result.screenshots.push(path);
-        expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
       }
       const before = await page.evaluate(() => Object.entries(localStorage).filter(([key]) => key.startsWith("flow.workspace-layout.v1:")));
       expect(before).toHaveLength(1); const publicLayout = JSON.parse(before[0]![1]);
