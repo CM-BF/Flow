@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:46:59.356Z；fixture诊断源码/局部结果已固定待审，R2保真批准保持 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:04:26.879712+00:00；诊断三源已独审/main，原R2失败保持 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 原基线a89f42ab57acb53657af6a2d1b745dabd4d50aa5；本段起始196d705913afefd102b31e451baf8cfd7c4975cf；新source 8cc10177f2dfa03f89d598260f742a5befd14d29 |
-| 工作树dirty状态 | 三源已固定25174；仅本次结果/Interface/own状态收口，提交后clean |
+| 工作树dirty状态 | 三源固定25174且已main；本次仅own status/review接收收口，产品停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 检查状态 | 12不同直接例分轮通过（首11/12与测试工具失败保留，定向1/1），focused types exit0；3组absent/双EOF、2861ms/raw2427B。2空scratch删、types缓存1357740B KEEP。0PG/服务/真实旅程。 |
-| 已集成main状态 / HEAD | 原c612四源已main421b2e89f10225bd37d1928ef2b627c6a375b76a；R2限定准备独审回执已main1b9eda58f，own source8cc/packet43dc由Git引用，不冒新实际能力。 |
+| 已集成main状态 / HEAD | 诊断三源逐字已main/origin 0e8bfa7b385aff582a85aa211df1c854e064258c；唯一I02 tui01f-fixture-observation-intake.json。原c612及R2独审历史保持，不重跑。 |
 | 实现目标 | 25174ee40a7c1e272c64a9b413853739401cce87 |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-observation.ts, apps/tui/src/task-controls/fixture-observation.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 有限执行阶段诊断和故障例已完成，可保留下一次合成执行失败的安全分类；原双端旅程失败未改。 |
-| 下一可用交付 | 独立审查这组诊断源码与局部证据；完整旅程需另行准备和真实资源窗口。 |
-| 当前阻塞 | ACTIVE: 新fixture诊断待独审；原第二任务未完成的底层原因仍UNKNOWN，尚无下一真实旅程许可。 |
+| 当前产出 | 有限执行阶段诊断已通过独立审查并合入主线，可为后续旅程保留安全故障分类；原双端失败仍保留。 |
+| 下一可用交付 | 本片段已交付；完整双端旅程仍需后续实际资源窗口和新输入。 |
+| 当前阻塞 | ACTIVE: 原第二任务未完成的底层原因仍UNKNOWN，尚无下一真实旅程许可。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R2实际b186获APPROVED_LIMITED_R2_RESULT_FIDELITY；本次25174诊断源码/局部记录待独审，未运行新actual。 |
-| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-08T00:06:46.936Z fresh核同owner/WT/branch/exact7，原scope未变 |
+| Review | [review.md](review.md)：诊断25174/43b5获APPROVED_LIMITED_FIXTURE_OBSERVATION_SOURCE_AND_RESULT，0P1/P2；R2实际b186仍为限定失败忠实性批准。 |
+| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active/exact7；2026-10-08T01:04:26.879712+00:00 fresh核同owner/WT/branch，needsVerification为旧标记；实际HEAD43b5 clean已独立核，当前仅metadata |
 | 架构影响 | 仅实验启动装配改用已审OPS14；原journey/fixture拥有任务与清理，生产controller/权限/调度不变。固定af51/d629/ec30不覆盖已发布779全设置/恢复。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -118,3 +118,5 @@
 2026-10-08T00:40:07.767Z：本轮fixture-only诊断工作段实际开始，fresh b186 clean/claimv5 exact7核同。原R2 20绑定结果获assignment独立限定批准（18raw203010B、全包211141B），Lead落I02；原FAIL/KEEP及runtime最终提交UNKNOWN保留。实施3源小观察接口：64帧/32KiB、阶段/执行身份与安全name/code/status，原错误透传，runtime finalization始终NOT_OBSERVED；保存沿现checkpoint，0新监督/计时器。段内最多6child/单20s/累计60s、总新增源码/raw/tmp16MiB；0PG/HTTP/PTY/Chrome/provider/install/个人。按已装find-skills本地优先结果应用brainstorming有界已授权方案、codebase-design小Interface、clean-code单职责，不重复安装或逐命令确认。
 
 2026-10-08T00:46:59.356Z：本轮诊断源码/局部检查安全收口。runtime00:44:06.287Z→00:45:09.231Z已RETURN；12不同/13选择、types0，首轮测试工具读取hostile Proxy的失败保留，定向只修测试捕获不改observer/fixture。见[单份manifest](../../docs/evidence/tui01f/web-handoff/fixture-observation-manifest.json)、[Interface](../../docs/evidence/tui01f/web-handoff/fixture-observation-interface.md)、[原始汇总](../../docs/evidence/tui01f/web-handoff/fixture-observation-local-summary.json)。3组均absent/双EOF，已关闭本队局部执行槽；非空types自有cache1357740B KEEP，不扩大清理。无旧原件/KEEP读取，无新真实旅程。源码停写交独审；完整TUI01F-04仍open，runtime最终提交NOT_OBSERVED保持。
+
+2026-10-08T01:04:26.879712+00:00：仅归档唯一批准与main回执。诊断source25174/delivery43b5由assignment独审 APPROVED_LIMITED_FIXTURE_OBSERVATION_SOURCE_AND_RESULT、0P1/P2，I02审查记录00:49:10.852Z；main/origin 0e8bfa7b385aff582a85aa211df1c854e064258c 已由Lead确认并核本地唯一记录。此处时间为owner接收观察，不推造实际merge UTC。原12不同分轮/首次失败/2861ms/缓存KEEP不变；无重测、新PG/PTY/Chrome/模型或旧KEEP读取。完整TUI01F-04仍open。

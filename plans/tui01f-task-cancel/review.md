@@ -118,3 +118,7 @@ Findings 未评估；结论未审查。0 本片运行检查，NOT_RUN。
 ## 2026-10-08 fixture诊断交审
 
 目标 `25174ee40a7c1e272c64a9b413853739401cce87`，范围为fixture.ts、fixture-observation.ts及其直接test；[唯一manifest](../../docs/evidence/tui01f/web-handoff/fixture-observation-manifest.json)。12不同直接例分轮覆盖、首11/12与定向1/1原件、focused types通过；本片独审PENDING，未把局部通过当真实旅程。原b186 R2结果已由assignment独立APPROVED_LIMITED_R2_RESULT_FIDELITY/0P1P2；原FAIL/KEEP、groups unknown和后置RETURN保持。审查重点为安全字段/上限、原错透传、直接fixture消费、旧完成与清理语义无变、runtime finalization不冒通过。
+
+## 2026-10-08T01:04:26.879712+00:00 诊断三源独审及main收口
+
+唯一审查为 main `0e8bfa7b385aff582a85aa211df1c854e064258c` 的 `docs/evidence/i02/tui01f-fixture-observation-intake.json`（reviewer assignment_review，00:49:10.852Z）。target25174/delivery43b5，APPROVED_LIMITED_FIXTURE_OBSERVATION_SOURCE_AND_RESULT、0P1/P2。三源精确接收，旧R2失败/KEEP、runtimeFinalization NOT_OBSERVED、实际新旅程未授权均保持；owner不复制审查报告、不重跑检查。
