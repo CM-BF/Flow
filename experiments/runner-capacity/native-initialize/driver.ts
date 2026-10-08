@@ -66,6 +66,7 @@ function samplerChannel(binding: SamplerBinding, signal: AbortSignal) {
   } finally { closeSync(fd); }
   const child = spawn(binding.path, [], { env: { PATH: '/usr/bin:/bin', LC_ALL: 'C' }, stdio: ['pipe','pipe','pipe'] });
   const ledger = createSampleLedger();
+  const frames: { stage: number; header: unknown; rows: readonly unknown[] }[] = [];
   let buffer = '', total = 0, fault: string | null = null, stdoutEof = false, stderrEof = false;
   let active: { stage: number; header?: unknown; count: number; rows: unknown[]; resolve(value: Sample): void; reject(error: Error): void; dispose(): void } | undefined;
   const fail = (code: string) => { fault ??= code; const pending = active; active = undefined; pending?.dispose(); pending?.reject(Error(code)); };
@@ -93,12 +94,13 @@ function samplerChannel(binding: SamplerBinding, signal: AbortSignal) {
         } else pending.rows.push(value);
         if (pending.rows.length === pending.count) {
           const sample = ledger.accept(pending.header, pending.rows, pending.stage);
+          frames.push({ stage: pending.stage, header: pending.header, rows: pending.rows });
           active = undefined; pending.dispose(); pending.resolve(sample);
         }
       } catch { fail('SAMPLER_DECODE'); return; }
     }
   });
-  let closePromise: Promise<{ known: boolean; pid: number | null; stdoutEof: boolean; stderrEof: boolean; fault: string | null; code: number | null; signal: NodeJS.Signals | null; samples: ReturnType<typeof ledger.facts>; bytes: number }> | undefined;
+  let closePromise: Promise<{ known: boolean; pid: number | null; stdoutEof: boolean; stderrEof: boolean; fault: string | null; code: number | null; signal: NodeJS.Signals | null; samples: ReturnType<typeof ledger.facts>; frames: typeof frames; bytes: number }> | undefined;
   const exited = new Promise<{ code: number | null; signal: NodeJS.Signals | null }>(resolve => {
     child.once('close', (code, exitSignal) => { if (active) fail('SAMPLER_CLOSED'); resolve({ code, signal: exitSignal }); });
   });
@@ -120,7 +122,7 @@ function samplerChannel(binding: SamplerBinding, signal: AbortSignal) {
       closePromise ??= (async () => {
         child.stdin.end(); const result = await exited; signal.removeEventListener('abort', cancel);
         return { known: result.code === 0 && result.signal === null && !fault && stdoutEof && stderrEof && !active && !buffer,
-          pid: child.pid ?? null, stdoutEof, stderrEof, fault, ...result, samples: ledger.facts(), bytes: total };
+          pid: child.pid ?? null, stdoutEof, stderrEof, fault, ...result, samples: ledger.facts(), frames, bytes: total };
       })();
       return closePromise;
     },
@@ -146,8 +148,9 @@ export async function runStockBaseline(input: {
   input.signal.throwIfAborted();
   const closing = new AbortController();
   const combined = AbortSignal.any([input.signal, closing.signal]);
-  const stopAtDeadline = clock.alarm(input.originMs + 70_000, () => closing.abort());
   const sampler = samplerChannel(input.sampler, combined);
+  const stopAtDeadline = clock.alarm(input.originMs + 70_000, () => closing.abort());
+  const measurements: { level: number; intervals: ReturnType<typeof compareSamples>[] }[] = [];
   let expected: number[] = [], samplerClose: Awaited<ReturnType<typeof sampler.close>> | undefined;
   try {
     const result = await runStages({
@@ -161,11 +164,13 @@ export async function runStockBaseline(input: {
       },
       async observe(level, duration, phase) {
         const began = clock.now(); let previous = await sampler.sample(level, phase);
+        const intervals: ReturnType<typeof compareSamples>[] = []; measurements.push({ level, intervals });
         if (expected.length !== level || !expected.every(pid => previous.members.some(member => member.pid === pid))) return { known: false };
         for (let i = 1; i <= 8; i++) {
           await pause(clock, began + i * duration / 8, phase);
           const next = await sampler.sample(level, phase);
-          if (!compareSamples(previous, next).known) return { known: false };
+          const comparison = compareSamples(previous, next); intervals.push(comparison);
+          if (!comparison.known) return { known: false };
           previous = next;
         }
         return { known: true };
@@ -181,6 +186,6 @@ export async function runStockBaseline(input: {
     });
     await timeout;
     return { ...result, known: result.known && samplerClose?.known === true && clock.now() < input.originMs + 70_000,
-      sampler: samplerClose ?? { known: false, fault: 'CLOSE_UNKNOWN' }, nativeWriteAccess: 'unknown' as const };
+      sampler: samplerClose ?? { known: false, fault: 'CLOSE_UNKNOWN' }, measurements, nativeWriteAccess: 'unknown' as const };
   } finally { stopAtDeadline(); closing.abort(); void sampler.close().catch(() => {}); }
 }

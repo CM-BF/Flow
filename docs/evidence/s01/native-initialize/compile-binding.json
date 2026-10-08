@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-08T01:39:01.515Z",
+  "kind": "COMPILE_LINK_ONLY_NOT_EXECUTED",
+  "executionHead": "1edff536b4c4820d015f2a014da3d1ce563c1f82",
+  "artifact": {
+    "path": "docs/evidence/s01/native-initialize/sampler-darwin",
+    "bytes": 34320,
+    "sha256": "02c41bf24c1544a0b99a148d0d956656b175b1ccbacf8eae106e45bda0622be3",
+    "executed": false
+  },
+  "argv": [
+    "/usr/bin/clang",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-O2",
+    "-arch",
+    "arm64",
+    "-isysroot",
+    "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/native-initialize/sampler-darwin.c",
+    "-lproc",
+    "-o",
+    "/tmp/flow-s01-initialize-clang-_zcu9max/sampler-darwin"
+  ],
+  "compilerAnchors": [
+    {
+      "path": "/usr/bin/clang",
+      "realpath": "/usr/bin/clang",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "realpath": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "bytes": 269112240,
+      "sha256": "bcac6febe0148c3696bd3f7c42fb5bb475720fee4a1412de56e3b16ea1c04e5f"
+    }
+  ],
+  "sdkHeaders": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libproc.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/libproc.h",
+      "bytes": 7575,
+      "sha256": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/proc_info.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sys/proc_info.h",
+      "bytes": 31262,
+      "sha256": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sys/resource.h",
+      "bytes": 20046,
+      "sha256": "4d55a54011d39c829228a54bd1c4b25c63c8066f4ed3f7a513af11d6ff37c7d3"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/mach_time.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/mach/mach_time.h",
+      "bytes": 2590,
+      "sha256": "d690e304ea595ca216ed51e20aa9747e0b3bcb07446d996abe0080a231c7065f"
+    }
+  ],
+  "limits": "SDK/header/compiler hashes do not attest current kernel ABI/runtime or all linker transitive inputs; no helper execution",
+  "source": {
+    "path": "experiments/runner-capacity/native-initialize/sampler-darwin.c",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/native-initialize/sampler-darwin.c",
+    "bytes": 4724,
+    "sha256": "62a5646545b7743c054fa74e5f498a9f6e860dc14b689c532c1df8d9f7bf84b6"
+  }
+}
