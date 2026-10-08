@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-08T03:53:20.926811+00:00",
+  "boundBytes": 16777216,
+  "accounting": "conservative logical upper allocation; includes all phase-local copies/index atomic; not physical allocated or reclaimable",
+  "termsBytes": {
+    "fixedReadonlyUISupply": 1095851,
+    "currentOwnerEvidence": 177107,
+    "privateTMPIncludingRawOriginals": 113852,
+    "canonicalPlanThree": 49168,
+    "twoIndexCopiesConservative": 4618796,
+    "productChangesUpperBound": 335009,
+    "newGitObjectLogicalReserve": 1048576,
+    "finalMetadataAndIndexGrowthReserve": 262144
+  },
+  "totalBytes": 7700503,
+  "index": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-versioned-profile-creation/index",
+    "bytes": 2309398
+  },
+  "source": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+  "deadline": "2026-10-08T04:09:51.914994Z",
+  "childrenClosed": {
+    "spentMs": 6082,
+    "count": 2,
+    "unusedNotTransferred": true
+  },
+  "runtime": "NOT_RUN",
+  "STOP": "all exact11 products; final own metadata seal only"
+}

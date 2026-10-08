@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-08T03:41:18.838189Z；后继合法迁源/采用已接main1b1428，正在消费者组合，旧元数据冻结 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:52:55.944851+00:00；f71e source/local独审通过，新mounted未运行；后继未集成main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation |
 | Branch | codex/web-versioned-profile-creation |
-| 工作基线 / HEAD | 固定main1b1428f3867a5396422f2b8d066a94f8f138030d；受控merge9ee273b48（完整HEAD见Git）；保66abb/e5原证据 |
-| 工作树dirty状态 | 消费者组合进行中；此刻仅已接基线及唯一状态迁移，0工程child；旧108树不写 |
+| 工作基线 / HEAD | 固定main1b1428f3867a5396422f2b8d066a94f8f138030d；受控merge9ee273b48e200644e52c68489575102596fa67ae；实现f71e1c9a3d7efef26859836365dc77d9fdb728ce |
+| 工作树dirty状态 | 全部exact11源码STOP；本次自然meta封存后normalpush，0工程child |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 新消费者组合；纯基础e5的7selected+末次focused1/旧affectedtypes仍历史限定通过 |
+| 检查状态 | PASSED f71e1c9a3d7efef26859836365dc77d9fdb728ce；仅五production roots affected noEmit0 + 两新consumer pure PASS/97未选，6082ms；browser/真实CREATE/Queue NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED（versioned creation后继）；原MSGAPP-01–06精确18源已INTEGRATED main3c9345df4aec85a37e8a2a155e079db260d515b1，不撤销历史交付 |
-| 实现目标 | e5c11b3c7ca7e9e3e303e6c861603640f75a1118 |
-| 实现范围 | apps/web/src/execution-profiles/selection.ts, apps/web/src/recovery/binding.tsx, apps/web/test/execution-profiles.test.ts, apps/web/test/conversation-recovery.test.ts |
+| 实现目标 | f71e1c9a3d7efef26859836365dc77d9fdb728ce |
+| 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/selection.ts, apps/web/src/recovery/binding.tsx, apps/web/test/execution-profiles.test.ts, apps/web/test/conversation-recovery.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已接Arc/Connection/Picker固定主线，versioned creation纯基础保持，正接真实消费者 |
-| 下一可用交付 | App公共目录、Thread提交前资格与Picker版本化选择固定后有界受影响验证 |
+| 当前产出 | 显式versioned目录/创建选择、Prepare独立tuple门、可信GET后Send/Queue同步资格检查；目录通知能重算资格；旧request/draft authority保持 |
+| 下一可用交付 | SOURCE_LOCAL_APPROVED；真实publisher→UI CREATE/UNKNOWN retry/Queue及390验收按现有接口准备后另授 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED e5c11b3c7ca7e9e3e303e6c861603640f75a1118；仅PURE_FOUNDATION / NOT_INDEPENDENTLY_MERGEABLE；[review.md](review.md) |
+| Review | APPROVED f71e1c9a3d7efef26859836365dc77d9fdb728ce；SOURCE_LOCAL_APPROVED；new mounted/realpublisher/auth/Queue/lostACK NOT_RUN；[review.md](review.md) |
 | Claim | a897732d-f68f-486e-a614-73c5510e966c v1 exact11 COMMITTED2026-10-08T03:39:52.022Z；旧fee104/25b868等均released，不沿旧权写 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -42,9 +42,10 @@
 
 ## 等待记录
 
-| 开始时间 | 结束时间 | 类别 | 等待事项 | 来源 |
-| --- | --- | --- | --- | --- |
-| UNKNOWN | 2026-10-08T03:41:18.838189Z | 接口 | versioned creation合法消费者交权与组合前置 | 固定main实际接收后a897 exact11 COMMITTED；不倒推等待起点 |
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| MSG07-HANDOFF | UNKNOWN | 2026-10-08T03:41:18.838Z | 接口 | versioned creation合法消费者交权与组合前置；实际main接收后解除 | canonical-migration.json / a897 exact11 COMMITTED；不倒推等待起点 |
+| MSG07-LOCAL | UNKNOWN | 2026-10-08T03:49:25.050Z | 资源 | 将下一局部child让给已READY W01；其RETURN后恢复 | D01调度消息；实际通知开始UTC未另存，UNKNOWN不倒推 |
 
 当前执行树：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation` / `codex/web-versioned-profile-creation`；此处为经理授权的新唯一status，旧108树冻结；Original registry owner待切同ID路由。
 

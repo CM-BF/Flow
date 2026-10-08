@@ -1,0 +1,179 @@
+{
+  "at": "2026-10-08T03:50:29.364905+00:00",
+  "taskId": "WPF-MESSAGESETTINGS03",
+  "source": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+  "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "foundationSource": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+  "foundationReview": "../root-versioned-profile-creation-review-20261008.json",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 11971,
+      "sha256": "28ffc4bd8617f29ba3b8f79b0fd4e7c3c36c1d12f3031763ca178c97713dcbec",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "changed": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 33671,
+      "sha256": "ea5046c2407b49cb9e7bb97b64468045de4a3ff4eb82cc8cc74f8a7a679a8782",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+      "changed": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 22349,
+      "sha256": "c94b35abd7e2bb498a8ddbc2bdcf3b2b14e97b9fd9c5128247429b8cfe81c647",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "changed": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 102141,
+      "sha256": "52b021d0cbea580ac959ef0190d45704597c86f2ad8973b0448cafd1362fbe7c",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "65249d1197f87f35e38c60d64a33f128442e0eb6a4149a7c579ae8fa2f4b52ce",
+      "changed": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 80588,
+      "sha256": "cb534370a8fdf0a28be69e7aa96454fe17bbbc005889250b62999ecf8b62c860",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "927b538e8289871c054ac598d81d36a9fd5b1386ffc840d78770f989a95a1e10",
+      "changed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 31311,
+      "sha256": "913f1606530c6f38a79cc42287b18d12cc6a09bfd531ef6085ab7a4252df0ef4",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "changed": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 30956,
+      "sha256": "a1e181aaec17ebc27e61bf1fd86713aad762c9e54968512576713f9797064068",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+      "changed": true
+    },
+    {
+      "path": "apps/web/test/execution-profile-integration.browser.ts",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 15661,
+      "sha256": "0f02fe9a6ae32db66ef2495b53fdb3f15f147f728ea473e9737476bb2540e2a0",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "0f02fe9a6ae32db66ef2495b53fdb3f15f147f728ea473e9737476bb2540e2a0",
+      "changed": false
+    },
+    {
+      "path": "apps/web/test/execution-profile-integration.fixture.ts",
+      "commit": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "bytes": 6361,
+      "sha256": "939e2c9a88a2a25caa47169d2cae32a0c0a31a34699a31b216d4a2f59f8fd792",
+      "baseCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "baseSha256": "939e2c9a88a2a25caa47169d2cae32a0c0a31a34699a31b216d4a2f59f8fd792",
+      "changed": false
+    }
+  ],
+  "rawPairs": [
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/direct-2.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/direct-2.json",
+      "bytes": 35604,
+      "sha256": "37a04f640b55a7231870106f62114e62b047dcc906205ba096d543c3fdf96552"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/direct-2.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/direct-2.log",
+      "bytes": 91,
+      "sha256": "ba23b9f0bff624f5fb4f4c7a617ca00b4da8be089e48145819eeb7a914ca760c"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/direct-2.outer.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/direct-2.outer.log",
+      "bytes": 9060,
+      "sha256": "7e8e094eee085f0de0a703726afca6205f0f6819ea7729b58de9d261cee2801d"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/run.py",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/run.py",
+      "bytes": 10674,
+      "sha256": "b680b284d721ce4e8a9f43f93b7f277cf44e41d815da78f6179d1f60e8367b22"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/sandbox.sb",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/sandbox.sb",
+      "bytes": 171,
+      "sha256": "c67ec82695f43638804c4f4a76a49259d32efc97fbc7ae391d1d7f32cd9272ed"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/segment.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/segment.json",
+      "bytes": 22097,
+      "sha256": "78825392805cefa8dc09424a673441c7e9b78f45aeac4e332d4cbed1d14fa610"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/take-receipt.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/take-receipt.json",
+      "bytes": 1101,
+      "sha256": "189ee1ad862450a1c7e67c14277fe87689ea0570daa09c1aae556b71bdbbc4fc"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/types-1.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/types-1.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/msg03-ui-consumers-20261008-033951/local/types-1.outer.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/local/types-1.outer.log",
+      "bytes": 8747,
+      "sha256": "b4819f5f9525b53d13ef3fc7bf5a056a5fb41967329f5f0e4cb21e645e329d5a"
+    }
+  ],
+  "actual": {
+    "types": {
+      "scope": "five production roots and static imports only",
+      "exit": 0,
+      "chargeMs": 4138
+    },
+    "direct": {
+      "selected": 2,
+      "passed": 2,
+      "notSelected": 97,
+      "exit": 0,
+      "chargeMs": 1944
+    },
+    "totalMs": 6082,
+    "children": 2,
+    "limits": {
+      "children": 3,
+      "totalMs": 60000
+    },
+    "cleanup": "both owned groups and scratch absent; regular merged file logs, not dual EOF"
+  },
+  "notRun": [
+    "browser",
+    "real publisher registration",
+    "CREATE lost ACK UI",
+    "real Cookie authentication",
+    "real Queue",
+    "native/provider",
+    "wholeWeb types"
+  ],
+  "claim": "a897732d-f68f-486e-a614-73c5510e966c v1 exact11",
+  "runtimeGrant": false
+}

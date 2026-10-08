@@ -1,0 +1,310 @@
+diff --git a/apps/web/src/App.tsx b/apps/web/src/App.tsx
+index 28189b969..f044b7bc4 100644
+--- a/apps/web/src/App.tsx
++++ b/apps/web/src/App.tsx
+@@ -49,7 +49,7 @@ import { ConversationProjection, ConversationCatalog } from "./conversations/pro
+ import { restoreOutbox } from "./conversations/outbox";
+ import { ConversationThread } from "./conversations/ConversationThread";
+ import { ConversationList } from "./conversations/ConversationList";
+-import { createExecutionProfileCatalog, type ExecutionProfileCatalog } from "./execution-profiles/catalog";
++import { createExecutionProfileCatalog, createMessageSettingsCatalog, type ExecutionProfileCatalog, type MessageSettingsCatalog } from "./execution-profiles/catalog";
+ import { legacyDefaultSelection, type ProfileSelection } from "./execution-profiles/selection";
+ import { userMessageId } from "./conversations/messages";
+ import { WorkspaceOverview } from "./workspace-feed/WorkspaceOverview";
+@@ -197,6 +197,7 @@ function ChatPane({
+   view,
+   drafts,
+   profiles,
++  messageProfiles,
+   profileSelection,
+   onProfileSelection,
+   onDraftChange,
+@@ -212,6 +213,7 @@ function ChatPane({
+   view: View;
+   drafts: Map<string, DraftState>;
+   profiles: ExecutionProfileCatalog;
++  messageProfiles: MessageSettingsCatalog;
+   profileSelection: ProfileSelection;
+   onProfileSelection: (selection: ProfileSelection) => void;
+   onDraftChange: () => void;
+@@ -228,7 +230,7 @@ function ChatPane({
+   );
+   const [confirm, setConfirm] = useState(false);
+   const task = state.task;
+-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} intent={view.intent ?? "follow-up"} onIntent={onIntent} onDraftChange={onDraftChange} restoredVersion={view.restoredVersion ?? 0} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
++  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} messageProfiles={messageProfiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} intent={view.intent ?? "follow-up"} onIntent={onIntent} onDraftChange={onDraftChange} restoredVersion={view.restoredVersion ?? 0} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
+     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
+     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
+@@ -381,6 +383,7 @@ function Workspace({
+   const [catalog] = useState(() => new TaskProjection(client));
+   const [conversations] = useState(() => new ConversationCatalog(client));
+   const [profiles] = useState(() => createExecutionProfileCatalog({ executionProfiles: (options, signal) => client.executionProfiles(options, signal) }));
++  const [messageProfiles] = useState(() => createMessageSettingsCatalog((options, signal) => client.claudeMessageSettingsProfiles(options, signal)));
+   const [profileSelections, setProfileSelections] = useState<Record<string, ProfileSelection>>({});
+   profileRef.current = profileSelections;
+   const [defaultProfileSelection] = useState(legacyDefaultSelection);
+@@ -476,6 +479,7 @@ function Workspace({
+     if (!ensureView(id)) return;
+     setCapacityBlocked(false); setOverview(false);
+     if (!profiles.getSnapshot().loaded && !profiles.getSnapshot().loading) void profiles.refresh();
++    if (!messageProfiles.getSnapshot().loaded && !messageProfiles.getSnapshot().loading) void messageProfiles.refresh();
+     if (window.innerWidth <= 800) setSidebar(false);
+     setLayout(previous => selectLayoutView(previous, activeGroup, id));
+   };
+@@ -524,6 +528,7 @@ function Workspace({
+       views.forEach((view) => { view.projection.disconnect(); view.conversation?.dispose(); });
+       conversations.dispose();
+       profiles.dispose();
++      messageProfiles.dispose();
+       catalog.disconnect();
+     };
+   }, [client]);
+@@ -1179,7 +1184,7 @@ function Workspace({
+                 style={{ gridColumn: position + 1, gridRow: 2, "--pane-stack-row": position * 2 + 2 } as CSSProperties}
+                 onFocusCapture={() => setActiveGroup(pane.id)}>
+                 <ChatPane viewId={id} visible={authorized && !overview && pageVisible && shown} view={view} drafts={drafts}
+-                  profiles={profiles} profileSelection={profileSelections[view.key] ?? defaultProfileSelection}
++                  profiles={profiles} messageProfiles={messageProfiles} profileSelection={profileSelections[view.key] ?? defaultProfileSelection}
+                   onProfileSelection={selection => { session.closeMessageSettings(); view.settings = messageSettingsDraft(view.settings.value); const key = view.key;
+                     profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
+                   onDraftChange={() => session.recovery.changed(view.key)}
+diff --git a/apps/web/src/conversations/ConversationThread.tsx b/apps/web/src/conversations/ConversationThread.tsx
+index cc15de405..30bed7c5b 100644
+--- a/apps/web/src/conversations/ConversationThread.tsx
++++ b/apps/web/src/conversations/ConversationThread.tsx
+@@ -11,8 +11,8 @@ import { SessionContext, AttachmentComposer, ComposerActions, MessageActions, Pl
+ import { fixtureMode, type DraftState } from "../TaskThread";
+ import { ConversationProjection } from "./projection";
+ import { ExecutionProfilePicker } from "../execution-profiles/ExecutionProfilePicker";
+-import type { ExecutionProfileCatalog } from "../execution-profiles/catalog";
+-import { freezeConversationCreation, type ProfileSelection } from "../execution-profiles/selection";
++import type { ExecutionProfileCatalog, MessageSettingsCatalog } from "../execution-profiles/catalog";
++import { freezeConversationCreation, messageSettingsSubmissionEligibility, type ProfileSelection } from "../execution-profiles/selection";
+ import { KnowledgeComposer, KnowledgeSelectionSummary } from "../plugin-integration/knowledge";
+ import { ConversationQueue } from "./queue/ConversationQueue";
+ import "./conversations.css";
+@@ -67,10 +67,10 @@ function ComposerConfiguration({ loading, profile, viewId, intent, queueAvailabl
+   </div>;
+ }
+ 
+-export function ConversationThread({ viewKey, viewId, visible, projection, drafts, intent, onIntent, onDraftChange, restoredVersion, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
++export function ConversationThread({ viewKey, viewId, visible, projection, drafts, intent, onIntent, onDraftChange, restoredVersion, profiles, messageProfiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
+   viewKey: string; viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
+   intent: "follow-up" | "queue"; onIntent: (intent: "follow-up" | "queue") => void; onDraftChange: () => void; restoredVersion: number;
+-  profiles: ExecutionProfileCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
++  profiles: ExecutionProfileCatalog; messageProfiles: MessageSettingsCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
+   onAccepted: (id: string) => void; onInspect: (taskId: string) => void; onCurrentTask: (taskId: string) => void; onOpenTask: (taskId: string) => void;
+ }) {
+   const session = useContext(SessionContext)!;
+@@ -86,6 +86,10 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+   const currentDraftMode = useRef({ intent, profileSelection });
+   useLayoutEffect(() => { currentDraftMode.current = { intent, profileSelection }; }, [intent, profileSelection]);
+   const profileCatalog = useSyncExternalStore(profiles.subscribe, profiles.getSnapshot);
++  const versionedCatalog = useSyncExternalStore(messageProfiles.subscribe, messageProfiles.getSnapshot);
++  // A directory refresh can change submission eligibility without a draft edit.
++  const settingsCatalog = useSyncExternalStore(settings.catalog.subscribe, settings.catalog.getSnapshot);
++  useSyncExternalStore(settings.subscribe, settings.getSnapshot);
+   const queue = useSyncExternalStore(projection.queue.subscribe, projection.queue.getSnapshot);
+   const recoveryState = useSyncExternalStore(session.recovery.subscribe, session.recovery.getSnapshot);
+   const [sendError, setSendError] = useState<string | null>(null);
+@@ -95,11 +99,16 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+     : state.outbox?.creation && state.outbox.state !== "rejected" ? { creation: state.outbox.creation, reason: "receipt-pending" as const } : undefined;
+   const profileReason = () => {
+     if (lockedProfile || profileSelection.kind === "legacy-default") return null;
+-    const catalog = profiles.getSnapshot(), ref = profileSelection.profile.reference;
++    const catalog = profileSelection.kind === "versioned" ? messageProfiles.getSnapshot() : profiles.getSnapshot();
++    const ref = profileSelection.kind === "versioned" ? profileSelection.entry.profile.reference : profileSelection.profile.reference;
+     return !catalog.loaded || catalog.stale || !catalog.profiles.some(profile => profile.reference.id === ref.id && profile.reference.runnerId === ref.runnerId && profile.reference.configDigest === ref.configDigest)
+       ? "Refresh or load more profiles to confirm this selection before creating a conversation. Your draft stays here." : null;
+   };
+-  const reason = session.recovery.sendReason() ?? projection.sendDisabledReason(intent) ?? profileReason();
++  const prepareReason = session.recovery.sendReason() ?? projection.sendDisabledReason(intent) ?? profileReason();
++  const authority = settings.authority();
++  const eligibility = messageSettingsSubmissionEligibility(authority?.draft.value, settingsCatalog,
++    authority?.context ?? { profile: null, capability: null }, profileSelection);
++  const reason = prepareReason ?? (eligibility.allowed ? null : eligibility.reason);
+   const last = state.snapshot?.lastTurn;
+   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
+   const attachmentAdapter = useMemo(() => attachments?.adapter ? { ...attachments.adapter,
+@@ -211,6 +220,10 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+       const draft = runtime.thread.composer.getState(), selection = knowledge.capture();
+       const creation = state.snapshot ? undefined : knowledge.creation(freezeConversationCreation(draft.text.trim().split("\n")[0]!.slice(0, 180), profileSelection));
+       const setting = settings.capture();
++      const live = settings.authority();
++      if (!live || live.generation !== setting.generation || live.draft.ownership !== setting.ownership) throw Error("The draft changed before submission.");
++      const eligible = messageSettingsSubmissionEligibility(setting.value, settings.catalog.getSnapshot(), live.context, profileSelection);
++      if (!eligible.allowed) throw Error(eligible.reason);
+       const wire = { text: draft.text, knowledge: selection.knowledge, ...(setting.value === undefined ? {} : { messageSettings: setting.value }) };
+       if (intent === "queue") conversationQueueEnqueueSchema.parse({ ...wire, expectedQueueRevision: projection.queue.getSnapshot().page?.queueRevision });
+       else conversationTurnSchema.parse({ ...wire, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up" });
+@@ -236,12 +249,12 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+       onDraftChange();
+     });
+   }, [runtime, draftComposer, viewId, drafts, restoredVersion]);
+-  const prepare = async () => {
++  const prepare = async (requireProject = true) => {
+     try {
+       const blocked = session.recovery.sendReason() ?? projection.sendDisabledReason() ?? profileReason(); if (blocked) throw Error(blocked);
+       const title = runtime.thread.composer.getState().text.trim().split("\n")[0]!.slice(0, 180) || "New conversation";
+       const creation = knowledge.creation(freezeConversationCreation(title, profileSelection));
+-      if (!creation.projectId) throw Error("Choose a project before preparing knowledge.");
++      if (requireProject && !creation.projectId) throw Error("Choose a project before preparing knowledge.");
+       setSendError(null); const id = await projection.prepare(creation); if (id) onAccepted(id);
+     } catch (error) { setSendError(error instanceof Error ? error.message : "Conversation could not be prepared."); }
+   };
+@@ -249,7 +262,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+     <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><AttachmentComposer binding={attachments} runtime={runtime} recovery={{ restore: restorePrepared, discard: () => { if (pending.current?.returning) return; attachments?.discardFailedSubmission(); pending.current = null; setSendError(null); } }} onAttached={() => {
+       const value = mention.current; mention.current = null;
+       if (value && runtime.thread.composer.getState().text === value.text) runtime.thread.composer.setText(value.text.slice(0, value.start) + value.text.slice(value.end));
+-    }}><MessageSettingsComposer session={session} viewKey={viewKey} viewId={viewId} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
++    }}><MessageSettingsComposer session={session} viewKey={viewKey} viewId={viewId} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={() => prepare(true)} reason={prepareReason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+       composerSubmit={submit}
+       composerInputOnKeyDown={event => {
+         if (event.key === "Tab" && /@file$/.test(event.currentTarget.value.slice(0, event.currentTarget.selectionStart))) {
+@@ -261,8 +274,8 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
+       }}
+       beforeMessages={<>{streamState.evicted && <p className="flow-conversation-notice">Older draft text was removed from this page’s limited cache. Final replies remain available.</p>}{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
+       afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}
+-      composerHeader={<><MessageSettingsSurface session={session} viewId={viewId} /><ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={onIntent}
+-        profile={{ catalog: profileCatalog, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
++      composerHeader={<>{profileSelection.kind === "versioned" && !state.snapshot && <button type="button" disabled={Boolean(prepareReason)} onClick={() => void prepare(false)}>Prepare conversation</button>}<MessageSettingsSurface session={session} viewId={viewId} /><ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={onIntent}
++        profile={{ catalog: profileCatalog, versioned: { catalog: versionedCatalog, onRefresh: () => { void messageProfiles.refresh(); }, onLoadMore: () => { void messageProfiles.loadMore(); } }, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
+           details: navigate => <ConversationBehavior live={streamState.enabled} recovery={session.recovery.configured()}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
+             onInspect={id => navigate(() => onInspect(id))}
+             onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} /></>}
+diff --git a/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx b/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx
+index 6855d1104..c9adf8e26 100644
+--- a/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx
++++ b/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx
+@@ -3,11 +3,12 @@ import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeTurnSettingsJson, type ClaudeTurnS
+ import { Button } from "../components/ui/button";
+ import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../components/ui/dialog";
+ import type { ExecutionProfileCatalogSnapshot, MessageSettingsCatalogSnapshot } from "./catalog";
+-import { captureMessageSettings, messageSettingsAvailability, sameMessageSettings, configuredSelection, isChatAccess, legacyDefaultSelection, type Immutable, type MessageSettingsContext, type ProfileSelection } from "./selection";
++import { captureMessageSettings, messageSettingsAvailability, sameMessageSettings, configuredSelection, versionedProfileSelection, isChatAccess, legacyDefaultSelection, type Immutable, type MessageSettingsContext, type ProfileSelection } from "./selection";
+ import "./execution-profiles.css";
+ 
+ export interface ExecutionProfilePickerProps {
+   catalog: ExecutionProfileCatalogSnapshot;
++  versioned?: { catalog: MessageSettingsCatalogSnapshot; onRefresh(): void; onLoadMore(): void };
+   selection: ProfileSelection;
+   onSelect(selection: ProfileSelection): void;
+   onRefresh(): void;
+@@ -29,12 +30,13 @@ function useProfileDialog() {
+   };
+ }
+ 
+-export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh, onLoadMore, locked, details }: ExecutionProfilePickerProps) {
++export function ExecutionProfilePicker({ catalog, versioned, selection, onSelect, onRefresh, onLoadMore, locked, details }: ExecutionProfilePickerProps) {
+   const groupId = useId();
+   const dialog = useProfileDialog();
+   if (locked) return <FrozenConfiguration creation={locked.creation} pending={locked.reason === "receipt-pending"} details={details} />;
+-  const selected = selection.kind === "configured" ? selection.profile : null;
+-  const missing = selected && catalog.loaded && !catalog.profiles.some(profile => profile.reference.id === selected.reference.id && profile.reference.configDigest === selected.reference.configDigest && profile.reference.runnerId === selected.reference.runnerId);
++  const selected = selection.kind === "configured" ? selection.profile : selection.kind === "versioned" ? selection.entry.profile : null;
++  const selectedCatalog = selection.kind === "versioned" ? versioned?.catalog : catalog;
++  const missing = selected && selectedCatalog?.loaded && !selectedCatalog.profiles.some(profile => profile.reference.id === selected.reference.id && profile.reference.configDigest === selected.reference.configDigest && profile.reference.runnerId === selected.reference.runnerId);
+   return <div className="ep-picker">
+     <Dialog open={dialog.open} onOpenChange={dialog.onOpenChange}>
+       <DialogTrigger asChild><Button type="button" variant="outline" className="ep-trigger" aria-label={`Execution profile: ${selected?.configuration.model ?? "Runner default"}`}><span>{selected?.configuration.model ?? "Runner default"}</span><span className="ep-trigger-access">{selected?.configuration.access === "none" ? "No tools" : "Read-only"}</span><span aria-hidden="true">⌄</span></Button></DialogTrigger>
+@@ -49,12 +51,33 @@ export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh
+           <legend className="sr-only">Configured execution profiles</legend>
+           <label className="ep-option"><input type="radio" name={groupId} checked={!selected} onChange={() => onSelect(legacyDefaultSelection())} /><span><strong>Runner default</strong><span>Legacy compatibility · no pinned profile</span><small>Thinking disabled · configured read-only access</small></span></label>
+           {catalog.profiles.map(profile => <label className="ep-option" key={profile.reference.id}>
+-            <input type="radio" name={groupId} checked={selected?.reference.id === profile.reference.id} disabled={catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(configuredSelection(profile))} />
++            <input type="radio" name={groupId} checked={selection.kind === "configured" && selected?.reference.id === profile.reference.id && selected.reference.runnerId === profile.reference.runnerId && selected.reference.configDigest === profile.reference.configDigest} disabled={catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(configuredSelection(profile))} />
+             <span><strong>{profile.model.displayName || profile.configuration.model}</strong><span>Requested model: {profile.configuration.model}</span><small>Runner {profile.reference.runnerId}</small><small>Profile {profile.reference.id}</small><span>{profile.configuration.access === "none" ? "No tools" : profile.configuration.access === "configured-readonly" ? "Configured read-only access" : `Access declaration: ${profile.configuration.access}`}{profile.configuration.requireReadApproval ? " · read approval required" : ""}</span>{!isChatAccess(profile.configuration.access) && <strong>Cannot be used for ordinary chat</strong>}<small>Thinking disabled · effort unsupported</small><small>Provider availability not checked · actual model unknown</small><details><summary>Configuration details</summary><span>Adapter {profile.configuration.adapterVersion}</span><span>Permission mode {profile.configuration.permissionMode}</span><span>Limits: {profile.configuration.limits.maxTurns} turns, ${profile.configuration.limits.maxBudgetUsd}, {profile.configuration.limits.timeoutMs / 1000}s</span><small>Configuration digest {profile.reference.configDigest}</small><small>Material scope digest {profile.configuration.materialScopeDigest}</small></details></span>
+           </label>)}
+         </fieldset>
+         {!catalog.loading && catalog.loaded && !catalog.profiles.length && <p>No configured profiles were returned. Runner default remains an explicit compatibility choice.</p>}
+         {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>Load more profiles</Button>}
++        {versioned && <section aria-label="Message settings profiles">
++          <h3>Per-message configuration</h3>
++          <Button type="button" variant="outline" onClick={versioned.onRefresh} disabled={versioned.catalog.loading}>{versioned.catalog.loading ? "Loading message profiles…" : "Refresh message profiles"}</Button>
++          {versioned.catalog.error && <p role="alert">{versioned.catalog.error}</p>}
++          {versioned.catalog.stale && versioned.catalog.loaded && <p>Message profile directory is stale. Refresh before selecting.</p>}
++          <fieldset className="ep-options" disabled={versioned.catalog.loading}>
++            <legend className="sr-only">Versioned message profiles</legend>
++            {versioned.catalog.profiles.map(profile => <label className="ep-option" key={profile.reference.id}>
++              <input type="radio" name={groupId} checked={selection.kind === "versioned" && selected?.reference.id === profile.reference.id && selected.reference.runnerId === profile.reference.runnerId && selected.reference.configDigest === profile.reference.configDigest}
++                disabled={versioned.catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(versionedProfileSelection(profile))} />
++              <span><strong>{profile.model.displayName}</strong><span>{profile.model.description}</span><small>Runner {profile.reference.runnerId}</small><small>Profile {profile.reference.id}</small><small>Full configuration {profile.reference.configDigest}</small>
++                <span>Prepare this conversation, then choose a complete model, thinking, effort and speed tuple before sending or queuing.</span>
++                {!profile.configuration.turnSettings?.choices.length && <strong>No supported message combinations. Drafts remain editable; sending is unavailable.</strong>}
++                {!isChatAccess(profile.configuration.access) && <strong>Cannot be used for ordinary chat</strong>}
++              </span>
++            </label>)}
++          </fieldset>
++          {!versioned.catalog.loading && versioned.catalog.loaded && !versioned.catalog.profiles.length && <p>No message settings profiles were returned.</p>}
++          {versioned.catalog.nextCursor && <Button type="button" variant="outline" disabled={!versioned.catalog.canLoadMore} onClick={versioned.onLoadMore}>Load more message profiles</Button>}
++          <p>A directory choice is not a live capability. The created conversation must confirm its configuration before messages can be submitted.</p>
++        </section>}
+         <p className="ep-footnote">This is a paged directory, not a global model search. A profile declares configuration; it does not attest that a runner or provider is online.</p>
+         {details?.(dialog.navigate)}
+       </DialogContent>
+diff --git a/apps/web/src/execution-profiles/selection.ts b/apps/web/src/execution-profiles/selection.ts
+index a5eae77fa..f42780043 100644
+--- a/apps/web/src/execution-profiles/selection.ts
++++ b/apps/web/src/execution-profiles/selection.ts
+@@ -89,6 +89,12 @@ export function versionedSelection(input: unknown): Extract<ProfileSelection, {
+   return freeze({ kind: "versioned" as const, entry });
+ }
+ 
++/** The public catalog already decodes this profile. Reconstitute only its fixed directory
++ * declaration, never a live conversation capability; the public codec validates it again. */
++export function versionedProfileSelection(profile: Immutable<ClaudeMessageSettingsExecutionProfile>): Extract<ProfileSelection, { kind: "versioned" }> {
++  return versionedSelection({ profile, conversation: { state: "existing-claude-contract", capabilitySource: "conversation-response" } });
++}
++
+ /** Call once before CREATE; the caller's outbox owns this payload and its idempotency key. */
+ export function freezeConversationCreation(title: string, selection: ProfileSelection): Immutable<ConversationCreation> {
+   const profile = selection.kind === "configured" ? configuredSelection(selection.profile).profile
+diff --git a/apps/web/test/execution-profiles.test.ts b/apps/web/test/execution-profiles.test.ts
+index fa8b7af17..361d3aa12 100644
+--- a/apps/web/test/execution-profiles.test.ts
++++ b/apps/web/test/execution-profiles.test.ts
+@@ -3,8 +3,8 @@ import { afterEach, describe, expect, it } from "vitest";
+ import { FlowApiError, FlowClient } from "@flow/client";
+ import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
+ import type { ConversationCreation, ConversationSummary, ExecutionProfile, ExecutionProfilePage } from "@flow/contracts";
+-import { createExecutionProfileCatalog } from "../src/execution-profiles/catalog";
+-import { assertCreationReceiptMatches, versionedSelection, messageSettingsSubmissionEligibility, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
++import { createExecutionProfileCatalog, createMessageSettingsCatalog } from "../src/execution-profiles/catalog";
++import { assertCreationReceiptMatches, versionedSelection, versionedProfileSelection, messageSettingsSubmissionEligibility, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
+ 
+ const id = (number: number) => `10000000-0000-4000-8000-${String(number).padStart(12, "0")}`;
+ function profile(number = 1): ExecutionProfile {
+@@ -201,6 +201,32 @@ describe("versioned creation invariants", () => {
+     const value: ClaudeTurnSettings = { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested };
+     return { source, selected, catalog, context, value };
+   }
++  it("versioned consumer preserves the decoded catalog identity without granting live capability", () => {
++    const f = ready(), selected = versionedProfileSelection(f.source.profile);
++    expect(selected).toEqual(f.selected);
++    expect(Object.isFrozen(selected.entry.profile.configuration.turnSettings!.choices)).toBe(true);
++    const creation = freezeConversationCreation("Prepare without tuple or project", selected);
++    expect(creation.executionProfile).toEqual(f.context.profile);
++    expect(creation).not.toHaveProperty("messageSettings"); expect(creation).not.toHaveProperty("projectId");
++    expect(messageSettingsSubmissionEligibility(undefined, f.catalog, { profile: f.context.profile, capability: null }, selected).allowed).toBe(false);
++    expect(() => versionedProfileSelection({ ...f.source.profile, configuration: { ...f.source.profile.configuration, turnSettings: undefined } })).toThrow();
++  });
++  it("versioned consumer observes refresh eligibility without editing the selected draft", async () => {
++    const f = ready(); let fail = false;
++    const catalog = createMessageSettingsCatalog(async () => {
++      if (fail) throw Error("offline");
++      return { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profiles: [f.source], nextCursor: null };
++    });
++    const transitions: boolean[] = [];
++    catalog.subscribe(() => transitions.push(messageSettingsSubmissionEligibility(f.value, catalog.getSnapshot(), f.context, f.selected).allowed));
++    await catalog.refresh();
++    expect(transitions).toEqual([false, true]);
++    fail = true; await catalog.refresh(); expect(transitions.at(-1)).toBe(false);
++    fail = false; await catalog.refresh(); expect(transitions.slice(-2)).toEqual([false, true]);
++    expect(messageSettingsSubmissionEligibility(undefined, catalog.getSnapshot(), f.context, f.selected).allowed).toBe(false);
++    expect(f.value.requested).toEqual(requested); expect(f.selected.entry.profile.reference).toEqual(f.context.profile);
++    catalog.dispose(); expect(transitions.at(-1)).toBe(false);
++  });
+   it("freezes the exact public versioned identity without defaults or a creation tuple", () => {
+     const source = entry(), selected = versionedSelection(source), creation = freezeConversationCreation("Prepared", selected);
+     const expected = structuredClone(source.profile.reference); source.profile.reference.configDigest = "c".repeat(64);

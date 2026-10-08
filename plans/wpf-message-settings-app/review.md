@@ -1,3 +1,14 @@
+# 当前 MSG03 versioned creation UI组合
+
+状态：APPROVED（SOURCE_LOCAL_APPROVED；new mounted/真实publisher/auth/Queue/lostACK NOT_RUN）
+Review target commit: f71e1c9a3d7efef26859836365dc77d9fdb728ce
+
+固定main1b1428受控采用后，App/Thread/Picker+纯基础组合；五production affected types0、两个new consumer PASS/97未选，总6082ms。当前无真实publisher/CREATE/Queue/Cookie/browser实际，不外推wholeWeb。
+
+[当前唯一审查输入](../../docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/review-input.json) · [mounted后继](../../docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/mounted-handoff.md) · [clean-code](../../docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/clean-code.md)。独立[root限定审](../../docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/root-msg03-consumer-review-20261008.json)通过，0P1/P2；下方旧批准只绑定历史target。
+
+## 历史 review — 原件与旧结论保留
+
 # WPF-MESSAGESETTINGS03 独立审查
 
 ## 当前同任务后继

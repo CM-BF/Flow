@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T03:53:04.211Z",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "waitingIssues": [],
+  "implementation": {
+    "target": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/execution-profiles.test.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "errors": []
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+      "id": "WPF-MATURE-02",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED（SOURCE_LOCAL_APPROVED；new mounted/真实publisher/auth/Queue/lostACK NOT_RUN）",
+    "target": "f71e1c9a3d7efef26859836365dc77d9fdb728ce"
+  }
+}
