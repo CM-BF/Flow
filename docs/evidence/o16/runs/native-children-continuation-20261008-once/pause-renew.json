@@ -1,0 +1,46 @@
+{
+  "kind": "flow.o16.pause.v1",
+  "run": "native-children-continuation-20261008-once",
+  "phase": "renew",
+  "next": "children",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "closedAt": "2026-10-08T02:30:20.624Z",
+  "reviewUntil": "2026-10-08T02:45:20.624Z",
+  "binding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "profiles": {
+      "plan": {
+        "id": "8a4e7920-7063-4904-a7e8-9c6ccf170e43",
+        "runnerId": "e0b83e89-1cbe-46b9-8916-d72a348411ab",
+        "configDigest": "731e102d84972911f8510cf6698aab96d687920dcb7c390f806d1bb2972ab00e"
+      },
+      "children": {
+        "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+        "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+        "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+      }
+    },
+    "confirmation": {
+      "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+      "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+      "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+      "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+      "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+    }
+  },
+  "stateDigest": "4e2e3c3143653bf83f71b1a0e92674226c57fa6da39d44032e07f2a310c753cc",
+  "reportDigest": "b65d9c8708b0c0ed06c701293af96b3249d632511ccdf0c287404c835265fe4c",
+  "resourcesDigest": "c790450498c38738656d5947cbf5f8b2d3576369c74596e2571ddc679a47e3c7",
+  "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+  "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+  "directory": {
+    "path": "/private/tmp/flow-o16-AcjjIf",
+    "dev": 16777234,
+    "ino": 124755810
+  },
+  "closure": "recorded-processes-server-pools-and-connections-closed",
+  "allEscapedDescendants": "not-proven",
+  "expiredAction": "refuse-and-retain"
+}

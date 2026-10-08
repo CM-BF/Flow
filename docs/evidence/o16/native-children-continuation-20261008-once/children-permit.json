@@ -1,0 +1,26 @@
+{
+  "kind": "flow.o16.phase-permit.v2",
+  "authorizedBy": "Goal Owner",
+  "approvalId": "O16-GO-CHILDREN-CONTINUATION-20261008",
+  "phase": "children",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "model": "claude-sonnet-5-5",
+  "limits": {
+    "queries": 2,
+    "maxTurns": 3,
+    "maxBudgetUsd": 0.1,
+    "timeoutMs": 60000
+  },
+  "approvedAt": "2026-10-08T02:32:23.355Z",
+  "expiresAt": "2026-10-08T02:36:47.000Z",
+  "authorizationReference": "GO decision issued 2026-10-08T02:21:47Z, relayed by Execution Lead: conditional maximum two sequential child SDK calls after actual confirmation ACK and complete closure. Renew ACK and full runtime return are now recorded. A separate D01 children window remains required; no retry/fallback or additional task.",
+  "confirmation": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8"
+}

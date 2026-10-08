@@ -1,0 +1,132 @@
+{
+  "kind": "O16_RENEW_WINDOW_RETURN",
+  "at": "2026-10-08T02:31:17.205Z",
+  "run": "native-children-continuation-20261008-once",
+  "stage": "renew",
+  "state": "FULL_RUNTIME_RETURN_WITH_RETAINED_RESOURCES",
+  "processes": [
+    {
+      "role": "operator",
+      "kind": "pid",
+      "id": 77024,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "role": "operator",
+      "kind": "group",
+      "id": 77024,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "role": "driver",
+      "kind": "pid",
+      "id": 77092,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "role": "driver",
+      "kind": "group",
+      "id": 77092,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "role": "watchdog",
+      "kind": "pid",
+      "id": 77091,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "role": "watchdog",
+      "kind": "group",
+      "id": 77091,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "operatorEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "driverEOF": "fixed operator returned processes-complete after stream capture",
+  "targetConnections": [],
+  "returnProbeAdminClosed": true,
+  "remoteAdminConnectionZero": "NOT_OBSERVED; pool.end is not a remote zero barrier",
+  "resourcesClosed": true,
+  "originPublic": [
+    {
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/pause.json",
+      "bytes": 1663,
+      "sha256": "a8ee9b78b432c950228f505fc47c347c40148e83baa8fcf44a7780ebeae17603",
+      "unchanged": true
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/plan.json",
+      "bytes": 22945,
+      "sha256": "2cfb1de91d6effb9529ab9b5472e47cbb5136bbea9d64b6e3f7f69356126a815",
+      "unchanged": true
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/resources.json",
+      "bytes": 1027,
+      "sha256": "4770b416a29dde0a564c7c8311bf34a700e0603a677f44ef258458a996822c2d",
+      "unchanged": true
+    }
+  ],
+  "originStateDigestUnchanged": true,
+  "oldPauseExpiredAndUnchanged": true,
+  "directories": [
+    {
+      "role": "origin",
+      "path": "/private/tmp/flow-o16-ljRSxz",
+      "dev": 16777234,
+      "ino": 124723126,
+      "sameIdentity": true,
+      "disposition": "KEEP"
+    },
+    {
+      "role": "new",
+      "path": "/private/tmp/flow-o16-AcjjIf",
+      "dev": 16777234,
+      "ino": 124755810,
+      "sameIdentity": true,
+      "disposition": "KEEP"
+    }
+  ],
+  "database": {
+    "name": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+    "oid": 1375594,
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytes": 13589527,
+    "disposition": "KEEP"
+  },
+  "confirmationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "admissions": 0,
+  "queries": 0,
+  "cumulativeQueries": 4,
+  "pauseClosedAt": "2026-10-08T02:30:20.624Z",
+  "pauseReviewUntil": "2026-10-08T02:45:20.624Z",
+  "confirmationExpiresAt": "2026-10-08T02:36:47.000Z",
+  "operatorElapsedMs": 1581,
+  "finalMetrics": {
+    "freeBytes": 14317854720,
+    "rawBytes": 20231,
+    "runtimeBytes": 13452,
+    "runtimeEntries": 3,
+    "runtimeState": "measured"
+  },
+  "allEscapedDescendants": "NOT_PROVEN",
+  "pendingLaunch": 0,
+  "childrenStarted": false,
+  "sourceChanged": false
+}

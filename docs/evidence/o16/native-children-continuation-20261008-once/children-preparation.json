@@ -1,0 +1,75 @@
+{
+  "kind": "O16_ACK_BOUND_CHILDREN_PREPARATION",
+  "at": "2026-10-08T02:32:23.355Z",
+  "run": "native-children-continuation-20261008-once",
+  "stage": "children",
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "approvalId": "O16-GO-CHILDREN-CONTINUATION-20261008",
+  "permit": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/children-permit.json",
+    "bytes": 1378,
+    "sha256": "50bb52f57836ed23b3cc60239a5575e78595d576cd30e35ffa99a16ea3c22cae"
+  },
+  "confirmation": {
+    "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/confirmation.json",
+    "bytes": 4198,
+    "sha256": "fb4377446d93a3bc80f7e7f15313ddd3043e8f2cb1172289fc8b7dc15a9e3993"
+  },
+  "pause": {
+    "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/pause-renew.json",
+    "bytes": 2039,
+    "sha256": "d9f612e761eb28fc071e8c5c32afb4a1d7ef4300650242631f68eabb6f7cfcd6"
+  },
+  "resourcesAtRenewClose": {
+    "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/resources.json",
+    "bytes": 1978,
+    "sha256": "a0e5649d6dce9dc86eb5bfe5e984d0f570e5734d6887df47c99fc0e4da818333"
+  },
+  "runtimeReturn": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/renew-window-return.json",
+    "bytes": 3606,
+    "sha256": "7af2e761457cbb773d6976fc2c58d7f073a928d9dbcde4b31335fb005ceae974"
+  },
+  "grant": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/grant.json",
+    "bytes": 5922,
+    "sha256": "9ad670c7fcf3ed1ea67fe332657de02495d5f5620a4487abce3faa79bec7346a"
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--children",
+    "native-children-continuation-20261008-once",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-children-continuation-20261008-once/children-permit.json"
+  ],
+  "requiredEnvironment": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot"
+  },
+  "queriesBeforeStart": 4,
+  "maximumNewSDKQueries": 2,
+  "maximumCumulativeSDKQueries": 6,
+  "limits": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "perQueryMs": 60000,
+    "perQueryTurns": 3,
+    "perQuerySDKUSD": 0.1,
+    "privateBytes": 8388608,
+    "combinedRunRawBytes": 2097152,
+    "PGReservation": 13,
+    "minimumPGAvailable": 29
+  },
+  "accountBilledUSD": "UNKNOWN",
+  "confirmationExpiresAt": "2026-10-08T02:36:47.000Z",
+  "pauseExpiresAt": "2026-10-08T02:45:20.624Z",
+  "latestProposedStartForFull150s": "2026-10-08T02:34:17.000Z",
+  "windowState": "NOT_SELECTED",
+  "actualStarted": false,
+  "conditions": "Fresh D01 stage selection/current floor/no competing auth + fixed source/runtime/env/claim; exact actual confirmation/new pause/private/material identity; children namespace/phase slots absent; same original immutable profiles and read-only tools. Confirmation earlier expiry applies; do not extend it or skip preflight to fit.",
+  "retention": "Old DB and both private directories KEEP; origin state/material/raw unchanged; no cleanup authorization inferred."
+}

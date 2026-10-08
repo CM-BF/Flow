@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-08T02:30:18.703Z",
+  "head": "dc26d8ea7a6939d1ab4da43faa44800a8a21828b",
+  "remoteEqual": true,
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ],
+    "state": "active",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "origin": "new",
+    "taskId": "O16",
+    "worker": "native_center_owner",
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "createdAt": "2026-10-07T09:00:26.182Z",
+    "updatedAt": "2026-10-07T09:00:26.182Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "sourceFiles": 327,
+  "dependencyAliases": 39,
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "runtimeVerified": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "dev": 16777234,
+      "ino": 116955756
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+      "dev": 16777234,
+      "ino": 116955906
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+      "dev": 16777234,
+      "ino": 116957779
+    }
+  ],
+  "originArchiveAndPrivateIdentityVerified": true,
+  "originMarker": {
+    "oid": 1375594,
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytes": 13433879
+  },
+  "capacity": {
+    "max_connections": 100,
+    "reserved_connections": 3,
+    "current_connections": 10,
+    "available": 87
+  },
+  "targetConnections": [],
+  "preflightPoolsClosed": true,
+  "centerFresh": {
+    "kind": "flow.o16.continuation-fresh.v1",
+    "projectRevision": 1,
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "activeOrUnknownTasks": 0,
+    "incompleteAttempts": 0,
+    "priorConfirmationOrProgression": false,
+    "profilesMatched": 2,
+    "materialMatched": true
+  },
+  "newNamespacesAbsent": true,
+  "freeBytes": 14318342144,
+  "minimumFreshFreeBytes": 11689394176,
+  "latestStart": "2026-10-08T02:31:37.999Z",
+  "queries": 0
+}

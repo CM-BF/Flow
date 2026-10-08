@@ -1,0 +1,113 @@
+{
+  "stage": "confirm",
+  "outcome": "confirmed-awaiting-separate-children-permit",
+  "nativeQueryCalls": 0,
+  "mode": "native",
+  "actualConfirmation": {
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "projectId": "44454e6a-4281-4cfa-9a4e-e3b84b1f9a74",
+    "graph": {
+      "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+      "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+      "projectId": "44454e6a-4281-4cfa-9a4e-e3b84b1f9a74",
+      "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+      "fromRevision": 1,
+      "toRevision": 4,
+      "nodeIds": {
+        "draft": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "review": "30a9c7a2-0055-4a1e-8005-967573a8fe61"
+      },
+      "actor": {
+        "kind": "owner"
+      },
+      "appliedAt": "2026-10-08T02:30:20.542Z"
+    },
+    "inputs": [
+      {
+        "key": "draft",
+        "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "inputVersion": 1
+      },
+      {
+        "key": "review",
+        "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+        "inputVersion": 1
+      }
+    ],
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "authorizationDigest": "666444829155a98cbacd8cb08546798a81fcab93c28a8b404bcd72ada9a74a20",
+    "confirmedAt": "2026-10-08T02:30:20.562Z"
+  },
+  "confirmationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "originalKey": "8865888d-0ec5-4a41-a531-370fa1e25890",
+  "replayed": false,
+  "admissions": 0,
+  "semanticAcceptance": "not-evaluated",
+  "resources": {
+    "kind": "flow.o16.private-resources.v1",
+    "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+    "startedAt": "2026-10-08T02:30:20.332Z",
+    "gate": {
+      "freeBytes": 14318161920,
+      "requiredBytes": 1207959552
+    },
+    "creationRequested": false,
+    "created": false,
+    "marked": true,
+    "origin": {
+      "run": "native-plan-normal-home-20261008-once",
+      "pauseDigest": "14c39dfaef1c29247557c6b2bbbc307754056128af1a91827527e9a7f20b6176",
+      "stateDigest": "692707837c604690060a443cfe6562441adb007034ec89eda71491cf6527bf73",
+      "reportDigest": "e767e36ca1b0095d5214d6927ec16b4d69ad94d4e997f3e43981e947a70a80b4",
+      "resourcesDigest": "75f22d5b05fbca54a5989cccfc52ff094cac30a6915942005550f97d8d7a7b91",
+      "sourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+      "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+      "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+      "directory": {
+        "path": "/private/tmp/flow-o16-ljRSxz",
+        "dev": 16777234,
+        "ino": 124723126
+      }
+    },
+    "retention": "keep-origin-database-and-both-directories",
+    "databaseBytes": 13589527,
+    "connectionObservations": [
+      {
+        "elapsedMs": 0,
+        "rows": []
+      }
+    ],
+    "continuationFresh": {
+      "kind": "flow.o16.continuation-fresh.v1",
+      "projectRevision": 1,
+      "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+      "activeOrUnknownTasks": 0,
+      "incompleteAttempts": 0,
+      "priorConfirmationOrProgression": false,
+      "profilesMatched": 2,
+      "materialMatched": true
+    },
+    "directory": {
+      "path": "/private/tmp/flow-o16-AcjjIf",
+      "dev": 16777234,
+      "ino": 124755810
+    },
+    "phase": "paused-owned-resources",
+    "serverClosed": true,
+    "workersStopped": true,
+    "adminClosed": true,
+    "errors": [],
+    "endedAt": "2026-10-08T02:30:20.607Z"
+  }
+}

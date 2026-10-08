@@ -1,0 +1,54 @@
+{
+  "kind": "O16_RENEW_ACTUAL_ANALYSIS",
+  "at": "2026-10-08T02:32:23.355Z",
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "executionHead": "dc26d8ea7a6939d1ab4da43faa44800a8a21828b",
+  "actualStart": "2026-10-08T02:30:18.714Z",
+  "terminal": "2026-10-08T02:30:20.700Z",
+  "runtimeReturn": "2026-10-08T02:31:17.205Z",
+  "outcome": "stage-paused",
+  "operatorElapsedMs": 1581,
+  "selected": 1,
+  "stagePassed": true,
+  "queries": 0,
+  "cumulativeQueries": 4,
+  "actualConfirmation": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "graphRevisions": {
+    "from": 1,
+    "to": 4
+  },
+  "admissions": 0,
+  "pauseClosedAt": "2026-10-08T02:30:20.624Z",
+  "pauseExpiresAt": "2026-10-08T02:45:20.624Z",
+  "confirmationExpiresAt": "2026-10-08T02:36:47.000Z",
+  "resources": {
+    "absentPID": 3,
+    "absentGroups": 3,
+    "targetConnections": [],
+    "serverClosed": true,
+    "adminClosed": true,
+    "returnProbeAdminClosed": true,
+    "remoteAdminZero": "NOT_OBSERVED",
+    "errors": [],
+    "oldDB": "KEEP",
+    "oldPrivate": "KEEP",
+    "newPrivate": "KEEP",
+    "newPrivateFinalBytes": 13452,
+    "combinedRunRecordsFinalBytes": 20231,
+    "peak": "NOT_MEASURED"
+  },
+  "origin": {
+    "oldPublicThreeFilesUnchanged": true,
+    "oldPrivateStateDigestUnchanged": true,
+    "oldPauseExpiredAndUnchanged": true,
+    "newConsumptionMarker": "Existing legacy pause-consumed-plan gate, added once; no old record replacement."
+  },
+  "limits": "Real renew and owner confirmation only. No SDK/auth/provider/children; not semantic final acceptance. All escaped descendants are not proven. Original operator registration records remain unknown as written; exact later PID/group observations support this RETURN, not rewriting them.",
+  "next": "ACK-bound children permit prepared under existing conditional GO authorization; new D01 stage window NOT_SELECTED."
+}

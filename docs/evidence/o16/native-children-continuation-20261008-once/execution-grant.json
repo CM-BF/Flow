@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-08T02:30:18.703Z",
+  "queueRecordedAt": "2026-10-08T02:28:37.999Z",
+  "grant": {
+    "logicalId": "native-children-continuation-20261008-once",
+    "stage": "renew-only",
+    "state": "SELECTED",
+    "selectedAt": "2026-10-08T02:28:37.999Z",
+    "latestStart": "2026-10-08T02:31:37.999Z",
+    "authorizationExpiresAt": "2026-10-08T02:36:47.000Z",
+    "owner": "Original / native_center_owner soleoperator",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "claim": {
+      "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "scopeCount": 3,
+      "worker": "native_center_owner"
+    },
+    "executionHead": "dc26d8ea7a6939d1ab4da43faa44800a8a21828b",
+    "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+    "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "preparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-children-continuation-20261008-once/authorization-preparation.json",
+      "bytes": 5682,
+      "sha256": "a93d42411ae2ce166e5cf186897d7560813a10ce3f918f8adb42479cd383d8f7"
+    },
+    "authorization": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-children-continuation-20261008-once/grant.json",
+      "bytes": 5922,
+      "sha256": "9ad670c7fcf3ed1ea67fe332657de02495d5f5620a4487abce3faa79bec7346a"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "--renew",
+      "native-children-continuation-20261008-once",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-children-continuation-20261008-once/grant.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "requiredEnvironment": {
+      "FLOW_O16_PG_WINDOW": "approved-one-shot"
+    },
+    "allowRun": true,
+    "singleUse": true,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "PG": 13,
+    "requiredPGAvailable": 29,
+    "preflightPG": 1,
+    "probeClosedBeforeLaunch": true,
+    "Chrome": 0,
+    "queries": 0,
+    "applyChildExecutionNow": false,
+    "provider": 0,
+    "personalOperations": 0,
+    "privateBytes": 8388608,
+    "crossStageRawBytes": 2097152,
+    "naturalSealBytes": 8388608,
+    "minimumFreshFreeBytes": 11689394176,
+    "liveReserveIncludedOnce": 1073741824,
+    "stock": "Exactauthorizedorigin DB/private identity read/renew only, originKEEP no delete; DB128Mplanning/raw2M already counted once, newprivate8M+naturalindex/rawcopies8M separate. No automaticconditional children stage.",
+    "fresh": "Samecall exactmatchingcurrent unconsumedselection/latest/noactual; activeclaim55c4v1exact3/cleanactualremotedc26/fullsource-env-runtime-pins+manifest/grant9ad andpreparea93; new run/operator/origin reservation absent; fixedorigin public/private/resource identity, projectrevision/proposal/profiles/material/onlycompletedplanner/noinflight; PGavailable>=29 probeclosed, before-start originmarker0conn and repeatedfixedSQL. free>=maxfrozen/currentfullterms/intrinsic. MismatchUNKNOWN0launch/no retry/changeinput.",
+    "lifecycle": "START/terminal/exactownedRETURN separate; 150s120+30 existingfixedOPS14/lifecycle. ActualACK/fullclosure/freshpause must precede any conditionalchildpermit; each laterstage independentnewmanagerwindow/decision, not authorized to run here. Retainfirsterror/UNKNOWNKEEP/noFORCE/no newquery/nativeauth refresh."
+  }
+}
