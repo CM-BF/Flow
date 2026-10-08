@@ -7,12 +7,15 @@ import { digest, readRecord, writeRecord } from './records.mjs';
 import { pauseReceipt, validatePause, recordDigest, stagePassed, assertNativeReady } from './stage-policy.mjs';
 import { verifySourceDelta, readContinuation, validateContinuation, reserveContinuation, verifyContinuationDatabase, continuationState } from './continuation.mjs';
 import { confirmationDraft } from './proposal.mjs';
-import { MATERIAL, REQUIREMENT } from './config.mjs';
+import { MATERIAL, REQUIREMENT, adapterOptions } from './config.mjs';
 import { nativeEnvironmentPolicy } from './native-environment.mjs';
 import { validatePermit, reservePhase, consumeSlot } from './permit.mjs';
 import { environmentFixture, permitInput } from './native-environment-fixture.mjs';
 import { continueSavedPlan } from './driver.mjs';
 import { operationArguments } from './operator.mjs';
+import { sourceIdentity } from './identity.mjs';
+import { createObservedQuery } from './query-run.mjs';
+import { createClaudeAdapter } from '../../apps/runner/src/claude.ts';
 
 async function fixture(t) {
   const root = await mkdtemp(join(tmpdir(), 'o16-continuation-')); t.after(() => rm(root, { recursive: true }));
@@ -173,4 +176,27 @@ test('continuation: explicit renew argv and adopted acceptance retain origin; or
     resources: { ...f.packet.resources, origin: f.grant.origin, retention: f.grant.retention } };
   assert.equal(stagePassed('decide', report), true);
   delete report.retention; assert.equal(stagePassed('decide', report), false);
+});
+test('continuation-final: real child adapter and decorator preserve read-only caps and consume one failed injected entry', async t => {
+  const f = await environmentFixture({ authenticationHome: 'normal-account' }); t.after(f.dispose);
+  const material = join(f.root, 'material.txt'); await writeFile(material, MATERIAL, { flag: 'wx', mode: 0o400 });
+  const confirmation = { goalId: 'goal', proposalId: 'proposal', proposalDigest: 'b'.repeat(64), confirmationDigest: 'c'.repeat(64), progressionId: 'progression' };
+  const raw = permitInput(f, 'children', confirmation), permit = validatePermit(raw, { identity: f.source, phase: 'children', confirmation, environmentDigest: f.policy.digest });
+  const reservation = await reservePhase(join(f.root, 'reservations'), permit), report = { nativeQueryCalls: 0 }; let calls = 0;
+  const query = createObservedQuery({ mode: 'native', phase: 'children', reservation, report, nativeEnvironment: f.nativeEnvironment,
+    getBinding: () => ({ slot: 'child-1', assignment: { taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1 } }),
+    nativeQuery(actual) { calls++; assert.deepEqual(actual.options.tools, ['Read']); assert.deepEqual(actual.options.allowedTools, ['Read']);
+      assert.deepEqual([actual.options.model, actual.options.maxTurns, actual.options.maxBudgetUsd, actual.options.persistSession], ['claude-sonnet-5-5', 3, .1, false]);
+      assert.equal(actual.options.env.HOME, '/Users/citrine'); throw new Error('synthetic-stop-before-provider'); } });
+  const adapter = createClaudeAdapter({ ...adapterOptions('native', 'children', material), query });
+  await assert.rejects(adapter.run({ task: { title: 'Synthetic child', prompt: 'Read fixed material only', harness: 'claude' },
+    workingDirectory: f.cwd, signal: new AbortController().signal, async assertOwnership() {}, async emit() {} }), /synthetic-stop-before-provider/);
+  assert.equal(calls, 1); assert.equal(report.nativeQueryCalls, 1); assert.equal(report.queries[0].closed, true);
+  assert.equal(report.queries[0].reservation.slot, 'child-1'); // Injected callback only; actual SDK count remains zero.
+});
+test('continuation-final: actual complete identity reverses to the fixed planner source without copying its closure', async t => {
+  const source = await sourceIdentity(), proof = await readRecord(new URL('../../docs/evidence/o16/expired-plan-continuation/source-delta.json', import.meta.url));
+  verifySourceDelta(source, proof.oldSourceDigest, proof.delta);
+  t.diagnostic(JSON.stringify({ sourceDigest: source.digest, files: source.files.length, dependencies: source.dependencies.length,
+    oldSourceDigest: proof.oldSourceDigest, deltaFiles: proof.delta.length }));
 });
