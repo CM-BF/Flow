@@ -1,6 +1,6 @@
 # TUI01F — 聊天任务显式取消与接续
 
-状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 20:24:06 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
+状态：completed（仅本TUI01F计划的限定验收）；创建：2026-10-06 15:47 UTC；最近更新：2026-10-08T02:57:06.693Z。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
 
 ## 小交付与 Interface
 
@@ -13,7 +13,7 @@
 - [x] TUI01F-01：固定源码 Interface、取消意图与终端入口，保留旧规则。
 - [x] TUI01F-02：新增公开 controller 定向行为用例，明确实际执行状态。
 - [x] TUI01F-03：资源/依赖具备后，真实 HTTP 与专用 PG 丢 ACK/恢复旅程及实际 PTY 验证。
-- [ ] TUI01F-04：实际 App ↔ TUI 同会话交替，CAS 拒绝保草稿与观察接续；独立 review/main 收口。
+- [x] TUI01F-04：固定af51/d629/ec30实际 App ↔ TUI 同会话交替，CAS拒绝保草稿与观察接续；限定独审/main已收，19alias准入遗漏不追认满足。见[验收回执](../../docs/evidence/tui01f/web-handoff/r4-final-receipt.json)。
 
 最初阶段只授权 source/合同/用例准备；后续已获得文末所列独立运行窗口。仍禁止安装/复制依赖/full build/未授权PG/browser/provider；不借 moving main 运行，也不把 NOT_RUN 写成 red/green。A-E 已有检查作为历史输入，不重复全集。源码用例覆盖缺端口/错误目标/回执身份/原 key 重报/退出/旧 journal；03/04 待 fresh 资源窗口。有限实际 source-only 闭包见 design-input.json，runner/center 未物化，不偷用最新树。
 
@@ -52,3 +52,5 @@
 2026-10-06 20:24:06 UTC：04四源准备target `d147a636f9cb54a8c87a89a89963d13e937cee9c`，原同一TODO进入独审；4纯检查/两focused types通过，完整双界面旅程NOT_RUN。固定Interface采用90s行为+60s收尾/150s独立总监督，原03证据和open TODO保持。
 
 2026-10-07T23:59:03.635522+00:00：TUI01F-04恢复准备已固定薄OPS14启动入口；原c612实验/fixture与af51/d629/ec30实际组合保持。新5不同纯入口例与实际受限import不替代真实PTY/Chrome；实际运行仍待独审与新窗口。完整04继续开放，原失败/KEEP不回填。见[本次Interface](../../docs/evidence/tui01f/web-handoff/r2-interface.md)。
+
+2026-10-08T02:57:06.693Z：四项TUI01F TODO按各自原证据完成。R4真实1/1与精确RETURN获独立限定批准并main eb06d5323接收，唯一[验收与父任务交接](../../docs/evidence/tui01f/web-handoff/r4-final-receipt.json)引用原件，不复制raw。缺失19alias准入观察仍NOT_RETROSPECTIVELY_SATISFIED，采样非峰值/两个负样本、旧FAIL/KEEP和runtimeFinalization未插桩保留；不代表current779/native/provider或完整TUI-001日用验收。后继准入方法只登记既有缺口，不开R5；本片停写。

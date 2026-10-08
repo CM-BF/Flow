@@ -1,0 +1,53 @@
+{
+  "kind": "TUI01F_LIMITED_COMPLETION_RECEIPT",
+  "acceptedAt": "2026-10-08T02:57:06.693Z",
+  "completedAt": "2026-10-08T02:57:06.693Z",
+  "completionTimeSource": "Owner actual acceptance of the independently reviewed result and existing main receipt at this UTC observation; not inferred from mtime or historical start.",
+  "task": "TUI01F",
+  "parentTask": "TUI-001",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "delivery": "f44ffae3604c616a07a27f2356a3867189743410",
+  "review": {
+    "main": "eb06d53237525b0e548ff552b9cc07ef5228560e",
+    "path": "docs/evidence/i02/tui01f-r4-result-intake.json",
+    "bytes": 3508,
+    "sha256": "22f973171ae816d2afae20f96c29708d6b605bf67f8f156b0707456c581cf91c",
+    "reviewedAt": "2026-10-08T02:54:46Z",
+    "decision": "APPROVED_OBSERVED_FUNCTIONAL_JOURNEY_AND_RESOURCE_RETURN_WITH_ADMISSION_LIMITATION"
+  },
+  "acceptedScope": "TUI01F-04 fixed af51/d629/ec30 App↔TUI behavior and exact current-run resource return; original four TUI01F TODOs now closed within their recorded limits.",
+  "limitations": [
+    "Fixed af51 backend/d629 Web/ec30 terminal with fixture adapter; not current deployed 779 behavior, real provider execution or complete TUI-001 daily-use acceptance.",
+    "One selected journey, not the count of its 9 PTY events, 22 text checkpoints or 4 DOM observations. Runtime finalization was not instrumented.",
+    "Resource samples are non-atomic observations, not peaks; two negative private-byte samples remain original. This review does not validate the inherited subtraction meter.",
+    "Old FAIL/UNKNOWN/KEEP records and resources are unchanged. No retry or new runtime was performed for review; no all-escaped-descendants claim."
+  ],
+  "admissionDeviation": {
+    "state": "NOT_RETROSPECTIVELY_SATISFIED",
+    "requiredAliasCount": 19,
+    "independentlyCheckedBeforeLaunch": 0,
+    "originalField": "r4-admission.json resolverCount=0",
+    "consequence": "Accept observed behavior and return only. Do not claim every admission requirement or all dependency identities were independently fresh-verified.",
+    "verifiedSourceEvidence": "741 inherited source pins, eight own pins and four runtime pins were checked; the missing alias walk is separate and is not repaired by this result review."
+  },
+  "methodGapFollowup": "Record missing19alias walk in existing local-admission method backlog. No R5 or retrospective completion claim; no new runtime authorized.",
+  "parentHandoff": {
+    "owner": "Execution Lead",
+    "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/plans/tui01-terminal-client/status.md",
+    "update": "TUI001-06/08 may now cite the fixed af51/d629/ec30 real App↔TUI cancellation/409 draft preservation/recovery/exit-without-cancel sub-result as reviewed and main-received. Keep steer/decision, complete daily-use, current779 and native/provider combinations open. Replace obsolete F04 awaiting real-journey/resource wording with these actual boundaries.",
+    "changedByThisOwner": false
+  },
+  "skills": {
+    "discovery": "Existing local find-skills method: documentation/provenance closeout; reuse installed methods, no network/install.",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Clear acceptance scope, one authoritative receipt, original errors/resources and unknowns retained; no production changes or redundant tests.",
+    "sourceVersion": "Existing installed source; global provenance remains Lead baseline."
+  },
+  "state": "STOP_WRITING",
+  "runtimeChildren": 0,
+  "pendingLaunch": 0,
+  "claim": "v7 active reservation retained; no ledger release/handoff mutation in this metadata-only closeout."
+}

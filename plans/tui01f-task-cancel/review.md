@@ -1,8 +1,10 @@
 # 当前 TUI01F R4 实际结果
 
-状态：PENDING_INDEPENDENT_REVIEW。固定执行source4bb6530e840c961b66afd68fe4634f728159ef2a/executionHead09c796b622b5336c74222398c1fdd9f239bbd19d；见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r4-result-manifest.json)。
+状态：APPROVED_OBSERVED_FUNCTIONAL_JOURNEY_AND_RESOURCE_RETURN_WITH_ADMISSION_LIMITATION。reviewedAt 2026-10-08T02:54:46Z；reviewer Execution Lead。固定执行source4bb6530e840c961b66afd68fe4634f728159ef2a、executionHead09c796b622b5336c74222398c1fdd9f239bbd19d、结果deliveryf44ffae3604c616a07a27f2356a3867189743410；main接收eb06d53237525b0e548ff552b9cc07ef5228560e。唯一[验收引用](../../docs/evidence/tui01f/web-handoff/r4-final-receipt.json)指向I02正式审查；原[manifest](../../docs/evidence/tui01f/web-handoff/r4-result-manifest.json)与22原件不改。
 
-实际1选1过/exit0/20223ms，功能及fixture清理均通过；8PID/4组absent、正常DROP/原身份tmp移除及后置确认成立。应审全部新阶段与原件、正确scope、短暂EPERM后真实关闭收束、原FAIL/KEEP不变。额外19alias独立fresh观察遗漏：原admission resolverCount0，741+8和4runtime pin实际已核；不把真实PASS回填为该前置已执行。源码/准备批准不替代此结果独审。
+限定批准实际1选1过/20223ms、终端取消与网页状态同步、409保草稿、后续B完成及精确RETURN。八PID/四组absent、真实child close/EOF、checkpoint先于正常DROP/tmp清理和后置观察成立。当前Chrome EPERM后只读ESRCH支持本run收尾，不回填R3原因。
+
+19alias独立fresh观察仍NOT_RETROSPECTIVELY_SATISFIED；741+8和四runtime pin不代替遗漏项。meter非峰值且两负样本保持，runtimeFinalization未插桩、current779/native/provider与完整TUI-001仍未验。原FAIL/UNKNOWN/KEEP不改，不重跑R5；仅本TUI01F四项按既有范围完成，父任务由合法owner接续。
 
 # 当前 TUI01F R4 调用候选
 

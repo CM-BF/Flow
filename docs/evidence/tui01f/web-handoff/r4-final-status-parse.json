@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T02:57:06.745Z",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "waitingIssues": [],
+  "started": {
+    "state": "unknown",
+    "at": null,
+    "record": "UNKNOWN"
+  },
+  "completed": {
+    "state": "known",
+    "at": "2026-10-08T02:57:06.693Z",
+    "record": "2026-10-08T02:57:06.693Z"
+  },
+  "todos": [
+    {
+      "id": "TUI01F-01",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "[Interface](../../docs/evidence/tui01f/interface.md)"
+    },
+    {
+      "id": "TUI01F-02",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "[局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md)"
+    },
+    {
+      "id": "TUI01F-03",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "[main接收](../../docs/evidence/tui01f/main-8d84-receipt.json)；原2行为pass/suite exit1保留；独立收尾1/1已审"
+    },
+    {
+      "id": "TUI01F-04",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "[限定独审/main验收](../../docs/evidence/tui01f/web-handoff/r4-final-receipt.json)；固定af51/d629/ec30真实1/1与RETURN通过，19alias缺失仍未满足；旧FAIL/KEEP不改"
+    }
+  ]
+}
