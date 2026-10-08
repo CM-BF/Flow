@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-08T00:18:14.870Z",
+  "decision": "APPROVED_SCOPED_METADATA_AND_LEAF_RETURN",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "base": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+  "source": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-receipt.json",
+      "originCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "mode": "100644",
+      "bytes": 1254,
+      "sha256": "9df502812616ca3f3a145982662c9f6996551f1e7eae8df973fa9ba513ecdcc1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-request.json",
+      "originCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "mode": "100644",
+      "bytes": 994,
+      "sha256": "dcc3bd76cf08d32ad954b53c27eed15dbc22983ff2971925f83097f0064d464b"
+    },
+    {
+      "path": "plans/svc06-browser-recovery/plan.md",
+      "originCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "mode": "100644",
+      "bytes": 5601,
+      "sha256": "15985bbdee8aed16cd1ea29c5a585d492878f2cec8740151dbfbb42d9f902f38"
+    },
+    {
+      "path": "plans/svc06-browser-recovery/review.md",
+      "originCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "mode": "100644",
+      "bytes": 13454,
+      "sha256": "c8b2513665055b3543da055366d1f0371413932559ccce10e2afeb1921fc9ba9"
+    },
+    {
+      "path": "plans/svc06-browser-recovery/status.md",
+      "originCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "mode": "100644",
+      "bytes": 46591,
+      "sha256": "e5c7033ba3b8679e170863da288201ae8f14fe95f320a747b1ec8c0bb5574ffd"
+    }
+  ],
+  "review": "Only five metadata paths. The original actor atomically removed runtime.ts at00:14:48.809Z; other13 scope unchanged. SVC06B task finish uses previously recorded final acceptance00:05:01Z; parentFLOW and actual assignment/newchat remain open. No product/raw/input changes.",
+  "handoff": "Originalclaim95f47f5c v8→v9; recipient must fresh take. Sent direct toMika, not throughGO.",
+  "tests": 0,
+  "personalOperations": 0,
+  "historicalUnknown": "Malformed local04 and unseen actual user assignment unchanged"
+}

@@ -6,7 +6,7 @@
 
 2026-10-08T00:05:01.000Z只读接收核对：上述唯一结果审查已main `97353e4f48ea515d268f6e4a6107e778b6c39abb` 收录，Lead交接的107d61927及当前观察1b9eda58f均包含它；target5719及原manifest/hash仍由own canonical保存，不复制原件或声称main已逐份归档全部raw。主线等待结束，本片段已交付；完整FLOW、真实用户领取与浏览器新聊天不在此结论内。
 
-当前产品及执行源码、两个已消费namespace与原件停写，无pending writer；claim v8未随意释放。以下保留各历史片段在当时的范围和结论。
+本登记SVC06B五TODO已闭合，完成时间采用上述已记录的2026-10-08T00:05:01.000Z最终接收观察；此前因父FLOW未完而保留NOT_COMPLETED现予纠正，不改变原验收或推定新聊天/真实领取通过。2026-10-08T00:14:48.809Z由原worker身份将claim v8原子amend为v9，仅归还runtime.ts；[成功receipt](../../docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-receipt.json)保留其余13scope，接收方须fresh take。当前产品及执行源码、两个已消费namespace与原件停写，无pending writer；不release整claim。以下保留各历史片段在当时的范围和结论。
 
 本次固定来源组合及参数化构建入口：APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION，reviewer astra_ultra_execution_lead，实际 2026-10-07T14:26:01.460Z。0 reviewer重跑/个人操作。唯一原件 main 6fd214eb62f269167f6af4a8390850561dc0d01c docs/evidence/i02/svc06b-preparation-review.json，本scope保存原字节副本[preparation-independent-review.json](../../docs/evidence/svc06/browser-recovery/preparation-independent-review.json)。
 

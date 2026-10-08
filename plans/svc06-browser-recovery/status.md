@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:05:01.000Z；779/v4实际部署及有限读回已独审，唯一结果审查已main收录，本片主线等待结束 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:14:48.809Z；原子归还runtime.ts单叶，五项验收全部闭合，修正本登记task完成字段 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | source.json中实际source-only provision开始；完成未验，不用claim或commit替代 |
+| 任务完成时间 | 2026-10-08T00:05:01.000Z |
+| 任务时间来源 | 开工来自source.json实际source-only provision开始；完成采用fe96已记录的owner最终接收观察时点：五TODO均完成且5719唯一结果审查已main收录，不用commit/mtime或本次claim归还时间倒推 |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -14,8 +14,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
 | 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；本次Web修复source6491c4815cd6daf8f640648d5e8a25a599d8cd92，旧f0及fresh包99c0保留 |
-| 工作树dirty状态 | 产品及全部执行源停写；仅status/review收口；两已消费namespace/原件封存无pending writer，claim未释放 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 产品及全部执行源停写；仅本次领取receipt与三件套收口；两已消费namespace/原件封存无pending writer；runtime.ts已归还，不再修改 |
+| 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布已完成并获限定独审 |
 | 实现范围 | 仅own Web caller及直接测试：外preview锁内复用公开只读维护store和固定Pool，不改运行产物 |
@@ -28,7 +28,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；I02 svc06b-web779-actual-result-review.json于2026-10-07T23:40:01.257Z限定APPROVED，0 P1/P2；目标5719，历史04未知保留。 |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v9 active；2026-10-08T00:14:48.809Z原子amend只移除apps/runner/src/runtime.ts，其余13scope不变；[成功receipt](../../docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-receipt.json)，接收方仍须fresh take后才可写 |
 | 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850已main72f5758bc，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -41,7 +41,9 @@
 
 ## 等待与实际时间
 
-本次发布窗口已于23:36:06.257Z归还，实际结果独审于23:40:01.257Z通过；资源等待和结果审查等待均结束。2026-10-08T00:05:01.000Z只读确认唯一结果审查已main收录，主线等待结束；此为接收观察时间，不从commit时间反推部署或任务开工。实际发布2026-10-07T23:35:35.341Z–23:36:06.257Z与readonly23:38:23.988Z–23:38:24.007Z分列保留。完整FLOW及真实用户领取/新聊天未由本片验收，任务总完成字段仍保NOT_COMPLETED。产品、执行源、两已消费namespace及原件继续停写，claim v8保持，不占运行窗口。
+本次发布窗口已于23:36:06.257Z归还，实际结果独审于23:40:01.257Z通过；资源等待和结果审查等待均结束。2026-10-08T00:05:01.000Z只读确认唯一结果审查已main收录，主线等待结束；该已记录的最终接收时点满足SVC06B全部五项验收，作为本登记task完成时间。此前因父FLOW未完成而保留NOT_COMPLETED不符合两层任务语义，本次明确纠正；不从commit/mtime反推完成。实际发布2026-10-07T23:35:35.341Z–23:36:06.257Z与readonly23:38:23.988Z–23:38:24.007Z分列保留。完整FLOW及真实用户领取/新聊天未由本片验收，后继范围仍由Lead协调。产品、执行源、两已消费namespace及原件继续停写，不占运行窗口。
+
+2026-10-08T00:14:48.809Z单叶移交：本人worker assignment_review沿原lead身份执行[固定amend请求](../../docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-request.json)，v8→v9只移除runtime.ts。紧前own clean fe96、主线b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b及已审77b489的该文件均为Git blob fa5c1b9236c5beb26e588d1564842210a68648d8，SHA256 200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f。没有修改runtime/其余产品/执行输入或个人服务；成功receipt已即时交Lead供Mika正式fresh领取，不把本次amend冒充接收方已take。
 
 本次仅plan/status/review一致性收口：复用本地find-skills/clean-code/codebase-design方法核事实、职责与限定结论；未运行产品检查或读取个人材料，未复制raw。主线1b9eda58f权威parseStatus仅核本status，errors/humanMissing/timingIssues均空；ownId原未声明保持unknown，历史UNKNOWN及04未知资源不改。
 

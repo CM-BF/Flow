@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:04:43.883Z / main107d61927；AV/GDEP已接收，D05实际212来源；TUI01F新入口独审通过，实际双端旅程待独立窗口。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:18:14.870Z / mainb9ea96aa2；TUI准备、RELEASE01实际兼容和SVC06B发布收口已接收；runtime单叶合法归还，VAR固定成果正在接收核对。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,11 +12,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main107d61927320fb10a8f50d45450da3ffedf7afc8；本段为既有接收记录和TUI固定入口独审，个人发布版本不随main变动 |
+| 工作基线 / HEAD | mainb9ea96aa2013a1ccb13eed7f910d89ff7e5d302b；本段仅已审成果接收及合法单叶移交，个人发布版本不随main变动 |
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | AV/GDEP原独审与直接消费者证据复用；TUI新入口5不同pure/8选择及受限真实导入已审，0新增重测。实际PTY/Web接续尚未运行。 |
-| 已集成main状态 / HEAD | 107d61927已含AV center/client、GDEP和D05实际212源；个人e15/current初始化/accepting24、Web779/v4实际发布独审已接收，不冒完整新聊天。 |
+| 已集成main状态 / HEAD | b9ea96aa2已含AV/GDEP、TUI准备、RELEASE01有限真实兼容及SVC06B发布收口；实际212源。个人e15/current初始化/accepting24、Web779/v4为既有部署事实，不冒当前健康或完整新聊天。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
@@ -558,3 +558,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:06:02.161Z：RELEASE01 e15/880四App已审结果受控接收，唯一fixture仅三行固定后台tuple、另一harness零差异；32 canonical绑定逐固定Git核同，复用原独审与完整RETURN，不重跑浏览器或个人操作。原始材料保留唯一来源，见[单份接收](../../docs/evidence/i02/release01-e15-approved-intake.json)。
 
 2026-10-08T00:07:50.106Z：接收原owner fe96发布metadata收口，SVC06B-04范围内交付已闭、阶段delivered；旧04UNKNOWN及未来真实用户领取/新聊天不改。任务完成字段与自身TODO范围的下一次owner一致性核对另记，不从父FLOW未完成推算时间。见[限定审查](../../docs/evidence/i02/svc06b-owner-closeout-review.json)。
+
+2026-10-08T00:18:14.870Z：已核原owner固定40c79五metadata、领取v9和最终接收时间语义；[单叶移交接收](../../docs/evidence/i02/svc06b-single-leaf-return-intake.json)。runtime.ts只交回一个leaf，Mika须fresh take；无产品测试/服务操作。VAR接收核对独立进行，TUI实际仍NOT_RUN，当前Context有限连续段后由资源owner选择，不凭无actual holder越过其有效reservation。
