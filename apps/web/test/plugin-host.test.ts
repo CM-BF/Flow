@@ -710,12 +710,13 @@ describe("diagnostic notification", () => {
   it.each(["sync", "async"] as const)("notifies a %s source-subscription failure and preserves the other subscriber", async mode => {
     const { host, navigation } = setup(); let healthy = 0;
     host.register(definition(context => {
+      implement(context);
       context.navigation.subscribe(mode === "sync"
         ? () => { throw Error("source subscriber failure"); }
         : async () => { throw Error("source subscriber failure"); });
       context.navigation.subscribe(() => { healthy++; });
     }));
-    await host.activate("test.plugin");
+    expect(await host.activate("test.plugin")).toEqual({ ok: true });
     let notifications = 0; const stop = host.subscribeDiagnostics(() => { notifications++; });
     navigation.set({ ...navigation.getSnapshot(), activeTaskId: "B" });
     await Promise.resolve(); await Promise.resolve();
