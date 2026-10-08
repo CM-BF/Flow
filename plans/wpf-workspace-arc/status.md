@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 全部18source/checks STOP；仅本次最终metadata seal，0child/HTTP/PG/Chrome |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED e14e665e56ee947fa3053939fe0a9beccefd32c0 — 最后4/4+2finalPNG；本段97234ms/3次 CLOSED，两旧FAIL与ChromeEOF差异保留，视觉审待定 |
+| 检查状态 | PASSED e14e665e56ee947fa3053939fe0a9beccefd32c0 — 最后4/4+2finalPNG；本段97234ms/3次 CLOSED，两旧FAIL与ChromeEOF差异保留；root限定功能接受/视觉P2 OPEN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
 | 实现目标 | e14e665e56ee947fa3053939fe0a9beccefd32c0 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
