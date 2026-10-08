@@ -1,0 +1,15 @@
+{
+  "extends": "./view/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "view/apps/runner/src/runtime.ts",
+    "view/apps/runner/src/plugins/process-host.ts",
+    "view/apps/runner/src/plugins/process-host.test.ts",
+    "view/apps/runner/src/plugins/process-host-observation.test.ts",
+    "view/apps/runner/src/plugins/runtime.test.ts"
+  ]
+}

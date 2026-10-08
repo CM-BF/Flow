@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-08T01:43:34.987Z",
+  "stage": "before reservation/OPS14",
+  "error": "TypeError comparing optional null frozen-floor value with integers",
+  "engineeringChildren": 0,
+  "fix": "null frozen floor contributes zero; full required terms and both current values remain mandatory"
+}

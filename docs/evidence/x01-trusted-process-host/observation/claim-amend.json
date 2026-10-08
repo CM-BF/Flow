@@ -1,0 +1,23 @@
+{
+  "requestId": "819c7fff-b897-4710-9706-82aee3c4af6f",
+  "action": "amend",
+  "actor": {
+    "lead": "mika",
+    "worker": "db_transaction_owner"
+  },
+  "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "version": 5,
+  "scope": [
+    "apps/runner/src/main-concurrency.test.ts",
+    "apps/runner/src/plugins/process-host.test.ts",
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-resources.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/runtime.test.ts",
+    "docs/evidence/x01-trusted-process-host",
+    "plans/x01-trusted-process-host",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/plugins/process-host-observation.test.ts"
+  ]
+}

@@ -35,3 +35,7 @@ Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status APPROVED at 2026-10-07T1
 ## Main intake observation（非新独审）
 
 2026-10-07T20:34:44.730Z：中央接收3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df at20:33:13.567Z，四叶与abc0736逐blob全等且此main为当前main祖先；复用19:42:43 chatui批准，不重测。原review未验证main是历史限定，当前源码集成已由实际main事实确认。T7/runtime/center/PG/部署仍未验。详见verifier-extension/main-accepted.json。
+
+## Observation source/local review
+
+状态 NOT_STARTED；新五叶目标待本次固定。7/7定向纯行为、types0、2child CLOSED。旧审批不覆盖新观察；真实worker/PG/T7未运行。唯一入口 observation/review-ready.json。

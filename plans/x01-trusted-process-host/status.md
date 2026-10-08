@@ -6,29 +6,29 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | integrated |
+| 工作分支状态 | implemented |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | delivered |
-| 当前产出 | 受信验证器独立worker源码已接收进主线；保留取消与未知结果，部署及完整runner/中心链另待验收。 |
-| 下一可用交付 | 本片段已交付；后继runner/中心接线与真实发布由各自owner继续。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 进程启动与收尾事实已接到现有运行器通知，纯接口和直接消费者检查通过，等待独立审查。 |
+| 下一可用交付 | 可核对业务身份、子进程退出与资源释放的安全诊断；真实worker观察由父验收后继验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | 3fcdf665a1110907418b277726a86415adf0fcfe（已审packet；本次仅批准转录与partial handback metadata） |
-| 工作树dirty状态 | 本段仅metadata；提交后确认clean并STOP，0工程child/待launch。 |
-| 实现目标 | abc0736dfbfe4c3dcbdd11d73e9386573ef565db |
-| 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-host.test.ts |
-| 检查状态 | PASSED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 10distinct分轮：9pass+1fixture失败→定向1pass；typed原文定向1pass；两focusedtypes0。首次失败保留。 |
-| Review | APPROVED abc0736dfbfe4c3dcbdd11d73e9386573ef565db chatui01_owner 2026-10-07T19:42:43.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；0P1/P2。见verifier-extension/review-approval-transcript.json（原结论转录，非新审）。 |
-| 已集成main状态 / HEAD | INTEGRATED 3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df；本verifier扩展4叶逐blob等批准abc0736。T7/部署/完整runtime-center链仍未验。 |
-| 最近更新时间 | 2026-10-08T00:30:51.422Z |
+| HEAD | 本次 observation source 固定后记录；旧扩展已main，当前新观察接缝未main。 |
+| 工作树dirty状态 | 本次五叶与自身证据已验证，正在固定source/packet；0 child/待launch。 |
+| 实现目标 | UNKNOWN |
+| 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host-observation.test.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
+| 检查状态 | PASSED observation/local.json：7selected/7passed/12未选，focusedtypes0；2child fullRETURN 2026-10-08T01:43:55.865Z。旧真实worker测试仅计数静态适配，未运行。 |
+| Review | NOT_STARTED observation新接缝待固定独审；旧abc0736批准仅属已main历史。 |
+| 已集成main状态 / HEAD | 旧工具/验证器host已main；本次观察五叶NOT_INTEGRATED，固定main2b52 runtime前像。T7/public真实链仍未验。 |
+| 最近更新时间 | 2026-10-08T01:45:24.052Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
-| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v5 ACTIVE/9；2026-10-08T00:30:21.124Z仅移出configuration.ts/configuration.test.ts；runtime与execution既有交回保持。 |
+| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v6 ACTIVE/11；01:37:54.214Z追加runtime.ts与观察纯测试；原v5历史：2026-10-08T00:30:21.124Z仅移出configuration.ts/configuration.test.ts；runtime与execution既有交回保持。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -54,7 +54,7 @@
 
 ## 下一步
 
-当前 verifier 扩展四叶已接收main3d6e0f54；普通资源19:35:26.901Z已归还。原两execution叶与本次runtime.ts均永久交回，不写后继scope；assignment_review须fresh take后才可改runtime。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
+当前只固定观察接缝并交独立review。runtime已合法重新纳入本claim v6；configuration及execution原交回仍有效。旧工具/验证器扩展已main，新的安全观察未main；父真实worker验收与T7仍独立。架构影响：host.observe→runtime.onNotice→既有main诊断出口；待此片主线接收后由原架构owner更新，未冒已部署。
 
 ## 计划复审修复段
 
@@ -107,3 +107,13 @@ clean-code metadata复核：现阶段与历史分开、原审结论注明转录�
 ## 2026-10-08T00:30:51.422Z 配置双叶永久交回
 
 本独立3MiB metadata段00:30:21.041Z开始，fresh旧v4/11本人；两配置叶此前23:42:42Z永久STOP，现再次确认并原子amend至v5/9，回执configuration-handback-receipt.json。两叶与main728同字节，无未main差量。新runtime独立树取得exact claim后方可写，本owner不恢复这两叶；其余九scope保留，T7未验事实不变。clean-code核命名/单一status/历史与现态/边界，0产品/工程/PG。预算含旧index额外原子副本2,129,500B；内容提交push后全部STOP。
+
+## 2026-10-08 进程观察接缝
+
+实际START/firstWrite 2026-10-08T01:37:54.104Z；deadline 2026-10-08T02:02:54.104Z。8MiB，最多3串行20s/cum60，0真实worker/native/PG/HTTP/provider。固定main2b52提供runtime前像，保持已main verifier/recovery接线；观察只安全标识，不输出wire nonce/input/config。当前局部检查7/7与types0已通过；原真实worker检查不重绑。架构影响planned：既有host.observe→runtime.onNotice→既有main诊断出口，原outbox/journal权威不变。
+
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| X01TP-07 | in-progress | db_transaction_owner | [observation/segment.json](../../docs/evidence/x01-trusted-process-host/observation/segment.json)：安全生命周期事实、纯检查、独审与main待完成 |
+
+2026-10-08T01:45:24.052Z clean-code安全点：两次实际检查全部资源RETURN，无待launch；当前仅source/metadata封存。命名、单一invoke生命周期、明确安全字段投影、observer异常与业务错误分离已复核，无第二supervisor或额外transport。8MiB保守量见observation/growth.json。

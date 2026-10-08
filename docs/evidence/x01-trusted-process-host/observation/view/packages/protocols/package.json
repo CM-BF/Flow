@@ -1,0 +1,16 @@
+{
+  "name": "@flow/protocols",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@flow/client": "workspace:*",
+    "@flow/contracts": "workspace:*",
+    "@a2a-js/sdk": "1.3.0",
+    "@modelcontextprotocol/client": "2.3.1"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/server": "2.3.1"
+  }
+}

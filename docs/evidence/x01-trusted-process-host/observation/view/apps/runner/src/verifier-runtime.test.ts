@@ -1,0 +1,173 @@
+import { randomUUID } from 'node:crypto';
+import { mkdtemp, mkdir, writeFile, readFile, lstat, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
+import { FlowApiError, FlowClient } from '@flow/client';
+import type { EventBatch } from '@flow/contracts';
+import { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
+import { JSON_OBJECT_ALGORITHM } from '../../../packages/contracts/src/plugin-verification.js';
+import { AdmissionJournal } from './admission-journal.js';
+import { runRunner, type RunnerOptions, type RunnerNotice } from './runtime.js';
+import { textDigest } from './verifier.js';
+const state = vi.hoisted(() => ({ invokes: 0, opens: 0, closes: 0, processInvokes: 0, unknown: false,
+  actualOpen: false, openError: undefined as Error | undefined, onOpen: async () => {}, onInvoke: async () => {} }));
+vi.mock('./plugins/host.js', async original => {
+  const real = await original<typeof import('./plugins/host.js')>();
+  return { ...real, invokeInstalledVerifier: async (input: import('./plugins/host.js').PluginToolInput) => {
+    await input.assertOwnership(); await input.authorize(input.binding, 'load');
+    await state.onInvoke(); await input.assertOwnership(); await input.authorize(input.binding, 'invoke');
+    state.invokes++;
+    if (state.unknown) throw new real.PluginToolError('OUTCOME_UNKNOWN');
+    const { source, rule, inputDigest } = JSON.parse(input.input);
+    const { verifyJsonObject } = await import('../../../packages/plugin-runtime/src/json-object-verifier.js');
+    return { kind: 'text', content: JSON.stringify({ schemaVersion: 1, algorithmId: rule.algorithmId, algorithmVersion: 1,
+      inputDigest, verdict: verifyJsonObject(source.content, rule) }), provenance: {
+      bindingId: input.binding.bindingId, invocationId: input.binding.invocationId, taskId: input.binding.taskId,
+      attemptId: input.binding.attemptId, ownerVersion: input.binding.ownerVersion, installationId: input.binding.material.installationId,
+      artifactId: input.binding.material.artifact.artifactId, artifactSha256: input.binding.material.artifact.sha256,
+      treeDigest: input.binding.material.treeDigest, hostApiMajor: 1 } };
+  } };
+});
+vi.mock('./plugins/process-host.js', async original => {
+  const actual = await original<typeof import('./plugins/process-host.js')>();
+  return { createTrustedProcessHost: async (options: Parameters<typeof actual.createTrustedProcessHost>[0]) => {
+    state.opens++; await state.onOpen();
+    if (state.openError) throw state.openError;
+    if (state.actualOpen) return actual.createTrustedProcessHost(options);
+    return { invoke: async () => { throw new Error('Verifier cannot use tool dispatch'); },
+      invokeVerifier: async (input: import('./plugins/host.js').PluginToolInput) => { state.processInvokes++; return (await import('./plugins/host.js')).invokeInstalledVerifier(input); },
+      close: async () => { state.closes++; } };
+  } };
+});
+const roots: { path: string; dev: number; ino: number }[] = [];
+beforeEach(() => { Object.assign(state, { invokes: 0, opens: 0, closes: 0, processInvokes: 0, unknown: false,
+  actualOpen: false, openError: undefined, onOpen: async () => {}, onInvoke: async () => {} }); });
+afterEach(async () => {
+  vi.restoreAllMocks();
+  for (const root of roots.splice(0)) { const s = await lstat(root.path); expect([s.dev, s.ino, s.isSymbolicLink()]).toEqual([root.dev, root.ino, false]); await rm(root.path, { recursive: true }); }
+});
+async function fixture(content = '{"needed":1}') {
+  const path = await mkdtemp(join(tmpdir(), 'flow-verifier-runtime-')), meta = await lstat(path); roots.push({ path, dev: meta.dev, ino: meta.ino });
+  const baseUrl = 'http://verifier.invalid', directory = join(path, textDigest(baseUrl)); await mkdir(directory);
+  const runnerId = randomUUID(), taskId = randomUUID(), attemptId = randomUUID(), abort = new AbortController();
+  const source = { taskId: randomUUID(), attemptId: randomUUID(), artifactId: randomUUID(), version: textDigest(content), content };
+  const rule = { schemaVersion: 1 as const, algorithmId: JSON_OBJECT_ALGORITHM.id, algorithmVersion: 1 as const, requiredKeys: ['needed'] };
+  const prompt = JSON.stringify({ source, rule });
+  const binding = { protocol: 'flow.plugin-runtime.v1' as const, executionKind: 'verifier' as const,
+    bindingId: randomUUID(), invocationId: randomUUID(), taskId, registrationId: randomUUID(), registrationRevision: 1, versionId: randomUUID(),
+    scope: { workspaceId: 'personal', projectId: randomUUID() }, materialInstallOperationId: randomUUID(), targetRunnerId: runnerId,
+    storeId: 'owned', materialId: 'a'.repeat(64), treeDigest: 'b'.repeat(64), hostApiMajor: 1 as const,
+    artifact: { artifactId: randomUUID(), name: 'controlled', version: '1.0.0', integrity: 'sha512-' + 'A'.repeat(86) + '==', bytes: 100, sha256: 'c'.repeat(64) },
+    configuration: {}, inputDigest: textDigest(prompt), createdAt: new Date().toISOString(),
+    verification: { projectId: randomUUID(), source: { taskId: source.taskId, attemptId: source.attemptId, artifactId: source.artifactId, version: source.version }, rule } };
+  const identity = { runnerId, taskId, attemptId, ownerVersion: 1 };
+  const assignment = { task: { id: taskId, title: 'Verify', prompt, harness: 'fixture' as const },
+    attempt: { id: attemptId, runnerId, ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 30000).toISOString() }, pluginVerifierBinding: binding };
+  const reports: EventBatch[] = [], requests: { route: string; input: any; key?: string }[] = [], notices: RunnerNotice[] = [];
+  const fault = { phase: '' }; let allocated = false;
+  vi.spyOn(FlowClient.prototype, 'runnerIdentity').mockResolvedValue({ protocol: 'flow.runner-claim.v2', runnerId });
+  vi.spyOn(FlowClient.prototype, 'heartbeat').mockResolvedValue({ action: 'continue', remainingLeaseMs: 30000, leaseExpiresAt: new Date(Date.now()+30000).toISOString(), decision: null });
+  vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async batch => { reports.push(batch); abort.abort(); return { accepted: batch.events.length, lastSequence: batch.events.at(-1)!.sequence }; });
+  const transport = new PluginRunnerClient(async (route, init) => {
+    const input = JSON.parse(String(init.body)), key = new Headers(init.headers).get('Idempotency-Key') ?? undefined; requests.push({ route, input, key });
+    if (route.endsWith('plugin-host')) return { published: true };
+    if (route.endsWith('/authorize')) {
+      expect(route).toBe('/api/runner/plugin-verifier/authorize');
+      if (fault.phase === 'unknown') throw new Error('Authorization ACK unknown');
+      if (fault.phase === 'denied' && input.phase === 'invoke') throw new FlowApiError(403, 'plugin_verifier_grant_required', 'Revoked');
+      return { ...input, protocol: 'flow.plugin-runtime.v1', taskId, runnerId, authorizedRevision: 1, replayed: fault.phase === 'replayed' };
+    }
+    if (route.endsWith('/status') && !allocated) return { ...input, state: 'missing' };
+    allocated = true; return { ...input, state: 'assigned', assignment, identity, remainingLeaseMs: 30000 };
+  });
+  const options: RunnerOptions = { baseUrl, token: 'synthetic', workingDirectory: path, signal: abort.signal, pollIntervalMs: 1, requestTimeoutMs: 500,
+    adapters: [], pluginExecution: { store: { root: path, storeId: 'owned', allowedDigests: ['c'.repeat(64)] },
+      verifier: { trustedAlgorithms: [{ artifactSha256: 'c'.repeat(64), treeDigest: 'b'.repeat(64), hostApiMajor: 1, algorithmId: JSON_OBJECT_ALGORITHM.id, algorithmVersion: 1 }] },
+      transport: () => transport }, onNotice: notice => { notices.push(notice); if (notice.type === 'admission-blocked') abort.abort(); } };
+  const pending = join(directory, textDigest(attemptId), 'pending-events.json');
+  return { options, abort, directory, reports, requests, notices, binding, assignment, identity, fault, pending };
+}
+
+test.each(['in-process', 'trusted-process'] as const)('v4 %s dispatch uses verifier phases and exact typed terminal batch', async executionMode => {
+  const f = await fixture(); f.options.pluginExecution!.executionMode = executionMode; await runRunner(f.options);
+  expect(state.invokes).toBe(1); expect(state.processInvokes).toBe(executionMode === 'trusted-process' ? 1 : 0);
+  const claim = f.requests.find(r => r.route.endsWith('/claim-opportunity'))!;
+  expect(claim.input.protocol).toBe('flow.runner-claim.v4'); expect(claim.input.pluginToolExecution).toBeUndefined();
+  const phases = f.requests.filter(r => r.route.endsWith('/authorize')); expect(phases.map(p => p.input.phase)).toEqual(['load', 'invoke']);
+  expect(new Set(phases.map(p => p.key)).size).toBe(2); expect(phases.every(p => /^[a-f0-9]{64}$/.test(p.key!))).toBe(true);
+  const events = f.reports[0]!.events; expect(events.map(e => e.type)).toEqual(['artifact', 'verification', 'completed']);
+  expect(events[1]).toMatchObject({ verifierId: 'flow.plugin-json-object', result: 'passed', pluginSource: { bindingId: f.binding.bindingId } });
+  expect(events[2]).toMatchObject({ outcome: 'succeeded', pluginCompletion: { state: 'settled' } });
+  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
+});
+test('failed verifier verdict remains typed failed and completes only after settled host', async () => {
+  const f = await fixture('{}'); await runRunner(f.options);
+  expect(f.reports[0]!.events[1]).toMatchObject({ result: 'failed', verdict: { reason: 'missing-required-keys' } });
+  expect(f.reports[0]!.events[2]).toMatchObject({ outcome: 'failed', pluginCompletion: { state: 'settled' } });
+});
+test.each(['unknown', 'replayed'])('uncertain %s phase retains assignment and emits no invented terminal', async phase => {
+  const f = await fixture(); f.fault.phase = phase; await runRunner(f.options);
+  expect(state.invokes).toBe(0); expect(f.reports).toEqual([]); expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true);
+});
+test('current verifier grant revocation prevents invoke and does not fabricate a verdict', async () => {
+  const f = await fixture(); f.fault.phase = 'denied'; await runRunner(f.options);
+  expect(state.invokes).toBe(0); expect(f.reports[0]!.events).toHaveLength(1);
+  expect(f.reports[0]!.events[0]).toMatchObject({ type: 'completed', outcome: 'failed', pluginCompletion: { state: 'settled' } });
+});
+test('unknown installed execution never completes or reinvokes the retained assignment', async () => {
+  const f = await fixture(); state.unknown = true; await runRunner(f.options);
+  expect(state.invokes).toBe(1); expect(f.reports).toEqual([]); expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true);
+});
+async function retainTerminal(f: Awaited<ReturnType<typeof fixture>>) {
+  vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async () => { f.abort.abort(); throw new Error('Terminal ACK lost'); });
+  await runRunner(f.options); return await readFile(f.pending, 'utf8');
+}
+test('durable terminal replays before real old PROCESS residue rejects initialization; no reinvoke or resource deletion', async () => {
+  const f = await fixture(); const saved = await retainTerminal(f); const abort = new AbortController();
+  f.options.signal = abort.signal; f.options.pluginExecution!.executionMode = 'trusted-process';
+  const root = join(f.directory, 'plugin-process'), receipts = join(root, 'receipts'); await mkdir(receipts, { recursive: true, mode: 0o700 });
+  await mkdir(join(root, 'scratch'), { mode: 0o700 }); const old = join(receipts, 'owner.json'); await writeFile(old, '{"old":true}', { mode: 0o600 });
+  state.actualOpen = true; f.requests.length = 0; f.notices.length = 0;
+  vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async batch => { expect(JSON.stringify(batch)).toBe(JSON.stringify(JSON.parse(saved))); return { accepted: batch.events.length, lastSequence: batch.events.at(-1)!.sequence }; });
+  await expect(runRunner(f.options)).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
+  expect(state.invokes).toBe(1); expect(state.opens).toBe(1); expect(state.closes).toBe(0); expect(f.requests).toEqual([]); expect(f.notices).toEqual([]);
+  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false); await expect(readFile(f.pending)).rejects.toMatchObject({ code: 'ENOENT' });
+  expect(await readFile(old, 'utf8')).toBe('{"old":true}');
+});
+test('unknown terminal ACK prevents PROCESS open and preserves the original event ids', async () => {
+  const f = await fixture(); const saved = await retainTerminal(f); const abort = new AbortController();
+  f.options.signal = abort.signal; f.options.pluginExecution!.executionMode = 'trusted-process';
+  f.options.onNotice = () => abort.abort();
+  vi.spyOn(FlowClient.prototype, 'report').mockRejectedValue(new Error('Still unknown'));
+  await runRunner(f.options); expect(state.opens).toBe(0); expect(state.invokes).toBe(1); expect(await readFile(f.pending, 'utf8')).toBe(saved);
+});
+test('PROCESS open failure retains original error and does not retry as a network failure', async () => {
+  const f = await fixture(); f.options.pluginExecution!.executionMode = 'trusted-process'; const error = new Error('resource closed unknown'); state.openError = error;
+  await expect(runRunner(f.options)).rejects.toBe(error); expect(state.opens).toBe(1); expect(state.closes).toBe(0); expect(f.requests).toEqual([]); expect(f.notices).toEqual([]);
+});
+test('cancellation during PROCESS open closes the returned instance without publication or initialization', async () => {
+  const f = await fixture(); f.options.pluginExecution!.executionMode = 'trusted-process'; state.onOpen = async () => { f.abort.abort(); };
+  await runRunner(f.options); expect(state.opens).toBe(1); expect(state.closes).toBe(1); expect(f.requests).toEqual([]); expect(f.notices).toEqual([]);
+});
+test('a prior v2 opportunity is not rewritten by verifier opt-in', async () => {
+  const f = await fixture(), journal = await AdmissionJournal.open(f.directory); await journal.bindRunner(f.identity.runnerId);
+  const original = await readFile(join(f.directory, 'admission.json'), 'utf8');
+  await expect(runRunner(f.options)).rejects.toThrow('admission storage'); expect(await readFile(join(f.directory, 'admission.json'), 'utf8')).toBe(original); expect(f.requests).toEqual([]);
+});
+
+test('PROCESS instance opens only once across empty v4 polling', async () => {
+  const f = await fixture(); f.options.pluginExecution!.executionMode = 'trusted-process'; let polls = 0;
+  f.options.pluginExecution!.transport = () => new PluginRunnerClient(async (route, init) => {
+    const input = JSON.parse(String(init.body)); f.requests.push({ route, input });
+    if (route.endsWith('plugin-host')) return { published: true };
+    if (route.endsWith('/status')) return { ...input, state: 'missing' };
+    if (++polls === 2) f.abort.abort(); return { ...input, state: 'empty' };
+  });
+  await runRunner(f.options); expect(polls).toBe(2); expect(state.opens).toBe(1); expect(state.closes).toBe(1);
+  expect(f.requests.filter(r => r.route.endsWith('plugin-host'))).toHaveLength(1); expect(state.invokes).toBe(0);
+});
+test('cancellation before invoke retains assignment without a fabricated completed event', async () => {
+  const f = await fixture(); state.onInvoke = async () => { f.abort.abort(); }; await runRunner(f.options);
+  expect(state.invokes).toBe(0); expect(f.reports).toEqual([]); expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true);
+});

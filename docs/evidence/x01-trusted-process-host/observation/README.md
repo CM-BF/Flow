@@ -1,0 +1,13 @@
+# PROCESS observation source/local review
+
+Only five owned leaves change. Runtime starts from exact current main2b52 (28,733B); the old feature branch runtime is stale and is never an integration preimage. The intake must use current-main-relative delta, not restore this branch wholesale. Source supply.json records the initial fixed main supply; current-inputs.json separately binds the final five owned overlays.
+
+The existing host observer emits at most two safe facts per invocation: launched from the actual ChildProcess spawn event, and settled after resource finish/KEEP. Fields are flat business identity, logical fixed workerEntry, pid, parent-observed timestamps, exit/signal, EOF, byte count and resource state. No wire nonce, token, input, result, private configuration, paths, argv, or secret digest is included. Timestamps are not kernel process-start identities, nor proof of arbitrary descendants. Frozen records are limited to 2048 UTF-8 JSON bytes. Observer errors become only the safe OBSERVER_FAILED diagnostic on a later fact: they cannot replace execution/settlement failure, interrupt cleanup, or turn a successful invocation into a retry. Existing unknown settlement remains authoritative.
+
+Runtime forwards these facts via its existing onNotice; existing main stderr JSON consumer requires no source edit. No second supervisor, process census, OS sandbox, physical-removal authority, or transport is introduced.
+
+Two actual check children: focused strict types0 and seven selected behavior passes (five new host cases using mocked spawn/resources and in-memory pipes, one new runtime forwarding case, one old trusted-process mocked runtime consumer). Twelve runtime cases unselected. No real worker/native/PG/HTTP/provider. Existing real-worker test only adapts event counts to settled facts and is NOT_RUN here. A null optional frozen-floor field caused a prelaunch caller exception before reservation or child; history is retained separately. Historical EPERM observations remain in OPS14 output; final absent/EOF and complete raw control cleanup.
+
+Clean-code/codebase-design: reused the single invoke lifecycle and existing runtime notice Interface; explicit safe field projection avoids spreading nonce-bearing identity. One callback cannot change resource cleanup. No new state authority; outbox/journal semantics preserved. Skills: existing local find-skills, codebase-design, brainstorming approved baseline, clean-code fixed project baseline; no installation.
+
+Review boundary: source/local only. True worker notices and parent real-process case, PG, public end-to-end and T7 release remain NOT_RUN. Source claim v6/11 retained for independent review.
