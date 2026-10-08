@@ -80,7 +80,7 @@ test('[group lifecycle] unknown unsafe codes never expose their contents or chil
   assert.deepEqual(result.observations[0], { state: 'unknown', code: null }); assert.ok(!JSON.stringify(result).includes('secret-like'));
 });
 
-test('[group lifecycle] actual fixture retains work primary and concrete group error after real child close', async () => {
+test('[group lifecycle] actual fixture retains work primary and concrete group error after real child close', async t => {
   const directory = await mkdtemp(join(tmpdir(), 'tui-owned-group-'));
   const fixture = new CancelJourney(directory, { kind: 'web-handoff', adapterVersion: 'synthetic',
     createCenter: async () => { throw Error('not a PG test'); }, beforeCleanup: async () => ({ withinBound: true }) });
@@ -101,6 +101,7 @@ test('[group lifecycle] actual fixture retains work primary and concrete group e
     assert.equal(group.pgid, child.pid); assert.equal(group.stopped, true); assert.equal(group.child.closed, true);
     assert.deepEqual(group.failure, { phase: 'child', code: 'EIO' }); assert.deepEqual(group.signals, []);
     assert.equal(group.observations.at(-1).state, 'absent');
+    t.diagnostic(JSON.stringify({ ownedTinyChild: group, originalWorkPrimary: saved.failures[0], aggregateCleanup: saved.cleanup.groups, irreversibleCleanup: false }));
   } finally {
     const stopped = await owned.stop(); assert.equal(stopped.stopped, true);
     for (const name of ['checkpoint.json', 'result.json']) await unlink(join(directory, name));
