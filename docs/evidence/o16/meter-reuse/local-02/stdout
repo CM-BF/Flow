@@ -1,0 +1,71 @@
+TAP version 13
+# Subtest: O16 meter: real three-root batch closes one inherited helper and measures current consumer
+ok 1 - O16 meter: real three-root batch closes one inherited helper and measures current consumer
+  ---
+  duration_ms: 45.406334
+  type: 'test'
+  ...
+# {"sampleElapsedMs":38.62949999999999,"helperClosed":true,"roots":3,"nonAtomic":true}
+# Subtest: O16 meter: missing optional evidence stays distinct from changed runtime identity
+ok 2 - O16 meter: missing optional evidence stays distinct from changed runtime identity
+  ---
+  duration_ms: 40.553208
+  type: 'test'
+  ...
+# Subtest: O16 meter: symlink remains rejected rather than becoming a measured zero
+ok 3 - O16 meter: symlink remains rejected rather than becoming a measured zero
+  ---
+  duration_ms: 40.231958
+  type: 'test'
+  ...
+# Subtest: O16 meter: real rename/unlink gaps reuse fixed module while opened-directory and I/O faults stay unknown
+ok 4 - O16 meter: real rename/unlink gaps reuse fixed module while opened-directory and I/O faults stay unknown
+  ---
+  duration_ms: 133.064584
+  type: 'test'
+  ...
+# Subtest: O16 meter: input/source validation and module import do not launch a helper
+ok 5 - O16 meter: input/source validation and module import do not launch a helper
+  ---
+  duration_ms: 0.293209
+  type: 'test'
+  ...
+# Subtest: O16 meter: fixed Python loader refuses changed shared source binding before target traversal
+ok 6 - O16 meter: fixed Python loader refuses changed shared source binding before target traversal
+  ---
+  duration_ms: 28.810833
+  type: 'test'
+  ...
+# Subtest: O16 meter: output/protocol failure is bounded and waits for close, without persisting private text
+ok 7 - O16 meter: output/protocol failure is bounded and waits for close, without persisting private text
+  ---
+  duration_ms: 0.769208
+  type: 'test'
+  ...
+# Subtest: O16 meter: one total deadline kills an actual stalled helper and confirms close
+ok 8 - O16 meter: one total deadline kills an actual stalled helper and confirms close
+  ---
+  duration_ms: 154.363084
+  type: 'test'
+  ...
+# Subtest: O16 meter: unconfirmed close latches rejection and never overlaps another helper
+ok 9 - O16 meter: unconfirmed close latches rejection and never overlaps another helper
+  ---
+  duration_ms: 21.302958
+  type: 'test'
+  ...
+# Subtest: O16 meter: operator and cleanup consumers preserve the first failure without new helper launches
+ok 10 - O16 meter: operator and cleanup consumers preserve the first failure without new helper launches
+  ---
+  duration_ms: 0.890667
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 516.555208

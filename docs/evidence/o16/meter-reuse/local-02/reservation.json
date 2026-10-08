@@ -1,0 +1,74 @@
+{
+  "startedAt": "2026-10-08T03:36:54.795Z",
+  "head": "cc1f47cf5df3febd149512063949a8fc3f9ec257",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "--experimental-test-isolation=none",
+    "--test-concurrency=1",
+    "--test-reporter=tap",
+    "--test-name-pattern",
+    "^O16 meter:",
+    "experiments/continuous-goal-acceptance/owned-meter.test.mjs",
+    "experiments/continuous-goal-acceptance/operator.test.mjs"
+  ],
+  "scratch": "/private/tmp/flow-o16-meter-local-2ts4uw0z",
+  "dev": 16777234,
+  "ino": 124783667,
+  "freeBytes": 14202953728,
+  "floorBytes": 11630542848,
+  "candidateBytes": 4587520,
+  "queueSha256": "0db55ff275acec80645297a9dace31ba586bf69a9cbea979b1ee46faa0625d40",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/meter-reuse/local-check.py",
+      "bytes": 5070,
+      "sha256": "d2c46359aa77dbd36e45cd94401b747df2db5529fac27a428fa7c5da8af092a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 13354,
+      "sha256": "faffea2736b36ccac4c17fe1672abcb8e1ef90b9bb7483ab5e8119a78509a668"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 5767,
+      "sha256": "1094227ba45832be68dfd8754af3de387e4be9c12c014a31b1892d7370471ff5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator.test.mjs",
+      "bytes": 6988,
+      "sha256": "782fce3ffba5b49365bc22f588824bac7b1ed3b1bc3f9b9f0441104842dcc0cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/owned-meter.mjs",
+      "bytes": 6186,
+      "sha256": "b3f5fec8c683c94e3b1db5b419e1f2886d4ddd3e5c6990d08db097b51071599f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/owned-meter.test.mjs",
+      "bytes": 11192,
+      "sha256": "df41e0fae6df7b4715ad29e503b3b910a0001fe144e8de8e2d4f5eb3db35a5dc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/meter-bridge.mjs",
+      "bytes": 4287,
+      "sha256": "e4c5da8d2fb57549d3efac56d65b76a19c5f9b7d7ba9486446d1f7ba1cc550c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "oldPrivateReads": 0
+}

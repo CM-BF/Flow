@@ -130,3 +130,7 @@ Target `5cf8a5dd529a77f7de054c2ed476cf62213af665`，base `e5c7fd9d664de11ab853c5
 固定source `8b31a1fedb0b7d8400c0ee0c997761710bc935a0`，生产实现214a9bf、后继仅直接文件consumer与source digest诊断；[单份manifest](../../docs/evidence/o16/progression-renewal/manifest.json)与[候选](../../docs/evidence/o16/progression-renewal/candidate.md)为本次范围。12不同/13实际选择、3975ms/4027B、2组absent/双EOF、初始EPERM及非空cache KEEP均保留。真实PG/revoke/create/模型与旧资源接触0，未自批。
 
 请核原pause共享wx、同run与旧source逆算、保旧确认而以新执行授权绑定真实assignment、public观察与两次独立事务的unknown边界、三期限及same-private新记录不覆盖旧原件。原两次总体模型额度保持，不能将新阶段合同当新增额度或复活过期许可。实际renew唯一限定结果已main d25dda8f1，其raw不复制/重审。
+
+## 2026-10-08T03:39:08.209Z 固定共享计量接缝待独审
+
+Target `82265ef377e56809e766d12fb3a298777d3966c8`，exact3生产/2测试路径及原件见[meter-reuse manifest](../../docs/evidence/o16/meter-reuse/manifest.json)。11不同通过，首语法FAIL保留并可反向重建前像，658ms/4786B/6个串行helper与两组归还明确。请核200ms总期限/close与首因锁定、两直接consumer、shared module准确绑定和限定消失语义；旧实际失败不被合成例归因，旧once不复活。外部依赖/Python进程是明确新增边界，不冒无进程开销。作者未自批；无PG/native/个人材料。

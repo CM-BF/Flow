@@ -1,0 +1,90 @@
+{
+  "kind": "O16_FIXED_METER_LOCAL_RESULT",
+  "at": "2026-10-08T03:39:08.209Z",
+  "source": "82265ef377e56809e766d12fb3a298777d3966c8",
+  "base": "cc1f47cf5df3febd149512063949a8fc3f9ec257",
+  "differentPassed": 11,
+  "selectedPassingChecks": 11,
+  "firstFailure": "local-01 syntax wrapper failure; affected consumer passed1; no helper launched from unloaded test file",
+  "testPreimage": {
+    "method": "Remove the closing function brace immediately before first O16 meter test once",
+    "bytes": 11190,
+    "sha256": "cf8549bf95a5644d0d0327a6c94c1f64780da652b6c960981a33fbd2791560d6"
+  },
+  "rounds": [
+    {
+      "finishedAt": "2026-10-08T03:36:15.107Z",
+      "elapsedMs": 95,
+      "selected": 2,
+      "passed": 1,
+      "failed": 1,
+      "rawBytes": 2123,
+      "scratchBytes": 0,
+      "scratchEntries": 0,
+      "sameIdentity": true,
+      "scratchRemoved": true,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "exitCode": 1
+    },
+    {
+      "finishedAt": "2026-10-08T03:36:55.394Z",
+      "elapsedMs": 563,
+      "selected": 10,
+      "passed": 10,
+      "failed": 0,
+      "rawBytes": 2663,
+      "scratchBytes": 0,
+      "scratchEntries": 0,
+      "sameIdentity": true,
+      "scratchRemoved": true,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null,
+      "exitCode": 0
+    }
+  ],
+  "totalElapsedMs": 658,
+  "rawBytes": 4786,
+  "supervisedChildren": 2,
+  "serialPythonHelpers": 6,
+  "maximumSimultaneousOwnChildren": 2,
+  "actualSample": {
+    "roots": 3,
+    "elapsedMs": 38.6295,
+    "helperClosed": true,
+    "nonAtomic": true,
+    "benchmark": false,
+    "phasePeak": "NOT_MEASURED"
+  },
+  "actualPG": 0,
+  "actualNative": 0,
+  "oldPrivateRead": false,
+  "oldFailurePath": "NOT_RECORDED",
+  "scope": "Source and synthetic owned-file consumers only; new source not authorized for any actual native stage.",
+  "cleanCode": {
+    "at": "2026-10-08T03:39:08.209Z",
+    "scope": [
+      "operator-bounds.mjs",
+      "owned-meter.mjs",
+      "meter-bridge.mjs",
+      "operator.test.mjs",
+      "owned-meter.test.mjs"
+    ],
+    "findings": "Traversal is single shared Implementation; process/protocol lives in adapter; byte/unknown policy remains consumer. One fixture brace repair; no source changes after passing checks.",
+    "remaining": "Independent review pending; interpreter/helper startup is an added measured cost, not an overall speed claim."
+  }
+}

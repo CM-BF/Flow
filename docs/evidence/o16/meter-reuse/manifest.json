@@ -1,0 +1,132 @@
+{
+  "kind": "O16_METER_REUSE_SOURCE_AND_LOCAL_RESULT",
+  "source": "82265ef377e56809e766d12fb3a298777d3966c8",
+  "base": "cc1f47cf5df3febd149512063949a8fc3f9ec257",
+  "bindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 5767,
+      "sha256": "1094227ba45832be68dfd8754af3de387e4be9c12c014a31b1892d7370471ff5"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/owned-meter.mjs",
+      "bytes": 6186,
+      "sha256": "b3f5fec8c683c94e3b1db5b419e1f2886d4ddd3e5c6990d08db097b51071599f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/meter-bridge.mjs",
+      "bytes": 4287,
+      "sha256": "e4c5da8d2fb57549d3efac56d65b76a19c5f9b7d7ba9486446d1f7ba1cc550c8"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.test.mjs",
+      "bytes": 6988,
+      "sha256": "782fce3ffba5b49365bc22f588824bac7b1ed3b1bc3f9b9f0441104842dcc0cd"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/owned-meter.test.mjs",
+      "bytes": 11192,
+      "sha256": "df41e0fae6df7b4715ad29e503b3b910a0001fe144e8de8e2d4f5eb3db35a5dc"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/interface.md",
+      "bytes": 4178,
+      "sha256": "24c308b46a79bc6cf85c7b306b654ad1f6043d86118fc64ed36cada00eeb1b84"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-check.py",
+      "bytes": 5070,
+      "sha256": "d2c46359aa77dbd36e45cd94401b747df2db5529fac27a428fa7c5da8af092a0"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/start.json",
+      "bytes": 762,
+      "sha256": "b87b879e84d487ae779a6ed4d5d99fdf88e025a4db1a5d7f68895d0372e2e637"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/result.json",
+      "bytes": 2712,
+      "sha256": "0f468a05bdf662ee5cdff6d076658ad6ca5b1bdb442d97dc84e82019faafe70c"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-01/outer.json",
+      "bytes": 661,
+      "sha256": "94ee689f54a27348865d5a4c094ca4182af4e7a3bbb8772a38b8a47b44443aa7"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-01/reservation.json",
+      "bytes": 3208,
+      "sha256": "08570872162f3812b3ce4453baa1c79515b091a9d2028227fef312a3f1786daf"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-01/result.json",
+      "bytes": 494,
+      "sha256": "74f8a3ec01a99e6276ea6b096438f08c447eec11976544d99cbb1c90311206e9"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-01/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-01/stdout",
+      "bytes": 2123,
+      "sha256": "28392ba01bf947eb3a68e8ce77b1fe22645bb8e2b2698b53fc2630b493cc4f18"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-02/outer.json",
+      "bytes": 517,
+      "sha256": "2c2a6df2c025611c517a8b162d654d0eea2814570f4f7accdbfd88d3fe5e3183"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-02/reservation.json",
+      "bytes": 3183,
+      "sha256": "c21f70a5343427e84e2c6dcf35756acceac5c05d4b7de99169fb3ea36e96d62d"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-02/result.json",
+      "bytes": 352,
+      "sha256": "3760bdc73ce7033fcc7d8c71f301a6831e0c4ced191dc509908445f360c401d9"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-02/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/meter-reuse/local-02/stdout",
+      "bytes": 2663,
+      "sha256": "b54767a568f5f2bb6b74b654560d43c9286b2b8264358592c731ff7272b68921"
+    }
+  ],
+  "bindingBytes": 60343,
+  "externalRuntime": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "inheritedFailure": {
+    "commit": "cc1f47cf5df3febd149512063949a8fc3f9ec257",
+    "manifest": "docs/evidence/o16/progression-renewal/children-result-manifest.json",
+    "bytes": 7100,
+    "sha256": "caf9cd064f0b2688b6b743d9e40761f45504d1919fb3a27be11b736011d83380",
+    "review": "APPROVED_LIMITED_CONTINUED_CHILDREN_FAILURE_FIDELITY",
+    "path": "NOT_RECORDED",
+    "cumulativeSDKEntry": 5,
+    "fee": "UNKNOWN"
+  },
+  "review": "PENDING",
+  "actualRun": "NOT_AUTHORIZED"
+}
