@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 export const expectedChecks = ["states-next-actions", "checking-keyboard-guard", "transient-submit", "explicit-retained-actions", "details-keyboard", "themes-390-geometry"];
 export async function startConnectionFixture(input: { cacheDir: string; aliases: Alias[] }) {
   const server = await createServer({ root, configFile: false, envDir: false, cacheDir: input.cacheDir,
-    resolve: { alias: input.aliases }, optimizeDeps: { noDiscovery: true, include: [] },
+    resolve: { alias: input.aliases }, optimizeDeps: { noDiscovery: true, include: ["react", "react/jsx-runtime", "react/jsx-dev-runtime", "react-dom", "react-dom/client"] },
     plugins: [react(), tailwindcss(), { name: "connection-component-fixture", configureServer(vite) {
       vite.middlewares.use((request, response, next) => {
         if (request.url === "/favicon.ico") { response.writeHead(204).end(); return; }
@@ -30,9 +30,15 @@ interface Observation { read: number; connect: number; logout: number; discard: 
 async function observation(page: Page): Promise<Observation> {
   return JSON.parse(await page.getByTestId("fixture-observation").innerText()) as Observation;
 }
-export async function checkConnection(page: Page, fixture: { url: string }, output: string) {
+export interface ComponentProgress { phase: string; completedChecks: string[] }
+export async function checkConnection(page: Page, fixture: { url: string }, output: string, reportProgress: (progress: ComponentProgress) => void = () => {}) {
   const checks: string[] = [], pageErrors: string[] = [], consoleErrors: string[] = [], blocked: string[] = [];
   const geometry: unknown[] = [];
+  const completeGroup = (index: number) => {
+    checks.push(expectedChecks[index]!);
+    reportProgress({ phase: expectedChecks[index + 1] ?? "complete", completedChecks: [...checks] });
+  };
+  reportProgress({ phase: expectedChecks[0]!, completedChecks: [] });
   page.setDefaultTimeout(4000);
   page.on("pageerror", error => { if (pageErrors.length < 8) pageErrors.push(error.name); });
   page.on("console", message => { if (message.type() === "error" && consoleErrors.length < 8) consoleErrors.push("console-error"); });
@@ -61,26 +67,26 @@ export async function checkConnection(page: Page, fixture: { url: string }, outp
   await phase("error"); await expect(main.getByRole("alert")).toContainText("Synthetic connection check failed");
   await page.getByLabel("Optional actions", { exact: true }).uncheck(); await expect(check).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Discard previous page-only work", exact: true })).toHaveCount(0);
-  await page.getByLabel("Optional actions", { exact: true }).check(); checks.push(expectedChecks[0]!);
+  await page.getByLabel("Optional actions", { exact: true }).check(); completeGroup(0);
 
   await phase("checking"); await token.fill("synthetic-A"); await expect(check).toHaveAttribute("aria-disabled", "true");
   await expect(connect).toHaveAttribute("aria-disabled", "true");
   await check.focus(); await page.keyboard.press("Enter"); await page.keyboard.press("Space"); await expect(check).toBeFocused();
   await token.focus(); await page.keyboard.press("Enter");
   assert.deepEqual(await observation(page), { read: 0, connect: 0, logout: 0, discard: 0, argumentsMatched: false, pending: false });
-  await expect(token).toHaveValue("synthetic-A"); checks.push(expectedChecks[1]!);
+  await expect(token).toHaveValue("synthetic-A"); completeGroup(1);
 
   await phase("unauthenticated"); await token.fill(""); await connect.click(); assert.equal((await observation(page)).connect, 0);
   await token.fill("synthetic-A"); await token.press("Enter");
   await expect(token).toHaveValue("");
   await expect.poll(() => observation(page)).toMatchObject({ connect: 1, argumentsMatched: true, pending: true });
   await token.fill("synthetic-B"); await token.press("Enter"); await expect(token).toHaveValue("synthetic-B");
-  assert.equal((await observation(page)).connect, 1); checks.push(expectedChecks[2]!);
+  assert.equal((await observation(page)).connect, 1); completeGroup(2);
 
   await page.getByRole("button", { name: "Sign out of this center", exact: true }).click();
   await page.getByRole("button", { name: "Discard previous page-only work", exact: true }).click();
   assert.deepEqual(await observation(page), { read: 0, connect: 1, logout: 1, discard: 1, argumentsMatched: true, pending: true });
-  await expect(token).toHaveValue("synthetic-B"); checks.push(expectedChecks[3]!);
+  await expect(token).toHaveValue("synthetic-B"); completeGroup(3);
 
   await page.getByRole("button", { name: "Settle synthetic connection", exact: true }).click();
   await check.focus(); await page.keyboard.press("Enter"); await expect(check).toBeFocused(); assert.equal((await observation(page)).read, 1);
@@ -88,7 +94,7 @@ export async function checkConnection(page: Page, fixture: { url: string }, outp
   await expect(main.locator("details")).toHaveAttribute("open", ""); await expect(summary).toBeFocused();
   await expect(main).toContainText("HttpOnly browser session"); await page.keyboard.press("Space");
   await expect(main.locator("details")).not.toHaveAttribute("open", ""); await expect(summary).toBeFocused();
-  await expect(main).toContainText("本机登录凭据"); await expect(main).toContainText("ask its administrator"); checks.push(expectedChecks[4]!);
+  await expect(main).toContainText("本机登录凭据"); await expect(main).toContainText("ask its administrator"); completeGroup(4);
 
   await token.fill("");
   for (const width of [1280, 390]) {
@@ -106,7 +112,7 @@ export async function checkConnection(page: Page, fixture: { url: string }, outp
       if (width === 390) await page.screenshot({ path: join(output, `connection-${theme}-390.png`) });
     }
   }
-  checks.push(expectedChecks[5]!); assert.deepEqual(pageErrors, []); assert.deepEqual(consoleErrors, []); assert.deepEqual(blocked, []);
+  completeGroup(5); assert.deepEqual(pageErrors, []); assert.deepEqual(consoleErrors, []); assert.deepEqual(blocked, []);
   return { checks, pageErrors, consoleErrors, blocked, geometry, observation: await observation(page),
     scope: "Production component with synthetic props/callbacks; not Cookie/session or full App Recovery acceptance" };
 }
