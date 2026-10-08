@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:15:18.909Z / main03527839f；TUI真实双端功能/失败收尾限定结果已审，O16明确续接源码限定独审通过。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:25:10.736Z / main312842ab5；本批九路径与TUI限定结果已推送主线，O16新增授权与实际运行分开。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main03527839f；本段限定结果接收与原生续接独审，产品/实际运行结论分别记录。 |
-| 工作树dirty状态 | 仅本批自身接收记录与已审输入；两个原有未知__pycache__保留不纳入。 |
+| 工作基线 / HEAD | main312842ab5；已审九路径保持原source字节，限定结果不替代完整验收。 |
+| 工作树dirty状态 | 仅后续本任务metadata；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED: TUI R3原件忠实性限定独审；实际旅程仍1选0过，功能完成、groups未知保留。O16续接7源/15不同局部检查已独审，原两次失败保留。 |
-| 已集成main状态 / HEAD | main03527839f含此前原生规划实证与TUI caller；本批接收R3限定结果与O16九条已审路径，未重跑产品。 |
+| 已集成main状态 / HEAD | main/origin312842ab5已接收O16九条已审路径及TUI R3限定结果；未重跑产品。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 终端与网页的接续功能已实际到达；验收收尾仍有未知，原失败记录保留。 |
-| 下一可用交付 | 收口跨端验收的进程观察，并接收已保存目标计划的明确续接实现。 |
-| 当前阻塞 | ACTIVE: 跨端验收的原始收尾缺少具体进程组错误；目标续接已审，实际新阶段确认和两次子任务执行尚无新额度。 |
+| 下一可用交付 | 本片段已交付；后续接收按原owner的终端收尾与目标实际续接结果。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -594,3 +594,5 @@ TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收
 2026-10-08T02:15:18.909Z：TUI R3限定原件独审完成，22固定绑定/227903B逐hash一致；实际功能workPassed但整次1选0过，仅groups unknown，后置runtime RETURN不改原FAIL/KEEP。见[tui01f-r3-result-intake](../../docs/evidence/i02/tui01f-r3-result-intake.json)。当前O16续接独审并行，0新工程运行/模型调用；本片收录不关闭完整TUI或FLOW。
 
 2026-10-08T02:19:06.965Z：O16过期提案新阶段7源/Interface/来源差量共9路径由原限定独审批准，main旧像逐条等于e5c7或不存在，现精确接收；15不同局部绿/两红均留原件，0真实renew/模型/PG。见[o16-expired-plan-continuation-intake](../../docs/evidence/i02/o16-expired-plan-continuation-intake.json)。原四SDK与旧过期pause永久保留，新阶段授权另待GO具体决定。
+
+2026-10-08T02:25:10.736Z：本批12文件main/origin312842ab5已推送，根工作树clean；已审O16七源+Interface/delta逐字接收、TUI1选0过保真结果不升级。GO随后新阶段明确授权只用于原owner后继renew及条件化最多两child，当前接收本身0新增调用，不再将其写为未有额度。原始材料与完整未验范围仍各自canonical；I02本片段交付不等于大task完成。
