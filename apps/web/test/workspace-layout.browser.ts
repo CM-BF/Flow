@@ -350,7 +350,10 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
             const title = node.querySelector('[role="tab"]')!;
             const action = node.querySelector('[aria-haspopup="menu"]')!;
             const strip = node.parentElement!;
-            const measure = (element: Element) => {
+            const ancestors: Element[] = []; let ancestor = close.parentElement;
+            while (ancestor && ancestors.length < 8) { ancestors.push(ancestor); ancestor = ancestor.parentElement; }
+            // Inline callback avoids a transpiler-named helper crossing Playwright's serialization boundary.
+            const measures = [close, title, action, node, strip, ...ancestors].map(element => {
               const rect = element.getBoundingClientRect(), style = getComputedStyle(element);
               return { tag: element.tagName, role: element.getAttribute("role"), className: element.getAttribute("class")?.slice(0, 160),
                 rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height, top: rect.top, right: rect.right, bottom: rect.bottom, left: rect.left },
@@ -359,12 +362,10 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
                 style: { overflowX: style.overflowX, overflowY: style.overflowY, clipPath: style.clipPath, contain: style.contain,
                   transform: style.transform, display: style.display, position: style.position, fontSize: style.fontSize,
                   lineHeight: style.lineHeight, minWidth: style.minWidth, maxWidth: style.maxWidth, flexShrink: style.flexShrink } };
-            };
-            const ancestors = []; let ancestor = close.parentElement;
-            while (ancestor && ancestors.length < 8) { ancestors.push(measure(ancestor)); ancestor = ancestor.parentElement; }
+            });
             return { stage, rootFontSize: getComputedStyle(document.documentElement).fontSize,
               viewport: { width: innerWidth, height: innerHeight, devicePixelRatio }, focusedLabel: document.activeElement?.getAttribute("aria-label"),
-              close: measure(close), title: measure(title), action: measure(action), tab: measure(node), strip: measure(strip), ancestors };
+              close: measures[0], title: measures[1], action: measures[2], tab: measures[3], strip: measures[4], ancestors: measures.slice(5) };
           }, { stage, closeName });
           if (Buffer.byteLength(JSON.stringify([...diagnostics.snapshots, snapshot])) <= 16 * 1024) diagnostics.snapshots.push(snapshot);
           else observationError("Tab geometry exceeded the shared 16KiB observation cap");
