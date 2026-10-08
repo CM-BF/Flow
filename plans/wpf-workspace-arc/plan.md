@@ -59,3 +59,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 ### 2026-10-08 连续验收边界
 
 当前固定d7e0b6f；queue fixture前置已更正并8纯例通过，三次真实browser均2/4。材料组中的准备期B以页面模型/正文/当前完整附件见证为准，原A命令交接后再检查唯一持久B；不承诺准备期B崩溃恢复。最后hover被Remove按钮拦截，后继先定位真实交互；本段三次已CLOSED，禁止第四次。TODO01–05仍in-progress，06未main集成。证据见[本段结果](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。
+
+新tooltip连续段：按已安装Radix原生焦点语义，以真实Shift+Tab经Remove到附件tile，观察真实文件名tooltip；保B模型/文本/完整ref、A原请求、交接后durableB和move/merge/split/retain/reopen。仅原测试差量，浏览器最多2次、经理lease前NOT_RUN，deadline01:17:41.457。

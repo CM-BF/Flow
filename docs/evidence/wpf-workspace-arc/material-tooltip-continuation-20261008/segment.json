@@ -1,0 +1,80 @@
+{
+  "sourceStart": "2026-10-08T00:53:10.163281Z",
+  "deadline": "2026-10-08T01:17:41.457Z",
+  "at": "2026-10-08T00:54:26.910469+00:00",
+  "base": "a4040e693b4d9e3bea39020d3235a581f0552de5",
+  "claim": "c34d95d1 v2 exact18 ACTIVE",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/package.json",
+      "logicalPath": "node_modules/@radix-ui/react-tooltip/package.json",
+      "bytes": 2161,
+      "sha256": "8feaf95e6f255e34a689aa63d9822ade38d81f22d83bf736cc346de8655f9a42"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/dist/index.mjs",
+      "logicalPath": "node_modules/@radix-ui/react-tooltip/dist/index.mjs",
+      "bytes": 20936,
+      "sha256": "7c039e917e92ba9e6245f2ffd94ff461b49d55fac174f07a6670d2b0ef227a88"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/ui/tooltip.tsx",
+      "logicalPath": "apps/web/src/components/ui/tooltip.tsx",
+      "bytes": 1271,
+      "sha256": "3600484df5c2bec03d57289e49b30a182a2ce22d8e9bef50cd21819d9f2e725c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "logicalPath": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "bytes": 9213,
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "logicalPath": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+      "logicalPath": "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+      "bytes": 1298,
+      "sha256": "5d4583d60636c5cb7fa88ce65339555b4963fcfa8e5b092b855ca04663aadac7"
+    }
+  ],
+  "installedEvidence": [
+    "@radix-ui/react-tooltip1.3.0 dist208-211: focus opens unless pointer-down latch; blur closes. handleOpen111-116 clears delay and sets open.",
+    "Official attachment tile is TooltipTrigger asChild rolebutton tabIndex0; actual filename only TooltipContent AttachmentPrimitive.Name.",
+    "Composer DOM: current attachment tile then real Remove button then Message input. Keyboard Shift+Tab from input verifies Remove then tile focus; no pointer coordinate or force."
+  ],
+  "implementation": "Input focus -> real Shift+Tab -> verify Remove focused -> real Shift+Tab -> verify unique File attachment focused -> real filename tooltip visible -> input focus -> tooltip hidden. Complete B/model/text/ref and downstream A/durable/layout assertions unchanged.",
+  "checks": "NOT_RUN new local; no type-interface/codec changes and existing keyboard/focus Playwright APIs already used; new real browser required, waiting manager lease.",
+  "browser": {
+    "maxAttempts": 2,
+    "totalMs": 180000,
+    "eachMs": 90000,
+    "spentMs": 0,
+    "attempts": [],
+    "state": "WAIT_MANAGER_LEASE"
+  },
+  "local": {
+    "maxChildren": 2,
+    "totalMs": 30000,
+    "spentMs": 0,
+    "state": "NOT_RUN"
+  },
+  "bytes": {
+    "total": 335544320,
+    "runtimeTMP": 268435456,
+    "allRetained": 67108864
+  },
+  "history": "Old3attempts59595CLOSED/no transfer",
+  "cleanCode": {
+    "skills": [
+      "find-skills",
+      "clean-code",
+      "assistant-ui"
+    ],
+    "actual": "One observation helper keeps selector authority unique; keyboard event sequence matches installed implementation; no helper framework/shared component mutation. Existing failing hover retained in old bundle."
+  }
+}

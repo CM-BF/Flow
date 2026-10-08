@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:44:54.771191+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:55:30.024670+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / fixed source d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；自然metadata待seal |
-| 工作树dirty状态 | 全部18source STOP；仅本次own结果归档，0runtime。三次browser已CLOSED，不启动第四次 |
+| 工作基线 / HEAD | base a4040e693b4d9e3bea39020d3235a581f0552de5 / fixed source 60caca5210b05a88e4817390a3bd4d4e840d319e；metadata待seal |
+| 工作树dirty状态 | keyboard源已固定；仅本段ownmetadata，0runtime/browserWAIT经理lease |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | FAILED d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；本连续三轮均2/4，最终早图1/末态双图0。8c fixture/guard8纯例PASSED654ms独立保留 |
+| 检查状态 | NOT_RUN 60caca5210b05a88e4817390a3bd4d4e840d319e；新keyboard文件名观察尚无actual；原d7三轮2/4 FAILED和8pure654ms保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | d7e0b6f1564361bf5c25bd50c9e3f0557a234e74 |
+| 实现目标 | 60caca5210b05a88e4817390a3bd4d4e840d319e |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工作区布局和三窗格读取通过；材料准备可进入，下一草稿设置与正文可见。附件名称悬停被移除按钮遮挡，完整材料与主题旅程仍未完成 |
+| 当前产出 | 工作区布局和三窗格读取通过；新独立段改用真实键盘焦点显示文件名，保完整材料断言，等待经理browser lease |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 最后一次真实附件名称悬停失败；不得据此宣材料丢失或整体PASS。原三次额度已封闭，等待有界后继定位 |
+| 当前阻塞 | ACTIVE: 新keyboard filename观察尚未actual；原hover失败保留。新段截止01:17:41.457，浏览器等待经理lease |
 | 需用户决定 | NONE |
-| Review | APPROVED d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；仅source时点修正/失败结果保真root89fde，产品验收FAILED2/4/后两组未达；[根审](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/root-final-review.json) |
+| Review | PENDING 60caca5210b05a88e4817390a3bd4d4e840d319e；本新连续段source/results最终一次独审，旧89fde仅失败保真不外推 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -145,3 +145,5 @@
 准备期Recovery明确journal保A、B仅页内/deferred；命令prepare交接后才要求完整持久B。本轮不证明准备期B崩溃恢复。第二轮观察误含A提交附件已窄修；第三轮实际Remove按钮拦截hover，未force或增timeout，未新增产品修改。最后原始Chrome/parent/outer EOF均true仅限本三轮；parent resultnull/UNKNOWN与raw nestedclosed分层保留，无独立portprobe。
 
 [连续段审入口](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。当前source和runtime STOP，main未集成。
+
+2026-10-08T00:53:10.163281Z：新ArcMaterialTooltipContinuation sourceSTART，fresh a404 cleanremote/claim18无重叠。已读installed Radix1.3.0 onFocus/onBlur，仅测试键盘focus差量；0runtime。旧59595三次封闭，新最多2×90s不转旧额。

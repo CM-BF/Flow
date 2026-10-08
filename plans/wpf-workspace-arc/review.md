@@ -1,5 +1,7 @@
 # WPF-WORKSPACEARC01 review
 
+当前keyboard后继 source 60caca5210b05a88e4817390a3bd4d4e840d319e，新连续段PENDING/实际NOT_RUN；已安装Radix焦点语义记录于[entry](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/entry.json)，旧全部失败保真批准以下保留。
+
 当前连续组合：APPROVED_LIMITED_FAILURE_RESULT_FIDELITY d7e0b6f1564361bf5c25bd50c9e3f0557a234e74（root89fde；产品验收仍FAILED2/4）；三个实际均2/4 FAIL/完整RETURN，原始与归档96pairs核同。后续历史APPROVED仅其固定目标与局部范围，不覆盖本轮。见[final-review-input](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。
 
 当前连续段 `6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477`：两test修chat4队列前置/有帽诊断，产品未改。8c36实际8相关purePASS/654ms，最终诊断catch小差量未重复绿检查。browser NOT_RUN/等待经理lease，最终一次独审待actual；不复用旧2/4为当前通过。[入口](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/entry.json)。
