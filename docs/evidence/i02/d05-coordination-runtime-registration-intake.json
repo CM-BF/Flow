@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T01:00:09.643Z",
+  "state": "APPROVED_LIMITED_DEPLOYMENT_REPAIR_AND_SOURCE_REGISTRATION",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "targets": [
+    "c35b212600618a3c53f705c7659529af5f7f25c5",
+    "641759dca63423b2c1e86386adcd20a9b3e6358f",
+    "910b557f939260a6ffc9889ac71075af229dd9ea"
+  ],
+  "findings": [],
+  "rows": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "originCommit": "910b557f939260a6ffc9889ac71075af229dd9ea",
+      "bytes": 30113,
+      "sha256": "0b890ab660226abbde22ece70e6b8c4863c92d13ff7aa847cceedc4a5a22fc13"
+    },
+    {
+      "path": "docs/evidence/d05/center-source-live.json",
+      "originCommit": "910b557f939260a6ffc9889ac71075af229dd9ea",
+      "bytes": 4951,
+      "sha256": "e7be4cd5a0bffa067b926e14ae702ae05a0aea46bdf443c1069a42aa4ba2ea2c"
+    },
+    {
+      "path": "docs/evidence/d05/center-source-coordination-repair.json",
+      "originCommit": "910b557f939260a6ffc9889ac71075af229dd9ea",
+      "bytes": 1278,
+      "sha256": "9cf3cec1da595cafe7b56f9b08e7f14ea6dcb5c7331dc2b044f7957e35b25221"
+    },
+    {
+      "path": "docs/evidence/d05/runtime-source-preparation.json",
+      "originCommit": "910b557f939260a6ffc9889ac71075af229dd9ea",
+      "bytes": 1073,
+      "sha256": "6bb0e0b8892c1db90f9fbfb0595df17045e82990d5256db1a27e7caea95ef20e"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "originCommit": "910b557f939260a6ffc9889ac71075af229dd9ea",
+      "bytes": 44920,
+      "sha256": "b340f558575db5ff2e89dc0fd7b1677897352059b01f2009583cced39a6427d4"
+    }
+  ],
+  "runtime": "213 actual sources; originalmissing coordination env regression preserved, repaired at00:56:14.690 withavailable272claims andsamepublicaccessmetadata. New214 registry onlycandidate.",
+  "limits": "0 reviewer/integration engineeringtests or personalservice/token actions; no fullapplicationhealthclaim."
+}
