@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-08T03:12:57.881Z",
+  "classification": "ACTUAL_REAUTHORIZE_PASSED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "start": "2026-10-08T03:11:19.593Z",
+  "terminal": "2026-10-08T03:11:21.651Z",
+  "exactReturn": "2026-10-08T03:12:02.961Z",
+  "selected": 1,
+  "passed": 1,
+  "queries": 0,
+  "cumulativeQueries": 4,
+  "operatorElapsedMs": 1646,
+  "oldConfirmationUnchanged": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "newAuthorization": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+    "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+    "expiresAt": "2026-10-08T03:39:15.000Z"
+  },
+  "admissions": 0,
+  "pause": {
+    "closedAt": "2026-10-08T03:11:21.560Z",
+    "reviewUntil": "2026-10-08T03:26:21.560Z"
+  },
+  "oldRecordsAndBothDirectories": "KEEP; originalpublic hashes unchanged; current resource identities unchanged",
+  "closure": "3PIDs/3PGIDs ESRCH, dualEOF, targetconnections[], server/adminclosed/errors[]; all escaped descendants NOT_PROVEN",
+  "lifetime": "Stage150s; newcenter expiry03:39:15Z, newpause03:26:21.560Z; no automaticchildren",
+  "acceptance": "No model generation or semantic final acceptance thisstage; two children budget unconsumed",
+  "limits": "Private8MiB/run2MiB still cumulative; remaining measured inwindow-return; normalsharedauth not claimed inprivatecap",
+  "next": "v3permit binds actual newACK plus unchanged originalconfirmation, separateD01 windowrequired"
+}

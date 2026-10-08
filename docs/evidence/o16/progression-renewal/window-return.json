@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-08T03:12:02.961Z",
+  "state": "EXACT_RUNNING_RESOURCES_RETURNED_KEEP",
+  "startAt": "2026-10-08T03:11:19.593Z",
+  "terminalAt": "2026-10-08T03:11:21.651Z",
+  "run": "native-children-continuation-20261008-once",
+  "phase": "reauthorize",
+  "queries": 0,
+  "cumulativeQueries": 4,
+  "processes": [
+    {
+      "identity": 5410,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": 5480,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": 5479,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "groups": [
+    {
+      "identity": -5410,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": -5480,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": -5479,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "dualEOF": true,
+  "targetConnections": [],
+  "returnProbeClosed": true,
+  "remoteProbeConnectionZero": "NOT_SEPARATELY_OBSERVED",
+  "ownedServerClosed": true,
+  "ownedAdminClosed": true,
+  "workersStopped": true,
+  "errors": [],
+  "marker": {
+    "oid": 1375594,
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytes": "13622295"
+  },
+  "oldPublicRecordsUnchanged": true,
+  "twoDirectoryIdentitiesUnchanged": true,
+  "retention": "DB_AND_BOTH_PRIVATE_KEEP",
+  "allEscapedDescendants": "NOT_PROVEN",
+  "confirmationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "executionAuthorizationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+    "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+    "expiresAt": "2026-10-08T03:39:15.000Z"
+  },
+  "admissions": 0,
+  "pause": {
+    "closedAt": "2026-10-08T03:11:21.560Z",
+    "reviewUntil": "2026-10-08T03:26:21.560Z"
+  },
+  "metrics": {
+    "freeBytes": 14275391488,
+    "rawBytes": 65313,
+    "runtimeBytes": 27509,
+    "runtimeEntries": 4,
+    "runtimeState": "measured"
+  },
+  "remainingRuntimeBytes": 8361099,
+  "remainingRunBytes": 2031839,
+  "pendingLaunch": 0,
+  "childrenStarted": false
+}

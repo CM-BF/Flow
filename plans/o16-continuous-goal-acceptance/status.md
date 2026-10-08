@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T03:07:23.677Z |
+| 最近更新 | 2026-10-08T03:12:57.881Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -25,9 +25,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 同一已确认目标的授权替换入口已完成零模型检查，保留旧确认、材料及资源原件。 |
+| 当前产出 | 已在同一目标中完成零模型授权替换，旧确认和材料保持；两步文本执行尚未开始。 |
 | 下一可用交付 | 在新独占窗口内替换过期执行授权，再承接尚未消费的两步文本任务。 |
-| 当前阻塞 | ACTIVE: 固定入口已审且GO已批准新阶段语义，等待D01明确窗口后一次签发准入；原两次模型额度未消费。 |
+| 当前阻塞 | ACTIVE: 等待绑定实际新授权的两步执行许可及独立资源窗口；原两次模型额度未消费。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -194,3 +194,5 @@
 2026-10-08T02:58:43.768Z：Lead已取消02:46:36短暂停写要求，本段继续，未丢dirty或新开task。生产源214a9bf、测试增补8b31固定；[单份manifest](../../docs/evidence/o16/progression-renewal/manifest.json)绑定12不同/13实际选择、3975ms/4027B，最后02:56:24.504Z RETURN。原11例不回跑，仅新增实际文件consumer+变更后的source逆算；sourceDigest d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e /329来源/39依赖。初始EPERM与第二cache KEEP保留，不改旧实际原件。现source停写、0child/0pending、0PG/native/auth/query/旧private读取，原累计SDK4及两次未消费额度不变；[具体候选](../../docs/evidence/o16/progression-renewal/candidate.md)分开总体额度、READY后准入和新中心绝对截止，原短授权不复活。
 
 2026-10-08T03:07:23.677Z：新阶段GO授权已到，非T准备于03:06:21.483Z核完329来源/39依赖、环境摘要、旧公开原件及六处未消费入口，见[唯一READY记录](../../docs/evidence/o16/progression-renewal/ready.json)。当前未创建grant/消费门、0PG/native/auth/query/pending launch；D01真正READY后由Lead一次定T，T+5min准入与T+30min中心授权独立。原累计4/两额度未消费、过期pause/旧确认/KEEP保持。
+
+2026-10-08T03:12:57.881Z：实际reauthorize于2026-10-08T03:11:19.593Z START、2026-10-08T03:11:21.651Z exit0、2026-10-08T03:12:02.961Z精确RETURN；1selected/stage-paused、0query/累计4，3PID+3PGID ESRCH/双EOF/目标连接空。新progression57188edb及authorization240a4870实际ACK、admissions0，原confirmation38e391保持，中心截止03:39:15Z、新pause至03:26:21.560Z；[唯一结果manifest](../../docs/evidence/o16/progression-renewal/actual-result-manifest.json)待独审。旧DB/两private KEEP、旧原件不改，remaining容量与未知边界见window-return。children未运行，后继仅真实v3绑定及独立D01窗口。

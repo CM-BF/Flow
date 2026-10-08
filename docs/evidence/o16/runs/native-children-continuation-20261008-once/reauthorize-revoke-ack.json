@@ -1,0 +1,68 @@
+{
+  "progression": {
+    "id": "9a39e855-637c-4067-846f-49d6d49da006",
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "projectId": "44454e6a-4281-4cfa-9a4e-e3b84b1f9a74",
+    "authorization": {
+      "nodes": [
+        {
+          "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+          "nodeVersion": 1,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        },
+        {
+          "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+          "nodeVersion": 2,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        }
+      ],
+      "reason": "两步分别生成固定纸鸢0.1发布说明草稿并依据同一材料核对，符合已接受有限文本目标，不新增功能/日期/链接、不正式发布。",
+      "protocol": "flow.goal-progression.v1",
+      "expiresAt": "2026-10-08T02:36:47.000Z",
+      "maxAdmissions": 2,
+      "projectRevision": 4,
+      "intermediatePolicy": "verified-artifact-within-this-authorization"
+    },
+    "authorizationDigest": "666444829155a98cbacd8cb08546798a81fcab93c28a8b404bcd72ada9a74a20",
+    "createdAt": "2026-10-08T02:30:20.555Z",
+    "revokedAt": "2026-10-08T03:11:21.458Z",
+    "state": "revoked",
+    "cause": {
+      "code": "revoked",
+      "nodeId": null
+    },
+    "admissions": 0,
+    "acceptance": "separate-owner-decision",
+    "nodes": [
+      {
+        "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      },
+      {
+        "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      }
+    ]
+  },
+  "replayed": false
+}

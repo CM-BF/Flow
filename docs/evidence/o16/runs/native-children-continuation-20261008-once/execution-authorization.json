@@ -1,0 +1,232 @@
+{
+  "stage": "reauthorize",
+  "outcome": "reauthorized-awaiting-separate-children-permit",
+  "nativeQueryCalls": 0,
+  "mode": "native",
+  "admissions": 0,
+  "confirmationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "executionAuthorizationBinding": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+    "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+    "expiresAt": "2026-10-08T03:39:15.000Z"
+  },
+  "oldProgression": {
+    "id": "9a39e855-637c-4067-846f-49d6d49da006",
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "projectId": "44454e6a-4281-4cfa-9a4e-e3b84b1f9a74",
+    "authorization": {
+      "nodes": [
+        {
+          "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+          "nodeVersion": 1,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        },
+        {
+          "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+          "nodeVersion": 2,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        }
+      ],
+      "reason": "两步分别生成固定纸鸢0.1发布说明草稿并依据同一材料核对，符合已接受有限文本目标，不新增功能/日期/链接、不正式发布。",
+      "protocol": "flow.goal-progression.v1",
+      "expiresAt": "2026-10-08T02:36:47.000Z",
+      "maxAdmissions": 2,
+      "projectRevision": 4,
+      "intermediatePolicy": "verified-artifact-within-this-authorization"
+    },
+    "authorizationDigest": "666444829155a98cbacd8cb08546798a81fcab93c28a8b404bcd72ada9a74a20",
+    "createdAt": "2026-10-08T02:30:20.555Z",
+    "revokedAt": "2026-10-08T03:11:21.458Z",
+    "state": "revoked",
+    "cause": {
+      "code": "revoked",
+      "nodeId": null
+    },
+    "admissions": 0,
+    "acceptance": "separate-owner-decision",
+    "nodes": [
+      {
+        "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      },
+      {
+        "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      }
+    ]
+  },
+  "progression": {
+    "id": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "projectId": "44454e6a-4281-4cfa-9a4e-e3b84b1f9a74",
+    "authorization": {
+      "nodes": [
+        {
+          "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+          "nodeVersion": 1,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        },
+        {
+          "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+          "nodeVersion": 2,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+            "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        }
+      ],
+      "reason": "原两步按固定纸鸢0.1材料先起草再事实核对及最终修订；旧授权已过期且未领取，仅新授权承接未消费两步，不新增功能日期链接或正式发布。",
+      "protocol": "flow.goal-progression.v1",
+      "expiresAt": "2026-10-08T03:39:15.000Z",
+      "maxAdmissions": 2,
+      "projectRevision": 4,
+      "intermediatePolicy": "verified-artifact-within-this-authorization"
+    },
+    "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+    "createdAt": "2026-10-08T03:11:21.476Z",
+    "revokedAt": null,
+    "state": "active",
+    "cause": null,
+    "admissions": 0,
+    "acceptance": "separate-owner-decision",
+    "nodes": [
+      {
+        "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      },
+      {
+        "nodeId": "30a9c7a2-0055-4a1e-8005-967573a8fe61",
+        "inputVersion": 1,
+        "executionId": null,
+        "artifact": null,
+        "task": null
+      }
+    ]
+  },
+  "semanticAcceptance": "not-evaluated",
+  "resources": {
+    "kind": "flow.o16.private-resources.v1",
+    "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "startedAt": "2026-10-08T03:11:21.258Z",
+    "gate": {
+      "freeBytes": 14275235840,
+      "requiredBytes": 1207959552
+    },
+    "creationRequested": false,
+    "created": false,
+    "marked": true,
+    "origin": {
+      "run": "native-plan-normal-home-20261008-once",
+      "pauseDigest": "14c39dfaef1c29247557c6b2bbbc307754056128af1a91827527e9a7f20b6176",
+      "stateDigest": "692707837c604690060a443cfe6562441adb007034ec89eda71491cf6527bf73",
+      "reportDigest": "e767e36ca1b0095d5214d6927ec16b4d69ad94d4e997f3e43981e947a70a80b4",
+      "resourcesDigest": "75f22d5b05fbca54a5989cccfc52ff094cac30a6915942005550f97d8d7a7b91",
+      "sourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+      "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+      "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+      "directory": {
+        "path": "/private/tmp/flow-o16-ljRSxz",
+        "dev": 16777234,
+        "ino": 124723126
+      }
+    },
+    "retention": "keep-origin-database-and-both-directories",
+    "databaseBytes": 13622295,
+    "connectionObservations": [
+      {
+        "elapsedMs": 0,
+        "rows": []
+      }
+    ],
+    "continuationFresh": {
+      "kind": "flow.o16.continuation-fresh.v1",
+      "projectRevision": 1,
+      "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+      "activeOrUnknownTasks": 0,
+      "incompleteAttempts": 0,
+      "priorConfirmationOrProgression": false,
+      "profilesMatched": 2,
+      "materialMatched": true
+    },
+    "directory": {
+      "path": "/private/tmp/flow-o16-AcjjIf",
+      "dev": 16777234,
+      "ino": 124755810
+    },
+    "phase": "paused-owned-resources",
+    "serverClosed": true,
+    "workersStopped": true,
+    "adminClosed": true,
+    "errors": [],
+    "endedAt": "2026-10-08T03:11:21.541Z",
+    "replacementOrigin": {
+      "run": "native-children-continuation-20261008-once",
+      "pauseDigest": "f943e1cbf57b47e1462072ca8180b3d211c99c21ac4f5a472e913c5db931ff84",
+      "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+      "stateDigest": "4e2e3c3143653bf83f71b1a0e92674226c57fa6da39d44032e07f2a310c753cc",
+      "reportDigest": "b65d9c8708b0c0ed06c701293af96b3249d632511ccdf0c287404c835265fe4c",
+      "resourcesDigest": "c790450498c38738656d5947cbf5f8b2d3576369c74596e2571ddc679a47e3c7",
+      "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+      "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+      "directory": {
+        "path": "/private/tmp/flow-o16-AcjjIf",
+        "dev": 16777234,
+        "ino": 124755810
+      },
+      "confirmation": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+      }
+    }
+  }
+}

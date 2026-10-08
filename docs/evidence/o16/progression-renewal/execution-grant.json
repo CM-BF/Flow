@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-08T03:11:19.578Z",
+  "window": {
+    "at": "2026-10-08T03:09:07.542Z",
+    "selectedAt": "2026-10-08T03:09:07.542Z",
+    "state": "SELECTED_OPERATOR_READY_SIGN_T_AND_FRESH_LAUNCH",
+    "allowRun": true,
+    "singleUse": true,
+    "logicalId": "O16-GO-REAUTHORIZE-20261008",
+    "selectionKey": "O16Reauthorize",
+    "stage": "reauthorize-only",
+    "sameRun": "native-children-continuation-20261008-once",
+    "latestStart": "2026-10-08T03:14:07.542Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "claim": {
+      "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "scopeCount": 3,
+      "worker": "native_center_owner"
+    },
+    "executionHead": "51ce9401a89daecc7b47bc702a9758897cfd0a64",
+    "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+    "productionSource": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+    "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "fixedPublicInputs": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/interface.md",
+        "bytes": 3171,
+        "sha256": "10db606bac191a833420b1f0b180f3d1819b279176ebf8a8de02b795ee31cecd"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/candidate.md",
+        "bytes": 7141,
+        "sha256": "0485d957601bf7361590855df9b1074963317da4d4c310ae03ab08a577e5c6d7"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/manifest.json",
+        "bytes": 7428,
+        "sha256": "3d51f217cfe3a58992574d9121c2d5da4a096fd662487e64858b57b848e0d383"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/validation.json",
+        "bytes": 3072,
+        "sha256": "f3d86f6ba38045b9f16419b2dc4a193b44a97e3dd3c98338d06700ce050da60b"
+      }
+    ],
+    "independentReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/o16-progression-renewal-review.json",
+      "bytes": 4710,
+      "sha256": "ff4b1ee4f2a420e87f6c7338a8709542b5d2204357fe3baa41ef626fdcf41cc2"
+    },
+    "goAuthorization": "Original/root actualGO O16-GO-REAUTHORIZE-20261008; new0querystage, source main8723763ff. CandidatePENDING fields historical, fixedreview/GOsupersede; no newroot sourcegate.",
+    "grantPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/grant.json",
+    "Tpolicy": "OperatorandwindowREADY now. Authorizedsoleowner stamps realT onlyatfreshconsumptionofthisselection, approvedAt=T/expiresAt=T+5min/authorizationExpiresAt=T+30min exactly per fixedschema; startbeforemin(managerlatest,grantExpiresAt). Do notprebackdateT,rolllatest,reviveoldpause orreuseoldexpiredgrant. Exclusive freshgrant/oncegateoriginalsame-run writes only.",
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "--reauthorize",
+      "native-children-continuation-20261008-once",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/grant.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "nonSecretEnvironment": {
+      "FLOW_O16_PG_WINDOW": "approved-one-shot"
+    },
+    "minimumFreshFreeBytes": 11608522752,
+    "managerReadFreeBytes": 14275096576,
+    "managerReadFreeIsNotActualAdmission": true,
+    "PG": 13,
+    "requiredPGAvailable": 29,
+    "managementPGReserve": 16,
+    "preflightPoolClosedBeforeLaunch": true,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "queryCount": 0,
+    "Chrome": 0,
+    "personalOperations": 0,
+    "samePrivateCapBytes": 8388608,
+    "sameRunEvidenceCapBytes": 2097152,
+    "newPlanningBytes": 0,
+    "budget": "Reuseonlysameoriginalrenewprivate8MiB andrun2MiBcumulative measuredremaining; selectedO16RenewPrivate and selectedO16NormalHomePlanner(raw2+DB128planning) alreadycountedonce. No thirdprivate/newDB/rawreset. OldDB/2privateKEEP preserved;normalsharedauthwrites existingseparateauthorization notprivatequota. Manager8MiBnaturalrecords remains counted separately.",
+    "fresh": "Samecall currentmatchingunconsumedselection/noholder/latest; freshD04v1exact3/ownerWTbranch/nooverlap/cleanactualremote;329source/39alias/3runtime/fullfixedinputs/sourceinverse/envdigest;originalsame-run marker+privateidentity/closedknownworkers/no targetconnections/newoncegate. PGavailable>=29/poolclosed; free>=maxfrozen/current/intrinsic, remaining8M/2M checked. UnknownSTOP0launchorKEEPoriginalfirsterror,noretry.",
+    "lifecycle": "Samefixedoperator150s120+30. Immediately reportSTART/terminal/exactownedRETURN separately; realACK/publicrevision/progression/0admissions/newpause onlyfromactual. No automaticcontinuedchildrenorcontinueddecide: eachrequiresnewmanagerselection afteractualACK+RETURN, originaltotalSDKmax6/cumulative4prior remains. OldNOT_RUN andrenewreceipts immutable.",
+    "ready": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/ready.json",
+      "bytes": 3611,
+      "sha256": "5cec4d39ffb6e36fd7c83aba1b41f6866a0270686e372477fecff5a6fd93ae90"
+    },
+    "executionHeadCorrection": {
+      "at": "2026-10-08T03:10:01.515Z",
+      "prior": "bd96654b7d9af2686b58a9784a42f289198df29c",
+      "reason": "Onlyready/statusmetadata committedaftermanagerread; fixed329source39aliases/sourceDigest unchanged. Originalactualremote clean report; operator fresh independently. Original selectedAt/latest unchanged."
+    }
+  },
+  "parentT": "2026-10-08T03:09:15.000Z"
+}

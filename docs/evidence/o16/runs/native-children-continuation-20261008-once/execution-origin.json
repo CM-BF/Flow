@@ -1,0 +1,194 @@
+{
+  "grant": {
+    "kind": "flow.o16.progression-renewal.v1",
+    "authorizedBy": "Goal Owner",
+    "approvalId": "O16-GO-REAUTHORIZE-20261008",
+    "authorizationReference": "GO actual O16-GO-REAUTHORIZE-20261008 decision relayed by Execution Lead; fixed main8723763ff independent review; T explicitly issued 2026-10-08T03:09:15Z",
+    "approvedAt": "2026-10-08T03:09:15.000Z",
+    "expiresAt": "2026-10-08T03:14:15.000Z",
+    "authorizationExpiresAt": "2026-10-08T03:39:15.000Z",
+    "run": "native-children-continuation-20261008-once",
+    "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "origin": {
+      "run": "native-children-continuation-20261008-once",
+      "pauseDigest": "f943e1cbf57b47e1462072ca8180b3d211c99c21ac4f5a472e913c5db931ff84",
+      "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+      "stateDigest": "4e2e3c3143653bf83f71b1a0e92674226c57fa6da39d44032e07f2a310c753cc",
+      "reportDigest": "b65d9c8708b0c0ed06c701293af96b3249d632511ccdf0c287404c835265fe4c",
+      "resourcesDigest": "c790450498c38738656d5947cbf5f8b2d3576369c74596e2571ddc679a47e3c7",
+      "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+      "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+      "directory": {
+        "path": "/private/tmp/flow-o16-AcjjIf",
+        "dev": 16777234,
+        "ino": 124755810
+      },
+      "confirmation": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+      }
+    },
+    "sourceDelta": [
+      {
+        "path": "experiments/continuous-goal-acceptance/driver.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/driver.mjs",
+          "bytes": 20664,
+          "sha256": "ff4cfba299979ecdedc5f31e598505b7177129424c79ed2778ddce6c2fef4246"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/driver.mjs",
+          "bytes": 24458,
+          "sha256": "4ea97b5353f2971455276dc7487e6dd1d6a208f45d81f71d628c7cf1c954f589"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+          "bytes": 6371,
+          "sha256": "493cf19237a52495b031728c5907814e1a601715728014a73ff2e5019afc0339"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+          "bytes": 6425,
+          "sha256": "be1c7346274179467611f271e420fb730f373da3b596dea9cc7eff96facc599a"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/operator.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/operator.mjs",
+          "bytes": 12974,
+          "sha256": "1d6da8d4024dfffe1871063aa5a5029bcaf40a9e7f47e942d10e3216b38c2dad"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/operator.mjs",
+          "bytes": 13354,
+          "sha256": "faffea2736b36ccac4c17fe1672abcb8e1ef90b9bb7483ab5e8119a78509a668"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/permit.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/permit.mjs",
+          "bytes": 8554,
+          "sha256": "6284d8fc6e34c07697e633062d3c1a44634ff2383401461ad973263b8ffff2a6"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/permit.mjs",
+          "bytes": 9700,
+          "sha256": "e823b4db6057c34e5fc85c95c3f9ab9912f2063007c9c8d3bc26c91b0b5c144d"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+          "bytes": 6075,
+          "sha256": "4326dc8b57d9d4ea85caec12155a96b261d41d44aa63dcb1a5ca76dfb6702a55"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+          "bytes": 6192,
+          "sha256": "0074a59687b59645e36c1a3d44f2d86539ea4a46719f7d7ed5bd0cb1539ec64c"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+        "before": null,
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+          "bytes": 13966,
+          "sha256": "be722c008844345282f5b321798d14db1e152768fda00bb8ff6207fe431ad15d"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+        "before": null,
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+          "bytes": 24942,
+          "sha256": "60b1320c1b0149c73b3a4a3ffc0bb4010975922b20823dc1ad29d524e8e51c26"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/resources.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/resources.mjs",
+          "bytes": 13216,
+          "sha256": "e298246df4654cb3acf7b8c37d096e649ae0c018d72f815b400694bd75afa875"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/resources.mjs",
+          "bytes": 14108,
+          "sha256": "5889242513777567ed9a62bc8d8e27bf5de84541294e2e9cf179b354c89ae0a2"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+          "bytes": 6882,
+          "sha256": "6e0d33f05980b78e55a54c58e2f594d8f4496b9f68cf495ec46cb0f7bd4d1b83"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+          "bytes": 8119,
+          "sha256": "e782107fd78df8e521b45bb85d9dfa19cee33e8df043cb45c94de104b740a514"
+        }
+      },
+      {
+        "path": "experiments/continuous-goal-acceptance/worker.mjs",
+        "before": {
+          "path": "experiments/continuous-goal-acceptance/worker.mjs",
+          "bytes": 6510,
+          "sha256": "d9956c0022f346324ca0de3f47e39a2d26b3271680b47c81f1ca53657a7db2bd"
+        },
+        "after": {
+          "path": "experiments/continuous-goal-acceptance/worker.mjs",
+          "bytes": 6790,
+          "sha256": "b8443aae26253d91e41b8014b7939bbb20875da6f9118d303fb2fcc02f48b408"
+        }
+      }
+    ],
+    "nativeQueries": 0,
+    "remainingQueries": 2,
+    "reason": "原两步按固定纸鸢0.1材料先起草再事实核对及最终修订；旧授权已过期且未领取，仅新授权承接未消费两步，不新增功能日期链接或正式发布。",
+    "retention": "keep-origin-database-and-both-directories"
+  },
+  "archived": {
+    "run": "native-children-continuation-20261008-once",
+    "pauseDigest": "f943e1cbf57b47e1462072ca8180b3d211c99c21ac4f5a472e913c5db931ff84",
+    "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+    "stateDigest": "4e2e3c3143653bf83f71b1a0e92674226c57fa6da39d44032e07f2a310c753cc",
+    "reportDigest": "b65d9c8708b0c0ed06c701293af96b3249d632511ccdf0c287404c835265fe4c",
+    "resourcesDigest": "c790450498c38738656d5947cbf5f8b2d3576369c74596e2571ddc679a47e3c7",
+    "database": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "directory": {
+      "path": "/private/tmp/flow-o16-AcjjIf",
+      "dev": 16777234,
+      "ino": 124755810
+    },
+    "confirmation": {
+      "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+      "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+      "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+      "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+      "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+    }
+  },
+  "privateState": "journey.json",
+  "publicRecords": [
+    "confirmation.json",
+    "pause-renew.json",
+    "pause.json",
+    "resources.json"
+  ],
+  "retention": "keep-origin-database-and-both-directories"
+}
