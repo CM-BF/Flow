@@ -6,33 +6,33 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T23:14:19Z |
+| 更新时间 | 2026-10-08T03:07:23.547Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | delivered |
-| 当前产出 | 个人中心、runner与Web宿主已恢复接收；本次恢复结果已通过独立审查并纳入主线记录。 |
-| 下一可用交付 | 本片段已交付；新页面发布由后继负责，完整设置能力验收仍开放。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 个人恢复片已交付；现开始组合支持逐消息设置的后端，保持旧会话与默认runner身份。 |
+| 下一可用交付 | 固定包含设置槽与领取资格修复的后端来源及构建/冷启动候选。 |
+| 当前阻塞 | ACTIVE: 新产物迁入前需明确第5项保留策略；本轮来源准备已保存，operator暂优先已授权目标续接，尚未构建或激活。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 146654ac5c839db601142b499442d7db1644c99e（已审实际结果；本次仅metadata收口） |
+| Head | 2b5931af20e8157813b1ad770b18f7236bf5b457（本轮开始前clean；仅own准备继续） |
 | 实现目标 | a93ac5338da5c52303cf4f83d0735d0a61713ee3 |
-| 工作分支状态 | delivered（本次个人恢复结果已审并main；完整任务未完成） |
-| 工作树dirty状态 | 本次仅status/review接收记录；源码与实际原件不变 |
+| 工作分支状态 | in-progress（设置后台组合准备；此前个人恢复结果仍已审/main） |
+| 工作树dirty状态 | 仅本轮own evidence/status；生产路径无写权且未改 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation, plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
 | Review | assignment于2026-10-07T23:12:21.313531Z给出APPROVED_LIMITED_PERSONAL_CONTINUATION_R2_RESULT_FIDELITY，0 P1/P2；唯一I02审查记录见下文。 |
-| 检查状态 | 六实际phase exit0/176427ms，全部双EOF/absent/无signals；11 transient PID与2观察组ESRCH，健康三role保留。 |
+| 检查状态 | 本轮0工程检查/构建/PG/服务；原恢复/冷启动与局部证据按固定来源继承，不改结果 |
 | 验证限制 | current初始化=true与accepting24已核；actualClaim NOT_OBSERVED。77表定义投影仅证checkpoint及紧前resume保持，after-resume fullhistory NOT_OBSERVED；未提交模型任务、未发布779，不冒完整双槽或Web用户旅程。 |
 | 已集成main状态 | main/origin 7cbcf04c89ec68f0e75c05ffc3c3964cea3ad784已接收本次限定结果独审；2026-10-07T23:14:19Z读取回执，非推定merge时刻。 |
-| 运行窗口 | 23:03:29.033765Z START；23:06:25.528431Z terminal0；23:07:45.970561Z精确RETURN。新grant适配floor16341663744B，原NOT_RUN保留。 |
-| 部署状态 | 个人backend/Webhost e15/source880060，旧d629页面仍current，release版本3；accepting24；健康三role持续运行。 |
-| 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
+| 运行窗口 | 本轮仅普通只读与own metadata；无actual holder或pending launch。历史23:07:45.970561Z RETURN保留。 |
+| 部署状态 | 此前e15/source880060恢复已核；Lead已转交779后续发布完成，但本轮未新读个人状态。e15设置槽未激活。 |
+| 架构影响 | 准备同一宿主的legacy/settings两槽与既有CORE领取资格组合；沿SVC06产物和SVC08宿主，不新增调度器/发布器；精确适配scope尚未领取。 |
 | 看板 | 唯一own status已对齐已审/main的恢复结果；完整双槽与个人settings激活继续开放。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -210,3 +210,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T23:14:19Z：读取main/origin `7cbcf04c89ec68f0e75c05ffc3c3964cea3ad784`的[唯一独审原件](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/svc06b-personal-continuation-r2-result-review.json)。assignment于23:12:21.313531Z对固定结果 `146654ac5c839db601142b499442d7db1644c99e`给出APPROVED_LIMITED_PERSONAL_CONTINUATION_R2_RESULT_FIDELITY，0 P1/P2；32绑定95,322B与9,581B manifest核同，不复制第二份审查。主线接收事实由Lead回执及该固定记录确认，独立merge UTC未另留，不以观察时间冒充。
 
 实际工作段23:03:29.033765Z开始，23:06:25.528431Z terminal exit0，23:07:45.970561Z精确RETURN；11 transient PID与2指定组归还，三角色及3条idle DB连接有意保留。当前初始化与accepting24成立，actualClaim NOT_OBSERVED。77表定义投影保持只覆盖checkpoint和紧前resume；after-resume fullhistory NOT_OBSERVED。原FAIL/KEEP及0child STOP保持；未发布779或提交新任务/模型查询。此安全点只更新状态与审查引用并使用own-status parser，不重测、不读取现场；完整任务NOT_COMPLETED、历史首次开工UNKNOWN不变。
+
+2026-10-08T03:01:22.085Z：恢复原SVC09A-04，fresh2b593 clean/claim8f407 v12原exact2 active已核，记录[本轮开始](../../docs/evidence/svc09/message-settings-activation/settings-backend/start.json)。已实读Mika personal-message-settings-acceptance验收；先核8d532/098b已审输入、e15/880060实际默认冷启动及后来恢复差量。原三角色恢复与新设置后台分开；0build/PG/个人I/O/provider，不复制旧manifest或重跑33例，生产路径未领取不写。O16最终包已交审，实际新stage未运行，不阻本准备。
+
+2026-10-08T03:07:23.547Z：本轮来源准备安全保存，见[固定指针与边界](../../docs/evidence/svc09/message-settings-activation/settings-backend/safe-point.json)。已有8生产叶最小候选由assignment只读核对；未组合或申请产品写权，0工程child/PG/build/provider/个人读取。个人retained4项的第5项容量/计数前置明确，不删旧KEEP。按Lead优先原O16已授权operator，本任务未放弃、无pending launch。

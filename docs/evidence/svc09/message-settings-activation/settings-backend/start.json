@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-08T03:01:22.085Z",
+  "task": "SVC09A-04",
+  "mode": "source-and-candidate-preparation-only",
+  "head": "2b5931af20e8157813b1ad770b18f7236bf5b457",
+  "branch": "codex/personal-message-settings",
+  "cleanAtStart": true,
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 12,
+    "state": "active",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "freshRead": "same worktree/owner/branch/exact two scopes via coordination list before write"
+  },
+  "sourceWriteAuthority": "Only own evidence/plan. Production adaptation requires exact additional scope before writing.",
+  "scope": "Fixed backend composition for actual per-message settings, preserve e15 recovery fixes; no moving-main merge",
+  "actual": {
+    "engineeringChildren": 0,
+    "build": 0,
+    "PG": 0,
+    "native": 0,
+    "provider": 0,
+    "personalRead": 0,
+    "serviceOperations": 0
+  },
+  "skills": {
+    "method": "Local find-skills discovery for existing Node host composition, module design and lifecycle review; accepted bounded direction; no installation",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md"
+    ],
+    "application": "One host owns both immutable slots; reuse existing artifact builder/compatibility/operator; fix composition at real Interface rather than copying a publisher or supervisor."
+  }
+}
