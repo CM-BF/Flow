@@ -1,8 +1,10 @@
 # X01 真实 verifier 进程旅程设计
 
-状态：PENDING（本次metadata/设计独立只读审，0新工程/PG）
+状态：APPROVED（仅固定设计与当前metadata增量，0P1/P2；未授实际运行）
 
-Review target commit: 待下个固定metadata提交
+Review target commit: 627c1b591aeb2efeb7537397fb144eb75cfee876
+
+2026-10-08T01:25:16.000Z db_transaction_owner/gpt-6-astra DESIGN_AND_CURRENT_METADATA_DELTA_REVIEW_APPROVED；[完整限定回执](../../docs/evidence/x01/verifier-parent-design-review.json)。三任务链路可行；same-key回放冻结原revision，T3 fresh revision；worker观察、HTTP全量与闭包在prepare阶段先闭合。0工程/PG，NOT_READY/NOT_RUN；旧历史审结不覆盖本次未来运行。
 
 范围：[verifier-real-process-design.md](../../docs/evidence/x01/verifier-real-process-design.md)及当前plan/status事实同步。已有四main回执不授新实际窗口；三个真实任务/一个case尚未实现或运行。原完整X01与T7未完成。
 

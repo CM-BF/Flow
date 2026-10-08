@@ -1,0 +1,31 @@
+{
+  "preparedAt": "2026-10-08T01:26:08.937Z",
+  "segmentStart": "2026-10-08T01:20:03.431Z",
+  "deadline": "2026-10-08T01:30:03.431Z",
+  "claim": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "version": 34,
+  "scopeCount": 36,
+  "claimMutation": false,
+  "reviewTarget": "627c1b591aeb2efeb7537397fb144eb75cfee876",
+  "reviewState": "DESIGN_AND_CURRENT_METADATA_DELTA_REVIEW_APPROVED",
+  "reviewAt": "2026-10-08T01:25:16.000Z",
+  "capBytes": 2097152,
+  "sample": {
+    "rewrittenAndNewMetadataBytes": 176075,
+    "fixedNewCompressedObjectsBytes": 108021,
+    "indexAtomicTemporaryBytes": 1399828,
+    "remainingCommitAdminReceiptAllowance": 196608,
+    "conservativeUpperBytes": 1880532
+  },
+  "meaning": "logical conservative accounting, not observed physical peak; existing files/KEEP retained; no physical recovery claim",
+  "engineeringChildren": 0,
+  "PG": 0,
+  "provider": 0,
+  "sourceSupply": 0,
+  "futureWriteAfterFinalSTOP": 0,
+  "finalStop": "由最终push/clean后的外部clock报告；本记录不预测其时刻",
+  "productSourceDelta": [],
+  "oldRawManifestChanges": [],
+  "fullX01": "NOT_COMPLETED",
+  "nextCandidate": "NOT_READY_NOT_RUN: worker observation/main HTTP bound/input closure require separately authorized prepare"
+}

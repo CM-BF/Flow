@@ -9,10 +9,43 @@
     "HTTP全量与worker观察证据需要后继prepare闭合，保持NOT_READY"
   ],
   "unresolved": [
-    "设计独审PENDING",
     "源码供给/准备/实际窗口未授权",
     "全X01与T7未验"
   ],
   "engineering": 0,
-  "PG": 0
+  "PG": 0,
+  "metadataFollowupAt": "2026-10-08T01:24:23.228Z",
+  "timingCorrection": "历史等待原时刻仅毫秒Z规范化/资源类别，原微秒源保留固定Git；taskstartUNKNOWN不猜",
+  "skillBaseline": "center-quality.md / leaf-quality.md；clean-code来源sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5固定基线，不安装或更新",
+  "localSkills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "reviewScope": "Interface及串行生命周期复用；已main与NOT_RUN拆分；unknown保留、无二重driver或预算复用；旧TODO不降级",
+  "independentReview": {
+    "at": "2026-10-08T01:25:16.000Z",
+    "target": "627c1b591aeb2efeb7537397fb144eb75cfee876",
+    "state": "DESIGN_AND_CURRENT_METADATA_DELTA_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "finalCleanCodeAt": "2026-10-08T01:25:47.335Z"
 }

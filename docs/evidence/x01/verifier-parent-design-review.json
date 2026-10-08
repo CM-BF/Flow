@@ -1,0 +1,32 @@
+{
+  "state": "DESIGN_AND_CURRENT_METADATA_DELTA_REVIEW_APPROVED",
+  "reviewedAt": "2026-10-08T01:25:16.000Z",
+  "timeCorrection": "审者后到明确工具clock01:25:16；前消息01:25:05不作精确clock",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "target": "627c1b591aeb2efeb7537397fb144eb75cfee876",
+  "P1": 0,
+  "P2": 0,
+  "design": {
+    "path": "docs/evidence/x01/verifier-real-process-design.md",
+    "bytes": 8716,
+    "sha256": "b6264a00715f913d803fd7337349c6920579e43b855a034bb826bc2c9ad891df"
+  },
+  "scope": "仅当前plan/status/review增量和三任务设计，四I02回执Git/bytes/SHA；不重审历史约160KB或各子片全产品",
+  "accepted": [
+    "真实fixture前缀T1→T2 invalid-json/failed settled输出JSON→T3 requiredKeys verdict passed；exact源四元组/项目/CAS，不要求来源成功/current",
+    "同key回放必须原冻结input含原project revision；T3用独立key与fresh revision"
+  ],
+  "remaining": [
+    "真实worker PID/identity/三EOF及resource finish与T2/T3关联，目前host.observe内部seam及瞬时receipt，main默认未暴露；prepare先确定最窄可观察方式",
+    "main全部HTTP计数与强制界、实际拓扑/材料loaderworker闭包尚未固定",
+    "NOT_READY/NOT_RUN；180s/17conn是候选，无actual授权；T7/完整X01/撤grant/cancelUNKNOWN/inflight仍独立"
+  ],
+  "reviewerActions": {
+    "writes": 0,
+    "engineering": 0,
+    "PG": 0,
+    "imports": 0,
+    "TMPaccess": 0
+  },
+  "archivedAt": "2026-10-08T01:25:47.335Z"
+}
