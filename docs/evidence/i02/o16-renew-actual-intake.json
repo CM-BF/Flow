@@ -1,0 +1,74 @@
+{
+  "kind": "I02_O16_RENEW_ACTUAL_LIMITED_REVIEW",
+  "reviewedAt": "2026-10-08T02:37:51.499Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_REAL_RENEW_AND_RETURN_WITH_LIMITATIONS",
+  "P1": 0,
+  "P2": 0,
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "executionHead": "dc26d8ea7a6939d1ab4da43faa44800a8a21828b",
+  "delivery": "12dcdbd42cffe47728fabc20380bd960db98cea6",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "manifest": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/renew-result-manifest.json",
+    "bytes": 6694,
+    "sha256": "135b64fddb29293eb06b4ab8e1ca9e83f14d27c610229869fd44eb0e2f59fbc5",
+    "bindingsVerified": 25,
+    "boundBytes": 56873,
+    "inheritedFixedGitBindingsVerified": 2
+  },
+  "reviewBasis": [
+    "Checked fixed Git/current bytes and digest for every bound record; read actual preflight, confirmation/CAS, pause, resource observations, raw operator terminal and result/return separately.",
+    "Source and bounded local checks remain the already independently reviewed 5cf8 input; no source change or engineering rerun.",
+    "Real confirmation preserves goal/proposal/two input versions/material/profile, original pause and original public/private state; added legacy one-shot marker is explicit.",
+    "Three owned PID/PGID absent observations, dual EOF and empty target connections support runtime RETURN. pool.end alone is not a remote admin zero proof."
+  ],
+  "actual": {
+    "start": "2026-10-08T02:30:18.714Z",
+    "terminal": "2026-10-08T02:30:20.700Z",
+    "return": "2026-10-08T02:31:17.205Z",
+    "elapsedMs": 1581,
+    "exitCode": 0,
+    "selected": 1,
+    "passed": 1,
+    "queries": 0,
+    "cumulativeQueries": 4,
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "admissions": 0,
+    "fromRevision": 1,
+    "toRevision": 4,
+    "pauseUntil": "2026-10-08T02:45:20.624Z",
+    "confirmationExpiresAt": "2026-10-08T02:36:47.000Z"
+  },
+  "resources": {
+    "database": "KEEP",
+    "oldPrivate": "KEEP",
+    "newPrivate": "KEEP",
+    "newPrivateFinalBytes": 13452,
+    "combinedRunFinalRawBytes": 20231,
+    "peaks": "NOT_MEASURED",
+    "allEscapedDescendants": "NOT_PROVEN",
+    "remoteAdminConnectionZero": "NOT_OBSERVED"
+  },
+  "laterStage": {
+    "delivery": "222e933a3d8db7c91d046d1eaf04ddf602704f49",
+    "record": "docs/evidence/o16/native-children-continuation-20261008-once/children-not-run.json",
+    "sha256": "627b5bd7856ff7497a0b789ba0bff7fc19436f2eb2463c67c26999b9c95320ac",
+    "state": "NOT_RUN_LATEST_START_EXPIRED",
+    "selectedAt": "2026-10-08T02:33:27.236Z",
+    "latestStart": "2026-10-08T02:34:17.000Z",
+    "leadObservedAt": "2026-10-08T02:35:19Z",
+    "queries": 0,
+    "launches": 0,
+    "cause": "Lead read the selection after latestStart during context restoration; no runtime failure or demonstrated resource shortage. Confirmation and permit also retain their original expiry; no unilateral extension."
+  },
+  "limits": [
+    "No children artifact or independent final semantic acceptance. Full O16 remains open.",
+    "Original model failures/UNKNOWN costs/KEEP and historical four calls remain sealed.",
+    "Old and new raw remain once at canonical; references do not copy the source closure.",
+    "This limited review creates no replacement authorization, runtime window or deletion permission."
+  ]
+}
