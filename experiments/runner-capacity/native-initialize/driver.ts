@@ -72,6 +72,8 @@ function samplerChannel(binding: SamplerBinding, signal: AbortSignal) {
   const fail = (code: string) => { fault ??= code; const pending = active; active = undefined; pending?.dispose(); pending?.reject(Error(code)); };
   child.on('error', () => fail('SAMPLER_SPAWN'));
   child.stdin.on('error', () => fail('SAMPLER_WRITE'));
+  child.stdout.on('error', () => fail('SAMPLER_READ'));
+  child.stderr.on('error', () => fail('SAMPLER_CAPTURE'));
   child.stderr.on('data', chunk => { total += chunk.length; fail('SAMPLER_STDERR'); });
   child.stderr.on('end', () => { stderrEof = true; });
   child.stdout.on('end', () => { stdoutEof = true; if (active || buffer.length) fail('SAMPLER_TRUNCATED'); });
