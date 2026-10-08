@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-08T01:44:59.301239+00:00",
+  "researcher": "root / gpt-6-astra ultra",
+  "mode": "READ_ONLY_STATIC_RESEARCH_NO_PRODUCT_EXECUTION",
+  "fixedRef": "2b52b23554e612077bbc25492417fbcf43f299cf",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "bytes": 22382,
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+    }
+  ],
+  "finding": {
+    "id": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+    "priority": "P2 follow-up",
+    "summary": "A diagnostic-only event changes the immutable diagnostics snapshot but does not notify the subscription used by the settings diagnostics UI.",
+    "evidence": [
+      "PluginSettings subscribes host.subscribe with host.getDiagnostics.",
+      "PluginHost.record replaces the diagnostics array (bounded to100) but never notifies. reportRenderError calls record alone; an already active command failure and sync/async source subscription failure can also record without publish.",
+      "Existing subscription-isolation test reads getDiagnostics directly and verifies continuation/cleanup; it does not observe notifications or mounted settings refresh. Activation/disposal paths that subsequently publish may incidentally reveal the entry."
+    ],
+    "inference": "An already mounted settings panel can retain stale count/list until another render or unrelated host publish. This is source-level inference, not a reproduced browser failure, and does not invalidate prior isolation tests."
+  },
+  "proposal": [
+    "Reuse the same host and bounded diagnostic store. At the next legal plugin-host owner segment give diagnostics an explicit stable subscription and notify it when record changes; unsubscribe/dispose must clear its listeners.",
+    "Prefer not rebuilding every slot/registry snapshot merely to refresh diagnostics. Preserve original error isolation; diagnostic observer handling must not recurse into recording endlessly.",
+    "Add focused meaningful notification/cleanup regression using an already active plugin; ensure snapshot stable on reads, new on diagnostic, and unrelated slot snapshots/listeners unaffected. A later existing mounted settings fixture should confirm visible count update without navigation."
+  ],
+  "notInScope": [
+    "No new task, registry, scheduler, background monitor, resource run or immediate cross-owner edit.",
+    "No performance improvement claimed without measurement. No forced all-plugin re-render fix.",
+    "Current Arc and login delivery remain priority; original WPF-001-05/plugin-host scope owns implementation."
+  ],
+  "skillsApplied": [
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "application": "Keep notification ownership inside the existing host rather than a second diagnostics system."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "application": "Separate diagnostic change publication from slot rebuilding; preserve single error ownership and disposal."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "application": "Check store snapshot identity and avoid unnecessary broad subscriptions."
+    }
+  ],
+  "sourceReference": {
+    "url": "https://react.dev/reference/react/useSyncExternalStore",
+    "checked": "2026-10-08",
+    "paraphrase": "Store mutations must notify the subscribed callback so React can read and compare the snapshot."
+  },
+  "cleanCodeReview": {
+    "range": "Read-only host diagnostics/React subscription interface",
+    "finding": "Missing matching notification for one external-store mutation; existing bounded100 history retained.",
+    "fixed": false,
+    "remaining": "Original owner legal scope and bounded verification required."
+  }
+}

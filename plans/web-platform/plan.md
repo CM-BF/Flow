@@ -687,3 +687,9 @@ D05发布健康必须同时验证summary来源数与`/api/assignments`载荷`sta
 原WPF-001-05/plugin覆盖后继追加[Thread footer固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/thread-plugin-coverage-research.json)：TaskThread未接MessageFooter；Conversation host的通用footer贡献被user/assistant-draft门控，普通assistant-final缺入口。下一合法owner分开通用贡献渲染与内置stream/activity的role资格，保task/message身份和能力复核，不能简单移除gate造成内置重复，也不建第二registry。无runtime贡献验收；Arc overflow菜单裁剪仅静态风险，当前Arc/login交付优先。
 
 D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-verifier-sources-live.json)于01:13:24.689归还，213→215一次、214未独立部署；summary215与assignments.available/publicaccess同验，root现有IAB确认用户可见。登录[source/local限定批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-actionable-source-review.json)不覆盖后继mounted/真实认证或main。
+
+上述footer后继还须统一可信task/message解析：现MessageFooter只有messageTask(messageId)，MessageActions才有scope.taskId fallback，故只为TaskThread传入组件仍可能无task早退。沿既有已验证解析逻辑复用，未知message/context不强转；通用贡献与内置role资格继续分开。
+
+[有界首失败证据方法](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/ui-failure-evidence-research.json)复用message-settings原错优先模式：custom Arc/Connection库调用不会自动继承plugin-host Test Runner的retain-on-failure。优先原错、已报告组/phase、小图与必要几何，诊断错误单独保留，不占cleanup；原冻结失败不重写。登录首mounted[初始化失败保真审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-mounted-failure-review.json)确认CJS入口未优化、10515ms CLOSED/0图；新段仅修fixture固定依赖优化，不改产品或冒已测真实认证。
+
+- 原 WPF-001-05/plugin-host 后继 `PLUGIN-DIAGNOSTIC-NOTIFY-01`：固定源码发现 diagnostics 的100项有界数组变化未通知 PluginSettings 所订阅的接口，已激活插件孤立错误可能直到其他发布才显示；这是静态P2推断，未实测浏览器，不撤销原错误隔离结果。由原合法host owner在下一段复用现有store补稳定诊断订阅与dispose，避免为错误重建全部slots、避免通知异常递归；用已激活插件的通知/稳定snapshot/解绑不变量和既有mounted设置入口验证。无第二registry，不加当前Arc/login前置。[固定证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-diagnostic-notification-research.json)。

@@ -1,4 +1,10 @@
-> 当前 2026-10-08T01:31:23.030Z：已唯一选择登录生产组件mounted一次60s（45work+15cleanup），latestStart 2026-10-08T01:35:23.030Z，完整floor 13303021568B；W01 samecall fresh后执行，现未报START。Arc两次窄屏48670ms已CLOSED/all18STOP，视觉P2保留，不自动第三次。O16已完整归还且0query。
+**当前调度 2026-10-08T01:50:50.647Z：O16 01:45:07.705 START、01:46:25.059 exactRETURN，单planner/1proposal/0apply/0child，DB/private PAUSE_KEEP，后继未授权。登录b2已01:50:11.562129实际START，w01唯一Chrome/HTTP，60s；Arc待此exactRETURN后剩2次。O16精确原件与双current为准，封存不持运行窗。**
+
+> Original/native 唯一新SELECT 2026-10-08T01:43:19.616Z：`current.O16NormalHomePlannerGrant`，logical O16-GO-PLANNER-NORMAL-HOME-20261008，latestStart 2026-10-08T01:47:19.616Z，完整floor 13847232512B。formalREADY e4b09已接，按原argv/permit3866同callfresh直接执行一次150s（120+30）、新1plannerquery，PGavailable≥28/poolclosed；旧SDK3不重用。当前无actual，Arc已01:41:11精确归还且browserlease暂停，登录首lease等O16 RETURN；源检查继续。成功持久15minpause，不进入后继phase。
+
+**Original O16新planner待最终READY（不重源审）：** 已亲读原`native-plan-normal-home-20261008-once/authorization-preparation.json` 2538B/SHA95029cbc…、`permit.json` 912B/SHA3866d12a…及原Interface。新1query GO授权与旧3已消费分开；请原唯一operator回最终READY的fixed当前HEAD/无pending与实际resource-input入口绑定，再正常SELECT。此刻无O16资源预占；不能把文件存在倒填为已START/最终READY。完整路径和hash见current.O16NormalHomePlannerCandidate。
+
+**Original/T7原owner只读请求（非执行前置）：** 核现有固定发行inventory是否包含PROCESS worker/protocol/resources及真实tsx/模块相对解析依赖，给精确缺口、原owner、可消费manifest路径，供X01三tasks/1case后继同driver使用。只读现有材料，不新task/window/build/install，不碰个人e15/779；源码镜像或cwd移出repo不能冒可重定位产物。
 
 # Web 当前交接与唯一来源
 

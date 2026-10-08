@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-08T01:32:31.731379+00:00",
+  "scope": "Read-only input for existing MATURE05/06; no new task/run/platform",
+  "main": "2b52b23554e612077bbc25492417fbcf43f299cf",
+  "sourcePins": [
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+    },
+    {
+      "path": "apps/web/test/plugin-host.config.ts",
+      "sha256": "37fcb8cae237cdc851a45f0c4150126ac748d649f7b33f1662015b7f70ec542a"
+    }
+  ],
+  "officialReference": "https://playwright.dev/docs/trace-viewer",
+  "observations": [
+    "Existing message-settings native diagnostic arm captures bounded failure and only throws a secondary trace error when no original failure exists (around lines385-398). Reuse this responsibility pattern, not the whole diagnostic harness.",
+    "Existing plugin-host.config.ts uses trace retain-on-failure under Playwright Test. Custom Arc and Connection functions are library callers, so this config does not automatically capture their failures.",
+    "Official docs describe Test Runner trace settings and separate browserContext.tracing for library callers. Full tracing is not required for this current narrow diagnostic."
+  ],
+  "minimalNextLegalSegment": [
+    "Keep the original failure unchanged as primary and retain current stage plus completed group names independently of successful final return. Missing partial reporting remains unknown, not0 executed.",
+    "Before context closes, best-effort capture one bounded viewport screenshot and only the necessary geometry: target/strip/tab rectangles, viewport, scroll offsets, clipping ancestors, computed root font and relevant width/overflow properties. Do not collect all DOM text, form values, auth headers or storage.",
+    "Give diagnostics a small explicit time/byte allocation inside the existing work budget; never steal required cleanup reserve. If page is gone or time exhausted, record NOT_CAPTURED with a bounded diagnostic reason.",
+    "Treat screenshot/geometry failures as secondary facts; they must not replace the original assertion, alter outcome, prevent context/HTTP/process cleanup, or erase the raw initial error.",
+    "For the synthetic login fixture, preserve counts and synthetic argument-equality booleans; no real sign-in material. A fixture screenshot is not permission to photograph a personal authenticated page.",
+    "Success still requires the original acceptance assertions and actual final theme screenshots. A failed-run screenshot is diagnostic evidence only."
+  ],
+  "frozenBoundary": [
+    "Do not modify historical Arc failed results, the current reviewed Connection candidate729363, or their original captured data.",
+    "Apply only in the original owner next legal segment. No retrospective rerun solely to obtain missing images and no blanket trace/video recording.",
+    "If a later interaction cannot be explained by one screenshot/geometry record, consider a bounded existing Playwright trace under separately accounted output; do not build another recorder."
+  ],
+  "cleanCode": "One diagnostic responsibility, existing runner lifecycle, primary/secondary errors separated; no product behavior change."
+}
