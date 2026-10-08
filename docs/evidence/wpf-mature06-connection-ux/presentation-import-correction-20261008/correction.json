@@ -1,0 +1,70 @@
+{
+  "firstWrite": "2026-10-08T03:17:02.150792+00:00",
+  "deadline": "2026-10-08T03:25:02.150792+00:00",
+  "headBefore": "e24bb11984cd8dd04614d668941f2ccdbcceb690",
+  "branch": "codex/web-connection-actionable",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/connection/Connection.tsx",
+      "apps/web/src/connection/presentation.ts",
+      "apps/web/test/connection-presentation.test.ts",
+      "apps/web/test/connection-ux.browser.ts",
+      "apps/web/test/connection-ux.fixture.tsx",
+      "docs/evidence/wpf-mature06-connection-ux"
+    ],
+    "state": "active",
+    "branch": "codex/web-connection-actionable",
+    "origin": "new",
+    "taskId": "MATURE06-04",
+    "worker": "w01_owner",
+    "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+    "createdAt": "2026-10-08T01:09:14.432Z",
+    "updatedAt": "2026-10-08T03:05:19.335Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-08T03:17:02.070Z",
+  "conflicts": [],
+  "cause": {
+    "reportedBy": "Original I02 via D01",
+    "combinedNoEmit": {
+      "elapsedMs": 6162,
+      "exitCode": 2,
+      "diagnostic": "TS5097",
+      "file": "apps/web/test/connection-presentation.test.ts",
+      "line": 3
+    },
+    "rawFailureNotModifiedOrReexecuted": true
+  },
+  "change": {
+    "path": "apps/web/test/connection-presentation.test.ts",
+    "originalSource": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+    "before": {
+      "blob": "ad7a941ea7d2aa361ff8c9deeea50ce502614ca9",
+      "bytes": 3383,
+      "sha256": "6285a09fb9531a34893796c00bedef4dec3ae8b6eea5c542e036d1dfe1a4344a",
+      "line3": "import { connectionPresentation, submitConnection } from \"../src/connection/presentation.ts\";"
+    },
+    "after": {
+      "blob": "11f5fc14a2f3d783f8d239022884a8441d10f56d",
+      "bytes": 3380,
+      "sha256": "9e9205b8f522e601b68ca402ae11c45334b9f980dfbe85a91feb2a1ce364e5ba",
+      "line3": "import { connectionPresentation, submitConnection } from \"../src/connection/presentation\";"
+    },
+    "onlyDelta": "remove .ts import extension at line3; production/globaltsconfig unchanged"
+  },
+  "fixedIntakeBefore": "7f5cc77954e815ab47dd53030b6b9e475aa42d9d4b5071abc49d659b8d04bda4",
+  "validation": "static exact byte replacement only; 0 engineering child; Original owns combined consumer noEmit",
+  "budget": {
+    "limitBytes": 4194304,
+    "indexAtomicBeforeBytes": 2336768,
+    "allRecordsObjectsAdminReserveBytes": 1048576,
+    "conservativeUpperBytes": 3385344,
+    "actualPeak": "NOT_OBSERVED"
+  }
+}

@@ -55,3 +55,7 @@ Final user boundary: the connection component now gives a clear neutral sign-in 
 ## Versioned profile UI leaf handoff
 
 2026-10-08T03:05:19.335Z: apps/web/src/App.tsx permanently STOP and removed by atomic partial-amend v2→v3; 6 other scopes remain active but STOP. Product source and fixed intake/review unchanged. Receiver acquires its own legal scope separately; no whole-task completion or release. [Committed receipt](versioned-profile-connectionapp-handoff-20261008/receipt.json).
+
+## I02 consumer import correction
+
+2026-10-08T03:17:02.150792+00:00: Original reported combined noEmit6162ms/exit2 with soleTS5097 at connection-presentation.test.ts:3. Removed only the .ts import extension; no product/tsconfig change. Prior pure7/browser results and fixed intake remain immutable. This delta is source-only and awaits Original combined consumer noEmit; no local rerun. [Exact before/after and prior source](presentation-import-correction-20261008/correction.json). After normal seal all six retained scopes STOP.
