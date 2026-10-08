@@ -1,0 +1,69 @@
+{
+  "actualStart": "2026-10-08T00:35:19.324Z",
+  "firstWriteAt": "2026-10-08T00:35:19.324Z",
+  "deadline": "2026-10-08T00:43:19.324Z",
+  "scope": [
+    "docs/evidence/wpf-mature-04",
+    "plans/wpf-mature-04-context-transparency"
+  ],
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/wpf-mature-04",
+      "plans/wpf-mature-04-context-transparency"
+    ],
+    "state": "active",
+    "branch": "codex/context-transparency",
+    "origin": "new",
+    "taskId": "WPF-MATURE-04",
+    "worker": "architecture_read",
+    "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 11,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "createdAt": "2026-10-06T08:58:31.292Z",
+    "updatedAt": "2026-10-06T13:13:15.994Z",
+    "observedAt": null,
+    "needsVerification": true
+  },
+  "ledgerObservedAt": "2026-10-08T00:35:19.044Z",
+  "conflicts": [],
+  "entryHead": "a8de66888de280f615fb254e370f46afc45b65cd",
+  "webObservedHead": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+  "webDirty": false,
+  "bindings": [
+    {
+      "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/delivery.json",
+      "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+      "bytes": 5677,
+      "sha256": "fdea5d0059b4bd73259198ba40d65a102d4513be9d84db600d138404c1d365b1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/root-final-review.json",
+      "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+      "bytes": 5725,
+      "sha256": "a6306227b31bc144731cf847ac3bfb5004f3a3467451ea59b7c0ec1df08c640b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/review-input.json",
+      "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+      "bytes": 7922,
+      "sha256": "42e051ad7094a409a1c46caff2af6333bd3579275d9e420446d7e5e2012a4cd2"
+    }
+  ],
+  "capBytes": 3145728,
+  "indexAtomicCopyAllowance": 724739,
+  "metadataAllowance": 131072,
+  "gitObjectAllowance": 262144,
+  "atomicWriteAllowance": 65536,
+  "totalConservative": 1183491,
+  "actualPeak": "UNKNOWN",
+  "floor": 13624803328,
+  "canonicalAt": "2026-10-08T00:34:21.037Z",
+  "free": 14916255744,
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "Chrome": 0
+}

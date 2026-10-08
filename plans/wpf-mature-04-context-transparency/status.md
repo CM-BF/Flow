@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:50:51.105Z / main附件接收历史仍为cde6646；本轮不宣称新的main能力 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:36:44.532Z / W01固定交付声明NOT_INTEGRATED；本轮无新的Web main接收收据 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 历史大task首次实际开工无独立clock来源；不以claim/commit推算。本metadata段22:49:19Z单独记录 |
+| 任务时间来源 | 历史大task首次实际开工无独立clock来源，保持UNKNOWN；本metadata段实际2026-10-08T00:35:19.324Z另记，不重置任务起点 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -13,31 +13,31 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a / 本段入口5525525af491577ea68ec5cd0a07b32de3115c53；提交后实际HEAD由Git聚合 |
+| 工作基线 / HEAD | daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a / 本段入口a8de66888de280f615fb254e370f46afc45b65cd；提交后实际HEAD由Git聚合 |
 | 工作树dirty状态 | 仅父计划/证据metadata；旧产品、raw、support固定不改，提交push后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 4366466e2685e6ac1854246a372931cb51df91c0：W01作者16 pure/affected strict0，1797ms CLOSED；c5f896末标题仅静态独审，非复跑；未挂载/无browser |
-| 已集成main状态 / HEAD | Web c5f896 NOT_INTEGRATED；历史附件 INTEGRATED cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd；两源逐字=approved4f879；[附件接收收据](../../docs/evidence/wpf-mature-04/attachment-main-acceptance.json)。旧producer已main7cb、18叶源已mainbf067；未重测，部署未知 |
-| 实现目标 | c5f896333458579b0e0fa65ba2b389e14084a81e（W01历史Web模块固定源；非父owner产品写入） |
-| 实现范围 | apps/web/src/conversation-context-history/ContextHistoryDialog.tsx,apps/web/src/conversation-context-history/controller.ts,apps/web/src/conversation-context-history/controller.test.ts,apps/web/src/conversation-context-history/fixture.ts,apps/web/src/plugin-integration/context-history.tsx（W01固定模块；本owner仅两metadata范围） |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED c7f3933c1cd815a539192823628847ac5ca6123e：第三轮8/8原组与390双主题2PNG；前两轮失败保留，三轮charge43817/270000ms CLOSED；不是完整CT通过 |
+| 已集成main状态 / HEAD | Web c7f3933c1cd815a539192823628847ac5ca6123e NOT_INTEGRATED，未收到接收收据；历史附件INTEGRATED cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd，producer已main7cb、18叶源已mainbf067；不重测，Web部署未验 |
+| 实现目标 | c7f3933c1cd815a539192823628847ac5ca6123e |
+| 实现范围 | apps/web/src/App.tsx,apps/web/src/conversation-context-history/ContextHistoryDialog.tsx,apps/web/src/conversation-context-history/binding.test.ts,apps/web/src/conversation-context-history/binding.ts,apps/web/src/conversation-context-history/controller.test.ts,apps/web/src/conversation-context-history/controller.ts,apps/web/src/conversation-context-history/fixture.ts,apps/web/src/conversations/ConversationThread.tsx,apps/web/src/plugin-integration/context-history.tsx,apps/web/src/plugin-integration/session.ts,apps/web/test/context-history-fixture.ts,apps/web/test/context-history.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史上下文面板模块已完成局部验证和限定独审，当前用量与剩余量仍明确未知 |
-| 下一可用交付 | 将历史面板接入现有会话与视图权限，再验证真实页面交互和按需读取 |
+| 当前产出 | 历史上下文面板已在独立页面通过按需详情、键盘和窄屏双主题验收，当前用量与剩余量仍明确未知 |
+| 下一可用交付 | 受控接入主线并验证与工作区组合后的权限撤销；补齐真实观测来源与完整上下文验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED c5f896333458579b0e0fa65ba2b389e14084a81e：D01/root 2026-10-07T22:45:15.211Z限定模块source/local批准，0 blocking findings；不含App/browser/完整CT矩阵 |
+| Review | APPROVED c7f3933c1cd815a539192823628847ac5ca6123e：root 2026-10-08T00:27:07.652Z限定历史Web验收，0 blocking；[固定原审结](../../docs/evidence/wpf-mature-04/web-history-scoped-review.json)，非Arc组合/producer/current/完整CT/main/部署批准 |
 | Claim | [COMMITTED amend v11](../../docs/evidence/wpf-mature-04/attachment-source-handback-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 ACTIVE；仅两metadata目录，附件两源及旧producer/18叶源均停止写入 |
-| 架构影响 | Web复用现有历史DTO/FlowClient，通过私有授权reader与会话视图生命周期消费；不新增上下文事实权威。薄接线进行中，main/部署未证，current/remaining/compaction标准不降低 |
+| 架构影响 | Web历史消费者复用中心DTO/FlowClient与现有会话授权reader；独立页面薄接线已验，Arc组合与main未验。D01/Original负责未来集成架构基线，父status不把分支运行写成main事实 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
 | WPF-MATURE-04-03 | in-progress | architecture_read / mika | 9ac正式027/历史模块50/50含9真实PG、strict0、独审APPROVED；已随生产reportEvents/owner历史GET进入bf067e3；[接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)。当前/remaining/SDK采集仍未知，不据此勾完完整验收 |
-| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | c173纯归一化已main；producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40独审APPROVED、121不同+strict0，已main7cbda706；fake Query不证明真实SDK采样/压缩事件，完整验收仍开放 |
-| WPF-MATURE-04-05 | in-progress | w01_owner / d01（父status仍architecture_read） | 唯一产品WT web-context-history/codex同名；claim25d7e029 v1于22:35:02.638Z领取exact3。c5f896模块/16pure+strict0已获限定独审；App/session薄接线新段进行中，Thread须fresh权属，未mounted/browser/main。固定来源见[路由证据](../../docs/evidence/wpf-mature-04/web-history-route-current.json) |
+| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | c173纯归一化已main；producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40独审APPROVED、121不同+strict0，已main7cbda706；fake Query不证明真实SDK采样/压缩事件，完整验收仍开放；现有04后继含窄屏长modelID紧凑摘要/完整身份展开，不损失可访问身份与unknown说明，属非阻塞体验改进 |
+| WPF-MATURE-04-05 | in-progress | w01_owner / d01（父status仍architecture_read） | web-context-history/codex同名，25d7e029 v3 exact8/all STOP；source c7f393、seal067f77、最新观察8819faa。第三轮8/8与390 light/dark 2PNG，前两失败保留，charge43817ms非总壁钟；00:23:55.953373Z exactRETURN。root限定APPROVED/0blocking，main待接收；Arc组合/真实producer/读取中撤权未验。[唯一路由与边界](../../docs/evidence/wpf-mature-04/web-history-route-current.json) |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | schema/纯投影/历史领域/归一化已有独审并进入main；完整矩阵与producer/current/压缩/Web等后继验收未完成 |
 
 ## 当前边界与下一步
@@ -121,3 +121,17 @@
 2026-10-07T22:50:51.105Z：本段22:49:19Z→22:55:19Z，仅父metadata/0工程child/PG。fresh账本确认d3a9 v11仍本owner且exact2目录；old needsVerification标记已按实际身份/范围核对，未抢占或扩大scope。W01当前观察ac25816373f5199c891c0ae5f6346d28d83dd8b2 clean，仅为22:50:05.833Z快照，不能覆盖其后合法新段dirty。固定source-local输入SHA eaa49afc…ad86e0，独审原件SHA9a4dd06c…afc24c；末unknown标题源码审过但未重跑。两个旧资源gate实际过低及事后free比较保留，不冒正确准入。
 
 App/session22:47:29交回由root/D01报告；W01获新薄接线段，具体新claim/Thread须其fresh核定。本父页不授写权，亦不称薄接线已挂载。WPF-001-09只引用本页-05，W01只交自身固定证据，不创建第二MATURE04手填status。-03/-04/-05/-06与CT01–09仍OPEN；真实provider、当前窗口/remaining、压缩和个人部署未验。详见[当前handoff](../../docs/evidence/wpf-mature-04/handoff-current.md)。
+
+## W01限定浏览器验收归档（2026-10-08）
+
+2026-10-08T00:36:44.532Z：父owner核固定Web HEAD/origin 8819faa34a5cb08f164c4a4f98b1595218dc2cad clean，只是该时点观察。source c7f3933c1cd815a539192823628847ac5ca6123e，统一seal067f77d6d195038d7b07d28ae9d9cd3657daa8de；root限定独审原件SHA a6306227b31bc144731cf847ac3bfb5004f3a3467451ea59b7c0ec1df08c640b已逐字归档。真实Cookie中心后的合成history/detail经过正式decoder与面板；8组第三轮通过，390双主题截图可读且无横溢。前两轮失败及三轮43817ms执行计费保留，非START至RETURN总壁钟。exactRETURN为2026-10-08T00:23:55.953373Z。
+
+两次held read均在交付前abort，不证明已解码迟到响应拒绝。same-view task replacement、held detail、隐藏Arc workspace、pending read期间plugin/authority revoke均未覆盖。完整CT01–09及03/04/05/06不勾完；没有新的main/部署证据。WPF-001-09只引用本父05，W01 progress.md是作者证据而非第二status。旧模块/失败原件与此前路由快照保留，不重审/重跑。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| M04-W01-INTEGRATION | 2026-10-08T00:28:20.638Z | OPEN | 接口 | 历史Web限定验收完成，等待受控main接收及Arc组合证据；不覆盖其他owner源码 | Web固定delivery.json/8819faa |
+
+2026-10-08T00:38:04.376Z：本段仅metadata内容封存，0工程child/PG/HTTP/Chrome/provider。parseStatus errors/humanMissing/implementation/waitingTable issues均空；唯一timing提示为历史开工缺证据，保持UNKNOWN不补猜。限定skills/clean-code复核见[质量记录](../../docs/evidence/wpf-mature-04/web-history-parent-quality.json)。本次首写/预算见[段记录](../../docs/evidence/wpf-mature-04/web-history-acceptance-start.json)，提交push后实际STOP由最终交付消息给Lead，不新增HTTP探针。

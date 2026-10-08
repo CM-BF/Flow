@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T00:38:04.376Z",
+  "stack": "Parent task metadata/Markdown/JSON only",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "provenance": "Existing installed baseline: /Users/citrine/Projects/AgentHarness/Flow/docs/quality/skills.md; no install/network",
+  "application": [
+    "Single parent status owner; child delivery and independent review referenced by exact Git/hash",
+    "Readable user-facing summary; implementation/test/main/deployment remain separate",
+    "Failure history preserved; charge not presented as walltime; no resource-cleanup extrapolation",
+    "No product or other-owner edit; no new task or repeated CT matrix",
+    "Current parser errors/human missing/implementation/waiting issues empty; task timing remains unknown with explicit history gap"
+  ],
+  "unresolved": [
+    "Historical task actual start UNKNOWN intentionally preserved",
+    "Web controlled main receipt, Arc composition and pending-read revoke absent",
+    "Provider observation/current remaining/fullCT still OPEN"
+  ]
+}

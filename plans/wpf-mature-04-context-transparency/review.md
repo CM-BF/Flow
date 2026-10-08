@@ -145,3 +145,7 @@ Reviewer：Mika / gpt-6-astra。绑定target `a7357c21511a81ca8e603b728c3a24725d
 ## Web历史模块限定审查来源归档
 
 2026-10-07T22:50:51.105Z：父owner只读核ac258固定root-module-review.json，D01/root22:45:15.211Z APPROVED_LIMITED_CONTEXT_HISTORY_MODULE_SOURCE_AND_LOCAL_RESULTS/0blocking，绑定c5f896/bdf6、actual4366466。16pure+strict0，未知标题仅静态核；非App/browser/完整CT/main/部署批准。本owner不重复源码独审/工程检查，原审结与raw不修改。
+
+## W01独立页面限定验收（2026-10-08）
+
+2026-10-08T00:36:44.532Z归档root/gpt-6-astra于2026-10-08T00:27:07.652Z的APPROVED_LIMITED_SCOPED_CONTEXT_HISTORY_ACCEPTANCE，0 blocking。固定source c7f3933c1cd815a539192823628847ac5ca6123e / seal067f77d6d195038d7b07d28ae9d9cd3657daa8de / evidence HEAD8819faa34a5cb08f164c4a4f98b1595218dc2cad；[原审结](../../docs/evidence/wpf-mature-04/web-history-scoped-review.json)逐字SHA a6306227b31bc144731cf847ac3bfb5004f3a3467451ea59b7c0ec1df08c640b。第三轮8/8与390双主题2PNG，前两失败不改；合成history/detail、非Arc组合/真实producer/完整CT/main/部署。父owner仅核来源与metadata一致性，未重复工程或独审。

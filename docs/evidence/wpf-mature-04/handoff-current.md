@@ -48,3 +48,7 @@ Lead在ENG01D接口冻结后fresh核账本、受控追加/交接写权，复用�
 下一接线仍属原-05：App.tsx提供授权FlowClient reader；plugin-integration/session.ts承接唯一view/session状态及取消；ConversationThread.tsx提供稳定入口。App/session22:47:29交回是管理回报；Thread与新exact scope须W01 fresh取得，父metadata不授产品写权。新的薄接线段已获管理安排，当前不得称mounted。继续真实HTTP schema/权限错误、按需详情请求、A→B→A失效、隐藏/关闭/禁用/重连取消及browser键盘/双主题/窄屏验证；不由历史estimate制造current/remaining或压缩证明。
 
 [唯一父status](../../../plans/wpf-mature-04-context-transparency/status.md)维护-05进度；WPF-001-09只引用，W01树只保存自身证据。旧12:15未见UI开工为历史，现由本固定路由取代。完整CT01–09与-03/-04/-05/-06保持开放。
+
+## 当前W01接收路由（2026-10-08T00:36:44.532Z）
+
+唯一产品owner w01_owner，web-context-history/codex/web-context-history，25d7e029 v3 exact8已STOP。固定source c7f3933c1cd815a539192823628847ac5ca6123e / seal067f77d6d195038d7b07d28ae9d9cd3657daa8de；现场8819faa34a5cb08f164c4a4f98b1595218dc2cad clean仅为本次快照。独立页面8/8与390双主题2PNG获root限定批准，main待Original受控接收，不能wholeblob覆盖Arc App/session/Thread。Arc隐藏工作区与pending撤权组合未验；真实producer/current/remaining/fullCT仍OPEN。Mika父05为唯一手填进度，WPF09只引用；具体边界与固定原件见[当前路由](web-history-route-current.json)。旧段记录保留为历史。

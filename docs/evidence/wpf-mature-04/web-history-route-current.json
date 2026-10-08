@@ -1,68 +1,96 @@
 {
-  "at": "2026-10-07T22:50:05.833Z",
-  "segmentStartedAt": "2026-10-07T22:49:19.000Z",
-  "segmentDeadline": "2026-10-07T22:55:19.000Z",
-  "scope": "Parent metadata only; no product or external owner changes",
+  "at": "2026-10-08T00:36:44.532Z",
+  "segmentStartedAt": "2026-10-08T00:35:19.324Z",
+  "segmentDeadline": "2026-10-08T00:43:19.324Z",
   "ownClaim": {
-    "id": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
-    "version": 11,
-    "state": "active",
-    "worker": "architecture_read",
-    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
-    "branch": "codex/context-transparency",
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
     "scope": [
       "docs/evidence/wpf-mature-04",
       "plans/wpf-mature-04-context-transparency"
     ],
-    "ledgerObservedAt": "2026-10-07T22:49:27.697Z",
-    "needsVerificationFlag": true,
-    "identityRechecked": true
+    "state": "active",
+    "branch": "codex/context-transparency",
+    "origin": "new",
+    "taskId": "WPF-MATURE-04",
+    "worker": "architecture_read",
+    "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 11,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "createdAt": "2026-10-06T08:58:31.292Z",
+    "updatedAt": "2026-10-06T13:13:15.994Z",
+    "observedAt": null,
+    "needsVerification": true
   },
+  "ledgerObservedAt": "2026-10-08T00:35:19.044Z",
   "web": {
     "worker": "w01_owner",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
     "branch": "codex/web-context-history",
-    "observedHead": "ac25816373f5199c891c0ae5f6346d28d83dd8b2",
-    "observedDirty": [],
-    "claimAtObservation": {
-      "id": "25d7e029-9334-479e-8872-61090c406e0a",
-      "version": 1,
-      "createdAt": "2026-10-07T22:35:02.638Z",
-      "scope": [
-        "apps/web/src/conversation-context-history",
-        "apps/web/src/plugin-integration/context-history.tsx",
-        "docs/evidence/wpf-mature04-web-history"
-      ]
-    },
-    "fixedSource": "c5f896333458579b0e0fa65ba2b389e14084a81e",
-    "actualLocalSource": "4366466e2685e6ac1854246a372931cb51df91c0",
-    "fixedDelivery": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
-    "fixedEvidenceCommit": "ac25816373f5199c891c0ae5f6346d28d83dd8b2",
-    "input": {
-      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/source-local-review-input.json",
-      "bytes": 5203,
-      "sha256": "eaa49afc2404cee73650a5dd9e44e954074bb86c6b03d8c2e35e15ca29ad86e0"
-    },
-    "review": {
-      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/root-module-review.json",
-      "bytes": 6801,
-      "sha256": "9a4dd06c29f518972d74eabcb27afbcce965b36f4164fd3947a528144bafc24c",
-      "at": "2026-10-07T22:45:15.211423+00:00",
-      "decision": "APPROVED_LIMITED_CONTEXT_HISTORY_MODULE_SOURCE_AND_LOCAL_RESULTS"
-    },
-    "local": {
-      "passed": 16,
-      "affectedStrict": 0,
-      "supervisorMs": 1797,
-      "state": "CLOSED",
-      "laterHeadingDelta": "SOURCE_REVIEWED_NOT_RERUN",
-      "staleFloorRetained": true
-    },
-    "thinWiring": "New segment authorized per root; App/session handback reported22:47:29, Thread/fresh writer ownership still prerequisites; no mounted/browser/main/deployment evidence"
+    "observedHead": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+    "observedDirty": false,
+    "observationScope": "Snapshot only; no ongoing liveness inference",
+    "claimAtDelivery": "25d7e029-9334-479e-8872-61090c406e0a v3 exact8 retained; all8STOP; release/handoff requiresmanager fresh transition",
+    "sourceTarget": "c7f3933c1cd815a539192823628847ac5ca6123e",
+    "resultSealTarget": "067f77d6d195038d7b07d28ae9d9cd3657daa8de",
+    "bindings": [
+      {
+        "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/delivery.json",
+        "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+        "bytes": 5677,
+        "sha256": "fdea5d0059b4bd73259198ba40d65a102d4513be9d84db600d138404c1d365b1"
+      },
+      {
+        "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/root-final-review.json",
+        "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+        "bytes": 5725,
+        "sha256": "a6306227b31bc144731cf847ac3bfb5004f3a3467451ea59b7c0ec1df08c640b"
+      },
+      {
+        "path": "docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/review-input.json",
+        "commit": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+        "bytes": 7922,
+        "sha256": "42e051ad7094a409a1c46caff2af6333bd3579275d9e420446d7e5e2012a4cd2"
+      }
+    ],
+    "deliveryPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/delivery.json",
+    "reviewPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/root-final-review.json",
+    "reviewDecision": "APPROVED_LIMITED_SCOPED_CONTEXT_HISTORY_ACCEPTANCE",
+    "reviewAt": "2026-10-08T00:27:07.652793+00:00",
+    "actual": "8/8 originalgroups+2PNG independently approved; 3attempts/43817msCLOSED/0localchildren; failures immutable",
+    "finalReturn": "2026-10-08T00:23:55.953373Z",
+    "scopeLimits": [
+      "b129 independent only; Arc controlled composition NOT_RUN",
+      "synthetic history/detail DTO producer behind realCookie; backend observation generation NOT_PROVEN",
+      "current draft use/remaining/hard model limit not supplied: unknown",
+      "both held reads abortedWithoutDelivery; not browser-decoded late delivery",
+      "same-view task replacement, helddetail, hiddenArcworkspace, plugin/authrevoke duringpendingread NOT_COVERED",
+      "fullMATURE04/CT01–09 remainOPEN"
+    ],
+    "integrationRequirements": [
+      "Do not whole-blob replace ArcApp/session/Thread. Preserve Arc runtime/pane/draft ownership in controlled merge.",
+      "Arc currentGroups covers hiddenworkspaces; authorize history against visibleGroups semantics. Add holdread→hideworkspace→abort/no latepublication→explicitreopen combined proof.",
+      "Keep parent progress single-source viaD01→Mika→architecture_read, no duplicate status."
+    ],
+    "main": "NOT_INTEGRATED",
+    "deployment": "NOT_DEPLOYED"
+  },
+  "parentTodo": "WPF-MATURE-04-05",
+  "completeCT": "OPEN",
+  "currentCapacityRemaining": "UNKNOWN",
+  "producerGeneration": "NOT_PROVEN",
+  "ArcComposition": "NOT_RUN",
+  "pendingReadRevocation": "NOT_COVERED",
+  "nonblockingFollowup": {
+    "parentTodo": "WPF-MATURE-04-04",
+    "text": "At390px longmodel identity wraps to8lines; readable/no horizontal overflow but compact summary vs expandable completeidentity is a future UX tradeoff, not this acceptance blocker."
   },
   "newEngineeringChildren": 0,
   "PG": 0,
+  "HTTP": 0,
+  "Chrome": 0,
   "provider": 0,
   "newProductWrites": 0,
-  "skills": "Reused fixed local find-skills/codebase-design/clean-code: parent owns acceptance/status, child owns source evidence, no second task or progress authority; preserve history/current/remaining and compaction unknowns."
+  "skills": "Existing local find-skills/codebase-design/clean-code: one parent progress authority; source vs browser vs main/deployment separated; preserve failed attempts and unknowns; no duplicate plan or speculative abstraction."
 }

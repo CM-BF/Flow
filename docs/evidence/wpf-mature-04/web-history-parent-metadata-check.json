@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-08T00:37:12.956Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "历史上下文面板已在独立页面通过按需详情、键盘和窄屏双主题验收，当前用量与剩余量仍明确未知",
+    "next": "受控接入主线并验证与工作区组合后的权限撤销；补齐真实观测来源与完整上下文验收",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "c7f3933c1cd815a539192823628847ac5ca6123e",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "apps/web/src/conversation-context-history/binding.test.ts",
+      "apps/web/src/conversation-context-history/binding.ts",
+      "apps/web/src/conversation-context-history/controller.test.ts",
+      "apps/web/src/conversation-context-history/controller.ts",
+      "apps/web/src/conversation-context-history/fixture.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/context-history.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/context-history-fixture.ts",
+      "apps/web/test/context-history.browser.ts"
+    ],
+    "errors": []
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "历史大task首次实际开工无独立clock来源，保持UNKNOWN；本metadata段实际2026-10-08T00:35:19.324Z另记，不重置任务起点"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| M04-W01-INTEGRATION | 2026-10-08T00:28:20.638Z | OPEN | 接口 | 历史Web限定验收完成，等待受控main接收及Arc组合证据；不覆盖其他owner源码 | Web固定delivery.json/8819faa |",
+    "waitingTable": {
+      "rows": [
+        {
+          "id": "M04-W01-INTEGRATION",
+          "started": {
+            "state": "known",
+            "at": "2026-10-08T00:28:20.638Z",
+            "record": "2026-10-08T00:28:20.638Z"
+          },
+          "ended": {
+            "state": "open",
+            "at": null,
+            "record": "OPEN"
+          },
+          "category": "接口",
+          "reason": "历史Web限定验收完成，等待受控main接收及Arc组合证据；不覆盖其他owner源码",
+          "source": "Web固定delivery.json/8819faa",
+          "issues": []
+        }
+      ],
+      "issues": []
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "c7f3933c1cd815a539192823628847ac5ca6123e",
+    "record": "PASSED c7f3933c1cd815a539192823628847ac5ca6123e：第三轮8/8原组与390双主题2PNG；前两轮失败保留，三轮charge43817/270000ms CLOSED；不是完整CT通过"
+  },
+  "todos": [
+    {
+      "id": "WPF-MATURE-04-01",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-MATURE-04-02",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-MATURE-04-03",
+      "state": "in-progress"
+    },
+    {
+      "id": "WPF-MATURE-04-04",
+      "state": "in-progress"
+    },
+    {
+      "id": "WPF-MATURE-04-05",
+      "state": "in-progress"
+    },
+    {
+      "id": "WPF-MATURE-04-06",
+      "state": "pending"
+    }
+  ],
+  "engineering": false,
+  "HTTP": false
+}

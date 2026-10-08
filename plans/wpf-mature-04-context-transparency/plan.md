@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 / 状态 | WPF-MATURE-04 / in-progress |
-| 创建日期 / 最近更新 | 2026-10-06 / 2026-10-07 |
+| 创建日期 / 最近更新 | 2026-10-06 / 2026-10-08 |
 | 任务层级 / 大task ID | 大task / [WPF-MATURE-04](plan.md)；本目录为本大task唯一正文，不复制 Web 管理计划 |
 | co-lead / 单一 owner / model | mika / architecture_read / gpt-6-astra（由派发 lead 确认继承模型，满足 Sol 门槛） |
 | 权威 worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency / codex/context-transparency |
@@ -18,6 +18,8 @@
 GO/用户已授权该方向及规划实施。首片规划已固定，mika随后协调批准4文件纯投影实现与局部验证；当前不包含生产SDK采集、持久化或页面挂载。Web由d01管理并沿本计划验收，不另写重复目标；不修改S01、CHATUI或其他任务的状态。只有后续明确获准的2测试路径/严格noEmit在此实现片执行；没有真实模型、安装、私人服务或凭据操作，协调连接只通过已配置环境加载。
 
 ## 当前事实与差距
+
+当前W01历史面板已完成独立页面的8组浏览器验收及390双主题限定独审，main接收、Arc组合、真实观测生成与完整CT仍未完成；详见唯一[status](status.md)。下列源码研究与首片实施描述保留其历史范围，不将当时未挂载结论用作当前Web状态。
 
 - main 的 execution profile 公开请求模型、配置 digest 与 opaque materialScopeDigest；resolvedModel=null、providerCapabilities=unknown。它不是实际模型、原生容量或工具实际读取材料的证明。
 - K02 已冻结精确 citation/version/digest/locator，公开 sources.byteLength，私有 execution input 与公开用户原文分离；当前 8192 UTF-8 bytes 等限额是 Flow 输入预算，不是模型 token 窗口。runner 还会附加本机材料路径/系统提示，executionInputDigest 不涵盖完整 SDK 上下文。
@@ -53,7 +55,7 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 - [x] **WPF-MATURE-04-01** 固定权威计划、原子 claim、源码/依赖差距和全部用户验收；首片文档自查、commit/push，独立 review 保持 NOT_STARTED。
 - [x] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限；879c989a594a8f4f266b9a78a885e311c52eca0d，30/30与局部strict noEmit，Mika于09:14:39 UTC独立APPROVED。
 - [ ] **WPF-MATURE-04-03** 实现受 ownership 保护的中心观测持久化与 owner 读取；提供去重/重放/过期/重启/权限证据，保留已有 usage 与全文隔离。
-- [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。
+- [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。沿此现有04记录非阻塞窄屏信息层级改进：长modelID使用紧凑摘要与可展开完整身份，保持可访问全值、时间和unknown/estimate说明。
 - [ ] **WPF-MATURE-04-05** d01 管理、w01_owner在web-context-history独立WT实施的 Web 插件消费中心 Interface，覆盖草稿/执行/换模型/材料变化、过期、超限、双主题/窄屏及按需详情；不重复传全文。
 - [ ] **WPF-MATURE-04-06** 完整矩阵、独立 review、必要直接消费者验证、main 集成与 canonical dashboard 事实同步；不以本首片或 fixture 结果替代完整交付。
 
