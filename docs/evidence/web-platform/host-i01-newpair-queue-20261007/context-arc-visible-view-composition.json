@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-08T00:33:10.558866+00:00",
+  "kind": "read-only integration research; no product edits or execution",
+  "existingPlan": "WPF-MATURE-04-05 and existing CT matrix; no new task",
+  "targets": {
+    "context": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+    "arc": "8935c756cd98b70773a32dca0d216419a4b07839"
+  },
+  "finding": "Context App uses currentGroups for read authorization. Arc redefines currentGroups as all workspace panes, while visibleGroups contains the active workspace panes. Mechanical merging the old authorization expression would broaden that port beyond its intended visible-view meaning. Existing binding.visible checks remain an additional defense; no current data leak is established by this static comparison.",
+  "codeReferences": [
+    {
+      "worktree": "web-context-history",
+      "path": "apps/web/src/App.tsx",
+      "lines": [
+        775,
+        786,
+        790
+      ],
+      "meaning": "History identity, authorized-current-pane predicate, per-view task/authority/document-visibility subscriptions."
+    },
+    {
+      "worktree": "web-context-history",
+      "path": "apps/web/src/conversation-context-history/binding.ts",
+      "lines": [
+        16,
+        21,
+        54,
+        73
+      ],
+      "meaning": "Trusted port checks both before and after each client read; session binding also checks visible/enabled/signal/identity."
+    },
+    {
+      "worktree": "web-workspace-composition",
+      "path": "apps/web/src/App.tsx",
+      "lines": [
+        392,
+        394,
+        395,
+        396,
+        809,
+        1180
+      ],
+      "meaning": "All panes versus active workspace panes are distinct; existing message settings already authorize using visibleGroups; Thread visibility propagates authorized&&!overview&&pageVisible&&shown."
+    }
+  ],
+  "compositionRequirements": [
+    "Apply the reviewed Context delta to the current Arc App/session/Thread; never replace whole old blobs. Preserve layoutPort, Arc pane ownership and recovery ownership.",
+    "Use visibleGroups for the trusted Context read port and preserve Thread visible propagation to ContextHistoryComposer. Keep currentGroups for inventory/retention purposes where that is intended.",
+    "Preserve per-stable-viewKey session binding, task and authority subscriptions, signal revocation, and disposal on releaseView/session disposal; do not introduce a second draft or request owner.",
+    "Use current observed attempt identity when available and retain post-read ownership checks; a server response arriving later must not restore an unavailable view."
+  ],
+  "acceptanceForExistingMatrix": [
+    "Held history read, switch to another Arc workspace: close/abort, no hidden background read or late publication; returning shows no fresh history request until explicit Context open. Record whether the old request aborted or a response actually decoded.",
+    "Hold detail, close/hide/revoke plugin or connection: no detail publication and paired lifecycle cleanup; do not claim coverage from a history-only abort.",
+    "Same stable view task/attempt replacement: old identity invalidated, explicit new read uses the new task. Preserve other views and their drafts.",
+    "Recheck normal short-model and stress long-model light/dark views during the separately scoped usability change; compact known metrics/time/one truthful qualification first, complete identity/measurement details accessible below."
+  ],
+  "limits": [
+    "Existing Context 8/8 approval remains scoped and valid. These are future combined acceptance requirements, not extra prerequisites for its current fixed delivery.",
+    "Arc actual result is still pending when this research is written. No claim of combined behavior or performance measurement."
+  ],
+  "cleanCode": "Reuse the existing private port, layout refs, subscriptions and host capability lifecycle. Change only the meaning-dependent authorization seam; avoid new global store, plugin registry or duplicated layout authority."
+}

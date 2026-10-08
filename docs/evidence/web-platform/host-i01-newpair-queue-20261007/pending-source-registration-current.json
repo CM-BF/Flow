@@ -178,5 +178,24 @@
       "WPF-WORKSPACEARC01": true,
       "X01-VERIFIER-ADMISSION-RESULT01": true
     }
+  },
+  "mature04CanonicalRoute": {
+    "observedAt": "2026-10-08T00:45:34.111Z",
+    "taskId": "WPF-MATURE-04",
+    "worktreeName": "context-transparency",
+    "branch": "codex/context-transparency",
+    "planDir": "plans/wpf-mature-04-context-transparency",
+    "evidenceDir": "docs/evidence/wpf-mature-04",
+    "owner": "architecture_read",
+    "coLead": "Mika",
+    "head": "5876d27734c20512bb7c29f98b5971acc9fa98d8",
+    "sourceStatusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
+    "webChildTodo": "WPF-MATURE-04-05",
+    "rule": "Web evidenceprogress is not a second authoritative status; no duplicate childregistration."
+  },
+  "center213Candidate": {
+    "main": "bc7fbcd2d",
+    "state": "ACCEPTED_REGISTRY_PENDING_SAFE_RELOAD_ACTUAL_RECEIPT",
+    "rule": "Do notinferdeployment frommain; OriginalsoleD05writer."
   }
 }

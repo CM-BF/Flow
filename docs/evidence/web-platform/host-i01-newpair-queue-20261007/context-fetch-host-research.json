@@ -1,0 +1,33 @@
+{
+  "kind": "read-only research; no product import or execution",
+  "observedAt": "2026-10-08T00:23:57.977303+00:00",
+  "runtime": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "finding": "The fixed Node v24.20.0 fetch implementation deletes the caller-provided Host before HTTP network fetch.",
+  "primarySource": {
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.20.0/deps/undici/src/lib/web/fetch/index.js",
+    "line": 1399,
+    "exactCode": "httpRequest.headersList.delete('host', true)"
+  },
+  "affectedPath": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "fixture": "apps/web/test/context-history-fixture.ts",
+    "authentication": "apps/server/src/browser-session/index.ts:51-60",
+    "explanation": "The fixture targets the private center port while browser-session requires request protocol plus Host to match its public cookieOrigin. Adding real Origin and Sec-Fetch-Site alone does not preserve the public Host under fetch."
+  },
+  "fixObserved": {
+    "commit": "c7f3933c1cd815a539192823628847ac5ca6123e",
+    "transport": "Existing node:http request with explicit public Host, incoming Cookie/Origin/Sec-Fetch-Site, agent:false, connection:close, original abort signal",
+    "responseBoundBytes": 8192,
+    "cleanup": "Auth request participates in existing upstream set and downstream-close cleanup. Public session schema and server origin checks remain unchanged."
+  },
+  "evidenceLimits": [
+    "This artifact proves the fixed fetch implementation behavior and reads the fixture/authentication code; root did not run a network reproduction.",
+    "The previous two failing actuals lacked auth-status diagnostics, so the old captured 500 alone does not prove its complete dynamic causal chain.",
+    "Initial attempt3 context-browser.json reports 8/8 with native transport; full final result and resource return are owner deliverables and require separate review."
+  ],
+  "cleanCodeReview": {
+    "scope": "Auth fixture transport change",
+    "findings": "Reuses the existing transport/lifecycle rather than adding a second abstraction. Diagnostics are constrained to stage, whitelisted error type and auth status; no headers/body/token logging.",
+    "remaining": "End-to-end result fidelity and complete cleanup to be reviewed on the final sealed owner packet."
+  }
+}

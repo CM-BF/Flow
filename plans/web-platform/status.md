@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:14:50.718Z；网页v4已发布；工作区导航高度实际修复、材料夹具继续窄修；上下文已选连续验收，TUI READY按后继排队。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:46:15.329Z；网页v4已发布；Context历史面板8/8和双主题图限定批准已封存；Arc三轮2/4失败完整归还；K01唯一下一实际选择。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,9 +22,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 个人服务已恢复，新网页v4已发布。工作区导航与三栏读取本轮通过，早图灰空白已实际消除；材料Send仍阻塞。上下文closure修复已审，正进入连续有界挂载验收。 |
-| 下一可用交付 | 实际验收已审工作区CSS和材料修正，再接上下文补齐供给后的真实挂载；VAR五领域数据库例已通过且归还，原owner做结果独审和受控接收。 |
-| 当前阻塞 | ACTIVE: 工作区桌面导航撑高与材料前置失败、上下文固定供给缺项，均已由原作者处理；完整界面与工作区组合未验。真实任务领取未观察，网页发布已完成。 |
+| 当前产出 | 新版网页v4已发布。Context历史面板8组与双390图限定批准并8819封存，Mika唯一父05已接；Arc桌面导航撑高已修、布局与三栏读通过，材料附件hover仍阻完整旅程。VAR/CENTER26叶已main728受控接收，固定部署不变。 |
+| 下一可用交付 | K01按已审固定150秒查询诊断窗口执行；Arc三轮完整结果只做一次统一审查，Context随后受控集成及Arc组合仍开放。 |
+| 当前阻塞 | ACTIVE: Arc材料附件hover/后续完整持久化和最终双主题尚未通过；Context与Arc组合及真实producer/current capacity仍未验。个人服务恢复与新版网页发布已完成，不再作为等待前置。 |
 | 需用户决定 | NONE |
 | 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)给出每次选择、真实START/RETURN、完整floor与单独历史gate；实时占用以该原件为准，准备包不表示已运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -43,7 +43,7 @@
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验，原始receipt保留；[已释放/从未领取的派生显示验收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)沿原D04/D01后继，不撤销原限定通过；[U14/TIMING02时间首屏易读后继](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-followup.json)沿D01排队，原已审Timing不回滚 |
-| WPF-001-09 | in-progress | d01_owner | MATURE04-05模块和ed5薄接线strict/12binding已限定独审、9553ms CLOSED/959封存，旧两红/HOLD保持。25d7v3 exact8仅准备mounted候选；Arc组合需修同名currentGroups包含隐藏workspace的授权语义并实测撤销/迟到，见[四Git输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-context-composition-research.json)。当前两支独立审批不代组合，父Mika唯一CT01–09仍开放。 |
+| WPF-001-09 | in-progress | d01_owner | MATURE04-05 历史面板8819真实8组及双390图已a630限定独审、三轮43817ms CLOSED，唯一父Mika5876已接；Web未main，Arc组合、真实producer/current capacity与CT01–09仍开放。currentGroups/visibleGroups组合边界见[固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-arc-visible-view-composition.json)。 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |

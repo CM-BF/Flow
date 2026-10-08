@@ -1,7 +1,8 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-08T00:15:10.525Z：Context 第一轮00:13:54.982729实际START，00:14:10.585130终态失败1/8、0PNG、15603ms；精确RETURN待回，仍唯一actual holder。新连续段总270s/3轮上界不变，清理确认后才可同范围修复复测。Arc当前只source/local窄修，TUI及K01未授。完整floor12,438,863,872B，原旧失败和已消费gate不改。**
+**即时调度 2026-10-08T00:44:49.357Z：Arc三轮59595ms已CLOSED、00:42:49.410214完整RETURN，最新2/4、早图1/最终0，只有统一归档尾。唯一NEXT K01 `K01-QUERY-INTEGRATED-20261008-ONCE`，latest 2026-10-08T00:48:49.357Z、完整floor 13,641,580,544B，原150s/19PG+16余量、单次外置10s只读余量预检；此刻未START。旧两次失败/KEEP与DB128MiB非硬峰值边界保留，新增actual276824064B+独立Git结果尾2MiB已计一次。**
 
+**Original D05 精确来源：** taskId `WPF-MATURE-04` / worktree `context-transparency` / branch `codex/context-transparency` / planDir `plans/wpf-mature-04-context-transparency` / evidenceDir `docs/evidence/wpf-mature-04`；唯一owner architecture_read/Mika，父HEAD5876d277已00:38:18 STOP。Web只是父TODO `WPF-MATURE-04-05`，`web-context-history` 无plans和独立status，禁止重复登记。
 **历史 Context 紧前修正 2026-10-07T23:41:56.064Z：** 首次只读precheck误比D04 `ACTIVE`/实际 `active`，0业务/PG/namespace/gate/env。经理已明确允许同一未消费选择内仅修两处真实schema字面值（本claim与其他active冲突筛选），原STOP保留，fixed parent/capture/product不变；一次same-call fresh接续，原floor/latest23:45:13.079不变，非自动runtime重试。
 **GDEP同ID实际收口：** 原四产品叶及直接fixture已main fe26cc936接收，owner最终d364已STOP/完成；f244v3仅保ownplan/evidence2范围，四产品叶原子移出。D05正确source对中间21e820ad读回200/clean/无问题，最终d364未重probe。FLOW原T04同ID不再pending未领，不重复派工。
 **个人准入来源：** 最终548490/00dcd已独审通过，准备基线16,913,137,664B加本次512MiB+2MiB共538,968,064B，形成已消费17,452,105,728B；live1GiB保护不另重复计。22:15:59.699选择、22:17:23.713320实际启动，历史准备/gate不改。
@@ -18,7 +19,7 @@
 
 **未来增长对账：** 原旧cd27/2515未来build峰值已各按固定无writer事实分类，residual仍8,806,203,392 UNKNOWN；当前精确组合见双current，旧frozen gates保留。Arc普通4MiB及779发布538,968,064B已据各作者最终STOP前向关闭，KEEP不删。个人R2旧538MiB、两旧ordinary各9,568,256B及04未知4MiB仍保守。
 
-**Original 单叶写权交接请求：** Mika00:05:28 fresh仍95fv8 active，现只有REQUEST；X01-RUNTIME后继仅需runtime/config/tests，已审client/execution不再重做。请原95fv8 assignment owner对 `apps/runner/src/runtime.ts` 立即给具体remaining-write/解除条件，或STOP→原version原子amend只移除此literal并回receipt；后继凭真实receipt再新WT/freshclaim。此写权交接独立于已完成779发布/部署，不阻当前Web验收；闲worker不能自行受控main接收，须Original明确唯一integration权责。
+**Original 单叶交权已完成：** 原95fv8→v9于00:14:48.809原子只移出runtime.ts，永久STOP；Mika00:17:19 freshD04与receipt核符。当前未有新runtime writer，原申请8MiB sparse源段须VAR main实际回执、PROCESS两配置叶顺序amend与新freshclaim；不再要求Original重复确认已解除的runtime阻点。
 
 **个人恢复事实：** e15/880060构建、cold三角色初始化、C4四报告均通过；首次partialFAIL与未写rebind保历史。后继R2六phase全成功，23:07:45.970561控制RETURN、accepting24及三健康role持久保留；779于23:35发布v4、23:36:06.257控制RETURN并独审通过。main接收与固定部署分开，不重放旧导入或把未观察actualClaim写成通过。
 

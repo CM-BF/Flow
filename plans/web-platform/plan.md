@@ -659,3 +659,13 @@ MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范�
 ### OPS16 本轮连续段实际执行（2026-10-08）
 
 00:12:46.922 实际一次派出 Context25min/320MiB、最多3次90s浏览器累计270s，以及Arc35min/384MiB同范围连续段（运行窗口顺序交接，源检查可并行）。每段最多4个相关局部child20s/累计60s，含清理；旧6352/20654ms等各段均CLOSED，旧余量不转。每个source/result固定记录，已定位普通fixture/CSS/窄产品错误可直接修复与相关复测，末尾一次独审；权限/归属/cleanup/验收含义变化才审变化面。真实START/terminal/RETURN与交接历时保留在原current/owner原件，不把准备或等待冒运行。
+
+OPS16 后继沿原Q01/GDEP支持层：现PG测试import历史evidence fixture，准备绑专名PG_OPEN/旧HEAD/window/root/≤10s启动，普通Vitest筛选不能替代准入。下个合法改动让稳定PG支持层接明确run context，资源准入留caller，复用markedDB生命周期；Q01 listen/boss与GDEP SQL保各自职责，不造泛化框架、不新task、不重开已绿2/8例。X01 runtime后继8MiB仅为预算可行研究（no-checkout及本WT精确non-cone供给，含自身index双副本/objects/TMP），须原runtime/config真实交权及VAR main后fresh重算；不改共享gitconfig或安装，当前未授源段。
+
+原WPF-001-09 / MATURE04-05 已完成本次独立历史面板8组及390双主题限定验收；当前容量/producer完整观测/Arc组合与pending revoke仍开放。长model ID在窄屏重复占约8行属非阻塞信息紧凑度后继，沿[Mika唯一父计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)记录，不另建task或复制CT矩阵。
+OPS16另有只读helper风险：conversation.fixture async经conversation-stream-integration wrapper可能漏return Promise，外层workspace-layout catch因而不能接拒绝；未证为本轮失败根因，原helper不在Arc exact18时不越权修改，待正常原owner范围处理，不重复全套验收。
+
+本次Context连续段[一次限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-continuous-acceptance-review.json)确认末轮8/8+双主题390图，前两轮失败及旧6352ms保留；固定[Host机制研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-fetch-host-research.json)仅作为fixture修复依据。受控Arc组合沿[实际visible-view接缝证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-arc-visible-view-composition.json)：Arc currentGroups含隐藏workspace，reader授权应消费visibleGroups并保Thread visible/session lifecycle；既有binding.visible是防线，不冒现泄露。heldhistory/detail、同viewtask替换、在途撤权仍原CT后继，不阻本独立小片接收。
+RELEASE01-11已由main2dbc受控接收，原owner69d0203 metadata收口、claimb4d7v2仅保2个records目录，两harness叶交回；RELEASE01-10与整体仍OPEN，网页779/v4实际发布引用Original独立回执，不重建或重验4App。
+
+原 TUI01F-04 接续只读研究见[未决 final 事件](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/tui-r2-uncertain-final-peer-research.json)。B exact attempt 的 seq2 assistant-final 证明 barrier 已释放并进入投递链；HTTP拒绝、ACK丢失或重试未结尚未知，原owner限定诊断，不延长8秒断言、不把部分链路通过改成整体PASS。该记录仅既有跨lead接收桥，未派新执行者或清理者。
