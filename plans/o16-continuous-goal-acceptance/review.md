@@ -89,3 +89,7 @@ source `c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c`；[唯一manifest](../../docs/
 ## 2026-10-08T01:17:13.198229+00:00 HOME recipe已审，薄实际caller待delta独审
 
 assignment_review经Lead确认 c5fc960fc/b9b7f9ef8 APPROVED_LIMITED_HOME_FACTOR_RECIPE_PREPARATION，0 P1/P2；13绑定42506B及原13消费者限定结果保持，未扩为认证执行批准。本轮 `8ab064493edc42408e219ac058d0eb42e726baf6` 与 [execution-manifest](../../docs/evidence/o16/auth-home-factor-candidate/execution-manifest.json)仅新薄caller/20pin装配/8例直接纯消费者，1child170ms196B/组absent/双EOF/exact空scratchremoved。旧策略源零改；同次D04 fresh检查由operator留receipt，不能以CLAIM字面量代替；没有actualgrant或native调用。作者未自批本delta，等待Lead独立审查。
+
+## 2026-10-08T01:19:13.099957+00:00 薄实际入口限定独审已通过
+
+独立 reviewer Execution Lead 核 source `8ab064493edc42408e219ac058d0eb42e726baf6`、delivery `da1a74a30abe22befc6fc17ace0784eb4c8f48e2`，结论 APPROVED_LIMITED_HOME_FACTOR_ACTUAL_CALLER_AND_8_DIRECT_RESULTS，0 P1/P2；20执行pins、8绑定manifest778a2193、8/8/170ms/196B及原EPERM→absent事实吻合。批准仅公开状态观察准备，不是实际认证成功或query资格；共享正常初始化/刷新写不受私有8MiB保证。原13及旧FAIL/KEEP未改。实际需权威O16HomeFactorGrant及同次fresh核对，尚未运行。

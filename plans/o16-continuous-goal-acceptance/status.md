@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:17:13.198229+00:00 |
+| 最近更新 | 2026-10-08T01:19:13.099957+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,7 +15,7 @@
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新caller 8不同/8通过，1child/170ms/196B、组absent/双EOF/exact空scratchremoved；初EPERM观察保留。原13未重跑，原Node passed:null保留；0native/PG/provider/个人读取。 |
-| Review | c5fc/b9b7 HOME recipe已获 APPROVED_LIMITED_HOME_FACTOR_RECIPE_PREPARATION，0 P1/P2；8ab薄caller与新局部结果待Lead一次delta独审。 |
+| Review | APPROVED_LIMITED_HOME_FACTOR_ACTUAL_CALLER_AND_8_DIRECT_RESULTS，Lead独审 source8ab064493/deliveryda1a74a30，0 P1/P2；仅公开auth status准备，无query授权。 |
 | 实现目标 | 8ab064493edc42408e219ac058d0eb42e726baf6 |
 | 实现范围 | docs/evidence/o16/auth-home-factor-candidate/run.py, run_test.py, execution-preparation.json, execution-interface.md（原三scope内实验caller） |
 | 已集成main状态 | 诊断49d main fb647700；R3失败main f68dbb71；auth f85a main62e9a839；调用链340025四文档已main064eb27fb473f7c6c8995510c8828d922fb35ab9，当前只核回执无重测。 |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | HOME 对照的有限双次入口已完成本地检查，正常刷新及未知结果的边界已明确。 |
-| 下一可用交付 | 审查一次性调用入口与固定输入，然后按正式窗口观察两次公开认证状态；目前尚未运行。 |
-| 当前阻塞 | ACTIVE: 薄入口等待窄范围独审和正式认证观察窗口；原生规划失败原因仍未知。 |
+| 当前产出 | HOME 对照入口与本地检查已通过独立审查，保留原报告缺口和未知状态。 |
+| 下一可用交付 | 在正式选中的短窗口内观察两次公开认证状态，核对进程收尾并保存四项安全字段。 |
+| 当前阻塞 | ACTIVE: 等待唯一资源账本明确选择认证观察窗口；当前没有实际运行或待启动进程。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -67,7 +67,9 @@
 | O16-W14 | 2026-10-07T11:13:59.555Z | OPEN | 验证失败 | 第三次SDK报告authentication_failed，无成功proposal；额度耗尽，只封结果/限定只读定位 | native-plan-20261007-r3/result-analysis.json |
 | O16-W15 | 2026-10-08T01:03:01.782127+00:00 | 2026-10-08T01:15:29.016477+00:00 | 审查与实际装配 | HOME纯策略/源码边界已固定；等待限定独审及明确实际双次期限/共享认证写边界，当前没有actual holder | auth-home-factor-candidate/manifest.json、Lead本段派工 |
 
-| O16-W16 | 2026-10-08T01:17:13.198229+00:00 | OPEN | 审查与窗口 | 双次薄入口已完成直接检查，等待delta独审与正式实际窗口；无holder/无pending launch | auth-home-factor-candidate/execution-manifest.json |
+| O16-W16 | 2026-10-08T01:17:13.198229+00:00 | 2026-10-08T01:19:13.099957+00:00 | 审查与窗口 | 双次薄入口已完成直接检查，等待delta独审与正式实际窗口；无holder/无pending launch | auth-home-factor-candidate/execution-manifest.json |
+
+| O16-W17 | 2026-10-08T01:19:13.099957+00:00 | OPEN | 资源 | 薄入口已审；等待匹配O16HomeFactorGrant与同次fresh身份，尚无actual holder | Lead限定独审与execution-manifest.json |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -144,3 +146,5 @@
 2026-10-08T01:15:29.016477+00:00：在原55c4 v1 exact3 fresh active、b9b7 fixed上续接薄A/B caller准备。复用已审环境/解释策略、原白名单及OPS14，正常同账户初始化写已在授权内，不能套用private8MiB为共享HOME上限。当前仅源码/自有合成检查准备，0native/PG/provider/个人读取；续段最多2短child/累计30s/tmp8MiB/raw128KiB，真实检查另记，实际auth窗口未开。
 
 2026-10-08T01:17:13.198229+00:00：薄caller source 8ab064493edc42408e219ac058d0eb42e726baf6固定，实际局部起点2026-10-08T01:16:02.192754+00:00、RETURN 2026-10-08T01:16:02.391794+00:00；[单份delta](../../docs/evidence/o16/auth-home-factor-candidate/execution-manifest.json)8绑定/8直接例，1child170ms196B，原始initialEPERM及最终两次absent分别保留。独立HOME recipe批准已收，不把批准延伸至actual；45s整体/每native10+3s/内存64KiB及128KiB安全记录，旧raw/KEEP不动。当前execution-grant与actualnamespace未创建，0native/query/正常HOME读取；等待Lead delta独审/资源协调，不驻留工程child。
+
+2026-10-08T01:19:13.099957+00:00：Lead独立全文审查8ab064493/deliveryda1a74a30，APPROVED_LIMITED_HOME_FACTOR_ACTUAL_CALLER_AND_8_DIRECT_RESULTS、0 P1/P2；20pins/8bindings及8/8原件核同，原13检查/initialEPERM保留。此时间为owner收到并记录批准，不冒独审起止。仅公开auth status准备批准，0query/凭据正文，正常同账户native初始化/必要刷新不冒private8MiB覆盖。当前actual grant/namespace均未创建，唯一operator等待正式45s窗口后同次freshclaim/head/env/pins；源码停止，禁止自动重试。
