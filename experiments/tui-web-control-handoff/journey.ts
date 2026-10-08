@@ -17,7 +17,7 @@ const R01 = '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retain
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const BOUNDS = Object.freeze({ workMs: 90_000, totalMs: 150_000, rawBytes: 4 * 1024 ** 2,
   privateBytes: 16 * 1024 ** 2, reserveBytes: 1024 ** 3, startBytes: 1024 ** 3 + 128 * 1024 ** 2 });
-const OWN = ['apps/tui/src/task-controls/fixture.ts', 'experiments/tui-web-control-handoff/journey.ts',
+const OWN = ['apps/tui/src/task-controls/fixture.ts', 'apps/tui/src/task-controls/fixture-process.ts', 'experiments/tui-web-control-handoff/journey.ts',
   'experiments/tui-web-control-handoff/preview.ts', 'experiments/tui-web-control-handoff/terminal.py'];
 const load = (root: string, name: string) => import(pathToFileURL(join(root, name)).href);
 
@@ -144,7 +144,7 @@ async function startTerminal(fixture: CancelJourney, origin: string, watchdog: {
       TSX_DISABLE_CACHE: '1', TUI_TEST_NODE: process.execPath, TUI_TEST_CONVERSATION: connection.conversationId } });
   let group: ReturnType<CancelJourney['registerHandoffGroup']> | undefined;
   const terminal = observeTerminal(child, async () => group ? group.stop() : { stopped: child.pid === undefined }, [connection.token]);
-  assert.ok(child.pid); group = fixture.registerHandoffGroup(child.pid);
+  assert.ok(child.pid); group = fixture.registerHandoffGroup(child);
   await watchdog.register([child.pid]); return terminal;
 }
 
@@ -155,7 +155,7 @@ async function startBrowser(fixture: CancelJourney, watchdog: { register: (group
   const child = spawn(CHROME, ['--remote-debugging-port=0', '--user-data-dir=' + directory, '--no-first-run', '--no-default-browser-check',
     '--disable-background-networking', '--disable-component-update', '--disable-sync', '--disable-default-apps', 'about:blank'],
     { detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: environment });
-  assert.ok(child.pid); const group = fixture.registerHandoffGroup(child.pid); let bytes = 0, failed = false;
+  assert.ok(child.pid); const group = fixture.registerHandoffGroup(child); let bytes = 0, failed = false;
   child.on('error', () => { failed = true; });
   for (const stream of [child.stdout, child.stderr]) stream.on('data', (chunk: Buffer) => {
     bytes += chunk.length; if (bytes > 65536) { failed = true; void group.stop().catch(() => {}); }
