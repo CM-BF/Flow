@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-08T03:07:30.494233+00:00",
+  "scope": "metadata handoff only; all retained scopes STOP after seal",
+  "firstWrite": "2026-10-08T03:07:24.689365+00:00",
+  "deadline": "2026-10-08T03:15:24.689365+00:00",
+  "indexAtomicCopyBeforeBytes": 2256568,
+  "recordsObjectsAdminReserveBytes": 524288,
+  "indexGrowthReserveBytes": 32768,
+  "conservativeUpperBytes": 2813624,
+  "limitBytes": 3145728,
+  "actualPeak": "NOT_OBSERVED",
+  "noProductChange": true,
+  "fixedIntakeUnchanged": true,
+  "noEngineeringChild": true,
+  "sourceStop": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx"
+  ],
+  "claimAfter": 2,
+  "scopeCountAfter": 7
+}

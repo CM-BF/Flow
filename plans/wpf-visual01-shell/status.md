@@ -3,14 +3,14 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-08T02:48:36.659Z |
+| 最近更新 | 2026-10-08T03:07:24.689Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays |
 | Branch | codex/web-shared-overlays |
 | 工作基线 / HEAD | 3c9345df4aec85a37e8a2a155e079db260d515b1 / 当前HEAD由Git聚合 |
-| 工作树dirty状态 | 六源码未改；本次metadata提交后exact8 STOP，实际clean/remote由Git核验 |
+| 工作树dirty状态 | 六源码未改；Picker叶已永久STOP/移出；本次metadata提交后余exact7 STOP，实际clean/remote由Git核验 |
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -27,7 +27,7 @@
 | 检查状态 | PASSED 7c727306535ebdfb5e07d8bce5f9023b57daa72e；overlay2组/5PNG及独立目视已通过；原六behavior/类型/Recovery限定通过保持，首FAIL原件保留；非单轮8/8 |
 | 已集成main状态 / HEAD | 新共享浮层 NOT_INTEGRATED；原 shell a8b2b22 已 INTEGRATED 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
 | Review | APPROVED 7c727306535ebdfb5e07d8bce5f9023b57daa72e；[review.md](review.md)；986f固定两overlay实际/五图与历史六行为限定组合接受，main待接收 |
-| D04 claim | acce2727-f3c0-433d-9b06-b802eefb32cb v1 active / exact8，[receipt](../../docs/evidence/wpf-visual01/shared-overlays/take-receipt.json) |
+| D04 claim | acce2727-f3c0-433d-9b06-b802eefb32cb v2 active / exact7，[receipt](../../docs/evidence/wpf-visual01/shared-overlays/take-receipt.json) |
 | 架构影响 | 展示布局与组件私有 disclosure；无新状态权威、契约或服务节点 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -108,3 +108,7 @@ START 2026-10-08T02:43:45.067034Z，run visual-overlay-20261008-a602532d，执�
 [本次唯一原件索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/index.json)保独立两组与五图。新增实际没有注入历史六组；[986f最终独审](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/root-final-review.json)已亲看五图并接受限定组合，0blocking。
 
 本批只归档固定结果/独审与主线接收清单；正常push clean后全8scope STOP，claim保留，0child/0待launch。任务整体完成时间仍NOT_COMPLETED；新共享浮层main与部署待既有集成链，不用旧shell接收记录替代。当前overlay滚动条已观察，classic OS模式与全App/真实中心准入不在本次通过范围。
+
+## Versioned profile UI leaf handoff
+
+2026-10-08T03:07:24.765Z: apps/web/src/execution-profiles/ExecutionProfilePicker.tsx permanently STOP and removed by atomic partial-amend v1→v2; 7 other scopes remain active but STOP. Product source and fixed intake/review unchanged. Receiver acquires its own legal scope separately; no whole-task completion or release. [Committed receipt](../../docs/evidence/wpf-visual01/shared-overlays/versioned-profile-picker-handoff-20261008/receipt.json).

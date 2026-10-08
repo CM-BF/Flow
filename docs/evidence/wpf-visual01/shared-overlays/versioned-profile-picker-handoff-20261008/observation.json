@@ -1,0 +1,52 @@
+{
+  "firstWrite": "2026-10-08T03:07:24.689365+00:00",
+  "deadline": "2026-10-08T03:15:24.689365+00:00",
+  "headBefore": "c6050013939584c2548b17d9a995f85072ff42cc",
+  "branch": "codex/web-shared-overlays",
+  "claimBefore": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-08T03:07:24.672Z",
+  "conflicts": [],
+  "indexAtomicCopyBytes": 2256568,
+  "recordsObjectsAdminCapBytes": 524288,
+  "indexGrowthReserveBytes": 32768,
+  "totalCapBytes": 3145728,
+  "permanentSourceStop": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx"
+  ],
+  "fixedLeaf": {
+    "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "bytes": 27940,
+    "sha256": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1"
+  },
+  "fixedIntake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/main-intake.json",
+    "sha256": "de7d842964cdbee7d8c32d62d31f6a838eb040be41a86b6332b502b8dc2fa57b"
+  },
+  "productsChanged": false
+}
