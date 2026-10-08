@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:36:06.000Z |
+| 最近更新 | 2026-10-08T01:48:09.597Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,7 +15,7 @@
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新环境6不同/6通过、815ms/1924B、1组absent/dualEOF/空scratch同身份removed；真实adapter/decorator仅注入1失败，0真实SDK/native/auth/PG/个人。旧13/8未重跑。 |
-| Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例获assignment_review的APPROVED_LIMITED_NORMAL_HOME_POLICY_AND_DIRECT_RESULTS，0P1/P2，已main2b52b2355。 |
+| Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例限定批准并main2b52b2355；本次实际planner成功与归还结果待独立审查，不冒完整目标通过。 |
 | 实现目标 | e5c7fd9d664de11ab853c55e0a01577c12530555 |
 | 实现范围 | experiments/continuous-goal-acceptance/native-environment.mjs, experiments/continuous-goal-acceptance/native-environment-fixture.mjs, experiments/continuous-goal-acceptance/native-normal-home.test.mjs |
 | 已集成main状态 | main2b52b2355精确接收正常HOME实验3源与Interface/candidate；唯一回执docs/evidence/i02/o16-normal-home-policy-intake.json时间2026-10-08T01:32:11.573Z。owner于01:34:40Z收录，0重测；历史失败/认证源码限定接收保持。 |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 规划器的正常账户 HOME 环境修正已通过独立审查并合入主线，私有目录、权限和旧许可拒绝检查保留。 |
-| 下一可用交付 | 环境修正片段已交付；一次新规划预算已获批准，待实际资源窗口与紧前核验后运行。 |
-| 当前阻塞 | ACTIVE: 等待本次规划的实际资源窗口；新单次预算已获批准，尚未创建运行reservation或启动调用。 |
+| 当前产出 | 新一次真实规划成功形成两步任务提案，已暂停并归还运行资源；尚未应用或执行子任务。 |
+| 下一可用交付 | 审查本次实际提案与运行结果；提案确认及子任务执行仍需明确后继授权。 |
+| 当前阻塞 | ACTIVE: 实际规划结果待独立审查；本次单次额度已消费，未获确认或子任务执行授权。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN；新1次预算已授权未消费，实际窗口待选。同2.1.290 HOME A/B结果限定独审/main214319132，正常HOME实验策略及6直接例限定独审/main2b52b2355；均不证明真实规划成功或R3根因。原[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)、FAIL/KEEP和children未授权不变 |
+| O16-06 | in-progress | native_center_owner | 本次1次真实planner成功、累计SDK4；SDK估价USD0.0492524与账户费用UNKNOWN分开。1proposal/0apply/0child、15min pause，整体验收仍未完成。同2.1.290 HOME A/B结果限定独审/main214319132，正常HOME实验策略及6直接例限定独审/main2b52b2355；均不证明真实规划成功或R3根因。原[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)、FAIL/KEEP和children未授权不变 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -58,13 +58,13 @@
 | O16-W05 | 2026-10-07T09:23:10.054477Z | 2026-10-07T09:27:34.488514Z | 独立审查 | 固定分阶段实现与原始局部证据已通过限定独审 | native-stages/independent-review.json |
 | O16-W06 | 2026-10-07T10:10:59.813650Z | 2026-10-07T10:16:07.879Z | 独立审查 | 环境delta审查，非资源等待 | native-environment-implementation/independent-review.json |
 | O16-W07 | 2026-10-07T10:18:33.342Z | 2026-10-07T10:19:10.652Z | 启动核对 | 新许可/固定输入/连接余量预检，非query耗时 | native-plan-20261007-1018/operation-input.json与operator reservation |
-| O16-W08 | 2026-10-07T10:37:40.706472Z | 2026-10-07T10:41:31.796604Z | 用户 | 修复独审通过后候选准备；原费用许可已消费，等待新GO预算；候选准备可并行，结束为本地收录新授权时刻，不冒GO决策发生时刻 | 独审原件与本次candidate |
+| O16-W08 | 2026-10-07T10:37:40.706472Z | 2026-10-07T10:41:31.796604Z | 其他 | 修复独审通过后候选准备；原费用许可已消费，等待GO内部预算审查（非用户未答复）；候选准备可并行，结束为本地收录新授权时刻，不冒GO决策发生时刻 | 独审原件与本次candidate |
 | O16-W09 | 2026-10-07T10:41:31.796604Z | 2026-10-07T10:47:07.022356Z | 资源 | SVC已实际归还，Lead已明确本次窗口；现fresh启动核对，尚未query | native-plan-r2-candidate/candidate.json与native-plan-20261007-r2/authorization-preparation.json |
 | O16-W10 | 2026-10-07T10:47:07.022356Z | 2026-10-07T10:47:46.949Z | 其他 | 一次fresh输入/资源/连接容量准入，非query或纯资源等待 | R2 operation-input/preflight/operator reservation |
-| O16-W11 | 2026-10-07T10:48:13.149Z | OPEN | 验证失败 | 规划isError且无成功proposal；原缺失正文不能补造；第三次条件额度另列，不把未形成提案的原失败改绿 | R2 plan/resources/result-analysis |
+| O16-W11 | 2026-10-07T10:48:13.149Z | UNKNOWN | 验证失败 | 原R2 FAIL永久保留，不是当前OPEN等待；已知10:59:09.255Z转入诊断实施，精确等待结束未记录，不拿RETURN/commit/今日审计时间补填 | R2 plan/resources/result-analysis与本status原10:59转段事件 |
 | O16-W12 | 2026-10-07T11:01:55.642771Z | 2026-10-07T11:05:58.578682Z | 审查 | 诊断固定源码与原局部证据限定独审通过；非资源等待 | private-error-diagnostics/independent-review.json |
 | O16-W13 | 2026-10-07T11:10:14.122Z | 2026-10-07T11:13:11.255832Z | 资源 | 第三次条件额度与候选已固定；等待Lead实际窗口及fresh准入，不预占 | native-plan-r3-candidate/candidate.json |
-| O16-W14 | 2026-10-07T11:13:59.555Z | OPEN | 验证失败 | 第三次SDK报告authentication_failed，无成功proposal；额度耗尽，只封结果/限定只读定位 | native-plan-20261007-r3/result-analysis.json |
+| O16-W14 | 2026-10-07T11:13:59.555Z | UNKNOWN | 验证失败 | 原R3 FAIL永久保留，不是当前OPEN等待；已知11:25:52.629Z已有同runtime零query诊断结果，精确转段/等待结束未知，不用后置时间代填 | native-plan-20261007-r3/result-analysis.json与本status同runtime诊断事件 |
 | O16-W15 | 2026-10-08T01:03:01.782Z | 2026-10-08T01:15:29.016Z | 审查 | HOME纯策略/源码边界已固定；等待限定独审及明确实际双次期限/共享认证写边界，当前没有actual holder | auth-home-factor-candidate/manifest.json、Lead本段派工 |
 
 | O16-W16 | 2026-10-08T01:17:13.198Z | 2026-10-08T01:19:13.099Z | 审查 | 双次薄入口已完成直接检查，等待delta独审与正式实际窗口；无holder/无pending launch | auth-home-factor-candidate/execution-manifest.json |
@@ -74,8 +74,9 @@
 | O16-W18 | 2026-10-08T01:24:18.731Z | 2026-10-08T01:30:57.830Z | 审查 | 已完成两次公开状态观察并归还；等待限定结果独审，不持auth或工程进程 | auth-home-factor-once/result-manifest.json |
 
 | O16-W19 | 2026-10-08T01:30:57.830Z | 2026-10-08T01:34:40.000Z | 审查 | 最小环境与直接消费者已独审/main；结束为owner收录回执时刻，不冒review发生时间 | native-normal-home-candidate/manifest.json、main2b52b2355的I02接收回执 |
-| O16-W20 | 2026-10-08T01:34:40.000Z | 2026-10-08T01:36:06.000Z | 用户 | 新一次planner预算由Lead转达；结束为owner收录时刻，不冒GO决定时间，旧三次不复用 | 本次授权准备记录 |
-| O16-W21 | 2026-10-08T01:36:06.000Z | OPEN | 资源 | 新单次permit已按固定source/env签发；等待D01实际窗口及同次fresh输入/资源，0pending launch | native-plan-normal-home-20261008-once/authorization-preparation.json |
+| O16-W20 | 2026-10-08T01:34:40.000Z | 2026-10-08T01:36:06.000Z | 其他 | GO内部单次预算决定由Lead转达（非用户未答复）；结束为owner收录时刻，不冒GO决定时间，旧三次不复用 | 本次授权准备记录 |
+| O16-W21 | 2026-10-08T01:36:06.000Z | 2026-10-08T01:45:07.705Z | 资源 | D01正式选中并同次fresh后已实际START；结束为原actual-start，不用grant或提交时间代替 | native-plan-normal-home-20261008-once/actual-start.json |
+| O16-W22 | 2026-10-08T01:48:09.597Z | OPEN | 审查 | 成功planner已暂停并精确RETURN，固定本次原件待独立结果审查，无运行holder | native-plan-normal-home-20261008-once/result-manifest.json |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -162,3 +163,5 @@
 2026-10-08T01:30:57.830Z：source e5c7fd9d664de11ab853c55e0a01577c12530555已停止写入，[最小候选](../../docs/evidence/o16/native-normal-home-candidate/candidate.json)绑定source5efa/envfc5e、325源/39aliases及原SDK三文件。实际局部2026-10-08T01:29:27.769Z→2026-10-08T01:29:28.608Z：6/6、815ms/1924B、1组收束/exact空scratchremoved，原errno1观察保留；0native/auth/真实SDKquery/PG/个人，未重复历史检查。实际planner仅HOME选择变更，private工厂原411兼容，原5直接层继续同export无散改；新recipe拒旧permit。requested1query/4turn/SDK$.20/90s及原1proposal0apply0child写明，公开Pro不冒账单/模型资格，第四query仍NOT_GRANTED。实验环境Interface共享写边界改变，已在本Interface记录；生产架构/个人服务未变，D05无需将本实验当产品部署。A/B唯一结果独审main214319132同次收录，历史recordloss/FAIL/KEEP不改。
 
 2026-10-08T01:36:06.000Z：正常HOME最小环境片已独审/main2b52b2355，原入口只读核对完成，未新增wrapper或改目标/profile/tool合同。Lead转达GO新授权O16-GO-PLANNER-NORMAL-HOME-20261008，仅1planner/4turn/SDK$.20/90s、1proposal/0apply/0child；[新授权与permit绑定](../../docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)保留旧candidate NOT_GRANTED历史。当前累计SDK3不变，无reservation、PG分配或实际启动，等待D01资源窗口。此前只读审查结束与当前等待分开，历史任务首次start UNKNOWN不改。
+
+2026-10-08T01:48:09.597Z：本次唯一预算实际2026-10-08T01:45:07.705Z开工、2026-10-08T01:45:32.385Zterminal、2026-10-08T01:46:25.059Z精确RETURN。1selected/1passed、一次SDK/累计4；中心审计1proposal、2node1edge、0apply/0child。SDK报告USD0.0492524仅估价，账户UNKNOWN；[本次结果](../../docs/evidence/o16/native-plan-normal-home-20261008-once/RESULT.md)与manifest保留全部固定来源。5PID/3组fresh ESRCH/双EOF/DBconn[]，DB/private KEEP，pause到2026-10-08T02:00:32.316Z不构成后继许可。旧FAIL等待W11/W14按已知转段关闭为UNKNOWN结束，失败/原件不改；W08/W20仅内部GO决定改其他类别。源码无变化，O16-06与整体仍开放。

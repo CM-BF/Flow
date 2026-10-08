@@ -1,0 +1,137 @@
+{
+  "at": "2026-10-08T01:46:25.059Z",
+  "state": "RUNNING_RESOURCES_RETURNED_SUCCESSFUL_PLANNER_PAUSE_KEEP",
+  "actualStart": "2026-10-08T01:45:07.705Z",
+  "terminalAt": "2026-10-08T01:45:32.385Z",
+  "observations": [
+    {
+      "kind": "pid",
+      "id": 42413,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 42511,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 42580,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 42581,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 47501,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 42511,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 42581,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 47501,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "pendingLaunches": 0,
+  "operatorAndDriverDualEOF": {
+    "operator": true,
+    "driverCloseAwaitedByFixedOperator": true
+  },
+  "database": {
+    "name": "flow_o16_36ebe1bd4f6343d59ba2e93c61882b92",
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytesAtClose": 13376535,
+    "connectionObservationSource": "fixed actual resources.json connectionObservations; no new PG probe",
+    "connections": [],
+    "observedClosedAt": "2026-10-08T01:45:32.290Z",
+    "serverClosed": true,
+    "adminClosed": true,
+    "disposition": "KEEP_PAUSED_NO_DROP"
+  },
+  "private": {
+    "directory": {
+      "path": "/private/tmp/flow-o16-ljRSxz",
+      "dev": 16777234,
+      "ino": 124723126
+    },
+    "sameIdentity": true,
+    "finalMeasuredBytes": 23808,
+    "disposition": "KEEP_PAUSED_NO_DELETE"
+  },
+  "nativeQueryCalls": 1,
+  "historicalSDKCalls": 3,
+  "cumulativeSDKCalls": 4,
+  "childQueries": 0,
+  "applications": 0,
+  "pause": {
+    "closedAt": "2026-10-08T01:45:32.316Z",
+    "reviewUntil": "2026-10-08T02:00:32.316Z",
+    "nextPhaseAuthorized": false,
+    "expiredAction": "refuse-and-retain"
+  },
+  "allEscapedDescendants": "not-proven",
+  "oldResources": "untouched KEEP",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/native-plan-normal-home-20261008-once/actual-start.json",
+      "bytes": 557,
+      "sha256": "ac8e8bc238967accb63283472f38fbab3f44d9e990c6d74adbdcc4051d6f79f4"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-normal-home-20261008-once/outer-tool-receipt.json",
+      "bytes": 562,
+      "sha256": "4676bc86d919c420158a2570d1b4b37510be5eb08261840a097a822a92a29c4c"
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/resources.json",
+      "bytes": 1027,
+      "sha256": "4770b416a29dde0a564c7c8311bf34a700e0603a677f44ef258458a996822c2d"
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/pause.json",
+      "bytes": 1663,
+      "sha256": "a8ee9b78b432c950228f505fc47c347c40148e83baa8fcf44a7780ebeae17603"
+    },
+    {
+      "path": "docs/evidence/o16/operators/native-plan-normal-home-20261008-once/plan/result.json",
+      "bytes": 2763,
+      "sha256": "5ca36d9c92d7f200ba3978fd9298bf0a006039dd7f2ed0ec9d6fa9d270beb4aa"
+    },
+    {
+      "path": "docs/evidence/o16/operators/native-plan-normal-home-20261008-once/plan/supervision.json",
+      "bytes": 471,
+      "sha256": "65738eb336434ee0265b0fdf5d4304116f38c381a195426c1f4039e34402bd22"
+    },
+    {
+      "path": "docs/evidence/o16/operators/native-plan-normal-home-20261008-once/plan/watchdog.json",
+      "bytes": 68,
+      "sha256": "6a3b6ac4a861b1243142c7f547f5603a8de218b29bf096f7a1a01b5ab1b92d72"
+    },
+    {
+      "path": "docs/evidence/o16/operators/native-plan-normal-home-20261008-once/plan/driver.json",
+      "bytes": 58,
+      "sha256": "c274f6bcde3c3ac9484de54e33adeb9d6bd5113cd0a24874560a8051774c088b"
+    }
+  ]
+}

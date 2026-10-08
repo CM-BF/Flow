@@ -113,3 +113,7 @@ assignment_review对固定source `e5c7fd9d664de11ab853c55e0a01577c12530555` / de
 plan入口使用全新标记DB、动态中心端口和自有runtime，resume=false；不读取或接续旧FAIL/KEEP。既有120s工作/30s清理/150s独立监督及15min暂停合同不变，固定最小磁盘guard不替代将来当前完整资源floor与连接准入。静态未发现需新增wrapper或必选参数的缺口；剩余为新预算、permit和当次fresh运行窗口。此次0工程child、0auth/query/PG/个人I/O，无新执行封包或资源探针。
 
 2026-10-08T01:36:06.000Z：上述静态核对后收到Lead转达的GO新1次planner预算，已仅准备新source/env绑定permit；旧candidate及审核结论不改。实际窗口未选、reservation未建，无新query；见同一[授权引用](../../docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)。
+
+## 2026-10-08T01:48:09.597Z 正常HOME真实planner结果待独审
+
+固定执行e4b09/源e5c7；[唯一结果manifest](../../docs/evidence/o16/native-plan-normal-home-20261008-once/result-manifest.json)绑定26项原件/分析、59564B，不复制私有runtime或凭据。本次1真实SDK/累计4、SDKsuccess/3turn、中心1propose/0apply/0child、2node1edge、15min pause；2026-10-08T01:46:25.059Z精确5PID/3group返回与DB/private KEEP分别保留。SDK估价不是账户账单；semanticAcceptance未评估、原三FAIL和旧KEEP不变。作者未自批，不进入confirm/children。请核固定source/env/permit、真实工具与中心audit实际身份、单次消费、pause绑定及原独立监督/连接关闭记录，不重跑模型或探测私有材料。

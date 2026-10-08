@@ -1,0 +1,27 @@
+{
+  "driverPid": 42581,
+  "outcome": "processes-complete",
+  "phase": "work",
+  "samples": 454,
+  "ownedGroups": [
+    {
+      "pgid": 42581,
+      "state": "stopped"
+    },
+    {
+      "pgid": 47501,
+      "state": "stopped"
+    }
+  ],
+  "reason": null,
+  "last": {
+    "freeBytes": 14498680832,
+    "rawBytes": 31253,
+    "runtimeBytes": 23808,
+    "runtimeEntries": 25,
+    "runtimeState": "measured"
+  },
+  "exitCode": 0,
+  "signalCode": null,
+  "elapsedMs": 24238
+}

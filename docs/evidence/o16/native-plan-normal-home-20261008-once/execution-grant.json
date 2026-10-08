@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-08T01:45:07.691Z",
+  "queueAt": "2026-10-08T01:44:57.267Z",
+  "grant": {
+    "logicalId": "O16-GO-PLANNER-NORMAL-HOME-20261008",
+    "state": "SELECTED",
+    "selectedAt": "2026-10-08T01:43:19.616Z",
+    "latestStart": "2026-10-08T01:47:19.616Z",
+    "owner": "native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "claim": {
+      "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "worker": "native_center_owner",
+      "scopeCount": 3
+    },
+    "executionHead": "e4b09cb256d9e914047dc17c084f88e0a9e9d2f5",
+    "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+    "candidateCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+    "preparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json",
+      "bytes": 2538,
+      "sha256": "95029cbc009897e1f6b8da73b98fa5639d7c0596652b789bd48be70640d59d32"
+    },
+    "permit": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/permit.json",
+      "bytes": 912,
+      "sha256": "3866d12ad2e654463fbebb292737e05aa130f789cfd83b46d66edfb89f35857c"
+    },
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "sourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+    "run": "native-plan-normal-home-20261008-once",
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "--plan",
+      "native-plan-normal-home-20261008-once",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/permit.json"
+    ],
+    "requiredEnvironment": {
+      "FLOW_O16_PG_WINDOW": "approved-one-shot"
+    },
+    "model": "claude-sonnet-5-5",
+    "newQueriesAuthorized": 1,
+    "SDKQueriesBeforeStart": 3,
+    "maximumCumulativeAfterEntry": 4,
+    "maxTurns": 4,
+    "SDKBudgetUsd": 0.2,
+    "queryTimeoutMs": 90000,
+    "proposals": 1,
+    "applications": 0,
+    "childQueries": 0,
+    "newNodes": 2,
+    "newEdges": 1,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "pauseAfterSuccessMs": 900000,
+    "minimumFreshFreeBytes": 13847232512,
+    "privateBytes": 8388608,
+    "rawBytes": 2097152,
+    "PGPlanningBytes": 134217728,
+    "PGPlanningBoundary": "Planning only, not hardDB/WAL peak cap; actualpeakUNKNOWN unless observed. Live1GiB fixedoperatorreserve and global reserveOnce sameonce notdoublecounted.",
+    "PG": "1new markedDB; business8+boss3+admin1=12 plus16headroom =>samecallfreshavailable>=28 andpreflightpoolclosed beforeentry",
+    "HTTP": 1,
+    "Chrome": 0,
+    "provider": "Exactly1plannerquery only; no newauthprobe/fallback/retry",
+    "normalAuthenticationWritesAccepted": true,
+    "authBoundary": "Sameaccountnormalinitialization/necessaryrefresh HOME/Keychain writes accepted outsideprivate8MiB; no manualcredentialread/copy/edit/accountswitch or oldKEEPcontact. AllWeb/Mika nativeauthwriters excluded duringactual.",
+    "freshRule": "Soleoperator samecallfullsource/runtime/permit/environment/claimv1exact3/cleanremotee4b09/newrunrootsabsent/goalmaterialprofiletools/PGheadroom+poolclosed/currenttermssum. Admissiontakes maxfrozen/current floor. No publishedpersonalservice/artifactchanges. Record actualSTART then terminal+exactownedRETURN separately; onunknown KEEP noFORCE.",
+    "postSuccess": "Persist15minpause and no nextphase/confirm/children/apply; this grant ends with thisonequery andresourceRETURN. SDKbudget estimate not billingguarantee.",
+    "singleUse": true,
+    "allowRun": true
+  },
+  "authWriters": "Lead confirmed Mika/Web0auth during150s; TUI0auth/PG actualRETURN01:43:46.230Z",
+  "extraTUIFutureBytes": 0
+}

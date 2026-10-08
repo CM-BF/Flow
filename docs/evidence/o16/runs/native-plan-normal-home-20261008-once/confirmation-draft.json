@@ -1,0 +1,29 @@
+{
+  "protocol": "flow.goal-plan-confirmation.v1",
+  "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+  "expectedProjectRevision": 1,
+  "nodes": [
+    {
+      "key": "draft",
+      "executionProfile": {
+        "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+        "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+        "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+      },
+      "externalDependencies": []
+    },
+    {
+      "key": "review",
+      "executionProfile": {
+        "id": "4c6dd8c8-cdf7-45d9-a616-2d6cffdf829b",
+        "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a",
+        "configDigest": "397319955a04d1509d3817b84748724117b1ce43fe07c78847662e362509547d"
+      },
+      "externalDependencies": []
+    }
+  ],
+  "maxAdmissions": 2,
+  "intermediatePolicy": "verified-artifact-within-this-authorization",
+  "expiresAt": "2026-10-08T02:45:32.222Z",
+  "reason": "REPLACE AFTER reviewing actual inputs and the separate child budget. This draft is not owner consent."
+}
