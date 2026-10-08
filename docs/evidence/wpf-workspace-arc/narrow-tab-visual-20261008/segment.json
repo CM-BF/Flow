@@ -1,0 +1,34 @@
+{
+  "firstWrite": "2026-10-08T01:16:56.691798+00:00",
+  "authorizedAt": "2026-10-08T01:15:03.453Z",
+  "deadline": "2026-10-08T01:40:03.453Z",
+  "base": "331d3fdb390b0b403317da8d8cdf0028eae27c19",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 activeexact18",
+  "scope": [
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/test/workspace-layout.browser.ts",
+    "ownrecords"
+  ],
+  "budget": {
+    "totalBytes": 335544320,
+    "scratchBytes": 268435456,
+    "retainedBytes": 67108864,
+    "browser": {
+      "maxAttempts": 2,
+      "perAttemptMs": 90000,
+      "totalMs": 180000,
+      "spentMs": 0,
+      "attempts": []
+    },
+    "local": {
+      "maxChildren": 2,
+      "perChildMs": 15000,
+      "totalMs": 30000,
+      "spentMs": 0
+    }
+  },
+  "cause": "Arc tab shared base flex 0 1 auto/min85/max230 plus actions compresses title; More actions wraps inside29px tab/fixed36px strip. Actual390rootb514 P2.",
+  "design": "Scoped Arc tabs keep nonshrinking readable minwidth, singleline actions/close, horizontaloverflow with automatic keyboardfocus visibility; no hiddenbutton or sharedApp/plugin mutation.",
+  "skills": "Reuse find-skills/brainstorming/assistant-ui/clean-code/codebase-design alreadyread; no install.",
+  "checks": "Only necessary browser assertion affectedtypes ifneeded; CSS doesnottriggergreenrerun."
+}

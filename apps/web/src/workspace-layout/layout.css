@@ -8,7 +8,12 @@
 .flow-arc-panes > [hidden] { display:none; }
 .flow-pane-header { min-width:0; background:var(--background); border-bottom:2px solid transparent; }
 .flow-pane-header.focused { border-bottom-color:var(--ring); }
-.flow-pane-header .flow-tabs { min-width:0; overflow:auto; }
+.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; }
+/* Keep a readable title and every plugin/close control; overflow belongs to the strip. */
+.flow-pane-header .flow-tab { flex:0 0 auto; min-width:16rem; max-width:20rem; }
+.flow-pane-header .flow-tab > [role=tab] { min-width:8rem; }
+.flow-pane-header .flow-tab [data-plugin-slot="chat.tab.actions"] { display:flex; flex:none; align-items:center; white-space:nowrap; }
+.flow-pane-header .flow-tab [data-plugin-slot="chat.tab.actions"] button { min-height:24px; white-space:nowrap; }
 .flow-pane-order { display:flex; justify-content:flex-end; }
 .flow-arc-panes > .flow-tab-body { min-width:0; min-height:0; background:var(--background); }
 .flow-pane-ratios { display:flex; gap:1rem; padding:.2rem .75rem; font-size:.7rem; border-bottom:1px solid var(--border); }

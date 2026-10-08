@@ -74,13 +74,17 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
   try {
     signal.throwIfAborted(); fixture = await startWorkspaceLayoutFixture({ cacheDirectory }); signal.throwIfAborted();
     context = await browser.newContext({ viewport: { width: 1500, height: 960 } }); signal.addEventListener("abort", abort, { once: true });
+    // A real fixture title exercises truncation without changing route/draft identity.
+    const longTitle = "Conversation 4 — retained materials and independent next draft across workspace layouts";
+    fixture.fixture.chats.get("chat-4")!.snapshot.conversation.title = longTitle;
+    const chatTitle = (number: number) => number === 4 ? longTitle : `Conversation ${number}`;
     const page = await context.newPage(); page.setDefaultTimeout(5000);
     const expectedBodies = [1, 2, 3].flatMap(number => [`/api/conversations/chat-${number}/turns/chat-${number}-turn-1/details/chat-${number}-task-1-reply`, `/api/conversations/chat-${number}/queue/chat-${number}-queue`]);
     bodyObserver = observeBodyRequests(page, new URL(fixture.url).origin, expectedBodies);
     const pane = (number: number) => page.locator(`.flow-tab-body[id="panel-conversation:chat-${number}"]`);
     const input = (number: number) => pane(number).getByRole("textbox", { name: "Message input", exact: true });
-    const tab = (number: number) => page.getByRole("tab", { name: `Conversation ${number}`, exact: true });
-    const chooseChat = (number: number) => page.getByRole("navigation", { name: "Conversations", exact: true }).getByRole("button", { name: `Conversation ${number}`, exact: true }).click();
+    const tab = (number: number) => page.getByRole("tab", { name: chatTitle(number), exact: true });
+    const chooseChat = (number: number) => page.getByRole("navigation", { name: "Conversations", exact: true }).getByRole("button", { name: chatTitle(number), exact: true }).click();
     const run = async (name: string, operation: () => Promise<void>) => { signal.throwIfAborted(); bodyObserver!.phase(name); fixture!.setObservationPhase(name); await operation(); signal.throwIfAborted(); result.passed.push(name); };
     await page.goto(fixture.url + "?recovery=1#conversation=chat-1");
     await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
@@ -330,6 +334,39 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await page.getByRole("button", { name: "Hide chat list", exact: true }).click();
       await expect(page.getByRole("complementary", { name: "Chats", exact: true })).not.toBeVisible();
       await expect(input(4)).toBeVisible();
+      const tabStrip = page.getByRole("tablist", { name: "Chat pane 1", exact: true });
+      await expect(tabStrip.getByRole("tab")).toHaveCount(3);
+      const tabIds = await tabStrip.getByRole("tab").evaluateAll(nodes => nodes.map(node => node.id));
+      await tab(4).focus(); await page.keyboard.press("Home");
+      await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeFocused();
+      await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeInViewport({ ratio: 1 });
+      await expect(tab(4)).toHaveAttribute("aria-selected", "true");
+      await page.keyboard.press("End"); await expect(tab(4)).toBeFocused();
+      await expect(tab(4)).toBeInViewport({ ratio: 1 });
+      await expect(input(4)).toHaveValue("Independent B while A prepares");
+      await page.keyboard.press("Tab");
+      const activeTab = tabStrip.locator(".flow-tab").filter({ has: tab(4) });
+      const tabAction = activeTab.getByRole("button", { name: "More actions", exact: true });
+      await expect(tabAction).toBeFocused(); await expect(tabAction).toBeInViewport({ ratio: 1 });
+      await expect(activeTab.getByRole("button", { name: `Close ${longTitle}`, exact: true })).toBeInViewport({ ratio: 1 });
+      const tabGeometry = await tabStrip.locator(".flow-tab").evaluateAll(nodes => nodes.map(node => {
+        const title = node.querySelector<HTMLElement>('[role="tab"]')!;
+        const action = node.querySelector<HTMLElement>('[aria-haspopup="menu"]')!;
+        const strip = node.parentElement!.getBoundingClientRect(), rect = action.getBoundingClientRect();
+        const range = document.createRange(); range.selectNodeContents(action);
+        return { title: title.textContent, titleWidth: title.clientWidth, titleContentWidth: title.scrollWidth,
+          titleWhiteSpace: getComputedStyle(title).whiteSpace, actionWhiteSpace: getComputedStyle(action).whiteSpace,
+          actionLines: range.getClientRects().length, actionHeight: rect.height,
+          clippedVertically: rect.top < strip.top || rect.bottom > strip.bottom };
+      }));
+      for (const item of tabGeometry) {
+        expect(item.titleWidth).toBeGreaterThanOrEqual(128); expect(item.titleWhiteSpace).toBe("nowrap");
+        if (item.title !== longTitle) expect(item.titleContentWidth).toBeLessThanOrEqual(item.titleWidth);
+        expect(item.actionWhiteSpace).toBe("nowrap"); expect(item.actionLines).toBe(1);
+        expect(item.actionHeight).toBeGreaterThanOrEqual(24); expect(item.clippedVertically).toBe(false);
+      }
+      result.observations.narrowTabs = { tabGeometry, keyboard: "Home/End focused offscreen tabs without selecting; Tab reached retained plugin action; close visible", longTitle };
+      await input(4).focus();
       for (const scheme of ["light", "dark"] as const) {
         const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();
         await expect(page.locator("html")).toHaveAttribute("data-theme", scheme);
