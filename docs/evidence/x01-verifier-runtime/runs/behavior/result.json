@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-08T00:39:13.149Z",
+  "supervision": {
+    "pid": 33816,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 2834,
+    "observed_bytes": 10745,
+    "retained_bytes": 10745,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "bytes": 10745,
+    "sha256": "8bf1c5786b196b8aaf3221b3671c95b2f2788fe31f70e4b99bc27edc9584dd28"
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "removed": true,
+    "retained": null,
+    "sampleEmpty": true,
+    "exactAbsenceAt": "2026-10-08T00:39:13.149Z"
+  },
+  "sourceHashes": {
+    "apps/runner/src/runtime.ts": "e6e52187d52d06843651f7892deb24d2359a442f88ab1ecd48d26ebcab61c499",
+    "apps/runner/src/configuration.ts": "bacfa34a02173d6c38748216c9ff4008c41f85d12af8e5f161827bad464e3d67",
+    "apps/runner/src/configuration.test.ts": "951ee792fe4b3cad62a80b5166e747915806d2a5334faa757049bf4f86d69469",
+    "apps/runner/src/verifier-runtime.test.ts": "484d238855cf3aa381bf02a903483b9e4351e1bb368d3996107de34557dbfcae",
+    "apps/runner/src/runtime-initialization.test.ts": "70d43e6d2fc4e8e62706c17bbda9ee34a9592a6b5f905ca38b21f958af1187ac",
+    "apps/runner/src/plugins/runtime.test.ts": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f",
+    "apps/runner/src/admission-journal.test.ts": "71318f982a60de1de6aedd834adb87dd1383565b397d2bb5f4d31a5a06518d74",
+    "apps/runner/src/outbox.test.ts": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a",
+    "docs/evidence/x01-verifier-runtime/run-local.py": "7b0572045ed8861a7c33de6d67239d36d8018818dd6cb4361dcbbe7384f7f432",
+    "docs/evidence/x01-verifier-runtime/tsconfig.json": "303a60db16feddd9e155722f6deea05d30af657f66ff498c6d1b9b658b16d278",
+    "docs/evidence/x01-verifier-runtime/vitest.config.mjs": "dac569b3cdd0f38f6013a96e29b08dbc863642bc31062c8a1690f9ab2df8b094"
+  },
+  "wallBeforePersistence": 2.8801059160614386
+}

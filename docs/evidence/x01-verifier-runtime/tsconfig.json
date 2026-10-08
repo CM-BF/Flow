@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "../../../apps/runner/src/runtime.ts",
+    "../../../apps/runner/src/configuration.ts",
+    "../../../apps/runner/src/configuration.test.ts",
+    "../../../apps/runner/src/verifier-runtime.test.ts",
+    "../../../apps/runner/src/runtime-initialization.test.ts",
+    "../../../apps/runner/src/plugins/runtime.test.ts"
+  ]
+}

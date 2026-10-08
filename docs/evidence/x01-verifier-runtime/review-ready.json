@@ -1,0 +1,18 @@
+{
+  "task": "X01-VERIFIER-RUNTIME01",
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "base": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "manifest": "docs/evidence/x01-verifier-runtime/review-manifest.json",
+  "sha256": "47764e78e726d46836e46eecf94b328addbe784f7bb80bc4af09d0b4185ff5ec",
+  "bindings": 35,
+  "bytes": 226790,
+  "local": "docs/evidence/x01-verifier-runtime/local.json",
+  "interface": "docs/evidence/x01-verifier-runtime/interface.md",
+  "status": "plans/x01-verifier-runtime/status.md",
+  "claim": "42493ff1-d47f-4fea-84cd-2080e6f5f14c v1 ACTIVE6",
+  "state": "SOURCE_AND_LOCAL_READY_FOR_REVIEW",
+  "scope": "Four product/test leaves only. Real runtime with mocked transport/host; actual resource-open rejection in durable replay test. Not PG/worker/T7/main.",
+  "engineeringClosed": "2026-10-08T00:39:55.672Z",
+  "noMoreChildren": true,
+  "growthUpper": 7529189
+}

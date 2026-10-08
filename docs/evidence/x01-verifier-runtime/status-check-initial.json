@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-08T00:45:12.472Z",
+  "kind": "metadata-only",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 9,
+    "output": "验证器已接入runner执行；局部恢复、取消和原工具路径检查通过，等待独立审查。",
+    "next": "独立审查后提供受控主线接收；真实中心与发布链路另验。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [
+      "优先级"
+    ],
+    "complete": false
+  },
+  "timing": {
+    "started": {
+      "state": "known",
+      "at": "2026-10-08T00:29:30.000Z",
+      "record": "2026-10-08T00:29:30.000Z"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "实际provision开段及原子receipt"
+    },
+    "issues": [],
+    "waiting": "",
+    "waitingTable": {
+      "rows": [],
+      "issues": []
+    }
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](../../../plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "../../../plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

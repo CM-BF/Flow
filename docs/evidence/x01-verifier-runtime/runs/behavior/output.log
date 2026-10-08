@@ -1,0 +1,88 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime
+
+ ✓ apps/runner/src/plugins/runtime.test.ts > v3 claim persists before package dispatch and reports artifact verification completed through the original outbox 61ms
+ ↓ apps/runner/src/plugins/runtime.test.ts > lost claim ACK recovers exactly the durable full request and does not allocate under another key
+ ↓ apps/runner/src/plugins/runtime.test.ts > unknown phase ACK retains assignment and restart never reinvokes the package
+ ↓ apps/runner/src/plugins/runtime.test.ts > unknown package outcome retains assignment and restart never reinvokes the package
+ ↓ apps/runner/src/plugins/runtime.test.ts > persisted v3 with no current port fails before claim or execution and preserves its request
+ ↓ apps/runner/src/plugins/runtime.test.ts > ordinary v3 assignment still follows the original adapter path
+ ✓ apps/runner/src/plugins/runtime.test.ts > legacy no-port polling uses only the unchanged v2 transport 11ms
+ ✓ apps/runner/src/plugins/runtime.test.ts > store-only runtime opt-in consumes the real FlowClient plugin domain and its bearer request 56ms
+ ✓ apps/runner/src/plugins/runtime.test.ts > terminal ACK loss replays the fixed complete bundle and old pin after a material upgrade without reinvoke 70ms
+ ↓ apps/runner/src/plugins/runtime.test.ts > terminal ACK followed by admission persistence failure keeps the bundle until restart completes the journal
+ ↓ apps/runner/src/plugins/runtime.test.ts > terminal crash after admission completion before unlink replays without leaving an assignment or reinvoking
+ ↓ apps/runner/src/plugins/runtime.test.ts > terminal owner-fenced replay retains original bytes and admission without repacking ownership or invoking
+ ✓ apps/runner/src/plugins/runtime.test.ts > trusted direct runtime opt-in selects the process host and closes it after original outbox completion 45ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > v4 in-process dispatch uses verifier phases and exact typed terminal batch 81ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > v4 trusted-process dispatch uses verifier phases and exact typed terminal batch 39ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > failed verifier verdict remains typed failed and completes only after settled host 45ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > uncertain unknown phase retains assignment and emits no invented terminal 33ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > uncertain replayed phase retains assignment and emits no invented terminal 20ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > current verifier grant revocation prevents invoke and does not fabricate a verdict 39ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > unknown installed execution never completes or reinvokes the retained assignment 22ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > durable terminal replays before real old PROCESS residue rejects initialization; no reinvoke or resource deletion 46ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > unknown terminal ACK prevents PROCESS open and preserves the original event ids 35ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > PROCESS open failure retains original error and does not retry as a network failure 11ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > cancellation during PROCESS open closes the returned instance without publication or initialization 12ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > a prior v2 opportunity is not rewritten by verifier opt-in 10ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > PROCESS instance opens only once across empty v4 polling 13ms
+ ✓ apps/runner/src/verifier-runtime.test.ts > cancellation before invoke retains assignment without a fabricated completed event 22ms
+ ↓ apps/runner/src/configuration.test.ts > defaults the ordinary runner entry point to fixture only
+ ↓ apps/runner/src/configuration.test.ts > enables Claude from an explicit material manifest without starting a query
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":["relative.txt"]}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":[],"tools":["Bash"]}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":[],"query":"injected"}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":[],"maxBudgetUsd":5}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":[],"requireReadApproval":"false"}
+ ↓ apps/runner/src/configuration.test.ts > rejects an invalid or policy-widening manifest {"materialFiles":[],"maxTurns":5}
+ ↓ apps/runner/src/configuration.test.ts > binds explicit active steering to one immutable profile while preserving legacy canonical bytes
+ ↓ apps/runner/src/configuration.test.ts > rejects a non-boolean steering manifest without starting a query: "true"
+ ↓ apps/runner/src/configuration.test.ts > rejects a non-boolean steering manifest without starting a query: null
+ ↓ apps/runner/src/configuration.test.ts > rejects a non-boolean steering manifest without starting a query: {"protocol":"flow.active-steering.v1"}
+ ↓ apps/runner/src/configuration.test.ts > refuses steering configuration for a planner tool profile
+ ↓ apps/runner/src/configuration.test.ts > refuses to silently drop steering configuration through the legacy adapter-only loader
+ ↓ apps/runner/src/configuration.test.ts > loads a strict Codex profile through the shared descriptor without starting a process
+ ↓ apps/runner/src/configuration.test.ts > fails without a trusted factory and refuses relative or oversized Codex files
+ ↓ apps/runner/src/configuration.test.ts > uses explicit mutually exclusive native selection while preserving fixture and Claude defaults
+ ↓ apps/runner/src/configuration.test.ts > does not accept launch permissions inside an otherwise valid Codex file
+ ↓ apps/runner/src/configuration.test.ts > refuses a file replaced with a FIFO after inspection without blocking and closes its handle
+ ↓ apps/runner/src/configuration.test.ts > persistent loader rejects mixed selection and invalid public JSON before publication
+ ↓ apps/runner/src/configuration.test.ts > persistent loader returns guarded adapters and a confirmed reference without starting a process
+ ↓ apps/runner/src/configuration.test.ts > plugin operator file is explicitly selected and returns only strict store policy without publishing or executing
+ ↓ apps/runner/src/configuration.test.ts > trusted process mode requires explicit private opt-in and leaves the store DTO unchanged
+ ✓ apps/runner/src/configuration.test.ts > verifier private opt-in requires exact trusted material and does not infer tool capability 20ms
+ ✓ apps/runner/src/admission-journal.test.ts > persists one runner-bound opportunity and reuses it across empty polls and restart without replacement 18ms
+ ↓ apps/runner/src/admission-journal.test.ts > durably accepts only the exact opportunity then retains the assignment across restart
+ ↓ apps/runner/src/admission-journal.test.ts > cannot reinterpret a legacy in-flight request or assignment as a recoverable v2 opportunity
+ ↓ apps/runner/src/admission-journal.test.ts > rejects credential identity changes and keeps the old opportunity when its durable handoff fails
+ ↓ apps/runner/src/admission-journal.test.ts > persists an unknown claim across restart without credentials or task text
+ ↓ apps/runner/src/admission-journal.test.ts > atomically hands the claim to a durable assignment before execution, cleared only by matching completion ACK
+ ↓ apps/runner/src/admission-journal.test.ts > serializes concurrent completion and the next claim handoff without losing either record
+ ↓ apps/runner/src/admission-journal.test.ts > clears only a definite empty response and bounds retained assignments to sixteen
+ ↓ apps/runner/src/admission-journal.test.ts > fails closed on corrupt or oversized existing journals
+ ↓ apps/runner/src/admission-journal.test.ts > retains the original storage error and the persisted guard when a handoff cannot be written
+ ↓ apps/runner/src/admission-journal.test.ts > rejects a real FIFO at admission.json within a bounded child lifetime
+ ↓ apps/runner/src/admission-journal.test.ts > rejects a real FIFO at admission.json.tmp within a bounded child lifetime
+ ✓ apps/runner/src/runtime-initialization.test.ts > emits one local initialization before natural polling without an extra claim or journal key 31ms
+ ↓ apps/runner/src/runtime-initialization.test.ts > initialization observer failure does not suppress polling or replace authentication failure
+ ↓ apps/runner/src/runtime-initialization.test.ts > does not initialize when identity authentication fails
+ ↓ apps/runner/src/runtime-initialization.test.ts > does not initialize when the journal belongs to another runner
+ ↓ apps/runner/src/runtime-initialization.test.ts > does not initialize across unresolved legacy intent or accepted assignment 0
+ ↓ apps/runner/src/runtime-initialization.test.ts > does not initialize across unresolved legacy intent or accepted assignment 1
+ ↓ apps/runner/src/runtime-initialization.test.ts > does not initialize before final proposal recovery is known
+ ✓ apps/runner/src/runtime-initialization.test.ts > does not initialize before explicit body support confirmation succeeds 17ms
+ ✓ apps/runner/src/runtime-initialization.test.ts > does not initialize before explicit plugin host publication succeeds 13ms
+ ↓ apps/runner/src/runtime-initialization.test.ts > already aborted input publishes no initialization and sends no request
+ ↓ apps/runner/src/runtime-initialization.test.ts > main forwards only the typed initialization on its parent IPC channel
+ ↓ apps/runner/src/outbox.test.ts > flushes the durable prefix, freezes concurrent allocation, then continues after a committed final
+ ↓ apps/runner/src/outbox.test.ts > a definitive conflict consumes no sequence and can continue the same attempt
+ ✓ apps/runner/src/outbox.test.ts > a lost response confirms the original receipt without another submission 7ms
+ ↓ apps/runner/src/outbox.test.ts > absence after timeout retains exact bytes, freezes all output and recovers only a committed receipt after restart
+
+ Test Files  6 passed (6)
+      Tests  25 passed | 54 skipped (79)
+   Start at  17:39:10
+   Duration  2.54s (transform 561ms, setup 0ms, import 1.26s, tests 781ms, environment 0ms)
+

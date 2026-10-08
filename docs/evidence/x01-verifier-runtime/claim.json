@@ -1,0 +1,29 @@
+{
+  "requestId": "926d7670-a3a6-43cc-9a81-20b49659fd8a",
+  "action": "take",
+  "committedAt": "2026-10-08T00:30:52.626Z",
+  "claim": {
+    "claimId": "42493ff1-d47f-4fea-84cd-2080e6f5f14c",
+    "version": 1,
+    "taskId": "X01-VERIFIER-RUNTIME01",
+    "lead": "mika",
+    "worker": "db_transaction_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime",
+    "branch": "codex/plugin-verifier-runtime",
+    "scope": [
+      "apps/runner/src/configuration.test.ts",
+      "apps/runner/src/configuration.ts",
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/verifier-runtime.test.ts",
+      "docs/evidence/x01-verifier-runtime",
+      "plans/x01-verifier-runtime"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-08T00:30:52.626Z",
+    "createdAt": "2026-10-08T00:30:52.626Z"
+  }
+}

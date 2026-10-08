@@ -1,0 +1,51 @@
+{
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "base": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "runs": [
+    {
+      "name": "types",
+      "result": "docs/evidence/x01-verifier-runtime/runs/types/result.json",
+      "exit": 2,
+      "supervisionMs": 2136,
+      "rawBytes": 367,
+      "tmpExactAbsentAt": "2026-10-08T00:37:58.421Z"
+    },
+    {
+      "name": "behavior",
+      "result": "docs/evidence/x01-verifier-runtime/runs/behavior/result.json",
+      "exit": 0,
+      "supervisionMs": 2834,
+      "rawBytes": 10745,
+      "tmpExactAbsentAt": "2026-10-08T00:39:13.149Z"
+    },
+    {
+      "name": "types-final",
+      "result": "docs/evidence/x01-verifier-runtime/runs/types-final/result.json",
+      "exit": 0,
+      "supervisionMs": 2184,
+      "rawBytes": 0,
+      "tmpExactAbsentAt": "2026-10-08T00:39:55.672Z"
+    }
+  ],
+  "selected": 25,
+  "passed": 25,
+  "skipped": 54,
+  "newDistinct": 15,
+  "directOldDistinct": 10,
+  "finalTypes": 0,
+  "supervisionMs": 7154,
+  "rawBytes": 11112,
+  "fullReturn": "2026-10-08T00:39:55.672Z",
+  "pendingLaunch": 0,
+  "originalFailures": [
+    "Initial tar link lookup was a provision-only assertion; no engineering child.",
+    "First types exit2: missing exact installed @modelcontextprotocol/client produced three diagnostics. Raw retained."
+  ],
+  "historicalInputs": "types-initial-test.ts.txt and run-local-initial.py.txt were reconstructed after the later edit, then verified byte-for-byte against the initial run sourceHashes. Initial record is immutable.",
+  "counts": "One behavior run: 14 new runtime +1 new configuration and10 selected old direct consumer cases. No old full suite replay.",
+  "limits": [
+    "No actual PG/HTTP listener/provider/worker invoke/artifact release/T7/end-to-end test.",
+    "Real runRunner, journal, outbox, client codec, execution and verifier algorithm with mock transport and installed host. Actual process-resource open rejection used in old-residue recovery case.",
+    "Supervision sum is not complete external wall; wallBeforePersistence retained separately; peak UNKNOWN."
+  ]
+}
