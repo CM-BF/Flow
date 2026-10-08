@@ -1,0 +1,43 @@
+{
+  "kind": "I02_TUI01F_FIXTURE_SOURCE_ALIGNMENT_REVIEW_AND_INTAKE",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "reviewedAt": "2026-10-08T01:46:45.075Z",
+  "decision": "APPROVED_LIMITED_FIXTURE_SOURCE_AND_DIRECT_RESULTS",
+  "P1": 0,
+  "P2": 0,
+  "source": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "delivery": "a9b0abff3770c0117e72c2f2cca881dc57cf4373",
+  "manifest": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/fixture-source-alignment/manifest.json",
+    "bytes": 6651,
+    "sha256": "876f33dfb62bf9e9e38c276a32e57d7ab9f45f3a7d335d3c65e32786e5af653c",
+    "verifiedBindings": 20,
+    "verifiedBytes": 121904
+  },
+  "basis": [
+    "Read all three source leaves and type configuration; fixed policy selects version once for adapter/session; legacy default unchanged.",
+    "Real fixture adapter produces session/final; injected SQL results enter the unchanged fixed af51 saveAssistantFinal consumer. v1 rejects 409 before inserts, aligned version reaches two inserts. No duplicated validator or production weakening.",
+    "Four TAP targets passed, no skip/cancel; focused types exit0. Two supervised children 2801ms/raw1124B, both groups absent/dualEOF/no signals.",
+    "Source and all20 manifest bindings match fixed Git/current bytes; two actual af51 consumer sources match their fixed commit. Clean pushed delivery.",
+    "Main preimage of existing source leaves equals a2eae76; new test/config absent in main. No conflicting implementation delta."
+  ],
+  "limits": [
+    "0PG/HTTP/browser/native/auth/provider/personal operations; no engineering checks repeated during review.",
+    "Original R2 remains1selected0passed/causeUNKNOWN; direct mismatch is not retroactive proof of R2 cause.",
+    "Runtime finalization and full TUI/Web journey unverified. New actual recipe must rebind source and use new resource window.",
+    "local01 empty scratch removed; local02 type cache1357780B sealed KEEP. No full filesystem cleanup claim."
+  ],
+  "skills": [
+    "find-skills local discovery",
+    "codebase-design: existing fixed policy Interface and actual producer/consumer seam",
+    "clean-code: single version selection, unchanged lifetime/identity checks"
+  ],
+  "integrationPaths": [
+    "apps/tui/src/task-controls/fixture-source.test.ts",
+    "apps/tui/src/task-controls/fixture.ts",
+    "docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "docs/evidence/tui01f/web-handoff/fixture-source-alignment/interface.md"
+  ],
+  "rawProvenance": "Read fixed delivery Git blobs at the canonical paths; raw and121904B bindings are not recopied."
+}

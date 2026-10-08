@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "files": [
+    "../../../../../apps/tui/src/task-controls/fixture.ts",
+    "../../../../../apps/tui/src/task-controls/fixture-source.test.ts",
+    "../../../../../experiments/tui-web-control-handoff/journey.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

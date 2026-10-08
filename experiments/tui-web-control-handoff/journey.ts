@@ -206,6 +206,9 @@ export async function runJourney(permitPath: string) {
   const { diskBytes } = await load(R01, 'fixture.mjs');
   const { CancelJourney } = await import('../../apps/tui/src/task-controls/fixture.js');
   const { createServer } = await load(BACKEND_ROOT, 'apps/server/src/index.ts');
+  const { assistantSourcePolicy } = await load(BACKEND_ROOT, 'apps/server/src/native-harness-policy.ts');
+  const assistantSource = assistantSourcePolicy('claude', 'claude.sdk.result');
+  assert.ok(assistantSource?.adapterVersion, 'Fixed center must recognize the handoff assistant source');
   const stop = new AbortController(); let fixture: CancelJourney, preview: Awaited<ReturnType<typeof openPreview>> | undefined;
   let terminal: Awaited<ReturnType<typeof startTerminal>> | undefined, chrome: Awaited<ReturnType<typeof startBrowser>> | undefined;
   let sampling: Promise<unknown> | undefined, workPassed = false, stage = 'fixture-start';
@@ -226,7 +229,8 @@ export async function runJourney(permitPath: string) {
     assert.ok(measured.freeBytes >= BOUNDS.reserveBytes && raw.bytes <= BOUNDS.rawBytes - 128 * 1024 && privateBytes <= BOUNDS.privateBytes);
     if (samples.length < 300) samples.push(measured); return measured;
   };
-  fixture = new CancelJourney(join(directory, 'fixture'), { kind: 'web-handoff', createCenter: createServer, beforeCleanup: sample });
+  fixture = new CancelJourney(join(directory, 'fixture'), { kind: 'web-handoff', adapterVersion: assistantSource.adapterVersion,
+    createCenter: createServer, beforeCleanup: sample });
   const reject = (reason: string, error: unknown = Error(reason), at = stage) => {
     workFailure ??= describe(at, error);
     if (!failures.includes(reason)) failures.push(reason); fixture.failed(reason); stop.abort();

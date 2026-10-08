@@ -41,6 +41,8 @@ type OwnedGroup = { pgid: number; stop: () => Promise<Awaited<ReturnType<typeof 
 type Center = Pick<Awaited<ReturnType<typeof createServer>>, 'listen' | 'close'>;
 type HandoffRecipe = {
   kind: 'web-handoff';
+  /** Supplied by the fixed center's assistant source policy, never by a user task. */
+  adapterVersion: string;
   createCenter: (options: { databaseUrl: string; ownerToken: string; automaticQueueScan: false }) => Promise<Center>;
   beforeCleanup: () => Promise<unknown>;
 };
@@ -77,6 +79,7 @@ export class CancelJourney {
 
   constructor(readonly evidenceDirectory: string, private readonly recipe?: HandoffRecipe) {
     if (!isAbsolute(evidenceDirectory) || resolve(evidenceDirectory) === resolve('.') || resolve(evidenceDirectory) === tmpdir()) throw Error('Fresh explicit evidence directory required');
+    if (recipe && !recipe.adapterVersion?.trim()) throw Error('Fixed handoff adapter version required');
     const database = new URL(this.adminUrl);
     if (!['127.0.0.1', 'localhost', '[::1]'].includes(database.hostname) || database.pathname !== '/postgres') throw Error('Only local admin database is allowed');
   }
@@ -131,14 +134,15 @@ export class CancelJourney {
     this.record('origins', { center: this.upstream, proxy: this.proxyUrl, conversationId: this.conversationId });
   }
   private adapter(): HarnessAdapter {
-    return observeFixtureAdapter({ name: 'claude', version: 'claude-sdk-0.3.290-v1', run: async context => {
+    const adapterVersion = this.recipe?.adapterVersion ?? 'claude-sdk-0.3.290-v1';
+    return observeFixtureAdapter({ name: 'claude', version: adapterVersion, run: async context => {
       const id = context.executionIdentity?.taskId;
       if (!id) throw Error('Fixture requires the runner-assigned task identity');
       this.activeAdapters.add(id);
       try {
         const nativeSessionId = context.task.resumeSessionId ?? randomUUID();
         await context.emit({ type: 'session', nativeSessionId,
-          adapterVersion: 'claude-sdk-0.3.290-v1', resources: ['fixture:no SDK/provider'] });
+          adapterVersion, resources: ['fixture:no SDK/provider'] });
         this.sessions.add(id);
         await this.observation.run('barrier', context.executionIdentity, () => new Promise<void>((done, reject) => {
           const abort = () => finish(Error('synthetic adapter interrupted'));
