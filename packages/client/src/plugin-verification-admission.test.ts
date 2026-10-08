@@ -74,3 +74,14 @@ test('SDK typed rejection and transport uncertainty retain distinct recovery beh
   expect((await api.admitPluginVerificationTask(registration, input(), 'key')).replayed).toBe(true);
   expect(fetch.mock.calls[1]![1].body).toBe(fetch.mock.calls[2]![1].body);
 });
+
+test.each([2147483646, 2147483647])('SDK project revision bound %i is checked on the ACK without rejecting a valid request', async revision => {
+  const body = input(); body.expectedSourceProjectRevision = revision;
+  const ack = acknowledgement(); ack.requestIdentity = verificationAdmissionIdentity(registration, body); ack.project.revision = revision + 1;
+  const fetch = vi.fn().mockResolvedValue(new Response(JSON.stringify(ack))); vi.stubGlobal('fetch', fetch);
+  const request = client().admitPluginVerificationTask(registration, body, 'max-key');
+  if (revision === 2147483646) expect((await request).project.revision).toBe(2147483647);
+  else await expect(request).rejects.toMatchObject({ code: 'plugin_ack_unknown', request: { key: 'max-key' } });
+  expect(fetch).toHaveBeenCalledTimes(1);
+  expect(JSON.parse(fetch.mock.calls[0]![1].body).expectedSourceProjectRevision).toBe(revision);
+});

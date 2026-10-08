@@ -166,6 +166,7 @@ export function decodePluginVerificationAccepted(value: unknown, id: string, inp
   requireAck(validUuid(task.id));
   const binding = decodePluginBinding(result.binding, task.id as string);
   const identity = pluginVerificationAdmissionIdentitySchema.parse(result.requestIdentity);
+  pluginRevisionSchema.parse(project.revision);
   requireAck(JSON.stringify(identity) === JSON.stringify(verificationAdmissionIdentity(id, input))
     && typeof result.replayed === 'boolean' && task.title === input.title && task.harness === 'fixture'
     && task.status === 'queued' && task.verificationStatus === 'pending'
