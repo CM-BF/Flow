@@ -1,5 +1,12 @@
 # Current Arc review
 
+状态: PENDING — narrow tab visual repair
+Review target commit: 6ac91bace38e39ade654e98e86d0d513af8255cf
+
+当前唯一组合：[窄tab入口](narrow-tab-visual-20261008/entry.json)。首3/4FAIL/closeviewport0.02保留；新CSSfocus scrollpadding待最后一次actual，原全功能4/4只属旧f6并仍有视觉P2。0runtime，O16lease等待归还；最终一次review。
+
+## 历史固定目标与原件
+
 状态: APPROVED — limited functional fixture acceptance; visual P2 OPEN
 Review target commit: f6c17be503ab68262a789c96429a7cc44975c8bb
 

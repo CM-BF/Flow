@@ -44,7 +44,7 @@
   "design": "Scoped Arc tabs keep nonshrinking readable minwidth, singleline actions/close, horizontaloverflow with automatic keyboardfocus visibility; no hiddenbutton or sharedApp/plugin mutation.",
   "skills": "Reuse find-skills/brainstorming/assistant-ui/clean-code/codebase-design alreadyread; no install.",
   "checks": "Only necessary browser assertion affectedtypes ifneeded; CSS doesnottriggergreenrerun.",
-  "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+  "source": "6ac91bace38e39ade654e98e86d0d513af8255cf",
   "local": "One necessarybrowser typed geometry/DOMassertion noEmit0/3573; notCSS-onlygreen rerun",
   "cleanCode": "Same scopedCSS owns layout and never hides controls; test uses existing publictab roles plus realHome/End/Tab andactualfixturetitle. No arbitrary first/nth/force orproduct hooks.",
   "fix": "Arc strip scroll-padding-inline2rem reserves trailing25pxclose beyond focusedmenu action; no assertion relaxed. Move existing geometry observation before close assertion so failure retains evidence.",

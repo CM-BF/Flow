@@ -18,7 +18,7 @@
 | 本片段交付阶段 | implementation |
 | 检查状态 | FAILED 5c6d4230c035e885666dd1fa516b6252559f289b browser3/4；Closeviewport0.02原件保留，affectednoEmit0/3573限定其source |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 5c6d4230c035e885666dd1fa516b6252559f289b |
+| 实现目标 | 6ac91bace38e39ade654e98e86d0d513af8255cf |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | ACTIVE: closebutton焦点滚动可达修复待末次actual；O16独占窗口暂停Arc第二lease，deadline01:40:03.453不延 |
 | 需用户决定 | NONE |
-| Review | PENDING 5c6d4230c035e885666dd1fa516b6252559f289b；本新段最终一次source/result/visual审，旧b514视觉P2未实际复验关闭 |
+| Review | PENDING 6ac91bace38e39ade654e98e86d0d513af8255cf；新CSS滚动预留待actual，旧b514不覆盖视觉修复 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
