@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T04:17:59.234Z",
+  "kind": "SCOPED_REVIEW_RECEIPT_ONLY",
+  "runtimeRepair": {
+    "task": "SVC09B",
+    "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+    "delivery": "80ff1ee3a1bdd7134d772edd8bf003e1209d37a7",
+    "reviewer": "native_center_owner / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_FIXED_NATIVE_TERMINAL_AND_ENVIRONMENT_DELTA",
+    "remainingP1P2": 0,
+    "manifestSha256": "0aa46719224f30b364080ff1e36defd351980c64e5336c0749aed98af8aeb0a6",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/plans/svc09-fixed-runtime/status.md",
+    "cases": 6,
+    "elapsedMs": 4359,
+    "childGroupsReturned": 5,
+    "productScopeReturned": "09f2ce36-0cec-45b9-95b5-837fe6d9ecb5 v2; 2026-10-08T04:14:56.684Z"
+  },
+  "buildPreparation": {
+    "task": "SVC09A",
+    "source": "f9a58e5d0e08827468b01669ba9516394873b97e",
+    "delivery": "6f25fba1cead0a357ab41656fef75f57b086435e",
+    "reviewer": "assignment_review / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_FIXED_SETTINGS_REBIND_HOST_PORTS_AND_DIRECT_RESULTS",
+    "remainingP1P2": 0,
+    "manifestSha256": "e67606802f10ee2693c812d8181c50cbef4e9234fbf59c7231b023ae83b943a5",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md",
+    "cases": 5,
+    "elapsedMs": 208,
+    "returnAt": "2026-10-08T04:12:48.517Z",
+    "childGroupsReturned": 2,
+    "build": "NOT_RUN",
+    "host": "NOT_RUN"
+  },
+  "limits": [
+    "No whole old runtime leaf imported over moving main",
+    "Fixed source and raw originals remain in pushed canonical Git; no second source copy",
+    "No actual build, PG, provider, personal operation or new window",
+    "Both execution workers stopped; external D01/Mika goals paused; no presumed grant from null holder",
+    "All prior FAIL/KEEP and O16 unknown remain"
+  ]
+}
