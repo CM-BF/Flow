@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:56:35.890Z / mainb63bf7eb5；真实规划结果限定独审已接收，终端新入口准备也已独审，实际后继分别待明确续接与资源段。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:23:42.026Z / main312842ab5；已审目标续接和终端限定结果已接收，新阶段获授权但尚未实际运行。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main254ce9579接收真实规划结果的限定审查；TUI fixture源已main89a27b983，R3 caller限定审查记录已mainb63bf7eb5。个人e15/Web779为既有部署事实，本段未操作服务。 |
+| 已集成main状态 / HEAD | main312842ab5已接收O16新阶段续接9路径和TUI R3限定结果；个人e15/Web779为此前部署事实，本段未操作服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 真实两步计划及其材料、权限和用量已核对，规划语义已接受；终端双端验证入口的修复与前置审查已完成。 |
-| 下一可用交付 | 让已保存的计划按明确的新阶段授权继续，再验证终端与网页之间的任务接续。 |
-| 当前阻塞 | ACTIVE: 计划接续入口正在实现，确认与子任务调用尚未授权；终端实际双端旅程等待隔离资源段，局部检查不代替完整体验。 |
+| 当前产出 | 真实两步计划已保存并获语义认可，续接实现已审；终端与网页接续功能已实际到达，验收收尾仍未通过。 |
+| 下一可用交付 | 确认已保存的计划，执行两项受限文本任务并独立核对；同时修复终端验收的进程收尾。 |
+| 当前阻塞 | ACTIVE: 新阶段已获有限授权，仍须绑定实际资源并完成确认、执行和独立接受；终端收尾的进程组观察仍有未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -309,3 +309,9 @@ REQ-19跨时点备份恢复新增验收已归原T04，当前仅只读研究/NOT_
 ### 2026-10-08T01:56:35.890Z 已审结果与下一可执行路径
 
 [O16限定实际结果接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-planner-result-intake.json)已main254ce9579；四次SDK调用历史永久分开，本次普通input不代表全部输入。GO接受实际两步规划语义，但未签confirmation、未给children额度或接受最终交付。原owner继续在既有范围准备新阶段的一次性续接：旧pause/source/state/raw保持，过期由旧入口拒绝；新阶段另核真实状态、权限、资源和旧新来源，不重新调用planner或改时间/digest绕guard。TUI准备独审见[唯一回执](../../../m2-integration/docs/evidence/i02/tui01f-r3-caller-review.json)，固定原件保留在原owner；已直接交D01按ready队列安排实际旅程，不预占窗口，不重跑旧绿检查。
+
+### 2026-10-08T02:23:42.026Z 原计划续接与跨端结果
+
+[O16源码/局部结果接收](../../../m2-integration/docs/evidence/i02/o16-expired-plan-continuation-intake.json)与[TUI R3限定结果](../../../m2-integration/docs/evidence/i02/tui01f-r3-result-intake.json)均已main312842ab5。O16保留过期pause与原材料，新阶段沿同来源一次消费和原确认CAS；GO于02:21:47Z授权唯一renew（有效至02:36:47Z）及最多两次条件化只读child，原4次SDK封存、真实新调用当前0，独立最终语义接受尚未发生。实际grant/资源/阶段回执仅由[原owner](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)维护，不重新调用成功planner。
+
+TUI R3实际02:08:17.814Z开始、02:08:36.845Z终止、02:11:39.152Z运行归还；跨端取消、草稿、终端退出后后台继续及最终读取均到达，但唯一完整选择仍1选0过，fixture-close/groups未知、专库/private KEEP。后继由原assignment owner在既有精确scope进行0PG/Chrome的有界生命周期修复，不把后续组absent观察追认为原收尾通过。
