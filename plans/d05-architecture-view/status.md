@@ -9,7 +9,7 @@
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -22,7 +22,7 @@
 | 阶段 | M2 |
 | 优先级 | 4 |
 | 当前产出 | 看板已读取聊天设置后继的实际实施来源，显示原任务开工时间与当前进度；登录入口与领取记录保持可用。 |
-| 下一可用交付 | 本片段已交付；产品接线与真实页面验收继续由原owner更新。 |
+| 下一可用交付 | 登记固定后台恢复修复，显示其现场开工时间；现有消息设置来源已正确显示。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -302,3 +302,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-08T03:53:22.474Z：本轮来源迁移实际开工；fresh核D05 claim3a6240d0 v6、clean dfbee7c8及registry与main同blob。MSG03原owner移交原件固定f71e1c9a3d7efef26859836365dc77d9fdb728ce，见[迁移依据](../../docs/evidence/d05/msg03-canonical-migration.json)。仅改registry的唯一worktree与evidenceDir，不新增task、不批改owner状态；标准三件套沿原ID/路径。原215源不增减，未声称本轮已部署。
 
 2026-10-08T04:00:32.480Z：限定独审8e689、main ee8a62ac5已接后，原owned4320正常换载80647→41842，304ms；[实际原件](../../docs/evidence/d05/msg03-canonical-live.json)保summary215、MSG03 sourceCurrent与新路径、无source/human/timing问题、原开始及NOT_COMPLETED。领取API available与ACCESS非敏感metadata逐值保持；随后只读独立核a897732d v1 ACTIVE/new worktree/branch相符，轻摘要assignment pending不冒已完成深度证明。0token、个人服务、用户tab或PGfixture动作，资源已立即归还；本次阶段完成不填补历史首次开工。
+
+2026-10-08T04:07:07.133Z：SVC09B 固定后台结果持久化与启动诊断纳入唯一登记，直接所属FLOW-001，owner assignment_review，独立fixed-source树；其现场start 04:03:00.506Z来自own start.json，未猜历史。计划三件套/原子claim已核，尚在实施，未把登记当产品通过。MSG03实际换载原件继续保留，本次仅追加来源，不操作个人预览。
