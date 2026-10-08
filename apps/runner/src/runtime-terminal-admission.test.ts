@@ -39,7 +39,7 @@ async function fixture() {
   vi.spyOn(FlowClient.prototype, 'runnerIdentity').mockResolvedValue({ protocol: 'flow.runner-claim.v2', runnerId: identity.runnerId });
   vi.spyOn(FlowClient.prototype, 'claimOpportunityStatus').mockImplementation(async input => ({ ...input, state: 'missing' }));
   const claim = vi.spyOn(FlowClient.prototype, 'claimOpportunity').mockImplementation(async input => ({ ...input, state: 'assigned', identity, assignment, remainingLeaseMs: 10000 }));
-  vi.spyOn(FlowClient.prototype, 'heartbeat').mockResolvedValue({ action: 'continue', remainingLeaseMs: 10000, decision: null });
+  vi.spyOn(FlowClient.prototype, 'heartbeat').mockResolvedValue({ action: 'continue', remainingLeaseMs: 10000, leaseExpiresAt: '2099-01-01T00:00:00.000Z', decision: null });
   const report = vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async batch => {
     reports.push(batch); order.push('ack'); stop.abort();
     return { accepted: batch.events.length, lastSequence: batch.events.at(-1)!.sequence };
@@ -59,7 +59,7 @@ async function fixture() {
 
 test('terminal admission: validated ACK clears durable journal before pending unlink', async () => {
   const f = await fixture(), complete = AdmissionJournal.prototype.complete;
-  vi.spyOn(AdmissionJournal.prototype, 'complete').mockImplementation(async function (ownership) {
+  vi.spyOn(AdmissionJournal.prototype, 'complete').mockImplementation(async function (this: AdmissionJournal, ownership) {
     expect(JSON.parse(await readFile(f.pending, 'utf8'))).toEqual(f.reports[0]);
     expect((await f.journal()).assignments).toEqual([f.identity]);
     await complete.call(this, ownership); f.order.push('journal');
