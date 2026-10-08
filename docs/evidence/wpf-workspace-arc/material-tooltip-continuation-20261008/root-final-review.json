@@ -1,0 +1,125 @@
+{
+  "reviewedAt": "2026-10-08T01:10:12.957997+00:00",
+  "reviewer": "root / gpt-6-astra ultra, independent of implementation",
+  "decision": "APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2",
+  "source": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+  "executionHead": "055b1643d25cdfb62dd5dd8376971c110321e757",
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/final-review-input.json",
+    "bytes": 10754,
+    "sha256": "be4b59c16c3fbfdd6544be8b11631cf72c56396a272caecce80e92fe8941dc9f"
+  },
+  "manifests": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/actual-manifest.json",
+      "bytes": 29116,
+      "sha256": "2f18cf65ba92c11c652e8e9a6fedf3ee07a6829bd5cfb4832b1eb8ce876baca9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/local-manifest.json",
+      "bytes": 1449,
+      "sha256": "1b762c23b08ea64e116a11cf502d079ab6abd31692665fc97c7daf98854447cc"
+    }
+  ],
+  "evidenceChecks": {
+    "browserPairs": 70,
+    "localPairs": 4,
+    "totalOriginalAndArchiveFilesHashed": 148,
+    "mismatches": [],
+    "browserUniqueBytes": 1839911,
+    "sourceDelta": "Read full a404→f6 browser-test diff; no apps/web/src product delta in this segment. Existing product source approvals retain their original scope.",
+    "imagesViewed": [
+      "attempt1 light/dark390, drawer open",
+      "attempt2 light/dark390, drawer closed and conversation body visible"
+    ],
+    "testSemantics": "Real keyboard focus traverses input→Remove→unique current composer File tile and inspects actual filename tooltip; preserves full ready-reference equality and posthandoff B durable content. Reload observation is now exact id/namespace/viewKey/route and full B data, not arbitrary first/latest route record.",
+    "metadataCorrection": "Initial110a input exported first failure:null although raw.error was nonnull. Owner preserved original derived input and corrected current be4b59 to FAILED with real raw error; raw originals were unchanged."
+  },
+  "results": {
+    "attempt1": {
+      "source": "60caca5210b05a88e4817390a3bd4d4e840d319e",
+      "groupsPassed": 3,
+      "groupsTotal": 4,
+      "state": "FAILED",
+      "reason": "Refresh route-only journal observation ambiguous; no claim that all matching record contents were observed.",
+      "chargedMs": 19006,
+      "return": "2026-10-08T00:58:57.256215Z",
+      "parentScenario": "UNKNOWN",
+      "rawContextClosed": true,
+      "rawHttpClosed": true
+    },
+    "attempt2": {
+      "groupsPassed": 4,
+      "groupsTotal": 4,
+      "state": "PASSED",
+      "groups": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "chargedMs": 21906,
+      "return": "2026-10-08T01:06:48.355183Z",
+      "parentScenario": "PASSED",
+      "rawContextClosed": true,
+      "rawHttpClosed": true,
+      "rawError": null,
+      "fixtureErrors": [],
+      "clientReadErrors": []
+    },
+    "phase": "Two attempts /40912ms CLOSED, no third runtime or old-credit transfer",
+    "local": "One affected noEmit3595ms, exit0, owned group absent, scratch absent, signals[]; no repeated unrelated green suite.",
+    "resources": "Each run4PID/2PGID ESRCH, scratch/cache ENOENT, all Chrome/parent/outer EOF true, dropped bytes0 and cleanupErrors[]. Independent port probe NOT_RUN; no PG.",
+    "measuredReadScope": "Max3 visible panes;6 browser-issued/body-loading reads totaling23568B; actual server bodyPeak3. Not6 physical concurrent sockets.",
+    "materialScope": "Frozen A text/model/two attachments sent once through held preparation; B model/text/single ready reference stable across reorder/resize/merge/split and durable after A handoff; protected close/retain/reopen and saved B identity across reload covered.",
+    "motion": "Visible panes/tabs/separators computed animation/transition0 under prefers-reduced-motion; not all app animations audited."
+  },
+  "screenshots": [
+    {
+      "path": "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-light-390.png",
+      "bytes": 55361,
+      "sha256": "848aae46e93d5ce7a7a2400b1138360b7741401358c86892cd27f6b6b4793074"
+    },
+    {
+      "path": "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-dark-390.png",
+      "bytes": 55155,
+      "sha256": "f004bcc22fe854d135c56abc8980b3aed7a3339f5d2a8c386017f2972b310314"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ARC-VISUAL-NARROW-TAB-01",
+      "priority": 2,
+      "state": "OPEN",
+      "blocks": "Complete narrow-screen UX delivery; does not negate the observed four functional group passes.",
+      "title": "Keep tab titles and plugin actions readable at390px",
+      "observed": "Both actual final390×844 screenshots show chat titles compressed to roughly two letters and More actions wrapped into a second line cut by the fixed-height tab bar. Closing the drawer reveals the defect rather than hiding it.",
+      "sourcePointers": [
+        "apps/web/src/styles.css:283 fixed36px flow-tabs",
+        "apps/web/src/styles.css:293 flex0 1 auto/min85px/height29px tabs",
+        "apps/web/src/workspace-layout/WorkspaceTabs.tsx:35-40 title plus real plugin action and close",
+        "apps/web/src/workspace-layout/layout.css:11 tab overflow"
+      ],
+      "suggestedBoundedRepair": "Use original Arc-owned layout CSS to reserve a readable tab/title width and keep action trigger on one line with horizontal tab navigation. Preserve real plugin slot/accessible name, focus and close actions; do not hide actions or replace the host. Verify actual title/action geometry and both390 themes. New ordinary segment after this CLOSED bundle, no third run here."
+    }
+  ],
+  "limitations": [
+    "This is controlled HTTP/Cookie fixture acceptance, not a real PG center/session-security/native provider/personal deployment test.",
+    "No preparing-B crash recovery claim: A remains durable while B is in-page deferred, and B becomes durable after handoff.",
+    "Reload proves exact saved B record and public layout without newPOST, not automatic B hydration into the newly owned visible input.",
+    "Keyboard tooltip acceptance does not fix/remove the separate suspected pointer hit-area overlap in the shared attachment component.",
+    "Existing global old-connection queued-draft warning remains visible in images; its lifetime is an existing Recovery follow-up, not diagnosed by this test.",
+    "Arc×Context integration, complete plugin-slot coverage, main intake and full product visual completion remain OPEN."
+  ],
+  "cleanCodeReview": {
+    "scope": "Narrow test identity and normal interaction changes, result fidelity, visual evidence and explicit acceptance boundaries",
+    "findingsFixed": [
+      "Route is not a journal identity; unique full saved identity retained and ambiguous unqualified reads still reject.",
+      "Current derived input now preserves first actual error instead of exporting false null."
+    ],
+    "remaining": [
+      "Open P2 tab/action clipping; original review.md should show one current target followed by clearly historical records."
+    ],
+    "noImplementationByReviewer": true
+  }
+}

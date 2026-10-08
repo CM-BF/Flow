@@ -1,0 +1,153 @@
+{
+  "source": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+  "base": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "paths": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "baseBlob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+      "baseState": "PRESENT",
+      "sourceBlob": "91f706f92e0debadcec68cad31da6b385c8db3fd",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "baseBlob": "c040dfcccc0dd69e8af31201670647bc9df553e5",
+      "baseState": "PRESENT",
+      "sourceBlob": "d0c311c2c06686bf772cf439153b4f0199998418",
+      "bytes": 15735,
+      "sha256": "ac5b4d12308b87eb8ebe4e2773a672fb1f13cbcebccd1dd52191d59cfed87288"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationList.tsx",
+      "baseBlob": "8c376b9ac0ab90af375fb3c9ec9d03167a74b4bf",
+      "baseState": "PRESENT",
+      "sourceBlob": "787971be1303a7d194c098d9e629a87d02649652",
+      "bytes": 1575,
+      "sha256": "c8d939f872a3187d0b62bd1952010ecbb52543cf3c3134108e4fdeb67bf22988"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "0089f655fc9eb4280934333aaddaac220e8277f2",
+      "bytes": 4039,
+      "sha256": "f5d234224b7fcd32e9a55a91ac4196bb2e8b30b66d501ae0cec811a44695dc1c"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "baseBlob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+      "baseState": "PRESENT",
+      "sourceBlob": "526114eabd81d82e8abce7eb06a48bfd3b8f061f",
+      "bytes": 29877,
+      "sha256": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "baseBlob": "d97812469d813db74c202825d8bec267ca4fbad8",
+      "baseState": "PRESENT",
+      "sourceBlob": "60e009f856bc49ab88ff93489e6f5b383d1991c8",
+      "bytes": 23812,
+      "sha256": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470"
+    },
+    {
+      "path": "apps/web/src/plugins/sample.tsx",
+      "baseBlob": "3fd0fd760f8d31e6352fe96420fada5fa322cd35",
+      "baseState": "PRESENT",
+      "sourceBlob": "09620669e2faec0c2c78538b7c51bc84aa08df78",
+      "bytes": 6697,
+      "sha256": "8656acc7a47a08d6474512f438ccb793126ce8375e324ca7e091b4fbb8193190"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "baseBlob": "2fedfc97799938c182d33777ff7672b98252abef",
+      "baseState": "PRESENT",
+      "sourceBlob": "a98aa0643773381844494bb4c550018047b7eb18",
+      "bytes": 7594,
+      "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "baseBlob": "e97a20522a4f4621af64b252ec76b5cc28c5e8be",
+      "baseState": "PRESENT",
+      "sourceBlob": "64038e50561b9e6f4c5d75a9c1b7170a18d527a4",
+      "bytes": 9254,
+      "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "7706f5f29efae3985911269444f4fc1c4df1175b",
+      "bytes": 3284,
+      "sha256": "315a63f07809e91011c662db80ad1f1f0a2ba239d0a6448da43d732de2c3388a"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "30a1d7f04d89b654099f89c3b5dd84576b3124ec",
+      "bytes": 2035,
+      "sha256": "9c4eaac03ebb684dea9c170c9c8e3857b17563e4d17bff394a18009fcfb88c5d"
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "baseBlob": "12faa5fcd571d9d8bb53a866de318b2485d56965",
+      "baseState": "PRESENT",
+      "sourceBlob": "464f30ff9f0d30c749562e9a7956a0f90054bbd6",
+      "bytes": 8309,
+      "sha256": "e22667e137b7ff08a178063a92f906f0767aceab000ca40ccf6bfb0fc43b54ea"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.test.ts",
+      "baseBlob": "6735728302da3766532d1a974dc1dc09ab12ddeb",
+      "baseState": "PRESENT",
+      "sourceBlob": "0eb6f3b734265d320373e22d6fa3ee5c59dee491",
+      "bytes": 19433,
+      "sha256": "3c65cda68939996c9533796665f6edb25a66828bad6f0ae8765749f492c3ec7d"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "baseBlob": "e38b372aa6a4f2907cc5ee85d6f6b85207154d8f",
+      "baseState": "PRESENT",
+      "sourceBlob": "f1a903b00788e384fdb537deaac7dddb731a9cdf",
+      "bytes": 24651,
+      "sha256": "ffcfac5d42aad176554ec8ae316856057ce45550cf4a6ac2a61f399272278b4c"
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "baseBlob": "d9afe2b8853600544724091f158c1bbdfe3f27cc",
+      "baseState": "PRESENT",
+      "sourceBlob": "9b671a499e7c3bf81139617f9cd5d15a1f1eea2a",
+      "bytes": 24018,
+      "sha256": "e5d8ccc23f9c636dab325702703da1c5b29b430c20d6cf749385dc3f75771d70"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "b80e7519027d350b9ae7e07eb732821f0747b070",
+      "bytes": 33314,
+      "sha256": "b40dc968182602141249b31fff9385ea4036c39d69135fe31ccb0487e184f0ec"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "74b44a0bff6142e1576f1642d14214ba3839f072",
+      "bytes": 20015,
+      "sha256": "1c053e64cffa8c7cc10f51bf722a282752ccbfdc5f8d76334c322e619ab7ad86"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.test.ts",
+      "baseBlob": null,
+      "baseState": "ABSENT",
+      "sourceBlob": "92289fefef4a0640a9cc0acd7594c0b9a974d4f4",
+      "bytes": 4672,
+      "sha256": "5d200cc1b470ddd0bbddb24c3c5af4db7bc2b495dfbe8a4b14f64860b44662cd"
+    }
+  ],
+  "main": "NOT_INTEGRATED; App/session nowotherowner Context; explicitcomposedintake needed,no blind overwrite",
+  "writeClaim": "v2 exact18; original App/session remainreadonlyinputs",
+  "observation": "First composition export rejected legitimate newfile missingbase; corrected explicitABSENT. No source/check/runtime changed."
+}

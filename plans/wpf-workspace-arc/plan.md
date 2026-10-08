@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01：Arc 会话组合工作区
 
-创建2026-10-07T18:02:31.663Z / 更新2026-10-08T00:07:02.901429+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
+创建2026-10-07T18:02:31.663Z / 更新2026-10-08T01:08:55.802337+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
 
 用户目标：在一个工作区中组合最多三个可见真实会话 pane，独立焦点/滚动/草稿与上下文；分拆、交换、合并和比例调整不重建composer或复制业务状态；插件真实上下文动作可随时扩展且旧权限/调用不能复活。
 
@@ -61,3 +61,11 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 当前固定d7e0b6f；queue fixture前置已更正并8纯例通过，三次真实browser均2/4。材料组中的准备期B以页面模型/正文/当前完整附件见证为准，原A命令交接后再检查唯一持久B；不承诺准备期B崩溃恢复。最后hover被Remove按钮拦截，后继先定位真实交互；本段三次已CLOSED，禁止第四次。TODO01–05仍in-progress，06未main集成。证据见[本段结果](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。
 
 新tooltip连续段：按已安装Radix原生焦点语义，以真实Shift+Tab经Remove到附件tile，观察真实文件名tooltip；保B模型/文本/完整ref、A原请求、交接后durableB和move/merge/split/retain/reopen。仅原测试差量，浏览器最多2次、经理lease前NOT_RUN，deadline01:17:41.457。
+
+### 2026-10-08T01:08:55.802337+00:00 原四组同轮完成，待组合独审/main
+
+新tooltip段首3/4FAIL保留，末次4/4PASS并收起drawer取得原两张390主体主题图。完整A冻结/prepare中B页面见证/交接后durableB/同composer布局/retain重开、exact保存记录刷新均通过；刷新只验已保存记录完整data仍存在，不宣自动输入框恢复。原13纯/第三HTTP2的限定证据沿用，不重跑。原准备期B崩溃恢复、pointerRemove覆盖、所有键盘/视觉/父taskMATURE05-04/06仍不外推。TODO01–05待最终一次独审收敛，06保持main待接；0新runtime。
+
+最终图审补充：TODO05仍OPEN，390实际chat tab标题难辨且action换行裁切，属于真实视觉P2；原四组功能PASS不改。后继需原layout.css窄修并实际可达性复验，当前段STOP，不扩sharedplugin/App写权。
+
+最终独审[root b514](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/root-final-review.json)限定接受功能fixture，ARC-VISUAL-NARROW-TAB-01真实视觉P2保持TODO05开放；当前无新runtime，main/Context组合及导航extension-slot另保持明确后继。

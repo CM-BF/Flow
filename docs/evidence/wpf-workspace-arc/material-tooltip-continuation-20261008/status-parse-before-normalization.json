@@ -1,0 +1,120 @@
+{
+  "errors": [],
+  "humanMissing": [
+    "当前阻塞"
+  ],
+  "implementation": {
+    "target": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-stream/host.ts",
+      "apps/web/src/conversations/ConversationList.tsx",
+      "apps/web/src/plugin-integration/layout.ts",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/host.ts",
+      "apps/web/src/plugins/sample.tsx",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "apps/web/src/workspace-layout/layout.css",
+      "apps/web/src/workspace-state.ts",
+      "apps/web/test/conversation-stream-integration.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-layout.browser.ts",
+      "apps/web/test/workspace-layout.fixture.ts",
+      "apps/web/test/workspace-layout.test.ts"
+    ],
+    "errors": []
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "前期只读研究首时刻未单独记录，不用ledger/commit猜；本源码实施实际开始2026-10-07T17:58:48.865Z见[provision](../../docs/evidence/wpf-workspace-arc/provision.json)，本片尚未完成"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| ARC-WAIT-CLASSIFIER-READY | 2026-10-07T23:39:15.523446Z | 2026-10-07T23:49:07.270Z | 资源 | 已固定候选等待唯一Chrome；经理正式grant解除 | 本owner delivery与经理ArcClassifierGrant，见本轮preflight |\n| ARC-WAIT-CLASSIFIER-FAIL | 2026-10-07T23:51:01.826066Z | 2026-10-08T00:02:35.586475Z | 验证失败 | CSS导航与合法设置目录前置已在新actual走过；新的Send前置失败另记 | 原root9605与本次raw workspaceNamespace/材料后续位置，不冒整体通过 |\n| ARC-WAIT-CSS-MATERIAL-FAIL | 2026-10-08T00:02:35.586475Z | 2026-10-08T01:06:03.047396Z | 验证失败 | 历史fixture前置已修；最后同轮四组通过，旧失败原件保留 | [本轮实际](../../docs/evidence/wpf-workspace-arc/css-material-browser-actual-20261008/failure-review-input.json) |\n前期K01测量曾暂停静态供给；首暂停实际收到时点未单独记录，不造等待时长。经理明确解除后已正常物化/取权；本次普通local已闭合18020ms；后继HTTP/browser仅proposal，无窗口预约。",
+    "waitingTable": {
+      "rows": [
+        {
+          "id": "ARC-WAIT-CLASSIFIER-READY",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "2026-10-07T23:39:15.523446Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T23:49:07.270Z",
+            "record": "2026-10-07T23:49:07.270Z"
+          },
+          "category": "资源",
+          "reason": "已固定候选等待唯一Chrome；经理正式grant解除",
+          "source": "本owner delivery与经理ArcClassifierGrant，见本轮preflight",
+          "issues": [
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+          ]
+        },
+        {
+          "id": "ARC-WAIT-CLASSIFIER-FAIL",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "2026-10-07T23:51:01.826066Z"
+          },
+          "ended": {
+            "state": "unknown",
+            "at": null,
+            "record": "2026-10-08T00:02:35.586475Z"
+          },
+          "category": "验证失败",
+          "reason": "CSS导航与合法设置目录前置已在新actual走过；新的Send前置失败另记",
+          "source": "原root9605与本次raw workspaceNamespace/材料后续位置，不冒整体通过",
+          "issues": [
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+          ]
+        },
+        {
+          "id": "ARC-WAIT-CSS-MATERIAL-FAIL",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "2026-10-08T00:02:35.586475Z"
+          },
+          "ended": {
+            "state": "unknown",
+            "at": null,
+            "record": "2026-10-08T01:06:03.047396Z"
+          },
+          "category": "验证失败",
+          "reason": "历史fixture前置已修；最后同轮四组通过，旧失败原件保留",
+          "source": "[本轮实际](../../docs/evidence/wpf-workspace-arc/css-material-browser-actual-20261008/failure-review-input.json)",
+          "issues": [
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+          ]
+        }
+      ],
+      "issues": [
+        "ARC-WAIT-CLASSIFIER-READY：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+        "ARC-WAIT-CLASSIFIER-FAIL：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+        "ARC-WAIT-CLASSIFIER-FAIL：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+        "ARC-WAIT-CSS-MATERIAL-FAIL：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+        "ARC-WAIT-CSS-MATERIAL-FAIL：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+      ]
+    }
+  }
+}

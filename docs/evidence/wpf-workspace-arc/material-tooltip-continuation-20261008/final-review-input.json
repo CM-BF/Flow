@@ -1,0 +1,291 @@
+{
+  "at": "2026-10-08T01:07:40.627997+00:00",
+  "source": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+  "executionHead": "055b1643d25cdfb62dd5dd8376971c110321e757",
+  "state": "FINAL_SCOPED_BROWSER_PASS_PENDING_INDEPENDENT_REVIEW",
+  "phase": {
+    "browserMs": 40912,
+    "attempts": 2,
+    "browserCapMs": 180000,
+    "localMs": 3595,
+    "localChildren": 1,
+    "state": "CLOSED_PASS_NO_MORE_RUNTIME",
+    "oldCreditTransfer": false
+  },
+  "rawManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/actual-manifest.json",
+    "bytes": 29116,
+    "sha256": "2f18cf65ba92c11c652e8e9a6fedf3ee07a6829bd5cfb4832b1eb8ce876baca9"
+  },
+  "localManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/local-manifest.json",
+    "sha256": "1b762c23b08ea64e116a11cf502d079ab6abd31692665fc97c7daf98854447cc"
+  },
+  "runs": [
+    {
+      "attempt": 1,
+      "packet": "/private/tmp/arc-tooltip-keyboard-eahbr_m4",
+      "source": "60caca5210b05a88e4817390a3bd4d4e840d319e",
+      "executionHead": "a8a908631b05a64bada1c60e27cde7d004d04371",
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "failure": "page.evaluate: Error: Ambiguous route draft observation\n    at request.onsuccess (eval at evaluate (:311:30), <anonymous>:1:823)\n    at draftRecord (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:9:29)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:341:20)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:293:5)\n    at async <anonymous> (/private/tmp/arc-tooltip-keyboard-eahbr_m4/worker.mjs:31:16)",
+      "screenshots": [
+        "/private/tmp/arc-tooltip-keyboard-eahbr_m4/raw/arc-light-390.png",
+        "/private/tmp/arc-tooltip-keyboard-eahbr_m4/raw/arc-dark-390.png"
+      ],
+      "accounting": {
+        "at": "2026-10-08T00:58:57.256215+00:00",
+        "logicalId": "ARC-MATERIAL-TOOLTIP-CONTINUATION-20261008",
+        "attempt": 1,
+        "run": "arc-tooltip-1-20261008-005817",
+        "outerElapsedMs": 19005.684624891728,
+        "outerPostWriteElapsedMs": 19005.990083911456,
+        "parentElapsedMs": 18964.77750001941,
+        "chargeMs": 19006,
+        "cumulativeMs": 19006,
+        "remainingMs": 160994,
+        "attemptState": "CLOSED",
+        "phaseState": "OPEN_ONE_ATTEMPT_REMAINS",
+        "oldCreditTransfer": false
+      },
+      "cleanup": {
+        "at": "2026-10-08T00:58:57.256215+00:00",
+        "run": "arc-tooltip-1-20261008-005817",
+        "observations": [
+          {
+            "kind": "PID",
+            "id": 79741,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 80541,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 80627,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 81511,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 80541,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 80627,
+            "state": "ESRCH"
+          },
+          {
+            "path": "/private/tmp/arc-tooltip-keyboard-eahbr_m4/scratch",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+            "state": "ENOENT"
+          }
+        ],
+        "rawClosure": {
+          "contextClosed": true,
+          "httpClosed": true
+        },
+        "parentCleanupErrors": [],
+        "parentScenarioConfirmation": "UNKNOWN",
+        "workerChromeStdoutEOF": true,
+        "workerChromeStderrEOF": true,
+        "parentStdoutEOF": true,
+        "parentStderrEOF": true,
+        "outerStreams": {
+          "stdout": {
+            "file": "parent.stdout.jsonl",
+            "bytes": 1733,
+            "retainedBytes": 1733,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "8b543f5300f19c3181d58e087b5b165d8b7c0c6703807493977e6fbd169aaa4e"
+          },
+          "stderr": {
+            "file": "parent.stderr.log",
+            "bytes": 0,
+            "retainedBytes": 0,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "independentPortProbe": false,
+        "PG": false,
+        "ownedReturn": true
+      },
+      "observations": [
+        "desktopStage",
+        "workspaceNamespace",
+        "maxVisible",
+        "bodyAdmission",
+        "bodyReads",
+        "streamReads",
+        "material",
+        "protectedClose",
+        "reducedMotion",
+        "http",
+        "clientReads"
+      ],
+      "state": "FAILED"
+    },
+    {
+      "attempt": 2,
+      "packet": "/private/tmp/arc-tooltip-final-xjzlm31w",
+      "source": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+      "executionHead": "055b1643d25cdfb62dd5dd8376971c110321e757",
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "failure": null,
+      "screenshots": [
+        "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-light-390.png",
+        "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-dark-390.png"
+      ],
+      "accounting": {
+        "at": "2026-10-08T01:06:48.355183+00:00",
+        "logicalId": "ARC-MATERIAL-TOOLTIP-CONTINUATION-20261008",
+        "attempt": 2,
+        "run": "arc-tooltip-2-20261008-010541",
+        "outerElapsedMs": 21905.553375021555,
+        "outerPostWriteElapsedMs": 21905.870583024807,
+        "parentElapsedMs": 21862.698500044644,
+        "chargeMs": 21906,
+        "cumulativeMs": 40912,
+        "remainingMs": 139088,
+        "attemptState": "CLOSED",
+        "phaseState": "CLOSED_PASS_NO_MORE_RUNTIME",
+        "oldCreditTransfer": false
+      },
+      "cleanup": {
+        "at": "2026-10-08T01:06:48.355183+00:00",
+        "run": "arc-tooltip-2-20261008-010541",
+        "observations": [
+          {
+            "kind": "PID",
+            "id": 73878,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 74865,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 74968,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 76020,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 74865,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 74968,
+            "state": "ESRCH"
+          },
+          {
+            "path": "/private/tmp/arc-tooltip-final-xjzlm31w/scratch",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+            "state": "ENOENT"
+          }
+        ],
+        "rawClosure": {
+          "contextClosed": true,
+          "httpClosed": true
+        },
+        "parentCleanupErrors": [],
+        "parentScenarioConfirmation": "PASSED",
+        "workerChromeStdoutEOF": true,
+        "workerChromeStderrEOF": true,
+        "parentStdoutEOF": true,
+        "parentStderrEOF": true,
+        "outerStreams": {
+          "stdout": {
+            "file": "parent.stdout.jsonl",
+            "bytes": 1718,
+            "retainedBytes": 1718,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "a5e18ff99916a82a15e758d8bfdaf9505ff4241d8819d12085c81c06618ec8c3"
+          },
+          "stderr": {
+            "file": "parent.stderr.log",
+            "bytes": 0,
+            "retainedBytes": 0,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "independentPortProbe": false,
+        "PG": false,
+        "ownedReturn": true
+      },
+      "observations": [
+        "desktopStage",
+        "workspaceNamespace",
+        "maxVisible",
+        "bodyAdmission",
+        "bodyReads",
+        "streamReads",
+        "material",
+        "protectedClose",
+        "reducedMotion",
+        "persistedDraftIdentity",
+        "persistedLayout",
+        "http",
+        "clientReads"
+      ],
+      "state": "PASSED"
+    }
+  ],
+  "currentSourceDelta": "Only browser: real keyboard tooltip; exact saved id+namespace+viewKey+route/fullB afterreload; close Chats drawer through actual button before original two390themes. Products unchanged vs previoussealedbundle.",
+  "limits": [
+    "Controlled HTTP/Cookie fixture, no PG center/session-security/native runner/provider/personal deployment",
+    "No preparing-B crash recovery: journal retains A before handoff; B UI/deferred then durable after originalA prepare",
+    "No assertion of automatic B hydration into current input on full reload; exactsaved record preserved with full data",
+    "Keyboard tooltip does not fix pointer Remove overlap; first twoPNG represent drawer state",
+    "No independent portprobe; exact process/stream/rawfixtureclosure receipts supplied",
+    "Main/Context combined intake NOT_INTEGRATED; existing navigation extension-slot/remaining visual scope separate"
+  ],
+  "supersedes": {
+    "sha256": "110a9fd86143917a327d252b136078111ed5285f1b980b88d924167d1b065e40",
+    "reason": "Derived runs[0].failure read missing failure key instead of actual error; raw unchanged. First3/4FAIL preserved."
+  },
+  "visualReviewPending": "Root actual390 identified tab title/action clipping P2; functional4/4 passes but complete narrow UX remainsOPEN; no third runtime."
+}

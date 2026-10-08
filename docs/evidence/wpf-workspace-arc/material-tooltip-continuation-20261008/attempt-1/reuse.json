@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-08T00:55:30.024670+00:00",
+  "source": "60caca5210b05a88e4817390a3bd4d4e840d319e",
+  "priorSource": "d7e0b6f1564361bf5c25bd50c9e3f0557a234e74",
+  "changedSource": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 32112,
+        "sha256": "d4c567172122a09698a3dd43552e02ccec11913a0f4030b605bf136a1cf7b00c",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "a9a7bcb0f3f33d3451126654dc8313b8841d9084"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 32443,
+        "sha256": "c7f2ec76db31aa44c2b0ba18a55f4355ab22133e9ecd5a3042bb3a6b6d6c5136",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "2bd5e52b4d199f012cf180f108fe0ef8f53cf892"
+      }
+    }
+  ],
+  "unchangedSources": 206,
+  "external": 43,
+  "resolver": 33,
+  "callerPins": [
+    {
+      "name": "run.py",
+      "bytes": 13757,
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    },
+    {
+      "name": "worker.mjs",
+      "bytes": 5014,
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "name": "capture.py",
+      "bytes": 8351,
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    }
+  ],
+  "originalPacket": "/private/tmp/arc-continuous-attempt3-27ijzu4e",
+  "noOldRawCopy": true,
+  "historicalInputManifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-manifest.json",
+  "authorization": "Newcontinuous segment permits ordinarysameauthority semanticfixes, no perSHA review; runtime requires manager lease/fresh allinputs."
+}

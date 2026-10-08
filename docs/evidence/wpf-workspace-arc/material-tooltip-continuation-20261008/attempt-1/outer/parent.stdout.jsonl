@@ -1,0 +1,58 @@
+{"actualStart": true, "outerPid": 80541, "workerPid": 80627}
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-08T00:58:17.881709+00:00",
+  "actualExit": 1,
+  "elapsedMs": 18964.77750001941,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 42525104,
+    "raw": 803508
+  },
+  "terminalFreeBytes": 14613237760,
+  "errors": [
+    "worker not passed",
+    "required four groups incomplete",
+    "scenario resources not confirmed closed"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [],
+  "limits": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "60caca5210b05a88e4817390a3bd4d4e840d319e",
+  "executionHead": "a8a908631b05a64bada1c60e27cde7d004d04371",
+  "grantSha256": "7aab0b234d9c6732d7692b6ee8b9fe46f3c007d862d03bab51c6ada5195d8d92",
+  "cacheLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "target": "/private/tmp/arc-tooltip-keyboard-eahbr_m4/scratch/.vite",
+      "dev": 16777234,
+      "inode": 124694134
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "target": "/private/tmp/arc-tooltip-keyboard-eahbr_m4/scratch/.vite-temp",
+      "dev": 16777234,
+      "inode": 124694136
+    }
+  ],
+  "chargeMs": 18965,
+  "independentPortProbe": false,
+  "PG": false,
+  "postWriteElapsedMs": 18965.85183404386,
+  "postWriteRawBytes": 805106
+}

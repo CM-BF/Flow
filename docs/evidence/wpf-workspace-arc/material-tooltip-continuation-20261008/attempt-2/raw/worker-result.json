@@ -1,0 +1,4423 @@
+{
+  "state": "PASSED",
+  "workerPid": 74968,
+  "chromePid": 76020,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "interrupts": [],
+  "cleanupErrors": [],
+  "result": {
+    "startedAt": "2026-10-08T01:05:47.056Z",
+    "selected": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "passed": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "screenshots": [
+      "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-light-390.png",
+      "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-dark-390.png"
+    ],
+    "observations": {
+      "desktopStage": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-tooltip-final-xjzlm31w/raw/arc-desktop-ready.png",
+        "bytes": 84471,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T01:05:48.675Z"
+      },
+      "workspaceNamespace": {
+        "beforePanel": {
+          "top": 58.5,
+          "height": 37.3828125,
+          "flexGrow": "0",
+          "naturalHeight": 37.3953125
+        },
+        "openPanel": {
+          "top": 58.5,
+          "height": 37.3828125,
+          "flexGrow": "0",
+          "naturalHeight": 37.3953125
+        },
+        "closedPanel": {
+          "top": 58.5,
+          "height": 37.3828125,
+          "flexGrow": "0",
+          "naturalHeight": 37.3953125
+        },
+        "rightTab": "Terminal",
+        "scope": "Arc navigation stays intrinsic; right Workspace panels keeps its own flex rule"
+      },
+      "maxVisible": 3,
+      "bodyAdmission": {
+        "logicalPending": [
+          {
+            "id": 11,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "issuedMs": 5320.342417000001,
+            "phase": "three-pane-reads"
+          },
+          {
+            "id": 12,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "issuedMs": 5381.2825,
+            "phase": "three-pane-reads"
+          },
+          {
+            "id": 13,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "issuedMs": 5420.7398330000005,
+            "phase": "three-pane-reads"
+          },
+          {
+            "id": 14,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "issuedMs": 5460.9165,
+            "phase": "three-pane-reads"
+          },
+          {
+            "id": 15,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "issuedMs": 5502.775208,
+            "phase": "three-pane-reads"
+          },
+          {
+            "id": 16,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "issuedMs": 5542.671708000001,
+            "phase": "three-pane-reads"
+          }
+        ],
+        "client": {
+          "semantics": "Page issued/response/body-finished/failed; not socket admission",
+          "rows": [
+            {
+              "id": 1,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "issuedMs": 1177.2251670000005,
+              "phase": "connection",
+              "status": 200,
+              "failedMs": 1497.969583
+            },
+            {
+              "id": 2,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "issuedMs": 1548.6185420000002,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 1612.3147920000001
+            },
+            {
+              "id": 3,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "issuedMs": 1670.0290000000005,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 1756.0021670000006
+            },
+            {
+              "id": 4,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "issuedMs": 1742.3187500000004,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 1832.3742080000002
+            },
+            {
+              "id": 5,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "issuedMs": 1891.883917,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 1953.3303329999999
+            },
+            {
+              "id": 6,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "issuedMs": 1940.2628329999998,
+              "phase": "layout-navigation",
+              "status": 200
+            },
+            {
+              "id": 7,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "issuedMs": 2021.0255830000006,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 2158.146207999999
+            },
+            {
+              "id": 8,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "issuedMs": 2135.1927079999996,
+              "phase": "layout-navigation",
+              "status": 200
+            },
+            {
+              "id": 9,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "issuedMs": 2251.0488749999995,
+              "phase": "layout-navigation",
+              "status": 200,
+              "failedMs": 2332.5989170000003
+            },
+            {
+              "id": 10,
+              "kind": "stream",
+              "method": "GET",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "issuedMs": 2319.0485419999995,
+              "phase": "layout-navigation",
+              "status": 200
+            },
+            {
+              "id": 11,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+              "issuedMs": 5320.342417000001,
+              "phase": "three-pane-reads"
+            },
+            {
+              "id": 12,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-1/queue/chat-1-queue",
+              "issuedMs": 5381.2825,
+              "phase": "three-pane-reads"
+            },
+            {
+              "id": 13,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+              "issuedMs": 5420.7398330000005,
+              "phase": "three-pane-reads"
+            },
+            {
+              "id": 14,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-2/queue/chat-2-queue",
+              "issuedMs": 5460.9165,
+              "phase": "three-pane-reads"
+            },
+            {
+              "id": 15,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+              "issuedMs": 5502.775208,
+              "phase": "three-pane-reads"
+            },
+            {
+              "id": 16,
+              "kind": "body",
+              "method": "GET",
+              "path": "/api/conversations/chat-3/queue/chat-3-queue",
+              "issuedMs": 5542.671708000001,
+              "phase": "three-pane-reads"
+            }
+          ],
+          "events": [
+            {
+              "sequence": 1,
+              "elapsedMs": 1177.2654170000005,
+              "phase": "connection",
+              "event": "issued",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "requestId": 1
+            },
+            {
+              "sequence": 2,
+              "elapsedMs": 1188.3315830000001,
+              "phase": "connection",
+              "event": "response",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "requestId": 1,
+              "status": 200
+            },
+            {
+              "sequence": 3,
+              "elapsedMs": 1497.9742500000002,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "requestId": 1,
+              "status": 200
+            },
+            {
+              "sequence": 4,
+              "elapsedMs": 1548.6441670000004,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 2
+            },
+            {
+              "sequence": 5,
+              "elapsedMs": 1550.7556249999998,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 2,
+              "status": 200
+            },
+            {
+              "sequence": 6,
+              "elapsedMs": 1612.3198330000005,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 2,
+              "status": 200
+            },
+            {
+              "sequence": 7,
+              "elapsedMs": 1670.0384169999998,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "requestId": 3
+            },
+            {
+              "sequence": 8,
+              "elapsedMs": 1674.8873329999997,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "requestId": 3,
+              "status": 200
+            },
+            {
+              "sequence": 9,
+              "elapsedMs": 1742.3259170000001,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 4
+            },
+            {
+              "sequence": 10,
+              "elapsedMs": 1756.012417,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "requestId": 3,
+              "status": 200
+            },
+            {
+              "sequence": 11,
+              "elapsedMs": 1756.1791670000002,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 4,
+              "status": 200
+            },
+            {
+              "sequence": 12,
+              "elapsedMs": 1832.376292,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 4,
+              "status": 200
+            },
+            {
+              "sequence": 13,
+              "elapsedMs": 1891.8866669999998,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 5
+            },
+            {
+              "sequence": 14,
+              "elapsedMs": 1892.9681250000003,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 5,
+              "status": 200
+            },
+            {
+              "sequence": 15,
+              "elapsedMs": 1940.264792,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "requestId": 6
+            },
+            {
+              "sequence": 16,
+              "elapsedMs": 1953.3320000000003,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 5,
+              "status": 200
+            },
+            {
+              "sequence": 17,
+              "elapsedMs": 1953.521417,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-3-task-2/stream",
+              "requestId": 6,
+              "status": 200
+            },
+            {
+              "sequence": 18,
+              "elapsedMs": 2021.0269580000004,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 7
+            },
+            {
+              "sequence": 19,
+              "elapsedMs": 2026.1497920000002,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 7,
+              "status": 200
+            },
+            {
+              "sequence": 20,
+              "elapsedMs": 2135.1940000000004,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 8
+            },
+            {
+              "sequence": 21,
+              "elapsedMs": 2158.1476250000005,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 7,
+              "status": 200
+            },
+            {
+              "sequence": 22,
+              "elapsedMs": 2158.2739169999995,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-2-task-2/stream",
+              "requestId": 8,
+              "status": 200
+            },
+            {
+              "sequence": 23,
+              "elapsedMs": 2251.051375,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 9
+            },
+            {
+              "sequence": 24,
+              "elapsedMs": 2256.653042000001,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 9,
+              "status": 200
+            },
+            {
+              "sequence": 25,
+              "elapsedMs": 2319.050333,
+              "phase": "layout-navigation",
+              "event": "issued",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "requestId": 10
+            },
+            {
+              "sequence": 26,
+              "elapsedMs": 2332.6001669999996,
+              "phase": "layout-navigation",
+              "event": "failed",
+              "path": "/api/tasks/chat-7-task-1/stream",
+              "requestId": 9,
+              "status": 200
+            },
+            {
+              "sequence": 27,
+              "elapsedMs": 2332.7072080000007,
+              "phase": "layout-navigation",
+              "event": "response",
+              "path": "/api/tasks/chat-1-task-2/stream",
+              "requestId": 10,
+              "status": 200
+            },
+            {
+              "sequence": 28,
+              "elapsedMs": 5244.520292,
+              "phase": "three-pane-reads",
+              "event": "reply-1-begin",
+              "path": ""
+            },
+            {
+              "sequence": 29,
+              "elapsedMs": 5320.344250000001,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+              "requestId": 11
+            },
+            {
+              "sequence": 30,
+              "elapsedMs": 5323.742792,
+              "phase": "three-pane-reads",
+              "event": "reply-1-end",
+              "path": ""
+            },
+            {
+              "sequence": 31,
+              "elapsedMs": 5323.746833,
+              "phase": "three-pane-reads",
+              "event": "queue-1-begin",
+              "path": ""
+            },
+            {
+              "sequence": 32,
+              "elapsedMs": 5381.283791999999,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-1/queue/chat-1-queue",
+              "requestId": 12
+            },
+            {
+              "sequence": 33,
+              "elapsedMs": 5383.288625,
+              "phase": "three-pane-reads",
+              "event": "queue-1-end",
+              "path": ""
+            },
+            {
+              "sequence": 34,
+              "elapsedMs": 5383.290333,
+              "phase": "three-pane-reads",
+              "event": "reply-2-begin",
+              "path": ""
+            },
+            {
+              "sequence": 35,
+              "elapsedMs": 5420.741333000001,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+              "requestId": 13
+            },
+            {
+              "sequence": 36,
+              "elapsedMs": 5423.456042000001,
+              "phase": "three-pane-reads",
+              "event": "reply-2-end",
+              "path": ""
+            },
+            {
+              "sequence": 37,
+              "elapsedMs": 5423.457125,
+              "phase": "three-pane-reads",
+              "event": "queue-2-begin",
+              "path": ""
+            },
+            {
+              "sequence": 38,
+              "elapsedMs": 5460.917958000001,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-2/queue/chat-2-queue",
+              "requestId": 14
+            },
+            {
+              "sequence": 39,
+              "elapsedMs": 5463.394708000001,
+              "phase": "three-pane-reads",
+              "event": "queue-2-end",
+              "path": ""
+            },
+            {
+              "sequence": 40,
+              "elapsedMs": 5463.396207999999,
+              "phase": "three-pane-reads",
+              "event": "reply-3-begin",
+              "path": ""
+            },
+            {
+              "sequence": 41,
+              "elapsedMs": 5502.776917,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+              "requestId": 15
+            },
+            {
+              "sequence": 42,
+              "elapsedMs": 5504.461958000001,
+              "phase": "three-pane-reads",
+              "event": "reply-3-end",
+              "path": ""
+            },
+            {
+              "sequence": 43,
+              "elapsedMs": 5504.463208,
+              "phase": "three-pane-reads",
+              "event": "queue-3-begin",
+              "path": ""
+            },
+            {
+              "sequence": 44,
+              "elapsedMs": 5542.673,
+              "phase": "three-pane-reads",
+              "event": "issued",
+              "path": "/api/conversations/chat-3/queue/chat-3-queue",
+              "requestId": 16
+            },
+            {
+              "sequence": 45,
+              "elapsedMs": 5546.235374999999,
+              "phase": "three-pane-reads",
+              "event": "queue-3-end",
+              "path": ""
+            }
+          ],
+          "errors": [],
+          "maxRows": 64,
+          "maxEvents": 256
+        },
+        "server": {
+          "bodyInFlight": 3,
+          "bodyPeak": 3,
+          "bodyBytes": 0
+        }
+      },
+      "bodyReads": {
+        "bodyInFlight": 0,
+        "bodyPeak": 3,
+        "bodyBytes": 23568,
+        "count": 6,
+        "limit": 6,
+        "semantics": "six browser-issued and UI-loading logical body reads; server socket concurrency recorded separately"
+      },
+      "streamReads": [
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 0
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 24
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 48
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 72
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 96
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 120
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 144
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 168
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 192
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 216
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 240
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 24
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 48
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 0
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 24
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 48
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 72
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 48
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 72
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 96
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 72
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 96
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 120
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 144
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 168
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 192
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 96
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 216
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 120
+        },
+        {
+          "taskId": "chat-3-task-2",
+          "kind": "patches",
+          "after": 240
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 144
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 168
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 192
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 216
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 240
+        },
+        {
+          "taskId": "chat-1-task-2",
+          "kind": "patches",
+          "after": 243
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "metadata",
+          "after": 0
+        },
+        {
+          "taskId": "chat-2-task-2",
+          "kind": "patches",
+          "after": 243
+        }
+      ],
+      "material": {
+        "key": "c92fa686-8e12-404f-9692-cfc0e6e9d4e5:turn",
+        "frozen": {
+          "expectedRevision": 1,
+          "text": "Frozen A through actual material preparation",
+          "mode": "follow-up",
+          "knowledge": [],
+          "attachments": [
+            {
+              "kind": "upload",
+              "projectId": "arc-project",
+              "resourceId": "be3284e6-7f68-4c83-b809-fad5406d7613",
+              "version": 1,
+              "contentDigest": "68c0caab16f6166b97f4cb2762bb56e7cd2c9c98e2eb56168ec3cc8f064b69d8"
+            },
+            {
+              "kind": "upload",
+              "projectId": "arc-project",
+              "resourceId": "04f40b44-5468-40e7-a247-ca254986c4b9",
+              "version": 1,
+              "contentDigest": "7628519d167a853971f38490a7784b0954068c5b8fbf4fc489cb549ca67e7035"
+            }
+          ],
+          "messageSettings": {
+            "protocol": "flow.claude-turn-settings.v1",
+            "profile": {
+              "id": "10000000-0000-4000-8000-000000000004",
+              "runnerId": "10000000-0000-4000-8000-000000000005",
+              "configDigest": "7e11b5ce42fbb6e0d7555743b50c3df509b59bd40bcb5fafac88ea9b0f662898"
+            },
+            "requested": {
+              "model": "arc-A",
+              "thinking": "disabled",
+              "effort": {
+                "kind": "not-requested"
+              },
+              "speed": "standard"
+            }
+          }
+        },
+        "nextDraft": {
+          "messageSettings": {
+            "protocol": "flow.claude-turn-settings.v1",
+            "profile": {
+              "id": "10000000-0000-4000-8000-000000000004",
+              "runnerId": "10000000-0000-4000-8000-000000000005",
+              "configDigest": "7e11b5ce42fbb6e0d7555743b50c3df509b59bd40bcb5fafac88ea9b0f662898"
+            },
+            "requested": {
+              "model": "arc-B",
+              "thinking": "disabled",
+              "effort": {
+                "kind": "not-requested"
+              },
+              "speed": "standard"
+            }
+          },
+          "steering": [],
+          "text": "Independent B while A prepares",
+          "intent": "follow-up",
+          "profile": {
+            "kind": "legacy-default"
+          },
+          "projectId": "arc-project",
+          "projectTitle": "arc-project",
+          "knowledge": [],
+          "attachments": [
+            {
+              "id": "7e34def6-af52-4243-a08e-f5a21ebcc771",
+              "name": "arc-next.txt",
+              "state": "ready",
+              "metadata": {
+                "reference": {
+                  "kind": "upload",
+                  "projectId": "arc-project",
+                  "resourceId": "caa754d0-efde-48e4-80b8-1624dba7a1ee",
+                  "version": 1,
+                  "contentDigest": "89e5a17dfe533811b13ac158322045316de086751ec506f78390e0a9c8df6fc8"
+                },
+                "name": "arc-next.txt",
+                "mediaType": "text/plain",
+                "byteLength": 16,
+                "createdAt": "2026-10-08T01:05:47.060Z",
+                "expiresAt": "2026-10-08T02:05:59.845Z",
+                "state": "ready",
+                "retained": false
+              },
+              "uploadKey": "014cbb9c-8ea5-4e43-a053-071e127b8d48"
+            }
+          ]
+        },
+        "probe": {
+          "armed": false,
+          "pending": false,
+          "rows": [
+            {
+              "validated": true,
+              "aborted": false,
+              "returned": true
+            }
+          ],
+          "ready": [
+            {
+              "id": "e231a2d9-0f65-447b-9bde-56d4a776028a",
+              "name": "arc-one.txt",
+              "reference": {
+                "kind": "upload",
+                "projectId": "arc-project",
+                "resourceId": "be3284e6-7f68-4c83-b809-fad5406d7613",
+                "version": 1,
+                "contentDigest": "68c0caab16f6166b97f4cb2762bb56e7cd2c9c98e2eb56168ec3cc8f064b69d8"
+              }
+            },
+            {
+              "id": "f4c3ecc7-ba1d-43d8-9181-a3d34082a326",
+              "name": "arc-two.txt",
+              "reference": {
+                "kind": "upload",
+                "projectId": "arc-project",
+                "resourceId": "04f40b44-5468-40e7-a247-ca254986c4b9",
+                "version": 1,
+                "contentDigest": "7628519d167a853971f38490a7784b0954068c5b8fbf4fc489cb549ca67e7035"
+              }
+            },
+            {
+              "id": "7e34def6-af52-4243-a08e-f5a21ebcc771",
+              "name": "arc-next.txt",
+              "reference": {
+                "kind": "upload",
+                "projectId": "arc-project",
+                "resourceId": "caa754d0-efde-48e4-80b8-1624dba7a1ee",
+                "version": 1,
+                "contentDigest": "89e5a17dfe533811b13ac158322045316de086751ec506f78390e0a9c8df6fc8"
+              }
+            }
+          ]
+        }
+      },
+      "protectedClose": "Public plugin close: cancel kept view; fresh confirmed close retained complete saved B; reopen kept text. Revoked confirmations are tested separately through actual host/port.",
+      "reducedMotion": {
+        "preference": "reduce",
+        "layoutStyles": [
+          {
+            "animationName": "none",
+            "animationDuration": "0s",
+            "transitionDuration": "0s"
+          },
+          {
+            "animationName": "none",
+            "animationDuration": "0s",
+            "transitionDuration": "0s"
+          },
+          {
+            "animationName": "none",
+            "animationDuration": "0s",
+            "transitionDuration": "0s"
+          },
+          {
+            "animationName": "none",
+            "animationDuration": "0s",
+            "transitionDuration": "0s"
+          }
+        ],
+        "scope": "Visible panes, tabs and separators; protected-close and workspace keyboard actions above ran with reduced motion."
+      },
+      "persistedDraftIdentity": {
+        "id": "draft:97a4dae2-504e-4e0a-9507-ead5b0d3d27b",
+        "namespace": "[\"http://127.0.0.1:52826\",\"10000000-0000-4000-8000-000000000001\",\"10000000-0000-4000-8000-000000000002\"]",
+        "viewKey": "97a4dae2-504e-4e0a-9507-ead5b0d3d27b"
+      },
+      "persistedLayout": {
+        "version": 1,
+        "tabs": [
+          {
+            "id": "workspace-main",
+            "title": "Workspace 1",
+            "panes": [
+              {
+                "id": "main",
+                "tabs": [
+                  "conversation:chat-1"
+                ],
+                "activeId": "conversation:chat-1",
+                "weight": 0.44999999999999996
+              },
+              {
+                "id": "group-f2f8788d-b275-4de2-beb5-892b7ee8e8a5",
+                "tabs": [
+                  "conversation:chat-2"
+                ],
+                "activeId": "conversation:chat-2",
+                "weight": 0.30000000000000004
+              },
+              {
+                "id": "group-bda762cf-4adc-4e15-8e2d-d37d7fdcfbfc",
+                "tabs": [
+                  "conversation:chat-3"
+                ],
+                "activeId": "conversation:chat-3",
+                "weight": 0.25
+              }
+            ],
+            "activePaneId": "group-f2f8788d-b275-4de2-beb5-892b7ee8e8a5"
+          },
+          {
+            "id": "workspace-d71d5447-020e-4982-b4f1-a7e1c57dc347",
+            "title": "Workspace 2",
+            "panes": [
+              {
+                "id": "group-4b2225e2-6859-4f8a-a0f9-5c741d5d5c4e",
+                "tabs": [
+                  "conversation:chat-6",
+                  "conversation:chat-5",
+                  "conversation:chat-4"
+                ],
+                "activeId": "conversation:chat-4",
+                "weight": 1
+              }
+            ],
+            "activePaneId": "group-4b2225e2-6859-4f8a-a0f9-5c741d5d5c4e"
+          }
+        ],
+        "activeTabId": "workspace-d71d5447-020e-4982-b4f1-a7e1c57dc347"
+      },
+      "http": {
+        "reads": [
+          {
+            "method": "GET",
+            "path": "/api/browser-session",
+            "bytes": 64,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "POST",
+            "path": "/api/browser-session/connect",
+            "bytes": 280,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/browser-session",
+            "bytes": 280,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5012,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations",
+            "bytes": 3757,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 20818,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/turns",
+            "bytes": 7574,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2",
+            "bytes": 589,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 4956,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 4989,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5009,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 720,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/turns",
+            "bytes": 7574,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2",
+            "bytes": 589,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 4956,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 4989,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/turns",
+            "bytes": 7574,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2",
+            "bytes": 589,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 4956,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 4989,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5009,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7/turns",
+            "bytes": 2536,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1",
+            "bytes": 748,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5001,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5009,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5009,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/assistant-stream/patches",
+            "bytes": 720,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-7",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 5010,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 720,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 108,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5012,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 9438,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "bytes": 6218,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "bytes": 1638,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "bytes": 6218,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "bytes": 1638,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "bytes": 6218,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "bytes": 1638,
+            "bodyRead": true,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 9438,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 731,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 9438,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/turns",
+            "bytes": 2536,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-1",
+            "bytes": 748,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5/turns",
+            "bytes": 2536,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1",
+            "bytes": 748,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-6",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-6/turns",
+            "bytes": 2536,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-6/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-6-task-1",
+            "bytes": 748,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/execution-profiles",
+            "bytes": 1518,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 9438,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/projects/arc-project/attachments/capabilities",
+            "bytes": 371,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/arc-project/attachments",
+            "bytes": 598,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/arc-project/attachments",
+            "bytes": 598,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/execution-profiles",
+            "bytes": 1518,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-6",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-6/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "POST",
+            "path": "/api/projects/arc-project/attachments",
+            "bytes": 599,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-5",
+            "bytes": 2996,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 9438,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "POST",
+            "path": "/api/conversations/chat-4/turns",
+            "bytes": 2830,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2",
+            "bytes": 657,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/assistant-stream",
+            "bytes": 179,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5237,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations",
+            "bytes": 3757,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5237,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 3294,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/assistant-stream",
+            "bytes": 179,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-1",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-2",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue",
+            "bytes": 434,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-3",
+            "bytes": 1930,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream",
+            "bytes": 880,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/assistant-stream/patches",
+            "bytes": 725,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/assistant-stream/patches",
+            "bytes": 725,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 3294,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/assistant-stream",
+            "bytes": 179,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5237,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 3294,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/assistant-stream",
+            "bytes": 179,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/browser-session",
+            "bytes": 280,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks",
+            "bytes": 5237,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations",
+            "bytes": 3757,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/workspace",
+            "bytes": 21131,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4",
+            "bytes": 3294,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/turns",
+            "bytes": 4861,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/conversations/chat-4/queue",
+            "bytes": 123,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2",
+            "bytes": 657,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/assistant-stream",
+            "bytes": 179,
+            "bodyRead": false,
+            "ended": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "bytes": 0,
+            "bodyRead": false,
+            "ended": true
+          }
+        ],
+        "errors": [],
+        "body": {
+          "bodyInFlight": 0,
+          "bodyPeak": 3,
+          "bodyBytes": 23568
+        },
+        "bodyEvents": [
+          {
+            "sequence": 1,
+            "elapsedMs": 1464.7503340000003,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "connection",
+            "inFlight": 0
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 1798.4417090000006,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 1843.331709,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 1913.3022500000006,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 1963.1271670000006,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 2041.315834,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 2056.575250000001,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 2132.9907920000005,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 2185.2517500000004,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 2240.1695,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 2254.107959,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 2316.2617500000006,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 2435.2521670000006,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 2459.1324590000004,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 2549.6538340000006,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 2618.9057919999996,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 2633.357417000001,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "phase": "layout-navigation",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 5621.277542,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 1
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 5621.292292,
+            "event": "body-held",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 1
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 5682.581,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 2
+          },
+          {
+            "sequence": 21,
+            "elapsedMs": 5682.589125,
+            "event": "body-held",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 2
+          },
+          {
+            "sequence": 22,
+            "elapsedMs": 5722.042959,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 23,
+            "elapsedMs": 5722.055959000001,
+            "event": "body-held",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 24,
+            "elapsedMs": 5858.119500000001,
+            "event": "body-release",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 25,
+            "elapsedMs": 5859.118792000001,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3,
+            "status": 200
+          },
+          {
+            "sequence": 26,
+            "elapsedMs": 5859.132542000001,
+            "event": "body-close",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 2,
+            "status": 200
+          },
+          {
+            "sequence": 27,
+            "elapsedMs": 5860.465209,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 28,
+            "elapsedMs": 5860.474250000001,
+            "event": "body-held",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 29,
+            "elapsedMs": 5961.717584,
+            "event": "body-release",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 30,
+            "elapsedMs": 5962.054209,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3,
+            "status": 200
+          },
+          {
+            "sequence": 31,
+            "elapsedMs": 5962.0626250000005,
+            "event": "body-close",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 2,
+            "status": 200
+          },
+          {
+            "sequence": 32,
+            "elapsedMs": 5963.111667000001,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 33,
+            "elapsedMs": 5963.121500000001,
+            "event": "body-held",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 34,
+            "elapsedMs": 6063.7060839999995,
+            "event": "body-release",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 35,
+            "elapsedMs": 6064.197125000001,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 3,
+            "status": 200
+          },
+          {
+            "sequence": 36,
+            "elapsedMs": 6064.201000000001,
+            "event": "body-close",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 2,
+            "status": 200
+          },
+          {
+            "sequence": 37,
+            "elapsedMs": 6065.172042,
+            "event": "body-arrive",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 38,
+            "elapsedMs": 6065.179625000001,
+            "event": "body-held",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 39,
+            "elapsedMs": 6165.325959,
+            "event": "body-release",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3
+          },
+          {
+            "sequence": 40,
+            "elapsedMs": 6165.632667,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 3,
+            "status": 200
+          },
+          {
+            "sequence": 41,
+            "elapsedMs": 6165.642625,
+            "event": "body-close",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 2,
+            "status": 200
+          },
+          {
+            "sequence": 42,
+            "elapsedMs": 6267.38075,
+            "event": "body-release",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 2
+          },
+          {
+            "sequence": 43,
+            "elapsedMs": 6267.740584000001,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 2,
+            "status": 200
+          },
+          {
+            "sequence": 44,
+            "elapsedMs": 6267.744542,
+            "event": "body-close",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "phase": "three-pane-reads",
+            "inFlight": 1,
+            "status": 200
+          },
+          {
+            "sequence": 45,
+            "elapsedMs": 6369.61175,
+            "event": "body-release",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 1
+          },
+          {
+            "sequence": 46,
+            "elapsedMs": 6369.886125000001,
+            "event": "body-finish",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 1,
+            "status": 200
+          },
+          {
+            "sequence": 47,
+            "elapsedMs": 6369.8935839999995,
+            "event": "body-close",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "phase": "three-pane-reads",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 48,
+            "elapsedMs": 9562.224834,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "three-pane-reads",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 49,
+            "elapsedMs": 9562.33725,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "three-pane-reads",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 50,
+            "elapsedMs": 9562.499375000001,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "three-pane-reads",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 51,
+            "elapsedMs": 9681.63625,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 52,
+            "elapsedMs": 9748.268042,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 53,
+            "elapsedMs": 9793.93125,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 54,
+            "elapsedMs": 9863.868292000001,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 55,
+            "elapsedMs": 9915.875792,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 56,
+            "elapsedMs": 9983.561625,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 57,
+            "elapsedMs": 10075.013209,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 58,
+            "elapsedMs": 13333.275292,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 59,
+            "elapsedMs": 13333.530834,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 60,
+            "elapsedMs": 13681.082792,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 61,
+            "elapsedMs": 14104.623542,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 62,
+            "elapsedMs": 14111.91925,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "prepare-await-stable",
+            "inFlight": 0
+          },
+          {
+            "sequence": 63,
+            "elapsedMs": 14653.089000000002,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 64,
+            "elapsedMs": 14785.011250000001,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 65,
+            "elapsedMs": 14801.592333999999,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 66,
+            "elapsedMs": 14872.804834,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 67,
+            "elapsedMs": 14873.628333999999,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 68,
+            "elapsedMs": 14874.773959,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 69,
+            "elapsedMs": 14899.931750000002,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 70,
+            "elapsedMs": 14969.054542,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 71,
+            "elapsedMs": 14986.143624999999,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 72,
+            "elapsedMs": 14986.272334,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 73,
+            "elapsedMs": 14986.278417,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 74,
+            "elapsedMs": 15052.249542,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 75,
+            "elapsedMs": 15106.256209000001,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 76,
+            "elapsedMs": 15357.980042000001,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 77,
+            "elapsedMs": 15703.766417,
+            "event": "stream-arrive",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "refresh-theme",
+            "inFlight": 0
+          },
+          {
+            "sequence": 78,
+            "elapsedMs": 15753.239042,
+            "event": "stream-finish",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "cleanup",
+            "inFlight": 0,
+            "status": 200
+          },
+          {
+            "sequence": 79,
+            "elapsedMs": 15753.298375,
+            "event": "stream-close",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "phase": "cleanup",
+            "inFlight": 0,
+            "status": 200
+          }
+        ],
+        "ports": [
+          52820,
+          52826
+        ]
+      },
+      "clientReads": {
+        "semantics": "Page issued/response/body-finished/failed; not socket admission",
+        "rows": [
+          {
+            "id": 1,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "issuedMs": 1177.2251670000005,
+            "phase": "connection",
+            "status": 200,
+            "failedMs": 1497.969583
+          },
+          {
+            "id": 2,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "issuedMs": 1548.6185420000002,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 1612.3147920000001
+          },
+          {
+            "id": 3,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "issuedMs": 1670.0290000000005,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 1756.0021670000006
+          },
+          {
+            "id": 4,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "issuedMs": 1742.3187500000004,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 1832.3742080000002
+          },
+          {
+            "id": 5,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "issuedMs": 1891.883917,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 1953.3303329999999
+          },
+          {
+            "id": 6,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "issuedMs": 1940.2628329999998,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 9261.521792
+          },
+          {
+            "id": 7,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "issuedMs": 2021.0255830000006,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 2158.146207999999
+          },
+          {
+            "id": 8,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "issuedMs": 2135.1927079999996,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 9261.468667000001
+          },
+          {
+            "id": 9,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "issuedMs": 2251.0488749999995,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 2332.5989170000003
+          },
+          {
+            "id": 10,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "issuedMs": 2319.0485419999995,
+            "phase": "layout-navigation",
+            "status": 200,
+            "failedMs": 9261.320333
+          },
+          {
+            "id": 11,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "issuedMs": 5320.342417000001,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 5560.018583
+          },
+          {
+            "id": 12,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "issuedMs": 5381.2825,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 5662.247042
+          },
+          {
+            "id": 13,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "issuedMs": 5420.7398330000005,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 5764.324250000001
+          },
+          {
+            "id": 14,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "issuedMs": 5460.9165,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 5865.447458
+          },
+          {
+            "id": 15,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "issuedMs": 5502.775208,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 5967.504042
+          },
+          {
+            "id": 16,
+            "kind": "body",
+            "method": "GET",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "issuedMs": 5542.671708000001,
+            "phase": "three-pane-reads",
+            "status": 200,
+            "finishedMs": 6069.595833
+          },
+          {
+            "id": 17,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "issuedMs": 9389.732375,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 9447.420583
+          },
+          {
+            "id": 18,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "issuedMs": 9503.014542,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 9562.810333000001
+          },
+          {
+            "id": 19,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "issuedMs": 9627.333083000001,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 13032.478749999998
+          },
+          {
+            "id": 20,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "issuedMs": 9684.888125000001,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 13032.428499999998
+          },
+          {
+            "id": 21,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "issuedMs": 9776.38175,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 13803.610249999998
+          },
+          {
+            "id": 22,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "issuedMs": 13384.288417,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 14500.607457999999
+          },
+          {
+            "id": 23,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "issuedMs": 13827.302375,
+            "phase": "prepare-await-stable",
+            "status": 200,
+            "failedMs": 14352.058916999998
+          },
+          {
+            "id": 24,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "issuedMs": 14485.164832999999,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 14598.936875
+          },
+          {
+            "id": 25,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "issuedMs": 14574.678333,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 14685.119292
+          },
+          {
+            "id": 26,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "issuedMs": 14575.227749999998,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 14685.158333
+          },
+          {
+            "id": 27,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "issuedMs": 14575.594792,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 14685.20375
+          },
+          {
+            "id": 28,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "issuedMs": 14668.924416999998,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 14753.045083
+          },
+          {
+            "id": 29,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "issuedMs": 14806.03025,
+            "phase": "refresh-theme",
+            "status": 200
+          },
+          {
+            "id": 30,
+            "kind": "stream",
+            "method": "GET",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "issuedMs": 15412.614624999998,
+            "phase": "refresh-theme",
+            "status": 200,
+            "failedMs": 15458.883291999999
+          }
+        ],
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 1177.2654170000005,
+            "phase": "connection",
+            "event": "issued",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 1188.3315830000001,
+            "phase": "connection",
+            "event": "response",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 1,
+            "status": 200
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 1497.9742500000002,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 1,
+            "status": 200
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 1548.6441670000004,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 2
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 1550.7556249999998,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 2,
+            "status": 200
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 1612.3198330000005,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 2,
+            "status": 200
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 1670.0384169999998,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 3
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 1674.8873329999997,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 3,
+            "status": 200
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 1742.3259170000001,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 4
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 1756.012417,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 3,
+            "status": 200
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 1756.1791670000002,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 4,
+            "status": 200
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 1832.376292,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 4,
+            "status": 200
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 1891.8866669999998,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 5
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 1892.9681250000003,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 5,
+            "status": 200
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 1940.264792,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 6
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 1953.3320000000003,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 5,
+            "status": 200
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 1953.521417,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 6,
+            "status": 200
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 2021.0269580000004,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 7
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 2026.1497920000002,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 7,
+            "status": 200
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 2135.1940000000004,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 8
+          },
+          {
+            "sequence": 21,
+            "elapsedMs": 2158.1476250000005,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 7,
+            "status": 200
+          },
+          {
+            "sequence": 22,
+            "elapsedMs": 2158.2739169999995,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 8,
+            "status": 200
+          },
+          {
+            "sequence": 23,
+            "elapsedMs": 2251.051375,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 9
+          },
+          {
+            "sequence": 24,
+            "elapsedMs": 2256.653042000001,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 9,
+            "status": 200
+          },
+          {
+            "sequence": 25,
+            "elapsedMs": 2319.050333,
+            "phase": "layout-navigation",
+            "event": "issued",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 10
+          },
+          {
+            "sequence": 26,
+            "elapsedMs": 2332.6001669999996,
+            "phase": "layout-navigation",
+            "event": "failed",
+            "path": "/api/tasks/chat-7-task-1/stream",
+            "requestId": 9,
+            "status": 200
+          },
+          {
+            "sequence": 27,
+            "elapsedMs": 2332.7072080000007,
+            "phase": "layout-navigation",
+            "event": "response",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 10,
+            "status": 200
+          },
+          {
+            "sequence": 28,
+            "elapsedMs": 5244.520292,
+            "phase": "three-pane-reads",
+            "event": "reply-1-begin",
+            "path": ""
+          },
+          {
+            "sequence": 29,
+            "elapsedMs": 5320.344250000001,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "requestId": 11
+          },
+          {
+            "sequence": 30,
+            "elapsedMs": 5323.742792,
+            "phase": "three-pane-reads",
+            "event": "reply-1-end",
+            "path": ""
+          },
+          {
+            "sequence": 31,
+            "elapsedMs": 5323.746833,
+            "phase": "three-pane-reads",
+            "event": "queue-1-begin",
+            "path": ""
+          },
+          {
+            "sequence": 32,
+            "elapsedMs": 5381.283791999999,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "requestId": 12
+          },
+          {
+            "sequence": 33,
+            "elapsedMs": 5383.288625,
+            "phase": "three-pane-reads",
+            "event": "queue-1-end",
+            "path": ""
+          },
+          {
+            "sequence": 34,
+            "elapsedMs": 5383.290333,
+            "phase": "three-pane-reads",
+            "event": "reply-2-begin",
+            "path": ""
+          },
+          {
+            "sequence": 35,
+            "elapsedMs": 5420.741333000001,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "requestId": 13
+          },
+          {
+            "sequence": 36,
+            "elapsedMs": 5423.456042000001,
+            "phase": "three-pane-reads",
+            "event": "reply-2-end",
+            "path": ""
+          },
+          {
+            "sequence": 37,
+            "elapsedMs": 5423.457125,
+            "phase": "three-pane-reads",
+            "event": "queue-2-begin",
+            "path": ""
+          },
+          {
+            "sequence": 38,
+            "elapsedMs": 5460.917958000001,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "requestId": 14
+          },
+          {
+            "sequence": 39,
+            "elapsedMs": 5463.394708000001,
+            "phase": "three-pane-reads",
+            "event": "queue-2-end",
+            "path": ""
+          },
+          {
+            "sequence": 40,
+            "elapsedMs": 5463.396207999999,
+            "phase": "three-pane-reads",
+            "event": "reply-3-begin",
+            "path": ""
+          },
+          {
+            "sequence": 41,
+            "elapsedMs": 5502.776917,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "requestId": 15
+          },
+          {
+            "sequence": 42,
+            "elapsedMs": 5504.461958000001,
+            "phase": "three-pane-reads",
+            "event": "reply-3-end",
+            "path": ""
+          },
+          {
+            "sequence": 43,
+            "elapsedMs": 5504.463208,
+            "phase": "three-pane-reads",
+            "event": "queue-3-begin",
+            "path": ""
+          },
+          {
+            "sequence": 44,
+            "elapsedMs": 5542.673,
+            "phase": "three-pane-reads",
+            "event": "issued",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "requestId": 16
+          },
+          {
+            "sequence": 45,
+            "elapsedMs": 5546.235374999999,
+            "phase": "three-pane-reads",
+            "event": "queue-3-end",
+            "path": ""
+          },
+          {
+            "sequence": 46,
+            "elapsedMs": 5559.4159580000005,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "requestId": 11,
+            "status": 200
+          },
+          {
+            "sequence": 47,
+            "elapsedMs": 5560.024667000001,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+            "requestId": 11,
+            "status": 200
+          },
+          {
+            "sequence": 48,
+            "elapsedMs": 5662.099042000001,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "requestId": 12,
+            "status": 200
+          },
+          {
+            "sequence": 49,
+            "elapsedMs": 5662.2477499999995,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-1/queue/chat-1-queue",
+            "requestId": 12,
+            "status": 200
+          },
+          {
+            "sequence": 50,
+            "elapsedMs": 5764.105167000001,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "requestId": 13,
+            "status": 200
+          },
+          {
+            "sequence": 51,
+            "elapsedMs": 5764.325207999999,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+            "requestId": 13,
+            "status": 200
+          },
+          {
+            "sequence": 52,
+            "elapsedMs": 5865.343167,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "requestId": 14,
+            "status": 200
+          },
+          {
+            "sequence": 53,
+            "elapsedMs": 5865.448292,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-2/queue/chat-2-queue",
+            "requestId": 14,
+            "status": 200
+          },
+          {
+            "sequence": 54,
+            "elapsedMs": 5967.402208,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "requestId": 15,
+            "status": 200
+          },
+          {
+            "sequence": 55,
+            "elapsedMs": 5967.5043749999995,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+            "requestId": 15,
+            "status": 200
+          },
+          {
+            "sequence": 56,
+            "elapsedMs": 6069.456375000001,
+            "phase": "three-pane-reads",
+            "event": "response",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "requestId": 16,
+            "status": 200
+          },
+          {
+            "sequence": 57,
+            "elapsedMs": 6069.597083,
+            "phase": "three-pane-reads",
+            "event": "finished",
+            "path": "/api/conversations/chat-3/queue/chat-3-queue",
+            "requestId": 16,
+            "status": 200
+          },
+          {
+            "sequence": 58,
+            "elapsedMs": 9261.322124999999,
+            "phase": "three-pane-reads",
+            "event": "failed",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 10,
+            "status": 200
+          },
+          {
+            "sequence": 59,
+            "elapsedMs": 9261.470292000002,
+            "phase": "three-pane-reads",
+            "event": "failed",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 8,
+            "status": 200
+          },
+          {
+            "sequence": 60,
+            "elapsedMs": 9261.522125,
+            "phase": "three-pane-reads",
+            "event": "failed",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 6,
+            "status": 200
+          },
+          {
+            "sequence": 61,
+            "elapsedMs": 9389.736333,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 17
+          },
+          {
+            "sequence": 62,
+            "elapsedMs": 9391.192542,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 17,
+            "status": 200
+          },
+          {
+            "sequence": 63,
+            "elapsedMs": 9447.423208,
+            "phase": "prepare-await-stable",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 17,
+            "status": 200
+          },
+          {
+            "sequence": 64,
+            "elapsedMs": 9503.016542000001,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 18
+          },
+          {
+            "sequence": 65,
+            "elapsedMs": 9504.210542,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 18,
+            "status": 200
+          },
+          {
+            "sequence": 66,
+            "elapsedMs": 9562.811208,
+            "phase": "prepare-await-stable",
+            "event": "failed",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 18,
+            "status": 200
+          },
+          {
+            "sequence": 67,
+            "elapsedMs": 9627.335374999999,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "requestId": 19
+          },
+          {
+            "sequence": 68,
+            "elapsedMs": 9628.924125000001,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "requestId": 19,
+            "status": 200
+          },
+          {
+            "sequence": 69,
+            "elapsedMs": 9684.889667,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 20
+          },
+          {
+            "sequence": 70,
+            "elapsedMs": 9688.213416999999,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 20,
+            "status": 200
+          },
+          {
+            "sequence": 71,
+            "elapsedMs": 9776.383582999999,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 21
+          },
+          {
+            "sequence": 72,
+            "elapsedMs": 9780.794208,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 21,
+            "status": 200
+          },
+          {
+            "sequence": 73,
+            "elapsedMs": 13032.429708,
+            "phase": "prepare-await-stable",
+            "event": "failed",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 20,
+            "status": 200
+          },
+          {
+            "sequence": 74,
+            "elapsedMs": 13032.479041999999,
+            "phase": "prepare-await-stable",
+            "event": "failed",
+            "path": "/api/tasks/chat-6-task-1/stream",
+            "requestId": 19,
+            "status": 200
+          },
+          {
+            "sequence": 75,
+            "elapsedMs": 13384.290541999999,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 22
+          },
+          {
+            "sequence": 76,
+            "elapsedMs": 13389.16025,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 22,
+            "status": 200
+          },
+          {
+            "sequence": 77,
+            "elapsedMs": 13803.611666999997,
+            "phase": "prepare-await-stable",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-1/stream",
+            "requestId": 21,
+            "status": 200
+          },
+          {
+            "sequence": 78,
+            "elapsedMs": 13827.304207999998,
+            "phase": "prepare-await-stable",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 23
+          },
+          {
+            "sequence": 79,
+            "elapsedMs": 13861.895832999999,
+            "phase": "prepare-await-stable",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 23,
+            "status": 200
+          },
+          {
+            "sequence": 80,
+            "elapsedMs": 14352.060624999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 23,
+            "status": 200
+          },
+          {
+            "sequence": 81,
+            "elapsedMs": 14485.166125,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 24
+          },
+          {
+            "sequence": 82,
+            "elapsedMs": 14500.608916999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-5-task-1/stream",
+            "requestId": 22,
+            "status": 200
+          },
+          {
+            "sequence": 83,
+            "elapsedMs": 14500.945,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 24,
+            "status": 200
+          },
+          {
+            "sequence": 84,
+            "elapsedMs": 14574.680083,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 25
+          },
+          {
+            "sequence": 85,
+            "elapsedMs": 14575.228749999998,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 26
+          },
+          {
+            "sequence": 86,
+            "elapsedMs": 14575.595582999998,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 27
+          },
+          {
+            "sequence": 87,
+            "elapsedMs": 14598.937707999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 24,
+            "status": 200
+          },
+          {
+            "sequence": 88,
+            "elapsedMs": 14599.220874999999,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 25,
+            "status": 200
+          },
+          {
+            "sequence": 89,
+            "elapsedMs": 14599.572791999999,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 26,
+            "status": 200
+          },
+          {
+            "sequence": 90,
+            "elapsedMs": 14599.809792,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 27,
+            "status": 200
+          },
+          {
+            "sequence": 91,
+            "elapsedMs": 14668.925875,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 28
+          },
+          {
+            "sequence": 92,
+            "elapsedMs": 14685.120082999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-1-task-2/stream",
+            "requestId": 25,
+            "status": 200
+          },
+          {
+            "sequence": 93,
+            "elapsedMs": 14685.158499999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-2-task-2/stream",
+            "requestId": 26,
+            "status": 200
+          },
+          {
+            "sequence": 94,
+            "elapsedMs": 14685.204125,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-3-task-2/stream",
+            "requestId": 27,
+            "status": 200
+          },
+          {
+            "sequence": 95,
+            "elapsedMs": 14685.298583,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 28,
+            "status": 200
+          },
+          {
+            "sequence": 96,
+            "elapsedMs": 14753.047082999998,
+            "phase": "refresh-theme",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 28,
+            "status": 200
+          },
+          {
+            "sequence": 97,
+            "elapsedMs": 14806.031707999999,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 29
+          },
+          {
+            "sequence": 98,
+            "elapsedMs": 14814.613582999998,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 29,
+            "status": 200
+          },
+          {
+            "sequence": 99,
+            "elapsedMs": 15412.616624999999,
+            "phase": "refresh-theme",
+            "event": "issued",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 30
+          },
+          {
+            "sequence": 100,
+            "elapsedMs": 15413.559458,
+            "phase": "refresh-theme",
+            "event": "response",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 30,
+            "status": 200
+          },
+          {
+            "sequence": 101,
+            "elapsedMs": 15458.884624999999,
+            "phase": "cleanup",
+            "event": "failed",
+            "path": "/api/tasks/chat-4-task-2/stream",
+            "requestId": 30,
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "maxRows": 64,
+        "maxEvents": 256
+      }
+    },
+    "error": null,
+    "cleanupErrors": [],
+    "cleanup": {
+      "contextClosed": true,
+      "httpClosed": true
+    }
+  },
+  "cdpPort": 52813,
+  "contextAdmission": {
+    "chromePid": 76020,
+    "profile": "/private/tmp/arc-tooltip-final-xjzlm31w/scratch/chrome",
+    "ownership": "fresh PID/exclusive profile; scenario creates and closes one own context; no user browser"
+  },
+  "chromeStdoutEOF": true,
+  "chromeStderrEOF": true,
+  "chromeLog": {
+    "observedBytes": 369,
+    "retainedBytes": 369,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  }
+}

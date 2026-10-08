@@ -1,5 +1,16 @@
 # WPF-WORKSPACEARC01 review
 
+状态: APPROVED — limited functional fixture acceptance; visual P2 OPEN
+Review target commit: f6c17be503ab68262a789c96429a7cc44975c8bb
+
+当前唯一 target `f6c17be503ab68262a789c96429a7cc44975c8bb`：**APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2**（[root b514独审](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/root-final-review.json)）。真实App受控HTTP末次四组同轮PASS，final390双图/earlydesktop1，affectedtypes0；[固定结果输入](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/final-review-input.json)。本新段首FAIL3/4保留，browser40912/local3595全部CLOSED。产品源码未因本测试修复改变。main/真实中心安全/runner/provider/个人部署未集成或未验证；不外推父task全验收。
+
+视觉P2 OPEN（root实际查看末次双图）：固定36px tab栏内标题缩为Co/Cc、More actions换行裁切；功能四组PASS保真，完整窄屏可用性尚未完成。后继仅原layout.css范围候选；本段不追加修复或第三次运行。
+
+## 历史固定目标与原件
+
+下文原“当前/NOT_RUN”等均仅属其记录时的历史目标，不覆盖上方唯一当前组合；原件内容不改。
+
 当前keyboard后继 source 60caca5210b05a88e4817390a3bd4d4e840d319e，新连续段PENDING/实际NOT_RUN；已安装Radix焦点语义记录于[entry](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/entry.json)，旧全部失败保真批准以下保留。
 
 当前连续组合：APPROVED_LIMITED_FAILURE_RESULT_FIDELITY d7e0b6f1564361bf5c25bd50c9e3f0557a234e74（root89fde；产品验收仍FAILED2/4）；三个实际均2/4 FAIL/完整RETURN，原始与归档96pairs核同。后续历史APPROVED仅其固定目标与局部范围，不覆盖本轮。见[final-review-input](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。

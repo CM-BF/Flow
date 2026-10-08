@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-08T01:11:04.376531+00:00",
+  "method": "Single own metadata parseStatus, administrative validation only; no engineering green replay",
+  "exit": 0,
+  "chargeMs": 56,
+  "timeoutMs": 5000,
+  "observations": [
+    {
+      "kind": "PID",
+      "id": 87928,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 87928,
+      "state": "ESRCH"
+    }
+  ],
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "projectWrites": "sandbox denied",
+  "network": "sandbox denied"
+}

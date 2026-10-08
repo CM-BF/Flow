@@ -1,5 +1,16 @@
 # Current Arc review
 
+状态: APPROVED — limited functional fixture acceptance; visual P2 OPEN
+Review target commit: f6c17be503ab68262a789c96429a7cc44975c8bb
+
+当前唯一 target `f6c17be503ab68262a789c96429a7cc44975c8bb`：**APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2**（[root b514独审](material-tooltip-continuation-20261008/root-final-review.json)）。真实App受控HTTP末次四组同轮PASS，final390双图/earlydesktop1，affectedtypes0；[固定结果输入](material-tooltip-continuation-20261008/final-review-input.json)。本新段首FAIL3/4保留，browser40912/local3595全部CLOSED。产品源码未因本测试修复改变。main/真实中心安全/runner/provider/个人部署未集成或未验证；不外推父task全验收。
+
+视觉P2 OPEN（root实际查看末次双图）：固定36px tab栏内标题缩为Co/Cc、More actions换行裁切；功能四组PASS保真，完整窄屏可用性尚未完成。后继仅原layout.css范围候选；本段不追加修复或第三次运行。
+
+## 历史固定目标与原件
+
+下文原“当前/NOT_RUN”等均仅属其记录时的历史目标，不覆盖上方唯一当前组合；原件内容不改。
+
 当前限定独审：[root89fde](continuous-acceptance-20261008/root-final-review.json)，证据保真通过，产品仍2/4 FAILED。
 
 当前唯一输入：[continuous final-review](continuous-acceptance-20261008/final-review-input.json)，source d7e0b6f，3次/59595ms CLOSED、均2/4，最终结果未通过。历史入口以下保留，不冒本轮通过。
