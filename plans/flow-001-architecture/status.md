@@ -308,4 +308,4 @@ REQ-19跨时点备份恢复新增验收已归原T04，当前仅只读研究/NOT_
 
 ### 2026-10-08T01:56:35.890Z 已审结果与下一可执行路径
 
-[O16限定实际结果接收](../../docs/evidence/i02/o16-normal-home-planner-result-intake.json)已main254ce9579；四次SDK调用历史永久分开，本次普通input不代表全部输入。GO接受实际两步规划语义，但未签confirmation、未给children额度或接受最终交付。原owner继续在既有范围准备新阶段的一次性续接：旧pause/source/state/raw保持，过期由旧入口拒绝；新阶段另核真实状态、权限、资源和旧新来源，不重新调用planner或改时间/digest绕guard。TUI准备独审见[唯一回执](../../docs/evidence/i02/tui01f-r3-caller-review.json)，固定原件保留在原owner；已直接交D01按ready队列安排实际旅程，不预占窗口，不重跑旧绿检查。
+[O16限定实际结果接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-planner-result-intake.json)已main254ce9579；四次SDK调用历史永久分开，本次普通input不代表全部输入。GO接受实际两步规划语义，但未签confirmation、未给children额度或接受最终交付。原owner继续在既有范围准备新阶段的一次性续接：旧pause/source/state/raw保持，过期由旧入口拒绝；新阶段另核真实状态、权限、资源和旧新来源，不重新调用planner或改时间/digest绕guard。TUI准备独审见[唯一回执](../../../m2-integration/docs/evidence/i02/tui01f-r3-caller-review.json)，固定原件保留在原owner；已直接交D01按ready队列安排实际旅程，不预占窗口，不重跑旧绿检查。
