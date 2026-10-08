@@ -1,6 +1,6 @@
 # S01-06 stock initialize/close 资源基线设计
 
-状态：DESIGN_PENDING_REVIEW；实现、sampler、native actual 均 NOT_IMPLEMENTED / NOT_OPEN。所属 FLOW-001 / 原 S01-06，owner status_read，co-lead mika。128 同步 burst / 6s / 4s ACK 完整验收仍优先且仍失败，本设计不改其负载、断言或已审诊断候选，不新建大task。
+状态：DESIGN_REVIEW_APPROVED（仅方法设计）；实现、sampler、native actual 均 NOT_IMPLEMENTED / NOT_OPEN。所属 FLOW-001 / 原 S01-06，owner status_read，co-lead mika。128 同步 burst / 6s / 4s ACK 完整验收仍优先且仍失败，本设计不改其负载、断言或已审诊断候选，不新建大task。
 
 ## 问题与可证明范围
 
@@ -49,6 +49,10 @@ R06 snapshot只有direct PID，不能据此称已覆盖Node/native/tsx-esbuild�
 
 实际START 2026-10-08T01:14:06Z，截止01:24:06Z。D01 canonical `docs/evidence/web-platform/resource-window-current.json` 的 `MikaS01IdleInitializeDesignMetadata=4,194,304B`，登记2026-10-08T01:12:03.554Z；本段读到future floor13,226,344,448B，fresh free14,619,779,072B，只供此次metadata，非未来native准入。fresh claim508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6于01:14:19.006Z，身份/WT/branch一致。
 
-基数：index781,567B；三plan文件132,825B；七ancestor tree17,118B。本次4MiB包含index副本≤1MiB、四metadata总量≤192KiB、新Gitobjects≤512KiB、Git临时≤1MiB、余1,376,256B，不加第二reserve。不复制raw/ENG源码；实际增长与最终Git见唯一status。管理parser仅校字段，不算工程验证；设计独审PENDING，未获得之前不称通过。
+基数：index781,567B；三plan文件132,825B；七ancestor tree17,118B。本次4MiB包含index副本≤1MiB、四metadata总量≤192KiB、新Gitobjects≤512KiB、Git临时≤1MiB、余1,376,256B，不加第二reserve。不复制raw/ENG源码；实际增长与最终Git见唯一status。管理parser仅校字段，不算工程验证；设计已由b01_bounded_reads对固定756856900491b8b293e739090dc165f89de4f9e9只读批准，0 P1/P2；不得继承为源码或运行批准。
 
 技能：沿本地find-skills/brainstorming的有界问题澄清，采用已授权设计方向，无安装/网络发现；codebase-design聚焦既有host/transport/OPS14与唯一数字sampler Seam；clean-code检查单一状态权威、错误命名、失败与清理分离、无第二监督器。固定clean-code来自sickn33既有baseline，文件SHA256 `3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317`；本段复读实际本地版本，未更新。实际检查范围只有四文档、链接/预算加法/历史边界，0工程/native/auth status/PG/KEEP读取。
+
+## 独立设计审查
+
+b01_bounded_reads于2026-10-08T01:17:01.958Z给出DESIGN_REVIEW_APPROVED / 0 P1/P2，固定target `756856900491b8b293e739090dc165f89de4f9e9`；当时四metadata143,580B，设计9,153B/SHA256 `3dc92c10e1fb99e6d78a1c1bdf4ce99b0edde9e36464a90f8f2bf406942c0b3c`，逐Git=WT。原消息更高精度时间01:17:01.958820Z保为来源，本status时间按毫秒契约记录。审者核已有ENG81499 initialize/close语义、阶段预算、资源未知和ACK优先，0写/import/工程/native/PG/KEEP。数字枚举/单位/身份、期限适配、真实字节门禁和完整动态输入均仍实施前条件。当前仅归档该审查，不改设计方法，不授新运行。

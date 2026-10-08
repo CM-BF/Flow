@@ -318,3 +318,7 @@ Source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[caller ready](../../docs/ev
 ## 2026-10-08T01:16:08.829Z S01-06 初始化基线设计待审
 
 本次仅四metadata，入口[stock-initialize-design.md](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)。拟独立只读核复用host/R06/OPS14、1→2→4与同deadline、整树采样未知/RSS共享页/同期CPU、ENG原FAIL/独立cleanup、原128 ACK优先以及候选预算不作OPEN。源码/工程/native均未实施，当前PENDING；既有各固定审批不覆盖本设计。
+
+## 2026-10-08T01:17:54.798Z S01-06 初始化设计限定批准
+
+b01_bounded_reads于2026-10-08T01:17:01.958Z对756856900491b8b293e739090dc165f89de4f9e9只读给DESIGN_REVIEW_APPROVED/0P1/P2；原交付消息时间01:17:01.958820Z。四metadata143580B/设计9153B逐Git=WT，SHA3dc92c10e1fb99e6d78a1c1bdf4ce99b0edde9e36464a90f8f2bf406942c0b3c。已核1→2→4、全ready/2s/完整close、同70s origin、64MiB逻辑预算、采样UNKNOWN/RSS共享页/CPU同身份同期、ENG原FAIL与独立cleanup以及128 ACK优先。0审者写/import/工程/native/PG/KEEP。仅设计批准：sampler方法/单位/有限编码、运输层剩余deadline、实际bytes门禁、完整输入和scope仍待实施；不得启动N1或称完整树已测。本owner沿固定本地技能复核唯一生命周期权威及首错/cleanup分列，无新复杂度/第二监督器，字段检查通过而无工程重测。
