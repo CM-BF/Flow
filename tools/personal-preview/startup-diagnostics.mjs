@@ -7,6 +7,10 @@ export const STARTUP_STDERR_BYTES = 64 * 1024;
 const roles = ['center', 'runner', 'web'];
 const phases = ['configuration-ready', 'marker', 'policy', 'runtime', 'child-spawn', 'child-running', 'child-exit', 'startup-failed'];
 const safeCodes = new Set([
+  'RUNNER_SLOT_PROFILE_MISMATCH', 'RUNNER_SLOT_PROFILE_CHANGED', 'RUNNER_SLOT_CONFIGURATION_CHANGED',
+  'RUNNER_SLOT_DIRECTORY_CHANGED', 'RUNNER_SLOT_REGISTRATION_UNKNOWN', 'RUNNER_SLOTS_RUNTIME_UNSUPPORTED',
+  'RUNNER_SLOTS_ARTIFACT_REQUIRED', 'RUNNER_SLOT_FILE_CHANGED', 'RUNNER_SLOT_FILE_INVALID',
+  'RUNNER_SLOT_CATALOG_LIMIT', 'RUNNER_SLOT_CATALOG_CHANGED', 'UNDECLARED_SERVICE_RECORD',
   'STARTUP_UNCONFIRMED', 'STARTUP_DIAGNOSTICS_UNAVAILABLE', 'SERVICE_EXITED_DURING_START', 'SERVICE_START_UNCONFIRMED',
   'SERVICE_NOT_OWNED', 'NATIVE_CONFIGURATION_CHANGED', 'RUNNER_IDENTITY_UNAVAILABLE', 'SOURCE_CHANGED_DURING_START',
   'CENTER_IDENTITY_UNCONFIRMED', 'CENTER_REQUEST_REJECTED', 'DATABASE_NOT_OWNED', 'DATABASE_IDENTITY_MISMATCH',
@@ -17,12 +21,13 @@ const safeCodes = new Set([
   'EACCES', 'EPERM', 'ENOENT', 'EEXIST', 'ENOSPC', 'EIO', 'ELOOP', 'EMFILE', 'ENFILE', 'ECONNREFUSED', 'ETIMEDOUT',
 ]);
 export function startupErrorCode(error) { return safeCodes.has(error?.code) ? error.code : 'STARTUP_UNCONFIRMED'; }
-export function startupFailure(error, role, phase) {
-  return { role: roles.includes(role) ? role : null, phase: ['spawn', 'ready', 'final-verification', ...phases].includes(phase) ? phase : 'unknown', code: startupErrorCode(error), at: new Date().toISOString() };
+export function startupFailure(error, role, phase, recordKey = role) {
+  if (role === 'runner-settings') role = 'runner';
+  return { ...(role === 'runner' && recordKey === 'runner-settings' ? { recordKey } : {}), role: roles.includes(role) ? role : null, phase: ['spawn', 'ready', 'final-verification', ...phases].includes(phase) ? phase : 'unknown', code: startupErrorCode(error), at: new Date().toISOString() };
 }
 export function publicStartupFailure(value) {
   if (!value) return null;
-  const safe = startupFailure({ code: value.code }, value.role, value.phase);
+  const safe = startupFailure({ code: value.code }, value.role, value.phase, value.recordKey ?? value.role);
   return { ...safe, at: /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(value.at ?? '') ? value.at : null };
 }
 
@@ -60,13 +65,22 @@ async function syncDirectory(path) {
 }
 
 /** One nonce owns one bounded private record and stderr file; this module never signals a process. */
-export async function openStartupDiagnostics({ directory, role, nonce, pid }) {
+export async function openStartupDiagnostics({ directory, role, recordKey = role, nonce, pid }) {
   if (!roles.includes(role) || !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(nonce ?? '') || !Number.isSafeInteger(pid) || pid < 2) fail();
+  if (recordKey !== role && !(role === 'runner' && recordKey === 'runner-settings')) fail();
+  if (recordKey === 'runner-settings') {
+    const { readRunnerSlots } = await import('./runner-slots.mjs');
+    const file = await open(join(directory, 'config.json'), constants.O_RDONLY | constants.O_NOFOLLOW);
+    let config;
+    try { privateFile(await file.stat({ bigint: true }), 65536); config = JSON.parse(await file.readFile('utf8')); } finally { await file.close(); }
+    if (config.directory !== directory) fail();
+    if (!(await readRunnerSlots(config)).some(slot => slot.key === recordKey)) fail();
+  }
   const installation = await privateDirectory(directory);
   const parent = join(directory, 'startup-diagnostics');
   try { await mkdir(parent, { mode: 0o700 }); await syncDirectory(directory); } catch (error) { if (error.code !== 'EEXIST') throw error; }
   const identity = await privateDirectory(parent);
-  const stem = join(parent, `${role}-${nonce}`);
+  const stem = join(parent, `${recordKey}-${nonce}`);
   const output = await open(`${stem}.stderr`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
   let stream, retained = 0, observed = 0, writeError, closed = false, runtimeInitialized;
   let writes = Promise.resolve();
@@ -83,13 +97,14 @@ export async function openStartupDiagnostics({ directory, role, nonce, pid }) {
       if (!sameIdentity(after, await lstat(join(directory, 'state.json'), { bigint: true }))) fail();
       if (size !== Number(info.size) || !sameIdentity(info, after) || info.mtimeNs !== after.mtimeNs || info.size !== after.size) fail();
       const state = JSON.parse(bytes.subarray(0, size).toString('utf8'));
-      if (state.processes?.[role]?.nonce !== nonce || state.processes[role].pid !== pid) fail();
+      if (state.processes?.[recordKey]?.nonce !== nonce || state.processes[recordKey].pid !== pid) fail();
     } finally { await file.close(); }
   }
   async function persist(phase, detail) {
     if (!phases.includes(phase)) fail();
     await checkIdentity();
-    const value = { format: 1, role, nonce, pid, phase, at: new Date().toISOString(), ...detail, ...(runtimeInitialized ? { runtimeInitialized } : {}) };
+    const value = { format: 1, role, ...(recordKey === role ? {} : { recordKey }), nonce, pid, phase, at: new Date().toISOString(), ...detail,
+      ...(runtimeInitialized ? { runtimeInitialized } : {}) };
     try { privateFile(await lstat(`${stem}.json`, { bigint: true }), 4096); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
     const temporary = `${stem}.${randomUUID()}.tmp`;
@@ -187,7 +202,7 @@ export async function observeStartupChild(child, diagnostic, { runnerId } = {}) 
 
 /** A published profile is durable configuration. Only a receipt from this launch proves local initialization. */
 export async function readRunnerInitialization({ directory, recordKey, record, runnerId }) {
-  if (recordKey !== 'runner' || !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(record?.nonce ?? '')
+  if (!['runner', 'runner-settings'].includes(recordKey) || !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(record?.nonce ?? '')
     || !Number.isSafeInteger(record?.pid) || record.pid < 2 || typeof runnerId !== 'string' || runnerId.length < 1 || runnerId.length > 256) return false;
   const parent = join(directory, 'startup-diagnostics'), path = join(parent, `${recordKey}-${record.nonce}.json`);
   try {

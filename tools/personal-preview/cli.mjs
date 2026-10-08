@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { baseServiceEnvironment } from './environment.mjs';
-import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration, replacePreviewWebHost, assertPreviewMaintenanceRuntime } from './preview.mjs';
+import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration, replacePreviewWebHost, assertPreviewMaintenanceRuntime, activatePreviewMessageSettings } from './preview.mjs';
 import { maintenanceRuntime } from './backend-release/host.mjs';
 import { join } from 'node:path';
 try {
@@ -35,6 +35,10 @@ try {
       result = await ({ bootstrap: bootstrapPreviewWeb, publish: publishPreviewWeb, rollback: rollbackPreviewWeb })[subcommand]({ ...input, directory: privateDirectory });
     } else throw new Error('USAGE');
     process.stdout.write(`${JSON.stringify(result)}\n`);
+  } else if (action === 'message-settings') {
+    if (flag !== '--directory' || !directory || rest.length !== 2 || rest[0] !== '--request') throw new Error('USAGE');
+    const recipe = await readPreviewJson(rest[1]);
+    process.stdout.write(`${JSON.stringify(await activatePreviewMessageSettings({ directory, recipe }))}\n`);
   } else if (action === 'maintenance') {
     const [subcommand, directoryFlag, privateDirectory, option, value, ...extra] = process.argv.slice(3);
     if (directoryFlag !== '--directory' || !privateDirectory || extra.length || (subcommand === 'refresh' ? option !== '--target' || !value : subcommand === 'bootstrap' ? option && (option !== '--backend-artifact' || !value) : option)) throw new Error('USAGE');

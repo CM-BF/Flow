@@ -7,10 +7,12 @@ import { createServer as createSocket } from 'node:net';
 import { spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { setTimeout as sleep } from 'node:timers/promises';
+import { performance } from 'node:perf_hooks';
 import { Pool } from 'pg';
-import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
+import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener, observeOwnedListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
-import { readRunnerInitialization, openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
+import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode, readRunnerInitialization } from './startup-diagnostics.mjs';
+import { LEGACY_NATIVE_CONFIGURATION, SETTINGS_SLOT_KEY, readRunnerSlots, slotServiceKeys, runnerServiceRole, registerSettingsSlot, observeSettingsProfile, pinSettingsProfile } from './runner-slots.mjs';
 import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
@@ -23,7 +25,7 @@ const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
 const roles = ['center', 'runner', 'web'];
 const execute = promisify(execFile);
-const NATIVE_CONFIGURATION = Object.freeze({ model: 'claude-sonnet-5-5', materialFiles: Object.freeze([]), allowRead: false, requireReadApproval: false, maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000 });
+const NATIVE_CONFIGURATION = LEGACY_NATIVE_CONFIGURATION;
 function fail(code) { const error = new Error(code); error.code = code; throw error; }
 async function outsideGit(path) {
   try { await execute('git', ['-C', path, 'rev-parse', '--show-toplevel'], { env: { ...process.env, LC_ALL: 'C' }, timeout: 1000 }); }
@@ -52,12 +54,12 @@ async function directoryPath(input) {
   await outsideGit(actual);
   return actual;
 }
-async function load(directory, serviceRole = null, launchRuntime = backendRuntime) {
+async function load(directory, serviceRole = null, resolveRuntime = backendRuntime) {
   const path = await directoryPath(directory);
   const config = await privateJson(join(path, 'config.json'));
   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
     || !/^flow_preview_[a-f0-9]{24}$/.test(config.databaseName) || !/^[a-f0-9-]{36}$/.test(config.installationId)) fail('CONFIGURATION_IDENTITY_MISMATCH');
-  await assertInstallationSource(config, repository, serviceRole, launchRuntime);
+  await assertInstallationSource(config, repository, serviceRole, resolveRuntime);
   const url = new URL(config.databaseUrl);
   const admin = new URL(config.adminUrl);
   if (url.pathname !== `/${config.databaseName}` || !['postgres:', 'postgresql:'].includes(admin.protocol) || admin.hostname !== '127.0.0.1' || admin.pathname !== '/postgres'
@@ -124,14 +126,18 @@ async function workFacts(config) {
     return { total: tasks.total, pending: tasks.pending, lastTaskSucceededAt: tasks.last_success?.toISOString() ?? null, lastHeartbeatAt: heartbeat.last?.toISOString() ?? null };
   });
 }
-async function api(config, path, body) {
+async function api(config, path, body, headers = {}) {
   const state = await privateJson(join(config.directory, 'state.json'));
   if (!state.processes.center || !await ownsListener(state.processes.center, config.centerPort)) fail('CENTER_IDENTITY_UNCONFIRMED');
-  const response = await fetch(`http://127.0.0.1:${config.centerPort}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${config.ownerToken}`, 'content-type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(2000) });
+  const response = await fetch(`http://127.0.0.1:${config.centerPort}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${config.ownerToken}`, 'content-type': 'application/json', ...headers }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(2000) });
   if (!response.ok) fail('CENTER_REQUEST_REJECTED');
   return response.json();
 }
-async function configuredProfile(config) {
+async function configuredProfile(config, slot, persist = false) {
+  if (slot?.id === 'settings') {
+    const profile = await observeSettingsProfile(slot, after => api(config, `/api/execution-profiles?limit=100${after ? `&after=${encodeURIComponent(after)}` : ''}`, undefined, { 'X-Flow-Execution-Profile': 'flow.claude-turn-settings.v1' }));
+    return profile ? pinSettingsProfile(config, slot, profile, persist) : null;
+  }
   if (!config.runner) return null;
   const page = await api(config, '/api/execution-profiles?limit=100');
   const profile = page.profiles.find(value => value.reference.runnerId === config.runner.runnerId);
@@ -142,7 +148,17 @@ async function configuredProfile(config) {
   return { id: profile.reference.id, source: 'runner-configured', model: value.model };
 }
 async function reachable(url) {
-  try { const response = await fetch(url, { signal: AbortSignal.timeout(700) }); await response.body?.cancel(); return response.ok; } catch { return false; }
+  return (await observeReachable(url)).reachable;
+}
+async function observeReachable(url) {
+  let status = null;
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(700) }); status = response.status;
+    await response.body?.cancel(); return { reachable: response.ok, status, code: null };
+  } catch (error) {
+    const direct = startupErrorCode(error);
+    return { reachable: false, status, code: direct === 'STARTUP_UNCONFIRMED' ? startupErrorCode(error?.cause) : direct };
+  }
 }
 async function webIdentity(config, artifact, releaseVersion, expectedBackendHead) {
   if (!artifact) return false;
@@ -157,16 +173,39 @@ async function webIdentity(config, artifact, releaseVersion, expectedBackendHead
     return actual.artifactId === artifact.artifactId && actual.sourceHead === artifact.sourceHead && actual.manifestDigest === artifact.manifestDigest && (releaseVersion === undefined || actual.releaseVersion === releaseVersion && actual.releasePolicy === 'flow-web-release-v1');
   } catch { return false; }
 }
-async function waitReady(config, role, record, artifact, expectedBackendHead) {
+async function waitReady(config, role, record, artifact, expectedBackendHead, slot, observation = {}) {
+  const started = performance.now();
+  Object.assign(observation, { role, pid: record.pid, nonce: record.nonce, outcome: 'pending', iterations: 0, elapsedMs: 0, code: null, predicates: {} });
+  const elapsed = start => Math.max(0, Math.round(performance.now() - start));
+  const probe = async (name, operation) => {
+    const began = performance.now();
+    try {
+      const value = await operation();
+      observation.predicates[name] = { iteration: observation.iterations, elapsedMs: elapsed(began), result: value };
+      return value;
+    } catch (error) {
+      observation.predicates[name] = { iteration: observation.iterations, elapsedMs: elapsed(began), result: 'unknown', code: startupErrorCode(error) };
+      throw error;
+    }
+  };
   const deadline = Date.now() + 10_000;
-  do {
-    if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
-    if (role === 'runner') { if (await readRunnerInitialization({ directory: config.directory, recordKey: role, record, runnerId: config.runner?.runnerId }) && await configuredProfile(config)) return; }
-    else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
-      && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead))) return;
-    await sleep(50);
-  } while (Date.now() < deadline);
-  fail('SERVICE_START_UNCONFIRMED');
+  try {
+    do {
+      observation.iterations++;
+      if (await probe('owner', () => inspectOwnedProcess(record)) !== 'running') fail('SERVICE_EXITED_DURING_START');
+      let ready;
+      if (runnerServiceRole(role) === 'runner') ready = await probe('runtimeInitialization', () => readRunnerInitialization({ directory: config.directory, recordKey: role, record,
+        runnerId: (slot?.runner ?? config.runner)?.runnerId })) && await probe('profile', async () => Boolean(await configuredProfile(config, slot, true)));
+      else if ((await probe('listener', () => observeOwnedListener(record, role === 'center' ? config.centerPort : config.webPort))).owned) {
+        ready = role === 'center' ? (await probe('health', () => observeReachable(`http://127.0.0.1:${config.centerPort}/api/health`))).reachable
+          : await probe('webIdentity', async () => webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead));
+      }
+      if (ready) { observation.outcome = 'ready'; return; }
+      await sleep(50);
+    } while (Date.now() < deadline);
+    fail('SERVICE_START_UNCONFIRMED');
+  } catch (error) { observation.outcome = 'failed'; observation.code = startupErrorCode(error); throw error; }
+  finally { observation.elapsedMs = elapsed(started); }
 }
 async function locked(config, callback) {
   const lock = join(config.directory, 'operation.lock');
@@ -181,8 +220,11 @@ export async function startPreview({ directory, adminUrl, confirmPending = false
     const state = await privateJson(join(config.directory, 'state.json'));
     await assertWebHostSettled(config, state);
     await ensureDatabase(config); await assertMarker(config);
+    const slots = await readRunnerSlots(config);
+    const expected = slotServiceKeys(slots);
+    if (Object.keys(state.processes).some(key => !expected.includes(key))) fail('UNDECLARED_SERVICE_RECORD');
     const previous = await Promise.all(Object.values(state.processes).map(inspectOwnedProcess));
-    if (previous.length === 3 && previous.every(value => value === 'running')) return statusPreview({ directory });
+    if (previous.length === expected.length && previous.every(value => value === 'running')) return statusPreview({ directory });
     if (previous.some(value => value !== 'stopped')) fail('STOP_OR_VERIFY_EXISTING_PROCESSES');
     if ((await workFacts(config)).pending > 0 && !confirmPending) fail('PENDING_WORK_REQUIRES_CONFIRMATION');
     if (JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
@@ -194,8 +236,11 @@ export async function statusPreview({ directory }) {
   const state = await privateJson(join(config.directory, 'state.json'));
   const processes = {};
   const lastProcessExits = {};
-  for (const role of roles) processes[role] = state.processes[role] ? await inspectOwnedProcess(state.processes[role]) : 'not-started';
-  for (const role of roles) {
+  let slots, slotError = false;
+  try { slots = await readRunnerSlots(config); } catch { slotError = true; }
+  const keys = [...new Set([...slotServiceKeys(slots ?? [{ key: 'runner' }, { key: SETTINGS_SLOT_KEY }]), ...Object.keys(state.processes)])];
+  for (const role of keys) processes[role] = state.processes[role] ? await inspectOwnedProcess(state.processes[role]) : 'not-started';
+  for (const role of keys) {
     try {
       const last = await privateJson(join(config.directory, `${role}-exit.json`));
       if (last.nonce === state.processes[role]?.nonce) lastProcessExits[role] = { at: last.at, code: last.code, signal: last.signal };
@@ -206,6 +251,12 @@ export async function statusPreview({ directory }) {
   const centerUrl = `http://127.0.0.1:${config.centerPort}`;
   let profile = null;
   try { profile = await configuredProfile(config); } catch { /* Configuration publication is not an online/provider guarantee. */ }
+  const runnerSlots = [];
+  for (const slot of slots ?? []) {
+    let published = slot.id === 'legacy' ? profile : null;
+    try { if (slot.id === 'settings') published = await configuredProfile(config, slot); } catch { /* Exact catalog or pin failure remains unknown. */ }
+    runnerSlots.push({ slot: slot.id, runnerId: slot.runner?.runnerId ?? null, process: processes[slot.key], configuration: published ? 'confirmed' : 'unknown', profile: published, provider: 'not-probed', actualClaim: 'unknown' });
+  }
   let webArtifact = { state: 'unknown', reason: 'legacy-or-unconfirmed' };
   try {
     const release = await readWebRelease(config.directory);
@@ -218,32 +269,81 @@ export async function statusPreview({ directory }) {
   } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
   return { installationId: config.installationId, webArtifact, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
     center: { url: centerUrl, reachable: processes.center === 'running' && await ownsListener(state.processes.center, config.centerPort) && await reachable(`${centerUrl}/api/health`) }, webUrl: `http://127.0.0.1:${config.webPort}`, database: databaseState, work, lastError: state.lastError, startFailure: publicStartupFailure(state.lastStartFailure),
-    profile, lastProcessExits, credentialsFile: join(config.directory, 'config.json'), limits: { maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000, scope: 'per-query-not-project-total' } };
+    profile, runnerSlots: slotError ? { state: 'unknown' } : { state: 'configured', slots: runnerSlots }, lastProcessExits, credentialsFile: join(config.directory, 'config.json'), limits: { maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000, scope: 'per-query-not-project-total' } };
 }
 export async function stopPreview({ directory }) {
   const config = await load(directory);
   return locked(config, async () => {
     const state = await privateJson(join(config.directory, 'state.json'));
     const processes = {};
-    for (const role of [...roles].reverse()) processes[role] = state.processes[role] ? await stopOwnedProcess(state.processes[role]) : 'not-started';
+    // Even an unresolved registration must not hide an already recorded owned process.
+    const keys = [...new Set([...roles, ...Object.keys(state.processes)])];
+    for (const role of keys.reverse()) processes[role] = state.processes[role] ? await stopOwnedProcess(state.processes[role]) : 'not-started';
     state.stoppedAt = new Date().toISOString(); state.lastError = Object.values(processes).includes('unknown') ? 'STOP_UNCONFIRMED' : null;
     await save(join(config.directory, 'state.json'), state);
     return { installationId: config.installationId, processes, databaseRetained: true, workOutcome: 'not-implied-by-process-stop' };
   });
 }
 
+async function assertRunnerIdentity(config, runner) {
+  if (!runner) fail('RUNNER_IDENTITY_UNAVAILABLE');
+  await database(config, async pool => {
+    const tokenHash = createHash('sha256').update(runner.token).digest('hex');
+    if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
+  });
+}
+/** Explicit activation only. Never rewrites the legacy runner, manifest, directory or sessions. */
+export async function activatePreviewMessageSettings({ directory, recipe }) {
+  const config = await load(directory);
+  return locked(config, async () => {
+    const state = await privateJson(join(config.directory, 'state.json'));
+    await assertWebHostSettled(config, state); await assertMarker(config);
+    if (Object.keys(state.processes).sort().join() !== [...roles].sort().join()) fail('EXISTING_PROCESSES_UNCONFIRMED');
+    for (const record of Object.values(state.processes)) if (await inspectOwnedProcess(record) !== 'running') fail('EXISTING_PROCESSES_UNCONFIRMED');
+    const operation = await privateJson(join(config.directory, 'maintenance.json')).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
+    if (operation && operation.phase !== 'resumed') fail('MAINTENANCE_OPERATION_UNCONFIRMED');
+    await assertRunnerIdentity(config, config.runner);
+    const admission = await api(config, `/api/runners/${config.runner.runnerId}/maintenance`);
+    if (admission.runnerId !== config.runner.runnerId || admission.state !== 'accepting' || !Number.isSafeInteger(admission.version)) fail('MAINTENANCE_OPERATION_UNCONFIRMED');
+    const runtime = await backendRuntime(config, state.backendArtifact);
+    await assertPreviewRunnerSlotsRuntime(config, runtime, [{ id: 'settings' }]);
+    const slot = await registerSettingsSlot(config, recipe, () => api(config, '/api/runners', { name: 'Personal message settings', harnesses: ['claude'], capacity: 1 }));
+    try {
+      await assertRunnerIdentity(config, slot.runner);
+      const record = await spawnOwnedProcess({ args: [runtime.entry, 'internal-service', config.directory, slot.key], cwd: runtime.root, env: await launchEnvironment('runner', config, state.source?.head),
+        onSpawn: async pending => { state.processes[slot.key] = pending; await save(join(config.directory, 'state.json'), state); } });
+      state.processes[slot.key] = record; await save(join(config.directory, 'state.json'), state);
+      await waitReady(config, slot.key, record, null, state.source?.head, slot);
+    } catch (error) {
+      // The old services remain untouched. Preserve the primary before stopping only this new record.
+      state.lastError = 'RUNNER_SLOT_START_UNCONFIRMED';
+      state.lastStartFailure = startupFailure(error, 'runner', 'ready', slot.key);
+      state.settingsEvidenceErrors = [];
+      const persist = async () => { try { await save(join(config.directory, 'state.json'), state); } catch (secondary) { state.settingsEvidenceErrors.push(startupErrorCode(secondary)); } };
+      await persist();
+      try { state.settingsCleanup = state.processes[slot.key] ? await stopOwnedProcess(state.processes[slot.key]) : 'not-started'; }
+      catch { state.settingsCleanup = 'unknown'; }
+      await persist(); throw error;
+    }
+    return statusPreview({ directory });
+  });
+}
+
 /** Private child entry: credentials stay in its environment and never appear in arguments or output. */
-export async function runService(directory, role) {
-  if (!roles.includes(role)) fail('UNKNOWN_SERVICE');
+export async function runService(directory, recordKey) {
+  const role = runnerServiceRole(recordKey);
   const launchRuntime = createLaunchRuntimeResolver();
   const config = await load(directory, role, launchRuntime.resolve);
   launchRuntime.seal();
+  const slots = await readRunnerSlots(config);
+  const slot = slots.find(value => value.key === recordKey);
+  if (role === 'runner' && !slot) fail('UNDECLARED_SERVICE_RECORD');
   const nonce = process.argv.find(value => value.startsWith('--flow-preview='))?.slice('--flow-preview='.length);
   const deadline = Date.now() + 2000;
   let owned = false;
   do {
     const state = await privateJson(join(config.directory, 'state.json'));
-    owned = Boolean(nonce && state.processes[role]?.nonce === nonce && state.processes[role]?.pid === process.pid);
+    owned = Boolean(nonce && state.processes[recordKey]?.nonce === nonce && state.processes[recordKey]?.pid === process.pid);
     if (!owned) await sleep(20);
   } while (!owned && Date.now() < deadline);
   if (!owned) fail('SERVICE_NOT_OWNED');
@@ -251,12 +351,12 @@ export async function runService(directory, role) {
   const stop = () => { if (!stopping) { stopping = true; child?.kill('SIGTERM'); } };
   const stage = async next => { phase = next; await diagnostic.stage(next); };
   try {
-    diagnostic = await openStartupDiagnostics({ directory: config.directory, role, nonce, pid: process.pid });
+    diagnostic = await openStartupDiagnostics({ directory: config.directory, role, recordKey, nonce, pid: process.pid });
     await stage('marker'); await assertMarker(config);
-    if (role === 'runner' && JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
+    if (role === 'runner' && JSON.stringify(await privateJson(slot.manifestPath)) !== JSON.stringify(slot.manifest)) fail('NATIVE_CONFIGURATION_CHANGED');
     await stage('policy');
     const browser = await readBrowserSessionLaunch(config);
-    const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
+    const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null, slot);
     await stage('runtime');
     const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime.resolve);
     let args; let cwd = runtime.root;
@@ -274,15 +374,15 @@ export async function runService(directory, role) {
     await stage('child-spawn');
     child = spawn(process.execPath, args, { cwd, env, stdio: role === 'runner' ? ['ignore', 'ignore', 'pipe', 'ipc'] : ['ignore', 'ignore', 'pipe'] });
     process.on('SIGTERM', stop); process.on('SIGINT', stop);
-    const result = await observeStartupChild(child, diagnostic, role === 'runner' ? { runnerId: config.runner.runnerId } : {});
+    const result = await observeStartupChild(child, diagnostic, role === 'runner' ? { runnerId: slot.runner.runnerId } : {});
     diagnostic = null;
-    await save(join(config.directory, `${role}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
+    await save(join(config.directory, `${recordKey}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
     process.exitCode = result.code ?? (stopping ? 0 : 1);
   } catch (error) {
     // This path is before child spawn, or after its observed exit. Never abandon a running child for a logging failure.
     let diagnosticError;
     if (diagnostic) { try { await diagnostic.finish(null, error); } catch (secondary) { diagnosticError = startupErrorCode(secondary); } }
-    try { await save(join(config.directory, `${role}-startup-failure.json`), { nonce, ...startupFailure(error, role, phase), ...(diagnosticError ? { diagnosticError } : {}) }); } catch { /* The primary error remains authoritative when evidence cannot be saved. */ }
+    try { await save(join(config.directory, `${recordKey}-startup-failure.json`), { nonce, ...startupFailure(error, role, phase, recordKey), ...(diagnosticError ? { diagnosticError } : {}) }); } catch { /* The primary error remains authoritative when evidence cannot be saved. */ }
     throw error;
   } finally { process.off('SIGTERM', stop); process.off('SIGINT', stop); }
 
@@ -291,6 +391,11 @@ export async function runService(directory, role) {
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
 export async function preparePreviewWeb(config, target, selectedBackend) {
+  const slots = await readRunnerSlots(config);
+  if (slots.some(slot => slot.id === 'settings')) {
+    const state = await privateJson(join(config.directory, 'state.json'));
+    await assertPreviewRunnerSlotsRuntime(config, await backendRuntime(config, selectedBackend === undefined ? state.backendArtifact : selectedBackend), slots);
+  }
   const browser = await pinnedBrowserSessionConfiguration(config);
   if (browser.context !== null) {
     const state = await privateJson(join(config.directory, 'state.json'));
@@ -307,11 +412,14 @@ export async function preparePreviewWeb(config, target, selectedBackend) {
   if (browser.context !== null) fail('WEB_COMPATIBILITY_REQUIRED');
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
-export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact) {
+export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact, readStatus = statusPreview) {
+  if (typeof readStatus !== 'function') fail('START_STATUS_PORT_INVALID');
   const browser = await pinnedBrowserSessionConfiguration(config);
   if (browser.context !== null) await assertWebHostPolicyRuntime(config, { ...state, backendArtifact: selectedBackend });
   await assertWebHostSettled(config, state);
   const runtime = await backendRuntime(config, selectedBackend);
+  const slots = await readRunnerSlots(config);
+  await assertPreviewRunnerSlotsRuntime(config, runtime, slots);
   const webRuntime = await serviceRuntime(config, { ...state, backendArtifact: selectedBackend }, 'web');
   const backendHead = selectedBackend?.sourceHead ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const artifact = preparedArtifact ?? await preparePreviewWeb(config, backendHead, selectedBackend);
@@ -324,23 +432,24 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
   state.webArtifact = artifact;
   if (selectedBackend) state.backendArtifact = selectedBackend;
   state.processes = {}; state.lastError = null; state.lastStartFailure = null; state.startCleanup = []; state.startEvidenceErrors = [];
+  state.startReadiness = {}; // Four declared roles at most; last predicate results only. Missing is not proof of an observation.
   let startingRole = null, startingPhase = 'spawn';
   try {
-    for (const role of roles) {
+    for (const role of slotServiceKeys(slots)) {
+      const nativeRole = runnerServiceRole(role);
+      const slot = slots.find(value => value.key === role);
       startingRole = role; startingPhase = 'spawn';
-      if (role === 'runner') {
-        if (!config.runner) { config.runner = await api(config, '/api/runners', { name: 'Personal preview', harnesses: ['claude'], capacity: 1 }); await save(join(config.directory, 'config.json'), config); }
-        await database(config, async pool => {
-          const tokenHash = createHash('sha256').update(config.runner.token).digest('hex');
-          if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
-        });
+      if (nativeRole === 'runner') {
+        if (role === 'runner' && !config.runner) { config.runner = await api(config, '/api/runners', { name: 'Personal preview', harnesses: ['claude'], capacity: 1 }); await save(join(config.directory, 'config.json'), config); }
+        if (role === 'runner') slot.runner = config.runner;
+        await assertRunnerIdentity(config, slot.runner);
       }
       const roleRuntime = role === 'web' ? webRuntime : runtime;
-      const record = await spawnOwnedProcess({ args: [roleRuntime.entry, 'internal-service', config.directory, role], cwd: roleRuntime.root, env: await launchEnvironment(role, config, backendHead),
+      const record = await spawnOwnedProcess({ args: [roleRuntime.entry, 'internal-service', config.directory, role], cwd: roleRuntime.root, env: await launchEnvironment(nativeRole, config, backendHead),
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
       startingPhase = 'ready';
-      await waitReady(config, role, record, artifact, backendHead);
+      await waitReady(config, role, record, artifact, backendHead, slot, state.startReadiness[role] = {});
     }
     startingPhase = 'final-verification';
     if (selectedBackend) await backendRuntime(config, selectedBackend);
@@ -351,7 +460,7 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
     }
     state.source = { head: backendHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
-    return statusPreview({ directory: config.directory });
+    return readStatus({ directory: config.directory });
   } catch (error) {
     await preserveStartupFailure({ state, error, role: startingRole, phase: startingPhase, stop: stopOwnedProcess,
       save: value => save(join(config.directory, 'state.json'), value) });
@@ -387,7 +496,7 @@ async function launchWeb(config, state, artifact, processes = webHostProcesses, 
   await processes.ready(config, 'web', record, artifact, state.source?.head);
 }
 const webHostProcesses = Object.freeze({ inspect: inspectOwnedProcess, ownsListener, stop: stopOwnedProcess, spawn: spawnOwnedProcess, ready: waitReady });
-const webHostFiles = Object.freeze(['cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'startup-diagnostics.mjs', 'environment.mjs', 'browser-session-configuration.mjs', 'web-retention-policy.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
+const webHostFiles = Object.freeze(['runner-slots.mjs', 'cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'startup-diagnostics.mjs', 'environment.mjs', 'browser-session-configuration.mjs', 'web-retention-policy.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
 const maintenanceHostFiles = Object.freeze([...webHostFiles, 'maintenance-host.mjs']);
 const sha256 = value => createHash('sha256').update(value).digest('hex');
 async function boundedHostBytes(path, maximum = 65_536) {
@@ -435,10 +544,19 @@ async function assertWebHostPolicyRuntime(config, state, runtime = serviceRuntim
     return selected;
   } catch { fail('WEB_HOST_POLICY_UNSUPPORTED'); }
 }
+/** Opt-in must never be launched through an older single-runner host. */
+export async function assertPreviewRunnerSlotsRuntime(config, runtime, slots) {
+  slots ??= await readRunnerSlots(config);
+  if (!slots.some(slot => slot.id === 'settings')) return;
+  if (!runtime.artifact) fail('RUNNER_SLOTS_ARTIFACT_REQUIRED');
+  try { await assertPolicyTools(await runtimeToolFiles(runtime.root, ['runner-slots.mjs', 'preview.mjs', 'environment.mjs', 'maintenance-host.mjs', 'cli.mjs', 'startup-diagnostics.mjs', 'backend-release/host.mjs'])); }
+  catch { fail('RUNNER_SLOTS_RUNTIME_UNSUPPORTED'); }
+}
 /** Qualify the selected maintenance program before CLI spawn can reach an older drain path. */
 export async function assertPreviewMaintenanceRuntime(config, runtime) {
   const browser = await pinnedBrowserSessionConfiguration(config);
   const release = await readWebRelease(config.directory);
+  await assertPreviewRunnerSlotsRuntime(config, runtime);
   if (browser.context === null && (!release || release.artifacts.length < WEB_RETENTION_POLICY.artifacts)) return;
   try { await assertPolicyTools(await runtimeToolFiles(runtime.root, maintenanceHostFiles)); }
   catch { fail('MAINTENANCE_HOST_POLICY_UNSUPPORTED'); }
@@ -486,7 +604,7 @@ function webHostRequest(input) {
 }
 async function protectedWebHostFiles(directory) {
   const result = {};
-  for (const name of ['config.json', 'claude.json', 'maintenance.json', 'web-release.json']) {
+  for (const name of ['config.json', 'claude.json', 'maintenance.json', 'web-release.json', 'runner-settings.json', 'runner-settings-profile.json', 'runner-settings-intent.json']) {
     try { result[name] = sha256(await boundedHostBytes(join(directory, name))); }
     catch (error) { if (error.code !== 'ENOENT' || ['config.json', 'web-release.json'].includes(name)) throw error; result[name] = null; }
   }
