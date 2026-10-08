@@ -1,9 +1,13 @@
+import { decodeVerifierRunnerClaimResponse, pluginVerifierExecutionSchema } from '../../../packages/contracts/src/verifier-runner-claim.js';
+import { pluginVerificationRequestSchema } from '../../../packages/contracts/src/plugin-verification.js';
+import { pluginGrantReceiptSchema } from '../../../packages/contracts/src/plugin-runtime.js';
+import type { PluginVerifierBinding } from '../../../packages/contracts/src/plugin-verification-binding.js';
 import { createTrustedProcessHost } from './plugins/process-host.js';
 import type { PluginToolInput, PluginToolResult } from './plugins/host.js';
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import type { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
 import { decodePluginRunnerClaimResponse, pluginToolExecutionSchema, type PluginRunnerClaimResponse } from '../../../packages/contracts/src/plugin-runner-claim.js';
-import { PluginAuthorizationUnknown, PluginExecutionUnsettled, executePluginTool } from './plugins/execution.js';
+import { PluginAuthorizationUnknown, PluginExecutionUnsettled, executePluginTool, executePluginVerifier, type TrustedVerifierAlgorithm } from './plugins/execution.js';
 import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js';
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
@@ -22,6 +26,8 @@ import { NativeActivityBodyHost } from './native-activity-body/host.js';
 
 export type RunnerNotice = { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
   | { type: 'runtime-initialized'; runnerId: string; attemptId?: never };
+type PluginTransport = Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>
+  & Partial<Pick<PluginRunnerClient, 'claimVerifier' | 'statusVerifier' | 'authorizeVerifier'>>;
 export interface RunnerOptions {
   baseUrl: string;
   token: string;
@@ -33,7 +39,8 @@ export interface RunnerOptions {
   pluginExecution?: {
     store: TrustedPackageStore;
     executionMode?: 'in-process' | 'trusted-process';
-    transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+    verifier?: { trustedAlgorithms: readonly TrustedVerifierAlgorithm[]; toolExecution?: boolean };
+    transport?(client: FlowClient): PluginTransport;
   };
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
@@ -52,8 +59,11 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   if (input.signal.aborted) return;
   const shutdown = new AbortController();
   const pluginExecution = input.pluginExecution ? { ...input.pluginExecution,
+    ...(input.pluginExecution.verifier ? { verifier: Object.freeze({ ...input.pluginExecution.verifier, trustedAlgorithms: Object.freeze(input.pluginExecution.verifier.trustedAlgorithms.map(item => Object.freeze({ ...item }))) }) } : {}),
     store: Object.freeze({ ...input.pluginExecution.store, allowedDigests: Object.freeze([...input.pluginExecution.store.allowedDigests]) }) } : undefined;
-  const qualification = pluginExecution ? pluginToolExecutionSchema.parse({ bindingProtocol: 'flow.plugin-runtime.v1',
+  const verifierQualification = pluginExecution?.verifier ? pluginVerifierExecutionSchema.parse({ bindingProtocol: 'flow.plugin-verification.v1',
+    storeId: pluginExecution.store.storeId, hostApiMajor: 1, algorithms: [...new Map(pluginExecution.verifier.trustedAlgorithms.map(item => [item.algorithmId + ':' + item.algorithmVersion, { id: item.algorithmId, version: item.algorithmVersion }])).values()] }) : undefined;
+  const qualification = pluginExecution && (!verifierQualification || pluginExecution.verifier?.toolExecution === true) ? pluginToolExecutionSchema.parse({ bindingProtocol: 'flow.plugin-runtime.v1',
     storeId: pluginExecution.store.storeId, hostApiMajor: 1 }) : undefined;
   const options = { ...input, pluginExecution, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
@@ -72,8 +82,9 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
   const journal = await AdmissionJournal.open(stateDirectory);
-  const processHost = pluginExecution?.executionMode === 'trusted-process'
-    ? await createTrustedProcessHost({ resourceRoot: join(await realpath(stateDirectory), 'plugin-process') }) : undefined;
+  let processHost: Awaited<ReturnType<typeof createTrustedProcessHost>> | undefined;
+  const bindAdmission = (id: string) => verifierQualification
+    ? journal.bindVerifierRunner(id, verifierQualification, qualification) : journal.bindRunner(id, qualification);
   const active = new Map<string, Promise<void>>();
   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
@@ -87,7 +98,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   }
   function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }), processHost?.invoke)
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }), processHost)
       .then(completed => { if (!completed) recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
@@ -98,7 +109,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
     while (!options.signal.aborted) {
       try {
         runnerId ??= (await client.runnerIdentity(requestSignal(options))).runnerId;
-        await journal.bindRunner(runnerId, qualification);
+        await bindAdmission(runnerId);
         if (recoveryPending) {
           if (active.size) {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
@@ -106,7 +117,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
           }
           await recover(stateDirectory, client, options, journal, bodies, runnerId);
           // A confirmed outbox completion may have made a legacy journal completely clean.
-          await journal.bindRunner(runnerId, qualification);
+          await bindAdmission(runnerId);
           recoveryPending = false; waitingNotice = false;
         }
         if (journal.unresolved(new Set(active.keys()))) {
@@ -114,14 +125,20 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
           blockedNotice = true; await wakeup.wait(); continue;
         }
         if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wakeup.wait(); continue; }
+        if (options.signal.aborted) continue;
+        if (pluginExecution?.executionMode === 'trusted-process' && !processHost) {
+          try { processHost = await createTrustedProcessHost({ resourceRoot: join(await realpath(stateDirectory), 'plugin-process') }); }
+          catch (error) { stop(error); throw error; }
+        }
+        if (options.signal.aborted) continue;
         // Unknown confirmation is outside execute's failed-settlement catch and before any new claim.
         const publishBodies = options.nativeActivityBodies === true
           ? await bodies.beforeAdmission(true, runnerId, requestSignal(options)) : false;
         if (plugin && !hostPublished) {
-          await pluginRequest(() => plugin.publishHost({ protocol: 'flow.plugin-runtime.v1', storeId: qualification!.storeId, hostApiMajor: 1 }, requestSignal(options)));
+          await pluginRequest(() => plugin.publishHost({ protocol: 'flow.plugin-runtime.v1', storeId: pluginExecution!.store.storeId, hostApiMajor: 1 }, requestSignal(options)));
           hostPublished = true;
         }
-        const opportunity = qualification ? journal.pluginOpportunity : journal.opportunity;
+        const opportunity = verifierQualification ? journal.verifierOpportunity : qualification ? journal.pluginOpportunity : journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
         if (!initialized) {
@@ -132,6 +149,11 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         }
         let requestedAt = performance.now();
         const query = (operation: 'claim' | 'status', signal: AbortSignal) => {
+          if (opportunity.protocol === 'flow.runner-claim.v4') {
+            const method = operation === 'claim' ? plugin?.claimVerifier : plugin?.statusVerifier;
+            if (!method) throw new AdmissionStorageError(new Error('Verifier admission transport is unavailable.'));
+            return pluginRequest(async () => decodeVerifierRunnerClaimResponse(await method.call(plugin, opportunity, signal), opportunity, operation));
+          }
           if (opportunity.protocol === 'flow.runner-claim.v3') {
             if (!plugin) throw new AdmissionStorageError(new Error('Persisted plugin capability is unavailable.'));
             return pluginRequest(async () => decodePluginRunnerClaimResponse(await plugin[operation](opportunity, signal), opportunity, operation));
@@ -225,8 +247,8 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   return client;
 }
 
-type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
-async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>, invokeTool?: (input: PluginToolInput) => Promise<PluginToolResult>): Promise<boolean> {
+type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding']; pluginVerifierBinding?: PluginVerifierBinding };
+async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: PluginTransport | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>, processHost?: Awaited<ReturnType<typeof createTrustedProcessHost>>): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -280,12 +302,50 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
   let nativeSettlement: NativeExecutionSettlement = 'settled';
   let terminalEvents: RunnerEventData[] | undefined;
   try {
-    if (assignment.pluginToolBinding) {
+    if (assignment.pluginVerifierBinding) {
+      const binding = assignment.pluginVerifierBinding;
+      if (!options.pluginExecution?.verifier || !plugin?.authorizeVerifier || assignment.pluginToolBinding
+        || options.pluginExecution.executionMode === 'trusted-process' && !processHost) {
+        throw new PluginExecutionUnsettled(binding.bindingId, binding.invocationId);
+      }
+      await control.assertOwnership();
+      const verification = pluginVerificationRequestSchema.parse(JSON.parse(assignment.task.prompt));
+      if (textDigest(assignment.task.prompt) !== binding.inputDigest) throw new Error('Verifier input digest does not match the pinned task.');
+      const result = await executePluginVerifier({ store: options.pluginExecution.store,
+        binding: { bindingId: binding.bindingId, invocationId: binding.invocationId, taskId: binding.taskId, ...ownership,
+          material: { installationId: binding.materialId, storeId: binding.storeId, artifact: binding.artifact, treeDigest: binding.treeDigest },
+          configuration: Object.fromEntries(Object.entries(binding.configuration).map(([key, value]) => [key, String(value)])) },
+        verification, trustedAlgorithms: options.pluginExecution.verifier.trustedAlgorithms,
+        ...(processHost ? { invokeVerifier: processHost.invokeVerifier } : {}),
+        signal: control.signal, assertOwnership: context.assertOwnership,
+        authorize: async (_, phase) => {
+          const request = { ...ownership, bindingId: binding.bindingId, invocationId: binding.invocationId, phase };
+          const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
+            ownership.attemptId, ownership.ownerVersion, phase]));
+          try {
+            const receipt = pluginGrantReceiptSchema.parse(await pluginRequest(() => plugin.authorizeVerifier!(request, key, AbortSignal.any([control.signal, requestSignal(options)]))));
+            if (receipt.taskId !== assignment.task.id || receipt.runnerId !== assignment.attempt.runnerId
+              || receipt.bindingId !== binding.bindingId || receipt.invocationId !== binding.invocationId
+              || receipt.attemptId !== ownership.attemptId || receipt.ownerVersion !== ownership.ownerVersion
+              || receipt.phase !== phase || receipt.replayed) throw new PluginAuthorizationUnknown();
+          } catch (error) {
+            if (error instanceof FlowApiError && error.status >= 400 && error.status < 500) throw error;
+            throw new PluginAuthorizationUnknown();
+          }
+        } });
+      await control.assertOwnership();
+      const content = JSON.stringify(result.output), version = textDigest(content), artifactId = `plugin-${binding.invocationId}`;
+      const pluginSource = { protocol: 'flow.plugin-artifact.v1' as const, ...result.provenance };
+      terminalEvents = [{ type: 'artifact', artifactId, title: 'Plugin verifier output', content, mediaType: 'application/json', version, pluginSource },
+        { type: 'verification', verifierId: 'flow.plugin-json-object', verifierVersion: '1', artifactId, artifactVersion: version,
+          inputDigest: result.output.inputDigest, result: result.output.verdict.result, verdict: result.output.verdict, pluginSource }];
+      outcome = result.output.verdict.result === 'passed' ? 'succeeded' : 'failed';
+    } else if (assignment.pluginToolBinding) {
       if (!options.pluginExecution || !plugin) throw new PluginExecutionUnsettled(assignment.pluginToolBinding.bindingId, assignment.pluginToolBinding.invocationId);
       await control.assertOwnership();
       const binding = assignment.pluginToolBinding;
       const result = await executePluginTool({ binding, task: assignment.task, ownership, runnerId: assignment.attempt.runnerId,
-        store: options.pluginExecution.store, invokeTool, signal: control.signal, assertOwnership: context.assertOwnership,
+        store: options.pluginExecution.store, invokeTool: processHost?.invoke, signal: control.signal, assertOwnership: context.assertOwnership,
         authorize: async request => {
           const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
             ownership.attemptId, ownership.ownerVersion, request.phase]));
@@ -331,7 +391,7 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
   // A prior cancel reason stays authoritative in AttemptControl, but is not proof
   // that an adapter's external execution stopped. Retain its admission in that case.
   if (nativeSettlement === 'settled' && !options.signal.aborted && control.reason !== 'lost') {
-    const completed: RunnerEventData = { type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) };
+    const completed: RunnerEventData = { type: 'completed', outcome, ...(assignment.pluginVerifierBinding ? { pluginCompletion: { state: 'settled' as const } } : {}), ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) };
     if (terminalEvents) await outbox.emitBatch([...terminalEvents, completed]);
     else await emit(completed);
     return true;
