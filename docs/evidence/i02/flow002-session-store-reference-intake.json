@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-08T03:51:10.579Z",
+  "source": "0b1410ff9a1a19828e7f2c7815dadd1f822a4b90",
+  "base": "ca840056efef40769069839a5bd58f05f7cf6248",
+  "mainPreimage": "30406194f670361763b63ab7c5cce456be3617c2",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_DOCS",
+  "remainingP1P2": 0,
+  "scope": "GO-provided fixed reference research, permissions and unimplemented boundary only; no independent upstream re-fetch",
+  "files": [
+    {
+      "path": "plans/flow-002-provider-harness/plan.md",
+      "bytes": 31018,
+      "sha256": "b2c5c1a281fb3596c5fc061c3768f794806fb11d2574f6bec174071c2c59c085"
+    },
+    {
+      "path": "plans/flow-002-provider-harness/status.md",
+      "bytes": 7339,
+      "sha256": "a5eb75181a6402c4dad33a662ed813d1dc9a51f067449d38bda6dc662bcec91e"
+    }
+  ],
+  "checks": {
+    "preimagesMatch": true,
+    "exactReviewedBytes": true,
+    "statusErrors": [],
+    "humanMissing": [],
+    "timing": "historical first start UNKNOWN retained",
+    "engineeringRuns": 0,
+    "provider": 0
+  },
+  "limits": [
+    "No SessionStore implementation or compatibility claim",
+    "No license applicability conclusion or source copying",
+    "Current personal settings delivery remains priority",
+    "No old evidence changed"
+  ]
+}

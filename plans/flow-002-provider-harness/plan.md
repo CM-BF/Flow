@@ -214,8 +214,14 @@ GO于本日完成官方只读研究并交付的候选输入：[Agents API archit
 
 ## 2026-10-07 T09 / R05 后继：上游 SessionStore 候选
 
-GO已核本机SDK0.3.290声明1810–1847、6535–6671，包含SessionStore append/load、batched/eager及loadTimeoutMs；[官方Session storage](https://code.claude.com/docs/en/agent-sdk/session-storage)本轮只读确认它镜像本地transcript并提供Postgres参考与conformance方向，参考实现源码/许可证尚未核，不直接复制或声明Flow已支持跨runner会话。
+GO已核本机SDK0.3.290声明1810–1847、6535–6671，包含SessionStore append/load、batched/eager及loadTimeoutMs；[官方Session storage](https://code.claude.com/docs/en/agent-sdk/session-storage)说明它镜像本地transcript并提供Postgres参考与conformance方向。2026-10-08补入下述固定源码研究；这是候选输入，不直接复制或声明Flow已支持跨runner会话。
 
 优先评估该小Interface隐藏SDK私有transcript，不另造格式或搬运器。采用前必须核：双写与UUID去重、同会话租约归属、mirror_error时远端完整性与本地保留/清除、缺store的fallback、本地和远端保留，以及整段load的字节/内存界限。Flow仍持有授权/恢复权威，正文轻投影与session存储分离；不为候选引新平台。
+
+GO只读源码固定官方仓库 `5dc91fb5ebe27e926e95d62f4b5dd7632e936e79`：[PostgresSessionStore.ts](https://github.com/anthropics/claude-agent-sdk-typescript/blob/5dc91fb5ebe27e926e95d62f4b5dd7632e936e79/examples/session-stores/postgres/src/PostgresSessionStore.ts)，Git blob `9e77f61e5cba091d2ac909a0c7b99d10f371902b`。该参考append使用普通多行INSERT、未按entry.uuid去重；load没有条数/字节上限；缺少listSessionSummaries，SDK listing helper可能逐会话load。官方文档的mirror append失败重试意味着采用前必须证明重送语义，不能把参考实现原样当可靠持久层。13项conformance未覆盖落库后ACK丢失、旧writer fencing和资源界限；可选方法缺失会直接return，PG live无环境时跳过，package test仅构造器。README明示非生产维护且未纳入仓库CI；这些是源码/测试覆盖观察，不是Flow运行故障或兼容通过。
+
+后继仍复用SDK Interface，由中心持有PG和授权/租约，runner经有界授权port读写，不给每个runner直接数据库连接或独立pool。Flow轻聊天列表保持既有权威；opaque transcript不等于已验收正文或产物。最小零模型直接消费者需分别覆盖：落库ACK丢失后的重送、有UUID与无UUID的不同去重合同、换owner后迟到写拒绝、mirror缺口后的恢复资格、超限整段load明确拒绝。当前没有新增安装、DB或provider预算。
+
+借用源码前还须核路径对应许可：该package.json标MIT，而仓库根LICENSE.md引用Commercial Terms，不能将整库归为MIT；本次只记录差异，未作许可适用结论或复制代码。示例SDK依赖latest不带入Flow固定版。
 
 当前普通Claude adapter仍persistSession:true，nativeEnvironment保留既有认证配置；settingSources:[]不能当不写盘。O16一次性只读实验可在自身query装饰口评估persistSession:false并拒resume/store，但不改普通聊天恢复，也不声称其他SDK缓存/认证写入消失。具体差量与剩余登录/写入来源缺口见[O16原生阶段候选](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-stages/candidate.md)。本段0安装/query/auth/DB/配置动作，不新增模型预算，当前可见发布与聊天验证优先。
