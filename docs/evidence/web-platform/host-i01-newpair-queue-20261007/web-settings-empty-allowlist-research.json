@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-08T02:52:38.313827+00:00",
+  "kind": "Read-only settings eligibility edge-case research",
+  "planTarget": "Existing MATURE02 TODO08/11 / MSG03 creation",
+  "base": "bfbf804bdc290ac27787a355b064457fb76bfc58",
+  "pins": [
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    }
+  ],
+  "facts": [
+    "claudeTurnSettingsChoicesSchema permits an empty array: max32 and byte cap, no min1. The strict versioned catalog codec therefore may legitimately return an opted-in profile with choices:[].",
+    "Server checkTaskMessageSettings requires a tuple whenever turnSettings policy exists; missing tuple is message_settings_required. Any proposed tuple against an empty allowlist is unsupported.",
+    "A loaded existing conversation can have trusted messageSettings capability even when its local draft ProfileSelection remains legacy-default; default draft-selection state must not override server-required settings."
+  ],
+  "recommendation": "Keep public codec facts intact. A pure submission-eligibility check should explicitly block empty allowlist, missing tuple and absent/mismatched trusted capability, while permitting Prepare before tuple selection. Clear/omit remains a valid editable draft state, not permission to send. Do not invent defaults or silently downgrade to legacy.",
+  "implementationBoundary": "Shared App/Thread/Picker guards are a later exact-owner handoff; pure helper passing cannot establish noHTTP/noDetach in mounted UI. Legal owner has received this edge case for its current two-leaf segment.",
+  "cleanCode": "Keep parsing separate from current send eligibility; do not redefine undefined globally or reject all public-valid configurations in a shared codec.",
+  "limits": "Static inference from fixed source only; no test or runtime launched by root, no project modifications, no newtask or grant."
+}

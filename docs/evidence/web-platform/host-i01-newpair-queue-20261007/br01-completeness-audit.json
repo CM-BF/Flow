@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T02:55:19.121845+00:00",
+  "kind": "Original-objective completeness audit / existing BR-01 dependency",
+  "source": "bfbf804bdc290ac27787a355b064457fb76bfc58",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/components/workspace/panels.tsx",
+      "bytes": 6966,
+      "sha256": "5f97e8ba1f41eabf2b79e21957fd59f2d6567f7cc271d4d4431bb3f0c5c6f9b8"
+    },
+    {
+      "path": "packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 69989,
+      "sha256": "b6ae9ff026605ea3e5cd121320bc434903152cdc8f0144f3e269ba68e8f26d62"
+    }
+  ],
+  "existingRequest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/integration-checklist.md",
+    "bytes": 57572,
+    "sha256": "4a9cdb96a3788c4415af6eeb74a1cade8f742d34ee9959d1dfe12a40fe1e813e",
+    "lines": "51-62"
+  },
+  "requirements": [
+    "WPF-REQ-32 / BR-01-A task-workspace location and capability discovery",
+    "BR-01-B bounded read-only workspace file list/read",
+    "BR-01-C authoritative stdout/stderr/system streams with reconnect sequence",
+    "BR-01-D independently authorized interactive terminal lifecycle"
+  ],
+  "observed": [
+    "Current AI Elements FileTree groups returned Reference IDs and loaded Detail.kind, with explicit workspace-browsing-not-connected message. It does not obtain runner filesystem paths or children.",
+    "Current AI Elements Terminal joins TimelineEntry text and explicitly labels read-only task output; interactive shell is not connected. It does not classify that text as stdout.",
+    "The inspected public WorkspacePage/client workspace() are unified task/event views, not filesystem/terminal capability APIs.",
+    "Existing BR-01 handoff already specifies opaque resource IDs, workspace/attempt identity, bounded content, lazy reads, stream sequence, separate detach/terminate and shared-contract ownership. Its current entry records no received owner/implementation SHA."
+  ],
+  "conclusion": "The rendered components are real and their limited wiring is honest, but they cannot prove completion of real workspace browsing or interactive terminal requirements. This is a dependency audit of the existing request, not proof that no backend branch anywhere has work.",
+  "nextAction": "D01 should reconcile existing BR-01 with Original: identify unique authoritative owner/plan and any reviewed contracts/client SHA or keep the acceptance explicitly pending. Reuse an existing implementation if found. Frontend must not invent shared APIs, assume browser-local paths locate a runner or duplicate a backend feature.",
+  "priority": "Record alongside ongoing MATURE02 product work and original user requirements; do not replace the full objective with small component checks.",
+  "quality": "Reuse the original four-part handoff instead of another status store or overlapping task. Separate verified current source facts from globally unknown backend readiness.",
+  "limits": "Read-only fixed-source audit; no code/test/browser/PG/native service executed and no owner claim changed."
+}

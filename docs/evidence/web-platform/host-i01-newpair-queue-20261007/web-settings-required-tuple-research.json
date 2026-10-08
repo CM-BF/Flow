@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-08T02:43:49.520262+00:00",
+  "kind": "Static continuation of root Web settings creation seam research",
+  "source": "782f0ad0953808474a43940c8241eb181ff7cf65",
+  "pins": [
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 27353,
+      "sha256": "84b5a5646488e6c4baf4f3bad455b182c9c6943a08beee24bd16f9f72f2a91da"
+    }
+  ],
+  "planTarget": "Existing MATURE02 TODO08/11 / MSG03",
+  "priorResearchSha256": "f6b3b5e8c7eeabc497cf829ecc8982dd2558cb030405120ae5adb4a1d8c86539",
+  "facts": [
+    "Server conversations/message-settings.ts:13 returns message_settings_required when authenticated profile declares turnSettings and task omits settings; execution-profiles/store.ts:137 calls it during admission.",
+    "TUI interaction/controller.ts:222 already blocks sending with SETTINGS_REQUIRED when a settings profile exists but no tuple was selected.",
+    "Web selection.ts captureMessageSettings(undefined) returns undefined before catalog/capability checks. Picker can apply omit. ConversationThread sendReason has no settings-required condition. Its submit then captures/ detaches current draft and passes omitted settings through outbox.",
+    "Recovery binding.tsx:48 currently recognizes only legacy-default/configured profile kinds; new versioned creation selection requires a deliberate restore decoder branch."
+  ],
+  "implication": "When adding Web opt-in profile creation, explicitly handle required tuple before Send/Queue; otherwise the new entry can prepare a conversation whose first unconfigured turn is predictably rejected by current server. This is static contract evidence, not a browser reproduction or proof of data loss.",
+  "candidateBehavior": [
+    "Keep clear/omit as a possible editable draft state, with explicit non-sendable reason where trusted current profile requires settings. Do not auto-select a tuple or relax server policy.",
+    "Preparation must remain possible without a tuple; after CREATE and trusted GET capability, user chooses a complete allowed tuple and normal synchronous capture/CAS applies.",
+    "Use current full profile/capability identity and retained exact intent; unknown/missing capability after preparation must not become fake permission or trigger another CREATE.",
+    "Add focused changed-path counterexample: prepare opt-in, leave or clear settings, then Send/Queue causes no request or draft detach; selecting an allowed tuple permits first turn. Legacy omitted-settings flow unchanged.",
+    "Exercise versioned profile draft restore through public codec, including malformed/stale reference, while unknown CREATE receipt retries original identity/key."
+  ],
+  "coordination": "D01 coordinates exact App/Picker/Recovery leaves with existing owners and I02 before source work. No new task, claim or runtime grant implied.",
+  "quality": "Clean-code review keeps editable draft value separate from submission eligibility and reuses existing receipt owner; avoids redefining undefined globally to break legacy or Prepare.",
+  "limits": "Root performed fixed-source reads and hash comparisons only. No engineering child/browser/HTTP/PG/provider; no code edits."
+}

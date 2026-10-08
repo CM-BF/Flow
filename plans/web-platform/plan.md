@@ -702,3 +702,19 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 - 2026-10-08 02:33 UTC自然事实批：Arc滚动条小片8ca9/3904限定通过且全STOP；登录cc4仍待受控main，VISUAL01 d227保留首次六组通过/浮层夹具FAIL并进入原任务窄修。O16实际renew已在原期限内START并FULLRETURN，后续children另选一次150s，不能因准备完成自动连续执行。S01原quiet未OPEN取消保留；新单臂诊断只允许其他队轻量源码/metadata/正常Git，PG、端口、安装、build、新工程child仍排他，结果不冒AB容量或SLO结论。
 
 - 原MATURE02 TODO08/11与MSG03设置入口：已把[固定Web创建接缝研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-settings-creation-seam-research.json)交Mika唯一父计划。Web当前legacy目录排除版本化设置，而TUI/new已有入口；后继复用prepare→原creationKey→CREATE-only→可信GET capability，不新receipt系统、不消费原draft、不因失ACK换key。需显式版本化ProfileSelection与Recovery codec分支，先协调App/I02、现Picker与recovery/binding.tsx权属，不能只松旧codec或让TUI代建。SVC09A产物与零模型激活沿Original独立原任务。
+
+- 原MATURE02创建片的必选设置约束：[固定required-tuple研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-settings-required-tuple-research.json)。真实服务端对设置会话缺messageSettings返回required，TUI已有相同门；Web后继保允许清空，但Send/Queue必须显示明确原因，可信完整tuple缺失时不发HTTP、不detach草稿。此为静态缺口，旧MSG夹具六绿未覆盖真实server该规则，不能称已证产品回归。已派panels新独立feature WT只做selection/recovery及两puretests，App/Thread/Picker组合须原作者交接，唯一MATURE02状态不复制。
+- OPS16原资源账本偏差：S01单臂本次runtime已PASS并02:40:52精确归还，后续封存事后5,428,580B超过原4MiB尾1,234,276B。原owner全STOP/future0；保该偏差与实际stock，不借已关闭512M、不删证据、不改阈值，不宣称全程预算合规。若需作者补写事件须新有限额度，已固定actual结果不重跑。
+
+- 原MATURE02/MSG03创建片补[空allowlist与可信capability边界](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-settings-empty-allowlist-research.json)：公共codec允许choices为空，但已opt-in会话仍必需完整可信tuple，空集不可发；本地legacy-default不能覆盖服务端能力，undefined与null能力均保旧会话语义。保Prepare先行、清空可编辑，不伪造默认、不降级、不放宽codec；纯函数通过不冒App无HTTP/无detach已验。
+- 原WPF-REQ-32 / BR-01完整目标继续沿[唯一接收清单](../../docs/evidence/web-platform/integration-checklist.md#WPF-REQ-32-后端能力请求br-01提交接收不假设已有)：A定位、B只读文件、C进程日志、D交互PTY尚缺可消费的实现owner/唯一plan/contract SHA。[固定审计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/br01-completeness-audit.json)只证明当前Web/公共入口不足以关闭四项，不声称全仓无人实现。已派W01有限只读查现有交接，UNKNOWN保留，不以组件checkbox替代，不另建后端任务或假API。
+- 原OPS16/O16[派发时延事实](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/o16-dispatch-latency-observation.json)：children选中02:33:27.236、latest02:34:17，Original报告02:35:19才读到，0START/0query且NOT_RUN；不是已证资源不足。后续有期限阶段在现授权渠道记录selected/读取/START/NOT_RUN，已有唯一operator直接消费，避免额外metadata确认链；不缩时、倒填或自动续期。
+- 本次交付收口：Picker c605全STOP，新两组/五图获[986f限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-overlay-final-review.json)，旧六行为证据独立复用、原失败保留；不是单轮8/8。Original/I02按Arc18→登录窄App提取→Picker6单一接收，当前无并行main写入。TUI R4原件1选1过/20223ms及完整资源归还单独入current，原R2/R3失败与KEEP不改。
+
+- BR-01接收定位补充：[R03-05唯一既有锚点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/br01-existing-owner-route.json)已找到，原assignment_review计划仍pending四能力，但旧claim已释放、9c597批准仅租期/清理；M02聚合投影与I02 terminal-event恢复均不等FS/交互PTY。沿原Lead/R03-05补A-D正式writer和契约接收SHA，未知继续OPEN，不再派同义feature。
+
+- MSG03纯基础e5的明确组合门：当前ConversationThread排除legacy后直接读profile.reference，Picker只识configured；因此4叶不能独立并main，不能以纯测试宣设置会话可用。原MSG03后继同一次合法App/Thread/Picker组合补穷尽分支与required/pre-detach门，再做受影响consumer类型/行为。三旧作者sourceSTOP后仅精确叶partialhandoff，各新3MiB/8min metadata封套，source bytes不动；接收现main Arc→登录→Picker后新UI段实施，不复制旧branch整文件。
+
+- MSG03纯基础[027415限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/versioned-profile-creation-review.json)绑定e5与15rawPairs；final66abb全5STOP，四child8872ms分层通过、首红保留，12MiB自然尾已关闭。NOT_INDEPENDENTLY_MERGEABLE保持；当前先原三叶合法交权与三Web接收，随后在同一MSG03做consumer组合，不新大task、不重纯绿。
+
+- MSG03可见性纠正：该task已在registry登记web-message-settings-app原唯一status，不是漏登记新child。由原panels在独立3MiB/8min records-only合法scope更新既有后继：保MSGAPP01-06与18叶旧完成历史，明确新执行树/fee104/66abb纯基础及UI未完成，不新status或registry。首写02:50:38与claim02:50:52的阶段差异仅按已有provision/源码证据澄清，未知保留、不倒改或直接判定越权。

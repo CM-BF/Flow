@@ -202,3 +202,5 @@ URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../d
 原 MATURE05-05 累计缓存后继参见[固定layout留存研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/workspace-layout-retention-research.json)：WorkspacePanels外层按task保留的Map没有delete/上限，内层task key重建不清外层；App32resident上限不能代表累计历史layout有界。属静态P2候选，未runtime/heap量测；后续原合法owner固定anchor并顺序打开关闭多任务验证，复用已有resident/closed权威生命周期清理，保草稿/UNKNOWN/后台任务。无第二store，不重复已验plugin-disable清理，不加当前Picker/Arc实际前置。
 
 - 原Arc视觉P2收口（2026-10-08 02:30 UTC）：source67a4、final8ca9在当前390 overlay双主题的原生滚动条显示时，文字、action与Close已分离；四组通过、18705ms且02:27:18精确归还，02:30:37全18STOP。[一次独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-scrollbar-final-acceptance.json)限定关闭本模式缺陷。其他OS经典滚动条、main接收、Context组合与真实中心仍沿原TODO开放，不再派本次重复修复。
+
+- 原Arc-03导航插件后继沿[固定8ca9研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-navigation-extension-research.json)：上层WorkspaceTabs没有实际挂载，PaneTabs已有chat.tab.actions，右侧workspace上下文是task/tab而非Arc布局身份。最小候选复用host，独立typed layout-workspace slot与select/add/close命令；App仍唯一状态写者，关闭跨flush/确认框前后重验并在最终同步变更时commit授权。App/session在当前Arc18外，须真实交权；当前优先MATURE02设置入口，不以只读设计冒实现或追加新task。

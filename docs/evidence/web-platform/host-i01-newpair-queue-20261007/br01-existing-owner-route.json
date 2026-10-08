@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-08T02:59:23.350Z",
+  "kind": "Existing BR-01 dependency owner-route read-only follow-up; no new task",
+  "reporter": "w01_owner",
+  "mode": "Owner-reported bounded read-only evidence, 0 project/TMP write/engineering/HTTP/PG/Chrome/claim mutation; no fresh manager DB probe",
+  "fixedMain": "eb06d53237525b0e548ff552b9cc07ef5228560e",
+  "acceptedCapabilities": {
+    "A_workspaceLocation": "UNKNOWN",
+    "B_readOnlyFilesystem": "UNKNOWN",
+    "C_processLogs": "UNKNOWN",
+    "D_interactivePTY": "UNKNOWN"
+  },
+  "existingAnchor": {
+    "task": "R03-05",
+    "plan": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability/plans/r03-runner-reliability/plan.md",
+    "line": 13,
+    "owner": "assignment_review",
+    "branch": "codex/runner-reliability",
+    "head": "b4e5bbd56232b0a16339ee1f49fe1e53ae437ae3",
+    "status": "Pending four capabilities; not implementation receipt",
+    "priorReview": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a covers lease/cleanup only, explicitly excludes FS/PTY/BR-01",
+    "oldClaim": "6b6b v4 RELEASED 2026-10-06T04:40:24.875Z; not new write authority",
+    "releaseReceipt": {
+      "path": "/tmp/flow-r03-final-release-receipt.json",
+      "bytes": 769,
+      "sha256": "02d2cad43f04cff9b002f67308980c0bec58e19aee2aac763a3162d64b29c2ee"
+    }
+  },
+  "relatedSources": {
+    "M02": "m2-workspace/plans/m02-unified-workspace owner Execution Lead; 9dafb0b51d970f48f18dea803bb0860992f2247b; reviewed e888862 is cross-task projection",
+    "X01": "plugin-enable-binding/plans/x01-plugin-management owner architecture_read/Mika; 2d65f2cd5d485d2c06f430230e2d126f13eb2cf8; no BR-specific intake found in bounded search",
+    "NotBRD": "I02/client-terminal-intake.json /20b143 is outbox/runtime terminal-event recovery, not interactive shell"
+  },
+  "next": "Existing Lead/R03-05 accepts exact A-D owner, existing-plan routing, legal scope, public contract/client/intake SHA. Until supplied, allfour OPEN; do not fabricate API or duplicate backend feature.",
+  "limits": "Bounded existing plans/registry/I02 intake search; not claim no implementation exists anywhere; released historical owner not current claim authority."
+}

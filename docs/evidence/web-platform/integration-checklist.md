@@ -59,7 +59,7 @@ D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一�
 | BR-01-C 只读进程日志 | 用户打开“任务日志”查看实际进程输出、断线后接续；模型回复仍是任务消息，不声称stdout | listLogStreams(taskId, attemptId) 返回流id/source/channel；read/watchLog(streamId, afterSequence, bounded limit) 返回seq、timestamp、channel stdout/stderr/system、text与结束/截断/保留边界。若只提供合并输出须明示channel unknown，不能Web推测 | Runner产生真实进程日志并与attempt绑定；重连不丢/不重复、保留超期reset明确、退出后只读可看；无stdin接口的日志不能显示交互shell输入 |
 | BR-01-D 交互shell（独立能力） | 用户明确打开交互终端，输入命令、调整尺寸、显式终止；连接/关tab仅detach观察，不能默认取消Flow任务或杀session | capability受权openTerminal(taskId, workspaceId, columns, rows) 返回terminalSessionId及生命周期；attachTerminal(afterSequence)输出；writeTerminalInput(sessionId, sequence/idempotencyKey, data)；resizeTerminal；显式terminateTerminal。需说明PTY进程owner、断连保留时限、退出状态、lease迁移规则；不复用Task.cancel作为关闭tab | 主线X01/Runner确认权限、可用shell/工作区/资源限制与能力作用域；真实PTY验证交互输入、尺寸、断连重附、顺序与重复防护、退出/超时、A/B隔离、明确终止；CLI同能力入口或明确阶段缺口 |
 
-BR-01当前解除状态：未接收实现SHA/具体owner登记，四项均未验证。当前UI仅支持真实任务文本/引用/Detail，源码不会因本文新增假API。主线接收后给唯一计划/owner、contracts/client精确SHA与调用例子；Web消费独立新迭代，先局部接口/直接依赖测试，共享链路变化再做真实runner端到端。
+BR-01当前解除状态（2026-10-08只读接收核）：已有唯一承接锚点为R03-05，`runner-reliability/plans/r03-runner-reliability`明确pending四能力，历史owner为assignment_review；旧R03已审范围仅租期/清理，旧claim v4已RELEASED，不能沿旧权开工。四项仍未收到已接收实现SHA、公共contract/client SHA或完成receipt，实际writer须原Lead明确登记；参见[固定源码审计](host-i01-newpair-queue-20261007/br01-completeness-audit.json)与[有限owner路由核对](host-i01-newpair-queue-20261007/br01-existing-owner-route.json)。不是全仓无人实现的断言，四项均未验证。当前UI仅支持真实任务文本/引用/Detail，源码不会因本文新增假API。主线接收后给唯一计划/owner、contracts/client精确SHA与调用例子；Web消费独立新迭代，先局部接口/直接依赖测试，共享链路变化再做真实runner端到端。
 
 
 ## M02 Web消费队列增量

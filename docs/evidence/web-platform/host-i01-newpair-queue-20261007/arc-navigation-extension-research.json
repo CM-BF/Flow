@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T02:39:41.632852+00:00",
+  "kind": "read-only research / existing Arc navigation extension follow-up",
+  "source": "8ca9de9825513f87af1bae4e720c7cc87b067e58",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 4183,
+      "sha256": "718882ea10440a1e2d627b2d810ec7ae44c3bb3cdbd974bbb09339328d4d88f2"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 7594,
+      "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 9254,
+      "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    }
+  ],
+  "planTarget": "Existing WPF-WORKSPACEARC01-03 / MATURE05 navigation extension; no new task",
+  "facts": [
+    "WorkspaceTabs.tsx:31-43 has fixed select/add/close controls and no renderActions extension seam. PaneTabs already receives renderActions and App binds chat.tab.actions to pane context. These are different UI surfaces.",
+    "SlotId and validation expose chat.tab.actions for pane only. Existing kind:workspace means right-side taskId/tabId, not the Arc layout workspace ID. NavigationSnapshot likewise represents right-side task workspace, not layout selection.",
+    "Arc plan/status explicitly leave navigation plugin slots unfinished; limited four-group/390 visual approval does not close this feature."
+  ],
+  "candidate": [
+    "Give layout navigation its own narrow typed context/slot or equivalent existing-host-safe adapter; do not misuse right-panel workspace authority.",
+    "Keep layout, view, draft, C/Symbol and pending state owned by App; contributed UI must invoke existing validated host actions without arbitrary callbacks or a second layout store.",
+    "Preserve keyboard tablist semantics, focus/close affordance, overflow readability and max3 pane rules. Extension actions must not create extra role=tab entries or change selection just on focus.",
+    "Required direct counterexamples: stale workspace removal/recreation, plugin disable/restart, delayed activation, namespace switch, and no hidden task authority from global context. Verify only affected behavior in a later admitted window."
+  ],
+  "coordination": "D01 alone checks existing c34d v2 exact scope, registered owner and I02 intake before authorizing source. Keep final8ca9/main-intake immutable. W01 Picker remains separate claim; no transfer inferred from STOP.",
+  "cleanCode": "Prefer one rendering seam using existing PluginHost authority and lifecycle, not bespoke plugin dispatch or second navigation store.",
+  "limits": [
+    "No code, process/test/browser/native/PG launch; static source observation only.",
+    "Candidate naming/design deliberately left to legal feature owner; no scope or runtime grant implied."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-08T02:41:08.593035+00:00",
+  "kind": "Coordination incident observation, not a new feature or runtime grant",
+  "task": "Existing O16 native children continuation",
+  "facts": {
+    "selectedAt": "2026-10-08T02:33:27.236Z",
+    "latestStart": "2026-10-08T02:34:17.000Z",
+    "authorizationExpiresAt": "2026-10-08T02:36:47.000Z",
+    "stageTotalMs": 150000,
+    "originalLeadReportedReadAt": "2026-10-08T02:35:19.000Z",
+    "outcome": "NOT_RUN_LATEST_PASSED_OWNER_CONFIRMED",
+    "queriesConsumed": 0,
+    "operatorStarted": false,
+    "ownerState": "Original reports native owner completed with0children/0pending launch after renew RETURN",
+    "notRunReceipt": {
+      "commitPrefix": "222e933a3",
+      "relativePath": "docs/evidence/o16/native-children-continuation-20261008-once/children-not-run.json",
+      "sha256": "627b5bd7856ff7497a0b789ba0bff7fc19436f2eb2463c67c26999b9c95320ac"
+    }
+  },
+  "classification": "Original explicitly attributes this to Lead reading selected after latestStart; not a failed resource preflight or executed provider run. Renew remains successful and separately returned.",
+  "processRecommendation": [
+    "For any future already-authorized expiring stage, native lead should arrange the sole operator to be available to consume the canonical selection before spending the remaining validity on a new metadata/seal cycle.",
+    "Prefer direct consumption by the same authorized owner from the canonical record with existing fresh gates, when its lead can arrange that within current agent limits; do not route through extra review acknowledgements.",
+    "Expose selected, delivery-observed, actual START and NOT_RUN separately in existing management records. Do not infer actual execution from SELECT or a prepared commit.",
+    "If no adequate launch runway remains, record NOT_RUN and release the selection rather than shorten the150s envelope, extend signed expiry, auto-renew or retry. Future provider stage still needs its proper independent authorization."
+  ],
+  "scope": "No direct messages to blocked recipient; no new automation/polling process, no operator launch, no contract change. D01 decides routine workflow improvements with Original through existing authorized handoff."
+}

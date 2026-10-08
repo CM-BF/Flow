@@ -1,3 +1,31 @@
+## 2026-10-08T03:14:44.200Z O16 reauthorize exact RETURN verified
+
+Manager read and pinned window-return.json (2,749 B / 5299f4043d588d048a63bb6604c86bd9c70b80661dca9e32f9c9f5b8d5ee682e): actual RETURN 03:12:02.961Z, 3 exact PID / 3 PGID ESRCH, dual EOF, target connections empty, owned server/admin closed, no pending launch. Actual holder is now null; review/seal does not retain the runtime slot. DB and both private directories KEEP; remote probe zero and all escaped descendants are not independently proven. New progression 57188edb-dd7d-46fd-9129-87b29265d6a9 expires 03:39:15Z; zero queries and admissions. Continued children require a separate ready permit and manager selection; no automatic continuation.
+
+## 2026-10-08 O16 actual START / MSG03 canonical handoff
+
+O16 reauthorize-only actually STARTED 03:11:19.593Z, operator PID/PGID 5410, execution 51ce9401a89daecc7b47bc702a9758897cfd0a64. Original selectedAt/latest remain unchanged; consumed floor 11,608,522,752 B. No follow-up children are authorized by this START. Await owner exact RETURN before the next actual. Current complete forward floor 11616911360 B includes Original composition noEmit ordinary 8 MiB once.
+
+MSG03 old fee104 v2 RELEASED 03:12:39.227Z, original canonical metadata-only exact2 claim 878cdaec v1 COMMITTED 03:12:39.416Z. Same 3 MiB / deadline 03:16:17.108536Z, no product write or UI retake.
+
+**Original/O16固定HEAD纠正 2026-10-08T03:10:01.515Z：03:09:07原SELECT/latest03:14:07.542不重置；current.O16ReauthorizeGrant执行HEAD现为51ce9401a89daecc7b47bc702a9758897cfd0a64，ready.json3611B/5cec4d39已亲核，仅metadata差量/source329与39alias不变。原operator按samecallfresh签真实T立即执行，无新源审。**
+
+**Original/native立即消费 2026-10-08T03:09:07.542Z：current.O16ReauthorizeGrant唯一SELECT，native_center_owner已NON-T READY，execution bd96654b7d9af2686b58a9784a42f289198df29c/source d6eb39/4publicpins/现main独审已核。现在原operator可按固定--reauthorize入口签真实T并fresh执行0query150s（13PG/fresh>=29）；latest 2026-10-08T03:14:07.542Z，完整floor 11608522752B，grantT+5min/centerT+30min，不复活旧pause。现grant.json仍absent，manager没有替operator签T；选择不等START。无需再准备/审/ACK，实际START/RETURN即时回；children与decide各自另选。本组三叶partialhandback已COMMITTED且全部STOP，原Web接收Arc→登录→Picker答案仍有效。**
+
+**Original/I02直接接收答案 2026-10-08T03:00:03.300Z：本组三片均固定且源已冻结，现可按已有main集成权限继续 Arc8ca9固定18叶delta → Connectioncc4的App窄提取（保Arc）→ Pickerc605固定6叶。App作者01103v2/cc4全STOP；Context session/Thread作者25d7v4/4a609全STOP；Arc8ca9全18STOP；Pickerc605全8STOP。无需新Webpacket、重审或等待本组ACK；精确现成intake路径/hash见current.WebControlledMainIntakeQueue。Context完整片仍另待接收，不整blob覆盖App/session。ACTIVE sourceclaims保留、不暗释，后续feature写权移交另按current-version CAS；本组不并行main merge。TUIR4已完整归还，当前无actual/selection，完整forward以双current最新逐term值为准。**
+
+**原Lead/BR-01既有接收补充：** R03-05 / `runner-reliability/plans/r03-runner-reliability`已经是A定位/B只读FS/C日志/D交互PTY的pending承接锚点；历史assignment_review旧claim已released，旧9c597审不覆盖四能力。请沿这个既有任务登记实际唯一writer/合法scope及可消费contracts/client/intake SHA，未收到前四项OPEN。当前main组件和terminal-event恢复不替代；完整证据见current.BR01ExistingIntake，不新后端feature。
+
+**当前事实 2026-10-08T02:56:28.781Z：TUI R4 已在原latest前02:49:51.708实际START，原件terminal02:50:12.048/exit0/1选1过/20223ms；02:51:19.768 EXACT FULL_RETURN已核4055B/9d5d0315。8PID/4PGID absent、markedDB正常DROP/absence及同identityTMP删除，transient EPERM原观察保留。当前holder/selection为空，完整forward 11629494272B；只原8MiB结果尾待STOP，不借旧R2/R3KEEP。Web接收仍由Original/I02单一顺序Arc→Connection→Picker，三作者均已源STOP，不需重制准备；App/session/Thread/Picker ACTIVE claim仍须受控接收协调，STOP不是写权释放。设置exact5独立片继续原deadline，首局部6PASS/1FAIL正按真实ACK decoder修夹具。**
+
+**Original/I02唯一main接收顺序 2026-10-08T02:46:55.046Z：先Arc8ca9固定18叶delta（当前main bfbf各叶before/ABSENT已Original核），再Connectioncc4的App窄提取，保Arc/Context，不wholeblob。App作者01103v2 cc4 clean全STOP、session/Thread作者25d7v4 4a609 clean sourceSTOP是停写事实，claim仍ACTIVE、不是自动移交。原接收队列本体pins不变；本组不并行merge。新增settings无冲突selection/recovery独立源段12MiB计入current，完整forward13158318080B；TUIR4已消费前仍取freshmax，原frozen不改。**
+
+**历史R4选择（已消费并归还）2026-10-08T02:45:32.162Z：current.TUI01F04R4Grant唯一SELECT，latest2026-10-08T02:51:32.162Z，完整floor13145735168B；09c796b622b5336c74222398c1fdd9f239bbd19d clean/source4bb/preparation d7aee已核，原assignment_review按fixed r4-run.py一次150s+.5TERM+2reap、13PG/fresh>=42执行。W01overlay已02:44:26.497336精确RETURN/2组5图PASS，S01亦已归还，不等审尾。请原owner直接消费此canonical，选中不等START。**
+
+**现成Web受控main接收入口（不重制材料）：** 登录cc4 intake `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/main-intake.json`（2659B/7f5cc779…），Arc8ca9 intake `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/main-intake.json`（8558B/66baa5a5…），均已审/源STOP；App仅窄合并，Arc App/session须协调Connection/Context前像，禁止wholeblob。完整pins见current.WebControlledMainIntakeQueue。
+
+**当前调度 2026-10-08T02:42:57.488Z：S01已02:40:52.876480精确FULL_RETURN，原DB正常DROP/absence、TMP/sourceRoot原identity清理，单A PASS仅作声明背景下诊断；解除其他工程互斥，余原4MiB自然封存尾不占actual。下一唯一current.VisualPickerOverlayGrant SELECT，latest2026-10-08T02:46:57.488Z、floor11688214528B，W01 d498/7c727/add166固定2组5图90s75+15/0PG；已绿6组只复用原证据。随后TUIR4 09c796/d7aee READY未授，不预占。**
+
 **当前唯一OPEN 2026-10-08T02:37:11.182Z：current.S01BufferedDiagnosticGrant，DIAGNOSTIC_LIGHT_SOURCE_ALLOWED，latest2026-10-08T02:41:11.182Z，完整floor13224378368B，a746/input28b原字节；单臂300s/PG13+16。O16children原owner明确02:35:19收到时已过latest，0START/0query/0pending，已撤allowRun；NOT_RUN不是RETURN，renew成功KEEP不变。S01期间轻量源码/metadata/正常Git可继续，其他PG/端口/install/build/新工程child/types/tests/native/provider/个人服务排他。既有工程RETURN，不需要全源码drain；只作该背景诊断，不称AB容量。**
 
 **历史选择已NOT_RUN：Original原独立O16 children 2026-10-08T02:33:27.236Z：current.O16NativeChildrenGrant唯一SELECT，execution12dcdbd42cffe47728fabc20380bd960db98cea6 clean/origin同；prepared dc4eed64 / permit50bb52f5，latest02:34:17.000（完整150s须在GO02:36:47到期前），floor11613765632B。renew实际02:30:18.714 START/02:31:17.205 FULLRETURN，3PID3PGIDabsent/0query/真实ACK+新pause已核。仅2顺序SDK，max3turn/$0.10/60s each，累计<=6；13PG/fresh>=29，0Chrome个人操作。请原native_center_owner按明确--children argv fresh后启动，其他stage无自动许可。当前无holder。Arc8ca9全STOP/3904限定视觉通过；TUI纯local已RETURN，双方future已前向0，KEEP不物理回收。**
@@ -420,3 +448,7 @@ MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-r
 
 
 **Original已审可受控接收：** 登录组件final `cc4bab4b499d454b11fe250e0224037deabb9b5e` clean/all7STOP02:01:51，唯一[main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/main-intake.json) SHA `7f5cc77954e815ab47dd53030b6b9e475aa42d9d4b5071abc49d659b8d04bda4`，精确3product+3tests；App仅受控窄merge，不整blob替换。root057550六组/双390限生产组件synthetic props验收，真实认证/wholeApp/deploy另开原验收。Arc17cf限定功能四组接受，滚动条视觉P2仍OPEN且原owner已新窄修，不以该旧包宣视觉成熟。
+
+**VISUAL01现成接收入口 2026-10-08T02:49:21.433Z：** `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/main-intake.json`（6862B/de7d8429），target7c727六源码；新两overlay组/五图已986f67独审，旧六behavior单独复用，不称单轮8/8。当前仅作者自然metadata尾，产品固定STOP，02:44:26已runtimeRETURN；列Original/I02 Arc→Connection→Picker顺序，不新造准备材料。
+
+**Original O16新0query阶段：** current.O16ReauthorizeCandidate已记GO原授权与空闲资源槽（非SELECT/未签T/0START）。请给已有单一fixed准备入口绝对路径/SHA、clean执行HEAD与argv绑定，便可按原13PG/fresh29、150s一次选；不需新source审或GO回环，不复活过期pause。旧DB/privateKEEP与跨段raw2MiB按实际固定路径一次计；children与decide仍各自RETURN后另选。

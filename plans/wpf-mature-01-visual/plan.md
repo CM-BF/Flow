@@ -124,3 +124,5 @@ Context内部标题动作扩展沿Mika唯一MATURE04原后继：[三挂载面证
 当前 VISUAL01 权威迁移到 [web-shared-overlays唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md)：w01_owner/acce2727v1 exact8、dcbd7a798清洁，恢复浮层限定通过，Picker已审现成单次准备尚未实际执行，sharedoverlays未main。沿原片在两Web安全归还后接真实原scope/inputs与新有界窗口，代表旅程→独审→集成发布队列，不等完整Arc/Context、不重复实现或借旧grant。旧visual-shell已release不是此片完成。0PG/90s/7图候选须fresh全依赖与index预算，当前只排队。
 
 - 原VISUAL01 Picker后继（2026-10-08 02:32 UTC）：现成片首次实际六组behavior通过并留两图；overlay两组在公共codec拒绝带空格modelID后未达。[固定失败审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-first-actual-review.json)保留15543ms CLOSED/精确RETURN，不能据此断言产品回归。原w01在同一唯一任务、原exact8下新8MiB/20min段，仅修合法modelID与同源locator，一次公共codec检查normal/long，准备未达两组/五图；不重六绿、不放宽codec、不借旧grant。
+
+- VISUAL01当前交付：c605/source7c727所选overlay两组及五图已[限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-overlay-final-review.json)，02:44:26.497336完整归还、02:49:59.922542全8STOP。原六行为与两图沿首轮固定证据复用，合法modelID修复仅test，四产品字节不变；保原invalid_format失败，main与完整App仍开放。
