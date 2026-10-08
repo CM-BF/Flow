@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-08T03:07:23.547Z |
+| 更新时间 | 2026-10-08T03:45:13.630Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -14,8 +14,8 @@
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
 | 当前产出 | 个人恢复片已交付；现开始组合支持逐消息设置的后端，保持旧会话与默认runner身份。 |
-| 下一可用交付 | 固定包含设置槽与领取资格修复的后端来源及构建/冷启动候选。 |
-| 当前阻塞 | ACTIVE: 新产物迁入前需明确第5项保留策略；本轮来源准备已保存，operator暂优先已授权目标续接，尚未构建或激活。 |
+| 下一可用交付 | 可独审的固定后台构建入口，随后验证双槽冷启动与混合队列。 |
+| 当前阻塞 | ACTIVE: 新后台组合源码已固定；正在验证公开默认入口和构建参数，构建、双槽冷启动与实际激活尚未运行。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -214,3 +214,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-08T03:01:22.085Z：恢复原SVC09A-04，fresh2b593 clean/claim8f407 v12原exact2 active已核，记录[本轮开始](../../docs/evidence/svc09/message-settings-activation/settings-backend/start.json)。已实读Mika personal-message-settings-acceptance验收；先核8d532/098b已审输入、e15/880060实际默认冷启动及后来恢复差量。原三角色恢复与新设置后台分开；0build/PG/个人I/O/provider，不复制旧manifest或重跑33例，生产路径未领取不写。O16最终包已交审，实际新stage未运行，不阻本准备。
 
 2026-10-08T03:07:23.547Z：本轮来源准备安全保存，见[固定指针与边界](../../docs/evidence/svc09/message-settings-activation/settings-backend/safe-point.json)。已有8生产叶最小候选由assignment只读核对；未组合或申请产品写权，0工程child/PG/build/provider/个人读取。个人retained4项的第5项容量/计数前置明确，不删旧KEEP。按Lead优先原O16已授权operator，本任务未放弃、无pending launch。
+
+## 设置后台固定组合准备恢复
+
+2026-10-08T03:45:13.630Z：原 exact2 claim v12/clean2eeb 已 fresh 核；接收 Lead 已审十叶组合 `f9221dbdce367d1794586471991adbe7a5a98c13`（base880060），包含容量 count5/总2GiB。仅准备公开入口、空独立 store 构建及真实双槽 cold/mixed；0build/PG/provider/个人操作。旧2515失败与 e15 default3成功范围不变。依据 [resume](../../docs/evidence/svc09/message-settings-activation/settings-backend/resume.json)。

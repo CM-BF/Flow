@@ -9,18 +9,24 @@ import sys
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
 
-def main(argv):
-    if argv != ['--execute-fixed-build']:
+def main(argv, *, settings=None):
+    argument = '--execute-fixed-build' if settings is None else '--execute-settings-build-once'
+    if argv != [argument]:
         raise ValueError('EXACT_BUILD_ARGUMENT_REQUIRED')
-    delta = json.loads((HERE / 'inputs.json').read_bytes())
-    manifest = json.loads((HERE / 'preparation.json').read_bytes())
+    # A second trusted caller shares this lifecycle. No CLI path overrides.
+    root = HERE if settings is None else settings
+    if settings is not None:
+        assert root == HERE.parents[1] / 'settings-backend'
+    delta = json.loads((root / ('inputs.json' if settings is None else 'build-inputs.json')).read_bytes())
+    manifest = json.loads((root / ('preparation.json' if settings is None else 'build-preparation.json')).read_bytes())
     for binding in manifest['bindings']:
-        path = HERE / binding['path']
+        path = root / binding['path']
         assert path.is_file() and not path.is_symlink()
         data = path.read_bytes()
         assert len(data) == binding['bytes']
         assert hashlib.sha256(data).hexdigest() == binding['sha256']
-    assert not (HERE / 'actual-first').exists()
+    destination = root if settings is None else root / 'build-once'
+    assert not (destination / 'actual-first').exists()
     binding = delta['supervisor']
     module = Path(binding['path'])
     assert str(module.resolve()) == binding['realpath']
@@ -29,10 +35,12 @@ def main(argv):
     ops = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = ops
     spec.loader.exec_module(ops)
-    output = HERE / 'outer-report.json'
+    if settings is not None:
+        destination.mkdir(mode=0o700)
+    output = destination / 'outer-report.json'
     fd = os.open(output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
     report = ops.supervise(ops.Launch(
-        ('/opt/homebrew/opt/node@24/bin/node', str(HERE / 'entry.mjs'), '--execute-fixed-build'),
+        ('/opt/homebrew/opt/node@24/bin/node', str(root / ('entry.mjs' if settings is None else 'build-entry.mjs')), argument),
         str(HERE.parents[5]), {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin',
         'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'},
         ops.Ownership.NEW_CHILD_SESSION), ops.Policy(420, .5, 2, 1024 * 1024))
@@ -43,7 +51,7 @@ def main(argv):
     with os.fdopen(fd, 'w', encoding='utf8') as stream:
         json.dump(result, stream, ensure_ascii=False)
         stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
-    parent = os.open(str(HERE), os.O_RDONLY)
+    parent = os.open(str(destination), os.O_RDONLY)
     try:
         os.fsync(parent)
     finally:
