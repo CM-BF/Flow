@@ -1,0 +1,227 @@
+{
+  "taskId": "WPF-MESSAGESETTINGS03",
+  "parent": "WPF-MATURE-02 TODO08/11",
+  "base": "bfbf804bdc290ac27787a355b064457fb76bfc58",
+  "sourceTarget": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+  "claim": {
+    "claimId": "fee104b3-47a8-4a4e-b25d-7b8111a2d0d9",
+    "version": 1,
+    "taskId": "WPF-MESSAGESETTINGS03",
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+    "branch": "codex/web-versioned-profile-creation",
+    "scope": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/conversation-recovery.test.ts",
+      "apps/web/test/execution-profiles.test.ts",
+      "docs/evidence/wpf-msg03/versioned-profile-creation"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-08T02:50:52.523Z",
+    "createdAt": "2026-10-08T02:50:52.523Z"
+  },
+  "pins": [
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "blob": "a5eae77fa0cea6d6ad713f3c2b383d38d0c571c3",
+      "bytes": 11492,
+      "sha256": "181a514e5b5a42f8c9f5b0b6e702d0e2224e2f1beae3e69db175dc7146b998b0"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "blob": "1bf49597fc5da0d67bb67126b7f4b2605cb80bb4",
+      "bytes": 33671,
+      "sha256": "ea5046c2407b49cb9e7bb97b64468045de4a3ff4eb82cc8cc74f8a7a679a8782"
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "blob": "fa8b7af17ad6a05a8c21c87752c8a0a39a8f2fd3",
+      "bytes": 20261,
+      "sha256": "3208dd64baf0a0d3f225066a304a1a0873abdbb1fafed68e3da93e9417a7d9cc"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "blob": "119ab1a1dc9d28aea47d47cd66889cb2412708e0",
+      "bytes": 102141,
+      "sha256": "52b021d0cbea580ac959ef0190d45704597c86f2ad8973b0448cafd1362fbe7c"
+    }
+  ],
+  "rawPairs": [
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/run.py",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/run.py",
+      "bytes": 10532,
+      "sha256": "34e62fbd55db74fa464d20ef433f852457147c1e91a0f45b93cf1f2a4d9e0c20"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/focused-run.py",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/focused-run.py",
+      "bytes": 10659,
+      "sha256": "1732a02944fa0f5842f511ede27efe6ddbd94d3884bb855589b09cceef66781c"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/sandbox.sb",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/sandbox.sb",
+      "bytes": 173,
+      "sha256": "d2b92c05bec7d43e5bcafe17bb0a574e8932640687d6e0c325b26861f82516b2"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/segment-before-focused.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/segment-before-focused.json",
+      "bytes": 28405,
+      "sha256": "2592f9afecd5cf27573b28929fb21c4a688514def5b67ac0eadcf8ac53611911"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/segment.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/segment.json",
+      "bytes": 38282,
+      "sha256": "37c0ab0dbf5a2e86663d9290f6e0baaf155eb215d3455966e490216ca93a439a"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-1.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-1.log",
+      "bytes": 93,
+      "sha256": "007cd4cd6782eaf000dea546e817096da5b8e21efcfb50e3fbe6d80059b1be72"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-1.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-1.json",
+      "bytes": 35488,
+      "sha256": "53324c24667e4034e391ddf9f5a7de2f07e2ed957032b71d1db071f656cda4dd"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-2.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-2.log",
+      "bytes": 93,
+      "sha256": "5f53aeae9f2685258b2240c433320b27ae66d1f588a629bee167a724406f9650"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-2.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-2.json",
+      "bytes": 35090,
+      "sha256": "ab3db66dc5ca9f5722138290f58a019b52258debbe7c9715ff9183e7c6ec5505"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-2.outer.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-2.outer.log",
+      "bytes": 7671,
+      "sha256": "0517003eb1407f0da8582ccf9fc5ea58b7f3dda8fd4d08ed5c4717cbf3d3e9cc"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/types-3.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/types-3.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/types-3.outer.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/types-3.outer.log",
+      "bytes": 7378,
+      "sha256": "6f0cdca813fbb23e01b3152569b28a219477a7e80360bb30eee79d083af964b4"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-4.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-4.log",
+      "bytes": 93,
+      "sha256": "7fd125d0758974ca9ea4d54e8c5532b14db545f4dfc772cfe02668ac2f4dfb9e"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-4.json",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-4.json",
+      "bytes": 34914,
+      "sha256": "e821fc5fe8951ee9b50607032f39b028d0a4f2cfdd285ed93f7bdc8230c0dcdb"
+    },
+    {
+      "original": "/private/tmp/versioned-profile-creation-20261008-025038/direct-4.outer.log",
+      "archive": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/local/direct-4.outer.log",
+      "bytes": 7765,
+      "sha256": "526c3bb13d602ab436573608f5892e2a8df412550dffc49d17a723a0507f2ba9"
+    }
+  ],
+  "skills": [
+    {
+      "skill": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "use": "Previously read local method reused; no installation"
+    },
+    {
+      "skill": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608",
+      "use": "Previously read local method reused; no installation"
+    },
+    {
+      "skill": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "use": "Previously read local method reused; no installation"
+    },
+    {
+      "skill": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "use": "Previously read local method reused; no installation"
+    }
+  ],
+  "checks": {
+    "first": "6 PASS / 1 FAIL / 90 NOT_SELECTED; test ACK missing replayed flag",
+    "fixed": "7 PASS / 90 NOT_SELECTED at 392aeac96",
+    "types": "affected production2/static imports exit0 at 392aeac96; no wholeWeb claim",
+    "finalDelta": "e5c focused omission test 1 PASS / 96 NOT_SELECTED; the final type-neutral guard delta not retyped",
+    "cumulativeMs": 8872,
+    "children": 4,
+    "phase": "CLOSED; original3 plus manager-authorized final focused1; no remaining child credit",
+    "actualOuterToolExits": {
+      "direct-1": 1,
+      "direct-2": 0,
+      "types-3": 0,
+      "direct-4": 0
+    },
+    "logBoundary": "Node stdout/stderr merged into regular files; tool outer exit observed. Not dual EOF evidence."
+  },
+  "notImplemented": [
+    "creation Picker/App/Thread wiring",
+    "actual pre-detach UI eligibility",
+    "trusted public HTTP/browser",
+    "native/provider/personal publication"
+  ],
+  "supplyBoundary": "318 fixed main source/config files; dynamic server fixtures and SQL not executed/provisioned as runtime; no install or node_modules copy",
+  "finalOwnedObservation": {
+    "at": "2026-10-08T03:00:46.499563+00:00",
+    "identities": [
+      {
+        "label": "direct-1",
+        "pid": 85976,
+        "pidAbsent": true,
+        "pgidAbsent": true
+      },
+      {
+        "label": "direct-2",
+        "pid": 86345,
+        "pidAbsent": true,
+        "pgidAbsent": true
+      },
+      {
+        "label": "types-3",
+        "pid": 86391,
+        "pidAbsent": true,
+        "pgidAbsent": true
+      },
+      {
+        "label": "direct-4",
+        "pid": 86936,
+        "pidAbsent": true,
+        "pgidAbsent": true
+      }
+    ],
+    "scratchAbsent": true
+  },
+  "integration": "REQUIRES_COORDINATED_CONSUMER_INTEGRATION; NOT_INDEPENDENTLY_MERGEABLE: existing Thread legacy-excluded branch reads selection.profile and Picker displays configured only. App/Thread/Picker owners must exhaust the new versioned branch and call eligibility before detach. No wholeWeb typecheck or standalone main readiness is claimed."
+}

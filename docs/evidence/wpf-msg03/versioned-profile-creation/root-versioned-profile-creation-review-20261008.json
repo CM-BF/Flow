@@ -1,0 +1,143 @@
+{
+  "reviewer": "root / gpt-6-astra ultra, independent of implementation",
+  "reviewedAt": "2026-10-08T03:01:39.302282+00:00",
+  "task": "WPF-MESSAGESETTINGS03 / original WPF-MATURE-02 TODO08/11",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+  "branch": "codex/web-versioned-profile-creation",
+  "base": "bfbf804bdc290ac27787a355b064457fb76bfc58",
+  "sourceTarget": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+  "result": "APPROVED_LIMITED_PURE_FOUNDATION; NOT_INDEPENDENTLY_MERGEABLE",
+  "scope": [
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "blob": "a5eae77fa0cea6d6ad713f3c2b383d38d0c571c3",
+      "bytes": 11492,
+      "sha256": "181a514e5b5a42f8c9f5b0b6e702d0e2224e2f1beae3e69db175dc7146b998b0"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "blob": "1bf49597fc5da0d67bb67126b7f4b2605cb80bb4",
+      "bytes": 33671,
+      "sha256": "ea5046c2407b49cb9e7bb97b64468045de4a3ff4eb82cc8cc74f8a7a679a8782"
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "blob": "fa8b7af17ad6a05a8c21c87752c8a0a39a8f2fd3",
+      "bytes": 20261,
+      "sha256": "3208dd64baf0a0d3f225066a304a1a0873abdbb1fafed68e3da93e9417a7d9cc"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "blob": "119ab1a1dc9d28aea47d47cd66889cb2412708e0",
+      "bytes": 102141,
+      "sha256": "52b021d0cbea580ac959ef0190d45704597c86f2ad8973b0448cafd1362fbe7c"
+    }
+  ],
+  "evidenceIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/review-input.json",
+    "bytes": 10907,
+    "sha256": "0b86d124b1b4f3c2d9ca771859f001aac6546862e4860c8872a10e6d8536494d"
+  },
+  "independentVerification": {
+    "fourSourceBytesHashesAndGitBlobs": "all matched fixed target",
+    "rawPairs": "15 original/archive pairs, all 30 exact bytes and SHA-256 matched",
+    "freshRootRuntimeChildren": 0,
+    "projectWrites": 0,
+    "wholeWebTypeCheck": "NOT_RUN"
+  },
+  "sourceAssessment": [
+    "Explicit versioned branch parses the strict public catalog-entry codec, rejects unsupported chat access, deep freezes detached parsed data, and does not coerce it through the legacy codec.",
+    "Creation pins the complete profile reference. It uses the existing creation schema and existing outbox receipt ownership. No message tuple, implicit tuple default, extra task, or new idempotency scheme is introduced.",
+    "The new pure Send/Queue eligibility requires trusted matching capability, fresh catalog and exact allowed tuple when the selection or existing conversation requires it. Prepare/receipt replay remain separate and can CREATE before a capability GET.",
+    "Empty allowed choices remain valid catalog facts but block submission. Cleared tuple remains editable; null and undefined absent capability retain legacy omission compatibility.",
+    "Recovery reuses the strict versioned decoder, preserves saved identity and choice, and does not turn stale saved data or catalog visibility into live authorization."
+  ],
+  "checks": [
+    {
+      "target": "b71e21fa1242edf0bca6a30f4eca3ac706d3a36a",
+      "kind": "first selected local tests",
+      "passed": 6,
+      "failed": 1,
+      "notSelected": 90,
+      "result": "FAIL retained; controlled CREATE ACK omitted public replayed flag"
+    },
+    {
+      "target": "392aeac96f664f41e287bdb18088d77fd1a0cb7a",
+      "kind": "selected local tests",
+      "passed": 7,
+      "failed": 0,
+      "notSelected": 90,
+      "result": "PASS"
+    },
+    {
+      "target": "392aeac96f664f41e287bdb18088d77fd1a0cb7a",
+      "kind": "two production leaves and static imports noEmit",
+      "exit": 0,
+      "result": "PASS; not all Web consumers"
+    },
+    {
+      "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+      "kind": "last focused null/undefined omission regression",
+      "passed": 1,
+      "failed": 0,
+      "notSelected": 96,
+      "result": "PASS; not a new all-seven or all-Web run"
+    }
+  ],
+  "localResourceRecord": {
+    "chargedMs": 8872,
+    "budgetMs": 60000,
+    "children": 4,
+    "fourth": "manager authorized focused 15s within original 12MiB/deadline",
+    "allRecordedGroupsAbsent": true,
+    "allRecordedScratchAbsent": true,
+    "signals": [],
+    "network": "sandbox denied",
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "logs": "regular merged stdout/stderr plus observed outer exit, not claimed separate EOF proof"
+  },
+  "integrationBlockers": [
+    {
+      "id": "CONSUMER-01",
+      "severity": "required before main integration",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 98,
+      "baseSha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "finding": "After excluding legacy-default, current consumer directly reads profileSelection.profile.reference. New versioned member has entry instead. Pure four-leaf extraction alone is not a complete compilable/usable consumer integration. A restored versioned draft would reach undefined access if mounted without adaptation.",
+      "ownerAction": "Current legal Thread owner must coordinate explicit branch handling with App/Picker, then validate affected consumer types and actual pre-detach submission behavior. Pure owner must not cross scope."
+    },
+    {
+      "id": "CONSUMER-02",
+      "severity": "required for usable versioned creation",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "line": 36,
+      "baseSha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b",
+      "finding": "Current creation picker represents configured only; explicit versioned entry selection and rendering remain to be wired.",
+      "ownerAction": "Coordinate existing catalog/Picker UI and separate Prepare from required Send/Queue guard. Do not infer a default full tuple."
+    }
+  ],
+  "scopeBlockingFindings": [],
+  "acceptanceBoundary": "Only reusable pure foundation and controlled projection/outbox behavior accepted. Whole feature remains OPEN until legal consumer composition. Do not independently merge these four leaves as finished Web.",
+  "notVerified": [
+    "actual mounted App/Thread pre-detach and zero turn HTTP rejection",
+    "full Web types/build",
+    "real HTTP center and trusted GET integration",
+    "browser themes, keyboard or visual flow",
+    "durable browser restart of new saved branch",
+    "personal publication or provider settings application"
+  ],
+  "cleanCode": {
+    "applied": "local clean-code / codebase-design method reused for independent review",
+    "reviewed": [
+      "naming",
+      "single receipt ownership",
+      "one decoder per schema branch",
+      "error preservation",
+      "minimal immutable interface",
+      "no duplicated defaults"
+    ],
+    "finding": "Two consumers require coordinated exhaustiveness adaptation; communicated to manager and owner, included in owner index. No scope expansion or cosmetic rewrite requested."
+  }
+}
