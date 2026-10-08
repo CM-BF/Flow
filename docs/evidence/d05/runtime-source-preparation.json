@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-08T00:58:57.291Z",
+  "task": {
+    "id": "X01-VERIFIER-RUNTIME01",
+    "title": "插件验证执行与恢复",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime",
+    "branch": "codex/plugin-verifier-runtime",
+    "planDir": "plans/x01-verifier-runtime",
+    "evidenceDir": "docs/evidence/x01-verifier-runtime"
+  },
+  "candidateCount": 214,
+  "canonical": {
+    "errors": [],
+    "missing": [],
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-08T00:29:30.000Z",
+        "record": "2026-10-08T00:29:30.000Z"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "实际provision开段及原子receipt"
+      },
+      "issues": [],
+      "waiting": "",
+      "waitingTable": {
+        "rows": [],
+        "issues": []
+      }
+    }
+  },
+  "runtime": "213; new214NOT_RELOADED",
+  "tests": 0,
+  "tokenRead": false
+}
