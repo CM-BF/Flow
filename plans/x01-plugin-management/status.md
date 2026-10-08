@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-08T01:25:47.335Z |
+| 最近更新时间 | 2026-10-08T01:46:00.000Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,21 +14,21 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | metadata输入9af0b6c37d32e63d2fe1450de98bcd2ef056cc53；生产观察main7001fab804a082aa7f2cf01b72022ea17ee80225；本次只同步已验收子片与真实verifier进程设计 |
-| 工作树 dirty 状态 | 设计627c1b591固定已独审；本次最后批准归档后commit/push clean STOP，原产品/历史原件不改 |
+| 工作基线 / HEAD | 新准备基线 main2b52b23554e612077bbc25492417fbcf43f299cf；原父17311b4a；仅已领process-runner-pg.test.ts与自有证据，观察接缝待独立已审输入 |
+| 工作树 dirty 状态 | 当前有界源码准备中；固定供给与test尚未交付，不冒clean或review通过 |
 | 工作分支状态 | in-progress |
-| 检查状态 | METADATA_ONLY；原实际结果保留；新真实PROCESS verifier单例NOT_RUN |
+| 检查状态 | NOT_RUN；0工程child/PG/worker/listener；等待观察接缝fixed及独审后focused types/精确collect |
 | Review | db_transaction_owner于2026-10-08T01:25:16.000Z对627c1b591设计/当前metadata增量APPROVED，0P1/P2；[正式回执](../../docs/evidence/x01/verifier-parent-design-review.json)。不授源码准备或PG实际窗口，NOT_READY/NOT_RUN |
-| 检查范围 | 本次metadata一致性/来源核对；0工程/PG。子片AV5PG、VAR5领域PG、factory9、runtime25局部、SDK29distinct分轮各自限定，不累计为一组全链通过 |
+| 检查范围 | 三任务真实verifier单例源码准备；旧semver用例未运行；HTTP仅owner/registry实计，runner计数仍null |
 | 检查目标 | [真实进程设计](../../docs/evidence/x01/verifier-real-process-design.md)；各子片固定main回执见verifier-parent-metadata-start.json |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。  AV center/client97353e4f48ea515d268f6e4a6107e778b6c39abb；VAR+CENTER728d3165f17dfe8272c8ffce6e1eff60d9602d6b；runtime ec7e72f04b7010ab86863c8c11589c78b4588c1d；SDK866f0a9c077df2cd51f03210d02949df17a299f5。均有I02回执，不冒个人部署/真实worker全链。 |
-| 实现目标 | 已验收子片固定main；本次设计不新增产品实现 |
-| 实现范围 | 本段仅plans/x01-plugin-management与docs/evidence/x01；原产品scope写入均STOP |
-| 本片段交付阶段 | planning |
+| 实现目标 | 准备公共来源→真实失败verifier→输出JSON成功verifier的单例，尚未实际执行 |
+| 实现范围 | 本段process-runner-pg.test.ts及docs/evidence/x01；不写其他产品或旧证据；12MiB/30min |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 安装式验证器的中心受理、独立结果门禁、运行器接线和公共客户端已接收主线；各片证据边界保留 |
-| 下一可用交付 | 准备真实主进程验证旅程，串行产生来源、失败验证和成功验证三个任务；尚未运行 |
+| 下一可用交付 | 固定三任务进程用例与生命周期/HTTP/动态依赖输入，随后独立准备审和真实窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -437,3 +437,5 @@ Root01:20:23.274383Z四个精确dashboard读取均HTTP200/consistency matched/so
 2026-10-08T01:24:23.228Z：设计固定627c1b591aeb2efeb7537397fb144eb75cfee876并交db只读审。metadata parser发现历史等待行微秒+00与local资源不合现契约，仅把原时刻规范为毫秒Z、类别资源；原精度值仍保留9af0/627c固定Git及正文，不重估时间。新等待起点为本次dispatch后实际clock观察，非猜测review开始。
 
 2026-10-08T01:25:47.335Z：接收db 2026-10-08T01:25:16.000Z 对固定627c1b591的 DESIGN_AND_CURRENT_METADATA_DELTA_REVIEW_APPROVED/0P1P2。正式[审结](../../docs/evidence/x01/verifier-parent-design-review.json)记录同key回放须保原冻结project revision，T3才独立key+fresh revision；真实worker观察/全量HTTP/输入闭包仍下一prepare解除项，候选NOT_READY/NOT_RUN。本段没有工程子进程、PG、材料构建或产品写入，历史首次开工UNKNOWN、完整X01未Done。
+
+2026-10-08T01:38:14.755Z：新12MiB source准备实际首写，截止02:08:14.755Z，claimv34/36 fresh。固定供给395文件1839156B，现0工程/PG/worker；见[本段start](../../docs/evidence/x01/verifier-process/start.json)。
