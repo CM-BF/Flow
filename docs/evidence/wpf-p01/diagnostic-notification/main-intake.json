@@ -1,0 +1,64 @@
+{
+  "taskId": "WPF-P01",
+  "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+  "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "sourceTarget": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+  "productionTarget": "8ad42282c3a617f6de25a6c3de9da27bba33b43f",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+  "branch": "codex/web-plugin-diagnostics",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "gitBlob": "7aab2fdbd4eb55fe63233084838f2933cbd92b2d",
+      "bytes": 24456,
+      "sha256": "295196ee751ea6f357bcde47388b6f7edfb6cd7322c9e9a9bc9c2352a7377410"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "gitBlob": "a76e0c8af9c87dcdc99bd93db4f30d68df1937b9",
+      "bytes": 25097,
+      "sha256": "922f3599716341667d88609f0e20e4a6275227c60f41b587780511a0be61cb92"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "gitBlob": "9781a7469bafccaaedbe0b63e512b4e917c2b078",
+      "bytes": 30044,
+      "sha256": "1cfd2428d66d8b858b94725a946bf7619d1bdc040d5556176493958a70d00c31"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "gitBlob": "d3cecf647a00880c0ee1641d0f895b0904478888",
+      "bytes": 6484,
+      "sha256": "a4c01e782c6e87cdffd0659c137bcff268c8ab877df9724b5baeb2091382e35b"
+    },
+    {
+      "path": "apps/web/test/plugin-integration.browser.ts",
+      "gitBlob": "f19a73ce608226bb98cbaefc4fa274c609395ee7",
+      "bytes": 22021,
+      "sha256": "657883cdaa70263625298cfde3a17745c00f642bc86f7f480dd89c88b987b463"
+    }
+  ],
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/root-source-local-review.json",
+    "bytes": 5150,
+    "sha256": "10588cb7b333bf3e9e78318b044b89e35b45520b33a1bd48b02a6a5620697d01",
+    "decision": "APPROVED_LIMITED_SOURCE_AND_LOCAL_RESULTS"
+  },
+  "evidence": {
+    "reviewInput": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/review-input.json",
+    "sha256": "49747e3434d082d0024dd6b2a2c159c8416eca0e68c3e7518fe0ba43c5e41f15",
+    "rawIndex": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/raw-index.json",
+    "rawPairs": 68,
+    "rawBytesEachSide": 779821,
+    "localChargeMs": 5759
+  },
+  "limits": [
+    "Six focused cases pass across 4 original unchanged cases and 2 corrected cases; not same-round6/6",
+    "Browser entry excluded from four-root affected strict; mounted NOT_RUN",
+    "No main intake, no D05 source mutation, no fullP01/X01 completion"
+  ],
+  "state": "SOURCE_LOCAL_READY_MOUNTED_NOT_RUN",
+  "claim": "c106e5aa-0d58-43a6-a326-1148c0e43490/v1",
+  "canonical": "plans/wpf-p01-plugin-host/status.md",
+  "sourceRouteRequest": "source-route-request.json"
+}

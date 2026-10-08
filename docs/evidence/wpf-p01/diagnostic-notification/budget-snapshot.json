@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-08T03:57:30.467619+00:00",
+  "capBytes": 16777216,
+  "scope": "Whole new source/local phase; installed package payload excluded because exact readonly symlinks only",
+  "worktree": {
+    "files": 424,
+    "symlinks": 33,
+    "logicalBytes": 3275262,
+    "allocatedBytes": 4206592
+  },
+  "tmp": {
+    "files": 79,
+    "symlinks": 0,
+    "logicalBytes": 860050,
+    "allocatedBytes": 1056768
+  },
+  "gitWorktreeAdmin": {
+    "files": 6,
+    "symlinks": 0,
+    "logicalBytes": 2306117,
+    "allocatedBytes": 2326528
+  },
+  "index": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-plugin-diagnostics/index",
+    "bytes": 2305099,
+    "dev": 16777234,
+    "ino": 124791011,
+    "atomicTemporaryReserveBytes": 2305099
+  },
+  "newReachableObjects": {
+    "count": 42,
+    "logicalBytes": 215697,
+    "diskBytes": 82136
+  },
+  "forthcomingCommitObjectsReserveBytes": 1041965,
+  "retainedPlusAtomicAndCommitBound": 10004190,
+  "runtimeScratchCapBytes": 4194304,
+  "conservativeOverlapLogicalBound": 14198494,
+  "withinCap": true,
+  "actualPeak": "NOT_OBSERVED; bound is conservative, snapshot is not whole-phase peak",
+  "scratch": "All four runs actually absent before this archive; overlap reserve retained conservatively",
+  "links": "33 exact ignored readonly links KEEP; no dependency payload copied; missing direct @opentelemetry/api link does not claim complete future browser closure",
+  "preSealAt": "2026-10-08T03:58:26.604911+00:00",
+  "preSealPhysical": {
+    "worktree": {
+      "logical": 3285341,
+      "allocated": 4222976,
+      "files": 460
+    },
+    "tmp": {
+      "logical": 860050,
+      "allocated": 1056768,
+      "files": 79
+    },
+    "gitAdmin": {
+      "logical": 2306117,
+      "allocated": 2326528,
+      "files": 6
+    },
+    "looseObjectsAllocated": 200704,
+    "indexAtomicAllocatedReserve": 2306048,
+    "futureCommitObjectsAllocatedReserve": 1572864,
+    "observedCurrentAndAtomicPlusFutureBound": 11685888,
+    "conservativeIncludingClosedScratchCap": 15880192
+  },
+  "canonicalLinksChecked": [
+    {
+      "document": "plans/wpf-p01-plugin-host/status.md",
+      "target": "plan.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/status.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/status.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/status.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/source-switch.json",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/status.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/root-source-local-review.json",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/plan.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/source-switch.json",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/plan.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/prior-plan.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/plan.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/prior-status.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/plan.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/prior-review.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/plan.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/review-input.json",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/review.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/review-input.json",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/review.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/quality.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/review.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/prior-review.md",
+      "exists": true
+    },
+    {
+      "document": "plans/wpf-p01-plugin-host/review.md",
+      "target": "../../docs/evidence/wpf-p01/diagnostic-notification/root-source-local-review.json",
+      "exists": true
+    }
+  ]
+}

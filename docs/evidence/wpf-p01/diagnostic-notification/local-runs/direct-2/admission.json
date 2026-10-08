@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-08T03:49:33.922Z",
+  "currentSha256": "a1de24b4361427c057e8ee0f5839f59ee7d34cc3550ae07815a7728b1d3de693",
+  "nonzeroTermsBytes": {
+    "residualUnknown": 8806203392,
+    "priorK01Db": 134217728,
+    "secondK01Db": 134217728,
+    "R4KeepPendingClassification": 134217728,
+    "OriginalOrdinaryKeepPendingClassification": 35651584,
+    "reserveOnce": 1073741824,
+    "OriginalRecoveryBuildLocalUnknown": 8519680,
+    "OriginalPersonalThinRecoveryOrdinary": 9568256,
+    "OriginalHeldArtifactImportOrdinary": 9568256,
+    "OriginalRecoveryColdCandidate": 134217728,
+    "selectedRecoveryColdR2": 134217728,
+    "selectedHeld23E15ContinuationR2": 538968064,
+    "OriginalWeb779LockGuardRepairOrdinary": 4194304,
+    "OriginalVARCenterIntegrationMetadata": 1048576,
+    "selectedTUI01F04R2": 134217728,
+    "selectedO16HomeFactorStatus": 131072,
+    "selectedO16NormalHomePlanner": 136314880,
+    "selectedTUI01F04R3": 150994944,
+    "TUI01F04R3NaturalResultSeal": 8388608,
+    "selectedO16RenewPrivate": 8388608,
+    "O16RenewNaturalSeal": 8388608,
+    "OriginalWebCombinedVerification": 8388608,
+    "MSG03UIConsumerCompositionSource": 16777216,
+    "PluginDiagnosticNotificationSource": 16777216,
+    "X01VerifierProcessR1": 177209344
+  },
+  "sum": 11824529408,
+  "minimumFreshFreeBytes": 11824529408,
+  "topFloor": 11824529408,
+  "requiredFree": 11824529408,
+  "actualFree": 14134083584,
+  "priorCharges": [
+    {
+      "startedAt": "2026-10-08T03:48:47.130433+00:00",
+      "finishedAt": "2026-10-08T03:48:47.886339+00:00",
+      "exitCode": 1,
+      "elapsedMs": 755.4087080061436,
+      "chargeMs": 756,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "terminal": {
+        "state": "FAILED",
+        "resultSha256": "3c7b8ecc5722c7dde8b74965a577b3c1a20b685986ab520bc7ce59607f02d25d",
+        "budgetSha256": "e0bd0ece75bd999361337bc865a759be7eb33bbef26c054511aa8e0dc571a733",
+        "elapsedAfterWritesMs": 720.77,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 1
+      }
+    }
+  ]
+}

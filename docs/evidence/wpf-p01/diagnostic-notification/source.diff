@@ -1,0 +1,294 @@
+diff --git a/apps/web/src/plugin-integration/react.tsx b/apps/web/src/plugin-integration/react.tsx
+index 478f8f213..a76e0c8af 100644
+--- a/apps/web/src/plugin-integration/react.tsx
++++ b/apps/web/src/plugin-integration/react.tsx
+@@ -169,7 +169,7 @@ export function PluginSettings({ registry }: { registry: PluginRegistryReader })
+     if (!session.managementAvailable()) { setOpen(false); setManagementExpanded(false); }
+   }, [session, centerRuntime]);
+   const plugins = useSyncExternalStore(session.host.subscribe, session.host.list);
+-  const diagnostics = useSyncExternalStore(session.host.subscribe, session.host.getDiagnostics);
++  const diagnostics = useSyncExternalStore(session.host.subscribeDiagnostics, session.host.getDiagnostics);
+   const sections = useSyncExternalStore(listener => session.host.subscribeSlot("settings.sections", listener), () => session.host.getSlotSnapshot("settings.sections"));
+   return <>
+     <button className="flow-icon" ref={trigger} aria-label="Extensions and appearance" title="Extensions and appearance" onClick={() => { if (session.managementAvailable()) setOpen(true); }}><SlidersHorizontal size={18} /></button>
+diff --git a/apps/web/src/plugin-integration/slot-fixture.tsx b/apps/web/src/plugin-integration/slot-fixture.tsx
+index e86889b85..d3cecf647 100644
+--- a/apps/web/src/plugin-integration/slot-fixture.tsx
++++ b/apps/web/src/plugin-integration/slot-fixture.tsx
+@@ -1,9 +1,11 @@
+ /** Isolated browser test entry; never imported by the product App. */
+ import { createRoot } from "react-dom/client";
+-import { createRef } from "react";
++import { createRef, useState } from "react";
+ import type { TaskSnapshot } from "@flow/contracts";
+ import { AppPluginSession } from "./session";
+-import { PluginProvider, PluginWorkspace } from "./react";
++import { PluginProvider, PluginSettings, PluginWorkspace } from "./react";
++import type { PluginRegistryReader } from "../plugin-management/PluginManagement";
++import type { OperationResult } from "../plugins/types";
+ import { themes } from "../themes";
+ 
+ export function mountWorkspaceSlotFixture(container: HTMLElement) {
+@@ -45,3 +47,56 @@ export function mountWorkspaceSlotFixture(container: HTMLElement) {
+   container.after(output);
+   return { disable: () => session.host.deactivate("fixture.tab-actions"), dispose: async () => { root.unmount(); output.remove(); await session.dispose(); } };
+ }
++
++/** Real session/provider/Settings; synthetic plugin faults only, no center or provider. */
++export async function mountPluginDiagnosticsFixture(container: HTMLElement) {
++  const session = new AppPluginSession({
++    knowsTask: () => false, task: () => null, hasDraft: () => false,
++    openTask: () => {}, openWorkspace: () => {}, closeWorkspace: () => {},
++    loadReference: async () => {}, setTheme: () => {}, copy: async () => {},
++  }, themes[0]!);
++  let commandResult: OperationResult | undefined;
++  let ancestorRenders = 0; let registryNotifications = 0; let slotNotifications = 0;
++  session.host.register({
++    manifest: {
++      id: "fixture.diagnostics", version: "1.0.0", hostApi: 1, capabilities: ["ui.layout"],
++      activationEvents: ["view:settings.sections", "command:fixture.diagnostics.fail"],
++      commands: [{ id: "fixture.diagnostics.fail", title: "Fail diagnostic command", capability: "ui.layout", contexts: ["global"] }],
++      contributions: [{ kind: "panel", id: "fixture.diagnostics.panel", slot: "settings.sections", title: "Diagnostic fixture", capability: "ui.layout" }],
++    },
++    load: async () => ({ activate(context) {
++      context.command("fixture.diagnostics.fail", { parse: () => undefined, run: () => { throw Error("Fixture command failure"); } });
++      context.contribute("fixture.diagnostics.panel", function DiagnosticPanel({ execute }) {
++        const [broken, setBroken] = useState(false);
++        if (broken) throw Error("Fixture local renderer failure");
++        return <section aria-label="Diagnostic fault controls">
++          <button type="button" onClick={() => { void execute("fixture.diagnostics.fail").then(result => { commandResult = result; }); }}>Fail diagnostic command</button>
++          <button type="button" onClick={() => setBroken(true)}>Fail local renderer</button>
++        </section>;
++      });
++    } }),
++  });
++  // Stabilize the real Settings panels before measuring diagnostic-only events.
++  const owners = new Set(session.host.getSlotSnapshot("settings.sections").map(item => item.pluginId));
++  for (const owner of owners) {
++    const activation = await session.host.activate(owner);
++    if (!activation.ok) { await session.dispose(); throw Error(activation.error); }
++  }
++  const registrySnapshot = session.host.list();
++  const slotSnapshot = session.host.getSlotSnapshot("settings.sections");
++  const stopRegistry = session.host.subscribe(() => { registryNotifications++; });
++  const stopSlot = session.host.subscribeSlot("settings.sections", () => { slotNotifications++; });
++  const unavailable = async () => { throw Error("Registry is outside the diagnostic fixture"); };
++  const registry: PluginRegistryReader = { plugins: unavailable, plugin: unavailable, pluginVersions: unavailable, pluginOperations: unavailable };
++  function StableAncestor() {
++    ancestorRenders++;
++    return <PluginProvider session={session}><PluginSettings registry={registry} /></PluginProvider>;
++  }
++  const root = createRoot(container);
++  root.render(<StableAncestor />);
++  return {
++    observation: () => ({ ancestorRenders, registryNotifications, slotNotifications,
++      registryStable: registrySnapshot === session.host.list(), slotStable: slotSnapshot === session.host.getSlotSnapshot("settings.sections"), commandResult }),
++    dispose: async () => { root.unmount(); stopRegistry(); stopSlot(); await session.dispose(); },
++  };
++}
+diff --git a/apps/web/src/plugins/host.ts b/apps/web/src/plugins/host.ts
+index 60e009f85..7aab2fdbd 100644
+--- a/apps/web/src/plugins/host.ts
++++ b/apps/web/src/plugins/host.ts
+@@ -66,6 +66,7 @@ export class PluginHost {
+   private entries = new Map<string, Entry>();
+   private ids = new Map<string, Entry>();
+   private listeners = new Set<() => void>();
++  private diagnosticListeners = new Set<() => void>();
+   private slotListeners = new Map<SlotId, Set<() => void>>();
+   private snapshot: readonly PluginSummary[] = Object.freeze([]);
+   private slotSnapshots = new Map<SlotId, readonly ContributionView[]>();
+@@ -74,6 +75,10 @@ export class PluginHost {
+   constructor(private readonly port: HostPort) {}
+   list = () => this.snapshot;
+   getDiagnostics = () => this.diagnostics;
++  subscribeDiagnostics = (listener: () => void) => {
++    if (!this.disposed) this.diagnosticListeners.add(listener);
++    return () => { this.diagnosticListeners.delete(listener); };
++  };
+   subscribe = (listener: () => void) => {
+     this.listeners.add(listener);
+     return () => {
+@@ -193,6 +198,7 @@ export class PluginHost {
+   async dispose(): Promise<void> {
+     if (this.disposed) return;
+     this.disposed = true;
++    this.diagnosticListeners.clear();
+     const entries = [...this.entries.values()];
+     for (const entry of entries) this.stop(entry);
+     for (const entry of entries) this.publish(entry);
+@@ -635,6 +641,13 @@ export class PluginHost {
+       ...this.diagnostics.slice(-99),
+       Object.freeze({ pluginId: entry.manifest.id, phase, message }),
+     ]);
++    for (const listener of [...this.diagnosticListeners]) {
++      if (!this.diagnosticListeners.has(listener)) continue;
++      try {
++        // A diagnostic observer must not replace the original error or record itself.
++        Promise.resolve(listener()).catch(() => {});
++      } catch { /* Keep notifying other diagnostic observers without recursion. */ }
++    }
+   }
+   private publish(entry: Entry) {
+     this.snapshot = immutable(
+diff --git a/apps/web/test/plugin-host.test.ts b/apps/web/test/plugin-host.test.ts
+index f1a903b00..9781a7469 100644
+--- a/apps/web/test/plugin-host.test.ts
++++ b/apps/web/test/plugin-host.test.ts
+@@ -683,3 +683,84 @@ it("validates the attachment builtin in the existing host and rechecks its expli
+   expect(f.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state).toBe("registered");
+   await f.host.dispose();
+ });
++
++describe("diagnostic notification", () => {
++  it("publishes an active command failure without changing registry or slot snapshots", async () => {
++    const { host } = setup();
++    host.register(definition(context => context.command("test.plugin.open", {
++      parse: value => value, run: async () => { throw Error("original command failure"); },
++    })));
++    await host.activate("test.plugin");
++    const registry = host.list(); const slot = host.getSlotSnapshot("sidebar.item.actions");
++    const before = host.getDiagnostics(); const subscribe = host.subscribeDiagnostics;
++    let diagnostics = 0; let registryChanges = 0; let slotChanges = 0;
++    const stop = host.subscribeDiagnostics(() => { diagnostics++; });
++    const stopRegistry = host.subscribe(() => { registryChanges++; });
++    const stopSlot = host.subscribeSlot("sidebar.item.actions", () => { slotChanges++; });
++    expect(host.getDiagnostics()).toBe(before);
++    expect(await host.execute("test.plugin.open")).toEqual({ ok: false, error: "original command failure" });
++    expect(diagnostics).toBe(1); expect(registryChanges).toBe(0); expect(slotChanges).toBe(0);
++    expect(host.list()).toBe(registry); expect(host.getSlotSnapshot("sidebar.item.actions")).toBe(slot);
++    expect(host.getDiagnostics()).not.toBe(before); expect(host.getDiagnostics()).toBe(host.getDiagnostics());
++    expect(host.subscribeDiagnostics).toBe(subscribe);
++    expect(host.getDiagnostics()).toEqual([{ pluginId: "test.plugin", phase: "command", message: "original command failure" }]);
++    stop(); stopRegistry(); stopSlot(); await host.dispose();
++  });
++
++  it.each(["sync", "async"] as const)("notifies a %s source-subscription failure and preserves the other subscriber", async mode => {
++    const { host, navigation } = setup(); let healthy = 0;
++    host.register(definition(context => {
++      implement(context);
++      context.navigation.subscribe(mode === "sync"
++        ? () => { throw Error("source subscriber failure"); }
++        : async () => { throw Error("source subscriber failure"); });
++      context.navigation.subscribe(() => { healthy++; });
++    }));
++    expect(await host.activate("test.plugin")).toEqual({ ok: true });
++    let notifications = 0; const stop = host.subscribeDiagnostics(() => { notifications++; });
++    navigation.set({ ...navigation.getSnapshot(), activeTaskId: "B" });
++    await Promise.resolve(); await Promise.resolve();
++    expect(healthy).toBe(1); expect(notifications).toBe(1);
++    expect(host.getDiagnostics()).toEqual([{ pluginId: "test.plugin", phase: "subscription", message: "source subscriber failure" }]);
++    stop(); await host.dispose(); expect(navigation.size).toBe(0);
++  });
++
++  it("publishes immutable render diagnostics in order while keeping only the latest 100", async () => {
++    const { host } = setup(); host.register(definition()); await host.activate("test.plugin");
++    let notifications = 0; const stop = host.subscribeDiagnostics(() => { notifications++; });
++    for (let i = 0; i < 103; i++) host.reportRenderError("test.plugin", Error(`render ${i}`));
++    const snapshot = host.getDiagnostics();
++    expect(notifications).toBe(103); expect(snapshot).toHaveLength(100);
++    expect(snapshot[0]?.message).toBe("render 3"); expect(snapshot.at(-1)?.message).toBe("render 102");
++    expect(Object.isFrozen(snapshot)).toBe(true); expect(snapshot.every(Object.isFrozen)).toBe(true);
++    expect(host.getDiagnostics()).toBe(snapshot); stop(); await host.dispose();
++  });
++
++  it("isolates throwing diagnostic observers without recursively recording or replacing the command error", async () => {
++    const { host } = setup(); host.register(definition(context => context.command("test.plugin.open", {
++      parse: value => value, run: () => { throw Error("original failure"); },
++    }))); await host.activate("test.plugin");
++    host.subscribeDiagnostics(() => { throw Error("observer sync failure"); });
++    host.subscribeDiagnostics(async () => { throw Error("observer async failure"); });
++    let healthy = 0; host.subscribeDiagnostics(() => { healthy++; });
++    expect(await host.execute("test.plugin.open")).toEqual({ ok: false, error: "original failure" });
++    await Promise.resolve();
++    expect(healthy).toBe(1); expect(host.getDiagnostics()).toHaveLength(1);
++    expect(host.getDiagnostics()[0]?.message).toBe("original failure"); await host.dispose();
++  });
++
++  it("detaches on unsubscribe and suppresses diagnostic notifications after disposal, including late work", async () => {
++    const { host } = setup(); const work = deferred<void>();
++    host.register(definition(context => context.command("test.plugin.open", { parse: value => value, run: () => work.promise })));
++    await host.activate("test.plugin"); let removed = 0; let remaining = 0;
++    const stop = host.subscribeDiagnostics(() => { removed++; }); stop(); stop();
++    host.subscribeDiagnostics(() => { remaining++; });
++    host.reportRenderError("test.plugin", Error("before disposal"));
++    expect(removed).toBe(0); expect(remaining).toBe(1);
++    const pending = host.execute("test.plugin.open"); await host.dispose();
++    host.subscribeDiagnostics(() => { remaining++; });
++    work.reject(Error("late failure")); expect(await pending).toEqual({ ok: false, error: "late failure" });
++    host.reportRenderError("test.plugin", Error("after disposal"));
++    expect(removed).toBe(0); expect(remaining).toBe(1);
++  });
++});
+diff --git a/apps/web/test/plugin-integration.browser.ts b/apps/web/test/plugin-integration.browser.ts
+index e0364f351..f19a73ce6 100644
+--- a/apps/web/test/plugin-integration.browser.ts
++++ b/apps/web/test/plugin-integration.browser.ts
+@@ -1,7 +1,60 @@
+ import { chromium, expect, type Page } from "@playwright/test";
+ import { writeFile } from "node:fs/promises";
+ import { fileURLToPath } from "node:url";
+-import { startIntegrationFixture, runRealIntegration } from "./plugin-integration.config";
++/** Selected by an owned browser caller; no legacy HTTP/PG entry is run on import. */
++export async function checkPluginDiagnostics(page: Page, fixtureUrl: string) {
++  const pageErrors: string[] = [];
++  const onError = (error: Error) => { pageErrors.push(error.message); };
++  page.on("pageerror", onError);
++  let mounted = false;
++  try {
++    await page.goto(fixtureUrl);
++    await page.evaluate(async () => {
++      const path = "/src/plugin-integration/slot-fixture.tsx";
++      const fixture = await import(path);
++      const container = document.createElement("div");
++      container.setAttribute("data-diagnostics-fixture", "");
++      document.body.append(container);
++      Reflect.set(window, "diagnosticsFixture", await fixture.mountPluginDiagnosticsFixture(container));
++    });
++    mounted = true;
++    const trigger = page.getByRole("button", { name: "Extensions and appearance", exact: true });
++    await trigger.click();
++    const dialog = page.getByRole("dialog", { name: "Extensions and appearance", exact: true });
++    await expect(dialog.getByText("Extension diagnostics (0)", { exact: true })).toBeVisible();
++    await dialog.getByText("Extension diagnostics (0)", { exact: true }).click();
++    const before = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
++    await dialog.getByRole("button", { name: "Fail diagnostic command", exact: true }).click();
++    await expect(dialog.getByText("Extension diagnostics (1)", { exact: true })).toBeVisible();
++    await expect(dialog.getByText("fixture.diagnostics · command: Fixture command failure", { exact: true })).toBeVisible();
++    await expect.poll(() => page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation().commandResult)).toEqual({ ok: false, error: "Fixture command failure" });
++    const command = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
++    expect(command.ancestorRenders).toBe(before.ancestorRenders);
++    expect(command.registryNotifications).toBe(0); expect(command.slotNotifications).toBe(0);
++    expect(command.registryStable && command.slotStable).toBe(true);
++    await dialog.getByRole("button", { name: "Fail local renderer", exact: true }).click();
++    await expect(dialog.getByText("fixture.diagnostics · render: Fixture local renderer failure", { exact: true })).toBeVisible();
++    await expect(dialog.getByRole("alert")).toContainText("Extension could not render.");
++    const rendered = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
++    expect(rendered.ancestorRenders).toBe(before.ancestorRenders);
++    expect(rendered.registryNotifications).toBe(0); expect(rendered.slotNotifications).toBe(0);
++    expect(rendered.registryStable && rendered.slotStable).toBe(true);
++    // Development React may report the deliberate error, never unrelated failures.
++    expect(pageErrors.filter(message => message !== "Fixture local renderer failure")).toEqual([]);
++    await dialog.getByRole("button", { name: "Close", exact: true }).click();
++    await expect(trigger).toBeFocused();
++    return { checks: ["active-command-notifies-open-production-settings", "local-render-error-notifies-without-ancestor-or-registry-publish", "settings-close-restores-focus"],
++      before, command, rendered, pageErrors, input: "Real AppPluginSession/PluginProvider/PluginSettings with synthetic plugin faults; no center/auth/provider proof" };
++  } finally {
++    try {
++      if (mounted) await page.evaluate(async () => { await Reflect.get(window, "diagnosticsFixture")?.dispose(); Reflect.deleteProperty(window, "diagnosticsFixture"); document.querySelector("[data-diagnostics-fixture]")?.remove(); });
++    } finally { page.off("pageerror", onError); }
++  }
++}
++
++// The future owned caller imports only the focused function. Legacy defaults stay explicit.
++if (!process.argv.includes("--diagnostics-module")) {
++const { startIntegrationFixture, runRealIntegration } = await import("./plugin-integration.config");
+ 
+ const output = fileURLToPath(new URL("../../../docs/evidence/wpf-i01/", import.meta.url));
+ if (process.argv.includes("--real")) {
+@@ -184,3 +237,5 @@ try {
+ } catch (error) { await page.screenshot({ path: `${output}browser-failure.png` }); throw error; }
+ finally { await browser.close(); await preview.close(); }
+ }
++
++}

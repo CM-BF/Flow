@@ -1,0 +1,5 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/plugin-diagnostic-notification-20261008/types-2/scratch") (literal "/dev/null"))
+(deny network*)

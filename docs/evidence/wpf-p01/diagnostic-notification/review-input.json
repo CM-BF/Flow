@@ -1,0 +1,282 @@
+{
+  "taskId": "WPF-P01",
+  "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+  "at": "2026-10-08T03:56:09.065489+00:00",
+  "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "target": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+  "productionTarget": "8ad42282c3a617f6de25a6c3de9da27bba33b43f",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "gitBlob": "7aab2fdbd4eb55fe63233084838f2933cbd92b2d",
+      "bytes": 24456,
+      "sha256": "295196ee751ea6f357bcde47388b6f7edfb6cd7322c9e9a9bc9c2352a7377410"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "gitBlob": "a76e0c8af9c87dcdc99bd93db4f30d68df1937b9",
+      "bytes": 25097,
+      "sha256": "922f3599716341667d88609f0e20e4a6275227c60f41b587780511a0be61cb92"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "gitBlob": "9781a7469bafccaaedbe0b63e512b4e917c2b078",
+      "bytes": 30044,
+      "sha256": "1cfd2428d66d8b858b94725a946bf7619d1bdc040d5556176493958a70d00c31"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "gitBlob": "d3cecf647a00880c0ee1641d0f895b0904478888",
+      "bytes": 6484,
+      "sha256": "a4c01e782c6e87cdffd0659c137bcff268c8ab877df9724b5baeb2091382e35b"
+    },
+    {
+      "path": "apps/web/test/plugin-integration.browser.ts",
+      "gitBlob": "f19a73ce608226bb98cbaefc4fa274c609395ee7",
+      "bytes": 22021,
+      "sha256": "657883cdaa70263625298cfde3a17745c00f642bc86f7f480dd89c88b987b463"
+    }
+  ],
+  "rawIndex": "raw-index.json",
+  "rawIndexSha256": "9f8a24215a6768657f7216fa15fd5da8b3e24f5abdc091bc1d2df79cce109900",
+  "runs": [
+    {
+      "run": "direct-1",
+      "sourceHead": "8ad42282c3a617f6de25a6c3de9da27bba33b43f",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/private/tmp/plugin-diagnostic-notification-20261008/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "diagnostic notification",
+        "--reporter=verbose"
+      ],
+      "outer": {
+        "startedAt": "2026-10-08T03:48:47.130433+00:00",
+        "finishedAt": "2026-10-08T03:48:47.886339+00:00",
+        "exitCode": 1,
+        "elapsedMs": 755.4087080061436,
+        "chargeMs": 756,
+        "stdoutEOF": true,
+        "stderrEOF": true,
+        "terminal": {
+          "state": "FAILED",
+          "resultSha256": "3c7b8ecc5722c7dde8b74965a577b3c1a20b685986ab520bc7ce59607f02d25d",
+          "budgetSha256": "e0bd0ece75bd999361337bc865a759be7eb33bbef26c054511aa8e0dc571a733",
+          "elapsedAfterWritesMs": 720.77,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 1
+        }
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 5190,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 1017,
+          "dropped": 0
+        }
+      },
+      "pid": 20073,
+      "pgid": 20073,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "run": "direct-2",
+      "sourceHead": "a78f16724b3eae627ba35c7b4902e0bfdd68848c",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/private/tmp/plugin-diagnostic-notification-20261008/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "notifies a",
+        "--reporter=verbose"
+      ],
+      "outer": {
+        "startedAt": "2026-10-08T03:50:14.233277+00:00",
+        "finishedAt": "2026-10-08T03:50:14.907688+00:00",
+        "exitCode": 0,
+        "elapsedMs": 673.9530420163646,
+        "chargeMs": 674,
+        "stdoutEOF": true,
+        "stderrEOF": true,
+        "terminal": {
+          "state": "PASSED",
+          "resultSha256": "22fff743a55215534e1bcfc2260acf6ee80b0c93b60a72cb8db2896081ce5b61",
+          "budgetSha256": "3999a5ae93cca3447e2d24ff6ea02a9c6cbe49fd134cee7e3ddb71ea971dc1e0",
+          "elapsedAfterWritesMs": 639.063,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 0
+        }
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 5067,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "pid": 20513,
+      "pgid": 20513,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "run": "types-1",
+      "sourceHead": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "/private/tmp/plugin-diagnostic-notification-20261008/types.json"
+      ],
+      "outer": {
+        "startedAt": "2026-10-08T03:51:10.486405+00:00",
+        "finishedAt": "2026-10-08T03:51:11.851425+00:00",
+        "exitCode": 1,
+        "elapsedMs": 1364.540542010218,
+        "chargeMs": 1365,
+        "stdoutEOF": true,
+        "stderrEOF": true,
+        "terminal": {
+          "state": "FAILED",
+          "resultSha256": "a4f0366b87bcd7a1ef23c879fdaa5f859ec7ae7498f353b5f247312165fc570d",
+          "budgetSha256": "954a444a718f039361b4938f2f88149aea8992b12e991966a51b12df5f58f1a2",
+          "elapsedAfterWritesMs": 1327.293,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 2
+        }
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 179,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "pid": 20905,
+      "pgid": 20905,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "run": "types-2",
+      "sourceHead": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "/private/tmp/plugin-diagnostic-notification-20261008/types.json"
+      ],
+      "outer": {
+        "startedAt": "2026-10-08T03:53:01.699733+00:00",
+        "finishedAt": "2026-10-08T03:53:04.663599+00:00",
+        "exitCode": 0,
+        "elapsedMs": 2963.386125047691,
+        "chargeMs": 2964,
+        "stdoutEOF": true,
+        "stderrEOF": true,
+        "terminal": {
+          "state": "PASSED",
+          "resultSha256": "36a18edb3dc459fffb0ea7642a93a3c8586cddf2b7b3d01a095ff0f80fd01aee",
+          "budgetSha256": "5d0931bedfcfb084b359a98b8d60cd4c1f75fba909b4781815aa05cabdd3e7a1",
+          "elapsedAfterWritesMs": 2929.893,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 0
+        }
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "pid": 21554,
+      "pgid": 21554,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    }
+  ],
+  "focusedCoverage": {
+    "firstRun": "4 PASS, 2 FAIL, 22 unselected; subscription fixture omitted required command implementation and activation rolled back",
+    "secondRun": "Only the corrected sync/async subscription cases: 2 PASS, 26 unselected",
+    "finalEvidence": "Six named cases covered across the two runs; no same-round 6/6 assertion; two production files byte-identical throughout"
+  },
+  "typeResult": {
+    "first": "TS2688 missing vite/client declaration entry; child exit2 retained",
+    "final": "affected strict/noUncheckedIndexedAccess/noEmit exit0",
+    "files": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/apps/web/src/plugins/host.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/apps/web/src/plugin-integration/react.tsx",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/apps/web/src/plugin-integration/slot-fixture.tsx",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/apps/web/test/plugin-host.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/client.d.ts"
+    ],
+    "browserFileIncluded": false,
+    "repair": "Private config types=[node] plus installed vite/client.d.ts explicit file; no production, shared config or compiler relaxations"
+  },
+  "chargeMs": 5759,
+  "localBudgetMs": 60000,
+  "children": 4,
+  "phaseState": "CLOSED",
+  "cleanup": "Four owned groups/scratch absent; all inner/outer streams EOF and dropped0 in original evidence",
+  "mounted": {
+    "state": "NOT_RUN",
+    "entry": "checkPluginDiagnostics(page, fixtureUrl), import with --diagnostics-module",
+    "semantics": "Real AppPluginSession/PluginProvider/production PluginSettings with synthetic faults; no auth/center/provider proof",
+    "remaining": "Fixed owned Vite/native caller and complete entry/CSS dependency closure, bounded output and grant remain to prepare; do not run legacy default I01 matrix"
+  },
+  "main": "NOT_INTEGRATED",
+  "registry": "D05 replacement of existing WPF-P01 source remains Original responsibility",
+  "failureHistoryPreserved": true
+}

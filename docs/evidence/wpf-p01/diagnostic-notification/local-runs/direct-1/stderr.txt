@@ -1,0 +1,23 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > notifies a sync source-subscription failure and preserves the other subscriber
+ FAIL  |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > notifies a async source-subscription failure and preserves the other subscriber
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ apps/web/test/plugin-host.test.ts:722:21
+    720|     navigation.set({ ...navigation.getSnapshot(), activeTaskId: "B" });
+    721|     await Promise.resolve(); await Promise.resolve();
+    722|     expect(healthy).toBe(1); expect(notifications).toBe(1);
+       |                     ^
+    723|     expect(host.getDiagnostics()).toEqual([{ pluginId: "test.plugin", …
+    724|     stop(); await host.dispose(); expect(navigation.size).toBe(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+

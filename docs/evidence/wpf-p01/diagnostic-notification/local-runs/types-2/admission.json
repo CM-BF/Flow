@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-08T03:52:10.573Z",
+  "currentSha256": "447ca713f5125634f4347aa6feff9716e663ab4f985b002295f91921be2c3d68",
+  "nonzeroTermsBytes": {
+    "residualUnknown": 8806203392,
+    "priorK01Db": 134217728,
+    "secondK01Db": 134217728,
+    "R4KeepPendingClassification": 134217728,
+    "OriginalOrdinaryKeepPendingClassification": 35651584,
+    "reserveOnce": 1073741824,
+    "OriginalRecoveryBuildLocalUnknown": 8519680,
+    "OriginalPersonalThinRecoveryOrdinary": 9568256,
+    "OriginalHeldArtifactImportOrdinary": 9568256,
+    "OriginalRecoveryColdCandidate": 134217728,
+    "selectedRecoveryColdR2": 134217728,
+    "selectedHeld23E15ContinuationR2": 538968064,
+    "OriginalWeb779LockGuardRepairOrdinary": 4194304,
+    "OriginalVARCenterIntegrationMetadata": 1048576,
+    "selectedTUI01F04R2": 134217728,
+    "selectedO16HomeFactorStatus": 131072,
+    "selectedO16NormalHomePlanner": 136314880,
+    "selectedTUI01F04R3": 150994944,
+    "TUI01F04R3NaturalResultSeal": 8388608,
+    "selectedO16RenewPrivate": 8388608,
+    "O16RenewNaturalSeal": 8388608,
+    "OriginalWebCombinedVerification": 8388608,
+    "MSG03UIConsumerCompositionSource": 16777216,
+    "PluginDiagnosticNotificationSource": 16777216,
+    "X01VerifierProcessR1": 177209344
+  },
+  "sum": 11824529408,
+  "minimumFreshFreeBytes": 11824529408,
+  "topFloor": 11824529408,
+  "requiredFree": 11824529408,
+  "actualFree": 14125510656,
+  "priorCharges": [
+    {
+      "startedAt": "2026-10-08T03:51:10.486405+00:00",
+      "finishedAt": "2026-10-08T03:51:11.851425+00:00",
+      "exitCode": 1,
+      "elapsedMs": 1364.540542010218,
+      "chargeMs": 1365,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "terminal": {
+        "state": "FAILED",
+        "resultSha256": "a4f0366b87bcd7a1ef23c879fdaa5f859ec7ae7498f353b5f247312165fc570d",
+        "budgetSha256": "954a444a718f039361b4938f2f88149aea8992b12e991966a51b12df5f58f1a2",
+        "elapsedAfterWritesMs": 1327.293,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 2
+      }
+    },
+    {
+      "startedAt": "2026-10-08T03:50:14.233277+00:00",
+      "finishedAt": "2026-10-08T03:50:14.907688+00:00",
+      "exitCode": 0,
+      "elapsedMs": 673.9530420163646,
+      "chargeMs": 674,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "terminal": {
+        "state": "PASSED",
+        "resultSha256": "22fff743a55215534e1bcfc2260acf6ee80b0c93b60a72cb8db2896081ce5b61",
+        "budgetSha256": "3999a5ae93cca3447e2d24ff6ea02a9c6cbe49fd134cee7e3ddb71ea971dc1e0",
+        "elapsedAfterWritesMs": 639.063,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-08T03:48:47.130433+00:00",
+      "finishedAt": "2026-10-08T03:48:47.886339+00:00",
+      "exitCode": 1,
+      "elapsedMs": 755.4087080061436,
+      "chargeMs": 756,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "terminal": {
+        "state": "FAILED",
+        "resultSha256": "3c7b8ecc5722c7dde8b74965a577b3c1a20b685986ab520bc7ce59607f02d25d",
+        "budgetSha256": "e0bd0ece75bd999361337bc865a759be7eb33bbef26c054511aa8e0dc571a733",
+        "elapsedAfterWritesMs": 720.77,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics
+
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > validates real Arc slot contexts and refuses a bridge redirected away from its original pane
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > does not revive a pending Arc command when the plugin is disabled and activated again
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > allows the declared composer context panel only in a composer and rechecks knowledge authority
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > validates JSON declarations atomically without running a loader
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > shares activation for concurrent distinct command requests and binds local B context
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > rolls back partial activation and actually reloads on retry
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > invalidates pending load on disable without reviving or running activation
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > disposes late activation return once while preserving the new generation
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > continues cleanup after one failure and rejects captured contexts
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > rechecks dynamic authorization after asynchronous activation
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > catches async handler and bridge failures without unhandled rejection
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > keeps list/slot snapshots stable across navigation and makes narrow copies immutable
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > rejects wrong task/reference/composer invocation and mismatched semantic slots
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > falls back from a disabled custom theme without retaining it through App snapshots
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > whole-host disposal invalidates pending commands, views and old connection context
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > isolates synchronous and asynchronous subscription failures while continuing fan-out
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > atomically rejects unknown and prototype slots and activation events
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > checks view resource and current grants synchronously without loading
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > accepts the typed message footer and rejects non-message invocations
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > independent assistant stream capability > accepts the explicit stream read capability but active state does not bypass resource permission
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > steering read declaration cannot grant write execution, and host policy still gates declared write
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > validates the attachment builtin in the existing host and rechecks its explicit read authority
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > publishes an active command failure without changing registry or slot snapshots
+ ✓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > notifies a sync source-subscription failure and preserves the other subscriber 2ms
+ ✓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > notifies a async source-subscription failure and preserves the other subscriber 0ms
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > publishes immutable render diagnostics in order while keeping only the latest 100
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > isolates throwing diagnostic observers without recursively recording or replacing the command error
+ ↓ |p01-diagnostics| apps/web/test/plugin-host.test.ts > diagnostic notification > detaches on unsubscribe and suppresses diagnostic notifications after disposal, including late work
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 26 skipped (28)
+   Start at  20:50:14
+   Duration  338ms (transform 191ms, setup 0ms, import 276ms, tests 3ms, environment 0ms)
+

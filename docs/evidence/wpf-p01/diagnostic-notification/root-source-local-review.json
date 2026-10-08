@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-08T03:57:05.614848+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "target": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+  "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "verdict": "APPROVED_LIMITED_SOURCE_LOCAL",
+  "blockingP1P2": 0,
+  "findings": [],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "gitBlob": "7aab2fdbd4eb55fe63233084838f2933cbd92b2d",
+      "bytes": 24456,
+      "sha256": "295196ee751ea6f357bcde47388b6f7edfb6cd7322c9e9a9bc9c2352a7377410",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "gitBlob": "a76e0c8af9c87dcdc99bd93db4f30d68df1937b9",
+      "bytes": 25097,
+      "sha256": "922f3599716341667d88609f0e20e4a6275227c60f41b587780511a0be61cb92",
+      "match": true
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "gitBlob": "9781a7469bafccaaedbe0b63e512b4e917c2b078",
+      "bytes": 30044,
+      "sha256": "1cfd2428d66d8b858b94725a946bf7619d1bdc040d5556176493958a70d00c31",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "gitBlob": "d3cecf647a00880c0ee1641d0f895b0904478888",
+      "bytes": 6484,
+      "sha256": "a4c01e782c6e87cdffd0659c137bcff268c8ab877df9724b5baeb2091382e35b",
+      "match": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.browser.ts",
+      "gitBlob": "f19a73ce608226bb98cbaefc4fa274c609395ee7",
+      "bytes": 22021,
+      "sha256": "657883cdaa70263625298cfde3a17745c00f642bc86f7f480dd89c88b987b463",
+      "match": true
+    }
+  ],
+  "input": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/review-input.json",
+  "inputSha256": "49747e3434d082d0024dd6b2a2c159c8416eca0e68c3e7518fe0ba43c5e41f15",
+  "rawIndexSha256": "9f8a24215a6768657f7216fa15fd5da8b3e24f5abdc091bc1d2df79cce109900",
+  "rawArchivePairs": 68,
+  "rawBytesEachSide": 779821,
+  "mismatches": [],
+  "production": [
+    "Dedicated stable subscribeDiagnostics observes the existing single frozen diagnostics array",
+    "PluginSettings uses the actual production consumer subscription",
+    "record notifies diagnostic listeners without registry publication or slot snapshot replacement",
+    "unsubscribe/dispose remove listeners; synchronous exceptions and rejected observers cannot recursively record or replace the original plugin error"
+  ],
+  "fixedSourceHistory": [
+    "8ad422: two product leaves and focused cases",
+    "a78f167: only two subscription fixtures implement the manifest-declared command and assert activation, so subscription is active before the event",
+    "b7dd3ad: mounted fixture preactivates real Settings panel owners before taking diagnostic-only notification observations; no further product changes"
+  ],
+  "local": {
+    "firstRun": "4 PASS / 2 FAIL / 22 not selected at 8ad422; retained",
+    "targetedRepairRun": "2 PASS / 26 not selected at a78f167, only the two changed subscription cases",
+    "notClaimed": "No single final-source six-of-six run",
+    "typesFirst": "TS2688 on vite/client library entry, child exit2 preserved",
+    "typesFinal": "b7dd3ad affected four project roots plus installed vite/client.d.ts, strict/noUncheckedIndexedAccess/noEmit exit0, 2964 ms",
+    "configCompilerDiff": {
+      "types": {
+        "before": [
+          "node",
+          "vite/client"
+        ],
+        "after": [
+          "node"
+        ]
+      }
+    },
+    "configFilesAdded": [
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/client.d.ts"
+    ],
+    "browserFileIncluded": false,
+    "fourChildrenChargeMs": 5759,
+    "allStreamsEOFDrop0": true,
+    "allGroupsScratchAbsent": true
+  },
+  "limits": [
+    "Root inspected fixed source and raw evidence; ran no engineering check",
+    "Mounted browser case, theme screenshots, keyboard/focus actual result remain NOT_RUN",
+    "Future caller must explicitly import the focused diagnostic function with --diagnostics-module and avoid legacy I01 default launch/output",
+    "Synthetic plugin faults use real AppPluginSession/Provider/Settings but cannot prove center/auth/provider behavior",
+    "No whole-Web typecheck/build, main integration or personal deployment proof"
+  ],
+  "cleanCode": {
+    "checked": [
+      "single diagnostics state owner",
+      "small dedicated subscription interface",
+      "observer error isolation",
+      "bounded 100-entry immutable retention",
+      "unsubscription/disposal",
+      "stable registry/slot identities"
+    ],
+    "finding": "No blocking design or behavior issue in changed product leaves; no second store, deferred scheduler or global invalidation added."
+  },
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ],
+  "next": "Owner archives this source/local review and retains pending mounted acceptance separately. No runtime grant or claim expansion from this review."
+}

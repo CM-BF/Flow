@@ -1,0 +1,19 @@
+diff --git a/apps/web/src/plugin-integration/slot-fixture.tsx b/apps/web/src/plugin-integration/slot-fixture.tsx
+index 49edcc9d1..d3cecf647 100644
+--- a/apps/web/src/plugin-integration/slot-fixture.tsx
++++ b/apps/web/src/plugin-integration/slot-fixture.tsx
+@@ -76,8 +76,12 @@ export async function mountPluginDiagnosticsFixture(container: HTMLElement) {
+       });
+     } }),
+   });
+-  const activation = await session.host.activate("fixture.diagnostics");
+-  if (!activation.ok) { await session.dispose(); throw Error(activation.error); }
++  // Stabilize the real Settings panels before measuring diagnostic-only events.
++  const owners = new Set(session.host.getSlotSnapshot("settings.sections").map(item => item.pluginId));
++  for (const owner of owners) {
++    const activation = await session.host.activate(owner);
++    if (!activation.ok) { await session.dispose(); throw Error(activation.error); }
++  }
+   const registrySnapshot = session.host.list();
+   const slotSnapshot = session.host.getSlotSnapshot("settings.sections");
+   const stopRegistry = session.host.subscribe(() => { registryNotifications++; });
