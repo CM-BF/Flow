@@ -6,7 +6,7 @@ import { createNativeEnvironmentPolicy } from './native-environment.mjs';
 import { validatePermit, PHASE_LIMITS, NATIVE_MODEL } from './permit.mjs';
 
 /** Test-only tiny regular files stand in for package, library and binary; nothing is executed. */
-export async function environmentFixture() {
+export async function environmentFixture(policyOptions) {
   const root = await realpath(await mkdtemp(join(tmpdir(), 'o16-env-unit-')));
   const runtime = [];
   for (const name of ['package.json', 'sdk.mjs', 'native']) {
@@ -16,7 +16,7 @@ export async function environmentFixture() {
   }
   const phase = join(root, 'phase'); await mkdir(phase, { mode: 0o700 });
   const cwd = join(phase, 'runtime'); await mkdir(cwd, { mode: 0o700 });
-  const policy = createNativeEnvironmentPolicy(runtime), source = { root, digest: 'a'.repeat(64) };
+  const policy = createNativeEnvironmentPolicy(runtime, policyOptions), source = { root, digest: 'a'.repeat(64) };
   const binding = await policy.prepare(phase, source);
   return { root, phase, cwd, runtime, policy, source, binding,
     nativeEnvironment: { policy, binding, source }, async dispose() { await rm(root, { recursive: true }); } };

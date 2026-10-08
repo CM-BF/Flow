@@ -1,0 +1,185 @@
+{
+  "kind": "O16_NORMAL_HOME_PLANNER_CANDIDATE",
+  "authorizationState": "NOT_GRANTED",
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "sourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "sourceFiles": 325,
+  "dependencyAliases": 39,
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "branch": "codex/continuous-native-goal-acceptance",
+  "proposedRun": "native-plan-normal-home-20261008-once",
+  "phase": "plan",
+  "requestedCalls": 1,
+  "historicalSDKCalls": 3,
+  "maximumCallsIfSeparatelyGranted": 4,
+  "fourthQuery": "NOT_GRANTED",
+  "newPermitCreated": false,
+  "newReservationCreated": false,
+  "model": "claude-sonnet-5-5",
+  "limits": {
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "queryTimeoutMs": 90000,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "pauseMs": 900000
+  },
+  "graph": {
+    "maxProposals": 1,
+    "maxApplications": 0,
+    "maxNewNodes": 2,
+    "maxNewEdges": 1,
+    "childQueries": 0
+  },
+  "sdkAndSubscriptionAccounting": {
+    "SDKBudget": "requested USD0.20 maxBudgetUsd; not a guaranteed account billing bound",
+    "publicStatus": "B reported loggedIn true/claude.ai/firstParty/pro; not query or model eligibility",
+    "actualAccountCharge": "UNKNOWN; no zero-charge claim",
+    "usageRequirement": "retain actual SDK modelUsage/cost when supplied; missing remains UNKNOWN; no fallback/retry"
+  },
+  "authenticationBoundary": {
+    "HOME": "/Users/citrine",
+    "private": "CLAUDE_CONFIG_DIR/TMPDIR/CLAUDE_TMPDIR/material/workdir retain original owned paths and identity checks",
+    "secureStorageOverride": "",
+    "session": "persistSession:false; no resume/continue/sessionStore/forkSession",
+    "sharedWrites": "normal native same-account initialization/auth refresh may update HOME/Keychain; not inside private8MiB guarantee",
+    "forbidden": [
+      "direct credential read/copy/link/edit",
+      "login/logout/setup-token/account-change/API-key fallback",
+      "production auth/service changes"
+    ]
+  },
+  "resources": {
+    "privateRuntimeBytes": 8388608,
+    "rawAndStageEvidenceBytes": 2097152,
+    "privateDiagnosticMaxBytes": 8192,
+    "privateTextMaxBytes": 4096,
+    "liveReserveBytes": 1073741824,
+    "PGPlanningAllowanceBytes": 134217728,
+    "connections": {
+      "business": 8,
+      "boss": 3,
+      "admin": 1,
+      "managementMargin": 16
+    },
+    "admission": "fresh latest full ledger plus actual other holders and explicitly accounted PG/WAL allowance; no consumed historical combinedfloor reused",
+    "forecastNotHardCap": [
+      "PGPlanningAllowanceBytes is forward planning, not a hard database/WAL cap; shared cluster/WAL current accounting required before actual grant"
+    ]
+  },
+  "fixedRuntime": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237"
+    }
+  ],
+  "directConsumerPins": [
+    {
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 8494,
+      "sha256": "c6f296f43224a2380a5f03be395745084da400dd232d783b6176aee11ef881d9"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 12951,
+      "sha256": "3ab651f4024d438fb69078571485e86387449f89ce59bf11759cb815891e6c9f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 19264,
+      "sha256": "f350393fa4f896cc48c8f80be739dea845caa409aabdcf05c1b712c6a9b32a58"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "bytes": 6075,
+      "sha256": "4326dc8b57d9d4ea85caec12155a96b261d41d44aa63dcb1a5ca76dfb6702a55"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "bytes": 6510,
+      "sha256": "d9956c0022f346324ca0de3f47e39a2d26b3271680b47c81f1ca53657a7db2bd"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "bytes": 7465,
+      "sha256": "066471dbf652330ce740281872121366ad645d7ccb22777d38e224882ba3d71d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment.mjs",
+      "bytes": 9221,
+      "sha256": "fd8fdaf99103a1279b2e30f466c163c93bc775381c64af96c46db6bfc1c5b5c3"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/identity.mjs",
+      "bytes": 3376,
+      "sha256": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 11072,
+      "sha256": "959bf8215e9aefbda5e5b4f7f9f4c8d6e330a724acf3d6043ac369741bdc4369"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/error-diagnostics.mjs",
+      "bytes": 5044,
+      "sha256": "f87638b251ff9686f3d781bef4ec2f505a76a8f2afb03a98efb0538633c9437e"
+    }
+  ],
+  "scopePins": [
+    {
+      "path": "docs/evidence/o16/current-main-entry-preflight.json",
+      "bytes": 68817,
+      "sha256": "ebadc9afcca5749e8ae02b4aac65736c1a2ce72130bf8bc7b114cbc87d935437"
+    },
+    {
+      "path": "docs/evidence/o16/dependency-links.json",
+      "bytes": 20954,
+      "sha256": "3daef629400d35e6f93fbac4fea4149748677c9212f1f86b1a034b6a09800c6f"
+    }
+  ],
+  "inheritsActual": {
+    "commit": "23a221c0a0f4f2d5b88d725872081de3c34a23b6",
+    "manifest": "docs/evidence/o16/auth-home-factor-once/result-manifest.json",
+    "reviewMain": "214319132",
+    "review": "docs/evidence/i02/o16-home-factor-result-intake.json",
+    "scope": "public status fidelity only, not root cause/query qualification"
+  },
+  "passRequires": [
+    "exactly one actual SDK entry and successful bounded result/usage evidence",
+    "one audited proposal, zero apply and child queries",
+    "actual assignment/profile/goal/material/tools/source binding matches original scope",
+    "original proposal and graph acceptance assertions remain unchanged",
+    "all owned runtime processes/pools/target connections return with durable closure-bound15min pause"
+  ],
+  "failure": "first failure and cleanup separate; any uncertainty remains KEEP, no automatic retry, account/model fallback or children",
+  "futureInvocationNotExecutable": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-normal-home-20261008-once",
+    "NOT_ISSUED_SOURCE_ENV_BOUND_PERMIT"
+  ],
+  "currentState": "FIXED_SOURCE_AND_6_PURE_CONSUMERS_READY_FOR_REVIEW_NO_MODEL_BUDGET"
+}

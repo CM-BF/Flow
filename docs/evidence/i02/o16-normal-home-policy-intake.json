@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-08T01:32:11.573Z",
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "delivery": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_NORMAL_HOME_POLICY_AND_DIRECT_RESULTS",
+  "P1": 0,
+  "P2": 0,
+  "accepted": [
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment.mjs",
+      "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+      "bytes": 9221,
+      "sha256": "fd8fdaf99103a1279b2e30f466c163c93bc775381c64af96c46db6bfc1c5b5c3"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment-fixture.mjs",
+      "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+      "bytes": 2190,
+      "sha256": "e2e53f77a5b3ffbc857b6a823841f0eefa7fb0da09ff9531666c54f598c65556"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-normal-home.test.mjs",
+      "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+      "bytes": 7421,
+      "sha256": "348328d267321e1952953d16794bbe8afcbac25daa8837bf6c27d5aa311990e4"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/Interface.md",
+      "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+      "bytes": 3195,
+      "sha256": "1f1eb1e3c8f588c3143f7499a522144ae4433eac0975203c301d66e63d18f0d3"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/candidate.json",
+      "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+      "bytes": 7890,
+      "sha256": "77166bf08c7dc9ec6eaa7c00a5322c4c55c2c230f9fc954d3b637ba2f4581cb2"
+    }
+  ],
+  "canonicalManifest": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "originCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+    "path": "docs/evidence/o16/native-normal-home-candidate/manifest.json",
+    "bytes": 2490,
+    "sha256": "76f5678ec255d659ff85849fb001883e61fcc5e1c51b18995601d971c755906d",
+    "bindings": 9,
+    "boundBytes": 42599
+  },
+  "validation": {
+    "distinctSelected": 6,
+    "passed": 6,
+    "supervisedChildren": 1,
+    "elapsedMs": 815,
+    "rawBytes": 1924,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "scratch": "exact empty own root removed",
+    "nativeCommands": 0,
+    "SDKQueries": 0,
+    "PG": 0
+  },
+  "integration": "Two existing preimages match main; three new paths absent. Exact5 reviewed files accepted, no new composition behavior or rerun. Raw/preparation original retained once at canonical fixed commit.",
+  "boundary": "Experimental O16 environment only; default factory private recipe unchanged, explicit planner normal HOME; tools/material/permissions/no persistent session/once slot unchanged. New source/env rejects oldpermit. Production services/auth untouched.",
+  "modelBudget": "Historical3 SDK attempts sealed; candidate asks1 new planner only, actual fourth NOT_GRANTED. No permit/reservation created."
+}
