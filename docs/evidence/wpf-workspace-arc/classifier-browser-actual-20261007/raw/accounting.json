@@ -1,0 +1,28 @@
+{
+  "run": "arc-classifier-20261007-235010",
+  "state": "CLOSED",
+  "totalMs": 90000,
+  "chargeMs": 50986,
+  "unusedMs": 39014,
+  "transfer": false,
+  "outcome": "FAILED2/4",
+  "passed": [
+    "layout-navigation",
+    "three-pane-reads"
+  ],
+  "earlyDesktopObservation": {
+    "stage": "connected-before-layout-actions",
+    "path": "/private/tmp/arc-browser-classifier-4s522h4u/raw/arc-desktop-ready.png",
+    "bytes": 75641,
+    "viewport": {
+      "width": 1500,
+      "height": 960
+    },
+    "at": "2026-10-07T23:50:19.148Z"
+  },
+  "finalScreenshots": [],
+  "parentElapsedMs": 50942.204832914285,
+  "outerPostWriteElapsedMs": 50985.232250066474,
+  "fullReturnAt": "2026-10-07T23:51:28.680683+00:00",
+  "scope": "early desktop observation is not final390 images or group PASS"
+}

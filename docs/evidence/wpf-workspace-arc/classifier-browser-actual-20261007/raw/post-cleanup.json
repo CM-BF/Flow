@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T23:51:28.680683+00:00",
+  "run": "arc-classifier-20261007-235010",
+  "identities": [
+    {
+      "role": "outer",
+      "pid": 22231,
+      "pidAbsent": true
+    },
+    {
+      "role": "parent",
+      "pid": 22799,
+      "pidAbsent": true,
+      "pgidAbsent": true
+    },
+    {
+      "role": "worker",
+      "pid": 22887,
+      "pidAbsent": true,
+      "pgidAbsent": true
+    },
+    {
+      "role": "Chrome",
+      "pid": 23690,
+      "pidAbsent": true
+    }
+  ],
+  "paths": [
+    {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/scratch",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "absent": true
+    }
+  ],
+  "rawScenarioCleanup": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "rawCleanupErrors": [],
+  "parentScenarioUnknownPreserved": true,
+  "independentPortProbe": false,
+  "PG": false,
+  "errors": []
+}

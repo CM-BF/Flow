@@ -1,3 +1,11 @@
+# Current Arc review
+
+Source `b3f5bed1a17019d1de01117f3a510314d5ecd412` APPROVED limited source/local/candidate (root4467). [CSS namespace/profile codec fix](css-material-fix-20261007/entry.json). Actual purecodec2PASS/645ms; newbrowserNOT_RUN/NOT_GRANTED. [Prior2/4 failure and visualP2](classifier-browser-actual-20261007/failure-review-input.json), root282c fidelity review archived separately.
+
+# Current Arc actual review
+
+[Fourth actual failure input](classifier-browser-actual-20261007/failure-review-input.json). Fixede621/executiona322: FAILED2/4, earlydesktop1PNG/final0. Root9605 actual visual P2 OPEN. No new runtime/source mutation. Main NOT_INTEGRATED.
+
 # Current Arc review entry
 
 Source `e621e7838d50048fcb57f5837a03e9fc474a3799` / APPROVED limited source/local/candidate preparation (root f1f8). [Classifier correction and local evidence](body-classifier-fix-20261007/entry.json). Pure12PASS/affectednoEmit0 only; browser NOT_RUN on this target. Previous c1db browser1/4FAIL preserved [here](body-flight-actual-20261007/failure-review-input.json). Original product/13pure/2HTTP acceptance retains its exact previous scope. Main NOT_INTEGRATED.

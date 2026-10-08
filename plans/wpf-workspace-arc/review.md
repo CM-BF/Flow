@@ -1,5 +1,11 @@
 # WPF-WORKSPACEARC01 review
 
+当前固定target `b3f5bed1a17019d1de01117f3a510314d5ecd412`：APPROVED（root4467限定source/local/candidate）。[本次入口](../../docs/evidence/wpf-workspace-arc/css-material-fix-20261007/entry.json)。4源29+/8-，实际publiccodec旧拒/新过2PASS/645ms，非browser。修后CSS与材料仍NOT_RUN；上一e6212/4FAIL和9605视觉P2保留到真实复验。
+
+
+Current e621 actual FAILED2/4. [Failure evidence](../../docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/failure-review-input.json): layout-navigation/three-pane-reads PASS only, material arc-A unavailable, final themes not reached. Root9605 desktop visual P2 blocks delivery; source/local priorf1f8 approval does not override actual. First three failures preserved.
+
+
 当前固定target `e621e7838d50048fcb57f5837a03e9fc474a3799`：APPROVED（root f1f8限定source/local/candidate）。两test19+/4-；AST实际classifier/observer12PASS和两文件/staticimports affected noEmit0，3715ms CLOSED。新browser NOT_RUN/无grant，前target c1db1/4 FAIL不得外推本targetPASS。[本次入口](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)。早桌面图只独立observation，不取代原四group/最终两图。
 
 以下为历史审查，旧原件不变。

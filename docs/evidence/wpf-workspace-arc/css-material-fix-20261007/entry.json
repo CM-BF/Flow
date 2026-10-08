@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-07T23:57:40.674485+00:00",
+  "source": "b3f5bed1a17019d1de01117f3a510314d5ecd412",
+  "packet": "/private/tmp/arc-browser-css-material-5g4win44",
+  "manifest": {
+    "path": "/private/tmp/arc-browser-css-material-5g4win44/manifest.json",
+    "realpath": "/private/tmp/arc-browser-css-material-5g4win44/manifest.json",
+    "bytes": 2644,
+    "sha256": "2e17e2fb639b2595a4d947ece85b657277a9f99bf1f91b4aaea456e2d5f184af"
+  },
+  "localManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/css-material-fix-20261007/local-manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/css-material-fix-20261007/local-manifest.json",
+    "bytes": 7542,
+    "sha256": "b249d6f98aadfef2b6a3fed154c74f910763ab92ddfd054cda8e8b8d5bb27ab6"
+  },
+  "changedSource": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "bytes": 3280,
+        "sha256": "7cc73e7134012504adedf69ba79ba2640961612487c3b768164f8c5e47c1e79a",
+        "gitPath": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "blob": "7d85ed64d242685e474a5c6bafe726eb14690e59"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "bytes": 3284,
+        "sha256": "315a63f07809e91011c662db80ad1f1f0a2ba239d0a6448da43d732de2c3388a",
+        "gitPath": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "blob": "7706f5f29efae3985911269444f4fc1c4df1175b"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2011,
+        "sha256": "81ab0360f6e3c234bab4e697af97600b50f1ffeb0505b42029cffb6ef48d40f8",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "ed00a01119ea3714ec72b52f171d5c969a708870"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2035,
+        "sha256": "9c4eaac03ebb684dea9c170c9c8e3857b17563e4d17bff394a18009fcfb88c5d",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "30a1d7f04d89b654099f89c3b5dd84576b3124ec"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 28426,
+        "sha256": "5a30a99d1e720295ee7e68965d4edb78a8d70f664b689fd3a9ea2f10a22825ef",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "c9ecec4265e8a44efc56cd01775fcf8fc39f08dd"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 30513,
+        "sha256": "c1acdc2fe27f77e1734f4827f6e777148c3bac33883216a1b5b3466e91348eb4",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "dcb9400324e40b5bc8caf6884c92daa9c5e62d34"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19592,
+        "sha256": "916b7dc75b78dca89411fe811366993fdff70b39b8ef6eb07e404e061a72c3ea",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "84e7c28bf2f9c59dc70b0e38d01bb912f48260fb"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19578,
+        "sha256": "d084484502ce3738771f1b719c6c5ced4b6dcd421afc2829cb1381a09f22ea37",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "94102855efed444814652b3e1923ac04a6e7fe58"
+      }
+    }
+  ],
+  "claim": {
+    "id": "c34d95d1-af01-4325-bcd5-77ba9dd28379",
+    "version": 2,
+    "scopeCount": 18
+  },
+  "runtime": "NOT_RUN_NOT_GRANTED",
+  "review": {
+    "state": "APPROVED_LIMITED_SOURCE_LOCAL_AND_CANDIDATE_PREPARATION",
+    "source": "b3f5bed1a17019d1de01117f3a510314d5ecd412",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/css-material-fix-20261007/root-arc-css-material-source-review-20261007.json",
+    "bytes": 3905,
+    "sha256": "4467fb2334ecbd7fae638ae3c28956022fc8e416b0c5ded1a6aa14d9e5d2de62",
+    "runtime": "NOT_RUN_NOT_GRANTED"
+  },
+  "rootPriorActualReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/root-arc-classifier-actual-failure-review-20261007.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/root-arc-classifier-actual-failure-review-20261007.json",
+    "bytes": 5099,
+    "sha256": "282c4ed7ef0c5f65da089140a5bed8a93dab5b3239b678981f9f84d5efea50ea"
+  },
+  "oldVisualP2": "actual observed; source namespace corrected, browser revalidation pending",
+  "fixtureCause": "exact original DTO rejects spaces in model.displayName; fixed publicschema purePASS, actualdialog error text not retained",
+  "noTypes": "No new publictype interface; one approved codec child replaces unhelpful repeatednoEmit",
+  "sourceStopAt": "2026-10-08T00:00:11.140034+00:00"
+}

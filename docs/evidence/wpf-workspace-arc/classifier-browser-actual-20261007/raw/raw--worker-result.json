@@ -1,0 +1,27 @@
+{
+  "state": "FAILED",
+  "workerPid": 22887,
+  "chromePid": 23690,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "interrupts": [],
+  "cleanupErrors": [],
+  "result": null,
+  "cdpPort": 60191,
+  "contextAdmission": {
+    "chromePid": 23690,
+    "profile": "/private/tmp/arc-browser-classifier-4s522h4u/scratch/chrome",
+    "ownership": "fresh PID/exclusive profile; scenario creates and closes one own context; no user browser"
+  },
+  "error": "Error: locator.check: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'arc-A' }).getByRole('radio')\n\n    at settings (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:201:90)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:216:7)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:194:5)\n    at async <anonymous> (/private/tmp/arc-browser-classifier-4s522h4u/worker.mjs:31:16)\n    at Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:308:58)\n    at async <anonymous> (/private/tmp/arc-browser-classifier-4s522h4u/worker.mjs:31:16)",
+  "chromeStdoutEOF": false,
+  "chromeStderrEOF": false,
+  "chromeLog": {
+    "observedBytes": 9002,
+    "retainedBytes": 9002,
+    "truncatedBytes": 0,
+    "finalAfterEOF": false
+  }
+}

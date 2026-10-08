@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T23:59:24.849846+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra independent read-only",
+  "verdict": "APPROVED_LIMITED_SOURCE_LOCAL_AND_CANDIDATE_PREPARATION",
+  "target": "b3f5bed1a17019d1de01117f3a510314d5ecd412",
+  "blockingSourceFindings": [],
+  "assessment": [
+    "Arc outer navigation and its six descendant rule selectors use flow-arc-workspace-tabs. This removes the observed collision with right-side flow-workspace-tabs flex:1 without fixed-height masks, !important or right-panel changes.",
+    "Actual layout group now checks intrinsic navigation height and stable top/height across opening the real workspace panel, selecting Terminal and closing it; right-side tab flex ownership remains explicitly checked. Original four group assertions and early/final screenshot distinction remain.",
+    "Fixture displayName now arc-A conforms to the existing public contract; description retains human prose. Configuration, profile reference and three message choices remain unchanged. Shared schema was not widened."
+  ],
+  "observedLocalEvidence": {
+    "method": "Owner extracts declarations and exact JSON response expression from actual old/new fixture AST, invokes original shared claudeMessageSettingsCatalogPageSchema; root inspected script/raw, did not rerun.",
+    "oldDTO": "Rejected specifically at profiles[0].profile.model.displayName",
+    "newDTO": "Accepted; arc-A/B/C and profile identity retained",
+    "passed": 2,
+    "failed": 0,
+    "children": 1,
+    "chargeMs": 645,
+    "state": "CLOSED",
+    "pid": 62844,
+    "pidAndGroupAbsent": true,
+    "scratchAbsent": true,
+    "types": "NOT_RUN; no unnecessary type rerun claimed",
+    "browser": "NOT_RUN"
+  },
+  "verified": {
+    "sourcePinsReadAndHashed": 207,
+    "changedPinsFixedGit": 4,
+    "unchangedSourcePins": 203,
+    "packetAndLocalOriginalArchivePins": 27,
+    "externalPinRecordsUnchanged": 43,
+    "resolverLinkRecordsUnchanged": 33,
+    "callerHashesUnchanged": 3,
+    "hashMismatches": 0,
+    "onlyBindingChanges": [
+      "source",
+      "preparedHead",
+      "four sourcePins"
+    ],
+    "candidateManifest": {
+      "path": "/private/tmp/arc-browser-css-material-5g4win44/manifest.json",
+      "bytes": 2644,
+      "sha256": "2e17e2fb639b2595a4d947ece85b657277a9f99bf1f91b4aaea456e2d5f184af"
+    },
+    "localManifest": {
+      "path": "docs/evidence/wpf-workspace-arc/css-material-fix-20261007/local-manifest.json",
+      "bytes": 7542,
+      "sha256": "b249d6f98aadfef2b6a3fed154c74f910763ab92ddfd054cda8e8b8d5bb27ab6"
+    }
+  },
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "appliedAt": "2026-10-07T23:59:24.850142+00:00",
+    "scope": "component class naming/style responsibility, public DTO validation, regression isolation",
+    "findings": "Narrow component-owned namespace fixes unwanted coupling; actual shared decoder checks contract refinement rather than a hand-written lookalike. No extra framework or shared API changes.",
+    "unresolved": "Full visible result, four groups and final light/dark390 images still require actual run."
+  },
+  "boundaries": [
+    "Prior failed2/4 run, visualP2 screenshot and closed50986ms remain unchanged; this approval is source remediation, not visual verification.",
+    "Material-await and final theme groups still unverified; runtime proposal is new independently scheduled90s/60work/30cleanup with original resource bounds. No old unused time transfers.",
+    "Manager must bind fresh complete floor/head/claim/namespace/native inputs before a new actual grant. This review grants no execution.",
+    "Missing Arc navigation plugin action slot/context remains a separate recorded same-task requirement; CSS rename does not complete the plugin system.",
+    "GO MATURE02 future friendly displayName-versus-modelID boundary remains research; current shared contract intentionally unchanged."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T23:50:38.307228+00:00",
+  "original": "actual-data-binding.json preserved",
+  "issue": "callersUnchanged prose array accidentally contains an incomplete concatenated hash; authoritative manifest and preflight checks were correct",
+  "actualCallers": [
+    {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    },
+    {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    }
+  ],
+  "sourceOrRuntimeChanged": false
+}

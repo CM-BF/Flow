@@ -1,0 +1,42 @@
+{
+  "method": "AST extracts actual fixture declarations and exact JSON response expression; original public claudeMessageSettingsCatalogPageSchema as used by FlowClient, not a mirrored schema. No fixture import/HTTP/browser.",
+  "passed": 2,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "Original exact DTO rejected at model.displayName",
+      "state": "PASS",
+      "issues": [
+        {
+          "code": "invalid_format",
+          "path": [
+            "profiles",
+            0,
+            "profile",
+            "model",
+            "displayName"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fixed exact DTO accepted, original profile identity/configuration and three choices preserved",
+      "state": "PASS"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+      "sha256": "d084484502ce3738771f1b719c6c5ced4b6dcd421afc2829cb1381a09f22ea37"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/packages/contracts/src/execution-profiles.ts",
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/packages/contracts/src/claude-turn-settings.ts",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    }
+  ],
+  "oldFixtureSha256": "916b7dc75b78dca89411fe811366993fdff70b39b8ef6eb07e404e061a72c3ea"
+}

@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:38:54.044949+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:00:11.140034+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,33 +12,38 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source e621e7838d50048fcb57f5837a03e9fc474a3799；正常metadata待seal |
-| 工作树dirty状态 | 全部18scope STOP待本次normal seal；0HTTP/PG/Chrome |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source b3f5bed1a17019d1de01117f3a510314d5ecd412；本次metadata待seal |
+| 工作树dirty状态 | 全部18scope源码/checksSTOP；仅own metadata尾待seal，0PG/HTTP/Chrome |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | validation |
-| 检查状态 | PASSED e621e7838d50048fcb57f5837a03e9fc474a3799；仅12纯classifier/observer与两test静态import受影响noEmit0；新browser NOT_RUN。旧c1db browser1/4 FAIL与0PNG保留 |
+| 本片段交付阶段 | implementation |
+| 检查状态 | PASSED b3f5bed1a17019d1de01117f3a510314d5ecd412；仅实际fixture新旧DTO公共codec两例/645ms；noEmit未跑（无新类型接口）。新browser NOT_RUN；原e6212/4FAIL保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | e621e7838d50048fcb57f5837a03e9fc474a3799 |
+| 实现目标 | b3f5bed1a17019d1de01117f3a510314d5ecd412 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工作区布局首组通过；误计开发模块的测试分类已修。纯分类与受影响类型检查通过；独立早桌面观察已加入源码但未实际截图，真实四组验收待新运行 |
+| 当前产出 | 顶部空白的样式命名冲突已修；材料设置目录改为合法展示标识，原公共codec检查通过。实际四组仍待新浏览器验证 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 新classifier browser尚未运行/无授权；旧完整验收仍FAILED1/4。 |
+| 当前阻塞 | ACTIVE: 修后CSS与材料场景尚未browser验收，未获新运行授权；旧2/4失败与视觉P2保留待复验。 |
 | 需用户决定 | NONE |
-| Review | APPROVED e621e7838d50048fcb57f5837a03e9fc474a3799；root f1f8限定两test/source/local/candidate，0blocking；新browser NOT_RUN，旧三FAIL保留 |
+| Review | APPROVED b3f5bed1a17019d1de01117f3a510314d5ecd412；root4467限定4源/2codec/新候选，0blocking。视觉实际/材料与完整四组仍待新run；非main批准。 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-WORKSPACEARC01-01 | in-progress | workspace_panels_owner | 固定设计/供给和原子take已完成；布局实现中 |
-| WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 共同稳定父级源码已接入；本轮layout-navigation通过，three-pane前置失败；真实prepare-await/长正文阅读锚点/六显式body读取尚未到达 |
+| WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 共同稳定父级源码已接入；本轮layout-navigation/three-pane-reads通过，含六显式正文读取；真实prepare-await/长正文阅读锚点未完成 |
 | WPF-WORKSPACEARC01-03 | in-progress | workspace_panels_owner | typed context/invocation lease源码已接入，5私有AppPort+2Host纯回归已通过，真实消费者待browser |
-| WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三独立HTTP同轮FIFO/hidden queued-dispose2PASS；旧两FAIL保留。本轮browser六bodyflight前置失败，未完成验收 |
-| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types与第三HTTP同轮2PASS保留；三次browser分别0/4、1/4、1/4 FAIL完整归还，当前c1db9145ms CLOSED，0PNG，全部失败不抹 |
+| WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三独立HTTP同轮FIFO/hidden queued-dispose2PASS；旧两FAIL保留。本轮three-pane-reads通过；整体2/4，材料与refresh-theme未完成 |
+| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types与第三HTTP同轮2PASS保留；四次browser分别0/4、1/4、1/4、2/4 FAIL完整归还；本次50986ms CLOSED，早图1/最终0，全部失败不抹 |
 | WPF-WORKSPACEARC01-06 | pending | workspace_panels_owner | NOT_INTEGRATED |
 
 ## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| ARC-WAIT-CLASSIFIER-READY | 2026-10-07T23:39:15.523446Z | 2026-10-07T23:49:07.270Z | 资源 | 已固定候选等待唯一Chrome；经理正式grant解除 | 本owner delivery与经理ArcClassifierGrant，见本轮preflight |
+| ARC-WAIT-CLASSIFIER-FAIL | 2026-10-07T23:51:01.826066Z | OPEN | 验证失败 | 材料设置前置失败及早图CSS P2；待合法源码修复和新验证 | 本轮outer actual-exit/root9605；不造task历史start |
 
 前期K01测量曾暂停静态供给；首暂停实际收到时点未单独记录，不造等待时长。经理明确解除后已正常物化/取权；本次普通local已闭合18020ms；后继HTTP/browser仅proposal，无窗口预约。
 
@@ -109,3 +114,11 @@
 2026-10-07T23:37:07.258160+00:00：新10min/4MiB普通段于23:31:23.413456Z开始、23:41:23.413456Z截止；fresh c34dv2 exact18/overlap[]、972a双端clean。固定source `e621e7838d50048fcb57f5837a03e9fc474a3799`，仅两test19+/4-；真实API classifier同时用于browser/fixture，保意外/重复/非GET正文拒绝。实际12纯例PASS/noEmit0，307（toolwall向上取整；原supervisor243保留）+3408=3715/20000 CLOSED，unused16285不转；两PIDPGID/ownscratchfreshabsent、regularlog非dualEOF。早桌面图为512KiB独立observations，不计组PASS；原四group/最终390两图与总raw8MiB不变。[本次入口](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)。code/checks已STOP，只有原封套metadata尾；0新browsergrant。
 
 2026-10-07T23:38:54.044949+00:00：root[f1f8限定独审](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/root-arc-classifier-source-review-20261007.json)APPROVED/0blocking。12pure/affectedtypes0与新候选仅准备批准，新browser NOT_RUN无grant；三旧FAIL原件/预算不变。fresh Git index2,286,387B一次atomic copy+source/meta/TMP+64KiB审尾保守2,722,909B<4MiB，64KiB不是commit全峰值。all18STOP，正常seal后候选交经理，不自动运行。
+
+2026-10-07T23:50:38.307228+00:00：ARC-CLASSIFIER-BROWSER-20261007-ONCE actual START23:50:10.841065Z，outer22231/parent22799/worker22887，sourcee621/executiona322，freshfree17912885248>=冻结11977490432。207/43/33/claimv2exact18实际remoteclean及新namespace通过，parent已启动worker后才更新status。90=60work30cleanup，0PG/2HTTP/1Chrome；RUNNING不推通过，原件/private/tmp/arc-browser-classifier-4s522h4u。
+
+2026-10-07T23:52:49.288843+00:00：本次23:50:10.841065Z START→23:51:01.826066Z terminal1→23:51:28.680683Z exactFULLRETURN。真实passed=[layout-navigation,three-pane-reads]，prepare-await-stable在arc-A radio5s超时，refresh-theme未达。独立桌面图75641B、最终390图0，root9605实际视觉P2：Arc顶栏大空白；runtimecomputedstyle未取样。outer/parentEOFtrue/drop0、Chromeexit0，rawcontext/httpClosed/errors[]；worker.resultnull/父scenarioUNKNOWN保留。4PID/2PGID/scratch/cachelinksabsent，无独立portprobe。ceilmax50986/90000 CLOSED/余39014不转。[原件入口](../../docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/failure-review-input.json)。只自然封存，无产品/test修复，无重试。
+
+2026-10-07T23:58:36.144826+00:00：新15min/8MiB普通段START23:53:58.039959Z→截止2026-10-08T00:08:58.039959Z。fresh c34dv2exact18/overlap[]；固定 `b3f5bed1a17019d1de01117f3a510314d5ecd412` 四源29+/8-。Arc outer与六descendant selector独立命名，未改右侧WorkspacePanels或sharedschema、未加高度硬盖；原layout组加入右侧开/Terminal/关后自然行高/top不变检查。fixture displayName空格为已确证公共codec拒绝，改合法arc-A；AST真实DTO旧拒/新过2PASS，Node62844/组/scratch归还、645/20k CLOSED，未用不转；无新类型接口故noEmitNOT_RUN。实际Chrome两EOFfalse、parent/outerEOFtrue及parentUNKNOWN/rawclosed分别保留，root282c失败保真审归档。[当前入口](../../docs/evidence/wpf-workspace-arc/css-material-fix-20261007/entry.json)。code/checksSTOP，新90仅proposal，无grant。
+
+2026-10-08T00:00:11.140034+00:00：root[4467限定源码/局部/准备审](../../docs/evidence/wpf-workspace-arc/css-material-fix-20261007/root-arc-css-material-source-review-20261007.json)APPROVED/0blocking；207源4变203同、43/33与3caller不变。新视觉实际/原完整四组/390双图仍NOT_RUN，无自动窗口/不借旧余额；Arc导航独立plugin slot后继未实现，不能冒全MATURE05完成。all18STOP，正常seal/pushclean后交经理READY。

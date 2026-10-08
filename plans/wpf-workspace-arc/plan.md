@@ -51,3 +51,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T23:22:31.454351+00:00：本次 c1db browser 实际FAILED1/4、0PNG，layout-navigation已通过，six-flight与材料/主题验收未完成。确认测试observer未锚/api误计四个Vite模块GET；仅记录，产品/test未改，新源修与browser须经理后继段。原件见[本次入口](../../docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/failure-review-input.json)。
 
 2026-10-07T23:37:07.258160+00:00 原TODO05验收修复：读取事件以URL.pathname锚定真实/api结构，开发模块不进入body计数，真实意外/重复API仍拒绝。原四组选定不变，ready桌面观察独立保留（非额外PASS），最终390light/dark两图仍是原完成条件。当前新source与12pure/noEmit见[证据](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)，browser未运行；旧三FAIL不改。
+
+2026-10-07T23:58:36.144826+00:00 原TODO02/05实际失败修复：Arc导航CSS独立namespace，不能被右侧tabflex规则撑满；既有layout组新增右面板开/切Terminal/关的自然尺寸检查，保原4groups。材料fixture公开目录必须通过真实codec而非仅TS结构；合法displayName、3choices与原identity保留。645ms纯codec已验证，实际CSS/材料browser仍待；不增加产品合同或scope。

@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T23:52:49.288843+00:00",
+  "source": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+  "execution": "a32224b5b757c8f75003235b5ab00c8afbf0f785",
+  "namespace": "/private/tmp/arc-browser-classifier-4s522h4u",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/manifest.json",
+    "bytes": 13750,
+    "sha256": "337d81c8f619a25c62221ab9f7e24ddf3dd279849696e269c9f4e85118bccf4c"
+  },
+  "actual": "FAILED2/4",
+  "passed": [
+    "layout-navigation",
+    "three-pane-reads"
+  ],
+  "earlyObservationPNG": {
+    "path": "/private/tmp/arc-browser-classifier-4s522h4u/raw/arc-desktop-ready.png",
+    "bytes": 75641,
+    "sha256": "e7d151eab495126733a5755c7f2ebdb5dc762de95051bd45a93e33e015758e30"
+  },
+  "finalPNG": 0,
+  "chargeMs": 50986,
+  "fullReturnAt": "2026-10-07T23:51:28.680683+00:00",
+  "browserError": "locator.check: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog', { name: '\u4e0b\u4e00\u6761\u6d88\u606f\u8bbe\u7f6e', exact: true }).locator('.ep-option').filter({ hasText: 'arc-A' }).getByRole('radio')\n\n    at settings (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:201:90)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:216:7)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:194:5)\n    at async <anonymous> (/private/tmp/arc-browser-classifier-4s522h4u/worker.mjs:31:16)",
+  "cleanupScope": "outer/parent doubleEOF and rawcontext/httpclosed, parent scenarioUNKNOWN preserved; no independentportprobe",
+  "visualReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/root-arc-desktop-stage-visual-review-20261007.json",
+    "bytes": 2959,
+    "sha256": "9605d14818a36172a3d017f6a949d13f73957d9c36bb4570ec6a32db72f73140"
+  },
+  "sourceChangedAfterActual": false
+}
