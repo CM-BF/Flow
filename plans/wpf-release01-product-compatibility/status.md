@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T22:05:50.925Z |
+| 最近更新时间 | 2026-10-08T00:33:39.115Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,26 +10,26 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本次actual与独审metadata正常封存；全4scope STOP保claim，执行字节不变 |
+| 工作树dirty状态 | 本次仅main接收metadata自然封存；两harness永久STOP且已移出claim；全2metadata封存后STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
 | 检查状态 | PASSED cb3ca8ec7ed4611097a3ab7414f9591526ccd896 本次e15/880四App实际outer0/4正式报告；21:58:28.977Z FULLRETURN；限定actual独审已APPROVED |
 | 诊断实际 | DIAGNOSTIC_COMPLETE fc2916c275efe86203d91ec33656ea9871eac42a；outer0，17:02:28.596973Z START，17:03:55.066182Z完整RETURN；14881/90000ms CLOSED，1条clientError/关联UNKNOWN，passed=false/reports=null |
 | 必要局部检查 | PASSED fc2916c275efe86203d91ec33656ea9871eac42a strict/noEmit复验exit0；首resolver FAIL1125ms保留，复验1650ms，独立20s累计2775ms CLOSED；不替代四App兼容 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED 新target；历史两harness接收 d669f3acb466f6f11bd6d81c1bffb7ffeedb5010；两harness逐字d882，四App现有证据接收；两产品窄修已随MSG进入main729d；非个人部署 |
+| 已集成main状态 / HEAD | INTEGRATED 2dbc5052c6936a94a995729d906a1c0f2fc52b78；固定cb3两harness与b422四报告接收，后继b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b保留；[收据与逐字核对](../../docs/evidence/wpf-release01/recovery-cookie/main-close-e15/README.md) |
 | 实现目标 | cb3ca8ec7ed4611097a3ab7414f9591526ccd896 |
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 四个固定网页与R2新后台兼容已独审通过，资料可交原发布链接收 |
-| 下一可用交付 | 将固定四报告交主线与原发布链；个人恢复由其独立确认 |
+| 当前产出 | e15后台与四个固定网页的兼容交付已main接收；779/v4公开发布由Original独立回执确认 |
+| 下一可用交付 | RELEASE01-10稳定executor与可信固定输入分责后继仍OPEN，未实施 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：APPROVED cb3ca8ec7ed4611097a3ab7414f9591526ccd896 新e15输入/native及本次actual限定独审；旧b692仅source批准/未运行，旧cd27四报告仅历史 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 整体开工UNKNOWN；本固定pair工程片段核齐交付 2026-10-07T18:33:46.469Z，见[主线收口](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/verification.json)；RELEASE01-10后继未实施，整体完成仍NOT_COMPLETED，不用提交/领取时间推定 |
-| 领取 | b4d7d7fd-f215-4882-b7f3-2afc133a0365 v1 ACTIVE exact4；旧7d60 v3 released，不沿旧权写 |
+| 任务时间来源 | 整体开工UNKNOWN；RELEASE01-11主线接收事件2026-10-08T00:06:02.161Z，本次亲核2026-10-08T00:33:39.115Z；RELEASE01-10仍OPEN，整体完成NOT_COMPLETED，不以提交时间推定 |
+| 领取 | b4d7d7fd-f215-4882-b7f3-2afc133a0365 v2 active exact2 records-only；原两harness已STOP并原子移出，原v1 exact4为历史 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -42,7 +42,7 @@
 | RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
 | RELEASE01-08 | completed | w01_owner | [固定新Web+四App实际+main接收](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md)；材料交Original发布，个人操作未由本轮执行 |
 | RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，[集中独审已批准](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)；非mounted/compat通过 |
-| RELEASE01-11 | in-progress | w01_owner | [e15 R2恢复后台固定输入准备](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md)，[新四App实际PASS/完整RETURN](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/README.md)，实际独审APPROVED；旧b692未运行，不改签旧C3 |
+| RELEASE01-11 | completed | w01_owner | [固定main接收/两源逐字/独立779发布引用](../../docs/evidence/wpf-release01/recovery-cookie/main-close-e15/README.md)；root actual与四报告原件保持，0重跑 |
 | RELEASE01-10 | pending | w01_owner | 本组合收口后的稳定executor/可信输入分责后继，尚未实施；见[plan.md](plan.md) |
 
 ## 等待记录
@@ -235,3 +235,7 @@ Root准备源/native批准与失败实际/清理独审已原样归档。newApp�
 ## e15限定独审与交付 2026-10-07T22:05:50.925Z
 
 [Root实际独审](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json)APPROVED_SCOPED_ACTUAL_RESULT/0blocking；[固定接收入口](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json)列四报告/16checks与exacttuple。inner实际4 streams均完整，PARTIAL_RETAINED_ADOPTION不夸大系统计量。执行cb3/68d7固定，当前仅normal metadata seal/push，四scope STOP保claim；Original main/个人发布尚未在本owner确认。
+
+## 当前：e15限定main收口
+
+2026-10-08T00:33:39.115Z：RELEASE01-11已main接收；[本批核对](../../docs/evidence/wpf-release01/recovery-cookie/main-close-e15/README.md)复用固定cb3与b422证据。Original公开779/v4已由独立结果审确认，非本owner重新部署或浏览器验收。RELEASE01-10仍OPEN，整体任务不标完成；旧失败/诊断、PARTIAL_RETAINED_ADOPTION与四inner streams口径不变。两harness永久STOP且claim已缩为records-only，正常push/clean后全2scope STOP。

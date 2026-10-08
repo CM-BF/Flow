@@ -1,0 +1,64 @@
+{
+  "startedAt": "2026-10-08T00:33:38.966Z",
+  "observedAt": "2026-10-08T00:33:39.115Z",
+  "priorHead": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+  "main": "2dbc5052c6936a94a995729d906a1c0f2fc52b78",
+  "successor": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+  "mainReceipt": {
+    "path": "docs/evidence/i02/release01-e15-approved-intake.json",
+    "bytes": 10524,
+    "sha256": "a2bb6021ed6547534a1fbdf0a997116a5b3cbdddf1d6499e83d0c9dc9f0e099c"
+  },
+  "publication": {
+    "fixedCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "path": "docs/evidence/i02/svc06b-web779-actual-result-review.json",
+    "bytes": 2654,
+    "sha256": "e968748270836af640fc1e5a839f47323397ee81b0ea64ff98d62155cdc01b51",
+    "decision": "APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY",
+    "scope": "Original operator public779/v4; not a new browser/chat or personal operation by this owner"
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6",
+      "mainEqualsOwnSource": true
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "fb6988b710431fc94283cb346c6d89138f503eb79bf082af5326751e4af2fcd6",
+      "mainEqualsOwnSource": true
+    }
+  ],
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-recovery",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "b4d7d7fd-f215-4882-b7f3-2afc133a0365",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "createdAt": "2026-10-07T21:17:33.560Z",
+    "updatedAt": "2026-10-08T00:33:39.027Z",
+    "observedAt": null
+  },
+  "todo11": "completed",
+  "todo10": "OPEN",
+  "taskFinish": "NOT_COMPLETED",
+  "indexBytesBefore": 2145321,
+  "envelopeBytes": 4194304,
+  "atomicIndexReserveBytes": 2621440,
+  "otherNewObjectsAndDocumentsReserveBytes": 1572864,
+  "actualPeak": "NOT_OBSERVED",
+  "engineeringRuns": 0,
+  "scope": "metadata only; both harnesses STOP and removed from claim"
+}

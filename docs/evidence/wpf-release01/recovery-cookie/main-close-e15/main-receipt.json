@@ -1,0 +1,224 @@
+{
+  "at": "2026-10-08T00:06:02.161Z",
+  "decision": "ACCEPT_APPROVED_FIXED_TUPLE_AND_RESULT",
+  "task": "WPF-RELEASE01 / RELEASE01-11",
+  "integrationBase": "1b9eda58f2ba68e3996c8a0ba2a14ce201367920",
+  "canonicalHead": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+  "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+  "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+  "intake": {
+    "commit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+    "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+    "bytes": 17583,
+    "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+  },
+  "verifiedCanonicalBindings": 32,
+  "references": [
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "fb6988b710431fc94283cb346c6d89138f503eb79bf082af5326751e4af2fcd6"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+      "bytes": 13917,
+      "sha256": "2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/parent/raw-manifest.json",
+      "bytes": 11474,
+      "sha256": "bfcd27ad4d8dc13451c5d21ab0322abe344ea3a680bfe9d8a0f5cc0e1bb799fa"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/outer/return-receipt.json",
+      "bytes": 3421,
+      "sha256": "8eb4ed449b2b0d9bd61cb23aaafeba0e48b4b0a6d2f9cbd8f2ac5e1e201c7c0a"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/report.json",
+      "bytes": 791,
+      "sha256": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698/report.json",
+      "bytes": 791,
+      "sha256": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/read.json",
+      "bytes": 394,
+      "sha256": "99d1bece1fec418cd5ea71dd4a1f50c847e3d44be90baf509bc23406b05fe0fd"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/send.json",
+      "bytes": 384,
+      "sha256": "e2c0cb57d2f8eed5bbd04b66769d54e87ea339374f4c63ff0d824e72e5c8087d"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/recover.json",
+      "bytes": 376,
+      "sha256": "bdf111c35ddfb960fb46b07ff3bae24e75dbfa59b37543edddcfc5159f70e278"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/negotiation.json",
+      "bytes": 410,
+      "sha256": "9c1f528246aed57c4ddab509ec025bd42fb33e1fc25cb135f99f22874dd6d554"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/report.json",
+      "bytes": 791,
+      "sha256": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117/report.json",
+      "bytes": 791,
+      "sha256": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/read.json",
+      "bytes": 394,
+      "sha256": "8eb4608ab36c7a65fa8573f356a134223d143d4f8c8749d7261bc32f0fa2e053"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/send.json",
+      "bytes": 384,
+      "sha256": "c8250410107bc55ef7ed39e6137bf8dc101e0bdfbdc90a2f65d297d499a618ec"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/recover.json",
+      "bytes": 376,
+      "sha256": "f59535cf3cc121e8c039d3dd5ccf3b26300bb29d456541391fe3af27f9a6d43a"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/negotiation.json",
+      "bytes": 410,
+      "sha256": "55476bdc5dfbca64854d94d8b19ccde9f9046d0747f84416f26be111ac0b6d8f"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/report.json",
+      "bytes": 791,
+      "sha256": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1/report.json",
+      "bytes": 791,
+      "sha256": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/read.json",
+      "bytes": 394,
+      "sha256": "8964854e971a86dd689933241322acc5b4be86ca9c62fd43edebabed957dace1"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/send.json",
+      "bytes": 384,
+      "sha256": "8b217e91bb97812e6784eb59b3316fa7cb00a9c01f1e73e007cc8e5a357af50d"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/recover.json",
+      "bytes": 376,
+      "sha256": "28bb57c08117bcdd4c6fcac4d2ad58d511237766816d926e83f0c1e963be16be"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/negotiation.json",
+      "bytes": 410,
+      "sha256": "5257759784c32bcb12d4d8c9164afb1a4e076edfc2b8800ef662f114480b20a6"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/report.json",
+      "bytes": 791,
+      "sha256": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c/report.json",
+      "bytes": 791,
+      "sha256": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/read.json",
+      "bytes": 394,
+      "sha256": "e7f39927f453d42210141ebbd1b87f09d618e97df1de71d23159c989047e3019"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/send.json",
+      "bytes": 384,
+      "sha256": "f1f3fb95342b49f4c844d661ceb42ca5d849af058d4229c06c1b4f573e995034"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/recover.json",
+      "bytes": 376,
+      "sha256": "3d06e58fc8f53cfe044498f0174377ec99020ec3df3c96e3f76b365490995bfb"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/negotiation.json",
+      "bytes": 410,
+      "sha256": "f42781ecbca7049de4da4effeecfcbcc35b0d4ce4a2d0164963f4bf25b2027c6"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/artifact-result-review.json",
+      "bytes": 2334,
+      "sha256": "f705b9bd83357c19500095663df65631747f33f1a09fb05baa05dbbec6fc7c4c"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json",
+      "bytes": 6635,
+      "sha256": "cc65d6498b4d3fd532e58d1504dcff013c2323c26cd43a82a24a763dfc7b47a3"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json",
+      "bytes": 1257,
+      "sha256": "f8626844f3d77871e658c126892044c8050d2f5a8273763a074aaf19c4fb3e70"
+    }
+  ],
+  "product": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "preSha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609",
+      "postSha256": "fb6988b710431fc94283cb346c6d89138f503eb79bf082af5326751e4af2fcd6",
+      "bytes": 41015,
+      "delta": "Only exact approved backend artifact/source/manifest tuple, three lines."
+    }
+  ],
+  "unchanged": [
+    "apps/web/test/web-release-compatibility.browser.ts"
+  ],
+  "originalReview": "APPROVED_SCOPED_ACTUAL_RESULT",
+  "findings": [],
+  "checks": "Reuse original source/native/actual independent reviews; four real Apps and full RETURN. No engineering rerun.",
+  "backend": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "reports": [
+    {
+      "label": "retained-461a",
+      "compatibilityId": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+    },
+    {
+      "label": "retained-caa1",
+      "compatibilityId": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+    },
+    {
+      "label": "retained-d629",
+      "compatibilityId": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+    },
+    {
+      "label": "recovery-779a",
+      "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+    }
+  ],
+  "rawPolicy": "Canonical fixed Git retains full raw; no duplicate archive or snapshot copies.",
+  "boundaries": [
+    "Historical cd27/b692 evidence unchanged.",
+    "This intake changes a fixture tuple; does not start personal services or rerun compatibility.",
+    "Personal779/v4 publication uses separate existing SVC06B receipt.",
+    "RELEASE01-10 stable executor successor remains open."
+  ]
+}

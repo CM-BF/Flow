@@ -1,0 +1,192 @@
+{
+  "at": "2026-10-08T00:34:01.039Z",
+  "errors": [],
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "整体开工UNKNOWN；RELEASE01-11主线接收事件2026-10-08T00:06:02.161Z，本次亲核2026-10-08T00:33:39.115Z；RELEASE01-10仍OPEN，整体完成NOT_COMPLETED，不以提交时间推定"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| RELEASE01-W06 | 2026-10-07T21:24:19.908Z | UNKNOWN | 历史审查与实际准入 | b692候选因默认null resolver被管理停止，未运行；确切关闭时间未知，保留历史 | [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md) |\n| RELEASE01-W07 | 2026-10-07T21:50:39.489Z | 2026-10-07T21:57:36.662Z | 审查与实际准入 | e15产物正式限定审已核齐；候选输入独审通过，经理实际窗口21:57:36.662Z已启动并完成；保历史等待范围 | [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md) |\n| RELEASE01-W08 | 2026-10-07T21:58:51.296Z | 2026-10-07T22:05:50.925Z | 审查 | 本次四App actual独立审已核齐；未占资源holder | [实际审查](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json) |\n| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |\n| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |\n| RELEASE01-W05 | 2026-10-07T16:22:48.759Z | 2026-10-07T18:01:09.576Z | 验证失败 | 本固定pair的c3四App严格断言已通过并确认完整RETURN；历史HPE唯一根因仍UNKNOWN，不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |\n| RELEASE01-W02 | UNKNOWN | 2026-10-07T14:54:01.259Z | 产物供给 | 外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作 | [接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json) |\n| RELEASE01-W03 | UNKNOWN | 2026-10-07T14:47:33.469Z | 后台供给 | 本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知 | [后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md) |",
+    "waitingTable": {
+      "rows": [
+        {
+          "id": "RELEASE01-W06",
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T21:24:19.908Z",
+            "record": "2026-10-07T21:24:19.908Z"
+          },
+          "ended": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "category": "历史审查与实际准入",
+          "reason": "b692候选因默认null resolver被管理停止，未运行；确切关闭时间未知，保留历史",
+          "source": "[新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md)",
+          "issues": [
+            "类别未知"
+          ]
+        },
+        {
+          "id": "RELEASE01-W07",
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T21:50:39.489Z",
+            "record": "2026-10-07T21:50:39.489Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T21:57:36.662Z",
+            "record": "2026-10-07T21:57:36.662Z"
+          },
+          "category": "审查与实际准入",
+          "reason": "e15产物正式限定审已核齐；候选输入独审通过，经理实际窗口21:57:36.662Z已启动并完成；保历史等待范围",
+          "source": "[新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md)",
+          "issues": [
+            "类别未知"
+          ]
+        },
+        {
+          "id": "RELEASE01-W08",
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T21:58:51.296Z",
+            "record": "2026-10-07T21:58:51.296Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T22:05:50.925Z",
+            "record": "2026-10-07T22:05:50.925Z"
+          },
+          "category": "审查",
+          "reason": "本次四App actual独立审已核齐；未占资源holder",
+          "source": "[实际审查](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json)",
+          "issues": []
+        },
+        {
+          "id": "RELEASE01-W01",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T11:15:10.520Z",
+            "record": "2026-10-07T11:15:10.520Z"
+          },
+          "category": "接口",
+          "reason": "原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知",
+          "source": "[后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json)",
+          "issues": []
+        },
+        {
+          "id": "RELEASE01-W04",
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T16:02:58.550Z",
+            "record": "2026-10-07T16:02:58.550Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T16:22:48.759Z",
+            "record": "2026-10-07T16:22:48.759Z"
+          },
+          "category": "验证失败",
+          "reason": "场景缺少Cookie流前置；固定顺序修复与实际验证后解除",
+          "source": "[首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)",
+          "issues": []
+        },
+        {
+          "id": "RELEASE01-W05",
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T16:22:48.759Z",
+            "record": "2026-10-07T16:22:48.759Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T18:01:09.576Z",
+            "record": "2026-10-07T18:01:09.576Z"
+          },
+          "category": "验证失败",
+          "reason": "本固定pair的c3四App严格断言已通过并确认完整RETURN；历史HPE唯一根因仍UNKNOWN，不忽略console断言",
+          "source": "[第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)",
+          "issues": []
+        },
+        {
+          "id": "RELEASE01-W02",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T14:54:01.259Z",
+            "record": "2026-10-07T14:54:01.259Z"
+          },
+          "category": "产物供给",
+          "reason": "外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作",
+          "source": "[接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json)",
+          "issues": [
+            "类别未知"
+          ]
+        },
+        {
+          "id": "RELEASE01-W03",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-07T14:47:33.469Z",
+            "record": "2026-10-07T14:47:33.469Z"
+          },
+          "category": "后台供给",
+          "reason": "本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知",
+          "source": "[后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md)",
+          "issues": [
+            "类别未知"
+          ]
+        }
+      ],
+      "issues": [
+        "RELEASE01-W06：类别未知",
+        "RELEASE01-W07：类别未知",
+        "RELEASE01-W02：类别未知",
+        "RELEASE01-W03：类别未知"
+      ]
+    }
+  },
+  "todos": [
+    {
+      "id": "RELEASE01-11",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定main接收/两源逐字/独立779发布引用](../../docs/evidence/wpf-release01/recovery-cookie/main-close-e15/README.md)；root actual与四报告原件保持，0重跑"
+    },
+    {
+      "id": "RELEASE01-10",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "本组合收口后的稳定executor/可信输入分责后继，尚未实施；见[plan.md](plan.md)"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 **当前状态：APPROVED，固定e15四App源码/native准备与本次实际/完整RETURN均已独审通过，0blocking。**
 
+[e15主线接收](../../docs/evidence/wpf-release01/recovery-cookie/main-close-e15/README.md)已完成：main 2dbc5052c6936a94a995729d906a1c0f2fc52b78 两harness逐字固定cb3；原actual审查target与四报告不追随metadata变化。Original的779/v4发布独立收据同页引用，不扩大为真实新聊天或全平台通过。RELEASE01-10仍OPEN。
+
 Review target commit：cb3ca8ec7ed4611097a3ab7414f9591526ccd896。原两harness范围，fixture仅三个可信backend身份值，browser原字节。
 
 [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md)：复用四App/native生命周期，R2产物限定独审00dcd1/f705已固定并核齐；不推运行许可。b692已因后台默认null resolver被阻塞，未运行；旧cd27四App通过仍保历史限定。
