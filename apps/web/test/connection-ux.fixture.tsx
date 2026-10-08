@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Connection } from "../src/connection/Connection";
 import { applyTheme } from "../src/themes";
@@ -10,6 +10,8 @@ function Fixture() {
   const [phase, setPhase] = useState<string | undefined>("idle");
   const [optional, setOptional] = useState(true);
   const [pending, setPending] = useState(false);
+  const release = useRef<(() => void) | null>(null);
+  useEffect(() => () => { release.current?.(); }, []);
   const [counts, setCounts] = useState({ read: 0, connect: 0, logout: 0, discard: 0, argumentsMatched: false });
   const increment = (key: "read" | "logout" | "discard") => setCounts(previous => ({ ...previous, [key]: previous[key] + 1 }));
   return <>
@@ -20,6 +22,7 @@ function Fixture() {
         setCounts(previous => ({ ...previous, connect: previous.connect + 1,
           argumentsMatched: address === "https://fixture.invalid" && token === "synthetic-A" }));
         setPending(true); setPhase("checking");
+        return new Promise<void>(resolve => { release.current = resolve; });
       }} />
     <aside aria-label="Synthetic fixture controls" style={{ padding: 16 }}>
       <p>Production Connection with synthetic props and callbacks. No authentication request is made.</p>
@@ -27,7 +30,7 @@ function Fixture() {
         {["idle", "unauthenticated", "offline", "forbidden", "unsupported", "error", "ready", "checking", "undefined"].map(value => <option key={value}>{value}</option>)}
       </select></label>
       <label><input type="checkbox" checked={optional} onChange={event => setOptional(event.target.checked)} />Optional actions</label>
-      <button type="button" onClick={() => { setPending(false); setPhase("unauthenticated"); }}>Settle synthetic connection</button>
+      <button type="button" onClick={() => { release.current?.(); release.current = null; setPending(false); setPhase("unauthenticated"); }}>Settle synthetic connection</button>
       <button type="button" onClick={() => applyTheme("light")}>Fixture light theme</button>
       <button type="button" onClick={() => applyTheme("dark")}>Fixture dark theme</button>
       <output data-testid="fixture-observation">{JSON.stringify({ ...counts, pending })}</output>
