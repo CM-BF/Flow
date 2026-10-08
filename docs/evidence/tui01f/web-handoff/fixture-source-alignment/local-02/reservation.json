@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-08T01:43:43.976Z",
+  "source": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "claimId": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+  "claimVersion": 7,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/typescript/bin/tsc",
+    "--project",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "env": {
+    "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TMPDIR": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-source-nwi45v2x",
+    "TMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-source-nwi45v2x",
+    "TEMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-source-nwi45v2x",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27917,
+      "sha256": "8c9847a48e90620ecdeea137b1323b7e0f21038e2e8859a607e51bd4b777196c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-source.test.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-source.test.ts",
+      "bytes": 6511,
+      "sha256": "c466fcf156548f1db2541609b2055e3220ccd959a59dc8fb65bb87a65d0444e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 29129,
+      "sha256": "d6b6994fd8c2ccb6fffbbcc9e34704dcdace54cb9ecf189b4a59b78fb12cc237"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json",
+      "bytes": 351,
+      "sha256": "b388bc9aee965cbc09d58a069f440b34baffa75b38c2c1efe706f6b747432638"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/tsconfig.json",
+      "bytes": 427,
+      "sha256": "d9385a7f163fc68e60a340fc72bd3f0e3de38bd1231bb116b669336ba0f1c47c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/journey-focused-tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/journey-focused-tsconfig.json",
+      "bytes": 1879,
+      "sha256": "e78021825330cc6d6a84885cd91725acabadd1ada6881fd0f1536c7f0cc5d562"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/typescript/bin/tsc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+      "bytes": 45,
+      "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-harness-policy.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-harness-policy.ts",
+      "bytes": 2103,
+      "sha256": "b05a8eaee51ae8c0fba0dbe2183cec0289c0a3393c26dfc0576e54fa10b66cb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/store.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/store.ts",
+      "bytes": 11116,
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa"
+    }
+  ],
+  "ledgerAt": "2026-10-08T01:43:19.616Z",
+  "baseFloor": 13847232512,
+  "unlistedSegmentIncrement": 8388608,
+  "floor": 13855621120,
+  "free": 14510886912,
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-source-nwi45v2x",
+    "dev": 16777234,
+    "ino": 124722655
+  },
+  "policy": {
+    "work_seconds": 27.5,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 131072
+  }
+}

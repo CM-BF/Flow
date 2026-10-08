@@ -1,0 +1,90 @@
+{
+  "recordedAt": "2026-10-08T01:45:00.844Z",
+  "source": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "base": "a2eae76f32f97ebfcef5ff80d8b810f4eab63213",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "acceptedAt": "2026-10-08T01:38:12.746Z",
+    "actor": {
+      "lead": "astra_ultra_execution_lead",
+      "worker": "assignment_review"
+    }
+  },
+  "segmentStartedAt": "2026-10-08T01:38:43Z",
+  "runtimeStartedAt": "2026-10-08T01:43:43.421Z",
+  "runtimeReturnedAt": "2026-10-08T01:43:46.230Z",
+  "tests": {
+    "selected": 4,
+    "distinct": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "prior12Rerun": false
+  },
+  "types": {
+    "exitCode": 0,
+    "noEmit": true,
+    "config": "tsconfig.json"
+  },
+  "execution": {
+    "supervisedChildren": 2,
+    "maxConcurrentSupervisedChildren": 1,
+    "totalElapsedMs": 2801,
+    "totalRawBytes": 1124,
+    "allOwnedGroupsAbsent": true,
+    "allDualEOF": true,
+    "signals": [],
+    "scratch": [
+      {
+        "sameIdentity": true,
+        "entries": 0,
+        "removed": true,
+        "retainedBytes": 0
+      },
+      {
+        "sameIdentity": true,
+        "entries": 1,
+        "removed": false,
+        "retainedBytes": 1357780
+      }
+    ]
+  },
+  "bounds": {
+    "cumulativeCheckSeconds": 120,
+    "maximumChildren": 4,
+    "eachChildIncludingCleanupSeconds": 30,
+    "ownTotalBytes": 8388608,
+    "eachCaptureBytes": 131072
+  },
+  "scope": {
+    "PG": 0,
+    "HTTP": 0,
+    "browser": 0,
+    "native": 0,
+    "auth": 0,
+    "provider": 0,
+    "personal": 0,
+    "oldKeepReads": 0,
+    "actualJourney": 0
+  },
+  "preserved": {
+    "originalR2": "1 selected / 0 passed; root cause UNKNOWN",
+    "runtimeFinalization": "NOT_OBSERVED",
+    "noRetry": true,
+    "oldImmutableRecords": "unchanged"
+  },
+  "cleanCode": {
+    "at": "2026-10-08T01:45:00.844Z",
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md"
+    ],
+    "method": "Reuse existing fixed center policy and recipe; actual producer/consumer with injected SQL rows, no duplicate validator; retain original default and lifecycle.",
+    "unresolved": "Full handoff remains unverified; independent review and new actual inputs/window required."
+  },
+  "independentReview": "PENDING",
+  "mainIntake": "NOT_INTEGRATED"
+}

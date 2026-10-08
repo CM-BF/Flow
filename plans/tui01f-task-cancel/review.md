@@ -1,3 +1,13 @@
+# 当前 TUI01F 固定中心版本对齐修复
+
+状态：NOT_STARTED（独立审查待安排）。
+
+Review target commit: 8379a051acb39898112609745ee14d8bcfe2c74d
+
+仅 fixture recipe 与真实 handoff caller 版本单一来源、四个真实固定中心消费者检查及 focused types。见[Interface](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/interface.md)、[唯一manifest](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/manifest.json)。作者4/4和types0不替代独立审查；原R2仍失败且原因UNKNOWN，不继承为新实际旅程许可。生产规则和旧原件未改，源码停写。
+
+以下历史批准按各自固定范围保留。
+
 # 当前 R2 薄启动准备：限定批准
 
 Review target commit: 8cc10177f2dfa03f89d598260f742a5befd14d29

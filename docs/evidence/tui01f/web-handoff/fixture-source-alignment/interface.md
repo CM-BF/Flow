@@ -1,0 +1,13 @@
+# TUI01F handoff fixture source alignment
+
+Scope: source `8379a051acb39898112609745ee14d8bcfe2c74d`; unchanged fixed center `af51c621696230fbced12227670f014ca73bd8a1`. This is an experiment assembly repair, not a center rule change or a new actual journey.
+
+The existing `HandoffRecipe` now requires `adapterVersion`. The actual handoff caller obtains it from the already source-bound backend `assistantSourcePolicy('claude', 'claude.sdk.result')`, then passes the value to the real fixture. Adapter metadata and emitted session use that same value. A handoff recipe without a nonempty version fails before startup. The no-recipe fixture preserves v1 and does not emit the handoff-only assistant final.
+
+The direct checks run the real fixture adapter and its real release barrier. They pass the resulting session and final to the fixed center's `saveAssistantFinal`; only SQL result rows are injected. The old v1 event is rejected with `assistant_source_mismatch` before writes; the policy-selected version is accepted and makes the original two inserts. Production session recognition, message identity, task ownership and acceptance rules are not replaced by a test validator. No database, server, runner, browser, native process or model is started. Runtime completion remains outside this direct evidence.
+
+Lifecycle, resource sampling, 8-second succeeded assertion, ownership, cancellation, cleanup, source identity and one-shot permits in the actual journey remain unchanged. The previous R2 remains 1 selected / 0 passed, and its earliest failure has no observed error code; this deterministic contract mismatch must not be substituted for its unknown root cause. A future actual run needs updated fixed source inputs, independent approval and a fresh window; none is granted by this packet.
+
+The single responsibility is supplying the already recognized synthetic source version across the fixture boundary. No second policy, runtime state machine or supervisor was introduced. Clean-code review checked naming, single-source version selection, nonempty recipe guard, unchanged default, exact consumer behavior and resource ownership. No product architecture baseline changes are required; this adds an experiment-to-existing-policy dependency only.
+
+Local evidence: 4 different direct checks passed once; focused noEmit exit 0. OPS14 supervised two sequential children, 2,801 ms / 1,124 raw bytes, both groups absent with dual EOF and no signals. One exact empty scratch was removed; the type-check scratch is KEEP with 1,357,780 bytes of generated cache. Runtime RETURN does not claim complete filesystem cleanup. Prior 12 observer checks were not rerun.

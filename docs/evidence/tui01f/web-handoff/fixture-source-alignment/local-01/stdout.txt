@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: [fixture source] original v1 session is rejected by the fixed center before any final write
+ok 1 - [fixture source] original v1 session is rejected by the fixed center before any final write
+  ---
+  duration_ms: 4.943833
+  type: 'test'
+  ...
+# Subtest: [fixture source] center-selected version lets actual fixture final pass the unchanged fixed consumer
+ok 2 - [fixture source] center-selected version lets actual fixture final pass the unchanged fixed consumer
+  ---
+  duration_ms: 0.776625
+  type: 'test'
+  ...
+# Subtest: [fixture source] legacy default keeps its original version and omits the handoff-only final
+ok 3 - [fixture source] legacy default keeps its original version and omits the handoff-only final
+  ---
+  duration_ms: 0.36975
+  type: 'test'
+  ...
+# Subtest: [fixture source] missing handoff version fails before adapter or center startup
+ok 4 - [fixture source] missing handoff version fails before adapter or center startup
+  ---
+  duration_ms: 0.114542
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 501.555541
