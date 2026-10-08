@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:16:56.691798+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:18:39.799285+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / fixed source f6c17be503ab68262a789c96429a7cc44975c8bb；本段执行055b1643d25cdfb62dd5dd8376971c110321e757；最终metadata待seal |
+| 工作基线 / HEAD | base331d3fdb390b0b403317da8d8cdf0028eae27c19 / fixedsource5c6d4230c035e885666dd1fa516b6252559f289b；新窄tab视觉actual待run |
 | 工作树dirty状态 | 新窄tab视觉连续段实施中；仅原layout.css/必要browser/ownrecords；0runtime |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED f6c17be503ab68262a789c96429a7cc44975c8bb；受控App四组同轮4/4+最终双主题390PNG/早桌面1，affected noEmit0；首轮3/4FAIL与全部旧红保留 |
+| 检查状态 | NOT_RUN 5c6d4230c035e885666dd1fa516b6252559f289b browser；必要affectednoEmit0/3573通过，旧四组fixturePASS只属f6历史 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | f6c17be503ab68262a789c96429a7cc44975c8bb |
+| 实现目标 | 5c6d4230c035e885666dd1fa516b6252559f289b |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 修复实际390标签标题过缩与More actions换行裁切；保插件动作/关闭与横向键盘可达，原功能4/4保历史 |
+| 当前产出 | Arc标签保可读宽度/动作单行、横向keyboard可达；新正常与长标题/原四组实际候选已固定，0runtime |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01修复中；新段截止01:40:03.453，最多2次browser；main/Context未集成 |
 | 需用户决定 | NONE |
-| Review | APPROVED f6c17be503ab68262a789c96429a7cc44975c8bb；[root b514](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/root-final-review.json)限定受控功能fixture，ARC-VISUAL-NARROW-TAB-01 P2仍OPEN |
+| Review | PENDING 5c6d4230c035e885666dd1fa516b6252559f289b；本新段最终一次source/result/visual审，旧b514视觉P2未实际复验关闭 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

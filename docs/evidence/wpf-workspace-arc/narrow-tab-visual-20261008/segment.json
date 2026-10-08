@@ -24,11 +24,16 @@
       "maxChildren": 2,
       "perChildMs": 15000,
       "totalMs": 30000,
-      "spentMs": 0
+      "spentMs": 3573,
+      "children": 1,
+      "state": "PASS_AFFECTED_TYPES"
     }
   },
   "cause": "Arc tab shared base flex 0 1 auto/min85/max230 plus actions compresses title; More actions wraps inside29px tab/fixed36px strip. Actual390rootb514 P2.",
   "design": "Scoped Arc tabs keep nonshrinking readable minwidth, singleline actions/close, horizontaloverflow with automatic keyboardfocus visibility; no hiddenbutton or sharedApp/plugin mutation.",
   "skills": "Reuse find-skills/brainstorming/assistant-ui/clean-code/codebase-design alreadyread; no install.",
-  "checks": "Only necessary browser assertion affectedtypes ifneeded; CSS doesnottriggergreenrerun."
+  "checks": "Only necessary browser assertion affectedtypes ifneeded; CSS doesnottriggergreenrerun.",
+  "source": "5c6d4230c035e885666dd1fa516b6252559f289b",
+  "local": "One necessarybrowser typed geometry/DOMassertion noEmit0/3573; notCSS-onlygreen rerun",
+  "cleanCode": "Same scopedCSS owns layout and never hides controls; test uses existing publictab roles plus realHome/End/Tab andactualfixturetitle. No arbitrary first/nth/force orproduct hooks."
 }

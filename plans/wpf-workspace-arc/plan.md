@@ -69,3 +69,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 最终图审补充：TODO05仍OPEN，390实际chat tab标题难辨且action换行裁切，属于真实视觉P2；原四组功能PASS不改。后继需原layout.css窄修并实际可达性复验，当前段STOP，不扩sharedplugin/App写权。
 
 最终独审[root b514](../../docs/evidence/wpf-workspace-arc/material-tooltip-continuation-20261008/root-final-review.json)限定接受功能fixture，ARC-VISUAL-NARROW-TAB-01真实视觉P2保持TODO05开放；当前无新runtime，main/Context组合及导航extension-slot另保持明确后继。
+
+2026-10-08T01:18:39.799285+00:00：TODO05原视觉P2新独立段，仅Arc layout.css及原browser组补正常/长标题可辨、More actions单行、Home/End手动焦点及横向可达，不隐去plugin/close。原功能4/4保历史，新sourceactual待条件lease；不改App/host/sharedattachment。
