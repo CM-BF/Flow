@@ -1,0 +1,58 @@
+{
+  "kind": "O16_NORMAL_HOME_PLANNER_AUTHORIZATION_PREPARATION",
+  "at": "2026-10-08T01:36:06.000Z",
+  "timeMeaning": "Owner receipt/permit issuance; not a reconstructed Goal Owner decision timestamp.",
+  "approvalId": "O16-GO-PLANNER-NORMAL-HOME-20261008",
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "candidateCommit": "2c121937c46d840ab100fc5b6feb7ac4e70c8d2c",
+  "candidatePath": "docs/evidence/o16/native-normal-home-candidate/candidate.json",
+  "candidateHistoricalAuthorizationState": "NOT_GRANTED remains unmodified",
+  "mainReceipt": "2b52b2355:docs/evidence/i02/o16-normal-home-policy-intake.json",
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "preparationClaimObservedAt": "2026-10-08T01:34:52.642Z",
+  "scope": [
+    "docs/evidence/o16",
+    "experiments/continuous-goal-acceptance",
+    "plans/o16-continuous-goal-acceptance"
+  ],
+  "permit": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/permit.json",
+    "bytes": 912,
+    "sha256": "3866d12ad2e654463fbebb292737e05aa130f789cfd83b46d66edfb89f35857c"
+  },
+  "SDKQueriesBeforeStart": 3,
+  "newQueriesAuthorized": 1,
+  "maximumCumulativeAfterEntry": 4,
+  "actualWindow": "NOT_SELECTED",
+  "reservationCreated": false,
+  "operatorStarted": false,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-normal-home-20261008-once",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/permit.json"
+  ],
+  "requiredEnvironment": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot"
+  },
+  "limits": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "pauseMs": 900000,
+    "queries": 1,
+    "maxTurns": 4,
+    "SDKBudgetUsd": 0.2,
+    "queryTimeoutMs": 90000,
+    "proposals": 1,
+    "applications": 0,
+    "childQueries": 0,
+    "newNodes": 2,
+    "newEdges": 1
+  },
+  "boundary": "SDK estimate is not an account billing guarantee; unknown actual charges stay unknown. Same-account normal initialization/refresh allowed, private config/material/tool/session boundaries unchanged. No old FAIL/KEEP contact, retry, fallback, account change or engineering write authorization. Actual execution requires same-call fresh source/runtime/claim/namespace/PG/current full resource window."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:30:57.830Z |
+| 最近更新 | 2026-10-08T01:36:06.000Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,19 +15,19 @@
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新环境6不同/6通过、815ms/1924B、1组absent/dualEOF/空scratch同身份removed；真实adapter/decorator仅注入1失败，0真实SDK/native/auth/PG/个人。旧13/8未重跑。 |
-| Review | A/B结果23a已获 APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY并main214319132；当前e5c7环境source/6直接例待独审。 |
+| Review | A/B结果23a已限定批准并main214319132；e5c7环境source/6直接例获assignment_review的APPROVED_LIMITED_NORMAL_HOME_POLICY_AND_DIRECT_RESULTS，0P1/P2，已main2b52b2355。 |
 | 实现目标 | e5c7fd9d664de11ab853c55e0a01577c12530555 |
-| 实现范围 | experiments/continuous-goal-acceptance/native-environment.mjs、native-environment-fixture.mjs、native-normal-home.test.mjs；仅原O16实验环境 |
-| 已集成main状态 | 诊断49d main fb647700；R3失败main f68dbb71；auth f85a main62e9a839；调用链340025四文档已main064eb27fb473f7c6c8995510c8828d922fb35ab9，当前只核回执无重测。 |
+| 实现范围 | experiments/continuous-goal-acceptance/native-environment.mjs, experiments/continuous-goal-acceptance/native-environment-fixture.mjs, experiments/continuous-goal-acceptance/native-normal-home.test.mjs |
+| 已集成main状态 | main2b52b2355精确接收正常HOME实验3源与Interface/candidate；唯一回执docs/evidence/i02/o16-normal-home-policy-intake.json时间2026-10-08T01:32:11.573Z。owner于01:34:40Z收录，0重测；历史失败/认证源码限定接收保持。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 规划器已具备正常账户 HOME 的最小环境准备，私有目录、权限和旧许可拒绝检查均保留。 |
-| 下一可用交付 | 审查这一环境变更及具体一次规划验证候选，再由预算决定是否进入真实模型验证。 |
-| 当前阻塞 | ACTIVE: 环境准备待独审；当前累计三次模型调用已封存，新真实规划预算未授予，不能启动候选。 |
+| 当前产出 | 规划器的正常账户 HOME 环境修正已通过独立审查并合入主线，私有目录、权限和旧许可拒绝检查保留。 |
+| 下一可用交付 | 环境修正片段已交付；一次新规划预算已获批准，待实际资源窗口与紧前核验后运行。 |
+| 当前阻塞 | ACTIVE: 等待本次规划的实际资源窗口；新单次预算已获批准，尚未创建运行reservation或启动调用。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN/无第4次；R3结构authentication_failed。后续一次同runtime auth公开false/none，0query；限定独审/main62e9仍保留[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)，旧FAIL/KEEP和children未授权不变 |
+| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN；新1次预算已授权未消费，实际窗口待选。同2.1.290 HOME A/B结果限定独审/main214319132，正常HOME实验策略及6直接例限定独审/main2b52b2355；均不证明真实规划成功或R3根因。原[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)、FAIL/KEEP和children未授权不变 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -71,9 +71,11 @@
 
 | O16-W17 | 2026-10-08T01:19:13.099Z | 2026-10-08T01:22:53.287091Z | 资源 | 薄入口已审；等待匹配O16HomeFactorGrant与同次fresh身份，尚无actual holder | Lead限定独审与execution-manifest.json |
 
-| O16-W18 | 2026-10-08T01:24:18.731782+00:00 | 2026-10-08T01:30:57.830Z | 审查 | 已完成两次公开状态观察并归还；等待限定结果独审，不持auth或工程进程 | auth-home-factor-once/result-manifest.json |
+| O16-W18 | 2026-10-08T01:24:18.731Z | 2026-10-08T01:30:57.830Z | 审查 | 已完成两次公开状态观察并归还；等待限定结果独审，不持auth或工程进程 | auth-home-factor-once/result-manifest.json |
 
-| O16-W19 | 2026-10-08T01:30:57.830Z | OPEN | 审查 | 最小环境与直接消费者已固定，等待独立审查；真实模型另需新预算 | native-normal-home-candidate/manifest.json |
+| O16-W19 | 2026-10-08T01:30:57.830Z | 2026-10-08T01:34:40.000Z | 审查 | 最小环境与直接消费者已独审/main；结束为owner收录回执时刻，不冒review发生时间 | native-normal-home-candidate/manifest.json、main2b52b2355的I02接收回执 |
+| O16-W20 | 2026-10-08T01:34:40.000Z | 2026-10-08T01:36:06.000Z | 用户 | 新一次planner预算由Lead转达；结束为owner收录时刻，不冒GO决定时间，旧三次不复用 | 本次授权准备记录 |
+| O16-W21 | 2026-10-08T01:36:06.000Z | OPEN | 资源 | 新单次permit已按固定source/env签发；等待D01实际窗口及同次fresh输入/资源，0pending launch | native-plan-normal-home-20261008-once/authorization-preparation.json |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -158,3 +160,5 @@
 2026-10-08T01:26:52.919Z：A/B source23a实际结果已由assignment独审 APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY、0 P1/P2；16+2绑定相符，只批准可见状态与RETURN，不归因或授权query。现原claim fresh active、clean23a开始最小planner HOME接缝实现：默认private工厂保持，原planner显式normal-account、新recipeDigest拒旧permit，其余私有目录/会话/工具/预算不变。新普通段按Lead≤120s/tmp8MiB/最多4child且单child30s含清理，0native/PG/auth/provider/个人I/O；实际checks另记。当前没有第4query授权/permit。W15–W17仅按同真实时点转ISO毫秒Z/模板类别，原raw未改。
 
 2026-10-08T01:30:57.830Z：source e5c7fd9d664de11ab853c55e0a01577c12530555已停止写入，[最小候选](../../docs/evidence/o16/native-normal-home-candidate/candidate.json)绑定source5efa/envfc5e、325源/39aliases及原SDK三文件。实际局部2026-10-08T01:29:27.769Z→2026-10-08T01:29:28.608Z：6/6、815ms/1924B、1组收束/exact空scratchremoved，原errno1观察保留；0native/auth/真实SDKquery/PG/个人，未重复历史检查。实际planner仅HOME选择变更，private工厂原411兼容，原5直接层继续同export无散改；新recipe拒旧permit。requested1query/4turn/SDK$.20/90s及原1proposal0apply0child写明，公开Pro不冒账单/模型资格，第四query仍NOT_GRANTED。实验环境Interface共享写边界改变，已在本Interface记录；生产架构/个人服务未变，D05无需将本实验当产品部署。A/B唯一结果独审main214319132同次收录，历史recordloss/FAIL/KEEP不改。
+
+2026-10-08T01:36:06.000Z：正常HOME最小环境片已独审/main2b52b2355，原入口只读核对完成，未新增wrapper或改目标/profile/tool合同。Lead转达GO新授权O16-GO-PLANNER-NORMAL-HOME-20261008，仅1planner/4turn/SDK$.20/90s、1proposal/0apply/0child；[新授权与permit绑定](../../docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)保留旧candidate NOT_GRANTED历史。当前累计SDK3不变，无reservation、PG分配或实际启动，等待D01资源窗口。此前只读审查结束与当前等待分开，历史任务首次start UNKNOWN不改。

@@ -103,3 +103,13 @@ assignment_review经Lead确认 c5fc960fc/b9b7f9ef8 APPROVED_LIMITED_HOME_FACTOR_
 source `e5c7fd9d664de11ab853c55e0a01577c12530555`；[9绑定manifest](../../docs/evidence/o16/native-normal-home-candidate/manifest.json)为本次唯一源码/6直接例/候选来源。默认private保旧411，实际planner显式normal-account新envfc5e，不改原五层消费者/生产认证；真实adapter/decorator为注入callback，报告中的nativeQueryCalls=1仅合成计数，实际SDK/native/auth/PG为0。1child815ms1924B/最终absent双EOF/empty scratch removed，原errno1保留。请核HOME唯一差量、授权/恢复/工具/预算不放宽、新permit拒旧及明确NOT_GRANTED。
 
 前一A/B实际23a由assignment独审APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY、0P1/P2；唯一main `214319132` 的 `docs/evidence/i02/o16-home-factor-result-intake.json` 已接收来源，原始safe记录仍单份在本树。不扩为R3根因或模型资格。
+
+## 2026-10-08T01:34:40.000Z 正常HOME片已审/main与下一入口静态核对
+
+assignment_review对固定source `e5c7fd9d664de11ab853c55e0a01577c12530555` / delivery `2c121937c46d840ab100fc5b6feb7ac4e70c8d2c` 给出 APPROVED_LIMITED_NORMAL_HOME_POLICY_AND_DIRECT_RESULTS，0P1/P2。main `2b52b2355` 的[唯一接收回执](../../../m2-integration/docs/evidence/i02/o16-normal-home-policy-intake.json)在2026-10-08T01:32:11.573Z记录精确3实验源与Interface/candidate接收；9绑定42599B和原6/6、815ms、0真实SDK证据限定继承，不重跑、不复制报告。源码冻结，第四query NOT_GRANTED。
+
+只读核对原operator→driver→phase-host→worker→query装饰器：入口必须为固定Node24 `--import tsx experiments/continuous-goal-acceptance/operator.mjs --plan native-plan-normal-home-20261008-once <新绝对permit路径>`，且 `FLOW_O16_PG_WINDOW=approved-one-shot`；v2 permit须绑定本候选sourceDigest/envDigest、model/limits/approval与有效时间，新reservation及run目录须未消费。原候选中的占位permit不是执行材料。原始纸鸢目标/固定材料、planner profile、两项flow-graph工具、1proposal/0apply/0child、无持久session与声明检查保持；公开登录状态不替代这些检查。
+
+plan入口使用全新标记DB、动态中心端口和自有runtime，resume=false；不读取或接续旧FAIL/KEEP。既有120s工作/30s清理/150s独立监督及15min暂停合同不变，固定最小磁盘guard不替代将来当前完整资源floor与连接准入。静态未发现需新增wrapper或必选参数的缺口；剩余为新预算、permit和当次fresh运行窗口。此次0工程child、0auth/query/PG/个人I/O，无新执行封包或资源探针。
+
+2026-10-08T01:36:06.000Z：上述静态核对后收到Lead转达的GO新1次planner预算，已仅准备新source/env绑定permit；旧candidate及审核结论不改。实际窗口未选、reservation未建，无新query；见同一[授权引用](../../docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)。
