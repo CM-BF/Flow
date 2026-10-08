@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-08T00:26:13.965Z",
+  "task": {
+    "id": "X01-VERIFIER-CENTER-WIRING01",
+    "title": "插件验证中心装配",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring",
+    "branch": "codex/plugin-verifier-center-wiring",
+    "planDir": "plans/x01-verifier-center-wiring",
+    "evidenceDir": "docs/evidence/x01-verifier-center-wiring"
+  },
+  "candidateCount": 213,
+  "canonical": {
+    "errors": [],
+    "missing": [],
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-07T22:04:21.000Z",
+        "record": "2026-10-07T22:04:21.000Z"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "实际clock开段与原子claim receipt，未发生事件不填造"
+      },
+      "issues": [],
+      "waiting": "",
+      "waitingTable": {
+        "rows": [],
+        "issues": []
+      }
+    }
+  },
+  "own": {
+    "errors": [],
+    "missing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ]
+  },
+  "runtime": "NOT_RELOADED",
+  "tests": 0,
+  "tokenRead": false
+}
