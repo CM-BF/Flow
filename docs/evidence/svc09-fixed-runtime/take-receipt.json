@@ -1,0 +1,29 @@
+{
+  "requestId": "4113966d-f7f2-4fdd-8d67-df48d136f12d",
+  "action": "take",
+  "committedAt": "2026-10-08T04:03:00.495Z",
+  "claim": {
+    "claimId": "09f2ce36-0cec-45b9-95b5-837fe6d9ecb5",
+    "version": 1,
+    "taskId": "SVC09B",
+    "lead": "astra_ultra_execution_lead",
+    "worker": "assignment_review",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source",
+    "branch": "codex/backend-settings-activation-source",
+    "scope": [
+      "apps/runner/src/runtime-terminal-admission.test.ts",
+      "apps/runner/src/runtime.ts",
+      "docs/evidence/svc09-fixed-runtime",
+      "plans/svc09-fixed-runtime",
+      "tools/personal-preview/environment.mjs",
+      "tools/personal-preview/environment.test.mjs"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-08T04:03:00.495Z",
+    "createdAt": "2026-10-08T04:03:00.495Z"
+  }
+}

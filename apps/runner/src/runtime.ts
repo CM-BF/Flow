@@ -62,8 +62,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   }
   function start(assignment: ClaimedTask, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies)
-      .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }))
+      .then(completed => { if (!completed) recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
     active.set(attemptId, completion);
@@ -188,7 +188,7 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   return client;
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean): Promise<boolean> {
+async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, completeAdmission: () => Promise<void>): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -198,6 +198,8 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
       const signal = requestSignal(options);
       await bodies.beforeReport(batch, assignment.attempt.runnerId, signal);
       await reportBatch(client, batch, signal);
+      // Match recovery: validated completion ACK -> durable admission clear -> outbox unlink.
+      if (batch.events.some(event => event.type === 'completed')) await completeAdmission();
     }
     catch (error) { control.interrupt('lost'); throw error; }
   });

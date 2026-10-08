@@ -9,7 +9,10 @@ const providerKeys = ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'CLAUDE_CODE_
 export function baseServiceEnvironment(role, inherited = process.env) {
   if (!['center', 'runner', 'web'].includes(role)) throw new Error('Unknown preview service.');
   const keys = role === 'runner' ? [...systemKeys, ...providerKeys] : systemKeys;
-  return Object.fromEntries(keys.filter(key => inherited[key] !== undefined).map(key => [key, inherited[key]]));
+  const env = Object.fromEntries(keys.filter(key => inherited[key] !== undefined).map(key => [key, inherited[key]]));
+  // Exact trusted host opt-in only; this grants no service, model or application authority.
+  if (role === 'center' && inherited.FLOW_STARTUP_DIAGNOSTICS === 'v1') env.FLOW_STARTUP_DIAGNOSTICS = 'v1';
+  return env;
 }
 export function serviceEnvironment(role, config, inherited = process.env, browserSession = null, backendHead = null, runnerSlot = null) {
   const env = baseServiceEnvironment(role, inherited);

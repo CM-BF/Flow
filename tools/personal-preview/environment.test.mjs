@@ -50,3 +50,14 @@ test('SVC09 browser settings require the explicit host port and never leak throu
   assert.equal(serviceEnvironment('runner', config, inherited, settings).FLOW_BROWSER_SESSION_JSON, undefined);
   assert.throws(() => serviceEnvironment('web', config, inherited, settings), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
 });
+
+test('SVC09B diagnostics: exact center opt-in crosses the real service environment', () => {
+  const config = { databaseUrl: 'synthetic', ownerToken: 'synthetic', centerPort: 1, webPort: 2 };
+  assert.equal(serviceEnvironment('center', config, { FLOW_STARTUP_DIAGNOSTICS: 'v1' }).FLOW_STARTUP_DIAGNOSTICS, 'v1');
+  for (const value of ['v2', 'true', '', 'V1']) assert.equal(serviceEnvironment('center', config, { FLOW_STARTUP_DIAGNOSTICS: value }).FLOW_STARTUP_DIAGNOSTICS, undefined);
+});
+
+test('SVC09B diagnostics: runner and web never inherit the center opt-in', () => {
+  const config = { directory: '/synthetic', runner: { token: 'synthetic' }, centerPort: 1, webPort: 2 };
+  for (const role of ['runner', 'web']) assert.equal(serviceEnvironment(role, config, { FLOW_STARTUP_DIAGNOSTICS: 'v1' }).FLOW_STARTUP_DIAGNOSTICS, undefined);
+});
