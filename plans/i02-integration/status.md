@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:40:41.160Z / mainc414c0d0d；5719实际发布结果限定独审通过：779/v4及旧d629各一版本资源HTTP核同；个人e15/currentinit/accepting24、3roles保留，实际用户任务领取NOT_OBSERVED。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:04:43.883Z / main107d61927；AV/GDEP已接收，D05实际212来源；TUI01F新入口独审通过，实际双端旅程待独立窗口。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main71288a457；本次仅接收事件与资源分类记录，不改固定个人恢复输入或产物 |
+| 工作基线 / HEAD | main107d61927320fb10a8f50d45450da3ffedf7afc8；本段为既有接收记录和TUI固定入口独审，个人发布版本不随main变动 |
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | R2六阶段exit0、原窗口176427ms，13临时身份absent；三个人持久服务运行，实际用户任务领取未观察，独审不扩大结论。 |
-| 已集成main状态 / HEAD | mainc414c0d0d已接收锁修复独审；个人现场e15/880060、current initialization/accepting24，Web779/v4于23:36:06确认。5719结果独审通过，源码接收与部署分列，不冒完整聊天通过。 |
+| 检查状态 | AV/GDEP原独审与直接消费者证据复用；TUI新入口5不同pure/8选择及受限真实导入已审，0新增重测。实际PTY/Web接续尚未运行。 |
+| 已集成main状态 / HEAD | 107d61927已含AV center/client、GDEP和D05实际212源；个人e15/current初始化/accepting24、Web779/v4实际发布独审已接收，不冒完整新聊天。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
-| 下一可用交付 | 接收已审的共享验证接口，继续真实聊天与双端接续验收。 |
-| 当前阻塞 | ACTIVE: 个人恢复和网页发布已完成；真实用户任务领取、完整双端接续与工程模型资格仍各按原验收开放。 |
+| 当前产出 | 个人服务与新版网页已恢复可访问；已审的验证接口和依赖读取成果已进入主线，新的双端接续入口已审。 |
+| 下一可用交付 | 完成真实终端与网页交替操作同一会话的验收，并及时接收已审结果。 |
+| 当前阻塞 | ACTIVE: 双端接续等待独立数据库与浏览器窗口；实际用户任务领取及工程模型资格仍按原边界开放。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -552,3 +552,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T23:47:33.071Z：GDEP01已审四产品叶及必要PG fixture按固定前像精确接收，见[唯一接收](../../docs/evidence/i02/gdep01-approved-intake.json)。16pure/8真实PG与独审原件复用，0工程重测。原commands调用/权限/事务不改；不把局部SQL证据称完整目标端到端或加速。个人版本不随main前进。
 
 2026-10-07T23:53:51.946Z：D05限定登记已实际换载，212来源/GDEP live、协调账本available、原登录公开绑定保留；[实际回执](../../docs/evidence/d05/gdep-source-live.json)由唯一D05保存。仅自有4320换载，未操作个人服务或读取token。
+
+2026-10-08T00:04:43.883Z：TUI01F R2固定入口获得Lead及assignment_review限定独审，见[单份审查](../../docs/evidence/i02/tui01f-r2-preparation-review.json)。19新绑定/8继承Git核同；原741输入及四旅程源码保留，原FAIL不改。实际运行需独立resource holder与同次fresh核验，当前NOT_RUN。
