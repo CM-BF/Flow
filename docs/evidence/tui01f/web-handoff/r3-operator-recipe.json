@@ -1,0 +1,105 @@
+{
+  "recordedAt": "2026-10-08T01:56:06.500Z",
+  "kind": "TUI01F_R3_EXISTING_CALLER_OPERATOR_RECIPE",
+  "preparationApproved": true,
+  "executionReady": false,
+  "status": "WAITING_FRESH_UNIQUE_RESOURCE_SELECTION",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "argv": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+    "--run-r3-once"
+  ],
+  "entry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+    "bytes": 820,
+    "sha256": "5f1c1cfb69997d5d07987be793f15c9cf49b72f5afbb50c3ce52a6468bcfa7b5"
+  },
+  "sharedCaller": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+    "bytes": 6937,
+    "sha256": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d"
+  },
+  "fixedInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-inputs.json",
+    "bytes": 5824,
+    "sha256": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350"
+  },
+  "pendingPermit": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-permit.pending.json",
+    "bytes": 894,
+    "sha256": "d0f990e55b936148224b02eb41194bb209e2e6515f0208dbfae53e20cdb4d623"
+  },
+  "approvedPreparation": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-preparation.json",
+    "bytes": 6450,
+    "sha256": "f313d56a68bed216188128d053c8217cb49f1ae87c7a5984fad29f1a0f83f757"
+  },
+  "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+  "windowId": "flow-tui01f04-20261008-r3",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "lead": "astra_ultra_execution_lead",
+    "worker": "assignment_review"
+  },
+  "actualPermit": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-permit.json",
+  "environment": {
+    "adminVariable": "FLOW_TEST_DATABASE_URL",
+    "source": "Reuse existing authorized local fixture administration configuration, only in memory; do not output value.",
+    "inheritedNames": [
+      "HOME",
+      "USER",
+      "LOGNAME",
+      "TMPDIR",
+      "LANG",
+      "LC_ALL",
+      "TZ"
+    ],
+    "fixedNames": [
+      "PATH",
+      "TSX_DISABLE_CACHE"
+    ],
+    "preparedOrChangedNow": false
+  },
+  "sameCallAdmission": [
+    "Read exact new resource selection, latestStart, complete floor and current actual holder; no old grant reuse.",
+    "Fresh exact claim v7/owner/worktree/branch and unchanged approved input/source/runtime pins; validate complete741 inherited plus7own.",
+    "New permit/outer/window/capture paths all absent including dangling symlinks.",
+    "Fresh actual free space >= selected complete floor, including current allowances/live reserve once.",
+    "Read PG capacity using the existing bounded local admin path: available>=42; close the preflight pool before launch.",
+    "Bind observation age<=30s and exact source/input/caller digests; exclusive0600 fsynced actual permit; launch only before selected latestStart."
+  ],
+  "stopRule": "Any mismatch/unknown/expired selection => no launch, preserve observations, report NOT_RUN; no retry or changed namespace.",
+  "limits": {
+    "workSeconds": 150,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputBytes": 65536,
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "stageRawBytes": 4194304,
+    "privateBytes": 16777216
+  },
+  "pg": {
+    "conservativeMaximum": 13,
+    "minimumAvailable": 42,
+    "preflightMaximum": 1,
+    "closeBeforeSpawn": true
+  },
+  "futurePlanningGrowthBytes": 1499463680,
+  "planningIsHardCap": false,
+  "liveReserveBytes": 1073741824,
+  "closure": "OPS14 exit/group/EOF plus original journey/fixture detached process, DB and private lifecycle records. Outer success alone is not RETURN.",
+  "currentActions": {
+    "permitCreated": false,
+    "journeyStarted": false,
+    "PG": 0,
+    "browser": 0,
+    "PTY": 0,
+    "native": 0,
+    "provider": 0,
+    "personal": 0
+  }
+}
