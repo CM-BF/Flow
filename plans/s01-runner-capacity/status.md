@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:01:05.876Z |
+| 最近更新 | 2026-10-08T02:43:38.935Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 重绑定源码/输入与限定独审已封存；最终commit/push后clean STOP，HEAD由Git/交付消息读取。 |
-| 工作分支状态 | delivered |
-| 检查状态 | NOT_RUN d7012e35fec13ee16da85febdea8a09552150ac7：本次0工程检查，仅124绑定与状态字段静态校验。历史19pure/types/C链接及callback结果不重跑。 |
+| 工作树dirty状态 | 本轮实际原件与离线结果封存中；提交/push后clean STOP，保留原claim。 |
+| 工作分支状态 | review |
+| 检查状态 | PASS a7467371b716031b178b007cf5d9aebdc429c0fa：真实单buffered诊断，128 fixture ACK原断言/4取消/final通过；新结果待独审，非工程重跑或SLO。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | d7012e35fec13ee16da85febdea8a09552150ac7 |
-| 实现范围 | 仅buffered caller INPUT一处字面量、新v2输入及本任务metadata；生产/实验行为、旧证据不变。 |
+| 实现目标 | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 |
+| 实现范围 | docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1, docs/evidence/s01/mixed-ab-preparation, plans/s01-runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 缓冲诊断候选已绑定当前写权并通过限定独审；原128 ACK失败与资源保留事实不变，尚未再次运行。 |
-| 下一可用交付 | 本准备片段已交付；等待经理明确窗口后，按原完整断言执行一次诊断。 |
-| 当前阻塞 | ACTIVE: 未来实际诊断尚未授窗；原128 ACK完整验收仍失败，native初始化不是该路径前置。 |
+| 当前产出 | 本轮128个fixture的原ACK窗口、四次取消和最终状态检查通过；观察交付完整，活动资源已归还，结果待独立复核。 |
+| 下一可用交付 | 封存并独立复核这一次现场诊断；不追加运行，完整原生模型及用户体验验收仍另列。 |
+| 当前阻塞 | ACTIVE: 本轮结果待独立复核及必要接收；真实原生代理容量、SLO与完整S01尚未验收。 |
 | 需用户决定 | NONE |
-| Review | INPUT_REBIND_SOURCE_PREPARATION_REVIEW_APPROVED 2026-10-08T01:59:59.000Z，db，0P1/P2，d701源/5b40621b包；仅重绑定准备，非300s许可或性能通过。 |
+| Review | PENDING_RESULT_REVIEW：本次执行a746原件已封存待db一次只读忠实性审；旧source/input批准与两次失败历史保持。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v4 ACTIVE/exact8；COMMIT 2026-10-08T01:25:24.929Z，仅追加native-initialize两个目录，正式receipt见新evidence。 |
-| 架构影响 | 复用原单臂caller/监督与完整验收；仅配置输入路径与所有权证据更新，无新模块或产品接口。 |
+| 架构影响 | 无新模块/接口；此次执行既有私有centerDelivery回调背压与单臂fixture完整验收。main仍仅既有离线packing/replay，不能反推新私有接线已main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -422,3 +422,9 @@ D01经Mika明确第四且末次focusedtypes修复额度，同原60s/8MiB/01:50:2
 实际firstWrite 2026-10-08T01:57:27.751Z，deadline02:07:27.751Z；D01新3MiB仅本准备，未借旧native/性能段。Fresh508f v4 ACTIVE8、2ba4 clean与canonical term已核。当前入口[ready](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)/[单记录](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-rebind.json)。原cd39/input及raw/三closure不改，124pins仅122同+caller1替换+现有claimreceipt1新增。0工程child/PG/native/HTTP/KEEP访问，原task开工UNKNOWN、三个开放TODO与main仅offline packing范围不变。沿本地固定技能核单一caller职责、有限字面量、身份/错误/期限守卫；本段不宣称新容量或主线接线通过。
 
 独审于2026-10-08T01:59:59.000Z批准d701/5b40621b，0P1/P2；2026-10-08T02:01:05.876Z owner归档于同一[rebind记录](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-rebind.json)。新v2 SHA28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2不因seal改动；原cd39仍原字节。实测index791670B，保守index双份/文本双256KiB/objects512KiB总2631916B<3MiB，余513812B；本轮6份文本188858B为seal前样本，seal后仍核上限。0工程/actual，未来增长于最终STOP归0；本次同步唯一状态并用现main parser核字段，未发dashboard HTTP，历史展示观察不冒新同步成功。
+
+## 2026-10-08T02:43:38.935Z 单buffered现场诊断实际收口
+
+[唯一结果入口](../../docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1/READY.md)。execution `a7467371b716031b178b007cf5d9aebdc429c0fa` / input28b088原字节；START02:40:01.120105Z、terminal02:40:24.031517Z、精确FULL_RETURN02:40:52.876480Z分列。原128同步burst/6s/4s ACK、四取消和final/identity门禁均通过，789窗内emit/128span零不足；20轻读成功，111heartbeat abort原件保留，未称所有HTTP成功。观察59chunk+1summary known/dropped0。fixture129总任务与128load分母分开。
+
+旧两次FAIL/旧KEEP不改；单场景/背景UNKNOWN，不因结果绿推pool因果、SLO、latestmain或128真实native容量。本window已消费，0后继launch/future runtime，只有原4MiB封存留额内的证据与metadata。main8e5仅旧primary12能力仍如实。沿既有本地技能核生命周期/字节/时间口径，本段没有改实现/阈值或重测。唯一status为dashboard来源；未请求新snapshot，不伪称当前HEAD已显示。原任务开工UNKNOWN/六TODO开放边界不改。

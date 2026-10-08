@@ -1,0 +1,84 @@
+{
+  "schema": "s01-diagnostic-execution-observation-v1",
+  "executionHead": "a7467371b716031b178b007cf5d9aebdc429c0fa",
+  "inputSHA256": "28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2",
+  "source": "Owner reconstruction from exact tool transcript, not a pre-existing runtime receipt; no invented response hash",
+  "grant": {
+    "at": "2026-10-08T02:37:11.182Z",
+    "latestStart": "2026-10-08T02:41:11.182Z",
+    "currentFloor": 13224378368,
+    "usedMaxFrozenCurrentFloor": 13562019840,
+    "isolation": "DIAGNOSTIC_LIGHT_SOURCE_ALLOWED",
+    "dualCanonicalRead": true
+  },
+  "admission": {
+    "at": "2026-10-08T02:40:00.951115Z",
+    "headCleanAndActualRemoteMatched": true,
+    "claimVersion": 4,
+    "scopeCount": 8,
+    "inputFiles": 124,
+    "inputBytes": 12618887,
+    "historicalFileTotals": "123/12617081 left byte-identical; actual files independently checked",
+    "closureUniqueBlobs": 675,
+    "runtimePaths": 223,
+    "migrationSql": 33,
+    "fiveOutputsAndRootAbsent": true,
+    "hostFreeBytes": 14310920192,
+    "pg": {
+      "max": 100,
+      "reserved": 3,
+      "used": 10,
+      "available": 87,
+      "required": 29,
+      "recovery": false,
+      "probePoolClosed": true
+    },
+    "privateInput": "Only existing authorized mapping, no secret values or hashes retained"
+  },
+  "actual": {
+    "checkpointAt": "2026-10-08T02:40:01.120105Z",
+    "pid": 80029,
+    "pgid": 80029,
+    "toolSession": 46531,
+    "terminalReceiptAt": "2026-10-08T02:40:24.031517+00:00",
+    "toolExit": 0,
+    "timeP": {
+      "realSeconds": 23.08,
+      "userSeconds": 9.44,
+      "sysSeconds": 4.28
+    },
+    "operatorPersistedElapsedMs": 23033.260166994296,
+    "exactWholeToolWallSeconds": null,
+    "wholeToolWallReason": "exec session split across calls; no same-origin external terminal timestamp recorded",
+    "fullReturnObservedAt": "2026-10-08T02:40:52.876480Z"
+  },
+  "exactRootObservation": {
+    "at": "2026-10-08T02:40:52.876480Z",
+    "method": "lstat exact two current roots only; no recursion/cleanup/new DB or process probe",
+    "rows": [
+      {
+        "path": "/tmp/flow-s01-mixed-5ndhuv",
+        "devInRuntimeReceipt": 16777234,
+        "inoInRuntimeReceipt": 124758960,
+        "errno": "ENOENT"
+      },
+      {
+        "path": "/tmp/flow-s01-ab-input-b622770b-d5d5-4286-9a4c-cb5c2e7e8dec",
+        "errno": "ENOENT"
+      }
+    ]
+  },
+  "budget": {
+    "experimentLogicalCap": 536870912,
+    "runtimeMeasuredIncludingFinalReserve": 100343136,
+    "includedFinalReserve": 4194304,
+    "metadataArchivePaidFromReserve": true,
+    "PGWALPlanningNotHardCap": 1073741824,
+    "noSecondReserve": true
+  },
+  "limitations": [
+    "This is one buffered fixture diagnostic on fixed production4fdd, not latest-main/native/provider/128-real-agent capacity/SLO",
+    "No AB or controlled-background causal performance claim",
+    "Old per-query and buffered failures/KEEP unchanged; no old root accessed"
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "executionHead": "a7467371b716031b178b007cf5d9aebdc429c0fa",
+  "generatedAt": "2026-10-08T02:42:27.353Z",
+  "basis": "Offline derivation from this run only; no project module imported or engineering rerun",
+  "rawObservationCount": 17694,
+  "kinds": {
+    "driver-query": 204,
+    "stream-bytes": 107,
+    "memory": 65,
+    "ready": 2,
+    "owner-http": 169,
+    "pg-activity": 97,
+    "attempt-snapshot": 93,
+    "runner-request-send": 4521,
+    "runner-http": 4410,
+    "claim": 128,
+    "heartbeat": 1984,
+    "adapter-enter": 128,
+    "event-ack": 2240,
+    "adapter-ready": 128,
+    "center-boundary": 2,
+    "pg-phase-ack": 2,
+    "window-start": 1,
+    "barrier-released": 128,
+    "emit-start": 1472,
+    "light-read-result": 20,
+    "emit-ack": 1472,
+    "window-end": 1,
+    "driver-boundary": 1,
+    "cancel-fence": 1,
+    "cancel-send": 4,
+    "cancel-accepted": 4,
+    "control-abort": 4,
+    "adapter-end": 128,
+    "runner-http-error": 111,
+    "read-summary": 1,
+    "stop-case-received": 1,
+    "case-runtime-settled": 1,
+    "final-state-observed": 1,
+    "child-settled": 2,
+    "center-settled": 1,
+    "pg-observation-chunk": 59,
+    "pg-delivery-summary": 1
+  },
+  "window": {
+    "caseMs": 6000,
+    "ackMinimumMs": 4000,
+    "taskCount": 128,
+    "uniqueTaskCount": 128,
+    "spanMs": {
+      "n": 128,
+      "min": 4391.549417,
+      "p50": 4571.249417000001,
+      "p95": 5330.570042000001,
+      "max": 5388.341458999999,
+      "mean": 4685.707734359375,
+      "method": "nearest-rank"
+    },
+    "below4000": 0,
+    "eligibleEmitCount": 789,
+    "eligibleCountPerAttempt": {
+      "n": 128,
+      "min": 6,
+      "p50": 6,
+      "p95": 7,
+      "max": 7,
+      "mean": 6.1640625,
+      "method": "nearest-rank"
+    },
+    "logicalAdapterPeak": 128,
+    "commonAckSpanMs": 3923.1516250000004,
+    "allAdapterOverlapMs": 7668.998416,
+    "windowComplete": true,
+    "settledByDeadline": true
+  },
+  "final": {
+    "states": {
+      "succeeded": 124,
+      "cancelled": 4
+    },
+    "verification": {
+      "passed": 128
+    },
+    "persistedEvents": 2240,
+    "databaseTotals": {
+      "tasks": 129,
+      "attempts": 129,
+      "sessions": 129
+    },
+    "sessions": 129
+  },
+  "lightReads": {
+    "issued": 20,
+    "success": 20,
+    "elapsedMs": {
+      "n": 20,
+      "min": 5.62591699999939,
+      "p50": 787.3427500000016,
+      "p95": 879.4195839999993,
+      "max": 883.4746249999989,
+      "mean": 561.6125728999999,
+      "method": "nearest-rank"
+    },
+    "scheduling": {
+      "kind": "read-summary",
+      "pid": 80029,
+      "receivedMs": 22163.048084,
+      "caseId": "eight-by-sixteen",
+      "issued": 20,
+      "skipped": 39,
+      "phase": "eight-by-sixteen:settlement"
+    }
+  },
+  "cancellation": {
+    "rows": [
+      {
+        "taskId": "4054d713-f099-494e-8cb4-87001611cfce",
+        "attemptId": "72bc139d-dd5c-43a7-b124-bed1d48df01d",
+        "ownerVersion": 1,
+        "driverSendToAckMs": 117.68924999999945,
+        "runnerSignalToAdapterEndMs": 307.738166000001,
+        "driverSendToFinalObservationMs": 5928.844874999999,
+        "runnerEmitStartsBeforeSignal": 8,
+        "ackToSignalMs": null,
+        "ackToSignalEmissionCount": null,
+        "unknownReason": "uncalibrated driver and runner clocks"
+      },
+      {
+        "taskId": "0973fd05-e354-4dad-9058-d32540b19904",
+        "attemptId": "dd989cdd-f979-4949-a894-2e5eaf17810d",
+        "ownerVersion": 1,
+        "driverSendToAckMs": 134.77808300000106,
+        "runnerSignalToAdapterEndMs": 300.27837499999987,
+        "driverSendToFinalObservationMs": 5928.482375,
+        "runnerEmitStartsBeforeSignal": 8,
+        "ackToSignalMs": null,
+        "ackToSignalEmissionCount": null,
+        "unknownReason": "uncalibrated driver and runner clocks"
+      },
+      {
+        "taskId": "ab8a3018-a529-4523-bf30-c52d4b613c26",
+        "attemptId": "a0a7cd3a-2292-4bbe-9c07-519d78ae9427",
+        "ownerVersion": 1,
+        "driverSendToAckMs": 134.416666000001,
+        "runnerSignalToAdapterEndMs": 316.3280419999992,
+        "driverSendToFinalObservationMs": 5928.361957999998,
+        "runnerEmitStartsBeforeSignal": 8,
+        "ackToSignalMs": null,
+        "ackToSignalEmissionCount": null,
+        "unknownReason": "uncalibrated driver and runner clocks"
+      },
+      {
+        "taskId": "ced3eb86-2cec-4ee3-96c9-4581584c58c6",
+        "attemptId": "59540120-e5d5-4375-adc3-d0e3bd2111d7",
+        "ownerVersion": 1,
+        "driverSendToAckMs": 134.49233300000196,
+        "runnerSignalToAdapterEndMs": 357.2364170000001,
+        "driverSendToFinalObservationMs": 5928.2851249999985,
+        "runnerEmitStartsBeforeSignal": 8,
+        "ackToSignalMs": null,
+        "ackToSignalEmissionCount": null,
+        "unknownReason": "uncalibrated driver and runner clocks"
+      }
+    ],
+    "boundaryStart": {
+      "requestsStarted": 1576,
+      "requestsSettled": 1575,
+      "inFlight": 1,
+      "activeAdapters": 128,
+      "pendingEmits": 0
+    },
+    "boundaryEnd": {
+      "requestsStarted": 3260,
+      "requestsSettled": 3015,
+      "inFlight": 245,
+      "activeAdapters": 128,
+      "pendingEmits": 128
+    },
+    "denominator": {
+      "issued": 4521,
+      "settled": 4521,
+      "errors": 111,
+      "missingOrInFlight": 0
+    },
+    "cancelFinalObservationBasis": "single final verification read; upper-bound observation time, not exact commit time",
+    "sourceEpoch": "s01-queue-buffered-diagnostic-once-A",
+    "extraActivityMs": 5000
+  },
+  "centerBoundaries": [
+    {
+      "kind": "center-boundary",
+      "epoch": "s01-queue-buffered-diagnostic-once-A",
+      "requestedPhase": "measure",
+      "known": true,
+      "acquisitionsStarted": 3444,
+      "acquisitionsSettled": 3444,
+      "acquisitionsInFlight": 0,
+      "queriesStarted": 22660,
+      "queriesSettled": 22658,
+      "queriesInFlight": 2,
+      "openTransactions": 2,
+      "basis": "observed calls only; begin-to-end state, not checkout hold or arrival queue",
+      "childMs": 10049.492292,
+      "pid": 80037,
+      "receivedMs": 10513.622459,
+      "phase": "eight-by-sixteen:window"
+    },
+    {
+      "kind": "center-boundary",
+      "epoch": "s01-queue-buffered-diagnostic-once-A",
+      "requestedPhase": "after",
+      "known": true,
+      "acquisitionsStarted": 6691,
+      "acquisitionsSettled": 6452,
+      "acquisitionsInFlight": 239,
+      "queriesStarted": 39817,
+      "queriesSettled": 39809,
+      "queriesInFlight": 8,
+      "openTransactions": 8,
+      "basis": "observed calls only; begin-to-end state, not checkout hold or arrival queue",
+      "childMs": 16062.423167,
+      "pid": 80037,
+      "receivedMs": 16526.839167,
+      "phase": "eight-by-sixteen:window"
+    }
+  ],
+  "observer": {
+    "summaries": [
+      {
+        "kind": "pg-delivery-summary",
+        "mode": "buffered",
+        "epoch": "s01-queue-buffered-diagnostic-once-A",
+        "phase": "cleanup",
+        "closed": true,
+        "known": true,
+        "failure": null,
+        "observed": 72168,
+        "counts": {
+          "pool-acquisition": 9504,
+          "sql": 57890,
+          "transaction": 4774
+        },
+        "retainedBytes": 3789580,
+        "outputMessages": 59,
+        "outputBytes": 3809618,
+        "sampleCount": 14278,
+        "sqlGroups": 17,
+        "deliveryPhase": "after",
+        "childMs": 22131.78375,
+        "pid": 80037,
+        "receivedMs": 22596.207042
+      }
+    ],
+    "chunks": 59,
+    "nonSqlSamples": 14278,
+    "childSettled": [
+      {
+        "kind": "child-settled",
+        "dropped": 0,
+        "firstFailure": null,
+        "childMs": 20275.109625,
+        "pid": 80039,
+        "receivedMs": 22543.9575,
+        "phase": "cleanup"
+      },
+      {
+        "kind": "child-settled",
+        "dropped": 0,
+        "firstFailure": null,
+        "childMs": 22131.870125,
+        "pid": 80037,
+        "receivedMs": 22596.240959,
+        "phase": "cleanup"
+      }
+    ],
+    "centerSettled": [
+      {
+        "kind": "center-settled",
+        "observationDropped": 0,
+        "childMs": 22097.433542,
+        "pid": 80037,
+        "receivedMs": 22561.571584,
+        "phase": "cleanup"
+      }
+    ]
+  },
+  "pgMeasure": {
+    "pool-acquisition": {
+      "elapsedMs": {
+        "n": 2983,
+        "min": 0.0021670000005542533,
+        "p50": 356.5560000000005,
+        "p95": 723.6048329999994,
+        "max": 824.5098749999997,
+        "mean": 362.43704673952396,
+        "method": "nearest-rank"
+      },
+      "waitingMax": 242,
+      "basis": "center-local measure phase; acquisition call-to-settle may include connecting; settle-time counts, not arrival queue/hold; no calibrated driver-clock subtraction"
+    },
+    "transaction": {
+      "elapsedMs": {
+        "n": 1478,
+        "min": 0.5446670000001177,
+        "p50": 31.32629199999974,
+        "p95": 47.352999999999156,
+        "max": 78.47975000000042,
+        "mean": 30.53667495737486,
+        "method": "nearest-rank"
+      },
+      "waitingMax": 243,
+      "basis": "center-local measure phase; acquisition call-to-settle may include connecting; settle-time counts, not arrival queue/hold; no calibrated driver-clock subtraction"
+    }
+  },
+  "runnerHttpErrors": {
+    "count": 111,
+    "categories": {
+      "heartbeat/abort/True": 111
+    },
+    "hidden": false
+  },
+  "journals": {
+    "count": 8,
+    "unresolved": 0
+  },
+  "cleanup": [
+    {
+      "pid": 80039,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 80037,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "databaseName": "flow_s01_mixed_80029_342b3d7d6902406e86752c9378e2d22d",
+      "dropped": true,
+      "retained": false
+    },
+    {
+      "databaseName": "flow_s01_mixed_80029_342b3d7d6902406e86752c9378e2d22d",
+      "absentConfirmed": true
+    },
+    {
+      "workdir": "/tmp/flow-s01-mixed-5ndhuv",
+      "dev": 16777234,
+      "ino": 124758960,
+      "removed": true
+    }
+  ],
+  "byteAccountingComplete": true,
+  "limits": {
+    "provider": 0,
+    "native": 0,
+    "actualArms": 1,
+    "noCausalComparison": true,
+    "backgroundUserWork": "UNKNOWN",
+    "oldFailuresAndKeepUnchanged": true,
+    "PGWALPeak": "UNKNOWN",
+    "activeTmpPeak": "UNKNOWN"
+  }
+}

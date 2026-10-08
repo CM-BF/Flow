@@ -1,0 +1,61 @@
+{
+  "windowId": "s01-queue-buffered-diagnostic-once",
+  "target": "a7467371b716031b178b007cf5d9aebdc429c0fa",
+  "outcomes": [
+    {
+      "side": "A",
+      "state": "PASS",
+      "receipt": {
+        "output": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1/buffered",
+        "success": true,
+        "errors": [],
+        "resourcesClosed": true,
+        "tasksSentOrUnknown": 129,
+        "finalElapsedMs": 22509.573958,
+        "finalMeasuredBytes": 83436926
+      }
+    }
+  ],
+  "errors": [],
+  "cleanup": {
+    "sourceRoot": "/tmp/flow-s01-ab-input-b622770b-d5d5-4286-9a4c-cb5c2e7e8dec",
+    "removed": true,
+    "retained": false
+  },
+  "success": true,
+  "tasksSentOrUnknown": 129,
+  "finalMeasuredBytes": 100343136,
+  "categories": {
+    "common:final-evidence-cli-reserve": 4194304,
+    "common:git-preflight": 41,
+    "common:preparation": 2676021,
+    "common:dependency-bindings": 4477,
+    "common:git-output": 5032700,
+    "common:exported-input": 4931265,
+    "common:external-manifests": 67402,
+    "A:preparation-evidence": 2676021,
+    "A:final-cli-receipt-reserve": 32768,
+    "A:post-run-archive-reserve": 1048576,
+    "A:required-source-inputs": 120363,
+    "A:observation-evidence-reserved": 19740646,
+    "A:fixed-experiment-inputs": 327136,
+    "A:evidence": 982940,
+    "A:observer-sql-payload": 562888,
+    "A:observer-row-json": 9275182,
+    "A:driver-pg-node-streams": 6786807,
+    "A:ipc-out": 7428,
+    "A:ipc-in": 9834574,
+    "A:center-node-streams": 30473863,
+    "A:owner-http-request": 24136,
+    "A:owner-http-response": 104385,
+    "A:runner-http-bodies": 1439213
+  },
+  "finalEvidenceBytes": 177028,
+  "finalReserveBytes": 4194304,
+  "elapsedBeforeResultWriteMs": 22808.026583,
+  "diskBytes": 14310838272,
+  "preparationPhase": "complete",
+  "byteBasis": "visible Git/input export + Node streams + IPC + evidence with conservative duplicate charges; not all OS I/O or PG/WAL disk growth",
+  "order": "one buffered arm; no paired control or packing-only causal claim",
+  "providerCalls": 0
+}
