@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-08T02:19:59.457980+00:00",
+  "kind": "READ_ONLY_STATIC_RETENTION_FINDING",
+  "task": "Existing WPF-MATURE-05-05 cumulative workspace cache validation; no new task or current write claim",
+  "sourceHead": "03527839fca91c512baaa0ae89de7671d2a80d1f",
+  "pins": [
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861"
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "bytes": 4020,
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "apps/web/src/workspace-retention.ts",
+      "bytes": 885,
+      "sha256": "c6df07b4d238fe449459d25d1596ad43eabadb596c92087ca45034c80ffe41c7"
+    },
+    {
+      "path": "apps/web/test/plugin-host.browser.ts",
+      "bytes": 14582,
+      "sha256": "2b9de2637746835332343c496f4f6ed8f8b724cd6941946f35bb1add36aaab82"
+    }
+  ],
+  "finding": {
+    "id": "WORKSPACE-LAYOUT-HISTORY-BOUND-01",
+    "severity": "P2 candidate; not runtime reproduced",
+    "fact": "WorkspacePanels owns useRef(new Map<string, WorkspaceLayout>()). It gets/sets an entry for every rendered task ID and never deletes or caps entries. Each entry retains tab, openDetails, expanded, selectedPath and follow, not draft text or command receipts.",
+    "lifetime": "Inner TaskWorkspace is keyed by taskId, but the Map is in its parent. PluginWorkspace keys by session ID; contribution renderer identity is not keyed by selected task. App keeps the panel in Activity after first visit. Therefore switching tasks can retain the Map for the plugin/session lifetime. Plugin disable or true parent unmount destroys it; this is not an immortal allocation claim.",
+    "gap": "MAX_RESIDENT_CONVERSATIONS=32 caps simultaneous conversation residency, not this independent history Map. A retained anchor view plus repeated opening/closing other tasks can visit more than 32 distinct task IDs without forcing plugin/session unmount. Count growth is inferred from source; heap cost, latency and actual trajectory have not been measured.",
+    "existingChecks": "plugin-host.browser.ts checks panel layout retention and release on explicit plugin disable, but that shown case does not cover many sequential task visits while the same plugin stays enabled."
+  },
+  "followup": [
+    "First reproduce with an isolated production-component fixture retaining one anchor view/plugin session while visiting and closing many other tasks. Keep page, per-view draft/receipt state and render identity observable; do not use DOM count as heap evidence.",
+    "Prefer pruning using the existing authoritative resident/closed view lifecycle, or an explicit bounded metadata retention policy if old layout restoration is required. Do not introduce a second resident-task authority. Preserve active/protected views and distinguish lightweight layout preference from unsent work.",
+    "Verify retained entries are bounded across repeated visits; current task layout survives allowed switches; closing a view never cancels a background task; existing protected drafts/attachments/UNKNOWN command receipts remain intact. Preserve explicit plugin-disable cleanup.",
+    "No eager detail reads or additional background projections may be introduced merely to track layout membership."
+  ],
+  "officialReference": {
+    "url": "https://react.dev/reference/react/Activity",
+    "accessed": "2026-10-08",
+    "paraphrase": "Hidden Activity preserves child state and DOM while cleaning up Effects, so hiding the panel alone does not establish a memory bound."
+  },
+  "limits": "No project edits, product imports, runtime tests, heap/CPU measurement, new browser or resource grant. This strengthens the existing cumulative cache acceptance item and does not block Picker or Arc CSS.",
+  "cleanCode": {
+    "skills": [
+      "find-skills local-first",
+      "codebase-design",
+      "clean-code"
+    ],
+    "applied": "Trace the single owner and lifetime of view metadata. Keep retention policy at one existing lifecycle seam; distinguish source inference from measurement. No implementation changed."
+  }
+}

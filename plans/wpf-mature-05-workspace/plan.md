@@ -197,3 +197,8 @@ URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../d
 受控UI后继复用原message-settings有界失败诊断：第一次失败就保留必要的小截图及相关几何/状态，原错误先保存，诊断失败不得覆盖它或妨碍finally/owned cleanup。原plugin-host retain-on-failure可参考；不默认全程trace/video、不造新平台、不保存真实登录材料。当前已审冻结候选及旧结果不回写；下一原owner合法段落实，避免另开一轮仅为观察现场。
 
 原 Arc 窄屏视觉 P2 的当前剩余项：e14功能4/4与Close完整显露/8rem口径已获限定接受，但最后双390截图原生横向滚动条仍压字，不能写完整视觉通过。[固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-scrollbar-clearance-research.json)显示36px条带=29px控制+上下3px+border1，无滚动条净空；下一合法原owner段优先仅layout.css底部非交互留白+intrinsicheight，候选尺寸须真图验证，不猜系统bar厚度。保focushelper、keyboard/selection/Close/正常全文/长名8rem及外层不横滚；390双主题在真实focus横滚后bar仍显示时留图和文字Range/rect。不以等待fade、隐藏bar/button或gutter:stable掩盖，不新DOM/store/registry，不为本研究重开已CLOSED三次。
+
+
+原 MATURE05-05 累计缓存后继参见[固定layout留存研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/workspace-layout-retention-research.json)：WorkspacePanels外层按task保留的Map没有delete/上限，内层task key重建不清外层；App32resident上限不能代表累计历史layout有界。属静态P2候选，未runtime/heap量测；后续原合法owner固定anchor并顺序打开关闭多任务验证，复用已有resident/closed权威生命周期清理，保草稿/UNKNOWN/后台任务。无第二store，不重复已验plugin-disable清理，不加当前Picker/Arc实际前置。
+
+- 原Arc视觉P2收口（2026-10-08 02:30 UTC）：source67a4、final8ca9在当前390 overlay双主题的原生滚动条显示时，文字、action与Close已分离；四组通过、18705ms且02:27:18精确归还，02:30:37全18STOP。[一次独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-scrollbar-final-acceptance.json)限定关闭本模式缺陷。其他OS经典滚动条、main接收、Context组合与真实中心仍沿原TODO开放，不再派本次重复修复。

@@ -698,3 +698,7 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 登录当前组件验收已由[最终限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-mounted-final-acceptance-review.json)接受：cc4封存、末轮六组与390双主题通过，旧初始化失败和新段前两失败不改；真实认证/fullApp/main/deploy保持原MATURE06后继。Arc由[几何最终独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-geometry-final-acceptance-review.json)限定接受四组功能、Close完整可见和8rem口径，滚动条压字仍原MATURE05视觉P2；[留白研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-scrollbar-clearance-research.json)只指导下一ownedCSS窄修，不隐藏bar或等待fade掩盖现场。
 
 既有子TODO→父唯一status映射采用[固定只读研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-child-claim-source-research.json)：显式关系保原claimId/taskId/executionWT/branch/scope，跨WT进度链接不转移写权；relation参与registryFingerprint，避免不同映射版本误join。未知、歧义、stale仍保占用，多claims不压成单owner；未运行产品验证，不新增status源。
+
+- 2026-10-08 02:33 UTC自然事实批：Arc滚动条小片8ca9/3904限定通过且全STOP；登录cc4仍待受控main，VISUAL01 d227保留首次六组通过/浮层夹具FAIL并进入原任务窄修。O16实际renew已在原期限内START并FULLRETURN，后续children另选一次150s，不能因准备完成自动连续执行。S01原quiet未OPEN取消保留；新单臂诊断只允许其他队轻量源码/metadata/正常Git，PG、端口、安装、build、新工程child仍排他，结果不冒AB容量或SLO结论。
+
+- 原MATURE02 TODO08/11与MSG03设置入口：已把[固定Web创建接缝研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-settings-creation-seam-research.json)交Mika唯一父计划。Web当前legacy目录排除版本化设置，而TUI/new已有入口；后继复用prepare→原creationKey→CREATE-only→可信GET capability，不新receipt系统、不消费原draft、不因失ACK换key。需显式版本化ProfileSelection与Recovery codec分支，先协调App/I02、现Picker与recovery/binding.tsx权属，不能只松旧codec或让TUI代建。SVC09A产物与零模型激活沿Original独立原任务。

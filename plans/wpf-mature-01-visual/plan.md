@@ -122,3 +122,5 @@ Context内部标题动作扩展沿Mika唯一MATURE04原后继：[三挂载面证
 原 MATURE01-04 的窄屏验收继续引用[Arc视觉P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)：末轮关闭聊天drawer后的390浅深画面已实际生成，但标题过缩与 More actions 裁切仍不达标。[限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-tooltip-final-acceptance-review.json)接受功能4/4，不接受完整UX完成；最窄修复归Arc原owner，不重复派共享组件writer。
 
 当前 VISUAL01 权威迁移到 [web-shared-overlays唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md)：w01_owner/acce2727v1 exact8、dcbd7a798清洁，恢复浮层限定通过，Picker已审现成单次准备尚未实际执行，sharedoverlays未main。沿原片在两Web安全归还后接真实原scope/inputs与新有界窗口，代表旅程→独审→集成发布队列，不等完整Arc/Context、不重复实现或借旧grant。旧visual-shell已release不是此片完成。0PG/90s/7图候选须fresh全依赖与index预算，当前只排队。
+
+- 原VISUAL01 Picker后继（2026-10-08 02:32 UTC）：现成片首次实际六组behavior通过并留两图；overlay两组在公共codec拒绝带空格modelID后未达。[固定失败审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-first-actual-review.json)保留15543ms CLOSED/精确RETURN，不能据此断言产品回归。原w01在同一唯一任务、原exact8下新8MiB/20min段，仅修合法modelID与同源locator，一次公共codec检查normal/long，准备未达两组/五图；不重六绿、不放宽codec、不借旧grant。

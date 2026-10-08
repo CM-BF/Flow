@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T02:18:29.158Z；D05 215已01:13:24.689Z实际发布并核assignments.available。主线同步仍以固定接收回执为准，文档更新不表示集成。 |
+| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T02:34:27.646Z；D05 215已01:13:24.689Z实际发布并核assignments.available。主线同步以固定接收回执为准，文档更新不表示产品已集成。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,9 +22,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 网页779/v4与看板215健康发布已确认。登录cc4六组及两390图获限定组件验收；Arc17cf功能四组与Close修复通过，滚动条压字视觉P2仍开放。两片已清洁封存并归还，等待受控main接收，未冒完整App或真实认证通过。 |
-| 下一可用交付 | 现成VISUAL01 Picker正封存新计量准备，Arc正封存滚动条留白窄修；两者尚无新browser许可。S01候选保持READY，本次因全组隔离未齐在OPEN前撤选，未执行，不重复准备审。 |
-| 当前阻塞 | ACTIVE: R3业务workPassed但suite因fixture-close/groups UNKNOWN失败，02:11:39精确归还、DB/private KEEP。Arc剩滚动条视觉P2，两Web受控main集成、登录真实认证/完整App、Context组合/producer及完整聊天仍OPEN。 |
+| 当前产出 | 网页779/v4与看板215健康发布已确认。登录cc4六组及两390图获限定组件验收；Arc8ca9四组及当前390双主题视觉获独审，滚动条压字在该模式下关闭。两片均已封存，等待受控main接收；真实认证、全App和Context组合未验完。 |
+| 下一可用交付 | 原VISUAL01已完成六组Picker行为及两图；两组浮层因夹具模型ID非法未达，原owner正在新段修复并准备只验这两组。O16按独立stage实际选择；S01原单臂诊断已按新轻量源码可并行边界OPEN，真实START另记；O16续期已归还，后续children因收到选择晚于latest未启动、0调用。 |
+| 当前阻塞 | ACTIVE: Picker浮层两组待修复后实际验证；TUI R3业务workPassed但suite因fixture-close/groups UNKNOWN失败，已精确归还，DB/private KEEP。Web受控main接收、登录真实认证/完整App、Context组合/producer及完整聊天仍OPEN。 |
 | 需用户决定 | NONE |
 | 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)给出每次选择、真实START/RETURN、完整floor与单独历史gate；实时占用以该原件为准，准备包不表示已运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |

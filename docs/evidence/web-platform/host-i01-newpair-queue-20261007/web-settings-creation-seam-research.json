@@ -1,0 +1,120 @@
+{
+  "kind": "read-only source research; bounded continuation of existing settings task",
+  "createdAt": "2026-10-08T02:34:56.067978+00:00",
+  "researcher": "root / gpt-6-astra ultra",
+  "planTarget": "WPF-MATURE-02 TODO08/11 and existing MSG03; no new task or ownership grant",
+  "sourceCommit": "782f0ad0953808474a43940c8241eb181ff7cf65",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8902,
+      "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 27353,
+      "sha256": "84b5a5646488e6c4baf4f3bad455b182c9c6943a08beee24bd16f9f72f2a91da"
+    }
+  ],
+  "finding": "Web new-conversation picker reads only legacy executionProfiles, which excludes turnSettings before LIMIT. The versioned message-settings catalog is used by existing-conversation settings but cannot select a creation profile. TUI already resolves settingsPage profiles in new; do not duplicate TUI work.",
+  "evidence": [
+    "App.tsx:403 creates legacy catalog; 774-798 binds trusted existing-conversation settings authority and versioned reader.",
+    "selection.ts:52-72 deliberately legacy-only controls; 84 freezes creation via configuredSelection. Preserve this decoder.",
+    "ConversationThread.tsx:96-102 validates new profile against legacy catalog; 210-226 captures settings before send; 239-246 existing Prepare UI rejects missing project (knowledge-specific).",
+    "projection.ts:276-284 prepare calls outbox.beginCreation, then refreshes GET after accepted creation. dispatch:320-336 persists original Recovery creation key and accepts creation-only receipt without submitting a turn.",
+    "outbox.ts:84-91 beginCreation owns one immutable CREATE receipt, request:null; restore and retry retain original keys.",
+    "plugin-integration/message-settings.tsx:48-59 catalog is owned by authorized opening; capture:112-117 requires live authority/generation. Reuse catalog implementation, do not remove its opening guard to serve creation.",
+    "packages/interaction/src/controller.ts:204-211 already selects versioned settings profile for /new."
+  ],
+  "candidateDesign": {
+    "status": "Recommendation for manager/owner refinement; no implementation or runtime verification",
+    "preferred": "Add a distinct versioned creation selection using public codec and complete reference. Expose explicit preparation for that profile via existing durable creation-only flow; after trusted GET capability arrives, allow existing full-tuple message settings UI for the first submitted turn. Preserve composer text/materials while preparing.",
+    "ownership": "Creation picker owns profile selection; existing conversation projection/outbox/Recovery owns mutation, original receipt and reconciliation. Existing message settings binding keeps live-draft CAS and capability authority.",
+    "alternatives": [
+      {
+        "option": "Pretend catalog visibility is conversation capability and send first settings with CREATE",
+        "decision": "Reject: bypasses existing trusted capability admission."
+      },
+      {
+        "option": "Ask user to precreate via TUI or hot-migrate old conversation",
+        "decision": "Reject: fails requested Web entry or violates immutable profile identity."
+      }
+    ],
+    "requiredDetails": [
+      "Do not inherit knowledge-only project requirement for general settings conversation; project-less profile creation is a supported candidate if public contract permits.",
+      "New selection must survive supported Recovery draft serialization and restore validation without widening legacy decoder or inventing receipt ownership.",
+      "Use complete id/runnerId/configDigest identity, independent pagination/stale/error/cancel states; old unknown ACK must reconcile or retry original keys.",
+      "Before CREATE, live chosen catalog and profile freeze must match. After CREATE, show pending/preparing or refresh failure explicitly and prevent premature settings send; never infer capability from selected profile.",
+      "App.tsx and ExecutionProfilePicker.tsx currently have active intake/other-owner claims: D01 must resolve exact claims before dispatch. Preserve reviewed login/Arc/Picker changes; no whole-file overwrite."
+    ]
+  },
+  "acceptanceProposal": [
+    "Public-codec versioned and legacy branches remain separate; malformed/unsupported/stale profiles rejected without changing old draft.",
+    "Controlled HTTP new-chat creation-only freezes correct profile and original key; trusted GET unlocks full tuple first turn. Include project-less and existing project context.",
+    "Lost CREATE ACK, reconnect, retry, capability unavailable/mismatch, view switch, picker cancel and plugin disable preserve original receipt and draft/CAS.",
+    "Keep actual verification scoped to changed behavior; reuse existing unchanged checks and separate fixture from personal-center/provider verification."
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "application": "Local-first discovery; no installation."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "application": "Reuse existing deep outbox/projection interface; avoid a second mutation or receipt store."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "application": "Bounded source-based candidate with alternatives; implementation already authorized by user and remains delegated."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "application": "Segment-end review: separate catalog validation, creation ownership and capability authority; identify knowledge-specific prepare precondition instead of copying it blindly."
+    }
+  ],
+  "limits": [
+    "Static evidence only; no tests, build, install, network, browser, PG, native SDK or personal service launched.",
+    "Main untracked tools/owned-process-supervision/__pycache__/ belongs to other work; observed and left untouched.",
+    "No project files changed by root. No independent implementation review status granted."
+  ]
+}

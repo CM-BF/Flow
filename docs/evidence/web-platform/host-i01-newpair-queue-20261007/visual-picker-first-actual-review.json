@@ -1,0 +1,148 @@
+{
+  "at": "2026-10-08T02:25:30.616133+00:00",
+  "reviewer": "root / gpt-6-astra ultra; independent read-only",
+  "conclusion": "ACCEPT_FAILED_RUN_AND_SIX_BEHAVIOR_GROUPS_ONLY_OVERLAY_VALIDATION_OPEN",
+  "sourceHead": "da05581427a47565a3c5be0b0134552048c16ffe",
+  "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "evidence": [
+    {
+      "path": "/private/tmp/vis-picker-b1/result.json",
+      "bytes": 91940,
+      "sha256": "a24230f1365e73961759ffd3b52880e1e80c5b6caef8d5700c5c1d25aaaf5ebb"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/outer-result.json",
+      "bytes": 1174,
+      "sha256": "5b84538cb6f56a66e4a17bc112c230fca50dbc0bee9e437c09750c985d706a2d"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/browser-budget.json",
+      "bytes": 316,
+      "sha256": "e3556938d3087762885c0f11eee8bd23a83832e6005c61e34b59ccb5b9cb8b28"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/browser-results.json",
+      "bytes": 6378,
+      "sha256": "72ce72b8b2f957675ba2febe72c9fb5d628f3ce7a29738948c74ad76cbb45391"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/actual-start.json",
+      "bytes": 171,
+      "sha256": "b5aed8c71a420b7be151c50ed6bdf870fc1beb0a55b0eb169d5843d29b686900"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/child-gate.json",
+      "bytes": 3514,
+      "sha256": "0abdfe4dc49d7b65ad84a59272b16d3dc7862343ae41a736178b10d4399404ce"
+    },
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 8167,
+      "sha256": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf"
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 3897,
+      "sha256": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 27940,
+      "sha256": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 5851,
+      "sha256": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 141850,
+      "sha256": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "git": "da05581427a47565a3c5be0b0134552048c16ffe",
+      "bytes": 48331,
+      "sha256": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/worker.log",
+      "bytes": 3569,
+      "sha256": "8e116c888ad27498c6ff58a8a4f3c9a41b79283483e6e43c811354c887c2dceb"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/exact-return.json",
+      "bytes": 2835,
+      "sha256": "84f9d003ed67e1f589a16da00e8434a38e59b5aff25c39a316a3c4274eb7a9f0"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/binding.json",
+      "bytes": 51418,
+      "sha256": "6263f2f97a469d8b4f573ef108fd896bbc617887ec1e52256f0b6a8b520ad15a"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/message-settings-light-390.png",
+      "bytes": 71955,
+      "sha256": "d0e65d60217a9de4d7b68c8bd4eba0d8d64146b71e66ca9b9a1e80cfc1cefd92"
+    },
+    {
+      "path": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/message-settings-dark-390.png",
+      "bytes": 71668,
+      "sha256": "5ea69e0e9bc25b71abed03a7bbd262911dc14d8136e4b6e86e611a3fe78fac98"
+    }
+  ],
+  "verified": {
+    "sourcePins": 6,
+    "recordedBehaviorGroups": 6,
+    "expectedTotalGroups": 8,
+    "overlayGroupsCompleted": 0,
+    "pageErrors": [],
+    "cleanupErrors": [],
+    "chargeMs": 15543,
+    "terminalAt": "2026-10-08T02:20:56.569869Z",
+    "exactReturnAt": "2026-10-08T02:23:03.771652+00:00",
+    "knownProcessAndGroupIdentitiesAbsent": 6,
+    "fiveStreamsEOFNoDrops": true,
+    "fixtureContextClosed": true,
+    "scratchAbsent": true
+  },
+  "finding": {
+    "id": "PICKER-NORMAL-FIXTURE-MODEL-ID-01",
+    "severity": "P2 acceptance-fixture blocker",
+    "evidence": "worker.log lines1–19 records Vite schema invalid_format with path profile.configuration.turnSettings.choices.0.model and exact allowed model regex; stack points to entry() line16 and HTTP handler line54. Fixed test supplies Claude Sonnet with a space. Fixed contracts choiceSchema allows alphanumeric followed by alphanumeric/dot/underscore/colon/hyphen, so this normal sample fails before the option can be offered.",
+    "symptom": "Overlay first normal/light radio lookup fails at message-settings.browser.ts185 after 5000ms. No overlay image or completed overlay group was produced. Missing radio is downstream of invalid fixture construction; not evidence of product selection regression.",
+    "next": "Within original owner scope use a valid representative declared model ID and a matching exact expected label; retain public codec and all selection/geometry/focus assertions. A focused local fixture codec check may validate both normal and long samples. New bounded actual should target previously uncompleted overlay groups, reusing the six unchanged behavior groups with explicit source mapping rather than rerunning by default.",
+    "reviewGap": "Prior preparation review did not detect invalid normal sample. Its source approval did not establish runtime acceptance; preserve original review and this actual failure."
+  },
+  "visual": {
+    "personallyViewed": [
+      "message-settings-light-390.png",
+      "message-settings-dark-390.png"
+    ],
+    "scope": "Both are completed behavior-journey long-model screenshots, not new normal/overlay journey images. Visible dialog, distinct themes and footer Apply/Cancel were observed. They do not establish the complete new normal/long/empty overlay matrix or classic scrollbar behavior."
+  },
+  "limits": [
+    "Independent controlled production component with synthetic HTTP catalog; not complete App/send/queue/recovery/provider or real credentials.",
+    "Known identities/streams and scratch closure do not prove every hypothetical escaped descendant.",
+    "No retry authorized by this review; original phase CLOSED and unused credit not transferred."
+  ],
+  "cleanCode": {
+    "applied": "Local clean-code and codebase-design: fix invalid fixture data at its single constructor seam, keep public input validation and behavior assertions, distinguish failure source from its UI symptom. No project changes or product executions by reviewer."
+  },
+  "canonicalArchive": {
+    "indexPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json",
+    "indexBytes": 11619,
+    "indexSha256": "accc438350b7660c3dc88ca609c651100f184fe2ecb96e32d4a289c984cbbc7e",
+    "independentlyVerifiedPairs": 28,
+    "files": 56,
+    "bytesEachSide": 424035,
+    "mismatches": 0,
+    "actualRuntimeSandboxPreserved": "The archived sandbox.sb is the parent-generated actual profile. Original prepared hash remains in its fixed input, not rewritten to the runtime value."
+  }
+}

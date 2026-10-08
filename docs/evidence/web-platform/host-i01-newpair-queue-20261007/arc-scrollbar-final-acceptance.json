@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-08T02:29:18.340282+00:00",
+  "reviewer": "root / gpt-6-astra ultra; independent read-only",
+  "conclusion": "APPROVED_LIMITED_FUNCTIONAL_AND_390_OVERLAY_VISUAL_ACCEPTANCE",
+  "blockingFindings": [],
+  "source": "67a4c981547fc0b8ea2dfcf27823f7b12f1c9117",
+  "executionHead": "370971fd82e75264271344b849732d777133e902",
+  "sourceDeltaBase": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+  "sourceDelta": [
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/test/workspace-layout.browser.ts"
+  ],
+  "verifiedSourcePins": [
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "bytes": 2600,
+      "sha256": "6e6a1f165a386fbe244be1d997269661fb2c17df268597ff9535e881660ac6d2"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "bytes": 43734,
+      "sha256": "cb599abbbb48c95e1ad3d4d5f77352e814cd7fdac08b725aa652b8ea7d4fe3c6"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 4183,
+      "sha256": "718882ea10440a1e2d627b2d810ec7ae44c3bb3cdbd974bbb09339328d4d88f2"
+    }
+  ],
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/final-review-input.json",
+    "bytes": 12756,
+    "sha256": "f9193db493f2467a0f28e54055e841aa963f515f65d30f244a7512e10b1762ea"
+  },
+  "archiveVerification": {
+    "independentlyVerifiedPairs": 42,
+    "files": 84,
+    "bytesEachSide": 1144784,
+    "mismatches": 0
+  },
+  "behavior": {
+    "selected": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "passed": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "error": null,
+    "actualToolExit": 0,
+    "chargeMs": 18705,
+    "localAffectedNoEmit": {
+      "exit": 0,
+      "chargeMs": 3376
+    },
+    "preserved": "Existing e14 own-strip focus helper unchanged; all four interaction groups and title/action/Close assertions remain. CSS adds bottom noninteractive padding only; no hidden native bar or controls."
+  },
+  "visual": {
+    "finding": "ARC-VISUAL-NARROW-TAB-01",
+    "state": "CLOSED_FOR_OBSERVED_390_OVERLAY_MODE_LIGHT_AND_DARK",
+    "personallyViewed": [
+      "/private/tmp/arc-scrollbar-clearance-_roj0rzk/raw/arc-light-390.png",
+      "/private/tmp/arc-scrollbar-clearance-_roj0rzk/raw/arc-dark-390.png"
+    ],
+    "observation": "Both real screenshots visibly retain the horizontal native bar below the tab text and action/Close controls, with clear separation. The old overlap is absent in both schemes; Close is fully visible.",
+    "supportingGeometry": {
+      "rootFontPx": 14,
+      "bottomPaddingPx": 17,
+      "stripHeightPx": 50,
+      "previousStripHeightPx": 36,
+      "scrollLeftTransition": [
+        0,
+        403
+      ],
+      "controlsBottomMax": 126.8828125,
+      "stripBottom": 145.8828125,
+      "normalTitleWidth": 117,
+      "readableMinimum": 112,
+      "actionHeight": 24.5
+    },
+    "coverage": "Actual Home/End strip movement and Tab action focus occur before each screenshot. DOM Range/rect observations supplement personally viewed paint; they do not independently prove paint visibility. Long title remains intentionally ellipsized with complete accessible name."
+  },
+  "return": {
+    "at": "2026-10-08T02:27:18.052169+00:00",
+    "knownPIDCount": 4,
+    "knownPGIDCount": 2,
+    "allObservedAbsent": true,
+    "contextHTTPClosed": {
+      "contextClosed": true,
+      "httpClosed": true
+    },
+    "chromeParentOuterEOF": true,
+    "droppedBytes": 0,
+    "scratchAndCacheLinks": "ABSENT",
+    "independentPortProbe": false
+  },
+  "recordedDeviations": [
+    "Local types gate read current12154830848 instead of max with assigned13511688192; observed free14400385024 exceeded both. Original record retained, no rerun or retroactive edit.",
+    "First return-receipt invocation omitted argv and exited before identity observation/writes; corrected call produced the exact RETURN. Notification delay is not execution duration.",
+    "Accounting retains an unconsumed second-attempt remainder but owner stopped after PASS; no automatic second runtime or transfer of historical credit."
+  ],
+  "limits": [
+    "Controlled HTTP fixture; not production center/security/provider/native runner/Context combination/main integration/personal deployment.",
+    "Only the observed current macOS/Chrome overlay scrollbar mode and two390 themes are visually accepted; classic/other OS/browser modes and all desktop/interaction aesthetics remain unverified.",
+    "Prepared material A/B assertions retain prior scope; no preparation-crash recovery or fully reloaded B visibility claim.",
+    "No all-descendant or independent-port closure claim; old failures and falseEOF facts remain unchanged."
+  ],
+  "cleanCode": {
+    "applied": "Existing clean-code/codebase-design skills: narrow owned CSS rule, no duplicate focus mechanism, bounded observations, original error/cleanup preserved; one affected typecheck and actual four-group regression. Reviewer wrote no implementation."
+  }
+}

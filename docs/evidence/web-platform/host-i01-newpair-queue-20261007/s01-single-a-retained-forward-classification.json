@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T02:24:21.952Z",
+  "term": "S01UnknownRetainedScratchPotential",
+  "priorBytes": 536870912,
+  "futureBytes": 0,
+  "introducedAtCommit": "bf026a1c606ddc15e2d3ce9e6fbe3d5b8307c9aa",
+  "introducedFromTerm": "selectedS01CandidateScratchAndDbWal1610612736",
+  "exactWindow": "s01-queue-buffered-once",
+  "exactRegisteredPIDs": [
+    27722,
+    28188,
+    30562
+  ],
+  "historicalMappingQuote": "S01 real DBdrop/absence removes1GiBDBWAL planning from future; unknown2TMP conservatively retain512MiBexperiment bound pending ownclassification.",
+  "evidence": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-buffered-actual-outer.json",
+      "bytes": 3165,
+      "sha256": "0fdbc889f7363f2951fbe8e0e9e38e6245cfef4ce7ecb95e454dd9b9bd681f3e",
+      "unchangedSince": "d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/pool-wait-run/buffered-single-v1/buffered/result.json",
+      "bytes": 225174,
+      "sha256": "d28b330934720904b6758668a74a9336a12d4d83ee729cdde745726c6d778ee1",
+      "unchangedSince": "d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/pool-wait-run/buffered-single-v1/outer-tool-transcript.json",
+      "bytes": 5618,
+      "sha256": "903e5edbb0091dc0ad6328f77512c4d4d5ab5311a01d93b5a9a3c68e7282a970",
+      "unchangedSince": "d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae"
+    }
+  ],
+  "basis": "Introduced in same hunk as singleA18:54:50.216335 active-resource RETURN and two namedKEEP. OldDB absent/0conn/adminclosed, registered27722 group absent/EOF, non-detached center28188 and runner30562 exited. Mika owner explicitly reports sealed stock/no continuation writers for this window; root limited mapping concurrence.",
+  "boundary": "Only former registered window futuregrowth retired. No proof every escaped descendant absent; original innerprocessClosed=false/UNKNOWN_RETAIN and TMP identity/inventoryUNKNOWN unchanged. No TMP scan/delete/physicalspace recovery or change to residual/R1-R4/otherunknown/sharedreserve. Picker consumedfloor12225085440 unchanged.",
+  "retainedPaths": [
+    "/tmp/flow-s01-mixed-Y01J0h",
+    "/tmp/flow-s01-ab-input-46f1cae6-a6e3-4aa8-b6f0-6b746405c8fe"
+  ]
+}
