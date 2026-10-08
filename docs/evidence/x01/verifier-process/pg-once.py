@@ -280,7 +280,7 @@ def main():
         env = pg_environment(temporary, window, head, int((wall + limits['workSeconds']) * 1000), int((wall + limits['workSeconds'] + limits['cleanupSeconds']) * 1000))
         if time.monotonic() - started >= 15: raise TimeoutError('PG start cutoff after reservation')
         report['PGMayHaveStarted'] = True
-        result = ops.supervise(ops.Launch((sys.executable, '-I', '-B', str(Path(__file__).resolve()), '--child'), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(max(.1, deadline - time.monotonic() - 8), 1, 1, limits['streamsBytes']))
+        result = ops.supervise(ops.Launch((sys.executable, '-I', '-B', str(Path(__file__).resolve()), '--child'), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(max(.1, started + limits['workSeconds'] + limits['cleanupSeconds'] - time.monotonic() - 2), 1, 1, limits['streamsBytes']))
         process, unknown = facts.supervision_facts(result, 'vitest'); report['processes'].append(process); report['unknown'] |= unknown
         report['firstFailure'] = process.get('first_failure')
         output_failure = []

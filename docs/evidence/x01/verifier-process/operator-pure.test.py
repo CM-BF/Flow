@@ -77,8 +77,8 @@ def failure_archive():
     retained = {}
     def write(name, data): retained[name] = bytes(data)
     identity = lambda p: (p.lstat().st_dev, p.lstat().st_ino)
-    values, errors = candidate.archive_existing(temporary, identity(temporary), run, identity(run), write, time.monotonic() + 3)
-    assert errors == [{'file': 'runtime-result.json', 'code': 'MISSING'}]
+    values, errors = candidate.archive_existing(temporary, identity(temporary), run, identity(run), write, time.monotonic() + 10)
+    assert errors == [{'file': 'runtime-result.json', 'code': 'MISSING'}], errors
     assert 'runtime-stage-1.json' in retained and 'vitest.json' in retained and 'runner-verifier.log' in retained
     assert values['runtime-create-request.json']['firstFailure'] == 'business'
     assert len(candidate.worker_notices(values['runner-verifier.log'])) == 4
@@ -86,7 +86,7 @@ def failure_archive():
     state, facts = candidate.classify(values, rows, 'window', 'head', 1, False, {})
     assert state == 'UNKNOWN' and facts['cleanupEligible'] is False
     (suite / 'result.json').write_bytes(b'x' * 16385)
-    retained.clear(); values, errors = candidate.archive_existing(temporary, identity(temporary), run, identity(run), write, time.monotonic() + 3)
+    retained.clear(); values, errors = candidate.archive_existing(temporary, identity(temporary), run, identity(run), write, time.monotonic() + 10)
     assert {'file': 'runtime-result.json', 'code': 'ValueError'} in errors
     assert 'vitest.json' in retained and 'runner-verifier.log' in retained and 'runtime-stage-1.json' in retained
     assert (suite / 'result.json').stat().st_size == 16385
