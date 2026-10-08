@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-08T03:56:11.319Z",
+  "decision": "NO_REQUIRED_BACKEND_API_BLOCKER_IDENTIFIED_FOR_FIXED_WEB29",
+  "web": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "reportedPersonalBackendSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "method": "Read fixed publicGit only, compare actualexisting twelve protocol/serverRoute/decoder files; inspect fixed App andconversation-streamhost protocol configuration. No private dirs/services/build/test/browser/token accessed.",
+  "pins": [
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "oldBytes": 1095,
+      "newBytes": 1095,
+      "oldSha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "newSha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "oldBytes": 4857,
+      "newBytes": 4857,
+      "oldSha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "newSha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "oldBytes": 4175,
+      "newBytes": 4175,
+      "oldSha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "newSha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "oldBytes": 7382,
+      "newBytes": 7382,
+      "oldSha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "newSha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "oldBytes": 15006,
+      "newBytes": 15006,
+      "oldSha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "newSha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "equal": true
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "oldBytes": 15496,
+      "newBytes": 15496,
+      "oldSha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "newSha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "oldBytes": 9640,
+      "newBytes": 9640,
+      "oldSha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12",
+      "newSha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "oldBytes": 4474,
+      "newBytes": 4474,
+      "oldSha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "newSha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "oldBytes": 4764,
+      "newBytes": 4764,
+      "oldSha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "newSha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "oldBytes": 2728,
+      "newBytes": 2728,
+      "oldSha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "newSha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "oldBytes": 3046,
+      "newBytes": 3046,
+      "oldSha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "newSha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "oldBytes": 15414,
+      "newBytes": 15414,
+      "oldSha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "newSha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "equal": true
+    }
+  ],
+  "requiredInterfaceMismatchCount": 0,
+  "analysis": [
+    "Connection29 change is a props-preserving presentation extraction; browserSession authentication callback/transport remains existing interface. Arc workspace navigation/layout persistence and sourceownership are Weblocal; existing conversation/profile contracts remain shared. Picker display/dialog/CSS source does not introduce a newbackend endpoint.",
+    "New1b client/contracts contain optional patch-select-v1 andplugin APIs relative880060, but fixedproduction App explicitlyconfigurespatch-v1 andnewconversation-streamhost passespatch-v1. Do not treat unusedclientexports orwholeindexdiff as required API gap for these29 changes.",
+    "Settingsnewcreation f71e andP01notification successor are notpartof1b1428 Web29 source; do not wait for them or silently publish them inthisminimaldelivery."
+  ],
+  "recommendation": "Existing legalWebpublisher may prepare the earliest accepted1b1428 Web29 combination for independentpublication against freshconfirmed currente15 tuple, withoutwaitingSVC09backendbuild. Pin actualWebartifact/runtimeinputs andcurrentpersonalbinding underoriginalpublicationworkflow; ifdirectcompatibilitycheck reveals a realgap, recordthat exactgap. Do not reuseoldRELEASE03/SVC05 tuple, reinitializeauth, orrefreshuserpage/drafts.",
+  "limits": [
+    "Static APIcompatibility only, not wholeWeb/auth/deployment proof.",
+    "Reported e15source880060 must still be confirmed byoriginalpublicationowner fromexistinglegitimate publicreceipt/runtimebinding; managerdidnotreadpersonalstorage.",
+    "Optionalnewpluginprotocols/selectedstreamfeatures are notclaimed availableon880060; currentfixedWeb29protocolstayspatch-v1.",
+    "Backend terminaljournalorder andenvironmentdiagnostics independentSVC09 corrections remain openforbackendpublication, not reasons bythemselves to blockthese29 UI changes."
+  ]
+}

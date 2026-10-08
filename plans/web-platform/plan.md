@@ -674,7 +674,7 @@ D05发布健康必须同时验证summary来源数与`/api/assignments`载荷`sta
 
 ### D01 / WPF-001-37：当前工作段历时后继（2026-10-08）
 
-- [ ] 在唯一 owner 的 status 增加明确的本工作段起止与来源，dashboard 独立显示“本工作段历时（含等待）”。采用[兼容设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-current-segment-timing-design.json)：完整 task 起点 UNKNOWN 与工作段已知时间互不覆盖，段结束不等 task Done，不累计净工时。只对后续真正新段采用，不批量补历史、不从 commit/mtime/claim/自由正文推断，不新增第三层 task、后台计时器或第二手填源。
+- [ ] 在唯一 owner 的 status 增加明确的本工作段起止与来源，dashboard 独立显示“本工作段历时（含等待）”与明确分类的等待原因。采用[兼容设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-current-segment-timing-design.json)：完整 task 起点 UNKNOWN 与工作段已知时间互不覆盖，段结束不等 task Done，不累计净工时。只对后续真正新段采用，不批量补历史、不从 commit/mtime/claim/自由正文推断，不新增第三层 task、后台计时器或第二手填源。
 - [ ] parser/model/UI 分开 task timing 与 workSegment 的问题；陈旧 snapshot 同时撤销两种 elapsed 的当前断言。原 TIMING02 全部完成记录保持通过，本项是原 D01 后继；实现仍由合法独立 owner/scope 承接。
 
 本轮原要求统一归入既有计划：[MATURE06-04 可行动登录](../wpf-mature-06-chat/plan.md)、[三真实插件挂载面](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)、[MATURE03 附件命中后继](../wpf-mature-03-attachments/plan.md)、[MATURE05 窄 tab 视觉 P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)。仅引用 Mika 的 MATURE04 唯一父计划，不生成第二份状态源。
@@ -719,13 +719,20 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 
 - MSG03可见性纠正：该task已在registry登记web-message-settings-app原唯一status，不是漏登记新child。由原panels在独立3MiB/8min records-only合法scope更新既有后继：保MSGAPP01-06与18叶旧完成历史，明确新执行树/fee104/66abb纯基础及UI未完成，不新status或registry。首写02:50:38与claim02:50:52的阶段差异仅按已有provision/源码证据澄清，未知保留、不倒改或直接判定越权。
 
-- MSG03原后继消费者组合沿同一web-versioned-profile-creation执行，新增独立16MiB/30min、exact10、至多3个受影响纯/类型子进程累计60s；必须先收到Original三片Web实际main回执并fresh原子领取。先实现合法公共目录与Prepare、可信GET后完整tuple的Send/Queue门禁、Thread/Picker联合类型分支；保原draft/UNKNOWN key，不改session/公共codec。只准备受影响mounted夹具，不授浏览器或个人服务，唯一status仍原MSG03 canonical。
+- MSG03原后继消费者组合沿同一web-versioned-profile-creation执行，原新增独立16MiB/30min、最终exact11、至多3个受影响纯/类型子进程累计60s；必须先收到Original三片Web实际main回执并fresh原子领取。先实现合法公共目录与Prepare、可信GET后完整tuple的Send/Queue门禁、Thread/Picker联合类型分支；保原draft/UNKNOWN key，不改session/公共codec。只准备受影响mounted夹具，不授浏览器或个人服务，唯一status仍原MSG03 canonical。
 
 - MSG03后继唯一来源收敛：不采用长期两树可写或proof执行源特例。原canonical108冻结历史；在三Web实际main接收后，由同owner对新WT原子领取exact11（加既有plans前缀），迁入固定小plan/status/review并保旧18叶完成历史，原大证据只引用。Original合法registry owner在新source就绪后只切同task既有一条路由。[固定两树差异研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-execution-source-separation-research.json)保留为观察，设计选项不扩大当前核验；不新增同义task。
 
-- MSG03同段consumer审查点见[固定说明](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json)：required tuple仅管Send/Queue，Prepare不被同一reason误禁；按钮依赖目录时订阅同一catalog，提交仍以最新同源权限在detach前复核。实际三Webmain回执尚未到，新exact11条件段尚未take/写产品；现fake夹具不得外推真实认证/Queue。MATURE02父6aee两叶metadata已STOP/有限审通过，任务仍NOT_COMPLETED，不代表个人settings激活。
+- MSG03同段consumer审查点见[固定说明](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json)：required tuple仅管Send/Queue，Prepare不被同一reason误禁；按钮依赖目录时订阅同一catalog，提交仍以最新同源权限在detach前复核。当时三Webmain尚待接收；现已main1b1428且exact11 consumer阶段已完成，后述真实fixture阶段仍不得由fake夹具外推认证/Queue。MATURE02父6aee两叶metadata已STOP/有限审通过，任务仍NOT_COMPLETED，不代表个人settings激活。
 - 原D01关系待办保留WPF-I01→WPF-001的父层级警告，待原权威给明确关系；不通过猜父关系或新task隐藏提示。MSG03当前无active claim与两次records释放一致，迁移后只在正常交付核一次同ID source/claim匹配。
 
 - 2026-10-08 03:39自然接收：三Web29源已在main1b1428完成[受控接收](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web29-main-reception.json)，固定tsx7/7与组合noEmit通过，旧失败/KEEP保留。原MSG03 exact11条件已满足并已派实际源阶段，不等待重复回执；旧pure仍不是独立Web验收。原WPF-P01的PLUGIN-DIAGNOSTIC-NOTIFY-01继续同任务，新独立web-plugin-diagnostics/exact7，先Arc原owner只交回host.ts和plugin-host.test.ts，保主线Arc差量；生产consumer为plugin-integration/react.tsx，真实Settings夹具复用，0新registry或浏览器许可。
 
 - 两个原任务后继已实际开工：MSG03预算/供给03:39:51.914994、exact11领取03:39:52.022，04:09:51.914994截止；P01预算/供给03:42:14.853242、exact7领取03:42:26.395，04:12:14.853242截止。P01先获Arc c34dv3精确移出host/test，原16叶保留；新WT基于已审main1b1428，生产诊断订阅与真实Settings局部夹具沿既有TODO，旧I01证据不可被默认browser入口改写。首预算写不冒首产品编辑时刻，实际浏览器均未授。
+
+- 2026-10-08 04:03既有后继收口：MSG03 f71e/c99消费者源码与局部检查获[限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-source-local-review.json)，五production类型0和两新pure通过、6082ms关闭；真实旅程未运行。D05已于04:00:32.480按同ID切到新唯一status，summary215/领取available/公开绑定保持，旧canonical108冻结。原exact11继续新的24MiB/25min真实fixture准备，production冻结，只写两受领test和ownrecords；固定闭包实际34SQL，0PG/HTTP/Chrome，最多2个必要local检查。公开publisher只注册/发布，不预建会话，必须真正UI CREATE、可信GET、失ACK原请求恢复、Send/Queue完整设置与草稿保留。
+- 同一WPF-P01诊断后继039167获[源码/局部检查限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/p01-diagnostic-source-local-review.json)，四child5759ms关闭，原失败保留；原16MiB全STOP。新8MiB/20min准备仅聚焦真实PluginSettings的错误通知/稳定快照/关闭返焦，mounted仍NOT_RUN，单次60s仅候选。原I01整入口与证据不可复用写入；既有D05 owner后续只切同ID来源，不新任务或status。
+- 原个人Web发布优先：已main的Web29与当前报告e15后台880060的[12个公共接口/路由逐字核验](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web29-e15-public-api-compatibility.json)未发现必需新API，production使用patch-v1。原合法publisher应先准备最早已验收组合，fresh实际tuple与必要兼容检查后另排发布，不因未完成SVC09/MSG03/P01自动阻塞；不套旧发布tuple、不刷新用户tab/草稿。SVC09旧a266/f922 READY已由Original改为source-delta准备，尚未授构建。
+- 原WPF-REQ-04产物验证关联缺口沿[固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/artifact-verification-identity-research.json)保留：现标签诚实显示Task verification，但单产物精确verdict公共关联尚未接收；不得凭同hash/标题推断。复用原central intake/依赖owner，保lazy详情、artifact身份与陈旧tab验收，不新增任务或Web越权共享contract。
+
+- 原R03-05/REQ32下一候选由Mika空闲architecture_read承接A稳定workspace身份、B有界懒读随后、C/D保持OPEN，仍须Original确认唯一owner与同task权威源迁移、独立WT/branch及exacttake；04:01只读无writer不等写权。先受控接PROCESS581d，再按task/attempt/ownerVersion/runner/workspace身份和fenced GET/unavailable最小切片推进，不暴露任意路径、不宣FS/PTY已完成。原WPF-001-37工作段时间后继由原TIMING owner普通有界增量承接，个人Web发布与MSG03优先，不补猜历史。

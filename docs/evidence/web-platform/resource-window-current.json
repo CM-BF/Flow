@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-08T02:28:37.999Z",
-  "state": "NO_ACTUAL_HOLDER_WEB29_MAIN_ACCEPTED_SOURCE_SUCCESSORS",
-  "groupWindowOwnership": "assignment_review soleR3selected notSTART",
+  "recordedAt": "2026-10-08T04:05:24.483Z",
+  "state": "NO_ACTUAL_HOLDER_MSG03_FIXTURE_SOURCE_ACTIVE",
+  "groupWindowOwnership": "No actual holder; D05 exact RETURN, MSG03 ordinary preparation only",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -1302,7 +1302,7 @@
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
   "currentWindowEvidence": "release-backend-route-20261007/msg03-settings-actual.json",
   "webActualHolder": null,
-  "webGate": "TUIR3selected;Webruntimeclosed",
+  "webGate": "NO_ACTUAL_GRANT; MSG03 and P01 source preparation only",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": {
     "state": "RETIRED_HISTORICAL_POINTER",
@@ -1310,7 +1310,7 @@
     "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
   },
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": "TUIR3soleactualselection;Webreview/sealonly",
+  "webReservation": "NONE_SELECTED",
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -2036,7 +2036,7 @@
     "formalReportCount": 4,
     "personalResumed": false
   },
-  "futureCompleteFreshFloorBytes": 11647320064,
+  "futureCompleteFreshFloorBytes": 11650465792,
   "futureFloorEvidence": "Current forwardAdmission terms; historical consumed gates retained by logicalId.",
   "externalPreparedCandidate": null,
   "currentActual": null,
@@ -2285,8 +2285,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "NO_ACTUAL_HOLDER_WEB29_MAIN_ACCEPTED_SOURCE_SUCCESSORS",
-    "at": "2026-10-08T03:43:18.945Z",
+    "state": "NO_ACTUAL_HOLDER_MSG03_FIXTURE_SOURCE_ACTIVE",
+    "at": "2026-10-08T04:05:24.483Z",
     "termsBytes": {
       "residualUnknown": 8806203392,
       "priorK01Db": 134217728,
@@ -2440,11 +2440,15 @@
       "ConnectionPresentationImportCorrection": 0,
       "MikaMature02SuccessorMetadata": 0,
       "OriginalWebCombinedVerification": 8388608,
-      "MSG03UIConsumerCompositionSource": 16777216,
+      "MSG03UIConsumerCompositionSource": 0,
       "ArcPluginDiagnosticHandbackMetadata": 0,
-      "PluginDiagnosticNotificationSource": 16777216
+      "PluginDiagnosticNotificationSource": 0,
+      "X01VerifierProcessR1": 0,
+      "MSG03RealFixturePreparation": 25165824,
+      "D05MSG03SourceReloadMetadata": 3145728,
+      "P01DiagnosticMountedPreparation": 8388608
     },
-    "minimumFreshFreeBytes": 11647320064,
+    "minimumFreshFreeBytes": 11650465792,
     "formula": "8806203392 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 134217728 + 538968064 + 4194304 + 1048576 + 1499463680 + 8388608 + 131072 + 8388608 + 335544320 + 134217728 + 8388608 + 12582912 + 144703488 = 13847232512",
     "method": "Active or still-unknown futuregrowth plus one reserve. Explicit sealed no-writer stock counted by freshfree only; Original oldcold retained128MiB PGbackground. Historical combinedfloors are not permanent intrinsic protection.",
     "classificationEvents": [
@@ -4442,6 +4446,41 @@
         "beforeBytes": 3145728,
         "afterBytes": 0,
         "basis": "Originalowner final0dc0fff push/clean/all16STOP explicitly reported afterexact2partialamend;2614876<3MiB. No product/intake changed, no physicalstockcleanup. ExactSTOP UTC not reported, not fabricated."
+      },
+      {
+        "at": "2026-10-08T03:47:29.803Z",
+        "term": "X01VerifierProcessR1",
+        "beforeBytes": 0,
+        "afterBytes": 177209344,
+        "basis": "New single reviewedactual161MiB plus8MiB natural tail; explicitOriginalcapacity actualclosure7630B/7b10 verified. Existingpacket no newpreparation/greens, no actualSTART inferred."
+      },
+      {
+        "at": "2026-10-08T03:54:24.796Z",
+        "term": "X01VerifierProcessR1",
+        "beforeBytes": 177209344,
+        "afterBytes": 8388608,
+        "basis": "Personally pinned ownerclosed168f68 +toolterminal785f4 +callerentry92fc4: actualPASS/exactRETURN03:50:50.285. Caller161MiB futureclosed; original8MiB naturalarchive/indexobjects until03:59:29.803 unchanged. OuterdualEOF andwholeexternalwall unknown preserved;no rerun/T7 inference."
+      },
+      {
+        "at": "2026-10-08T03:57:29.429Z",
+        "term": "MSG03UIConsumerCompositionSource",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "Ownfinalc99c clean/all11STOP, pinned098ac9;6082ms/2childrenclosed,retained7700503<16MiB. Newfixture isindependentbudget, oldunusedcreditclosed."
+      },
+      {
+        "at": "2026-10-08T03:57:29.429Z",
+        "term": "MSG03RealFixturePreparation",
+        "beforeBytes": 0,
+        "afterBytes": 25165824,
+        "basis": "NewsameMSG03 exact11 fixture/source preparation25min, <=2x20s/cum40 pure/types only, noPG/HTTP/Chrome; allrepo supply/indexatomic/objects/raw/privatecaller/cache within24MiB, existingserverfixturesonlyreadonly."
+      },
+      {
+        "at": "2026-10-08T03:57:29.429Z",
+        "term": "D05MSG03SourceReloadMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 3145728,
+        "basis": "New<=8min3MiB ownD05scope receipt/index/objects only plusoneownedservice reload<=15s; source8e conditionalindependentreview+main, no personal/PGfixture/browser. No phantomactualholder."
       }
     ]
   },
@@ -4632,6 +4671,14 @@
       "personal": "ACCEPTING24_HEALTHY_ROLE_STOCK",
       "currentRepair": "Source6491/dd6dd finalindependentapproval received; actualpublicationselectednotSTARTED. Old04defaultdiscoveryFAIL/EOFunknown4MiB remainsdistinct; nohistoryrewrite.",
       "olderTerms": "Two9,568,256 caps retained pending finite no-writer classification; historicalHELD23 not current"
+    },
+    "webReservation-retired-2026-10-08T04:04:52.749Z": {
+      "retiredAt": "2026-10-08T04:04:52.749Z",
+      "value": "TUIR3soleactualselection;Webreview/sealonly"
+    },
+    "webGate-retired-2026-10-08T04:04:52.749Z": {
+      "retiredAt": "2026-10-08T04:04:52.749Z",
+      "value": "TUIR3selected;Webruntimeclosed"
     }
   },
   "launchHandoffBoundary": {
@@ -4679,9 +4726,9 @@
   },
   "activeWindows": {},
   "selectedWindows": {},
-  "activeWindowPolicy": "SoleO16renew150s selected,0query/0Chrome; no competingactual. Ordinary boundedlocal/light source allowed withcurrentfullfloor; S01 notOPEN.",
+  "activeWindowPolicy": "No actual holder or pending actual selection. Bounded ordinary local checks serial per Web team. Existing publisher may prepare Web29; SVC09 build awaits reviewed fixed delta. No retry or implicit native/PG/browser grant.",
   "actualHolder": null,
-  "at": "2026-10-08T03:43:18.945Z",
+  "at": "2026-10-08T04:05:24.483Z",
   "ArcScrollbarClearanceContinuation": {
     "authorizedAt": "2026-10-08T02:11:29.715Z",
     "capBytes": 8388608,
@@ -6344,6 +6391,14 @@
       "finding": "Attempt cwd contains outbox and cannot expose entire root; ownedAttempt identity alone does not check lease/finished. Reuse existing nofollow/nonblock/file-size/change/UTF8 guard with parent identity and returned authority recheck.",
       "candidate": "Existing R03-05 A/B opaque workspace/resource contract with task/runner/attempt/ownerVersion/workspaceVersion; opt-in bounded one-level paging/lazy versioned read. C/D unavailable.",
       "authorization": "No backend grant. Original must confirm unique owner/worktree/legal exact scope; no duplicate task."
+    },
+    "MikaAvailableSuccessor": {
+      "at": "2026-10-08T04:04:52.749Z",
+      "state": "AWAIT_ORIGINAL_EXISTING_R03_OWNER_HANDOFF_NOT_GRANTED",
+      "candidateOwner": "Mika architecture_read",
+      "candidate": "Existing R03-05 / REQ32 BR01-A first stable workspace identity; B bounded lazy read later under same identity, C/D OPEN.",
+      "preconditions": "Original first controlledintake PROCESS581d; then unique same-task canonical source/independentWT/branch plus exact atomic scope before any delta. Readonly ledger04:01:46 no matching writer is not write authority.",
+      "boundary": "Opaque task/attempt/ownerVersion/runner/workspace descriptor and fenced owner GET/unavailable; no arbitrary filesystem paths or claim FS/PTY complete. No Web backend implementation assigned."
     }
   },
   "VersionedProfileUIHandoffMetadata": {
@@ -6556,15 +6611,23 @@
     "implementationProof": "NOT_PASSED: trailing Chinese annotation parsed as a source path; parser errors[] does not imply proof errors[]"
   },
   "MSG03CanonicalStatusRoute": {
-    "at": "2026-10-08T03:26:16.281Z",
-    "state": "MIGRATION_AUTHORIZED_PENDING_NEW_CANONICAL_WRITE_AND_REGISTRY_ROUTE",
+    "at": "2026-10-08T04:02:52.935Z",
+    "state": "SAME_ID_NEW_SOURCE_LIVE_CLAIM_MATCHED",
     "taskId": "WPF-MESSAGESETTINGS03",
-    "currentUntilHandoff": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+    "currentUntilHandoff": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/plans/wpf-message-settings-app/status.md",
     "currentFixedHead": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
     "plannedCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/plans/wpf-message-settings-app/status.md",
     "plannedExecutionWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
-    "executionClaim": "Previous fee104 v2 released; future exact11 take not yet performed",
-    "rule": "One writable canonical task source. Existing registry entry updated by legal registry owner after fixed new source receipt. Old108 is immutable history, no long-lived dual write or hidden proof-source override."
+    "executionClaim": "a897732d-f68f-486e-a614-73c5510e966c v1 ACTIVE exact11",
+    "rule": "One writable canonical task source. Existing registry entry updated by legal registry owner after fixed new source receipt. Old108 is immutable history, no long-lived dual write or hidden proof-source override.",
+    "oldFrozenStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+    "receipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/msg03-canonical-live.json",
+      "bytes": 5092,
+      "sha256": "2c2926caf5156461eeadb3d62acb8a251d9a88678e3f17937529d8254b1253f6"
+    },
+    "uiObservation": "Root existing DOM after04:00 reload: badge已领取, sameowner, in-progress6/7, NOT_COMPLETED; no userdialog interaction.",
+    "claimMatchObservation": "Separate subsequent root existing-DOM observation: 已领取 and named lead/worker. Do not derive this from live receipt assignment=pending."
   },
   "O16ReauthorizeGrant": {
     "at": "2026-10-08T03:09:07.542Z",
@@ -7251,7 +7314,7 @@
     "retryOrDecide": "NOT_AUTHORIZED"
   },
   "MSG03UIConsumerCompositionSource": {
-    "state": "SOURCE_ACTIVE_EXACT11_TAKEN_MAIN_ADOPTED",
+    "state": "ALL11_SOURCE_METADATA_STOP_SOURCE_LOCAL_APPROVED",
     "authorizedAt": "2026-10-08T03:23:47.746Z",
     "task": "WPF-MESSAGESETTINGS03",
     "owner": "workspace_panels_owner",
@@ -7330,7 +7393,47 @@
       "committedAt": "2026-10-08T03:39:52.022Z"
     },
     "mainAdoptionCommit": "9ee273b48e200644e52c68489575102596fa67ae",
-    "childrenStarted": 0
+    "childrenStarted": 0,
+    "localResult": {
+      "state": "TYPES_AND_TWO_NEW_CONSUMER_CASES_RETURNED",
+      "source": "f71e1c9a3",
+      "childrenUsed": 2,
+      "chargedMs": 6082,
+      "first": {
+        "start": "2026-10-08T03:45:29.331702Z",
+        "pid": 19019,
+        "pgid": 19019,
+        "exit": 0,
+        "group": "absent",
+        "scratch": "absent",
+        "errors": [],
+        "log": "empty regular file; dualEOF not asserted"
+      },
+      "scope": "Five affected production roots/static imports only, not wholeWeb",
+      "second": {
+        "start": "2026-10-08T03:49:25.050884Z",
+        "pid": 20238,
+        "pgid": 20238,
+        "exit": 0,
+        "passed": 2,
+        "notSelected": 97,
+        "chargedMs": 1944,
+        "group": "absent",
+        "scratch": "absent",
+        "errors": []
+      }
+    },
+    "finalHead": "c99c3772620b5c1a81bed10cd6881a7f08c00131",
+    "source": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+    "finalReceipt": {
+      "path": "/private/tmp/msg03-ui-consumers-20261008-033951/final.json",
+      "bytes": 2581,
+      "sha256": "098ac9da055cefc4df3c28d006186ff618c393ba63729d3f58e1049f02625359"
+    },
+    "allStop": "Owner reportedall11STOP; exactUTC fromfinalreceipt",
+    "futureBytes": 0,
+    "retainedBytes": 7700503,
+    "review": "efb1ee6f limitedsource/local;mountedNOT_RUN/mainNOT_INTEGRATED"
   },
   "D01ExistingRelationObservations": {
     "at": "2026-10-08T03:32:16.038Z",
@@ -7367,7 +7470,7 @@
     "futureBytes": 0
   },
   "PluginDiagnosticNotificationSource": {
-    "state": "SOURCE_ACTIVE_EXACT7_TAKEN",
+    "state": "ALL7_STOP_LIMITED_SOURCE_LOCAL_APPROVED_MOUNTED_NOT_RUN",
     "authorizedAt": "2026-10-08T03:40:41.421Z",
     "task": "WPF-P01",
     "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
@@ -7377,7 +7480,7 @@
     "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
     "planningBytes": 16777216,
     "durationMinutes": 30,
-    "maxEngineeringChildren": 3,
+    "maxEngineeringChildren": 4,
     "childMs": 20000,
     "cumulativeMs": 60000,
     "PG": 0,
@@ -7397,7 +7500,7 @@
     ],
     "startCondition": "Only after original Arc owner COMMITTED exact2leaf partialhandback, fresh all7 literal/prefix and same-task conflicts absent, original P01 released/oldcanonical frozen, new ownWT/branch exactbase1b1428/source/index/objects/TMP accounting within16MiB, atomic exact7 take before delta. Do not use stale aac0 host/test as current. No old P01 runtime credit.",
     "implementation": "Existing host bounded100 diagnostics-specific subscription/stable snapshot plus production PluginSettings consumer. Notify without rebuilding global/slot snapshots, preserve command errors and isolation, safe unsubscription/dispose/nonrecursive listener-error policy. Reuse real AppPluginSession/PluginProvider slotfixture and production PluginSettings, no custom trace replacement or secondregistry.",
-    "verification": "Necessary bounded focused invariant tests/types/fixture preparation only, <=3 sequential20s children/cumulative60s includingcleanup, fresh completefloor and ownnamespaces/exactclosure each. Do not rerun old11-group browsermatrix. Actual mounted panel-open→isolated error→count/text update is separate future browser grant.",
+    "verification": "Necessary bounded focused invariant tests/types/fixture preparation only, <=4 explicit sequential children; first three20s and last10s children/cumulative60s includingcleanup, fresh completefloor and ownnamespaces/exactclosure each. Do not rerun old11-group browsermatrix. Actual mounted panel-open→isolated error→count/text update is separate future browser grant.",
     "sourceMigration": "SameWPF-P01 only. Copy fixed small original28b70c35 plan/status/review into newWT at authorizedhandoff, preserve history/largeevidence references, oldweb-plugin-host freezes. Original legal D05 registry owner changes existing task route after newsource ready; no secondwritable status or newtask.",
     "firstWrite": "2026-10-08T03:42:14.853242Z",
     "deadline": "2026-10-08T04:12:14.853242Z",
@@ -7415,11 +7518,91 @@
       "sameSizeAtomicReserve": true,
       "sharedConfigUnchanged": true
     },
-    "childrenStarted": 0,
-    "evidenceBoundary": "Focused newbrowser case outputs only ownP01evidence or ownedTMP; original integration browser defaultI01output/fullmatrix is not permitted. Real productionSettings only; no customtrace substitute."
+    "childrenStarted": 4,
+    "evidenceBoundary": "Focused newbrowser case outputs only ownP01evidence or ownedTMP; original integration browser defaultI01output/fullmatrix is not permitted. Real productionSettings only; no customtrace substitute.",
+    "sourceMigrationReceipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/source-switch.json",
+      "bytes": 1511,
+      "sha256": "d6b51450161d6a517fb4597971b27354d07b129f3fb3fc51469d9f89496af26a",
+      "registry": "Existing WPF-P01 source route replacement pending Original; new same-ID status initialized, old28b70 frozen."
+    },
+    "localResult": {
+      "state": "FOUR_CHILDREN_CLOSED",
+      "childrenUsed": 4,
+      "chargedMs": 5759,
+      "start": "2026-10-08T03:48:47.130433Z",
+      "exactReturn": "2026-10-08T03:48:47.886339Z",
+      "exit": 1,
+      "dualEOF": true,
+      "group": "absent",
+      "scratch": "absent",
+      "root": "/private/tmp/plugin-diagnostic-notification-20261008/direct-1",
+      "cause": "First direct fixture declared a command without implementation; activation rolled back before diagnostic listener installed. Original4PASS2FAIL preserved.",
+      "second": {
+        "start": "2026-10-08T03:50:14.233277Z",
+        "exactReturn": "2026-10-08T03:50:14.907688Z",
+        "exit": 0,
+        "passed": 2,
+        "notSelected": 26,
+        "chargedMs": 674,
+        "dualEOF": true,
+        "group": "absent",
+        "scratch": "absent"
+      },
+      "third": {
+        "start": "2026-10-08T03:51:10.486405Z",
+        "exactReturn": "2026-10-08T03:51:11.851425Z",
+        "exit": 2,
+        "chargedMs": 1365,
+        "dualEOF": true,
+        "group": "absent",
+        "scratch": "absent",
+        "cause": "TS2688 vite/client declaration setup, no source type verdict"
+      },
+      "fourth": {
+        "start": "2026-10-08T03:53:01.699733Z",
+        "exactReturn": "2026-10-08T03:53:04.663599Z",
+        "exit": 0,
+        "chargedMs": 2964,
+        "dualEOF": true,
+        "drop": 0,
+        "group": "absent",
+        "scratch": "absent"
+      }
+    },
+    "additionalFocusedTypes": {
+      "authorizedAt": "2026-10-08T03:52:10.573Z",
+      "maxMs": 10000,
+      "cleanupReserveMs": 3000,
+      "count": 1,
+      "reason": "Prior strict TS2688 loader config pointed vite/client through @types-only typeRoots; use existing fixed vite/client.d.ts explicitfile plus node types. No product delta, preserve compilerfailure; only necessary affectedstrict once, no pure rerun.",
+      "totalMsUnchanged": 60000,
+      "capBytesUnchanged": 16777216,
+      "deadlineUnchanged": "2026-10-08T04:12:14.853242Z"
+    },
+    "finalHead": "03916738ebb2e834e628429ee70aad886b5b5176",
+    "allStop": "2026-10-08T03:59:17.036170Z",
+    "stopReceipt": {
+      "path": "/private/tmp/plugin-diagnostic-notification-20261008/final-stop.json",
+      "bytes": 3842,
+      "sha256": "e7a2e582dc80e44583f04a8b88d5de4979877b60952016e93df93913b8b430a2"
+    },
+    "futureBytes": 0,
+    "mainIntake": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/main-intake.json",
+      "bytes": 2911,
+      "sha256": "5113edefdc354b82bf9798e269144b1bd200db18ce29465fc3aafd3d80cd1e80"
+    },
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/root-source-local-review.json",
+      "bytes": 5150,
+      "sha256": "10588cb7b333bf3e9e78318b044b89e35b45520b33a1bd48b02a6a5620697d01"
+    },
+    "retainedConservativeBytes": 14913536,
+    "actualPeak": "NOT_OBSERVED"
   },
   "X01VerifierProcessR1Queue": {
-    "state": "READY_NOT_SELECTED_WAIT_ORIGINAL_ISOLATED_LOCAL_FACTS",
+    "state": "CONSUMED_ALL_STOP_RESULT_ACCEPTED_T7_MAIN_OPEN",
     "at": "2026-10-08T03:42:29.088Z",
     "task": "X01",
     "owner": "Mika / architecture_read",
@@ -7436,6 +7619,328 @@
     "planningBytes": 177209344,
     "limits": "PG17 plus16 adminheadroom; existing supervised10s availability/preflightpoolclosed; exact one180s caller110work60cleanup10final;1case3tasks3main2worker;0provider/Chrome/personal/install/build;no retry;failureKEEP/T7separate",
     "accounting": "32MiB TMP +1MiB raw +128MiB DBWAL planning +8MiB seal =169MiB; not counted as active future until selection. Reserve once already in current. pairedBytes will equal selected completeFloor minus1073741824 reserve minus168820736 caller own161MiB.",
-    "blockingQuestion": "Original reported isolated local capacity stage; need its actual selected/start/return and exclusion boundary before new sharedactual. No repeated X01source review/preparation."
+    "blockingQuestion": null
+  },
+  "SVC09PublicSourceCompositionFollowup": {
+    "at": "2026-10-08T03:45:24.395Z",
+    "state": "READONLY_FINDING_FOR_EXISTING_ORIGINAL_COMPOSITION_OWNER",
+    "source": "Root relayed Mika/db fixed public source inspection; no privateinventory/build/operation",
+    "facts": [
+      "2eeb eight source pointers vs reviewed03527839: six identical blobs. Selected environment8d5326 omits main environment.mjs12–15 center-only FLOW_STARTUP_DIAGNOSTICS=v1 forwarding; selectedpreview still filters, so diagnostic opt-in preservation is not established.",
+      "Selected runners aa741 includes CORE preLIMIT; difference from main AV verifier v4 may be explicitly scoped out for non-plugin acceptance.",
+      "Retained880060 host/maintenance-target matches main, but runner/runtime terminal ordering differs: old reportBatch lacks journal cleanup until execute returns; main runtime256–262 performs completeAdmission afterterminalACK thenoutboxunlink. This ordinary durableterminal-order fix is not merely plugin-only."
+    ],
+    "next": "Original existing SVC09 composition owner pins exact selected source/delta and scope; no newbuild or personal grant, no Web duplicateimplementation.",
+    "compatibility": {
+      "at": "2026-10-08T03:50:29.952Z",
+      "fixedBackend": "f9221dbdce367d1794586471991adbe7a5a98c13",
+      "fixedWebBase": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+      "consumerSource": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "scope": "Root fixed source and independentS01read03:49:22: consumed catalog/header/CREATE/GET/Queue require no newbackend endpoint/DTO/CREATEflag. Not runtime/realserver/deployment proof.",
+      "separateDeltas": "Environment selectedblob85625ac needs reviewed18bf17ea26cacb4a12cd89f962b455f6688f729d wholeleaf50584c. Runtime only81b4805c42d12ad35e70cd7e27ad3b78df1f035a three terminalACK→completeAdmission→outboxunlink hunks, no wholesale runtime/pluginemitBatch. Original combinationreview still required; not MSG API missing."
+    }
+  },
+  "ordinaryLocalCurrent": {
+    "state": "NONE_RUNNING",
+    "note": "MSG03 source preparation max2 local children authorized; P01 four closed. Do not infer future launch."
+  },
+  "OriginalIsolatedCapacityLocalResolution": {
+    "at": "2026-10-08T03:47:29.803Z",
+    "receipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/retention-five/result.json",
+      "bytes": 7630,
+      "sha256": "7b10cb03cb22f0a95f2d56405fc8fa3d61af341d7dfd0f2c878f23097aadd09f"
+    },
+    "source": "167958cf229851ecb235975d858d50d839009afc",
+    "owner": "astra_ultra_execution_lead/assignment_review",
+    "start": "2026-10-08T03:34:41.913Z",
+    "exactReturn": "2026-10-08T03:35:07.895Z",
+    "state": "CANONICAL_TWO_CHILDREN_FULL_RETURN_NO_PENDING",
+    "interpretation": "Explicit isolated synthetic retention/store-lock capacity case closes reported assignment_review local request; no PG/provider/build/personal. Red retained,6green. Not inferred from missingfile or elapsedtime."
+  },
+  "X01VerifierProcessR1Grant": {
+    "state": "CONSUMED_PASSED_CLOSED_NO_RETRY",
+    "allowRun": false,
+    "logicalId": "X01-VERIFIER-PROCESS-R1-ONCE",
+    "window": "1095cf1739f446898319a20ab5916259",
+    "selectedAt": "2026-10-08T03:47:29.803Z",
+    "latestStart": "2026-10-08T03:51:29.803Z",
+    "segmentDeadline": "2026-10-08T03:59:29.803Z",
+    "lead": "mika",
+    "owner": "architecture_read",
+    "task": "X01",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+    "branch": "codex/plugin-enable-binding",
+    "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+    "readySha256": "81098b143f416c92e708217fd89a053e8d6bfaca90ea99a719bec5da0e318235",
+    "manifestSha256": "b110301971336745a05866957a9385906f7e6fb26eda0393cd480213317ecb99",
+    "inputSha256": "49039b67f227f59ba1940e6bab814e426576bdf00ec99d2d1d05ed31e3b941a0",
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "claimVersion": 34,
+    "scopeCount": 36,
+    "stage": "X01_VERIFIER_PROCESS_PG",
+    "minimumFreshFreeBytes": 11824529408,
+    "frozenCompleteFloorBytes": 11824529408,
+    "pairedBytesAtSelection": 10581966848,
+    "planningBytes": 177209344,
+    "runtimePlanningBytes": 168820736,
+    "sealPlanningBytes": 8388608,
+    "budgetScope": "All new preflight receipts, admission/raw,32MiB scratch,128MiB DB/WAL planning,1MiB runtime raw and8MiB natural result/index/objects tail. Sealed priorstock already usesfreshfree;reserveOnce onlyonce. Planning is not harddatabase/WAL peakproof.",
+    "limits": {
+      "preflightMs": 10000,
+      "wholeCallerMs": 180000,
+      "workMs": 110000,
+      "cleanupMs": 60000,
+      "finalMs": 10000,
+      "PGConfigured": 17,
+      "adminMargin": 16,
+      "availableRequired": 33,
+      "database": 1,
+      "cases": 1,
+      "tasks": 3,
+      "mainProcesses": 3,
+      "workers": 2,
+      "provider": 0,
+      "Chrome": 0,
+      "personal": 0,
+      "install": 0,
+      "build": 0,
+      "maxAttempts": 1
+    },
+    "admission": "Owner creates exact existing admission shape lead=mika/stage/state=OPEN, actualsamecall ledgerObservedAt<=60s and fullinput claim fields, exactexecutionHead/window/manifest, pairedBytes=max(selectedfloor,freshcurrentfullsum)-reserve1073741824-caller161MiB168820736. Do not regenerate fixedinputs or source. Fresh402/62/15+9bindings,HEADoriginclean,namespaceENOENT,rootidentity,existing boundedPGavailability caller/adminpoolclosed>=33 before actual. Preflight and actual exactSTART/TERMINAL/RETURN separate. A failed/preflight/unknown result retainsraw/KEEP and consumes this one attempt; no retry/forcedDBcleanup/newsourcecheck.",
+    "concurrency": "Only newsharedPG/browser/native actual selection. Ordinary bounded local sourcechecks in otherteams permitted underexisting per-teamlimit; not quietcapacity/S01benchmark. No otherPG/browser/native/build/install/personal actual until exactRETURN.",
+    "return": "TERM_EXIT is notRETURN. ExactknownPID/PGID/EOF/ownedlisteneradminDBconnection and namespace result required;UNKNOWN retained without inventedcleanup. No automaticT7."
+  },
+  "X01VerifierProcessR1Actual": {
+    "state": "PASSED_EXACT_FULL_RETURN_FINAL_SEALED",
+    "actualStart": "2026-10-08T03:49:53.085Z",
+    "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+    "window": "1095cf1739f446898319a20ab5916259",
+    "pid": 20311,
+    "reservation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/verifier-process-run-r1/reservation.json",
+      "bytes": 285,
+      "sha256": "a5a4d99da83dfda4c5532d689adab5e5d2264a9430d9e87cc85540eebb9d2f87"
+    },
+    "consumedFloorBytes": 11824529408,
+    "actualFreeBytes": 14127165440,
+    "source": "Manager read existing operator-written reservation; not plannedstart or elapsedtime inference",
+    "return": "FULL_RETURN",
+    "internalCallerStart": "2026-10-08T03:49:53.124365+00:00",
+    "firstWrite": "2026-10-08T03:49:53.011Z",
+    "pgid": 20311,
+    "terminal": "2026-10-08T03:50:00.605755Z",
+    "exactReturn": "2026-10-08T03:50:50.285Z",
+    "returnState": "FULL_RETURN",
+    "receipts": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/verifier-process-run-r1/owner-closed.json",
+        "bytes": 2039,
+        "sha256": "168f68c2729e628fcc038c2bdccd257222ff8e41fe8d84ba8a9bc71926d5110a"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/verifier-process-run-r1/tool-terminal.json",
+        "bytes": 860,
+        "sha256": "785f4d663f87beee4beffbc64ee31f3c6449caba018f25a441f578a32f23c640"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/verifier-process-run-r1/external-caller-entry.json",
+        "bytes": 341,
+        "sha256": "92fc4ed48d7f21c320e417f7392236b25a68016a219fedfe0702fd052c495137"
+      }
+    ],
+    "result": {
+      "selected": 1,
+      "passed": 1,
+      "case": "Three tasks: source then invalidJSON verifierfailed thenJSON verifierpassed",
+      "provider": 0,
+      "T7": "NOT_PROVEN"
+    },
+    "closure": "Nine registeredPIDs laterESRCH;twoOPSmergedEOF/full exit0;dedicatedDB1383156 identity/0connections/normalDROP+absence andthreeListenersclosed fromoriginalownerreceipts;two realworkers settled3EOF/processClosed/removed;ownTMP andexternal5filesidentityarchived thenENOENT",
+    "outerDualEOF": "NOT_INDEPENDENTLY_RECORDED",
+    "wholeExternalWall": "UNKNOWN",
+    "finalHead": "114530bfd2616c5973e1b7d54363a83e66c94f54",
+    "allStop": "2026-10-08T03:58:22.272Z",
+    "stopSource": "Mika owner final STOP via root; canonical r1-final pending-Git snapshot preserved, final actual HEAD/clean reported after push",
+    "futureBytes": 0,
+    "retainedTailConservativeBytes": 3535876,
+    "reviewDecision": "RESULT_FIDELITY_REVIEW_APPROVED",
+    "resultHead": "fbc259bc51041d618f0e41bf702d650b5420d93f",
+    "reviewPacket": "45bc60697568067fe1689d73093bc7a29c9b02a8",
+    "finalMetadata": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/r1-final.json",
+      "bytes": 679,
+      "sha256": "ac2458a8458ecc1adeb3d340ad2da6dd6e4c6ad4721a22995b43ba5ca647a774"
+    }
+  },
+  "SVC09SettingsBackendBuildCandidate": {
+    "state": "SOURCE_DELTA_PREPARING_NO_BUILD_GRANT",
+    "at": "2026-10-08T03:54:24.796Z",
+    "execution": "a266e20364422648f644a3e4cd5cf541862f1524",
+    "source": "f9221dbdce367d1794586471991adbe7a5a98c13",
+    "preparation": "settings-backend/build-preparation.json andfixedmanifest fromexistingOriginalowner",
+    "requestedGrowthBytes": 2317352960,
+    "wholeMs": 422500,
+    "workMs": 420000,
+    "termMs": 500,
+    "reapMs": 2000,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "recipe": "Existing runFixedArtifact into empty independentstore;artifact1GiB,seed512MiB,archive32MiB,homecache128MiB,metadata512MiB,raw2MiB;reserve1GiBgloballyonce.8directchecks309msalreadyRETURNed, no rerun.",
+    "next": "Existing source owner performs legal exact takeover after runtime handback; source preparation only. Personal Web29 independent publication preparation proceeds.",
+    "supersededReadyAt": "2026-10-08T04:02:52.935Z",
+    "reason": "Original expressly superseded prior a266/f922 READY: compose reviewed environment18bf plus only runtime81b terminalACK/completeAdmission/outbox-unlink hunks; old preparation review retained historically. New fixed delta review/READY required, no actual selection or growth reservation."
+  },
+  "decision": "Web29 main1b1428 accepted and publicAPI-compatible with reported e15 backend; existing publisher preparation requested. D05 MSG03 route live, exact RETURN04:00:32.480. MSG03 real fixture source preparation active; P01039167 source/local sealed, mounted NOT_RUN. X01 r1 passed/fullSTOP; SVC09 source delta preparation, no build grant. No actual holder.",
+  "MSG03RealFixturePreparation": {
+    "state": "SOURCE_PREPARATION_ACTIVE",
+    "authorizedAt": "2026-10-08T03:57:29.429Z",
+    "task": "WPF-MESSAGESETTINGS03",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+    "branch": "codex/web-versioned-profile-creation",
+    "base": "c99c3772620b5c1a81bed10cd6881a7f08c00131",
+    "productionSource": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+    "claim": "a897732d-f68f-486e-a614-73c5510e966c v1 ACTIVE exact11 fresh beforewrite",
+    "planningBytes": 25165824,
+    "durationMinutes": 25,
+    "maxEngineeringChildren": 2,
+    "childMs": 20000,
+    "cumulativeMs": 40000,
+    "PG": 0,
+    "HTTPListeners": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "actualGranted": false,
+    "writeBoundary": "Only alreadyclaimed execution-profile-integration.fixture.ts/.browser.ts andownplans/evidence. Productionf71e frozen; ifactualfixture reveals specificproductgap, reportprecisedelta before sourcewrite. Existing Recovery fixture/startRecoveryFixture/RecoveryDatabaseLease readonlyimports/reference; no borrowingtheirwriteclaim.",
+    "journeys": "Own publish-only helper via publicregisterRunner/publishExecutionProfile, not seedprecreatedConversation. RealUICREATE→trustedGETcapability→fulltupleSend/Queuepre-detach gate, emptychoices/clear behavior; acceptedCREATElostACK retains samekey/body/draft thenretryGET; versionedApply/Cancel/reopen vslegacy with keyboard/390themes. Do not claimfakeBearer/localcapture fixture satisfies realserver/cookie/Queue.",
+    "preparation": "First bound exactserver/33SQL/runtime/packageclosure andindexatomic objectsplusmetadata/privatecaller before materialization; installeddepsreadonlypins/ownedlinks, nocopy/install/build. Propose exactPGconnections/listeners/browser/deadlines/scratch/raw/nativecaller; noactualpermission here. Reuse fixedsameboundaries supervision wherepossible; firstfailure boundedphase/geometry/maskedPNG inremainingworktime notcleanup, preserveoriginalfailure.",
+    "verification": "Only neededfixture pure/statictypes/syntax at mosttwo20s cumulative40 includingcleanup. Nounchangedfoundation/sourcegreens, no realserverimportexecution ifitopensPG/listener. Actualspec preparation source andruntimecandidate separated.",
+    "handoff": "Same migrateduniqueMSG03status innewWT; old108 remainsfrozen. ExistingD05routepending acceptedbyOriginal, no newtask.",
+    "dispatched": true,
+    "firstWrite": "2026-10-08T04:01:24.508036Z",
+    "deadline": "2026-10-08T04:26:24.508036Z",
+    "admissionFloorBytes": 11667243008,
+    "admissionFreeBytes": 14084317184,
+    "engineeringChildrenStarted": 0,
+    "supplyCorrection": {
+      "at": "2026-10-08T04:03:53.723Z",
+      "fixedSQLCount": 34,
+      "oldProposalCount": 33,
+      "basis": "Owner fixed c99/main1b inventory contains036-plugin-verification-bindings.sql; all fixed34 hash-bound, no moving main/no schema execution."
+    }
+  },
+  "D05MSG03SourceReloadGrant": {
+    "state": "CONSUMED_EXACT_RETURN_METADATA_SEAL_PENDING",
+    "authorizedAt": "2026-10-08T03:57:29.429Z",
+    "task": "D05 existing source registration",
+    "owner": "Original dashboard-architecture owner",
+    "sourceCandidate": "8e6894b30b5d48c5b3b4afb312b3adc46c303e90",
+    "claim": "3a6240d0 v6 fresh",
+    "planningBytes": 3145728,
+    "durationMinutes": 8,
+    "reloadMs": 15000,
+    "PGFixture": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "preconditions": "Independentlimitedreview approved andcontrolledmainreceipt forfixedMSG03same-IDroute, current noheavyactualselection/holder. Thenexecute originalowned4320reload directly without newapproval/packet, verifyPIDidentity andoldexit/newownedPID, preserveACCESSandFLOW_COORDINATION_DATABASE_URLwithoutprintingsecrets.",
+    "checks": "summary215unique plusMSG03actualnewsource/claimmatched;assignments.stateavailable, publicbinding/localaccesssame. HTTP200aloneinsufficient. P01notpartof8e candidate, do notclaimitsroutealreadychanged; oneexistingowner mayconsume P01d6b514source-switchinlaternaturalcompatiblebatch.",
+    "return": "ExactreloadRETURNimmediately;0pending before nextbuild. No usertab/draftrefresh andno claimreset. Original reportsallmetadataSTOP toclose3MiB.",
+    "queue": "ShortsafepointbeforeSVC09buildwhenready; notactualSTARTnorphantomholder whileindependentreviewpending.",
+    "allowRun": false,
+    "main": "ee8a62ac584e7033f065af57317fd10991192c0f",
+    "actualStart": "2026-10-08T04:00:32.176Z",
+    "exactReturn": "2026-10-08T04:00:32.480Z",
+    "elapsedMs": 304,
+    "oldPid": 80647,
+    "newPid": 41842,
+    "receipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/msg03-canonical-live.json",
+      "bytes": 5092,
+      "sha256": "2c2926caf5156461eeadb3d62acb8a251d9a88678e3f17937529d8254b1253f6"
+    },
+    "summaryCount": 215,
+    "assignmentsState": "available",
+    "publicMetadataUnchanged": true,
+    "receiptAssignmentState": "pending in summary entry; receipt proves sourceCurrent and coordinator availability, not claim-source match"
+  },
+  "Web29IndependentPublication": {
+    "state": "PUBLIC_API_COMPATIBLE_EXISTING_PUBLISHER_PREPARATION_REQUESTED",
+    "at": "2026-10-08T03:57:29.429Z",
+    "webSource": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+    "backendReportedSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "evidence": {
+      "path": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/web29-e15-public-api-compatibility.json",
+      "bytes": 6190,
+      "sha256": "aaa25dd8cd7493e1ffb15857e0ff11dda49392ac436700be1a06ccd55a398740"
+    },
+    "decision": "No requiredAPIblocker found in12identicalcontracts/routes/decoderfiles;productionpatch-v1 explicitlypreserved. OriginalexistingWebpublisher can prepare earliestaccepted29independently; do notwaitSVC09/newMSG/P01.",
+    "remaining": "Freshactualpersonalbinding+fixedWebartifact/publicationtuple andnecessarydirectcompatibilityunderexistingowner before actualselection;oldRELEASE03/SVC05tuple cannotreplay. No page/draftrefresh/tokenread bymanager."
+  },
+  "SVC09RuntimeLeafHandback": {
+    "state": "COMMITTED_RUNTIME_LEAF_REMOVED_ORIGINAL_FRESH_TAKE_REQUIRED",
+    "at": "2026-10-08T04:02:52.935Z",
+    "sourceStop": "2026-10-08T03:57:58Z",
+    "committedAt": "2026-10-08T03:58:09.934Z",
+    "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "oldVersion": 6,
+    "version": 7,
+    "retainedScopeCount": 10,
+    "removed": [
+      "apps/runner/src/runtime.ts"
+    ],
+    "receipt": {
+      "path": "/private/tmp/x01-runtime-handback-20261008T035758-receipt.json",
+      "bytes": 1014,
+      "sha256": "38ec6b82bf48113f180f348eab4f0867d69b7c05f8ce1e3b1bf9e7eb091f974d"
+    },
+    "boundary": "No receiver claim assumed. Original assignment performs fresh exacttake before narrow 81b three-hunk composition; no whole old runtime replacement. PROCESS other10 STOP, no backend build permission."
+  },
+  "P01DiagnosticMountedPreparation": {
+    "state": "SOURCE_PREPARATION_ACTIVE",
+    "authorizedAt": "2026-10-08T04:03:53.723Z",
+    "task": "WPF-P01",
+    "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+    "owner": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+    "branch": "codex/web-plugin-diagnostics",
+    "base": "03916738ebb2e834e628429ee70aad886b5b5176",
+    "source": "b7dd3add045bc3b3daa3f2ffdb21cb2cb9b4b01a",
+    "claim": "c106e5aa-0d58-43a6-a326-1148c0e43490 v1 ACTIVE exact7, fresh before write",
+    "planningBytes": 8388608,
+    "durationMinutes": 20,
+    "maxEngineeringChildren": 2,
+    "childMs": 10000,
+    "cumulativeMs": 20000,
+    "cleanupReservePerChildMs": 3000,
+    "PG": 0,
+    "HTTPListeners": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "actualGranted": false,
+    "scope": "Same exact7; production host/react and accepted tests fixed. Own P01 evidence/private caller and necessary focused browser/fixture adapter only; report substantive product delta before changing it. No legacy I01 output or all-matrix execution.",
+    "supply": "Reuse exact existing332 supplied files/33readonlylinks after fresh pins; quantify precise missing dependency/static CSS chain, installed external peers including actual @opentelemetry/api edge if needed. Index2317239 plus atomiccopy4634478 total leaves about3.3MiB for exact missing supply/packet/records/objects/TMP. No install or dependency copy; report before exceeding8MiB.",
+    "native": "Reuse Connection b4 60s45+15 sibling Chrome lifecycle as a reference, pin actual parent/worker/measure. Adapt identity/mode/root/threechecks and own blankHTML Vite entry only where required. Vite configFile:false/envDir:false/loopback port0/no proxy, own caches and explicit CJS include. Exact expected intentional page error only; all other pageErrors fail. One consolidated lineage review before later actual grant.",
+    "checks": "ProductionSettings stably open diagnostic0→commanderror1 with preserved OperationResult, unchanged global/slot snapshots and no ancestor rerender; isolated renderererror displayed with realfallback, unchanged global/slot; close focus back to trigger. No customtrace/fullApp/auth claim.",
+    "local": "At most two necessary syntax/affected type children10s each/cumulative20 including >=3s cleanup, only if privatecaller/typedadapter changes justify. No rerun already passed pure suite; no real Vite/server/browser execution.",
+    "futureActualProposal": "Not authorized: one60s/0PG/1Node-Vite+1Chrome/oneownedHTTP, candidate75MiB active64scratch+8retained+3metadata. PostRETURN scratch0 before raw/archive/Git-copy stage<=27MiB. Bound primary failure diagnostics within remaining work, never consume cleanup.",
+    "firstWrite": "2026-10-08T04:04:41.317974Z",
+    "deadline": "2026-10-08T04:24:41.317974Z",
+    "admissionFloorBytes": 11650465792,
+    "admissionFreeBytes": 14066376704,
+    "privateRoot": "/private/tmp/p01-diag-b1",
+    "engineeringChildrenStarted": 0
+  },
+  "CurrentWorkSegmentTimingSuccessor": {
+    "at": "2026-10-08T04:04:52.749Z",
+    "task": "WPF-001-37 / existing TIMING01/02",
+    "state": "EXISTING_PLAN_WAITING_LEGAL_OWNER_BOUNDED_SOURCE_STAGE",
+    "request": "Display current segment explicit start/end/elapsed including waiting and classified waiting reasons. Preserve whole-task UNKNOWN and historical segments; no inferred timestamps, reset, third timer system or duplicate UI.",
+    "priority": "Personal Web publication and MSG03 first; history backfill does not block. Original legal owner should take one bounded ordinary increment in existing task, not new feature."
   }
 }

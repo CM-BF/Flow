@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-08T03:45:42.732009+00:00",
+  "kind": "WPF-REQ-04 exact artifact verification identity coverage research",
+  "fixedMain": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "finding": "Existing artifact tab truthfully labels Task verification; it does not establish the selected artifact version verification. Original per-artifact requirement remains partially open. Not a claim that the current task-level label is false.",
+  "facts": [
+    {
+      "source": "apps/web/src/components/workspace/WorkspacePanels.tsx:171 and panels.tsx:119-120",
+      "fact": "Every selected artifact receives task.verificationStatus alongside its own artifactVersion."
+    },
+    {
+      "source": "apps/server/src/evidence.ts:12-37",
+      "fact": "saveArtifact updates latest_artifact_id/version and resets task verification pending; verifyArtifact only updates task status when artifact identity and version equal latest. It stores specific verification detail for exact task/artifact/version/attempt."
+    },
+    {
+      "source": "packages/contracts/src/tasks.ts:129-136 and apps/server/src/queries.ts:28-31",
+      "fact": "Public Detail exposes id/kind/content/mediaType/artifactVersion, no general artifactId, attempt or bound verification reference/status. ArtifactVersion is content hash; different artifact identities can share it."
+    },
+    {
+      "source": "apps/server/src/plugin-runtime/verification-result.ts:60-65",
+      "fact": "Plugin result is independently checked and bound to exact latest artifact before setting task status and saving a verification detail. This does not add that association to the general artifact Detail DTO."
+    }
+  ],
+  "counterexampleToAvoid": "Task emits artifact A with failed verification, then different artifact B passes. Selecting A may truthfully show current Task verification passed, but that must not be presented as A passed. Matching only title/hash, scanning loaded verification text or using latest task status cannot safely fill the missing identity association.",
+  "nextExistingPlan": "Record under original WPF-REQ-04/W01 artifact verification acceptance. Ask the existing central evidence/contracts owner for accepted public exact association before a Web consumer; do not invent a duplicate backend task or edit shared contracts from this Web scope. Reuse any existing accepted interface if the owner identifies one.",
+  "candidateAcceptance": [
+    "Return/read an authoritative association for selected task, attempt, artifact id and version, with explicitly pending/unavailable/unknown and verifier-specific meaning; exact existing contract shape remains central-owner decision.",
+    "Keep summary and lazy-detail boundaries: no initial full verification/body reads; opening one artifact does not fetch all verification details. Cache by complete public identity/version and connection authority.",
+    "A failed / B passed, two different artifacts with same content hash, changed version and reopened retained tab must never borrow another result.",
+    "Expose evidence drill-down and task-level aggregate separately, including missing/rejected/stale association. No wording implies process isolation or complete user acceptance from a verifier PASS."
+  ],
+  "limits": [
+    "Static source evidence only; no browser reproduction, product import, test, service or provider.",
+    "This bounded check does not prove no other accepted artifact endpoint exists elsewhere. Existing-owner intake discovery is required.",
+    "No new task, claim, permission, implementation or runtime allocation."
+  ],
+  "cleanCode": {
+    "scope": "Identity association and read-model responsibility",
+    "finding": "Avoid frontend inference from aggregate task status or content hashes; reuse one authority and bounded lazy rendering.",
+    "unresolved": "Accepted general per-artifact contract/source owner and actual mounted behavior."
+  },
+  "pins": [
+    {
+      "path": "apps/web/src/components/workspace/panels.tsx",
+      "bytes": 6966,
+      "sha256": "5f97e8ba1f41eabf2b79e21957fd59f2d6567f7cc271d4d4431bb3f0c5c6f9b8"
+    },
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "bytes": 6466,
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551"
+    }
+  ]
+}

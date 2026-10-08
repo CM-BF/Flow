@@ -1,10 +1,50 @@
-## Original immediate bridge — same MSG03 route and actual queue facts
+## Current bridge — 2026-10-08T04:02:52.935Z
+
+No actual holder; full forward floor **11650465792 B**. D05 source reload completed at **04:00:32.480Z** (304 ms), owned PID80647 exited, new41842; summary215, MSG03 sourceCurrent=true on web-versioned-profile-creation, assignments.available and public ACCESS metadata unchanged. Receipt `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/msg03-canonical-live.json` (5092 B / 2c2926caf5156461eeadb3d62acb8a251d9a88678e3f17937529d8254b1253f6). The 3 MiB metadata tail stays counted until explicit STOP; no further reload selected. Root's existing DOM confirms the claim/source badge now aligns.
+
+Original SVC09 build is **SOURCE_DELTA_PREPARING**, not READY/OPEN. Runtime leaf handback is already COMMITTED03:58:09.934Z: 8c2f v6→v7 retains10 and removes only apps/runner/src/runtime.ts. [Exact CLI receipt](/private/tmp/x01-runtime-handback-20261008T035758-receipt.json) (1014 B / 38ec6b82bf48113f180f348eab4f0867d69b7c05f8ce1e3b1bf9e7eb091f974d) permits Original to fresh take the leaf without waiting for another ACK; it does not grant build. Apply only reviewed environment18bf and runtime81b three ordinary terminal-order hunks.
+
+Original existing Web publisher: fixed **1b1428 Web29 can enter independent preparation against current e15 backend880060**. [Bounded public API comparison](host-i01-newpair-queue-20261007/web29-e15-public-api-compatibility.json) (6190 B / aaa25dd8cd7493e1ffb15857e0ff11dda49392ac436700be1a06ccd55a398740) finds12 exact interface/route pins identical and production patch-v1; no required backend API blocker found. Fresh actual publication tuple and required direct compatibility remain publisher-owned. Do not reuse old RELEASE03/SVC05 tuple, refresh user tab/draft, or wait for unrelated MSG03/P01 or SVC09 build merely because they are unfinished.
+
+P01 **03916738ebb2e834e628429ee70aad886b5b5176** is clean/all7 STOP03:59:17.036170Z, four local children5759ms CLOSED, root10588 limited approval, mounted NOT_RUN. Existing I02 may consume its [five-source intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/main-intake.json) (2911 B / 5113edefdc354b82bf9798e269144b1bd200db18ce29465fc3aafd3d80cd1e80). Existing D05 owner also has its same-ID source-route-request; MSG03 reload did not include P01. No whole branch/history replacement or inferred browser pass.
+
+MSG03 c99 source/local sealed; new24 MiB real-fixture preparation actually started04:01:24.508036Z and ends04:26:24.508036Z. Exact11 a897 retained; production f71e frozen, only owned fixture/browser and records, no PG/HTTP/Chrome actual. X01 r1 actualRETURN03:50:50.285 and finalSTOP03:58:22.272/final114530 confirmed, all future8 MiB tail now0. Its PROCESS observer five-source intake still needs controlled I02 acceptance: runtime only observer import/notice union/observe forwarding hunks, not old whole runtime; T7/main/personal remain open.
+
+Original existing R03-05 coordination: Mika architecture_read is available for BR01-A stable workspace identity, B later lazy read, C/D open. Existing PROCESS581d intake precedes legal same-task owner/source/WT/scope handoff; current.BR01ExistingIntake contains the bounded candidate. No reply or readonly absent conflict is write authority. Existing WPF-001-37/TIMING owner may prepare the requested current-segment timing increment with classified waiting reasons after priority Web/MSG03 work; preserve task UNKNOWN.
+
+The following entries are historical snapshots. They do not grant current execution or describe current resource ownership; use this page top and current.json.
+
+## Historical handoff — Original immediate: independent Web29 publish preparation; D05 short safe point
+
+Fixed1b1428 Web29 versus reportedpersonalbackend880060 has no requiredAPIblocker in manager's boundedpublicsource comparison: [12 exact interface/route/decoder pins](host-i01-newpair-queue-20261007/web29-e15-public-api-compatibility.json),6190B/aaa25dd8cd7493e1ffb15857e0ff11dda49392ac436700be1a06ccd55a398740. ProductionApp andstreamhost explicitlyusepatch-v1; optionalnewclientexports do notcreate a requirement for these29. OriginalexistingWebpublisher should now prepare earliestacceptedWeb29/freshactuale15binding independently of SVC09backendbuild. No oldRELEASE03/SVC05tuple reuse, no usertab/draftrefresh. No freshbuild/publicationactual is granted merely by this source conclusion.
+
+D05MSG03SourceReloadGrant authorizes one<=15s owned4320 safepoint directly after8e689 independentreview+controlledmain andnoactualconflict, new3MiB ownmetadata≤8min. PreservebothACCESS/coordinationenv, checksummary215/newMSG03source/claimsavailable/publicbinding, exactRETURNbeforeSVC09build. P01routewasnotin8e candidate; d6b514same-IDsource-switchremainsavailabletoOriginallater. Currentfloor 11667243008 B; X01fullRETURN/8MiBtailonly.
+
+## Historical handoff — Current resource fact — X01 fullRETURN, personalWeb publication priority
+
+X01 r1 exactFULL_RETURN03:50:50.285 verified by owner-closed.json2039B/168f68c2 plus actualtoolterminal andcallerentry. One selectedcase passed with real3tasks/2workers; outerdualEOF andwholeexternalwall remainUNKNOWN. Noactualholder; original8MiB seal deadline03:59:29.803 only. Completeforwardfloor 11655708672 B. SVC09 a266/f922 build is a candidate underOriginalreview, notselected; no reservedactual.
+
+GO's existing personalWeb request: original publicationowner should evaluate minimal1b1428 Web29 release against currente15/880060 independently of SVC09backend build. Use currentpersonaltuple fresh, no旧RELEASE03/SVC05 tuple reuse and no tab/draft refresh. Managerpublicsource comparison inprogress; no additional API is inferred from unrelated client modules.
+
+## Historical handoff — SVC09 fixed compatibility clarification — no new MSG API requirement
+
+Root fixed f922 candidate +1b1428 Web base and S01 independentread agree: current MSG03 f71e consumption of catalog/header/CREATE/GET/Queue needs no newbackend endpoint, DTO or CREATE flag. This is source compatibility only. Separate environment blob85625ac→reviewed18bf17ea wholeleaf50584c and runtime81b4805c three terminalACK/completeAdmission/outboxunlink hunks remain Original SVC09 composition/review work; do not replace whole runtime or import pluginemitBatch. Full precise facts in current.SVC09PublicSourceCompositionFollowup.compatibility; no build/activation grant implied.
+
+## Historical handoff — Current actual selection — X01 reviewed r1, 2026-10-08T03:47:29.803Z
+
+Current.X01VerifierProcessR1Grant is selected, latestSTART 2026-10-08T03:51:29.803Z, window 1095cf1739f446898319a20ab5916259, completefloor 11824529408 B. Existing2d65/ready81098/manifestb110/input49039 only; one10s PGheadroom preflight then180s caller, PG17+16margin,0Chrome/provider/personal, no retry. Original reported capacity segment is now explicitly closed by SVC06B retention-five result7630B/7b10: RETURN03:35:07.895, twoownedgroupsabsent/dualEOF/no pending. This newselection is not START. No competing sharedPG/browser/native actual; normal bounded local per-team source checks continue.
+
+## Historical handoff — Original immediate bridge — same MSG03 route and actual queue facts
 
 MSG03 new unique canonical source is now web-versioned-profile-creation / codex/web-versioned-profile-creation / plans/wpf-message-settings-app, same task WPF-MESSAGESETTINGS03. Fresh exact11 claim a897732d v1 committed03:39:52.022; old108 source frozen. Migration receipt `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation/ui-consumers/canonical-migration.json` (1469 B /590899d6…) is directly consumable by the existing D05 registry owner for the one existing task route; no new status task. Actual30min source clock03:39:51.914994–04:09:51.914994, base1b1428 adopted, no mounted grant.
 
+P01 likewise has one new same-ID source: web-plugin-diagnostics / codex/web-plugin-diagnostics / plans/wpf-p01-plugin-host, claim c106e5aa v1 exact7. Source-switch `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics/docs/evidence/wpf-p01/diagnostic-notification/source-switch.json` (1511 B /d6b51450161d6a517fb4597971b27354d07b129f3fb3fc51469d9f89496af26a); old web-plugin-host28b70 frozen. Existing D05 registry owner may replace that existing route, not add a parallel task. Newsource remains in progress, no mounted PASS.
+
+SVC09 existing composition owner: current.SVC09PublicSourceCompositionFollowup records exact public-source gaps in selected environment startup diagnostics and ordinary runtime terminalACK/journal order; the latter is not solely plugin-specific. Pin selected delta/scope within original task; this is no build/activation permission.
+
 X01 r1 existing fixed reviewed operator is ready (current.X01VerifierProcessR1Queue), one180s PG17/0Chrome stage. Original mentioned an isolated local capacity segment: please expose its actual SELECT/START/RETURN and exclusion boundary now; current has no sharedactual holder, and no new X01 selection has been made pending this concrete fact. Ordinary Web source continues. Do not hold the sharedslot merely for unrelated metadata seal.
 
-## CURRENT — Three Web slices accepted on main; source successors may proceed
+## Historical handoff — CURRENT — Three Web slices accepted on main; source successors may proceed
 
 Original/I02 main/origin `1b1428f3867a5396422f2b8d066a94f8f138030d` contains all29 reviewed paths, including Connection correction123c / blob11f5. Final intake review `/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json` (1596 B /1be6a84a…) and [independent reception facts](host-i01-newpair-queue-20261007/web29-main-reception.json) are fixed. Node24 + fixedtsx7/7 and combinednoEmit0/6431ms returned03:33:37.339Z; old TS5097/spec interpretation failure and scratchKEEP remain. Runtime holder is null; original all-in8MiB seal remains conservatively counted until explicit sourceSTOP. No personal deployment or wholeApp authentication inference.
 
@@ -20,7 +60,7 @@ Manager verified children-window-return.json 3536 B / 889d02c6bb939ef0b651b8eb8f
 
 Ready 6494 B / 361a17cbe8cfedfa527b95853cd3410ba691dfe458a1af0d882953475419e0c7 and all six actual pins verified; clean execution 9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb. Original/operator is now selected to sign the one v3 permit and immediately same-call fresh launch. Canonical key O16ContinuedChildrenV3Grant, latestStart 2026-10-08T03:23:07.035Z, complete floor 11612717056 B. Entire 150s must finish before signed expiry and pause 03:26:21.560Z. Same2 unconsumed queries/cumulative6, PG13/fresh29, no Chrome, same8MiB+2MiB cumulative. Reauthorize exactRETURN5299 verified; no automatic decide. Selection is not actualSTART.
 
-## Original controlled Web intake: single import correction and exact validation
+## Historical handoff — Original controlled Web intake: single import correction and exact validation
 
 W01 final123c0feced013da6bf9e4366b53d16b04ea75c38 clean/allSTOP. Exact apps/web/test/connection-presentation.test.ts blob ad7a941ea7d2aa361ff8c9deeea50ce502614ca9 → 11f5fc14a2f3d783f8d239022884a8441d10f56d; only line3 .ts suffix removed. Record: /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/presentation-import-correction-20261008/correction.json (2700 B / eaa0e0b4ae4df219e56cb02dd78664fb3efdb5fcad70a1e1a6a8ad9286359737). OriginalWebCombinedVerification now separately allows new8MiB / max2 sequential children / cumulative60s: combined noEmit<=32s and this one test via existing fixed tsx resolver<=15s. Old bare-Node PASS and allowImportingTsExtensions types are historical and do not prove changed module resolution. Preserve earlier TS5097; no global tsconfig, PG or browser rerun. Current full floor 11616911360 B; O16 consumed selection floor remains immutable.
 
