@@ -1,0 +1,40 @@
+{
+  "startedAt": "2026-10-08T01:12:50.000Z",
+  "deadline": "2026-10-08T01:20:50.000Z",
+  "firstWriteAt": "2026-10-08T01:13:54.555Z",
+  "productPermanentStopAt": "2026-10-08T01:13:54.555Z",
+  "baseline": "e286451c385b697b860f890f9b2401338064b247",
+  "capBytes": 3145728,
+  "oldIndexBytes": 2298080,
+  "atomicIndexReserveBytes": 2363616,
+  "metadataAndTemporaryCap": 65536,
+  "objectsRefsPushCap": 262144,
+  "coordinationReceiptCap": 65536,
+  "estimatedIncrementalBound": 2756832,
+  "engineeringRuns": 0,
+  "productWrites": 0,
+  "pendingLaunch": 0,
+  "freshClaimAt": "2026-10-08T01:13:05.758Z",
+  "claimVersionBefore": 1,
+  "quality": {
+    "method": "local find-skills/codebase-design/clean-code baseline; one owner status, exact main hashes, historical failures unchanged, no duplicate execution",
+    "unresolved": "D05 runtime registration receipt pending; PG/worker/publicE2E/T7/deployment unverified"
+  },
+  "managerAt": "2026-10-08T01:12:38.179Z",
+  "managerFullTermsSum": 13226344448,
+  "managerMatchesBothCurrent": true,
+  "amendCommittedAt": "2026-10-08T01:14:00.513Z",
+  "claimVersionAfter": 2,
+  "retainedScope": [
+    "docs/evidence/x01-verifier-runtime",
+    "plans/x01-verifier-runtime"
+  ],
+  "registrationReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/verifier-sources-live.json",
+  "completionObservedAt": "2026-10-08T01:14:47.770Z",
+  "qualityCheckedAt": "2026-10-08T01:14:47.770Z",
+  "qualityResult": "one status; exact millisecondsZ; inherited failures/source unchanged; full plan closure excludes parent/T7",
+  "metadataFullFilesBytesBeforeSeal": 11049,
+  "metadataWithOneTemporaryCopyBound": 26194,
+  "incrementalBoundBytes": 2756832,
+  "contentFrozenAt": "2026-10-08T01:15:01.525Z"
+}

@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-10-08T01:13:54.555Z",
+  "main": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-verifier-runtime-intake.json",
+  "receiptAt": "2026-10-08T00:58:29.414Z",
+  "receiptSha256": "1b35f59e47382eefd1d7837b4951df225f244ad0645056fa52ee9e42b552d566",
+  "rows": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 28733,
+      "sha256": "e6e52187d52d06843651f7892deb24d2359a442f88ab1ecd48d26ebcab61c499",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 8672,
+      "sha256": "bacfa34a02173d6c38748216c9ff4008c41f85d12af8e5f161827bad464e3d67",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 13430,
+      "sha256": "951ee792fe4b3cad62a80b5166e747915806d2a5334faa757049bf4f86d69469",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/runner/src/verifier-runtime.test.ts",
+      "bytes": 15640,
+      "sha256": "484d238855cf3aa381bf02a903483b9e4351e1bb368d3996107de34557dbfcae",
+      "mainMatchesSource": true
+    }
+  ],
+  "registration": {
+    "state": "REGISTERED_ACTUAL_215",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/verifier-sources-live.json",
+    "sha256": "4d1293296323557180cf247af41bcdb233102c137a836325600a99259f553ebe",
+    "observedAt": "2026-10-08T01:14:47.770Z",
+    "receiptCompletedAt": "2026-10-08T01:13:24.689Z",
+    "sourceCurrent": true,
+    "priorDisplayedStatus": "old integration status; new metadata not yet claimed reaggregated"
+  },
+  "validation": "Inherited independently reviewed25/25 and types2→0; no new checks",
+  "notValidated": [
+    "real PG",
+    "worker invoke",
+    "T7",
+    "public E2E",
+    "deployment"
+  ]
+}
