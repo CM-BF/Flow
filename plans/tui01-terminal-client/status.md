@@ -2,28 +2,31 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:22:37.079084+00:00 / main15847da4；仅父计划事实维护，空间旧HOLD已解除 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:02:48Z / main eb06d5323已审接收TUI R4；本父仅对齐限定事实，不重跑产品。 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 父任务最初实际开工无独立时刻证据；不以创建日期或领取时间倒填。本轮metadata工作03:02:48Z；子片真实START、RETURN及限定交付分别引用原件。 |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client |
 | Branch | codex/tui-client |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / c8bacf7471e023914e77994bcc3f5d3070f49a92；本次仅管理metadata |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 1d357145e887631f6de550258243a2b35d323bc2；本次仅父计划metadata |
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | A–E与F控制片已审/main；F-03真实HTTP/PG取消与Ink PTY两行为通过，原suite exit1保留；独立收尾1/1及类型兼容已审，本父不重测 |
-| 已集成main状态 / HEAD | A–F及TUI01G已审产品已main，G的51不同局部检查/focused types分轮通过；本片没有HTTP/PG/新PTY/browser/provider证据。F04原1选中0通过与已审c612修复保持，完整双端尚未通过。 |
+| 检查状态 | A–G已审产品保持；F04固定af51/d629/ec30真实PTY与生产Web同会话旅程1/1、资源完整归还已限定独审。原19alias独立准入遗漏、两负计量样本与旧FAIL/KEEP均保留。 |
+| 已集成main状态 / HEAD | TUI01F R4限定实际结果已main/origin eb06d5323；canonical4c39d88ed关闭原F四项。本父06/08完整控制与日用验收未完成，current779/native/provider未由固定fixture证明。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端取消和退出后后台继续已获真实中心与终端验证；Claude逐消息设置已进入主线。完整双界面接续仍待独立验证。 |
-| 下一可用交付 | 在现有发布与聊天验证顺序中接续真实终端→网页→终端旅程；逐消息设置的实际HTTP/终端操作与完整控制验收分别补齐。 |
-| 当前阻塞 | ACTIVE: 完整双界面旅程保留原失败，后续执行输入和共享重窗口尚未安排。当前已不以旧磁盘不足为阻塞；并行源码和局部检查按现OPS门槛执行。 |
+| 当前产出 | 终端与网页已在固定版本的同一会话交替取消、恢复观察，冲突草稿保留，退出后后台任务继续。Claude逐消息设置已进入主线。 |
+| 下一可用交付 | 补齐共享聊天控制的跨端一致性，以及逐消息设置的真实终端操作；完整日用、附件和原生执行仍按原计划推进。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；F-03限定独审APPROVED，完整大task验收仍开放 |
+| Review | [review.md](review.md)；F04已获功能/资源归还限定独审，完整大task未被本片关闭。 |
 | Claim | f6055d8a-356e-4dfa-8420-1eaf81874410 v1；仅plan/evidence |
 | 架构影响 | TUI01C把已审Web纯stream/settlement规则提取为浏览器安全共享子入口；Web私有展示状态不迁移 |
 
@@ -34,10 +37,10 @@
 | TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
 | TUI001-04 | in-progress | native_center_owner / Execution Lead | [TUI01G](../../../tui-message-settings/plans/tui01g-message-settings/status.md)固定215063fb/66ac已独审/main；51不同局部检查与focused types通过，HTTP/真实PTY/browser/provider未验；Codex与完整模型验收仍开放 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
-| TUI001-06 | in-progress | native_center_owner / Execution Lead | TUI01D/E及F-03已审/main；真实取消/Ink PTY限定验证完成，F-04真实双端与steer/decision仍后继 |
+| TUI001-06 | in-progress | Execution Lead | TUI01D/E/F已审；真实取消、冲突草稿保留、跨端恢复与退出后台继续已有固定1/1。steer/decision与完整控制后继仍开放。 |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
 | TUI001-09 | completed | runner_owner / Web独立消费者 | TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08 |
-| TUI001-08 | pending | 独立review / Execution Lead | 已有独立PTY与两公开client证据；完整日用、真实TUI→Web→TUI及provider边界仍开放，不能互相替代 |
+| TUI001-08 | in-progress | Execution Lead | [F04唯一结果](../../../tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-final-receipt.json)与[独审/main](../../../m2-integration/docs/evidence/i02/tui01f-r4-result-intake.json)；固定真实双端子旅程完成，完整日用/current779/native/provider仍未验。 |
 
 本claim仅管理文档；TUI01A由runner_owner在独立tui-conversations树与0ba7e5d7 claim实施，复用R06交付后的同一槽。依赖固定1cec921，既有Web importer/package/snapshot保持，实际core仍0.3.22；lock移交已归还F01。首片9e5588原CHANGES_REQUESTED保持历史；29b已修复两个P2并获MikaAPPROVED，19增量含11重复及8新例，mainf181已接收。P3最大revision边界留共享ACK后继；无provider结论。唯一status进入dashboard；与GO只报真实大task blocker或完整Done。
 
@@ -68,3 +71,7 @@
 2026-10-06 23:23 UTC：fresh账本确认TUI01G claim ecd1c07c v1 active，原F claim v5仅保7实验/取消范围；共享源无双writer。首canonical fabc7af2计划/Interface已push，实施与F04资源等待解耦。父计划不代替子片独审、局部检查和main验收。
 
 2026-10-07T03:22:37.079084+00:00：本父仅同步已发生主线事实和真实等待原因。依据I02的`tui01g-controlled-intake.json`与TUI01G唯一status，原空间HOLD为历史，不重跑A–G或F04。完整大task与TUI001-04/06/08不勾完成，真实双端/显示与headless证据仍分开。
+
+## 2026-10-08 固定双端验收接收
+
+2026-10-08T03:02:48Z：原F04本次02:49:51.708Z START、02:50:12.048Z operator结束、02:51:19.768Z完整RETURN，20,223ms/1选1过/0provider；独审02:54:46Z、main eb06、owner02:57:06.693Z限定接收分开记录。固定fixture backend af51/Web d629/TUI ec30，409草稿保留、Web与TUI交替取消/恢复、终端退出不取消后台有真实PTY/DOM证据；不把事件数当测试数。19别名launch前独立核验未执行，不能追认准入全部满足；两负计量样本与旧失败原件仍保存。无需R5。原F04资源等待现已结束，早期每段等待以子片权威表为准，不从今日时间倒填。完整TUI001-04/05/06/07/08保持开放。

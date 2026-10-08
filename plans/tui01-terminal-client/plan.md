@@ -79,7 +79,7 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 
 2026-10-06 13:57:22 UTC：TUI01E的queue轻读/暂停/继续已独审进入maind4a2e0a7，当前固定证据不替代完整06/08。后继按已发布能力接聊天取消/决定/steer及真实双端操作；实现槽当前用于COST首纵向片，完整TUI验收保持开放。
 
-### 当前下一片：显式取消与同中心接续（2026-10-06 15:47 UTC）
+### 已交付子片：显式取消与同中心接续（2026-10-06 15:47 UTC规划，2026-10-08限定接收）
 
 TUI001-06/08 由 TUI01F 接续，owner assignment_review，独立 tui-task-cancel / codex/tui-task-cancel，fixed base a89f42ab。只增加 `/cancel <displayed-task-id>`，共用 typed command、公开 FlowClient 与原 intent 生命周期。终端不读取任务prompt来发现取消身份，不产生第二状态机；受理、取消请求中、实际停止和unknown分别显示。设计/精确范围见[候选](../../docs/evidence/tui01/task-cancel-next-design.json)。
 
@@ -92,3 +92,7 @@ TUI01G由native_center_owner在独立tui-message-settings / codex/tui-message-se
 模块沿现interaction controller/commands、独立设置选择模块和TUI renderer接线，小Interface复用既有FlowClient与ACK恢复。TUI01F的已审共享源须原owner停写、原子部分移交后再take；其固定F04实验和证据仍留原树，历史1选中0通过及后续正常收尾不变。先做选择/缺能力/冻结重试/矛盾ACK/过期CAS的局部验证；实际HTTP、PTY与双界面旅程分别按资源与独立窗口验，不重跑旧F04或调用模型。完整04/06/08仍开放。
 
 使用已安装brainstorming界定现有流程内的有界扩展，复用find-skills/codebase-design/clean-code的职责与生命周期方法；沿用户已授权co-lead自主细化实施，不再增设普通实现审批。新增一个公开设置组合应只依目录与共享schema，不在各层增加harness特判或复制Web私有状态。
+
+## 2026-10-08 接续顺序
+
+TUI01F四项已按固定af51/d629/ec30旅程限定完成并main接收，详见唯一status及其结果链接；不重复已绿取消/真实双端旅程。原06/08下一控制片先复用公开回执规则，使Web/TUI对无promotion却换task、promoted task/turn/item矛盾保持原key/body与unknown；已核源码差异只是待复现输入，未称现场发生。由Execution Lead与Web共同协调浏览器安全纯规则及各自持久化consumer，fresh scope后实施，不合并UI私有状态机。此项排在当前App/聊天设置激活/O16之后。原08另保非聊天help/settings/profiles界面停止无用conversation/turn/queue刷新、返回恢复及headless有界输出的联合验收，后台任务与未知发送语义不变；测量尚未运行。工具全文沿已交CHAT05P01/P02公共分页合同给TUI consumer，不重写正文模块。
