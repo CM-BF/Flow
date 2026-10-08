@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:19:51.350Z / main866f0a9c0；插件验证客户端接收完成，215来源实际部署回执限定独审已通过。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:27:17.431Z / main7001fab80；O16公开状态结果与父状态已获限定独审，本次只接收固定来源与事实引用。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,8 +21,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 插件验证执行、受理回执与客户端已进入主线；看板已显示两项新增进度来源，登录入口与领取记录保持可用。 |
-| 下一可用交付 | 本批已审成果已接收；下一步完成原生登录环境的公开状态对照，再按结果推进连续目标验收。 |
+| 当前产出 | 已审插件与看板交付已接收。原生登录环境对照的真实结果已归档，正常HOME可见登录，原失败与未验目标保留。 |
+| 下一可用交付 | 原owner推进规划验收的最小环境修正与零模型检查，随后形成具体真实验证候选；当前没有新增查询许可。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -578,3 +578,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T01:12:37.300Z：X01 verifier client/admission六叶完整接收，36批准绑定及317其他实际输入均核同，复用29distinct分轮结果与strict0限定，不重跑PG/HTTP或复制340466B审查包。[产品接收](../../docs/evidence/i02/x01-verifier-client-admission-intake.json)。D05候选215新增该唯一source获限定独审，实际213待受管重载；[登记依据](../../docs/evidence/i02/verifier-client-source-registration-review.json)。
 
 2026-10-08T01:19:51.350Z：限定接收D05固定dfbee7c8b两份原件，独审native_center_owner/0P1P2；213→215实际一次，历史214未单独部署，协调与公开ACCESS同时保存。累计时间字段仅按原记录各自含义保留；0重载/产品检查/个人操作。[接收](../../docs/evidence/i02/verifier-dashboard-live-intake.json)。
+
+2026-10-08T01:27:17.431Z：O16固定23a221c0a真实A/B结果获assignment限定忠实性独审，16结果绑定及两个继承引用保持；本组另核三个manifest共37绑定的固定Git原件，仅新增接收provenance，未复制候选/raw或运行native。[接收](../../docs/evidence/i02/o16-home-factor-result-intake.json)。父状态5743dffdc仅两文档获APPROVED_DOCS并逐字接收；没有将实验环境差异扩大为生产认证故障、根因或query资格。原owner沿原scope准备最小修复，实际第4query仍未授。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:05:25.985Z / mainfddde4e71；TUI最小诊断与插件验证runtime已审接收；CENTER实际213/协调配置恢复，RUNTIME214登记已main待安全reload。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:26:07.128Z / main7001fab80；215来源实际部署及插件客户端接收完成；O16双HOME公开状态实际归还并获限定结果独审。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main0e8bfa7b3含TUI诊断、ec7e72f04含插件验证runtime；fddde4e71含RUNTIME唯一来源候选。个人e15/Web779为既有部署，不冒当前健康或新任务领取。 |
+| 已集成main状态 / HEAD | main866f0a9c0含插件验证客户端与215登记，7001fab80接收实际部署原件；个人e15/Web779为既有部署，不冒当前健康或新任务领取。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 个人新版网页已发布，插件验证的执行与恢复能力已进入主线。双端接续失败的最小诊断已交付，旧失败和未知原因如实保留。 |
-| 下一可用交付 | 用同一原生版本对照本机登录在两种HOME环境中的可见性，并展示插件验证执行任务的真实进度。 |
-| 当前阻塞 | ACTIVE: 双端接续尚未完整通过；目标规划的认证可见性正在零模型对照准备中，尚无新查询结果。工程写入资格仍按原待决边界。 |
+| 当前产出 | 插件验证执行、回执与客户端已进入主线，看板已显示对应进度。同一原生版本的登录环境对照已完成，正常HOME可见登录，原有失败仍保留。 |
+| 下一可用交付 | 依据已观察到的登录环境差异，完成原生规划入口的最小环境修正和零模型检查；实际新查询仍需独立额度。 |
+| 当前阻塞 | ACTIVE: 双端接续仍未完整通过；正常HOME可见登录尚不证明目标规划调用成功，下一环境修正正在准备。工程写入资格保留原待决边界。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -513,6 +513,7 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | OPS-WAIT-APP-20261007 | 2026-10-07T10:44:35.378Z | 2026-10-07T11:59:06.606Z | 接口 | 个人更新需要三个既存页面对固定新后台的真实兼容证据；Web co-lead负责，报告固定并独审后解除。准备期间其他合格检查可使用窗口。 | [SVC唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)与r2实际归还事件 |
+| OPS-WAIT-O16-HOME | 2026-10-08T01:19:13.100Z | 2026-10-08T01:22:53.287Z | 资源 | 已审薄入口等待唯一认证对照窗口及紧前身份核验；D01选择后原owner执行，01:23:21.418Z实际归还，不等结果审查占窗。非模型运行耗时。 | [O16 W17与actual](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md) |
 
 ### 2026-10-07T11:15:52.756Z 运行归还与接收队列核对
 
@@ -617,3 +618,7 @@ OPS16本次实际采用：CENTER注册独审后即接main，213候选与实际21
 TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEEP未变；尚无新真实双端旅程。X01 runtime四文件保持5bdf817d受审字节，209个直接输入与固定基线一致，复用25/25及strict0，于main ec7e72f04接收；回执仅存来源与审查引用，未复制226790B原包。
 
 看板00:52的213来源发布遗漏协调配置，00:56:14.690Z已保留该失败事实并恢复领取API available；没有操作个人服务。214来源已主线登记，仍待原资源owner确认普通部署安全点。O16本段00:47:28.671Z开工，01:01:10.886877Z两个纯检查child归还；12策略例与1真实环境consumer通过，原spec/TAP汇总不匹配保留。b9b7f9ef8源/纯结果正在独审，实际A/B status caller继续准备：0 SDK query、原3次费用与失败不变，不读/复制凭据，不把同环境字段对照当模型资格或根因证明。
+
+2026-10-08T01:26:07.128Z：O16原owner实际01:22:53.287Z开始、01:23:21.418Z归还；同native2.1.290仅HOME变化，A未登录/exit1且原失败保留，B公开已登录/exit0。assignment_review对23a221c0a的16绑定及2继承作限定结果忠实性APPROVED/0P1P2；5PID/3组absent、双EOF，private427B保留。正常共享认证初始化/刷新可能写入，A可能影响B，故不追认旧失败根因、不证明query资格。0新SDK，累计3不变；后继只准备显式正常HOME环境策略、保持private配置/材料/工具权限与旧许可拒绝，第四query仍NOT_GRANTED。[唯一结果](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/result-analysis.json)与[归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/window-return.json)。
+
+本批OPS16实际采用：两项插件来源由一次213→215看板重载交付，协调配置与公开ACCESS同时核对；原213漏配置失败和独立计时差异保留。SDK六源独审后即main866f接收，原owner已收口并交回产品scope；本批不再复制预备源码/旧raw，O16实际原件保留canonical固定Git来源，主线仅收必要接收引用。没有重跑已绿检查或将本批当FLOW整体Done。

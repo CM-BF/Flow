@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-08T01:26:38.175Z",
+  "kind": "O16_HOME_FACTOR_EVIDENCE_ACCEPTANCE",
+  "target": "23a221c0a0f4f2d5b88d725872081de3c34a23b6",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "branch": "codex/continuous-native-goal-acceptance",
+  "mainBefore": "7001fab80",
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY",
+    "P1": 0,
+    "P2": 0
+  },
+  "fixedEvidence": [
+    {
+      "originCommit": "23a221c0a0f4f2d5b88d725872081de3c34a23b6",
+      "path": "docs/evidence/o16/auth-home-factor-once/result-manifest.json",
+      "mode": "100644",
+      "bytes": 4148,
+      "sha256": "58705b6859a187c021a6f9ba1fc1e3d0dca1d58dc1e6c1a304b23b8bc4a752f9",
+      "bindings": 16
+    },
+    {
+      "originCommit": "da1a74a30abe22befc6fc17ace0784eb4c8f48e2",
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-manifest.json",
+      "mode": "100644",
+      "bytes": 2727,
+      "sha256": "778a21937d6ef7f6907d46cf51c33f911e2fd276c47ee9237bf8fe6139222253",
+      "bindings": 8
+    },
+    {
+      "originCommit": "b9b7f9ef8e53cd2978251f8343f625bea6288ac3",
+      "path": "docs/evidence/o16/auth-home-factor-candidate/manifest.json",
+      "mode": "100644",
+      "bytes": 3513,
+      "sha256": "ca2000d10c78d23a0d2325fdfbdb0b149dfd0cbea509e53f7a62f09da672aa20",
+      "bindings": 13
+    }
+  ],
+  "actual": {
+    "startedAt": "2026-10-08T01:22:53.287091Z",
+    "resourcesReturnedAt": "2026-10-08T01:23:21.418466Z",
+    "A": "private HOME: loggedIn false/authMethod none/apiProvider firstParty; subscription UNKNOWN; exit1/CHILD_EXIT_NONZERO preserved",
+    "B": "normal HOME: loggedIn true/authMethod claude.ai/apiProvider firstParty/subscription pro; exit0",
+    "nativeStatusCommands": 2,
+    "SDKQueries": 0,
+    "historicalSDKQueries": 3,
+    "fourthQueryAuthorized": false,
+    "outerElapsedMs": 1359,
+    "nativeElapsedMs": [
+      170,
+      140
+    ],
+    "pidsAbsent": 5,
+    "groupsAbsent": 3,
+    "dualEOF": true,
+    "privateLogicalBytesKEEP": 427
+  },
+  "limits": [
+    "Sequential HOME visibility contrast only; shared normal initialization/refresh may affect B.",
+    "No retrospective cause, account/model qualification or successful query claim.",
+    "Shared HOME/Keychain writes are outside private8MiB; no caller credential read/copy/edit or cleanup.",
+    "Old failed queries/unknown retained resources remain unchanged."
+  ],
+  "archive": "Original source/results remain once in pushed canonical fixed Git objects. This main receipt accepts provenance and limited facts, not a replay grant, product source change or complete goal acceptance.",
+  "checks": "All3 fixed manifest bindings verified against fixed Git blobs; original13 pure and8 direct cases reused;0 rerun."
+}
