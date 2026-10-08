@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-08T04:08:21.624Z",
+  "base": "ee8a62ac584e7033f065af57317fd10991192c0f",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_DOCS",
+  "remainingP1P2": 0,
+  "files": [
+    {
+      "source": "1fb3494a3a1227ba2b2c2d704ae7a149511c0c21",
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 58452,
+      "sha256": "438d22708dcd8d7943421ef4183171e2f761d6733c07d237f3b0f8023e0eaeba"
+    },
+    {
+      "source": "1fb3494a3a1227ba2b2c2d704ae7a149511c0c21",
+      "path": "plans/flow-002-provider-harness/status.md",
+      "bytes": 7358,
+      "sha256": "691f05c256ae18a5220c6ebc30c35a25bfdc1ee3d236ee69650559f21417d916"
+    },
+    {
+      "source": "1fb3494a3a1227ba2b2c2d704ae7a149511c0c21",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 129858,
+      "sha256": "6586e895d1410f521e75049c76d3854d63ebde9697f1350f95c72bbce1ceee37"
+    },
+    {
+      "source": "5ebe75f8ee08a51121610a90ca671ab3d514f378",
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 30494,
+      "sha256": "ab6100cfbed6b20eb136d448ff70a193479cc342dc17eb584535507700f55e3e"
+    },
+    {
+      "source": "5ebe75f8ee08a51121610a90ca671ab3d514f378",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 47173,
+      "sha256": "228dd9c963614839306407f3dbce545146f7846bad3cf08d2146c8fca6296b3e"
+    },
+    {
+      "source": "5ebe75f8ee08a51121610a90ca671ab3d514f378",
+      "path": "docs/evidence/d05/msg03-canonical-live.json",
+      "bytes": 5092,
+      "sha256": "2c2926caf5156461eeadb3d62acb8a251d9a88678e3f17937529d8254b1253f6"
+    },
+    {
+      "source": "5ebe75f8ee08a51121610a90ca671ab3d514f378",
+      "path": "docs/evidence/d05/svc09-fixed-runtime-registry.json",
+      "bytes": 682,
+      "sha256": "6ec1570e9294e3ced77a77f353e22e64bac662250c3da03049dd0c6c74285327"
+    }
+  ],
+  "checks": {
+    "preimagesMatch": true,
+    "exactReviewedBytes": true,
+    "registryUniqueSources": 216,
+    "SVC09BFirstWork": "2026-10-08T04:03:00.506Z",
+    "engineeringRuns": 0
+  },
+  "limits": [
+    "MSG03 4320 reload already occurred at 04:00:32.480Z, receipt only",
+    "SVC09B routing added; actual dashboard reload still separate",
+    "Source preparation and main records are not personal deployment",
+    "Historical unknown dates and O16 failed/KEEP remain"
+  ]
+}

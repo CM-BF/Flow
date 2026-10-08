@@ -1,0 +1,135 @@
+{
+  "startedAt": "2026-10-08T04:00:32.176Z",
+  "source": "ee8a62ac584e7033f065af57317fd10991192c0f",
+  "operation": "owned dashboard same-ID MSG03 source reload",
+  "oldPid": 80647,
+  "publicMetadataBefore": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "coordinationBefore": {
+    "state": "available",
+    "observedAt": "2026-10-08T04:00:32.165Z"
+  },
+  "personalChanges": 0,
+  "tokenRead": false,
+  "state": "SUMMARY_COORDINATION_ACCESS_CONFIRMED",
+  "oldConfirmedAbsent": true,
+  "newPid": 41842,
+  "log": "/tmp/flow-dashboard-msg03-20261008-0400.log",
+  "summaryCount": 215,
+  "entry": {
+    "id": "WPF-MESSAGESETTINGS03",
+    "title": "聊天消息设置实际接入",
+    "role": "工作线",
+    "sourceKey": "c78302541be7708219fb1b1460de4af9459fbc6e025cfd77a0493e4608b423dd",
+    "sourceCurrent": true,
+    "source": {
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/plans/wpf-message-settings-app/status.md",
+      "digest": "e5eefc495ea17e4151958342dace1c016dfcabba78aca149952e976d8c4d26b2",
+      "modifiedAt": "2026-10-08T03:52:55.947Z",
+      "readAt": "2026-10-08T04:00:32.347Z",
+      "declaredUpdatedAt": "2026-10-08T03:52:55.944Z",
+      "stale": false,
+      "ageHours": 0.1267786111111111,
+      "issues": [],
+      "error": null,
+      "frozenCommit": null
+    },
+    "declarations": {
+      "owner": "workspace_panels_owner / gpt-6-astra",
+      "branch": "codex/web-versioned-profile-creation",
+      "branchState": "in-progress",
+      "declaredHead": "固定main1b1428f3867a5396422f2b8d066a94f8f138030d；受控merge9ee273b48e200644e52c68489575102596fa67ae；实现f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+      "declaredDirty": "全部exact11源码STOP；本次自然meta封存后normalpush，0工程child",
+      "updatedRecord": "2026-10-08T03:52:55.944851+00:00；f71e source/local独审通过，新mounted未运行；后继未集成main",
+      "checks": {
+        "state": "passed",
+        "target": "f71e1c9a3d7efef26859836365dc77d9fdb728ce",
+        "record": "PASSED f71e1c9a3d7efef26859836365dc77d9fdb728ce；仅五production roots affected noEmit0 + 两新consumer pure PASS/97未选，6082ms；browser/真实CREATE/Queue NOT_RUN"
+      },
+      "reviewRecord": "APPROVED f71e1c9a3d7efef26859836365dc77d9fdb728ce；SOURCE_LOCAL_APPROVED；new mounted/realpublisher/auth/Queue/lostACK NOT_RUN；[review.md](review.md)",
+      "mainRecord": "NOT_INTEGRATED（versioned creation后继）；原MSGAPP-01–06精确18源已INTEGRATED main3c9345df4aec85a37e8a2a155e079db260d515b1，不撤销历史交付",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "显式versioned目录/创建选择、Prepare独立tuple门、可信GET后Send/Queue同步资格检查；目录通知能重算资格；旧request/draft authority保持",
+        "next": "SOURCE_LOCAL_APPROVED；真实publisher→UI CREATE/UNKNOWN retry/Queue及390验收按现有接口准备后另授",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T12:11:30.621Z",
+          "record": "2026-10-07T12:11:30.621Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "原任务开工12:11:30.621Z和原六项完成时刻不变；新后继供给firstWrite02:50:38.358088Z、take02:50:52.523Z；独立首次产品编辑UTC UNKNOWN，详successor.json"
+        },
+        "issues": []
+      },
+      "truncatedFields": []
+    },
+    "progress": {
+      "completed": 6,
+      "total": 7
+    },
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "reason": "",
+        "targetId": "WPF-MATURE-02",
+        "title": "Claude与Codex执行选项"
+      },
+      "basis": "status-source"
+    },
+    "verification": {
+      "state": "not_loaded"
+    },
+    "assignment": {
+      "state": "pending"
+    }
+  },
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "coordination": {
+    "state": "available",
+    "observedAt": "2026-10-08T04:00:32.432Z",
+    "count": 279
+  },
+  "completedAt": "2026-10-08T04:00:32.480Z",
+  "elapsedMs": 304
+}
