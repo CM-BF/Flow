@@ -1,0 +1,184 @@
+{
+  "kind": "TUI01F_R3_LIMITED_CALLER_PREPARATION",
+  "at": "2026-10-08T01:53:10.619Z",
+  "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "fixtureSource": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "ready": false,
+  "actual": "NOT_RUN",
+  "independentReview": "PENDING",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "worker": "assignment_review"
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 6937,
+      "sha256": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-run.py",
+      "bytes": 820,
+      "sha256": "5f1c1cfb69997d5d07987be793f15c9cf49b72f5afbb50c3ce52a6468bcfa7b5",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-run.test.py",
+      "bytes": 6397,
+      "sha256": "aee68ddb7cfb253ad5d8b2c224113dcf570457093ec2ff45febe1734e6cc9033",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-inputs.json",
+      "bytes": 5824,
+      "sha256": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-permit.pending.json",
+      "bytes": 894,
+      "sha256": "d0f990e55b936148224b02eb41194bb209e2e6515f0208dbfae53e20cdb4d623",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-01/outer.json",
+      "bytes": 515,
+      "sha256": "5045c82e5e1c9500e03b10050546395d285a4452220680dd1dfe7a936a54fd15",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-01/reservation.json",
+      "bytes": 3978,
+      "sha256": "6cb3759035864c058481e2b8861d7b5d8a23cf8f0979a715698d01b791ac1b9b",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-01/result.json",
+      "bytes": 498,
+      "sha256": "48f10e1695f0f3987682b84ff98687fe1a8cd474aa6b32c4ce52e005d9fae033",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-01/stderr.txt",
+      "bytes": 654,
+      "sha256": "36f4f34541d2df844f3c62fe419efeae668f47d82450bb1525119c5091cb84a2",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-01/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-interface.md",
+      "bytes": 4496,
+      "sha256": "469e09ec5f69df3e564d3bccb5c3c344850f324d8eb505f382eb38eb881f112f",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-local-summary.json",
+      "bytes": 1332,
+      "sha256": "df1cc1a13649e313b5ee762db29bafc27366c68cfdb35c4d391157e6213271e0",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-status-parse.json",
+      "bytes": 365,
+      "sha256": "00cc11e8fa612f0eff039cd8fababbd0bc723aa5d144ab47f489f1c3da7a03cc",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/fixture-source-alignment/main-receipt.json",
+      "bytes": 1121,
+      "sha256": "973538202eafb768ede893bae98d61a9eba93fa5ef1b6f7428017454f40af2f6",
+      "role": "record"
+    },
+    {
+      "path": "plans/tui01f-task-cancel/status.md",
+      "bytes": 23461,
+      "sha256": "14871c6554cf79efc9a39e1d16ebd7203c965caf6371c33471ead3fcd56da374",
+      "role": "record"
+    },
+    {
+      "path": "plans/tui01f-task-cancel/review.md",
+      "bytes": 13958,
+      "sha256": "7287dcd02ee44464089acfdd291bb42149eb7fa2cf4b62e6744b31481bdf4178",
+      "role": "record"
+    }
+  ],
+  "bindingCount": 16,
+  "bindingBytes": 71250,
+  "inherit": [
+    {
+      "commit": "a9b0abff3770c0117e72c2f2cca881dc57cf4373",
+      "path": "docs/evidence/tui01f/web-handoff/fixture-source-alignment/manifest.json",
+      "sha256": "876f33dfb62bf9e9e38c276a32e57d7ab9f45f3a7d335d3c65e32786e5af653c"
+    },
+    {
+      "commit": "43dc95fd4d1152ff506b507e4d45355fa90eb2fd",
+      "path": "docs/evidence/tui01f/web-handoff/r2-preparation.json",
+      "note": "Unchanged741 inputs referenced through two inherited manifests, not copied; live bytes checked by new direct entry."
+    },
+    {
+      "commit": "b1862907a1caaf40673123f86af0c8f5f5861ad8",
+      "path": "docs/evidence/tui01f/web-handoff/r2-result-manifest.json",
+      "note": "Original R2FAIL/KEEP not modified or replayed."
+    }
+  ],
+  "sourceDigest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+  "runtime": {
+    "inheritedPins": 741,
+    "ownPins": 7,
+    "oldDefault": "R2",
+    "trustedRunSpec": "R3 names only; no JSON strategy selector"
+  },
+  "checks": {
+    "selected": 4,
+    "passed": 4,
+    "distinct": 4,
+    "elapsedMs": 682,
+    "rawBytes": 654,
+    "supervisedChildren": 1,
+    "ownedGroupAbsent": true,
+    "dualEOF": true,
+    "signals": [],
+    "exactEmptyScratchRemoved": true,
+    "actualJourneyChildren": 0
+  },
+  "segmentTotals": {
+    "supervisedChildren": 3,
+    "elapsedMs": 3483,
+    "rawBytes": 1778,
+    "priorTypeCacheKeepBytes": 1357780
+  },
+  "resourceProposal": {
+    "newActualGrant": "NOT_GRANTED",
+    "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+    "planningGrowthBytes": 1499463680,
+    "liveReserveBytes": 1073741824,
+    "supervisedWorkSeconds": 150,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "conservativePGConnections": 13,
+    "minimumPGAvailable": 42,
+    "interpretation": "Planning allowances only; latest combined floor/holder required. No Chrome/DB/WAL hard quota claim. Fresh preflight pool must close before launch."
+  },
+  "namespaceObservation": {
+    "absent": [
+      "docs/evidence/tui01f/web-handoff/r3-permit.json",
+      "docs/evidence/tui01f/web-handoff/r3-actual-once",
+      "docs/evidence/tui01f/web-handoff/windows/flow-tui01f04-20261008-r3.json",
+      "docs/evidence/tui01f/web-handoff/captures/flow-tui01f04-20261008-r3"
+    ],
+    "note": "Metadata observation only; must recheck in same actual admission call."
+  },
+  "limits": [
+    "No PG/HTTP/browser/PTY/native/auth/provider/personal actual in preparation.",
+    "Full journey remains unverified; original R2 causeUNKNOWN.",
+    "OPS14 group/EOF does not establish detached fixture cleanup.",
+    "No automatic retry or rollback; old raw/KEEP retained."
+  ]
+}

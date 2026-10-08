@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-08T01:52:20.014Z",
+  "reviewedAt": "2026-10-08T01:46:45.075Z",
+  "decision": "APPROVED_LIMITED_FIXTURE_SOURCE_AND_DIRECT_RESULTS",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "source": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "delivery": "a9b0abff3770c0117e72c2f2cca881dc57cf4373",
+  "main": "89a27b983c15e46f7f2e1e24f27b335272eb0015",
+  "review": {
+    "path": "docs/evidence/i02/tui01f-fixture-source-alignment-intake.json",
+    "bytes": 2724,
+    "sha256": "b69dcc942c2239cad3eeaf4a99ef37634eba9d88a1c26815c33bbc0c953287e6"
+  },
+  "intakePaths": [
+    "apps/tui/src/task-controls/fixture-source.test.ts",
+    "apps/tui/src/task-controls/fixture.ts",
+    "docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "docs/evidence/tui01f/web-handoff/fixture-source-alignment/interface.md"
+  ],
+  "exactIntegratedBytes": true,
+  "actualJourney": "NOT_RUN since R2; original R2 remains1/0/causeUNKNOWN",
+  "note": "Main observation is not an invented merge time. Original manifest/raw not changed."
+}

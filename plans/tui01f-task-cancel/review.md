@@ -1,3 +1,13 @@
+# 当前 TUI01F R3 受信薄调用准备
+
+状态：NOT_STARTED（独立审查待安排）。
+
+Review target commit: bdf11c06ef7cef843b0a52f456408bdb1f539be6
+
+仅原caller受信RunSpec、R3薄入口/新input及四项真实前置消费者；[单份准备](../../docs/evidence/tui01f/web-handoff/r3-preparation.json)。4/4、682ms/raw654B，真实pin/permit/exclusive reservation/OPS14验证后只拦截最终supervise；无实际PG/PTY/Chrome/provider。原默认R2保持，旧FAIL/KEEP与新actual未授权边界不变。
+
+fixture source8379已获Lead独立限定APPROVED/0P1P2并main89a27精确接收，见[唯一引用](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/main-receipt.json)。以下作者提交时的PENDING及历史批准按原时点保留，不代表当前fixture仍未审。
+
 # 当前 TUI01F 固定中心版本对齐修复
 
 状态：NOT_STARTED（独立审查待安排）。

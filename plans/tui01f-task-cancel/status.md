@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:45:00.844Z；版本对齐修复与直接消费者检查完成，待独立审查 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:52:20.014Z；fixture修复已独审/main89a27，R3受信薄装配与纯入口检查完成待独审 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -12,23 +12,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；实现8379a051acb39898112609745ee14d8bcfe2c74d；历史基线与原R2见下方记录 |
-| 工作树dirty状态 | 实现源已固定；本次仅own收口记录；源码停写待独审 |
+| 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；fixture源8379已main；新R3装配bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
+| 工作树dirty状态 | 已固定fixture与R3调用源码；当前仅own metadata收口，产品与caller停写待独审 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED 8379a051acb39898112609745ee14d8bcfe2c74d；4/4新直接消费者、focused types0；2组absent/双EOF、2801ms/raw1124B。1空scratch删，types缓存1357780B KEEP；原12绿未重跑。 |
-| 已集成main状态 / HEAD | 诊断三源逐字已main/origin 0e8bfa7b385aff582a85aa211df1c854e064258c；唯一I02 tui01f-fixture-observation-intake.json。原c612及R2独审历史保持，不重跑。 |
-| 实现目标 | 8379a051acb39898112609745ee14d8bcfe2c74d |
-| 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-source.test.ts, experiments/tui-web-control-handoff/journey.ts |
+| 检查状态 | PASSED bdf11c06ef7cef843b0a52f456408bdb1f539be6；R3真实前置入口4/4、682ms/raw654B；之前fixture4/4+types0保持，总3483ms；3组absent/双EOF，2空scratch删/既有types缓存1357780B KEEP。0实际旅程。 |
+| 已集成main状态 / HEAD | fixture源8379三叶+typeconfig+Interface已精确main/origin 89a27b983c15e46f7f2e1e24f27b335272eb0015；唯一I02 tui01f-fixture-source-alignment-intake.json。R3装配尚待独审/main；原25174诊断与R2历史保持。 |
+| 实现目标 | bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
+| 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r3-run.py, docs/evidence/tui01f/web-handoff/r3-run.test.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 测试任务会话版本已与固定中心规则对齐，真实中心消费者的正反例检查通过，正在等待独立审查。原双端旅程失败记录保留。 |
-| 下一可用交付 | 完成版本对齐修复的审查与主线接收；完整双端旅程另需固定新输入和实际窗口。 |
+| 当前产出 | 测试任务会话版本修复已通过独立审查并进入主线；下一次终端与网页接续的独立运行入口已准备，正在等审查。 |
+| 下一可用交付 | 完成新运行入口审查后，按独占资源窗口进行一次真实双端接续复验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前8379增量PENDING；原25174诊断已独审/main，原R2仍仅限定失败忠实性批准。 |
+| Review | [review.md](review.md)：8379获Lead限定APPROVED/main；新R3 caller/input PENDING。原R2仅失败忠实性批准。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v7 active/exact7；2026-10-08T01:38:12.746Z 正式 accept，worker assignment_review；[回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/accept-receipt.json) |
-| 架构影响 | 仅实验HandoffRecipe增加受信固定中心版本输入，复用既有assistantSourcePolicy；生产授权、中心接受规则、runner与清理生命周期不变。无需产品架构基线变更。 |
+| 架构影响 | 仅实验recipe复用固定中心版本policy、一次性调用名称经受信RunSpec传给既有OPS14装配。生产接受规则/权限、8s成功断言、150s期限与cleanup不变，无新框架。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -124,3 +124,5 @@
 2026-10-08T01:38:43Z：本段实际接收后开工，原首次开工 UNKNOWN 不改。固定 8cc/25174 的合成 session v1 与已绑定 af51 中心 v2 规则存在确定契约不匹配；它不是原 R2 已观测根因。采用有界修复：固定中心 policy 经原 handoff recipe 传给 fixture，默认旧 recipe 保持；测试使用真实 fixture 输入和固定 saveAssistantFinal 的 SQL port，0PG/browser/native/auth/provider。原12绿不重跑，普通累计120s/8MiB/最多4子进程每次30s含清理，复用OPS14。技能复用本地 find-skills/clean-code/codebase-design/brainstorming；只补版本单一来源与真实消费者，不新增状态机。
 
 2026-10-08T01:45:00.844Z：本轮版本对齐源8379已固定并停写待独审。实际局部01:43:43.421Z→01:43:46.230Z RETURN，4/4真实fixture/固定af51中心SQLport消费者、focused types0，2组absent/双EOF/无signals，2801ms/1124B。一个空scratch按同身份删除，另types缓存1357780B KEEP，未声明完整清理。见[单份结果](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/result-summary.json)、[Interface](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/interface.md)。原R2 1/0、原因UNKNOWN、旧KEEP与原12绿不变；0PG/browser/native/auth/provider，未申请或执行新实际旅程。
+
+2026-10-08T01:52:20.014Z：已收Lead01:46:45.075Z对8379/a9b的限定APPROVED/0P1P2及main89a27精确接收；[接收回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/main-receipt.json)。按同段授权准备R3，01:51:09.463Z→01:51:10.146Z纯入口4/4运行并RETURN，真实741/7pins+mkdir/fsync/OPS14边界被消费，仅最终supervise被拦截，0旅程子进程。原R2默认/旧许可与新namespace拒绝保持；见[R3 Interface](../../docs/evidence/tui01f/web-handoff/r3-interface.md)、[单份准备](../../docs/evidence/tui01f/web-handoff/r3-preparation.json)。caller/source停写待独审，ready=false，无实际window/permit，原R2原因UNKNOWN与KEEP不变。

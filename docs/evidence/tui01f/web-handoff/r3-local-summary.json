@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-08T01:52:20.014Z",
+  "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "actual": "NOT_RUN",
+  "ready": false,
+  "runtimeReturnedAt": "2026-10-08T01:51:10.146Z",
+  "checks": {
+    "selected": 4,
+    "passed": 4,
+    "distinct": 4,
+    "old12Rerun": false,
+    "priorFixture4Rerun": false,
+    "actualInheritedPins": 741,
+    "actualOwnPins": 7
+  },
+  "elapsedMs": 682,
+  "rawBytes": 654,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "cleanup": {
+    "sameIdentity": true,
+    "entries": 0,
+    "removed": true,
+    "retainedBytes": 0
+  },
+  "segmentTotals": {
+    "supervisedChildren": 3,
+    "elapsedMs": 3483,
+    "rawBytes": 1778,
+    "priorTypesCacheKeepBytes": 1357780
+  },
+  "actualJourneyChildren": 0,
+  "scope": {
+    "PG": 0,
+    "HTTP": 0,
+    "PTY": 0,
+    "Chrome": 0,
+    "native": 0,
+    "auth": 0,
+    "provider": 0,
+    "personal": 0
+  },
+  "cleanCode": {
+    "at": "2026-10-08T01:52:20.014Z",
+    "method": "One immutable trusted naming tuple reuses the existing admission and supervision Module. No JSON-selected policy or new supervisor. Default R2 semantics and all limits remain.",
+    "unresolved": "Real dual-interface journey remains unverified; pending permit does not authorize launch."
+  },
+  "independentReview": "PENDING"
+}

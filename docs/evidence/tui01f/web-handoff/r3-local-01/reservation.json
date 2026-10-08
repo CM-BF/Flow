@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-08T01:51:09.446Z",
+  "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "argv": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.test.py",
+    "-v"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "env": {
+    "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TMPDIR": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r3-local-_612do38",
+    "TMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r3-local-_612do38",
+    "TEMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r3-local-_612do38",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 6937,
+      "sha256": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+      "bytes": 820,
+      "sha256": "5f1c1cfb69997d5d07987be793f15c9cf49b72f5afbb50c3ce52a6468bcfa7b5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.test.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.test.py",
+      "bytes": 6397,
+      "sha256": "aee68ddb7cfb253ad5d8b2c224113dcf570457093ec2ff45febe1734e6cc9033"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-inputs.json",
+      "bytes": 5824,
+      "sha256": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-permit.pending.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-permit.pending.json",
+      "bytes": 894,
+      "sha256": "d0f990e55b936148224b02eb41194bb209e2e6515f0208dbfae53e20cdb4d623"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    }
+  ],
+  "ledgerAt": "2026-10-08T01:50:50.647Z",
+  "baseFloor": 13838843904,
+  "unlistedSegmentIncrement": 8388608,
+  "floor": 13847232512,
+  "free": 14468968448,
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r3-local-_612do38",
+    "dev": 16777234,
+    "ino": 124727701
+  },
+  "policy": {
+    "work_seconds": 27.5,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 131072
+  }
+}
