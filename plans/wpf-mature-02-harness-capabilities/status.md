@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:20:38.000Z / CORE 已 main677a93e9；registry 来源已迁移，actual reload UNKNOWN；个人设置仍未激活 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:23:13.324Z / 仅父后继路由同步；原主线收据按历史来源保留，个人设置未激活 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；source e7ff1a83，result 9b9c1182d2e649d2a68f3d3c7de980bac0e71fed；封口为本提交，旧源按历史Git保留 |
-| 工作树dirty状态 | fresh f268e6052dc9ab09e8bc54a901c1834a9422da79 clean=origin；本次仅父 status/个人安装验收与路由 metadata，旧 raw/manifest/封账未改；本提交后 clean 状态由 Git 回执确认。 |
+| 工作树dirty状态 | fresh fc11d15292bc8ecc3c8c1b3f3f7d1e7955491b91 clean=实际origin；本段仅status/interface两叶，candidate和封口SHA由本次Git提交固定。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原大task实际开工缺可证时间；下述 metadata 段开始不替代任务开始，不以 commit/mtime 推测。 |
@@ -24,9 +24,9 @@
 | 实现目标 / 范围 | Claude CORE/C01/F01中心、adapter与公共client已main；跨端完整用户验收仍开放。本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude中心与公共客户端已在主线；Codex受控初始化后首次取得6个模型的目录，尚未验证账号或实际模型调用。 |
-| 下一可用交付 | 让个人安装的用户可在 Web/TUI 选择下一条 Claude 消息设置；先交付两槽配置、精确目录与混合队列兼容，再独立验证真实模型效果。 |
-| 当前阻塞 | ACTIVE: PERSONAL_SETTINGS_NOT_ACTIVATED：现个人预览配置未声明逐消息设置；原个人维护已归还；领取资格已进入主线；仍待合法 owner 完成两槽配置、精确目录及 Web/TUI 实测。真实账号与模型后验另待独立额度。 |
+| 当前产出 | 中心与公共客户端能力已在主线；Web版本化选择基础已获限定审，个人设置后台保存了来源候选。个人安装尚未启用逐消息设置。 |
+| 下一可用交付 | 在网页中新建支持逐消息设置的会话，并让个人安装的网页与终端客户端可以选择、发送和读回设置。 |
+| 当前阻塞 | ACTIVE: PERSONAL_SETTINGS_NOT_ACTIVATED；网页入口仍待接通，个人安装的新后台版本还需完成保留容量核验与迁入；实际模型设置效果另待验证。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | Mika/root 20:42:21 RESULT_FIDELITY_APPROVED/0P1P2绑定9b9c1182；仅真实目录、资源收束和计量忠实性，未知资格不升级。 |
@@ -96,3 +96,17 @@ SVC09A 当前路由为 native_center_owner / `codex/personal-message-settings`�
 本段实际开始 2026-10-07T14:18:38.000Z；fresh 账本 readId `d90516f1-105a-4322-93e9-918f03abe0bb` / 2026-10-07T14:18:38.374Z 确认父 claim0dd97484 v6 ACTIVE/3scope、mika/chatui01_owner、同树同分支 matchesSource=true。只更新三份父 metadata，0工程检查/PG/服务/私有配置读取；旧额度/raw不变。复用已读本地 find-skills/codebase-design/clean-code，检查单一事实源、当前与历史分离、未知边界和链接。实际大task开工 UNKNOWN、完整完成 NOT_COMPLETED；文档 parser 的时间缺证据不补猜。提交后 STOP，保留原claim。
 
 本次 metadata 校核：当前 main parseStatus errors=[]、human.missing=[]；timing.issues=[任务开工时间未记录]，对应明确 UNKNOWN，未伪造历史时间。三文件 46,085B（追加本条后仍低于64KiB），git diff --check 通过。正式 main 收据5项及新增 canonical 路径存在；无行为测试。
+
+## 当前后继路由（2026-10-08）
+
+2026-10-08T03:23:13.324Z 只读核验：Web 沿 [MSG03唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)，canonical HEAD `1081861d0d1d8b9659fcc5681120bf4ccb974e3a` clean。版本化选择 source `e5c11b3c7ca7e9e3e303e6c861603640f75a1118` / delivery `66abb1c7d73623efeff2717b24ff5ce4c8f38c09` / base `bfbf804bdc290ac27787a355b064457fb76bfc58` 仅限定审，NOT_INDEPENDENTLY_MERGEABLE；App/Thread/Picker 后继由 workspace_panels_owner 合法组合，不复制子TODO或当作用户旅程完成。
+
+SVC09 沿 [native_center_owner唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，HEAD `2eeb860dbbf6afef2d34e483d83d467e8a07521a` clean，文件安全点03:07:23.547Z保存八叶候选来源；四项产物保留/第五项策略待解，operator当时优先O16。不推断后续进展；原恢复main与settings未启用分开，0构建/激活结论。TODO08/11不变；[个人验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)保留Web/TUI、精确runner/profile/digest与有限完整tuple、旧session、A/B/C冻结、UNKNOWN原key/body及独立provider后验。
+
+本次新段 `MikaMature02SuccessorMetadata`：D01 2026-10-08T03:19:25.827Z 登记；firstWrite `2026-10-08T03:23:13.324Z`，绝对deadline `2026-10-08T03:31:13.324Z`。fresh claim readId `484d63db-1487-46ba-bbba-9d181ad06262` / 2026-10-08T03:23:13.186Z：0dd97484 v6 ACTIVE，同mika/chatui01_owner/树/分支、原3scope、matchesSource=true且无重叠，旧陈旧提示不当释放。current SHA `3541459323bfc383e53965f59248539f369194f53df0bba93f556c455dccba00`，manager floor 11616911360B，实际取较高既定线 `11620057088B`；同次free `14252535808B`（2026-10-08T03:23:13.324Z）。只准两叶、新3MiB/8min/0工程，无第三receipt/TMP/raw。首个编辑脚本在语法解析时失败，0语句执行/0文件写入；本firstWrite不回填该失败。
+
+计量：index logical 674701B / allocated 675840B，含一份atomiccopy按2×704KiB；两文档原/编辑/写盘按3×48KiB；loose对象256KiB、commit/push/admin512KiB、收尾512KiB，保守2,899,968B≤3,145,728B，非物理峰值实测。候选校核及最终STOP在本节收口，保留收尾额度。
+
+本地find-skills匹配并复用codebase-design/clean-code（/Users/citrine/.agents/skills；来源沿quality.json固定sickn33@bdacd76，无安装）。检查唯一owner、链接、历史/当前分离、UNKNOWN与有限资源；不改架构/生产/旧22/manifest/raw/额度，不读个人配置，不跑工程/PG/provider。任务开工UNKNOWN、完整NOT_COMPLETED保持。
+
+元数据校核：TODO表逐字保留，diffcheck通过；main parseStatus errors/humanMissing/waitingIssues均空，timing仅原开工UNKNOWN。候选只读核验无阻塞，最终commit独审由Mika随后回报。正文STOP 2026-10-08T03:26:14.695Z；0工程/PG/服务/待launch，保留claim，随后仅本段一次commit/push及只读封口计量，完成后0pending；最终SHA/actualremote/clean由外部工具回执固定，无第三文件。
