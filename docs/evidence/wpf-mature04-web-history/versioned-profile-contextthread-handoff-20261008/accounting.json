@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-08T03:07:06.879312+00:00",
+  "scope": "metadata handoff only; all retained scopes STOP after seal",
+  "firstWrite": "2026-10-08T03:06:25.335512+00:00",
+  "deadline": "2026-10-08T03:14:25.335512+00:00",
+  "indexAtomicCopyBeforeBytes": 2331745,
+  "recordsObjectsAdminReserveBytes": 524288,
+  "indexGrowthReserveBytes": 32768,
+  "conservativeUpperBytes": 2888801,
+  "limitBytes": 3145728,
+  "actualPeak": "NOT_OBSERVED",
+  "noProductChange": true,
+  "fixedIntakeUnchanged": true,
+  "noEngineeringChild": true,
+  "sourceStop": [
+    "apps/web/src/conversations/ConversationThread.tsx"
+  ],
+  "claimAfter": 5,
+  "scopeCountAfter": 6
+}

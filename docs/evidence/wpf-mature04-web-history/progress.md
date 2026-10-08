@@ -70,3 +70,7 @@ Final independent result/source/visual review: [root-final-review.json](browser/
 ## Connection presentation handback — 2026-10-08T01:07:14.455Z
 
 All Context source remains STOP at 8819faa34a5cb08f164c4a4f98b1595218dc2cad. App.tsx alone was removed by committed claim v4 (seven scopes retained) for the separate MATURE06-04 connection presentation slice. No Context product or acceptance evidence changed. The fixed ed5 implementation and final 8-group review remain historical inputs; this does not claim the Arc combination or current capacity. [Exact receipt](connection-app-handoff-20261008/receipt.json). App is permanently outside this claim after the handback.
+
+## Versioned profile UI leaf handoff
+
+2026-10-08T03:07:01.050Z: apps/web/src/conversations/ConversationThread.tsx permanently STOP and removed by atomic partial-amend v4→v5; 6 other scopes remain active but STOP. Product source and fixed intake/review unchanged. Receiver acquires its own legal scope separately; no whole-task completion or release. [Committed receipt](versioned-profile-contextthread-handoff-20261008/receipt.json).

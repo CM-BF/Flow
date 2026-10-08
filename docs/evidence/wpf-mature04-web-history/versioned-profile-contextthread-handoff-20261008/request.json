@@ -1,0 +1,17 @@
+{
+  "requestId": "versioned-profile-contextthread-handoff-d62db80f-c5a4-4389-973f-934e05bba703",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+  "version": 4,
+  "scope": [
+    "apps/web/src/conversation-context-history",
+    "apps/web/src/plugin-integration/context-history.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/context-history-fixture.ts",
+    "apps/web/test/context-history.browser.ts",
+    "docs/evidence/wpf-mature04-web-history"
+  ]
+}

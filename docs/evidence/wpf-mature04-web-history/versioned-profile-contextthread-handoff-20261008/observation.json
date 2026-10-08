@@ -1,0 +1,62 @@
+{
+  "firstWrite": "2026-10-08T03:06:25.335512+00:00",
+  "deadline": "2026-10-08T03:14:25.335512+00:00",
+  "headBefore": "4a60949ef69b7e06e49b37519b58eaf881a1c0e1",
+  "branch": "codex/web-context-history",
+  "claimBefore": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-context-history",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/context-history.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/context-history-fixture.ts",
+      "apps/web/test/context-history.browser.ts",
+      "docs/evidence/wpf-mature04-web-history"
+    ],
+    "state": "active",
+    "branch": "codex/web-context-history",
+    "origin": "new",
+    "taskId": "MATURE04-05",
+    "worker": "w01_owner",
+    "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "createdAt": "2026-10-07T22:35:02.638Z",
+    "updatedAt": "2026-10-08T01:07:14.455Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-08T03:07:00.953Z",
+  "conflicts": [],
+  "indexAtomicCopyBytes": 2331745,
+  "recordsObjectsAdminCapBytes": 524288,
+  "indexGrowthReserveBytes": 32768,
+  "totalCapBytes": 3145728,
+  "permanentSourceStop": [
+    "apps/web/src/conversations/ConversationThread.tsx"
+  ],
+  "fixedLeaf": {
+    "path": "apps/web/src/conversations/ConversationThread.tsx",
+    "bytes": 29957,
+    "sha256": "cd59be625918652833bf125eacbe54e0598cb1a3ae4c2f66f81ec397e82de598"
+  },
+  "fixedIntake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/delivery.json",
+    "sha256": "fdea5d0059b4bd73259198ba40d65a102d4513be9d84db600d138404c1d365b1"
+  },
+  "productsChanged": false,
+  "priorMetadataStop": {
+    "missingAssumedPath": "main-intake.json",
+    "actualFixedDelivery": "browser/continuous-acceptance/delivery.json",
+    "claimMutation": false,
+    "createdEmptyDirIdentity": {
+      "dev": 16777234,
+      "ino": 124775736,
+      "uid": 501
+    },
+    "clock": "original directory birthtime; no reset"
+  }
+}
