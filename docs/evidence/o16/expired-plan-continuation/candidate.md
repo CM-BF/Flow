@@ -2,7 +2,7 @@
 
 记录时间：2026-10-08T02:16:41.342Z。**NOT_GRANTED / NOT_RUN**：本文件不是 grant、confirmation、permit 或资源窗口；原 SDK 累计 4 次，当前新增 0 次。
 
-固定实现 `5cf8a5dd529a77f7de054c2ed476cf62213af665`，真实源码摘要 `2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa`，环境摘要 `fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8`。本次 exact 7 叶见 [source-delta.json](source-delta.json)，327 输入/39 依赖逆算到原 `e5c7fd9d664de11ab853c55e0a01577c12530555` / `5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4`；不复制旧完整闭包。源码/局部结果待独审，真实动态 SQL 和资源接续未执行。
+固定实现 `5cf8a5dd529a77f7de054c2ed476cf62213af665`，真实源码摘要 `2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa`，环境摘要 `fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8`。本次 exact 7 叶见 [source-delta.json](source-delta.json)，327 输入/39 依赖逆算到原 `e5c7fd9d664de11ab853c55e0a01577c12530555` / `5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4`；不复制旧完整闭包。源码/局部结果已由 assignment_review 独立批准 APPROVED_EXPIRED_PLAN_CONTINUATION_SOURCE_AND_LOCAL_RESULT，0 P1/P2；真实动态 SQL 和资源接续未执行。
 
 原件来源为 `76a9f36b14c3da1604ee38121f609095cf0cc997` 的 [result-manifest](../native-plan-normal-home-20261008-once/result-manifest.json) 与 [原 pause](../runs/native-plan-normal-home-20261008-once/pause.json)。限定结果独审已 main `254ce9579`（I02 `o16-normal-home-planner-result-intake.json`）。GO 已语义接受 proposal `9a3d0320-efd7-4d65-828c-adb42d6dd5c2` / `fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b`；该决定不等于签发 confirmation 或授权 children。
 
@@ -16,8 +16,8 @@
 
 资源保留：旧DB `flow_o16_36ebe1bd4f6343d59ba2e93c61882b92` / marker `1f572164-67bc-4c71-b050-c77b69113a1d`、旧private身份（仅引用原pause，不新读）均KEEP。新阶段新建独立private，状态只写其中；旧material仍按其原绝对路径只读，不复制/改写原journey、凭据、pause/report/resources。原namespace只新增原权威 `pause-consumed-plan.json` 消费记录，和旧入口互斥；不同新run不能绕过同一来源已消费。任何部分写/崩溃留UNKNOWN，不删除消费记录/不回滚旧状态。新private也KEEP；final接受不授DROP或删除两目录。
 
-原资源上界：新private运行材料8MiB；同一新run的operator+stage evidence合计2MiB（跨阶段累计，不能每段重置）。旧private为原封存存量/只读材料，不冒纳入新目录8MiB实测；正常共享HOME/Keychain初始化与刷新在既有同账户权限内，也不冒8MiB保证。原live reserve1GiB与最低start1GiB+128MiB仅模块下限，实际需D01最新完整future floor一次计数；DB/WAL保留与未来增长由真实窗口合并，不能把128MiB称数据库硬cap。原center8+boss3+admin1=PG12，准入需fresh≥28含16余量并关闭probe，renew额外max1只读pool与server错峰关闭；实际容量、身份、old marker/无连接、新namespace/claim与完整输入须在新窗口fresh核。
+原资源上界：新private运行材料8MiB；同一新run的operator+stage evidence合计2MiB（跨阶段累计，不能每段重置）。旧private为原封存存量/只读材料，不冒纳入新目录8MiB实测；正常共享HOME/Keychain初始化与刷新在既有同账户权限内，也不冒8MiB保证。原live reserve1GiB与最低start1GiB+128MiB仅模块下限，实际需D01最新完整future floor一次计数；DB/WAL保留与未来增长由真实窗口合并，不能把128MiB称数据库硬cap。原center8+boss3+admin1=12个稳定配置连接；renew只读pool调用end后不代表远端已同步归零，第二次fresh检查至createServer间可能仍有1个closing transient，候选共预留13个连接，准入需fresh available≥29（含16余量）并关闭preflight probe。这是保守配置/瞬时预算，不是已测峰值或远端零屏障；实际容量、身份、old marker/无连接、新namespace/claim与完整输入须在新窗口fresh核。
 
 最前fresh拒绝：公开合同按旧原件重算后，同一受控窗口实际核中心goal/project revision/proposal全input、唯一已完成planner/attempt、两个不可变profile/currentrunner、知识版本、全库无confirmation/progression/application/execution，且来源无in-flight/unknown；开server前再次核。同一SQL只读快照不冒永久排他，实际确认仍依靠原CAS。原4query及旧FAIL/KEEP不动；本片0真实renew/confirmation/PG/auth/native/child。
 
-局部证据见 [validation.json](validation.json)：15不同检查通过，两次FAIL保留，4监督child/6691ms/10595B；最后RETURN `2026-10-08T02:12:06.112396Z`。当前无运行窗口、无pending launch。所需后继只有固定源码独审、GO一次明确新阶段确认+两child预算、D01新资源窗口和当次fresh；不申请再次规划或重跑旧查询。
+局部证据见 [validation.json](validation.json)：15不同检查通过，两次FAIL保留，4监督child/6691ms/10595B；最后RETURN `2026-10-08T02:12:06.112396Z`。当前无运行窗口、无pending launch。源码独审已通过，所需后继为GO一次明确新阶段确认+两child预算、D01新资源窗口和当次fresh；不申请再次规划或重跑旧查询。

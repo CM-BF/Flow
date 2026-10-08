@@ -52,8 +52,8 @@
     },
     {
       "path": "docs/evidence/o16/expired-plan-continuation/candidate.md",
-      "bytes": 5830,
-      "sha256": "135b75ea20740b05b5ae568cd6d272be6dc2cfb21af3cca71ae0886901706c77"
+      "bytes": 6159,
+      "sha256": "e668ffd4c787b3c6a4c84b6d0097005a143436a5f6d192cf4b3f87c8706e2de8"
     },
     {
       "path": "docs/evidence/o16/expired-plan-continuation/validation.json",
@@ -167,7 +167,7 @@
     }
   ],
   "bindingCount": 32,
-  "bindingBytes": 184655,
+  "bindingBytes": 184984,
   "inherited": [
     {
       "commit": "76a9f36b14c3da1604ee38121f609095cf0cc997",
@@ -191,7 +191,23 @@
     "lastReturnAt": "2026-10-08T02:12:06.112396Z"
   },
   "scope": "Experiment source + synthetic direct evidence only. No actual renew, confirmation, PG, native, auth, old-private access, children, or semantic acceptance.",
-  "review": "PENDING",
+  "review": {
+    "verdict": "APPROVED_EXPIRED_PLAN_CONTINUATION_SOURCE_AND_LOCAL_RESULT",
+    "reviewer": "assignment_review",
+    "findings": {
+      "P1": 0,
+      "P2": 0
+    },
+    "target": "7edd6ea2269d5d682eedacfbdc3c9221f470a332",
+    "ownerRecordedAt": "2026-10-08T02:19:04.237Z",
+    "limits": "Source and local evidence only; actual renew/PG/children and new stage authorization NOT_GRANTED."
+  },
   "actualAuthorization": "NOT_GRANTED",
-  "provenance": "Source inputs are the individual reservation commits; local-03/source-delta.json preserves its exact preimage. Final one-line regex repair only reran actual identity and its negative direct consumer. No full old closure copied."
+  "provenance": "Source inputs are the individual reservation commits; local-03/source-delta.json preserves its exact preimage. Final one-line regex repair only reran actual identity and its negative direct consumer. No full old closure copied.",
+  "metadataDelta": {
+    "at": "2026-10-08T02:19:04.237Z",
+    "scope": "candidate connection planning and owner status only; source, local raw and source identity unchanged",
+    "PG": "12 steady + 1 possibly closing transient; reserve13/freshAvailable29 including16 margin; not measured peak",
+    "authority": "Execution Lead candidate-only correction after independent source review"
+  }
 }
