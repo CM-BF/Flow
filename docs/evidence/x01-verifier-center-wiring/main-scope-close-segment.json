@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-08T01:15:37.000Z",
+  "deadline": "2026-10-08T01:23:37.000Z",
+  "firstWriteAt": "2026-10-08T01:16:05.836Z",
+  "productPermanentStopAt": "2026-10-08T01:16:05.836Z",
+  "baseline": "3b40cf15995cd732f6680b58f1121575dce2dbe4",
+  "capBytes": 3145728,
+  "oldIndexBytes": 2344026,
+  "atomicIndexReserveBytes": 2409562,
+  "metadataAndTemporaryCap": 65536,
+  "objectsRefsPushCap": 262144,
+  "coordinationReceiptCap": 65536,
+  "estimatedIncrementalBound": 2802778,
+  "engineeringRuns": 0,
+  "productWrites": 0,
+  "pendingLaunch": 0,
+  "freshClaimAt": "2026-10-08T01:15:38.299Z",
+  "claimVersionBefore": 1,
+  "managerAt": "2026-10-08T01:15:50.277Z",
+  "managerFullTermsSum": 13567131648,
+  "managerMatchesBothCurrent": true,
+  "quality": {
+    "method": "local find-skills/codebase-design/clean-code baseline; one status, current TODO and plan consistency; exact main/D05 receipts; old failures intact",
+    "unresolved": "public E2E/T7/deployment remain outside this slice"
+  },
+  "amendCommittedAt": "2026-10-08T01:16:10.758Z",
+  "claimVersionAfter": 2,
+  "retainedScope": [
+    "docs/evidence/x01-verifier-center-wiring",
+    "plans/x01-verifier-center-wiring"
+  ],
+  "completionObservedAt": "2026-10-08T01:16:34.610Z",
+  "qualityCheckedAt": "2026-10-08T01:16:34.610Z",
+  "qualityResult": "one status; ISO millisecondsZ; plan TODO matches status; inherited results unchanged; source integrated, product deployment unverified",
+  "metadataFullFilesBytesBeforeSeal": 15514,
+  "metadataWithOneTemporaryCopyBound": 35124,
+  "incrementalBoundBytes": 2802778,
+  "contentFrozenAt": "2026-10-08T01:16:34.775Z"
+}

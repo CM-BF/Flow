@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-08T00:28:53.085Z |
+| 最近更新时间 | 2026-10-08T01:16:34.610Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](../../../plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -15,32 +15,32 @@
 | 本片段交付阶段 | delivered |
 | 实现目标 | d17125c112240468444b71f6a049303158efad1c |
 | 实现范围 | apps/server/src/main.ts, apps/server/src/index.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-verification-wiring.test.ts |
-| 检查状态 | focused types0；9 distinct分轮通过，首夹具失败及旧源重复保留；PG NOT_RUN |
+| 检查状态 | PASSED d17125c112240468444b71f6a049303158efad1c；focused types0；9 distinct分轮通过，首夹具失败及旧源重复保留；PG NOT_RUN |
 | 已集成main状态 / HEAD | INTEGRATED 728d3165f17dfe8272c8ffce6e1eff60d9602d6b；四叶逐hash等已审d171，组合strict0及factory9/9另有主线原件 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 中心验证入口的显式装配与认证边界已接收主线，组合检查通过；尚未部署。 |
-| 下一可用交付 | 本片段已交付；等待唯一登记事实同步，完整runner链与部署属后继。 |
+| 下一可用交付 | 本片段已交付；公开整链、T7与部署由后继验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：APPROVED d17125c112240468444b71f6a049303158efad1c |
-| Claim | daf9316f-13dc-4404-ba04-f1033f2eed2e v1 ACTIVE6，22:05:39.732Z COMMITTED |
+| Claim | daf9316f-13dc-4404-ba04-f1033f2eed2e v2 ACTIVE2；2026-10-08T01:16:10.758Z COMMITTED，仅own计划/证据，四产品永久STOP |
 | 架构影响 | 已main：现中心factory显式verifier policy装配，领域算法与状态权威不变；Execution Lead固定架构展示更新状态待回执。 |
-| Dashboard登记 | 待Execution Lead/D05按唯一status登记 |
+| Dashboard登记 | REGISTERED：D05 actual213，2026-10-08T00:52:45.462Z sourceCurrent/live/issues[]；本次新metadata展示尚未另读 |
 | 任务开工时间 | 2026-10-07T22:04:21.000Z |
 | 分支交付时间 | 2026-10-07T22:26:06.525Z |
 | 独立审查时间 | 2026-10-07T22:28:49.000Z |
 | 主线集成时间 | 2026-10-08T00:22:02.205Z |
 | 部署时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 实际clock开段与原子claim receipt，未发生事件不填造 |
+| 任务完成时间 | 2026-10-08T01:16:34.610Z |
+| 任务时间来源 | 实际clock开段与原子claim receipt；完成为本owner核main和D05全部验收并收口的实际clock；部署仍UNKNOWN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | X01WIRE-01 | completed | db_transaction_owner | [前像](../../docs/evidence/x01-verifier-center-wiring/preimages.json)、[claim](../../docs/evidence/x01-verifier-center-wiring/claim-receipt.json) |
 | X01WIRE-02 | completed | db_transaction_owner | 三薄入口同policy接线已固定 |
 | X01WIRE-03 | completed | db_transaction_owner | [局部原件](../../docs/evidence/x01-verifier-center-wiring/local.json)，9distinct分轮/types0，真实PG未跑 |
-| X01WIRE-04 | in-progress | db_transaction_owner | 独审与main接收完成；[核验](../../docs/evidence/x01-verifier-center-wiring/main-accepted.json)，登记回执仍UNKNOWN |
+| X01WIRE-04 | completed | db_transaction_owner | 独审/main728/D05 actual213均已核；[登记回执](../../docs/evidence/x01-verifier-center-wiring/registration-accepted.json) |
 
 当前AV R3实际5/5、VAR领域实际5/5均已独立结果审通过；VAR输入schema400修复也已通过源码/局部审。迁移前置2fec已随main97353接收。VAR完整模块与CENTER四叶现已按顺序接收main728；主线接收不等于runtime派发、公开整链或部署。AV R1/R2与所有旧局部失败原件不变。原插件migration phase顺序包围034→036，无新增共享phase定义。
 
@@ -73,3 +73,7 @@ D01解除三叶协作HOLD后已fresh claim无冲突，原截止22:29:21不延长
 ## 2026-10-08T00:28:53.085Z 主线接收收口
 
 实际00:27:57Z开始metadata-only段，fresh账本daf v1 ACTIVE6。四产品43,937B逐hash等main728与已审d171；中央组合strict0和单轮9/9独立于历史9distinct分轮，原失败/类型绑定不变。见main-accepted.json。新工程/PG/HTTP为0。登记回执仍UNKNOWN，因此X01WIRE-04保留该项未完成，不把父X01或部署勾为完成；本次metadata commit/push后全STOP，claim保留仅待登记/必要收口。质量复核：当前与历史、source main与部署边界分开，预算含index原子副本。
+
+## 2026-10-08 登记完成与产品范围交回
+
+实际段START01:15:37Z；四产品自 2026-10-08T01:16:05.836Z 永久STOP。D05 actual213原登记已核sourceCurrent/live/issues[]，不把看板更新称产品部署。已于01:16:10.758Z原子amend至v2，仅保留own计划/证据，原产品/raw/manifest/局部失败不变；本段0工程检查。
