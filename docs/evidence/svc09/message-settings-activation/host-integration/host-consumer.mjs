@@ -18,17 +18,35 @@ export function validateHostInput(input, { requiresSettings = true } = {}) {
   return join(input.directory, 'backend-artifacts', input.artifact.artifactId, 'root');
 }
 
-export async function runHostConsumer({ input, checkpoint, pool }) {
+export function fixedCompositionPins(composition, sourceHead) {
+  assert.ok(composition && composition.target === sourceHead, 'HOST_COMPOSITION_TARGET_MISMATCH');
+  assert.match(sourceHead, /^[a-f0-9]{40}$/);
+  assert.ok(Array.isArray(composition.paths) && composition.paths.length > 0 && composition.paths.length <= 128);
+  const seen = new Set();
+  return composition.paths.map(pin => {
+    assert.ok(typeof pin.path === 'string' && /^(apps|packages|tools)\//.test(pin.path)
+      && !pin.path.split('/').some(part => !part || part === '.' || part === '..') && !seen.has(pin.path), 'HOST_COMPOSITION_PATH_INVALID');
+    assert.ok(Number.isSafeInteger(pin.bytes) && pin.bytes > 0); assert.match(pin.sha256, /^[a-f0-9]{64}$/);
+    seen.add(pin.path); return { path: pin.path, bytes: pin.bytes, sha256: pin.sha256 };
+  });
+}
+
+export async function runHostConsumer({ input, checkpoint, pool }, { composition = null } = {}) {
   const root = validateHostInput(input); // Fails before any runtime or private installation read.
   if (typeof checkpoint !== 'function' || !pool || typeof pool.query !== 'function') fail('HOST_FIXTURE_OWNER_REQUIRED');
+  // Only the fixed successor caller supplies this code port; the historical default
+  // remains bound to its original composition and makes no new initialization claim.
+  const currentBootRequired = composition !== null;
+  const pins = composition === null
+    ? JSON.parse(await readFile(new URL('./source-composition.json', import.meta.url), 'utf8')).paths.map(pin => ({ path: pin.path, ...pin.after }))
+    : fixedCompositionPins(composition, input.sourceHead);
   const info = await lstat(input.directory);
   assert.ok(info.isDirectory() && !info.isSymbolicLink() && info.uid === process.getuid() && (info.mode & 0o777) === 0o700);
   assert.equal(await realpath(input.directory), input.directory);
-  const composition = JSON.parse(await readFile(new URL('./source-composition.json', import.meta.url), 'utf8'));
-  for (const pin of composition.paths) {
+  for (const pin of pins) {
     const path = join(root, pin.path), stat = await lstat(path);
-    assert.ok(stat.isFile() && !stat.isSymbolicLink()); assert.equal(stat.size, pin.after.bytes);
-    assert.equal(digest(await readFile(path)), pin.after.sha256, `SOURCE_PIN_${pin.path}`);
+    assert.ok(stat.isFile() && !stat.isSymbolicLink()); assert.equal(stat.size, pin.bytes);
+    assert.equal(digest(await readFile(path)), pin.sha256, `SOURCE_PIN_${pin.path}`);
   }
   const load = relative => import(pathToFileURL(join(root, relative)).href);
   const preview = await load('tools/personal-preview/preview.mjs');
@@ -36,6 +54,7 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
   const slotsModule = await load('tools/personal-preview/runner-slots.mjs');
   const { maintainPreview } = await load('tools/personal-preview/maintenance-host.mjs');
   const { backendRuntime } = await load('tools/personal-preview/backend-release/host.mjs');
+  const diagnostics = currentBootRequired ? await load('tools/personal-preview/startup-diagnostics.mjs') : null;
   const config = await preview.loadPreviewConfiguration(input.directory);
   assert.equal(config.repository, input.repository);
   assert.equal((await backendRuntime(config, input.artifact)).root, root); // Complete inventory + sourceRepository.
@@ -55,6 +74,17 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
     return JSON.parse(Buffer.concat(chunks).toString('utf8'));
   }
   const state = () => preview.readPreviewJson(join(input.directory, 'state.json'));
+  async function currentInitialization(config, observedState) {
+    if (!currentBootRequired) return {};
+    const initialized = [];
+    for (const slot of await slotsModule.readRunnerSlots(config)) {
+      const record = observedState.processes[slot.key];
+      assert.ok(await diagnostics.readRunnerInitialization({ directory: input.directory, recordKey: slot.key,
+        record, runnerId: slot.runner.runnerId }), 'CURRENT_RUNNER_INITIALIZATION_REQUIRED');
+      initialized.push({ recordKey: slot.key, runnerId: slot.runner.runnerId, pid: record.pid, nonce: record.nonce, initialized: true });
+    }
+    return { currentInitialization: initialized, actualNativeClaim: 'NOT_OBSERVED' };
+  }
   async function emptyQueue() {
     const value = (await pool.query('SELECT (SELECT count(*)::int FROM flow.tasks) AS tasks,(SELECT count(*)::int FROM flow.attempts) AS attempts')).rows[0];
     assert.deepEqual(value, { tasks: 0, attempts: 0 });
@@ -75,7 +105,8 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
   const legacyFiles = {};
   for (const name of ['config.json', 'claude.json']) legacyFiles[name] = digest(await readFile(join(input.directory, name)));
   const legacyWork = await lstat(join(input.directory, 'runner'), { bigint: true });
-  await phase('default-legacy', { processes: before.processes, runnerId: configured.runner.runnerId, files: legacyFiles });
+  await phase('default-legacy', { processes: before.processes, runnerId: configured.runner.runnerId, files: legacyFiles,
+    ...await currentInitialization(configured, before) });
   await preview.activatePreviewMessageSettings({ directory: input.directory, recipe: { format: 1, choices: input.choices } });
   await emptyQueue();
   const slots = await slotsModule.readRunnerSlots(configured), settingsSlot = slots.find(slot => slot.id === 'settings');
@@ -89,7 +120,8 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
   assert.ok(settingsProfile); assert.deepEqual(settingsProfile.configuration, recipe.configuration);
   const legacyProfile = (await http('/api/execution-profiles?limit=100')).profiles.find(p => p.reference.runnerId === configured.runner.runnerId);
   assert.ok(legacyProfile); assert.equal(legacyProfile.configuration.turnSettings, undefined);
-  await phase('settings-published', { processes: active.processes, legacy: legacyProfile.reference, settings: settingsProfile.reference, choices: input.choices });
+  await phase('settings-published', { processes: active.processes, legacy: legacyProfile.reference, settings: settingsProfile.reference, choices: input.choices,
+    ...await currentInitialization(configured, active) });
   const drained = await maintainPreview({ directory: input.directory, action: 'bootstrap', backendId: input.artifact.artifactId });
   assert.equal(drained.state, 'draining'); assert.equal(drained.slots.length, 2); assert.equal(drained.activeAttempts, 0); assert.equal(drained.uncertainAttempts, 0);
   await phase('both-draining', drained);
@@ -99,7 +131,7 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
   const restarted = await state();
   assert.deepEqual(Object.keys(restarted.processes).sort(), ['center', 'runner', 'runner-settings', 'web']);
   for (const [key, record] of Object.entries(restarted.processes)) { assert.notEqual(record.nonce, active.processes[key].nonce); assert.equal(await processes.inspectOwnedProcess(record), 'running'); }
-  await phase('both-refreshed-held', { paused, processes: restarted.processes });
+  await phase('both-refreshed-held', { paused, processes: restarted.processes, ...await currentInitialization(configured, restarted) });
   const resumed = await maintainPreview({ directory: input.directory, action: 'resume' });
   assert.equal(resumed.state, 'accepting'); assert.ok(resumed.slots.every(v => v.state === 'accepting'));
   await phase('both-resumed', resumed); await emptyQueue();

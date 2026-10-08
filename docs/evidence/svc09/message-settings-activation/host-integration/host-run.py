@@ -89,8 +89,8 @@ def preparation_bindings(source, read_pin=pin):
     return [replacements.get(value['path'], value) for value in previous]
 
 def work_and_cleanup(child, node, namespace, directory, result, write=save, purpose=None, entries=None):
-    assert purpose in (None, 'SVC09A_DEFAULT_THREE_ROLE_START_STOP', 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'), 'HOST_PURPOSE_MISMATCH'
-    assert (entries is not None) == (purpose == 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'), 'EXPLICIT_COLD_ENTRIES_REQUIRED'
+    assert purpose in (None, 'SVC09A_DEFAULT_THREE_ROLE_START_STOP', 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE', 'SVC09A_FIXED_SETTINGS_DUAL_SLOT'), 'HOST_PURPOSE_MISMATCH'
+    assert (entries is not None) == (purpose in ('SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE', 'SVC09A_FIXED_SETTINGS_DUAL_SLOT')), 'EXPLICIT_COLD_ENTRIES_REQUIRED'
     work_entry = 'default-host.mjs' if purpose else 'host-entry.mjs'
     cleanup_entry = 'default-host.mjs' if purpose else 'host-cleanup.mjs'
     if entries is not None:
@@ -113,11 +113,12 @@ def work_and_cleanup(child, node, namespace, directory, result, write=save, purp
     result['complete'] = not result['persistenceFailures'] and work.exit_code == 0 and not work.first_failure and terminated(work) and cleanup.exit_code == 0 and not cleanup.first_failure and terminated(cleanup)
     return work, cleanup
 
-def main(argv, *, attempt=None):
+def main(argv, *, attempt=None, attempt_purpose='SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'):
     deadline = time.monotonic() + 215
     # Optional in-process port only. The thin reviewed caller binds these pins; CLI JSON
     # cannot supply it, and the original once-only entry mappings stay unchanged.
     if attempt is None:
+        assert attempt_purpose == 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE', 'EXPLICIT_ATTEMPT_REQUIRED'
         namespace_name, preparation_name = attempt_files(argv)
         fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
         source = json.loads((HERE / preparation_name).read_bytes())
@@ -132,7 +133,8 @@ def main(argv, *, attempt=None):
         assert namespace.is_absolute() and namespace.parent == Path(attempt['preparation']['path']).parent, 'COLD_NAMESPACE_INVALID'
         assert len(attempt['entries']) == 2 and all(Path(v).is_absolute() for v in attempt['entries']), 'COLD_ENTRY_INVALID'
         entries = attempt['entries']
-        purpose = 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'
+        assert attempt_purpose in ('SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE', 'SVC09A_FIXED_SETTINGS_DUAL_SLOT'), 'HOST_PURPOSE_MISMATCH'
+        purpose = attempt_purpose
         effective = {v['path'] for v in preparation_bindings(source)}
         assert set(entries) <= effective, 'COLD_ENTRY_PIN_MISSING' 
     assert source.get('purpose') == purpose, 'HOST_PURPOSE_MISMATCH'
