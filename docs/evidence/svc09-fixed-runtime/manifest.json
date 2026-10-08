@@ -1,0 +1,298 @@
+{
+  "at": "2026-10-08T04:09:14.272Z",
+  "kind": "SVC09B_FIXED_NATIVE_TERMINAL_ADAPTATION",
+  "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+  "records": "20f57f1c1d4326ac41f12872c613568b8b0c6c93",
+  "base": "f9221dbdce367d1794586471991adbe7a5a98c13",
+  "bindings": [
+    {
+      "path": "apps/runner/src/runtime-terminal-admission.test.ts",
+      "bytes": 6804,
+      "sha256": "3d7f7fa3d61d1fd1ccbc9081592c699b68fa3d0a637b78881659da400a7e0a8c",
+      "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 18004,
+      "sha256": "d13c573b6b374e3d3d1ca57bdb5a68dce49d9a27eaeda42210abc7e6dd15aac1",
+      "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/Interface.md",
+      "bytes": 881,
+      "sha256": "980251d8a54ea934d73218bbcb3baa4ab4b15c384e07ffe68194de74e0c838e2",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/fresh-scope.json",
+      "bytes": 1236,
+      "sha256": "ba27c8678d98d386f42104504d969b026d04342ffe12391c2ca04f11d54d4730",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/input-closure.json",
+      "bytes": 12819,
+      "sha256": "dd2f3b46fb8b1960893ede03414554f4ef296adc17c4ede35447900bb3c39114",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-environment/outer.json",
+      "bytes": 514,
+      "sha256": "50fdcf806f3f099ab0807710e7084858be4531a5de0990739e0dbc07f54c0ec2",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-environment/reservation.json",
+      "bytes": 3517,
+      "sha256": "c9ac6591e3b2c7adeab0404a09eea8f727f8281831cfd895da60cdcbc183b456",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-environment/result.json",
+      "bytes": 301,
+      "sha256": "6ab23e7f9cc7111944e7c7ad5791547f5385e33385bdccd90914a56c40f7d8cb",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-environment/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-environment/stdout",
+      "bytes": 287,
+      "sha256": "98f2ead17bb333aca69eb7f3f6a7042d48919164db57590aa7b3e3b644c88762",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-history.json",
+      "bytes": 389,
+      "sha256": "ed82891fa34cdadb5da8b52ebe801e3847c251e928b85d571971c650ee9edc32",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-original.py",
+      "bytes": 4522,
+      "sha256": "bf16058631a5b1355b293fef005760d23d6994b4d9522aaf7d4b9b0556d492c0",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime/outer.json",
+      "bytes": 515,
+      "sha256": "c1c4e00ec9a991e8e5348bc7cb591e933cb0f29231ef881e21274e56f486a453",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime/reservation.json",
+      "bytes": 3856,
+      "sha256": "60a396fc3242aa8980ca9abedfd86433f8dfb4cc39949d7483222fa78e5f9a12",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime/result.json",
+      "bytes": 305,
+      "sha256": "29e97ba1ca1c727f835de0dff48c6c59f7cb418e13dd4564b7efe86f5f591904",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime/stdout",
+      "bytes": 502,
+      "sha256": "c75732e0e8ea72ce566a371fda6c64d93fe3ffcd3405da2f9533bfdd829cc6c9",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime-fix/outer.json",
+      "bytes": 515,
+      "sha256": "a64508d240ba1ebcb67790e6f2def4050ff6d8a3011cdcf51d300e66366089c2",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime-fix/reservation.json",
+      "bytes": 3859,
+      "sha256": "1fa3076ef7c4ab1d8bf3e8334c3df8d1c6237e6a3979c3b4ccd08f2a722175c3",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime-fix/result.json",
+      "bytes": 305,
+      "sha256": "5bc588ce751a59c9b00114388ad1a349578a570af9dcca4749eeffc92556f256",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime-fix/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-runtime-fix/stdout",
+      "bytes": 502,
+      "sha256": "3ec3d777084581ab3369c1300ed22cf2863af5b756a9285df7b4f6c9e81aae83",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types/outer.json",
+      "bytes": 661,
+      "sha256": "c6c81074d1aaeaf189bc91c11542602600a359fb639961135b10cf9531f942c7",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types/reservation.json",
+      "bytes": 3959,
+      "sha256": "e8a05ec6bd0ae2bc5769ad0f572de9d1a52a432436b1713b2da8fd7174af0974",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types/result.json",
+      "bytes": 448,
+      "sha256": "0659391d572703f297930acefb684c57f06112afdf2d10ccce8ae880cc3446bc",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types/stdout",
+      "bytes": 525,
+      "sha256": "5391a0b3227d00bf89e3c35adaa4e17d113f9b23467adb7cc9b6ca6f9b697ce6",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types-fix/outer.json",
+      "bytes": 512,
+      "sha256": "134cff1a6c33e1dd9c3aecd97cd1ee4f7e7502c47c854549a97c49718e00e3c4",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types-fix/reservation.json",
+      "bytes": 3960,
+      "sha256": "b4b87e24db23e6867957c71c89be9effcc36ec97fbdcaab196c6efb0f569fc41",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types-fix/result.json",
+      "bytes": 301,
+      "sha256": "0cbda4a69a1e677ccaa4c7a152e9cbadd065ef052ccbd2b00a2642362a2b8d51",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types-fix/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local-types-fix/stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/local.py",
+      "bytes": 4824,
+      "sha256": "fdd067c8ee3a216bfa4629764d11f36b1325e66fc262e643b4e908c078cdf340",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/provision.json",
+      "bytes": 2301,
+      "sha256": "e80ad408f7d4ac834b8e9369d0cf7b9cff8304051186ac5c3dd5469ed984f9fc",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/result.json",
+      "bytes": 1102,
+      "sha256": "6ec97a3f1bbebe0cd9bf94e49a1b3ff15c37ffd4decf5db4f7a7454585991525",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/source-delta.json",
+      "bytes": 1429,
+      "sha256": "85d7c6bdf19ac4956e1d8a4ab3f68782487b1cefdc16cd431e5803e9b6812873",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/start.json",
+      "bytes": 435,
+      "sha256": "51f3b86ea1faa5bcbf7b4de83636f951f5b5f6ae1416afd9fbfadb2ea6582262",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/status-parse.json",
+      "bytes": 630,
+      "sha256": "84565030147351b6b5adcbb9fbd941230525320a695f5e3179525c32a30591a2",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/take-receipt.json",
+      "bytes": 972,
+      "sha256": "eb12a45a1a36947f4fde48fb85b51e1628a5549ed22e1cb3e7de65dd896e26c2",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/take-request.json",
+      "bytes": 634,
+      "sha256": "a75fd053eca5596874594860babb10a78eff113374b20c6eb70e616974dbd012",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/types.json",
+      "bytes": 3181,
+      "sha256": "9f4783b2d01db9d9b818f749e04ab2b6e2fa7a4cb3ce9da582d3a56738b83376",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "docs/evidence/svc09-fixed-runtime/vitest.config.mjs",
+      "bytes": 1873,
+      "sha256": "797492917ff9c84cd9bf48197c5437eb69c771d1ee8294f6610d4dc8812f78bf",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "plans/svc09-fixed-runtime/plan.md",
+      "bytes": 996,
+      "sha256": "e5ea25fcd46ee53573619c242f6f066bf4dbc70942c1d35d162d1e28c0e577ee",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "plans/svc09-fixed-runtime/review.md",
+      "bytes": 850,
+      "sha256": "11911701a8d3b31475f16f8d5e94a02d0f2f28a2cc0e22a1023755a1ff8278be",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "plans/svc09-fixed-runtime/status.md",
+      "bytes": 2787,
+      "sha256": "fb6674a9e7c98cb05cac4f4d37ca193550df961c12d13a012c07175b908d4b0e",
+      "commit": "20f57f1c1d4326ac41f12872c613568b8b0c6c93"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8",
+      "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 5202,
+      "sha256": "c6dc48b2cf542e7fe3a8c4d3682537a7af96cc13441abf2f08c5cdc5290501da",
+      "commit": "00c84910d5ba1cfd1724a996a3649b8680de0e67"
+    }
+  ],
+  "counts": {
+    "bindings": 47,
+    "bytes": 100220
+  },
+  "result": "6 distinct/10 selections passed; types first2 diagnostics retained, fixed0;4359ms1816B;5groupsabsent/dualEOF/noSignals;3emptyscratchremoved/2x135BcacheKEEP",
+  "limits": "Direct injected transport and own files only; no PG/HTTP/service/native/provider/personal/build/cold/settings result; runtime diagnostic producer not added",
+  "actualSourceFidelity": "Original runtime/environment test launcher preimage preserved local-original.py; original runtime test in dfba64462, final two test fixture fixes in source; product2 unchanged after first behavioral run; actual reservations authoritative"
+}
