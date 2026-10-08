@@ -1,0 +1,88 @@
+{
+  "schema": "s01-buffered-diagnostic-budget-erratum-v1",
+  "baseResult": "0f1bb985b7667b4df83dc543742e3a4f7d60b4a6",
+  "firstWriteAt": "2026-10-08T02:52:53.331Z",
+  "deadline": "2026-10-08T03:00:53.331Z",
+  "authority": {
+    "canonicalTerm": "MikaS01DiagnosticErratumMetadata",
+    "authorizedAt": "2026-10-08T02:50:57.145Z",
+    "capBytes": 3145728,
+    "durationMs": 480000,
+    "claim": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 4,
+    "state": "ACTIVE",
+    "scopeCount": 8,
+    "scopeCheckedAt": "2026-10-08T02:52Z minute precision read-tool observation",
+    "owner": "mika/status_read",
+    "engineeringChildren": 0
+  },
+  "priorTail": {
+    "verdict": "NOT_COMPLIANT",
+    "capBytes": 4194304,
+    "observedConservativeBytes": 5428580,
+    "overrunBytes": 1234276,
+    "terms": {
+      "newReachableGitObjectsDiskBytes": 3429399,
+      "indexBytes": 795216,
+      "atomicIndexCopyBytes": 795216,
+      "allTouchedMetadataBytes": 146605,
+      "includedOuterCaptureReserveBytes": 262144
+    },
+    "basis": "Post-commit owner tool measurement at fixed0f1; root independently checked all36 new reachable loose objects and index at2026-10-08T02:51:24Z. Conservative logical accounting, not physical peak. Atomic copy is a charged bound, not claimed currently retained.",
+    "cause": "Owner did not accurately estimate Git object size before committing; discovered after fixed commit/push, immediately reported and stopped.",
+    "managerDisposition": "Canonical/OPS16 recorded the overrun; this new3MiB grant only funds correction, never retrospectively authorizes the old overrun.",
+    "notOffsetAgainstRuntimeBudget": true
+  },
+  "corrections": [
+    {
+      "path": "report.md",
+      "line": 29,
+      "historicalStatement": "Source/metadata/index/own Git object sealing spends the existing final reserve only.",
+      "disposition": "FALSE: the conservative seal exceeded the4MiB tail by1234276B. No whole-budget compliance claim follows from runtime PASS."
+    },
+    {
+      "path": "execution-observation.json",
+      "line": 75,
+      "field": "budget.metadataArchivePaidFromReserve",
+      "historicalValue": true,
+      "correctValue": false,
+      "disposition": "Insufficient reserve; original field preserved as immutable historical error, corrected here."
+    },
+    {
+      "path": "report.md",
+      "line": 31,
+      "historicalStatement": "not yet independently reviewed or integrated",
+      "disposition": "Result fidelity was subsequently approved at02:48:17Z; integration remains NOT_INTEGRATED for this result/private center wiring. See independent-result-review.json."
+    }
+  ],
+  "unchanged": {
+    "manifestSHA256": "90cdcbb62d2f95f32f801ffc39a5ebdd99ace226fa509218500b95689bb91cb9",
+    "bindings": 22,
+    "bytes": 20926955,
+    "inputSHA256": "28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2",
+    "runtimePASS": true,
+    "activeResourcesFullReturnAt": "2026-10-08T02:40:52.876480Z",
+    "oldFailuresAndKEEP": true,
+    "noOriginalRawOrSourceEdits": true
+  },
+  "newSegment": {
+    "freshFloorBytes": 13562019840,
+    "freshFreeBytes": 14339522560,
+    "observedIndexBytes": 795216,
+    "prediction": {
+      "indexRetainedUpperBound": 808000,
+      "atomicIndexCopyUpperBound": 808000,
+      "editedMetadataTotalUpperBound": 131072,
+      "metadataAtomicCopyUpperBound": 131072,
+      "newReachableGitObjectsUpperBound": 524288,
+      "gitAdminRefsTransferTemporaryAllowance": 262144,
+      "additionalFinalTailAllowance": 131072,
+      "ownTmp": 0
+    },
+    "predictedTotalBytes": 2795648,
+    "headroomBytes": 350080,
+    "countedOnceNoOldTailBorrow": true,
+    "actualFinalReadback": "Final commit/head/STOP and actual measured charge will be reported directly after one commit/push; no subsequent project write solely for measurement."
+  },
+  "method": "Existing local find-skills/codebase-design/clean-code: immutable evidence remains authoritative; separate runtime result, compliance error, independent review, and integration; no new framework/test/PG/KEEP access."
+}

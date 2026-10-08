@@ -1,0 +1,55 @@
+{
+  "schema": "s01-buffered-diagnostic-independent-result-review-v1",
+  "reviewedAt": "2026-10-08T02:48:17Z",
+  "reviewer": {
+    "owner": "db_transaction_owner",
+    "model": "gpt-6-astra"
+  },
+  "fixedResult": "0f1bb985b7667b4df83dc543742e3a4f7d60b4a6",
+  "deliveryProvenance": "Reviewer directly retransmitted the already completed conclusion on2026-10-08 during this authorized erratum segment. No new review/run implied.",
+  "verdicts": {
+    "runtimeAndObservedResourceFidelity": "RESULT_FIDELITY_REVIEW_APPROVED",
+    "sealTail": "NOT_COMPLIANT",
+    "newSourceOrRuntimeP1": 0,
+    "newSourceOrRuntimeP2": 0,
+    "unconditionalWholePackageCompliantPass": false
+  },
+  "binding": {
+    "manifestSHA256": "90cdcbb62d2f95f32f801ffc39a5ebdd99ace226fa509218500b95689bb91cb9",
+    "files": 22,
+    "bytes": 20926955,
+    "fixedGitEqualsWTBytesSHA": true,
+    "reviewObservation": "HEAD matched fixedResult and clean",
+    "inputSHA256": "28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2",
+    "inputRows": 124,
+    "inputBytes": 12618887,
+    "gitInputPathsIndependentlyChecked": 70,
+    "gitInputsExecutionToResultUnchanged": true,
+    "externalBindingScope": "Remaining installed bindings rely on prior fixed preparation; reviewer did not claim a new full dependency execution."
+  },
+  "reviewFindings": [
+    "128 unique attempts /789 eligible emit ACK. Minimum4391.549417ms, p50 4571.249417ms, p95 5330.570042ms; original6s and>=4s not weakened.",
+    "124 succeeded+4 cancelled;2240 persisted DB events each id/sequence/digest matched original attempt/owner ACK. Four control-abort events had zero subsequent emit-start.129 task/attempt/session,8journals unresolved0.",
+    "59 chunks ordinal0..58 sameepoch;9504 acquisitions+4774 transactions+57890 SQL=72168;14278 samples/17SQLgroups match the unique known/closed summary. Both children dropped0.111heartbeat abort errors preserved, not allHTTP successful.",
+    "80029 exit0/finalabsent/dualEOF/1825B complete/no first-secondary-signals; initialEPERM retained.80037/80039 normalclose0/no forced/ipcFailed.",
+    "DB OID1379375/CREATE ACK/marker matches normalDROP/absence; fixedfinally enforces0connections andadminclose. Sameidentity runnerTMP/sourceRoot removal plus owner exactENOENT supportFULL_RETURN; reviewer made no process/PG/TMP query.",
+    "START02:40:01.120105,terminal02:40:24.031517,RETURN02:40:52.876480 distinct. Runtime reservationfree14310903808>=floor13562019840. Samecallledger/remote andpostexactENOENT are explicitly owner tool observations, not falsely runtime originals.",
+    "Runtime logical100343136B remains separate. Tail3429399+795216*2+146605+262144=5428580B exceeds4194304B by1234276B. Existingreserveonly/paidFromReserve:true cannot support compliance, nor may unused512MiB cover it. This is post-seal observation, not prior admission; the new metadata grant cannot retroactively authorize it."
+  ],
+  "requiredCorrection": {
+    "filesPreserved": [
+      "report.md:29",
+      "execution-observation.json:75"
+    ],
+    "erratum": "budget-erratum.json",
+    "original22BindingsUnchanged": true,
+    "noRerunRequired": true
+  },
+  "limits": [
+    "Fixed4fdd fixture diagnostic:8runRunner instances sharing1OSrunner; not128nativeagents",
+    "No AB/SLO/latestmain/pool causal claim",
+    "OldFAIL/KEEP untouched",
+    "Review0engineering/import/PG/HTTP/projectwrite/KEEPaccess; existingfind-skills/codebase-design/clean-code reused"
+  ],
+  "reviewerStopped": true
+}

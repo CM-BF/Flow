@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:43:38.935Z |
+| 最近更新 | 2026-10-08T02:53:54.821Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本轮实际原件与离线结果封存中；提交/push后clean STOP，保留原claim。 |
-| 工作分支状态 | review |
-| 检查状态 | PASS a7467371b716031b178b007cf5d9aebdc429c0fa：真实单buffered诊断，128 fixture ACK原断言/4取消/final通过；新结果待独审，非工程重跑或SLO。 |
+| 工作树dirty状态 | 本次仅预算更正/独审批件/READY/status封存；单提交push后clean STOP，最终HEAD由Git读取。 |
+| 工作分支状态 | delivered |
+| 检查状态 | PASS a7467371b716031b178b007cf5d9aebdc429c0fa：单buffered现场诊断结果忠实性已审；封存尾部NOT_COMPLIANT。原始检查/失败不改，无新增工程检查。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 |
-| 实现范围 | docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1, docs/evidence/s01/mixed-ab-preparation, plans/s01-runner-capacity |
+| 实现范围 | docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1, plans/s01-runner-capacity/status.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 本轮128个fixture的原ACK窗口、四次取消和最终状态检查通过；观察交付完整，活动资源已归还，结果待独立复核。 |
-| 下一可用交付 | 封存并独立复核这一次现场诊断；不追加运行，完整原生模型及用户体验验收仍另列。 |
-| 当前阻塞 | ACTIVE: 本轮结果待独立复核及必要接收；真实原生代理容量、SLO与完整S01尚未验收。 |
+| 当前产出 | 本轮fixture诊断结果已独立复核，活动资源已归还；封存超过原尾部预算的偏差已明确记录，未追认为合规。 |
+| 下一可用交付 | 等待本次已审诊断的受控接收；本owner停止运行与新增准备，完整原生模型/用户体验验收仍开放。 |
+| 当前阻塞 | ACTIVE: 本次诊断及私有中心接线尚未主线接收；原封存预算偏差保留，不能把局部PASS当完整容量或SLO通过。 |
 | 需用户决定 | NONE |
-| Review | PENDING_RESULT_REVIEW：本次执行a746原件已封存待db一次只读忠实性审；旧source/input批准与两次失败历史保持。 |
+| Review | RESULT_FIDELITY_REVIEW_APPROVED 2026-10-08T02:48:17Z，db，0P1/P2；TAIL NOT_COMPLIANT 5428580>4194304。新更正仅归档，不改原22bindings。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v4 ACTIVE/exact8；COMMIT 2026-10-08T01:25:24.929Z，仅追加native-initialize两个目录，正式receipt见新evidence。 |
-| 架构影响 | 无新模块/接口；此次执行既有私有centerDelivery回调背压与单臂fixture完整验收。main仍仅既有离线packing/replay，不能反推新私有接线已main。 |
+| 架构影响 | 无产品/实验行为变化；只纠正预算与review当前事实。私有centerDelivery已测但未main，既有main离线packing/replay边界不扩大。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -428,3 +428,13 @@ D01经Mika明确第四且末次focusedtypes修复额度，同原60s/8MiB/01:50:2
 [唯一结果入口](../../docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1/READY.md)。execution `a7467371b716031b178b007cf5d9aebdc429c0fa` / input28b088原字节；START02:40:01.120105Z、terminal02:40:24.031517Z、精确FULL_RETURN02:40:52.876480Z分列。原128同步burst/6s/4s ACK、四取消和final/identity门禁均通过，789窗内emit/128span零不足；20轻读成功，111heartbeat abort原件保留，未称所有HTTP成功。观察59chunk+1summary known/dropped0。fixture129总任务与128load分母分开。
 
 旧两次FAIL/旧KEEP不改；单场景/背景UNKNOWN，不因结果绿推pool因果、SLO、latestmain或128真实native容量。本window已消费，0后继launch/future runtime，只有原4MiB封存留额内的证据与metadata。main8e5仅旧primary12能力仍如实。沿既有本地技能核生命周期/字节/时间口径，本段没有改实现/阈值或重测。唯一status为dashboard来源；未请求新snapshot，不伪称当前HEAD已显示。原任务开工UNKNOWN/六TODO开放边界不改。
+
+## 2026-10-08T02:53:54.821Z 结果已审与封存预算更正
+
+固定结果 `0f1bb985b7667b4df83dc543742e3a4f7d60b4a6` 已由db于02:48:17Z批准结果忠实性，TAIL NOT_COMPLIANT独立保留。原22bindings/20,926,955B、manifest/raw/input未改。原report第29行“只使用既有finalreserve”和execution-observation第75行paidFromReserve=true均错误，以[预算更正](../../docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1/budget-erratum.json)明确否定；不是修改原运行事实或追认合规。
+
+原封存完整保守量5,428,580B：Gitobjects3,429,399 + index795,216 + atomic副本795,216 + metadata146,605 + outer262,144，超4,194,304B共1,234,276B。owner在commit前未准确估Git对象，发现后即时报告STOP；root02:51:24独核对象/index一致，经理canonical/OPS16已记录。运行PASS/完整RETURN与封存预算不合规分别成立，旧FAIL/KEEP/未知峰值不变。
+
+新段经D01单独授权3MiB/8min，真实firstWrite02:52:53.331Z/deadline03:00:53.331Z。fresh508fv4 ACTIVE8/本人/WT/branch及base0f1=actualremote clean均核符；完整预量2,795,648B含index两份、metadata及编辑副本、objects/Gitadmin/尾部，新free14,339,522,560>=取高floor13,562,019,840。仅更正、审批件、READY和本status；0工程child/PG/HTTP/TMP/旧KEEP/源码/raw复制。最终单提交后读回实际计量并直接交经理，不为统计追加项目写入。
+
+沿本地find-skills/codebase-design/固定clean-code方法分开证据、预算、review与main事实，保持唯一status供dashboard聚合。只核字段，不获取新snapshot或声称新HEAD已显示。原task开工UNKNOWN、完整TODO和main旧片边界不变；新3MiB只支付本更正，不借旧4MiB/512MiB。
