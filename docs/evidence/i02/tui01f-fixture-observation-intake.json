@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T00:49:10.852Z",
+  "state": "APPROVED_LIMITED_FIXTURE_OBSERVATION_SOURCE_AND_RESULT",
+  "target": "25174ee40a7c1e272c64a9b413853739401cce87",
+  "delivery": "43b5e0247947ccc256d84aa52b64bdc02381246e",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "findings": [],
+  "rows": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27650,
+      "sha256": "5466a02b64a5d97533ddce5992378e6eed77b082b8eb7ac53cea14fa6ee19329",
+      "originCommit": "25174ee40a7c1e272c64a9b413853739401cce87",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-observation.ts",
+      "bytes": 5028,
+      "sha256": "6e7b1b9c31ec3949364d630fa935756e4b4b6d861d786450a090ea5275876280",
+      "originCommit": "25174ee40a7c1e272c64a9b413853739401cce87",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-observation.test.ts",
+      "bytes": 8492,
+      "sha256": "4a30e32a8fc495c3d441fbfca1424bca5c3b222d0f156dcf1189cc394a572185",
+      "originCommit": "25174ee40a7c1e272c64a9b413853739401cce87",
+      "mode": "100644"
+    }
+  ],
+  "manifest": {
+    "originCommit": "43b5e0247947ccc256d84aa52b64bdc02381246e",
+    "path": "docs/evidence/tui01f/web-handoff/fixture-observation-manifest.json",
+    "bytes": 4043,
+    "sha256": "a065aefeb257c15cde6a3ceffcb2118b65c95eefc888b49bcf7a2ea1bc8f4e20"
+  },
+  "checks": "12 distinct/13 selections over rounds; first11/12 then affected1/1, focused types0. First failure preserved; reviewer and integrator 0 reruns.",
+  "runtime": "3 child2861ms/raw2427B; final groups absent/dualEOF/no signals; 2empty scratch removed, types cache1357740B staticKEEP.",
+  "semantics": "64 frames/32KiB, allowlisted fields/null unknown; original return/error identity/order preserved. Existing8s,ownership,cleanup unchanged. runtimeFinalization NOT_OBSERVED.",
+  "notClaimed": "Original R2 1/0 FAIL; no root cause, no new actual window or provider."
+}
