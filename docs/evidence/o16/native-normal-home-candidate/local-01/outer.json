@@ -1,0 +1,33 @@
+{
+  "pid": 20009,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 815,
+  "stdout": "TAP version 13\n# Subtest: normal-home: trusted active policy changes HOME while private factory remains byte-compatible\nok 1 - normal-home: trusted active policy changes HOME while private factory remains byte-compatible\n  ---\n  duration_ms: 8.892791\n  type: 'test'\n  ...\n# Subtest: normal-home: actual query input keeps private config tmp and all non-environment options\nok 2 - normal-home: actual query input keeps private config tmp and all non-environment options\n  ---\n  duration_ms: 3.543292\n  type: 'test'\n  ...\n# Subtest: normal-home: old environment permit and account mismatch refuse before provider entry\nok 3 - normal-home: old environment permit and account mismatch refuse before provider entry\n  ---\n  duration_ms: 3.5475\n  type: 'test'\n  ...\n# Subtest: normal-home: same private binding checks and resume refusal remain mandatory\nok 4 - normal-home: same private binding checks and resume refusal remain mandatory\n  ---\n  duration_ms: 4.984041\n  type: 'test'\n  ...\n# Subtest: normal-home: actual Claude adapter and decorator preserve caps and consume only one failed synthetic entry\nok 5 - normal-home: actual Claude adapter and decorator preserve caps and consume only one failed synthetic entry\n  ---\n  duration_ms: 27.368708\n  type: 'test'\n  ...\n# {\"kind\":\"normal-home-candidate-identity\",\"sourceDigest\":\"5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4\",\"environmentDigest\":\"fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8\",\"sourceFiles\":325,\"aliases\":39,\"realNativeQueries\":0,\"authorization\":\"NOT_GRANTED\"}\n# Subtest: normal-home: current fixed source and environment identity remain separate from authorization\nok 6 - normal-home: current fixed source and environment identity remain separate from authorization\n  ---\n  duration_ms: 320.751792\n  type: 'test'\n  ...\n1..6\n# tests 6\n# suites 0\n# pass 6\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 768.799666\n",
+  "stderr": "",
+  "observed_bytes": 1924,
+  "retained_bytes": 1924,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

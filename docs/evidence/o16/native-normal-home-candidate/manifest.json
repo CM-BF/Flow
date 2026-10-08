@@ -1,0 +1,64 @@
+{
+  "kind": "O16_NORMAL_HOME_POLICY_SOURCE_AND_LOCAL_PREPARATION",
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "bindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment.mjs",
+      "bytes": 9221,
+      "sha256": "fd8fdaf99103a1279b2e30f466c163c93bc775381c64af96c46db6bfc1c5b5c3"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment-fixture.mjs",
+      "bytes": 2190,
+      "sha256": "e2e53f77a5b3ffbc857b6a823841f0eefa7fb0da09ff9531666c54f598c65556"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-normal-home.test.mjs",
+      "bytes": 7421,
+      "sha256": "348328d267321e1952953d16794bbe8afcbac25daa8837bf6c27d5aa311990e4"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/Interface.md",
+      "bytes": 3195,
+      "sha256": "1f1eb1e3c8f588c3143f7499a522144ae4433eac0975203c301d66e63d18f0d3"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/candidate.json",
+      "bytes": 7890,
+      "sha256": "77166bf08c7dc9ec6eaa7c00a5322c4c55c2c230f9fc954d3b637ba2f4581cb2"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/local-result.json",
+      "bytes": 1201,
+      "sha256": "6c152d36469a648fe94ec3fcdea995fb44b89eeebe7955380dcce48e3131c542"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/local-01/reservation.json",
+      "bytes": 8567,
+      "sha256": "6489f886ac76f1f43eb441362fad7ea53a6adf844986eb0bf6038a3335b282f1"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/local-01/outer.json",
+      "bytes": 2542,
+      "sha256": "9064808de4654dc8c92f5b139472170f922c0bfd46fe693da720af2f5898ad47"
+    },
+    {
+      "path": "docs/evidence/o16/native-normal-home-candidate/local-01/result.json",
+      "bytes": 372,
+      "sha256": "1ead67825d67c22a9f0fc51f3818f5455193fd983ab19529136a5c7c93ac6449"
+    }
+  ],
+  "bindingCount": 9,
+  "bindingBytes": 42599,
+  "inherits": [
+    {
+      "commit": "23a221c0a0f4f2d5b88d725872081de3c34a23b6",
+      "path": "docs/evidence/o16/auth-home-factor-once/result-manifest.json",
+      "bytes": 4148,
+      "sha256": "58705b6859a187c021a6f9ba1fc1e3d0dca1d58dc1e6c1a304b23b8bc4a752f9",
+      "scope": "actual A/B public status limited independent fidelity approval, not query permission"
+    }
+  ],
+  "review": "PENDING_SOURCE_AND_DIRECT_CONSUMER_REVIEW",
+  "nativeBudget": "NOT_GRANTED; historical3 calls remain sealed"
+}

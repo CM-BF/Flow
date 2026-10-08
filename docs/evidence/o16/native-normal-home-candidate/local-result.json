@@ -1,0 +1,48 @@
+{
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "startedAt": "2026-10-08T01:29:27.769Z",
+  "returnedAt": "2026-10-08T01:29:28.608Z",
+  "selected": 6,
+  "different": 6,
+  "passed": 6,
+  "supervisedChildren": 1,
+  "elapsedMs": 815,
+  "rawBytes": 1924,
+  "pid": 20009,
+  "finalOwnedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "initialObservationPreserved": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "scratch": "REMOVED_EXACT_EMPTY",
+  "identity": {
+    "kind": "normal-home-candidate-identity",
+    "sourceDigest": "5efa6412123c8134a80759326f8a53572ec9162a6e858dd09581194c5dff83e4",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "sourceFiles": 325,
+    "aliases": 39,
+    "realNativeQueries": 0,
+    "authorization": "NOT_GRANTED"
+  },
+  "injectedCallbackCalls": 1,
+  "realSDKQueryOrNativeAuthCalls": 0,
+  "PG": 0,
+  "personalReads": 0,
+  "oldTestsRerun": 0,
+  "scope": "fixed environment and real adapter/decorator negative consumer; no real provider"
+}

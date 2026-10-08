@@ -97,3 +97,9 @@ assignment_review经Lead确认 c5fc960fc/b9b7f9ef8 APPROVED_LIMITED_HOME_FACTOR_
 ## 2026-10-08T01:24:18.731782+00:00 HOME A/B实际结果待限定独审
 
 [唯一manifest](../../docs/evidence/o16/auth-home-factor-once/result-manifest.json)绑定本次公开4字段与原始监督事实；source8ab不变。A未登录合法exit1与可选subscriptionType UNKNOWN保留，B公开已登录/claude.ai/firstParty/pro；0query，非模型资格或旧根因证明。1359ms outer、5PID+3group新观察ESRCH/全部EOF，01:23:21.418466Z窗口归还与private KEEP分开。原stdout/stderr不存或hash，review不需要读取私有目录。作者未自批本实际结果。
+
+## 2026-10-08T01:30:57.830Z 最小planner HOME策略待独审
+
+source `e5c7fd9d664de11ab853c55e0a01577c12530555`；[9绑定manifest](../../docs/evidence/o16/native-normal-home-candidate/manifest.json)为本次唯一源码/6直接例/候选来源。默认private保旧411，实际planner显式normal-account新envfc5e，不改原五层消费者/生产认证；真实adapter/decorator为注入callback，报告中的nativeQueryCalls=1仅合成计数，实际SDK/native/auth/PG为0。1child815ms1924B/最终absent双EOF/empty scratch removed，原errno1保留。请核HOME唯一差量、授权/恢复/工具/预算不放宽、新permit拒旧及明确NOT_GRANTED。
+
+前一A/B实际23a由assignment独审APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY、0P1/P2；唯一main `214319132` 的 `docs/evidence/i02/o16-home-factor-result-intake.json` 已接收来源，原始safe记录仍单份在本树。不扩为R3根因或模型资格。
