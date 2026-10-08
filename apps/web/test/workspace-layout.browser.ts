@@ -251,8 +251,11 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
         await expect(pane(4).locator(".ep-settings-summary").filter({ hasText: "下一条消息设置" })).toContainText("arc-B");
         const nextAttachment = pane(4).locator(".aui-composer-root").getByRole("button", { name: "File attachment", exact: true });
         await expect(nextAttachment).toHaveCount(1);
-        await nextAttachment.hover(); await expect(page.getByRole("tooltip", { name: "arc-next.txt", exact: true })).toBeVisible();
-        await page.mouse.move(0, 0);
+        await input(4).focus(); await page.keyboard.press("Shift+Tab");
+        await expect(pane(4).locator(".aui-composer-root").getByRole("button", { name: "Remove file", exact: true })).toBeFocused();
+        await page.keyboard.press("Shift+Tab"); await expect(nextAttachment).toBeFocused();
+        const filename = page.getByRole("tooltip", { name: "arc-next.txt", exact: true });
+        await expect(filename).toBeVisible(); await input(4).focus(); await expect(filename).not.toBeVisible();
         expect((await probe("snapshot")).ready.find((item: { name: string }) => item.name === "arc-next.txt")).toEqual(nextFile);
       };
       // While A prepares, Recovery deliberately retains A and defers B in-page.
