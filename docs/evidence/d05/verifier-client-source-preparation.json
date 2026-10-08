@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-08T01:10:48.095Z",
+  "task": {
+    "id": "X01-VERIFIER-CLIENT-ADMISSION01",
+    "title": "插件验证客户端与回执",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission",
+    "branch": "codex/plugin-verifier-client-admission",
+    "planDir": "plans/x01-verifier-client-admission",
+    "evidenceDir": "docs/evidence/x01-verifier-client-admission"
+  },
+  "count": 215,
+  "claim": "03b10778-27dd-4a2d-bbc1-c98c5fcfcb0e v1 active8 observed2026-10-08T01:10Z",
+  "canonical": {
+    "errors": [],
+    "missing": [],
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "provision实际clock未落盘；可证范围00:54:50.953Z至00:55:39.223Z，首metadata00:56:40.495Z；不以claim推断开工"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": "",
+      "waitingTable": {
+        "rows": [],
+        "issues": []
+      }
+    }
+  },
+  "runtime": "213 currently;214 never deployed;combined215 pending",
+  "tests": 0,
+  "tokenRead": false
+}
