@@ -24,7 +24,7 @@ function unavailable(): HttpError { return new HttpError(409, 'plugin_claim_unav
 
 /** Exact source and verification task must have one unambiguous project authority.
  * Missing/null/conflicting conversation and direct bindings never become workspace-wide access. */
-async function assertSourceProject(client: PoolClient, taskId: string, projectId: string, workspaceId: string): Promise<void> {
+export async function assertSourceProject(client: PoolClient, taskId: string, projectId: string, workspaceId: string): Promise<void> {
   const rows = (await client.query<{ project_id: string | null; workspace_id: string | null }>(`
     WITH direct AS (SELECT project_id FROM flow.project_task_bindings WHERE task_id=$1 FOR SHARE)
     SELECT authority.project_id,p.workspace_id FROM (
@@ -57,4 +57,14 @@ export async function claimVerificationReference(client: PoolClient, task: TaskR
   if (!expected.success || !submitted.success || canonical(expected.data) !== canonical(submitted.data)
     || binding.inputDigest !== sha256(task.submission.prompt)) throw unavailable();
   return pluginVerifierBindingSchema.parse({ ...binding, executionKind: 'verifier', verification: { projectId: row.project_id, source, rule: rule.data } });
+}
+
+/** Positive installed kind is mandatory for every bound task, including error completion. */
+export async function verifierBinding(client: PoolClient, taskId: string): Promise<PluginToolBinding | null> {
+  const row = (await client.query<{ id: string; kind: string | null }>(`SELECT b.id,e.kind FROM flow.plugin_tool_bindings b
+    LEFT JOIN flow.plugin_binding_executions e ON e.binding_id=b.id WHERE b.task_id=$1`, [taskId])).rows[0];
+  if (!row) return null;
+  if (row.kind !== 'tool' && row.kind !== 'verifier') throw unavailable();
+  if (row.kind === 'tool') return null;
+  return (await import('./store.js')).readBinding(client, taskId);
 }

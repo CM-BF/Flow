@@ -1,3 +1,4 @@
+import { assertTrustedVerifier, type TrustedPluginVerifierPolicy } from '../plugin-verification-configuration.js';
 import { readFile } from 'node:fs/promises';
 import type { Pool, PoolClient } from 'pg';
 import { PLUGIN_RUNTIME_PROTOCOL, pluginToolBindingSchema, pluginRuntimeViewSchema, type PluginHostIdentity, type PluginHostPublication, type PluginRuntimeView, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
@@ -35,19 +36,19 @@ export function assertTrustedPluginHost(policy: TrustedPluginHostPolicy | undefi
   if (policy?.(Object.freeze({ ...identity })) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
 }
 
-export async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId?: string) {
+export async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId?: string, kind: 'tool' | 'verifier' | 'either' = 'tool') {
   const row = await loadInstall(client, operationId);
   const receipt = row.receipt;
   if (row.registration_id !== snapshot.installation.id || row.version_id !== snapshot.version.id || (storeId !== undefined && row.store_id !== storeId)
     || row.status !== 'installed' || !receipt || receipt.schemaVersion !== 1 || receipt.storeId !== row.store_id
     || !/^[a-f0-9]{64}$/.test(receipt.installationId) || !/^[a-f0-9]{64}$/.test(receipt.treeDigest)
-    || receipt.manifest?.kind !== 'tool' || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
+    || !['tool', 'verifier'].includes(receipt.manifest?.kind) || (kind !== 'either' && receipt.manifest.kind !== kind) || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
     || receipt.artifact.artifactId !== row.artifact_id || receipt.artifact.sha256 !== snapshot.version.declaredSha256
     || receipt.artifact.name !== snapshot.version.packageName || receipt.artifact.version !== snapshot.version.packageVersion
     || receipt.artifact.bytes !== row.artifact.bytes || receipt.artifact.integrity !== row.artifact.integrity
     || receipt.artifact.sha256 !== row.artifact.sha256 || receipt.artifact.artifactId !== row.artifact.artifactId
     || receipt.artifact.name !== row.artifact.name || receipt.artifact.version !== row.artifact.version) {
-    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed tool material.');
+    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed execution material.');
   }
   return receipt;
 }
@@ -75,7 +76,7 @@ export async function assertPluginHost(client: PoolClient, runnerId: string, sto
     throw new HttpError(409, 'plugin_host_unavailable', 'The exact tool host and material store are not registered.');
   }
 }
-export async function readRuntime(client: PoolClient, registrationId: string, policy?: TrustedPluginHostPolicy): Promise<PluginRuntimeView> {
+export async function readRuntime(client: PoolClient, registrationId: string, policy?: TrustedPluginHostPolicy, algorithms?: TrustedPluginVerifierPolicy): Promise<PluginRuntimeView> {
   const current = await readSnapshot(client, registrationId);
   const runtime = await latestRuntimeRevision(client, registrationId);
   const enabled = runtime?.desired_enabled === true;
@@ -83,12 +84,19 @@ export async function readRuntime(client: PoolClient, registrationId: string, po
   if (enabled) {
     if (runtime.revision !== current.revision) reason = 'revision-changed';
     else if (current.configurationStatus !== 'ready') reason = 'configuration-incomplete';
-    else if (!current.grants.includes('tool')) reason = 'grant-missing';
     else {
+      const material = await installedMaterial(client, current, runtime.material_install_operation_id!, runtime.store_id!, 'either');
+      if (!current.grants.includes(material.manifest.kind)) reason = 'grant-missing';
+      else {
       const host = await client.query(`SELECT 1 FROM flow.plugin_runtime_hosts h JOIN flow.runners r ON r.id=h.runner_id
         WHERE h.runner_id=$1 AND h.store_id=$2 AND h.host_api_major=1 AND NOT r.revoked AND r.maintenance_state='accepting' AND 'fixture'=ANY(r.harnesses)`, [runtime.target_runner_id, runtime.store_id]);
       const trusted = runtime.target_runner_id && runtime.store_id && policy?.(Object.freeze({ protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: runtime.target_runner_id, storeId: runtime.store_id, hostApiMajor: 1 })) === true;
-      reason = host.rowCount && trusted ? 'ready' : 'host-unavailable';
+      let algorithmTrusted = true;
+      if (material.manifest.kind === 'verifier') {
+        try { assertTrustedVerifier(algorithms, { artifactSha256: material.artifact.sha256, treeDigest: material.treeDigest, hostApiMajor: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1 }); } catch { algorithmTrusted = false; }
+      }
+      reason = host.rowCount && trusted && algorithmTrusted ? 'ready' : 'host-unavailable';
+      }
     }
   }
   return pluginRuntimeViewSchema.parse({ protocol: PLUGIN_RUNTIME_PROTOCOL, registrationId, currentRevision: current.revision,

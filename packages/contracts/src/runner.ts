@@ -1,3 +1,4 @@
+import { pluginVerificationEventDataSchema, pluginCompletionSchema } from './plugin-verification-event.js';
 import { pluginArtifactSourceSchema } from './plugin-artifact.js';
 import type { GoalGraphCapability, GoalGraphRunReference } from './goal-graph-runs.js';
 import type { ConversationContextExecutionReference } from './conversation-context.js';
@@ -61,13 +62,14 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),
   z.strictObject({ ...envelope, type: z.literal('artifact'), artifactId: idSchema, title, version: digest, content, mediaType: z.string().max(120), pluginSource: pluginArtifactSourceSchema.optional() }),
   z.discriminatedUnion('verifierId', [
+    pluginVerificationEventDataSchema.extend(envelope),
     z.strictObject({ ...envelope, type: z.literal('verification'), artifactId: idSchema, artifactVersion: digest, verifierId: z.literal('flow.text'), verifierVersion: z.literal('1'), inputDigest: digest, result: z.enum(['passed', 'failed']), evidence: z.string().min(1).max(4000) }),
     engineeringVerificationDataSchema.extend(envelope),
     nativeEngineeringVerificationDataSchema.extend(envelope),
   ]),
   z.strictObject({ ...envelope, type: z.literal('usage'), source: idSchema, scope: z.enum(['step', 'turn', 'session']), scopeId: idSchema, sampleId: idSchema, cumulative: z.boolean(), baseline: z.discriminatedUnion('kind', [z.strictObject({ kind: z.literal('new-session') }), z.strictObject({ kind: z.literal('sample'), sampleId: idSchema }), z.strictObject({ kind: z.literal('unknown') })]).optional(), accounting: z.enum(['authoritative', 'informational']), costKind: z.enum(['sdk_estimate', 'provider_actual', 'unknown']), model: z.string().max(180).optional(), inputTokens: tokenCount, outputTokens: tokenCount, cacheReadTokens: tokenCount.optional(), cacheWriteTokens: tokenCount.optional(), costUsd: z.number().nonnegative().nullable() }),
   z.strictObject({ ...envelope, type: z.literal('session'), nativeSessionId: idSchema, adapterVersion: idSchema, resources: z.array(z.string().max(200)).max(100).optional() }),
-  z.strictObject({ ...envelope, type: z.literal('completed'), outcome: z.enum(['succeeded', 'failed', 'cancelled']), error: z.string().max(2000).optional() }),
+  z.strictObject({ ...envelope, type: z.literal('completed'), outcome: z.enum(['succeeded', 'failed', 'cancelled']), pluginCompletion: pluginCompletionSchema.optional(), error: z.string().max(2000).optional() }),
 ]);
 export type RunnerEvent = z.infer<typeof runnerEventSchema>;
 type WithoutEnvelope<T> = T extends RunnerEvent ? Omit<T, 'id' | 'sequence'> : never;

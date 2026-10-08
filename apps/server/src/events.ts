@@ -1,3 +1,5 @@
+import { guardVerificationEvent } from './plugin-runtime/verification-result.js';
+import type { TrustedPluginVerifierPolicy } from './plugin-verification-configuration.js';
 import { saveNativeActivityBody, assertNativeActivityBodiesFinalizable } from './native-activity-body/store.js';
 import type { Pool, PoolClient } from 'pg';
 import type { EventAcknowledgement, EventBatch, RunnerEvent } from '@flow/contracts';
@@ -18,7 +20,8 @@ import { saveAssistantStreamMarker, settleAssistantStream } from './assistant-st
 import { saveAssistantStream } from './assistant-stream/store.js';
 import { saveNativeActivity, type NativeActivityEvent } from './native-activity/store.js';
 
-export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: RunnerEvent | NativeActivityEvent): Promise<void> {
+export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: RunnerEvent | NativeActivityEvent, verifierPolicy?: TrustedPluginVerifierPolicy): Promise<void> {
+  if (event.type !== 'native-activity' && await guardVerificationEvent(client, task, attempt, event, verifierPolicy)) return;
   if (event.type === 'steering-result') await recordSteeringResult(client, task, attempt, event.result);
   else if (event.type === 'steering-receipt') {
     if (event.receipt.attemptId !== attempt.id || event.receipt.ownerVersion !== attempt.owner_version) throw new HttpError(409, 'steering_identity', 'Receipt does not belong to the reporting attempt.');
@@ -81,7 +84,7 @@ export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: 
     await client.query('UPDATE flow.sessions SET active_task_id=NULL WHERE active_task_id=$1', [task.id]);
   } else throw new HttpError(400, 'unsupported_event', 'This event is not supported yet.');
 }
-export async function reportEvents(pool: Pool, runnerId: string, batch: EventBatch): Promise<EventAcknowledgement> {
+export async function reportEvents(pool: Pool, runnerId: string, batch: EventBatch, verifierPolicy?: TrustedPluginVerifierPolicy): Promise<EventAcknowledgement> {
   return transaction(pool, async client => {
     const { attempt, task } = await ownedAttempt(client, runnerId, batch);
     const live = (await client.query<{ live: boolean }>('SELECT $1::timestamptz>clock_timestamp() AS live', [attempt.lease_expires_at])).rows[0]!.live;
@@ -100,7 +103,7 @@ export async function reportEvents(pool: Pool, runnerId: string, batch: EventBat
       }
       if (!live || attempt.completed_at || ['succeeded', 'failed', 'cancelled', 'uncertain'].includes(task.status)) throw new HttpError(409, 'stale_owner', 'This attempt no longer accepts new events.');
       if (event.sequence !== attempt.last_sequence + 1) throw new HttpError(409, 'event_gap', 'An earlier event is missing.');
-      await applyEvent(client, task, attempt, event);
+      await applyEvent(client, task, attempt, event, verifierPolicy);
       await client.query('INSERT INTO flow.runner_events(attempt_id,sequence,event_id,digest) VALUES($1,$2,$3,$4)', [attempt.id, event.sequence, event.id, digest]);
       attempt.last_sequence = event.sequence;
       accepted += 1;

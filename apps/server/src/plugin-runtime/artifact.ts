@@ -9,7 +9,7 @@ import { appendTimeline } from '../timeline.js';
 import { readBinding } from './store.js';
 
 type ArtifactEvent = Extract<RunnerEvent, { type: 'artifact' }>;
-async function validateSource(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, input: unknown): Promise<PluginArtifactSource> {
+export async function validatePluginSource(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, input: unknown): Promise<PluginArtifactSource> {
   const parsed = pluginArtifactSourceSchema.safeParse(input);
   if (!parsed.success) throw new HttpError(400, 'plugin_artifact_source', 'Invalid plugin artifact source.');
   const source = parsed.data;
@@ -32,7 +32,7 @@ async function validateSource(client: PoolClient, task: TaskRecord, attempt: Att
 
 /** Called inside reportEvents' owned-attempt transaction. Legacy artifacts retain their existing path. */
 export async function recordPluginArtifact(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: ArtifactEvent): Promise<void> {
-  const source = event.pluginSource === undefined ? null : await validateSource(client, task, attempt, event.pluginSource);
+  const source = event.pluginSource === undefined ? null : await validatePluginSource(client, task, attempt, event.pluginSource);
   const artifact = await saveArtifact(client, task, attempt.id, event);
   await appendTimeline(client, task, { kind: 'reference', reference: artifact });
   if (!source) return;

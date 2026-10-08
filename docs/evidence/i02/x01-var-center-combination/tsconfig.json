@@ -1,0 +1,47 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "baseUrl": "../../../..",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "include": [
+    "../../../../apps/runner/src/plugins/execution.ts",
+    "../../../../apps/server/src/events.ts",
+    "../../../../apps/server/src/plugin-runtime/artifact.ts",
+    "../../../../apps/server/src/plugin-runtime/commands.ts",
+    "../../../../apps/server/src/plugin-runtime/store.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-admission.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-result.test.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-result.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-routes.ts",
+    "../../../../apps/server/src/plugin-runtime/verification.ts",
+    "../../../../apps/server/src/plugin-verification-configuration.test.ts",
+    "../../../../apps/server/src/plugin-verification-configuration.ts",
+    "../../../../packages/contracts/src/plugin-verification-admission.ts",
+    "../../../../packages/contracts/src/plugin-verification-event.ts",
+    "../../../../packages/contracts/src/runner.ts",
+    "../../../../packages/plugin-runtime/src/verification-input.test.ts",
+    "../../../../packages/plugin-runtime/src/verification-input.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-routes.test.ts",
+    "../../../../apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+    "../../../../docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts",
+    "../../../../apps/server/src/main.ts",
+    "../../../../apps/server/src/index.ts",
+    "../../../../apps/server/src/plugin-runtime/routes.ts",
+    "../../../../apps/server/src/plugin-verification-wiring.test.ts"
+  ],
+  "exclude": []
+}

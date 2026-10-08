@@ -21,7 +21,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人服务与新版网页已恢复可访问；已审的验证接口和依赖读取成果已进入主线，新的双端接续入口已审。 |
+| 当前产出 | 个人服务与新版网页已恢复可访问；插件验证领域与中心装配的组合检查和独立审查已通过，双端接续入口已准备完成。 |
 | 下一可用交付 | 完成真实终端与网页交替操作同一会话的验收，并及时接收已审结果。 |
 | 当前阻塞 | ACTIVE: 双端接续等待独立数据库与浏览器窗口；实际用户任务领取及工程模型资格仍按原边界开放。 |
 | 需用户决定 | NONE |
@@ -560,3 +560,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:07:50.106Z：接收原owner fe96发布metadata收口，SVC06B-04范围内交付已闭、阶段delivered；旧04UNKNOWN及未来真实用户领取/新聊天不改。任务完成字段与自身TODO范围的下一次owner一致性核对另记，不从父FLOW未完成推算时间。见[限定审查](../../docs/evidence/i02/svc06b-owner-closeout-review.json)。
 
 2026-10-08T00:18:14.870Z：已核原owner固定40c79五metadata、领取v9和最终接收时间语义；[单叶移交接收](../../docs/evidence/i02/svc06b-single-leaf-return-intake.json)。runtime.ts只交回一个leaf，Mika须fresh take；无产品测试/服务操作。VAR接收核对独立进行，TUI实际仍NOT_RUN，当前Context有限连续段后由资源owner选择，不凭无actual holder越过其有效reservation。
+
+2026-10-08T00:22:35.829Z：VAR领域22路径＋CENTER四叶共198692B按固定前像/后像接收，既有034→036启动前导保留；实际组合strict0与exact9factory通过，独立结果审查0P1/P2。[唯一接收记录](../../docs/evidence/i02/x01-var-center-intake.json)绑定原审批与本次3597ms监督/155B输出、两组及空scratch闭合。领域PG/旧route检查未重复，runtime后继和完整公开验收仍开放。普通局部资源已归还，不以结果审查占浏览器/PG。

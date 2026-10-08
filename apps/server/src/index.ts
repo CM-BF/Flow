@@ -1,10 +1,12 @@
-import { migratePluginVerification } from './plugin-runtime/verification.js';
 import { withStartupPhase, type StartupObserver } from './startup-progress.js';
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
 import { migratePluginRuntime, type TrustedPluginHostPolicy } from './plugin-runtime/store.js';
 import { registerPluginRuntimeRoutes } from './plugin-runtime/routes.js';
+import { migratePluginVerification } from './plugin-runtime/verification.js';
+import { registerPluginVerificationRoutes } from './plugin-runtime/verification-routes.js';
+import type { TrustedPluginVerifierPolicy } from './plugin-verification-configuration.js';
 import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
@@ -67,6 +69,8 @@ export interface ServerOptions {
   pluginInstallHost?: PluginInstallHost;
   /** Explicit operator trust. Absence leaves plugin admission and phase routes unmounted. */
   pluginRuntimeHostPolicy?: TrustedPluginHostPolicy;
+  /** Exact operator-trusted material/algorithm identities; absent leaves verifier routes disabled. */
+  pluginVerifierPolicy?: TrustedPluginVerifierPolicy;
   /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
   browserSession?: BrowserSessionOptions;
   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
@@ -74,6 +78,9 @@ export interface ServerOptions {
 }
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
+  if (options.pluginVerifierPolicy !== undefined && (typeof options.pluginVerifierPolicy !== 'function' || typeof options.pluginRuntimeHostPolicy !== 'function')) {
+    throw new Error('Verifier policy requires an explicit plugin host policy.');
+  }
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
   registerShutdown(app, options.shutdownGraceMs);
   app.decorateRequest('runnerId', null);
@@ -112,7 +119,10 @@ export async function createServer(options: ServerOptions) {
       ['migrateContextObservationHistory', migrateContextObservationHistory],
       ['migrateBrowserSessions', migrateBrowserSessions],
       ['migratePluginInstallations', migratePluginInstallations],
-      ['migratePluginRuntime', async (pool: Pool) => { await migratePluginRuntime(pool); await migratePluginVerification(pool); }],
+      ['migratePluginRuntime', async (pool: Pool) => {
+        await migratePluginRuntime(pool);
+        await migratePluginVerification(pool);
+      }],
       ['migrateGoalProgressions', migrateGoalProgressions],
       ['migrateGoalPlanConfirmations', migrateGoalPlanConfirmations],
       ['migrateClaudeMessageSettings', migrateClaudeMessageSettings],
@@ -195,7 +205,10 @@ export async function createServer(options: ServerOptions) {
     registerPluginRoutes(app, pool);
     if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
     if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
-    if (options.pluginRuntimeHostPolicy) registerPluginRuntimeRoutes(app, pool, boss, options.pluginRuntimeHostPolicy);
+    if (options.pluginRuntimeHostPolicy) registerPluginRuntimeRoutes(app, pool, boss, options.pluginRuntimeHostPolicy, options.pluginVerifierPolicy);
+    if (options.pluginRuntimeHostPolicy && options.pluginVerifierPolicy) {
+      registerPluginVerificationRoutes(app, pool, boss, { hosts: options.pluginRuntimeHostPolicy, algorithms: options.pluginVerifierPolicy });
+    }
     registerAssistantRoutes(app, pool);
     registerNativeActivityRoutes(app, pool);
     registerNativeActivityBodyRoutes(app, pool);
@@ -229,7 +242,7 @@ export async function createServer(options: ServerOptions) {
     app.post('/api/runner/events', request => {
       const input = eventBatchSchema.safeParse(request.body);
       if (!input.success) throw new HttpError(400, 'invalid_events', 'Invalid event batch.');
-      return reportEvents(pool, request.runnerId!, input.data);
+      return reportEvents(pool, request.runnerId!, input.data, options.pluginVerifierPolicy);
     });
     app.post('/api/tasks', async (request, reply) => {
       const parsed = taskSubmissionSchema.safeParse(request.body);

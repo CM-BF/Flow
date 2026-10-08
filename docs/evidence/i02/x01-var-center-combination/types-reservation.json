@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-08T00:20:43.798Z",
+  "label": "types",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--project",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/x01-var-center-combination/tsconfig.json"
+  ],
+  "source": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "2c98ac43c07d9c5079215fb8bda65774fe12627ee7862a50d8369e823ac27323",
+      "bytes": 8508
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+      "bytes": 9366
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929",
+      "bytes": 3279
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f",
+      "bytes": 11569
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d",
+      "bytes": 10467
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69",
+      "bytes": 7720
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+      "bytes": 7635
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.test.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+      "bytes": 7492
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+      "bytes": 6466
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8",
+      "bytes": 3128
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17",
+      "bytes": 5971
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.test.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+      "bytes": 1239
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87",
+      "bytes": 1930
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+      "bytes": 655
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-event.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819",
+      "bytes": 916
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca",
+      "bytes": 8090
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.test.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "103f985153b6da6972d4c90559810dafada661a236d9d3fe222634e8d67cf1b7",
+      "bytes": 4613
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.ts",
+      "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sha256": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998",
+      "bytes": 2526
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef",
+      "bytes": 8919
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "source": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "sha256": "7ccd13f0e14f256ac117548618d6e71052cd926e4c09ba2da1209b4fb5d2becc",
+      "bytes": 25741
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts",
+      "source": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "sha256": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc",
+      "bytes": 15991
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-input.json",
+      "source": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "sha256": "7191bdb351617e940e4576c272c934eebaf828d227947a85c0eb3e67f7f3a3fc",
+      "bytes": 2534
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "source": "d17125c112240468444b71f6a049303158efad1c",
+      "sha256": "475d7a434b3862103fe3d57cbc0cf7d81661f75f063aa579115a311c3e1661ba",
+      "bytes": 4398
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "source": "d17125c112240468444b71f6a049303158efad1c",
+      "sha256": "24655c1a4764d3797426c0c70c38fc3e17210e9ff8fe8eaee3e4b6c599520cc1",
+      "bytes": 18291
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "source": "d17125c112240468444b71f6a049303158efad1c",
+      "sha256": "98a903a5912135df4768e56c9e291a9f75da0dd7790a5a3d39e485cd1d82a05a",
+      "bytes": 5994
+    },
+    {
+      "path": "apps/server/src/plugin-verification-wiring.test.ts",
+      "source": "d17125c112240468444b71f6a049303158efad1c",
+      "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e",
+      "bytes": 15254
+    }
+  ],
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "floor": 12455641088,
+  "freshFree": 15325904896,
+  "ledgerAt": "2026-10-08T00:20:00.303Z",
+  "scratch": {
+    "path": "/private/tmp/flow-i02-var-center-vqsh_ibw",
+    "dev": 16777234,
+    "ino": 124671314
+  },
+  "bounds": {
+    "workSeconds": 24,
+    "termGrace": 2,
+    "reapGrace": 4,
+    "outputBytes": 65536,
+    "newBytes": 16777216,
+    "PG": 0,
+    "HTTPListener": 0,
+    "provider": 0
+  }
+}

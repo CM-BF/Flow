@@ -1,3 +1,5 @@
+import { assertTrustedVerifier, type TrustedPluginVerifierPolicy } from '../plugin-verification-configuration.js';
+import { bindingExecutionKind, claimVerificationReference } from './verification.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -16,7 +18,7 @@ function requireRevision(actual: number, expected: number): void {
   if (actual !== expected) throw new HttpError(409, 'plugin_revision_conflict', 'Plugin registration changed.');
 }
 
-export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string, policy?: TrustedPluginHostPolicy) {
+export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string, policy?: TrustedPluginHostPolicy, algorithms?: TrustedPluginVerifierPolicy) {
   const result = await command(pool, `plugin.runtime.command:${registrationId}`, key, input, async client => {
     // Never acquire a runner lock after the registration lock.
     if (input.change.kind === 'enable') {
@@ -27,9 +29,11 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
     requireRevision(installation.revision, input.expectedRevision);
     const current = await readSnapshot(client, registrationId);
     if (input.change.kind === 'enable') {
-      requireToolPermission(current);
+      const material = await installedMaterial(client, current, input.change.materialInstallOperationId, input.change.storeId, 'either');
+      if (material.manifest.kind === 'tool') requireToolPermission(current);
+      else if (!current.grants.includes('verifier')) throw new HttpError(403, 'plugin_verifier_grant_required', 'Current verifier permission is required.');
+      if (material.manifest.kind === 'verifier') assertTrustedVerifier(algorithms, { artifactSha256: material.artifact.sha256, treeDigest: material.treeDigest, hostApiMajor: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1 });
       if (current.configurationStatus !== 'ready') throw new HttpError(409, 'plugin_configuration_incomplete', 'Complete public configuration before enabling.');
-      await installedMaterial(client, current, input.change.materialInstallOperationId, input.change.storeId);
     }
     const changed = await appendPluginRevision(client, installation, { versionId: current.version.id,
       configuration: current.configuration, grants: current.grants, kind: input.change.kind, inputDigest: sha256(canonical(input)) });
@@ -38,7 +42,7 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
       material_install_operation_id,target_runner_id,store_id,host_api_major) VALUES($1,$2,$3,$4,$5,$6,$7,$8)`,
     [registrationId, changed.snapshot.revision, current.version.id, enabled !== null, enabled?.materialInstallOperationId ?? null,
       enabled?.targetRunnerId ?? null, enabled?.storeId ?? null, enabled ? 1 : null]);
-    return { ...changed, runtime: await readRuntime(client, registrationId, policy) };
+    return { ...changed, runtime: await readRuntime(client, registrationId, policy, algorithms) };
   });
   return { ...result.value, replayed: result.replayed };
 }
@@ -73,18 +77,24 @@ export async function admitPluginToolTask(pool: Pool, boss: PgBoss, registration
 }
 
 interface AuthorizationRecord { attempt_id: string; owner_version: number; runner_id: string; authorized_revision: number }
-export async function authorizePluginPhase(pool: Pool, runnerId: string, input: PluginGrantRequest, key: string): Promise<PluginGrantReceipt> {
+export async function authorizePluginPhase(pool: Pool, runnerId: string, input: PluginGrantRequest, key: string, kind: 'tool' | 'verifier' = 'tool', algorithms?: TrustedPluginVerifierPolicy): Promise<PluginGrantReceipt> {
   return transaction(pool, async client => {
     // Every request, including a cached ACK, rechecks the live fence and current grant.
     const { task, attempt } = await ownedAttempt(client, runnerId, input);
     const live = (await client.query<{ live: boolean }>('SELECT $1::timestamptz>clock_timestamp() AS live', [attempt.lease_expires_at])).rows[0]!.live;
     if (!live || attempt.completed_at || task.status !== 'running') throw new HttpError(409, 'plugin_attempt_inactive', 'The tool attempt is no longer allowed to act.');
     const binding = await readBinding(client, task.id);
+    if (await bindingExecutionKind(client, binding.bindingId) !== kind) throw new HttpError(409, 'plugin_execution_kind', 'The phase route does not match the installed execution kind.');
     if (binding.bindingId !== input.bindingId || binding.invocationId !== input.invocationId || binding.targetRunnerId !== runnerId
       || binding.inputDigest !== sha256(task.submission.prompt)) throw new HttpError(409, 'plugin_binding_mismatch', 'The frozen binding does not match this attempt.');
     await loadInstallation(client, binding.registrationId, true);
     const current = await readSnapshot(client, binding.registrationId);
-    requireToolPermission(current);
+    if (kind === 'tool') requireToolPermission(current);
+    else if (!current.grants.includes('verifier')) throw new HttpError(403, 'plugin_verifier_grant_required', 'Current verifier permission is required.');
+    if (kind === 'verifier') {
+      const qualified = await claimVerificationReference(client, task, binding, { bindingProtocol: 'flow.plugin-verification.v1', storeId: binding.storeId, hostApiMajor: 1, algorithms: [{ id: 'flow.json-object.required-keys', version: 1 }] });
+      assertTrustedVerifier(algorithms, { artifactSha256: binding.artifact.sha256, treeDigest: binding.treeDigest, hostApiMajor: 1, algorithmId: qualified.verification.rule.algorithmId, algorithmVersion: qualified.verification.rule.algorithmVersion });
+    }
     // Disabling blocks new bindings. It does not revoke grants or rewrite an accepted pin.
     const result = await commandInTransaction(client, `plugin.tool-phase:${runnerId}`, key, input, async () => {
       const prior = (await client.query<AuthorizationRecord>(`SELECT attempt_id,owner_version,runner_id,authorized_revision FROM flow.plugin_tool_authorizations
