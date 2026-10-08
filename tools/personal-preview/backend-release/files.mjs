@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { createReadStream } from 'node:fs';
 import { lstat, readdir, readlink, realpath, open, rename, rm, mkdir } from 'node:fs/promises';
 import { join, relative, isAbsolute } from 'node:path';
-export const LIMITS = Object.freeze({ bytes: 1024 ** 3, entries: 100_000, artifacts: 4, retainedBytes: 2 * 1024 ** 3, seedBytes: 6 * 1024 ** 3, seedEntries: 200_000 });
+export const LIMITS = Object.freeze({ bytes: 1024 ** 3, entries: 100_000, artifacts: 5, retainedBytes: 2 * 1024 ** 3, seedBytes: 6 * 1024 ** 3, seedEntries: 200_000 });
 export function fail(code) { const error = new Error(code); error.code = code; throw error; }
 export const digest = value => createHash('sha256').update(value).digest('hex');
 export function inside(root, path) { const value = relative(root, path); return value === '' || !isAbsolute(value) && value !== '..' && !value.startsWith('../'); }

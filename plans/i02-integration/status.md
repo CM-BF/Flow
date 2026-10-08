@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T03:34:32.708Z / main aac0c8b6b；三项网页组合与单行修正完成限定独审及直接检查，待本次接收。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:42:12.335Z / main1b1428f38；网页29源已接收。容量4源与后台10叶固定组合已独审，后者仍非运行验收。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,13 +16,13 @@
 | 工作树dirty状态 | 仅后续本任务metadata；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED: 组合独审0阻断；Connection直接入口7/7，Web类型检查通过。原类型失败和报告解释失败保留。 |
-| 已集成main状态 / HEAD | main/origin aac0c8b6b；当前Web组合748129abd及123c精确修正待本次受控接收；个人部署未改变。 |
+| 已集成main状态 / HEAD | main/origin 1b1428f3867a5396422f2b8d066a94f8f138030d已接收Web组合与精确修正；个人部署未改变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 工作区布局、连接提示与设置浮层已组成同一网页版本，并通过必要组合检查。 |
-| 下一可用交付 | 将这三项已审网页能力接入主线，为新版聊天设置提供稳定基线；原生目标失败继续零模型定位。 |
+| 当前产出 | 网页工作区、连接提示与设置浮层已合入；固定后台的容量修正和来源组合也已完成独立审查。 |
+| 下一可用交付 | 接收容量修正后，验证新版聊天设置后台的默认启动与两runner组合；网页负责人继续实际设置接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -608,3 +608,7 @@ TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收
 2026-10-08T03:17:31.720Z：Web29已审源组合固定748129abd，独立APPROVED_SCOPED_INTEGRATION/0P1P2；必要组合noEmit实际6162ms/exit2，只报Connection测试的TS5097。原owner修正后仅定向复测；旧FAIL、非空自有TMP KEEP、0PG/Chrome/provider事实保留。来源见[组合审查](../../docs/evidence/i02/web-arc-connection-picker-combination/source-review.json)。main仍aac，个人部署未改变。
 
 2026-10-08T03:34:32.708Z：三项网页组合完成限定接收审查；123c仅移除测试导入后缀，真实Node24+tsx 7/7、Web类型检查6431ms通过，两个owned组/双EOF均归还。新检查的报告格式解释错误已从原spec输出核正，无测试重跑、原件不改。见[最终接收审查](../../docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json)。本次0PG/Chrome/provider/个人操作；尚未部署。
+
+2026-10-08T03:35:59.656Z：main/origin1b1428f38已推送Arc/Connection/Picker29路径及限定直接检查，Web负责人已收到唯一接收回执，可沿原owner同步状态与共享交权，未部署个人页。O16继续children的原件获限定忠实性独审；[单份接收](../../docs/evidence/i02/o16-continued-children-failure-intake.json)核25固定绑定，首child已进入SDK且结果unknown，累计5；二slot未消费不授权移作重试。03:21:12.220Z资源归还与原始失败分列，现仅零模型计量修复，不新增模型调用。
+
+2026-10-08T03:42:12.335Z：容量source167958/delivery6c4e独立限定批准并精确接四源；6/6真实局部消费者、16.541s，原红1/0保留，未重跑检查或操作个人目录。[唯一接收](../../docs/evidence/i02/svc06b-retention-five-intake.json)。SVC09固定f9221dbdc=880060+10叶完成独立来源/接口review，[组合回执](../../docs/evidence/i02/svc09-settings-source-composition/review.json)；未把构造源码等同默认/双槽冷启动或四App兼容。原源与所有历史结果可由fixed Git定位，不复制完整树或原件。

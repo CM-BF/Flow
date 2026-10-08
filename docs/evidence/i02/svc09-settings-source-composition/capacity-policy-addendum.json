@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-08T03:41:08.788Z",
+  "intermediateSource": "90617d673",
+  "source": "167958cf229851ecb235975d858d50d839009afc",
+  "review": "../svc06b-retention-five-intake.json",
+  "reason": "Base880060 used count2 and lacked shared policy Interface. New fixed host must consume the same reviewed5/2GiB/1GiB policy as migration. No change to existing artifacts.",
+  "sources": [
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "originCommit": "167958cf229851ecb235975d858d50d839009afc",
+      "blob": "b84a464d176610ed0b02fbf121679f50bf217e56",
+      "mode": "100644",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "originCommit": "167958cf229851ecb235975d858d50d839009afc",
+      "blob": "c833d3ca00c5d9f7c7313ea368ac1b2ad56f6a9b",
+      "mode": "100644",
+      "bytes": 3480,
+      "sha256": "26e6e89409346e1d2cfbc9409d4754b379f8a7819eadc5b7ae2a8613605cb264"
+    }
+  ],
+  "otherEightSources": "composition.json exact unchanged",
+  "totalProductionPaths": 10
+}

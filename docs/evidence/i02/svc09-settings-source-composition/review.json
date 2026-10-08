@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-08T03:42:12.335Z",
+  "source": "f9221dbdce367d1794586471991adbe7a5a98c13",
+  "base": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "state": "APPROVED_LIMITED_FIXED_SETTINGS_BACKEND_COMPOSITION",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "P1": 0,
+  "P2": 0,
+  "matchedPaths": 10,
+  "provenance": [
+    "composition.json",
+    "capacity-policy-addendum.json"
+  ],
+  "capacitySourceIndependentApproval": "../svc06b-retention-five-intake.json",
+  "interfaceReview": [
+    "load third parameter defaults to backendRuntime function",
+    "runService both calls use launchRuntime.resolve and seal",
+    "settings current boot nonce/recordKey/runnerId bound to IPC initialization",
+    "observeOwnedListener and fixed contracts present",
+    "all other tracked sources stay fixed base; no packages lock SQL new delta"
+  ],
+  "limits": [
+    "No build/cold startup/mixed behavior/compatibility/personal operation in this review",
+    "Held-target rebind remains single slot / three roles; settings activation must follow required same-artifact steps",
+    "Old failures and original8source intermediate proof remain; capacity addendum applies only to this final10source"
+  ]
+}

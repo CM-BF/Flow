@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-08T03:40:54.087Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_RETENTION_FIVE_SOURCE_AND_DIRECT_RESULTS",
+  "P1": 0,
+  "P2": 0,
+  "source": "167958cf229851ecb235975d858d50d839009afc",
+  "delivery": "6c4e6859cf741596b718f7a41112467048ac9477",
+  "result": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/retention-five/result.json",
+    "bytes": 7630,
+    "sha256": "7b10cb03cb22f0a95f2d56405fc8fa3d61af341d7dfd0f2c878f23097aadd09f",
+    "fixedBindingsMatched": 11,
+    "logicalBytes": 34863,
+    "inheritedExactConsumerInputs": 3
+  },
+  "review": "One shared limit evolves4→5. Aggregate2GiB/individual1GiB/build full reservation unchanged; unknown/count6/aggregate overflow reject. Real locked migration inspectStore verifies candidate+retained; no personal operation/deletion. Both preimages match integration; no conflict.",
+  "tests": "Five retention/public prepare plus actual migration port =6/6,16.541s; original1/0 red preserved. No reruns; two groups absent,dualEOF,empty same-identity scratch removed.",
+  "mainIntakePaths": [
+    "tools/personal-preview/backend-release/files.mjs",
+    "tools/personal-preview/backend-release/artifact.test.mjs",
+    "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs",
+    "docs/evidence/svc06/browser-recovery/retention-five/Interface.md"
+  ],
+  "fixedCandidateConsumer": "SVC09A may compose index.mjs and files.mjs in new fixed source; no old artifact alteration",
+  "remaining": "Actual fifth build/verification/coldstartup/compatibility/import separately required; cannot use small fixtures as personal migration proof."
+}

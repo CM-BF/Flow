@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-08T03:38:05.304Z",
+  "base": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "claim": "0a2fc351-0972-47ec-b68b-eb86e2655fb8 v1 integration",
+  "sources": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "originCommit": "8d532613e876d34812554572fb32d46bf582de44",
+      "mode": "100644",
+      "blob": "6c5668912f50d31d9198e22c7a9994642a663501",
+      "bytes": 5753,
+      "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8",
+      "baseSha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "originCommit": "8d532613e876d34812554572fb32d46bf582de44",
+      "mode": "100644",
+      "blob": "85625ac052005f448d0ae20b89c52ec6ebab0d8b",
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a",
+      "baseSha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "originCommit": "8d532613e876d34812554572fb32d46bf582de44",
+      "mode": "100644",
+      "blob": "4693e62cce8a899498fa5ab41114be07cbfab56e",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458",
+      "baseSha256": null
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "originCommit": "77b489ea545bae1939f64f4669aeaa3f84816b01",
+      "mode": "100644",
+      "blob": "e0861c4fd3942605ca4a96ff61f48403764e7eb0",
+      "bytes": 57126,
+      "sha256": "882385d311836c456a0156444bcd529c6729052e44294c305f38c4069f7604c5",
+      "baseSha256": "ab59c6be5be67b00eda33bb0c8e1769feac98e1c32dc80a4a96de9de0baee2b2"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "originCommit": "77b489ea545bae1939f64f4669aeaa3f84816b01",
+      "mode": "100644",
+      "blob": "28435f736ee177aa18f318431184736deb24bcfb",
+      "bytes": 15896,
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec",
+      "baseSha256": "3190f12de066ef1377f5de966819a08dd6980e13fa4867336aa09a708c1601f1"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "originCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+      "mode": "100644",
+      "blob": "f1a890fb64398df716c8bd6224d3295aa95b07e2",
+      "bytes": 13178,
+      "sha256": "1edc25d054fdbb02b947231a8c73df72c6956734960ef9a5f12cf79b4e750da4",
+      "baseSha256": "1e8dad55f7daa34a826e19b1adbc7b65e42b7825cbc9aae3a857759275171a13"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "originCommit": "f0e434bd04c496fbd60e8458c3f840f4d7b25e80",
+      "mode": "100644",
+      "blob": "a2100a0e7b637d15ce4d843c0361a69c8a18a6b0",
+      "bytes": 4296,
+      "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4",
+      "baseSha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "originCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "mode": "100644",
+      "blob": "399db4f4d012819cd9cb66db46f9c32ecadc73bf",
+      "bytes": 20703,
+      "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+      "baseSha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+    }
+  ],
+  "allOtherTrackedGitSource": "base unchanged",
+  "validation": "NOT_RUN; own default public entry and actual cold startup remain required",
+  "retentionPolicy": "not part of this artifact; reviewed external migration policy must permit fifth retained artifact under unchanged total byte bound",
+  "artifactOrPersonalChanges": 0
+}

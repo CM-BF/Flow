@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T03:35:59.656Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_CONTINUED_CHILDREN_FAILURE_FIDELITY",
+  "P1": 0,
+  "P2": 0,
+  "delivery": "cc1f47cf5df3febd149512063949a8fc3f9ec257",
+  "manifest": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-result-manifest.json",
+    "bytes": 7100,
+    "sha256": "caf9cd064f0b2688b6b743d9e40761f45504d1919fb3a27be11b736011d83380",
+    "fixedGitBindingsMatched": 25,
+    "logicalBytes": 44831,
+    "inheritedReferences": 2
+  },
+  "facts": {
+    "start": "2026-10-08T03:19:54.186Z",
+    "terminal": "2026-10-08T03:19:58.175Z",
+    "exitCode": 1,
+    "firstFailure": "resource-observation-or-bound-unconfirmed/runtime/ENOENT",
+    "missingRelativePath": "NOT_RECORDED; transient disappearance remains hypothesis",
+    "originalOperatorQueryCount": "UNKNOWN",
+    "durableWorkerSDKEntryCount": 1,
+    "cumulativeSDKEntryCount": 5,
+    "child1": "reservation consumed; native-started-unknown; no terminal SDK result",
+    "child2": "no reservation record",
+    "completionCostArtifact": "UNKNOWN",
+    "return": "2026-10-08T03:21:12.220Z",
+    "fourOwnedPidsGroups": "ESRCH",
+    "dualEOF": true,
+    "targetConnections": [],
+    "probeClosed": true,
+    "DBAndTwoPrivate": "KEEP",
+    "escapedDescendants": "NOT_PROVEN",
+    "remoteProbeZeroSeparately": "NOT_OBSERVED"
+  },
+  "next": "0model meter diagnosis only; no SDK/retry/run rename/slot transfer/decide authorized",
+  "historicalEvidence": "Original failure, first error and later bounded RETURN remain separate; no retrospective PASS",
+  "newTests": 0,
+  "privateBodyReads": 0
+}
