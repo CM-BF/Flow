@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-10-08T03:07:38.856Z",
+  "head": "4c39d88ed1caee3e3a0bdf61abdfc79ed8d98c27",
+  "cleanBefore": true,
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/tui/src/journey.test.ts",
+      "apps/tui/src/task-controls",
+      "apps/tui/test-fixtures/cancel_driver.py",
+      "docs/evidence/tui01f",
+      "experiments/tui-web-control-handoff",
+      "packages/interaction/src/task-control",
+      "plans/tui01f-task-cancel"
+    ],
+    "state": "active",
+    "branch": "codex/tui-task-cancel",
+    "origin": "new",
+    "taskId": "TUI01F",
+    "worker": "assignment_review",
+    "claimId": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "createdAt": "2026-10-06T15:46:19.232Z",
+    "updatedAt": "2026-10-08T01:38:12.746Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlappingActiveWriters": 0,
+  "runtimeChildren": 0,
+  "pendingLaunch": 0,
+  "purpose": "Final release after bounded TUI01F completion and main acceptance; no product or original raw edits."
+}
