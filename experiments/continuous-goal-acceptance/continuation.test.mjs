@@ -144,7 +144,7 @@ test('continuation: actual confirmation driver publishes only a new pause with f
             return { replayed: false, progression: { admissions: 0 }, confirmation: { goalId: f.packet.state.goalId, projectId: f.packet.state.projectId,
               proposalDigest: body.proposalDigest, confirmationDigest: 'c'.repeat(64), progressionId: 'progression', authorizationDigest: 'e'.repeat(64),
               inputs: body.nodes.map((n, i) => ({ key: n.key, nodeId: `node-${i}`, inputVersion: 1 })),
-              graph: { nodeIds: Object.fromEntries(body.nodes.map((n, i) => [n.key, `node-${i}`])) } }; } },
+              graph: { nodeIds: Object.fromEntries(body.nodes.map((n, i) => [n.key, `node-${i}`])) } } }; } },
         async finish(options) { events.push('finish'); assert.equal(options.destroy, false); return resources; },
         async pause(phase, report) { events.push('pause'); const state = await readRecord(join(newPrivate, 'journey.json'));
           await writeRecord(join(directory, 'pause.json'), pauseReceipt({ run: f.grant.run, phase, state, report, resources, sourceDigest: source.digest })); } };
