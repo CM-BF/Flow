@@ -5,6 +5,22 @@ import { buildBackend } from './build.mjs';
 import { nodeIdentity } from './node-identity.mjs';
 import { LIMITS, fail, digest, inventory, ensureStore, withStoreLock, saveJson, privateDirectory } from './files.mjs';
 export const BACKEND_POLICY = 'flow.backend-artifact.v1';
+/** Capacity only: callers verify every retained artifact under the store lock first.
+ * Builds reserve the maximum; imports must supply a fully verified artifact's total bytes.
+ * This neither verifies an import nor authorizes deleting or replacing retained artifacts. */
+export function assertBackendRetention({ count, bytes }, addition = null) {
+  if (![count, bytes].every(value => Number.isSafeInteger(value) && value >= 0)) fail('BACKEND_RETENTION_INVALID');
+  let addedBytes = 0;
+  if (addition !== null) {
+    const keys = Object.keys(addition).sort().join();
+    if (addition.kind === 'build' && keys === 'kind') addedBytes = LIMITS.bytes;
+    else if (addition.kind === 'import' && keys === 'bytes,kind'
+      && Number.isSafeInteger(addition.bytes) && addition.bytes > 0 && addition.bytes <= LIMITS.bytes) addedBytes = addition.bytes;
+    else fail('BACKEND_RETENTION_INVALID');
+  }
+  if (count + (addition === null ? 0 : 1) > LIMITS.artifacts
+    || bytes > LIMITS.retainedBytes - addedBytes) fail('BACKEND_RETENTION_FULL');
+}
 function validateDescriptor(value) {
   if (!value || value.policy !== BACKEND_POLICY || !/^[a-f0-9]{64}$/.test(value.artifactId ?? '') || value.artifactId !== value.manifestDigest || !/^[a-f0-9]{40}$/.test(value.sourceHead ?? '')) fail('BACKEND_DESCRIPTOR_INVALID');
 }
@@ -44,9 +60,9 @@ export async function prepareBackendArtifact({ repository, target, directory, of
       const verified = await verifyBackendArtifact({ directory, artifact }); bytes += verified.totalBytes;
       if (manifest.sourceHead === target) reusable = artifact;
     }
-    if (bytes > LIMITS.retainedBytes) fail('BACKEND_RETENTION_FULL');
+    assertBackendRetention({ count: retained.length, bytes });
     if (reusable) return reusable;
-    if (retained.length >= LIMITS.artifacts || bytes + LIMITS.bytes > LIMITS.retainedBytes) fail('BACKEND_RETENTION_FULL');
+    assertBackendRetention({ count: retained.length, bytes }, { kind: 'build' });
     const stage = join(store, `stage-${randomUUID()}`), record = `${stage}.json`;
     await mkdir(stage, { mode: 0o700 });
     await saveJson(record, { phase: 'building', target, stage, at: new Date().toISOString() });
