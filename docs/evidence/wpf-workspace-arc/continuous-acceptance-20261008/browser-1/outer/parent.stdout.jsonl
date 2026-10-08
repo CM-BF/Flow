@@ -1,0 +1,58 @@
+{"actualStart": true, "outerPid": 89726, "workerPid": 89816}
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-08T00:35:31.392047+00:00",
+  "actualExit": 1,
+  "elapsedMs": 21555.156874936074,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 93327973,
+    "raw": 692461
+  },
+  "terminalFreeBytes": 14837874688,
+  "errors": [
+    "worker not passed",
+    "required four groups incomplete",
+    "scenario resources not confirmed closed"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [],
+  "limits": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+  "executionHead": "8935c756cd98b70773a32dca0d216419a4b07839",
+  "grantSha256": "a08093ba34d280137a7221355faab23326761f21205cc34dd6cafdf5485ced2a",
+  "cacheLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "target": "/private/tmp/arc-continuous-browser-_n9vua_3/scratch/.vite",
+      "dev": 16777234,
+      "inode": 124680233
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "target": "/private/tmp/arc-continuous-browser-_n9vua_3/scratch/.vite-temp",
+      "dev": 16777234,
+      "inode": 124680235
+    }
+  ],
+  "chargeMs": 21556,
+  "independentPortProbe": false,
+  "PG": false,
+  "postWriteElapsedMs": 21556.130416924134,
+  "postWriteRawBytes": 694064
+}

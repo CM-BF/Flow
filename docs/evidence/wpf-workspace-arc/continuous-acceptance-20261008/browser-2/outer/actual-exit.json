@@ -1,0 +1,32 @@
+{
+  "run": "arc-continuous-2-20261008-003953",
+  "startedAt": "2026-10-08T00:39:53.708827+00:00",
+  "endedAt": "2026-10-08T00:40:10.163931+00:00",
+  "outerPid": 61807,
+  "parentPid": 62802,
+  "exitCode": 1,
+  "elapsedMs": 16455.01958404202,
+  "signals": [],
+  "streams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1741,
+      "retainedBytes": 1741,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "0c2a25785ef490e198bf6eb5e1c1c2befc2a2c74175930be82517fdd46169377"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "errors": [
+    "actual parent exit 1"
+  ],
+  "cleanupAuthority": "Only Arc parent owns worker/Chrome/cache links/scratch; fixture owns two HTTP listeners; PG is absent. Separate exact post-cleanup observation required; absent not inferred here."
+}

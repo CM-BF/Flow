@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-08T00:18:07.521141+00:00",
+  "baselineBinding": {
+    "path": "/private/tmp/arc-browser-css-material-5g4win44/binding-before-actual.json",
+    "realpath": "/private/tmp/arc-browser-css-material-5g4win44/binding-before-actual.json",
+    "bytes": 145780,
+    "sha256": "63cffb8349568a0f98e8b40dff013ed15111db50abfbd252daa649765acba4d1"
+  },
+  "newSource": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+  "changedSource": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 30513,
+        "sha256": "c1acdc2fe27f77e1734f4827f6e777148c3bac33883216a1b5b3466e91348eb4",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "dcb9400324e40b5bc8caf6884c92daa9c5e62d34"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 30924,
+        "sha256": "a060e0d6a41567f662d469031c2b14979d9b8cdc175dbd9cb916335b3ca382f5",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "eac155a730ca052f739cb9956c0576f39217c82a"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19578,
+        "sha256": "d084484502ce3738771f1b719c6c5ced4b6dcd421afc2829cb1381a09f22ea37",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "94102855efed444814652b3e1923ac04a6e7fe58"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 20015,
+        "sha256": "1c053e64cffa8c7cc10f51bf722a282752ccbfdc5f8d76334c322e619ab7ad86",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "74b44a0bff6142e1576f1642d14214ba3839f072"
+      }
+    }
+  ],
+  "unchangedSource": 205,
+  "external43": true,
+  "resolver33": true,
+  "callers": [
+    {
+      "path": "/private/tmp/arc-continuous-browser-_n9vua_3/run.py",
+      "realpath": "/private/tmp/arc-continuous-browser-_n9vua_3/run.py",
+      "bytes": 13757,
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    },
+    {
+      "path": "/private/tmp/arc-continuous-browser-_n9vua_3/worker.mjs",
+      "realpath": "/private/tmp/arc-continuous-browser-_n9vua_3/worker.mjs",
+      "bytes": 5014,
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "path": "/private/tmp/arc-continuous-browser-_n9vua_3/capture.py",
+      "realpath": "/private/tmp/arc-continuous-browser-_n9vua_3/capture.py",
+      "bytes": 8351,
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    }
+  ],
+  "authority": "Manager continuous same-semantics fixture repair; no per-SHA approval, actual requires manager Chrome lease",
+  "localEvidence": "/private/tmp/arc-continuous-local-3x_05dwp/pure-result.json",
+  "diagnosticQualityFix": "1s bounded auxiliary read and independent catch preserve original5s assertion error; no acceptance timeout change"
+}

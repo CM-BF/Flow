@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-08T00:42:49.410214+00:00",
+  "run": "arc-continuous-3-20261008-004154",
+  "observations": [
+    {
+      "kind": "PID",
+      "id": 40848,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 41934,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 42057,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 43225,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 41934,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 42057,
+      "state": "ESRCH"
+    },
+    {
+      "path": "/private/tmp/arc-continuous-attempt3-27ijzu4e/scratch",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "state": "ENOENT"
+    }
+  ],
+  "rawClosure": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "parentCleanupErrors": [],
+  "parentScenarioConfirmation": "UNKNOWN",
+  "workerChromeStdoutEOF": true,
+  "workerChromeStderrEOF": true,
+  "parentStdoutEOF": true,
+  "parentStderrEOF": true,
+  "outerStreams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1741,
+      "retainedBytes": 1741,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "79d081d41cceda8c9604f8d146b66e45708a283733feaacecd1e9c0dde48b4f6"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "independentPortProbe": false,
+  "PG": false,
+  "ownedReturn": true
+}

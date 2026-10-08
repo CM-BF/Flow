@@ -1,0 +1,27 @@
+{
+  "state": "FAILED",
+  "workerPid": 42057,
+  "chromePid": 43225,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "interrupts": [],
+  "cleanupErrors": [],
+  "result": null,
+  "cdpPort": 49902,
+  "contextAdmission": {
+    "chromePid": 43225,
+    "profile": "/private/tmp/arc-continuous-attempt3-27ijzu4e/scratch/chrome",
+    "ownership": "fresh PID/exclusive profile; scenario creates and closes one own context; no user browser"
+  },
+  "error": "Error: locator.hover: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-composer-root').getByRole('button', { name: 'File attachment', exact: true })\n    - locator resolved to <div tabindex=\"0\" role=\"button\" data-state=\"closed\" aria-label=\"File attachment\" class=\"aui-attachment-tile bg-muted hover:after:bg-foreground/10 focus-visible:ring-ring/50 relative size-14 cursor-pointer overflow-hidden rounded-[calc(var(--composer-radius,1rem)-var(--composer-padding,8px))] transition-transform outline-none after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:ring-1 after:ring-black/10 after:transition-colors after:ring-inset focus-visible:ring-1 ac…>…</div>\n  - attempting hover action\n    2 × waiting for element to be visible and stable\n      - element is not stable\n    - retrying hover action\n    - waiting 20ms\n    - waiting for element to be visible and stable\n    - element is not stable\n  2 × retrying hover action\n      - waiting 100ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" data-state=\"closed\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground aui-button-icon p-1 aui-attachment-tile-remove absolute end-1 top-1 size-5 rounded-full bg-black/50! text-white after:absolute af…>…</button> intercepts pointer events\n  9 × retrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" data-state=\"closed\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground aui-button-icon p-1 aui-attachment-tile-remove absolute end-1 top-1 size-5 rounded-full bg-black/50! text-white after:absolute af…>…</button> intercepts pointer events\n  - retrying hover action\n    - waiting 500ms\n\n    at expectNextDraft (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:254:30)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:260:7)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-continuous-attempt3-27ijzu4e/worker.mjs:31:16)\n    at Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:353:58)\n    at async <anonymous> (/private/tmp/arc-continuous-attempt3-27ijzu4e/worker.mjs:31:16)",
+  "chromeStdoutEOF": true,
+  "chromeStderrEOF": true,
+  "chromeLog": {
+    "observedBytes": 369,
+    "retainedBytes": 369,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  }
+}

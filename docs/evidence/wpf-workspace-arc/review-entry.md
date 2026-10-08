@@ -1,5 +1,7 @@
 # Current Arc review
 
+当前唯一输入：[continuous final-review](continuous-acceptance-20261008/final-review-input.json)，source d7e0b6f，3次/59595ms CLOSED、均2/4，最终结果未通过。历史入口以下保留，不冒本轮通过。
+
 当前连续段 `6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477`：两test修chat4队列前置/有帽诊断，产品未改。8c36实际8相关purePASS/654ms，最终诊断catch小差量未重复绿检查。browser NOT_RUN/等待经理lease，最终一次独审待actual；不复用旧2/4为当前通过。[入口](continuous-acceptance-20261008/entry.json)。
 
 下文均为历史固定记录。

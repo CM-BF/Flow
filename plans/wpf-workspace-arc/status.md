@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:36:05.090652+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:44:54.771191+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477；本连续段metadata待seal |
-| 工作树dirty状态 | 8935 clean admission后仅status即时更新；continuous attempt2 FAILED/exactRETURN；第三且最后一次准备，source92a5010 clean admission后仅status更新，source6ca不变 |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / fixed source d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；自然metadata待seal |
+| 工作树dirty状态 | 全部18source STOP；仅本次own结果归档，0runtime。三次browser已CLOSED，不启动第四次 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 8c36f39b63d5d5621eafea616aeb532472caed3c；仅新fixture queue/实际guard8纯例654ms，最终6ca仅诊断错误保留差量；修后browser attempt1 FAILED 2/4（00:35:52.952751Z），00:36:30.434746Z exactRETURN，旧b3f5 2/4 FAIL保留 |
+| 检查状态 | FAILED d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；本连续三轮均2/4，最终早图1/末态双图0。8c fixture/guard8纯例PASSED654ms独立保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477 |
+| 实现目标 | d7e0b6f1564361bf5c25bd50c9e3f0557a234e74 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 连续第1轮布局与读取通过；已修正handoff观测时点；第2轮B模型/正文已过；附件断言混入提交区，已按official composer和真实文件名提示窄修 |
+| 当前产出 | 工作区布局和三窗格读取通过；材料准备可进入，下一草稿设置与正文可见。附件名称悬停被移除按钮遮挡，完整材料与主题旅程仍未完成 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 完整材料与主题旅程尚未完成；经理ArcContinuousGrant已授，本轮资源已归还，bundle内有界后继候选 |
+| 当前阻塞 | ACTIVE: 最后一次真实附件名称悬停失败；不得据此宣材料丢失或整体PASS。原三次额度已封闭，等待有界后继定位 |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED 6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477；连续普通同语义窄修授权，最终一次独审；已批准历史source/实际失败审范围不扩。 |
+| Review | PENDING d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；本连续source/三actual统一独审见final-review-input，历史批准范围保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -135,3 +135,13 @@
 2026-10-08T00:35:31.353534Z：continuous browser attempt1实际START，run arc-continuous-1-20261008-003531，outer88847/parent89726/worker89816；fresh free14918766592 >= complete13624803328，207/43/33与claim18/actualremote8935 clean同调用核过。90s单次/270s新总账；原失败账不转。
 
 2026-10-08T00:39:53.708827Z：continuous attempt2 START，source92a501080a5b15889f768550233a316697b201f1；原attempt1=21600/2of4FAIL保留。准备中journal保A、B页内/deferred；命令交接后才验证持久B，未宣准备时B崩溃恢复。
+
+2026-10-08T00:41:54.051108Z：第三且最后一次actualSTART，source d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；此前合38056ms/2轮，当前90s/原总270s不变，无第四次。
+
+## 2026-10-08 连续段实际收口
+
+三次browser均完整资源归还：21600 + 16456 + 21539 = 59595ms，3/3次CLOSED，余210405ms不转用。最后RETURN00:42:49.410214Z。各轮layout-navigation/three-pane-reads通过；prepare-await-stable/refresh-theme未完成，不拼接PASS。8pure654ms与旧所有红原件保留。
+
+准备期Recovery明确journal保A、B仅页内/deferred；命令prepare交接后才要求完整持久B。本轮不证明准备期B崩溃恢复。第二轮观察误含A提交附件已窄修；第三轮实际Remove按钮拦截hover，未force或增timeout，未新增产品修改。最后原始Chrome/parent/outer EOF均true仅限本三轮；parent resultnull/UNKNOWN与raw nestedclosed分层保留，无独立portprobe。
+
+[连续段审入口](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。当前source和runtime STOP，main未集成。

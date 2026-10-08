@@ -1,0 +1,1 @@
+Arc continuous acceptance. Same e744 parent, fixed worker/capture; only two fixture/browser test pins change. 0PG, two owned HTTP, one Chrome. No browser launch without current manager lease; exact return after each attempt.

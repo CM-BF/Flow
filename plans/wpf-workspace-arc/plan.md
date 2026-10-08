@@ -55,3 +55,7 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T23:58:36.144826+00:00 原TODO02/05实际失败修复：Arc导航CSS独立namespace，不能被右侧tabflex规则撑满；既有layout组新增右面板开/切Terminal/关的自然尺寸检查，保原4groups。材料fixture公开目录必须通过真实codec而非仅TS结构；合法displayName、3choices与原identity保留。645ms纯codec已验证，实际CSS/材料browser仍待；不增加产品合同或scope。
 
 2026-10-08T00:07:02.901429+00:00：b3f5修后actual2/4；CSS命名空间与右panel独立布局已实际验证，设置目录前置已通过；材料Send disabled，原完整prepare-await/refresh/theme仍未完成。六正文读取与两个HTTP FIFO已有各自限定证据，不外推整个TODO完成。见[本次唯一原件入口](../../docs/evidence/wpf-workspace-arc/css-material-browser-actual-20261008/failure-review-input.json)。root只读提出chat4统一paused/waiting与guard冲突的候选，需后续合法段验证；本批没有产品/fixture修复或新运行。
+
+### 2026-10-08 连续验收边界
+
+当前固定d7e0b6f；queue fixture前置已更正并8纯例通过，三次真实browser均2/4。材料组中的准备期B以页面模型/正文/当前完整附件见证为准，原A命令交接后再检查唯一持久B；不承诺准备期B崩溃恢复。最后hover被Remove按钮拦截，后继先定位真实交互；本段三次已CLOSED，禁止第四次。TODO01–05仍in-progress，06未main集成。证据见[本段结果](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。

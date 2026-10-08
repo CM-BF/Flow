@@ -1,0 +1,146 @@
+{
+  "at": "2026-10-08T00:43:56.133256+00:00",
+  "source": "d7e0b6f1564361bf5c25bd50c9e3f0557a234e74",
+  "priorSource": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+  "intermediateSource": "92a501080a5b15889f768550233a316697b201f1",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 exact18",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-manifest.json",
+    "bytes": 37742,
+    "sha256": "b8bb7caa19dbbde3748c1d10e98781a61013691cede9891e6b0a73ff53f9c0c4"
+  },
+  "localManifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/local-manifest.json",
+  "runs": [
+    {
+      "attempt": 1,
+      "packet": "/private/tmp/arc-continuous-browser-_n9vua_3",
+      "source": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+      "executionHead": "8935c756cd98b70773a32dca0d216419a4b07839",
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads"
+      ],
+      "selected": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "finalScreenshots": [],
+      "desktopStage": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-continuous-browser-_n9vua_3/raw/arc-desktop-ready.png",
+        "bytes": 84146,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T00:35:39.484Z"
+      },
+      "error": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"arc-B\"\nReceived: \"arc-A\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBe (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:247:128)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-continuous-browser-_n9vua_3/worker.mjs:31:16)",
+      "chargeMs": 21600,
+      "terminal": "2026-10-08T00:35:52.952751+00:00",
+      "returnAt": "2026-10-08T00:36:30.434746+00:00",
+      "ownedReturn": true,
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-1/post-cleanup.json",
+      "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-1/raw/arc-browser.json"
+    },
+    {
+      "attempt": 2,
+      "packet": "/private/tmp/arc-continuous-attempt2-0z0h86ei",
+      "source": "92a501080a5b15889f768550233a316697b201f1",
+      "executionHead": "92a501080a5b15889f768550233a316697b201f1",
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads"
+      ],
+      "selected": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "finalScreenshots": [],
+      "desktopStage": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-continuous-attempt2-0z0h86ei/raw/arc-desktop-ready.png",
+        "bytes": 87115,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T00:40:01.747Z"
+      },
+      "error": "Error: expect(locator).toContainText(expected) failed\n\nLocator: locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-attachment-root')\nExpected substring: \"arc-next.txt\"\nError: strict mode violation: locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-attachment-root') resolved to 3 elements:\n    1) <div class=\"aui-attachment-root relative\">\u2026</div> aka locator('.aui-attachment-root').first()\n    2) <div class=\"aui-attachment-root relative\">\u2026</div> aka locator('.aui-user-message-attachments-end > div:nth-child(2)')\n    3) <div class=\"aui-attachment-root relative animate-in fade-in-0 zoom-in-95 duration-200 motion-reduce:animate-none\">\u2026</div> aka locator('div').filter({ hasText: /^Remove file$/ }).nth(1)\n\nCall log:\n  - Expect \"toContainText\" locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-attachment-root') with timeout 5000ms\n  - waiting for locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-attachment-root')\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toContainText (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at expectNextDraft (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:253:63)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:258:7)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-continuous-attempt2-0z0h86ei/worker.mjs:31:16)",
+      "chargeMs": 16456,
+      "terminal": "2026-10-08T00:40:10.163931+00:00",
+      "returnAt": "2026-10-08T00:40:36.377912+00:00",
+      "ownedReturn": true,
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-2/post-cleanup.json",
+      "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-2/raw/arc-browser.json"
+    },
+    {
+      "attempt": 3,
+      "packet": "/private/tmp/arc-continuous-attempt3-27ijzu4e",
+      "source": "d7e0b6f1564361bf5c25bd50c9e3f0557a234e74",
+      "executionHead": "d7e0b6f1564361bf5c25bd50c9e3f0557a234e74",
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads"
+      ],
+      "selected": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "finalScreenshots": [],
+      "desktopStage": {
+        "stage": "connected-before-layout-actions",
+        "path": "/private/tmp/arc-continuous-attempt3-27ijzu4e/raw/arc-desktop-ready.png",
+        "bytes": 85057,
+        "viewport": {
+          "width": 1500,
+          "height": 960
+        },
+        "at": "2026-10-08T00:42:02.094Z"
+      },
+      "error": "locator.hover: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').locator('.aui-composer-root').getByRole('button', { name: 'File attachment', exact: true })\n    - locator resolved to <div tabindex=\"0\" role=\"button\" data-state=\"closed\" aria-label=\"File attachment\" class=\"aui-attachment-tile bg-muted hover:after:bg-foreground/10 focus-visible:ring-ring/50 relative size-14 cursor-pointer overflow-hidden rounded-[calc(var(--composer-radius,1rem)-var(--composer-padding,8px))] transition-transform outline-none after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:ring-1 after:ring-black/10 after:transition-colors after:ring-inset focus-visible:ring-1 ac\u2026>\u2026</div>\n  - attempting hover action\n    2 \u00d7 waiting for element to be visible and stable\n      - element is not stable\n    - retrying hover action\n    - waiting 20ms\n    - waiting for element to be visible and stable\n    - element is not stable\n  2 \u00d7 retrying hover action\n      - waiting 100ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" data-state=\"closed\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground aui-button-icon p-1 aui-attachment-tile-remove absolute end-1 top-1 size-5 rounded-full bg-black/50! text-white after:absolute af\u2026>\u2026</button> intercepts pointer events\n  9 \u00d7 retrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <button type=\"button\" data-state=\"closed\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground aui-button-icon p-1 aui-attachment-tile-remove absolute end-1 top-1 size-5 rounded-full bg-black/50! text-white after:absolute af\u2026>\u2026</button> intercepts pointer events\n  - retrying hover action\n    - waiting 500ms\n\n    at expectNextDraft (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:254:30)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:260:7)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-continuous-attempt3-27ijzu4e/worker.mjs:31:16)",
+      "chargeMs": 21539,
+      "terminal": "2026-10-08T00:42:15.589668+00:00",
+      "returnAt": "2026-10-08T00:42:49.410214+00:00",
+      "ownedReturn": true,
+      "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-3/post-cleanup.json",
+      "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/browser-3/raw/arc-browser.json"
+    }
+  ],
+  "scope": "All three FAILED2/4. Layout and body groups PASS each, not compositional whole4PASS. Early desktop present each; final screenshots0.0PG2ownedHTTP1Chrome each. Exact ownedreturn all; no independent port probe. Parent UNKNOWN/resultnull retained versus raw nested closed. Chrome EOF flags true in these3 only.",
+  "sourceMeaning": "Recovery prepares A before deferred B commits: hold has B in-page, no preparing-crash recovery B claim. Prior prematureIDB assertion corrected, followed by exact durable B after command prepare. New UI assertion corrected scope to official composer; final hover still blocked by actual Remove overlay. No force/timeout change or product edit.",
+  "pending": "Material layout/after-handoff durable B and final refresh-theme still not reached; last hover failure needs bounded next analysis, no fourth run.",
+  "budget": {
+    "localCharge": 654,
+    "browserCharges": [
+      21600,
+      16456,
+      21539
+    ],
+    "browserTotal": 59595,
+    "maxAttempts": 3,
+    "closed": true,
+    "noTransfer": true
+  },
+  "fixedCallers": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    }
+  ]
+}

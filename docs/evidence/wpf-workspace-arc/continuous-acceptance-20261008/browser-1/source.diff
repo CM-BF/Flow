@@ -1,0 +1,36 @@
+diff --git a/apps/web/test/workspace-layout.browser.ts b/apps/web/test/workspace-layout.browser.ts
+index dcb940032..eac155a73 100644
+--- a/apps/web/test/workspace-layout.browser.ts
++++ b/apps/web/test/workspace-layout.browser.ts
+@@ -235,7 +235,13 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
+       const files = pane(4).getByRole("button", { name: "Files", exact: true }); await files.click();
+       const picker = page.getByRole("dialog", { name: "Project text files", exact: true }); await expect(picker).toBeVisible(); await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+       await settings("arc-A"); await input(4).fill("Frozen A through actual material preparation"); await upload("arc-one.txt"); await upload("arc-two.txt");
+-      await expect(pane(4).getByRole("button", { name: "Send message", exact: true })).toBeEnabled();
++      try { await expect(pane(4).getByRole("button", { name: "Send message", exact: true })).toBeEnabled(); }
++      catch (error) {
++        try { result.observations.materialReadiness = { paneText: (await pane(4).innerText({ timeout: 1000 })).slice(-4096),
++          lastTaskStatus: fixture!.fixture.chats.get("chat-4")!.snapshot.lastTurn?.task.status }; }
++        catch (diagnostic) { result.observations.materialReadiness = { observationError: String(diagnostic).slice(0, 256) }; }
++        throw error;
++      }
+       await probe("arm"); await input(4).press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
+       await settings("arc-B"); await input(4).fill("Independent B while A prepares"); await upload("arc-next.txt");
+       await expect.poll(async () => (await draftRecord(page, "conversation:chat-4"))?.data?.messageSettings?.requested?.model).toBe("arc-B");
+diff --git a/apps/web/test/workspace-layout.fixture.ts b/apps/web/test/workspace-layout.fixture.ts
+index 94102855e..74b44a0bf 100644
+--- a/apps/web/test/workspace-layout.fixture.ts
++++ b/apps/web/test/workspace-layout.fixture.ts
+@@ -160,6 +160,12 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
+     const queue = /^\/api\/conversations\/(chat-[1-8])\/queue(?:\/(.+))?$/.exec(url.pathname);
+     if (queue && method === "GET") {
+       const conversationId = queue[1]!, text = `Waiting ${conversationId} ` + "body ".repeat(240);
++      // Material preparation sends a follow-up in chat-4. The read/load panes retain their paused queues.
++      if (conversationId === "chat-4") {
++        if (queue[2]) json(response, { error: { code: "not_found", message: "No waiting material-scene item" } }, 404);
++        else json(response, { conversationId, queueRevision: 1, paused: false, currentTurn: null, blocked: null, items: [], nextCursor: null });
++        return;
++      }
+       const item = { id: `${conversationId}-queue`, conversationId, sequence: 1, state: "waiting", preview: text.slice(0, 100), truncated: true, promoted: null, createdAt: at, updatedAt: at };
+       const value = { conversationId, queueRevision: 1, paused: true, currentTurn: null, blocked: "queue-paused", ...(queue[2] ? { item: { ...item, text } } : { items: [item], nextCursor: null }) };
+       if (queue[2]) bodyResponse(url.pathname, response, () => json(response, value));
