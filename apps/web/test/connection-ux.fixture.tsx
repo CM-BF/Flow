@@ -26,9 +26,9 @@ function Fixture() {
       }} />
     <aside aria-label="Synthetic fixture controls" style={{ padding: 16 }}>
       <p>Production Connection with synthetic props and callbacks. No authentication request is made.</p>
-      <label>Fixture phase<select value={phase ?? "undefined"} onChange={event => setPhase(event.target.value === "undefined" ? undefined : event.target.value)}>
+      <label htmlFor="fixture-phase">Fixture phase</label><select id="fixture-phase" value={phase ?? "undefined"} onChange={event => setPhase(event.target.value === "undefined" ? undefined : event.target.value)}>
         {["idle", "unauthenticated", "offline", "forbidden", "unsupported", "error", "ready", "checking", "undefined"].map(value => <option key={value}>{value}</option>)}
-      </select></label>
+      </select>
       <label><input type="checkbox" checked={optional} onChange={event => setOptional(event.target.checked)} />Optional actions</label>
       <button type="button" onClick={() => { release.current?.(); release.current = null; setPending(false); setPhase("unauthenticated"); }}>Settle synthetic connection</button>
       <button type="button" onClick={() => applyTheme("light")}>Fixture light theme</button>

@@ -37,3 +37,7 @@ Current actual receipt: [mounted failure](mounted-runs/connection-20261008-5108a
 New 01:35:48.999–02:05:48.999 bounded continuation; firstWrite 01:37:00.388397Z. Product 0f58 stays frozen. Source 3706efa67 keeps Vite noDiscovery but explicitly optimizes the five installed React entries. Six original groups remain; bounded progress/first-error/geometry diagnose a failed mount without input values.
 
 Worker syntax and final affected fixture/browser strict PASS (142+2338=2480ms; two children CLOSED). New browser attempts remain WAIT for exact native-lineage acceptance and manager lease. Old 10515ms failure is immutable and supplies no new budget. [Current intake](loader-continuation/intake.json), [local raw index](loader-continuation/local-results/index.json), [first failure review](loader-continuation/first-failure-review.json).
+
+New loader attempt RUNNING 2026-10-08T01:50:11.562129Z; run connection-loader-20261008-e9df81b8, parent43439, execution5cd0157f665132cc8bd4b95f574108000d09fc10. Parent clean admission completed before child gate. First new attempt of three; no actual result yet.
+
+Loader attempt 1 FAILED / exact RETURN 2026-10-08T01:50:49.799985Z; 10649ms, pageErrors empty, states-next-actions timed out with no group completion reported. Real component mounted; safe failure screenshot captured. Fixture phase selector now has an explicit separate label/id (source correction; next actual pending). Product and six assertions unchanged.
