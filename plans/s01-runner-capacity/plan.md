@@ -145,3 +145,7 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 本次queue窗口O1持续ACK跨度不足、O2按门禁未启；结果忠实性已独审通过，不是容量/优化通过。原4秒跨度、真实取消最终态和UNKNOWN/KEEP不降要求。下一小片仅[固定轨迹观察交付策略成本](../../docs/evidence/s01/mixed-ab-preparation/delivery-strategy-replay-design.md)，复用现pg-delivery/bridge/reporter/OPS14，0PG候选，尚未实施/运行。buffered改变SQL聚合和finish交付时序，因此不称纯IPC隔离；原128验收独立保留。无新大task/新性能窗口/2×2矩阵，Web发布和经理完整fresh资源优先；stable TODO状态不变。
 
 2026-10-07T15:25:09Z 后继小片：上述2048-trace实际已完成并独审，仅支持两交付策略成本；buffered JSON较少、完整耗时及CPU较高。先在既有pg-delivery.finish内消除重复增长prefix编码，保留所有原边界，用直接行为及编码工作量反例验证；[窄接口/输入](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)。此为普通实现准备，0新实际replay/PG，不改变原128/ACK/cancel验收或任何稳定TODO。
+
+## S01-06：stock initialize/close 小基线候选（2026-10-08T01:16:08.829Z）
+
+沿原S01-06安排[1→2→4设计与候选预算](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)，仅零model/provider初始化及空闲资源/关闭成本，不是128native容量。原128同步burst ACK失败诊断优先；本候选尚无源码、sampler或native窗口。复用既有host/R06/OPS14，数字整树采样方法与scope必须另固定；UNKNOWN/KEEP、ENG原outerFAIL与后续独立cleanup分列。70s/64MiB只是待审候选，本次仅4MiB/10min元数据段。稳定TODO仍三完成三开放。

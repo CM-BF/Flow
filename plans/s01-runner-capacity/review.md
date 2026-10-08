@@ -314,3 +314,7 @@ Target `839a1614bb8429922716fb86e8a9ebe6b2972967`；入口 [queue-buffered-ready
 ## 2026-10-07T17:11:33.451Z 单臂caller增量待审
 
 Source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[caller ready](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)，选择source839已审；新caller/input+5pure结果PENDING。0PG/实际性能，原FAIL/KEEP/raw与冻结operator/input不变。
+
+## 2026-10-08T01:16:08.829Z S01-06 初始化基线设计待审
+
+本次仅四metadata，入口[stock-initialize-design.md](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)。拟独立只读核复用host/R06/OPS14、1→2→4与同deadline、整树采样未知/RSS共享页/同期CPU、ENG原FAIL/独立cleanup、原128 ACK优先以及候选预算不作OPEN。源码/工程/native均未实施，当前PENDING；既有各固定审批不覆盖本设计。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T20:31:29.819Z |
+| 最近更新 | 2026-10-08T01:16:08.829Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,7 +15,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 起点08819a6175ddcedf85c406a2b68e1d18d7c906a4 = origin clean；仅正式审查回执/ready/status/review收口，输入与源码原件不变。 |
+| 工作树dirty状态 | 起点4cb21543a415022e5c495532b803e842435ef364 = origin clean；本段仅原三plan文件与一个initialize设计。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
@@ -24,13 +24,13 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 4 |
-| 当前产出 | 诊断候选的命名空间和输入绑定已独立审查通过并封存；尚未授予实际窗口，原128容量验收仍失败。 |
-| 下一可用交付 | 获得独立运行授权后执行一次保持原断言的诊断；当前只保留已审候选，不启动PG或新检查。 |
-| 当前阻塞 | ACTIVE: 原完整ACK窗口验收未过；新候选已审但实际CLOSED/NOT_OPEN，无holder、待launch或新nonce。 |
+| 当前产出 | 原128 ACK验收仍失败，完整交付诊断候选已封存；现只补零模型初始化资源基线设计，尚未运行。 |
+| 下一可用交付 | 交付1→2→4初始化与关闭的有限资源基线方案；源码、采样器与实际窗口须后续另行准备。 |
+| 当前阻塞 | ACTIVE: 原128 ACK完整验收未过；初始化资源方案只到设计，未领新源码范围、未授native窗口。 |
 | 需用户决定 | NONE |
-| Review | NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED，Mika/root 2026-10-07 20:28 UTC，source 3dffa3f0c344767eccc58716343fa1b0a3e0369d / packet 08819a6175ddcedf85c406a2b68e1d18d7c906a4，0P1/P2；84b5 source/local批准独立，不扩展为实际性能或main。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T20:30:38.725Z本人/WT/branch/scope fresh相符；保留至后续。 |
-| 架构影响 | 不新增Interface/调度器；仅已有caller与recipe六个namespace/input路径字面量绑定新候选，原guard/预算/完整proof保持。私有observer本修复未main。 |
+| Review | 初始化设计PENDING；既有3dffa命名空间/输入与84b5源码局部批准保留，不继承为native或性能通过。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-08T01:14:19.006Z本人/WT/branch/scope fresh相符；本次未amend。 |
+| 架构影响 | 仅方法设计：复用已有trusted host/R06/OPS14，整树数字sampler为待实现私有Seam；无源码、依赖或运行变化，不更新主线架构能力。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -396,3 +396,7 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 本独立metadata段实际20:30:38Z开始、3min/新增64KiB单列，不借旧2MiB。Mika20:28分钟精度NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED0P1/P2已归档：[回执](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-independent-review.json)。输入cd39原字节/123bindings/旧raw/manifest/source不改；whole300/arm135、原4s/6s/128断言和两个KEEP保持。0工程child/产品PG/HTTP/TMP访问/新nonce，actual仍CLOSED。最终metadata完整HEAD随Git固定交付，用作未来显式argv候选，授窗才定完整floor。唯一status与ready同步，不新增第二状态源；历史taskstartUNKNOWN和开放TODO不变。沿本地find-skills/codebase-design/clean-code只核阶段、审批范围和固定输入一致性。
 
 本段新增逻辑增长封存前3641B，加本行仍<6KiB/64KiB；commit/push clean后STOP，保claim。
+
+## 2026-10-08T01:16:08.829Z S01-06 初始化基线设计开工
+
+实际START01:14:06Z（截止01:24:06Z），firstWrite 2026-10-08T01:16:08.829Z；D01已登记4MiB，fresh claim/head/clean和资源terms已核。只改三plan与[设计](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)，保持128 ACK优先、原单A FAIL/2KEEP与ENG outerFAIL/cleanupUNKNOWN，后独立cleanup不改原FAIL。0工程/native/auth status/PG/KEEP/raw复制；不授sampler，70s/64MiB仍候选。新设计需独立只读review；本任务startUNKNOWN/NOT_COMPLETED与3个开放TODO不变。唯一status仍供已登记dashboard读取，本段不请求snapshot或声称新HEAD已展示。
