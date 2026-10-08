@@ -1,6 +1,6 @@
 # SVC06B 浏览器恢复所需固定后台
 
-状态：completed（本登记task五项验收已闭合，最终接收观察2026-10-08T00:05:01.000Z；不表示父FLOW完成）。所属唯一大task [FLOW-001 / REQ-19](../../../plan-status-review/plans/flow-001-architecture/plan.md)，co-lead Execution Lead，owner assignment_review。沿原SVC06固定产物方法推进，不创建第二发布系统或调度器。
+状态：in-progress（原五项验收已于2026-10-08T00:05:01.000Z交付；本次追加REQ19有限第五项保留工具，不表示父FLOW完成）。所属唯一大task [FLOW-001 / REQ-19](../../../plan-status-review/plans/flow-001-architecture/plan.md)，co-lead Execution Lead，owner assignment_review。沿原SVC06固定产物方法推进，不创建第二发布系统或调度器。
 
 ## 用户结果与范围
 
@@ -25,6 +25,7 @@
 - [x] **SVC06B-04** 将准确descriptor/source交Web原owner完成三retained与新网页组合证据，受控接收；补齐有限backend保留工具及受管更新候选，个人发布沿单独固定门禁与窗口完成，唯一结果审查已main收录。范围见status/review，不扩为真实用户领取、新聊天或整个FLOW完成。
 
 - [x] **SVC06B-05** 集中backend count≤4/总2GiB/单项1GiB策略，prepare最大预留与verified import实际字节分判；直接消费者及独审，不改已审cd27。
+- [ ] **SVC06B-06** 沿同一容量Interface将count上限正式演进到5，保持总2GiB/单项1GiB；第五项完整核验实际字节可迁入，第六项/超总量/unknown拒绝。同store prepare仍预留最大1GiB，实际采用独立空store构建；直接消费者、独审及精确main接收，不改现有产物或个人store。
 
 原entry普通local累计≤120s、scratch16MiB/raw2MiB、同时≤4自有child；当前0PG/Chrome/provider/个人服务。完整构建已一次完成并归还，后继完整构建仍需原420+.5+2与fresh>=2.5GiB及所有并发/保留总预算中更严格者、live1GiB、raw2MiB保持。无资源holder不等于自动许可构建。
 

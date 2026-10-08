@@ -2,34 +2,34 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:14:48.809Z；原子归还runtime.ts单叶，五项验收全部闭合，修正本登记task完成字段 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:38:41.063Z；第五项保留策略 source167958 已固定，实际六项通过/RETURN，待独审及主线接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
-| 任务完成时间 | 2026-10-08T00:05:01.000Z |
-| 任务时间来源 | 开工来自source.json实际source-only provision开始；完成采用fe96已记录的owner最终接收观察时点：五TODO均完成且5719唯一结果审查已main收录，不用commit/mtime或本次claim归还时间倒推 |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 开工来自source.json；原五TODO完成采用fe96已记录的2026-10-08T00:05:01.000Z最终接收观察。03:28:22.477Z原子amend后同REQ19新增SVC06B-06，本次重新开放；不借父FLOW未完或commit/mtime猜时间 |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；本次Web修复source6491c4815cd6daf8f640648d5e8a25a599d8cd92，旧f0及fresh包99c0保留 |
-| 工作树dirty状态 | 产品及全部执行源停写；仅本次领取receipt与三件套收口；两已消费namespace/原件封存无pending writer；runtime.ts已归还，不再修改 |
-| 工作分支状态 | completed |
-| 本片段交付阶段 | delivered |
-| 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布已完成并获限定独审 |
-| 实现范围 | 仅own Web caller及直接测试：外preview锁内复用公开只读维护store和固定Pool，不改运行产物 |
-| 检查状态 | 实际transfer16994ms与publish13918ms均exit0/双EOF/各组absent；紧前只读8606ms通过，总raw2289B；原局部6+1有效且04失败未知保持 |
+| 工作基线 / HEAD | 本片 base40c79b842535867545117ed1b9ad1b40a183e2f3 / source167958cf229851ecb235975d858d50d839009afc；现个人部署仍e15/880060与Web779/v4，未改产物 |
+| 工作树dirty状态 | 本片产品/测试/Interface已固定；仅own结果与计划metadata待本次交付提交，未改他人文件 |
+| 工作分支状态 | in-progress（本次有限保留策略；原五项已交付事实保持） |
+| 本片段交付阶段 | review |
+| 实现目标 | 为下一设置后台保留第五项固定产物，继续限制总量与单项字节；当前个人服务和网页部署保持 |
+| 实现范围 | tools/personal-preview/backend-release/files.mjs, tools/personal-preview/backend-release/artifact.test.mjs, docs/evidence/svc06/browser-recovery, plans/svc06-browser-recovery |
+| 检查状态 | 六项定向检查6/6，旧count4预期红1/0原件保留；合计16636ms/raw2870B，两组absent/双EOF/空scratch同身份removed，0PG/模型/构建/安装/个人I/O |
 | 已集成main状态 / HEAD | 调用修复与独审已main c414c0d0d；目标5719的唯一结果审查已于main97353e4f48ea515d268f6e4a6107e778b6c39abb收录，107d61927及本次观察1b9eda58f均含该记录；固定原件仍由own canonical保存，不声称主线复制全部raw |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版网页已发布，原三版网页与三个正在运行的服务均保留。新实例初始化和开放接收状态已核；尚未验证新的真实用户任务领取。 |
-| 下一可用交付 | 本片段已交付；后继用户任务与浏览器新聊天验收另有范围。 |
+| 当前产出 | 第五项后台产物的有界保留工具已实现并通过直接消费者检查，既有四项产物与个人部署保持。 |
+| 下一可用交付 | 独立审查并接收本次容量工具，交下一设置后台复用；新后台构建和个人迁入另按固定输入执行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；I02 svc06b-web779-actual-result-review.json于2026-10-07T23:40:01.257Z限定APPROVED，0 P1/P2；目标5719，历史04未知保留。 |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v9 active；2026-10-08T00:14:48.809Z原子amend只移除apps/runner/src/runtime.ts，其余13scope不变；[成功receipt](../../docs/evidence/svc06/browser-recovery/runtime-single-leaf-return-receipt.json)，接收方仍须fresh take后才可写 |
-| 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850已main72f5758bc，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
+| Review | source167958 及 retention-five/result.json 待Execution Lead独审；本片尚未集成main，历史发布批准保持 |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v10 active；03:28:22.477Z 原子追加 files.mjs/artifact.test.mjs，其余原13域不变 |
+| 架构影响 | 沿既有 LIMITS/assertBackendRetention 单一Interface，将count4变5；总2GiB/单产物1GiB、prepare最大预留和import完整验证不变，无新Module或运行结构 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,8 @@
 | SVC06B-02 | completed | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，Lead限定独审已通过 |
 | SVC06B-03 | completed | assignment_review / Execution Lead | 实际artifact cd27/04da及内部加载通过，独审批准并main b37e404d |
 | SVC06B-04 | completed | assignment_review / Execution Lead | e15 cold/四App、个人恢复及779/v4发布均已独审；5719唯一结果审查已main97353e4f收录，本片受控交付闭合，不扩为实际用户领取/新聊天或整个FLOW完成 |
-| SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，3产品scope已释放；不改cd27 |
+| SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，历史count4不改原件 |
+| SVC06B-06 | in-progress | assignment_review | [单份结果](../../docs/evidence/svc06/browser-recovery/retention-five/result.json)：source167958、六项通过，待独审/main；实际迁入与新后台build不在本片 |
 
 ## 等待与实际时间
 
@@ -222,3 +223,11 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T23:41:16.799Z：唯一[实际独审](../../../m2-integration/docs/evidence/i02/svc06b-web779-actual-result-review.json)于2026-10-07T23:40:01.257Z给出APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY/0 P1/P2，2654B/SHAe968748270836af640fc1e5a839f47323397ee81b0ea64ff98d62155cdc01b51，source6491/target5719/manifest63741f。原发布工作段23:35:35.341Z–23:36:06.257Z与readonly23:38:23.988Z–23:38:24.007Z分列；独审等待结束，不修改历史firstStart或缺证据UNKNOWN。产品/执行源码明确停写，两个已完成私有namespace及原始回执均封存，本owner无继续写入或pending launch；其已占用存量不再由此工作段产生未来增长，可供资源owner分类，local04独立4MiB未知不动。不释放共享product claim，后继移交另协调。复用已读clean-code/codebase-design核范围、生命周期、错误/unknown与无重复框架；0新产品测试或个人探针。
 
 本次收口仅用main c414c0d0de44fd0c7d38d46da109b7598412055e既有parseStatus核本status：errors/humanMissing/timingIssues均空，FLOW-001/co-lead关联已知；原ownId未显式声明保持unknown，未新造任务。无产品测试、全看板聚合或现场探针。
+
+## 第五项保留策略后继
+
+2026-10-08T03:28:22.477Z以本次成功amend与显式开工记录为本段开始（[start](../../docs/evidence/svc06/browser-recovery/retention-five/start.json)、[receipt](../../docs/evidence/svc06/browser-recovery/retention-five/amend-receipt.json)）。此前完整五TODO于00:05:01.000Z交付事实保留；本次在同REQ19追加SVC06B-06，登记task重新开放，非父FLOW未完导致。选定既有count策略小修改，独立空store构建后按完整核验实际字节迁入；不删四个旧artifact、不改个人参数。brainstorming按bounded已由Lead明确设计定案，复用本地find-skills/clean-code/codebase-design，无新安装。当前main接收与native meter普通段优先，本owner0test child/0pending launch。
+
+2026-10-08T03:38:41.063Z：第五项容量source `167958cf229851ecb235975d858d50d839009afc` 已固定，唯一[结果](../../docs/evidence/svc06/browser-recovery/retention-five/result.json)绑定两生产前后像、真实公共prepare及迁入store port。实际03:34:41.913Z→03:35:07.895Z；原count4红1/0/95ms与新count5绿6/6/16541ms分开保留，累计16636ms/2870B，两组absent/双EOF/无signals，两空scratch按原dev/ino删除。I02实际03:33:37.339Z归还后已接局部段，等待结束；本段RETURN已交Lead/native。仅待唯一独审/main，0child/0pending launch，不重跑旧检查。
+
+本次clean-code/codebase-design安全停点复核：配置单一来源、Interface/锁/完整校验与unknown保持，不引入新模块。已知四项合计与最大构建预留仍超总上限，因此独立空store build→实际核验字节import是未来消费方式；新artifact未构建、个人store未读写。原所有失败/KEEP不变。新测试源码及四个运行原件固定于本片，未复制历史raw。own-status只用主线权威parseStatus检查本status，结果另存本片，非产品测试。

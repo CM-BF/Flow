@@ -1,0 +1,38 @@
+{
+  "requestId": "svc06b-retention-five-amend-20261008-v9",
+  "action": "amend",
+  "committedAt": "2026-10-08T03:28:22.477Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/main.ts",
+      "apps/runner/src/runtime-initialization.test.ts",
+      "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "plans/svc06-browser-recovery",
+      "tools/personal-preview/backend-release/artifact.test.mjs",
+      "tools/personal-preview/backend-release/files.mjs",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/backend-release/runtime.test.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs",
+      "tools/personal-preview/startup-diagnostics.mjs",
+      "tools/personal-preview/startup-diagnostics.test.mjs"
+    ],
+    "state": "active",
+    "branch": "codex/backend-browser-recovery",
+    "origin": "new",
+    "taskId": "SVC06B",
+    "worker": "assignment_review",
+    "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 10,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "createdAt": "2026-10-07T14:08:10.726Z",
+    "updatedAt": "2026-10-08T03:28:22.477Z",
+    "observedAt": null
+  }
+}

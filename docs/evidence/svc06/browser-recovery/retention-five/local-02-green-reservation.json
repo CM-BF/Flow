@@ -1,0 +1,69 @@
+{
+  "startedAt": "2026-10-08T03:34:51.346Z",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "--test-name-pattern=^retention ",
+    "tools/personal-preview/backend-release/artifact.test.mjs",
+    "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "HOME": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-i5rs08we",
+    "TMPDIR": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-i5rs08we",
+    "XDG_CACHE_HOME": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-i5rs08we",
+    "LC_ALL": "C",
+    "NO_COLOR": "1"
+  },
+  "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+  "version": 10,
+  "floor": 11634999296,
+  "freshFreeBytes": 14206582784,
+  "queueAt": "2026-10-08T03:32:16.038Z",
+  "queueSha256": "0db55ff275acec80645297a9dace31ba586bf69a9cbea979b1ee46faa0625d40",
+  "ownForwardAddedBytes": 4456448,
+  "limits": {
+    "remainingMs": 59905,
+    "scratchBytes": 4194304,
+    "rawBytes": 260003
+  },
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-i5rs08we",
+    "dev": 16777234,
+    "ino": 124783064
+  },
+  "sourcePins": [
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "26e6e89409346e1d2cfbc9409d4754b379f8a7819eadc5b7ae2a8613605cb264"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 9162,
+      "sha256": "8e838d7fff28ce9e4bb4db6ce055b1fe65fe62ba890d93a345b0af9a87662ca9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs",
+      "bytes": 5221,
+      "sha256": "cbf12ecc8d6fd7f4ffd8f1edd1296b08bca45d812c8903f6ab0e28619309993f"
+    }
+  ]
+}

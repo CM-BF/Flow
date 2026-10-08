@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-08T03:34:51.346Z",
+  "returnedAt": "2026-10-08T03:35:07.895Z",
+  "report": {
+    "pid": 12172,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 16541,
+    "stdout": "✔ retention migration consumer verifies a fifth artifact and preserves the old set through the real locked store port (9948.4595ms)\n✔ retention keeps four fixed artifacts and admits a bounded fifth, never a sixth (0.978333ms)\n✔ retention reserves the maximum for build while verified imports use actual bytes (0.105833ms)\n✔ retention retains exact aggregate and single-artifact byte limits (0.1005ms)\n✔ retention rejects unknown quantities and unrecognized admission modes (0.196916ms)\n✔ retention public prepare reads five unchanged legacy manifests and rejects a sixth before build (6442.989083ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 16500.215334\n",
+    "stderr": "",
+    "observed_bytes": 729,
+    "retained_bytes": 729,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "scratchRemaining": [],
+  "scratchBytesAtReturn": 0,
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "originalPrimaryRetained": true,
+  "PG": 0,
+  "provider": 0,
+  "personalIO": 0
+}

@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-10-08T03:34:41.913Z",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "--test-name-pattern=^retention keeps four fixed artifacts",
+    "tools/personal-preview/backend-release/artifact.test.mjs"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "HOME": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-hrr_qtvo",
+    "TMPDIR": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-hrr_qtvo",
+    "XDG_CACHE_HOME": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-hrr_qtvo",
+    "LC_ALL": "C",
+    "NO_COLOR": "1"
+  },
+  "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+  "version": 10,
+  "floor": 11634999296,
+  "freshFreeBytes": 14206496768,
+  "queueAt": "2026-10-08T03:32:16.038Z",
+  "queueSha256": "0db55ff275acec80645297a9dace31ba586bf69a9cbea979b1ee46faa0625d40",
+  "ownForwardAddedBytes": 4456448,
+  "limits": {
+    "remainingMs": 60000,
+    "scratchBytes": 4194304,
+    "rawBytes": 262144
+  },
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06b-retention5-hrr_qtvo",
+    "dev": 16777234,
+    "ino": 124782943
+  },
+  "sourcePins": [
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 9162,
+      "sha256": "8e838d7fff28ce9e4bb4db6ce055b1fe65fe62ba890d93a345b0af9a87662ca9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs",
+      "bytes": 5221,
+      "sha256": "cbf12ecc8d6fd7f4ffd8f1edd1296b08bca45d812c8903f6ab0e28619309993f"
+    }
+  ]
+}

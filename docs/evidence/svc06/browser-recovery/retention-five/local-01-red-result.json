@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-10-08T03:34:41.913Z",
+  "returnedAt": "2026-10-08T03:34:42.015Z",
+  "report": {
+    "pid": 12066,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 95,
+    "stdout": "✖ retention keeps four fixed artifacts and admits a bounded fifth, never a sixth (0.71375ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 51.937625\n\n✖ failing tests:\n\ntest at tools/personal-preview/backend-release/artifact.test.mjs:53:1\n✖ retention keeps four fixed artifacts and admits a bounded fifth, never a sixth (0.71375ms)\n  AssertionError [ERR_ASSERTION]: Got unwanted exception.\n  Actual message: \"BACKEND_RETENTION_FULL\"\n      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/artifact.test.mjs:55:10)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1397:25)\n      at Test.start (node:internal/test_runner/test:1257:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: Error: BACKEND_RETENTION_FULL\n        at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/files.mjs:6:44)\n        at assertBackendRetention (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/index.mjs:22:51)\n        at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/artifact.test.mjs:55:29\n        at getActual (node:assert:611:5)\n        at strict.doesNotThrow (node:assert:779:32)\n        at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/artifact.test.mjs:55:10)\n        at Test.runInAsyncScope (node:async_hooks:227:14)\n        at Test.run (node:internal/test_runner/test:1397:25)\n        at Test.start (node:internal/test_runner/test:1257:17)\n        at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17),\n    expected: undefined,\n    operator: 'doesNotThrow',\n    diff: 'simple'\n  }\n",
+    "stderr": "",
+    "observed_bytes": 2141,
+    "retained_bytes": 2141,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "scratchRemaining": [],
+  "scratchBytesAtReturn": 0,
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "originalPrimaryRetained": true,
+  "PG": 0,
+  "provider": 0,
+  "personalIO": 0
+}

@@ -1,0 +1,203 @@
+{
+  "taskId": "SVC06B",
+  "todo": "SVC06B-06",
+  "recordedAt": "2026-10-08T03:38:41.063Z",
+  "owner": "astra_ultra_execution_lead/assignment_review",
+  "model": "gpt-6-astra",
+  "sourceCommit": "167958cf229851ecb235975d858d50d839009afc",
+  "baseCommit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "branch": "codex/backend-browser-recovery",
+  "claim": {
+    "id": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 10,
+    "committedAt": "2026-10-08T03:28:22.477Z"
+  },
+  "design": {
+    "artifacts": 5,
+    "retainedBytes": 2147483648,
+    "singleArtifactBytes": 1073741824,
+    "buildReservationBytes": 1073741824,
+    "historicalFourLogicalBytes": 1467477371,
+    "illustrativeFifthBytes": 367000000,
+    "illustrativeFiveTotalBytes": 1834477371,
+    "historicalFourPlusBuildReservationBytes": 2541219195,
+    "actualNextArtifactBytes": "NOT_BUILT_NOT_OBSERVED",
+    "retirement": "NONE",
+    "manifestSchema": "UNCHANGED",
+    "policyInterface": "unchanged assertBackendRetention; single LIMITS authority"
+  },
+  "sourceBindings": [
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "26e6e89409346e1d2cfbc9409d4754b379f8a7819eadc5b7ae2a8613605cb264"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 9162,
+      "sha256": "8e838d7fff28ce9e4bb4db6ce055b1fe65fe62ba890d93a345b0af9a87662ca9"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs",
+      "bytes": 5221,
+      "sha256": "cbf12ecc8d6fd7f4ffd8f1edd1296b08bca45d812c8903f6ab0e28619309993f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/Interface.md",
+      "bytes": 2534,
+      "sha256": "f68ca811708a52420eb5080540df9ab4ab48d646b8c7a5e42c9db888e6d5fd7d"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/start.json",
+      "bytes": 1833,
+      "sha256": "cc67d4e93a65d720a97d3155b7a759f5becc7311561f250c8430a5e0790bc176"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/amend-request.json",
+      "bytes": 1108,
+      "sha256": "ca5ad59d209687fc6178f7b9d69d660b5f4cc8652e968f77bc94f228a3628e13"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/amend-receipt.json",
+      "bytes": 1579,
+      "sha256": "92197cd917eb6bae1634db72229042326ab767236802b2dd307da9c4ac450e36"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/local-01-red-reservation.json",
+      "bytes": 2506,
+      "sha256": "605a9130fd523a8079f89d2a652513319acd1e19bd660a1283fb396e87f0fa6c"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/local-01-red-result.json",
+      "bytes": 3235,
+      "sha256": "cd8b2c7daaa7c059ead99df0f9c8d55dd84bc0323c2892186f351ea550be1b66"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/local-02-green-reservation.json",
+      "bytes": 2564,
+      "sha256": "ca8e24dc6cf438eab48c552f771a49d03eaf8a4df3ae9b04dfc27783a196a6cf"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-five/local-02-green-result.json",
+      "bytes": 1641,
+      "sha256": "c52a8ae787c293c0b9ce4d05e677c57da13cc79124712a8982dfee4eef54dc39"
+    }
+  ],
+  "bindingCount": 11,
+  "bindingBytes": 34863,
+  "preimages": [
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "commit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "commit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "bytes": 9255,
+      "sha256": "c3db62e3fdefda33b1c321446b1a2581ebb109f948c6789e7447f4f9a7feb3b6"
+    }
+  ],
+  "inheritedGitInputs": [
+    {
+      "commit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "commit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "commit": "40c79b842535867545117ed1b9ad1b40a183e2f3",
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    }
+  ],
+  "actualSourcePinFidelity": {
+    "greenSixPinsMatchFixedSource": true,
+    "redFilesMatchBaseCountFour": true,
+    "testSourcesUnchangedBetweenRedAndGreen": true
+  },
+  "localResult": {
+    "startedAt": "2026-10-08T03:34:41.913Z",
+    "returnedAt": "2026-10-08T03:35:07.895Z",
+    "elapsedMs": 16636,
+    "rawBytes": 2870,
+    "supervisedChildren": 2,
+    "red": {
+      "selected": 1,
+      "passed": 0,
+      "exitCode": 1,
+      "elapsedMs": 95,
+      "rawBytes": 2141,
+      "reason": "Expected fifth-item rejection under original count4; original CHILD_EXIT_NONZERO preserved"
+    },
+    "green": {
+      "selected": 6,
+      "passed": 6,
+      "exitCode": 0,
+      "elapsedMs": 16541,
+      "rawBytes": 729,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "scope": "five retention cases including public prepare plus real currentMigrationIO store port under actual store lock; synthetic owned manifests only",
+    "groupFinalStates": [
+      "absent",
+      "absent"
+    ],
+    "dualEOF": [
+      true,
+      true
+    ],
+    "signals": [],
+    "scratchCleanup": [
+      "REMOVED_SAME_EMPTY_DIRECTORY",
+      "REMOVED_SAME_EMPTY_DIRECTORY"
+    ],
+    "remainingChildOrPendingLaunch": 0,
+    "budget": {
+      "milliseconds": 60000,
+      "scratchBytes": 4194304,
+      "rawBytes": 262144
+    },
+    "freshFloorBytes": 11634999296,
+    "ownForwardAddedOnceBytes": 4456448,
+    "unrelatedArtifactCases": "NOT_RUN",
+    "PG": 0,
+    "provider": 0,
+    "build": 0,
+    "install": 0,
+    "personalIO": 0
+  },
+  "limitsOfEvidence": [
+    "No new artifact or production deployment was performed.",
+    "The import port test checks fully verified owned data and preserves old files; it does not execute a personal migration.",
+    "Old historical artifacts, raw failures and all unknowns remain unchanged.",
+    "A currentMigrationIO consumer must load this fixed capacity version through its lexical backend import; replacing mod.backend alone does not change retention policy."
+  ],
+  "quality": {
+    "at": "2026-10-08T03:38:41.063Z",
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Reuse installed local skills and approved bounded design; single configuration change, unchanged policy/lock/verification interfaces, actual direct consumers, errors and unknowns preserved; no new framework or supervisor.",
+    "unresolvedImplementationFinding": null
+  },
+  "review": "PENDING_EXECUTION_LEAD",
+  "mainIntake": "NOT_INTEGRATED",
+  "handoff": "SVC09A may use the fixed capacity version after independent review; empty-store build and verified-byte import remain distinct and require their own scope/input/window."
+}

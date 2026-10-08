@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T03:38:50.590Z",
+  "taskId": "SVC06B",
+  "parserCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "statusSha256": "276e06aca37484242c131bcfb9d998f980149dbe314094bd2a25e83a7d6f319c",
+  "errors": [
+    "存在无法识别的 TODO 状态"
+  ],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

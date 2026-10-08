@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T03:39:07.656Z",
+  "taskId": "SVC06B",
+  "parserCommit": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "statusSha256": "32c44755b064bd9e092bd5437422d022983a0b46a986a32d10fe06daae221fb8",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "earlierResult": "status-check-original.json",
+  "correction": "TODO and branch use existing in-progress token; phase remains review. No product or test source changed."
+}

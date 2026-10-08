@@ -1,5 +1,7 @@
 # SVC06B review
 
+当前新片SVC06B-06：**PENDING**，source `167958cf229851ecb235975d858d50d839009afc`，唯一[容量结果](../../docs/evidence/svc06/browser-recovery/retention-five/result.json)。独立review由Execution Lead负责，本owner不自批；6/6定向检查、预期红与资源RETURN为待审原件，本片main尚未接收。原五TODO已完成，但本次同REQ19新TODO06尚待审查/集成，登记task保持NOT_COMPLETED。以下发布及历史独审结论不扩展至本片。
+
 当前可见发布结果：`APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY`，0 P1/P2。Execution Lead于2026-10-07T23:40:01.257Z独审source `6491c4815cd6daf8f640648d5e8a25a599d8cd92` / target `5719f0a4cb252324fa1434a7870bf615f31f66dd`；唯一[I02原件](../../../m2-integration/docs/evidence/i02/svc06b-web779-actual-result-review.json)，不复制raw或制造第二结论。
 
 实际发布23:35:35.341Z–23:36:06.257Z：迁入确认后公开CAS到779/v4，保留三旧Web产物与三运行服务；两个action均0退出/双EOF/owned组absent。随后readonly23:38:23.988Z–23:38:24.007Z仅3GET，身份及新旧各一versioned资产精确size/hash通过。22 fixed/118188B与8安全副本5361B核同；reader无reviewer个人读取或重跑。原04误选FAIL/截断/逃逸UNKNOWN保持；实际用户领取与浏览器新聊天NOT_OBSERVED，不升级整个FLOW完成。
