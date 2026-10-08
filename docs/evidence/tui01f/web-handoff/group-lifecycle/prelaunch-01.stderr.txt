@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py", line 44, in <module>
+    class Report:
+  File "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py", line 45, in Report
+    pid: int | None = None
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'

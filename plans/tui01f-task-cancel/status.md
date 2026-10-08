@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:23:21.933Z；R3结果限定独审已收，当前仅最小fixture进程组修复 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:29:05Z；新生命周期片局部已归还/待独审，R3结果已main312842ab5 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；fixture源8379已main；新R3装配bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
-| 工作树dirty状态 | 仅本轮fixture进程组helper/直接消费者及own记录修改；旧actual原件保持 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | FAILED R3实际1选0过/exit1；workPassed=true，A取消/B完成且验证passed，整suite仅fixture-close/groups unknown。原纯4项与fixture4项/types0不重跑。 |
+| 工作树dirty状态 | 四源码固定51e380；仅本轮原件/manifest和own三件套收口 |
+| 工作分支状态 | review |
+| 本片段交付阶段 | review |
+| 检查状态 | 新8/8直接例、focused types0；首解释器0child红/首types红保留。4693ms/2822B/三组absent双EOF；R3实际仍1选0过。 |
 | 已集成main状态 / HEAD | fixture8379已main/origin89a27；R3 caller bdf已获限定独审main b63bf7eb5。R3结果已限定独审/main312842ab5；保持功能到达但suite失败，不将保真接收当实际旅程通过。 |
-| 实现目标 | bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
+| 实现目标 | 51e380009559768c246a890f9edcf53ab2d48760；行为8例在89739运行，三执行源逐字不变；最终test仅类型位置修正 |
 | 实现范围 | apps/tui/src/task-controls/fixture-process.ts及其直接测试、fixture.ts、experiments/tui-web-control-handoff/journey.ts；own records |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成终端取消A、网页与终端继续B并看到最终结果；整次验收因资源清理确认缺失仍未通过。 |
-| 下一可用交付 | 补齐进程组与子进程关闭证据，并用自有小进程验证原失败保留和收尾边界。 |
-| 当前阻塞 | ACTIVE：原清理阶段未保留失败进程组及具体错误；owner assignment_review，解除条件是有依据地定位并验证收尾合同。 |
+| 当前产出 | 终端与网页接续功能已实测到达；已补进程组及关闭证据并完成局部验证，整次双端验收仍未通过。 |
+| 下一可用交付 | 独立审查清理修复，再准备绑定新源码的受控旅程；当前不运行浏览器或数据库。 |
+| 当前阻塞 | ACTIVE：新清理修复待独立审查与后继实际收尾验收；owner assignment_review，解除条件为固定修复获审并在新受控旅程确认。 |
 | 需用户决定 | NONE |
-| Review | R3 9435由Lead限定保真APPROVED/0P1P2；新生命周期片待独审。 |
+| Review | [review.md](review.md)：R3结果已限定保真批准/main312842；新51e380生命周期修复待独审。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v7 active/exact7；2026-10-08T01:38:12.746Z 正式 accept，worker assignment_review；[回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/accept-receipt.json) |
 | 架构影响 | 实验fixture小模块统一真实child组关闭与错误记录；Node已reap限制明确，生产状态机/数据库清理不变。 |
 
@@ -140,3 +140,5 @@
 2026-10-08T02:13:19.203Z：R3 02:08:17.814Z START→02:08:36.845Z terminal exit1→02:11:39.152Z精确运行RETURN。实际1选0过，workPassed=true：A cancelled、B succeeded/verification passed、9PTY事件/22checkpoint/4DOM阶段、终端exit0/草稿保留；这些计数不冒额外用例。原fixture-close唯一失败为groups unknown，未记录具体组/error，不能归因EPERM或追认清理。8PID/5组ESRCH/双EOF、DB1377665连接空/admin关闭，DB/private KEEP；return目录identity投影缺字段保UNKNOWN，不另读内容或删除。见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)、[结果与窄诊断](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)。0provider/个人/重投，原R1/R2保持；本次实际等待已结束。clean-code复核主失败与清理分离/单一原件，无新增产品变化，source停写交独审。
 
 2026-10-08T02:18:43.161Z：本轮最小生命周期片实际开工，fresh claim v7/HEAD9435 clean；02:23:21.933Z再次核同owner/exact7。R3结果已获Lead限定保真批准，不改变1选0过/groups unknown/DB与private KEEP。按[本片Interface](../../docs/evidence/tui01f/web-handoff/group-lifecycle/interface.md)复用既有关闭语义，120s累计/≤4受监督children/8MiB scratch/128KiB raw，0PG/Chrome/provider/旧KEEP；未启动检查。历史首次开工UNKNOWN不改。
+
+2026-10-08T02:29:05Z：新四源码51e380封定，8新直接例全过；首0child解释器导入错误和types TS2540保留，test-only类型位置修正后只types复测0。实际02:27:59.177→02:28:25.983Z三组RETURN，4693ms/2822B，tiny child76310实际close/ESRCH；1空scratch删除，两types cache2715568B静态KEEP，无后续writer。见[唯一结果/来源manifest](../../docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json)、[验证与限制](../../docs/evidence/tui01f/web-handoff/group-lifecycle/validation.md)。Lead确认原R3结果忠实性已main312842ab5，唯一[I02接收](../../../m2-integration/docs/evidence/i02/tui01f-r3-result-intake.json)；不改原1选0过/未知组/KEEP，不推原根因。当前源码停写、0child/0pending，仅独审与集成等待；未建actual permit，下一真实旅程须重绑helper/sourceDigest。

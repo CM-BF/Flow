@@ -1,0 +1,33 @@
+{
+  "pid": 76304,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 638,
+  "observed_bytes": 2685,
+  "retained_bytes": 2685,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdoutFile": "stdout.txt",
+  "stderrFile": "stderr.txt"
+}

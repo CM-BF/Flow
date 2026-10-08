@@ -1,0 +1,14 @@
+{
+  "outcome": "NOT_RUN",
+  "firstFailure": {
+    "phase": "supervisor-import",
+    "type": "TypeError",
+    "reason": "/usr/bin/python3 cannot parse Python 3.10 union annotations in fixed OPS14"
+  },
+  "supervisedChildStarted": false,
+  "scratchCreated": false,
+  "namespaceCreated": false,
+  "observedToolWallMs": 123,
+  "sourceUnchanged": true,
+  "correction": "Use existing pinned Python 3.13 runtime; no source/supervisor changes."
+}

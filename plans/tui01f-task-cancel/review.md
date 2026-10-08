@@ -1,6 +1,12 @@
+# 当前 TUI01F 进程组生命周期修复
+
+NOT_STARTED（独立源码/结果审查）。目标51e380009559768c246a890f9edcf53ab2d48760，base9435dca65c5b123639976365254359529c6fb955。
+
+仅fixture-process.ts/.test.ts、fixture.ts、journey.ts四源与own Interface/records。见[manifest](../../docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json)。8新直接例/真实tiny child及types0；原0child错误、首types红与类型位置修复分别保存，未重跑无关绿例。审查真实child注册、close与absent双证据、未知禁signal/Node reap限制、安全错误及primary保留、fixture先落具体组再汇总结论。原R3失败与UNKNOWN/KEEP不可回填，新实际旅程仍未授。
+
 # 当前 TUI01F R3 实际结果
 
-状态：NOT_STARTED（限定结果保真独审待安排）。
+状态：APPROVED_LIMITED_R3_RESULT_FIDELITY（Lead，结果保真限定；main312842ab5，唯一I02/tui01f-r3-result-intake.json）。
 
 实际执行source bdf11c06ef7cef843b0a52f456408bdb1f539be6 / executionHead 0b6d952bda939b16aeed1ab740d0625518eb89b2。见[单份manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)及[安全摘要](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)：1选0过，功能workPassed但fixture-close/groups unknown；后置8PID/5组absent/双EOF/DB连接空与原KEEP严格分开。只审原件/来源，不重复旅程或旧741闭包，不追认原cleanup通过。新实际结果未继承原准备批准。
 

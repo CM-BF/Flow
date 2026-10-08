@@ -1,0 +1,59 @@
+TAP version 13
+# Subtest: [group lifecycle] unknown never signals, close and later absence resolve with original safe observation
+ok 1 - [group lifecycle] unknown never signals, close and later absence resolve with original safe observation
+  ---
+  duration_ms: 1.067333
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] persistent unknown preserves group identity and bounded error without retry
+ok 2 - [group lifecycle] persistent unknown preserves group identity and bounded error without retry
+  ---
+  duration_ms: 0.613375
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] absence without real child close cannot pass
+ok 3 - [group lifecycle] absence without real child close cannot pass
+  ---
+  duration_ms: 0.110542
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] reaped leader cannot authorize a signal to a still-present numeric group
+ok 4 - [group lifecycle] reaped leader cannot authorize a signal to a still-present numeric group
+  ---
+  duration_ms: 0.109833
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] TERM waits for close, then absence; signal failure stays primary after closure
+ok 5 - [group lifecycle] TERM waits for close, then absence; signal failure stays primary after closure
+  ---
+  duration_ms: 0.105709
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] TERM/KILL remain bounded and final absent still waits for close
+ok 6 - [group lifecycle] TERM/KILL remain bounded and final absent still waits for close
+  ---
+  duration_ms: 0.085834
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] unknown unsafe codes never expose their contents or child error primary
+ok 7 - [group lifecycle] unknown unsafe codes never expose their contents or child error primary
+  ---
+  duration_ms: 0.109292
+  type: 'test'
+  ...
+# Subtest: [group lifecycle] actual fixture retains work primary and concrete group error after real child close
+ok 8 - [group lifecycle] actual fixture retains work primary and concrete group error after real child close
+  ---
+  duration_ms: 206.079125
+  type: 'test'
+  ...
+# {"ownedTinyChild":{"pgid":76310,"stopped":true,"signals":[],"observations":[{"state":"present","code":null},{"state":"present","code":null},{"state":"present","code":null},{"state":"present","code":null},{"state":"present","code":null},{"state":"present","code":null},{"state":"present","code":null},{"state":"absent","code":"ESRCH"}],"child":{"pid":76310,"closed":true,"exitCode":0,"signal":null},"firstUnknown":null,"failure":{"phase":"child","code":"EIO"}},"originalWorkPrimary":"original-work-primary","aggregateCleanup":"unknown","irreversibleCleanup":false}
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 593.863292

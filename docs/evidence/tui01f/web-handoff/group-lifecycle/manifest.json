@@ -1,0 +1,191 @@
+{
+  "recordedAt": "2026-10-08T02:30:44.622Z",
+  "scope": "TUI01F_FIXED_OWNED_GROUP_LIFECYCLE_SOURCE_AND_LOCAL_RESULT",
+  "base": "9435dca65c5b123639976365254359529c6fb955",
+  "source": "51e380009559768c246a890f9edcf53ab2d48760",
+  "behaviorSource": "89739a0e1b2d0effe954575e50bdb47f80b086cb",
+  "review": "PENDING_INDEPENDENT",
+  "actualJourney": "NOT_RUN / no new permit",
+  "bindings": [
+    {
+      "path": "apps/tui/src/task-controls/fixture-process.ts",
+      "bytes": 4060,
+      "sha256": "8a767fa813d6b84acf752215b108f6e04922478d5fb8bf387052b5d10fea4cf5",
+      "role": "source"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-process.test.ts",
+      "bytes": 7524,
+      "sha256": "02e214751f1f0b3e04d39a6e82e09aba32ab7eedd87cf4dad603dac66028a92c",
+      "role": "source"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27157,
+      "sha256": "8d4de0c96fa631a813c8ae8467b07bbd5391c21b343d53639a8f0496929ba285",
+      "role": "source"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 29170,
+      "sha256": "7f0a943cf19be3a86a6a29c46a9506408259e224ce967b247656e559e1501c03",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/interface.md",
+      "bytes": 2381,
+      "sha256": "bafa67aa92dedc26fea11debb3d8b288f726b1bebf5a261cc9b6c9659052bc96",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-01/outer.json",
+      "bytes": 577,
+      "sha256": "00f7d0a48b69c968d71e037c5f1e0761246cb2bfb272fbebeb878cd504dcea1f",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-01/reservation.json",
+      "bytes": 6213,
+      "sha256": "4cf97bd168a1f277c5c3167a9d6e86c6fa870729cea646662cf14f0067fc6b1d",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-01/result.json",
+      "bytes": 499,
+      "sha256": "98df1d904702f2771b3d280f6d14486f949369653bbe6a5251fc11e199bb1db4",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-01/stdout.txt",
+      "bytes": 2685,
+      "sha256": "d32cc0f4f0959afd7326bde0c0942aff7ce52ace5672d9ba47f750229940e893",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-02/outer.json",
+      "bytes": 721,
+      "sha256": "1794a0cbcf4c97f3b812518189aef12e208b428c862126bc06be7513ed668ac4",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-02/reservation.json",
+      "bytes": 6272,
+      "sha256": "fd4087bcddfad861f94003c9eeb2d6a4f29e55b04f266184594572264abd2979",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-02/result.json",
+      "bytes": 651,
+      "sha256": "ba666c161b9092a3a4cb973369acba3af8399d699ee1b9a3760ef3a478be3d4d",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-02/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-02/stdout.txt",
+      "bytes": 137,
+      "sha256": "622e52fb06266113f50163415c41215a2da6e18bb65b45d856c6953faa4f2b66",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-03/outer.json",
+      "bytes": 572,
+      "sha256": "01e3513a140d235c359fbf05fb8140ace577b7cce2d2fce3033056afb3368c62",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-03/reservation.json",
+      "bytes": 6272,
+      "sha256": "034884c696ebcdde37cd94f90e9b5751ffccf645c4874a10b73864f79600e5eb",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-03/result.json",
+      "bytes": 504,
+      "sha256": "999a0648ea82897f2c3362382f625f9d260650685f17f72488a90d9de4e4797c",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-03/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/local-03/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/prelaunch-01.json",
+      "bytes": 439,
+      "sha256": "fc003530bd37016fcd440c386ffac15f1b499691fa8ad0cea49673f129a71d95",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/prelaunch-01.stderr.txt",
+      "bytes": 573,
+      "sha256": "31d5652efcc55ff66266443a7b6cdaf77d9e010f36981f1bee361c32debb3c00",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/result-summary.json",
+      "bytes": 1260,
+      "sha256": "df9777e66338610945fde8d4d2333ce1aa274dcc14faeb91f740e69fc53c0fc1",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/start.json",
+      "bytes": 611,
+      "sha256": "ec66af9bc5b8f112971795a99a5ffc433619119e6fb662bf8f78f1e79fdd6cb6",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/status-parse.json",
+      "bytes": 625,
+      "sha256": "496b89c47f10f445a67465978f61a0a1be6ca7f6ac3a8d2deebcbfaabd560ba4",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/tsconfig.json",
+      "bytes": 430,
+      "sha256": "b222fb55f128d7824de5e5bf672fb5b3b9bfa2bf86b62451139bfbf63bb38fbc",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/validation.md",
+      "bytes": 2212,
+      "sha256": "79f0f5830a9533dd0f7577dfc80d5a4a3e930f23b481d8b5d58f945fe177bade",
+      "role": "record"
+    }
+  ],
+  "bindingCount": 27,
+  "logicalBytes": 101545,
+  "inheritance": [
+    {
+      "git": "9435dca65c5b123639976365254359529c6fb955",
+      "path": "docs/evidence/tui01f/web-handoff/r3-result-manifest.json",
+      "scope": "Original R3 functional success / suite1selected0passed / groupsunknown / laterRETURN; immutable historical baseline"
+    },
+    {
+      "git": "8379a051acb39898112609745ee14d8bcfe2c74d",
+      "path": "docs/evidence/tui01f/web-handoff/fixture-source-alignment/tsconfig.json",
+      "scope": "Existing targeted type/import closure reused; no741copy"
+    }
+  ],
+  "runtimeEvidence": "local-01..03 reservation.json: exact13 current input/runtime pins per launch; source preimage behavior differs only in test fake-child type placement",
+  "result": "8 distinct/8pass; types first2 then0; prelaunch0child import failure retained; 3groups absent dualEOF/no signals;4693ms/2822B supervised raw, no PG/HTTP/Chrome/native/provider/oldKEEP",
+  "cleanup": "tinyPID76310 actualclose+groupESRCH,1empty scratch removed;2static types caches2715568B KEEP; no further writer or launch",
+  "sourceBindingChange": "journey OWN adds fixture-process.ts; old consumed R2/R3 caller/input remain untouched. Future actual must bind this helper and revised digest through existing trusted caller."
+}

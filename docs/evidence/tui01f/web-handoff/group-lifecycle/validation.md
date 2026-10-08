@@ -1,0 +1,11 @@
+# Fixed local validation
+
+Source51e380009559768c246a890f9edcf53ab2d48760 (four source paths). Behavior run89739a0e1b2d0effe954575e50bdb47f80b086cb differs only in fake-child type placement; helper/fixture/journey were exact final bytes. Eight distinct direct cases all passed, zero skipped. Actual fixture case created only one owned tiny Node process, observed its real close and ESRCH, persisted concrete EIO synthetic child failure plus the original work failure, then removed only its own generated result/checkpoint and empty directory. No PG/HTTP/Chrome/native/provider.
+
+First attempt failed importing fixed OPS14 under system Python, before any supervised launch/scratch/namespace. Its original traceback is retained. Existing pinned Python3.13 corrected the caller only. First focused types failed TS2540 in fake-child setup; source-only type placement fixed it and only types reran. These failures remain red. The eight behavior cases are not claimed to have rerun on changed test bytes.
+
+Three OPS14 groups absent, dual EOF, no signals;638+2114+1941=4693ms,2685+137+0=2822B. Work runtime02:27:59.177Z through02:28:25.983Z. One empty scratch removed with original identity; two nonempty type caches1357764+1357804B KEEP, no further writes. Inner tiny process PID76310 closed/exit0/ESRCH is separately documented in actual TAP. Prelaunch import0child failure conservatively uses123ms of the120s envelope; no fourth engineering child was launched.
+
+Clean-code at02:29:05Z: one lifecycle Module shared by fixture and journey; no new supervisor; safe bounded result, first failure preservation and no arbitrary PID registration. OS/clock test ports are trusted in-process only. Eight-record cap plus firstUnknown retains the final observation without losing the first unsafe probe. Node reaping limitation stays explicit. Remaining acceptance: independent source/result review, future newly bound caller/input, then separately authorized actual journey. No changes to8s success assertion,150s whole journey or old KEEP.
+
+Skills: existing localfind-skills/codebase-design/clean-code; no installs. Actual method was real consumer tests and focused types, not copied validators or a second process framework.
