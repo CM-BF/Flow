@@ -26,6 +26,7 @@ const FIXED_RUNTIME = [
 const WRITE_POLICY = Object.freeze({ authentication: 'existing-default-keychain-normal-native-refresh',
   credentialCopy: false, accountChange: false, privateFiles: 'owned-home-config-tmp', persistSession: false,
   sharedKeychainMayUpdate: true, keychainIncludedInPrivateByteBudget: false, totalSystemZeroWrites: false });
+const NORMAL_ACCOUNT_HOME = Object.freeze({ kind: 'normal-account', username: 'citrine', path: '/Users/citrine' });
 const keys = (value, expected) => assert.deepEqual(Object.keys(value).sort(), expected.sort());
 function freeze(value) { if (value && typeof value === 'object') { Object.values(value).forEach(freeze); Object.freeze(value); } return value; }
 async function directory(path) {
@@ -50,16 +51,23 @@ async function fixedFile(expected) {
 }
 
 /** Trusted code supplies runtime pins; JSON never supplies an environment or credential. No import/spawn/cleanup here. */
-export function createNativeEnvironmentPolicy(runtime) {
+export function createNativeEnvironmentPolicy(runtime, { authenticationHome = 'private' } = {}) {
   assert(Array.isArray(runtime) && runtime.length === 3);
+  assert(['private', 'normal-account'].includes(authenticationHome));
   const files = freeze(structuredClone(runtime));
   for (const row of files) assert(isAbsolute(row.path) && Number.isSafeInteger(row.bytes) && row.bytes > 0 && row.bytes < 268435456 && /^[a-f0-9]{64}$/.test(row.sha256));
-  const recipe = freeze({ kind: 'flow.o16.native-environment.v1', sdkVersion: '0.3.290', nativeVersion: '2.1.290', files, writePolicy: WRITE_POLICY });
+  // This is a trusted code choice, never a path or account supplied by JSON.
+  const normalAccount = authenticationHome === 'normal-account';
+  const recipe = freeze({ kind: 'flow.o16.native-environment.v1', sdkVersion: '0.3.290', nativeVersion: '2.1.290', files,
+    ...(normalAccount ? { authenticationHome: NORMAL_ACCOUNT_HOME } : {}),
+    writePolicy: normalAccount ? { ...WRITE_POLICY, sharedHomeMayUpdate: true,
+      homeIncludedInPrivateByteBudget: false, privateFiles: 'owned-config-tmp-materials; unused private home retained' } : WRITE_POLICY });
   const digest = recordDigest(recipe);
   async function verify(binding, source) {
     keys(binding, ['kind', 'sourceDigest', 'worktree', 'recipeDigest', 'phaseRoot', 'nativeRoot', 'folders', 'username', 'runtime']);
     assert(binding.kind === recipe.kind && binding.sourceDigest === source.digest && binding.worktree === source.root && binding.recipeDigest === digest);
     assert.equal(binding.username, userInfo().username); assert(/^[a-zA-Z0-9._-]{1,128}$/.test(binding.username));
+    if (normalAccount) assert.equal(binding.username, NORMAL_ACCOUNT_HOME.username);
     assert.deepEqual(await directory(binding.phaseRoot.path), binding.phaseRoot);
     keys(binding.folders, ['home', 'config', 'tmp']);
     for (const name of ['home', 'config', 'tmp']) {
@@ -74,7 +82,8 @@ export function createNativeEnvironmentPolicy(runtime) {
     return binding;
   }
   function environment(binding) {
-    return Object.freeze({ HOME: binding.folders.home.path, CLAUDE_CONFIG_DIR: binding.folders.config.path,
+    if (normalAccount) assert.equal(binding.username, NORMAL_ACCOUNT_HOME.username);
+    return Object.freeze({ HOME: normalAccount ? NORMAL_ACCOUNT_HOME.path : binding.folders.home.path, CLAUDE_CONFIG_DIR: binding.folders.config.path,
       TMPDIR: binding.folders.tmp.path, CLAUDE_TMPDIR: binding.folders.tmp.path,
       CLAUDE_SECURESTORAGE_CONFIG_DIR: '', USER: binding.username, PATH: '/usr/bin:/bin:/usr/sbin:/sbin', LANG: 'C.UTF-8',
       DISABLE_AUTOUPDATER: '1', DISABLE_TELEMETRY: '1', CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: '1' });
@@ -99,7 +108,7 @@ export function createNativeEnvironmentPolicy(runtime) {
     },
   });
 }
-export const nativeEnvironmentPolicy = createNativeEnvironmentPolicy(FIXED_RUNTIME);
+export const nativeEnvironmentPolicy = createNativeEnvironmentPolicy(FIXED_RUNTIME, { authenticationHome: 'normal-account' });
 
 /** Metadata driver only: private import-time HOME/config/tmp; no authentication or inherited environment. */
 export async function prepareDriverEnvironment(controlDirectory, run, phase) {

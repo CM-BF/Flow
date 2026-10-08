@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:24:18.731782+00:00 |
+| 最近更新 | 2026-10-08T01:26:52.919Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -23,7 +23,7 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 同版本认证状态在私有 HOME 与正常 HOME 下呈现差异，观察已完成且运行资源已归还。 |
 | 下一可用交付 | 独立核对本次公开状态和收尾原件，再根据证据决定原生任务的后续方案。 |
@@ -65,11 +65,11 @@
 | O16-W12 | 2026-10-07T11:01:55.642771Z | 2026-10-07T11:05:58.578682Z | 审查 | 诊断固定源码与原局部证据限定独审通过；非资源等待 | private-error-diagnostics/independent-review.json |
 | O16-W13 | 2026-10-07T11:10:14.122Z | 2026-10-07T11:13:11.255832Z | 资源 | 第三次条件额度与候选已固定；等待Lead实际窗口及fresh准入，不预占 | native-plan-r3-candidate/candidate.json |
 | O16-W14 | 2026-10-07T11:13:59.555Z | OPEN | 验证失败 | 第三次SDK报告authentication_failed，无成功proposal；额度耗尽，只封结果/限定只读定位 | native-plan-20261007-r3/result-analysis.json |
-| O16-W15 | 2026-10-08T01:03:01.782127+00:00 | 2026-10-08T01:15:29.016477+00:00 | 审查与实际装配 | HOME纯策略/源码边界已固定；等待限定独审及明确实际双次期限/共享认证写边界，当前没有actual holder | auth-home-factor-candidate/manifest.json、Lead本段派工 |
+| O16-W15 | 2026-10-08T01:03:01.782Z | 2026-10-08T01:15:29.016Z | 审查 | HOME纯策略/源码边界已固定；等待限定独审及明确实际双次期限/共享认证写边界，当前没有actual holder | auth-home-factor-candidate/manifest.json、Lead本段派工 |
 
-| O16-W16 | 2026-10-08T01:17:13.198229+00:00 | 2026-10-08T01:19:13.099957+00:00 | 审查与窗口 | 双次薄入口已完成直接检查，等待delta独审与正式实际窗口；无holder/无pending launch | auth-home-factor-candidate/execution-manifest.json |
+| O16-W16 | 2026-10-08T01:17:13.198Z | 2026-10-08T01:19:13.099Z | 审查 | 双次薄入口已完成直接检查，等待delta独审与正式实际窗口；无holder/无pending launch | auth-home-factor-candidate/execution-manifest.json |
 
-| O16-W17 | 2026-10-08T01:19:13.099957+00:00 | 2026-10-08T01:22:53.287091Z | 资源 | 薄入口已审；等待匹配O16HomeFactorGrant与同次fresh身份，尚无actual holder | Lead限定独审与execution-manifest.json |
+| O16-W17 | 2026-10-08T01:19:13.099Z | 2026-10-08T01:22:53.287091Z | 资源 | 薄入口已审；等待匹配O16HomeFactorGrant与同次fresh身份，尚无actual holder | Lead限定独审与execution-manifest.json |
 
 | O16-W18 | 2026-10-08T01:24:18.731782+00:00 | OPEN | 审查 | 已完成两次公开状态观察并归还；等待限定结果独审，不持auth或工程进程 | auth-home-factor-once/result-manifest.json |
 
@@ -152,3 +152,5 @@
 2026-10-08T01:19:13.099957+00:00：Lead独立全文审查8ab064493/deliveryda1a74a30，APPROVED_LIMITED_HOME_FACTOR_ACTUAL_CALLER_AND_8_DIRECT_RESULTS、0 P1/P2；20pins/8bindings及8/8原件核同，原13检查/initialEPERM保留。此时间为owner收到并记录批准，不冒独审起止。仅公开auth status准备批准，0query/凭据正文，正常同账户native初始化/必要刷新不冒private8MiB覆盖。当前actual grant/namespace均未创建，唯一operator等待正式45s窗口后同次freshclaim/head/env/pins；源码停止，禁止自动重试。
 
 2026-10-08T01:24:18.731782+00:00：已按D01 01:21:52.717Z新grant，同call核fresh55c4v1/exact3、cleanhead/20pins/free14581121024≥13562019840和认证无冲突。实际START 01:22:53.287091Z、outer1359ms/exit0；[唯一安全原件](../../docs/evidence/o16/auth-home-factor-once/result-manifest.json)记录 A=false/none/firstParty、subscriptionType缺失UNKNOWN与原exit1首失败，B=true/claude.ai/firstParty/pro/exit0。native原stdout/stderr未存或hash；query0/原累计3无第四次。01:23:21.418466Z精确RETURN已直交Lead/D01：5PID+3组ESRCH、dualEOF、0pending；private427B/8192allocated KEEP不读正文。A可能改变B共享认证，不能推纯因果/旧失败根因/模型资格；历史record loss与FAIL/KEEP不改。
+
+2026-10-08T01:26:52.919Z：A/B source23a实际结果已由assignment独审 APPROVED_LIMITED_HOME_FACTOR_ACTUAL_RESULT_FIDELITY、0 P1/P2；16+2绑定相符，只批准可见状态与RETURN，不归因或授权query。现原claim fresh active、clean23a开始最小planner HOME接缝实现：默认private工厂保持，原planner显式normal-account、新recipeDigest拒旧permit，其余私有目录/会话/工具/预算不变。新普通段按Lead≤120s/tmp8MiB/最多4child且单child30s含清理，0native/PG/auth/provider/个人I/O；实际checks另记。当前没有第4query授权/permit。W15–W17仅按同真实时点转ISO毫秒Z/模板类别，原raw未改。
