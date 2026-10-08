@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T03:15:17.581Z；D05 215已01:13:24.689Z实际发布并核assignments.available。主线同步以固定接收回执为准，文档更新不表示产品已集成。 |
+| 最近更新 / 最近main同步核验 | 文档事实更新 2026-10-08T03:27:14.688Z；D05 215已01:13:24.689Z实际发布并核assignments.available。主线同步以固定接收回执为准，文档更新不表示产品已集成。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -194,4 +194,4 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 **Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner287947已完成原01–06，6ff v6两metadata已[正式释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，19源码此前已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
 
-MSG03当前实施源（2026-10-08T03:02:57.043Z）：[唯一own evidence进度](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/docs/evidence/wpf-msg03/versioned-profile-creation)，worker workspace_panels_owner，claim `fee104b3-47a8-4a4e-b25d-7b8111a2d0d9 v1`，固定source `e5c11b3c7ca7e9e3e303e6c861603640f75a1118`。本管理行是跨任务归属索引；MSG03已注册的唯一status仍web-message-settings-app/plans/wpf-message-settings-app，由panels在新合法metadata段更新后继，MATURE02父仍Mika权威。不是新建child/status；原MATURE04/06映射后继另计。
+MSG03当前后继（2026-10-08T03:27:14.688Z）：worker workspace_panels_owner 的纯基础 source e5 / delivery66abb 已限定批准并全STOP，原 fee104 领取已v2 RELEASED。旧唯一status固定1081861的后继记录与完整proof已修正，两个records-only领取均释放。下一UI源段为同task/同web-versioned-profile-creation新16MiB条件段；在Original三Web真实main回执后fresh exact11 take，依法将既有plans前缀迁入新执行WT，旧108冻结历史，Original仅切同ID既有registry路由。尚未开始UI产品写入/新领取，不能把纯基础单独并入宣称Web可用；MATURE02父仍Mika权威，不新建同义task。

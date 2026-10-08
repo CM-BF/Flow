@@ -718,3 +718,7 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 - MSG03纯基础[027415限定独审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/versioned-profile-creation-review.json)绑定e5与15rawPairs；final66abb全5STOP，四child8872ms分层通过、首红保留，12MiB自然尾已关闭。NOT_INDEPENDENTLY_MERGEABLE保持；当前先原三叶合法交权与三Web接收，随后在同一MSG03做consumer组合，不新大task、不重纯绿。
 
 - MSG03可见性纠正：该task已在registry登记web-message-settings-app原唯一status，不是漏登记新child。由原panels在独立3MiB/8min records-only合法scope更新既有后继：保MSGAPP01-06与18叶旧完成历史，明确新执行树/fee104/66abb纯基础及UI未完成，不新status或registry。首写02:50:38与claim02:50:52的阶段差异仅按已有provision/源码证据澄清，未知保留、不倒改或直接判定越权。
+
+- MSG03原后继消费者组合沿同一web-versioned-profile-creation执行，新增独立16MiB/30min、exact10、至多3个受影响纯/类型子进程累计60s；必须先收到Original三片Web实际main回执并fresh原子领取。先实现合法公共目录与Prepare、可信GET后完整tuple的Send/Queue门禁、Thread/Picker联合类型分支；保原draft/UNKNOWN key，不改session/公共codec。只准备受影响mounted夹具，不授浏览器或个人服务，唯一status仍原MSG03 canonical。
+
+- MSG03后继唯一来源收敛：不采用长期两树可写或proof执行源特例。原canonical108冻结历史；在三Web实际main接收后，由同owner对新WT原子领取exact11（加既有plans前缀），迁入固定小plan/status/review并保旧18叶完成历史，原大证据只引用。Original合法registry owner在新source就绪后只切同task既有一条路由。[固定两树差异研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-execution-source-separation-research.json)保留为观察，设计选项不扩大当前核验；不新增同义task。

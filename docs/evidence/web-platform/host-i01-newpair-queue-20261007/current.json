@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-08T03:14:44.200Z",
-  "state": "NO_ACTUAL_HOLDER_O16_REAUTHORIZE_RETURNED",
+  "at": "2026-10-08T03:26:16.281Z",
+  "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
   "decision": "R3selected/read byOriginal, operator slotpending afteronecaprejection; noactualSTART. WebbothfullSTOP/future0. NewX01pureoperator4M counted.",
-  "floor": 11616911360,
+  "floor": 11633688576,
   "SVC09A": {
     "state": "FAILED_ATTEMPT_RUNTIME_RETURNED_WITH_DB_PRIVATE_KEEP",
     "totalMs": 215000,
@@ -2046,8 +2046,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "NO_ACTUAL_HOLDER_O16_REAUTHORIZE_RETURNED",
-    "at": "2026-10-08T03:14:44.200Z",
+    "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
+    "at": "2026-10-08T03:23:47.746Z",
     "termsBytes": {
       "residualUnknown": 8806203392,
       "priorK01Db": 134217728,
@@ -2195,10 +2195,15 @@
       "VersionedUIConnectionAppHandoffMetadata": 0,
       "VersionedUIContextThreadHandoffMetadata": 0,
       "VersionedUIPickerHandoffMetadata": 0,
-      "MSG03CanonicalSuccessorMetadata": 3145728,
-      "OriginalWebCombinedIntakeLocal": 8388608
+      "MSG03CanonicalSuccessorMetadata": 0,
+      "OriginalWebCombinedIntakeLocal": 0,
+      "MSG03CanonicalProofCorrection": 0,
+      "ConnectionPresentationImportCorrection": 0,
+      "MikaMature02SuccessorMetadata": 3145728,
+      "OriginalWebCombinedVerification": 8388608,
+      "MSG03UIConsumerCompositionSource": 16777216
     },
-    "minimumFreshFreeBytes": 11616911360,
+    "minimumFreshFreeBytes": 11633688576,
     "formula": "8806203392 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 134217728 + 538968064 + 4194304 + 1048576 + 1499463680 + 8388608 + 131072 + 8388608 + 335544320 + 134217728 + 8388608 + 12582912 + 144703488 = 13847232512",
     "method": "Active or still-unknown futuregrowth plus one reserve. Explicit sealed no-writer stock counted by freshfree only; Original oldcold retained128MiB PGbackground. Historical combinedfloors are not permanent intrinsic protection.",
     "classificationEvents": [
@@ -4105,6 +4110,69 @@
         "beforeBytes": 0,
         "afterBytes": 8388608,
         "basis": "Original actual Web controlled-composition noEmit ordinary one child <=32s/8MiB/64KiB raw, 0 PG/Chrome/provider; same-call actual caller independently applies full floor. O16 consumed floor unchanged."
+      },
+      {
+        "at": "2026-10-08T03:15:56.880Z",
+        "term": "OriginalWebCombinedIntakeLocal",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Original composition noEmit exactRETURN 6162ms/TS5097 only; canonical metadata final0c89 STOP/released and c0204 receipt pinned. Two new narrow correction segments have separate budgets, old segments remain closed."
+      },
+      {
+        "at": "2026-10-08T03:15:56.880Z",
+        "term": "MSG03CanonicalSuccessorMetadata",
+        "beforeBytes": 3145728,
+        "afterBytes": 0,
+        "basis": "Original composition noEmit exactRETURN 6162ms/TS5097 only; canonical metadata final0c89 STOP/released and c0204 receipt pinned. Two new narrow correction segments have separate budgets, old segments remain closed."
+      },
+      {
+        "at": "2026-10-08T03:15:56.880Z",
+        "term": "MSG03CanonicalProofCorrection",
+        "beforeBytes": 0,
+        "afterBytes": 3145728,
+        "basis": "Original composition noEmit exactRETURN 6162ms/TS5097 only; canonical metadata final0c89 STOP/released and c0204 receipt pinned. Two new narrow correction segments have separate budgets, old segments remain closed."
+      },
+      {
+        "at": "2026-10-08T03:15:56.880Z",
+        "term": "ConnectionPresentationImportCorrection",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "Original composition noEmit exactRETURN 6162ms/TS5097 only; canonical metadata final0c89 STOP/released and c0204 receipt pinned. Two new narrow correction segments have separate budgets, old segments remain closed."
+      },
+      {
+        "at": "2026-10-08T03:19:25.827Z",
+        "term": "MSG03CanonicalProofCorrection",
+        "beforeBytes": 3145728,
+        "afterBytes": 0,
+        "basis": "Final1081861 clean/allSTOP/released25b868v2; pinned739d receipt; complete implementation and current review proof closed."
+      },
+      {
+        "at": "2026-10-08T03:19:25.827Z",
+        "term": "ConnectionPresentationImportCorrection",
+        "beforeBytes": 4194304,
+        "afterBytes": 0,
+        "basis": "Final123c0fec clean/allSTOP; pinned5541 receipt; one test import delta only, no new execution PASS."
+      },
+      {
+        "at": "2026-10-08T03:19:25.827Z",
+        "term": "MikaMature02SuccessorMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 3145728,
+        "basis": "New original parent metadata-only <=8min; existing0dd97484v6; 2 files only; measured estimate2899968<3MiB. No duplicate status or product write."
+      },
+      {
+        "at": "2026-10-08T03:19:25.827Z",
+        "term": "OriginalWebCombinedVerification",
+        "beforeBytes": 0,
+        "afterBytes": 8388608,
+        "basis": "New necessary controlled-composition verification after TS5097 import correction: at most2 sequential children, combined noEmit<=32s plus fixedtsx execution of changed presentation test<=15s; cumulative<=60s incl cleanup; no PG/Chrome/provider. New8MiB all own scratch/cache/raw/metadata/index, old segment remains closed."
+      },
+      {
+        "at": "2026-10-08T03:23:47.746Z",
+        "term": "MSG03UIConsumerCompositionSource",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "New conditional ordinary source+affected local phase, sameMSG03 exact10, originalpure12MiB STOP stays0. No actual browser/native grant; implementation starts only after actual main intake and fresh atomic take."
       }
     ]
   },
@@ -16373,7 +16441,7 @@
   },
   "MSG03CanonicalSuccessorMetadata": {
     "authorizedAt": "2026-10-08T03:06:44.793Z",
-    "state": "ORIGINAL_CANONICAL_EXACT2_ACTIVE_METADATA_ONLY",
+    "state": "SEALED_STOP_RELEASED_WITH_IMPLEMENTATION_PROOF_FIELD_ERROR",
     "owner": "workspace_panels_owner",
     "taskId": "WPF-MESSAGESETTINGS03",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
@@ -16420,17 +16488,26 @@
       "takenAt": "2026-10-08T03:12:39.416Z",
       "priorInvalid": "Missing stoppedWriting; no mutation; original request preserved",
       "deadline": "2026-10-08T03:16:17.108536Z"
-    }
+    },
+    "stoppedAt": "2026-10-08T03:14:57.486322Z",
+    "finalHead": "0c89b4e802552f7a532c7d07a475d44825ca8e58",
+    "finalReceipt": {
+      "path": "/private/tmp/msg03-canonical-successor-20261008-030817/final.json",
+      "bytes": 1581,
+      "sha256": "c0204ed9ef2e7674dbd889c11593b49e3019cb96c739213667e9ec5e69b4f649"
+    },
+    "implementationProof": "NOT_PASSED: trailing Chinese annotation parsed as a source path; parser errors[] does not imply proof errors[]"
   },
   "MSG03CanonicalStatusRoute": {
-    "at": "2026-10-08T03:06:44.793Z",
+    "at": "2026-10-08T03:26:16.281Z",
+    "state": "MIGRATION_AUTHORIZED_PENDING_NEW_CANONICAL_WRITE_AND_REGISTRY_ROUTE",
     "taskId": "WPF-MESSAGESETTINGS03",
-    "registeredStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
-    "statusOwner": "workspace_panels_owner",
-    "parent": "WPF-MATURE-02 uniqueMika parent",
-    "executionWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
-    "executionClaim": "fee104b3-47a8-4a4e-b25d-7b8111a2d0d9 v1",
-    "correction": "AlreadyregisteredMSG03, notmissingchildsource. Oldcompletedstatusneedslegalsuccessorrecord, notnewstatus/registry. SeparateMATURE04-05/MATURE06-04mappingTODOunchanged."
+    "currentUntilHandoff": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+    "currentFixedHead": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
+    "plannedCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/plans/wpf-message-settings-app/status.md",
+    "plannedExecutionWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+    "executionClaim": "Previous fee104 v2 released; future exact11 take not yet performed",
+    "rule": "One writable canonical task source. Existing registry entry updated by legal registry owner after fixed new source receipt. Old108 is immutable history, no long-lived dual write or hidden proof-source override."
   },
   "O16ReauthorizeGrant": {
     "at": "2026-10-08T03:09:07.542Z",
@@ -16651,7 +16728,7 @@
     }
   },
   "OriginalWebCombinedIntakeLocal": {
-    "state": "REPORTED_RUNNING",
+    "state": "RETURNED_FAILED_STOP",
     "reportedAt": "2026-10-08T03:14:12.107Z",
     "source": "Original via root",
     "maxChildren": 1,
@@ -16661,6 +16738,473 @@
     "PG": 0,
     "Chrome": 0,
     "provider": 0,
-    "return": "PENDING"
+    "return": "PENDING",
+    "elapsedMs": 6162,
+    "result": "One TS5097 at connection-presentation.test.ts:3 .ts import extension; group absent, dual EOF. Nonempty scratch KEEP, no future engineering growth. Original I02 combination remains unmerged."
+  },
+  "MSG03CanonicalProofCorrection": {
+    "state": "ALL_STOP_RELEASED_PROOF_VALID",
+    "authorizedAt": "2026-10-08T03:15:56.880Z",
+    "owner": "workspace_panels_owner",
+    "taskId": "WPF-MESSAGESETTINGS03",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "branch": "codex/web-message-settings-app",
+    "baseHead": "0c89b4e802552f7a532c7d07a475d44825ca8e58",
+    "scope": [
+      "plans/wpf-message-settings-app",
+      "docs/evidence/wpf-message-settings-app/versioned-creation-successor-20261008"
+    ],
+    "planningBytes": 3145728,
+    "durationMinutes": 5,
+    "engineeringChildren": 0,
+    "instructions": "Fresh D04/all prior claims RELEASED/HEAD clean; exact2 metadata take. Remove only trailing explanatory annotation from implementation source-path field, explanation remains elsewhere. Check full implementation.errors plus normal parser/links; preserve prior proof failure. No product/source/check children. Seal push clean STOP and release this exact2 claim, external receipt; all index/temp/objects/records within new3MiB, no oldcredit.",
+    "finalHead": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
+    "stoppedAt": "2026-10-08T03:18:23.643829Z",
+    "release": "25b86891 v2 RELEASED 03:18:23.292Z",
+    "finalReceipt": "/private/tmp/msg03-proof-correction-20261008-031626/final.json",
+    "sha256": "739d558f9addb152a7e17db6a626f87b9dc653db192357921c19a86a949dab2f",
+    "conservativeBytes": 2197404
+  },
+  "ConnectionPresentationImportCorrection": {
+    "state": "ALL_STOP_SOURCE_DELTA_NOT_EXECUTED",
+    "authorizedAt": "2026-10-08T03:15:56.880Z",
+    "owner": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+    "branch": "codex/web-connection-actionable",
+    "claim": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "claimVersion": 3,
+    "scopeCount": 6,
+    "planningBytes": 4194304,
+    "durationMinutes": 8,
+    "engineeringChildren": 0,
+    "writeScope": [
+      "apps/web/test/connection-presentation.test.ts",
+      "docs/evidence/wpf-mature06-connection-ux"
+    ],
+    "instructions": "Fresh same owner claim/HEAD/clean/no overlap; only remove .ts extension at reported import line3. No product changes or global tsconfig change. Record exact before/after blob and original source, preserve old failure and intake. Normal commit/push clean allSTOP; no need repeat pure/browser or child check, Original runs necessary combined consumer noEmit. All index atomic, objects and own evidence within new4MiB.",
+    "finalHead": "123c0feced013da6bf9e4366b53d16b04ea75c38",
+    "stoppedAt": "2026-10-08T03:17:33.918369Z",
+    "afterBlob": "11f5fc14a2f3d783f8d239022884a8441d10f56d",
+    "finalReceipt": "/private/tmp/connection-presentation-import-correction-final-20261008.json",
+    "sha256": "5541314c50a617669952ac33117f925873a2f94489f9f24cd4c1459287114298",
+    "conservativeBytes": 2398101,
+    "moduleResolutionBoundary": "Old direct result used bare Node24 without tsx, and old types allowed TS import extensions. Neither old PASS proves changed extensionless runtime import. Verify through fixed existing tsx resolver separately; no new product behavior claim."
+  },
+  "O16ContinuedChildrenV3Grant": {
+    "at": "2026-10-08T03:18:07.035Z",
+    "selectedAt": "2026-10-08T03:18:07.035Z",
+    "state": "CONSUMED_FAILED_CLOSED_NO_RETRY_NO_DECIDE",
+    "allowRun": false,
+    "singleUse": true,
+    "selectionKey": "O16ContinuedChildrenV3",
+    "logicalId": "O16-GO-REAUTHORIZE-20261008-CHILDREN",
+    "stage": "continued-children",
+    "sameRun": "native-children-continuation-20261008-once",
+    "latestStart": "2026-10-08T03:23:07.035Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "claim": {
+      "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "scopeCount": 3,
+      "worker": "native_center_owner"
+    },
+    "executionHead": "9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb",
+    "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+    "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "ready": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-ready.json",
+      "bytes": 6494,
+      "sha256": "361a17cbe8cfedfa527b95853cd3410ba691dfe458a1af0d882953475419e0c7"
+    },
+    "fixedActualInputs": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/confirmation.json",
+        "bytes": 4198,
+        "sha256": "fb4377446d93a3bc80f7e7f15313ddd3043e8f2cb1172289fc8b7dc15a9e3993"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-authorization.json",
+        "bytes": 9085,
+        "sha256": "0b0f08fefd90d9e536cc8008a2a957e9f9e0d841759bd52f6ee1affc5866adbf"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-pause.json",
+        "bytes": 2670,
+        "sha256": "b89f3e85e64390f261dc6e8d427c830955c03f80bab658e755122f17dba46804"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-resources.json",
+        "bytes": 3133,
+        "sha256": "aed3b180682622cd9fbea0c7598af965351901e2bcb2bae72f2f26842b7abcb6"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/window-return.json",
+        "bytes": 2749,
+        "sha256": "5299f4043d588d048a63bb6604c86bd9c70b80661dca9e32f9c9f5b8d5ee682e"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/actual-result-manifest.json",
+        "bytes": 7302,
+        "sha256": "b5c16fe5f67b33b6b54eec4f0ff2bae9ac230c57db8937fa867a01c882bdbf21"
+      }
+    ],
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "--continued-children",
+      "native-children-continuation-20261008-once",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-permit.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "nonSecretEnvironment": {
+      "FLOW_O16_PG_WINDOW": "approved-one-shot"
+    },
+    "permitPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-permit.json",
+    "permitTemplate": {
+      "kind": "flow.o16.phase-permit.v3",
+      "authorizedBy": "Goal Owner",
+      "approvalId": "O16-GO-REAUTHORIZE-20261008-CHILDREN",
+      "phase": "children",
+      "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+      "model": "claude-sonnet-5-5",
+      "limits": {
+        "queries": 2,
+        "maxTurns": 3,
+        "maxBudgetUsd": 0.1,
+        "timeoutMs": 60000
+      },
+      "approvedAt": null,
+      "expiresAt": null,
+      "authorizationReference": "GO O16-GO-REAUTHORIZE-20261008 actual decision preserves original unconsumed two-child budget; actual new ACK and exactRETURN recorded. Lead will bind stage times; separate D01 window required; no retry/fallback/new planner.",
+      "confirmation": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+      },
+      "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+      "executionAuthorization": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+        "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+        "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+        "expiresAt": "2026-10-08T03:39:15.000Z"
+      }
+    },
+    "signingRule": "Original/operator may now sign exactly one v3 permit from pinned ready template with actual approvedAt=T and expiresAt no later than 03:26:21.560Z; whole150s must fit. Start before min(manager latest, signed expiresAt minus150s, execution authorization expiry minus150s). No rolling, backdating, old expired permit, new planner or fallback. No second READY approval loop.",
+    "minimumFreshFreeBytes": 11612717056,
+    "managerFreeSampleBytes": 14250045440,
+    "managerSampleNotActualAdmission": true,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "PG": 13,
+    "requiredPGAvailable": 29,
+    "preflightPoolClosedBeforeLaunch": true,
+    "Chrome": 0,
+    "maximumAdditionalQueries": 2,
+    "maximumCumulativeQueries": 6,
+    "model": "claude-sonnet-5-5",
+    "perQueryMaxTurns": 3,
+    "perQueryMaxBudgetUSD": 0.1,
+    "perQueryTimeoutMs": 60000,
+    "newPlanningBytes": 0,
+    "privateBytesCumulative": 8388608,
+    "runBytesCumulative": 2097152,
+    "newPrivateDirectory": false,
+    "budgetReset": false,
+    "budgetRule": "Same already-counted renew private8MiB/run2MiB; fresh remaining bytes required. Existing DB and both directories KEEP. Normal shared auth writes remain separately authorized; no personal service operation. No new scratch pool or raw reset.",
+    "fresh": "Same-call current matching unused selection/no holder/latest, exact claim/owner/scope/WT/branch/no overlap, clean actual remote executionHead, 329 source/39 alias/3runtime and all actual input bindings/old+new confirmation digests, current marker and both directory identities, workers/target connections closed, oncegates absent, availablePG>=29 then pool closed, free>=max(frozen/current/intrinsic), fresh cumulative remaining8M/2M. Unknown or mismatch stops without retry.",
+    "lifecycle": "Immediately send actual START and terminal separately; exact owned PID/PGID/EOF/server/admin/targetconnections/private identity RETURN required. Keep original failures/unknowns. Two actual artifacts require independent review; no automatic decide or extra query. Future decide is separate0query selection after exactRETURN."
+  },
+  "MikaMature02SuccessorMetadata": {
+    "state": "AUTHORIZED_NOT_STARTED",
+    "authorizedAt": "2026-10-08T03:19:25.827Z",
+    "task": "WPF-MATURE-02",
+    "owner": "chatui01_owner / Mika",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+    "branch": "codex/claude-codex-capabilities",
+    "claim": "0dd97484 v6",
+    "managerReadHead": "fc11d15292bc8ecc3c8c1b3f3f7d1e7955491b91",
+    "planningBytes": 3145728,
+    "durationMinutes": 8,
+    "estimatedBytes": 2899968,
+    "writeScope": [
+      "plans/wpf-mature-02-harness-capabilities/status.md",
+      "docs/evidence/wpf-mature-02/interface.md"
+    ],
+    "engineeringChildren": 0,
+    "instructions": "Fresh exact claim identity/version/scope, branch, clean actual remote and no overlap before first write. Link existing MSG03 canonical successor and SVC09 actual facts; do not duplicate TODOs or claim implementation/main/personal activation. All index atomic/objects/full changed files and administrative receipts fit new3MiB. Record real firstWrite/deadline/STOP; no stale budget reuse."
+  },
+  "OriginalWebCombinedVerification": {
+    "state": "AUTHORIZED_ORDINARY_NOT_STARTED",
+    "authorizedAt": "2026-10-08T03:19:25.827Z",
+    "owner": "Original / I02 sole integrator",
+    "planningBytes": 8388608,
+    "rawBytes": 131072,
+    "maxChildren": 2,
+    "cumulativeMs": 60000,
+    "checks": [
+      {
+        "name": "affected combined noEmit after fixed test import correction",
+        "maxMs": 32000
+      },
+      {
+        "name": "changed connection presentation test through existing fixed tsx resolver",
+        "maxMs": 15000
+      }
+    ],
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personalServices": 0,
+    "instructions": "Fresh own authority, controlled29 source combination and new test blob11f5fc14; preserve earlier TS5097. Exact owned groups/EOF/scratch closure for each child, all scratch/cache/raw/index/object growth within8MiB. No full browser/PG matrix, no global tsconfig change, no bare Node replay claim. Report actual start/return and STOP. O16 is ordinary PG native stage, not a diagnostic quiet benchmark; one distinct ordinary local may run under original per-team concurrency rule."
+  },
+  "O16ContinuedChildrenV3Actual": {
+    "state": "EXACT_RUNTIME_RETURN_FAILED_KEEP",
+    "startedAt": "2026-10-08T03:19:54.186Z",
+    "operatorPID": 7969,
+    "operatorPGID": 7969,
+    "executionHead": "9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb",
+    "stage": "continued-children",
+    "reportedBy": "Original via root",
+    "consumedFloorBytes": 11616911360,
+    "managerForwardAt031925Bytes": 11616911360,
+    "floorObservation": "Manager read exact preflight ed2d7601: actual gate DID use updated complete 11,616,911,360 B. Initial oral report was old selected floor; superseded by raw, no admission deviation established.",
+    "maxQueries": 2,
+    "priorCumulativeQueries": 4,
+    "grantT": "2026-10-08T03:18:43Z",
+    "permitExpiresAt": "2026-10-08T03:26:21.560Z",
+    "return": "RUNNING_RESOURCES_RETURNED_FAILED_KEEP",
+    "terminalAt": "2026-10-08T03:19:58.175Z",
+    "exitCode": 1,
+    "signal": null,
+    "dualEOF": true,
+    "freeBytes": 14252064768,
+    "preflightAt": "2026-10-08T03:19:54.180Z",
+    "PGAvailable": 87,
+    "preflightReceipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-preflight.json",
+      "bytes": 4115,
+      "sha256": "ed2d7601887e122caff83281394f4b077e165d4c3676fc252fe60153ec97d9b0"
+    },
+    "terminalReceipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-operator-tool-terminal.json",
+      "bytes": 124,
+      "sha256": "09b8100548ffca6f1a863fad2e8c01198e92c5e8f2f7d883c78cb3baf23a09f6"
+    },
+    "returnAt": "2026-10-08T03:21:12.220Z",
+    "returnReceipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-window-return.json",
+      "bytes": 3536,
+      "sha256": "889d02c6bb939ef0b651b8eb8fd58ebe95afc5f03bd6254b6599b26f4325962e"
+    },
+    "returnFacts": {
+      "at": "2026-10-08T03:21:12.220Z",
+      "state": "RUNNING_RESOURCES_RETURNED_FAILED_KEEP",
+      "startAt": "2026-10-08T03:19:54.186Z",
+      "terminalAt": "2026-10-08T03:19:58.175Z",
+      "run": "native-children-continuation-20261008-once",
+      "stage": "continued-children",
+      "processes": [
+        {
+          "identity": 7969,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": 8038,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": 8037,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": 8055,
+          "state": "absent",
+          "code": "ESRCH"
+        }
+      ],
+      "groups": [
+        {
+          "identity": -7969,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": -8037,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": -8038,
+          "state": "absent",
+          "code": "ESRCH"
+        },
+        {
+          "identity": -8055,
+          "state": "absent",
+          "code": "ESRCH"
+        }
+      ],
+      "dualEOF": true,
+      "targetConnections": [],
+      "returnProbeClosed": true,
+      "remoteProbeConnectionZero": "NOT_SEPARATELY_OBSERVED",
+      "pendingLaunch": 0,
+      "marker": {
+        "oid": 1375594,
+        "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+        "bytes": "13728791"
+      },
+      "privateIdentitiesUnchanged": true,
+      "retention": "DB_AND_BOTH_PRIVATE_KEEP",
+      "allEscapedDescendants": "NOT_PROVEN",
+      "primary": {
+        "state": "unknown",
+        "stage": "runtime",
+        "code": "ENOENT",
+        "constraint": null
+      },
+      "firstFailure": "resource-observation-or-bound-unconfirmed",
+      "primaryRelativePath": "NOT_RECORDED_BY_FIXED_METER",
+      "persistedClosure": {
+        "phase": "worker-group-recorded",
+        "serverClosed": false,
+        "adminClosed": false,
+        "workersStopped": false,
+        "errors": []
+      },
+      "resultFinalReport": "ABSENT",
+      "operatorQueryCalls": "unknown",
+      "workerSafe": {
+        "present": true,
+        "nativeQueryCalls": 1,
+        "errors": null,
+        "queries": [
+          {
+            "binding": {
+              "slot": "child-1",
+              "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+              "executionId": "710e858d-e661-4604-abca-3b223aa9a710",
+              "assignment": {
+                "taskId": "8c3b9f43-a907-45aa-9e11-ddb8a91d193d",
+                "attemptId": "70f98b36-a1dc-47bb-b944-ae2944d8f953",
+                "ownerVersion": 1,
+                "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a"
+              }
+            },
+            "entry": "native-started-unknown",
+            "closed": true,
+            "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+            "firstFailure": null,
+            "frames": null,
+            "result": null
+          }
+        ]
+      },
+      "slots": [
+        {
+          "slot": "child-1",
+          "present": true,
+          "consumedAt": "2026-10-08T03:19:57.700Z",
+          "assignment": {
+            "taskId": "8c3b9f43-a907-45aa-9e11-ddb8a91d193d",
+            "attemptId": "70f98b36-a1dc-47bb-b944-ae2944d8f953",
+            "ownerVersion": 1,
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a"
+          },
+          "outcome": "unknown"
+        },
+        {
+          "slot": "child-2",
+          "present": false
+        }
+      ],
+      "newQueryCalls": "UNKNOWN_UNLESS_DURABLE_WORKER_COUNTER",
+      "budgetConsumption": "child-1 reservation consumed; absent child-2 is not authority to retry; no new permit or run",
+      "metrics": {
+        "freeBytes": 14255820800,
+        "rawBytes": 76242,
+        "runtimeBytes": 39978,
+        "runtimeEntries": 21,
+        "runtimeState": "measured"
+      },
+      "remainingRuntimeBytes": 8348630,
+      "remainingRunBytes": 2020910,
+      "decideStarted": false
+    },
+    "durableNativeQueryCalls": 1,
+    "cumulativeSDKCalls": 5,
+    "completionAndCost": "UNKNOWN",
+    "retryOrDecide": "NOT_AUTHORIZED"
+  },
+  "MSG03UIConsumerCompositionSource": {
+    "state": "CONDITIONAL_SOURCE_AUTHORIZED_WAIT_ACTUAL_MAIN_INTAKE",
+    "authorizedAt": "2026-10-08T03:23:47.746Z",
+    "task": "WPF-MESSAGESETTINGS03",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+    "branch": "codex/web-versioned-profile-creation",
+    "priorDelivery": "66abb1c7d73623efeff2717b24ff5ce4c8f38c09",
+    "foundationSource": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+    "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation/plans/wpf-message-settings-app/status.md",
+    "scope": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/execution-profiles.test.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-msg03/versioned-profile-creation",
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/execution-profile-integration.browser.ts",
+      "apps/web/test/execution-profile-integration.fixture.ts",
+      "plans/wpf-message-settings-app"
+    ],
+    "scopeCount": 11,
+    "planningBytes": 16777216,
+    "durationMinutes": 30,
+    "maxEngineeringChildren": 3,
+    "childMs": 20000,
+    "cumulativeMs": 60000,
+    "browserGranted": false,
+    "PG": 0,
+    "HTTPListeners": 0,
+    "Chrome": 0,
+    "native": 0,
+    "provider": 0,
+    "personalOperations": 0,
+    "startCondition": "Original actual controlled main intake receipt covers Arc18, Connection narrow App and import correction, Picker6. No partial pre-receipt adoption or standalone foundation main merge. At that point fresh same-task old claims RELEASED, all10 literal/prefix conflicts absent, owner/WT/branch/clean/source pins, current full capacity. Atomic exact10 take before feature source delta.",
+    "baseline": "Adopt only exact accepted main baseline via normal controlled Git integration in this same feature WT, preserving immutable66abb evidence/source history. Fixed support files are read-only supply pinned to that accepted main. No whole old App/Thread/Picker replacement. Resolve base changes within own claimed product delta; unexpected ownership/source conflict stops for precise manager adjustment.",
+    "implementation": "Same existing MSG03 successor: explicit versioned public catalog/creation selection, real Prepare through existing projection/outbox key and trusted GET, keep draft unchanged while preparing. Full trusted tuple required only for Send/Queue; clear remains editable but blocks dispatch. Thread exhaustive union and guard after settings.capture before attachment capture/detach/send; Picker explicit versioned branch; App connection-owned public catalog lifecycle, no unauthorized reuse of opening-gated message catalog. Preserve legacy/unknown ACK original key-body, retained drafts and session authority.",
+    "readonlyBoundaries": "Session, projection/outbox, catalog and public codecs only read; no relaxation/cast/shadow controller or duplicate registry. If a concrete gap requires another leaf, report exact change before fresh scope amendment.",
+    "verification": "Only necessary affected consumer noEmit, focused behavior/invariant tests and fixture typing/preparation; do not rerun unchanged seven foundation cases or old browser/PG matrices. At most3 sequential supervised20s children, cumulative60 including cleanup, new namespace/owned scratch/EOF and exact closure; no actual mounted run in this grant. All fixed supply/index atomic/Gitobjects/raw copies/cache/TMP/metadata <=16MiB; recompute prior to first child and stop if plan cannot fit.",
+    "evidence": "New same-task canonical plan/status/review in new feature WT after authorized handoff. Existing own evidence prefix only; preserve old66abb/108 fixed evidence and prior failures. Record first budget/provision time, claim commit and product delta separately. No duplicate authority; new exact11 claim persists until actual release. Mounted/auth/main acceptance remain separate.",
+    "sourceHandoff": {
+      "state": "AUTHORIZED_PENDING_NO_NEW_SOURCE_WRITE_OR_TAKE",
+      "oldCanonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "oldCanonicalHead": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
+      "oldClaims": "25b868 v2 RELEASED; 878c v2 RELEASED; fee104 v2 RELEASED",
+      "newCanonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+      "planDir": "plans/wpf-message-settings-app",
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "registryOwner": "Original / existing D05 registry authority, not this worker",
+      "method": "After actual threeWeb main receipt and fresh exact11 atomic take, copy only fixed108 small plan/status/review into newWT and update current owner/worktree/branch/source while preserving historical18-leaf completion and immutable prior evidence references. Rewrite historical relative links to explicit fixed original evidence references when needed; do not copy large raw or create a second writable status. Old108 source remains frozen history. Produce one migration receipt with pins and actual handoff time; Original changes existing same-ID registry route only after new canonical source is ready. No new task or execution-source validation exception.",
+      "budget": "Within same new16MiB/30min, no extra growth or clock reset; count plan copies/index/objects. No write to old released WT."
+    }
   }
 }

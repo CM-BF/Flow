@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-08T03:22:11.892629+00:00",
+  "classification": "Read-only extension of existing D01 source-linkage TODO; not a new task or current UI blocker",
+  "fixedMain": "aac0c8b6ba05838fde3bfbea7b4dda3fd2a27d55",
+  "task": "WPF-MESSAGESETTINGS03",
+  "canonical": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "head": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
+    "branch": "codex/web-message-settings-app",
+    "dirty": "",
+    "status": "plans/wpf-message-settings-app/status.md"
+  },
+  "execution": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+    "head": "66abb1c7d73623efeff2717b24ff5ce4c8f38c09",
+    "branch": "codex/web-versioned-profile-creation",
+    "dirty": "",
+    "sourceTarget": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118"
+  },
+  "scopes": [
+    "apps/web/src/execution-profiles/selection.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/execution-profiles.test.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "canonicalVsTarget": [
+    "apps/web/src/execution-profiles/selection.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.test.ts",
+    "apps/web/test/execution-profiles.test.ts"
+  ],
+  "executionVsTarget": [],
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 9470,
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 30336,
+      "sha256": "410086e3d4e58604c19ba39e7ea06d0ddae8e1a30641b2009474ec2a79ea1492"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+    }
+  ],
+  "findings": [
+    "MSG03 has a registered canonical status source; it is not an unregistered child ID. The real source follow-up intentionally runs in a distinct worktree and retains a single manual status.",
+    "matchAssignments read-model.mjs:132 treats equality to the status worktree/branch as the only source-match signal. A future valid same-task claim in the execution tree will therefore be marked progress-source mismatch until an explicit relationship exists.",
+    "compareImplementation proof.mjs:46 compares a target against the supplied worktree HEAD and dirty files. Comparing e5 to the canonical record tree reports four implementation differences, while the actual delivery tree has zero differences over those four leaves. Metadata syntax fixes alone do not change this semantic mismatch.",
+    "Current live card correctly shows the task incomplete and consumer composition open. Do not use this finding to mark whole Web complete or to skip legal take/consumer checks."
+  ],
+  "designWithinExistingTodo": [
+    "Keep exactly one task/status authority. Introduce an explicit registered execution-source relationship (worktree/branch and permitted implementation scopes) instead of reading arbitrary path strings from markdown, inferring from owner names or changing ledger claim identity.",
+    "Display progress-record source and execution source separately, with independent HEAD/dirty/read timestamps. Resolve implementation/review comparisons against the actual registered execution source; retain historical source targets rather than rewriting old delivery facts.",
+    "Make absence, branch mismatch, invalid repository/path, unresolved ambiguity and stale source observations explicitly unknown. A released claim must not erase a completed execution-source reference; an active claim alone must not silently nominate an arbitrary proof directory.",
+    "Bind any source relationship into registryFingerprint and require matching summary/detail/assignment observations, as the existing protocol already does. Current child-ID-to-parent TODO mapping and this same-ID cross-tree case should share one clear provenance resolver, not two manually edited status files.",
+    "Treat this as a design input for the existing D01 linkage follow-up; MSG03 UI production can proceed after legal main reception and new claim. No new runtime grant or mandatory broad test matrix."
+  ],
+  "focusedFutureValidation": [
+    "Two-worktree fixture with one status and exact shared task ID: canonical metadata differs but registered execution remains byte-identical to the approved target; show each HEAD honestly, do not mark source changed from status-tree comparison.",
+    "Explicit child-to-parent mapping remains supported independently of exact task ID; multiple role claims stay visible.",
+    "Unregistered execution source, bad path/branch or mapping change between summary/detail remains unknown and does not change allocation rights."
+  ],
+  "method": {
+    "rootProjectWrites": 0,
+    "engineeringChildren": 0,
+    "services": 0,
+    "claimMutations": 0,
+    "skills": "Previously read local find-skills/codebase-design/clean-code; separate progress, allocation and proof identity at one interface."
+  }
+}
