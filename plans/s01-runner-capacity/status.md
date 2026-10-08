@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:49:37.979Z |
+| 最近更新 | 2026-10-08T01:58:39.161Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本轮source/单record已固定；最终metadata封存后STOP，HEAD/dirty由Git读取。旧ACK源码/input/raw及KEEP不动。 |
-| 工作分支状态 | delivered |
+| 工作树dirty状态 | 本次INPUT单literal已固定；v4输入和metadata正在封存，最终clean后STOP。旧raw/input/KEEP不动。 |
+| 工作分支状态 | in-progress |
 | 检查状态 | PASSED d3c12fa6cd95c8e8b2c60ed118664bc324794bc0：pure19/19（sequence/snapshot）；types首2保留→补同ref声明后0；C arm64链接0/34320B未执行。4child资源闭合；driver运行行为和native实际未测。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | d3c12fa6cd95c8e8b2c60ed118664bc324794bc0 |
-| 实现范围 | experiments/runner-capacity/native-initialize 六叶；docs/evidence/s01/native-initialize 准备/固定支持；无生产或旧mixed源码改动。 |
+| 实现目标 | d7012e35fec13ee16da85febdea8a09552150ac7 |
+| 实现范围 | 仅buffered caller INPUT一处字面量、新v2输入及本任务metadata；生产/实验行为、旧证据不变。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 初始化源码准备与四组局部结果已独审通过；19项纯例、修后类型、C链接均完成，helper从未执行。原128 ACK失败保持。 |
-| 下一可用交付 | 本准备片段已交付；后继补真实调用者的目录与整树关闭/字节端口、完整运行输入及独立窗口，当前未开native测量。 |
-| 当前阻塞 | ACTIVE: 真实初始化尚缺完整实际caller/输入/资源窗口，非actualREADY；原128 ACK验收仍失败且优先。 |
+| 当前产出 | 已将后续缓冲诊断候选重新绑定当前写权；旧128 ACK失败及已归还活动资源保持，尚未再次运行。 |
+| 下一可用交付 | 完成本次输入重绑定的限定独审，再由经理安排一次原约束诊断；当前没有实际窗口。 |
+| 当前阻塞 | ACTIVE: 输入重绑定待独审及未来明确运行窗口；原128 ACK完整验收仍失败，native初始化不是该路径前置。 |
 | 需用户决定 | NONE |
-| Review | SOURCE_AND_DECLARED_LOCAL_PREPARATION_REVIEW_APPROVED 01:48:03Z + FINAL_TYPES_RESULT_FIDELITY_APPROVED 01:49:02Z，db，0P1/P2；d3源/96faf052结果。仅本源码/纯类型链接结果，不含native行为。 |
+| Review | 本次claim-v4输入重绑定待限定独审；旧84b5 callback与3dffa namespace批准各自保留，不扩展为实际性能通过。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v4 ACTIVE/exact8；COMMIT 2026-10-08T01:25:24.929Z，仅追加native-initialize两个目录，正式receipt见新evidence。 |
-| 架构影响 | 新增私有sequence/snapshot与host/R06组合driver；单有限libproc helper只数字输出、无信号/清理权。caller保目录/整树关闭权威，actual caller仍待绑定；未改主线产品。 |
+| 架构影响 | 复用原单臂caller/监督与完整验收；仅配置输入路径与所有权证据更新，无新模块或产品接口。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -416,3 +416,7 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 D01经Mika明确第四且末次focusedtypes修复额度，同原60s/8MiB/01:50:24.924截止；executionb370ce9de54aa76f35ec0f312af8ae2abb1997a5。PID21909于2026-10-08T01:47:06.011Z exit0/finalownedabsent/MERGED EOF/0raw，同identity TMP removed。源d3c12fa6cd95c8e8b2c60ed118664bc324794bc0的6leaf及34支持被此types覆盖；pure19只证明sequence/snapshot端口行为，未执行helper/libproc/native。四监督累计2829ms；wholeexternalwall与activepeakUNKNOWN，原types2/raw不改。现0child/0待launch，代码STOP，待Mika固定独审；canonical [review-ready](../../docs/evidence/s01/native-initialize/review-ready.md)。无新窗口/实际native READY，原S01整体未完成。
 
 2026-10-08T01:49:37.979Z 独审收口STOP：db于01:49:02Z完成第四types fidelity，29bindings211960B核符；与01:48:03Z源/前三结果批准合并。全部4child已RETURN，无待launch；保claimv4/8。预算5,178,362B保守charge加本尾metadata≤64KiB仍低8MiB，旧raw/input/KEEP/原128失败未改。原task开工UNKNOWN/三TODO开放保持，不称S01整体完成或新main接收。
+
+## 2026-10-08 claim-v4 诊断输入重绑定
+
+实际firstWrite 2026-10-08T01:57:27.751Z，deadline02:07:27.751Z；D01新3MiB仅本准备，未借旧native/性能段。Fresh508f v4 ACTIVE8、2ba4 clean与canonical term已核。当前入口[ready](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)/[单记录](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-rebind.json)。原cd39/input及raw/三closure不改，124pins仅122同+caller1替换+现有claimreceipt1新增。0工程child/PG/native/HTTP/KEEP访问，原task开工UNKNOWN、三个开放TODO与main仅offline packing范围不变。沿本地固定技能核单一caller职责、有限字面量、身份/错误/期限守卫；本段不宣称新容量或主线接线通过。

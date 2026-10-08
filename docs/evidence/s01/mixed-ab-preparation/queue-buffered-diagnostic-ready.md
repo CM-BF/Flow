@@ -1,3 +1,19 @@
+# Current claim-v4 buffered diagnostic preparation
+
+This current rebind is CLOSED / NOT_OPEN and awaiting its narrow independent review. [Rebind record](queue-buffered-diagnostic-rebind.json) is the current entry; the old cd39 input and namespace approval remain immutable historical evidence.
+
+Source `d7012e35fec13ee16da85febdea8a09552150ac7` changes only caller INPUT to `queue-buffered-diagnostic-input-v2.json`. New input SHA `28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2` has 124 pins: 122 unchanged, one caller replacement, one existing 1803B claim-v4 receipt addition. The receipt is ownership evidence, not a native dependency. D04 was freshly read before this metadata segment; actual grant still requires a new current ledger read. No runtime/test was launched.
+
+Future exact invocation from this worktree, only after an explicit grant names the final clean packet:
+
+```sh
+/usr/bin/env -i PATH=/usr/bin:/bin FLOW_S01_ADMIN_URL="$FLOW_COORDINATION_DATABASE_URL" FLOW_S01_QUEUE_OPEN=s01-queue-buffered-diagnostic-once /opt/homebrew/bin/python3.13 -I -B docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py '<GRANTED_FINAL_PACKET_40SHA>' '28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2' '<FRESH_MANAGER_COMPLETE_FLOOR_BYTES>'
+```
+
+The final packet is named in the delivery Git receipt, not guessed from moving HEAD or embedded recursively. Existing authorized private admin mapping is unchanged; do not print credentials. Runtime/limits/output namespace/675 fixed closure/production4fdd are unchanged; no output nonce or directory was created. Actual complete floor is the manager's future sum; this preparation's 13,833,601,024B is not a runtime admission.
+
+## Historical namespace preparation and approval — prior input retained
+
 # S01 single buffered diagnostic candidate
 
 **CLOSED / INPUT_BOUND / REVIEW_APPROVED / NOT_OPEN.** No future nonce, DB, process, TMP or run directory is reserved. Namespace-only source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`; observer callback repair `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2` already independently approved against packet86bbdd5eaeb076dc29b6733be437c9ff40ab723a. This candidate is fixed4fdd experimentation, not latest-main capacity.

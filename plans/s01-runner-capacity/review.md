@@ -332,3 +332,7 @@ b01_bounded_reads于2026-10-08T01:17:01.958Z对756856900491b8b293e739090dc165f89
 2026-10-08T01:48:03.000Z db独立只读正式批准：source d3c12fa6cd95c8e8b2c60ed118664bc324794bc0/packet1a2397ea9357e06ef805ac9a20171c1a1a062882，SOURCE_AND_DECLARED_LOCAL_PREPARATION_REVIEW_APPROVED/0P1/P2；六源与前三结果，第四types尚单独窄核。正式[回执](../../docs/evidence/s01/native-initialize/independent-review.json)；不含actualREADY/OPEN，0审者工程/native/采样/PG/KEEP。
 
 2026-10-08T01:49:02.000Z db对96faf052追加 FINAL_TYPES_RESULT_FIDELITY_APPROVED/0P1P2；第四全部inputs与finalGit相符，6源=d3，PID21909/812ms/0raw/EOF/absent/ownTMPremoved。四组2829ms/873B，旧types2保留；未来actual NOT_READY/NOT_OPEN。
+
+## 2026-10-08T01:58:39.161Z 当前claim-v4重绑定待限定审
+
+源码 `d7012e35fec13ee16da85febdea8a09552150ac7` 仅INPUT字面量；新input `28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2`，124bindings/122不变+1caller+1现有claimreceipt。旧cd39与20:28 namespace批准不回写，callback84b5批准范围独立。仅请求db核这次固定差量、输入/当前写权证据与NOT_OPEN；0工程/PG/native/raw重读。原失败/KEEP/4s验收均保留，未把准备当actual。

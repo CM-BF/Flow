@@ -1,0 +1,886 @@
+{
+  "schema": "s01-queue-buffered-operator-input-v1",
+  "windowId": "s01-queue-buffered-diagnostic-once",
+  "state": "CURRENT_CLAIM_BOUND_CLOSED_REVIEW_PENDING_NOT_OPEN",
+  "source": "84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2",
+  "productionBase": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "productionTree": "54f1f73b365e65f4bf29f9bb1bb4a076f88e30e6",
+  "claim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 4,
+    "scopeCount": 8
+  },
+  "minimumCandidateFloorBytes": 2684354560,
+  "floorBasis": {
+    "basis": "intrinsic_candidate_lower_bound_only_not_complete_admission_floor",
+    "experimentLogicalIncrement": 536870912,
+    "additionalDbWalSchedulingHeadroom": 1073741824,
+    "globalCleanupReserveIncludedOnce": 1073741824,
+    "managerMustCombineRemainingGrowthAndUnknownsOnce": true,
+    "futureManagerCompleteSumRequired": true,
+    "schedulingHeadroomNotDbWalHardCap": true,
+    "reserveCombination": "The manager counts this same global cleanup reserve once; do not add a second reserve."
+  },
+  "limits": {
+    "wholeSeconds": 300,
+    "preparationSeconds": 15,
+    "armSeconds": 135,
+    "armWorkSeconds": 105,
+    "armCleanupSeconds": 30,
+    "totalLogicalBytes": 536870912,
+    "eachArmLogicalBytes": 251658240,
+    "commonLogicalBytes": 33554432,
+    "finalReserveIncludedBytes": 4194304,
+    "outerCaptureIncludedInFinalReserveBytes": 262144,
+    "tasks": 129,
+    "tasksPerArm": 129,
+    "httpPerArm": 8192,
+    "lightReadPerArm": 200,
+    "poolConnectionsTheoreticalPeak": 13,
+    "providerCalls": 0,
+    "arms": 1,
+    "firstArmMinimumRemainingSeconds": 150
+  },
+  "callerOutputs": [
+    "queue-buffered-diagnostic-actual-reservation.json",
+    "queue-buffered-diagnostic-actual-spawn.json",
+    "queue-buffered-diagnostic-actual-stdout.raw",
+    "queue-buffered-diagnostic-actual-stderr.raw",
+    "queue-buffered-diagnostic-actual-outer.json"
+  ],
+  "experimentOutputRoot": "docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1",
+  "files": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-operator.py",
+      "bytes": 8811,
+      "sha256": "51457f70cd90b27815b348f6b43c21b332498593891d0a9683036c8d894bf825",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-operator.py"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-output-scope-receipt.json",
+      "bytes": 743,
+      "sha256": "d0b60eeae6ad54e2785d4a601eb446aa2ac80387e53e65655dfb299008d091c4",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-output-scope-receipt.json"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-closure.json",
+      "bytes": 372224,
+      "sha256": "fead3242f962f85915ee4635f79c5636002fc6a24ab99e9ab9e4c4b1a5eeb20f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-runtime-closure.json"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-environment.json",
+      "bytes": 13787,
+      "sha256": "67641e811ea841c2a086f2f633c6b8cd467cc46995d9aab4c44bc35bc2d2ab0b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-runtime-environment.json"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-runtime-inputs.json",
+      "bytes": 199290,
+      "sha256": "a6b1e0d44269199324b9f91cb5ab9d3bbe7d574f65b51dcf278c46a11c0b96c7",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-runtime-inputs.json"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "bytes": 6610,
+      "sha256": "14b14ddb3f64eb551f3e0f7cfa1009c10d066e66bc0310fae40a82ae18c02042",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/evidence.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "bytes": 621,
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/http.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/README.md",
+      "bytes": 4953,
+      "sha256": "d61b4826b630b897146724b88f4a594a145e5c3cae2444df69ec2a6b7f4408c9",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/README.md"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.test.ts",
+      "bytes": 4608,
+      "sha256": "f5520376564e8c9cb143d7d1f57d95bb21c57072d7168a55f4396f50aef6a0a0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-budget.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.ts",
+      "bytes": 5081,
+      "sha256": "d4b380d4eed81bb0ea87bfecd45cbdda24c942bb1e4b4e4aecad3dbd43420e7e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-budget.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-dependencies.json",
+      "bytes": 4216,
+      "sha256": "c2840e2e4ade191a0d135850733aac8096e5d279190ab493c2310fd433f7c88e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-dependencies.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-driver.ts",
+      "bytes": 8033,
+      "sha256": "5a7f092fa961e4a32f97abc8d85a50edc910fe9686f706a807557c9e4c00f26c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-driver.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.test.ts",
+      "bytes": 4220,
+      "sha256": "2a8eb050e9372f70425f856b93efa675de7e2d39bd363eb08bb6368eb7757bc6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-input.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.ts",
+      "bytes": 9916,
+      "sha256": "91a39c3bfa61e221c7e1e73ac90fa2a7dd7ffd2cf64435c5228b39925880d427",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-input.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-main.ts",
+      "bytes": 1071,
+      "sha256": "add10ccadc04ee0cc7a9f32223dcd92975e41aae351f6dc37bc29914feda3bc9",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-main.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-sequence.test.ts",
+      "bytes": 1472,
+      "sha256": "678d33a6ca02967944405ee1824aba2f615104125ea8ecba2ac9b228c8169ff1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-sequence.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-sequence.ts",
+      "bytes": 1526,
+      "sha256": "59a8309e92ca67c499ff54868cf7a0a5b76acd321634d303d473341861baaab2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/ab-sequence.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 4130,
+      "sha256": "b96401022911b7d4c6d75424dbaf2b868dd84035842a680386fbf23b1cd0e501",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/channel.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 16484,
+      "sha256": "ee3639e0f09b58484330fe9a6e352ae7c912fda8306f620beb471d3013023fcf",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/child.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/claim-observation.ts",
+      "bytes": 4532,
+      "sha256": "4fd2c9bc04946773080de18cea3d02ac44ae03e384b30e4d41dddb21b78dafc5",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/claim-observation.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.test.ts",
+      "bytes": 1405,
+      "sha256": "ff67bea350f4232d0df3e95d165e72e930300990f29625dc9ff69ffb61cd8ff0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/contract.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 4691,
+      "sha256": "a838aef1863c9491868ff68a28d3af12474f75aa36112f1628f58db5a8bdc280",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/contract.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.test.ts",
+      "bytes": 1281,
+      "sha256": "ca202a4e14121cb3a3967bc61d286a5b3395e0c24fd7169a021181bcd861524e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/deadline.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.ts",
+      "bytes": 1098,
+      "sha256": "3431dd41074b0ae2613bfff00c38da3c3e78fdcb2b5d5a367751f9f2ca47d76a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/deadline.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 42526,
+      "sha256": "4fbd73e17f6462703164990bad089b89762193a5d802947aeb784d5f8f6777a6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/driver.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/evidence-bounds.test.ts",
+      "bytes": 2594,
+      "sha256": "e2e56f25b8e72c33958e06ec1cf3a40518bd84c5de4c7d9109c59eab8aeff371",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/evidence-bounds.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.test.ts",
+      "bytes": 1268,
+      "sha256": "52818a1e4534facdef00a6b465b50a9a2675c27387a75d1b9fa0d57dad34365a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-budget.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.ts",
+      "bytes": 4338,
+      "sha256": "3191803229539e221a3510e7818405825b3af8b552e0eb95f8c41f377d8382e6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-budget.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.test.ts",
+      "bytes": 6961,
+      "sha256": "57c7af7164a25e1c465a2b8e122975cdeafd48ca29afb5b4bd2972a17480e1b1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-observer.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.ts",
+      "bytes": 7394,
+      "sha256": "d55e83abff72551924ebf3666396472abb15ed949971225936dcd4dbc371b530",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-observer.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-pure-tsconfig.json",
+      "bytes": 423,
+      "sha256": "3c3155799a70e6cf9da7a13aa897820c1ca2090a020dfe43873a5efbcd84b985",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-pure-tsconfig.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json",
+      "bytes": 725,
+      "sha256": "f1b05c8b6fcbdc92bfe6e4142eb6b00ee59bece4c679e18d6e8854a0d0799a2b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim.test.ts",
+      "bytes": 12263,
+      "sha256": "a26af83464892a9da39f5a76478baab084e4519b263b7d1813a8e90464f6f006",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/idle-claim.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/main.ts",
+      "bytes": 1061,
+      "sha256": "3b5b3ffec08e17c0a9a598f5623c926055d53cffe99655cbfecd1d38f2242691",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/main.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observation-archive.ts",
+      "bytes": 1045,
+      "sha256": "dde8c42d673dc04d1747d418ad9b792398e25bcb325916a0e6c6a05c13dea44d",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/observation-archive.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/observe-pg.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 6097,
+      "sha256": "88a4a2f0d2a09be795b7a8e6e5ad9ca3450d7a7902e37a0524cf769da91391b6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/observe-pg.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "bytes": 5367,
+      "sha256": "e5d46ccae8820398c5bceec8465a5074d70c4e31774f24b577035b6c4985cb82",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/pg-delivery-bridge.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts",
+      "bytes": 10412,
+      "sha256": "6c653713accf2aa6ec4d0e2dd8d80452473265524dc0b7bda0b920e50b5fc62b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.test.ts",
+      "bytes": 8708,
+      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/pg-delivery.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "bytes": 8714,
+      "sha256": "5871faea12a4752b1f00dff5b6234dc70eb517521e01ea3a7eadcacb58a4c14c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/pg-delivery.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/preparation-git.test.ts",
+      "bytes": 1217,
+      "sha256": "7e2ed82ab35d49ffa73d609fd502ad2d434bc6aafb9e1c2e18a2c5764d32acc7",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/preparation-git.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 3137,
+      "sha256": "52fd3dd943b16cbe82cfe5e01427f9275720a65a3b2a30c6639e77c5661ff484",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/process.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/profile.test.ts",
+      "bytes": 3422,
+      "sha256": "6bd21e70cd5a28403307e350a191f735da9491ca2fdab69be257d785cef2e92a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/profile.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.test.ts",
+      "bytes": 2061,
+      "sha256": "45974063cf5feb9be4ff8e8feda611d9455bea0f92008f0ae4fb7961029494f2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/proof.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 12378,
+      "sha256": "7659b1146c7da6995862ed76968b9f717eb869e798541c39ec7b7e809256a0f4",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/proof.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-chat.ts",
+      "bytes": 5970,
+      "sha256": "2909bcbea6b8686fdf7b829cd15b9f08499112930ed754b3be6a1173ab325ac5",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-chat.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-dependencies.json",
+      "bytes": 4477,
+      "sha256": "151de5db2b13d407a73b015df4aaf212041105556793d2c3b1e3f26ba90d9914",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-dependencies.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-journal.ts",
+      "bytes": 737,
+      "sha256": "47431b07d212f199699a822a34692ea19cede8d126963bd40034de651c87665a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-journal.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-main.ts",
+      "bytes": 1032,
+      "sha256": "5e07f10fcbf5761b022d2a761d790e18e0a5893be3317b65efb87e427fba76bc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-main.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.test.ts",
+      "bytes": 9168,
+      "sha256": "cfd4510d266af670cb527875309b828bcfae00383c183d824ac102d99b84609b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-probe.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+      "bytes": 1960,
+      "sha256": "d91734fb69e76206dbd5ee5d83a4f579e3e696bb5df3bef4779158d4a9a4ac04",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-probe.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-proof.ts",
+      "bytes": 4466,
+      "sha256": "0b8bfaed9ca7e07b5e3af7ac961d369d2bf55609e8c9680929875e8d5362da1d",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-proof.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-source-bindings.ts",
+      "bytes": 988,
+      "sha256": "e148d1beff5861701e87714c2e738a7fe69f6d5b30655cacef93a11ffd11eb4c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-source-bindings.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/request-error.ts",
+      "bytes": 755,
+      "sha256": "5ec7a45c2c9f819e04f303f064183d813a7b3b2bc0c2d58659a2d4d287f650f2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/request-error.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.test.ts",
+      "bytes": 2712,
+      "sha256": "7bc02d9d47f5e32546d9ce10df521c54b312856adb7d6164434c11af345eea15",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/run-identity.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.ts",
+      "bytes": 5625,
+      "sha256": "321bed473511e833aec235a368732910f9d0d6a75b9c9721af23e12988dd8cff",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/run-identity.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/runtime-dependencies.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.test.ts",
+      "bytes": 1789,
+      "sha256": "015221f67762c06cf484aef9bce39bed2c4a1ec285781be4278be7fe2c689122",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/stream-bytes.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.ts",
+      "bytes": 1830,
+      "sha256": "6b88d05a975bf91bdec9eedb42b2a4f0c47b7c2149831a9bbb0a11c118fade2b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/stream-bytes.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/sustained-proof.test.ts",
+      "bytes": 7501,
+      "sha256": "8dc9e60be5d036ead4dc584711d3dcccfadfc6c79bceefc31493d53819fd9b98",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/sustained-proof.test.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/tsconfig.json"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/vitest.config.ts"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "bytes": 3570,
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/processes.ts"
+    },
+    {
+      "path": "node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/package.json",
+      "bytes": 8032,
+      "sha256": "829fcc9e4768d6ca190ca369203061503911e70f4433e4e5e4aed649f440457a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+    },
+    {
+      "path": "node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "bytes": 1759,
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client/package.json",
+      "bytes": 4591,
+      "sha256": "4a886cbee0d611f822618e4ee94ae4589655c282fa0dbafc17e80da9697f2d91",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.d.ts",
+      "bytes": 23551,
+      "sha256": "e078310f23f0ccfa28a6ac81b5fad81f27150e921f92ab6e648caab42e2d9a14",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.d.ts"
+    },
+    {
+      "path": "node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js"
+    },
+    {
+      "path": "node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "bytes": 1503,
+      "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "bytes": 1956,
+      "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js"
+    },
+    {
+      "path": "node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "bytes": 1832,
+      "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.cjs",
+      "bytes": 442,
+      "sha256": "8cd3fa8b91b0bef84f763f0b0505e4dd522967893c0fde51fe2ad395f30f1619",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.cts",
+      "bytes": 1030,
+      "sha256": "18a6455f90fa14342c99f831031bbb7ca903690d3a1f0003d957854d0831d997",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.cts"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.mts",
+      "bytes": 1030,
+      "sha256": "18a6455f90fa14342c99f831031bbb7ca903690d3a1f0003d957854d0831d997",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.mts"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.mjs",
+      "bytes": 487,
+      "sha256": "7d3e6a7d5bc5c33675221a5439762f8d0094cd157bfefbfaaceb0ac9be966172",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "bytes": 332,
+      "sha256": "97a9d7b9d959f9528c46660beedcef69adc1ae29c71948b1e695860511a711d5",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "bytes": 124418,
+      "sha256": "8690135061bc49d187143493b82d26a09b7fb71d6dd817d2242cc9dc52506de9",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.cjs",
+      "bytes": 16770,
+      "sha256": "4c09cef408c1915365cda5d1769cb61a8ee0b05c6a4f57c44e6d9bffaacb5cb5",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.cts",
+      "bytes": 1079,
+      "sha256": "800928ec427376cde9efffbfba8667fdd3893b68fdea6c22abc19d44eb2e6efa",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.cts"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.mts",
+      "bytes": 1079,
+      "sha256": "800928ec427376cde9efffbfba8667fdd3893b68fdea6c22abc19d44eb2e6efa",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.mts"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.mjs",
+      "bytes": 1001,
+      "sha256": "abee15f23172ead6a5f709908677ac4be5989fe1140ea7275dd35f597623493c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "bytes": 675,
+      "sha256": "a57842a725ba112ab029d3a0748f4ba5dc7b7a38bc9d38e7c4985af36aaa3c84",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "bytes": 32,
+      "sha256": "20f38ff0210e4f838032714d0590012e4fb82ad4095c8930652a13b37420cd80",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "bytes": 506,
+      "sha256": "33f5f6755270054783f4c568d0d48d4a79fecde965ec6f91ca27f0f949ba6da6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "bytes": 1061,
+      "sha256": "853ed9c14711bb11333f3a53803965149509bac4bc515492707f73c83ed9193d",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "bytes": 738,
+      "sha256": "dad3f9708f4eceb99a5885f9c41b03b01bf30db1418514d7b1dc0637f45cdc21",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "bytes": 474,
+      "sha256": "a29a3db7a21cfd665df96d4cb800b527139903df6e6c52c206f944e854ab59d0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "bytes": 497,
+      "sha256": "028063d20bd49083f03a0b1ed4f7a3d55fac1f64f5aca0e58e1ec61601f20ee7",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs"
+    },
+    {
+      "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json"
+    },
+    {
+      "path": "node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json"
+    },
+    {
+      "path": "node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json"
+    },
+    {
+      "path": "node_modules/pg/lib/client.js",
+      "bytes": 25715,
+      "sha256": "ad6aa93c26b0bf26db1f2ebe74216212790a04c41af5585c63760f9fa8322a32",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js"
+    },
+    {
+      "path": "node_modules/pg/lib/connection.js",
+      "bytes": 6399,
+      "sha256": "f93e914bf408657f2301393489da561a5a464e9c30f4f51b681b18a21a5f1c84",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/connection.js"
+    },
+    {
+      "path": "node_modules/pg/lib/stream.js",
+      "bytes": 2132,
+      "sha256": "0bd4001775301604ddf7c94152e05f6f30a9354876717bdae2ab636d00eb12ba",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/stream.js"
+    },
+    {
+      "path": "node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/package.json"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/pnpm-lock.yaml"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/tsconfig.json"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+    },
+    {
+      "path": "/usr/bin/git",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+      "realpath": "/usr/bin/git"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-buffered-main.ts",
+      "bytes": 1039,
+      "sha256": "38a66c6911ef985db8c37149b66bebdd47eb35a0704598c53281091d2410f536",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/queue-buffered-main.ts"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+      "bytes": 7623,
+      "sha256": "8000c8a249895b8dcb2be4eee8e377b91d87f16b7b15c7489a0732f2f327a406",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py"
+    },
+    {
+      "path": "docs/evidence/s01/native-initialize/claim-amend.json",
+      "bytes": 1803,
+      "sha256": "b5ce02fab57e2aec079b8377d55f6382afd7b6f8d52b06248c70ee1a7184c16b",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/native-initialize/claim-amend.json"
+    }
+  ],
+  "fileTotals": {
+    "count": 123,
+    "bytes": 12617081
+  },
+  "unresolved": [
+    "Namespace-only source and this binding require root independent review; observer source84b5 separately approved.",
+    "Final ready packet HEAD must be supplied explicitly at future grant; do not resolve moving HEAD as authority.",
+    "Actual NOT_OPEN. Fresh manager full resource sum/holder/claim/head/allinput hashes/new output absence/cluster-WAL still required.",
+    "No new actual nonce, DB, TMP or output is reserved by this preparation.",
+    "Third-party selected bytes/manifests are pinned, not every transitive dependency byte.",
+    "Complete diagnostics may still accompany ACK/capacity FAIL; no second arm or relaxed proof."
+  ],
+  "environment": {
+    "outer": "env -i + Python -I -B",
+    "inner": "fixed Python -I -B; Node execve",
+    "ambientInputsRead": [
+      "FLOW_S01_QUEUE_OPEN",
+      "FLOW_S01_ADMIN_URL"
+    ],
+    "forwardedSecretKeyOnly": "FLOW_S01_ADMIN_URL",
+    "git": "/usr/bin/git; explicit nonsecret base_environment",
+    "openNotForwarded": true,
+    "tmpRoot": "/tmp",
+    "postPrintAbsoluteDeadline": true
+  },
+  "deltaFromOldInput": [
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "oldBytes": 1909,
+      "oldSha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c",
+      "bytes": 4130,
+      "sha256": "b96401022911b7d4c6d75424dbaf2b868dd84035842a680386fbf23b1cd0e501"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "oldBytes": 15831,
+      "oldSha256": "a85b170dd6e06bc20e87e2867de74b7db0d6e796252c311cc6b39ead222b60c4",
+      "bytes": 16484,
+      "sha256": "ee3639e0f09b58484330fe9a6e352ae7c912fda8306f620beb471d3013023fcf"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "oldBytes": 4597,
+      "oldSha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e",
+      "bytes": 5367,
+      "sha256": "e5d46ccae8820398c5bceec8465a5074d70c4e31774f24b577035b6c4985cb82"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "oldBytes": 7920,
+      "oldSha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2",
+      "bytes": 8714,
+      "sha256": "5871faea12a4752b1f00dff5b6234dc70eb517521e01ea3a7eadcacb58a4c14c"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+      "oldBytes": 1945,
+      "oldSha256": "8be200677e37266448fe8cc588091765e5f9ec38e0456b30b23497b661095ba6",
+      "bytes": 1960,
+      "sha256": "d91734fb69e76206dbd5ee5d83a4f579e3e696bb5df3bef4779158d4a9a4ac04"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+      "oldBytes": 7592,
+      "oldSha256": "24bdb6cd60d0b5b5f558db13487e58514c8beaf90f82e6e79fdb828b9bf9518c",
+      "bytes": 7623,
+      "sha256": "8000c8a249895b8dcb2be4eee8e377b91d87f16b7b15c7489a0732f2f327a406"
+    }
+  ],
+  "priorInput": {
+    "commit": "c7519722ea8464558b74183b888e934350b7ac83",
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json",
+    "sha256": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2"
+  },
+  "namespaceSource": "3dffa3f0c344767eccc58716343fa1b0a3e0369d",
+  "inputRebindSource": "d7012e35fec13ee16da85febdea8a09552150ac7",
+  "claimReceiptBinding": {
+    "path": "docs/evidence/s01/native-initialize/claim-amend.json",
+    "sha256": "b5ce02fab57e2aec079b8377d55f6382afd7b6f8d52b06248c70ee1a7184c16b",
+    "committedAt": "2026-10-08T01:25:24.929Z",
+    "scopePurpose": "Current v4 ownership snapshot; not native runtime authority. Actual OPEN must fresh-check ledger."
+  },
+  "previousDiagnosticInput": {
+    "commit": "2ba4da050f612f84762fa83b8d4341f1ddca185b",
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-input.json",
+    "sha256": "cd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9",
+    "namespaceReview": "queue-buffered-diagnostic-independent-review.json"
+  }
+}

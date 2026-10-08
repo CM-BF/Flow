@@ -1,0 +1,99 @@
+{
+  "schema": "s01-diagnostic-claim-rebind-v1",
+  "state": "FIXED_SOURCE_INPUT_REVIEW_PENDING_ACTUAL_NOT_OPEN",
+  "firstWriteAt": "2026-10-08T01:57:27.751Z",
+  "deadline": "2026-10-08T02:07:27.751Z",
+  "recordedAt": "2026-10-08T01:58:39.161Z",
+  "base": "2ba4da050f612f84762fa83b8d4341f1ddca185b",
+  "source": "d7012e35fec13ee16da85febdea8a09552150ac7",
+  "claim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 4,
+    "scopeCount": 8
+  },
+  "freshClaimObservation": "Authorized D04 list before firstWrite: active/current v4, owner status_read/mika, same branch/WT, exact8; no mutation",
+  "claimReceipt": {
+    "path": "docs/evidence/s01/native-initialize/claim-amend.json",
+    "sha256": "b5ce02fab57e2aec079b8377d55f6382afd7b6f8d52b06248c70ee1a7184c16b",
+    "committedAt": "2026-10-08T01:25:24.929Z",
+    "scopePurpose": "Current v4 ownership snapshot; not native runtime authority. Actual OPEN must fresh-check ledger."
+  },
+  "canonicalResourceAt": "2026-10-08T01:57:02.872Z",
+  "freshFloorBytes": 13833601024,
+  "freshFreeBytes": 14474739712,
+  "managerTerm": "MikaS01BufferedRebindPreparation",
+  "oldInput": {
+    "commit": "2ba4da050f612f84762fa83b8d4341f1ddca185b",
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-input.json",
+    "sha256": "cd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9",
+    "namespaceReview": "queue-buffered-diagnostic-independent-review.json"
+  },
+  "newInput": {
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-input-v2.json",
+    "bytes": 49039,
+    "sha256": "28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2"
+  },
+  "pinDelta": {
+    "oldCount": 123,
+    "newCount": 124,
+    "unchanged": 122,
+    "replaced": [
+      {
+        "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py",
+        "oldBytes": 7620,
+        "oldSha256": "7b9810f1f720150e77b54ed485ca1c65ea026f0871ea76ad3491ae8c45873573",
+        "bytes": 7623,
+        "sha256": "8000c8a249895b8dcb2be4eee8e377b91d87f16b7b15c7489a0732f2f327a406"
+      }
+    ],
+    "added": [
+      {
+        "path": "docs/evidence/s01/native-initialize/claim-amend.json",
+        "bytes": 1803,
+        "sha256": "b5ce02fab57e2aec079b8377d55f6382afd7b6f8d52b06248c70ee1a7184c16b",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/native-initialize/claim-amend.json"
+      }
+    ],
+    "newBytes": 12618887,
+    "allRealpathBytesHashesVerified": true
+  },
+  "callerDelta": "Exactly INPUT filename literal; no hardcoded claim/version in caller/helper; actual ledger admission remains external named preflight",
+  "limitsEqualToOld": true,
+  "floorBasisEqualToOld": true,
+  "windowOutputsProductionUnchanged": true,
+  "absence": {
+    "at": "2026-10-08T01:58:39.161Z",
+    "method": "exact lstat only",
+    "paths": [
+      "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-reservation.json",
+      "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-spawn.json",
+      "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-stdout.raw",
+      "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-stderr.raw",
+      "docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-actual-outer.json",
+      "docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1"
+    ]
+  },
+  "engineeringChildren": 0,
+  "PG": 0,
+  "native": 0,
+  "oldKeepAccess": false,
+  "budget": {
+    "capBytes": 3145728,
+    "indexBytes": 791382,
+    "metadataCapBytes": 262144,
+    "atomicIndexAndTextCapBytes": 1053526,
+    "newGitObjectsCapBytes": 524288,
+    "conservativeTotalBytes": 2631340,
+    "remainingBytes": 514388
+  },
+  "quality": {
+    "methods": [
+      "existing local find-skills",
+      "codebase-design",
+      "fixed sickn33 clean-code"
+    ],
+    "application": "Reuse one operator and immutable prior input. No new supervisor/state machine. Preserve failure, identity, deadlines, output ownership and complete receipt gates."
+  },
+  "review": "PENDING independent bounded delta review; historical namespace and callback approvals retain original scope",
+  "runtime": "CLOSED_NOT_OPEN; 300s/one135s/128 fixture/6s/4s/13PG/512MiB +1GiB DBWAL planning unchanged. Not latestmain/SDK/SLO proof"
+}
