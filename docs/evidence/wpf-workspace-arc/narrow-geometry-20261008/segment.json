@@ -8,9 +8,9 @@
     "maxAttempts": 3,
     "perAttemptMs": 90000,
     "totalMs": 270000,
-    "spentMs": 51482,
-    "attempts": 1,
-    "state": "BETWEEN_ATTEMPTS_PENDING_CANONICAL"
+    "spentMs": 75205,
+    "attempts": 2,
+    "state": "WAIT_LOGIN_B3_RETURN_THIRD_LEASE"
   },
   "local": {
     "maxChildren": 2,
@@ -24,7 +24,7 @@
   "oldCreditTransfer": false,
   "scope": "browser passivegeometry/firstfailurePNG and correct8rem title assertion; CSS/PaneTabs only after causal clip observation",
   "skills": "Reuse local find-skills/clean-code/assistant-ui; no installs. Observer catches bounded failures without replacing original assertion error; no new framework.",
-  "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+  "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
   "firstActual": {
     "packet": "/private/tmp/arc-geometry-first-rgv61qvz",
     "chargeMs": 51482,
@@ -32,5 +32,28 @@
     "error": "Close viewport0.02; diagnostic named measure serialized with missing __name",
     "diagnosticFailurePNG": "/private/tmp/arc-geometry-first-rgv61qvz/raw/arc-narrow-failure-390.png",
     "returnAt": "2026-10-08T01:41:11.080655Z"
+  },
+  "secondActual": {
+    "packet": "/private/tmp/arc-geometry-observe-v74ta2d0",
+    "chargeMs": 23723,
+    "passed": 3,
+    "failure": "Close viewport0.02",
+    "returnAt": "2026-10-08T01:52:34.778081Z",
+    "notificationDelay": "Return formed01:52:34; notification delayed until01:54, no runtime in gap",
+    "geometry": "strip right386, tabright411.5/width280, close385.5..410.5, client334 scroll377.5/max406; horizontalclip definite",
+    "diagnosticErrors": [
+      "third snapshot rejected by shared16KiB cap"
+    ],
+    "chromeEOF": [
+      true,
+      true
+    ]
+  },
+  "cleanCode": {
+    "at": "2026-10-08T01:56:28.594902+00:00",
+    "scope": "owned PaneTabs and scoped CSS",
+    "finding": "Native focused action visibility did not cover sibling Close; scroll-padding ineffective",
+    "fix": "One private focus-only handler scrolls own strip, preserves selection and external page position; oversized tab prioritizes current focused control",
+    "validation": "No additional local child:2 used/6759 CLOSED. Fixedsource awaiting last browser."
   }
 }

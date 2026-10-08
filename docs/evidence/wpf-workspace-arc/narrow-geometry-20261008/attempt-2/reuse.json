@@ -1,0 +1,46 @@
+{
+  "previousPacket": "/private/tmp/arc-geometry-first-rgv61qvz",
+  "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+  "changedSource": [
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 40341,
+        "sha256": "e6240eb551774cd82675a083673d6cc816e31fb4260aaefe8b2735586ca6f2ad",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "200ee2a28d5e55e449fb08ecb1b3a21179c885de"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 40502,
+        "sha256": "d7c93f11dc1692c442d0056da3763182cd865210e8ecd99e75892a9fe011d84f",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "d97ecdbfbe85e342adb3bd573492a51dcd416765"
+      }
+    }
+  ],
+  "unchangedSources": 206,
+  "externalPinsUnchanged": true,
+  "resolverLinksUnchanged": true,
+  "callers": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "unchanged": true
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778",
+      "unchanged": true
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12",
+      "unchanged": true
+    }
+  ],
+  "scope": "Only evaluate callback helper serialization fix; CSS and all4/close unchanged"
+}

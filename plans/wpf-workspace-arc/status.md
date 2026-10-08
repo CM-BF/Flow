@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:43:26.434961+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:55:48.979141+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base8f617 / sourcec385faa310dc6e24e005c15e4f9cb19f4a16b0b1；几何诊断helper修正 |
-| 工作树dirty状态 | geometry首轮3/4失败已RETURN；source修正已提交，仅原自然metadata dirty，0runtime |
+| 工作基线 / HEAD | base8f617 / sourcee14e665e56ee947fa3053939fe0a9beccefd32c0；PaneTabs水平focus窄修 |
+| 工作树dirty状态 | 第二FULLRETURN后仅owned PaneTabs/CSS窄修，未再运行 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | FAILED 7b297a226e56b5e020f05b027a8e6fc27fcc4245 — 首geometry3/4；__name观测失败保真。修后c385 affectedtypes0/累计6759，actual待验 |
+| 检查状态 | FAILED c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 — 第二3/4、23723ms，累计75205；真实矩形定位水平裁剪，窄修待最后actual |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 |
+| 实现目标 | e14e665e56ee947fa3053939fe0a9beccefd32c0 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 失败390图已保；三次geometry都被__name拒绝，改无外部named helper闭包，CSS未动。等待current归还/同段第二次 |
+| 当前产出 | 第二01:52:34.778081Z FULLRETURN；strip右386/Close右410.5，聚焦仅滚所属strip以显示完整tab；当前0runtime，登录b3持窗 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: clip矩形缺失；原close ratio0.02与视觉P2仍OPEN；经理canonical未复位前不launch |
+| 当前阻塞 | ACTIVE: Close水平clip P2修后待验；第三等待登录b3 exactRETURN与经理明确lease，截止02:05:48.999不延 |
 | 需用户决定 | NONE |
-| Review | PENDING c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 — 同连续段最终一次独审 |
+| Review | PENDING e14e665e56ee947fa3053939fe0a9beccefd32c0 — 同连续段最终一次独审 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -166,3 +166,5 @@
 2026-10-08T01:28:58.148136+00:00：root4f952一次独审已归档，68pairs/136hash全符，批准限定结果保真而视觉验收BLOCKED。旧closeP2与新未达titleWidth固定像素P2都保持OPEN；2次已尽，无第三或本段补源。只原64MiB自然尾normal commit/pushclean，当前0child/0HTTP/0Chrome/0PG。
 
 2026-10-08T01:38:24.115409+00:00：新geometry段firstWrite01:37:03.442343Z，deadline02:05:48.999固定，新320MiB/3×90累计270k/最多2local累计30k；不借旧48670。必要types1实际3572/exit0，Node40070组与scratch归还。实际fixture/Chrome仍未启动，conditional lease紧前还须同调用fresh。
+
+2026-10-08T01:55:48.979141+00:00：第二actual3/4/0finalPNG、23723ms，累计75205/270000两次；Chrome两EOF true、parent/outer EOF true、4PID2PGID与scratch/cache absent/rawcontextHTTPclosed。exactRETURN01:52:34.778081Z，通知延迟至01:54后补发保真。两snapshot成功，第三因共享16KiB帽拒绝保诊断error。当前真实geometry证实horizontalclip而非vertical；仅PaneTabs focus capture滚本strip，不改选择/焦点/authority，超窄时优先focused control。两local6759 CLOSED，不新增types。
