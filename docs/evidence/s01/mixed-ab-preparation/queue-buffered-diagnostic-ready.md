@@ -1,6 +1,6 @@
 # Current claim-v4 buffered diagnostic preparation
 
-This current rebind is CLOSED / NOT_OPEN and awaiting its narrow independent review. [Rebind record](queue-buffered-diagnostic-rebind.json) is the current entry; the old cd39 input and namespace approval remain immutable historical evidence.
+This current rebind is APPROVED and CLOSED / NOT_OPEN. db_transaction_owner independently approved source d7012e35fec13ee16da85febdea8a09552150ac7 / packet5b40621b40934601a3d24b97acd4a53f5715e0d5 at2026-10-08T01:59:59.000Z,0P1/P2; this is preparation only. [Rebind record](queue-buffered-diagnostic-rebind.json) is the current entry; the old cd39 input and namespace approval remain immutable historical evidence.
 
 Source `d7012e35fec13ee16da85febdea8a09552150ac7` changes only caller INPUT to `queue-buffered-diagnostic-input-v2.json`. New input SHA `28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2` has 124 pins: 122 unchanged, one caller replacement, one existing 1803B claim-v4 receipt addition. The receipt is ownership evidence, not a native dependency. D04 was freshly read before this metadata segment; actual grant still requires a new current ledger read. No runtime/test was launched.
 

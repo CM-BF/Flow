@@ -1,6 +1,6 @@
 {
   "schema": "s01-diagnostic-claim-rebind-v1",
-  "state": "FIXED_SOURCE_INPUT_REVIEW_PENDING_ACTUAL_NOT_OPEN",
+  "state": "INPUT_REBIND_APPROVED_CLOSED_NOT_OPEN",
   "firstWriteAt": "2026-10-08T01:57:27.751Z",
   "deadline": "2026-10-08T02:07:27.751Z",
   "recordedAt": "2026-10-08T01:58:39.161Z",
@@ -79,12 +79,16 @@
   "oldKeepAccess": false,
   "budget": {
     "capBytes": 3145728,
-    "indexBytes": 791382,
+    "indexBytes": 791670,
     "metadataCapBytes": 262144,
-    "atomicIndexAndTextCapBytes": 1053526,
+    "atomicIndexAndTextCapBytes": 1053814,
     "newGitObjectsCapBytes": 524288,
-    "conservativeTotalBytes": 2631340,
-    "remainingBytes": 514388
+    "conservativeTotalBytes": 2631916,
+    "remainingBytes": 513812,
+    "observedBeforeSealReachableObjectLogicalBytes": 244716,
+    "observedBeforeSealLooseObjectBytes": 110372,
+    "observedBeforeSealChangedTextBytes": 188858,
+    "accounting": "Both index and temporary index copies charged; full changed text and its temporary copy each bounded256KiB; newly reachable Git objects bounded512KiB. Metadata seal included, no extra reserve."
   },
   "quality": {
     "methods": [
@@ -94,6 +98,37 @@
     ],
     "application": "Reuse one operator and immutable prior input. No new supervisor/state machine. Preserve failure, identity, deadlines, output ownership and complete receipt gates."
   },
-  "review": "PENDING independent bounded delta review; historical namespace and callback approvals retain original scope",
-  "runtime": "CLOSED_NOT_OPEN; 300s/one135s/128 fixture/6s/4s/13PG/512MiB +1GiB DBWAL planning unchanged. Not latestmain/SDK/SLO proof"
+  "review": {
+    "verdict": "INPUT_REBIND_SOURCE_PREPARATION_REVIEW_APPROVED",
+    "at": "2026-10-08T01:59:59.000Z",
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "source": "d7012e35fec13ee16da85febdea8a09552150ac7",
+    "packet": "5b40621b40934601a3d24b97acd4a53f5715e0d5",
+    "P1": 0,
+    "P2": 0,
+    "evidence": "Caller one INPUT literal;124 pins/12618887B=122 same rows+7620 to7623B caller+1803B existingv4 receipt. Oldcd39/review/threeclosures unchanged. 0 reviewer engineering/native/PG/KEEP/write. Not actual or performance approval."
+  },
+  "runtime": "CLOSED_NOT_OPEN; 300s/one135s/128 fixture/6s/4s/13PG/512MiB +1GiB DBWAL planning unchanged. Not latestmain/SDK/SLO proof",
+  "sealedAt": "2026-10-08T02:01:05.876Z",
+  "pendingLaunch": false,
+  "futureGrowthAfterStop": 0,
+  "finalPacket": "Exact clean final HEAD supplied by final Git delivery; no self-referential input hash.",
+  "statusValidation": {
+    "at": "2026-10-08T02:01:05.936Z",
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ],
+    "taskStart": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "taskComplete": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    }
+  }
 }

@@ -336,3 +336,7 @@ b01_bounded_reads于2026-10-08T01:17:01.958Z对756856900491b8b293e739090dc165f89
 ## 2026-10-08T01:58:39.161Z 当前claim-v4重绑定待限定审
 
 源码 `d7012e35fec13ee16da85febdea8a09552150ac7` 仅INPUT字面量；新input `28b0884211749f7082eae43a83b681a054cb8dbe2bc1c6e66d68074760d096d2`，124bindings/122不变+1caller+1现有claimreceipt。旧cd39与20:28 namespace批准不回写，callback84b5批准范围独立。仅请求db核这次固定差量、输入/当前写权证据与NOT_OPEN；0工程/PG/native/raw重读。原失败/KEEP/4s验收均保留，未把准备当actual。
+
+### 2026-10-08T02:01:05.876Z 限定独审归档
+
+db_transaction_owner/gpt-6-astra 于2026-10-08T01:59:59.000Z对source d7012e35fec13ee16da85febdea8a09552150ac7 / packet5b40621b40934601a3d24b97acd4a53f5715e0d5出具INPUT_REBIND_SOURCE_PREPARATION_REVIEW_APPROVED，0P1/P2。124pins/12618887B，122同+caller一替换+既有claimreceipt一新增；旧cd39/namespace review/三closure不变。只审INPUT literal/当前所有权绑定与准备边界，0工程/PG/native/KEEP访问，不是actual许可。正式结构化归档在queue-buffered-diagnostic-rebind.json；原ACKFAIL、KEEP和完整TODO未放宽。
