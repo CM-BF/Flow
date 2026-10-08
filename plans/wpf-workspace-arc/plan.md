@@ -75,3 +75,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-08T01:28:00.015702+00:00 TODO05窄屏后继：在原layout.css采用可读非收缩宽度/动作单行与横向键盘焦点，原四组新增正常/长标题和完整close可见验收。两次都3/4，第二scroll-padding未满足closefullviewport0.02；实际geometry已保，最终图未达。保持该强断言与原失败，不在用尽2次后追加修复/运行。source6acSTOP，browser48670/local3573CLOSED；仅自然独审/记录，完整窄屏UX仍OPEN。
 
 2026-10-08T01:28:58.148136+00:00 独审4f952：结果保真APPROVED，完整窄屏视觉BLOCKED。下一合法后继应先观察close/tab/strip rect、scrollLeft/clientWidth、实际font与clip祖先以及失败390图；现128px标题断言与14px root/8rem不符为静态P2，未达不冒实际失败。保真实标题可辨/动作单行/关闭可达的验收，不改全局字体或借旧额度。
+
+2026-10-08T01:37:03.442343Z 新geometry连续段：沿TODO05先在End/动作焦点/firstfailure最多3次16KiB只读采close/tab/strip/clip祖先/字号/滚动，独立失败390图≤512KiB；保原close完整可见性和原错/cleanup优先。标题最小宽度按8rem真实root，普通全文/长名完整accessible name不弱化。确认clip原因后才原scope CSS/PaneTabs窄修；不改sharedApp。新270k最多3次、deadline02:05:48.999；旧账不转。
