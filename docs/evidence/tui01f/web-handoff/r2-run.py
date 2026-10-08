@@ -26,6 +26,7 @@ class RunSpec(NamedTuple):
     permit_name: str
     outer_name: str
     logical_id: str
+    source_paths: tuple[str, ...] = tuple(OWN)
 
 
 R2 = RunSpec('--run-r2-once', WINDOW, INPUT, PERMIT, OUTER, 'TUI01F04-REAL-HANDOFF-R2-ONCE')
@@ -56,7 +57,7 @@ def verify_inputs(run_spec=R2):
     rows = inherited[0]['backendBindings'] + inherited[1]['bindings']
     for pin in rows + value['own'] + [value[k] for k in ['node', 'supervisor', 'python', 'terminalPython']]:
         read_pin(pin)
-    files = [{'path': p, 'sha256': sha((ROOT / p).read_bytes())} for p in OWN]
+    files = [{'path': p, 'sha256': sha((ROOT / p).read_bytes())} for p in run_spec.source_paths]
     identity = {'files': files, 'inputs': [{'path': p['path'], 'sha256': p['sha256']} for p in rows]}
     digest = sha(json.dumps(identity, separators=(',', ':'), ensure_ascii=False).encode())
     assert digest == value['sourceDigest'], 'SOURCE_DIGEST'

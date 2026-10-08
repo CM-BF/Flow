@@ -1,0 +1,22 @@
+{
+  "kind": "flow.tui01f04.r4.permit.v1",
+  "ready": false,
+  "logicalId": "TUI01F04-REAL-HANDOFF-R4-ONCE",
+  "windowId": "flow-tui01f04-20261008-r4",
+  "sourceDigest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+  "inputDigest": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+  "callerDigest": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb",
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "startBefore": null,
+  "freshObservedAt": null,
+  "pgAvailable": null,
+  "preflightPoolClosed": false,
+  "minimumFreshFreeBytes": null,
+  "actualHolder": "NOT_GRANTED",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7
+  },
+  "note": "Not executable. Fresh new selection/current source/runtime/claim/unused namespace/PG/free required; only then exclusive r4-permit.json. Old R1/R2/R3 permits remain immutable and cannot authorize R4."
+}

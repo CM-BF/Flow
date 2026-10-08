@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:29:05Z；新生命周期片局部已归还/待独审，R3结果已main312842ab5 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:32:38.370Z；生命周期修复已审/main782f0ad09，开始R4最小调用绑定 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；fixture源8379已main；新R3装配bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
-| 工作树dirty状态 | 四源码固定51e380；仅本轮原件/manifest和own三件套收口 |
-| 工作分支状态 | review |
-| 本片段交付阶段 | review |
+| 工作树dirty状态 | 生命周期四源码冻结51e380；只own R4薄调用、输入及metadata准备 |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | implementation |
 | 检查状态 | 新8/8直接例、focused types0；首解释器0child红/首types红保留。4693ms/2822B/三组absent双EOF；R3实际仍1选0过。 |
-| 已集成main状态 / HEAD | fixture8379已main/origin89a27；R3 caller bdf已获限定独审main b63bf7eb5。R3结果已限定独审/main312842ab5；保持功能到达但suite失败，不将保真接收当实际旅程通过。 |
+| 已集成main状态 / HEAD | 生命周期六path已main/origin782f0ad09；R3结果main312842ab5，原suite1选0过/unknownKEEP保持。 |
 | 实现目标 | 51e380009559768c246a890f9edcf53ab2d48760；行为8例在89739运行，三执行源逐字不变；最终test仅类型位置修正 |
 | 实现范围 | apps/tui/src/task-controls/fixture-process.ts及其直接测试、fixture.ts、experiments/tui-web-control-handoff/journey.ts；own records |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 终端与网页接续功能已实测到达；已补进程组及关闭证据并完成局部验证，整次双端验收仍未通过。 |
-| 下一可用交付 | 独立审查清理修复，再准备绑定新源码的受控旅程；当前不运行浏览器或数据库。 |
-| 当前阻塞 | ACTIVE：新清理修复待独立审查与后继实际收尾验收；owner assignment_review，解除条件为固定修复获审并在新受控旅程确认。 |
+| 下一可用交付 | 准备绑定清理修复的独立R4旅程，等待固定候选审查及唯一资源窗口。 |
+| 当前阻塞 | NONE；当前仅准备一次性调用与固定输入，真实旅程尚未获新窗口。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R3结果已限定保真批准/main312842；新51e380生命周期修复待独审。 |
+| Review | 生命周期限定APPROVED_LIMITED_FIXTURE_LIFECYCLE_SOURCE_AND_DIRECT_RESULT/0P1P2；R4新调用准备待独审。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v7 active/exact7；2026-10-08T01:38:12.746Z 正式 accept，worker assignment_review；[回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/accept-receipt.json) |
 | 架构影响 | 实验fixture小模块统一真实child组关闭与错误记录；Node已reap限制明确，生产状态机/数据库清理不变。 |
 
@@ -142,3 +142,5 @@
 2026-10-08T02:18:43.161Z：本轮最小生命周期片实际开工，fresh claim v7/HEAD9435 clean；02:23:21.933Z再次核同owner/exact7。R3结果已获Lead限定保真批准，不改变1选0过/groups unknown/DB与private KEEP。按[本片Interface](../../docs/evidence/tui01f/web-handoff/group-lifecycle/interface.md)复用既有关闭语义，120s累计/≤4受监督children/8MiB scratch/128KiB raw，0PG/Chrome/provider/旧KEEP；未启动检查。历史首次开工UNKNOWN不改。
 
 2026-10-08T02:29:05Z：新四源码51e380封定，8新直接例全过；首0child解释器导入错误和types TS2540保留，test-only类型位置修正后只types复测0。实际02:27:59.177→02:28:25.983Z三组RETURN，4693ms/2822B，tiny child76310实际close/ESRCH；1空scratch删除，两types cache2715568B静态KEEP，无后续writer。见[唯一结果/来源manifest](../../docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json)、[验证与限制](../../docs/evidence/tui01f/web-handoff/group-lifecycle/validation.md)。Lead确认原R3结果忠实性已main312842ab5，唯一[I02接收](../../../m2-integration/docs/evidence/i02/tui01f-r3-result-intake.json)；不改原1选0过/未知组/KEEP，不推原根因。当前源码停写、0child/0pending，仅独审与集成等待；未建actual permit，下一真实旅程须重绑helper/sourceDigest。
+
+2026-10-08T02:32:19Z：原TUI01F-04下一R4准备段开始（工具UTC），02:32:38.370Z fresh claim v7/exact7/同owner，base6c6clean。生命周期固定51e380/delivery6c6已Lead限定APPROVED/0P1P2，27bindings/39运行输入原件核同，六精确consumer/Interface/types已main782f0ad09。复用RunSpec增加受信source_paths默认仍旧四路径，仅R4显式五路径含helper；不变150s/原assertions/cleanup，不复制741闭包。当前0actualPG/Chrome/PTY/provider，未建permit；只必要新入口直接检查，不重跑8例/types。另如实补：上轮Python导入OPS14未禁bytecode，可能写root精确tools/owned-process-supervision/__pycache__，Lead观察的untracked保持KEEP，未清理/未冒根树全clean；后续Python统一-B。
