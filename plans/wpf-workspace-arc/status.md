@@ -26,7 +26,7 @@
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | ACTIVE: 最后一次真实附件名称悬停失败；不得据此宣材料丢失或整体PASS。原三次额度已封闭，等待有界后继定位 |
 | 需用户决定 | NONE |
-| Review | PENDING d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；本连续source/三actual统一独审见final-review-input，历史批准范围保留 |
+| Review | APPROVED d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；仅source时点修正/失败结果保真root89fde，产品验收FAILED2/4/后两组未达；[根审](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/root-final-review.json) |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

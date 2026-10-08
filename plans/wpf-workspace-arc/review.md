@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01 review
 
-当前连续组合：PENDING d7e0b6f1564361bf5c25bd50c9e3f0557a234e74；三个实际均2/4 FAIL/完整RETURN，原始与归档96pairs核同。后续历史APPROVED仅其固定目标与局部范围，不覆盖本轮。见[final-review-input](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。
+当前连续组合：APPROVED_LIMITED_FAILURE_RESULT_FIDELITY d7e0b6f1564361bf5c25bd50c9e3f0557a234e74（root89fde；产品验收仍FAILED2/4）；三个实际均2/4 FAIL/完整RETURN，原始与归档96pairs核同。后续历史APPROVED仅其固定目标与局部范围，不覆盖本轮。见[final-review-input](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/final-review-input.json)。
 
 当前连续段 `6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477`：两test修chat4队列前置/有帽诊断，产品未改。8c36实际8相关purePASS/654ms，最终诊断catch小差量未重复绿检查。browser NOT_RUN/等待经理lease，最终一次独审待actual；不复用旧2/4为当前通过。[入口](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/entry.json)。
 
@@ -42,3 +42,5 @@ APPROVED `7e911df40d8c0ff875ac96e0fab36a1a3a253940`，范围仅FIFO验收修正�
 2026-10-07T21:43:20.807362+00:00：此前browser数据准备批准保历史；root在未运行parent确认scratch/祖先身份P2，见[限定审](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-timing-cleanup-review-20261007.json)。本次仅私有caller修复，target e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b；[exactdiff/最终7FS原件](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/final/raw-manifest.json)。目录fd持有与每项门禁、删后ENOENT、cache parent/link检查；缺进程退出/EOF/身份或过期均保留剩余。产品207/worker/capture未变。独立新caller review 已由下述2b2f关闭；browser4/两PNG/main仍NOT_RUN/NOT_INTEGRATED。
 
 2026-10-07T21:45:12.092738+00:00：[最终独审2b2f](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-owned-root-cleanup-final-review-20261007.json)APPROVED/P2 CLOSED，target e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b；7FS/11最终原件核同。前204ff六PASS保历史，564ms累计CLOSED。原全局floor属历史组合，经理实际准入可routine重绑合法完整sum/保护阈值与clean执行HEAD，无新产品检查；不等同browsergrant。
+
+最终独审：[root89fde](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/root-final-review.json)，0blocking evidence findings；pointer hover未解决，material/refresh/final2PNG未达，不冒产品通过。
