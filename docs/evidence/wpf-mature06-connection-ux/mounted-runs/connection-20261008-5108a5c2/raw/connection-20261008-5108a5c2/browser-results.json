@@ -1,0 +1,32 @@
+{
+  "sourceHead": "729363c38084d4c85e00d9979c69188bdf8a511f",
+  "sourceHashes": {
+    "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+    "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+    "apps/web/test/connection-ux.browser.ts": "d2551ce26fd59add7be8e0838fe01dc7f0f0157913dbb5a0f6a0368edcf99287",
+    "apps/web/test/connection-ux.fixture.tsx": "680e5e1b93ec1284b8ac1058d0050067745b874a89cb1a66690849cb444dcc84"
+  },
+  "implementation": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "startedAt": "2026-10-08T01:32:27.952Z",
+  "workerPid": 42160,
+  "parentPid": 38825,
+  "chromePid": 38829,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [
+    "SyntaxError"
+  ],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "journeys": [],
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-08T01:32:33.726Z",
+  "failure": "TimeoutError",
+  "finishedAt": "2026-10-08T01:32:38.000Z",
+  "observedElapsedMs": 10048,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

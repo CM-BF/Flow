@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-08T01:30:18.774731+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "APPROVED_LIMITED_MOUNTED_COMPONENT_PREPARATION",
+  "source": "505009c6a2b027f17157189d6c49a43a21a04cf9",
+  "implementation": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "executionHead": "729363c38084d4c85e00d9979c69188bdf8a511f",
+  "claim": {
+    "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "version": 2,
+    "worker": "w01_owner"
+  },
+  "manifest": {
+    "path": "/private/tmp/connection-ux-b1/manifest.json",
+    "bytes": 2793,
+    "sha256": "af87b07cce199ef2f18660519298184ccf0334d0ee8c55bf9517388c3c49fac8"
+  },
+  "bindingBeforeApproval": {
+    "path": "/private/tmp/connection-ux-b1/binding.json",
+    "bytes": 20945,
+    "sha256": "65d3e3a306cb5f7385392f4b5a58fa80c1993d09f7091fc55ea2f3eabd81ea36"
+  },
+  "findings": [],
+  "independentVerification": {
+    "sourcePins": 4,
+    "readOnlySourcePins": 9,
+    "preparedPins": 7,
+    "manifestEntries": 14,
+    "externalEntryPins": 31,
+    "installedRootIdentityChecks": 53,
+    "installedFileHashes": 1210,
+    "installedLogicalBytes": 100339082,
+    "payloadCopy": 0,
+    "rawCheckPairs": 30,
+    "rawCheckBytes": 91433,
+    "mismatches": [],
+    "worktree": "clean; HEAD equals owner-reported remote729363; review git status confirms tracking clean"
+  },
+  "sourceReview": [
+    "Read full production Connection, both mounted test files, final controlled-Promise5+/2- delta, worker and changed supervisor surface. Production0f58 unchanged.",
+    "Real Connection/Button/theme/CSS render with synthetic props; no duplicated login component or real credential/session read. Valid URL/nonempty synthetic token reaches native Enter handler, checking guards callbacks and keeps focus; subsequent B survives pending auth; explicit retained callbacks counted.",
+    "Controlled promise now remains unresolved through token-clear checks and is resolved by explicit settle/unmount; this remains synthetic acceptance, not an auth request.",
+    "Native details keyboard, eight states and unknown fallback, optional action absence, valid explicit submit, empty required token,390/1280 light/dark measured; screenshot acceptance still needs actual images.",
+    "Worker routes page traffic only to its one fixture origin; no PG/API/provider/personal target. Original bounded native Chrome sibling/Node worker lifecycle maintained; not a custom Chrome OS egress sandbox."
+  ],
+  "localChecks": {
+    "source": "275f067c61cea05bae9711ff61124c67e3272a20",
+    "first": "TS alias/declaration failure preserved;21515 exit2,stdout955B/stderr0,EOFtrue/drop0,group/scratchabsent",
+    "second": "Corrected real installed declaration aliases;39355 exit0,stdout/stderr0,EOFtrue/drop0,group/scratchabsent",
+    "chargedMs": 4539,
+    "state": "CLOSED",
+    "finalPromiseDelta": "505009 inspected statically only; no final-source typecheck claimed"
+  },
+  "limitations": [
+    "Browser is NOT_RUN; six groups and two screenshots are planned, not passed.",
+    "Root did not start any product/Chrome/HTTP test.",
+    "On failure the local checks array is not returned and worker records only safe error name: [] means no group report, not no work or six failures; diagnostics may be insufficient to identify the exact failing step. Preserve that limit, do not infer a cause.",
+    "Geometry toBeInViewport uses default intersection semantics for buttons; visual review must inspect complete labels/control clipping in actual screenshots.",
+    "Archived intake pins the prior preparation manifest54fe as history. Actual reviewed candidate is af87 at executionHEAD729363; original archived intake must not be represented as this final manifest.",
+    "No full App/Cookie/CSRF/reauth/retained draft store/main/personal deployment acceptance."
+  ],
+  "executionConditions": [
+    "D01 must select a fresh exclusive actual window with the original exact claim7/currentHEAD/pins/globaloverlap/free-floor checks. This source review does not select a resource window.",
+    "One60s packet including15s cleanup;64MiB scratch8MiB retained3MiB metadata;1private ViteHTTP plus owned ChromeCDP control;0PG/provider/actualauth.",
+    "Only fill the approval pointers/state and fresh manager runtime gate as expected by the existing packet; preserve prior binding/manifest and record derived execution hashes. No product/input semantics changes without reviewing the changed surface.",
+    "Actual OS exit, terminal seal digests, dual-group absence/EOF/drop0 and scratch identity cleanup required; retain failure and release actual before final review."
+  ]
+}

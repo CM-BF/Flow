@@ -9,7 +9,7 @@ This is the existing MATURE06-04 / WPF-RECOVERY01 connection interface. The mana
 - Source target: 0f58a64dce1cd8fd7e8f067c542a7db565c003f2; source implementation STOP 2026-10-08T01:14:42.347730+00:00.
 - User result: neutral signed-out guidance, clear next action, local engineering-dashboard/administrator credential help, optional technical details.
 - Checks: 7/7 pure behavior and affected strict/noEmit PASS; two serial children, 1526/60000ms CLOSED with exact PID/PGID/scratch absence and EOF/drop0.
-- Review: APPROVED_LIMITED_SOURCE_AND_LOCAL_RESULTS for 0f58 by root c0af32d7. Main: NOT_INTEGRATED. Mounted browser/390/themes/keyboard: NOT_RUN.
+- Review: APPROVED_LIMITED_SOURCE_AND_LOCAL_RESULTS for 0f58 by root c0af32d7. Main: NOT_INTEGRATED. Mounted attempt: FAILED initialization (checks not returned, 0 PNG); component UI acceptance NOT_REACHED.
 - Next: mounted preparation source/native review, then an independently authorized representative mounted check and controlled main integration. No additional runtime is authorized by unused budget.
 
 [Single intake](intake.json), [claim](take-receipt.json), [exact App extraction proof](extraction-proof.json), [raw index](local-results/index.json), [local accounting](local-accounting.json), [quality](quality.json).
@@ -22,4 +22,12 @@ New preparation clock 01:21:15.863679Z → 01:36:15.863679Z; 12MiB includes sour
 
 New affected types: first alias failure preserved; corrected private declaration mapping PASS on 275f. Two children charged 2121+2418=4539ms/30000 CLOSED, EOF/drop0 and exact owned groups/scratch absent. Subsequent 5+/2- fixture Promise lifetime adjustment is source-only. No third child, no old seven-case rerun.
 
-[Mounted intake](mounted-preparation/intake.json), [source/local approval](mounted-preparation/source-local-review.json), [two-check raw index](mounted-preparation/checks/index.json), [quality](mounted-preparation/quality.json). The proposed 60s browser allowance is not a runtime grant.
+[Mounted intake](mounted-preparation/intake.json), [source/local approval](mounted-preparation/source-local-review.json), [two-check raw index](mounted-preparation/checks/index.json), [quality](mounted-preparation/quality.json). The subsequently authorized once-only 60s window is now CLOSED/FAILED; it does not authorize a retry.
+
+## Current mounted attempt
+
+RUNNING 2026-10-08T01:32:27.906470+00:00; single authorized component attempt connection-20261008-5108a5c2. Runtime target 505009c6a2b027f17157189d6c49a43a21a04cf9 / execution HEAD 729363c38084d4c85e00d9979c69188bdf8a511f. Parent clean check completed before owned Chrome creation; fixed inputs are unchanged. No result or visual approval yet.
+
+FAILED / exact RETURN 2026-10-08T01:33:07.664422+00:00; actual exit 1, 10515ms/60000 CLOSED. No reported completed groups or screenshots; no retry authorization. Failure diagnosis pending; original raw kept in /private/tmp/connection-ux-b1.
+
+Current actual receipt: [mounted failure](mounted-runs/connection-20261008-5108a5c2/intake.json), [raw index](mounted-runs/connection-20261008-5108a5c2/index.json). Failure is the fixture CJS-to-browser resolver, not a verified Connection product behavior failure. Preparation source/native review accepted; actual result fidelity review pending. Product and test source remain STOP.

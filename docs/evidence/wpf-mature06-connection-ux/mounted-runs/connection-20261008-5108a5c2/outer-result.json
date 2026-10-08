@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-08T01:32:38.418774+00:00",
+  "actualExitCode": 1,
+  "elapsedMs": 10514.292416977696,
+  "chargeMs": 10515,
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "receivedBytes": 654,
+      "keptBytes": 654,
+      "droppedBytes": 0
+    },
+    "stderr": {
+      "eof": true,
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0
+    }
+  },
+  "terminal": {
+    "type": "terminal-seal",
+    "terminalContract": "connection-ux-browser-v1-external-exit-required",
+    "state": "FAILED",
+    "declaredExitCode": 1,
+    "sealedFiles": {
+      "binding.json": "50145185484a3bae6bb8cbc09b5941618ed7bc7663383084ad8f811a3ea25278",
+      "result.json": "a5e299523cf0ec46f1e78b2b53081cd85e6daac2468ffce98f783f9ef7fa06b9",
+      "browser-budget.json": "1d420df785a1a5b1ff102279b6ad5d6076e56f3a199336a854035fa1967e4036",
+      "runtime-evidence-manifest.json": null
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 10460
+  },
+  "parentPid": 38825
+}

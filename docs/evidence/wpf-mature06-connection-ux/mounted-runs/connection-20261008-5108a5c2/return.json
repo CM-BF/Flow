@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-08T01:33:07.664422+00:00",
+  "actualExitCode": 1,
+  "chargeMs": 10515,
+  "identities": [
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "pgid": "ESRCH"
+    }
+  ],
+  "allAbsent": true,
+  "scratchAbsent": true,
+  "outerStreams": {
+    "stdout": {
+      "eof": true,
+      "receivedBytes": 654,
+      "keptBytes": 654,
+      "droppedBytes": 0
+    },
+    "stderr": {
+      "eof": true,
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0
+    }
+  },
+  "innerStreams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 5861,
+      "keptBytes": 5861,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 344,
+      "keptBytes": 344,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "browser": {
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "cleanupErrors": [],
+    "failure": "TimeoutError",
+    "checks": [],
+    "outcome": "failed"
+  },
+  "secretInput": "NOT_USED 0PG",
+  "retry": "NOT_AUTHORIZED"
+}

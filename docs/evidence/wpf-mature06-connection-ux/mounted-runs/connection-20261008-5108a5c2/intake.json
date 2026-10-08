@@ -1,0 +1,113 @@
+{
+  "task": "MATURE06-04",
+  "source": "505009c6a2b027f17157189d6c49a43a21a04cf9",
+  "executionHead": "729363c38084d4c85e00d9979c69188bdf8a511f",
+  "implementation": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "actualStart": {
+    "at": "2026-10-08T01:32:27.906470+00:00",
+    "pid": 38825,
+    "pgid": 38825,
+    "run": "connection-20261008-5108a5c2",
+    "floor": 13303021568,
+    "free": 14548172800
+  },
+  "terminalAt": "2026-10-08T01:32:38.418774+00:00",
+  "return": {
+    "at": "2026-10-08T01:33:15.526131+00:00",
+    "actualExitCode": 1,
+    "chargeMs": 10515,
+    "identities": [
+      {
+        "identity": 38825,
+        "PID": "ESRCH",
+        "PGID": "ESRCH"
+      },
+      {
+        "identity": 42160,
+        "PID": "ESRCH",
+        "PGID": "ESRCH"
+      },
+      {
+        "identity": 38829,
+        "PID": "ESRCH",
+        "PGID": "ESRCH"
+      }
+    ],
+    "allAbsent": true,
+    "scratchAbsent": true,
+    "outerStreams": {
+      "stdout": {
+        "eof": true,
+        "receivedBytes": 654,
+        "keptBytes": 654,
+        "droppedBytes": 0
+      },
+      "stderr": {
+        "eof": true,
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0
+      }
+    },
+    "innerStreams": {
+      "chrome.stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "chrome.stderr": {
+        "receivedBytes": 5861,
+        "keptBytes": 5861,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "worker": {
+        "receivedBytes": 344,
+        "keptBytes": 344,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      }
+    },
+    "browser": {
+      "fixtureClosed": true,
+      "contextClosed": true,
+      "cleanupErrors": [],
+      "failure": "TimeoutError",
+      "checks": [],
+      "outcome": "failed"
+    },
+    "secretInput": "NOT_USED 0PG",
+    "retry": "NOT_AUTHORIZED",
+    "priorReceiptNote": "return.json mistakenly reused pid field for status, original retained; this exact receipt preserves numeric identity"
+  },
+  "result": "FAILED_INITIALIZATION",
+  "reportedChecks": [],
+  "screenshots": [],
+  "chargeMs": 10515,
+  "phaseLimitMs": 60000,
+  "phaseState": "CLOSED",
+  "unusedIsNotPermission": true,
+  "finding": {
+    "category": "fixture resolver",
+    "observed": "Browser SyntaxError: react-dom/client.js does not provide createRoot; subsequent TimeoutError",
+    "sourceEvidence": "optimizeDeps noDiscovery:true include:[] with exact alias to CJS client.js",
+    "causality": "The raw directly establishes module initialization failure. No completed component groups were reported, and no product behavior conclusion follows.",
+    "next": "No correction or retry in this once-only window; bounded resolver fix requires manager continuation."
+  },
+  "preparedHistory": "intake snapshot54fe; execution af87; routine reviewed binding501451 preserved separately",
+  "measurement": "PARTIAL_RETAINED_ADOPTION",
+  "tailBudget": {
+    "limitBytes": 3145728,
+    "atomicIndexCopyAllocated": 2310144,
+    "rawBytes": 111701,
+    "rawAndCopyBytes": 223402,
+    "objectsDocsReserve": 524288,
+    "prewriteUpperBound": 3057834,
+    "actualPeak": "NOT_OBSERVED"
+  },
+  "rawIndex": "index.json"
+}

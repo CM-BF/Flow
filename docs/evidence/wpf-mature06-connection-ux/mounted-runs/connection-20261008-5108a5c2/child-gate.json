@@ -1,0 +1,61 @@
+{
+  "mode": "connection-ux-browser",
+  "allowRun": true,
+  "singleUse": true,
+  "taskId": "MATURE06-04",
+  "entry": "connection-ux",
+  "run": "connection-20261008-5108a5c2",
+  "expiresAt": "2026-10-08T01:33:57.903492+00:00",
+  "bindingSha256": "50145185484a3bae6bb8cbc09b5941618ed7bc7663383084ad8f811a3ea25278",
+  "runnerSha256": "fafc45383f45093a952d3a0df7727ec0f24bc03d64e7bbeea969380d74d723a8",
+  "claim": {
+    "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "version": 2,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "sourceHead": "729363c38084d4c85e00d9979c69188bdf8a511f",
+  "sourceHashes": {
+    "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+    "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d",
+    "apps/web/test/connection-ux.browser.ts": "d2551ce26fd59add7be8e0838fe01dc7f0f0157913dbb5a0f6a0368edcf99287",
+    "apps/web/test/connection-ux.fixture.tsx": "680e5e1b93ec1284b8ac1058d0050067745b874a89cb1a66690849cb444dcc84"
+  },
+  "previousRuntimeMs": 0,
+  "totalMs": 60000,
+  "startFreeBytes": 13303021568,
+  "stopFreeBytes": 1140850688,
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-connection-mounted-native-boundary-20261008.json",
+    "sha256": "df091cfc002ae348ded1c0ee52334b3cf9520eff1c23836b233d136a4e6f75ff"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-connection-mounted-preparation-review-20261008.json",
+    "sha256": "73b35b7f945b17bd6bce1b415d687862833ec0a24af049f4f8ddd2f243ab8d68"
+  },
+  "priorLocalEvidence": {
+    "reviews": [
+      {
+        "path": "/private/tmp/root-connection-actionable-source-review-20261008.json",
+        "sha256": "c0af32d7dda6a99eee1d32767628aa88e6c94f528ecaec88299f3f8e97a47342"
+      }
+    ],
+    "unchangedSources": {
+      "apps/web/src/connection/Connection.tsx": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d",
+      "apps/web/src/connection/presentation.ts": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d"
+    },
+    "meaning": "7 pure and affected component types only; mounted not run"
+  },
+  "supervision": {
+    "startedAtMs": 1791423147952,
+    "workDeadlineMs": 1791423192952,
+    "hardDeadlineMs": 1791423207952,
+    "scratch": "/private/tmp/connection-ux-b1/scratch",
+    "output": "/private/tmp/connection-ux-b1/raw/connection-20261008-5108a5c2",
+    "parentPid": 38825,
+    "chromePid": 38829,
+    "chromePgid": 38829,
+    "chromeEndpoint": "http://127.0.0.1:56592",
+    "chromeOwnership": "external-parent-native-sibling"
+  }
+}
