@@ -1,0 +1,34 @@
+{
+  "state": "SOURCE_LOCAL_REVIEW_READY",
+  "recordedAt": "2026-10-08T01:45:48.891Z",
+  "owner": "db_transaction_owner",
+  "source": "581d38a40777efdcc4ef46c341184b2755750e83",
+  "baseline": "2b52b23554e612077bbc25492417fbcf43f299cf",
+  "claim": {
+    "id": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 6,
+    "scopeCount": 11
+  },
+  "manifest": {
+    "path": "docs/evidence/x01-trusted-process-host/observation/review-manifest.json",
+    "sha256": "904b3e3524878503c718c0bb59da8c411a9f855b79d957c54b13b49767673b0c",
+    "bindings": 31,
+    "bytes": 397600
+  },
+  "inputs": "current-inputs.json",
+  "supply": "supply.json",
+  "dependencies": "dependencies.json",
+  "local": "local.json",
+  "interface": "README.md",
+  "productPaths": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-host.test.ts",
+    "apps/runner/src/plugins/process-host-observation.test.ts",
+    "apps/runner/src/plugins/runtime.test.ts"
+  ],
+  "reviewBoundary": "five owned leaves relative current main; 7 pure/mock cases and types; real worker/T7/PG/main NOT_RUN; old real-worker counts adapted statically after first types",
+  "retained": [],
+  "pendingLaunch": 0,
+  "futureChecks": 0
+}

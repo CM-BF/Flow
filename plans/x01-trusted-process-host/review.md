@@ -38,4 +38,4 @@ Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status APPROVED at 2026-10-07T1
 
 ## Observation source/local review
 
-状态 NOT_STARTED；新五叶目标待本次固定。7/7定向纯行为、types0、2child CLOSED。旧审批不覆盖新观察；真实worker/PG/T7未运行。唯一入口 observation/review-ready.json。
+状态 NOT_STARTED；新五叶目标 581d38a40777efdcc4ef46c341184b2755750e83。7/7定向纯行为、types0、2child CLOSED。旧审批不覆盖新观察；真实worker/PG/T7未运行。唯一入口 observation/review-ready.json。

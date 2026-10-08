@@ -17,12 +17,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | 本次 observation source 固定后记录；旧扩展已main，当前新观察接缝未main。 |
-| 工作树dirty状态 | 本次五叶与自身证据已验证，正在固定source/packet；0 child/待launch。 |
-| 实现目标 | UNKNOWN |
+| HEAD | 581d38a40777efdcc4ef46c341184b2755750e83（观察source；packet另见review-ready） |
+| 工作树dirty状态 | source已固定，metadata封packet后clean STOP；0 child/待launch。 |
+| 实现目标 | 581d38a40777efdcc4ef46c341184b2755750e83 |
 | 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host-observation.test.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
 | 检查状态 | PASSED observation/local.json：7selected/7passed/12未选，focusedtypes0；2child fullRETURN 2026-10-08T01:43:55.865Z。旧真实worker测试仅计数静态适配，未运行。 |
-| Review | NOT_STARTED observation新接缝待固定独审；旧abc0736批准仅属已main历史。 |
+| Review | NOT_STARTED 581d38a40777efdcc4ef46c341184b2755750e83 新观察接缝待独审；旧abc0736批准仅属已main历史。 |
 | 已集成main状态 / HEAD | 旧工具/验证器host已main；本次观察五叶NOT_INTEGRATED，固定main2b52 runtime前像。T7/public真实链仍未验。 |
 | 最近更新时间 | 2026-10-08T01:45:24.052Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |

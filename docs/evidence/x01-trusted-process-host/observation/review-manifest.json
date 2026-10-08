@@ -1,0 +1,162 @@
+{
+  "source": "581d38a40777efdcc4ef46c341184b2755750e83",
+  "fixedGit": "packet",
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/process-host-observation.test.ts",
+      "bytes": 9354,
+      "sha256": "23c5b95b3752c42dbad822cd0f0f7095a182ff1104e9fc79e1a868bf143d49cc"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 13103,
+      "sha256": "e56be38e2a7297a152143b92ddc10b93e6c505b113839ef15a7210bb32f2487a"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "bytes": 11552,
+      "sha256": "d888dd3900c004e571193bc6b77222a01b9185afcdd7fb63b375bceab5427234"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "bytes": 18110,
+      "sha256": "735847225be7682a1f6d6f77674f2efc4ed43a34705fe4f6afc4f90b2e7f5c00"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 28822,
+      "sha256": "19ead276a66d45dddf58e663dda6dd37c5c18242692f210011c188b391888817"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/README.md",
+      "bytes": 2686,
+      "sha256": "3c6c52043bcab9ae33a2ec50815c96d85c38d08ffa38dc9ad288355cbde41147"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/claim-amend.json",
+      "bytes": 768,
+      "sha256": "db4470d675d07d318e597c22636a62074c9e3d44f200379450cfe69eacc9624b"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/claim-receipt.json",
+      "bytes": 1043,
+      "sha256": "e0029249173e49e51903733bc5861e927e0b1374e9d3281ddaff21fc9c0cac1e"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/current-inputs.json",
+      "bytes": 60195,
+      "sha256": "b0870d6cce3a6c9115ea350c2d432110c1e66e7f77c5734bb1f49d25411c2895"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/dependencies.json",
+      "bytes": 4544,
+      "sha256": "15f0dd645c8ad69ed90b0542d935615a38fe582907d0ca9b9deebb2d31e05b9f"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/fresh-claim.json",
+      "bytes": 1042,
+      "sha256": "0f45bf0b55c981ab56db41b67efa39c67f1edcd1fb77e0f4eca11da75e5db43d"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/fresh-head.txt",
+      "bytes": 41,
+      "sha256": "dd5f2a9d5c56aa6f8aa084b505b8a2a3734b1276c9f00c162b07ec5fd041c7a0"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/growth.json",
+      "bytes": 465,
+      "sha256": "b2b7b3bc4f4d97b177b4babded59cf8e45292dd22b8e64052a1e9346a73375b4"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/local.json",
+      "bytes": 802,
+      "sha256": "21cb92de422c7014713cca184d3b87ecc5ff3b5239667144303de64907401973"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/owned-inputs.json",
+      "bytes": 1397,
+      "sha256": "7fbe75e2e1073d99cac0e44dacf9fcc1f3fc103cbed15f743125fd5006c8eed5"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/prelaunch-failure.json",
+      "bytes": 296,
+      "sha256": "37e8713cb7cb035378fc5acc0416e28c6645c435685ecdf0c980e308eadfec93"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/run-local.py",
+      "bytes": 5745,
+      "sha256": "93f4f86b318afc7090c0a5fe80666be4315ec0e3a623d0764ee61abe315c506e"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/behavior/fixtures.json",
+      "bytes": 477,
+      "sha256": "7edf6fa5bf7d5938eb3522c6975bb7e38ba60cf1ebd689e7174556c74e751d75"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/behavior/output.log",
+      "bytes": 486,
+      "sha256": "ab0b8b63704f445d80f47e527b32455363bf3e121e34f1b7aade95abeef0a2af"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/behavior/reservation.json",
+      "bytes": 46607,
+      "sha256": "6b4128bf89471850b83b4ffba79a4dd83bebbc15ad44e597e5c2c69319b63a3a"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/behavior/result.json",
+      "bytes": 39151,
+      "sha256": "e057cee87110cffb822c3777f99af726a52cd15894174fd26cb43fac2d2f3960"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/types/output.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/types/reservation.json",
+      "bytes": 46005,
+      "sha256": "42f89a89ff93d817157d3e9e6b70af1ff2b0c367bd0e0c69bca32dadc2873b55"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/runs/types/result.json",
+      "bytes": 39145,
+      "sha256": "9cb713d51d176fbe556c15ec04ea63aba5550d381d2ea3a8f23ae6445cf8b88b"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/segment.json",
+      "bytes": 614,
+      "sha256": "87e5c3d3feda0188cddad034ccd9e4db9e94a944654efbcd2bbb2002c0ac19ab"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/supply.json",
+      "bytes": 37509,
+      "sha256": "925583163f6c83ba1389c7e1067fb2c86aad59ca89c095d7be4d13b8103cd7b5"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/tsconfig.json",
+      "bytes": 407,
+      "sha256": "05bb33bdc43ad0d4b2c0ac5209dd3874287ffd0a10e589273da95318d3e25a63"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/observation/vitest.config.mjs",
+      "bytes": 109,
+      "sha256": "a8378f869e9cedd5a08710058c8a65d71cc2aee4d26f3a7d65864e1715940e1a"
+    },
+    {
+      "path": "plans/x01-trusted-process-host/plan.md",
+      "bytes": 8394,
+      "sha256": "8896cb758f9cf36b0dabaefbb2499648e7ec5c362d8a9027544bcdf93f3981d8"
+    },
+    {
+      "path": "plans/x01-trusted-process-host/review.md",
+      "bytes": 4975,
+      "sha256": "cb4d6503476e59eabfd7f1794f280f69ab00062a817dad605e8c97f49c6681d8"
+    },
+    {
+      "path": "plans/x01-trusted-process-host/status.md",
+      "bytes": 13756,
+      "sha256": "34738610ce3d57af9a9717ab6096450db979b89b11b9a455bf74703589e84740"
+    }
+  ],
+  "bytes": 397600
+}
