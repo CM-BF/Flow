@@ -33,7 +33,7 @@ function Fixture() {
       <button type="button" onClick={() => { release.current?.(); release.current = null; setPending(false); setPhase("unauthenticated"); }}>Settle synthetic connection</button>
       <button type="button" onClick={() => applyTheme("light")}>Fixture light theme</button>
       <button type="button" onClick={() => applyTheme("dark")}>Fixture dark theme</button>
-      <output data-testid="fixture-observation">{JSON.stringify({ ...counts, pending })}</output>
+      <output data-testid="fixture-observation" style={{ display: "block", overflowWrap: "anywhere" }}>{JSON.stringify({ ...counts, pending })}</output>
     </aside>
   </>;
 }

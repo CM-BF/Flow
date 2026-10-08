@@ -41,3 +41,5 @@ Worker syntax and final affected fixture/browser strict PASS (142+2338=2480ms; t
 New loader attempt RUNNING 2026-10-08T01:50:11.562129Z; run connection-loader-20261008-e9df81b8, parent43439, execution5cd0157f665132cc8bd4b95f574108000d09fc10. Parent clean admission completed before child gate. First new attempt of three; no actual result yet.
 
 Loader attempt 1 FAILED / exact RETURN 2026-10-08T01:50:49.799985Z; 10649ms, pageErrors empty, states-next-actions timed out with no group completion reported. Real component mounted; safe failure screenshot captured. Fixture phase selector now has an explicit separate label/id (source correction; next actual pending). Product and six assertions unchanged.
+
+Loader attempt 2 FAILED / exact RETURN 2026-10-08T01:55:20.832795Z; 6581ms, first five groups reported complete, final390 geometry failed (document571>390). Failure PNG shows synthetic observation JSON single-line overflow below the real main. Fixture output now wraps naturally; document geometry assertion remains unchanged. Bundle17230ms/2attempts, final candidate pending manager lease.
