@@ -50,33 +50,33 @@ test('offline missing selected cache records pre-install failure before cleaning
  }finally{await rm(directory,{recursive:true,force:true});await rm(seed,{recursive:true,force:true});}
 });
 
-test('retention keeps the three historical artifacts and admits a bounded fourth, never a fifth', () => {
-  const oldBytes = 366318536 + 367041727, newBytes = 367045616;
-  assert.equal(LIMITS.artifacts, 4);
+test('retention keeps four fixed artifacts and admits a bounded fifth, never a sixth', () => {
+  const four = { count: 4, bytes: 1467477371 }, nextBytes = 367000000;
+  assert.doesNotThrow(() => assertBackendRetention(four, { kind: 'import', bytes: nextBytes }));
+  assert.equal(LIMITS.artifacts, 5);
   assert.equal(LIMITS.bytes, 1024 ** 3);
   assert.equal(LIMITS.retainedBytes, 2 * 1024 ** 3);
-  assert.doesNotThrow(() => assertBackendRetention({ count: 2, bytes: oldBytes }, { kind: 'import', bytes: newBytes }));
-  const three = { count: 3, bytes: oldBytes + newBytes };
-  assert.doesNotThrow(() => assertBackendRetention(three, { kind: 'import', bytes: newBytes }));
-  assert.deepEqual(three, { count: 3, bytes: 1100405879 });
-  assert.throws(() => assertBackendRetention({ count: 4, bytes: 4 * newBytes }, { kind: 'import', bytes: 1 }), { code: 'BACKEND_RETENTION_FULL' });
+  const five = { count: 5, bytes: four.bytes + nextBytes };
+  assert.doesNotThrow(() => assertBackendRetention(five));
+  assert.throws(() => assertBackendRetention(five, { kind: 'import', bytes: 1 }), { code: 'BACKEND_RETENTION_FULL' });
+  assert.deepEqual(four, { count: 4, bytes: 1467477371 });
 });
 
-test('retention separates maximum build reservation from verified import bytes', () => {
-  const three = { count: 3, bytes: 1100405879 };
-  assert.throws(() => assertBackendRetention(three, { kind: 'build' }), { code: 'BACKEND_RETENTION_FULL' });
-  assert.doesNotThrow(() => assertBackendRetention(three, { kind: 'import', bytes: 367045616 }));
-  assert.doesNotThrow(() => assertBackendRetention({ count: 2, bytes: 733360263 }, { kind: 'build' }));
-  assert.throws(() => assertBackendRetention(three, { kind: 'build', bytes: 1 }), { code: 'BACKEND_RETENTION_INVALID' });
+test('retention reserves the maximum for build while verified imports use actual bytes', () => {
+  const four = { count: 4, bytes: 1467477371 };
+  assert.throws(() => assertBackendRetention(four, { kind: 'build' }), { code: 'BACKEND_RETENTION_FULL' });
+  assert.doesNotThrow(() => assertBackendRetention(four, { kind: 'import', bytes: 367000000 }));
+  assert.doesNotThrow(() => assertBackendRetention({ count: 0, bytes: 0 }, { kind: 'build' }));
+  assert.throws(() => assertBackendRetention(four, { kind: 'build', bytes: 1 }), { code: 'BACKEND_RETENTION_INVALID' });
 });
 
 test('retention retains exact aggregate and single-artifact byte limits', () => {
   const gib = 1024 ** 3;
-  assert.doesNotThrow(() => assertBackendRetention({ count: 3, bytes: gib }, { kind: 'import', bytes: gib }));
-  assert.throws(() => assertBackendRetention({ count: 3, bytes: gib + 1 }, { kind: 'import', bytes: gib }), { code: 'BACKEND_RETENTION_FULL' });
+  assert.doesNotThrow(() => assertBackendRetention({ count: 4, bytes: gib }, { kind: 'import', bytes: gib }));
+  assert.throws(() => assertBackendRetention({ count: 4, bytes: gib + 1 }, { kind: 'import', bytes: gib }), { code: 'BACKEND_RETENTION_FULL' });
   assert.throws(() => assertBackendRetention({ count: 1, bytes: 1 }, { kind: 'import', bytes: gib + 1 }), { code: 'BACKEND_RETENTION_INVALID' });
-  assert.throws(() => assertBackendRetention({ count: 4, bytes: 2 * gib + 1 }), { code: 'BACKEND_RETENTION_FULL' });
-  assert.throws(() => assertBackendRetention({ count: 5, bytes: 1 }), { code: 'BACKEND_RETENTION_FULL' });
+  assert.throws(() => assertBackendRetention({ count: 5, bytes: 2 * gib + 1 }), { code: 'BACKEND_RETENTION_FULL' });
+  assert.throws(() => assertBackendRetention({ count: 6, bytes: 1 }), { code: 'BACKEND_RETENTION_FULL' });
 });
 
 test('retention rejects unknown quantities and unrecognized admission modes', () => {
@@ -90,7 +90,7 @@ test('retention rejects unknown quantities and unrecognized admission modes', ()
   }
 });
 
-test('retention public prepare reads four unchanged legacy manifests and rejects a fifth before build', async () => {
+test('retention public prepare reads five unchanged legacy manifests and rejects a sixth before build', async () => {
   const { mkdir, writeFile, readFile, realpath } = await import('node:fs/promises');
   const { nodeIdentity } = await import('./node-identity.mjs');
   const directory = await realpath(await mkdtemp(join(tmpdir(), 'svc06-retention-')));
@@ -98,7 +98,7 @@ test('retention public prepare reads four unchanged legacy manifests and rejects
     const store = join(directory, 'backend-artifacts');
     await mkdir(store, { mode: 0o700 });
     const node = await nodeIdentity(), originals = [];
-    for (const digit of ['1', '2', '3', '4']) {
+    for (const digit of ['1', '2', '3', '4', '5']) {
       const sourceHead = digit.repeat(40);
       const encoded = JSON.stringify({ policy: BACKEND_POLICY, sourceHead, node, inventory: { entries: [], bytes: 0 } }) + '\n';
       const artifactId = digest(encoded), path = join(store, artifactId);
@@ -108,7 +108,7 @@ test('retention public prepare reads four unchanged legacy manifests and rejects
     }
     const first = originals[0].artifact;
     assert.deepEqual(await prepareBackendArtifact({ directory, repository: process.cwd(), target: first.sourceHead }), first);
-    await assert.rejects(prepareBackendArtifact({ directory, repository: process.cwd(), target: '5'.repeat(40) }), { code: 'BACKEND_RETENTION_FULL' });
+    await assert.rejects(prepareBackendArtifact({ directory, repository: process.cwd(), target: '6'.repeat(40) }), { code: 'BACKEND_RETENTION_FULL' });
     assert.deepEqual((await readdir(store)).sort(), originals.map(item => item.artifact.artifactId).sort());
     for (const item of originals) assert.equal(await readFile(join(item.path, 'manifest.json'), 'utf8'), item.encoded);
     await writeFile(join(store, 'unknown'), 'unconfirmed');
