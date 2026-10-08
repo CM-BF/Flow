@@ -1,0 +1,56 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_NO_RUNTIME_GRANT",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "branch": "codex/web-context-history",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a",
+  "version": 3,
+  "exactScopeCount": 8,
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "fixedSourceHead": "9cd2ae350887ca80e59765f1867627a29cdca787",
+  "executionHead": "5402a167f32b1011af469eb82c09bda33fe67c68",
+  "phaseId": "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007",
+  "runs": "actual-closure-r2",
+  "parent": {
+    "path": "/private/tmp/context-history-closure-r2-20261007/parent.ts",
+    "realpath": "/private/tmp/context-history-closure-r2-20261007/parent.ts",
+    "bytes": 38415,
+    "sha256": "d433800b4174fa8aee7f76c8a7319dbd6ddf34e7113cca388152d6ebc2495636"
+  },
+  "capture": {
+    "path": "/private/tmp/context-history-closure-r2-20261007/capture.py",
+    "realpath": "/private/tmp/context-history-closure-r2-20261007/capture.py",
+    "bytes": 9102,
+    "sha256": "d8e4c5f108da352d64d4619f0e572337585157a5b76b178eb80955f2829288f0"
+  },
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/closure-r2/root-review.json",
+    "originalPath": "/private/tmp/root-context-history-closure-r2-review-20261008.json",
+    "bytes": 2933,
+    "sha256": "5a76a60344bb5ca31dbda28a3b38b93d9246e0380016ef691fc27b2dcbaee7ca",
+    "target": "5402a167f32b1011af469eb82c09bda33fe67c68",
+    "status": "APPROVED_LIMITED_FIXED_SOURCE_CLOSURE_AND_FIVE_LITERAL_BINDING_DELTA"
+  },
+  "nativeApproval": {
+    "base": {
+      "path": "/private/tmp/root-context-history-mounted-preparation-review-20261007.json",
+      "bytes": 6163,
+      "sha256": "3af24f3992c0401e6db3beca3cf0848cbdfb352db83123548dd56c54049040fa",
+      "decision": "APPROVED_LIMITED_SOURCE_AND_NATIVE_PREPARATION"
+    },
+    "fiveLiteralDeltaReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/closure-r2/root-review.json",
+      "originalPath": "/private/tmp/root-context-history-closure-r2-review-20261008.json",
+      "bytes": 2933,
+      "sha256": "5a76a60344bb5ca31dbda28a3b38b93d9246e0380016ef691fc27b2dcbaee7ca",
+      "target": "5402a167f32b1011af469eb82c09bda33fe67c68",
+      "status": "APPROVED_LIMITED_FIXED_SOURCE_CLOSURE_AND_FIVE_LITERAL_BINDING_DELTA"
+    },
+    "runtimeGrant": null,
+    "meaning": "Original native lifecycle unchanged; exact data delta accepted. Future manager execution grant required."
+  },
+  "oldPhaseClosed": true,
+  "oldUnusedTransferred": false,
+  "testsRunInThisPreparation": 0,
+  "staticBinding": "Exact new phase appears twice in parent, once in capture; fixed absolute parent points to new packet; task selection/budget/native cleanup/all8groups unchanged; new actual parent exclusive0700 identity recorded."
+}

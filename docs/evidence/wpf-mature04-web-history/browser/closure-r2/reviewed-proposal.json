@@ -1,0 +1,91 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_NO_RUNTIME_GRANT",
+  "task": "MATURE04-05",
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "groups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "png": [
+    "light-390.png",
+    "dark-390.png"
+  ],
+  "totalMs": 90000,
+  "workMs": 60000,
+  "cleanupMs": 30000,
+  "budgetMsAlreadyUsed": 0,
+  "processes": {
+    "pythonOuter": 1,
+    "nodeParent": 1,
+    "nodeWorkerGroup": 1,
+    "ownedChromeGroup": 1,
+    "httpListeners": 2,
+    "markedDatabases": 1,
+    "configuredPGConservative": 13,
+    "availablePGReserve": 16,
+    "providerCalls": 0
+  },
+  "storageBytes": {
+    "scratchCap": 67108864,
+    "databaseWalPlanning": 134217728,
+    "retainedEvidenceCap": 9437184,
+    "outerStreamsCap": 262144,
+    "metadataPlanning": 3145728,
+    "proposalPeakSum": 214171648
+  },
+  "storageNote": "Independent90s proposal only; future manager actual grant required. No transfer of old unused. Inner9MiB cap continues to include all existing browser evidence, including old actual; new phase runs are isolated under actual-closure-r2. Outer256KiB plus3MiB metadata. DB WAL is planning, not hard measured limit.",
+  "entry": [
+    "python3",
+    "/private/tmp/context-history-closure-r2-20261007/capture.py",
+    "--gate",
+    "<fresh own independent phase gate>",
+    "--env-file",
+    "<new unique0600 owned fixture admin input>",
+    "--output",
+    "/private/tmp/context-history-closure-r2-20261007/actual/<new-run>"
+  ],
+  "admin": "Existing dedicated fixture source only; unique 0600 single-link input, value never logged; owner dev/ino exact deletion after return. No admin input created in preparation.",
+  "native": "Reuse fixed Recovery sibling Chrome/CDP/Playwright, owned Node groups, marked DB normalDROP/KEEP and passive outer EOF capture. This changed task/worker requires focused source/native review; no runtime grant.",
+  "cleanup": [
+    "context closed then fixture closes own two HTTP listeners, Vite and center; own pending response/upstream/socket close events settled and counts zero",
+    "parent reaps all registered worker/Chrome groups, EOF/drop accounting; lease marker checks, normal DROP/KEEP; scratch removed only after owned groups absent",
+    "outer parent actual exit and both EOF/hash; owner fresh PID/PGID/ports/DB/scratch/private-env exact return before release"
+  ],
+  "coverageLimits": [
+    "b129 independent App, NOT Arc-combined",
+    "DTO history/detail producer is synthetic after real Cookie authentication; not backend observation generation",
+    "same-view task replacement NOT_COVERED",
+    "held detail NOT_COVERED",
+    "plugin disable and authority revoke during a pending read NOT_COVERED",
+    "hidden Arc workspace NOT_COVERED",
+    "serverFinished means ServerResponse finish only, not browser receipt/decoded success",
+    "two PNGs are candidates; actual visual review still required"
+  ],
+  "arcIntegration": "Arc currentGroups includes hidden workspaces; controlled integration must authorize against visibleGroups. Hold real read -> switch workspace -> clear/abort/no late publication -> explicit reopen; not proven by this independent b129 candidate.",
+  "phaseId": "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007",
+  "executionHead": "5402a167f32b1011af469eb82c09bda33fe67c68",
+  "sourceClosure": "closure.json",
+  "metadataAccounting": "3MiB includes own index atomic temporary copy and bounded documents; source preparation8MiB is separate and not runtime credit",
+  "priorPhase": {
+    "id": "CONTEXT-HISTORY-MOUNTED-20261007",
+    "innerElapsedMs": 5748.182125,
+    "conservativeOuterChargeMs": 6352,
+    "state": "CLOSED_FAILED",
+    "unusedTransferred": false
+  },
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/closure-r2/root-review.json",
+    "originalPath": "/private/tmp/root-context-history-closure-r2-review-20261008.json",
+    "bytes": 2933,
+    "sha256": "5a76a60344bb5ca31dbda28a3b38b93d9246e0380016ef691fc27b2dcbaee7ca",
+    "target": "5402a167f32b1011af469eb82c09bda33fe67c68",
+    "status": "APPROVED_LIMITED_FIXED_SOURCE_CLOSURE_AND_FIVE_LITERAL_BINDING_DELTA"
+  }
+}
