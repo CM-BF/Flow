@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-08T00:31:16.011Z",
+  "state": "DELIVERED_METADATA_STOP_AFTER_COMMIT_PUSH",
+  "main": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "scopeReceipt": "metadata-scope-amend-receipt.json",
+  "claimVersion": 3,
+  "scopeCount": 2,
+  "productScopeRemoved": 22,
+  "noProductWriteRemaining": true,
+  "start": "2026-10-08T00:28:56.473Z",
+  "deadline": "2026-10-08T00:38:56.473Z",
+  "budget": {
+    "capBytes": 3145728,
+    "indexAtomicCopyObservedBytes": 2424569,
+    "newOrRewrittenMetadataLogicalBytes": 55421,
+    "newGitObjectsAllowanceBytes": 196608,
+    "atomicAndClosingRecordAllowanceBytes": 65536,
+    "conservativeTotalBytes": 2742134
+  },
+  "actualPeak": "UNKNOWN, conservative accounting not actual peak",
+  "pendingLaunch": 0,
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "futureWritingBytes": 0,
+  "originalInputsAndRawUnchanged": true,
+  "quality": "Installed find-skills/codebase-design/clean-code applied: preserve source/result/main distinctions, exact claims/time/rows, completed slice versus unverified end-to-end. No unneeded product scope retained."
+}

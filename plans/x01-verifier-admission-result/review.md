@@ -75,3 +75,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## 精确接收单metadata核对
 
 2026-10-08T00:18:31.922Z：固定22叶154755B来源/main b9ea96aa前像，未改产品或原件；与1b9e前像零差。两个已有测试required-existing，16直接依赖等实测输入。复用core53d/route8eb/57b实际5PG批准；非新增独立source审或main回执。
+
+## Main受控接收归档
+
+2026-10-08T00:31:16.011Z：main728d的26postimages198692B逐source核符，receipt9776B SHA cacd53ad36dc54cde13150195f2c0fa88e0652563ab9f9fefcaab455a1692134。assignment_review source APPROVED_SCOPED_INTAKE与00:22:35.829Z APPROVED_SCOPED_COMBINATION_RESULT，0P1/P2，strict0/9factory；复用原5domainPG，非再运行。22产品scope已STOP→原子amend v3仅2metadata，原件/旧失败不改。公开worker/端到端和部署不在本通过范围。

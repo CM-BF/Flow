@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-08T00:22:02.205Z",
+  "operator": "astra_ultra_execution_lead / gpt-6-astra",
+  "base": "06fbe107aa699ab7de0d4b83c824e7b0f401dec3",
+  "state": "APPROVED_SCOPED_COMBINATION_READY_FOR_MAIN",
+  "intakeReferences": [
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/main-intake.json",
+      "canonical": "plugin-verifier-admission-result",
+      "commit": "43172b0bd188b2604af2dd423070a2478bcad012",
+      "bytes": 27818,
+      "sha256": "3c951de0bb0cd5ebb4b9176847bed5ea508691a0acd9c642986e1dea175a507b"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/main-intake.json",
+      "canonical": "plugin-verifier-center-wiring",
+      "commit": "2e08f88d35d870270f442a4036f63dd73ff564e3",
+      "bytes": 6217,
+      "sha256": "5391b8dae0fdade79aecff57eaa50c7a26a0e77a966133f74e01551b5980cc2e"
+    }
+  ],
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 8508,
+      "sha256": "2c98ac43c07d9c5079215fb8bda65774fe12627ee7862a50d8369e823ac27323"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 9366,
+      "sha256": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 3279,
+      "sha256": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 11569,
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 10467,
+      "sha256": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 7720,
+      "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 7635,
+      "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.test.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 7492,
+      "sha256": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 6466,
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "commit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "mode": "100644",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 5971,
+      "sha256": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.test.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 1239,
+      "sha256": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 1930,
+      "sha256": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 655,
+      "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-event.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 916,
+      "sha256": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 8090,
+      "sha256": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca"
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.test.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 4613,
+      "sha256": "103f985153b6da6972d4c90559810dafada661a236d9d3fe222634e8d67cf1b7"
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "mode": "100644",
+      "bytes": 2526,
+      "sha256": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "commit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "mode": "100644",
+      "bytes": 8919,
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "commit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "mode": "100644",
+      "bytes": 25741,
+      "sha256": "7ccd13f0e14f256ac117548618d6e71052cd926e4c09ba2da1209b4fb5d2becc"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts",
+      "commit": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "mode": "100644",
+      "bytes": 15991,
+      "sha256": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-input.json",
+      "commit": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "mode": "100644",
+      "bytes": 2534,
+      "sha256": "7191bdb351617e940e4576c272c934eebaf828d227947a85c0eb3e67f7f3a3fc"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "commit": "d17125c112240468444b71f6a049303158efad1c",
+      "mode": "100644",
+      "bytes": 4398,
+      "sha256": "475d7a434b3862103fe3d57cbc0cf7d81661f75f063aa579115a311c3e1661ba"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "d17125c112240468444b71f6a049303158efad1c",
+      "mode": "100644",
+      "bytes": 18291,
+      "sha256": "24655c1a4764d3797426c0c70c38fc3e17210e9ff8fe8eaee3e4b6c599520cc1"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "commit": "d17125c112240468444b71f6a049303158efad1c",
+      "mode": "100644",
+      "bytes": 5994,
+      "sha256": "98a903a5912135df4768e56c9e291a9f75da0dd7790a5a3d39e485cd1d82a05a"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-wiring.test.ts",
+      "commit": "d17125c112240468444b71f6a049303158efad1c",
+      "mode": "100644",
+      "bytes": 15254,
+      "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e"
+    }
+  ],
+  "sourceReview": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "verdict": "APPROVED_SCOPED_INTAKE",
+    "scope": "All22VAR and4CENTER fixed postimages, preimages and approval coverage;16PGdependencies and48direct relative imports. No code changes beyond exact reviewed postimages."
+  },
+  "actual": "x01-var-center-combination/actual.json",
+  "factoryReport": "x01-var-center-combination/factory-report.json",
+  "localResult": {
+    "typesExit": 0,
+    "typesMs": 2179,
+    "factorySelected": 9,
+    "factoryPassed": 9,
+    "factoryMs": 1418,
+    "rawBytes": 155,
+    "groupsAbsent": 2,
+    "mergedEOF": 2,
+    "exactEmptyScratchRemoved": 2,
+    "provider": 0,
+    "PG": 0,
+    "HTTPListener": 0
+  },
+  "validationReuse": "VAR15/repair3/route11 and actual5domainPG; AV5PG/client11 retained, not rerun. CENTER previously9distinct in rounds now one exact9 pass on actual combination.",
+  "limits": [
+    "No runtime v4 worker injection/public verifier end-to-end/installation/native/provider proof.",
+    "No personal deployment or change to fixed e15/779 assets.",
+    "Historical failures/unknowns and original source/raw remain in fixed canonical Git; no whole branch merge or source archive duplication.",
+    "PG test support is gated to its fixture-specific operator; ordinary main full-suite invocation not claimed usable.",
+    "No actual task assignment or completeFLOW/X01 acceptance implied."
+  ],
+  "resultReview": {
+    "at": "2026-10-08T00:22:35.829Z",
+    "reviewer": "assignment_review / gpt-6-astra",
+    "verdict": "APPROVED_SCOPED_COMBINATION_RESULT",
+    "P1": 0,
+    "P2": 0,
+    "actualSha256": "2e32d87618d7a1a4b7fb33f28792ae86229cf80f186be2eda2f71ff9f243791d",
+    "scope": "26exact postimages;25TSentries strict0;9namedfactory checks allpassed;both groupsabsent MERGED EOF/no signals/secondary and exactempty scratch removal; initialunknown observation preserved. Reviewer0execution/private/process accesses."
+  }
+}

@@ -3,8 +3,8 @@
 所属大task：[X01-07](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)。co-lead Mika，owner architecture_read。已批准设计：同TX受理精确源产物验证任务、独立重算typed verdict、completed gate一起交付。状态 in-progress。
 
 - [x] VAR-01 共享输入身份/严格合同与私有可信材料策略，保持原runner消费者字节。
-- [ ] VAR-02 owner受理同command TX：来源与项目锁、一次acceptTask、项目图、036 binding/ref、wake和receipt。
-- [ ] VAR-03 同reportEvents TX独立verdict与终态门禁；重放/失败/取消/未知保持既有权威。
+- [x] VAR-02 owner受理同command TX：来源与项目锁、一次acceptTask、项目图、036 binding/ref、wake和receipt。
+- [x] VAR-03 同reportEvents TX独立verdict与终态门禁；重放/失败/取消/未知保持既有权威。
 - [ ] VAR-04 局部直接消费者与独审，AV真实PG前置后受控集成。
 
 复用现tasks/project command、034/036、runRunner与outbox，0新表/调度器。源码实现与真实PG/生产装配分开；main/index归Original装配owner，PROCESS runtime/v4另片。未完整gate前不公开producer。source8192B/32keys/input16KiB与16000codeunits、项目200节点界；未知不completed。
@@ -16,3 +16,5 @@
 独审补充（2026-10-08T00:02:58.000Z）：本次领域PG结果忠实性已批准0P1/P2；下一门槛为精确受控接收和既定公开装配/worker链，不重跑这五例替代后继验收。
 
 当前接收状态（2026-10-08T00:18:31.922Z）：领域源码与真实5PG结果均已独审；精确22叶main-intake READY，先VAR完整gate组再CENTER。VAR-02/03待受控main；VAR-04公开装配/worker仍OPEN，结果独审已完成。
+
+当前main事实（2026-10-08T00:31:16.011Z）：VAR领域能力与CENTER装配已接收728d；VAR-02/03完成，原5PG与main strict0/9factory分列。VAR-04的完整公开/worker验收继续OPEN，当前没有待编辑产品，本owner只保plan/evidence两个目录。此前NOT_MAIN/等待记录为历史快照，不覆盖本当前事实。

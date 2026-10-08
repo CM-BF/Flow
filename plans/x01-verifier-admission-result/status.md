@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-08T00:18:31.922Z |
+| 最近更新时间 | 2026-10-08T00:31:16.011Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -13,30 +13,30 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result |
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / core53d50dddcefb5b1e060f45b5a7addd429aa6ec81、route8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd、result4702e8e268768e1899ece9ebead117a86fd5cdc7 |
-| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 产品及运行输入冻结；接收单提交push后clean STOP |
-| 工作分支状态 | awaiting-integration |
+| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v3 ACTIVE2；只保own plans/evidence，22产品leaf已永久STOP并原子移出；[receipt](../../docs/evidence/x01-verifier-admission-result/metadata-scope-amend-receipt.json) |
+| 工作树 dirty 状态 | 产品/原件冻结；本次main回执metadata提交push后clean STOP |
+| 工作分支状态 | delivered（领域与装配片已main，完整worker旅程验收开放） |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
-| 检查状态 | PASSED 57b188f5ee9fce6589160bb61b75891a800bfb6b：真实领域PG5/5、suite成功；8eb输入边界11/11与types0保留；公开verifier装配/worker未验 |
-| Review | APPROVED 4702e8e268768e1899ece9ebead117a86fd5cdc7：chatui 2026-10-08T00:02:58.000Z实际结果忠实性0P1/P2；原核心/路由/准备批准范围不扩大 |
-| 已集成 main 状态 / HEAD | NOT_INTEGRATED（本VAR）；接收前像观察b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b clean；未收到VAR main回执 |
-| 本片段交付阶段 | integration |
+| 检查状态 | PASSED 728d3165f17dfe8272c8ffce6e1eff60d9602d6b：main组合strict0、9/9 factory；复用原分支5/5真实领域PG，不称main重跑PG |
+| Review | APPROVED 728d3165f17dfe8272c8ffce6e1eff60d9602d6b：assignment_review受控source与组合结果独审0P1/P2；原核心/路由/真实5PG批准各保范围 |
+| 已集成 main 状态 / HEAD | INTEGRATED 728d3165f17dfe8272c8ffce6e1eff60d9602d6b；26路径198692B，原receipt逐行核符；不是个人部署 |
+| 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 验证受理、权限拒绝和结果原子提交已获真实数据库验证及独立审查 |
-| 下一可用交付 | 将已审能力接入主线，再接公开接口与执行器完整旅程 |
+| 当前产出 | 验证任务受理、权限与结果原子提交已进入主线，并通过公开装配的组合检查 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
 | --- | --- | --- | --- |
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
-| VAR-02 | in-progress | architecture_read | 五个真实领域PG与结果独审通过，等待受控main接收 |
-| VAR-03 | in-progress | architecture_read | 领域事件原子性PG及结果独审通过；与受理同片接收，不先暴露producer |
-| VAR-04 | in-progress | architecture_read | 真实5/5、完整RETURN及独审均通过；主线和公开装配/worker仍未完成，历史准备和失败原件保留 |
+| VAR-02 | completed | architecture_read | 同TX受理/项目/绑定/receipt经真实PG与独审通过，已main728d |
+| VAR-03 | completed | architecture_read | 独立verdict/terminal gate与整批rollback经真实PG、独审及main接收 |
+| VAR-04 | in-progress | architecture_read | 本片局部/真实5PG/独审/main组合均通过；公开verifier端到端与worker验收仍OPEN，后继需新独立scope，现无产品写权 |
 
-架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
+架构影响：verifier admission/result及CENTER同policy装配已main728d，唯一事务/事件权威不变；固定架构基线待Execution Lead/D05按main728d更新，不把worker未验能力画成已运行。
 
 本轮局部终态：6child监督合计10049ms/raw14606B，全部finalabsent/mergedEOF/6TMP同identity删除；最后receipt20:48:43.969Z，tool20:48:50Z。15 distinct分轮，非一次15/15。前两次旧floor误用及事后free比较见result-summary，不修写原gate。
 
@@ -136,3 +136,13 @@ Mika明确允许先用本树固定组合验证五domain PG；AV main receipt移�
 [唯一main-intake](../../docs/evidence/x01-verifier-admission-result/main-intake.json)：20产品测试136230B+2直接support18525B，共22叶154755B；core53d/route8eb/test57b/support b4e6。main b9ea96aa前像与1b9e一致；两个已main测试skip，16直接依赖等实测输入。先VAR完整gate组再CENTER4叶同policy装配，不先公开producer/覆盖旧index。当前VAR NOT_MAIN，原review/实际结果/旧失败/raw全冻结。
 
 本次一致性核对不代替main接收或扩大产品验收；VAR-02/03待受控main，VAR-04公开HTTP/worker及部署仍OPEN。产品与运行输入STOP，本次commit/push后metadata STOP；未来写入余额0。
+
+## 主线接收与产品scope关闭
+
+2026-10-08T00:31:16.011Z：原子账本于2026-10-08T00:29:11.993Z完成cb699 v2/24→v3/2，仅保docs/evidence/x01-verifier-admission-result和plans/x01-verifier-admission-result。00:28:56.676Z已永久STOP全部22产品leaf，无剩余产品编辑计划；未来接缝修复/SDK身份或worker工作须另领取精确scope，不能沿旧claim写入。
+
+main728d3165f17dfe8272c8ffce6e1eff60d9602d6b接收26路径198692B，own VAR22与CENTER4；[接受记录](../../docs/evidence/x01-verifier-admission-result/main-acceptance.json)逐行固定Git/bytes/hash核符。main receipt原state为组合ready快照，实际main commit内容与root00:23:08 fresh观察共同证明已接收，不能只凭label。00:29:56.837Z另核该commit为当前main61ca12e7祖先。
+
+原分支真实领域5/5由chatui00:02:58限定独审，main组合另有strict0（2179ms）和9/9 factory（1418ms），2owned组absent/MERGED EOF/两scratch正常移除，由assignment_review分别source/结果独审0P1/P2（结果00:22:35.829Z）。没有重跑PG、provider、监听或个人部署；公开完整verifier用户旅程/worker/T7仍未验，任务完成保持NOT_COMPLETED。
+
+本段actualSTART 2026-10-08T00:28:56.473Z，deadline 2026-10-08T00:38:56.473Z，新3MiB含index临时副本/objects/metadata，0工程。旧raw/295输入/固定intake不改。D05此前已live211注册，当前只同步源，不新增HTTP/dashboard探针；root按需回读。提交push后全部STOP、未来写入余额0。

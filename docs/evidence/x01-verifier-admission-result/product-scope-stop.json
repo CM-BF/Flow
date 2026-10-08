@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-08T00:28:56.676Z",
+  "claimId": "cb699a7a-bc28-4659-82e6-56f6a0765e6c",
+  "fromVersion": 2,
+  "permanentProductStop": true,
+  "noPendingProductEdits": true,
+  "removed": [
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/server/src/events.ts",
+    "apps/server/src/plugin-runtime/artifact.ts",
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/store.ts",
+    "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.ts",
+    "apps/server/src/plugin-runtime/verification-result.test.ts",
+    "apps/server/src/plugin-runtime/verification-result.ts",
+    "apps/server/src/plugin-runtime/verification-routes.test.ts",
+    "apps/server/src/plugin-runtime/verification-routes.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/plugin-verification-configuration.test.ts",
+    "apps/server/src/plugin-verification-configuration.ts",
+    "packages/contracts/src/plugin-verification-admission.ts",
+    "packages/contracts/src/plugin-verification-event.ts",
+    "packages/contracts/src/runner.ts",
+    "packages/plugin-runtime/src/verification-input.test.ts",
+    "packages/plugin-runtime/src/verification-input.ts"
+  ],
+  "retained": [
+    "docs/evidence/x01-verifier-admission-result",
+    "plans/x01-verifier-admission-result"
+  ],
+  "main": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "rule": "No writes to removed product paths after COMMITTED amend. Any future product work requires a separate explicit scope assignment. Existing fixed input references remain readable."
+}
