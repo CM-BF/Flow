@@ -1,0 +1,57 @@
+{
+  "kind": "I02_TUI01F_R4_FIXED_CALLER_REVIEW",
+  "reviewedAt": "2026-10-08T02:38:55.783Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_FIXED_CALLER_DELTA_AND_DIRECT_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "delivery": "bd132b10cd9bf494ff88313c44b480dc0e1532fe",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "preparation": {
+    "path": "docs/evidence/tui01f/web-handoff/r4-preparation.json",
+    "bytes": 8277,
+    "sha256": "d7aee8580c313272547f8e1aed5e24376a2919cf0e4d2975f0b55177ec4c7e14",
+    "bindingsVerified": 13,
+    "boundBytes": 30271,
+    "fixedGitInherited": 2
+  },
+  "scope": [
+    "docs/evidence/tui01f/web-handoff/r2-run.py",
+    "docs/evidence/tui01f/web-handoff/r4-run.py",
+    "docs/evidence/tui01f/web-handoff/r4-run.test.py",
+    "docs/evidence/tui01f/web-handoff/r4-inputs.json",
+    "docs/evidence/tui01f/web-handoff/r4-permit.pending.json",
+    "docs/evidence/tui01f/web-handoff/r4-interface.md"
+  ],
+  "reviewBasis": [
+    "Read complete three caller/test sources and trusted RunSpec delta, real source identity order, fixed inputs/permit shape and lifecycle boundary.",
+    "Only RunSpec default-preserving source_paths changes shared caller; R4 exact five sources includes the reviewed fixture process helper. JSON cannot supply the trusted strategy. Old callers and failed raw remain bound to original Git.",
+    "Actual main reaches original pin/source/permit checks, exclusive reservation and OPS14 launch validation; only final supervise is intercepted. Helper omission, wrong command and namespace reuse reject.",
+    "Verified all13 fixed/current bindings and two inherited fixedGit records. Local reservation pins match tested source; actual raw records show1/1 and complete local return."
+  ],
+  "local": {
+    "selected": 1,
+    "passed": 1,
+    "start": "2026-10-08T02:36:09.001Z",
+    "return": "2026-10-08T02:36:09.386Z",
+    "elapsedMs": 384,
+    "rawBytes": 238,
+    "group": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "scratch": "same identity empty removed",
+    "PG": 0,
+    "Chrome": 0,
+    "PTY": 0,
+    "provider": 0,
+    "rerunByReviewer": false
+  },
+  "actual": "NOT_RUN; reviewed candidate needs fresh D01 selection and exact one-shot admission, not supplied by this review",
+  "limits": [
+    "Fixed af51/d629/ec30 journey; does not prove current deployed product or native model behavior.",
+    "Original150/.5/2s supervision and90s inner/150s total, full existing assertions/ownership/unknown behavior unchanged.",
+    "PG planning13/available42 plus closed preflight, complete future floor and distinct namespace remain required.",
+    "Prior R2/R3 FAIL/KEEP retained. No automatic reuse, retries, deletion or main/service restart."
+  ]
+}

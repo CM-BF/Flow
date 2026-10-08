@@ -598,3 +598,5 @@ TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收
 2026-10-08T02:25:10.736Z：本批12文件main/origin312842ab5已推送，根工作树clean；已审O16七源+Interface/delta逐字接收、TUI1选0过保真结果不升级。GO随后新阶段明确授权只用于原owner后继renew及条件化最多两child，当前接收本身0新增调用，不再将其写为未有额度。原始材料与完整未验范围仍各自canonical；I02本片段交付不等于大task完成。
 
 2026-10-08T02:37:51.499Z：已审TUI局部生命周期源经782f0ad09进入main；[O16实际确认限定审查](../../docs/evidence/i02/o16-renew-actual-intake.json)核25绑定及2继承来源、真实中心确认与02:31:17.205Z资源归还。children选择未在最晚启动前被Lead接续，0运行/0新query，原确认截止不改；这是调度衔接过期，未归因为机器或模型失败。完整O16与TUI验收仍开放。
+
+2026-10-08T02:38:55.783Z：[TUI R4固定入口限定审查](../../docs/evidence/i02/tui01f-r4-preparation-review.json)完成，13绑定30271B与2继承原件核对；真实入口前置1/1、384ms，末端启动被截断、0PG/Chrome/PTY/provider。完整旅程需要新的资源选择，未把局部绿替代实际跨端验收。
