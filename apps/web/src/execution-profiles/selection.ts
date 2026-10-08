@@ -89,6 +89,12 @@ export function versionedSelection(input: unknown): Extract<ProfileSelection, { 
   return freeze({ kind: "versioned" as const, entry });
 }
 
+/** The public catalog already decodes this profile. Reconstitute only its fixed directory
+ * declaration, never a live conversation capability; the public codec validates it again. */
+export function versionedProfileSelection(profile: Immutable<ClaudeMessageSettingsExecutionProfile>): Extract<ProfileSelection, { kind: "versioned" }> {
+  return versionedSelection({ profile, conversation: { state: "existing-claude-contract", capabilitySource: "conversation-response" } });
+}
+
 /** Call once before CREATE; the caller's outbox owns this payload and its idempotency key. */
 export function freezeConversationCreation(title: string, selection: ProfileSelection): Immutable<ConversationCreation> {
   const profile = selection.kind === "configured" ? configuredSelection(selection.profile).profile

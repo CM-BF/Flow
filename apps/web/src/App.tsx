@@ -49,7 +49,7 @@ import { ConversationProjection, ConversationCatalog } from "./conversations/pro
 import { restoreOutbox } from "./conversations/outbox";
 import { ConversationThread } from "./conversations/ConversationThread";
 import { ConversationList } from "./conversations/ConversationList";
-import { createExecutionProfileCatalog, type ExecutionProfileCatalog } from "./execution-profiles/catalog";
+import { createExecutionProfileCatalog, createMessageSettingsCatalog, type ExecutionProfileCatalog, type MessageSettingsCatalog } from "./execution-profiles/catalog";
 import { legacyDefaultSelection, type ProfileSelection } from "./execution-profiles/selection";
 import { userMessageId } from "./conversations/messages";
 import { WorkspaceOverview } from "./workspace-feed/WorkspaceOverview";
@@ -197,6 +197,7 @@ function ChatPane({
   view,
   drafts,
   profiles,
+  messageProfiles,
   profileSelection,
   onProfileSelection,
   onDraftChange,
@@ -212,6 +213,7 @@ function ChatPane({
   view: View;
   drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog;
+  messageProfiles: MessageSettingsCatalog;
   profileSelection: ProfileSelection;
   onProfileSelection: (selection: ProfileSelection) => void;
   onDraftChange: () => void;
@@ -228,7 +230,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} intent={view.intent ?? "follow-up"} onIntent={onIntent} onDraftChange={onDraftChange} restoredVersion={view.restoredVersion ?? 0} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} messageProfiles={messageProfiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} intent={view.intent ?? "follow-up"} onIntent={onIntent} onDraftChange={onDraftChange} restoredVersion={view.restoredVersion ?? 0} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -381,6 +383,7 @@ function Workspace({
   const [catalog] = useState(() => new TaskProjection(client));
   const [conversations] = useState(() => new ConversationCatalog(client));
   const [profiles] = useState(() => createExecutionProfileCatalog({ executionProfiles: (options, signal) => client.executionProfiles(options, signal) }));
+  const [messageProfiles] = useState(() => createMessageSettingsCatalog((options, signal) => client.claudeMessageSettingsProfiles(options, signal)));
   const [profileSelections, setProfileSelections] = useState<Record<string, ProfileSelection>>({});
   profileRef.current = profileSelections;
   const [defaultProfileSelection] = useState(legacyDefaultSelection);
@@ -476,6 +479,7 @@ function Workspace({
     if (!ensureView(id)) return;
     setCapacityBlocked(false); setOverview(false);
     if (!profiles.getSnapshot().loaded && !profiles.getSnapshot().loading) void profiles.refresh();
+    if (!messageProfiles.getSnapshot().loaded && !messageProfiles.getSnapshot().loading) void messageProfiles.refresh();
     if (window.innerWidth <= 800) setSidebar(false);
     setLayout(previous => selectLayoutView(previous, activeGroup, id));
   };
@@ -524,6 +528,7 @@ function Workspace({
       views.forEach((view) => { view.projection.disconnect(); view.conversation?.dispose(); });
       conversations.dispose();
       profiles.dispose();
+      messageProfiles.dispose();
       catalog.disconnect();
     };
   }, [client]);
@@ -1179,7 +1184,7 @@ function Workspace({
                 style={{ gridColumn: position + 1, gridRow: 2, "--pane-stack-row": position * 2 + 2 } as CSSProperties}
                 onFocusCapture={() => setActiveGroup(pane.id)}>
                 <ChatPane viewId={id} visible={authorized && !overview && pageVisible && shown} view={view} drafts={drafts}
-                  profiles={profiles} profileSelection={profileSelections[view.key] ?? defaultProfileSelection}
+                  profiles={profiles} messageProfiles={messageProfiles} profileSelection={profileSelections[view.key] ?? defaultProfileSelection}
                   onProfileSelection={selection => { session.closeMessageSettings(); view.settings = messageSettingsDraft(view.settings.value); const key = view.key;
                     profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
                   onDraftChange={() => session.recovery.changed(view.key)}

@@ -1,0 +1,17 @@
+{
+  "extends": "../../../../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "vite/client"
+    ]
+  },
+  "files": [
+    "../../../../../apps/web/src/App.tsx",
+    "../../../../../apps/web/src/conversations/ConversationThread.tsx",
+    "../../../../../apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "../../../../../apps/web/src/execution-profiles/selection.ts",
+    "../../../../../apps/web/src/recovery/binding.tsx"
+  ],
+  "include": []
+}

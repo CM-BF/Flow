@@ -3,8 +3,8 @@ import { afterEach, describe, expect, it } from "vitest";
 import { FlowApiError, FlowClient } from "@flow/client";
 import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
 import type { ConversationCreation, ConversationSummary, ExecutionProfile, ExecutionProfilePage } from "@flow/contracts";
-import { createExecutionProfileCatalog } from "../src/execution-profiles/catalog";
-import { assertCreationReceiptMatches, versionedSelection, messageSettingsSubmissionEligibility, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
+import { createExecutionProfileCatalog, createMessageSettingsCatalog } from "../src/execution-profiles/catalog";
+import { assertCreationReceiptMatches, versionedSelection, versionedProfileSelection, messageSettingsSubmissionEligibility, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
 
 const id = (number: number) => `10000000-0000-4000-8000-${String(number).padStart(12, "0")}`;
 function profile(number = 1): ExecutionProfile {
@@ -201,6 +201,32 @@ describe("versioned creation invariants", () => {
     const value: ClaudeTurnSettings = { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested };
     return { source, selected, catalog, context, value };
   }
+  it("versioned consumer preserves the decoded catalog identity without granting live capability", () => {
+    const f = ready(), selected = versionedProfileSelection(f.source.profile);
+    expect(selected).toEqual(f.selected);
+    expect(Object.isFrozen(selected.entry.profile.configuration.turnSettings!.choices)).toBe(true);
+    const creation = freezeConversationCreation("Prepare without tuple or project", selected);
+    expect(creation.executionProfile).toEqual(f.context.profile);
+    expect(creation).not.toHaveProperty("messageSettings"); expect(creation).not.toHaveProperty("projectId");
+    expect(messageSettingsSubmissionEligibility(undefined, f.catalog, { profile: f.context.profile, capability: null }, selected).allowed).toBe(false);
+    expect(() => versionedProfileSelection({ ...f.source.profile, configuration: { ...f.source.profile.configuration, turnSettings: undefined } })).toThrow();
+  });
+  it("versioned consumer observes refresh eligibility without editing the selected draft", async () => {
+    const f = ready(); let fail = false;
+    const catalog = createMessageSettingsCatalog(async () => {
+      if (fail) throw Error("offline");
+      return { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profiles: [f.source], nextCursor: null };
+    });
+    const transitions: boolean[] = [];
+    catalog.subscribe(() => transitions.push(messageSettingsSubmissionEligibility(f.value, catalog.getSnapshot(), f.context, f.selected).allowed));
+    await catalog.refresh();
+    expect(transitions).toEqual([false, true]);
+    fail = true; await catalog.refresh(); expect(transitions.at(-1)).toBe(false);
+    fail = false; await catalog.refresh(); expect(transitions.slice(-2)).toEqual([false, true]);
+    expect(messageSettingsSubmissionEligibility(undefined, catalog.getSnapshot(), f.context, f.selected).allowed).toBe(false);
+    expect(f.value.requested).toEqual(requested); expect(f.selected.entry.profile.reference).toEqual(f.context.profile);
+    catalog.dispose(); expect(transitions.at(-1)).toBe(false);
+  });
   it("freezes the exact public versioned identity without defaults or a creation tuple", () => {
     const source = entry(), selected = versionedSelection(source), creation = freezeConversationCreation("Prepared", selected);
     const expected = structuredClone(source.profile.reference); source.profile.reference.configDigest = "c".repeat(64);

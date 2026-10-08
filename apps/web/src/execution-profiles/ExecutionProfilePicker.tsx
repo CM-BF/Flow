@@ -3,11 +3,12 @@ import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeTurnSettingsJson, type ClaudeTurnS
 import { Button } from "../components/ui/button";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../components/ui/dialog";
 import type { ExecutionProfileCatalogSnapshot, MessageSettingsCatalogSnapshot } from "./catalog";
-import { captureMessageSettings, messageSettingsAvailability, sameMessageSettings, configuredSelection, isChatAccess, legacyDefaultSelection, type Immutable, type MessageSettingsContext, type ProfileSelection } from "./selection";
+import { captureMessageSettings, messageSettingsAvailability, sameMessageSettings, configuredSelection, versionedProfileSelection, isChatAccess, legacyDefaultSelection, type Immutable, type MessageSettingsContext, type ProfileSelection } from "./selection";
 import "./execution-profiles.css";
 
 export interface ExecutionProfilePickerProps {
   catalog: ExecutionProfileCatalogSnapshot;
+  versioned?: { catalog: MessageSettingsCatalogSnapshot; onRefresh(): void; onLoadMore(): void };
   selection: ProfileSelection;
   onSelect(selection: ProfileSelection): void;
   onRefresh(): void;
@@ -29,12 +30,13 @@ function useProfileDialog() {
   };
 }
 
-export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh, onLoadMore, locked, details }: ExecutionProfilePickerProps) {
+export function ExecutionProfilePicker({ catalog, versioned, selection, onSelect, onRefresh, onLoadMore, locked, details }: ExecutionProfilePickerProps) {
   const groupId = useId();
   const dialog = useProfileDialog();
   if (locked) return <FrozenConfiguration creation={locked.creation} pending={locked.reason === "receipt-pending"} details={details} />;
-  const selected = selection.kind === "configured" ? selection.profile : null;
-  const missing = selected && catalog.loaded && !catalog.profiles.some(profile => profile.reference.id === selected.reference.id && profile.reference.configDigest === selected.reference.configDigest && profile.reference.runnerId === selected.reference.runnerId);
+  const selected = selection.kind === "configured" ? selection.profile : selection.kind === "versioned" ? selection.entry.profile : null;
+  const selectedCatalog = selection.kind === "versioned" ? versioned?.catalog : catalog;
+  const missing = selected && selectedCatalog?.loaded && !selectedCatalog.profiles.some(profile => profile.reference.id === selected.reference.id && profile.reference.configDigest === selected.reference.configDigest && profile.reference.runnerId === selected.reference.runnerId);
   return <div className="ep-picker">
     <Dialog open={dialog.open} onOpenChange={dialog.onOpenChange}>
       <DialogTrigger asChild><Button type="button" variant="outline" className="ep-trigger" aria-label={`Execution profile: ${selected?.configuration.model ?? "Runner default"}`}><span>{selected?.configuration.model ?? "Runner default"}</span><span className="ep-trigger-access">{selected?.configuration.access === "none" ? "No tools" : "Read-only"}</span><span aria-hidden="true">⌄</span></Button></DialogTrigger>
@@ -49,12 +51,33 @@ export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh
           <legend className="sr-only">Configured execution profiles</legend>
           <label className="ep-option"><input type="radio" name={groupId} checked={!selected} onChange={() => onSelect(legacyDefaultSelection())} /><span><strong>Runner default</strong><span>Legacy compatibility · no pinned profile</span><small>Thinking disabled · configured read-only access</small></span></label>
           {catalog.profiles.map(profile => <label className="ep-option" key={profile.reference.id}>
-            <input type="radio" name={groupId} checked={selected?.reference.id === profile.reference.id} disabled={catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(configuredSelection(profile))} />
+            <input type="radio" name={groupId} checked={selection.kind === "configured" && selected?.reference.id === profile.reference.id && selected.reference.runnerId === profile.reference.runnerId && selected.reference.configDigest === profile.reference.configDigest} disabled={catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(configuredSelection(profile))} />
             <span><strong>{profile.model.displayName || profile.configuration.model}</strong><span>Requested model: {profile.configuration.model}</span><small>Runner {profile.reference.runnerId}</small><small>Profile {profile.reference.id}</small><span>{profile.configuration.access === "none" ? "No tools" : profile.configuration.access === "configured-readonly" ? "Configured read-only access" : `Access declaration: ${profile.configuration.access}`}{profile.configuration.requireReadApproval ? " · read approval required" : ""}</span>{!isChatAccess(profile.configuration.access) && <strong>Cannot be used for ordinary chat</strong>}<small>Thinking disabled · effort unsupported</small><small>Provider availability not checked · actual model unknown</small><details><summary>Configuration details</summary><span>Adapter {profile.configuration.adapterVersion}</span><span>Permission mode {profile.configuration.permissionMode}</span><span>Limits: {profile.configuration.limits.maxTurns} turns, ${profile.configuration.limits.maxBudgetUsd}, {profile.configuration.limits.timeoutMs / 1000}s</span><small>Configuration digest {profile.reference.configDigest}</small><small>Material scope digest {profile.configuration.materialScopeDigest}</small></details></span>
           </label>)}
         </fieldset>
         {!catalog.loading && catalog.loaded && !catalog.profiles.length && <p>No configured profiles were returned. Runner default remains an explicit compatibility choice.</p>}
         {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>Load more profiles</Button>}
+        {versioned && <section aria-label="Message settings profiles">
+          <h3>Per-message configuration</h3>
+          <Button type="button" variant="outline" onClick={versioned.onRefresh} disabled={versioned.catalog.loading}>{versioned.catalog.loading ? "Loading message profiles…" : "Refresh message profiles"}</Button>
+          {versioned.catalog.error && <p role="alert">{versioned.catalog.error}</p>}
+          {versioned.catalog.stale && versioned.catalog.loaded && <p>Message profile directory is stale. Refresh before selecting.</p>}
+          <fieldset className="ep-options" disabled={versioned.catalog.loading}>
+            <legend className="sr-only">Versioned message profiles</legend>
+            {versioned.catalog.profiles.map(profile => <label className="ep-option" key={profile.reference.id}>
+              <input type="radio" name={groupId} checked={selection.kind === "versioned" && selected?.reference.id === profile.reference.id && selected.reference.runnerId === profile.reference.runnerId && selected.reference.configDigest === profile.reference.configDigest}
+                disabled={versioned.catalog.stale || !isChatAccess(profile.configuration.access)} onChange={() => onSelect(versionedProfileSelection(profile))} />
+              <span><strong>{profile.model.displayName}</strong><span>{profile.model.description}</span><small>Runner {profile.reference.runnerId}</small><small>Profile {profile.reference.id}</small><small>Full configuration {profile.reference.configDigest}</small>
+                <span>Prepare this conversation, then choose a complete model, thinking, effort and speed tuple before sending or queuing.</span>
+                {!profile.configuration.turnSettings?.choices.length && <strong>No supported message combinations. Drafts remain editable; sending is unavailable.</strong>}
+                {!isChatAccess(profile.configuration.access) && <strong>Cannot be used for ordinary chat</strong>}
+              </span>
+            </label>)}
+          </fieldset>
+          {!versioned.catalog.loading && versioned.catalog.loaded && !versioned.catalog.profiles.length && <p>No message settings profiles were returned.</p>}
+          {versioned.catalog.nextCursor && <Button type="button" variant="outline" disabled={!versioned.catalog.canLoadMore} onClick={versioned.onLoadMore}>Load more message profiles</Button>}
+          <p>A directory choice is not a live capability. The created conversation must confirm its configuration before messages can be submitted.</p>
+        </section>}
         <p className="ep-footnote">This is a paged directory, not a global model search. A profile declares configuration; it does not attest that a runner or provider is online.</p>
         {details?.(dialog.navigate)}
       </DialogContent>

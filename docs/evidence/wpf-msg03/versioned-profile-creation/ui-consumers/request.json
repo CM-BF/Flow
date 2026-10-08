@@ -1,0 +1,25 @@
+{
+  "requestId": "msg03-ui-consumers-take-20261008-033951",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "taskId": "WPF-MESSAGESETTINGS03",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+  "branch": "codex/web-versioned-profile-creation",
+  "scope": [
+    "apps/web/src/execution-profiles/selection.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/execution-profiles.test.ts",
+    "apps/web/test/conversation-recovery.test.ts",
+    "docs/evidence/wpf-msg03/versioned-profile-creation",
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/execution-profile-integration.browser.ts",
+    "apps/web/test/execution-profile-integration.fixture.ts",
+    "plans/wpf-message-settings-app"
+  ],
+  "role": "writer",
+  "origin": "new"
+}
