@@ -1,0 +1,56 @@
+{
+  "firstWrite": "2026-10-08T03:05:19.254897+00:00",
+  "deadline": "2026-10-08T03:13:19.254897+00:00",
+  "headBefore": "cc4bab4b499d454b11fe250e0224037deabb9b5e",
+  "branch": "codex/web-connection-actionable",
+  "claimBefore": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/connection/Connection.tsx",
+      "apps/web/src/connection/presentation.ts",
+      "apps/web/test/connection-presentation.test.ts",
+      "apps/web/test/connection-ux.browser.ts",
+      "apps/web/test/connection-ux.fixture.tsx",
+      "docs/evidence/wpf-mature06-connection-ux"
+    ],
+    "state": "active",
+    "branch": "codex/web-connection-actionable",
+    "origin": "new",
+    "taskId": "MATURE06-04",
+    "worker": "w01_owner",
+    "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+    "createdAt": "2026-10-08T01:09:14.432Z",
+    "updatedAt": "2026-10-08T01:21:27.812Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-08T03:05:19.238Z",
+  "conflicts": [],
+  "indexAtomicCopyBytes": 2335847,
+  "recordsObjectsAdminCapBytes": 524288,
+  "indexGrowthReserveBytes": 32768,
+  "totalCapBytes": 3145728,
+  "permanentSourceStop": [
+    "apps/web/src/App.tsx"
+  ],
+  "fixedLeaf": {
+    "path": "apps/web/src/App.tsx",
+    "bytes": 71466,
+    "sha256": "9b19ca26c7a30e23ba1e820f46e4a83eb054423d12c2bd444ff8bf753fe2e0d6"
+  },
+  "fixedIntake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable/docs/evidence/wpf-mature06-connection-ux/main-intake.json",
+    "sha256": "7f5cc77954e815ab47dd53030b6b9e475aa42d9d4b5071abc49d659b8d04bda4"
+  },
+  "productsChanged": false,
+  "priorAdmission": {
+    "state": "STOP_BEFORE_FIRST_WRITE",
+    "cause": "Expected list.state known; actual documented legal value available. Exact available fixed after reading ledger.mjs88-90.",
+    "mutation": false
+  }
+}

@@ -51,3 +51,7 @@ Final source44fcbc / product0f58 unchanged: all six component groups PASS, deskt
 [Actual index](loader-continuation/actual-index.json), [three-attempt accounting](loader-continuation/actual-accounting.json), [quality](loader-continuation/quality-final.json). Final independent result/visual review APPROVED_LIMITED_MOUNTED_COMPONENT_ACCEPTANCE, 0 blocking. [Review](loader-continuation/final-acceptance-review.json). All seven scopes STOP after this natural seal; claim remains active for manager-controlled integration. [Main intake](main-intake.json).
 
 Final user boundary: the connection component now gives a clear neutral sign-in next step; checking prevents duplicate requests and explicit submission clears the transient input. Production UI passed the scoped synthetic callback checks and light/dark390 inspection. Real Cookie/CSRF/reauth, full-App retained-work semantics, main integration and deployment remain unverified here. No task completion or claim release is inferred.
+
+## Versioned profile UI leaf handoff
+
+2026-10-08T03:05:19.335Z: apps/web/src/App.tsx permanently STOP and removed by atomic partial-amend v2→v3; 6 other scopes remain active but STOP. Product source and fixed intake/review unchanged. Receiver acquires its own legal scope separately; no whole-task completion or release. [Committed receipt](versioned-profile-connectionapp-handoff-20261008/receipt.json).

@@ -1,0 +1,17 @@
+{
+  "requestId": "versioned-profile-connectionapp-handoff-83a727f6-aaf4-4f69-8336-d15a03c63f2e",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+  "version": 2,
+  "scope": [
+    "apps/web/src/connection/Connection.tsx",
+    "apps/web/src/connection/presentation.ts",
+    "apps/web/test/connection-presentation.test.ts",
+    "apps/web/test/connection-ux.browser.ts",
+    "apps/web/test/connection-ux.fixture.tsx",
+    "docs/evidence/wpf-mature06-connection-ux"
+  ]
+}
