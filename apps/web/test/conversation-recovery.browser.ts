@@ -9,10 +9,18 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
-// This worktree owns only MSG03 output; historical Recovery evidence remains immutable.
-const evidence = join(root, "docs/evidence/wpf-message-settings-app");
-// Independent membership-fix phase. The old 90s phase is closed; no unused credit transfers.
-const TOTAL_MS = 120_000, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+// Task presets bind output, phase and selection together; no caller-supplied evidence path.
+// The default MSG03 preset preserves its closed-phase guard and historical budget.
+const visualAppearance = process.argv.includes("--visual-appearance");
+const taskPreset = visualAppearance ? {
+  id: "WPF-VISUAL01", evidence: "docs/evidence/wpf-visual01", runs: "browser-appearance-runs",
+  phaseId: "VISUAL01-RECOVERY-APPEARANCE-20261007", totalMs: 60_000, approvalEnv: "FLOW_VISUAL01_BROWSER",
+} as const : {
+  id: "WPF-MESSAGESETTINGS03", evidence: "docs/evidence/wpf-message-settings-app", runs: "browser-membership-runs",
+  phaseId: "MSG03-MEMBERSHIP-FIX-20261007", totalMs: 120_000, approvalEnv: "FLOW_MSG03_BROWSER",
+} as const;
+const evidence = join(root, taskPreset.evidence);
+const TOTAL_MS = taskPreset.totalMs, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -36,6 +44,7 @@ async function treeBytes(directory: string, scratch = false): Promise<number> {
 async function freeBytes() { const value = await statfs(root); return value.bavail * value.bsize; }
 const sourcePaths = ["apps/web/src/App.tsx", "apps/web/src/connection/session.ts", "apps/web/src/recovery/journal.ts", "apps/web/src/recovery/binding.tsx", "apps/web/src/conversations/ConversationThread.tsx", "apps/web/src/conversations/outbox.ts", "apps/web/src/conversations/projection.ts", "apps/web/src/conversations/queue/commands.ts", "apps/web/src/conversation-steering/control.ts", "apps/web/src/conversation-steering/SteeringControl.tsx", "apps/web/src/conversation-context/controller.ts", "apps/web/src/attachments/controller.ts", "apps/web/src/plugin-integration/attachments.tsx", "apps/web/src/plugin-integration/knowledge.tsx", "apps/web/src/plugin-integration/session.ts", "apps/web/src/plugin-integration/steering.tsx", "apps/web/test/conversation-recovery.test.ts", "apps/web/test/conversation-recovery.fixture.ts", "apps/web/test/conversation-recovery.browser.ts"];
 sourcePaths.push("apps/web/src/plugin-integration/react.tsx", "apps/web/src/conversation-context/receipts.ts", "apps/web/src/conversations/queue/projection.ts", "apps/web/src/conversations/queue/ConversationQueue.tsx", "apps/web/src/plugin-integration/message-settings.tsx", "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx", "apps/web/src/execution-profiles/execution-profiles.css");
+if (visualAppearance) sourcePaths.push("apps/web/src/components/ui/dialog.tsx", "apps/web/src/assistant-ui.css");
 const journeyGroups = {
   full: ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn", "pageOnlyAuthLoss", "csrfOffline", "themes390"],
   "recovery-chain": ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn"],
@@ -62,7 +71,8 @@ function selectedGroups(journey: unknown): readonly Group[] {
 }
 type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
 type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
-  messageSettingsPhase: { id: "MSG03-MEMBERSHIP-FIX-20261007"; budgetMs: 120000; spentMs: number; cleanupMs: 30000 };
+  messageSettingsPhase?: { id: "MSG03-MEMBERSHIP-FIX-20261007"; budgetMs: 120000; spentMs: number; cleanupMs: 30000 };
+  visualAppearancePhase?: { id: "VISUAL01-RECOVERY-APPEARANCE-20261007"; budgetMs: 60000; spentMs: number; cleanupMs: 30000 };
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
   twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
 type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };
@@ -130,17 +140,23 @@ function priorAttemptCharge(run: string, budgetText: string, reconciliation?: Fa
 }
 
 async function supervisor() {
-  requireThat(process.env.FLOW_MSG03_BROWSER === "1", "Separate real browser/PG approval is required");
+  requireThat(process.env[taskPreset.approvalEnv] === "1", "Separate task-specific real browser/PG approval is required");
   const gatePath = process.env.FLOW_RECOVERY_GATE, adminUrl = process.env.FLOW_RECOVERY_TEST_ADMIN;
   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
-  requireThat(["message-settings-app", "message-settings-material-return"].includes(gate.journey), "MSG03 owner entry cannot replay historical Recovery journeys");
-  const phase = gate.messageSettingsPhase;
-  requireThat(phase?.id === "MSG03-MEMBERSHIP-FIX-20261007" && phase.budgetMs === TOTAL_MS && phase.cleanupMs === CLEANUP_MS
+  if (visualAppearance) {
+    requireThat(gate.journey === "appearance" && gate.messageSettingsPhase === undefined,
+      "VISUAL01 can select only the appearance journey and its own phase");
+  } else {
+    requireThat(["message-settings-app", "message-settings-material-return"].includes(gate.journey) && gate.visualAppearancePhase === undefined,
+      "MSG03 owner entry cannot replay historical Recovery journeys or another task phase");
+    requireThat(digest(await readFile(join(evidence, "browser-phase.json"))) === "bd32b2d5808ece143ea2d33c2c4c5ba86957e35b2ce790414b86c3ced2051310",
+      "Closed original MSG03 phase must remain unchanged; unused credit does not transfer");
+  }
+  const phase = visualAppearance ? gate.visualAppearancePhase : gate.messageSettingsPhase;
+  requireThat(phase?.id === taskPreset.phaseId && phase.budgetMs === TOTAL_MS && phase.cleanupMs === CLEANUP_MS
     && Number.isSafeInteger(phase.spentMs) && phase.spentMs >= 0 && gate.totalMs <= TOTAL_MS - phase.spentMs,
-    "Independent MSG03 phase with conservative actual outer/late/parent accounting required");
-  requireThat(digest(await readFile(join(evidence, "browser-phase.json"))) === "bd32b2d5808ece143ea2d33c2c4c5ba86957e35b2ce790414b86c3ced2051310",
-    "Closed original MSG03 phase must remain unchanged; unused credit does not transfer");
+    "Independent task phase with conservative actual outer/late/parent accounting required");
   const requiredGroups = selectedGroups(gate.journey);
   const twoCenter = gate.journey === "second-center-cycle", cleanupMs = twoCenter ? 30_000 : CLEANUP_MS;
   const evidenceLimit = twoCenter ? 13 * 1024 ** 2 : EVIDENCE_BYTES;
@@ -164,7 +180,7 @@ async function supervisor() {
   const sourceHashes = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, digest(await readFile(join(root, path)))])));
   for (const path of sourcePaths) requireThat(sourceHashes[path] === gate.sourceHashes[path], `Admitted source mismatch: ${path}`);
   const dirty = !!execFileSync("git", ["status", "--porcelain"], { cwd: root, encoding: "utf8", timeout: 2000 }).trim();
-  const runs = join(evidence, "browser-membership-runs"); await mkdir(runs, { recursive: true });
+  const runs = join(evidence, taskPreset.runs); await mkdir(runs, { recursive: true });
   const reconciliations = gate.reconciledFailures ?? [];
   requireThat(Array.isArray(reconciliations) && reconciliations.length <= 8, "Invalid failure reconciliation list");
   const remainingReconciliations = new Map<string, FailureReconciliation>();
@@ -279,7 +295,7 @@ async function supervisor() {
     const chromeExecutable = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", profile = join(scratch, "chrome");
     const chromeArgs = ["--headless=new", "--remote-debugging-port=0", "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`,
       "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"];
-    const workerArgs = ["--import", "tsx", fileURLToPath(import.meta.url), "--worker"];
+    const workerArgs = ["--import", "tsx", fileURLToPath(import.meta.url), "--worker", ...(visualAppearance ? ["--visual-appearance"] : [])];
     await json(join(directory, "launch-config.json"), {
       temp: { TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, BREAKPAD_DUMP_LOCATION: crashpad, XDG_CACHE_HOME: join(scratch, "cache") },
       worker: { executable: process.execPath, argv: workerArgs, inheritsNodeArguments: false },
@@ -391,7 +407,7 @@ async function supervisor() {
         journey: gate.journey, requiredGroups, completedGroups: result?.completedGroups ?? [],
         initialization: result?.initialization ?? null, groupTimings: result?.groupTimings ?? null,
         acceptanceScope: gate.journey === "full" ? "original seven-group subset; not full feature approval" : "selected journey only; full journey remains unverified",
-        errors, cleanupErrors, databaseCleanup, messageSettingsPhase: phase, ...(twoCenter ? { databaseCleanups, twoCenterPhase: gate.twoCenterPhase } : {}), processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
+        errors, cleanupErrors, databaseCleanup, task: taskPreset.id, ...(visualAppearance ? { visualAppearancePhase: phase } : { messageSettingsPhase: phase }), ...(twoCenter ? { databaseCleanups, twoCenterPhase: gate.twoCenterPhase } : {}), processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
         stopReason, interruptionRequested, allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
         attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
       await json(join(directory, "budget.json"), budget);
@@ -1147,7 +1163,7 @@ async function worker(init: Init) {
         await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
       };
       const omit = async () => {
-        await open(); await dialog.getByRole("radio", { name: /不附加消息设置/ }).check();
+        await open(); await dialog.getByRole("radio", { name: /不单独设置/ }).check();
         await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).not.toBeVisible();
       };
       return { action, dialog, applied, open, choose, apply, omit };
@@ -1506,7 +1522,20 @@ async function worker(init: Init) {
         if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
         const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
         if (init.journey === "appearance") await expect(dialog).toContainText("Saved recovery draft 中文🙂");
-        const rect = await dialog.evaluate(element => ({ client: element.clientWidth, scroll: element.scrollWidth, width: element.getBoundingClientRect().width })); expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
+        const rect = await dialog.evaluate(element => {
+          if (!(element instanceof HTMLElement)) throw Error("The dialog geometry requires an HTML element.");
+          const box = element.getBoundingClientRect(), css = getComputedStyle(element);
+          return { client: element.clientWidth, scroll: element.scrollWidth, width: box.width, left: box.left, right: box.right, top: box.top, bottom: box.bottom,
+            radius: parseFloat(css.borderTopLeftRadius), paddingEnd: parseFloat(css.paddingInlineEnd), scrollbarWidth: element.offsetWidth - element.clientWidth, gutter: css.scrollbarGutter };
+        });
+        expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
+        if (init.journey === "appearance") {
+          expect(rect.left).toBeGreaterThanOrEqual(0); expect(rect.right).toBeLessThanOrEqual(390);
+          expect(rect.top).toBeGreaterThanOrEqual(0); expect(rect.bottom).toBeLessThanOrEqual(844);
+          expect(rect.radius).toBeGreaterThanOrEqual(12); expect(rect.paddingEnd).toBeGreaterThanOrEqual(12);
+          await expect(dialog.getByRole("button", { name: "Close", exact: true })).toBeInViewport({ ratio: 1 });
+          await writeFile(join(init.directory, `overlay-recovery-${theme}-geometry.json`), JSON.stringify({ ...rect, scrollbarCoverage: "observed mode only" }, null, 2));
+        }
         const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "Screenshot exceeds its retained budget"); await writeFile(join(init.directory, theme + "-390.png"), png); await page.keyboard.press("Escape"); await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
       }
     });

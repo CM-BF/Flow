@@ -9,6 +9,8 @@ import { messageSettingsDraft } from "../src/plugin-integration/message-settings
 import { AppPluginSession, type AppActions, type CenterRuntimePort } from "../src/plugin-integration/session";
 import { themes } from "../src/themes";
 import type { PluginDefinition } from "../src/plugins/types";
+import { AppLayoutPort, type LayoutActions } from "../src/plugin-integration/layout";
+import { addWorkspace, emptyLayout, selectLayoutView } from "../src/workspace-state";
 
 function task(id: string): TaskSnapshot {
   const now = "2026-10-06T03:00:00Z";
@@ -26,6 +28,87 @@ function setup() {
   return { session, actions, tasks };
 }
 function deferred<T>() { let resolve!: (value: T) => void; const promise = new Promise<T>(done => { resolve = done; }); return { promise, resolve }; }
+
+function layoutSetup() {
+  const base = setup(), port = new AppLayoutPort();
+  let layout = selectLayoutView(emptyLayout(), "main", "conversation:A"), authority: string | null = "principal:g1", visible = true, viewKey = "view-A";
+  const actions: LayoutActions = { authorityKey: () => authority, layout: () => layout, panesVisible: () => visible,
+    viewKey: () => viewKey, knowsConversation: id => ["A", "B"].includes(id),
+    openConversation: vi.fn(), closeView: vi.fn(), changePane: vi.fn() };
+  const configure = () => port.configure(actions);
+  configure(); base.actions.layout = port; base.session.updateActions(base.actions);
+  const context = { kind: "pane", workspaceId: "workspace-main", paneId: "main", viewKey: "view-A" } as const;
+  return { ...base, port, layoutActions: actions, context, configure,
+    hide: () => { visible = false; configure(); }, show: () => { visible = true; configure(); },
+    generation: (value: string | null) => { authority = value; configure(); },
+    replaceView: (key: string) => { viewKey = key; configure(); },
+    awayAndBack: () => { const original = layout; layout = addWorkspace(layout, "other"); configure(); layout = original; configure(); },
+  };
+}
+
+describe("Arc actual App layout command authority", () => {
+  it("opens the original catalog B and changes its explicit pane without following global task selection", async () => {
+    const s = layoutSetup();
+    expect((await s.session.host.execute("sample.notes.open", undefined, { kind: "conversation", conversationId: "B" })).ok).toBe(true);
+    expect(s.layoutActions.openConversation).toHaveBeenCalledWith("B"); expect(s.actions.openTask).not.toHaveBeenCalled();
+    expect((await s.session.host.execute("sample.notes.split", undefined, s.context)).ok).toBe(true);
+    expect(s.layoutActions.changePane).toHaveBeenCalledWith(s.context, { kind: "split" });
+    expect(s.session.navigation.getSnapshot().activeTaskId).toBe("A");
+  });
+  it("rejects delayed activation after A to B to A and close to reopen even when public route IDs match", async () => {
+    for (const change of ["workspace", "view"] as const) {
+      const s = layoutSetup(), gate = deferred<void>();
+      s.session.host.register({ manifest: { id: "arc.delayed", version: "1.0.0", hostApi: 1, capabilities: ["ui.layout"],
+        activationEvents: ["command:arc.delayed.resize"], contributions: [],
+        commands: [{ id: "arc.delayed.resize", title: "Resize", capability: "ui.layout", contexts: ["pane"] }] },
+        load: async () => { await gate.promise; return { activate(context) { context.command("arc.delayed.resize", { parse: () => undefined,
+          run: (_, command) => command.execute("flow.layout.change", { paneId: "main", change: { kind: "resize", share: .6 } }) }); } }; } });
+      const result = s.session.host.execute("arc.delayed.resize", undefined, s.context);
+      if (change === "workspace") s.awayAndBack(); else { s.replaceView("replacement"); s.replaceView("view-A"); }
+      gate.resolve(); expect((await result).ok).toBe(false); expect(s.layoutActions.changePane).not.toHaveBeenCalled();
+    }
+  });
+  it("propagates hide and live authentication revocation through an already running command", async () => {
+    for (const revoke of ["hide", "auth"] as const) {
+      const s = layoutSetup(), entered = deferred<void>(), gate = deferred<void>(); let signal: AbortSignal | undefined;
+      s.session.host.register({ manifest: { id: "arc.pending", version: "1.0.0", hostApi: 1, capabilities: ["ui.navigate"],
+        activationEvents: ["command:arc.pending.close"], contributions: [],
+        commands: [{ id: "arc.pending.close", title: "Close", capability: "ui.navigate", contexts: ["pane"] }] },
+        load: async () => ({ activate(context) { context.command("arc.pending.close", { parse: () => undefined, run: async (_, command) => {
+          signal = command.signal; entered.resolve(); await gate.promise; await command.execute("flow.view.close", { viewKey: "view-A" });
+        } }); } }) });
+      const result = s.session.host.execute("arc.pending.close", undefined, s.context); await entered.promise;
+      if (revoke === "hide") { s.hide(); s.show(); } else { s.generation(null); s.generation("principal:g2"); }
+      expect(signal?.aborted).toBe(true); gate.resolve(); expect((await result).ok).toBe(false);
+      expect(s.layoutActions.closeView).not.toHaveBeenCalled();
+      expect((await s.session.host.execute("sample.notes.close-view", undefined, s.context)).ok).toBe(true);
+      expect(s.layoutActions.closeView).toHaveBeenCalledTimes(1);
+    }
+  });
+  it("suspends an unmounted private port and accepts only a newly captured lease after remount", () => {
+    const s = layoutSetup(), lease = s.port.capture(s.context);
+    s.port.suspend(); expect(() => lease.check()).toThrow("expired"); s.configure();
+    expect(() => lease.check()).toThrow("expired"); expect(() => s.port.capture(s.context).check()).not.toThrow();
+    s.port.dispose(); expect(s.port.allows(s.context)).toBe(false);
+  });
+  it("keeps a protected close in preparation until confirmation, and revokes old confirmations without rotating the draft", async () => {
+    for (const revoke of ["plugin", "layout", "auth"] as const) {
+      const s = layoutSetup();
+      expect((await s.session.host.execute("sample.notes.close-view", undefined, s.context)).ok).toBe(true);
+      const prepared = vi.mocked(s.layoutActions.closeView).mock.calls[0]![1];
+      expect(() => prepared.check()).not.toThrow();
+      if (revoke === "plugin") { await s.session.host.deactivate("sample.notes"); await s.session.host.activate("sample.notes"); }
+      else if (revoke === "layout") s.awayAndBack();
+      else { s.generation(null); s.generation("principal:g2"); }
+      expect(() => prepared.commit()).toThrow();
+      expect(s.actions.openTask).not.toHaveBeenCalled();
+      expect((await s.session.host.execute("sample.notes.close-view", undefined, s.context)).ok).toBe(true);
+      const fresh = vi.mocked(s.layoutActions.closeView).mock.calls[1]![1];
+      expect(() => fresh.commit()).not.toThrow();
+      expect(() => fresh.commit()).toThrow();
+    }
+  });
+});
 
 describe("App bridge resource and connection authority", () => {
   it("opens local sidebar B while global selection remains A and rejects unknown tasks", async () => {

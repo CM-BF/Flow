@@ -4,7 +4,14 @@ import type {
   WorkspaceTabId,
 } from "../components/workspace/types";
 export type { WorkspaceTabId };
+export type LayoutResource =
+  | { readonly kind: "conversation"; readonly conversationId: string }
+  | { readonly kind: "pane"; readonly workspaceId: string; readonly paneId: string; readonly viewKey: string };
+export type LayoutChange = { kind: "split" } | { kind: "merge" } | { kind: "swap"; direction: -1 | 1 } | { kind: "resize"; share: number };
+/** Host-private proof captured before activation; never exposed to a plugin handler. */
+export interface LayoutInvocation { readonly signal: AbortSignal; check(): void }
 export type ResourceContext =
+  | LayoutResource
   | { readonly kind: "global" }
   | { readonly kind: "task"; readonly taskId: string }
   | {
@@ -52,6 +59,7 @@ export type SlotId =
   | "sidebar.item.actions"
   | "sidebar.footer"
   | "chat.header"
+  | "chat.tab.actions"
   | "chat.task.actions"
   | "chat.message.actions"
   | "chat.message.footer"
@@ -83,6 +91,9 @@ export interface ThemeSnapshot {
   readonly availableThemes: readonly ThemeDefinition[];
 }
 export interface HostCommandArgs {
+  "flow.conversation.open": { conversationId: string };
+  "flow.view.close": { viewKey: string };
+  "flow.layout.change": { paneId: string; change: LayoutChange };
   "flow.chat.open": { taskId: string };
   "flow.workspace.open": { taskId: string; tab: WorkspaceTabId };
   "flow.workspace.close": Record<string, never>;
@@ -96,6 +107,7 @@ export interface HostPort {
   readonly navigation: Readable<Readonly<NavigationSnapshot>>;
   readonly theme: Readable<Readonly<ThemeSnapshot>>;
   getContext(): ResourceContext;
+  captureLayoutInvocation?(context: LayoutResource): LayoutInvocation;
   authorize(
     pluginId: string,
     capability: Capability,

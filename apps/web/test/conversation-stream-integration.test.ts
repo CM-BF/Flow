@@ -1,4 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import { FlowClient } from "@flow/client";
 import { ConversationProjection } from "../src/conversations/projection";
 import { ConversationStreamHost, STREAM_OWNER, STREAM_PANEL } from "../src/conversation-stream/host";
@@ -10,6 +11,35 @@ import { coreFixture } from "./conversation-message-reuse.probe";
 import { installStreamFixture } from "./conversation-stream-integration.fixture";
 const cleanups: (()=>Promise<void>)[]=[];
 afterEach(async()=>{await Promise.all(cleanups.splice(0).map(close=>close()));});
+/** Hold two real response bodies, without changing their status, headers or bytes. */
+function holdStreamResponses(fixture: ReturnType<typeof createConversationFixture>, taskIds: readonly string[], after?:number) {
+ if(taskIds.length<1||taskIds.length>2)throw Error("Response barrier requires one or two peers");
+ const waiting=new Set(taskIds), responses:{taskId:string;response:ServerResponse;end:ServerResponse["end"];args?:unknown[];released:boolean}[]=[];
+ let released=false, held=0, resolve!:()=>void, reject!:(error:Error)=>void;
+ const reached=new Promise<void>((yes,no)=>{resolve=yes;reject=no;});
+ const releaseTask=(taskId:string)=>{
+  const row=responses.find(item=>item.taskId===taskId);if(!row||row.released)return;
+  row.released=true;row.response.end=row.end;if(row.args&&!row.response.destroyed)Reflect.apply(row.end,row.response,row.args);
+ };
+ const release=()=>{
+  if(released)return;released=true;clearTimeout(timer);fixture.server.removeListener("request",observe);
+  for(const row of responses)releaseTask(row.taskId);
+ };
+ const timer=setTimeout(()=>{reject(Error("Two stream response bodies did not reach the barrier"));release();},1000);
+ const observe=(request:IncomingMessage,response:ServerResponse)=>{
+  const url=new URL(request.url??"/","http://fixture"), match=/^\/api\/tasks\/([^/]+)\/assistant-stream(\/patches)?$/.exec(url.pathname);
+  if(after!==undefined&&(!match?.[2]||Number(url.searchParams.get("after")??0)!==after))return;
+  if(!match||!waiting.delete(decodeURIComponent(match[1]!)))return;
+  const row:typeof responses[number]={taskId:decodeURIComponent(match[1]!),response,end:response.end,released:false};responses.push(row);
+  response.end=((...args:unknown[])=>{
+   row.args=args;held++;
+   if(held===taskIds.length){clearTimeout(timer);resolve();}
+   return response;
+  }) as ServerResponse["end"];
+ };
+ fixture.server.prependListener("request",observe);cleanups.push(async()=>release());
+ return{reached,release,releaseTask};
+}
 async function setup(count=1){
  const fixture=createConversationFixture(), stream=installStreamFixture(fixture);fixture.setReplyDelay(600000);
  const tasks=Array.from({length:count},(_,i)=>stream.seed(fixture.chats.get(`chat-${i+1}`)!.turns[0]!));tasks.forEach(task=>stream.append(task,`Draft ${task}`));
@@ -26,6 +56,62 @@ async function setup(count=1){
  return{fixture,stream,client,projections,tasks,open,session,hosts,start};
 }
 describe("actual conversation stream host",()=>{
+ it("Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",async()=>{
+  const s=await setup(3); s.stream.setDelay(8);
+  for(const task of s.tasks) for(let index=0;index<80;index++) s.stream.append(task,` ${index}`);
+  const [a,b,c]=s.tasks as [string,string,string], barriers:ReturnType<typeof holdStreamResponses>[]=[];
+  const hold=(tasks:string[],after?:number)=>{const barrier=holdStreamResponses(s.fixture,tasks,after);barriers.push(barrier);return barrier;};
+  const starts=(task:string,after:number)=>s.stream.reads.filter(row=>row.kind==="patches"&&row.taskId===task&&row.after===after).length;
+  const boundaries:{name:string;readIndex:number}[]=[];
+  const trace=()=>JSON.stringify({boundaries,reads:s.stream.reads.slice(0,48),omitted:Math.max(0,s.stream.reads.length-48)});
+  try{
+   // A and B retain their real fourth response (cursor72) and therefore both leases.
+   const first=hold([a,b],72);await s.session.host.activate(STREAM_OWNER);s.hosts[0]!.setVisible(true);s.hosts[1]!.setVisible(true);await first.reached;
+   const late=hold([c]);s.hosts[2]!.setVisible(true);await Promise.resolve();expect(s.hosts[2]!.hasQueuedWork()).toBe(true);
+   boundaries.push({name:"late-C-queued-behind-two-complete-batches",readIndex:s.stream.reads.length});
+   first.releaseTask(a);await late.reached;
+   expect(starts(a,96),trace()).toBe(0); // Older C waiter won A's released lease; A cannot reacquire.
+   const aSecond=hold([a],96);first.releaseTask(b);await aSecond.reached;
+   expect(starts(b,96),trace()).toBe(0); // Queued A won B's released lease while C remains in flight.
+   boundaries.push({name:"first-FIFO-handoffs-C-then-A",readIndex:s.stream.reads.length});
+   const bSecond=hold([b],96);late.release();await bSecond.reached;
+   expect(starts(c,96),trace()).toBe(0); // C yields its completed first batch to the waiting B.
+   const cSecond=hold([c],96);aSecond.release();await cSecond.reached;
+   expect(starts(a,192),trace()).toBe(0); // A's next completed batch yields again to queued C.
+   boundaries.push({name:"repeated-FIFO-handoffs-B-then-C",readIndex:s.stream.reads.length});
+   barriers.forEach(barrier=>barrier.release());
+   await vi.waitFor(()=>expect(s.hosts.every(host=>host.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes(" 79")))).toBe(true));
+   const pages=s.stream.reads.filter(row=>row.kind==="patches");
+   for(const task of s.tasks)expect(pages.filter(row=>row.taskId===task).map(row=>row.after),trace()).toEqual(Array.from({length:11},(_,index)=>index*24));
+   expect(s.stream.peak,trace()).toBeLessThanOrEqual(2);expect(s.stream.reads.length).toBeLessThanOrEqual(48);
+   expect(s.hosts.reduce((sum,host)=>sum+host.cached().reduce((bytes,entry)=>bytes+(entry.module.getSnapshot().patches?.totalBytes??0),0),0)).toBeLessThanOrEqual(4*1024*1024);
+  }finally{barriers.forEach(barrier=>barrier.release());console.info("ARC_FIFO_TRACE",trace());}
+ });
+ it("Arc removes hidden or closed FIFO waiters without retaining a reserved lease",async()=>{
+  const s=await setup(3);await s.session.host.activate(STREAM_OWNER);
+  const first=holdStreamResponses(s.fixture,s.tasks.slice(0,2));
+  try{
+   s.hosts.forEach(host=>host.setVisible(true));await first.reached;
+   expect(s.stream.reads).toHaveLength(2);expect(s.stream.reads.some(row=>row.taskId===s.tasks[2])).toBe(false);
+   s.hosts[2]!.setVisible(false);
+  }finally{first.release();}
+  await vi.waitFor(()=>expect(s.hosts.slice(0,2).every(host=>host.getSnapshot().messages.length===2)).toBe(true));
+  expect(s.stream.reads.some(row=>row.taskId===s.tasks[2])).toBe(false);
+  s.hosts[2]!.setVisible(true);await vi.waitFor(()=>expect(s.hosts[2]!.getSnapshot().messages.length).toBe(2));
+  s.hosts[2]!.setVisible(false);const closed=s.stream.reads.filter(row=>row.taskId===s.tasks[2]).length;
+  const second=holdStreamResponses(s.fixture,s.tasks.slice(0,2));
+  try{
+   s.tasks.forEach(task=>s.stream.append(task," queued close boundary"));
+   await Promise.all(s.projections.map(projection=>projection.refresh()));await second.reached;
+   s.hosts[2]!.setVisible(true);await Promise.resolve(); // Let the host's queued pump enter the occupied FIFO.
+   expect(s.hosts[2]!.hasQueuedWork()).toBe(true);
+   expect(s.stream.reads.filter(row=>row.taskId===s.tasks[2])).toHaveLength(closed);
+   s.hosts[2]!.dispose();
+  }finally{second.release();}
+  s.stream.append(s.tasks[0]!," survives waiter removal");await s.projections[0]!.refresh();
+  await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes("survives waiter removal"))).toBe(true));
+  expect(s.stream.reads.filter(row=>row.taskId===s.tasks[2])).toHaveLength(closed);expect(s.stream.peak).toBeLessThanOrEqual(2);
+ });
  it("requires independent plugin permission, retains canonical complete state, and has zero inactive reads",async()=>{
   const s=await setup();s.hosts[0]!.setVisible(true);await new Promise(resolve=>setTimeout(resolve,20));expect(s.stream.reads).toEqual([]);
   expect(s.session.host.checkView(STREAM_PANEL,{kind:"global"}).ok).toBe(false);await s.start();expect(s.stream.reads).toHaveLength(2);

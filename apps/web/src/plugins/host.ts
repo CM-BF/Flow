@@ -8,6 +8,7 @@ import type {
   HostCommandArgs,
   HostCommandId,
   HostPort,
+  LayoutInvocation,
   OperationResult,
   PluginContext,
   PluginDefinition,
@@ -44,6 +45,9 @@ type Entry = {
   session?: Session;
 };
 const bridgeCapabilities: Record<HostCommandId, Capability> = {
+  "flow.conversation.open": "ui.navigate",
+  "flow.view.close": "ui.navigate",
+  "flow.layout.change": "ui.layout",
   "flow.chat.open": "ui.navigate",
   "flow.workspace.open": "ui.layout",
   "flow.workspace.close": "ui.layout",
@@ -342,6 +346,10 @@ export class PluginHost {
         "Command does not accept this context",
       );
       this.authorize(entry, declaration.capability, resource);
+      const layoutInvocation = resource.kind === "pane" || resource.kind === "conversation"
+        ? this.port.captureLayoutInvocation?.(resource) : undefined;
+      assert((resource.kind !== "pane" && resource.kind !== "conversation") || layoutInvocation, "Layout invocation authority is unavailable");
+      layoutInvocation?.check();
       if (entry.state !== "active") {
         assert(
           entry.manifest.activationEvents.includes(`command:${commandId}`),
@@ -353,18 +361,19 @@ export class PluginHost {
       const session = entry.session;
       assert(session, "Command has no active session");
       this.current(entry, session);
+      layoutInvocation?.check();
       this.authorize(entry, declaration.capability, resource);
       const handler = session.commands.get(commandId);
       assert(handler, "Command implementation is unavailable");
       const context: CommandContext = Object.freeze({
-        signal: session.controller.signal,
+        signal: layoutInvocation ? AbortSignal.any([session.controller.signal, layoutInvocation.signal]) : session.controller.signal,
         resource,
         navigation: this.readable(entry, session, this.port.navigation),
         theme: this.readable(entry, session, this.port.theme),
         execute: <K extends HostCommandId>(
           command: K,
           parameters: HostCommandArgs[K],
-        ) => this.bridge(entry, session, resource, command, parameters),
+        ) => this.bridge(entry, session, resource, command, parameters, layoutInvocation),
       });
       const value = await handler.run(handler.parse(args), context);
       this.current(entry, session);
@@ -395,9 +404,11 @@ export class PluginHost {
     resource: ResourceContext,
     command: K,
     args: HostCommandArgs[K],
+    layoutInvocation?: LayoutInvocation,
   ): Promise<void> {
     try {
       this.current(entry, session);
+      layoutInvocation?.check();
       assert(
         Object.hasOwn(bridgeCapabilities, command),
         "Unknown host command",
@@ -414,7 +425,7 @@ export class PluginHost {
       await this.port.execute(command, safe, {
         pluginId: entry.manifest.id,
         context: resource,
-        signal: session.controller.signal,
+        signal: layoutInvocation ? AbortSignal.any([session.controller.signal, layoutInvocation.signal]) : session.controller.signal,
         ...(theme ? { theme } : {}),
       });
       this.current(entry, session);
@@ -432,6 +443,7 @@ export class PluginHost {
       "Command arguments must be an object",
     );
     const value = args as Record<string, unknown>;
+    const exact = (keys: string[]) => assert(Object.keys(value).every(key => keys.includes(key)), "Unexpected layout command argument");
     const nonempty = (key: string) =>
       assert(
         typeof value[key] === "string" &&
@@ -439,6 +451,25 @@ export class PluginHost {
         `Invalid ${key}`,
       );
     if (command === "flow.chat.open") nonempty("taskId");
+    if (command === "flow.conversation.open") {
+      exact(["conversationId"]); nonempty("conversationId");
+      assert(context.kind === "conversation" && context.conversationId === value.conversationId, "Conversation does not match invocation");
+    }
+    if (command === "flow.view.close") {
+      exact(["viewKey"]); nonempty("viewKey");
+      assert(context.kind === "pane" && context.viewKey === value.viewKey, "View does not match invocation");
+    }
+    if (command === "flow.layout.change") {
+      exact(["paneId", "change"]); nonempty("paneId");
+      assert(context.kind === "pane" && context.paneId === value.paneId, "Pane does not match invocation");
+      assert(value.change && typeof value.change === "object" && !Array.isArray(value.change), "Invalid layout change");
+      const change = value.change as Record<string, unknown>;
+      assert(["split", "merge", "swap", "resize"].includes(change.kind as string), "Unknown layout change");
+      const fields = change.kind === "swap" ? ["kind", "direction"] : change.kind === "resize" ? ["kind", "share"] : ["kind"];
+      assert(Object.keys(change).every(key => fields.includes(key)), "Unexpected layout change field");
+      if (change.kind === "swap") assert(change.direction === -1 || change.direction === 1, "Invalid pane direction");
+      if (change.kind === "resize") assert(typeof change.share === "number" && Number.isFinite(change.share) && change.share >= .15 && change.share <= .85, "Pane share is outside its bounds");
+    }
     if (
       command === "flow.workspace.open" ||
       command === "flow.reference.load"
