@@ -118,3 +118,7 @@ Q01既有事件：16:23:07开工、16:31:06产品source、21:55完整交付；�
 ### OPS-001-16：日常队列回归入口（2026-10-07，待实施）
 
 既有queue.test.ts已消费Q01受控fixture，但普通显式Vitest文档尚未表达其OPEN/记录根/HEAD/window输入；两个新例通过不能替代整份队列文件的日常可重复入口。下一同范围变更由Mika与原owner复用固定fixture/caller/结果解释，提供不修改旧episode或复制准备清单的有界入口；保精确选择、专库身份/正常清理/unknown，不恢复旧不安全fixture、不造通用框架。当前不运行、不改旧许可或CI（CI候选未选择queue）。TUI01F当前有限连续段继续，不能为本后继延迟已审接收。
+
+2026-10-08同项范围补充：GDEP已接收的依赖PG测试也引用受控episode fixture，支持文件必须作为直接消费者闭包保留；它与Q01共同约束未来稳定的test-only运行上下文接口。Q01需要真实listen/boss生命周期，GDEP为SQL，两者资源职责不合并；原Q01两例预算不能外推整文件34例。只演进未来合法入口，不改旧raw/许可或借此重新运行已绿PG。
+
+2026-10-08已发生的局部组合采用：I02按22个VAR领域/support＋4个CENTER固定叶一次接收，复用原PG/route批准，单一ordinary段对实际组合运行focused strict与exact9factory，监督共3597ms、155B输出、两组/空scratch闭合；[唯一接收记录](../../../m2-integration/docs/evidence/i02/x01-var-center-intake.json)及原Git来源保存必要provenance，没有复制全源码闭包。领域结果与组合结果各按范围保留，不把这一个样本当团队速度改善证明；独审/准备壁钟与真实运行仍分开，后续继续减少无实质变更的转录和往返。
