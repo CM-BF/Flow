@@ -39,3 +39,5 @@ Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status APPROVED at 2026-10-07T1
 ## Observation source/local review
 
 状态 NOT_STARTED；新五叶目标 581d38a40777efdcc4ef46c341184b2755750e83。7/7定向纯行为、types0、2child CLOSED。旧审批不覆盖新观察；真实worker/PG/T7未运行。唯一入口 observation/review-ready.json。
+
+2026-10-08T01:47:45.000Z root独审 581d38a40777efdcc4ef46c341184b2755750e83/f7621aebd9da4aa4591f8c39f05fb1bdc77dc0ce SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。本条归档于2026-10-08T01:48:51.554Z，不是新审查。原31bindings/7pure-mock cases/types0与资源记录经独立核验；无真实worker/PG/T7。状态APPROVED，等待受控main，原fixed packet保持不改。

@@ -1,0 +1,65 @@
+{
+  "state": "APPROVED_WAIT_MAIN",
+  "at": "2026-10-08T01:48:51.554Z",
+  "source": "581d38a40777efdcc4ef46c341184b2755750e83",
+  "reviewPacket": "f7621aebd9da4aa4591f8c39f05fb1bdc77dc0ce",
+  "reviewApproval": "review-approval.json",
+  "baseline": "2b52b23554e612077bbc25492417fbcf43f299cf",
+  "products": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 28822,
+      "sha256": "19ead276a66d45dddf58e663dda6dd37c5c18242692f210011c188b391888817",
+      "mainPreimage": {
+        "bytes": 28733,
+        "sha256": "e6e52187d52d06843651f7892deb24d2359a442f88ab1ecd48d26ebcab61c499"
+      }
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "bytes": 11552,
+      "sha256": "d888dd3900c004e571193bc6b77222a01b9185afcdd7fb63b375bceab5427234",
+      "mainPreimage": {
+        "bytes": 9901,
+        "sha256": "7588e4ac0b4e7bdec2a5a3d8e0fb605880f8040c03fac5bcbf8d6dce7041e01f"
+      }
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 13103,
+      "sha256": "e56be38e2a7297a152143b92ddc10b93e6c505b113839ef15a7210bb32f2487a",
+      "mainPreimage": {
+        "bytes": 12898,
+        "sha256": "4c674c07198de5fd702669a335c01ac35626f44fa41ad3c6799f33d7c42d637d"
+      }
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host-observation.test.ts",
+      "bytes": 9354,
+      "sha256": "23c5b95b3752c42dbad822cd0f0f7095a182ff1104e9fc79e1a868bf143d49cc",
+      "mainPreimage": null
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "bytes": 18110,
+      "sha256": "735847225be7682a1f6d6f77674f2efc4ed43a34705fe4f6afc4f90b2e7f5c00",
+      "mainPreimage": {
+        "bytes": 16654,
+        "sha256": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f"
+      }
+    }
+  ],
+  "totalBytes": 80941,
+  "instructions": [
+    "Only exact five declared leaves; runtime preimage is main2b52, not this old branch parent runtime",
+    "Preserve all subsequent main changes; if main preimages drift coordinate minimal delta, never restore old full branch",
+    "Owned source mirror/support/raw are audit evidence, not production replacements"
+  ],
+  "notValidated": [
+    "real worker notices",
+    "PG/public end-to-end",
+    "T7 release",
+    "deployment"
+  ],
+  "claim": "8c2f0b78 v6 ACTIVE11 retained for main/review repair"
+}

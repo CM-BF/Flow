@@ -9,22 +9,22 @@
 | 工作分支状态 | implemented |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 进程启动与收尾事实已接到现有运行器通知，纯接口和直接消费者检查通过，等待独立审查。 |
-| 下一可用交付 | 可核对业务身份、子进程退出与资源释放的安全诊断；真实worker观察由父验收后继验证。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | integration |
+| 当前产出 | 安全进程生命周期事实已通过独立审查，可接收主线；真实worker端到端验收另行进行。 |
+| 下一可用交付 | 将安全启动、退出与资源释放事实接入主线运行器诊断。 |
+| 当前阻塞 | 等待受控主线接收；真实worker与发布验收属于后继范围。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
 | HEAD | 581d38a40777efdcc4ef46c341184b2755750e83（观察source；packet另见review-ready） |
-| 工作树dirty状态 | source已固定，metadata封packet后clean STOP；0 child/待launch。 |
+| 工作树dirty状态 | 已审source与原packet冻结；本次仅归档审结/接收表，最终提交push clean后全部STOP。 |
 | 实现目标 | 581d38a40777efdcc4ef46c341184b2755750e83 |
 | 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host-observation.test.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
 | 检查状态 | PASSED observation/local.json：7selected/7passed/12未选，focusedtypes0；2child fullRETURN 2026-10-08T01:43:55.865Z。旧真实worker测试仅计数静态适配，未运行。 |
-| Review | NOT_STARTED 581d38a40777efdcc4ef46c341184b2755750e83 新观察接缝待独审；旧abc0736批准仅属已main历史。 |
+| Review | APPROVED 581d38a40777efdcc4ef46c341184b2755750e83 root 2026-10-08T01:47:45.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。 |
 | 已集成main状态 / HEAD | 旧工具/验证器host已main；本次观察五叶NOT_INTEGRATED，固定main2b52 runtime前像。T7/public真实链仍未验。 |
-| 最近更新时间 | 2026-10-08T01:45:24.052Z |
+| 最近更新时间 | 2026-10-08T01:48:51.554Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -117,3 +117,5 @@ clean-code metadata复核：现阶段与历史分开、原审结论注明转录�
 | X01TP-07 | in-progress | db_transaction_owner | [observation/segment.json](../../docs/evidence/x01-trusted-process-host/observation/segment.json)：安全生命周期事实、纯检查、独审与main待完成 |
 
 2026-10-08T01:45:24.052Z clean-code安全点：两次实际检查全部资源RETURN，无待launch；当前仅source/metadata封存。命名、单一invoke生命周期、明确安全字段投影、observer异常与业务错误分离已复核，无第二supervisor或额外transport。8MiB保守量见observation/growth.json。
+
+2026-10-08T01:48:51.554Z 新观察source 581d38a40777efdcc4ef46c341184b2755750e83 / packet f7621aebd9da4aa4591f8c39f05fb1bdc77dc0ce 已root独审批准；原审结转录见observation/review-approval.json，五叶主线接收表observation/main-intake.json。局部2child/7pass/types0与原失败/EPERM不改，原真实host计数改动晚于types静态边界保留。当前0child/0pending，新工程额度不消费剩余第3次；提交push后全写STOP，scope保留。
