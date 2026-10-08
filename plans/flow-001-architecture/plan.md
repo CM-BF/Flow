@@ -697,3 +697,13 @@ GO的固定`main2b52b2355`八文件只读覆盖审查确认：SVC02明确没有�
 ### O16 已保存规划的下一阶段（2026-10-08）
 
 本次真实planner产生的两节点/一依赖提案已限定独审并获GO规划语义接受；历史四次SDK调用封存，最终交付仍未验收。原native_center_owner沿O16-06准备新阶段的显式一次接续合同：同一goal/proposal/material/version，固定新阶段实现与旧来源并列，fresh核中心状态/授权/资源，旧pause/source/state/raw不改，过期仍由原入口拒绝。零模型实现及直接消费者先行，确认与最多两child的实际新额度待可运行固定候选一次提出；机械断言不替代独立最终语义审阅，不为工程接线重跑成功planner或另造调度器。唯一实现与实际等待仍读[O16 status](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)。
+
+### REQ-32 / R03-05 原工作区能力接续（2026-10-08）
+
+原R03-05/BR-01以及Web集成清单的定位、只读文件、真实日志、交互PTY仍是同一大task开放能力。Execution Lead与Mika/Web协调原runner可靠性与现工程workspace身份，下一独立可交结果先为有授权、版本化的工作区定位/只读浏览；原始宿主路径不能由Web任意指定，复用公开client及runner/项目归属。日志/PTY保留各自完整验收与明确后继，不以任务引用/静态文本关闭。排在当前已审Arc/登录/Picker接收、聊天设置后台激活与O16阶段后；准备可在独立范围并行，当前没有新writer/领取，不能抢App或runner共享路径。唯一来源仍原R03计划，具体小片由co-leads协调后在该父项登记，不新立第三层或第二中心。
+
+### COST-001 / ERROR-01 上游限额等待的来源与边界（2026-10-08研究增量）
+
+GO只读输入固定main bfbf804bd：Claude adapter未投影SDK rate_limit_event/system.api_retry，native-activity仅接assistant/user/tool_progress；SDK0.3.290声明SHA193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541包含重试attempt/max_retries/retry_delay_ms/error_status，以及订阅限额allowed/allowed_warning/rejected和可缺reset/type。类型存在不证明实际账户已发过事件。本节归既有COST001-05、FLOW-001-T03-ERROR-01与S01，不改产品/账户配置或新增probe。
+
+后继用户应能区分harness内部等待/重试、已确认额度受限和未知；零模型注入同attempt的重试通知不新建任务、不重置原deadline；限额未知不冒终态失败，缺失/陈旧不能显示0或可运行。共享账号桶须受信来源绑定，不能用token/邮箱读取或模型名猜归属；Web/TUI/CLI共用轻投影，来源详情按需。中心原子受理/预留仍COST001-05，不叠加Flow自动重试/第二quota服务。研究来源由GO提供：[Codex app-server](https://learn.chatgpt.com/docs/app-server)、[Anthropic rate limits](https://platform.claude.com/docs/en/api/rate-limits)、[errors](https://platform.claude.com/docs/en/api/errors)。本机固定Codex支持及model→bucket未验，API语义不直接套订阅SDK；当前没有新真实账号查询、额度耗尽实验或模型调用授权。
