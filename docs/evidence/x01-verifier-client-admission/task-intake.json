@@ -1,0 +1,26 @@
+{
+  "taskId": "X01-VERIFIER-CLIENT-ADMISSION01",
+  "parentTaskId": "X01",
+  "coLead": "mika",
+  "owner": "architecture_read",
+  "model": "gpt-6-astra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission",
+  "branch": "codex/plugin-verifier-client-admission",
+  "base": "0e8bfa7b385aff582a85aa211df1c854e064258c",
+  "statusPath": "plans/x01-verifier-client-admission/status.md",
+  "planPath": "plans/x01-verifier-client-admission/plan.md",
+  "reviewPath": "plans/x01-verifier-client-admission/review.md",
+  "claimId": "03b10778-27dd-4a2d-bbc1-c98c5fcfcb0e",
+  "claimVersion": 1,
+  "source": "0904d72bbc3a76e2beee2db79457f996be5acc39",
+  "intake": "docs/evidence/x01-verifier-client-admission/main-intake.json",
+  "requestedAction": "Execution Lead/D05 register the unique owner status; owner has not edited shared registry or probed dashboard",
+  "main": "NOT_INTEGRATED",
+  "taskStartedAt": "UNKNOWN",
+  "taskStartRange": [
+    "2026-10-08T00:54:50.953Z",
+    "2026-10-08T00:55:39.223Z"
+  ],
+  "firstMetadataWriteAt": "2026-10-08T00:56:40.495Z",
+  "recordedAt": "2026-10-08T01:10:59.779Z"
+}
