@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-08T03:49:53.080Z",
+  "elapsedSeconds": 0.06835125002544373,
+  "process": {
+    "pid": 20327,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 68,
+    "observed_bytes": 298,
+    "retained_bytes": 298,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "label": "capacity-preflight",
+    "rawComplete": true
+  },
+  "unknown": false,
+  "sourceSha256": "7496ae050ecadc3a92f1873e2e35adfddb6cac4a958bea260bc111ff21333aac"
+}

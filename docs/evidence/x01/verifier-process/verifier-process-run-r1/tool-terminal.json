@@ -1,0 +1,25 @@
+{
+  "toolSession": 9643,
+  "chunkId": "4eb68e",
+  "exitCode": 0,
+  "delivery": {
+    "state": "PASSED",
+    "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/verifier-process/verifier-process-run-r1",
+    "receiptState": "PASSED",
+    "resultPersistence": "CONFIRMED",
+    "elapsedAfterPersistence": 7.481404875055887,
+    "withinTotalDeadline": true,
+    "endedAfterPersistenceAt": "2026-10-08T03:50:00.605755+00:00",
+    "retained": [],
+    "temporary": {
+      "path": "/private/tmp/flow-x01-verifier-pg-iav_q2zy",
+      "dev": 16777234,
+      "ino": 124790499,
+      "removed": true,
+      "sampleBytes": 20821,
+      "sampleEntries": 48
+    }
+  },
+  "observedAt": "2026-10-08T03:50:50.285Z",
+  "note": "Tool returned completed exit0; dual EOF not independently exposed. No inferred wholeexternal wall."
+}

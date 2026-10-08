@@ -1,0 +1,595 @@
+{
+  "startedAt": "2026-10-08T03:49:53.124365+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.verifier-process-pg.v1",
+    "productCommit": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 1,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "verifier-process-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "docs/evidence/x01/verifier-process/inputs/apps/server/src/plugin-runtime/process-runner-pg.test.ts",
+        "name": "real center and trusted-process runner verify a failed source and its JSON output"
+      }
+    ],
+    "tasksMax": 3,
+    "attemptsMax": 3,
+    "scope": "Three public tasks through real main entries and trusted PROCESS; actual not authorized; T7 not proved",
+    "runnersMax": 1,
+    "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+    "metadataRunners": 1,
+    "providerCalls": 0,
+    "registrationsMax": 1,
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/runner/src/admission-plugin-claim.test.ts",
+        "apps/runner/src/outbox.ts",
+        "apps/runner/src/plugins/semver-package.test.ts",
+        "apps/runner/src/plugins/semver-pinning.test.ts",
+        "apps/runner/src/plugins/terminal-outbox.test.ts",
+        "apps/server/src/plugin-runtime-configuration.test.ts",
+        "apps/server/src/plugin-runtime-configuration.ts",
+        "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "apps/server/src/plugin-runtime/artifact.test.ts",
+        "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "apps/server/src/plugin-runtime/claim.test.ts",
+        "apps/server/src/plugin-runtime/host-candidates.test.ts",
+        "apps/server/src/plugin-runtime/host-candidates.ts",
+        "apps/server/src/plugin-runtime/process-runner-pg.test.ts",
+        "apps/server/src/plugin-runtime/public-runner-pg.test.ts",
+        "apps/server/src/plugin-runtime/recovery.test.ts",
+        "apps/server/src/plugin-runtime/runtime.test.ts",
+        "apps/server/src/plugins/commands.ts",
+        "apps/server/src/plugins/plugins.test.ts",
+        "apps/server/src/plugins/storage.ts",
+        "apps/server/src/private-json-configuration.ts",
+        "apps/server/src/reconciliation.ts",
+        "docs/evidence/x01",
+        "experiments/plugins/semver-compare",
+        "packages/contracts/src/plugin-artifact.ts",
+        "packages/contracts/src/plugin-runner-claim.test.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts",
+        "packages/contracts/src/plugin-runtime.test.ts",
+        "packages/contracts/src/plugin-runtime.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/plugin-runtime/src/private-configuration.test.ts",
+        "packages/plugin-runtime/src/private-configuration.ts",
+        "packages/storage/migrations/034-plugin-runtime.sql",
+        "plans/x01-plugin-management"
+      ],
+      "state": "active",
+      "branch": "codex/plugin-enable-binding",
+      "origin": "new",
+      "taskId": "X01",
+      "worker": "architecture_read",
+      "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+      "version": 34,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+      "createdAt": "2026-10-06T12:31:22.156Z",
+      "updatedAt": "2026-10-07T20:32:42.865Z",
+      "observedAt": null,
+      "needsVerification": false,
+      "ledgerAt": "2026-10-08T01:56:32.965Z"
+    }
+  },
+  "processes": [
+    {
+      "pid": 20328,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 33,
+      "observed_bytes": 321,
+      "retained_bytes": 321,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 20329,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 7392,
+      "observed_bytes": 78,
+      "retained_bytes": 78,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "1095cf1739f446898319a20ab5916259",
+      "sourceHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+      "suite": "runtime",
+      "database": "flow_x01_59a78caa65e949acaa30b65f9bd6a252",
+      "facts": [
+        {
+          "kind": "tar",
+          "pid": 20332,
+          "exitCode": 0,
+          "signal": null
+        },
+        {
+          "kind": "real-verifier-three-task-process",
+          "taskIds": [
+            "86bdbfa9-3987-4d66-81a5-670eb744458c",
+            "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+            "cff72073-6529-4aa9-a9d9-5a61c296d508"
+          ],
+          "outcomes": [
+            {
+              "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+              "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+              "ownerVersion": 1,
+              "bindingId": "56ce6920-cf52-4bf2-a223-ddd5549e6797",
+              "invocationId": "02c6d30e-9a99-4360-83ac-35bb02176b6e",
+              "status": "failed",
+              "verificationStatus": "failed",
+              "outputArtifact": {
+                "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+                "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+                "artifactId": "plugin-02c6d30e-9a99-4360-83ac-35bb02176b6e",
+                "version": "cc184cb7004b36a8a0e89f3180f9b3baf0011f780bd0d8a73257e352be9fb612"
+              },
+              "inputDigest": "f821e7da9e18337c9c731042ae3281adf806fdcb11a13931e5cca9e153dd7ac9",
+              "verdict": {
+                "result": "failed",
+                "reason": "invalid-json",
+                "missingKeys": []
+              },
+              "phases": [
+                "invoke",
+                "load"
+              ]
+            },
+            {
+              "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+              "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+              "ownerVersion": 1,
+              "bindingId": "605ff79b-7597-40b0-af14-248f5ffe2152",
+              "invocationId": "2a2b3e9d-2729-4482-b516-1cdec0a97231",
+              "status": "succeeded",
+              "verificationStatus": "passed",
+              "outputArtifact": {
+                "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+                "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+                "artifactId": "plugin-2a2b3e9d-2729-4482-b516-1cdec0a97231",
+                "version": "ef336fbe252b2f156aa656dd47aadce6be2fcca9d9e61653b9d01d54aa9d6ccb"
+              },
+              "inputDigest": "e24a85de26aa6e5e8fae791e1ac24b3605c5d6222223dac0d4f9b512f4bece65",
+              "verdict": {
+                "result": "passed",
+                "reason": "passed",
+                "missingKeys": []
+              },
+              "phases": [
+                "invoke",
+                "load"
+              ]
+            }
+          ],
+          "workerNotices": [
+            {
+              "type": "plugin-process",
+              "stage": "launched",
+              "executionKind": "verifier",
+              "workerEntry": "flow.runner.process-worker.v1",
+              "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+              "bindingId": "56ce6920-cf52-4bf2-a223-ddd5549e6797",
+              "invocationId": "02c6d30e-9a99-4360-83ac-35bb02176b6e",
+              "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+              "ownerVersion": 1,
+              "pid": 20363,
+              "observedAt": "2026-10-08T03:49:59.039Z",
+              "launchedAt": "2026-10-08T03:49:59.039Z",
+              "exitCode": null,
+              "signal": null,
+              "protocolEof": false,
+              "stdoutEof": false,
+              "stderrEof": false,
+              "diagnosticBytes": 0,
+              "processClosed": false,
+              "resourceState": "reserved",
+              "observerError": null
+            },
+            {
+              "type": "plugin-process",
+              "stage": "settled",
+              "executionKind": "verifier",
+              "workerEntry": "flow.runner.process-worker.v1",
+              "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+              "bindingId": "56ce6920-cf52-4bf2-a223-ddd5549e6797",
+              "invocationId": "02c6d30e-9a99-4360-83ac-35bb02176b6e",
+              "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+              "ownerVersion": 1,
+              "pid": 20363,
+              "observedAt": "2026-10-08T03:49:59.299Z",
+              "launchedAt": "2026-10-08T03:49:59.039Z",
+              "exitCode": 0,
+              "signal": null,
+              "protocolEof": true,
+              "stdoutEof": true,
+              "stderrEof": true,
+              "diagnosticBytes": 0,
+              "processClosed": true,
+              "resourceState": "removed",
+              "observerError": null
+            },
+            {
+              "type": "plugin-process",
+              "stage": "launched",
+              "executionKind": "verifier",
+              "workerEntry": "flow.runner.process-worker.v1",
+              "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+              "bindingId": "605ff79b-7597-40b0-af14-248f5ffe2152",
+              "invocationId": "2a2b3e9d-2729-4482-b516-1cdec0a97231",
+              "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+              "ownerVersion": 1,
+              "pid": 20365,
+              "observedAt": "2026-10-08T03:49:59.901Z",
+              "launchedAt": "2026-10-08T03:49:59.901Z",
+              "exitCode": null,
+              "signal": null,
+              "protocolEof": false,
+              "stdoutEof": false,
+              "stderrEof": false,
+              "diagnosticBytes": 0,
+              "processClosed": false,
+              "resourceState": "reserved",
+              "observerError": null
+            },
+            {
+              "type": "plugin-process",
+              "stage": "settled",
+              "executionKind": "verifier",
+              "workerEntry": "flow.runner.process-worker.v1",
+              "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+              "bindingId": "605ff79b-7597-40b0-af14-248f5ffe2152",
+              "invocationId": "2a2b3e9d-2729-4482-b516-1cdec0a97231",
+              "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+              "ownerVersion": 1,
+              "pid": 20365,
+              "observedAt": "2026-10-08T03:50:00.172Z",
+              "launchedAt": "2026-10-08T03:49:59.901Z",
+              "exitCode": 0,
+              "signal": null,
+              "protocolEof": true,
+              "stdoutEof": true,
+              "stderrEof": true,
+              "diagnosticBytes": 0,
+              "processClosed": true,
+              "resourceState": "removed",
+              "observerError": null
+            }
+          ],
+          "observedOwnerRequests": 84,
+          "runnerHttpActual": null,
+          "runnerHttpBoundOnly": true,
+          "T7": false
+        },
+        {
+          "kind": "process-traffic",
+          "registryRequests": 2,
+          "tarDownloads": 1,
+          "managementCalls": 0,
+          "runnerHttpActual": null,
+          "httpTheoreticalMaximum": 4096,
+          "responseBytesTheoreticalMaximum": 536870912,
+          "ownerRequests": 84,
+          "ownerRequestBytes": 2855,
+          "sdkAcknowledgements": 3,
+          "runnerCountIsObserved": false,
+          "processes": [
+            {
+              "label": "bootstrap-center",
+              "pid": 20333,
+              "startedAt": "2026-10-08T03:49:53.996Z",
+              "exitCode": 0,
+              "signal": null,
+              "stdoutEof": true,
+              "stderrEof": true,
+              "closed": true,
+              "outputBytes": 0,
+              "terminationRequested": true,
+              "workDeadlineReached": false,
+              "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "label": "trusted-center",
+              "pid": 20355,
+              "startedAt": "2026-10-08T03:49:56.384Z",
+              "exitCode": 0,
+              "signal": null,
+              "stdoutEof": true,
+              "stderrEof": true,
+              "closed": true,
+              "outputBytes": 0,
+              "terminationRequested": true,
+              "workDeadlineReached": false,
+              "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "label": "runner-verifier",
+              "pid": 20361,
+              "startedAt": "2026-10-08T03:49:57.205Z",
+              "exitCode": 0,
+              "signal": null,
+              "stdoutEof": true,
+              "stderrEof": true,
+              "closed": true,
+              "outputBytes": 2410,
+              "terminationRequested": true,
+              "workDeadlineReached": false,
+              "logSha256": "d8eb2b7a7fbb3bb4292ca3a8766db4a2c57ef88fa0a516f50ec1c829c9dd8330"
+            }
+          ]
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "registry": true,
+          "runner": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1383156",
+          "owner": "flow",
+          "marker": "x01:1095cf1739f446898319a20ab5916259:runtime:1f5db72b-a13e-40c9-9e85-88c26f5bc67c"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true,
+        "connectionObservations": [
+          {
+            "at": "2026-10-08T03:50:00.328Z",
+            "connections": 0
+          }
+        ]
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:64366",
+          "closed": true
+        },
+        {
+          "origin": "http://127.0.0.1:64367",
+          "closed": true
+        },
+        {
+          "origin": "http://127.0.0.1:64367",
+          "closed": true
+        }
+      ],
+      "httpRequests": 80,
+      "responseBytes": 48972,
+      "workUntil": 1791431503124,
+      "cleanupUntil": 1791431563124,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-08T03:50:00.574Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "1095cf1739f446898319a20ab5916259",
+  "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+  "manifestSha256": "b110301971336745a05866957a9385906f7e6fb26eda0393cd480213317ecb99",
+  "temporary": {
+    "path": "/private/tmp/flow-x01-verifier-pg-iav_q2zy",
+    "dev": 16777234,
+    "ino": 124790499,
+    "removed": true,
+    "sampleBytes": 20821,
+    "sampleEntries": 48
+  },
+  "firstFailure": null,
+  "archiveFailures": [],
+  "secondaryFailures": [],
+  "observedWorkerNotices": [
+    {
+      "type": "plugin-process",
+      "stage": "launched",
+      "executionKind": "verifier",
+      "workerEntry": "flow.runner.process-worker.v1",
+      "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+      "bindingId": "56ce6920-cf52-4bf2-a223-ddd5549e6797",
+      "invocationId": "02c6d30e-9a99-4360-83ac-35bb02176b6e",
+      "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+      "ownerVersion": 1,
+      "pid": 20363,
+      "observedAt": "2026-10-08T03:49:59.039Z",
+      "launchedAt": "2026-10-08T03:49:59.039Z",
+      "exitCode": null,
+      "signal": null,
+      "protocolEof": false,
+      "stdoutEof": false,
+      "stderrEof": false,
+      "processClosed": false,
+      "resourceState": "reserved",
+      "observerError": null
+    },
+    {
+      "type": "plugin-process",
+      "stage": "settled",
+      "executionKind": "verifier",
+      "workerEntry": "flow.runner.process-worker.v1",
+      "taskId": "df2640dc-308c-4c89-81cc-d4a8ed13a2a1",
+      "bindingId": "56ce6920-cf52-4bf2-a223-ddd5549e6797",
+      "invocationId": "02c6d30e-9a99-4360-83ac-35bb02176b6e",
+      "attemptId": "e7293c99-fa84-49c7-af9c-ab8509677184",
+      "ownerVersion": 1,
+      "pid": 20363,
+      "observedAt": "2026-10-08T03:49:59.299Z",
+      "launchedAt": "2026-10-08T03:49:59.039Z",
+      "exitCode": 0,
+      "signal": null,
+      "protocolEof": true,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "processClosed": true,
+      "resourceState": "removed",
+      "observerError": null
+    },
+    {
+      "type": "plugin-process",
+      "stage": "launched",
+      "executionKind": "verifier",
+      "workerEntry": "flow.runner.process-worker.v1",
+      "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+      "bindingId": "605ff79b-7597-40b0-af14-248f5ffe2152",
+      "invocationId": "2a2b3e9d-2729-4482-b516-1cdec0a97231",
+      "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+      "ownerVersion": 1,
+      "pid": 20365,
+      "observedAt": "2026-10-08T03:49:59.901Z",
+      "launchedAt": "2026-10-08T03:49:59.901Z",
+      "exitCode": null,
+      "signal": null,
+      "protocolEof": false,
+      "stdoutEof": false,
+      "stderrEof": false,
+      "processClosed": false,
+      "resourceState": "reserved",
+      "observerError": null
+    },
+    {
+      "type": "plugin-process",
+      "stage": "settled",
+      "executionKind": "verifier",
+      "workerEntry": "flow.runner.process-worker.v1",
+      "taskId": "cff72073-6529-4aa9-a9d9-5a61c296d508",
+      "bindingId": "605ff79b-7597-40b0-af14-248f5ffe2152",
+      "invocationId": "2a2b3e9d-2729-4482-b516-1cdec0a97231",
+      "attemptId": "cb4f00ee-fd6c-4350-bc1f-c1728285aba1",
+      "ownerVersion": 1,
+      "pid": 20365,
+      "observedAt": "2026-10-08T03:50:00.172Z",
+      "launchedAt": "2026-10-08T03:49:59.901Z",
+      "exitCode": 0,
+      "signal": null,
+      "protocolEof": true,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "processClosed": true,
+      "resourceState": "removed",
+      "observerError": null
+    }
+  ],
+  "cleanupEligible": true,
+  "exactSelection": true,
+  "processEvidence": true,
+  "selection": {
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 1,
+    "success": true
+  },
+  "httpRequests": 80,
+  "responseBytes": 48972,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "trusted-center.log": 0,
+    "temporary-reservation.json": 118,
+    "runner-verifier.log": 2410,
+    "vitest.json": 1324,
+    "runtime-reservation.json": 415,
+    "runtime-create-request.json": 353,
+    "output.log": 78,
+    "runtime-result.json": 9270,
+    "bootstrap-center.log": 0,
+    "reservation.json": 285,
+    "launch.json": 188,
+    "preflight.stdout": 321,
+    "admission.json": 2829
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 17993,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 17993,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-08T03:50:00.605481+00:00",
+  "elapsedBeforePersistence": 7.481151708052494
+}

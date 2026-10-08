@@ -1,0 +1,3 @@
+# X01 real verifier result quality
+
+2026-10-08T03:52:17.529Z — existing local find-skills / codebase-design / clean-code baseline reused. Scope: immutable input and raw preservation, public three-task identity, failed-source JSON reuse, same-attempt phase receipts, two distinct worker launch/settled identities, structured failure/UNKNOWN, sameidentity cleanup and bounded result. No product/case/operator modification; no second scheduler or supervisor. One actual case, 0 provider. Runtime and natural seal clocks remain distinct. Historical first failures and post-return observation times are not rewritten. Reviewed prepare is not result approval. Exact preflight cwd deviation, outer EOF limitation and unknown physical peaks disclosed in r1-result-summary.json.

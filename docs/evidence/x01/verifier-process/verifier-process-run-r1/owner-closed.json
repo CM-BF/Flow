@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-08T03:50:50.285Z",
+  "state": "FULL_RETURN",
+  "window": "1095cf1739f446898319a20ab5916259",
+  "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+  "toolSession": 9643,
+  "toolExitCode": 0,
+  "outerDualEOF": "NOT_INDEPENDENTLY_RECORDED",
+  "wholeExternalWall": "UNKNOWN",
+  "recordedPidObservation": {
+    "20311": "ESRCH",
+    "20327": "ESRCH",
+    "20328": "ESRCH",
+    "20329": "ESRCH",
+    "20333": "ESRCH",
+    "20355": "ESRCH",
+    "20361": "ESRCH",
+    "20363": "ESRCH",
+    "20365": "ESRCH"
+  },
+  "ownTmpExactAbsent": [
+    "/private/tmp/flow-x01-r1-admission-a32_e25d",
+    "/private/tmp/flow-x01-verifier-pg-iav_q2zy"
+  ],
+  "externalTailReservation": {
+    "dev": 16777234,
+    "ino": 124790487
+  },
+  "externalFilesArchived": [
+    {
+      "name": "entry.json",
+      "bytes": 496,
+      "sha256": "51c1479551b73e11674db41d6f514667d608aacd013fb33ffa7919d7b9abd995",
+      "dev": 16777234,
+      "ino": 124790488
+    },
+    {
+      "name": "preflight.raw",
+      "bytes": 298,
+      "sha256": "2340cf66504d489ce70332d6b35beaa1878dbc71d9afdd108078ce298de51d92",
+      "dev": 16777234,
+      "ino": 124790489
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 810,
+      "sha256": "4468ff3f53aedd459be6c8dbdaa21d6fe5230231ba120d5de25a0b4312bd034b",
+      "dev": 16777234,
+      "ino": 124790490
+    },
+    {
+      "name": "admission.json",
+      "bytes": 2829,
+      "sha256": "88111bb09944f56af83cf0186dedc878fb42b9b37a2c9c653de2d07a783752ab",
+      "dev": 16777234,
+      "ino": 124790491
+    },
+    {
+      "name": "caller-entry.json",
+      "bytes": 341,
+      "sha256": "92fc4ed48d7f21c320e417f7392236b25a68016a219fedfe0702fd052c495137",
+      "dev": 16777234,
+      "ino": 124790492
+    }
+  ],
+  "runtimeClosureSource": "runtime-result.json",
+  "runtimeTmpClosureSource": "result.json",
+  "limits": "PID followup is a later observation, not backdated; raw worker launchedAt is parent observation not kernel start; database and listeners use original owner receipts, no new DB query"
+}
