@@ -23,7 +23,8 @@ export async function runPhase(center, state, phase, { source, permit, report, d
   await writeRecord(configFile, { mode: state.mode, phase, sourceDigest: source.digest, baseUrl: center.origin,
     runnerToken: runner.token, profile: runner.profile, workingDirectory: join(directory, 'runtime'), reportFile,
     materialFile: state.materialFile, citation: state.citation, admitted: state.admitted, expected: state.expected,
-    confirmation: state.confirmationBinding, ...(permit ? { permit, nativeEnvironment } : {}) }, { exclusive: true });
+    confirmation: state.confirmationBinding, ...(state.executionAuthorizationBinding ? { executionAuthorization: state.executionAuthorizationBinding } : {}),
+    ...(permit ? { permit, nativeEnvironment } : {}) }, { exclusive: true });
   const home = join(directory, 'home'); await mkdir(home, { mode: 0o700 });
   const env = nativeEnvironment ? nativeEnvironmentPolicy.environment(nativeEnvironment) : { PATH: process.env.PATH, HOME: home, TMPDIR: directory, LANG: 'C.UTF-8' };
   if (nativeEnvironment) { await nativeEnvironmentPolicy.verify(nativeEnvironment, source); report.nativeEnvironment = nativeEnvironment; report.writePolicy = nativeEnvironmentPolicy.recipe.writePolicy; }

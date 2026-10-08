@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:54:46Z / main bfbf804bd；TUI R4实际结果已限定独审，O16新续接源码待审。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:00:37Z / main eb06d5323；O16新阶段实现与候选已独审，真实运行未授权。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / HEAD | main312842ab5；已审九路径保持原source字节，限定结果不替代完整验收。 |
 | 工作树dirty状态 | 仅后续本任务metadata；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED: TUI R3原件忠实性限定独审；实际旅程仍1选0过，功能完成、groups未知保留。O16续接7源/15不同局部检查已独审，原两次失败保留。 |
-| 已集成main状态 / HEAD | main/origin312842ab5已接收O16九条已审路径及TUI R3限定结果；未重跑产品。 |
+| 检查状态 | PASSED: O16新阶段12不同局部检查、13次实际选择与两组归还已限定独审；TUI R4实际1/1及精确RETURN已审，19alias准入遗漏仍是明确限制。 |
+| 已集成main状态 / HEAD | main/origin eb06d5323已接收TUI R4限定结果；本次候选接收O16十个已审源与直接消费者来源记录，未运行PG/provider。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端与网页的固定接续旅程已通过，资源已归还；运行前一项依赖核验遗漏已保留为结果限制。 |
-| 下一可用交付 | 接收网页工作区已审成果，并完成同一目标的过期执行授权续接。 |
+| 当前产出 | 终端与网页固定接续旅程已接收；同一目标在授权过期后保留原结果、开启明确新阶段的实现已通过独审。 |
+| 下一可用交付 | 接收网页工作区已审成果；在新阶段授权成立后继续目标的两个子任务。聊天设置后台组合已由原负责人准备。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -602,3 +602,5 @@ TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收
 2026-10-08T02:38:55.783Z：[TUI R4固定入口限定审查](../../docs/evidence/i02/tui01f-r4-preparation-review.json)完成，13绑定30271B与2继承原件核对；真实入口前置1/1、384ms，末端启动被截断、0PG/Chrome/PTY/provider。完整旅程需要新的资源选择，未把局部绿替代实际跨端验收。
 
 2026-10-08T02:54:46Z：[TUI R4限定实际结果](../../docs/evidence/i02/tui01f-r4-result-intake.json)核22原件/固定Git一致；真实PTY与Web同会话旅程1选1过、20.223s，02:51:19.768Z精确FULL_RETURN。19alias独立fresh核验未执行，原resolverCount0与非原子样本保留，不以PASS追认全部准入；仅接收观察行为与归还，无当前部署/native或完整TUI大task完成声明。旧失败与KEEP不改，0重跑。
+
+2026-10-08T03:00:37Z：O16原过期确认的显式新阶段实现已独立批准，十源对214a父基线/main精确前像相同，最终8b31只补真实文件consumer例。详见[唯一审查](../../docs/evidence/i02/o16-progression-renewal-review.json)。原raw/source保持canonical；只收测试直接依赖的source-delta，不复制整套输入。新阶段实际授权、PG替换、两child与最终语义接受仍未发生，四次历史调用/两次未消费额度不改。

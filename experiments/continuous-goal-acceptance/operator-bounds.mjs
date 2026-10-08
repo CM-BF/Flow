@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { lstat, readdir, statfs } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { stageSpec } from './stage-policy.mjs';
+import { stageSpec, stageRecords } from './stage-policy.mjs';
 import { readRecord } from './records.mjs';
 export const BOUNDS = Object.freeze({ workMs: 120000, cleanupMs: 30000, rawBytes: 2 * 1024 ** 2, runtimeBytes: 8 * 1024 ** 2,
   reserveBytes: 1024 ** 3, startBytes: 1024 ** 3 + 128 * 1024 ** 2 });
@@ -67,9 +67,9 @@ export async function measureRun(run, directory, io = { lstat, readdir, statfs }
     runtimeState: directory === null ? 'removed' : directory ? 'measured' : 'unknown' };
 }
 /** Final accounting requires the durable resource identity, even if stage.finish failed. */
-export async function measureFinalRun(run, sourceDigest, { read = readRecord, measure = measureRun } = {}) {
+export async function measureFinalRun(run, sourceDigest, { read = readRecord, measure = measureRun, phase = 'rehearse' } = {}) {
   try {
-    const resources = await atStage('resources-record', () => read(join(runPaths(run).evidence, 'resources.json')));
+    const resources = await atStage('resources-record', () => read(join(runPaths(run, phase).evidence, stageRecords(phase).resources)));
     requireMeasurement(resources?.kind === 'flow.o16.private-resources.v1', 'resources-record', 'resourceFacts', 'O16_RESOURCE_FACTS');
     requireMeasurement(resources.sourceDigest === sourceDigest, 'resources-record', 'sourceDigest', 'O16_RESOURCE_FACTS');
     requireMeasurement(resources.directoryRemoved === true || resources.directory, 'resources-record', 'directoryIdentity', 'O16_RESOURCE_FACTS');

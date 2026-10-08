@@ -1,0 +1,73 @@
+{
+  "kind": "I02_O16_EXPIRED_PROGRESSION_RENEWAL_REVIEW",
+  "reviewedAt": "2026-10-08T03:00:37Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_BOUNDED_IMPLEMENTATION_AND_NEW_STAGE_CANDIDATE",
+  "P1": 0,
+  "P2": 0,
+  "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+  "productionSource": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+  "delivery": "bd96654b7d9af2686b58a9784a42f289198df29c",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "manifest": {
+    "path": "docs/evidence/o16/progression-renewal/manifest.json",
+    "bytes": 7428,
+    "sha256": "3d51f217cfe3a58992574d9121c2d5da4a096fd662487e64858b57b848e0d383",
+    "fixedBindingsVerified": 26,
+    "fixedInheritedBindingsVerified": 3,
+    "boundBytes": 182581
+  },
+  "reviewBasis": [
+    "Independent review of all ten implementation/test paths, existing public progression/client/assignment/resource consumers, source delta and actual fixed candidate. Prior 214a review followed by the only 8b31 test delta.",
+    "Rechecked fixed Git/current bytes and sha256 for every bound record; read local raw TAP, outer process reports, reservation inputs and kept/removed scratch facts. No engineering rerun.",
+    "Old confirmation, expired pause, two original private directories and database stay preserved. New zero-admission stage uses durable revoke/create intents and distinct new authorization binding; unknown has no retry/rollback.",
+    "Reauthorization is not a cross-command zero-admission CAS. The fixed private center disables scans and requires exclusive database/resource ownership; public per-command locking/CAS remains unchanged.",
+    "Actual file-backed claimPausedResources test rejects altered state before consumption, preserves five archived files and rejects reused/expired entry; v3 permits bind both original confirmation and new authorization.",
+    "Source proof and original dependency closure are referenced once. Main receives ten exact source blobs plus the one direct test-consumer source-delta record; raw remains canonical."
+  ],
+  "checks": {
+    "distinctPassed": 12,
+    "executionSelections": 13,
+    "elapsedMs": 3975,
+    "rawBytes": 4027,
+    "groups": 2,
+    "bothAbsent": true,
+    "bothDualEOF": true,
+    "signals": [],
+    "initialEPERM": "Preserved in both raw reports; not retrospectively absent",
+    "scratch": "One exact empty root removed; second same-identity 1501866 logical bytes/226 entries KEEP"
+  },
+  "candidate": {
+    "path": "docs/evidence/o16/progression-renewal/candidate.md",
+    "sha256": "0485d957601bf7361590855df9b1074963317da4d4c310ae03ab08a577e5c6d7",
+    "overallBudget": "Previously authorized two children calls remain unconsumed; historical calls stay four",
+    "stageAdmission": "Only after READY, explicit T to T+5min; no rolling extension",
+    "centerAuthorization": "New explicit absolute T+30min, separate from old expired authorization; no old confirmation/pause revival",
+    "actualStageDeadline": "120s work + 30s cleanup, 150s per stage unchanged",
+    "newAuthorizationState": "NOT_GRANTED",
+    "actualPG": 0,
+    "actualNativeQueries": 0
+  },
+  "mainBefore": "eb06d53237525b0e548ff552b9cc07ef5228560e",
+  "controlledPaths": [
+    "experiments/continuous-goal-acceptance/driver.mjs",
+    "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "experiments/continuous-goal-acceptance/permit.mjs",
+    "experiments/continuous-goal-acceptance/phase-host.mjs",
+    "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+    "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+    "experiments/continuous-goal-acceptance/resources.mjs",
+    "experiments/continuous-goal-acceptance/stage-policy.mjs",
+    "experiments/continuous-goal-acceptance/worker.mjs",
+    "docs/evidence/o16/progression-renewal/source-delta.json"
+  ],
+  "limits": [
+    "Real PG revoke/create, children outputs and independent final semantic acceptance remain NOT_RUN. Full O16 remains open.",
+    "The candidate is implementable but needs explicit GO decision for replacing the expired center progression; review itself creates no grant, query budget or runtime window.",
+    "Same run8MiB private/2MiB evidence limits are cumulative, no new private directory or deletion permission; normal HOME authentication boundary unchanged.",
+    "No comparison performance, all escaped descendants or billing-cap guarantee."
+  ]
+}

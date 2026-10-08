@@ -24,7 +24,10 @@ const stop = new AbortController();
 process.once('SIGTERM', () => stop.abort()); process.once('SIGINT', () => stop.abort());
 let reservation, nativeQuery, rehearseQuery, activeBinding;
 if (config.mode === 'native') {
-  const permit = validatePermit(config.permit, { identity, phase: config.phase, confirmation: config.confirmation, environmentDigest: nativeEnvironmentPolicy.digest });
+  const permit = validatePermit(config.permit, { identity, phase: config.phase, confirmation: config.confirmation,
+    executionAuthorization: config.executionAuthorization, environmentDigest: nativeEnvironmentPolicy.digest });
+  if (config.executionAuthorization) assert(config.expected.progressionId === config.executionAuthorization.progressionId
+    && config.expected.authorizationDigest === config.executionAuthorization.authorizationDigest);
   assertNativeReady(config.mode, permit, nativeEnvironmentPolicy.digest);
   await nativeEnvironmentPolicy.verify(config.nativeEnvironment, identity);
   for (const [key, value] of Object.entries(nativeEnvironmentPolicy.environment(config.nativeEnvironment))) assert.equal(process.env[key], value);
