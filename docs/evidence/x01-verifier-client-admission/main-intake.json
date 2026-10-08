@@ -1,5 +1,5 @@
 {
-  "state": "DRAFT_PENDING_REVIEW",
+  "state": "READY",
   "taskId": "X01-VERIFIER-CLIENT-ADMISSION01",
   "source": "0904d72bbc3a76e2beee2db79457f996be5acc39",
   "base": "0e8bfa7b385aff582a85aa211df1c854e064258c",
@@ -107,6 +107,12 @@
     "existing FlowClient bounded request transport",
     "existing schema runtime binding and revision bounds"
   ],
-  "validation": "local only, no PG/HTTP server/worker or deployment",
-  "integration": "Original fresh preimages then controlled six-leaf intake; do not copy branch wholesale"
+  "validation": "27 selected26pass1fail\u2192types2 supply\u2192types0\u21925pass24unselected; 29 distinct across rounds; strict0 before final small bound delta; no PG/HTTP listener/worker",
+  "integration": "Original fresh preimages then controlled six-leaf intake; do not copy branch wholesale",
+  "review": "docs/evidence/x01-verifier-client-admission/review-approval.json",
+  "reviewPacket": "c0d31fb730a0922936002220c40f29dad8493c05",
+  "reviewManifest": "3776b768773a5c7df73ffb1af7e1ccc34e8004d6ed6590aa25f27399a66fb2ca",
+  "actualResult": "4c17e261e317ebcef603cb6f228f1d0725d4a9c7",
+  "completePlan": false,
+  "receiveOrder": "six paths together; existing VAR/CENTER already in base. No dependency on pending runtime feature for this SDK seam."
 }
