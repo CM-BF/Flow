@@ -1,0 +1,109 @@
+{
+  "state": "DRAFT_PENDING_INDEPENDENT_SOURCE_REVIEW",
+  "recordedAt": "2026-10-08T00:46:59.438Z",
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "packet": "cbeec091bf3318d34ba492230c4e2eda31edc68e",
+  "base": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "observedMain": "218077da0bbb316cc51d885197c2f54fae2df028",
+  "rows": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "source": "5bdf817db27483a03984d87870fde6372060262e",
+      "target": {
+        "exists": true,
+        "bytes": 28733,
+        "sha256": "e6e52187d52d06843651f7892deb24d2359a442f88ab1ecd48d26ebcab61c499",
+        "blob": "07ed866c725ae64b4b5e7b75f30144e80ccf2253"
+      },
+      "basePreimage": {
+        "exists": true,
+        "bytes": 22833,
+        "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f",
+        "blob": "fa5c1b9236c5beb26e588d1564842210a68648d8"
+      },
+      "observedMainPreimage": {
+        "exists": true,
+        "bytes": 22833,
+        "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f",
+        "blob": "fa5c1b9236c5beb26e588d1564842210a68648d8"
+      },
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "source": "5bdf817db27483a03984d87870fde6372060262e",
+      "target": {
+        "exists": true,
+        "bytes": 8672,
+        "sha256": "bacfa34a02173d6c38748216c9ff4008c41f85d12af8e5f161827bad464e3d67",
+        "blob": "6192740e14faa27d8240a64853e88709f2d84108"
+      },
+      "basePreimage": {
+        "exists": true,
+        "bytes": 7963,
+        "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+        "blob": "4e996f88ee22ee621b50d9f23dafc635d84d41af"
+      },
+      "observedMainPreimage": {
+        "exists": true,
+        "bytes": 7963,
+        "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+        "blob": "4e996f88ee22ee621b50d9f23dafc635d84d41af"
+      },
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "source": "5bdf817db27483a03984d87870fde6372060262e",
+      "target": {
+        "exists": true,
+        "bytes": 13430,
+        "sha256": "951ee792fe4b3cad62a80b5166e747915806d2a5334faa757049bf4f86d69469",
+        "blob": "9ad20ef6207e6622fbced7e887c88e080aa4a691"
+      },
+      "basePreimage": {
+        "exists": true,
+        "bytes": 12178,
+        "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+        "blob": "39cc8711caf2ceda0e6d6714c1c13f92ecc33956"
+      },
+      "observedMainPreimage": {
+        "exists": true,
+        "bytes": 12178,
+        "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+        "blob": "39cc8711caf2ceda0e6d6714c1c13f92ecc33956"
+      },
+      "mainPreimageMatches": true
+    },
+    {
+      "path": "apps/runner/src/verifier-runtime.test.ts",
+      "source": "5bdf817db27483a03984d87870fde6372060262e",
+      "target": {
+        "exists": true,
+        "bytes": 15640,
+        "sha256": "484d238855cf3aa381bf02a903483b9e4351e1bb368d3996107de34557dbfcae",
+        "blob": "7f3791a85d2299eef4ec2041f95ff386c8d0a81e"
+      },
+      "basePreimage": {
+        "exists": false
+      },
+      "observedMainPreimage": {
+        "exists": false
+      },
+      "mainPreimageMatches": true
+    }
+  ],
+  "count": 4,
+  "bytes": 66475,
+  "dependencies": "VAR/CENTER/PROCESS already integrated in fixed base728; no foreign pending branch overlay.",
+  "notValidated": [
+    "Actual center PG/HTTP",
+    "Real verifier worker invocation through runRunner",
+    "T7 release artifact",
+    "Deployment/public E2E"
+  ],
+  "sourceInputs": "source-inputs.json",
+  "local": "local.json",
+  "review": "REQUESTED architecture_read",
+  "taskRegistration": "task-intake.json; registration receipt not yet known"
+}
