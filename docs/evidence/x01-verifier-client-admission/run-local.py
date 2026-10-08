@@ -2,7 +2,7 @@
 from pathlib import Path
 import dataclasses,datetime,hashlib,importlib.util,json,os,stat,sys,time
 E=Path(__file__).resolve().parent;ROOT=E.parents[2];name=sys.argv[1]
-assert name in ('types','behavior','behavior-repair')
+assert name in ('types','behavior','behavior-repair','types-final')
 def now():return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z')
 assert now()<'2026-10-08T01:19:50.953Z'
 prior=[json.loads(p.read_text()) for p in E.glob('runs/*/result.json')];assert len(prior)<3
