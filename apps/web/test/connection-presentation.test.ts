@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { connectionPresentation, submitConnection } from "../src/connection/presentation.ts";
+import { connectionPresentation, submitConnection } from "../src/connection/presentation";
 
 test("an existing session can be checked before asking for a credential", () => {
   assert.equal(connectionPresentation("idle", true).primary, "check");

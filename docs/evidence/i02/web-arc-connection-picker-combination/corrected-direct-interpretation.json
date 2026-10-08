@@ -1,0 +1,61 @@
+{
+  "observedAt": "2026-10-08T03:33:37.339Z",
+  "originalReceipt": "corrected-direct-result.json",
+  "classification": "ASSERTION_REPORT_PARSER_MISMATCH_NODE24_SPEC_REPORTER",
+  "originalReceiptPreserved": true,
+  "presentation": {
+    "tests": 7,
+    "pass": 7,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "raw": "presentation-stdout.txt",
+    "rerun": false
+  },
+  "secondChild": {
+    "pid": 11726,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 6431,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/bin/tsc",
+    "-p",
+    "apps/web/tsconfig.json",
+    "--noEmit",
+    "--incremental",
+    "false",
+    "--pretty",
+    "false"
+  ],
+  "remainingWorkAtLaunch": 39.790726,
+  "scratchCleanup": "KEEP_NONEMPTY_SAME_IDENTITY",
+  "passed": true
+}

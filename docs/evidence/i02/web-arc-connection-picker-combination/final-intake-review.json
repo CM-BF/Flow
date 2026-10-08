@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T03:34:32.708Z",
+  "decision": "APPROVED_SCOPED_INTEGRATION_AFTER_DIRECT_CHECKS",
+  "sourceCombination": "748129abd1808cdf6de0ed69b984638ff54b320c",
+  "independentCombinationReviewer": "assignment_review / gpt-6-astra",
+  "combinationReview": "source-review.json",
+  "correction": {
+    "source": "123c0feced013da6bf9e4366b53d16b04ea75c38",
+    "path": "apps/web/test/connection-presentation.test.ts",
+    "blob": "11f5fc14a2f3d783f8d239022884a8441d10f56d",
+    "sha256": "9e9205b8f522e601b68ca402ae11c45334b9f980dfbe85a91feb2a1ce364e5ba",
+    "bytes": 3380,
+    "independentReviewer": "Execution Lead / gpt-6-astra",
+    "review": "Only suffix removal; actual Node24+tsx consumer 7/7; global tsconfig and production unchanged",
+    "blockingFindings": []
+  },
+  "combinationIntegrity": "Other28 paths match source-review fixed hashes; App remains reviewed narrow composition",
+  "newChecks": "corrected-direct-interpretation.json",
+  "originalFailure": "result.json",
+  "interpretationLimit": "First corrected receipt incorrectly expected TAP; Node24 emitted spec. Existing exact 7/7/0 fail/0 skip raw interpreted without rerunning. Old receipt preserved.",
+  "cleanCodeReview": "Existing presentation Interface reused. No policy duplication, no tsconfig workaround; one exact test import correction.",
+  "scope": {
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personalOperation": 0
+  },
+  "limits": "Only scoped source intake; prior leaf fixture evidence reused. No current deployment or whole App authentication proof.",
+  "next": "controlled FF main and push"
+}

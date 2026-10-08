@@ -1,0 +1,15 @@
+✔ an existing session can be checked before asking for a credential (0.44675ms)
+✔ unauthenticated never invents first-login or expiry history (0.130792ms)
+✔ offline preserves work while rejected and unsupported access require administrator action (0.057166ms)
+✔ only the known checking phase suspends form actions (0.072333ms)
+✔ an explicit connection clears the credential before calling the existing callback exactly once (0.368625ms)
+✔ pending or empty submissions neither clear a new entry nor dispatch another connection (0.047041ms)
+✔ a callback error propagates after clearing and does not trigger a retry (0.18525ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.672625
