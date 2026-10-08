@@ -1,5 +1,5 @@
 {
-  "state": "REVIEW_PENDING_CLOSED",
+  "state": "PREPARED_REVIEWED_CLOSED_WAIT_RESOURCE",
   "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
   "preparedSource": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
   "preparedPacket": "c86f0a209ea355f64d714c2d5947072aebf0f250",
@@ -70,7 +70,7 @@
     "wholeExternalWall": "UNKNOWN"
   },
   "requiredBeforeActual": [
-    "independent source/local review followed by manager unique actual grant",
+    "new manager unique actual grant; source/local preparation reviews fixed in operator-review.json",
     "fresh402local/62external/15link source closure and9operator bindings",
     "fresh exact34claim/scope/worktree/branch/head=origin clean<=60s/nooverlap",
     "future namespace lstat ENOENT and recorded parent/root identity",
@@ -80,5 +80,14 @@
   ],
   "preservation": "Missing/malformed/oversized receipt: archive other bounded readable raw first, retain originals and resource UNKNOWN; no PASS from assertions alone",
   "T7": false,
-  "resourceReturn": "2026-10-08T02:19:49.709Z"
+  "resourceReturn": "2026-10-08T02:19:49.709Z",
+  "review": "operator-review.json",
+  "preparedAt": "2026-10-08T02:23:15.094Z",
+  "sourceSTOP": true,
+  "remaining": [
+    "new manager unique180second grant",
+    "fresh claim/head/origin/rootidentity/input hashes/runtime link and complete resource checks",
+    "independent bounded PGheadroom preflight closure",
+    "real3main2worker journey andT7 separate"
+  ]
 }

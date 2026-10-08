@@ -1,5 +1,5 @@
 {
-  "state": "RESULT_DELTA_REVIEW_PENDING",
+  "state": "SOURCE_AND_LOCAL_PREPARATION_REVIEWED",
   "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
   "result": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
   "files": [
@@ -63,5 +63,37 @@
   "oldInputsUnchanged": "402source/62external/15link descriptors and old case/local evidence relativebc511 unchanged",
   "actual": "NOT_OPEN",
   "PG": 0,
-  "worker": 0
+  "worker": 0,
+  "rootReview": {
+    "at": "2026-10-08T02:21:53.000Z",
+    "verdict": "SOURCE_REVIEW_APPROVED_LIMITED",
+    "packet": "4950395097d3f359f8f627bbc1ef357b13464338",
+    "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
+    "P1": 0,
+    "P2": 0,
+    "scope": "second half admission/closure/Git gate/TMP reservation/170 supervision/final persistence and delivery; result pending db"
+  },
+  "dbReview": {
+    "at": "2026-10-08T02:22:12.000Z",
+    "verdict": "SOURCE_AND_LOCAL_RESULT_DELTA_REVIEW_APPROVED",
+    "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
+    "result": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
+    "packet": "28fae3f0c1662a5de96158e7da8c61ed4cf0e49d",
+    "P1": 0,
+    "P2": 0,
+    "closed": "duplicate-outcome could hide unknown second worker",
+    "bindings": 9,
+    "bytes": 87056,
+    "manifestBindingBytes": 269057,
+    "local": {
+      "children": 3,
+      "supervisorMs": 154,
+      "rawBytes": 851,
+      "lastReturn": "2026-10-08T02:19:49.709Z",
+      "historicalArchiveFailure": "702B AssertionError retained",
+      "finalArchivePassed": true,
+      "allResourcesReturned": true
+    },
+    "limits": "No PG/real workers/actual170deadline run; not final all-selection same-source execution; original402/62/15 inherited; budget correction excluded"
+  }
 }
