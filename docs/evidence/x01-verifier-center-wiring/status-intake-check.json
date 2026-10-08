@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-08T00:18:54.590Z",
+  "taskId": "X01-VERIFIER-CENTER-WIRING01",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](../../../plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "../../../plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "scope": "Final own status metadata shape only; not product/main/deployment"
+}

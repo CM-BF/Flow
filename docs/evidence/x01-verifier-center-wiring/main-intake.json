@@ -1,0 +1,154 @@
+{
+  "kind": "REVIEWED_SOURCE_READY_FOR_ORDERED_MAIN_INTAKE",
+  "recordedAt": "2026-10-08T00:17:26.154Z",
+  "taskId": "X01-VERIFIER-CENTER-WIRING01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring",
+  "branch": "codex/plugin-verifier-center-wiring",
+  "owner": "db_transaction_owner",
+  "source": "d17125c112240468444b71f6a049303158efad1c",
+  "packet": "82f9588d1712c76b3ffd29c81e82e7da93305511",
+  "rows": [
+    {
+      "path": "apps/server/src/main.ts",
+      "sourceCommit": "d17125c112240468444b71f6a049303158efad1c",
+      "source": {
+        "blob": "3c3ed1e57966fcb06ee22984a2c8577f1d73b54d",
+        "bytes": 4398,
+        "sha256": "475d7a434b3862103fe3d57cbc0cf7d81661f75f063aa579115a311c3e1661ba"
+      },
+      "mainPreimage": {
+        "blob": "e63d4599ea9fe74ea49988c0d4d7a3c9702c7075",
+        "bytes": 4124,
+        "sha256": "f37b7b999b050655bd506d2559deee8011e6be9d8ba6a13f3a08350660997dc5"
+      },
+      "operation": "apply-reviewed-delta"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sourceCommit": "d17125c112240468444b71f6a049303158efad1c",
+      "source": {
+        "blob": "1dd0aa011203ea255ce0142d6a06b38299f593e2",
+        "bytes": 18291,
+        "sha256": "24655c1a4764d3797426c0c70c38fc3e17210e9ff8fe8eaee3e4b6c599520cc1"
+      },
+      "mainPreimage": {
+        "blob": "9770bd2961baad58fa39baa94b1ee15766b20597",
+        "bytes": 17395,
+        "sha256": "483198deda3f56d7c022ad36ae098ccab3107abad346f5a4a17ce7f6795cf2aa"
+      },
+      "operation": "apply-reviewed-delta"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "sourceCommit": "d17125c112240468444b71f6a049303158efad1c",
+      "source": {
+        "blob": "1e619b3484117d0a551017285efc9319cbe4feb4",
+        "bytes": 5994,
+        "sha256": "98a903a5912135df4768e56c9e291a9f75da0dd7790a5a3d39e485cd1d82a05a"
+      },
+      "mainPreimage": {
+        "blob": "562228945aebc41e80e877187697b348f8f756c8",
+        "bytes": 5824,
+        "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc"
+      },
+      "operation": "apply-reviewed-delta"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-wiring.test.ts",
+      "sourceCommit": "d17125c112240468444b71f6a049303158efad1c",
+      "source": {
+        "blob": "7051df42ae156a0ef57f2a64a59772ad221d834f",
+        "bytes": 15254,
+        "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e"
+      },
+      "mainPreimage": null,
+      "operation": "add"
+    }
+  ],
+  "productCount": 4,
+  "productBytes": 43937,
+  "claim": {
+    "id": "daf9316f-13dc-4404-ba04-f1033f2eed2e",
+    "version": 1,
+    "scopeCount": 6,
+    "freshObservedAt": "2026-10-08T00:14:36.678Z",
+    "state": "active"
+  },
+  "approval": {
+    "archive": "f440e53d2ca8a8cc9fd237dbb53db420edf8dbd7",
+    "path": "docs/evidence/x01-verifier-center-wiring/independent-review.json",
+    "at": "2026-10-07T22:28:49.000Z",
+    "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "mainObservation": {
+    "head": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "origin": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "dirty": false,
+    "scope": "Only four explicit paths; recheck immediately before intake"
+  },
+  "alreadyMainPrelude": {
+    "source": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+    "mainCommit": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+    "receipt": "docs/evidence/i02/x01-verifier-center-client-intake.json",
+    "scope": "index migratePluginVerification import and034->036 existing observed phase",
+    "remainingIndexDiff": "17add4delete relative to exact prelude; do not reapply prelude"
+  },
+  "prerequisite": {
+    "taskId": "X01-VERIFIER-ADMISSION-RESULT01",
+    "owner": "architecture_read",
+    "fixedDelivery": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+    "productSources": [
+      "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd"
+    ],
+    "canonicalIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/main-intake.json",
+    "canonicalState": "Being sealed by owner; not a main receipt",
+    "order": "VAR20 product/test+2support, then CENTER4; no shared product literal",
+    "mainState": "NOT_INTEGRATED at observation; actual receipt required",
+    "schema400Approval": {
+      "commit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/approval.json",
+      "at": "2026-10-07T22:41:46.000Z",
+      "state": "APPROVED"
+    },
+    "domainPGApproval": {
+      "commit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/actual-approval.json",
+      "at": "2026-10-08T00:02:58.000Z",
+      "selected": 5,
+      "passed": 5,
+      "state": "ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED",
+      "limit": "Domain transactions, not public factory/worker/end-to-end"
+    }
+  },
+  "reuseEvidence": {
+    "manifest": "docs/evidence/x01-verifier-center-wiring/review-manifest.json",
+    "sha256": "f09d1a3ee613e7e42e645cd01f143fb23fc81b947a1bbd169fc854469bfa5632",
+    "selectedDistinct": 9,
+    "rounds": "8/9 then accidental old-source repeat8/9 retained, final targeted1passed8unselected",
+    "focusedTypes": "exit0 earlier test; final fixture correction not retyped",
+    "engineeringChildren": 4,
+    "supervisionMs": 7248,
+    "rawBytes": 5105,
+    "history": "First failures/EPERM/source bindings unchanged; not final single9/9"
+  },
+  "proposedIntegrationValidation": {
+    "state": "PLANNED_NOT_RUN",
+    "checks": [
+      "focused noEmit actual combined main and final test",
+      "exact9 factory cases on actual combined main, noPG/listener"
+    ],
+    "noNewTestAuthorization": true,
+    "reuse": "VAR schema11/local, domain5PG and AV migration5PG; no replay of consumed windows"
+  },
+  "notClaimed": [
+    "runtime v4 dispatch",
+    "public verifier end-to-end",
+    "T7 release artifact",
+    "deployment",
+    "new PG/main receipt"
+  ],
+  "mutationScope": "Own plan/evidence only; product/raw/original manifest frozen"
+}

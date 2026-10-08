@@ -1,0 +1,49 @@
+{
+  "startedAt": "2026-10-08T00:14:21.000Z",
+  "deadline": "2026-10-08T00:24:21.000Z",
+  "recordedAt": "2026-10-08T00:17:26.154Z",
+  "mode": "metadata-only",
+  "claim": "daf9316f-13dc-4404-ba04-f1033f2eed2e v1 ACTIVE6",
+  "freshLedgerAt": "2026-10-08T00:14:36.678Z",
+  "initialHead": "f440e53d2ca8a8cc9fd237dbb53db420edf8dbd7",
+  "budget": {
+    "capBytes": 3145728,
+    "initialIndexBytes": 2343386,
+    "prospectiveAtomicIndexBytes": 2343386,
+    "metadataObjectsAndManagementUpperBytes": 665600,
+    "totalUpperBytes": 3008986,
+    "existingFixedWorktreeAndIndex": "Previously retained; not zero or counted again as new growth",
+    "physicalPeak": "UNKNOWN",
+    "atomicIndexAdditionalAllowance": 32768,
+    "gitObjectsUpperBytes": 196608,
+    "otherManagementUpperBytes": 65536,
+    "changedFilesWholeBytesUpper": 32768,
+    "refinedConservativeUpper": 2671066
+  },
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "productWrites": 0,
+  "pendingLaunch": false,
+  "metadataFailure": "Initial in-memory Python literal had SyntaxError before execution:0 files written/0 engineering child; corrected without touching raw/source",
+  "quality": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Reuse local baseline: one status authority, historical review/main prerequisite/not-yet-run checks separated; no closure copy or new runner; exact four preimages checked; raw/manifests/products unchanged",
+    "unresolved": "Full CENTER not main at observation; runtime/T7/deployment unverified",
+    "checkedAt": "2026-10-08T00:18:54.538Z",
+    "findings": "No product delta; unambiguous prerequisite ordering and one canonical intake/status; original source/local failures preserved. Initial metadata script syntax failure had zero writes."
+  },
+  "statusParse": {
+    "path": "docs/evidence/x01-verifier-center-wiring/status-intake-check.json",
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "validation": "Own status shape only, not product or main acceptance"
+  },
+  "stop": "CONTENT_STOP; only fixed metadata commit/push remains; no pending engineering launch",
+  "contentSealedAt": "2026-10-08T00:18:54.538Z"
+}
