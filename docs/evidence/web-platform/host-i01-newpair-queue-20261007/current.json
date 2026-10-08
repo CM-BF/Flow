@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-08T03:26:16.281Z",
+  "at": "2026-10-08T03:32:16.038Z",
   "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
   "decision": "R3selected/read byOriginal, operator slotpending afteronecaprejection; noactualSTART. WebbothfullSTOP/future0. NewX01pureoperator4M counted.",
-  "floor": 11633688576,
+  "floor": 11630542848,
   "SVC09A": {
     "state": "FAILED_ATTEMPT_RUNTIME_RETURNED_WITH_DB_PRIVATE_KEEP",
     "totalMs": 215000,
@@ -2047,7 +2047,7 @@
   },
   "forwardAdmission": {
     "state": "NO_ACTUAL_HOLDER_O16_CHILDREN_FAILED_RETURNED",
-    "at": "2026-10-08T03:23:47.746Z",
+    "at": "2026-10-08T03:29:47.995Z",
     "termsBytes": {
       "residualUnknown": 8806203392,
       "priorK01Db": 134217728,
@@ -2199,11 +2199,11 @@
       "OriginalWebCombinedIntakeLocal": 0,
       "MSG03CanonicalProofCorrection": 0,
       "ConnectionPresentationImportCorrection": 0,
-      "MikaMature02SuccessorMetadata": 3145728,
+      "MikaMature02SuccessorMetadata": 0,
       "OriginalWebCombinedVerification": 8388608,
       "MSG03UIConsumerCompositionSource": 16777216
     },
-    "minimumFreshFreeBytes": 11633688576,
+    "minimumFreshFreeBytes": 11630542848,
     "formula": "8806203392 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 134217728 + 538968064 + 4194304 + 1048576 + 1499463680 + 8388608 + 131072 + 8388608 + 335544320 + 134217728 + 8388608 + 12582912 + 144703488 = 13847232512",
     "method": "Active or still-unknown futuregrowth plus one reserve. Explicit sealed no-writer stock counted by freshfree only; Original oldcold retained128MiB PGbackground. Historical combinedfloors are not permanent intrinsic protection.",
     "classificationEvents": [
@@ -4173,6 +4173,13 @@
         "beforeBytes": 0,
         "afterBytes": 16777216,
         "basis": "New conditional ordinary source+affected local phase, sameMSG03 exact10, originalpure12MiB STOP stays0. No actual browser/native grant; implementation starts only after actual main intake and fresh atomic take."
+      },
+      {
+        "at": "2026-10-08T03:29:47.995Z",
+        "term": "MikaMature02SuccessorMetadata",
+        "beforeBytes": 3145728,
+        "afterBytes": 0,
+        "basis": "Explicit owner allSTOP03:27:17.155, manager verified final6aee actualtracking/clean. Two metadata files only, retained2899968<3MiB; limited metadata reviews, no taskDone or stock reclamation."
       }
     ]
   },
@@ -16928,13 +16935,13 @@
     "lifecycle": "Immediately send actual START and terminal separately; exact owned PID/PGID/EOF/server/admin/targetconnections/private identity RETURN required. Keep original failures/unknowns. Two actual artifacts require independent review; no automatic decide or extra query. Future decide is separate0query selection after exactRETURN."
   },
   "MikaMature02SuccessorMetadata": {
-    "state": "AUTHORIZED_NOT_STARTED",
+    "state": "ALL_SOURCE_METADATA_STOP_LIMITED_METADATA_APPROVED",
     "authorizedAt": "2026-10-08T03:19:25.827Z",
     "task": "WPF-MATURE-02",
     "owner": "chatui01_owner / Mika",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
     "branch": "codex/claude-codex-capabilities",
-    "claim": "0dd97484 v6",
+    "claim": "0dd97484 v6 retained; no release inferred",
     "managerReadHead": "fc11d15292bc8ecc3c8c1b3f3f7d1e7955491b91",
     "planningBytes": 3145728,
     "durationMinutes": 8,
@@ -16944,7 +16951,31 @@
       "docs/evidence/wpf-mature-02/interface.md"
     ],
     "engineeringChildren": 0,
-    "instructions": "Fresh exact claim identity/version/scope, branch, clean actual remote and no overlap before first write. Link existing MSG03 canonical successor and SVC09 actual facts; do not duplicate TODOs or claim implementation/main/personal activation. All index atomic/objects/full changed files and administrative receipts fit new3MiB. Record real firstWrite/deadline/STOP; no stale budget reuse."
+    "instructions": "Fresh exact claim identity/version/scope, branch, clean actual remote and no overlap before first write. Link existing MSG03 canonical successor and SVC09 actual facts; do not duplicate TODOs or claim implementation/main/personal activation. All index atomic/objects/full changed files and administrative receipts fit new3MiB. Record real firstWrite/deadline/STOP; no stale budget reuse.",
+    "firstWrite": "2026-10-08T03:23:13.324Z",
+    "deadline": "2026-10-08T03:31:13.324Z",
+    "actualHead": "fc11d15292bc8ecc3c8c1b3f3f7d1e7955491b91",
+    "actualClaim": "0dd97484 v6 fresh active, no overlap",
+    "actualFloorBytes": 11620057088,
+    "actualFreeBytes": 14252535808,
+    "changedFullFilesBytes": 43001,
+    "reportedBy": "Mika via root",
+    "finalHead": "6aee397568dc37828991c0ee99e8db99bd39f9cb",
+    "stoppedAt": "2026-10-08T03:27:17.155Z",
+    "conservativeRetainedBytes": 2899968,
+    "actualPeak": "NOT_OBSERVED",
+    "reviews": "Mika03:27:51 semantic and db03:28:13 scope/budget LIMITED_METADATA APPROVED; no UI/main/personal activation acceptance",
+    "dashboardReadback": "03:29:02 consistency matched/head6aee clean/issues-errors-missing empty, task NOT_COMPLETED and historical start UNKNOWN",
+    "pending": 0,
+    "candidateFullFilesBytes": 43001,
+    "changedFullFilesBytesMeaning": "Candidate size reported before final seal, not final source bytes",
+    "finalFullFilesBytes": 43438,
+    "finalFullFilesPartsBytes": [
+      20076,
+      23362
+    ],
+    "finalAllocatedBytes": 45056,
+    "netGrowthBytes": 3489
   },
   "OriginalWebCombinedVerification": {
     "state": "AUTHORIZED_ORDINARY_NOT_STARTED",
@@ -16968,7 +16999,17 @@
     "Chrome": 0,
     "provider": 0,
     "personalServices": 0,
-    "instructions": "Fresh own authority, controlled29 source combination and new test blob11f5fc14; preserve earlier TS5097. Exact owned groups/EOF/scratch closure for each child, all scratch/cache/raw/index/object growth within8MiB. No full browser/PG matrix, no global tsconfig change, no bare Node replay claim. Report actual start/return and STOP. O16 is ordinary PG native stage, not a diagnostic quiet benchmark; one distinct ordinary local may run under original per-team concurrency rule."
+    "instructions": "Fresh own authority, controlled29 source combination and new test blob11f5fc14; preserve earlier TS5097. Exact owned groups/EOF/scratch closure for each child, all scratch/cache/raw/index/object growth within8MiB. No full browser/PG matrix, no global tsconfig change, no bare Node replay claim. Report actual start/return and STOP. O16 is ordinary PG native stage, not a diagnostic quiet benchmark; one distinct ordinary local may run under original per-team concurrency rule.",
+    "latestManagerObservation": {
+      "at": "2026-10-08T03:32:16.038Z",
+      "state": "NEW_ACTUAL_START_NOT_RECEIVED",
+      "source": "Bounded read of existing public I02 combination directory",
+      "head": "748129abd1808cdf6de0ed69b984638ff54b320c",
+      "visibleReservationAt": "2026-10-08T03:11:05.458Z",
+      "visibleResultAt": "2026-10-08T03:11:38.518Z",
+      "visibleResult": "Old PID5523 / 6162ms / TS5097 failed noEmit only",
+      "limitation": "Absence of a new message/record in this bounded read is not proof of global zero children. Await owner actual START/RETURN."
+    }
   },
   "O16ContinuedChildrenV3Actual": {
     "state": "EXACT_RUNTIME_RETURN_FAILED_KEEP",
@@ -17205,6 +17246,13 @@
       "registryOwner": "Original / existing D05 registry authority, not this worker",
       "method": "After actual threeWeb main receipt and fresh exact11 atomic take, copy only fixed108 small plan/status/review into newWT and update current owner/worktree/branch/source while preserving historical18-leaf completion and immutable prior evidence references. Rewrite historical relative links to explicit fixed original evidence references when needed; do not copy large raw or create a second writable status. Old108 source remains frozen history. Produce one migration receipt with pins and actual handoff time; Original changes existing same-ID registry route only after new canonical source is ready. No new task or execution-source validation exception.",
       "budget": "Within same new16MiB/30min, no extra growth or clock reset; count plan copies/index/objects. No write to old released WT."
-    }
+    },
+    "reviewInput": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json"
+  },
+  "D01ExistingRelationObservations": {
+    "at": "2026-10-08T03:32:16.038Z",
+    "source": "Root existing IAB read-only observation",
+    "msg03": "Current card in-progress/6of7/owner panels/not completed; no active claim is consistent with released old scopes and new exact11 not taken. Verify same-ID source/claim once after ordinary migration publication.",
+    "wpfI01": "Existing WPF-I01 -> WPF-001 parent warning says parent level unclear/conflicting. Reuse existing D01 relation TODO, preserve warning until original authority supplies explicit correct relation. No new task/implementation or inferred parent."
   }
 }

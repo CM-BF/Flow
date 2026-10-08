@@ -722,3 +722,6 @@ D05已[一次实际215发布](../../docs/evidence/web-platform/host-i01-newpair-
 - MSG03原后继消费者组合沿同一web-versioned-profile-creation执行，新增独立16MiB/30min、exact10、至多3个受影响纯/类型子进程累计60s；必须先收到Original三片Web实际main回执并fresh原子领取。先实现合法公共目录与Prepare、可信GET后完整tuple的Send/Queue门禁、Thread/Picker联合类型分支；保原draft/UNKNOWN key，不改session/公共codec。只准备受影响mounted夹具，不授浏览器或个人服务，唯一status仍原MSG03 canonical。
 
 - MSG03后继唯一来源收敛：不采用长期两树可写或proof执行源特例。原canonical108冻结历史；在三Web实际main接收后，由同owner对新WT原子领取exact11（加既有plans前缀），迁入固定小plan/status/review并保旧18叶完成历史，原大证据只引用。Original合法registry owner在新source就绪后只切同task既有一条路由。[固定两树差异研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-execution-source-separation-research.json)保留为观察，设计选项不扩大当前核验；不新增同义task。
+
+- MSG03同段consumer审查点见[固定说明](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/msg03-consumer-review-notes.json)：required tuple仅管Send/Queue，Prepare不被同一reason误禁；按钮依赖目录时订阅同一catalog，提交仍以最新同源权限在detach前复核。实际三Webmain回执尚未到，新exact11条件段尚未take/写产品；现fake夹具不得外推真实认证/Queue。MATURE02父6aee两叶metadata已STOP/有限审通过，任务仍NOT_COMPLETED，不代表个人settings激活。
+- 原D01关系待办保留WPF-I01→WPF-001的父层级警告，待原权威给明确关系；不通过猜父关系或新task隐藏提示。MSG03当前无active claim与两次records释放一致，迁移后只在正常交付核一次同ID source/claim匹配。

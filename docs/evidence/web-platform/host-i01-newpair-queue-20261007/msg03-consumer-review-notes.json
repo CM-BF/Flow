@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-08T03:32:16.038Z",
+  "task": "WPF-MESSAGESETTINGS03 existing consumer successor",
+  "kind": "READ_ONLY_REVIEW_INPUT_NOT_RUNTIME_RESULT",
+  "source": "Root/W01 fixed main aac0c8b6ba05838fde3bfbea7b4dda3fd2a27d55 and existing reviewed e5 foundation",
+  "constraints": [
+    "Required tuple affects Send/Queue eligibility, not shared reason used by Knowledge Prepare.",
+    "App draft replace setGroups refreshes a draft, but catalog refresh has its own subscription. If disabled state depends on catalog, subscribe to that same catalog so UI recovers when fresh data arrives.",
+    "Submit captures settings, checks current same-authority context/catalog eligibility, then captures attachments and detaches via original generation/ownership CAS; no missing tuple POST or draft loss.",
+    "Creation picker needs legal public versioned catalog lifecycle, not an opening-gated message-settings reader.",
+    "Keep normal Prepare distinct from knowledge/project preparation; trusted capability comes from server GET, never reconstructed from display model or a local selection."
+  ],
+  "minimalFutureJourneys": [
+    "New UI CREATE, then trusted GET capability and exact fresh directory; no sends or queue before full tuple, clear remains editable; queue exercised only when server GET says queue=true.",
+    "Upstream accepts CREATE but ACK is lost: UNKNOWN retains original request key/body, B draft and close/reopen state; explicit retry gets same conversation then trusted GET, no automatic turn.",
+    "Versioned Apply/Cancel/reopen and legacy no-upgrade/no-CREATE comparison; real keyboard focus, 390 light/dark and long identifiers."
+  ],
+  "fixtureLimits": "Current execution-profile integration uses fake in-memory center/Bearer; message-settings fixture uses real Picker/FlowClient decode but fabricated capability/local send snapshots. Neither is proof of real server/auth/Queue behavior. Exact fixture scope and actual runtime budget are separate from source grant.",
+  "authority": "No new task, source review gate or runtime permission. Consumer implementation starts only after actual controlled main intake and exact11 take; one canonical source migrates with the owner."
+}
