@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-08T03:44:14.324Z",
+  "decision": "APPROVED_LIMITED_METER_REUSE_SOURCE_AND_DIRECT_RESULTS",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "P1": 0,
+  "P2": 0,
+  "source": "82265ef377e56809e766d12fb3a298777d3966c8",
+  "delivery": "d2a8af719b915420a478755f22b043039d7dad20",
+  "manifest": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/meter-reuse/manifest.json",
+    "bytes": 4885,
+    "sha256": "ee7fcda946b51ae03f33a9d0f04a0e8bf1f5d5f2697c720942bcea53fb65f819",
+    "fixedGitBindingsMatched": 19,
+    "logicalBytes": 60343,
+    "externalRuntimeMatched": 3
+  },
+  "intakePaths": [
+    "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+    "experiments/continuous-goal-acceptance/owned-meter.mjs",
+    "experiments/continuous-goal-acceptance/meter-bridge.mjs",
+    "experiments/continuous-goal-acceptance/operator.test.mjs",
+    "experiments/continuous-goal-acceptance/owned-meter.test.mjs",
+    "docs/evidence/o16/meter-reuse/interface.md"
+  ],
+  "tests": "11 different direct checks passed across two rounds; original missing-brace syntax failure preserved. Total658ms/raw4786B, two groups absent/dualEOF/sameempty scratch removed;6serial Python helpers. No rerun in intake.",
+  "scope": "Existing fixed OPS-METER via one inherited-group helper.≤3roots,200ms total/150ms stop+50msclose/8192B output,per-process singleflight+failure latch. Two real callers may overlap at most2 helpers in a later separately prepared stage.",
+  "unknown": "Root/identity/I/O/open-directory loss remain unknown; only fixed meter enumeration gap may report vanished. Original runtime ENOENT path not recorded, synthetic cases do not prove its cause.",
+  "limits": "No PG/SDK/auth/personal/oldprivate access. History SDKentry5, completion/costUNKNOWN. No new query or continuedstage authorized."
+}
