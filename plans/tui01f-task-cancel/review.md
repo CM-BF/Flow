@@ -1,6 +1,6 @@
 # 当前 TUI01F R4 调用候选
 
-NOT_STARTED（独立准备审查）。固定source4bb6530e840c961b66afd68fe4634f728159ef2a，base6c6b79eb4d68c56e61f61f81088f0d1321776580。见[唯一准备](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)。
+APPROVED_FIXED_CALLER_DELTA_AND_DIRECT_RESULT（Lead，0P1P2，I02 b9904a63e；[唯一引用](../../docs/evidence/tui01f/web-handoff/r4-review-receipt.json)）。固定source4bb6530e840c961b66afd68fe4634f728159ef2a，base6c6b79eb4d68c56e61f61f81088f0d1321776580。见[唯一准备](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)。
 
 仅原RunSpec增加默认旧四源的受信source_paths，R4显式传与journey同序的五源；JSON不授权选策略。1个真实入口直接检查验证741+8pin/permit/wx/OPS14及三个相关拒绝，384ms/238B/完整RETURN，0实际旅程。生命周期四源/8例和types不变不重跑，原R2/R3 raw与UNKNOWN/KEEP不改。需审固定hash/准确新namespace/默认旧合同与执行前最新资源身份，不把本准备当完整双端PASS或实际许可。
 

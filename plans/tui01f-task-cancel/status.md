@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:36:09.386Z；生命周期已main782f0ad09；R4纯入口归还，固定准备待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:39:44Z；R4候选限定独审已收，等待新资源选择 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,9 +13,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；fixture源8379已main；新R3装配bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
-| 工作树dirty状态 | R4 source4bb653固定；仅候选manifest/本次原件/自身状态收口 |
-| 工作分支状态 | review |
-| 本片段交付阶段 | review |
+| 工作树dirty状态 | 原R4 source/input/preparation保持；仅本次review/waiting metadata收口 |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | implementation |
 | 检查状态 | R4新实际前置入口1/1，384ms/238B/组absent双EOF/空scratch removed；0actualPG/Chrome/PTY。旧8例/types不重跑，R3仍1选0过。 |
 | 已集成main状态 / HEAD | 生命周期六path已main/origin782f0ad09；R3结果main312842ab5，原suite1选0过/unknownKEEP保持。 |
 | 实现目标 | 4bb6530e840c961b66afd68fe4634f728159ef2a；生命周期51e380已审且保持 |
@@ -23,10 +23,10 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 终端与网页接续功能已实测到达；已补进程组及关闭证据并完成局部验证，整次双端验收仍未通过。 |
-| 下一可用交付 | 独立审查R4固定调用候选，再按新资源选择运行一次完整双端旅程。 |
-| 当前阻塞 | ACTIVE：R4候选待独立审查和唯一资源窗口；owner assignment_review，解除条件为固定输入获审后新选择及紧前准入通过。 |
+| 下一可用交付 | R4候选已审，等待唯一新窗口后运行一次完整双端旅程并核真实收尾。 |
+| 当前阻塞 | ACTIVE：权威队列尚无TUI R4新选择；owner assignment_review/D01，解除条件为新的匹配窗口和紧前全部准入通过。 |
 | 需用户决定 | NONE |
-| Review | 生命周期限定批准已main782f0ad09；[review.md](review.md)的新R4调用准备待独审。 |
+| Review | [唯一引用](../../docs/evidence/tui01f/web-handoff/r4-review-receipt.json)：APPROVED_FIXED_CALLER_DELTA_AND_DIRECT_RESULT/0P1P2；仅准备，不是实际旅程通过。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v7 active/exact7；2026-10-08T01:38:12.746Z 正式 accept，worker assignment_review；[回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/accept-receipt.json) |
 | 架构影响 | 无生产结构变化；原RunSpec新增默认旧四源的受信tuple，仅R4固定五源包含进程组helper。原监督/业务及清理边界不变。 |
 
@@ -146,3 +146,9 @@
 2026-10-08T02:32:19Z：原TUI01F-04下一R4准备段开始（工具UTC），02:32:38.370Z fresh claim v7/exact7/同owner，base6c6clean。生命周期固定51e380/delivery6c6已Lead限定APPROVED/0P1P2，27bindings/39运行输入原件核同，六精确consumer/Interface/types已main782f0ad09。复用RunSpec增加受信source_paths默认仍旧四路径，仅R4显式五路径含helper；不变150s/原assertions/cleanup，不复制741闭包。当前0actualPG/Chrome/PTY/provider，未建permit；只必要新入口直接检查，不重跑8例/types。另如实补：上轮Python导入OPS14未禁bytecode，可能写root精确tools/owned-process-supervision/__pycache__，Lead观察的untracked保持KEEP，未清理/未冒根树全clean；后续Python统一-B。
 
 2026-10-08T02:36:09.386Z：R4 source4bb653实际前置直接例1/1通过，384ms/238B；同次741继承+8own实读、真实输入/permit/exclusive目录/OPS14验证后仅拦最终supervise，0actualPG/Chrome/PTY/provider。组absent/双EOF/no signals、空scratch原身份removed。R3原始结果及生命周期8例/types不重跑；生命周期51e380已经main782f0ad09。唯一[r4-preparation](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)绑定新run与小差量，ready=false/无permit/无actual窗口。原失败与root自动bytecode可能副作用KEEP保持；这次Python均-B。源码停止，0child/0pending，等一次独审和D01新资源选择，首次任务时间UNKNOWN不改。
+
+2026-10-08T02:39:44Z：已只读接收I02 b9904a63e固定R4独审，reviewedAt02:38:55.783Z，0P1/P2，13bindings/新1例原件限定批准。权威队列02:38:10.519Z为S01诊断已选未开始，TUI01F04R4不存在；未执行freshPG/旅程或创建permit。由本owner继续等待匹配新SELECT，收到后同call核完整currentfloor/claim/head/741+8/runtime/未用namespace/PGavailable42及已闭预检池，依原一次入口执行，不借旧R3。当前0工程child/0pending；不重复轮询或旧绿检查。
+
+| 等待 ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| TUI04-R4-WINDOW | 2026-10-08T02:39:15Z | OPEN | 资源 | 固定候选已审，需新TUI01F04R4选择与紧前准入 | 本次queue观察与r4-review-receipt |
