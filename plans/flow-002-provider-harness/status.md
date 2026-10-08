@@ -15,7 +15,7 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `ca840056efef40769069839a5bd58f05f7cf6248`（修改前clean观察） |
 | 工作树dirty状态 | 仅本任务plan/status两叶研究归档；提交后以Git读取为准 |
 | 工作分支状态 | in-progress；历史选型完成不代表全部harness/真实工程验收完成 |
-| 已集成main状态 / HEAD | 历史main5cd64a4d已含R05/R06接缝、ENG01I组合与ENG01J受限机制；本轮观察main30406194f，本次SessionStore研究尚待限定文档接收。后续各接入结果按原owner唯一status读取；个人运行事实只从FLOW-001/SVC读取，下方旧runtime值是历史观察。 |
+| 已集成main状态 / HEAD | 历史main5cd64a4d已含R05/R06接缝、ENG01I组合与ENG01J受限机制；本轮观察main30406194f，本次SessionStore研究已于main7da3225cd限定接收，未实施。后续各接入结果按原owner唯一status读取；个人运行事实只从FLOW-001/SVC读取，下方旧runtime值是历史观察。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |

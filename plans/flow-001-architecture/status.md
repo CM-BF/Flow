@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T03:40:18.147Z / main1b1428f38；三项网页组合已接收，原生子任务首段失败已归还并进入零模型计量修复。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T04:03:19.634Z / mainee8a62ac5；计量修复已接收，消息设置新来源已实际载入，固定后台补齐已审恢复顺序。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origindc694bdc6已含容量策略；1b1428f38包含Arc/Connection/Picker29路径；TUI R4及O16新阶段历史限定批准保持。个人e15/Web779是此前部署，本段没有个人操作。 |
+| 已集成main状态 / HEAD | main/originee8a62ac5已含固定构建准备独审与MSG03迁源；560b3db9e为计量修复、dc694bdc6为容量策略、1b1428f38为网页29路径。个人e15/Web779是此前部署，本段仅4320来源换载，无个人操作。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 工作区布局、连接提示与设置浮层已合入；终端与网页的固定接续旅程已通过，真实目标规划已保存。 |
-| 下一可用交付 | 验证并发布聊天设置所需的固定后台组合；原生目标子任务先修复资源观察，再决定具体续接条件。 |
-| 当前阻塞 | ACTIVE: 真实目标首个子任务进入模型后因资源观察未确认而停止，结果与费用未知；后续执行暂停，负责人先完成零模型修复。 |
+| 下一可用交付 | 先验证可独立发布的新工作区与连接界面，同时补齐设置后台并验证真实启动；原生目标保持既有结果，另定可审续接。 |
+| 当前阻塞 | ACTIVE: 真实目标首个子任务结果与费用仍未知；计量修复已完成，但没有重试或下一次模型调用授权，后续执行保持暂停。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -321,3 +321,5 @@ TUI R3实际02:08:17.814Z开始、02:08:36.845Z终止、02:11:39.152Z运行归�
 2026-10-08T03:02:48Z：TUI01F R4实际1/1、02:51:19.768Z完整RETURN已限定独审/main eb06，19别名独立launch前核验遗漏未追认通过，旧FAIL/KEEP与非原子计量限制保留。O16新阶段十源及12不同局部检查已独审/main8723763ff；GO新阶段合同已获批，实际T只在operator/固定输入/D01窗口同时READY后签发，旧过期确认和pause永不复活。历史SDK4，原两次未消费children额度保持；此条非实际query或阶段成功。SVC09A原native_center_owner接续聊天设置后台候选，assignment作既有差量只读核对；不把779上线冒完整settings激活。
 
 2026-10-08T03:40:18.147Z：Arc/Connection/Picker29路径已受控进入main/origin1b1428f38；单行测试修正123c经7/7实际入口与Web类型检查通过，复用各已审leaf原件，不重新跑浏览器/PG。[唯一接收](../../../m2-integration/docs/evidence/i02/web-arc-connection-picker-combination/final-intake-review.json)。当前个人部署未改变。O16新阶段0query确认成功后，03:19:54.186Z真实children启动，首slot已消耗并记录SDK入口1次，累计5；资源观察runtime/ENOENT且缺相对路径，完成/产物/费用unknown，不能归因provider/auth或追认临时文件消失。03:21:12.220Z四PID/组与连接归还，DB/private KEEP；[限定原件审查](../../../m2-integration/docs/evidence/i02/o16-continued-children-failure-intake.json)。第二slot无记录但不授权挪用重试、改run或继续decide。原owner零模型计量修复已固定待独审，原失败不改。
+
+2026-10-08T04:03:19.634Z：现网页29路径已main但尚非个人部署，Web原owner并行核其能否与现e15后台独立发布；MSG03新目录/创建/能力/提交合同已在f9221静态核齐，不等新API。SVC09原a266默认入口8例/构建准备已独审且实际build为0；构建前发现环境诊断透传和普通native终态ACK→journal→outbox顺序仍遗漏，选择最小补齐。Mika runtime v7已正式归还，assignment在原fixed-source树以FLOW直接子片SVC09B领取实施，native负责独审；不将含plugin的moving main整文件塞入固定产物。当前仅源码/局部检查，不保留重窗口。O16计量修复main560b已接，历史entry5结果/费用UNKNOWN和旧KEEP不改。
