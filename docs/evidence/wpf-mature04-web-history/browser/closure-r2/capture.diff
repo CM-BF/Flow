@@ -1,0 +1,20 @@
+--- context-history-browser-20261007/capture.py
++++ context-history-closure-r2-20261007/capture.py
+@@ -13,7 +13,7 @@
+ assert output == Path(__file__).resolve().parent / 'actual' / gate['run'], 'Outer output must stay in this prepared task namespace'
+ phase = gate.get('visualAppearancePhase', {})
+ assert gate.get('allowRun') is True and gate['journey'] == 'context-history' and gate.get('messageSettingsPhase') is None
+-assert phase.get('id') == 'CONTEXT-HISTORY-MOUNTED-20261007' and phase.get('budgetMs') == 90000 and phase.get('cleanupMs') == 30000
++assert phase.get('id') == 'CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007' and phase.get('budgetMs') == 90000 and phase.get('cleanupMs') == 30000
+ assert 45000 <= gate['totalMs'] <= min(90000, 90000-phase['spentMs'])
+ assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+ identity = env_path.lstat()
+@@ -48,7 +48,7 @@
+ for number in (signal.SIGTERM, signal.SIGINT): signal.signal(number, interrupted)
+ env = {key:value for key,value in os.environ.items() if key in ('PATH','HOME','USER','LOGNAME','LANG','LC_ALL')}
+ env.update(FLOW_CONTEXT_HISTORY_BROWSER='1', FLOW_RECOVERY_GATE=str(gate_path), TSX_DISABLE_CACHE='1', NODE_DISABLE_COMPILE_CACHE='1')
+-command = ['/opt/homebrew/opt/node@24/bin/node', '--env-file='+str(env_path), '--import', 'tsx', '/private/tmp/context-history-browser-20261007/parent.ts', '--visual-appearance']
++command = ['/opt/homebrew/opt/node@24/bin/node', '--env-file='+str(env_path), '--import', 'tsx', '/private/tmp/context-history-closure-r2-20261007/parent.ts', '--visual-appearance']
+ streams = {}; selector = selectors.DefaultSelector(); handles = []
+ try:
+     if signals: raise RuntimeError('interrupted before launch')

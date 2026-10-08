@@ -1,0 +1,32 @@
+{
+  "state": "PREPARED_REVIEW_PENDING_NO_RUNTIME_GRANT",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "branch": "codex/web-context-history",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a",
+  "version": 3,
+  "exactScopeCount": 8,
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "fixedSourceHead": "9cd2ae350887ca80e59765f1867627a29cdca787",
+  "executionHead": "FINAL_METADATA_HEAD_PENDING",
+  "phaseId": "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007",
+  "runs": "actual-closure-r2",
+  "parent": {
+    "path": "/private/tmp/context-history-closure-r2-20261007/parent.ts",
+    "realpath": "/private/tmp/context-history-closure-r2-20261007/parent.ts",
+    "bytes": 38415,
+    "sha256": "d433800b4174fa8aee7f76c8a7319dbd6ddf34e7113cca388152d6ebc2495636"
+  },
+  "capture": {
+    "path": "/private/tmp/context-history-closure-r2-20261007/capture.py",
+    "realpath": "/private/tmp/context-history-closure-r2-20261007/capture.py",
+    "bytes": 9102,
+    "sha256": "d8e4c5f108da352d64d4619f0e572337585157a5b76b178eb80955f2829288f0"
+  },
+  "sourceReview": null,
+  "nativeApproval": null,
+  "oldPhaseClosed": true,
+  "oldUnusedTransferred": false,
+  "testsRunInThisPreparation": 0,
+  "staticBinding": "Exact new phase appears twice in parent, once in capture; fixed absolute parent points to new packet; task selection/budget/native cleanup/all8groups unchanged; new actual parent exclusive0700 identity recorded."
+}

@@ -1,6 +1,6 @@
 # MATURE04-05 Web history consumer
 
-Stage: APPROVED_SCOPED_THIN_WIRING_SOURCE_AND_LOCAL; ALL_SIX_STOP. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
+Stage: MOUNTED_INITIALIZATION_FAILED; CLOSURE_REPAIR_SOURCE_REVIEW_PENDING; ALL_EIGHT_STOP after this seal. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
 
 Initial module claim start: 2026-10-07T22:35:02.638Z. Conservative source-segment deadline: 2026-10-07T22:59:17Z. Fixed base: b1291faae260be8d86ada12ff63341d44efc2709. Branch: codex/web-context-history. Claim: 25d7e029-9334-479e-8872-61090c406e0a v1, exactly the new conversation-context-history directory, new plugin binding, and this evidence directory.
 
@@ -47,3 +47,6 @@ Mounted preparation independently approved at 23:27:32Z, source/native scope onl
 FAILED initialization / FULL_RETURN: context-history-234701-b66e19, fixed ffd735/ed5 and execution0c8b. Missing supplied server startup-progress import prevented fixture HTTP creation; 0completed groups/0PNG/0wire. New90s CLOSED6352ms/83648unused, no retry. Prior pre-spawn failures remain NOT_RUN. All known processes/groups ESRCH, marked DB0connections normalDROP, scratch/CDP listener absent and private admin input exact-deleted. Full return 2026-10-07T23:48:20.440952+00:00. This is no mounted UI acceptance.
 
 Root independently accepted failure-result fidelity only: [receipt](browser/attempt-context-history-234701-b66e19/root-failure-review.json). Fixed source ffd735 and production ed5 unchanged; mounted 0/8,0PNG,0wire. Missing fixed startup-progress is a source-supply closure omission. Current dependency preparation is HOLD pending a bounded fixed-entry closure audit; no runtime retry or product conclusion. All eight scopes STOP after this result seal; claim remains held.
+
+
+Closure repair source segment 2026-10-07T23:52:22.335540Z–2026-10-08T00:07:22.335540Z: [single report](browser/closure-r2/report.md), [fixed manifest](browser/closure-r2/manifest.json), [supplementary supply](browser/closure-r2/source-supply-receipt.json). Fixed-Git entry projection372 files/1544 edges/396 external edges/33 SQL; only6664-byte startup-progress.ts supplied exactly. This is a bounded literal graph, not complete runtime resolution. New parent/capture five-line phase data delta preserves oldactual6352/90000 CLOSED; independent90s remains proposal, no runtime grant. No engineering child, product import or browser check in this preparation. Existing source/local approvals are unchanged; mounted8groups/2PNG are not passed. Awaiting focused closure/data/native review and later manager runtime selection; whole parent CT task remains OPEN. All8 scopes STOP at seal.
