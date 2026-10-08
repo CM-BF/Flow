@@ -1,6 +1,6 @@
 # SVC06B 浏览器恢复所需固定后台
 
-状态：in-progress。所属唯一大task [FLOW-001 / REQ-19](../../../plan-status-review/plans/flow-001-architecture/plan.md)，co-lead Execution Lead，owner assignment_review。沿原SVC06固定产物方法推进，不创建第二发布系统或调度器。
+状态：completed（本登记task五项验收已闭合，最终接收观察2026-10-08T00:05:01.000Z；不表示父FLOW完成）。所属唯一大task [FLOW-001 / REQ-19](../../../plan-status-review/plans/flow-001-architecture/plan.md)，co-lead Execution Lead，owner assignment_review。沿原SVC06固定产物方法推进，不创建第二发布系统或调度器。
 
 ## 用户结果与范围
 
