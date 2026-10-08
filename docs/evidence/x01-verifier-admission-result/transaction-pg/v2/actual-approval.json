@@ -1,0 +1,81 @@
+{
+  "reviewedAt": "2026-10-08T00:02:58.000Z",
+  "archivedAt": "2026-10-08T00:04:21.547Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "state": "ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "result": "4702e8e268768e1899ece9ebead117a86fd5cdc7",
+  "packet": "792ec7e8b4d981a7b6fc0bae979b9f2939fa0ad2",
+  "bindingCount": 37,
+  "bindingBytes": 323690,
+  "prepared": {
+    "files": 295,
+    "executionToResultDiff": [],
+    "external191links16": "Accepted actual admission receipts; reviewer did not rescan external content"
+  },
+  "actual": {
+    "selected": 5,
+    "passed": 5,
+    "failed": 0,
+    "pending": 0,
+    "suiteSuccess": true,
+    "tasks": 5,
+    "attempts": 5,
+    "runners": 1,
+    "registrations": 1,
+    "fixtureRequests": 30,
+    "fixtureResponseBytes": 5176,
+    "runRecords": 23,
+    "runRecordBytes": 27284,
+    "includingSummaryBudgetRows": 25,
+    "includingSummaryBudgetBytes": 31742
+  },
+  "preflight": {
+    "pid": 59441,
+    "maximum": 100,
+    "current": 9,
+    "available": 91,
+    "threshold": 33,
+    "meaning": "Instantaneous max-current includes probe and does not subtract reserved slots; not a reservation",
+    "adminClosed": true,
+    "poolClosed": true,
+    "retainedCompleteBytes": 298,
+    "mergedEOF": true,
+    "finalAbsent": true
+  },
+  "closure": {
+    "internalGroups": [
+      59617,
+      59658
+    ],
+    "exit0": true,
+    "finalAbsent": true,
+    "mergedEOF": true,
+    "rawComplete": true,
+    "faultsAndSignals": [],
+    "databaseOID": 1363132,
+    "fourIdentityReceiptsAgree": true,
+    "zeroConnections": true,
+    "ordinaryDropAcknowledged": true,
+    "databaseAbsent": true,
+    "ownersPoolAdminListenerClosed": true,
+    "runtimeTemporary": "Same identity cleanup receipt plus later exact ENOENT",
+    "externalTemporary": "5 items5230B archived then same-identity removal/ENOENT",
+    "laterOwnerFullReturn": "2026-10-07T23:59:27.445Z"
+  },
+  "time": {
+    "preflightSeconds": 0.06979649991262704,
+    "callerBeforeSaveSeconds": 7.884096959023736,
+    "callerAfterSaveSeconds": 7.884792625089176,
+    "entry": "2026-10-07T23:56:30.037Z",
+    "delivery": "2026-10-07T23:56:37.965405+00:00",
+    "wholeExternalWall": "UNKNOWN",
+    "outerExit": 0,
+    "outerDualEOF": "Not independently recorded; no upgrade"
+  },
+  "history": "Initial EPERM, unknown peak/database-WAL physical bytes, earlier inline preflight failure and cancelled grant preserved",
+  "scope": "Only real domain PG result fidelity; no verifier public mount, worker/native/provider, main or complete X01 claim",
+  "reviewerActions": "Read-only fixed Git/hash/source/receipts; no execution/import/write/TMP/PG/process access"
+}
