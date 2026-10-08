@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:55:30.024670+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:05:03.457238+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base a4040e693b4d9e3bea39020d3235a581f0552de5 / fixed source 60caca5210b05a88e4817390a3bd4d4e840d319e；metadata待seal |
-| 工作树dirty状态 | 新tooltip attempt1 FAILED 3/4/2PNG，完整RETURN；末次前精确saved identity修正中；clean admission后仅status更新 |
+| 工作基线 / HEAD | base a4040e693b4d9e3bea39020d3235a581f0552de5 / fixed source f6c17be503ab68262a789c96429a7cc44975c8bb；metadata待seal |
+| 工作树dirty状态 | 第二且最后一次准备；首轮3/4 FAIL与两张drawer图保留；0child/完整归还 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 60caca5210b05a88e4817390a3bd4d4e840d319e；新keyboard文件名观察actual RUNNING；原d7三轮2/4 FAILED和8pure654ms保留 |
+| 检查状态 | FAILED 60caca5210b05a88e4817390a3bd4d4e840d319e；新段首轮3/4，最后saved identity观测歧义；f6c17be503ab68262a789c96429a7cc44975c8bb affected noEmit PASSED/3595ms，browser待本段末次 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 60caca5210b05a88e4817390a3bd4d4e840d319e |
+| 实现目标 | f6c17be503ab68262a789c96429a7cc44975c8bb |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工作区布局和三窗格读取通过；新独立段改用真实键盘焦点显示文件名，保完整材料断言，已获经理browser lease，第1轮3/4已归还，第二且最后一次准备 |
+| 当前产出 | 真实键盘filename、材料准备A/B隔离与close/reopen已走通；修正刷新后的精确saved identity，并收起390侧栏保主体双图 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 新keyboard filename观察尚未actual；原hover失败保留。新段截止01:17:41.457，浏览器等待经理lease |
+| 当前阻塞 | 新段第二且最后一次实际待验；截止01:17:41.457，已有经理lease。首失败保留，不冒刷新自动恢复输入框。 |
 | 需用户决定 | NONE |
-| Review | PENDING 60caca5210b05a88e4817390a3bd4d4e840d319e；本新连续段source/results最终一次独审，旧89fde仅失败保真不外推 |
+| Review | PENDING f6c17be503ab68262a789c96429a7cc44975c8bb；两轮最终一次独审，旧失败保真审不外推 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

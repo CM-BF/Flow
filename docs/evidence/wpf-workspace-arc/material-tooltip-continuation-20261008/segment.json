@@ -48,7 +48,7 @@
     "Composer DOM: current attachment tile then real Remove button then Message input. Keyboard Shift+Tab from input verifies Remove then tile focus; no pointer coordinate or force."
   ],
   "implementation": "Input focus -> real Shift+Tab -> verify Remove focused -> real Shift+Tab -> verify unique File attachment focused -> real filename tooltip visible -> input focus -> tooltip hidden. Complete B/model/text/ref and downstream A/durable/layout assertions unchanged.",
-  "checks": "NOT_RUN new local; no type-interface/codec changes and existing keyboard/focus Playwright APIs already used; new real browser required, waiting manager lease.",
+  "checks": "Affected two-test static-import noEmit exit0/3595ms; new exact identity parameter validated. No HTTP/browser in local.",
   "browser": {
     "maxAttempts": 2,
     "totalMs": 180000,
@@ -74,8 +74,10 @@
   "local": {
     "maxChildren": 2,
     "totalMs": 30000,
-    "spentMs": 0,
-    "state": "NOT_RUN"
+    "spentMs": 3595,
+    "state": "PASS_AFFECTED_NOEMIT",
+    "children": 1,
+    "original": "/private/tmp/arc-tooltip-local-uhfygma0/segment.json"
   },
   "bytes": {
     "total": 335544320,
@@ -91,5 +93,7 @@
     ],
     "actual": "One observation helper keeps selector authority unique; keyboard event sequence matches installed implementation; no helper framework/shared component mutation. Existing failing hover retained in old bundle."
   },
-  "nextDelta": "Keep route-only ambiguity rejection for existing view observations. Capture B saved identity before close; after reload match exact identity and compare allBdata (stronger than old notNull)."
+  "nextDelta": "Keep route-only ambiguity rejection for existing view observations. Capture B saved identity before close; after reload match exact identity and compare allBdata (stronger than old notNull).",
+  "nextSource": "f6c17be503ab68262a789c96429a7cc44975c8bb",
+  "narrowVisual": "First two390 images preserve drawer state; second original theme group closes drawer via actual Hide chat list, asserts Chats hidden/current input visible, then captures originaltwo themes."
 }
