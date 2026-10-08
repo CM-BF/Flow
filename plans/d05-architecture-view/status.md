@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:26:13.916Z / main728d3165f；新增CENTER唯一source登记待审；实际4320仍212源 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:52:45.537Z / main0e8bfa7b3；CENTER新增唯一来源已mainbc7fbcd2d并实际加载，4320现213来源。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | GDEP01登记已mainc39c36761；2026-10-07T23:53:51.830Z实际4320读取212来源，原本机登录公开配置保持。 |
+| 已集成 main 状态 | CENTER来源登记已mainbc7fbcd2d；2026-10-08T00:52:45.537Z实际4320读取213来源，CENTER sourceCurrent与开工时间可见，本机登录公开配置保持。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板原212个来源保持可用，插件验证中心装配的唯一进度来源已准备登记。 |
-| 下一可用交付 | 发布新增进度来源，让中心装配的开工、审查和主线接收时间可见。 |
+| 当前产出 | 看板已显示插件验证中心装配的唯一进度和真实开工时间，原来源与登录入口保持可用。 |
+| 下一可用交付 | 本片段已交付；后续只按合法owner交接维护来源与阶段事实。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -290,3 +290,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T23:53:51.946Z：仅原自有4320正常换载，old57950身份/cwd/监听核同后SIGTERM并确认absent，新66636；212来源与GDEP live/sourceCurrent、协调账本available及原ACCESS公开配置已核，见[gdep-source-live.json](../../docs/evidence/d05/gdep-source-live.json)。未读取token、未触个人61227/61228、未刷新用户页。登记独审native绑定a73a8fbf8已由main接收，owner格式问题不由聚合器猜补。
 
 2026-10-08T00:26:13.916Z：本次原登记范围维护开始。CENTER固定d171与26路径组合已main728d3165f；只登记原db_transaction_owner的canonical plugin-verifier-center-wiring/plans/x01-verifier-center-wiring，保原22:04:21Z开工与阶段边界，不复制status或猜完成。当前4320仍212源，新213候选待独审/main及安全重载；不在活动浏览器/PG段中重启看板。
+
+2026-10-08T00:52:45.537Z：CENTER登记22cf已获native_center_owner限定源码/元数据独审并mainbc7接收；[真实加载回执](../../docs/evidence/d05/center-source-live.json)记录2026-10-08T00:52:45.042Z→2026-10-08T00:52:45.537Z仅owned4320替换与HTTP213。原66636确认退出、新69822；本机登录非敏感绑定逐值相同，0token/个人服务/browser/provider操作。首次只读lsof字段门误拒和随后K01选择门STOP均未动服务；K01精确RETURN后才执行，不追认前两次为实际启动。Context -05由Web明确继续归父WPF-MATURE-04，不新增第二来源。

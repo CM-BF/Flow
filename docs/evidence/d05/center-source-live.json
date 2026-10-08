@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-10-08T00:52:45.042Z",
+  "source": "0e8bfa7b385aff582a85aa211df1c854e064258c",
+  "oldPid": 66636,
+  "oldCwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "previousPublicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "preflightHistory": [
+    "First read-only gate rejected lsof f12 as extra listener; no process action. Corrected to documented p process fields; exact identity unchanged.",
+    "Second fresh gate saw K01 selection and stopped before any service action."
+  ],
+  "coordinationSafePoint": "2026-10-08T00:52:41.457Z",
+  "oldConfirmedAbsent": true,
+  "newPid": 69822,
+  "log": "/tmp/flow-dashboard-213-20261008-0053.log",
+  "summaryHttp": 200,
+  "summaryCount": 213,
+  "generatedAt": "2026-10-08T00:52:45.462Z",
+  "selected": [
+    {
+      "id": "X01-VERIFIER-CENTER-WIRING01",
+      "title": "插件验证中心装配",
+      "role": "工作线",
+      "sourceKey": "cfe46afeccac113a3885f551dc3bbb46f9b0907f292f7b7e3730c47381dea7a8",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring/plans/x01-verifier-center-wiring/status.md",
+        "digest": "e8170146a8db6dedd9652ac740ac13e334854bbc3f9629972b0d37c6d24fd083",
+        "modifiedAt": "2026-10-08T00:28:53.179Z",
+        "readAt": "2026-10-08T00:52:45.462Z",
+        "declaredUpdatedAt": "2026-10-08T00:28:53.085Z",
+        "stale": false,
+        "ageHours": 0.3978825,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "db_transaction_owner / gpt-6-astra",
+        "branch": "codex/plugin-verifier-center-wiring",
+        "branchState": "integrated",
+        "declaredHead": "base69a71e3d / source d17125c112240468444b71f6a049303158efad1c / packet82f9588d1712c76b3ffd29c81e82e7da93305511",
+        "declaredDirty": "本轮仅metadata；固定push后clean，产品持续STOP",
+        "updatedRecord": "2026-10-08T00:28:53.085Z",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "focused types0；9 distinct分轮通过，首夹具失败及旧源重复保留；PG NOT_RUN"
+        },
+        "reviewRecord": "[review.md](review.md)：APPROVED d17125c112240468444b71f6a049303158efad1c",
+        "mainRecord": "INTEGRATED 728d3165f17dfe8272c8ffce6e1eff60d9602d6b；四叶逐hash等已审d171，组合strict0及factory9/9另有主线原件",
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "中心验证入口的显式装配与认证边界已接收主线，组合检查通过；尚未部署。",
+          "next": "本片段已交付；等待唯一登记事实同步，完整runner链与部署属后继。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T22:04:21.000Z",
+            "record": "2026-10-07T22:04:21.000Z"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "实际clock开段与原子claim receipt，未发生事件不填造"
+          },
+          "issues": []
+        },
+        "truncatedFields": []
+      },
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[X01](../../../plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "reason": "",
+          "targetId": "X01",
+          "title": "插件管理计划"
+        },
+        "basis": "status-source"
+      },
+      "verification": {
+        "state": "not_loaded"
+      },
+      "assignment": {
+        "state": "pending"
+      }
+    }
+  ],
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "completedAt": "2026-10-08T00:52:45.537Z"
+}
