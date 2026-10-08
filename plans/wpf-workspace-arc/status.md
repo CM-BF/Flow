@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:55:48.979141+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:02:36.270088+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base8f617 / sourcee14e665e56ee947fa3053939fe0a9beccefd32c0；PaneTabs水平focus窄修 |
-| 工作树dirty状态 | 第二FULLRETURN后仅owned PaneTabs/CSS窄修，未再运行 |
+| 工作树dirty状态 | 全部18source/checks STOP；仅本次最终metadata seal，0child/HTTP/PG/Chrome |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | FAILED c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 — 第二3/4、23723ms，累计75205；真实矩形定位水平裁剪，窄修待最后actual |
+| 检查状态 | PASSED e14e665e56ee947fa3053939fe0a9beccefd32c0 — 最后4/4+2finalPNG；本段97234ms/3次 CLOSED，两旧FAIL与ChromeEOF差异保留，视觉审待定 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
 | 实现目标 | e14e665e56ee947fa3053939fe0a9beccefd32c0 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 第二01:52:34.778081Z FULLRETURN；strip右386/Close右410.5，聚焦仅滚所属strip以显示完整tab；当前0runtime，登录b3持窗 |
+| 当前产出 | 最后4/4+双390限定接受；横向Close与8rem P2关闭，滚动条压字视觉P2 OPEN；97234/3 CLOSED |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: Close水平clip P2修后待验；第三等待登录b3 exactRETURN与经理明确lease，截止02:05:48.999不延 |
+| 当前阻塞 | ACTIVE: ARC-VISUAL-NARROW-TAB-01滚动条压文字，完整窄屏UX未达；main/Context组合未集成 |
 | 需用户决定 | NONE |
-| Review | PENDING e14e665e56ee947fa3053939fe0a9beccefd32c0 — 同连续段最终一次独审 |
+| Review | APPROVED e14e665e56ee947fa3053939fe0a9beccefd32c0 — root07673限定功能fixture接受，视觉P2 OPEN；见review.md |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -35,7 +35,7 @@
 | WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 末次prepare-await-stable PASS：同composer、B模型/正文/完整readyref，A冻结命令后durable B、retain/reopen；不承诺准备中B崩溃恢复 |
 | WPF-WORKSPACEARC01-03 | in-progress | workspace_panels_owner | 原5AppPort+2Host纯回归、真实插件有效确认/保稿关闭同轮PASS；失效授权证据仍为受控host/port，不冒所有modal mounted排列 |
 | WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三HTTP2PASS原证据保留；本次六logicalpending/六loading、六200finished完整正文/hidden无新增通过，serverpeak与client分层 |
-| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 当前两次3/4且最终两图未达；Closeviewport0.02失败保留，局部3573ms通过只限定5c6。旧f6的4/4与双图不覆盖新视觉P2 |
+| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 本段先两次3/4，e14修后最后4/4与双390/Close ratio1通过；97234三次CLOSED。root07673限定接受功能；滚动条压字视觉P2 OPEN，两旧FAIL与更早阶段不覆盖 |
 | WPF-WORKSPACEARC01-06 | pending | workspace_panels_owner | NOT_INTEGRATED；需与main Context/既有App/session受控组合，不能盲覆 |
 
 ## 等待记录
@@ -168,3 +168,9 @@
 2026-10-08T01:38:24.115409+00:00：新geometry段firstWrite01:37:03.442343Z，deadline02:05:48.999固定，新320MiB/3×90累计270k/最多2local累计30k；不借旧48670。必要types1实际3572/exit0，Node40070组与scratch归还。实际fixture/Chrome仍未启动，conditional lease紧前还须同调用fresh。
 
 2026-10-08T01:55:48.979141+00:00：第二actual3/4/0finalPNG、23723ms，累计75205/270000两次；Chrome两EOF true、parent/outer EOF true、4PID2PGID与scratch/cache absent/rawcontextHTTPclosed。exactRETURN01:52:34.778081Z，通知延迟至01:54后补发保真。两snapshot成功，第三因共享16KiB帽拒绝保诊断error。当前真实geometry证实horizontalclip而非vertical；仅PaneTabs focus capture滚本strip，不改选择/焦点/authority，超窄时优先focused control。两local6759 CLOSED，不新增types。
+
+2026-10-08T01:59:02.838037+00:00：第三最后 actual START01:58:45.184027Z，原90s60work30cleanup。freshfree14471475200>=13766492160，currentAt2026-10-08T01:58:22.800Z，sourcee14/execution6be；samecallfreshD04/20743/33/remote clean通过后才写status。
+
+2026-10-08T02:00:17.674132+00:00：第三4/4+2finalPNG/early1，22029ms→总97234/270000 CLOSED；两local6759 CLOSED。4PID2PGID与scratchcache absent、nestedcontextHTTPclosed，Chrome/parent/outerEOF均true本轮，首false不改。全部产品/检查STOP；本轮仅metadata尾。
+
+2026-10-08T02:02:36.270088+00:00：root07673最终独审原样归档，限定功能fixture4/4接受/106pairs独核一致；ARC-VISUAL-NARROW-TAB-01继续OPEN不虚称完整UX通过。全18source/checks STOP；本自然尾正常commit/push，无第四/无新local/main接收。

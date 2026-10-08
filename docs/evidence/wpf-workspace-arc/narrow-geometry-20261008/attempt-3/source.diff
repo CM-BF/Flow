@@ -1,0 +1,57 @@
+diff --git a/apps/web/src/workspace-layout/WorkspaceTabs.tsx b/apps/web/src/workspace-layout/WorkspaceTabs.tsx
+index 7706f5f29..57df501c2 100644
+--- a/apps/web/src/workspace-layout/WorkspaceTabs.tsx
++++ b/apps/web/src/workspace-layout/WorkspaceTabs.tsx
+@@ -1,4 +1,4 @@
+-import type { KeyboardEvent, ReactNode } from "react";
++import type { FocusEvent, KeyboardEvent, ReactNode } from "react";
+ import { MAX_WORKSPACE_TABS, type ChatGroup, type WorkspaceLayout } from "../workspace-state";
+ 
+ function focusTab(event: KeyboardEvent<HTMLButtonElement>) {
+@@ -11,6 +11,22 @@ function focusTab(event: KeyboardEvent<HTMLButtonElement>) {
+   if (next >= 0) { event.preventDefault(); tabs[next]?.focus(); }
+ }
+ 
++/** Reveal only this strip, without changing selection or scrolling the page. */
++function revealFocusedPaneTab(event: FocusEvent<HTMLDivElement>) {
++  const strip = event.currentTarget;
++  const focused = event.target;
++  const tab = focused.closest<HTMLElement>(".flow-tab");
++  if (!tab || tab.parentElement !== strip) return;
++  const viewport = strip.getBoundingClientRect();
++  const left = viewport.left + strip.clientLeft;
++  const right = left + strip.clientWidth;
++  const tabBounds = tab.getBoundingClientRect();
++  // If an unusually narrow pane cannot fit the tab, keep its focused control reachable.
++  const bounds = tabBounds.width <= strip.clientWidth ? tabBounds : focused.getBoundingClientRect();
++  if (bounds.right > right) strip.scrollLeft += bounds.right - right;
++  else if (bounds.left < left) strip.scrollLeft += bounds.left - left;
++}
++
+ /** Navigation owns focus only. App owns layout, views and all business state. */
+ export function WorkspaceTabs({ layout, onSelect, onAdd, onClose }: {
+   layout: WorkspaceLayout; onSelect(id: string): void; onAdd(): void; onClose(id: string): void;
+@@ -31,7 +47,7 @@ export function PaneTabs({ pane, focused, position, total, renderTitle, renderCl
+   onSelect(id: string): void; onClose(id: string): void; onMove(direction: -1 | 1): void;
+ }) {
+   return <div className={`flow-pane-header ${focused ? "focused" : ""}`} data-pane-id={pane.id}>
+-    <div className="flow-tabs" role="tablist" aria-label={`Chat pane ${position + 1}`}>{pane.tabs.map(id =>
++    <div className="flow-tabs" role="tablist" aria-label={`Chat pane ${position + 1}`} onFocusCapture={revealFocusedPaneTab}>{pane.tabs.map(id =>
+       <div key={id} className={`flow-tab ${pane.activeId === id ? "selected" : ""}`}>
+         <button type="button" role="tab" id={`tab-${id}`} aria-controls={`panel-${id}`} aria-selected={pane.activeId === id}
+           tabIndex={pane.activeId === id ? 0 : -1} onKeyDown={event => {
+diff --git a/apps/web/src/workspace-layout/layout.css b/apps/web/src/workspace-layout/layout.css
+index 0c30382fc..539457a81 100644
+--- a/apps/web/src/workspace-layout/layout.css
++++ b/apps/web/src/workspace-layout/layout.css
+@@ -8,8 +8,8 @@
+ .flow-arc-panes > [hidden] { display:none; }
+ .flow-pane-header { min-width:0; background:var(--background); border-bottom:2px solid transparent; }
+ .flow-pane-header.focused { border-bottom-color:var(--ring); }
+-.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; scroll-padding-inline:2rem; }
+-/* Keep a readable title and every control; focus scrolling also reserves the trailing close button. */
++.flow-pane-header .flow-tabs { height:auto; min-height:36px; min-width:0; align-items:center; overflow:auto; }
++/* Keep a readable title and every control; PaneTabs reveals the whole tab on focus. */
+ .flow-pane-header .flow-tab { flex:0 0 auto; min-width:16rem; max-width:20rem; }
+ .flow-pane-header .flow-tab > [role=tab] { min-width:8rem; }
+ .flow-pane-header .flow-tab [data-plugin-slot="chat.tab.actions"] { display:flex; flex:none; align-items:center; white-space:nowrap; }

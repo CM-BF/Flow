@@ -1,0 +1,65 @@
+{
+  "previousPacket": "/private/tmp/arc-geometry-observe-v74ta2d0",
+  "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+  "changedSource": [
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "bytes": 3284,
+        "sha256": "315a63f07809e91011c662db80ad1f1f0a2ba239d0a6448da43d732de2c3388a",
+        "gitPath": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "blob": "7706f5f29efae3985911269444f4fc1c4df1175b"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "bytes": 4183,
+        "sha256": "718882ea10440a1e2d627b2d810ec7ae44c3bb3cdbd974bbb09339328d4d88f2",
+        "gitPath": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "blob": "57df501c2bb03270c271154d6b3ea25830d82293"
+      }
+    },
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2608,
+        "sha256": "6132d7ad34ddbf692b9117c226b4f87850717a4d09c9b4e135fec6ee545b551f",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "0c30382fc4180dad23b398308e0599577616cee6"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2564,
+        "sha256": "5645379fc6be5c1dd288471a3a95e7ae149a598615b8989470fa03863f094c2b",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "539457a8145f2b1ab30a915c2d69d549a428b7d1"
+      }
+    }
+  ],
+  "unchangedSources": 205,
+  "externalPinsUnchanged": true,
+  "resolverLinksUnchanged": true,
+  "callers": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "unchanged": true
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778",
+      "unchanged": true
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12",
+      "unchanged": true
+    }
+  ],
+  "scope": "Owned PaneTabs focus capture horizontally exposes complete tab; oversized tab keeps focused control. No focus/selection/authority change; remove ineffective scroll-padding. All browser assertions unchanged."
+}

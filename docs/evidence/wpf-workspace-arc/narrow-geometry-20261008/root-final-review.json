@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-08T02:01:56.137132+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2",
+  "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+  "executionHead": "6be798109089587de4d3bafcb32bb7720d622ffb",
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/final-review-input.json",
+    "bytes": 90491,
+    "sha256": "bff8779a6f4918bc91ff9e3516971feda9b221f6f4f806cd7d3093d7936b7f53",
+    "pairsIndependentlyVerified": 106,
+    "files": 212,
+    "bytesPerSide": 2737881,
+    "hashMismatches": []
+  },
+  "sourceChanged": [
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/test/workspace-layout.browser.ts"
+  ],
+  "sourceReview": "Read full final focus helper diff. It requires a direct child tab, scrolls only its own strip horizontally, preserves focused control/selection, and chooses focused-control bounds if a tab cannot fit. It removes ineffective scroll-padding. No App/session/shared authority edits. Geometry assertion now derives8rem from actual root font14px rather than assuming128px. No original Close ratio1 or four-group assertion relaxed.",
+  "runs": [
+    {
+      "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245",
+      "executionHead": "0329ffb9706971af69f2f0cf75ec57a5a288a4a5",
+      "chargeMs": 51482,
+      "returnAt": "2026-10-08T01:41:11.080655+00:00",
+      "actualExit": 1,
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "errorRetained": true,
+      "ChromeEOF": false,
+      "parentEOF": true,
+      "outerEOF": true
+    },
+    {
+      "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+      "executionHead": "5ffb0f2f508b7f3e76e72dae44217ce734ee200c",
+      "chargeMs": 23723,
+      "returnAt": "2026-10-08T01:52:34.778081+00:00",
+      "actualExit": 1,
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "errorRetained": true,
+      "ChromeEOF": true,
+      "parentEOF": true,
+      "outerEOF": true
+    },
+    {
+      "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+      "executionHead": "6be798109089587de4d3bafcb32bb7720d622ffb",
+      "chargeMs": 22029,
+      "returnAt": "2026-10-08T01:59:19.406853+00:00",
+      "actualExit": 0,
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "errorRetained": false,
+      "ChromeEOF": true,
+      "parentEOF": true,
+      "outerEOF": true
+    }
+  ],
+  "finalAssertions": [
+    "4/4 exact original groups; actual outer0; two official390 images.",
+    "Close now x360/right385 inside stripright386; focused whole tab x106/right386; native-scroll clipping0.02 repaired.",
+    "Normal titles117px show full content; long title173px truncates with full accessible name; declared8rem minimum112px holds.",
+    "Home/End focus without selection, Tab to plugin action, frozenA and distinct nextB materials/settings preserved through held preparation and layout changes; no full reload visibleB hydration claim.",
+    "Three-pane logical reads and source observations retain original scope, not equivalent to six concurrent socket admissions."
+  ],
+  "visualReview": {
+    "personallyViewed": [
+      "arc-light-390.png",
+      "arc-dark-390.png"
+    ],
+    "horizontalClose": "PASS in both images",
+    "remaining": {
+      "id": "ARC-VISUAL-NARROW-TAB-01",
+      "priority": "P2",
+      "state": "OPEN",
+      "finding": "Native horizontal scrollbar visibly crosses the lower portion of the narrow tab row near title/menu text in both390 images. DOM intersection/full-close ratio does not prove that overlay chrome leaves the text unobscured.",
+      "next": "At next legal owner segment design scrollbar space/visibility with keyboard and horizontal reachability preserved; do not simply relax existing assertion or infer pixel clearance from bounding boxes."
+    },
+    "titleUnitFinding": "ARC-NARROW-TITLE-UNIT-02 CLOSED by intentional8rem actual-root check with unchanged title reachability."
+  },
+  "budgets": {
+    "currentBrowserMs": 97234,
+    "attempts": 3,
+    "state": "CLOSED_NO_FOURTH",
+    "localMs": 6759,
+    "localChecks": 2,
+    "localBinding": "7b297 andc385 only; final e14 focus helper not separately tsc checked, actual Vite-mounted final four groups passed.",
+    "prior48670FailedAnd40912Historical": "Separate CLOSED histories, not transferred."
+  },
+  "limits": [
+    "Fixture HTTP journey only; no real model/provider, center production authentication, main integration or personal deployment.",
+    "First run ChromeEOFfalse remains original; later runs true do not backfill it.",
+    "First observer __name failure and second16KiB diagnostic cap error remain secondary evidence.",
+    "Known process identities absent/contextHTTPclosed/scratch caches absent; no independent port probe or proof of all escaped descendants."
+  ],
+  "cleanCode": {
+    "scope": "Single responsibility of strip focus scrolling; exact owner boundary; diagnostics do not replace primary assertion or cleanup.",
+    "fixed": "Measured horizontal clip and rem/pixel assumption addressed with small local changes.",
+    "open": "Scrollbar overlay visualP2; final typecheck binding limitation retained."
+  }
+}

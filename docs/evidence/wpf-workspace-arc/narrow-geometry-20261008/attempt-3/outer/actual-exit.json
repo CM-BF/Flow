@@ -1,0 +1,30 @@
+{
+  "run": "arc-geometry-3-20261008-015845",
+  "startedAt": "2026-10-08T01:58:45.184027+00:00",
+  "endedAt": "2026-10-08T01:59:07.212080+00:00",
+  "outerPid": 86037,
+  "parentPid": 86057,
+  "exitCode": 0,
+  "elapsedMs": 22028.263167012483,
+  "signals": [],
+  "streams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1720,
+      "retainedBytes": 1720,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "0b6c4dda85093b594a1757ccb90a4d704d62467acf9b624f56c81aea19a8eba7"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "errors": [],
+  "cleanupAuthority": "Only Arc parent owns worker/Chrome/cache links/scratch; fixture owns two HTTP listeners; PG is absent. Separate exact post-cleanup observation required; absent not inferred here."
+}

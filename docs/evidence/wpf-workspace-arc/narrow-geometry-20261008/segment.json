@@ -8,9 +8,9 @@
     "maxAttempts": 3,
     "perAttemptMs": 90000,
     "totalMs": 270000,
-    "spentMs": 75205,
-    "attempts": 2,
-    "state": "WAIT_LOGIN_B3_RETURN_THIRD_LEASE"
+    "spentMs": 97234,
+    "attempts": 3,
+    "state": "CLOSED_MAX_THREE_ATTEMPTS"
   },
   "local": {
     "maxChildren": 2,
@@ -55,5 +55,20 @@
     "finding": "Native focused action visibility did not cover sibling Close; scroll-padding ineffective",
     "fix": "One private focus-only handler scrolls own strip, preserves selection and external page position; oversized tab prioritizes current focused control",
     "validation": "No additional local child:2 used/6759 CLOSED. Fixedsource awaiting last browser."
-  }
+  },
+  "thirdActual": {
+    "packet": "/private/tmp/arc-geometry-focus-nterbbef",
+    "chargeMs": 22029,
+    "passed": 4,
+    "returnAt": "2026-10-08T01:59:19.406853+00:00",
+    "finalPNGs": 2
+  },
+  "sourceStoppedAt": "2026-10-08T02:00:17.674132+00:00",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/root-final-review.json",
+    "sha256": "07673e4b8c02b4740c5aecca09d179752a226928aa921941f21c004086960e77",
+    "result": "APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2"
+  },
+  "allSourceChecksStoppedAt": "2026-10-08T02:00:17.674132+00:00",
+  "metadataSealAt": "2026-10-08T02:02:36.270088+00:00"
 }

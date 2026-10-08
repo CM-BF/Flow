@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-08T01:59:19.406853+00:00",
+  "run": "arc-geometry-3-20261008-015845",
+  "observations": [
+    {
+      "kind": "PID",
+      "id": 86037,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86057,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86060,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86062,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86057,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86060,
+      "state": "ESRCH"
+    },
+    {
+      "path": "/private/tmp/arc-geometry-focus-nterbbef/scratch",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "state": "ENOENT"
+    }
+  ],
+  "rawClosure": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "parentCleanupErrors": [],
+  "parentScenarioConfirmation": "PASSED",
+  "workerChromeStdoutEOF": true,
+  "workerChromeStderrEOF": true,
+  "parentStdoutEOF": true,
+  "parentStderrEOF": true,
+  "outerStreams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1720,
+      "retainedBytes": 1720,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "0b6c4dda85093b594a1757ccb90a4d704d62467acf9b624f56c81aea19a8eba7"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "independentPortProbe": false,
+  "PG": false,
+  "ownedReturn": true
+}

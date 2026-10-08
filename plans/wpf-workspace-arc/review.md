@@ -1,9 +1,12 @@
-# WPF-WORKSPACEARC01 review
+# WPF-WORKSPACEARC01 Review
 
-状态: PENDING — current bounded geometry continuation
-Review target commit: c385faa310dc6e24e005c15e4f9cb19f4a16b0b1
+## 当前组合
 
-当前唯一组合：[geometry入口](../../docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/entry.json)。新被动geometry/错误截图与实际8rem口径已fixed，受影响types0/3572ms；首geometry实际3/4/51482ms，观测__name错误与首错390图保留；修后c385/types0待第二actual。当前CSS与全部close/四组断言不变，旧失败/P2继续，最终同段一次独审。
+APPROVED e14e665e56ee947fa3053939fe0a9beccefd32c0 — **APPROVED_LIMITED_FUNCTIONAL_FIXTURE_ACCEPTANCE_WITH_OPEN_VISUAL_P2**。最后实际4/4/双390，97234ms三次CLOSED，首二FAIL保留。Close横向可见与8rem单位P2关闭；两图滚动条压文字的ARC-VISUAL-NARROW-TAB-01仍OPEN，阻完整窄屏UX。无新local（6759/2已闭）；e14没有新增tsc。main/Context未集成。
+
+[root唯一最终独审](../../docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/root-final-review.json)，5495B/07673e4b8c02b4740c5aecca09d179752a226928aa921941f21c004086960e77；106pairs/212files独立核同。
+
+[唯一最终输入](../../docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/final-review-input.json)。
 
 ## 历史固定目标与原件
 

@@ -1,0 +1,20 @@
+{
+  "beforeSHA": "87616ad9f99ac66f04c0746ecf5865b81361c147d935e5b1b211bbb174e1a038",
+  "afterSHA": "844f5d596aa005a05710a862d57c5f79d4b09daeb296dc775524cec8e6477cbb",
+  "onlyDelta": "limits.minimumFreeBytes routine max(manager frozen,current complete,intrinsic1GiB); callers unchanged",
+  "gateSHA": "a4ec107eb7b3177be4d2b88a1a37b92b4182bc6ddd4e471f816a4ee087c9e512",
+  "callersUnchanged": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    }
+  ]
+}

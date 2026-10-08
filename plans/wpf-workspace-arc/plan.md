@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01：Arc 会话组合工作区
 
-创建2026-10-07T18:02:31.663Z / 更新2026-10-08T01:28:00.015702+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
+创建2026-10-07T18:02:31.663Z / 更新2026-10-08T02:01:02.579556+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
 
 用户目标：在一个工作区中组合最多三个可见真实会话 pane，独立焦点/滚动/草稿与上下文；分拆、交换、合并和比例调整不重建composer或复制业务状态；插件真实上下文动作可随时扩展且旧权限/调用不能复活。
 
@@ -77,3 +77,9 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-08T01:28:58.148136+00:00 独审4f952：结果保真APPROVED，完整窄屏视觉BLOCKED。下一合法后继应先观察close/tab/strip rect、scrollLeft/clientWidth、实际font与clip祖先以及失败390图；现128px标题断言与14px root/8rem不符为静态P2，未达不冒实际失败。保真实标题可辨/动作单行/关闭可达的验收，不改全局字体或借旧额度。
 
 2026-10-08T01:37:03.442343Z 新geometry连续段：沿TODO05先在End/动作焦点/firstfailure最多3次16KiB只读采close/tab/strip/clip祖先/字号/滚动，独立失败390图≤512KiB；保原close完整可见性和原错/cleanup优先。标题最小宽度按8rem真实root，普通全文/长名完整accessible name不弱化。确认clip原因后才原scope CSS/PaneTabs窄修；不改sharedApp。新270k最多3次、deadline02:05:48.999；旧账不转。
+
+## 2026-10-08T02:01:02.579556+00:00 几何因果与限定修复
+
+原TODO05连续段先保两个Close ratio0.02失败：首次观测helper序列化__name失败，修正后真实矩形证实原焦点只显露More actions，Close超出本strip右侧24.5px。e14仅owned PaneTabs focus capture横滚本strip显露完整tab，超窄时保focusedcontrol，不改选择/草稿/布局writer；移除无效scroll-padding。最后真实4/4与双390/Close ratio1通过，97234ms三次CLOSED；两local6759 CLOSED。屏幕中水平滚动条靠近标题文字，完整视觉结论待独审，不因测试通过勾全部UX。main/Context仍未集成，旧全部失败不改。[唯一输入](../../docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/final-review-input.json)。
+
+2026-10-08T02:02:36.270088+00:00：root最终07673限定接受e14功能fixture与106原件对，Close横向/8rem单位修复已验证；双390滚动条压字的原视觉P2保留，TODO05/06继续未完成。后继必须新合法段，当前三actual与两local全部CLOSED。

@@ -1,0 +1,2426 @@
+{
+  "at": "2026-10-08T02:00:17.674132+00:00",
+  "feature": "WPF-WORKSPACEARC01",
+  "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+  "executionHead": "6be798109089587de4d3bafcb32bb7720d622ffb",
+  "base": "8f6174e215bdc39e86fd1acb097992e664736701",
+  "state": "FINAL_4_OF_4_FUNCTIONAL_PASS_VISUAL_PENDING_REVIEW",
+  "scope": "Only browser passive geometry+8rem assertion and owned PaneTabs focus-scroll/CSS; App/session/shared controls unchanged. No fourth run.",
+  "runs": [
+    {
+      "packet": "/private/tmp/arc-geometry-first-rgv61qvz",
+      "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245",
+      "executionHead": "0329ffb9706971af69f2f0cf75ec57a5a288a4a5",
+      "start": {
+        "run": "arc-geometry-1-20261008-013947",
+        "startedAt": "2026-10-08T01:39:47.984089+00:00",
+        "outerPid": 30937,
+        "parentPid": 30946,
+        "gateSha256": "2f31c14199e6b480ec07a3e3f2ee7416e96b4077016d274cbe110d37cb4a7add"
+      },
+      "accounting": {
+        "at": "2026-10-08T01:41:11.080655+00:00",
+        "logicalId": "ARC-GEOMETRY-CONTINUATION-20261008",
+        "attempt": 1,
+        "outerElapsedMs": 51481.47091595456,
+        "outerPostWriteElapsedMs": 51481.80395795498,
+        "parentElapsedMs": 51441.61650002934,
+        "chargeMs": 51482,
+        "cumulativeMs": 51482,
+        "remainingMs": 218518,
+        "state": "CLOSED_ATTEMPT_TWO_REMAIN",
+        "oldCreditTransfer": false
+      },
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "failure": "Error: expect(locator).toBeInViewport() failed\n\nLocator:  getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0.019999999552965164\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeInViewport\" getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true })\n    14 \u00d7 locator resolved to <button tabindex=\"-1\" aria-label=\"Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts\">\u2026</button>\n       - unexpected value \"viewport ratio 0.019999999552965164\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeInViewport (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:398:87)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:88:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:298:5)\n    at async <anonymous> (/private/tmp/arc-geometry-first-rgv61qvz/worker.mjs:31:16)",
+      "finalScreenshots": [],
+      "observations": {
+        "desktopStage": {
+          "stage": "connected-before-layout-actions",
+          "path": "/private/tmp/arc-geometry-first-rgv61qvz/raw/arc-desktop-ready.png",
+          "bytes": 86539,
+          "viewport": {
+            "width": 1500,
+            "height": 960
+          },
+          "at": "2026-10-08T01:39:56.070Z"
+        },
+        "narrowTabDiagnostics": {
+          "snapshots": [],
+          "errors": [
+            "Error: locator.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:306)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+            "Error: locator.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:306)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+            "Error: locator.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:306)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ],
+          "screenshot": {
+            "path": "/private/tmp/arc-geometry-first-rgv61qvz/raw/arc-narrow-failure-390.png",
+            "bytes": 55625
+          }
+        },
+        "narrowTabs": {
+          "tabGeometry": [
+            {
+              "title": "Conversation 6",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 5",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts",
+              "titleWidth": 173,
+              "titleContentWidth": 497,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            }
+          ],
+          "longTitle": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts",
+          "stage": "after keyboard focus reached plugin action"
+        }
+      },
+      "returnReceipt": "/private/tmp/arc-geometry-first-rgv61qvz/post-cleanup.json",
+      "return": {
+        "at": "2026-10-08T01:41:11.080655+00:00",
+        "run": "arc-geometry-1-20261008-013947",
+        "observations": [
+          {
+            "kind": "PID",
+            "id": 30937,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 30946,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 30949,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 31101,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 30946,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 30949,
+            "state": "ESRCH"
+          },
+          {
+            "path": "/private/tmp/arc-geometry-first-rgv61qvz/scratch",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+            "state": "ENOENT"
+          }
+        ],
+        "rawClosure": {
+          "contextClosed": true,
+          "httpClosed": true
+        },
+        "parentCleanupErrors": [],
+        "parentScenarioConfirmation": "FAILED",
+        "workerChromeStdoutEOF": false,
+        "workerChromeStderrEOF": false,
+        "parentStdoutEOF": true,
+        "parentStderrEOF": true,
+        "outerStreams": {
+          "stdout": {
+            "file": "parent.stdout.jsonl",
+            "bytes": 1730,
+            "retainedBytes": 1730,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "b5ce573aba72acaeb0a31c8dc37938b7a511776f91c81a5f125cad6651bc2f24"
+          },
+          "stderr": {
+            "file": "parent.stderr.log",
+            "bytes": 0,
+            "retainedBytes": 0,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "independentPortProbe": false,
+        "PG": false,
+        "ownedReturn": true
+      }
+    },
+    {
+      "packet": "/private/tmp/arc-geometry-observe-v74ta2d0",
+      "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+      "executionHead": "5ffb0f2f508b7f3e76e72dae44217ce734ee200c",
+      "start": {
+        "run": "arc-geometry-2-20261008-015143",
+        "startedAt": "2026-10-08T01:51:43.145517+00:00",
+        "outerPid": 7088,
+        "parentPid": 7568,
+        "gateSha256": "a06c90c16d0d61a76e26c84f704a479a254b55a7c02b8af054926aeb7eee9a33"
+      },
+      "accounting": {
+        "at": "2026-10-08T01:52:34.778081+00:00",
+        "logicalId": "ARC-GEOMETRY-CONTINUATION-20261008",
+        "attempt": 2,
+        "outerElapsedMs": 23722.23687497899,
+        "outerPostWriteElapsedMs": 23722.49745798763,
+        "parentElapsedMs": 23681.212083087303,
+        "chargeMs": 23723,
+        "cumulativeMs": 75205,
+        "remainingMs": 194795,
+        "state": "CLOSED_ATTEMPT_ONE_REMAINS",
+        "oldCreditTransfer": false
+      },
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable"
+      ],
+      "failure": "Error: expect(locator).toBeInViewport() failed\n\nLocator:  getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0.019999999552965164\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeInViewport\" getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tablist', { name: 'Chat pane 1', exact: true }).locator('.flow-tab').filter({ has: getByRole('tab', { name: 'Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true }) }).getByRole('button', { name: 'Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts', exact: true })\n    14 \u00d7 locator resolved to <button tabindex=\"-1\" aria-label=\"Close Conversation 4 \u2014 retained materials and independent next draft across workspace layouts\">\u2026</button>\n       - unexpected value \"viewport ratio 0.019999999552965164\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeInViewport (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:399:87)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:88:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:298:5)\n    at async <anonymous> (/private/tmp/arc-geometry-observe-v74ta2d0/worker.mjs:31:16)",
+      "finalScreenshots": [],
+      "observations": {
+        "desktopStage": {
+          "stage": "connected-before-layout-actions",
+          "path": "/private/tmp/arc-geometry-observe-v74ta2d0/raw/arc-desktop-ready.png",
+          "bytes": 85760,
+          "viewport": {
+            "width": 1500,
+            "height": 960
+          },
+          "at": "2026-10-08T01:51:50.691Z"
+        },
+        "narrowTabDiagnostics": {
+          "snapshots": [
+            {
+              "stage": "after End focus",
+              "rootFontSize": "14px",
+              "viewport": {
+                "width": 390,
+                "height": 844,
+                "devicePixelRatio": 1
+              },
+              "focusedLabel": null,
+              "close": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 385.5,
+                  "y": 99.8828125,
+                  "width": 25,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 410.5,
+                  "bottom": 126.8828125,
+                  "left": 385.5
+                },
+                "clientWidth": 25,
+                "clientHeight": 27,
+                "scrollWidth": 25,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "grid",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "title": {
+                "tag": "BUTTON",
+                "role": "tab",
+                "rect": {
+                  "x": 132.5,
+                  "y": 99.8828125,
+                  "width": 172.984375,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 305.484375,
+                  "bottom": 126.8828125,
+                  "left": 132.5
+                },
+                "clientWidth": 173,
+                "clientHeight": 27,
+                "scrollWidth": 497,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "112px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "action": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 305.484375,
+                  "y": 101.1328125,
+                  "width": 80.015625,
+                  "height": 24.5,
+                  "top": 101.1328125,
+                  "right": 385.5,
+                  "bottom": 125.6328125,
+                  "left": 305.484375
+                },
+                "clientWidth": 80,
+                "clientHeight": 25,
+                "scrollWidth": 80,
+                "scrollHeight": 25,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "inline-block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "tab": {
+                "tag": "DIV",
+                "role": null,
+                "className": "flow-tab selected",
+                "rect": {
+                  "x": 131.5,
+                  "y": 98.8828125,
+                  "width": 280,
+                  "height": 29,
+                  "top": 98.8828125,
+                  "right": 411.5,
+                  "bottom": 127.8828125,
+                  "left": 131.5
+                },
+                "clientWidth": 278,
+                "clientHeight": 27,
+                "scrollWidth": 278,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "224px",
+                  "maxWidth": "280px",
+                  "flexShrink": "0"
+                }
+              },
+              "strip": {
+                "tag": "DIV",
+                "role": "tablist",
+                "className": "flow-tabs",
+                "rect": {
+                  "x": 52,
+                  "y": 95.8828125,
+                  "width": 334,
+                  "height": 36,
+                  "top": 95.8828125,
+                  "right": 386,
+                  "bottom": 131.8828125,
+                  "left": 52
+                },
+                "clientWidth": 334,
+                "clientHeight": 35,
+                "scrollWidth": 740,
+                "scrollHeight": 35,
+                "scrollLeft": 377.5,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "auto",
+                  "overflowY": "auto",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "ancestors": [
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-tab selected",
+                  "rect": {
+                    "x": 131.5,
+                    "y": 98.8828125,
+                    "width": 280,
+                    "height": 29,
+                    "top": 98.8828125,
+                    "right": 411.5,
+                    "bottom": 127.8828125,
+                    "left": 131.5
+                  },
+                  "clientWidth": 278,
+                  "clientHeight": 27,
+                  "scrollWidth": 278,
+                  "scrollHeight": 27,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "224px",
+                    "maxWidth": "280px",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tablist",
+                  "className": "flow-tabs",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 36,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 131.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 35,
+                  "scrollWidth": 740,
+                  "scrollHeight": 35,
+                  "scrollLeft": 377.5,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-pane-header focused",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 36,
+                  "scrollWidth": 334,
+                  "scrollHeight": 36,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 38,
+                  "scrollWidth": 334,
+                  "scrollHeight": 38,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "auto",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tabpanel",
+                  "className": "flow-chat-groups flow-arc-panes",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 744.1171875,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 840,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 744,
+                  "scrollWidth": 334,
+                  "scrollHeight": 744,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "grid",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-work-area",
+                  "rect": {
+                    "x": 48,
+                    "y": 95.8828125,
+                    "width": 342,
+                    "height": 748.1171875,
+                    "top": 95.8828125,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 748,
+                  "scrollWidth": 342,
+                  "scrollHeight": 748,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "MAIN",
+                  "role": null,
+                  "className": "flow-main",
+                  "rect": {
+                    "x": 48,
+                    "y": 0,
+                    "width": 342,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 844,
+                  "scrollWidth": 342,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-shell",
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 390,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 0
+                  },
+                  "clientWidth": 390,
+                  "clientHeight": 844,
+                  "scrollWidth": 390,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "hidden",
+                    "overflowY": "hidden",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "stage": "after action focus",
+              "rootFontSize": "14px",
+              "viewport": {
+                "width": 390,
+                "height": 844,
+                "devicePixelRatio": 1
+              },
+              "focusedLabel": null,
+              "close": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 385.5,
+                  "y": 99.8828125,
+                  "width": 25,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 410.5,
+                  "bottom": 126.8828125,
+                  "left": 385.5
+                },
+                "clientWidth": 25,
+                "clientHeight": 27,
+                "scrollWidth": 25,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "grid",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "title": {
+                "tag": "BUTTON",
+                "role": "tab",
+                "rect": {
+                  "x": 132.5,
+                  "y": 99.8828125,
+                  "width": 172.984375,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 305.484375,
+                  "bottom": 126.8828125,
+                  "left": 132.5
+                },
+                "clientWidth": 173,
+                "clientHeight": 27,
+                "scrollWidth": 497,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "112px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "action": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 305.484375,
+                  "y": 101.1328125,
+                  "width": 80.015625,
+                  "height": 24.5,
+                  "top": 101.1328125,
+                  "right": 385.5,
+                  "bottom": 125.6328125,
+                  "left": 305.484375
+                },
+                "clientWidth": 80,
+                "clientHeight": 25,
+                "scrollWidth": 80,
+                "scrollHeight": 25,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "inline-block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "tab": {
+                "tag": "DIV",
+                "role": null,
+                "className": "flow-tab selected",
+                "rect": {
+                  "x": 131.5,
+                  "y": 98.8828125,
+                  "width": 280,
+                  "height": 29,
+                  "top": 98.8828125,
+                  "right": 411.5,
+                  "bottom": 127.8828125,
+                  "left": 131.5
+                },
+                "clientWidth": 278,
+                "clientHeight": 27,
+                "scrollWidth": 278,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "224px",
+                  "maxWidth": "280px",
+                  "flexShrink": "0"
+                }
+              },
+              "strip": {
+                "tag": "DIV",
+                "role": "tablist",
+                "className": "flow-tabs",
+                "rect": {
+                  "x": 52,
+                  "y": 95.8828125,
+                  "width": 334,
+                  "height": 36,
+                  "top": 95.8828125,
+                  "right": 386,
+                  "bottom": 131.8828125,
+                  "left": 52
+                },
+                "clientWidth": 334,
+                "clientHeight": 35,
+                "scrollWidth": 740,
+                "scrollHeight": 35,
+                "scrollLeft": 377.5,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "auto",
+                  "overflowY": "auto",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "ancestors": [
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-tab selected",
+                  "rect": {
+                    "x": 131.5,
+                    "y": 98.8828125,
+                    "width": 280,
+                    "height": 29,
+                    "top": 98.8828125,
+                    "right": 411.5,
+                    "bottom": 127.8828125,
+                    "left": 131.5
+                  },
+                  "clientWidth": 278,
+                  "clientHeight": 27,
+                  "scrollWidth": 278,
+                  "scrollHeight": 27,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "224px",
+                    "maxWidth": "280px",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tablist",
+                  "className": "flow-tabs",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 36,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 131.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 35,
+                  "scrollWidth": 740,
+                  "scrollHeight": 35,
+                  "scrollLeft": 377.5,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-pane-header focused",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 36,
+                  "scrollWidth": 334,
+                  "scrollHeight": 36,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 38,
+                  "scrollWidth": 334,
+                  "scrollHeight": 38,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "auto",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tabpanel",
+                  "className": "flow-chat-groups flow-arc-panes",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 744.1171875,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 840,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 744,
+                  "scrollWidth": 334,
+                  "scrollHeight": 744,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "grid",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-work-area",
+                  "rect": {
+                    "x": 48,
+                    "y": 95.8828125,
+                    "width": 342,
+                    "height": 748.1171875,
+                    "top": 95.8828125,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 748,
+                  "scrollWidth": 342,
+                  "scrollHeight": 748,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "MAIN",
+                  "role": null,
+                  "className": "flow-main",
+                  "rect": {
+                    "x": 48,
+                    "y": 0,
+                    "width": 342,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 844,
+                  "scrollWidth": 342,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-shell",
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 390,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 0
+                  },
+                  "clientWidth": 390,
+                  "clientHeight": 844,
+                  "scrollWidth": 390,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "hidden",
+                    "overflowY": "hidden",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": [
+            "Tab geometry exceeded the shared 16KiB observation cap"
+          ],
+          "screenshot": {
+            "path": "/private/tmp/arc-geometry-observe-v74ta2d0/raw/arc-narrow-failure-390.png",
+            "bytes": 55613
+          }
+        },
+        "narrowTabs": {
+          "tabGeometry": [
+            {
+              "title": "Conversation 6",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 5",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts",
+              "titleWidth": 173,
+              "titleContentWidth": 497,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            }
+          ],
+          "longTitle": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts",
+          "stage": "after keyboard focus reached plugin action"
+        }
+      },
+      "returnReceipt": "/private/tmp/arc-geometry-observe-v74ta2d0/post-cleanup.json",
+      "return": {
+        "at": "2026-10-08T01:52:34.778081+00:00",
+        "run": "arc-geometry-2-20261008-015143",
+        "observations": [
+          {
+            "kind": "PID",
+            "id": 7088,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 7568,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 7571,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 7590,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 7568,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 7571,
+            "state": "ESRCH"
+          },
+          {
+            "path": "/private/tmp/arc-geometry-observe-v74ta2d0/scratch",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+            "state": "ENOENT"
+          }
+        ],
+        "rawClosure": {
+          "contextClosed": true,
+          "httpClosed": true
+        },
+        "parentCleanupErrors": [],
+        "parentScenarioConfirmation": "FAILED",
+        "workerChromeStdoutEOF": true,
+        "workerChromeStderrEOF": true,
+        "parentStdoutEOF": true,
+        "parentStderrEOF": true,
+        "outerStreams": {
+          "stdout": {
+            "file": "parent.stdout.jsonl",
+            "bytes": 1734,
+            "retainedBytes": 1734,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "a3cf95296a5e6cda6a239408e4eb2798c9f2afa4dd693310c02384e62fda6868"
+          },
+          "stderr": {
+            "file": "parent.stderr.log",
+            "bytes": 0,
+            "retainedBytes": 0,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "independentPortProbe": false,
+        "PG": false,
+        "ownedReturn": true
+      }
+    },
+    {
+      "packet": "/private/tmp/arc-geometry-focus-nterbbef",
+      "source": "e14e665e56ee947fa3053939fe0a9beccefd32c0",
+      "executionHead": "6be798109089587de4d3bafcb32bb7720d622ffb",
+      "start": {
+        "run": "arc-geometry-3-20261008-015845",
+        "startedAt": "2026-10-08T01:58:45.184027+00:00",
+        "outerPid": 86037,
+        "parentPid": 86057,
+        "gateSha256": "a4ec107eb7b3177be4d2b88a1a37b92b4182bc6ddd4e471f816a4ee087c9e512"
+      },
+      "accounting": {
+        "at": "2026-10-08T01:59:19.406853+00:00",
+        "logicalId": "ARC-GEOMETRY-CONTINUATION-20261008",
+        "attempt": 3,
+        "outerElapsedMs": 22028.263167012483,
+        "outerPostWriteElapsedMs": 22028.50858401507,
+        "parentElapsedMs": 21986.936083063483,
+        "chargeMs": 22029,
+        "cumulativeMs": 97234,
+        "remainingMs": 172766,
+        "state": "CLOSED_MAX_THREE_ATTEMPTS",
+        "oldCreditTransfer": false
+      },
+      "passed": [
+        "layout-navigation",
+        "three-pane-reads",
+        "prepare-await-stable",
+        "refresh-theme"
+      ],
+      "failure": null,
+      "finalScreenshots": [
+        "/private/tmp/arc-geometry-focus-nterbbef/raw/arc-light-390.png",
+        "/private/tmp/arc-geometry-focus-nterbbef/raw/arc-dark-390.png"
+      ],
+      "observations": {
+        "desktopStage": {
+          "stage": "connected-before-layout-actions",
+          "path": "/private/tmp/arc-geometry-focus-nterbbef/raw/arc-desktop-ready.png",
+          "bytes": 86583,
+          "viewport": {
+            "width": 1500,
+            "height": 960
+          },
+          "at": "2026-10-08T01:58:53.077Z"
+        },
+        "narrowTabDiagnostics": {
+          "snapshots": [
+            {
+              "stage": "after End focus",
+              "rootFontSize": "14px",
+              "viewport": {
+                "width": 390,
+                "height": 844,
+                "devicePixelRatio": 1
+              },
+              "focusedLabel": null,
+              "close": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 360,
+                  "y": 99.8828125,
+                  "width": 25,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 385,
+                  "bottom": 126.8828125,
+                  "left": 360
+                },
+                "clientWidth": 25,
+                "clientHeight": 27,
+                "scrollWidth": 25,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "grid",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "title": {
+                "tag": "BUTTON",
+                "role": "tab",
+                "rect": {
+                  "x": 107,
+                  "y": 99.8828125,
+                  "width": 172.984375,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 279.984375,
+                  "bottom": 126.8828125,
+                  "left": 107
+                },
+                "clientWidth": 173,
+                "clientHeight": 27,
+                "scrollWidth": 497,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "112px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "action": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 279.984375,
+                  "y": 101.1328125,
+                  "width": 80.015625,
+                  "height": 24.5,
+                  "top": 101.1328125,
+                  "right": 360,
+                  "bottom": 125.6328125,
+                  "left": 279.984375
+                },
+                "clientWidth": 80,
+                "clientHeight": 25,
+                "scrollWidth": 80,
+                "scrollHeight": 25,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "inline-block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "tab": {
+                "tag": "DIV",
+                "role": null,
+                "className": "flow-tab selected",
+                "rect": {
+                  "x": 106,
+                  "y": 98.8828125,
+                  "width": 280,
+                  "height": 29,
+                  "top": 98.8828125,
+                  "right": 386,
+                  "bottom": 127.8828125,
+                  "left": 106
+                },
+                "clientWidth": 278,
+                "clientHeight": 27,
+                "scrollWidth": 278,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "224px",
+                  "maxWidth": "280px",
+                  "flexShrink": "0"
+                }
+              },
+              "strip": {
+                "tag": "DIV",
+                "role": "tablist",
+                "className": "flow-tabs",
+                "rect": {
+                  "x": 52,
+                  "y": 95.8828125,
+                  "width": 334,
+                  "height": 36,
+                  "top": 95.8828125,
+                  "right": 386,
+                  "bottom": 131.8828125,
+                  "left": 52
+                },
+                "clientWidth": 334,
+                "clientHeight": 35,
+                "scrollWidth": 740,
+                "scrollHeight": 35,
+                "scrollLeft": 403,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "auto",
+                  "overflowY": "auto",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "ancestors": [
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-tab selected",
+                  "rect": {
+                    "x": 106,
+                    "y": 98.8828125,
+                    "width": 280,
+                    "height": 29,
+                    "top": 98.8828125,
+                    "right": 386,
+                    "bottom": 127.8828125,
+                    "left": 106
+                  },
+                  "clientWidth": 278,
+                  "clientHeight": 27,
+                  "scrollWidth": 278,
+                  "scrollHeight": 27,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "224px",
+                    "maxWidth": "280px",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tablist",
+                  "className": "flow-tabs",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 36,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 131.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 35,
+                  "scrollWidth": 740,
+                  "scrollHeight": 35,
+                  "scrollLeft": 403,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-pane-header focused",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 36,
+                  "scrollWidth": 334,
+                  "scrollHeight": 36,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 38,
+                  "scrollWidth": 334,
+                  "scrollHeight": 38,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "auto",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tabpanel",
+                  "className": "flow-chat-groups flow-arc-panes",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 744.1171875,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 840,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 744,
+                  "scrollWidth": 334,
+                  "scrollHeight": 744,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "grid",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-work-area",
+                  "rect": {
+                    "x": 48,
+                    "y": 95.8828125,
+                    "width": 342,
+                    "height": 748.1171875,
+                    "top": 95.8828125,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 748,
+                  "scrollWidth": 342,
+                  "scrollHeight": 748,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "MAIN",
+                  "role": null,
+                  "className": "flow-main",
+                  "rect": {
+                    "x": 48,
+                    "y": 0,
+                    "width": 342,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 844,
+                  "scrollWidth": 342,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-shell",
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 390,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 0
+                  },
+                  "clientWidth": 390,
+                  "clientHeight": 844,
+                  "scrollWidth": 390,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "hidden",
+                    "overflowY": "hidden",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "stage": "after action focus",
+              "rootFontSize": "14px",
+              "viewport": {
+                "width": 390,
+                "height": 844,
+                "devicePixelRatio": 1
+              },
+              "focusedLabel": null,
+              "close": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 360,
+                  "y": 99.8828125,
+                  "width": 25,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 385,
+                  "bottom": 126.8828125,
+                  "left": 360
+                },
+                "clientWidth": 25,
+                "clientHeight": 27,
+                "scrollWidth": 25,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "grid",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "title": {
+                "tag": "BUTTON",
+                "role": "tab",
+                "rect": {
+                  "x": 107,
+                  "y": 99.8828125,
+                  "width": 172.984375,
+                  "height": 27,
+                  "top": 99.8828125,
+                  "right": 279.984375,
+                  "bottom": 126.8828125,
+                  "left": 107
+                },
+                "clientWidth": 173,
+                "clientHeight": 27,
+                "scrollWidth": 497,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "112px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "action": {
+                "tag": "BUTTON",
+                "role": null,
+                "rect": {
+                  "x": 279.984375,
+                  "y": 101.1328125,
+                  "width": 80.015625,
+                  "height": 24.5,
+                  "top": 101.1328125,
+                  "right": 360,
+                  "bottom": 125.6328125,
+                  "left": 279.984375
+                },
+                "clientWidth": 80,
+                "clientHeight": 25,
+                "scrollWidth": 80,
+                "scrollHeight": 25,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "inline-block",
+                  "position": "static",
+                  "fontSize": "11px",
+                  "lineHeight": "16.5px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "1"
+                }
+              },
+              "tab": {
+                "tag": "DIV",
+                "role": null,
+                "className": "flow-tab selected",
+                "rect": {
+                  "x": 106,
+                  "y": 98.8828125,
+                  "width": 280,
+                  "height": 29,
+                  "top": 98.8828125,
+                  "right": 386,
+                  "bottom": 127.8828125,
+                  "left": 106
+                },
+                "clientWidth": 278,
+                "clientHeight": 27,
+                "scrollWidth": 278,
+                "scrollHeight": 27,
+                "scrollLeft": 0,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "224px",
+                  "maxWidth": "280px",
+                  "flexShrink": "0"
+                }
+              },
+              "strip": {
+                "tag": "DIV",
+                "role": "tablist",
+                "className": "flow-tabs",
+                "rect": {
+                  "x": 52,
+                  "y": 95.8828125,
+                  "width": 334,
+                  "height": 36,
+                  "top": 95.8828125,
+                  "right": 386,
+                  "bottom": 131.8828125,
+                  "left": 52
+                },
+                "clientWidth": 334,
+                "clientHeight": 35,
+                "scrollWidth": 740,
+                "scrollHeight": 35,
+                "scrollLeft": 403,
+                "scrollTop": 0,
+                "style": {
+                  "overflowX": "auto",
+                  "overflowY": "auto",
+                  "clipPath": "none",
+                  "contain": "none",
+                  "transform": "none",
+                  "display": "flex",
+                  "position": "static",
+                  "fontSize": "14px",
+                  "lineHeight": "21px",
+                  "minWidth": "0px",
+                  "maxWidth": "none",
+                  "flexShrink": "0"
+                }
+              },
+              "ancestors": [
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-tab selected",
+                  "rect": {
+                    "x": 106,
+                    "y": 98.8828125,
+                    "width": 280,
+                    "height": 29,
+                    "top": 98.8828125,
+                    "right": 386,
+                    "bottom": 127.8828125,
+                    "left": 106
+                  },
+                  "clientWidth": 278,
+                  "clientHeight": 27,
+                  "scrollWidth": 278,
+                  "scrollHeight": 27,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "224px",
+                    "maxWidth": "280px",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tablist",
+                  "className": "flow-tabs",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 36,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 131.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 35,
+                  "scrollWidth": 740,
+                  "scrollHeight": 35,
+                  "scrollLeft": 403,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "0"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-pane-header focused",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 36,
+                  "scrollWidth": 334,
+                  "scrollHeight": 36,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 38,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 133.8828125,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 38,
+                  "scrollWidth": 334,
+                  "scrollHeight": 38,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "block",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "auto",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": "tabpanel",
+                  "className": "flow-chat-groups flow-arc-panes",
+                  "rect": {
+                    "x": 52,
+                    "y": 95.8828125,
+                    "width": 334,
+                    "height": 744.1171875,
+                    "top": 95.8828125,
+                    "right": 386,
+                    "bottom": 840,
+                    "left": 52
+                  },
+                  "clientWidth": 334,
+                  "clientHeight": 744,
+                  "scrollWidth": 334,
+                  "scrollHeight": 744,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "auto",
+                    "overflowY": "auto",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "grid",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-work-area",
+                  "rect": {
+                    "x": 48,
+                    "y": 95.8828125,
+                    "width": 342,
+                    "height": 748.1171875,
+                    "top": 95.8828125,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 748,
+                  "scrollWidth": 342,
+                  "scrollHeight": 748,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "MAIN",
+                  "role": null,
+                  "className": "flow-main",
+                  "rect": {
+                    "x": 48,
+                    "y": 0,
+                    "width": 342,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 48
+                  },
+                  "clientWidth": 342,
+                  "clientHeight": 844,
+                  "scrollWidth": 342,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "visible",
+                    "overflowY": "visible",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                },
+                {
+                  "tag": "DIV",
+                  "role": null,
+                  "className": "flow-shell",
+                  "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 390,
+                    "height": 844,
+                    "top": 0,
+                    "right": 390,
+                    "bottom": 844,
+                    "left": 0
+                  },
+                  "clientWidth": 390,
+                  "clientHeight": 844,
+                  "scrollWidth": 390,
+                  "scrollHeight": 844,
+                  "scrollLeft": 0,
+                  "scrollTop": 0,
+                  "style": {
+                    "overflowX": "hidden",
+                    "overflowY": "hidden",
+                    "clipPath": "none",
+                    "contain": "none",
+                    "transform": "none",
+                    "display": "flex",
+                    "position": "static",
+                    "fontSize": "14px",
+                    "lineHeight": "21px",
+                    "minWidth": "0px",
+                    "maxWidth": "none",
+                    "flexShrink": "1"
+                  }
+                }
+              ]
+            }
+          ],
+          "errors": []
+        },
+        "narrowTabs": {
+          "tabGeometry": [
+            {
+              "title": "Conversation 6",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 5",
+              "titleWidth": 117,
+              "titleContentWidth": 117,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            },
+            {
+              "title": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts",
+              "titleWidth": 173,
+              "titleContentWidth": 497,
+              "readableMinimum": 112,
+              "titleWhiteSpace": "nowrap",
+              "actionWhiteSpace": "nowrap",
+              "actionLines": 1,
+              "actionHeight": 24.5,
+              "clippedVertically": false
+            }
+          ],
+          "keyboard": "Home/End focused offscreen tabs without selecting; Tab reached retained plugin action; close visible",
+          "longTitle": "Conversation 4 \u2014 retained materials and independent next draft across workspace layouts"
+        }
+      },
+      "returnReceipt": "/private/tmp/arc-geometry-focus-nterbbef/post-cleanup.json",
+      "return": {
+        "at": "2026-10-08T01:59:19.406853+00:00",
+        "run": "arc-geometry-3-20261008-015845",
+        "observations": [
+          {
+            "kind": "PID",
+            "id": 86037,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 86057,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 86060,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PID",
+            "id": 86062,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 86057,
+            "state": "ESRCH"
+          },
+          {
+            "kind": "PGID",
+            "id": 86060,
+            "state": "ESRCH"
+          },
+          {
+            "path": "/private/tmp/arc-geometry-focus-nterbbef/scratch",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+            "state": "ENOENT"
+          },
+          {
+            "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+            "state": "ENOENT"
+          }
+        ],
+        "rawClosure": {
+          "contextClosed": true,
+          "httpClosed": true
+        },
+        "parentCleanupErrors": [],
+        "parentScenarioConfirmation": "PASSED",
+        "workerChromeStdoutEOF": true,
+        "workerChromeStderrEOF": true,
+        "parentStdoutEOF": true,
+        "parentStderrEOF": true,
+        "outerStreams": {
+          "stdout": {
+            "file": "parent.stdout.jsonl",
+            "bytes": 1720,
+            "retainedBytes": 1720,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "0b6c4dda85093b594a1757ccb90a4d704d62467acf9b624f56c81aea19a8eba7"
+          },
+          "stderr": {
+            "file": "parent.stderr.log",
+            "bytes": 0,
+            "retainedBytes": 0,
+            "droppedBytes": 0,
+            "EOF": true,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "independentPortProbe": false,
+        "PG": false,
+        "ownedReturn": true
+      }
+    }
+  ],
+  "local": {
+    "checks": [
+      {
+        "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245",
+        "chargeMs": 3572,
+        "exit": 0
+      },
+      {
+        "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+        "chargeMs": 3187,
+        "exit": 0
+      }
+    ],
+    "spentMs": 6759,
+    "state": "CLOSED_TWO_CHILDREN",
+    "newPaneTabsTypes": "NOT_RUN; local child maximum consumed before e14. Actual Vite mounted e14 passed4groups."
+  },
+  "pairManifests": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/attempt-1-manifest.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/attempt-2-manifest.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/attempt-3-manifest.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/narrow-geometry-20261008/local-manifest.json"
+  ],
+  "pairCount": 106,
+  "uniqueBytes": 2737881,
+  "allPairsHashMatch": true,
+  "sourceDelta": "/private/tmp/arc-geometry-focus-nterbbef/source.diff",
+  "limitations": [
+    "First failed __name passive observer and second shared16KiB diagnostic cap rejection preserved; main error unchanged.",
+    "Second return formed01:52:34 but notification delayed until01:54; third terminal/return notification immediate.",
+    "First Chrome EOFfalse/false; second and third true/true. Parent/outer flags remain separately exact.",
+    "No independent portprobe; fixture context/httpclosed plus exactowned absence is accepted closure boundary.",
+    "Final Close ratio1, title8rem using14px root and original four groups all passed, but owner views horizontal scrollbar crowding text in final390PNG; do not equate functional PASS with full visual acceptance.",
+    "ControlledHTTP Cookie fixture only; no PGcenter security/native/provider/personal. Context/main composition not integrated.",
+    "Prepare-held journalA/Binpage deferred boundary unchanged; not crashB recovery before handoff."
+  ],
+  "cleanCode": {
+    "at": "2026-10-08T02:00:17.674132+00:00",
+    "finding": "Native focus scrolled action only, leaving sibling Close24.5px beyondstrip; two realgeometry snapshots prove horizontal cause.",
+    "fix": "Private direct-child focus handler scrolls only own strip, no selection/state/authority mutation; oversizedtab keeps focused control. IneffectiveCSSscrollpadding removed.",
+    "remaining": "Root final visual decision; no additional source or runtime in this segment."
+  }
+}
