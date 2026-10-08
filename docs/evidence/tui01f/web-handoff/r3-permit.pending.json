@@ -1,0 +1,22 @@
+{
+  "kind": "flow.tui01f04.r3.permit.v1",
+  "ready": false,
+  "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+  "windowId": "flow-tui01f04-20261008-r3",
+  "sourceDigest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+  "inputDigest": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350",
+  "callerDigest": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d",
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "startBefore": null,
+  "freshObservedAt": null,
+  "pgAvailable": null,
+  "preflightPoolClosed": false,
+  "minimumFreshFreeBytes": null,
+  "actualHolder": "NOT_GRANTED",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7
+  },
+  "note": "Not executable. One new resource selection and same-call fresh observations required; only then freeze absent r3-permit.json. Existing R1/R2 permits cannot be reused."
+}
