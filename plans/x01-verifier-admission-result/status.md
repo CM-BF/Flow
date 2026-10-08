@@ -19,7 +19,7 @@
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 57b188f5ee9fce6589160bb61b75891a800bfb6b：真实领域PG5/5、suite成功；8eb输入边界11/11与types0保留；公开verifier装配/worker未验 |
-| Review | PENDING：本次真实PG结果忠实性独审；核心53d、route8eb、v2准备及独立preflight原范围均已批准 |
+| Review | PENDING：本次真实PG结果忠实性独审（result 4702e8e268768e1899ece9ebead117a86fd5cdc7）；核心53d、route8eb、v2准备及独立preflight原范围均已批准 |
 | 已集成 main 状态 / HEAD | NOT_INTEGRATED（本VAR）；AV前置center/client已于97353e4f48ea515d268f6e4a6107e778b6c39abb受控接收，不代表本片main/部署 |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -122,3 +122,5 @@ Mika明确允许先用本树固定组合验证五domain PG；AV main receipt移�
 2026-10-08T00:01:18.667Z：独立grant下23:56:30.037Z entry START，23:56:37.965405Z caller PASSED/CONFIRMED，真实5 selected/5 passed/0fail/0pending。预检59441已关闭，maximum100/current9/available91仅瞬时总空位。59617/59658完整MERGED EOF/终态absent；23:59:27.445Z owner另核外层58488及全部组ESRCH、61230拒连、原TMP exactENOENT，独立preflight TMP五项5230B逐字归档后同identity删除。专库OID1363132同marker/owner、0conn普通DROP ACK+absence，所有owner/pool/admin关闭；retained为空。收尾后无PG/child/待launch。
 
 五例实际counts为5tasks/5attempts/1runner/1registration，fixtureHTTP30/5176B；源产物来自公开流程，安装材料metadata为synthetic，verifier HTTP未挂载/worker未执行。原取消许可、引号首错与全部旧raw/input不变。当前[结果摘要](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/result-summary.json)待独审；完整VAR/X01未完成。自然封存3MiB包含index原子副本，不借旧池。
+
+| VAR-W09 | 2026-10-08T00:01:50.557Z | OPEN | 审查 | 五例真实领域PG结果忠实性增量，固定source不重审 | v2/result-review-ready.json |
