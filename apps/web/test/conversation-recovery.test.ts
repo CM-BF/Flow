@@ -1006,7 +1006,7 @@ describe("versioned creation recovery invariants", () => {
         messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" } } };
     const submit = vi.fn(async () => { throw Error("No turn before explicit submission"); });
     const client = { conversation: vi.fn(async () => snapshot), conversationTurns: vi.fn(async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null })),
-      createConversation: vi.fn(async (body: ConversationCreation, key = "") => { calls.push({ key, body: structuredClone(body) }); if (calls.length === 1) throw Error("ACK lost"); return { conversation: snapshot.conversation, capabilities: snapshot.capabilities }; }),
+      createConversation: vi.fn(async (body: ConversationCreation, key = "") => { calls.push({ key, body: structuredClone(body) }); if (calls.length === 1) throw Error("ACK lost"); return { conversation: snapshot.conversation, capabilities: snapshot.capabilities, replayed: true }; }),
       submitConversationTurn: submit, conversationDetail: submit };
     const projection = new ConversationProjection(client, null); cleanup.push(() => projection.dispose());
     const independent = readRecoveryDraft(recoveryValue({ ...(draft("next untouched body") as object), profile: selected }));
