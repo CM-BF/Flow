@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:58:20.560030+00:00 |
+| 最近更新 | 2026-10-08T01:00:12.951415+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,10 +11,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 实验source49d不变；认证调用链结论340025已main064eb27f；本次仅收口metadata |
+| HEAD | 815f0eaf12c72f4c881b5fa1840857db14f7e0ce 后继 HOME 单因素候选；仅 own evidence/plans，实验产品不变 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 同runtime auth公开false/none/firstParty；准备787ms有原始监督记录。native174ms/exit1/absent及私有427B仅工具回执/派生摘要口径，完整native结构缺失；0新检查，SDK累计3。 |
+| 检查状态 | 公开源码只读段已关闭，固定必要启动/正常认证写链；新 HOME 差集及四字段纯消费者准备中，0 native/auth/query/个人读取。旧 SDK 累计3/费用UNKNOWN。 |
 | Review | 同runtime结果为有record loss的限定批准；调用链结论340025获assignment限定审查，唯一I02 o16-d05-closeout-intake.json，无实际凭据读取/根因批准。 |
 | 实现目标 | 49d35d97e2d5d529d34dc29458ed2d95f2474909 |
 | 实现范围 | experiments/continuous-goal-acceptance |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 认证状态调用链的限定结论已审并接入主线；实际未识别原因仍未知，原生规划尚未通过。 |
-| 下一可用交付 | 本片段已交付；现有公开接口缺少区分底层存储结果的字段，暂无可直接执行的安全诊断选项。 |
-| 当前阻塞 | ACTIVE: 公开状态无法区分存储未返回、读取错误或凭据结构未获认可；原native完整观察链缺失，三次模型额度已用完。 |
+| 当前产出 | 已定位认证状态启动时可能发生的正常刷新及 HOME 辅助写入，正在准备同版本的可见性对照。 |
+| 下一可用交付 | 固定只改变 HOME 的两次公开状态候选及直接正反例；实际认证运行另待明确边界与窗口。 |
+| 当前阻塞 | ACTIVE: 正常 HOME 初始化写入不能套用私有目录容量；实际两个公开状态段尚未授予，原生规划失败原因仍未知。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -133,3 +133,5 @@
 2026-10-07T11:48:46.101508+00:00：[auth status有界源码链](../../docs/evidence/o16/same-runtime-auth-once/status-call-chain-conclusion.md)已收口。32,622B公开摘录/约23秒墙钟；重复minified名称已显式消歧。已核fe→Dc→gn→sK分支没有oauthAccount/onboarding前置门槛，storage值还需accessToken和认可scope；Ln账户信息用于展示。当前false未记录下层读取分类，根因仍UNKNOWN，不据此填配置或改HOME。0native/auth/query/PG/测试/真实配置读取；原失败/覆盖缺口/累计3/KEEP不变，未生成新许可。
 
 2026-10-07T11:58:20.560030+00:00：只读片340025已限定独审/main064eb27f，四输入与权威I02回执逐字同；[诊断边界收口](../../docs/evidence/o16/same-runtime-auth-once/diagnostic-boundary-closeout.md)说明最有区分力的是非秘密storage结果类别，但现固定公开status没有该接口，当前UNSUPPORTED，不重复布尔状态探针或新造框架。本片段delivered，O16-06仍open；0新源码扫描/auth/query/配置读取/工程检查，原3次/费用UNKNOWN/record loss/FAIL/KEEP不变。
+
+2026-10-08T01:00:12.951415+00:00：原 owner 从 2026-10-08T00:47:28.671Z 续接 O16，fresh 815f clean/55c4 v1 exact3 已核。公开源码读取于 00:54:08.755298Z 关闭；[HOME 候选](../../docs/evidence/o16/auth-home-factor-candidate/README.md)及[唯一来源](../../docs/evidence/o16/auth-home-factor-candidate/startup-write-boundary.json)区分正常认证写与未穷尽初始化，不声称共享 HOME 零写或 8MiB 全覆盖。Lead 已明确合法 false/none/firstParty+exit1 及条件性 subscriptionType 缺项语义；原报告首失败不得抹除。当前只实施/检查纯解释与固定 recipe，无 native/auth/query/PG/个人读取；普通上界2短child/累计30s/tmp8MiB/raw128KiB/source256KiB，实际另记。历史任务开始 UNKNOWN、原失败和 KEEP 不变。

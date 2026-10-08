@@ -1,0 +1,178 @@
+{
+  "kind": "O16_PUBLIC_NATIVE_HOME_WRITE_BOUNDARY_READONLY",
+  "startedAt": "2026-10-08T00:47:28.671Z",
+  "sourceReadClosedAt": "2026-10-08T00:54:08.755298+00:00",
+  "worktreeHead": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+  "claim": {
+    "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "freshAt": "2026-10-08T00:47:28.671Z",
+    "scopes": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ]
+  },
+  "native": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+    "bytes": 233260816,
+    "dev": 16777234,
+    "ino": 116957779,
+    "sha256Inherited": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+    "fullHashRecomputed": false,
+    "version": "2.1.290",
+    "sdkVersion": "0.3.290"
+  },
+  "inheritedSource": "../same-runtime-auth-once/source-resolution.json",
+  "inheritedSlicesRechecked": [
+    {
+      "offset": 183946121,
+      "bytes": 8000,
+      "sha256": "94d2c9f2abf015869fb6e8ee9ab701040d4c0cc91d4eff13fa70d8b59245ae90",
+      "currentMatches": true
+    },
+    {
+      "offset": 183953900,
+      "bytes": 7600,
+      "sha256": "df6a39ec5f7e4da601e40aefab639123ed5d29b0f93dc4cf25c935ef4afb0970",
+      "currentMatches": true
+    },
+    {
+      "offset": 181929121,
+      "bytes": 600,
+      "sha256": "8c45437ea531a91b2b45ba97ea6d2c278718128b68208a54d88b6d91cee8b9bc",
+      "currentMatches": true
+    }
+  ],
+  "publicSourceReferences": [
+    {
+      "label": "auth registration",
+      "offset": 199688000,
+      "bytes": 2800,
+      "sha256": "068a1bd7d52ae88092a86411e595ffe0ee1cae75f8b34fded022013e7f76850e"
+    },
+    {
+      "label": "preAction initialization",
+      "offset": 199650607,
+      "bytes": 1600,
+      "sha256": "ba43a1f426583b5a7ec276dc2de81de4527f2c200bc150c82178010d6d614253"
+    },
+    {
+      "label": "shared startup H",
+      "offset": 198420258,
+      "bytes": 5200,
+      "sha256": "4f3dc778ccfd174bf881c6aed28b99126cdb3b8675b8209574df313d541893f6"
+    },
+    {
+      "label": "subcommand root",
+      "offset": 208388853,
+      "bytes": 90,
+      "sha256": "5d23a1a312fe470eaa8568e752af34af311c0fc5558441d51cfd7292d2c50a1b"
+    },
+    {
+      "label": "terminal renderer",
+      "offset": 200040182,
+      "bytes": 430,
+      "sha256": "7a368d8ec3ce56e92f57dc1ce1f44f3b86e889015910334f5cc2b4f9742dc26f"
+    },
+    {
+      "label": "config root we",
+      "offset": 181809420,
+      "bytes": 510,
+      "sha256": "943c340076cf2decbeea03a115ea19713bcaadb8f6c6bddbedff18e36a0454ef"
+    },
+    {
+      "label": "global config qgr",
+      "offset": 181929121,
+      "bytes": 600,
+      "sha256": "8c45437ea531a91b2b45ba97ea6d2c278718128b68208a54d88b6d91cee8b9bc"
+    },
+    {
+      "label": "oauth populate refresh",
+      "offset": 184899647,
+      "bytes": 1700,
+      "sha256": "e7fe984fb6f1fb3032f2cd96449b5e9c768320ee447c4a79734a5f6fb154af3e"
+    },
+    {
+      "label": "refresh decision",
+      "offset": 184861797,
+      "bytes": 2500,
+      "sha256": "3849e4e80ee2413fd6db9ef2d40d64ed862b98bc9dda079150fdd1e736677080"
+    },
+    {
+      "label": "refresh lock paths",
+      "offset": 184859467,
+      "bytes": 1400,
+      "sha256": "47e77a3a0b50d0077e9aa29616f20b44f3d260561cfba12f8c3eb44137f207da"
+    },
+    {
+      "label": "refresh update",
+      "offset": 184864200,
+      "bytes": 2300,
+      "sha256": "a3831cbc22b8bb06e849d8244c36b8283aeddb5e2b7c9411138883af33a5c212"
+    },
+    {
+      "label": "secure storage Jb/VN/iT",
+      "offset": 183947170,
+      "bytes": 950,
+      "sha256": "719326dd990c0b8c7c8e14e7affb8c4017fb5ca328c22eadf807f29621ade20d"
+    },
+    {
+      "label": "storage mutation lock",
+      "offset": 183951086,
+      "bytes": 950,
+      "sha256": "6685dbceb34f86e13f98a644e184991c306640ff37be7e4d9215694e6ca4cf9a"
+    },
+    {
+      "label": "storage fallback policy",
+      "offset": 183951900,
+      "bytes": 1300,
+      "sha256": "dae3a749d372d4ff59f359021ab681c9705ea3f7de151c43f38a7fe74a845a13"
+    },
+    {
+      "label": "file storage paths/write",
+      "offset": 183957007,
+      "bytes": 1050,
+      "sha256": "adb78061728604b69629442f9b12da14f61e8e5e8e1445437fa8aa49e0d3ee9e"
+    },
+    {
+      "label": "private firstStart config",
+      "offset": 184772314,
+      "bytes": 900,
+      "sha256": "9343fbf545c3476d8c1fab6c98858a2835183c6fd75f8b1a3528028df77a0825"
+    },
+    {
+      "label": "private machineID config",
+      "offset": 184771282,
+      "bytes": 420,
+      "sha256": "a9462c5730bba8398aca94f6e045242ae0799466853f2434a2ff64f005ed22f9"
+    },
+    {
+      "label": "refresh owner record",
+      "offset": 184253266,
+      "bytes": 820,
+      "sha256": "4fdd305df10bbab671408caef9f9e0352430647d3211638a65a9584adfeea9d7"
+    }
+  ],
+  "referenceBytes": 25520,
+  "excerptBodiesArchived": false,
+  "discoveryQualification": "Bounded public-byte searches included minified-name collisions; only resolved auth/startup references listed here support conclusions. No assertion of exhaustive bundle side-effect closure.",
+  "runtime": {
+    "nativeCalls": 0,
+    "authStatusCalls": 0,
+    "SDKQueryCalls": 0,
+    "credentialReadsByCaller": 0,
+    "actualHomeReadsByCaller": 0,
+    "privateConfigReadsByCaller": 0,
+    "newRuntimeNamespaceCreated": false
+  },
+  "conclusion": "Known HOME-dependent normal refresh paths identified; full initialization write closure and actual trigger remain UNKNOWN. Candidate not approved for execution.",
+  "methods": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Reuse existing public parser/environment/supervisor; separate observation from native auth authority; no generic framework or credential export. Local installed skills reused, no installation."
+  }
+}
