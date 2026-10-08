@@ -60,6 +60,14 @@ def selection_and_processes():
 
 
 def failure_archive():
+    # Distinct T2/T3 must each own one pair; duplicating T2 cannot hide an unknown T3.
+    logs, fixture, _ = sample()
+    fixture['facts'][2]['outcomes'][1] = copy.deepcopy(fixture['facts'][2]['outcomes'][0])
+    notices = candidate.worker_notices(logs['runner-verifier.log']); notices[3]['resourceState'] = 'unknown'
+    logs['runner-verifier.log'] = ('\n'.join(json.dumps(n) for n in notices) + '\n').encode()
+    fixture['facts'][1]['processes'][2].update(outputBytes=len(logs['runner-verifier.log']),
+        logSha256=candidate.digest(logs['runner-verifier.log']))
+    assert not candidate.process_evidence(fixture, logs)
     # This tree is a new child fixture inside the supervisor's registered owned TMP.
     root = Path(os.environ['TMPDIR']) / 'archive'; root.mkdir()
     run = root / 'run'; run.mkdir(); temporary = root / 'temporary'; temporary.mkdir()
@@ -96,7 +104,7 @@ def failure_archive():
         if path.is_dir(): path.rmdir()
         else: path.unlink()
     root.rmdir()
-    print(json.dumps({'group': 'archive', 'assertionScenarios': 12, 'passed': True}))
+    print(json.dumps({'group': 'archive-and-distinct-workers', 'assertionScenarios': 13, 'passed': True}))
 
 
 if __name__ == '__main__':

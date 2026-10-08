@@ -140,7 +140,11 @@ def process_evidence(fixture_result, archived):
             or any(process.get(key) is not True for key in ('closed', 'stdoutEof', 'stderrEof'))
             or process.get('outputBytes') != len(raw) or process.get('logSha256') != digest(raw)): return False
     outcomes = business[0]['outcomes']; notices = worker_notices(archived['runner-verifier.log'])
-    if len(outcomes) != 2 or len(notices) != 4 or len(set(business[0]['taskIds'])) != 3: return False
+    task_ids = business[0]['taskIds']
+    if (not isinstance(task_ids, list) or len(task_ids) != 3
+        or any(not isinstance(task, str) or not task or len(task) > 128 for task in task_ids)
+        or len(set(task_ids)) != 3 or len(outcomes) != 2 or len(notices) != 4
+        or [outcome['taskId'] for outcome in outcomes] != task_ids[1:]): return False
     identity = ('taskId', 'attemptId', 'ownerVersion', 'bindingId', 'invocationId')
     for outcome in outcomes:
         pair = [notice for notice in notices if notice['taskId'] == outcome['taskId']]
@@ -276,6 +280,7 @@ def main():
         report['temporary'] = {'path': str(temporary), 'dev': item.st_dev, 'ino': item.st_ino, 'removed': False}
         temporary = temporary.resolve(); assert_directory(temporary, identity)
         report['temporary']['path'] = str(temporary)
+        write('temporary-reservation.json', report['temporary'])
         for name in ['fixtures', 'cache', 'tmp']: (temporary / name).mkdir(mode=0o700)
         env = pg_environment(temporary, window, head, int((wall + limits['workSeconds']) * 1000), int((wall + limits['workSeconds'] + limits['cleanupSeconds']) * 1000))
         if time.monotonic() - started >= 15: raise TimeoutError('PG start cutoff after reservation')
@@ -289,6 +294,10 @@ def main():
         # Preserve independent readable evidence before classifying any missing or malformed receipt.
         archived, archive_failures = archive_existing(temporary, identity, RUN, run_identity, write, deadline)
         archive_failures = output_failure + archive_failures
+        for name, value in archived.items():
+            if name.startswith('runtime-stage-') and (not isinstance(value, dict) or any(value.get(k) != v
+                    for k, v in {'window': window, 'sourceHead': head, 'suite': 'runtime'}.items())):
+                archive_failures.append({'file': name, 'code': 'STAGE_IDENTITY_MISMATCH'})
         report['archiveFailures'] = archive_failures
         report['firstFailure'] = process.get('first_failure')
         report['secondaryFailures'] = list(process.get('secondary_failures', []))
