@@ -1,0 +1,33 @@
+{
+  "pid": 92841,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 78,
+  "stdout": "{\"selected\": 12, \"passed\": 12, \"nativeCalls\": 0, \"queryCalls\": 0, \"personalReads\": 0}\n",
+  "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+  "observed_bytes": 197,
+  "retained_bytes": 197,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

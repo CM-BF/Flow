@@ -1,0 +1,89 @@
+{
+  "kind": "O16_HOME_FACTOR_SOURCE_AND_PURE_RECIPE_PREPARATION",
+  "source": "c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/README.md",
+      "bytes": 5279,
+      "sha256": "3d36fe95d1c6687cbbf402a7662c71e3e762b61bb571a302119e34d4a7c880b9"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/startup-write-boundary.json",
+      "bytes": 6062,
+      "sha256": "f001e384b29b9d90a66499b4f6e404e51cb5a60021f49d62f1349908c3f2d28f"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "bytes": 4096,
+      "sha256": "cc4d0576d1f8e9ee7c3c5aa66e0f9ad0bb4104a859ada79a232af70affba5cb6"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/home_factor_test.py",
+      "bytes": 6737,
+      "sha256": "2c49c3ab2b0f9c42375ea1c070f04629863a8d4b829181aa1d9b2483552741db"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/prepare.mjs",
+      "bytes": 2003,
+      "sha256": "8bed0ee086e2059e5d05aabcaaf993a7085407a88d39d123f450111e65f1dcb2"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/prepare.test.mjs",
+      "bytes": 990,
+      "sha256": "7baed447e4a1a4312655e6fcb054385c9c4ed1249e1708b567182d26fc1e8bdd"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-result.json",
+      "bytes": 1571,
+      "sha256": "55b720f5aed1412b257d77d57d6f03aafb9d683426aea656eaf1042799f3543d"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-01/reservation.json",
+      "bytes": 6705,
+      "sha256": "be2c51681f89fc4d140b69ad60dd2e582979d616aae24a146e3361243c119afd"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-01/outer.json",
+      "bytes": 759,
+      "sha256": "7079446e22a9492bce7302d9294d725cdffd90b2a3eb49323268f07878ca5e74"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-01/result.json",
+      "bytes": 341,
+      "sha256": "036d8bb481956b3643ff0362eae6695c674dada2decf0a74adb3e840f24d1fc7"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-02/reservation.json",
+      "bytes": 6808,
+      "sha256": "bd9a7dd2edd22fcb8e80c110ff0c13682793eb7cccb847972e42e3ed9ba23db3"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-02/outer.json",
+      "bytes": 812,
+      "sha256": "aabc222fe05e84161b4b4584c9b749482e076fb7d9ff2f2981f600f2ddd2813d"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/local-02/result.json",
+      "bytes": 343,
+      "sha256": "3e9f083273d504037378a35f5b48d0e32536e2a690b6371033d712b8b33f004d"
+    }
+  ],
+  "bindingCount": 13,
+  "bindingBytes": 42506,
+  "inherits": [
+    {
+      "commit": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "path": "docs/evidence/o16/same-runtime-auth-once/source-resolution.json"
+    },
+    {
+      "commit": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "path": "docs/evidence/o16/same-runtime-auth-once/status-call-chain-conclusion.md"
+    },
+    {
+      "commit": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "path": "docs/evidence/o16/same-runtime-auth-candidate/run.py"
+    }
+  ],
+  "scope": "13 pure consumers plus bounded public source route only; no actual auth execution/normal HOME access or cause proof",
+  "next": "Fix finite actual caller/resource and accepted normal-auth initialization write boundary; no executable run grant exists here."
+}

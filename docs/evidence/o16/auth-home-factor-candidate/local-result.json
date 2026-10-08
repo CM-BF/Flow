@@ -1,0 +1,41 @@
+{
+  "kind": "O16_HOME_FACTOR_PURE_PREPARATION_RESULT",
+  "source": "c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c",
+  "actualStart": "2026-10-08T01:01:10.702106+00:00",
+  "actualReturn": "2026-10-08T01:01:10.886877Z",
+  "distinct": 13,
+  "selections": 13,
+  "rounds": [
+    {
+      "path": "local-01",
+      "selected": 12,
+      "passed": 12,
+      "elapsedMs": 78,
+      "rawBytes": 197
+    },
+    {
+      "path": "local-02",
+      "selected": 1,
+      "passed": 1,
+      "elapsedMs": 101,
+      "rawBytes": 229,
+      "qualification": "The initial postprocessor expected TAP but fixed Node produced spec reporter. Original result.passed=null remains. This count is read from the unchanged stdout tests1/pass1/fail0/skipped0, not a new run."
+    }
+  ],
+  "elapsedMs": 179,
+  "rawBytes": 426,
+  "supervisedGroupsAbsent": 2,
+  "dualEOF": 2,
+  "exactEmptyScratchRemoved": 2,
+  "pendingLaunches": 0,
+  "nativeAuthPGProviderPersonalCalls": 0,
+  "actualAuthenticationContrast": "NOT_RUN",
+  "actualCallerBinding": "PENDING_EXECUTION_BOUNDARY; no executable auth-run dispatch in this packet",
+  "sharedHomeWrites": "NOT_MEASURED; not covered by private byte bound",
+  "originalFailureRecordsChanged": false,
+  "cleanCodeReview": {
+    "at": "2026-10-08T01:03:01.779116+00:00",
+    "scope": "pure policy, real recipe consumer, source interpretation",
+    "result": "Small interface preserves original failure and missing-field distinctions; no native/process authority in policy. No generic supervisor or credential reader. Actual launch/cleanup not validated by pure cases."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-08T01:01:10.702106+00:00",
+  "source": "c5fc960fc",
+  "scope": "pure HOME env and public parser only; no native/auth/PG/personal",
+  "argv": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor_test.py",
+    "--selected-home-factor"
+  ],
+  "selected": 12,
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "bytes": 4096,
+      "sha256": "cc4d0576d1f8e9ee7c3c5aa66e0f9ad0bb4104a859ada79a232af70affba5cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor_test.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor_test.py",
+      "bytes": 6737,
+      "sha256": "2c49c3ab2b0f9c42375ea1c070f04629863a8d4b829181aa1d9b2483552741db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.mjs",
+      "bytes": 2003,
+      "sha256": "8bed0ee086e2059e5d05aabcaaf993a7085407a88d39d123f450111e65f1dcb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/prepare.test.mjs",
+      "bytes": 990,
+      "sha256": "7baed447e4a1a4312655e6fcb054385c9c4ed1249e1708b567182d26fc1e8bdd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "bytes": 3376,
+      "sha256": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.mjs",
+      "bytes": 8332,
+      "sha256": "c49ee75a6d5b9c79c8be651fe08eed3d6a3cf8819d703f69f034abd222731c54"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 8494,
+      "sha256": "c6f296f43224a2380a5f03be395745084da400dd232d783b6176aee11ef881d9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 6411,
+      "sha256": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0"
+    }
+  ],
+  "queueAt": "2026-10-08T01:00:17.834Z",
+  "queueState": "ARC_TOOLTIP_BETWEEN_ATTEMPTS",
+  "baseFloorBytes": 13547732992,
+  "unlistedIncrementBytes": 8388608,
+  "freshFloorBytes": 13556121600,
+  "freeBytes": 14637920256,
+  "ordinaryParallelAuthority": "Lead 00:56; isolated ARC may coexist",
+  "scratch": {
+    "path": "/private/tmp/flow-o16-home-pure-fpt9zk21",
+    "dev": 16777234,
+    "ino": 124697347
+  },
+  "policy": {
+    "work_seconds": 10,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 65536
+  }
+}

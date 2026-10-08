@@ -81,3 +81,7 @@ assignment_review完成唯一限定审查，无新P1/P2；main `62e9a83923a3c299
 ## 2026-10-07T11:58:20.560030+00:00 调用链只读片已main
 
 固定340025的限定源码结论由assignment_review独审；main064eb27fb473f7c6c8995510c8828d922fb35ab9中唯一 `docs/evidence/i02/o16-d05-closeout-intake.json` 记录APPROVED_LIMITED_METADATA_INTAKE，无finding。本次核其四O16输入的fixed/current/hash一致，不复制review原文；[收口与可用性边界](../../docs/evidence/o16/same-runtime-auth-once/diagnostic-boundary-closeout.md)。该批准不覆盖实际凭据读取、根因或新认证执行；O16-06仍open。
+
+## 2026-10-08T01:03:01.782127+00:00 HOME单因素公开源码与纯策略待审
+
+source `c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c`；[唯一manifest](../../docs/evidence/o16/auth-home-factor-candidate/manifest.json)只含公开源码定位、纯结果解释和实际环境recipe消费者。13不同/两监督组/179ms/426B，Node首次postprocessor计数未识别spec格式的原passed:null保留，固定原stdout支持1/1。无native/auth/query/PG/个人读取；正常认证HOME写不受private8MiB覆盖，全初始化写闭包UNKNOWN，实际caller dispatch未绑定。请独立审查缺项/exit1精确例外不掩盖其它失败、HOME唯一差集与原四字段parser复用；作者未自批。
