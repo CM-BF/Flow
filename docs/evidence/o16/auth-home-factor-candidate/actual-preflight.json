@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-08T01:22:53.285209+00:00",
+  "head": "1cbf3c75e52ea582bd1ce314ea394bd4fe111f0c",
+  "source": "8ab064493edc42408e219ac058d0eb42e726baf6",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ],
+    "state": "active",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "origin": "new",
+    "taskId": "O16",
+    "worker": "native_center_owner",
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "createdAt": "2026-10-07T09:00:26.182Z",
+    "updatedAt": "2026-10-07T09:00:26.182Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "queueAt": "2026-10-08T01:21:52.717Z",
+  "queueState": "O16_HOME_FACTOR_SELECTED_NOT_STARTED",
+  "grant": {
+    "logicalId": "O16-HOME-FACTOR-PUBLIC-STATUS-ONCE",
+    "state": "SELECTED",
+    "preparationSHA256": "ab90290d86ace8632b30491fc1c8efd95ceda49e919896b8c35ac0679d921e77",
+    "normalAuthenticationWritesAccepted": true,
+    "claim": {
+      "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "worker": "native_center_owner",
+      "branch": "codex/continuous-native-goal-acceptance"
+    },
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "selectedAt": "2026-10-08T01:21:52.717Z",
+    "latestStart": "2026-10-08T01:25:52.717Z",
+    "minimumFreshFreeBytes": 13562019840
+  },
+  "preparationSHA256": "ab90290d86ace8632b30491fc1c8efd95ceda49e919896b8c35ac0679d921e77",
+  "pinsVerified": 20,
+  "freeBytes": 14581121024,
+  "minimumFreshFreeBytes": 13562019840,
+  "namespaceAbsent": true,
+  "authOccupancy": "Lead confirmed Mika 0native/auth writer and 45s no new auth; D01 Arc paused; current actualHolder/currentActual null",
+  "scope": "2 native public auth status max; 0 query/PG/personal service or direct credential read",
+  "pid": 58319
+}

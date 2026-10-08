@@ -1,0 +1,74 @@
+{
+  "kind": "O16_HOME_FACTOR_PUBLIC_STATUS_ACTUAL_RESULT",
+  "source": "8ab064493edc42408e219ac058d0eb42e726baf6",
+  "recipeSource": "c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c",
+  "dispatchHead": "1cbf3c75e",
+  "startedAt": "2026-10-08T01:22:53.287091Z",
+  "nativeCompletedBy": "2026-10-08T01:22:54.797597+00:00",
+  "resourcesReturnedAt": "2026-10-08T01:23:21.418466+00:00",
+  "outer": {
+    "exitCode": 0,
+    "elapsedMs": 1359,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    }
+  },
+  "cases": [
+    {
+      "case": "A",
+      "publicStatus": {
+        "loggedIn": false,
+        "authMethod": "none",
+        "apiProvider": "firstParty"
+      },
+      "missingFields": [
+        "subscriptionType"
+      ],
+      "exitCode": 1,
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "expectedNegativeStatus": true,
+      "elapsedMs": 170,
+      "observedOutputBytes": 281
+    },
+    {
+      "case": "B",
+      "publicStatus": {
+        "loggedIn": true,
+        "authMethod": "claude.ai",
+        "apiProvider": "firstParty",
+        "subscriptionType": "pro"
+      },
+      "missingFields": [],
+      "exitCode": 0,
+      "firstFailure": null,
+      "expectedNegativeStatus": false,
+      "elapsedMs": 140,
+      "observedOutputBytes": 367
+    }
+  ],
+  "actualNativeStatusCommands": 2,
+  "actualSDKQueriesThisSegment": 0,
+  "historicalSDKQueries": 3,
+  "fourthQueryAuthorized": false,
+  "nativeOutputStoredOrHashed": false,
+  "sourceAndRecipeInvariant": "same fixed SDK0.3.290/native2.1.290; samecwd/config/tmp/USER/secure override; env difference HOME only",
+  "supportedConclusion": "Current fixed public status differed across the sequential HOME contexts.",
+  "limitations": [
+    "A may perform normal shared authentication refresh before B; not a pure causal experiment.",
+    "B public loggedIn and subscription are not provider/model account eligibility or a successful query.",
+    "No Keychain/credential/configuration body read, copy, symlink or caller edit.",
+    "No retroactive attribution to R1/R2/R3, prior status native-record loss not repaired.",
+    "Shared normal HOME/Keychain changes are not asserted to fit private8MiB; normal native initialization/refresh was authorized.",
+    "Original unknown/errno1 observations remain in supervisor records; only final absent and later explicit ESRCH support RETURN."
+  ],
+  "private": "KEEP427B observed,8192 allocated; no body inspection or deletion",
+  "state": "PUBLIC_STATUS_OBSERVED_PENDING_LIMITED_FIDELITY_REVIEW"
+}

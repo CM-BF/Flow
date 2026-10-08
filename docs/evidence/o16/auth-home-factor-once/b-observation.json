@@ -1,0 +1,57 @@
+{
+  "pid": 60441,
+  "ownership": "newChildSession",
+  "exit_code": 0,
+  "elapsed_ms": 140,
+  "observed_bytes": 367,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "publicStatus": {
+    "loggedIn": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty",
+    "subscriptionType": "pro"
+  },
+  "missingFields": [],
+  "decision": "CONTINUE",
+  "expectedNegativeStatus": false,
+  "case": "B",
+  "at": "2026-10-08T01:22:54.797013+00:00",
+  "privateMeasurement": {
+    "state": "complete",
+    "logical_bytes": 427,
+    "allocated_bytes": 8192,
+    "entries": 7,
+    "regular_files": 2,
+    "directories": 6,
+    "symlinks": 0,
+    "vanished_entries": 0,
+    "elapsed_seconds": 0.00028549996204674244,
+    "issueCode": null
+  },
+  "privateWithinBound": true,
+  "rawArchivedOrHashed": false,
+  "sharedHomeOrKeychainWithinPrivateBudget": false,
+  "queryCalls": 0,
+  "cleanup": "KEEP"
+}

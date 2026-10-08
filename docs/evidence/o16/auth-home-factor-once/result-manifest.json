@@ -1,0 +1,105 @@
+{
+  "kind": "O16_HOME_FACTOR_ACTUAL_SAFE_RESULT_MANIFEST",
+  "source": "8ab064493edc42408e219ac058d0eb42e726baf6",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-grant.json",
+      "bytes": 632,
+      "sha256": "b48a93880b625ef35c13051528a1155e82d5da512d34c92f5c72a1ace30d7a11"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/actual-preflight.json",
+      "bytes": 2116,
+      "sha256": "c700abb0b3470643337cd0cf934ef4b58b089f167db57bb0be216774bfc8f04f"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/a-consumed.json",
+      "bytes": 419,
+      "sha256": "ded6652c6567c0619c83ab827286ed712b86502036c3a1152b670d903f9bd101"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/a-observation.json",
+      "bytes": 1328,
+      "sha256": "9cc77994bade97e25a67e8f10c91b660f00202851aa91a65570c0e40fdcb3c4f"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/b-consumed.json",
+      "bytes": 419,
+      "sha256": "f4039dc8d49c6850b2e34167f8ef218658484b551962093585b083291b764ddc"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/b-observation.json",
+      "bytes": 1193,
+      "sha256": "4c334c632f6bf57e8a6abc03144fe4660f3319f61c119462d584333ccded61b2"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/case-disposition.json",
+      "bytes": 357,
+      "sha256": "876cbd2f12967e57558519c9e0a63c00a05794ca488935529213cff22c444dbe"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/home-difference.json",
+      "bytes": 605,
+      "sha256": "96fa7b77ba3fe22a512f22a2f8b74f49235b0c2632420af8fa291c7a10cc6707"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/outer-reservation.json",
+      "bytes": 924,
+      "sha256": "2052cd1aef3978fa04acf8f445b7256dbf0d15acffda7e5cf507ee2825578daa"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/outer-result.json",
+      "bytes": 463,
+      "sha256": "2bd11f45b85853a355c80c5b6915db9bba0a7a5b2244dfe48ad9137473ca2533"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/preparation-result.json",
+      "bytes": 463,
+      "sha256": "53ba59bbe23dfbdefbf08f08ce65d910101347ea0e16e738e3e5e8c0c607349a"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/prepared.json",
+      "bytes": 3381,
+      "sha256": "031443724ba93b0cdfe259844546dd29c140677dde509894b7a627d15f6f2efb"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/reservation.json",
+      "bytes": 389,
+      "sha256": "9aade81de0dbf6841fcb3da8e89eeb25b5c322abe83820b9d8c7f30b5b070060"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/result-analysis.json",
+      "bytes": 2677,
+      "sha256": "be3cc1317917f9a4378a9656dcd66c457c2a955dd3a1d545b418e7cfcd6be127"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/window-return.json",
+      "bytes": 2002,
+      "sha256": "d9a91c7fb9b5d10643f817f202d1969e89c500c0ff1e18dc4fd6e1bffeebe875"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-once/worker-consumed.json",
+      "bytes": 94,
+      "sha256": "d1f03e922733c7c3b1a34ba83f4cc9466a8482f7836d8cf924c8703cfca3db27"
+    }
+  ],
+  "bindingCount": 16,
+  "bindingBytes": 17462,
+  "inherits": [
+    {
+      "commit": "da1a74a30abe22befc6fc17ace0784eb4c8f48e2",
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-manifest.json",
+      "bytes": 2727,
+      "sha256": "778a21937d6ef7f6907d46cf51c33f911e2fd276c47ee9237bf8fe6139222253"
+    },
+    {
+      "commit": "8ab064493edc42408e219ac058d0eb42e726baf6",
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-preparation.json",
+      "bytes": 13247,
+      "sha256": "ab90290d86ace8632b30491fc1c8efd95ceda49e919896b8c35ac0679d921e77"
+    }
+  ],
+  "boundary": "Only public 4-field auth results and original supervised metadata; native raw output is neither stored nor hashed; private root contents excluded",
+  "resources": "5PIDs+3groups absent and all EOF; private KEEP; no query/auth retry or old resource action",
+  "review": "PENDING_LIMITED_RESULT_FIDELITY"
+}

@@ -1,0 +1,28 @@
+{
+  "keys": [
+    "CLAUDE_AGENT_SDK_VERSION",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC",
+    "CLAUDE_CODE_ENTRYPOINT",
+    "CLAUDE_CODE_SDK_READS_SESSION_STATE",
+    "CLAUDE_CONFIG_DIR",
+    "CLAUDE_SECURESTORAGE_CONFIG_DIR",
+    "CLAUDE_TMPDIR",
+    "DISABLE_AUTOUPDATER",
+    "DISABLE_TELEMETRY",
+    "HOME",
+    "LANG",
+    "PATH",
+    "TMPDIR",
+    "USER"
+  ],
+  "differentKeys": [
+    "HOME"
+  ],
+  "caseOrder": [
+    "A_PRIVATE_HOME",
+    "B_NORMAL_HOME"
+  ],
+  "sameCwd": "/private/tmp/flow-o16-home-factor-c3ltj349",
+  "sharedStateMayChangeBetweenCases": true,
+  "causalAttribution": false
+}

@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-08T01:23:21.418466+00:00",
+  "logicalId": "O16-HOME-FACTOR-PUBLIC-STATUS-ONCE",
+  "state": "ACTUAL_RESOURCES_RETURNED_PUBLIC_STATUS_OBSERVED",
+  "observations": [
+    {
+      "kind": "operator",
+      "pid": 58319,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "outer-result.json",
+      "pid": 59064,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "preparation-result.json",
+      "pid": 59210,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "a-observation.json",
+      "pid": 60134,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "b-observation.json",
+      "pid": 60441,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "preparation-result.json-group",
+      "pgid": 59210,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "a-observation.json-group",
+      "pgid": 60134,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "kind": "b-observation.json-group",
+      "pgid": 60441,
+      "state": "absent",
+      "errno": 3
+    }
+  ],
+  "supervisorDualEOF": true,
+  "nativeCommands": 2,
+  "queryCalls": 0,
+  "PG": 0,
+  "personalServiceOperations": 0,
+  "pendingLaunches": 0,
+  "rawNativeOutputArchivedOrHashed": false,
+  "private": {
+    "disposition": "KEEP",
+    "logicalBytesObserved": 427,
+    "allocatedBytesObserved": 8192,
+    "scope": "own private only; not shared HOME or Keychain"
+  },
+  "public": {
+    "A": {
+      "loggedIn": false,
+      "authMethod": "none",
+      "apiProvider": "firstParty"
+    },
+    "A_missingFields": [
+      "subscriptionType"
+    ],
+    "A_exit": 1,
+    "A_expectedNegative": true,
+    "B": {
+      "loggedIn": true,
+      "authMethod": "claude.ai",
+      "apiProvider": "firstParty",
+      "subscriptionType": "pro"
+    },
+    "B_exit": 0
+  },
+  "limits": "HOME-only sequential observation; A may alter shared auth before B; no causal or query qualification claim; historical 3 SDK queries unchanged"
+}

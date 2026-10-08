@@ -1,0 +1,80 @@
+{
+  "binding": {
+    "kind": "flow.o16.native-environment.v1",
+    "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "recipeDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+    "phaseRoot": {
+      "path": "/private/tmp/flow-o16-home-factor-c3ltj349",
+      "dev": "16777234",
+      "ino": "124708578"
+    },
+    "nativeRoot": {
+      "path": "/private/tmp/flow-o16-home-factor-c3ltj349/native",
+      "dev": "16777234",
+      "ino": "124708582"
+    },
+    "folders": {
+      "home": {
+        "path": "/private/tmp/flow-o16-home-factor-c3ltj349/native/home",
+        "dev": "16777234",
+        "ino": "124708583"
+      },
+      "config": {
+        "path": "/private/tmp/flow-o16-home-factor-c3ltj349/native/config",
+        "dev": "16777234",
+        "ino": "124708584"
+      },
+      "tmp": {
+        "path": "/private/tmp/flow-o16-home-factor-c3ltj349/native/tmp",
+        "dev": "16777234",
+        "ino": "124708585"
+      }
+    },
+    "username": "citrine",
+    "runtime": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+        "bytes": 2546,
+        "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+        "dev": "16777234",
+        "ino": "116955756"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+        "bytes": 1230597,
+        "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+        "dev": "16777234",
+        "ino": "116955906"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+        "bytes": 233260816,
+        "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+        "dev": "16777234",
+        "ino": "116957779"
+      }
+    ]
+  },
+  "environment": {
+    "HOME": "/private/tmp/flow-o16-home-factor-c3ltj349/native/home",
+    "CLAUDE_CONFIG_DIR": "/private/tmp/flow-o16-home-factor-c3ltj349/native/config",
+    "TMPDIR": "/private/tmp/flow-o16-home-factor-c3ltj349/native/tmp",
+    "CLAUDE_TMPDIR": "/private/tmp/flow-o16-home-factor-c3ltj349/native/tmp",
+    "CLAUDE_SECURESTORAGE_CONFIG_DIR": "",
+    "USER": "citrine",
+    "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+    "LANG": "C.UTF-8",
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_ENTRYPOINT": "sdk-ts",
+    "CLAUDE_AGENT_SDK_VERSION": "0.3.290",
+    "CLAUDE_CODE_SDK_READS_SESSION_STATE": "1"
+  },
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "sourceFiles": 324,
+  "aliases": 39,
+  "SDKImports": 0,
+  "queryCalls": 0
+}
