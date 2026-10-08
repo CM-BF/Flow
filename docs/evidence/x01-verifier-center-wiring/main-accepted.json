@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-08T00:28:53.085Z",
+  "startedAt": "2026-10-08T00:27:57.000Z",
+  "deadline": "2026-10-08T00:37:57.000Z",
+  "main": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "receipt": "docs/evidence/i02/x01-var-center-intake.json",
+  "receiptSha256": "cacd53ad36dc54cde13150195f2c0fa88e0652563ab9f9fefcaab455a1692134",
+  "receivedAt": "2026-10-08T00:22:02.205Z",
+  "rows": [
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 4398,
+      "sha256": "475d7a434b3862103fe3d57cbc0cf7d81661f75f063aa579115a311c3e1661ba"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 18291,
+      "sha256": "24655c1a4764d3797426c0c70c38fc3e17210e9ff8fe8eaee3e4b6c599520cc1"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "bytes": 5994,
+      "sha256": "98a903a5912135df4768e56c9e291a9f75da0dd7790a5a3d39e485cd1d82a05a"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-wiring.test.ts",
+      "bytes": 15254,
+      "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e"
+    }
+  ],
+  "mainChecks": {
+    "typesExit": 0,
+    "typesMs": 2179,
+    "factorySelected": 9,
+    "factoryPassed": 9,
+    "factoryMs": 1418,
+    "rawBytes": 155,
+    "groupsAbsent": 2,
+    "mergedEOF": 2,
+    "exactEmptyScratchRemoved": 2,
+    "provider": 0,
+    "PG": 0,
+    "HTTPListener": 0
+  },
+  "independentReview": {
+    "at": "2026-10-08T00:22:35.829Z",
+    "reviewer": "assignment_review / gpt-6-astra",
+    "verdict": "APPROVED_SCOPED_COMBINATION_RESULT",
+    "P1": 0,
+    "P2": 0,
+    "actualSha256": "2e32d87618d7a1a4b7fb33f28792ae86229cf80f186be2eda2f71ff9f243791d",
+    "scope": "26exact postimages;25TSentries strict0;9namedfactory checks allpassed;both groupsabsent MERGED EOF/no signals/secondary and exactempty scratch removal; initialunknown observation preserved. Reviewer0execution/private/process accesses."
+  },
+  "ownNewChecks": 0,
+  "limits": [
+    "Source integrated, not personal deployment",
+    "Runtime v4 dispatch/public full chain/T7 remain separate",
+    "Earlier local failures retained"
+  ],
+  "budget": {
+    "cap": 3145728,
+    "indexAtomicUpper": 2400000,
+    "metadataObjectsManagementUpper": 650000,
+    "totalUpper": 3050000
+  },
+  "quality": {
+    "skills": "existing local find-skills/codebase-design/clean-code",
+    "method": "Exact four main postimages; distinguish historical branch checks from actual combined-main checks; one status; no product/raw edits"
+  }
+}
