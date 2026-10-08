@@ -26,7 +26,7 @@
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 新一次真实规划成功形成两步任务提案，已暂停并归还运行资源；尚未应用或执行子任务。 |
-| 下一可用交付 | 审查本次实际提案与运行结果；提案确认及子任务执行仍需明确后继授权。 |
+| 下一可用交付 | 审查本次真实提案；已列明确认对象和两项后继任务的独立额度、执行能力缺口，尚不具备直接续跑条件。 |
 | 当前阻塞 | ACTIVE: 实际规划结果待独立审查；本次单次额度已消费，未获确认或子任务执行授权。 |
 | 需用户决定 | NONE |
 
@@ -165,3 +165,5 @@
 2026-10-08T01:36:06.000Z：正常HOME最小环境片已独审/main2b52b2355，原入口只读核对完成，未新增wrapper或改目标/profile/tool合同。Lead转达GO新授权O16-GO-PLANNER-NORMAL-HOME-20261008，仅1planner/4turn/SDK$.20/90s、1proposal/0apply/0child；[新授权与permit绑定](../../docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)保留旧candidate NOT_GRANTED历史。当前累计SDK3不变，无reservation、PG分配或实际启动，等待D01资源窗口。此前只读审查结束与当前等待分开，历史任务首次start UNKNOWN不改。
 
 2026-10-08T01:48:09.597Z：本次唯一预算实际2026-10-08T01:45:07.705Z开工、2026-10-08T01:45:32.385Zterminal、2026-10-08T01:46:25.059Z精确RETURN。1selected/1passed、一次SDK/累计4；中心审计1proposal、2node1edge、0apply/0child。SDK报告USD0.0492524仅估价，账户UNKNOWN；[本次结果](../../docs/evidence/o16/native-plan-normal-home-20261008-once/RESULT.md)与manifest保留全部固定来源。5PID/3组fresh ESRCH/双EOF/DBconn[]，DB/private KEEP，pause到2026-10-08T02:00:32.316Z不构成后继许可。旧FAIL等待W11/W14按已知转段关闭为UNKNOWN结束，失败/原件不改；W08/W20仅内部GO决定改其他类别。源码无变化，O16-06与整体仍开放。
+
+2026-10-08T01:50:04.500Z：固定结果76a9已push、源码停写。仅补[后继候选](../../docs/evidence/o16/native-plan-normal-home-20261008-once/next-stage-candidate.md)：真实两步提案/完整确认版本，拟两次children预算与独立接受分开；native guard当前仅plan，修改源码又会触发pause/source绑定拒绝，合法续接合同尚缺。未创建后继许可、未确认或apply、未改private/DB/原pause。当前15min期限不自动延长。
