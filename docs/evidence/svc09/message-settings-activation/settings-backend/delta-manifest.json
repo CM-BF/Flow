@@ -1,0 +1,175 @@
+{
+  "at": "2026-10-08T04:14:26.394Z",
+  "kind": "SVC09A_SETTINGS_BUILD_REBIND_AND_HOST_PORT_DELTA",
+  "source": "f9a58e5d0e08827468b01669ba9516394873b97e",
+  "hostPortSource": "b3a11860a02df5636fb5545759861659e6700b86",
+  "records": "c458449939287715f9e7186940bb09ed0dad8b74",
+  "backendSource": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 12262,
+      "sha256": "fad95d468840f48755318cc755cc844e6f127e2291927a7f15623d5318b1e2f2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 13095,
+      "sha256": "e5e8d6921ca28526b17ba95c050e3285de7459b3010d1ceb5b80725dabd2f171"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-entry.mjs",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 4153,
+      "sha256": "dcf7b8d7fee71ee66d35b47065db1d4725dbe0fa5db8eac1ab470b5fcaff41e3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-inputs.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 6139,
+      "sha256": "cfe5b380063def16b6fea2f1687f8bd0c0227164a1aa1496e201a293c88f518d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-preparation.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 5400,
+      "sha256": "c3d0a1deebd7bafba39ca837bd14dd5e9a3aebe18454db46a9d1ed4071c172d9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/delta-result.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 1437,
+      "sha256": "7aca0ff5f28e84bf0464117a7b8e36c08abae70106148ab765558991531e12b1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/dual-slot-interface.md",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 2497,
+      "sha256": "39f04721884400056b9c10c58bdd76b9eec96de2aef27d0a61cca652433dde6c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/dual-slot-port.test.mjs",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 1542,
+      "sha256": "e158e03505b37eed5256dd43e04955c5b64027ba7700880c827b4eb9a06454e8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/dual-slot-port.test.py",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 1924,
+      "sha256": "7eb24766a768ad1ad7a21b9185b628b51583f5eea2238c9ae5bb2441c0457bda"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/host-source-composition.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 2918,
+      "sha256": "38445556db8eac83fadcead0b7bbb5796ead294e347d07feb1a4cb1bafd348b5"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-check.py",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 5554,
+      "sha256": "d1b5b03999095b8188ce4b7a24ca1c129a7b80c8fe58f283a7332ddb02517998"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-node/outer.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 515,
+      "sha256": "93baf6e66061cd0225c1d40e653db088bb1a6f80647e635340dbe3b2f2f3a76d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-node/reservation.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 7419,
+      "sha256": "42b7b6c72ebfe46fa27d025d5ef14f65e394b5bf95c686d3982d03cad8978c5e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-node/result.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 319,
+      "sha256": "9b9dc64a13d4a84930cfd263c956dcb91fcd9d64797d8ba985748a442866b861"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-node/stderr",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-node/stdout",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 857,
+      "sha256": "54a296c192600407b31e25dcced5aa7e67b0231e0289ceed82da89ad626c3e0d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-python/outer.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 514,
+      "sha256": "d715cc32e68416a0390b180cdd2e5bea364fad63e26e9581937cbf0cd0e32800"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-python/reservation.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 7174,
+      "sha256": "84ff21eaf4f1bc4de7a145c909059bb9a1b86b78bc8160a90545e2fda6f5a37f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-python/result.json",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 318,
+      "sha256": "4737d8880fc5b9d8d50d6e398d957ce684ee09799724a5d825944adf33b58814"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-python/stderr",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 100,
+      "sha256": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/local-delta-python/stdout",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/rebind.test.mjs",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 1870,
+      "sha256": "f58b544b9c8828c360ddf249d90a68167c6fde7f82b3b2f4f16136de3de4c011"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/status.md",
+      "commit": "c458449939287715f9e7186940bb09ed0dad8b74",
+      "bytes": 45951,
+      "sha256": "86715242e168a71f0e2c49c7901202061f2e67df8f80438d4d03ec47f10e2214"
+    }
+  ],
+  "counts": {
+    "bindings": 23,
+    "bytes": 121958
+  },
+  "inherits": [
+    {
+      "commit": "a266e20364422648f644a3e4cd5cf541862f1524",
+      "path": "docs/evidence/svc09/message-settings-activation/settings-backend/manifest.json",
+      "bytes": 7007,
+      "sha256": "bdde0438b3b04d1424868778a8f29ed59fe190656dfb848b5850fe71c0d6afc3"
+    },
+    {
+      "commit": "5e3ac72e2b73cdc2bca732e0b23f4db243af4850",
+      "path": "docs/evidence/svc09-fixed-runtime/manifest.json",
+      "bytes": 12548,
+      "sha256": "0aa46719224f30b364080ff1e36defd351980c64e5336c0749aed98af8aeb0a6"
+    }
+  ],
+  "actualPreparationPreimage": {
+    "commit": "f9a58e5d0e08827468b01669ba9516394873b97e",
+    "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-preparation.json",
+    "bytes": 5168,
+    "sha256": "ab1f44ed28cdfc8108fd4169eb1369eb8204c8c75e72a17bebacebe31b4e4cc0"
+  },
+  "result": "5/5 new direct cases;208ms/957B;2 groups absent/dualEOF;2 empty exact scratch removed;0PG/build/HTTP/native/personal",
+  "scope": "11 production expectations, two support tests,1001 archivefiles7896835B. Original8 checks inherited; actual build/host remains NOT_RUN. Runtime approval does not imply center diagnostic producer. Original supervisor/work/cleanup assertions unchanged.",
+  "coordination": "After local RETURN, Lead 04:14 coordination paused new work awaiting Web/D01 status clarification; this packet only seals already-started source/results. No actual holder or pending launch; claims retained."
+}
