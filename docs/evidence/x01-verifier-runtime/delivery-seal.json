@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-08T00:49:56.119Z",
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "productStop": true,
+  "engineeringReturn": "2026-10-08T00:39:55.672Z",
+  "pendingLaunch": 0,
+  "main": "NOT_INTEGRATED",
+  "claim": "42493ff1-d47f-4fea-84cd-2080e6f5f14c v1 ACTIVE6 retained for integration/review fixes",
+  "oldReviewManifestUnchanged": "47764e78e726d46836e46eecf94b328addbe784f7bb80bc4af09d0b4185ff5ec",
+  "measuredOwnNodeModules": {
+    "links": 15,
+    "linkBytes": 1757,
+    "regularFiles": 0,
+    "viteTempEntries": 0
+  },
+  "newReachableGitObjectsBeforeSeal": {
+    "count": 58,
+    "uncompressed": 272690,
+    "disk": 111704
+  },
+  "budget": "growth.json upper7,529,189 includes700000 new object/metadata reserve plus margin; extra seal/index growth remains within8MiB; peak/allocated UNKNOWN",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ]
+}

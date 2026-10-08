@@ -1,5 +1,5 @@
 {
-  "state": "DRAFT_PENDING_INDEPENDENT_SOURCE_REVIEW",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE",
   "recordedAt": "2026-10-08T00:46:59.438Z",
   "source": "5bdf817db27483a03984d87870fde6372060262e",
   "packet": "cbeec091bf3318d34ba492230c4e2eda31edc68e",
@@ -96,14 +96,13 @@
   "count": 4,
   "bytes": 66475,
   "dependencies": "VAR/CENTER/PROCESS already integrated in fixed base728; no foreign pending branch overlay.",
-  "notValidated": [
-    "Actual center PG/HTTP",
-    "Real verifier worker invocation through runRunner",
-    "T7 release artifact",
-    "Deployment/public E2E"
-  ],
+  "notValidated": "仅四叶源码与mock transport/host局部证据；真实资源open拒绝不等于实际worker invoke；PG/worker/T7/publicE2E/main/deploy未验。审者0写/工程/import/PG/进程探针/TMP/KEEP。",
   "sourceInputs": "source-inputs.json",
   "local": "local.json",
-  "review": "REQUESTED architecture_read",
+  "review": {
+    "path": "docs/evidence/x01-verifier-runtime/review-approval.json",
+    "at": "2026-10-08T00:48:19.843Z",
+    "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED"
+  },
   "taskRegistration": "task-intake.json; registration receipt not yet known"
 }

@@ -1,0 +1,24 @@
+{
+  "kind": "Owner transcription of independent reviewer message; not a new review",
+  "reviewer": "architecture_read",
+  "model": "gpt-6-astra",
+  "at": "2026-10-08T00:48:19.843Z",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "5bdf817db27483a03984d87870fde6372060262e",
+  "packet": "cbeec091bf3318d34ba492230c4e2eda31edc68e",
+  "observedHead": "ff17164bf15e8b70662a1feb1a4270ca07411c48",
+  "manifest": "47764e78e726d46836e46eecf94b328addbe784f7bb80bc4af09d0b4185ff5ec",
+  "readySha256": "9681ab1bb5eaf8160b1216f3b54050b46f9292130a0376fff7a01570dfc2de16",
+  "bindings": 35,
+  "bytes": 226790,
+  "sourceInputs": {
+    "count": 213,
+    "bytes": 1155257
+  },
+  "statement": "资格与生命周期：verifier精确私有表detach，工具资格需显式toolExecution；v4原key/资格→bind/recover/rebind→unresolved/capacity→一次PROCESS open，open失败原错fatal/cancel后close且不publication/claim；旧v2/v3不热升级。真实executePluginVerifier/共享input算法、两phase稳定key及完整非replayed ACK、typed artifact+verification+settled completion在原outbox同批；UNKNOWN保journal/原batch不重invoke。无PROCESS失败fallback。center固定728的重算/终态直接合同核对相符，未执行它。",
+  "local": "25/25=15新+10旧/54未选，types2→0；三run33个sourceHashes逐核，首test/caller事后重建变体仅凭匹配原record哈希成立。7154ms监督/raw11112B；三group最终absent/MERGED EOF/fullbytes，无secondary/signals，初EPERM及首nonzero保留，同inode空TMP清理由原caller/receipt支持。",
+  "limit": "仅四叶源码与mock transport/host局部证据；真实资源open拒绝不等于实际worker invoke；PG/worker/T7/publicE2E/main/deploy未验。审者0写/工程/import/PG/进程探针/TMP/KEEP。",
+  "metadataExclusion": "ff171 only adds main-intake draft; not part of original source review. Original bound manifest/status bytes retained in packet Git."
+}
