@@ -7,7 +7,7 @@ NODE='/opt/homebrew/opt/node@24/bin/node'
 SDK='/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk'
 DEADLINE=datetime.fromisoformat('2026-10-08T01:50:24.924+00:00')
 MODE=sys.argv[1]; HEAD=sys.argv[2]
-assert MODE in ('types','ports','clang')
+assert MODE in ('types','ports','clang','types-fixed')
 def load(name,path):
     spec=importlib.util.spec_from_file_location(name,path); m=importlib.util.module_from_spec(spec);sys.modules[name]=m;spec.loader.exec_module(m);return m
 helper=load('replay_checked_helper', ROOT/'docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py')
@@ -28,14 +28,15 @@ manager=json.loads(current.read_text())['forwardAdmission']
 assert manager['termsBytes']['MikaS01NativeInitializeSourcePreparation']==8388608
 floor=max(13291487232, manager['minimumFreshFreeBytes']);free=shutil.disk_usage(ROOT).free
 assert free>=floor
-bindings=json.loads((HERE/'local-inputs.json').read_text())
+bindings=json.loads((HERE/('current-inputs.json' if MODE=='types-fixed' else 'local-inputs.json')).read_text())
 for row in bindings:
     assert helper.digest(ROOT/row['path'])==(row['bytes'],row['sha256']),row['path']
 recordPath=HERE/'local.json'; record=json.loads(recordPath.read_text()) if recordPath.exists() else {'startedAt':'2026-10-08T01:25:24.924Z','deadline':'2026-10-08T01:50:24.924Z','runs':[],'engineeringCap':3,'nativeExecuted':False,'wholeExternalWall':'UNKNOWN','activePeak':'UNKNOWN'}
-assert len(record['runs'])==('types','ports','clang').index(MODE)
+assert len(record['runs'])==('types','ports','clang','types-fixed').index(MODE)
 assert all(r['processClosed'] for r in record['runs'])
+if MODE=='types-fixed': record['fourthCheckAmendment']={'authorizedBy':'D01 canonical via Mika','maximumChildren':4,'deadlineUnchanged':True,'cumulativeSeconds':60}; record['engineeringCap']=4
 rawPath=HERE/(MODE+'.raw'); assert helper.absent(rawPath)
-allowed={'docs/evidence/s01/native-initialize/local.json'}|{'docs/evidence/s01/native-initialize/'+x+s for x in ('types','ports','clang') for s in ('-gate.json','.raw')}
+allowed={'docs/evidence/s01/native-initialize/local.json'}|{'docs/evidence/s01/native-initialize/'+x+s for x in ('types','ports','clang','types-fixed') for s in ('-gate.json','.raw')}
 for line in git('status','--porcelain','--untracked-files=all').splitlines():
     assert line[3:] in allowed, line
 scratch=Path(tempfile.mkdtemp(prefix='flow-s01-initialize-'+MODE+'-')); identity=scratch.lstat(); row={'mode':MODE,'head':HEAD,'startAt':helper.utc(),'gate':gate,'managerAt':manager['at'],'floor':floor,'freeBytes':free,'inputs':bindings,'tmp':{'path':str(scratch),'dev':identity.st_dev,'ino':identity.st_ino,'cleanup':'KEEP'}}
@@ -44,7 +45,7 @@ def save():
     data=json.dumps(record,indent=2)+'\n';assert len(data.encode())<262144;recordPath.write_text(data)
 save()
 env=dict(baseenv,TMPDIR=str(scratch),TMP=str(scratch),TEMP=str(scratch),HOME=str(scratch),NODE_DISABLE_COMPILE_CACHE='1',TSX_DISABLE_CACHE='1')
-if MODE=='types': argv=[NODE,str(ROOT/'node_modules/typescript/bin/tsc'),'-p',str(HERE/'tsconfig.json')]
+if MODE in ('types','types-fixed'): argv=[NODE,str(ROOT/'node_modules/typescript/bin/tsc'),'-p',str(HERE/'tsconfig.json')]
 elif MODE=='ports': argv=[NODE,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'vitest.config.mjs'),'--configLoader','native']
 else: argv=['/usr/bin/clang','-std=c11','-Wall','-Wextra','-Werror','-O2','-arch','arm64','-isysroot',SDK,str(ROOT/'experiments/runner-capacity/native-initialize/sampler-darwin.c'),'-lproc','-o',str(scratch/'sampler-darwin')]
 row['argv']=argv; save()
