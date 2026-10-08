@@ -1,0 +1,132 @@
+{
+  "kind": "O16_EXPIRED_PLAN_RENEW_AUTHORIZATION_PREPARATION",
+  "recordedAt": "2026-10-08T02:24:02.858Z",
+  "approvalId": "O16-GO-CHILDREN-CONTINUATION-20261008",
+  "authorization": {
+    "issuedAt": "2026-10-08T02:21:47.000Z",
+    "renewExpiresAt": "2026-10-08T02:36:47.000Z",
+    "reference": "Goal Owner decision relayed by Execution Lead on 2026-10-08T02:21:47Z: one expired-plan renew with unchanged goal/proposal/two-node profiles; conditional separate actual-ACK-bound two-child permit and independent decision, each requiring a fresh D01 stage window."
+  },
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "reviewedDelivery": "7edd6ea2269d5d682eedacfbdc3c9221f470a332",
+  "candidateDelivery": "f4b8ffbc99a8b16299687f4f76cd8861ab98ed75",
+  "mainReceipt": "312842ab5",
+  "claimObservedAt": "2026-10-08T02:24:02.858Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ],
+    "state": "active",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "origin": "new",
+    "taskId": "O16",
+    "worker": "native_center_owner",
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "createdAt": "2026-10-07T09:00:26.182Z",
+    "updatedAt": "2026-10-07T09:00:26.182Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "grant": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/grant.json",
+    "bytes": 5922,
+    "sha256": "9ad670c7fcf3ed1ea67fe332657de02495d5f5620a4487abce3faa79bec7346a"
+  },
+  "sourceDelta": {
+    "path": "docs/evidence/o16/expired-plan-continuation/source-delta.json",
+    "bytes": 3489,
+    "sha256": "4d64b966ac1b8d7aecf72d251784a277f303b75ff643f1f4c120ae2acbb6fe66"
+  },
+  "approvedPreparation": {
+    "path": "docs/evidence/o16/expired-plan-continuation/manifest.json",
+    "bytes": 8661,
+    "sha256": "55e45e2ef858f70547ff41f8ac264b319dab35d923fe8c39006173d24ba434fd"
+  },
+  "originResult": {
+    "path": "docs/evidence/o16/native-plan-normal-home-20261008-once/result-manifest.json",
+    "bytes": 6847,
+    "sha256": "99488dc2133755e93d7ea6d5b5528ebb150fb09e9803a4e58051a88ed2784776"
+  },
+  "originPause": {
+    "path": "docs/evidence/o16/runs/native-plan-normal-home-20261008-once/pause.json",
+    "bytes": 1663,
+    "sha256": "a8ee9b78b432c950228f505fc47c347c40148e83baa8fcf44a7780ebeae17603"
+  },
+  "originReadBoundary": "Only archived public records were read during preparation; actual private material/state/DB remains untouched. Runtime performs the approved fresh checks.",
+  "runtimeProvenance": {
+    "path": "docs/evidence/o16/native-plan-normal-home-20261008-once/preflight.json",
+    "bytes": 2753,
+    "sha256": "58677d43dc8cde652ecb0cd96ab538ed45889a4f1d2a2e3f5826569b7ca8af6d"
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--renew",
+    "native-children-continuation-20261008-once",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-children-continuation-20261008-once/grant.json"
+  ],
+  "requiredEnvironment": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot"
+  },
+  "limits": {
+    "queries": 0,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "stablePGConnections": 12,
+    "closingReadOnlyTransient": 1,
+    "PGReservation": 13,
+    "minimumAvailablePG": 29,
+    "privateBytes": 8388608,
+    "combinedRunRecordsBytes": 2097152,
+    "liveReserveBytes": 1073741824,
+    "newPauseMs": 900000
+  },
+  "confirmationExpiresAt": "2026-10-08T02:36:47.000Z",
+  "confirmationExpiryMeaning": "Conservatively bounded by the supplied renew expiry; no extra authorization lifetime inferred.",
+  "conditionalChildren": {
+    "authorization": "Granted conditionally by same GO decision; permit NOT_CREATED until actual ACK, full closure and fresh pause.",
+    "maximumNewQueries": 2,
+    "maximumCumulativeQueries": 6,
+    "model": "claude-sonnet-5-5",
+    "perQuery": {
+      "maxTurns": 3,
+      "maxBudgetUsd": 0.1,
+      "timeoutMs": 60000
+    },
+    "totalWorkMs": 120000,
+    "totalCleanupMs": 30000,
+    "retry": false,
+    "fallback": false,
+    "newD01StageWindowRequired": true
+  },
+  "independentDecision": {
+    "authorization": "Conditionally granted; actual independent actor, exact observed artifacts and accept/reject reason required after children; fresh D01 stage window required.",
+    "queries": 0
+  },
+  "freshRequired": [
+    "matching new D01 grant + holder + latestStart/current full floor",
+    "same-call active exact claim/head/remote/source/environment/runtime pins",
+    "new run/operator/origin reservation all absent",
+    "original public/private/resource identity and immutable source delta validation",
+    "fresh project revision/proposal/profiles/material/only completed planner/no new authority or inflight",
+    "PG available>=29 then probe closed; read-only runtime pool may have one transient closing connection",
+    "before-start original marker/no connections and fresh SQL repeated by fixed runtime"
+  ],
+  "executionWindow": "NOT_SELECTED",
+  "operatorStarted": false,
+  "originConsumed": false,
+  "SDKQueriesBeforeStart": 4,
+  "sourceModified": false
+}
