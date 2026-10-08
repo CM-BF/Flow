@@ -2,7 +2,7 @@ import { assertVerificationInputFits } from '../../../../packages/plugin-runtime
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
-import { pluginVerificationAdmissionSchema, type PluginVerificationAdmission } from '../../../../packages/contracts/src/plugin-verification-admission.js';
+import { pluginVerificationAdmissionSchema, verificationAdmissionIdentity, type PluginVerificationAdmission } from '../../../../packages/contracts/src/plugin-verification-admission.js';
 import { pluginVerificationRequestSchema } from '../../../../packages/contracts/src/plugin-verification.js';
 import { PLUGIN_RUNTIME_PROTOCOL } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { HttpError, sha256 } from '../database.js';
@@ -32,6 +32,7 @@ export async function lockSourceProject(client: PoolClient, taskId: string, work
 export async function admitPluginVerification(pool: Pool, boss: PgBoss, registrationId: string, raw: PluginVerificationAdmission,
   key: string, hosts: TrustedPluginHostPolicy, algorithms: TrustedPluginVerifierPolicy) {
   const input = pluginVerificationAdmissionSchema.parse(raw);
+  const requestIdentity = verificationAdmissionIdentity(registrationId, input);
   const result = await command(pool, `plugin.verification-task:${registrationId}`, key, input, async client => {
     const candidate = await latestRuntimeRevision(client, registrationId);
     if (!candidate?.desired_enabled || !candidate.target_runner_id || !candidate.store_id || !candidate.material_install_operation_id) {
@@ -73,5 +74,6 @@ export async function admitPluginVerification(pool: Pool, boss: PgBoss, registra
       VALUES($1,$2,$3,$4,$5,$6,$7)`, [binding.bindingId, input.source.taskId, input.source.attemptId, input.source.artifactId, input.source.version, project.id, JSON.stringify(input.rule)]);
     return { task, binding, project: { id: project.id, revision: changed.snapshot.project.revision, nodeId: node!.id } };
   });
-  return { ...result.value, replayed: result.replayed };
+  // command() has already compared the normalized digest, including historical receipts.
+  return { ...result.value, replayed: result.replayed, requestIdentity };
 }

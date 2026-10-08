@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-08T01:12:37.300Z",
+  "review": "APPROVED_SCOPED_SOURCE_REGISTRATION",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "target": "01e1fa6bfd6c6701180a0830846840858d8d9276",
+  "findings": [],
+  "rows": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "originCommit": "01e1fa6bfd6c6701180a0830846840858d8d9276",
+      "bytes": 30336,
+      "sha256": "410086e3d4e58604c19ba39e7ea06d0ddae8e1a30641b2009474ec2a79ea1492"
+    },
+    {
+      "path": "docs/evidence/d05/verifier-client-source-preparation.json",
+      "originCommit": "01e1fa6bfd6c6701180a0830846840858d8d9276",
+      "bytes": 1387,
+      "sha256": "1a4626743ca0ba3e05f5ad3e7feccf2326ff0a0ea5fa7c31c844fa5b07c18f7a"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "originCommit": "01e1fa6bfd6c6701180a0830846840858d8d9276",
+      "bytes": 45333,
+      "sha256": "6b9793ce6220786963c088d539ecda6a76661ac37325a9f0d295856cc6e460fb"
+    }
+  ],
+  "runtime": "215 candidate;214 never separately deployed;actual213",
+  "tests": 0
+}

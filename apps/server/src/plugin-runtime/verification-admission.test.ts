@@ -42,7 +42,8 @@ test('VAR admission creates exactly one task and project binding on the receipt 
   state.accept.mockResolvedValue({ id: 'new-task' });
   state.graph.mockResolvedValue({ changedNodeId: 'node', snapshot: { project: { revision: 4 }, graph: { nodes: [{ id: 'node', taskId: 'new-task' }] }, tasks: [{ id: 'new-task' }] } });
   state.binding.mockImplementation(async (_client, binding) => binding);
-  const result = await admitPluginVerification({} as never, {} as never, 'registration', request, 'stable-key', () => true, () => true);
+  const result = await admitPluginVerification({} as never, {} as never, '11111111-1111-4111-8111-111111111111', request, 'stable-key', () => true, () => true);
+  expect(result.requestIdentity).toMatchObject({ protocol: 'flow.plugin-verification-admission.v1', registrationId: '11111111-1111-4111-8111-111111111111', ...request });
   expect(result.task.id).toBe('new-task'); expect(result.project).toEqual({ id: 'project', revision: 4, nodeId: 'node' });
   expect(state.accept).toHaveBeenCalledTimes(1); expect(state.accept.mock.calls[0]![0]).toBe(client);
   expect(state.graph.mock.calls[0]![0]).toBe(client); expect(state.graph.mock.calls[0]![2].change.taskId).toBe('new-task');
@@ -70,4 +71,29 @@ test('VAR repair tool enable retains its existing permission error before revisi
   await expect(changePluginRuntime({} as never, 'registration', { expectedRevision: 2, reason: 'Enable', change: { kind: 'enable', materialInstallOperationId: 'install', targetRunnerId: 'runner', storeId: 'store' } }, 'stable-key', () => true))
     .rejects.toMatchObject({ status: 403, code: 'plugin_tool_grant_required' });
   expect(client.query).not.toHaveBeenCalled();
+});
+
+// Real command digest/replay logic, with only its database transport replaced.
+test('SDK admission adds identity to an old saved receipt without reauthorizing or recreating work', async () => {
+  const { command } = await vi.importActual<typeof import('../tasks.js')>('../tasks.js');
+  const { canonical } = await vi.importActual<typeof import('../database.js')>('../database.js');
+  const { pluginVerificationAdmissionSchema } = await import('../../../../packages/contracts/src/plugin-verification-admission.js');
+  const input = { expectedRevision: 2, expectedSourceProjectRevision: 3, title: '  Verify  ', source: { taskId: 'source', attemptId: 'attempt', artifactId: 'artifact', version: 'a'.repeat(64) },
+    rule: { schemaVersion: 1 as const, algorithmId: 'flow.json-object.required-keys' as const, algorithmVersion: 1 as const, requiredKeys: ['z', 'a'] } };
+  const saved = { task: { id: 'historical-task' }, binding: { registrationRevision: 2 }, project: { id: 'project', revision: 4, nodeId: 'node' } };
+  const digest = sha256(canonical(pluginVerificationAdmissionSchema.parse(input)));
+  const borrowed = { query: vi.fn(async (sql: string) => ({ rows: sql.startsWith('SELECT digest,response') ? [{ digest, response: saved }] : [] })), release: vi.fn(), on: vi.fn(), removeListener: vi.fn() };
+  const pool = { connect: (callback: (error: null, client: typeof borrowed) => void) => callback(null, borrowed) };
+  state.command.mockImplementation(command);
+  state.runtime.mockRejectedValue(new Error('Current policy must not authorize a replay'));
+  const admit = (body: typeof input) => admitPluginVerification(pool as never, {} as never, '11111111-1111-4111-8111-111111111111', body, 'original-key', () => false, () => false);
+  const result = await admit(input);
+  expect(result).toMatchObject({ ...saved, replayed: true, requestIdentity: { protocol: 'flow.plugin-verification-admission.v1', title: 'Verify', rule: { requiredKeys: ['a', 'z'] }, source: input.source } });
+  expect(saved).not.toHaveProperty('requestIdentity'); expect(state.runtime).not.toHaveBeenCalled(); expect(state.accept).not.toHaveBeenCalled();
+  for (const changed of [{ ...input, source: { ...input.source, version: 'b'.repeat(64) } }, { ...input, rule: { ...input.rule, requiredKeys: ['different'] } }]) {
+    await expect(admit(changed)).rejects.toMatchObject({ status: 409, code: 'idempotency_conflict' });
+  }
+  expect(borrowed.query.mock.calls.filter(([sql]) => sql === 'ROLLBACK')).toHaveLength(2);
+  expect(borrowed.query.mock.calls.some(([sql]) => sql.startsWith('INSERT'))).toBe(false);
+  expect(borrowed.release).toHaveBeenCalledTimes(3);
 });
