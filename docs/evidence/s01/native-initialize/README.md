@@ -11,3 +11,5 @@ Driver defines future invocation but has no actual CLI/admission permission. Tru
 Preparation START2026-10-08T01:25:24.924Z; deadline01:50:24.924Z. Claimv4/exact8 receipt retained. Local≤3serial×20s/cum60; third compile/link amended in same8MiB cap, output≤128KiB; helper never executed. Whole external wall/active peak only reported if measured. Existing KEEP/raw are untouched.
 
 Methods: local find-skills/codebase-design/fixed clean-code; one lifecycle owner, narrow injected effects, strict decoding, explicit unknown and same deadline. Global clean-code baseline is reused without install. Design approved7568569; this implementation pending independent review. Fixed support supplied exclusively33files185051B plus13external hash references; no global dependencies changed.
+
+Final preparation 2026-10-08T01:48:09.465Z: sourced3c12fa6cd95c8e8b2c60ed118664bc324794bc0; authorized fourth focusedtypes exit0, total4children supervision2829ms/raw873B, all closed. First type failure remains. Native/kernel/channel runtime untested; no new actual grant.

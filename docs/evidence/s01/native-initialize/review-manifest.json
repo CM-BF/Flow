@@ -39,14 +39,14 @@
     },
     {
       "path": "docs/evidence/s01/native-initialize/README.md",
-      "bytes": 2596,
-      "sha256": "dcedbe56022c90b5a14b154dfcf051d327c89fcbcc917e6a32c09a5b11fcbb58",
+      "bytes": 2870,
+      "sha256": "15eae47f307d242985611278f72760bb01402ee9fd73808057df7068b9cbac40",
       "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/native-initialize/quality.md",
-      "bytes": 1915,
-      "sha256": "ad1c48be94fd07af953dfa7a207d7365f562dd99937d9052642338ec7222c521",
+      "bytes": 2177,
+      "sha256": "20dfbbd398b9188a411b46aefaf0f0058ea0a1d6f7f95e008d4fee89ffbc0c7d",
       "mode": "0o644"
     },
     {
@@ -63,14 +63,14 @@
     },
     {
       "path": "docs/evidence/s01/native-initialize/support-type-fix.json",
-      "bytes": 12654,
-      "sha256": "2a11a9ae11ec3abc5afd3e61d48cea9f28442bd56de01b2afd0a08aa68e45789",
+      "bytes": 12844,
+      "sha256": "c3cca533cf3e541115aa6cf0883d1c6b0e89b46470af725db7b96669bae8c483",
       "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/native-initialize/current-inputs.json",
       "bytes": 16804,
-      "sha256": "46c70cd4efef71a4348d1b9fb9347464b628b924538348bbc7a62ea14eb36f74",
+      "sha256": "48e31547a009982b6e6fd5e040ed062f95ba4d41e6a27e87e23ff657d325f244",
       "mode": "0o644"
     },
     {
@@ -81,8 +81,8 @@
     },
     {
       "path": "docs/evidence/s01/native-initialize/local.json",
-      "bytes": 40565,
-      "sha256": "0454d889c526e62de6973caa87d25a302604a61aa8e867306073a88d82793cbe",
+      "bytes": 62214,
+      "sha256": "7c934804031a41e91fa166695a52107e1c35c04a3b76a6beb407b7e3468fec14",
       "mode": "0o644"
     },
     {
@@ -99,8 +99,8 @@
     },
     {
       "path": "docs/evidence/s01/native-initialize/run-local.py",
-      "bytes": 6135,
-      "sha256": "48a12623d4323544b6a68f167994be57c80b9e491bc9783a5888772040d3cee6",
+      "bytes": 6440,
+      "sha256": "ee04bef0f1e62ea67ab91e39fb441a52f2e238dfebd1dd7d4031afa0c07ec748",
       "mode": "0o644"
     },
     {
@@ -150,10 +150,35 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/native-initialize/types-fixed-gate.json",
+      "bytes": 776,
+      "sha256": "9cdd31750cd93190563e4f7d0015a129a5b709f81008a96f41bdb525ca3ade83",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/native-initialize/types-fixed.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/native-initialize/budget.json",
+      "bytes": 714,
+      "sha256": "3113171d5ade1c4d910719c49867ef854eebcced3a349f96407730ee8c23b559",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/native-initialize/review-ready.md",
+      "bytes": 1558,
+      "sha256": "f3168cf37f42ec2b7399229361c758274527d2984da7d9f7d04e724957c809d0",
+      "mode": "0o644"
     }
   ],
-  "count": 25,
-  "bytes": 186232,
+  "count": 29,
+  "bytes": 211960,
   "scope": "private source/local preparation, no native execution",
-  "typescript": "first2; exact missing declaration supplied; no recheck yet"
+  "typescript": "first2; same-ref declaration supplied; finalfocused0",
+  "caller": "b370ce9de54aa76f35ec0f312af8ae2abb1997a5"
 }

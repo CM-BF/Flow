@@ -149,3 +149,5 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 ## S01-06：stock initialize/close 小基线候选（2026-10-08T01:16:08.829Z）
 
 沿原S01-06安排[1→2→4设计与候选预算](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)，仅零model/provider初始化及空闲资源/关闭成本，不是128native容量。原128同步burst ACK失败诊断优先；本候选尚无源码、sampler或native窗口。复用既有host/R06/OPS14，数字整树采样方法与scope必须另固定；UNKNOWN/KEEP、ENG原outerFAIL与后续独立cleanup分列。70s/64MiB只是待审候选，本次仅4MiB/10min元数据段。稳定TODO仍三完成三开放。
+
+2026-10-08T01:48:09.465Z S01-06实施准备checkpoint：六私有叶/固定34支持已实现；pure19、类型首2→0、C link0（未执行）。[单一审查入口](../../docs/evidence/s01/native-initialize/review-ready.md)待独审，原128 ACK优先不变。未来真正native运行还需caller owned paths/全部成员关闭/字节清理端口与完整动态输入、单独资源OPEN，不继承原ENG或本ordinary许可。
