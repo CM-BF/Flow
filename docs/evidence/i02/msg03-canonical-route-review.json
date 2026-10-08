@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-08T03:55:26.888Z",
+  "decision": "APPROVED_CANONICAL_SOURCE_ROUTING",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "remainingP1P2": 0,
+  "source": "8e6894b30b5d48c5b3b4afb312b3adc46c303e90",
+  "files": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 30327,
+      "sha256": "e7ef79454f4a85abab3f590a2e2ed055a601a71a5653eda8c3fd923dae81d634"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 46127,
+      "sha256": "99c509df7ebdf1ce57dcdda43ce090bfffb3563ba4e036cb418f69eb385b397a"
+    },
+    {
+      "path": "docs/evidence/d05/msg03-canonical-migration.json",
+      "bytes": 684,
+      "sha256": "79bbe1a032dd7a518f82195ab6a999b7511284f94fa8188d366c0428227f5a53"
+    }
+  ],
+  "verified": {
+    "registryPreimage": "same as main7da3225cd",
+    "sourceCount": 215,
+    "stableTaskId": "WPF-MESSAGESETTINGS03",
+    "canonical": "web-versioned-profile-creation",
+    "planDir": "plans/wpf-message-settings-app",
+    "evidenceDir": "docs/evidence/wpf-msg03",
+    "formalHandoff": "f71e1c9a3d7efef26859836365dc77d9fdb728ce / a897732d v1",
+    "newHeadObserved": "c99c",
+    "oldSourceFrozen": "1081861d0d1d8b9659fcc5681120bf4ccb974e3a",
+    "documentsAndEvidenceExist": true,
+    "parserErrors": [],
+    "humanMissing": []
+  },
+  "limits": [
+    "Routing only; no product/browser checks",
+    "Original task identity/start and NOT_COMPLETED preserved",
+    "Actual dashboard reload remains separate"
+  ]
+}

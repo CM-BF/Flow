@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-08T03:55:13.636Z",
+  "decision": "APPROVED_LIMITED_FIXED_SETTINGS_BUILD_PREPARATION_AND_DIRECT_RESULTS",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "remainingP1P2": 0,
+  "source": "413d956ccc1fb0d383d6d77fd87dce8cba7c5009",
+  "delivery": "a266e20364422648f644a3e4cd5cf541862f1524",
+  "artifactSource": "f9221dbdce367d1794586471991adbe7a5a98c13",
+  "canonicalManifest": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "path": "docs/evidence/svc09/message-settings-activation/settings-backend/manifest.json",
+    "bytes": 7007,
+    "sha256": "bdde0438b3b04d1424868778a8f29ed59fe190656dfb848b5850fe71c0d6afc3"
+  },
+  "verified": {
+    "bindings": 22,
+    "bytes": 58202,
+    "inheritedPins": 24,
+    "fixedSource": 80,
+    "sql": 33,
+    "distinctPassed": 8,
+    "elapsedMs": 309,
+    "rawBytes": 1919,
+    "ownedGroups": "2 absent / dual EOF",
+    "scratch": "2 exact empty same identity removed"
+  },
+  "limits": [
+    "Only fixed build preparation/direct checks approved; real build/cold/mixed/compatibility/activation not run",
+    "Web and Mika read-only source checks found required catalogue/create/capability/submit API; this clears the recorded static API hold only",
+    "D01 fresh actual window and complete future floor required before build",
+    "No provider, PG, browser or personal operation in reviewed checks"
+  ]
+}
