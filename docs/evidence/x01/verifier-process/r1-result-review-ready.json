@@ -1,0 +1,22 @@
+{
+  "state": "ACTUAL_PASSED_RESULT_REVIEW_PENDING",
+  "resultCommit": "fbc259bc51041d618f0e41bf702d650b5420d93f",
+  "executionHead": "2d65f2cd5d485d2c06f430230e2d126f13eb2cf8",
+  "manifest": "docs/evidence/x01/verifier-process/r1-result-manifest.json",
+  "manifestSha256": "20ed113e898c63d1b133be31c76e467009aaa3f3ca89e35c6bf8fe2bde3eef07",
+  "manifestBytes": 10117,
+  "summary": "docs/evidence/x01/verifier-process/r1-result-summary.json",
+  "rawDirectory": "docs/evidence/x01/verifier-process/verifier-process-run-r1",
+  "resourceReturn": "2026-10-08T03:50:50.285Z",
+  "reviewer": "db_transaction_owner",
+  "reviewScope": "fixed raw/bindings, real three-task/three-main/two-worker result and resource closure; cwd variation and outer EOF/wholewall UNKNOWN disclosed",
+  "segmentDeadline": "2026-10-08T03:59:29.803Z",
+  "limits": {
+    "selectedCases": 1,
+    "selectedPassed": 1,
+    "inactiveLegacySemverPending": 1,
+    "provider": 0,
+    "T7": false
+  },
+  "noRetry": true
+}
