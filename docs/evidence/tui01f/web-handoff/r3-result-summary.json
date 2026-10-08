@@ -1,0 +1,130 @@
+{
+  "recordedAt": "2026-10-08T02:13:19.203Z",
+  "sourceCommit": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "executionHead": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+  "fixtureSource": "8379a051acb39898112609745ee14d8bcfe2c74d",
+  "window": "flow-tui01f04-20261008-r3",
+  "run": "handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff",
+  "startedAt": "2026-10-08T02:08:17.814Z",
+  "terminalAt": "2026-10-08T02:08:36.845Z",
+  "returnedAt": "2026-10-08T02:11:39.152Z",
+  "selected": 1,
+  "passed": 0,
+  "exitCode": 1,
+  "supervisedWorkMs": 18922,
+  "stdoutBytes": 0,
+  "stderrBytes": 744,
+  "functional": {
+    "workPassed": true,
+    "workFailure": null,
+    "handoff": {
+      "conflict": true,
+      "draftPreserved": true,
+      "singleCancel": true,
+      "recoveredB": true,
+      "exitWithoutCancel": true,
+      "visibleFinal": true
+    },
+    "tasks": [
+      {
+        "id": "644efe70-6234-4fe2-8e1b-79aeb10ff3aa",
+        "status": "cancelled",
+        "verificationStatus": "pending"
+      },
+      {
+        "id": "dc5e6dcb-f5b1-4683-9b1b-89f35bbec8a2",
+        "status": "succeeded",
+        "verificationStatus": "passed"
+      }
+    ],
+    "domStages": [
+      {
+        "turn": 1,
+        "status": "running"
+      },
+      {
+        "turn": 1,
+        "status": "cancelled"
+      },
+      {
+        "turn": 2,
+        "status": "running"
+      },
+      {
+        "turn": 2,
+        "status": "succeeded"
+      }
+    ],
+    "ptyEvents": 9,
+    "ptyCheckpoints": 22,
+    "terminalExitCode": 0,
+    "rawModeRestored": true,
+    "unsentDraftAtExit": true,
+    "runtimeFinalization": "NOT_OBSERVED",
+    "observationFrames": 20,
+    "caseAccounting": "One selected journey; event/checkpoint/DOM counts are observations, not extra test cases."
+  },
+  "cleanup": {
+    "primary": [
+      {
+        "stage": "fixture-close",
+        "name": "Error",
+        "code": null,
+        "message": "TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of flow_tui01f_9550d9b37544 or private tmp"
+      }
+    ],
+    "fixtureFailures": [
+      "groups"
+    ],
+    "originalGroups": "unknown",
+    "terminalSettlement": {
+      "pgid": 68549,
+      "stopped": true,
+      "signals": []
+    },
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "originalConnections": "empty",
+    "adminClosed": true,
+    "databaseRemoved": false,
+    "temporaryRemoved": false,
+    "physicalDisposition": "Database and temporary files KEEP; no DROP or deletion."
+  },
+  "return": {
+    "receipt": "r3-window-return.json",
+    "exactPidsAbsent": 8,
+    "exactGroupsAbsent": 5,
+    "dualEOF": true,
+    "databaseOid": 1377665,
+    "databaseConnections": [],
+    "observerAdminClosed": true,
+    "temporaryIdentity": "UNKNOWN in return receipt. Its metadata expression referenced handoffOwnership.directory, which does not exist. This projection failure is not evidence of filesystem failure or cleanup. No repeat private-directory observation was performed.",
+    "pendingLaunches": 0
+  },
+  "diagnosis": {
+    "confirmed": "Saved fixture result contains only groups unknown, no individual failed group/error code. Registered terminal group 68549 separately settled stopped=true with no signals/errors. groupPresent converts non-ESRCH to a generic error and registerHandoffGroup memoizes its stop promise.",
+    "notEstablished": [
+      "Which registered group failed its original close check",
+      "Original OS error or specific failure cause",
+      "Whether cached rejection contributed",
+      "Runtime finalization stage beyond separately observed task state"
+    ],
+    "nextSmallCandidate": "After independent result review, retain bounded pgid/stage/safe OS code per actual group and preserve primary/unknown behavior; verify actual lifecycle consumer locally. No additional full PG/Chrome journey authorized by this record."
+  },
+  "limits": {
+    "nativeQueryCalls": 0,
+    "provider": 0,
+    "personal": 0,
+    "retry": 0,
+    "oldR1R2KeepTouched": false,
+    "fullJourneyAccepted": false,
+    "fixtureCallsSynthetic": true,
+    "startAndReturnDoNotRewriteCleanup": true
+  },
+  "cleanCode": {
+    "at": "2026-10-08T02:13:19.203Z",
+    "scope": "Result metadata/primary versus cleanup/limited resource-return provenance",
+    "finding": "No product change or new framework; unknown remains explicit. Source frozen."
+  }
+}

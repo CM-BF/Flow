@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:56:06.500Z；R3固定调用准备已获限定独审，等待唯一新资源窗口；fixture main89a27事实保持 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:13:19.203Z；R3功能路径首次到达，整suite因清理unknown失败；02:11:39.152Z运行资源归还，结果待独审 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 本片基线a2eae76f32f97ebfcef5ff80d8b810f4eab63213；fixture源8379已main；新R3装配bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
-| 工作树dirty状态 | 已审源码与输入停写；当前仅own review/等待/调用参数metadata更新，未创建实际permit |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PASSED bdf11c06ef7cef843b0a52f456408bdb1f539be6；R3真实前置入口4/4、682ms/raw654B；之前fixture4/4+types0保持，总3483ms；3组absent/双EOF，2空scratch删/既有types缓存1357780B KEEP。0实际旅程。 |
-| 已集成main状态 / HEAD | fixture源8379三叶+typeconfig+Interface已精确main/origin 89a27b983c15e46f7f2e1e24f27b335272eb0015；唯一I02 tui01f-fixture-source-alignment-intake.json。R3装配已获限定独审，实际尚待新窗口；原25174诊断与R2历史保持。 |
+| 工作树dirty状态 | 已审source/input不变；仅本次R3原件/结果manifest与own状态/审查交付 |
+| 工作分支状态 | review |
+| 本片段交付阶段 | review |
+| 检查状态 | FAILED R3实际1选0过/exit1；workPassed=true，A取消/B完成且验证passed，整suite仅fixture-close/groups unknown。原纯4项与fixture4项/types0不重跑。 |
+| 已集成main状态 / HEAD | fixture8379已main/origin89a27；R3 caller bdf已获限定独审main b63bf7eb5。当前实际结果尚待独审/接收；不将main准备当实际旅程通过。 |
 | 实现目标 | bdf11c06ef7cef843b0a52f456408bdb1f539be6 |
 | 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r3-run.py, docs/evidence/tui01f/web-handoff/r3-run.test.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 终端与网页接续的修复及新运行入口已通过独立审查，具备申请一次限定复验的准备条件。 |
-| 下一可用交付 | 取得唯一执行窗口并完成紧前核验后，进行一次真实双端接续复验。 |
-| 当前阻塞 | ACTIVE: 等待资源owner给出唯一新选择并确认当前holder完整归还；准备通过不构成实际执行许可。 |
+| 当前产出 | 已完成终端取消A、网页与终端继续B并看到最终结果；整次验收因资源清理确认缺失仍未通过。 |
+| 下一可用交付 | 独立审查本次功能与收尾双结论，再最小定位进程组确认缺口。 |
+| 当前阻塞 | ACTIVE：原清理阶段未保留失败进程组及具体错误；owner assignment_review，解除条件是有依据地定位并验证收尾合同。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R3 bdf11/d19f获Lead APPROVED_LIMITED_CALLER_INPUT_AND_LOCAL_RESULT、0P1/P2；仅准备批准，未验证实际双端。 |
+| Review | [review.md](review.md)：原bdf准备限定批准保持；新R3实际FAIL/RETURN结果待独立保真审查。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v7 active/exact7；2026-10-08T01:38:12.746Z 正式 accept，worker assignment_review；[回执](../../docs/evidence/tui01f/web-handoff/fixture-source-alignment/accept-receipt.json) |
 | 架构影响 | 仅实验recipe复用固定中心版本policy、一次性调用名称经受信RunSpec传给既有OPS14装配。生产接受规则/权限、8s成功断言、150s期限与cleanup不变，无新框架。 |
 
@@ -35,7 +35,7 @@
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
 | TUI01F-03 | completed | assignment_review | [main接收](../../docs/evidence/tui01f/main-8d84-receipt.json)；原2行为pass/suite exit1保留；独立收尾1/1已审 |
-| TUI01F-04 | in-progress | assignment_review | [准备独审](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json)；[实际1选中失败](../../docs/evidence/tui01f/web-handoff/one-shot-result.md) / [独立收尾](../../docs/evidence/tui01f/web-handoff/cleanup-once-summary.md) |
+| TUI01F-04 | in-progress | assignment_review | [R3单份结果](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)：workPassed但whole suite1/0；[运行资源归还](../../docs/evidence/tui01f/web-handoff/r3-window-return.json)，DB/private KEEP、原groups unknown保持 |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
 
@@ -133,4 +133,8 @@
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| TUI01F-W-R3-RESOURCE | 2026-10-08T01:56:06.500Z | OPEN | 资源 | 准备独审已通过；待唯一新selection与当前holder完整归还，同call紧前核验后才可执行 | r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点 |
+| TUI01F-W-R3-RESOURCE | 2026-10-08T01:56:06.500Z | 2026-10-08T02:08:17.814Z | 资源 | 准备独审后取得唯一新selection；同call核验通过并实际启动 | r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点 |
+
+2026-10-08T02:08:17.814Z：R3 actual START，operator63460/launcher62721。唯一TUI01F04R3选择latest02:09:51.261Z；samecall fresh claimv7、cleanremote0b6d、741+7pins与依赖、unused namespace、free14447423488>=floor13562019840、availablePG88且max1预检池已关。新permit0600/fsync，原150/.5/2监督入口一次启动；[实际启动](../../docs/evidence/tui01f/web-handoff/r3-actual-start.json)。功能结果及detached/DB/private RETURN尚待观察，不从outer状态推断；原R2KEEP不动，0provider/个人。
+
+2026-10-08T02:13:19.203Z：R3 02:08:17.814Z START→02:08:36.845Z terminal exit1→02:11:39.152Z精确运行RETURN。实际1选0过，workPassed=true：A cancelled、B succeeded/verification passed、9PTY事件/22checkpoint/4DOM阶段、终端exit0/草稿保留；这些计数不冒额外用例。原fixture-close唯一失败为groups unknown，未记录具体组/error，不能归因EPERM或追认清理。8PID/5组ESRCH/双EOF、DB1377665连接空/admin关闭，DB/private KEEP；return目录identity投影缺字段保UNKNOWN，不另读内容或删除。见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)、[结果与窄诊断](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)。0provider/个人/重投，原R1/R2保持；本次实际等待已结束。clean-code复核主失败与清理分离/单一原件，无新增产品变化，source停写交独审。

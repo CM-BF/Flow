@@ -1,0 +1,20 @@
+{
+  "run": "handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff",
+  "sourceDigest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+  "selected": 1,
+  "passed": false,
+  "workFailure": null,
+  "cleanupFailures": [
+    {
+      "stage": "fixture-close",
+      "name": "Error",
+      "code": null,
+      "message": "TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of flow_tui01f_9550d9b37544 or private tmp"
+    }
+  ],
+  "failures": [
+    "fixture-close"
+  ],
+  "cleanup": "inspect-fixture-result-or-checkpoint; unknown resources retained",
+  "nativeQueryCalls": 0
+}

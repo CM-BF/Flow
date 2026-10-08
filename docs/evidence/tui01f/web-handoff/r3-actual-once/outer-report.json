@@ -1,0 +1,39 @@
+{
+  "pid": 63559,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 18922,
+  "stdout": "",
+  "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   'fixture-close'\n+ ]\n- []\n\n    at runJourney (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts:302:42)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts:360:70) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: [ 'fixture-close' ],\n  expected: [],\n  operator: 'deepStrictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.20.0\n",
+  "observed_bytes": 744,
+  "retained_bytes": 744,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

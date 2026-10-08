@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-08T02:08:17.811Z",
+  "grant": {
+    "at": "2026-10-08T02:03:51.261Z",
+    "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+    "state": "SELECTED",
+    "latestStart": "2026-10-08T02:09:51.261Z",
+    "owner": "Original / assignment_review soleoperator",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "branch": "codex/tui-task-cancel",
+    "claim": {
+      "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+      "version": 7,
+      "worker": "assignment_review"
+    },
+    "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+    "delivery": "d19f7129a17fd76b0d4f3cb0966885b43e1af944",
+    "executionHead": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+    "executionHeadDelta": "Onlyoperatorrecipe/reviewreceipt/waitingparser/ownstatusreview afterreviewedd19; managerreadcleanlocal+trackingorigin. Operatorfreshactualremote required.",
+    "preparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-preparation.json",
+      "bytes": 6450,
+      "sha256": "f313d56a68bed216188128d053c8217cb49f1ae87c7a5984fad29f1a0f83f757"
+    },
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/tui01f-r3-caller-review.json",
+      "bytes": 2305,
+      "sha256": "e848bafdd2b83c4705924b7359d04ac561dddf7c702ab1001cb781e79b2348e6"
+    },
+    "input": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-inputs.json",
+      "bytes": 5824,
+      "sha256": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350"
+    },
+    "entry": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+      "bytes": 820,
+      "sha256": "5f1c1cfb69997d5d07987be793f15c9cf49b72f5afbb50c3ce52a6468bcfa7b5"
+    },
+    "sharedCaller": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 6937,
+      "sha256": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d"
+    },
+    "sourceDigest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+    "argv": [
+      "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "-B",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-run.py",
+      "--run-r3-once"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "windowId": "flow-tui01f04-20261008-r3",
+    "namespace": "docs/evidence/tui01f/web-handoff/r3-actual-once",
+    "permit": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r3-permit.json",
+    "minimumFreshFreeBytes": 13562019840,
+    "managerCapacityObservation": {
+      "at": "2026-10-08T02:03:51.261Z",
+      "freeBytes": 14457131008,
+      "meaning": "Planning read-only disk sample, not substitute operator samecallfresh admission"
+    },
+    "candidateAddedPlanningBytes": 1499463680,
+    "naturalResultSealBytes": 8388608,
+    "configuredPG": 13,
+    "requiredPGAvailable": 42,
+    "preflightMaxPG": 1,
+    "preflightPoolClosedBeforeLaunch": true,
+    "Chrome": 1,
+    "provider": 0,
+    "personalOperations": 0,
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "outerWorkSeconds": 150,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "supervisedChildMaxSeconds": 152.5,
+    "outputBytes": 65536,
+    "stageRawBytes": 4194304,
+    "privateNonChromeBytes": 16777216,
+    "fresh": "Samecallmatchingunconsumedselection/latest/noholder;freshclaimv7/exactownerWTbranch/globalconflicts;cleanremoteapprovedsource741inherited+7own/allruntimealiasesfixed. Newpermit/outer/window/capturepathsENOENTincludingdanglingsymlinks. freshfree>=maxfrozen/currentcompletefloor/intrinsic;availablePG>=42 closeprobe beforelaunch; observations<=30s;onlylistedresourcepermitfieldsderive. Failed/unknownadmission0launchSTOP noautotry/sourceornamechange.",
+    "lifecycle": "ImmediateactualSTART/terminal/exactFULLRETURN separate. OPS14exit/groupEOF notdetachedPTYChromeHTTPRunnerDBTMPproof;originalfixture receipts plusknownidentityobservations;unknownKEEP/noFORCE/oldKEEPuntouched. No concurrentactual.",
+    "scope": "Existingaf51/d629/ec30fixture controls, no779/fullpersonal/auth/provider claim. R3oneactual only, no retry; oldR2FAIL/cleanupunknown immutable.",
+    "budgetCaveat": "152.5s supervisedchild only, pre/postpinreads/fsync separate;ChromeDBWALplanningnot hardquotas. reserveOnce1GiB alreadycounted once.",
+    "allowRun": true,
+    "singleUse": true
+  },
+  "authority": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+  "authoritySha256": "63e4c70492bbea20b646de19fdc6e2b9b9bae0df7f60643bb09fe3f1bd332d79",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/tui/src/journey.test.ts",
+      "apps/tui/src/task-controls",
+      "apps/tui/test-fixtures/cancel_driver.py",
+      "docs/evidence/tui01f",
+      "experiments/tui-web-control-handoff",
+      "packages/interaction/src/task-control",
+      "plans/tui01f-task-cancel"
+    ],
+    "state": "active",
+    "branch": "codex/tui-task-cancel",
+    "origin": "new",
+    "taskId": "TUI01F",
+    "worker": "assignment_review",
+    "claimId": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "createdAt": "2026-10-06T15:46:19.232Z",
+    "updatedAt": "2026-10-08T01:38:12.746Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+  "remote": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+  "inheritedPins": 741,
+  "ownPins": 7,
+  "capacity": {
+    "maximum": 100,
+    "reserved": 3,
+    "observed": 9,
+    "available": 88,
+    "preflightPoolClosed": true,
+    "resolverCount": 19
+  },
+  "preflightPid": 63369,
+  "freshFreeBytes": 14447423488,
+  "completeFloorBytes": 13562019840,
+  "sourceUnchanged": true,
+  "priorNamespacesAbsent": true,
+  "chromeIdentity": {
+    "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "bytes": 367696,
+    "dev": 16777234,
+    "ino": 123578051,
+    "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+    "scope": "fresh public executable observation; not a full application inventory claim"
+  },
+  "wrapperPid": 62721
+}

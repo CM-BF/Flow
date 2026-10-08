@@ -1,0 +1,147 @@
+{
+  "at": "2026-10-08T02:13:37.163Z",
+  "sourceCommit": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "executionHead": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+  "inherited": [
+    {
+      "commit": "d19f7129a17fd76b0d4f3cb0966885b43e1af944",
+      "path": "docs/evidence/tui01f/web-handoff/r3-preparation.json",
+      "bytes": 6450,
+      "sha256": "f313d56a68bed216188128d053c8217cb49f1ae87c7a5984fad29f1a0f83f757",
+      "purpose": "Reviewed R3 input and original 741 closure; no duplicate archive."
+    },
+    {
+      "commit": "b63bf7eb5",
+      "path": "docs/evidence/i02/tui01f-r3-caller-review.json",
+      "purpose": "Execution Lead limited source and local-result approval."
+    }
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-actual-once/disposition.json",
+      "bytes": 196,
+      "sha256": "1ea752187ddc4773ce2903fbdf8ad1301cf8c9d1ab6332837493a1267bc03635"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-actual-once/outer-report.json",
+      "bytes": 1462,
+      "sha256": "177cce2d1859fa43ba59f5ef51184280cb18783807013ba68e586fbe902711cb"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-actual-once/reservation.json",
+      "bytes": 826,
+      "sha256": "8158107df40665e2df11af6a469338cc463213e1cdfcfc5760ff68d8db311795"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-actual-start.json",
+      "bytes": 401,
+      "sha256": "5b61c625b0f38e5c1f4c314412e86058c662d4a3cbb448a88cef5743429dfe6a"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-admission.json",
+      "bytes": 6665,
+      "sha256": "c7dabe17edd3733c34439c9c7f43bf6519fc27e15036a73982e383769c1adfd9"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-launcher.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-launcher.stdout",
+      "bytes": 184,
+      "sha256": "f3ca171d8765cb8baa04d3e7c56f54b2ee98fd5b78e2931caa0a0a77a753dee8"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-operator-terminal.json",
+      "bytes": 138,
+      "sha256": "0735de47dd30119bd915e3ceff6e49811d7209335e768582b38ad34ad025599b"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-permit.json",
+      "bytes": 932,
+      "sha256": "7bea0715729f80ecd2fc97403e6c2ae96abb4bb9c9a182e2044121cb69566b58"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-window-return.json",
+      "bytes": 2723,
+      "sha256": "ab3f1059cd122b95da4a1e8f29eacee04ee04cec093fa28821e698a2d9314f5c"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/checkpoint.json",
+      "bytes": 46473,
+      "sha256": "163de699c630a97c0e896cd1c6bc7cc9dc37eac0920c4dc52d6660b2f5358c3b"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/handoff-database-reservation.json",
+      "bytes": 97,
+      "sha256": "7abf1bb227bb561ba60787ce4acf465c72640ec8087534ec260c2b488b2f8366"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/handoff-stages.json",
+      "bytes": 72783,
+      "sha256": "ee763b9de2da8a1f590925f03144aaaee7d79bec1a263a3ed3de25ed6a6c19a8"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/held-original-request.json",
+      "bytes": 437,
+      "sha256": "7b1d37c3440538ca61b0b843f9442e0cea8415e21f44d066c53287669549e8db"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/reservation.json",
+      "bytes": 484,
+      "sha256": "5ff2bd53452951fd1c51f113585fcd05e6dab3f57c43168be4d05a694dfe3c3e"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/result.json",
+      "bytes": 46724,
+      "sha256": "916dd764fcb9dbc959880863e08009b9ffcc2751904706d43dc41667f14c3bc9"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/fixture/terminal-settlement.json",
+      "bytes": 34524,
+      "sha256": "e6eb65bef3f74e2686dbee4ed777d1d8b46343f0302e3ef455df12db9d8a7247"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/reservation.json",
+      "bytes": 2418,
+      "sha256": "905403934c9337407f2853a14423bea521842729cc3853facfd828aeeccc6026"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff/result.json",
+      "bytes": 606,
+      "sha256": "8980ae722e16caeae3775d0b31686b996c8e40e991f3ec0694179a2d24ea6ebb"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/windows/flow-tui01f04-20261008-r3.json",
+      "bytes": 2394,
+      "sha256": "31dfd9bd662882aa43d54f92ce7e3cbe94f2dd594d3418762f60dfdf4e26b941"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-result-summary.json",
+      "bytes": 4368,
+      "sha256": "adbd3dca4a8818b12a6c94b71788a94a89fe20b059398174ccd01ccf88147782"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r3-result-status-parse.json",
+      "bytes": 3068,
+      "sha256": "d610d91ab38eff63a63119119418dbe74e66b12f380a6ded27fd1a607c38a593"
+    }
+  ],
+  "rawCount": 20,
+  "rawBytes": 220467,
+  "bindingBytes": 227903,
+  "outcome": {
+    "selected": 1,
+    "passed": 0,
+    "exitCode": 1,
+    "workPassed": true,
+    "primary": "fixture-close; groups unknown",
+    "returnedAt": "2026-10-08T02:11:39.152Z",
+    "keep": "DB/private retained; original groups unknown unchanged",
+    "provider": 0,
+    "personal": 0,
+    "retry": 0
+  },
+  "review": "NOT_STARTED"
+}

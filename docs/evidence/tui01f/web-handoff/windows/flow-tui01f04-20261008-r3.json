@@ -1,0 +1,62 @@
+{
+  "run": "handoff-e699fe47-3ffe-4e37-afe4-85966d6522ff",
+  "identity": {
+    "digest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "8c9847a48e90620ecdeea137b1323b7e0f21038e2e8859a607e51bd4b777196c"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "d6b6994fd8c2ccb6fffbbcc9e34704dcdace54cb9ecf189b4a59b78fb12cc237"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "permit": {
+    "kind": "flow.tui01f04.r3.permit.v1",
+    "ready": true,
+    "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+    "windowId": "flow-tui01f04-20261008-r3",
+    "sourceDigest": "bf4be1119cfef17d1c3728639caf8e84d65e8e8a243c512253c9a97f05270184",
+    "inputDigest": "375292729bcd542355c10a14c5163e1a312e2d58a287272dc1755086fb17d350",
+    "callerDigest": "709588280ce14f5fa5694cf7760d182c8d501513c2017f357fda0a0424256b1d",
+    "providerCalls": 0,
+    "personalOperations": 0,
+    "startBefore": "2026-10-08T02:09:51.261Z",
+    "freshObservedAt": "2026-10-08T02:08:17.811Z",
+    "pgAvailable": 88,
+    "preflightPoolClosed": true,
+    "minimumFreshFreeBytes": 13562019840,
+    "actualHolder": null,
+    "claim": {
+      "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+      "version": 7
+    },
+    "note": "Not executable. One new resource selection and same-call fresh observations required; only then freeze absent r3-permit.json. Existing R1/R2 permits cannot be reused."
+  },
+  "outcome": "unknown-retain",
+  "bounds": {
+    "workMs": 90000,
+    "totalMs": 150000,
+    "rawBytes": 4194304,
+    "privateBytes": 16777216,
+    "reserveBytes": 1073741824,
+    "startBytes": 1207959552
+  }
+}

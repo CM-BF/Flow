@@ -1,3 +1,9 @@
+# 当前 TUI01F R3 实际结果
+
+状态：NOT_STARTED（限定结果保真独审待安排）。
+
+实际执行source bdf11c06ef7cef843b0a52f456408bdb1f539be6 / executionHead 0b6d952bda939b16aeed1ab740d0625518eb89b2。见[单份manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)及[安全摘要](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)：1选0过，功能workPassed但fixture-close/groups unknown；后置8PID/5组absent/双EOF/DB连接空与原KEEP严格分开。只审原件/来源，不重复旅程或旧741闭包，不追认原cleanup通过。新实际结果未继承原准备批准。
+
 # 当前 TUI01F R3 受信薄调用准备
 
 状态：APPROVED（限定调用准备与局部结果）。

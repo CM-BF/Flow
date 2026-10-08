@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-08T02:13:37.028Z",
+  "errors": [],
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| TUI01F-W-R3-RESOURCE | 2026-10-08T01:56:06.500Z | 2026-10-08T02:08:17.814Z | 资源 | 准备独审后取得唯一新selection；同call核验通过并实际启动 | r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点 |\n2026-10-08T02:08:17.814Z：R3 actual START，operator63460/launcher62721。唯一TUI01F04R3选择latest02:09:51.261Z；samecall fresh claimv7、cleanremote0b6d、741+7pins与依赖、unused namespace、free14447423488>=floor13562019840、availablePG88且max1预检池已关。新permit0600/fsync，原150/.5/2监督入口一次启动；[实际启动](../../docs/evidence/tui01f/web-handoff/r3-actual-start.json)。功能结果及detached/DB/private RETURN尚待观察，不从outer状态推断；原R2KEEP不动，0provider/个人。\n2026-10-08T02:13:19.203Z：R3 02:08:17.814Z START→02:08:36.845Z terminal exit1→02:11:39.152Z精确运行RETURN。实际1选0过，workPassed=true：A cancelled、B succeeded/verification passed、9PTY事件/22checkpoint/4DOM阶段、终端exit0/草稿保留；这些计数不冒额外用例。原fixture-close唯一失败为groups unknown，未记录具体组/error，不能归因EPERM或追认清理。8PID/5组ESRCH/双EOF、DB1377665连接空/admin关闭，DB/private KEEP；return目录identity投影缺字段保UNKNOWN，不另读内容或删除。见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)、[结果与窄诊断](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)。0provider/个人/重投，原R1/R2保持；本次实际等待已结束。clean-code复核主失败与清理分离/单一原件，无新增产品变化，source停写交独审。",
+    "waitingTable": {
+      "rows": [
+        {
+          "id": "TUI01F-W-R3-RESOURCE",
+          "started": {
+            "state": "known",
+            "at": "2026-10-08T01:56:06.500Z",
+            "record": "2026-10-08T01:56:06.500Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-08T02:08:17.814Z",
+            "record": "2026-10-08T02:08:17.814Z"
+          },
+          "category": "资源",
+          "reason": "准备独审后取得唯一新selection；同call核验通过并实际启动",
+          "source": "r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点",
+          "issues": []
+        }
+      ],
+      "issues": []
+    }
+  }
+}

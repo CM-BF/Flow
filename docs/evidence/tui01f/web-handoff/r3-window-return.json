@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-08T02:11:39.152Z",
+  "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+  "startedAt": "2026-10-08T02:08:17.814Z",
+  "terminalAt": "2026-10-08T02:08:36.845Z",
+  "state": "RUNNING_RESOURCES_RETURNED_FAILED_KEEP",
+  "processes": [
+    {
+      "target": 63369,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 62721,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 63460,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 63559,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 63752,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 66263,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 68549,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 68550,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "processGroups": [
+    {
+      "target": -63460,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -63559,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -63752,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -66263,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -68549,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "operatorEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "innerEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "innerExit": 1,
+  "innerElapsedMs": 18922,
+  "functionalWorkPassed": true,
+  "suite": {
+    "selected": 1,
+    "passed": false
+  },
+  "firstFailure": {
+    "stage": "fixture-close",
+    "reason": "groups unknown; workFailure null"
+  },
+  "cleanupOriginal": {
+    "groups": "unknown",
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 5.490084000000934,
+          "rows": []
+        }
+      ]
+    },
+    "adminClosed": true,
+    "databaseRemoved": false,
+    "temporaryRemoved": false
+  },
+  "database": {
+    "rows": [
+      {
+        "oid": 1377665,
+        "datname": "flow_tui01f_9550d9b37544"
+      }
+    ],
+    "connections": [],
+    "disposition": "KEEP; no DROP",
+    "observerAdminClosed": true
+  },
+  "temporary": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-yrzv8h",
+    "state": "unknown",
+    "code": null,
+    "disposition": "KEEP"
+  },
+  "pendingLaunches": 0,
+  "provider": 0,
+  "personal": 0,
+  "limits": "Exact post-terminal observations do not rewrite original groups unknown or suite failure; no retry, signals, DROP, old KEEP read, or private content read."
+}
