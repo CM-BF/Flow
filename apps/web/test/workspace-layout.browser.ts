@@ -327,6 +327,9 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       }
       result.observations.reducedMotion = { preference: "reduce", layoutStyles: motion, scope: "Visible panes, tabs and separators; protected-close and workspace keyboard actions above ran with reduced motion." };
       await page.setViewportSize({ width: 390, height: 844 });
+      await page.getByRole("button", { name: "Hide chat list", exact: true }).click();
+      await expect(page.getByRole("complementary", { name: "Chats", exact: true })).not.toBeVisible();
+      await expect(input(4)).toBeVisible();
       for (const scheme of ["light", "dark"] as const) {
         const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();
         await expect(page.locator("html")).toHaveAttribute("data-theme", scheme);
