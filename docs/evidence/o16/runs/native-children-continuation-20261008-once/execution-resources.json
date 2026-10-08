@@ -30,7 +30,7 @@
   "databaseBytes": 13622295,
   "connectionObservations": [
     {
-      "elapsedMs": 0,
+      "elapsedMs": 1,
       "rows": []
     }
   ],
@@ -49,10 +49,10 @@
     "dev": 16777234,
     "ino": 124755810
   },
-  "phase": "paused-owned-resources",
-  "serverClosed": true,
-  "workersStopped": true,
-  "adminClosed": true,
+  "phase": "worker-group-recorded",
+  "serverClosed": false,
+  "workersStopped": false,
+  "adminClosed": false,
   "errors": [],
   "endedAt": "2026-10-08T03:11:21.541Z",
   "replacementOrigin": {
@@ -76,5 +76,17 @@
       "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
       "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
     }
-  }
+  },
+  "workerProcess": {
+    "pgid": 8055,
+    "groupLeader": true,
+    "state": "unknown"
+  },
+  "workerProcesses": [
+    {
+      "pgid": 8055,
+      "groupLeader": true,
+      "state": "unknown"
+    }
+  ]
 }

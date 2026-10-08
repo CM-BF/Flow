@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-08T03:21:12.220Z",
+  "state": "RUNNING_RESOURCES_RETURNED_FAILED_KEEP",
+  "startAt": "2026-10-08T03:19:54.186Z",
+  "terminalAt": "2026-10-08T03:19:58.175Z",
+  "run": "native-children-continuation-20261008-once",
+  "stage": "continued-children",
+  "processes": [
+    {
+      "identity": 7969,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": 8038,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": 8037,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": 8055,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "groups": [
+    {
+      "identity": -7969,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": -8037,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": -8038,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "identity": -8055,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "dualEOF": true,
+  "targetConnections": [],
+  "returnProbeClosed": true,
+  "remoteProbeConnectionZero": "NOT_SEPARATELY_OBSERVED",
+  "pendingLaunch": 0,
+  "marker": {
+    "oid": 1375594,
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytes": "13728791"
+  },
+  "privateIdentitiesUnchanged": true,
+  "retention": "DB_AND_BOTH_PRIVATE_KEEP",
+  "allEscapedDescendants": "NOT_PROVEN",
+  "primary": {
+    "state": "unknown",
+    "stage": "runtime",
+    "code": "ENOENT",
+    "constraint": null
+  },
+  "firstFailure": "resource-observation-or-bound-unconfirmed",
+  "primaryRelativePath": "NOT_RECORDED_BY_FIXED_METER",
+  "persistedClosure": {
+    "phase": "worker-group-recorded",
+    "serverClosed": false,
+    "adminClosed": false,
+    "workersStopped": false,
+    "errors": []
+  },
+  "resultFinalReport": "ABSENT",
+  "operatorQueryCalls": "unknown",
+  "workerSafe": {
+    "present": true,
+    "nativeQueryCalls": 1,
+    "errors": null,
+    "queries": [
+      {
+        "binding": {
+          "slot": "child-1",
+          "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+          "executionId": "710e858d-e661-4604-abca-3b223aa9a710",
+          "assignment": {
+            "taskId": "8c3b9f43-a907-45aa-9e11-ddb8a91d193d",
+            "attemptId": "70f98b36-a1dc-47bb-b944-ae2944d8f953",
+            "ownerVersion": 1,
+            "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a"
+          }
+        },
+        "entry": "native-started-unknown",
+        "closed": true,
+        "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+        "firstFailure": null,
+        "frames": null,
+        "result": null
+      }
+    ]
+  },
+  "slots": [
+    {
+      "slot": "child-1",
+      "present": true,
+      "consumedAt": "2026-10-08T03:19:57.700Z",
+      "assignment": {
+        "taskId": "8c3b9f43-a907-45aa-9e11-ddb8a91d193d",
+        "attemptId": "70f98b36-a1dc-47bb-b944-ae2944d8f953",
+        "ownerVersion": 1,
+        "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a"
+      },
+      "outcome": "unknown"
+    },
+    {
+      "slot": "child-2",
+      "present": false
+    }
+  ],
+  "newQueryCalls": "UNKNOWN_UNLESS_DURABLE_WORKER_COUNTER",
+  "budgetConsumption": "child-1 reservation consumed; absent child-2 is not authority to retry; no new permit or run",
+  "metrics": {
+    "freeBytes": 14255820800,
+    "rawBytes": 76242,
+    "runtimeBytes": 39978,
+    "runtimeEntries": 21,
+    "runtimeState": "measured"
+  },
+  "remainingRuntimeBytes": 8348630,
+  "remainingRunBytes": 2020910,
+  "decideStarted": false
+}

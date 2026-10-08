@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-08T03:19:54.170Z",
+  "window": {
+    "at": "2026-10-08T03:18:07.035Z",
+    "selectedAt": "2026-10-08T03:18:07.035Z",
+    "state": "SELECTED_READY_TO_SIGN_V3_PERMIT_AND_LAUNCH",
+    "allowRun": true,
+    "singleUse": true,
+    "selectionKey": "O16ContinuedChildrenV3",
+    "logicalId": "O16-GO-REAUTHORIZE-20261008-CHILDREN",
+    "stage": "continued-children",
+    "sameRun": "native-children-continuation-20261008-once",
+    "latestStart": "2026-10-08T03:23:07.035Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "claim": {
+      "id": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+      "version": 1,
+      "scopeCount": 3,
+      "worker": "native_center_owner"
+    },
+    "executionHead": "9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb",
+    "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+    "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+    "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+    "ready": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-ready.json",
+      "bytes": 6494,
+      "sha256": "361a17cbe8cfedfa527b95853cd3410ba691dfe458a1af0d882953475419e0c7"
+    },
+    "fixedActualInputs": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/confirmation.json",
+        "bytes": 4198,
+        "sha256": "fb4377446d93a3bc80f7e7f15313ddd3043e8f2cb1172289fc8b7dc15a9e3993"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-authorization.json",
+        "bytes": 9085,
+        "sha256": "0b0f08fefd90d9e536cc8008a2a957e9f9e0d841759bd52f6ee1affc5866adbf"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-pause.json",
+        "bytes": 2670,
+        "sha256": "b89f3e85e64390f261dc6e8d427c830955c03f80bab658e755122f17dba46804"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/runs/native-children-continuation-20261008-once/execution-resources.json",
+        "bytes": 3133,
+        "sha256": "aed3b180682622cd9fbea0c7598af965351901e2bcb2bae72f2f26842b7abcb6"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/window-return.json",
+        "bytes": 2749,
+        "sha256": "5299f4043d588d048a63bb6604c86bd9c70b80661dca9e32f9c9f5b8d5ee682e"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/actual-result-manifest.json",
+        "bytes": 7302,
+        "sha256": "b5c16fe5f67b33b6b54eec4f0ff2bae9ac230c57db8937fa867a01c882bdbf21"
+      }
+    ],
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "--continued-children",
+      "native-children-continuation-20261008-once",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-permit.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "nonSecretEnvironment": {
+      "FLOW_O16_PG_WINDOW": "approved-one-shot"
+    },
+    "permitPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/children-permit.json",
+    "permitTemplate": {
+      "kind": "flow.o16.phase-permit.v3",
+      "authorizedBy": "Goal Owner",
+      "approvalId": "O16-GO-REAUTHORIZE-20261008-CHILDREN",
+      "phase": "children",
+      "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+      "model": "claude-sonnet-5-5",
+      "limits": {
+        "queries": 2,
+        "maxTurns": 3,
+        "maxBudgetUsd": 0.1,
+        "timeoutMs": 60000
+      },
+      "approvedAt": null,
+      "expiresAt": null,
+      "authorizationReference": "GO O16-GO-REAUTHORIZE-20261008 actual decision preserves original unconsumed two-child budget; actual new ACK and exactRETURN recorded. Lead will bind stage times; separate D01 window required; no retry/fallback/new planner.",
+      "confirmation": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+      },
+      "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+      "executionAuthorization": {
+        "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+        "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+        "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+        "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+        "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+        "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+        "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+        "expiresAt": "2026-10-08T03:39:15.000Z"
+      }
+    },
+    "signingRule": "Original/operator may now sign exactly one v3 permit from pinned ready template with actual approvedAt=T and expiresAt no later than 03:26:21.560Z; whole150s must fit. Start before min(manager latest, signed expiresAt minus150s, execution authorization expiry minus150s). No rolling, backdating, old expired permit, new planner or fallback. No second READY approval loop.",
+    "minimumFreshFreeBytes": 11612717056,
+    "managerFreeSampleBytes": 14250045440,
+    "managerSampleNotActualAdmission": true,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "PG": 13,
+    "requiredPGAvailable": 29,
+    "preflightPoolClosedBeforeLaunch": true,
+    "Chrome": 0,
+    "maximumAdditionalQueries": 2,
+    "maximumCumulativeQueries": 6,
+    "model": "claude-sonnet-5-5",
+    "perQueryMaxTurns": 3,
+    "perQueryMaxBudgetUSD": 0.1,
+    "perQueryTimeoutMs": 60000,
+    "newPlanningBytes": 0,
+    "privateBytesCumulative": 8388608,
+    "runBytesCumulative": 2097152,
+    "newPrivateDirectory": false,
+    "budgetReset": false,
+    "budgetRule": "Same already-counted renew private8MiB/run2MiB; fresh remaining bytes required. Existing DB and both directories KEEP. Normal shared auth writes remain separately authorized; no personal service operation. No new scratch pool or raw reset.",
+    "fresh": "Same-call current matching unused selection/no holder/latest, exact claim/owner/scope/WT/branch/no overlap, clean actual remote executionHead, 329 source/39 alias/3runtime and all actual input bindings/old+new confirmation digests, current marker and both directory identities, workers/target connections closed, oncegates absent, availablePG>=29 then pool closed, free>=max(frozen/current/intrinsic), fresh cumulative remaining8M/2M. Unknown or mismatch stops without retry.",
+    "lifecycle": "Immediately send actual START and terminal separately; exact owned PID/PGID/EOF/server/admin/targetconnections/private identity RETURN required. Keep original failures/unknowns. Two actual artifacts require independent review; no automatic decide or extra query. Future decide is separate0query selection after exactRETURN."
+  },
+  "leadApprovedAt": "2026-10-08T03:18:43.000Z",
+  "leadExpiresAt": "2026-10-08T03:26:21.560Z"
+}

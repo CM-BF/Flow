@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-08T03:22:44.184Z",
+  "source": {
+    "path": "/private/tmp/flow-o16-AcjjIf/children/report.json",
+    "bytes": 2616,
+    "sha256": "c56b3115a34687aa80fd645319bc0d0b9ff31d4c8bb162196db30ea49d101400",
+    "dev": 16777234,
+    "ino": 124779615
+  },
+  "privateOriginalKept": true,
+  "nativeQueryCalls": 1,
+  "queries": [
+    {
+      "binding": {
+        "slot": "child-1",
+        "nodeId": "15c56356-937d-41f7-824f-452f6c9c74ef",
+        "executionId": "710e858d-e661-4604-abca-3b223aa9a710",
+        "assignment": {
+          "taskId": "8c3b9f43-a907-45aa-9e11-ddb8a91d193d",
+          "attemptId": "70f98b36-a1dc-47bb-b944-ae2944d8f953",
+          "ownerVersion": 1,
+          "runnerId": "c03a73ce-3b5b-4958-bca4-8dc1506b9a1a"
+        }
+      },
+      "entry": "native-started-unknown",
+      "closed": true,
+      "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+      "firstFailure": null,
+      "frames": null,
+      "result": null
+    }
+  ],
+  "entryCountMeaning": "Fixed worker increments before invoking actual nativeQuery; durable1 means SDK entry, not network/model completion, token/cost or successful artifact.",
+  "operatorQueryCalls": "unknown unchanged",
+  "sdkUsage": "UNKNOWN",
+  "accountCost": "UNKNOWN",
+  "result": "NO_SUCCESS_RESULT_RECORDED",
+  "projectionPolicy": "Only counter, actual execution identity, controlled entry/close and result flags; no credentials/prompt/body/raw auth copied."
+}

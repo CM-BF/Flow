@@ -1,0 +1,35 @@
+{
+  "driverPid": 8038,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 66,
+  "ownedGroups": [
+    {
+      "pgid": 8038,
+      "state": "stopped"
+    },
+    {
+      "pgid": 8055,
+      "state": "stopped"
+    }
+  ],
+  "reason": "resource-observation-or-bound-unconfirmed",
+  "last": {
+    "freeBytes": 14250909696,
+    "rawBytes": 71488,
+    "runtimeBytes": 39978,
+    "runtimeEntries": 21,
+    "runtimeState": "measured"
+  },
+  "observationFailure": {
+    "state": "unknown",
+    "stage": "runtime",
+    "code": "ENOENT",
+    "constraint": null
+  },
+  "stopCheckpoint": "durable",
+  "signal": "unknown",
+  "exitCode": null,
+  "signalCode": "SIGTERM",
+  "elapsedMs": 3577
+}

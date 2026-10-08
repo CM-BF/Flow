@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T03:22:44.184Z",
+  "classification": "ACTUAL_CONTINUED_CHILDREN_FAILED_PENDING_INDEPENDENT_FIDELITY_REVIEW",
+  "start": "2026-10-08T03:19:54.186Z",
+  "terminal": "2026-10-08T03:19:58.175Z",
+  "exactRunningReturn": "2026-10-08T03:21:12.220Z",
+  "selected": 1,
+  "passed": 0,
+  "operatorElapsedMs": 3577,
+  "firstFailure": "resource-observation-or-bound-unconfirmed",
+  "observation": {
+    "state": "unknown",
+    "stage": "runtime",
+    "code": "ENOENT",
+    "constraint": null
+  },
+  "relativePath": "NOT_RECORDED; do not reconstruct or infer from later files",
+  "SDKEntryCounter": 1,
+  "historicalSDKEntryCounter": 4,
+  "cumulativeObservedSDKEntries": 5,
+  "operatorQueryCount": "unknown (unchanged)",
+  "slot1": "consumed/native-started-unknown/closed true",
+  "slot2": "absent; no authority for retry",
+  "report": "continued-children.json absent; no artifacts/usage/semanticacceptance",
+  "usage": "UNKNOWN",
+  "closure": "Postterminal4PID+4PGIDfreshESRCH/dualEOF/targetconnempty/returnprobeclosed. Originalresources closurefalse/unknown remains; runningRETURN is separate.",
+  "retention": "OriginalDB/bothprivate/rawKEEP. Newpause not created; prior reauthorize pause is stale after consumed gate, cannot resume.",
+  "sourceOnlyObservation": "Fixed size() treats nested lstat/readdir ENOENT as runtime unknown. This does not identify the vanished path or prove a benign rename happened.",
+  "next": "No query/decide/retry. Minimalzero-model meterInterface reuse proposal after seal; any actual continuation needs new explicit authority."
+}

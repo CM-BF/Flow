@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-08T03:19:54.180Z",
+  "head": "9b9a3f93aabb0bc25eff7e6655a3f5c41369e1bb",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/o16",
+      "experiments/continuous-goal-acceptance",
+      "plans/o16-continuous-goal-acceptance"
+    ],
+    "state": "active",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "origin": "new",
+    "taskId": "O16",
+    "worker": "native_center_owner",
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "createdAt": "2026-10-07T09:00:26.182Z",
+    "updatedAt": "2026-10-07T09:00:26.182Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+  "sourceFiles": 329,
+  "dependencyAliases": 39,
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "runtime": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "dev": "16777234",
+      "ino": "116955756"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+      "dev": "16777234",
+      "ino": "116955906"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+      "dev": "16777234",
+      "ino": "116957779"
+    }
+  ],
+  "originalConfirmation": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "progressionId": "9a39e855-637c-4067-846f-49d6d49da006"
+  },
+  "newExecutionAuthorization": {
+    "goalId": "7d22a98e-3337-4d6b-bd39-1f5403f739c2",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "confirmationDigest": "38e391109723f0f8cd3bff6e584889ee1f0d8cf7d8ca512962d31f9465235f54",
+    "oldProgressionId": "9a39e855-637c-4067-846f-49d6d49da006",
+    "progressionId": "57188edb-dd7d-46fd-9129-87b29265d6a9",
+    "authorizationDigest": "240a487014df5388f8d59d62ad957dd3ce00c4ebe48046b5f82af1fd8a89fe1f",
+    "expiresAt": "2026-10-08T03:39:15.000Z"
+  },
+  "actualPauseAndPrivateStateValidated": true,
+  "namespaceUnused": true,
+  "capacity": {
+    "max": 100,
+    "reserved": 3,
+    "extra": 0,
+    "used": 10,
+    "available": 87
+  },
+  "marker": {
+    "oid": 1375594,
+    "marker": "1f572164-67bc-4c71-b050-c77b69113a1d",
+    "bytes": "13622295"
+  },
+  "targetConnections": [],
+  "probeClosed": true,
+  "metrics": {
+    "freeBytes": 14252064768,
+    "rawBytes": 65313,
+    "runtimeBytes": 27509,
+    "runtimeEntries": 4,
+    "runtimeState": "measured"
+  },
+  "minimumFreshFreeBytes": 11616911360,
+  "latestStart": "2026-10-08T03:23:07.035Z",
+  "permit": {
+    "bytes": 1887,
+    "sha256": "2ee001e2ae4c2540586fb2832d48895c00ca09336b6b3cf4f19f3a48766067a0"
+  },
+  "queryCallsBefore": 4,
+  "maximumNewQueries": 2
+}
