@@ -62,6 +62,7 @@ def selection_and_processes():
 def failure_archive():
     # Distinct T2/T3 must each own one pair; duplicating T2 cannot hide an unknown T3.
     logs, fixture, _ = sample()
+    assert candidate.process_evidence(fixture, logs)
     fixture['facts'][2]['outcomes'][1] = copy.deepcopy(fixture['facts'][2]['outcomes'][0])
     notices = candidate.worker_notices(logs['runner-verifier.log']); notices[3]['resourceState'] = 'unknown'
     logs['runner-verifier.log'] = ('\n'.join(json.dumps(n) for n in notices) + '\n').encode()
@@ -104,7 +105,7 @@ def failure_archive():
         if path.is_dir(): path.rmdir()
         else: path.unlink()
     root.rmdir()
-    print(json.dumps({'group': 'archive-and-distinct-workers', 'assertionScenarios': 13, 'passed': True}))
+    print(json.dumps({'group': 'archive-and-distinct-workers', 'assertionScenarios': 14, 'passed': True}))
 
 
 if __name__ == '__main__':
