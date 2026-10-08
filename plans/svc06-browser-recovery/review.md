@@ -4,7 +4,9 @@
 
 实际发布23:35:35.341Z–23:36:06.257Z：迁入确认后公开CAS到779/v4，保留三旧Web产物与三运行服务；两个action均0退出/双EOF/owned组absent。随后readonly23:38:23.988Z–23:38:24.007Z仅3GET，身份及新旧各一versioned资产精确size/hash通过。22 fixed/118188B与8安全副本5361B核同；reader无reviewer个人读取或重跑。原04误选FAIL/截断/逃逸UNKNOWN保持；实际用户领取与浏览器新聊天NOT_OBSERVED，不升级整个FLOW完成。
 
-当前产品及执行源码停写，结果已部署/已审，主线结果接收另由Execution Lead完成；claim未随意释放。以下保留各历史片段在当时的范围和结论。
+2026-10-08T00:05:01.000Z只读接收核对：上述唯一结果审查已main `97353e4f48ea515d268f6e4a6107e778b6c39abb` 收录，Lead交接的107d61927及当前观察1b9eda58f均包含它；target5719及原manifest/hash仍由own canonical保存，不复制原件或声称main已逐份归档全部raw。主线等待结束，本片段已交付；完整FLOW、真实用户领取与浏览器新聊天不在此结论内。
+
+当前产品及执行源码、两个已消费namespace与原件停写，无pending writer；claim v8未随意释放。以下保留各历史片段在当时的范围和结论。
 
 本次固定来源组合及参数化构建入口：APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION，reviewer astra_ultra_execution_lead，实际 2026-10-07T14:26:01.460Z。0 reviewer重跑/个人操作。唯一原件 main 6fd214eb62f269167f6af4a8390850561dc0d01c docs/evidence/i02/svc06b-preparation-review.json，本scope保存原字节副本[preparation-independent-review.json](../../docs/evidence/svc06/browser-recovery/preparation-independent-review.json)。
 

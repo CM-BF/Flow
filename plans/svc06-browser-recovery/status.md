@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:41:16.799Z；779/v4实际部署及有限读回已独审通过，本片等待主线正常收录 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:05:01.000Z；779/v4实际部署及有限读回已独审，唯一结果审查已main收录，本片主线等待结束 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,15 +16,15 @@
 | 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；本次Web修复source6491c4815cd6daf8f640648d5e8a25a599d8cd92，旧f0及fresh包99c0保留 |
 | 工作树dirty状态 | 产品及全部执行源停写；仅status/review收口；两已消费namespace/原件封存无pending writer，claim未释放 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布尚未启动 |
+| 本片段交付阶段 | delivered |
+| 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布已完成并获限定独审 |
 | 实现范围 | 仅own Web caller及直接测试：外preview锁内复用公开只读维护store和固定Pool，不改运行产物 |
 | 检查状态 | 实际transfer16994ms与publish13918ms均exit0/双EOF/各组absent；紧前只读8606ms通过，总raw2289B；原局部6+1有效且04失败未知保持 |
-| 已集成main状态 / HEAD | 调用修复与独审已main c414c0d0d；实际部署result5719已独审，当前实际结果/本次metadata主线接收待Execution Lead；不以部署成功冒main收录 |
+| 已集成main状态 / HEAD | 调用修复与独审已main c414c0d0d；目标5719的唯一结果审查已于main97353e4f48ea515d268f6e4a6107e778b6c39abb收录，107d61927及本次观察1b9eda58f均含该记录；固定原件仍由own canonical保存，不声称主线复制全部raw |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版网页已发布，原三版网页与三个正在运行的服务均保留。新实例初始化和开放接收状态已核；尚未验证新的真实用户任务领取。 |
-| 下一可用交付 | 本次发布结果已审，待主线收录；后继用户任务与浏览器新聊天验收另有范围。 |
+| 下一可用交付 | 本片段已交付；后继用户任务与浏览器新聊天验收另有范围。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；I02 svc06b-web779-actual-result-review.json于2026-10-07T23:40:01.257Z限定APPROVED，0 P1/P2；目标5719，历史04未知保留。 |
@@ -36,12 +36,14 @@
 | SVC06B-01 | completed | assignment_review | source.json精确provision/take/三前像/四后像与原独审 |
 | SVC06B-02 | completed | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，Lead限定独审已通过 |
 | SVC06B-03 | completed | assignment_review / Execution Lead | 实际artifact cd27/04da及内部加载通过，独审批准并main b37e404d |
-| SVC06B-04 | pending | assignment_review / Execution Lead | e15 cold/四App、个人恢复及779/v4发布结果均已独审；只剩当前结果/metadata主线受控收录，完整任务不提前关闭 |
+| SVC06B-04 | completed | assignment_review / Execution Lead | e15 cold/四App、个人恢复及779/v4发布均已独审；5719唯一结果审查已main97353e4f收录，本片受控交付闭合，不扩为实际用户领取/新聊天或整个FLOW完成 |
 | SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，3产品scope已释放；不改cd27 |
 
 ## 等待与实际时间
 
-本次发布窗口已于23:36:06.257Z归还，实际结果独审于23:40:01.257Z通过；资源等待和结果审查等待均结束。当前只待主线正常接收，不占运行窗口。历史首次接口等待起点无单独证据仍UNKNOWN，不把纯准备时间全归因资源。
+本次发布窗口已于23:36:06.257Z归还，实际结果独审于23:40:01.257Z通过；资源等待和结果审查等待均结束。2026-10-08T00:05:01.000Z只读确认唯一结果审查已main收录，主线等待结束；此为接收观察时间，不从commit时间反推部署或任务开工。实际发布2026-10-07T23:35:35.341Z–23:36:06.257Z与readonly23:38:23.988Z–23:38:24.007Z分列保留。完整FLOW及真实用户领取/新聊天未由本片验收，任务总完成字段仍保NOT_COMPLETED。产品、执行源、两已消费namespace及原件继续停写，claim v8保持，不占运行窗口。
+
+本次仅plan/status/review一致性收口：复用本地find-skills/clean-code/codebase-design方法核事实、职责与限定结论；未运行产品检查或读取个人材料，未复制raw。主线1b9eda58f权威parseStatus仅核本status，errors/humanMissing/timingIssues均空；ownId原未声明保持unknown，历史UNKNOWN及04未知资源不改。
 
 ## 已有审查与质量方法
 
