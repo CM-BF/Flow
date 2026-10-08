@@ -1,14 +1,19 @@
 {
   "kind": "SVC09A_SETTINGS_BACKEND_FIXED_BUILD",
   "base": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
-  "target": "f9221dbdce367d1794586471991adbe7a5a98c13",
+  "target": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
   "sourceDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source",
-  "sourceTree": "b08d692bb50a13534c3908e57e4991d8450ffc79",
+  "sourceTree": "b135557967c0a09650b8cb3740030100221a5125",
   "sourceArchive": {
-    "files": 1000,
-    "logicalBytes": 7888748
+    "files": 1001,
+    "logicalBytes": 7896835
   },
   "sourceChanges": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 18004,
+      "sha256": "d13c573b6b374e3d3d1ca57bdb5a68dce49d9a27eaeda42210abc7e6dd15aac1"
+    },
     {
       "path": "apps/server/src/runners.ts",
       "bytes": 20703,
@@ -31,8 +36,8 @@
     },
     {
       "path": "tools/personal-preview/environment.mjs",
-      "bytes": 2784,
-      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
     },
     {
       "path": "tools/personal-preview/maintenance-host.mjs",
@@ -105,5 +110,27 @@
     "opsCaptureBytes": 1048576,
     "liveReserveBytes": 1073741824
   },
-  "actual": "NOT_RUN; requires independent review and fresh explicit D01 build window"
+  "actual": "NOT_RUN; requires independent review and fresh explicit D01 build window",
+  "sourceDelta": {
+    "priorSource": "f9221dbdce367d1794586471991adbe7a5a98c13",
+    "reviewedDelivery": "5e3ac72e2b73cdc2bca732e0b23f4db243af4850",
+    "manifestSha256": "0aa46719224f30b364080ff1e36defd351980c64e5336c0749aed98af8aeb0a6",
+    "productChanges": [
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/environment.mjs"
+    ],
+    "supportTests": [
+      {
+        "path": "apps/runner/src/runtime-terminal-admission.test.ts",
+        "bytes": 6804,
+        "sha256": "3d7f7fa3d61d1fd1ccbc9081592c699b68fa3d0a637b78881659da400a7e0a8c"
+      },
+      {
+        "path": "tools/personal-preview/environment.test.mjs",
+        "bytes": 5202,
+        "sha256": "c6dc48b2cf542e7fe3a8c4d3682537a7af96cc13441abf2f08c5cdc5290501da"
+      }
+    ],
+    "limits": "center environment opt-in only; no server producer; no plugin runtime import"
+  }
 }

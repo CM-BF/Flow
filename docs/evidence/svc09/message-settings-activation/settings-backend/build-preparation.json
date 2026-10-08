@@ -1,16 +1,16 @@
 {
-  "state": "FIXED_SOURCE_AND_DIRECT_RESULT_READY_FOR_REVIEW_BUILD_NOT_GRANTED",
-  "source": "f9221dbdce367d1794586471991adbe7a5a98c13",
+  "state": "SUCCESSOR_FIXED_SOURCE_DELTA_READY_FOR_DIRECT_REVIEW_BUILD_NOT_GRANTED",
+  "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
   "bindings": [
     {
       "path": "build-inputs.json",
-      "bytes": 5114,
-      "sha256": "8a0b4f1923d7a1c75db6017ec120c620cb2fd6d5fef1131cd9f460b7adad5945"
+      "bytes": 6139,
+      "sha256": "cfe5b380063def16b6fea2f1687f8bd0c0227164a1aa1496e201a293c88f518d"
     },
     {
       "path": "build-entry.mjs",
-      "bytes": 4063,
-      "sha256": "4807e1a3b922472fa9ba3c98fc0f23459b026e154aeb6f2ac68c6fc45cfd9681"
+      "bytes": 4153,
+      "sha256": "dcf7b8d7fee71ee66d35b47065db1d4725dbe0fa5db8eac1ab470b5fcaff41e3"
     },
     {
       "path": "build-supervise.py",
@@ -23,13 +23,13 @@
     "bytes": 3302,
     "sha256": "2935f14b13841c318d83eb3841c9185de1a99c4461b6560b2832f9ff0ebd918d"
   },
-  "actual": "NOT_GRANTED; await Web required contract decision then new D01 selection; no build/PG/provider/personal",
-  "at": "2026-10-08T03:50:37.792Z",
-  "callerSource": "413d956ccc1fb0d383d6d77fd87dce8cba7c5009",
-  "sourceTree": "b08d692bb50a13534c3908e57e4991d8450ffc79",
+  "actual": "NOT_GRANTED; Web contract confirmed sufficient; successor source reviewed, rebind and host ports awaiting direct checks/review then explicit D01 selection",
+  "at": "2026-10-08T04:11:30.387Z",
+  "callerSource": "PENDING_CURRENT_DELTA_FIXED_COMMIT",
+  "sourceTree": "b135557967c0a09650b8cb3740030100221a5125",
   "archive": {
-    "files": 1000,
-    "logicalBytes": 7888748
+    "files": 1001,
+    "logicalBytes": 7896835
   },
   "runtimePins": [
     {
@@ -101,5 +101,10 @@
     "lastReturn": "2026-10-08T03:48:42.930Z",
     "groups": "2 absent/dualEOF",
     "scratch": "2 exact empty same identity removed"
+  },
+  "priorPreparation": {
+    "commit": "a266e20364422648f644a3e4cd5cf541862f1524",
+    "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-preparation.json",
+    "sha256": "32510a5869b11ff78bde1973e02e6abff6846f19cf483110267a0d584eb9111a"
   }
 }

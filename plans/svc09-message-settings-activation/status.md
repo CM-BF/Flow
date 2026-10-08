@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-08T04:02:54.588Z |
+| 更新时间 | 2026-10-08T04:12:27.757Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -14,13 +14,13 @@
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
 | 当前产出 | 个人恢复片已交付；现开始组合支持逐消息设置的后端，保持旧会话与默认runner身份。 |
-| 下一可用交付 | 可独审的固定后台构建入口，随后验证双槽冷启动与混合队列。 |
-| 当前阻塞 | ACTIVE: 构建准备已独审、现有 Web 接口已确认足够；真正构建前正补准确运行时与环境差量，随后固定新来源并验证双槽宿主。 |
+| 下一可用交付 | 新固定后台的精确构建输入与双槽宿主检查接口，随后进行隔离构建和完整宿主验证。 |
+| 当前阻塞 | ACTIVE: 构建准备已独审、现有 Web 接口已确认足够；运行时与环境差量已固定独审，现将构建和宿主输入绑定同一来源；真实构建仍待窗口。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 2b5931af20e8157813b1ad770b18f7236bf5b457（本轮开始前clean；仅own准备继续） |
+| Head | b3a11860a02df5636fb5545759861659e6700b86（本次重绑前clean；本段own源码/输入另固定） |
 | 实现目标 | 413d956ccc1fb0d383d6d77fd87dce8cba7c5009 |
 | 工作分支状态 | in-progress（设置后台组合准备；此前个人恢复结果仍已审/main） |
 | 工作树dirty状态 | 仅本轮own evidence/status；生产路径无写权且未改 |
@@ -224,3 +224,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-08T03:59:08.494Z：Lead决定在真正构建前补既有 center 诊断转发与 runtime 终态处理顺序，a266/f922原批准保留而actual HOLD。仅 own 双槽host两helper新增受信composition/purpose接缝，尚未局部运行/独审，见[接缝](../../docs/evidence/svc09/message-settings-activation/settings-backend/dual-slot-interface.md)。原构建入口冻结、0child/0pending；等待Lead最终固定source后再差量绑定。
 
 2026-10-08T04:02:54.588Z：SVC09B原owner正实施受控环境/terminal-order差量；本owner当前0child/0pending，暂不启动同队局部检查。own两helper及4个port例先固定源码，原a266构建入口/pins未改，待新target一次重绑定。两槽真实旅程/兼容/个人激活均未运行。
+
+2026-10-08T04:12:27.757Z：04:10:26.547Z fresh claim v12/exact2 后开始本次source重绑与host端口局部段。SVC09B source00c84910/delivery5e3ac72 独立限定批准，11产品期待与2支持测试来源已绑定；Git archive1001files/7896835B，原80source/33SQL/工具与预算不扩。旧a266/8例不回跑。Lead授本段≤15s累计监督child、tmp8MiB/raw128KiB，0PG/HTTP/native/个人；只新4个host端口例与1个实际build/host输入对齐例。当前尚未launch，原实际构建未授权；缺artifact不伪造host运行输入。

@@ -1,0 +1,83 @@
+{
+  "target": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+  "paths": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 18004,
+      "sha256": "d13c573b6b374e3d3d1ca57bdb5a68dce49d9a27eaeda42210abc7e6dd15aac1"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 20703,
+      "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "26e6e89409346e1d2cfbc9409d4754b379f8a7819eadc5b7ae2a8613605cb264"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5753,
+      "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 13178,
+      "sha256": "1edc25d054fdbb02b947231a8c73df72c6956734960ef9a5f12cf79b4e750da4"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 57126,
+      "sha256": "882385d311836c456a0156444bcd529c6729052e44294c305f38c4069f7604c5"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 4296,
+      "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 15896,
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    }
+  ],
+  "sourceDelta": {
+    "priorSource": "f9221dbdce367d1794586471991adbe7a5a98c13",
+    "reviewedDelivery": "5e3ac72e2b73cdc2bca732e0b23f4db243af4850",
+    "manifestSha256": "0aa46719224f30b364080ff1e36defd351980c64e5336c0749aed98af8aeb0a6",
+    "productChanges": [
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/environment.mjs"
+    ],
+    "supportTests": [
+      {
+        "path": "apps/runner/src/runtime-terminal-admission.test.ts",
+        "bytes": 6804,
+        "sha256": "3d7f7fa3d61d1fd1ccbc9081592c699b68fa3d0a637b78881659da400a7e0a8c"
+      },
+      {
+        "path": "tools/personal-preview/environment.test.mjs",
+        "bytes": 5202,
+        "sha256": "c6dc48b2cf542e7fe3a8c4d3682537a7af96cc13441abf2f08c5cdc5290501da"
+      }
+    ],
+    "limits": "center environment opt-in only; no server producer; no plugin runtime import"
+  },
+  "artifact": "NOT_BUILT; source-only input, not executable host authority"
+}

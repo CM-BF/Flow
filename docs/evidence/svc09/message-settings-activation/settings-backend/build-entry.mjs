@@ -6,7 +6,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
-export const TARGET = 'f9221dbdce367d1794586471991adbe7a5a98c13';
+export const TARGET = '00c84910d5ba1cfd1724a996a3649b8680de0e67';
 export const ARGUMENT = '--execute-settings-build-once';
 const sha = value => createHash('sha256').update(value).digest('hex');
 export async function pinned(binding) {
@@ -22,6 +22,7 @@ export function composeSettingsInput(base, delta) {
   assert.equal(delta.kind, 'SVC09A_SETTINGS_BACKEND_FIXED_BUILD');
   assert.equal(delta.base, base.target); assert.equal(delta.target, TARGET);
   assert.deepEqual(delta.sourceChanges.map(row => row.path).sort(), [
+    'apps/runner/src/runtime.ts',
     'apps/server/src/runners.ts', 'tools/personal-preview/backend-release/files.mjs',
     'tools/personal-preview/backend-release/index.mjs', 'tools/personal-preview/cli.mjs',
     'tools/personal-preview/environment.mjs', 'tools/personal-preview/maintenance-host.mjs',
@@ -38,7 +39,7 @@ export function composeSettingsInput(base, delta) {
     fixedSourceInputs: [...sources.values()], resources: { ...base.resources, minimumFreeBytes: delta.minimumFreeBytes },
     bindings: [...base.bindings, delta.baseLoader, delta.baseInput],
     inputProvenance: { ...base.inputProvenance, settingsDeltaSha256: sha(JSON.stringify(delta)) },
-    preparationNotes: 'Fixed880060 plus ten reviewed settings/eligibility/retention leaves; empty offline store; no host/PG/personal/provider.',
+    preparationNotes: 'Fixed880060 plus eleven reviewed settings/eligibility/retention/terminal leaves; two support-test changes in source archive; empty offline store; no host/PG/personal/provider.',
   };
 }
 export async function loadSettingsBuild() {
