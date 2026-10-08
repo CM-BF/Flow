@@ -18,7 +18,7 @@ async function draftRecord(page: Page, route: string) {
       open.onsuccess = () => {
         if (expired) { open.result.close(); return; }
         const database = open.result, tx = database.transaction("records", "readonly"), request = tx.objectStore("records").getAll();
-        request.onsuccess = () => { clearTimeout(timer); database.close(); resolve(request.result.find(value => value.kind === "draft" && value.owner.routeId === routeId) ?? null); };
+        request.onsuccess = () => { clearTimeout(timer); database.close(); const matches = request.result.filter(value => value.kind === "draft" && value.owner.routeId === routeId); if (matches.length > 1) { reject(Error("Ambiguous route draft observation")); return; } resolve(matches[0] ?? null); };
         request.onerror = () => { clearTimeout(timer); database.close(); reject(request.error); };
       };
     });
@@ -244,8 +244,18 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       }
       await probe("arm"); await input(4).press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
       await settings("arc-B"); await input(4).fill("Independent B while A prepares"); await upload("arc-next.txt");
-      await expect.poll(async () => (await draftRecord(page, "conversation:chat-4"))?.data?.messageSettings?.requested?.model).toBe("arc-B");
-      const saved = (await draftRecord(page, "conversation:chat-4"))!; expect(saved.data.attachments.map((item: { name: string }) => item.name)).toEqual(["arc-next.txt"]);
+      const nextFile = (await probe("snapshot")).ready.find((item: { name: string }) => item.name === "arc-next.txt");
+      expect(nextFile).toBeTruthy();
+      const expectNextDraft = async () => {
+        await expect(input(4)).toHaveValue("Independent B while A prepares");
+        await expect(pane(4).locator(".ep-settings-summary").filter({ hasText: "下一条消息设置" })).toContainText("arc-B");
+        await expect(pane(4).getByRole("button", { name: "File attachment", exact: true })).toHaveCount(1);
+        await expect(pane(4).locator(".aui-attachment-root")).toContainText("arc-next.txt");
+        expect((await probe("snapshot")).ready.find((item: { name: string }) => item.name === "arc-next.txt")).toEqual(nextFile);
+      };
+      // While A prepares, Recovery deliberately retains A and defers B in-page.
+      // B becomes durable only after the original command handoff below.
+      await expectNextDraft();
       const writes = fixture!.fixture.requests.filter(row => row.method === "POST" && row.path === "/api/conversations/chat-4/turns").length;
       await page.getByRole("button", { name: "Move pane 1 right", exact: true }).click();
       await page.getByRole("slider", { name: "Resize panes 1 and 2", exact: true }).fill("65");
@@ -253,19 +263,25 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await expect(page.locator(".flow-pane-header")).toHaveCount(1);
       await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(1);
       await expect(page.locator('.flow-pane-header [role="tab"][aria-selected="true"]')).toHaveAttribute("id", "tab-conversation:chat-4");
-      await expect(input(4)).toBeVisible(); await expect(input(4)).toHaveValue("Independent B while A prepares");
+      await expect(input(4)).toBeVisible(); await expectNextDraft();
       await page.getByRole("button", { name: "Split chat", exact: true }).click();
       expect(await input(4).evaluate((node, original) => node === original, originalInput!)).toBe(true);
       expect((await probe("snapshot")).rows[0]).toMatchObject({ validated: true, aborted: false, returned: false });
-      await expect(input(4)).toHaveValue("Independent B while A prepares");
+      await expectNextDraft();
       expect(fixture!.fixture.requests.filter(row => row.method === "POST" && row.path === "/api/conversations/chat-4/turns")).toHaveLength(writes);
       await probe("settle"); await expect.poll(() => fixture!.fixture.requests.filter(row => row.method === "POST" && row.path === "/api/conversations/chat-4/turns").length).toBe(writes + 1);
       const sent = fixture!.fixture.requests.findLast(row => row.method === "POST" && row.path === "/api/conversations/chat-4/turns")!;
       const request = JSON.parse(sent.body!), observed = await probe("snapshot");
       expect(request.text).toBe("Frozen A through actual material preparation"); expect(request.messageSettings.requested.model).toBe("arc-A");
       expect(request.attachments).toEqual(observed.ready.slice(0, 2).map((item: { reference: unknown }) => item.reference)); expect(sent.key).toBeTruthy();
-      await expect(input(4)).toHaveValue("Independent B while A prepares");
-      await expect.poll(async () => (await draftRecord(page, "conversation:chat-4"))?.data?.attachments).toEqual(saved.data.attachments);
+      await expectNextDraft();
+      await expect.poll(async () => {
+        const draft = (await draftRecord(page, "conversation:chat-4"))?.data;
+        return draft && { model: draft.messageSettings?.requested.model, text: draft.text,
+          files: draft.attachments.map(item => ({ id: item.id, name: item.name, reference: item.metadata?.reference })) };
+      }).toEqual({ model: "arc-B", text: "Independent B while A prepares",
+        files: [{ id: nextFile.id, name: nextFile.name, reference: nextFile.reference }] });
+      const saved = (await draftRecord(page, "conversation:chat-4"))!;
       await expect(pane(4).locator(".ep-settings-summary").filter({ hasText: "下一条消息设置" })).toContainText("arc-B");
       result.observations.material = { key: sent.key, frozen: request, nextDraft: saved.data, probe: observed };
     });

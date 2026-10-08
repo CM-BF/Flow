@@ -24,9 +24,22 @@
     "totalMs": 270000,
     "maxAttempts": 3,
     "perAttemptMs": 90000,
-    "spentMs": 0,
-    "state": "WAIT_MANAGER_LEASE",
-    "attempts": []
+    "spentMs": 21600,
+    "state": "OPEN_FIX_SAME_HANDOFF_CONTRACT",
+    "attempts": [
+      {
+        "attempt": 1,
+        "packet": "/private/tmp/arc-continuous-browser-_n9vua_3",
+        "source": "6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477",
+        "exit": 1,
+        "passed": 2,
+        "selected": 4,
+        "chargeMs": 21600,
+        "returnAt": "2026-10-08T00:36:30.434746Z",
+        "ownedReturn": true,
+        "reason": "Premature journal B assertion during preparing handoff; existing Recovery preserves A until command prepare and defers B in-page."
+      }
+    ]
   },
   "bytes": {
     "total": 402653184,
@@ -34,5 +47,6 @@
     "retained": 134217728,
     "sourceLocalSuballocation": 8388608
   },
-  "history": "All old source/local/browser budgets CLOSED; no transfer."
+  "history": "All old source/local/browser budgets CLOSED; no transfer.",
+  "currentFix": "Before handoff: visible B model/text/ready exact file witness stable across move/merge/split and same composer. After A command preparation: unique durable B model/text/exact ordered refs. Does not claim crash recovery of B before handoff."
 }
