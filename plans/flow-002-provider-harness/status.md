@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:10:52.406412+00:00 / main9b27005f；上游SessionStore只读后继输入归档，未实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:49:20.693Z / main30406194f；SessionStore固定参考源码与采用前验收归档，未实施 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,10 +12,10 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
+| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `ca840056efef40769069839a5bd58f05f7cf6248`（修改前clean观察） |
+| 工作树dirty状态 | 仅本任务plan/status两叶研究归档；提交后以Git读取为准 |
 | 工作分支状态 | in-progress；历史选型完成不代表全部harness/真实工程验收完成 |
-| 已集成main状态 / HEAD | 历史main5cd64a4d已含R05/R06接缝、ENG01I组合与ENG01J受限机制；本轮main9b27005f，后续各接入结果按原owner唯一status读取，不沿旧“待接收”推断现状。个人运行事实只从FLOW-001/SVC读取；下方旧runtime值是历史观察。 |
+| 已集成main状态 / HEAD | 历史main5cd64a4d已含R05/R06接缝、ENG01I组合与ENG01J受限机制；本轮观察main30406194f，本次SessionStore研究尚待限定文档接收。后续各接入结果按原owner唯一status读取；个人运行事实只从FLOW-001/SVC读取，下方旧runtime值是历史观察。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
@@ -71,3 +71,5 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 2026-10-07T05:53:04.970751+00:00：T09记录GO官方SIWC候选与明确非实施边界，见plan末节。0认证/注册/凭据/provider/工程检查；不阻当前C02/ENG工作，也不把目录或独立helper片段当真实模型资格。历史T07/T08/T09开放验收保留。
 
 2026-10-07T09:10:52.406412+00:00：T09/R05归档上游SessionStore候选与采用前边界，见plan末节及O16唯一候选；0新运行，不改变普通聊天persistSession或现有认证。
+
+2026-10-08T03:49:20.693Z：在合法管理claim v4与clean HEAD核验后开始本次两叶研究归档。T09/R05纳入GO提供的固定Postgres参考源码、测试覆盖和许可差异；中心持有PG、runner有界port、ACK丢失/旧writer/超限load仍为待验条件。复用本地find-skills、codebase-design与clean-code的小Interface方法，仅核本次文字/来源/状态解析；0安装、工程检查、DB、认证或query，不占个人设置交付窗口，不改变历史TODO或完整任务起点。
