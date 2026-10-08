@@ -1,0 +1,28 @@
+{
+  "taskId": "TUI01F",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)",
+      "id": "TUI-001",
+      "location": "../../../tui-client/plans/tui01-terminal-client/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

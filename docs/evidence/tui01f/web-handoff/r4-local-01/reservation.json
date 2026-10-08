@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-08T02:36:09.000Z",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "claimId": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+  "claimVersion": 7,
+  "claimObservedAt": "2026-10-08T02:32:38.370Z",
+  "argv": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.test.py",
+    "-v"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "env": {
+    "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+    "LANG": "C",
+    "LC_ALL": "C",
+    "TMPDIR": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r4-prephase-pbqsk77o",
+    "TMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r4-prephase-pbqsk77o",
+    "TEMP": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r4-prephase-pbqsk77o",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 7002,
+      "sha256": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.py",
+      "bytes": 1077,
+      "sha256": "4f9b2d73bc817378f5d31448e999ee5d6e98b315d17b6336cb43e28b5ea4f87f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.test.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.test.py",
+      "bytes": 3950,
+      "sha256": "033e030c07504088cbb375ea295477eeedde97b5f6f7b557a87b8645dff6b998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-inputs.json",
+      "bytes": 6244,
+      "sha256": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-permit.pending.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-permit.pending.json",
+      "bytes": 926,
+      "sha256": "e731bb6d700aab32e55512aa1dc3b562a979fddc37bf88bc4ec8d26fe346801b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27157,
+      "sha256": "8d4de0c96fa631a813c8ae8467b07bbd5391c21b343d53639a8f0496929ba285"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-process.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture-process.ts",
+      "bytes": 4060,
+      "sha256": "8a767fa813d6b84acf752215b108f6e04922478d5fb8bf387052b5d10fea4cf5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 29170,
+      "sha256": "7f0a943cf19be3a86a6a29c46a9506408259e224ce967b247656e559e1501c03"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "ledgerAt": "2026-10-08T02:34:27.646Z",
+  "ledgerState": "O16_NATIVE_CHILDREN_SELECTED_NOT_STARTED",
+  "baseFloor": 11613765632,
+  "unlistedSegmentIncrement": 8388608,
+  "floor": 11622154240,
+  "free": 14296952832,
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui-r4-prephase-pbqsk77o",
+    "dev": 16777234,
+    "ino": 124757117
+  },
+  "policy": {
+    "work_seconds": 27.5,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 131072
+  }
+}

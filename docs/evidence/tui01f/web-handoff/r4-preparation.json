@@ -1,0 +1,201 @@
+{
+  "kind": "TUI01F_R4_LIMITED_FIXED_CALLER_PREPARATION",
+  "at": "2026-10-08T02:37:51.727Z",
+  "base": "6c6b79eb4d68c56e61f61f81088f0d1321776580",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "lifecycleSource": "51e380009559768c246a890f9edcf53ab2d48760",
+  "lifecycleApproval": "APPROVED_LIMITED_FIXTURE_LIFECYCLE_SOURCE_AND_DIRECT_RESULT / main782f0ad09",
+  "ready": false,
+  "actual": "NOT_RUN",
+  "independentReview": "PENDING",
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 7002,
+      "sha256": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-run.py",
+      "bytes": 1077,
+      "sha256": "4f9b2d73bc817378f5d31448e999ee5d6e98b315d17b6336cb43e28b5ea4f87f",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-run.test.py",
+      "bytes": 3950,
+      "sha256": "033e030c07504088cbb375ea295477eeedde97b5f6f7b557a87b8645dff6b998",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-inputs.json",
+      "bytes": 6244,
+      "sha256": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-permit.pending.json",
+      "bytes": 926,
+      "sha256": "e731bb6d700aab32e55512aa1dc3b562a979fddc37bf88bc4ec8d26fe346801b",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-interface.md",
+      "bytes": 2574,
+      "sha256": "2dd1faa5c7618d8910249644e17766dc908013ee79bc5f8a5e0be6e9bcea1d69",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-summary.json",
+      "bytes": 1127,
+      "sha256": "c08fe9a8691b87696ac1e1f65f1a8ce083d2dad62b9dccc83582470d80e001fe",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-status-parse.json",
+      "bytes": 625,
+      "sha256": "496b89c47f10f445a67465978f61a0a1be6ca7f6ac3a8d2deebcbfaabd560ba4",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-01/outer.json",
+      "bytes": 575,
+      "sha256": "e1c2dab2216164377b1ddf42ea67d37299390f5dcbb8d9b83d873eacfb24f8c4",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-01/reservation.json",
+      "bytes": 5435,
+      "sha256": "bf0e1ff9172aaeebc6db45da89ae1a86264fdfbf0a1555fc2ebc44f60f579eb2",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-01/result.json",
+      "bytes": 498,
+      "sha256": "6c3bb46a2875754a205c0d7527c9fa1eee591957d3edf8613bae0063166f6286",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-01/stderr.txt",
+      "bytes": 238,
+      "sha256": "77f0b6c8dc47289ebb2a74c2219a77972f26d62ab1d6a4454c7272864af29e37",
+      "role": "record"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-local-01/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "record"
+    }
+  ],
+  "bindingCount": 13,
+  "logicalBytes": 30271,
+  "inheritance": [
+    {
+      "git": "6c6b79eb4d68c56e61f61f81088f0d1321776580",
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json",
+      "sha256": "55b3bfe4da2cce61aa6dff58107514cf663540b1172d3075d0c7aa59caebeb1a",
+      "scope": "Approved fixture4source/direct8/types; no rerun or rawcopy"
+    },
+    {
+      "git": "d19f7129a17fd76b0d4f3cb0966885b43e1af944",
+      "path": "docs/evidence/tui01f/web-handoff/r3-preparation.json",
+      "scope": "Prior shared caller/default/bounds review; 741 inherited source closure remains referenced through unchanged input-request/helper-inputs"
+    }
+  ],
+  "recipe": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "argv": [
+      "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "-B",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.py",
+      "--run-r4-once"
+    ],
+    "logicalId": "TUI01F04-REAL-HANDOFF-R4-ONCE",
+    "resourceSelectionKey": "TUI01F04R4",
+    "windowId": "flow-tui01f04-20261008-r4",
+    "sourceDigest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+    "inputDigest": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+    "callerDigest": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb",
+    "actualPermit": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-permit.json",
+    "outer": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-actual-once",
+    "windowRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/windows/flow-tui01f04-20261008-r4.json",
+    "oldCaptureGuard": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/captures/flow-tui01f04-20261008-r4",
+    "inheritedPins": 741,
+    "ownPins": 8,
+    "environment": {
+      "adminVariable": "FLOW_TEST_DATABASE_URL",
+      "source": "Reuse existing authorized local fixture administration configuration, only in memory; do not output value.",
+      "inheritedNames": [
+        "HOME",
+        "USER",
+        "LOGNAME",
+        "TMPDIR",
+        "LANG",
+        "LC_ALL",
+        "TZ"
+      ],
+      "fixedNames": [
+        "PATH",
+        "TSX_DISABLE_CACHE"
+      ],
+      "preparedOrChangedNow": false
+    },
+    "limits": {
+      "workSeconds": 150,
+      "termSeconds": 0.5,
+      "reapSeconds": 2,
+      "outputBytes": 65536,
+      "innerWorkMs": 90000,
+      "innerTotalMs": 150000,
+      "stageRawBytes": 4194304,
+      "privateBytes": 16777216
+    },
+    "pg": {
+      "conservativeMaximum": 13,
+      "minimumAvailable": 42,
+      "preflightMaximum": 1,
+      "closeBeforeSpawn": true
+    },
+    "futurePlanningGrowthBytes": 1499463680,
+    "planningIsHardCap": false,
+    "liveReserveBytes": 1073741824,
+    "admission": [
+      "Read exact new resource selection, latestStart, complete floor and current actual holder; no old grant reuse.",
+      "Fresh exact claim v7/worker/worktree/branch and approved source/currentremote; all741 inherited+8own pins/runtime and five-source identity match.",
+      "New permit/outer/window/capture paths all absent including dangling symlinks.",
+      "Fresh actual free space >= selected complete floor, including current allowances/live reserve once.",
+      "Read PG capacity using the existing bounded local admin path: available>=42; close the preflight pool before launch.",
+      "Bind observation age<=30s and exact source/input/caller digests; exclusive0600 fsynced actual permit; launch only before selected latestStart."
+    ],
+    "stopRule": "Any mismatch/unknown/expired selection => no launch, preserve observations, report NOT_RUN; no retry or changed namespace.",
+    "closure": "OPS14 exit/group/EOF plus original journey/fixture detached process, DB and private lifecycle records. Outer success alone is not RETURN.",
+    "dynamicFieldsOnly": [
+      "ready",
+      "startBefore",
+      "freshObservedAt",
+      "pgAvailable",
+      "preflightPoolClosed",
+      "minimumFreshFreeBytes",
+      "actualHolder"
+    ],
+    "freshSelectionRequired": true
+  },
+  "localResult": {
+    "distinct": 1,
+    "passed": 1,
+    "milliseconds": 384,
+    "rawBytes": 238,
+    "realEntry": true,
+    "finalSuperviseIntercepted": true,
+    "PG": 0,
+    "browser": 0,
+    "PTY": 0,
+    "provider": 0,
+    "group": "absent",
+    "dualEOF": true,
+    "scratch": "sameidentity empty removed",
+    "statusParse": "errors/humanMissing empty; historical taskfirst UNKNOWN"
+  },
+  "limits": "No actual grant/permit. Old R2/R3 failed results and KEEP remain fixed. No remapping to current779/native product. Future actual needs new single selection/PG/free/identity/namespace in one call. Previous root OPS14 auto bytecode possible write is reported as KEEP; this preparation uses Python -B."
+}

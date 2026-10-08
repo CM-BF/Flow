@@ -1,0 +1,41 @@
+{
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "selected": 1,
+  "passed": 1,
+  "distinct": 1,
+  "actualEntry": "r4-run.main -> shared fixed verifier/permit/reservation/OPS14._validate; intercept only final supervise",
+  "directCoverage": [
+    "741 inherited +8 own fixed pins",
+    "actual journey five source paths match trusted RunSpec",
+    "old R2 default four paths unchanged",
+    "omitting helper rejects digest",
+    "old R3 argv rejects",
+    "pending false/inputDigest aligns",
+    "real exclusive0700/0600 fsync reservation",
+    "new R4 exact argv/150/.5/2/65536 bound",
+    "second entry to consumed namespace rejects"
+  ],
+  "startedAt": "2026-10-08T02:36:09.001Z",
+  "returnedAt": "2026-10-08T02:36:09.386Z",
+  "elapsedMs": 384,
+  "rawBytes": 238,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "cleanup": {
+    "sameIdentity": true,
+    "entries": 0,
+    "removed": true,
+    "retainedBytes": 0
+  },
+  "actualJourney": "NOT_RUN",
+  "provider": 0,
+  "pg": 0,
+  "browser": 0,
+  "PTY": 0,
+  "oldGreenReruns": 0,
+  "bytecodeWritesDisabled": true
+}

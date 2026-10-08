@@ -1,6 +1,12 @@
+# 当前 TUI01F R4 调用候选
+
+NOT_STARTED（独立准备审查）。固定source4bb6530e840c961b66afd68fe4634f728159ef2a，base6c6b79eb4d68c56e61f61f81088f0d1321776580。见[唯一准备](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)。
+
+仅原RunSpec增加默认旧四源的受信source_paths，R4显式传与journey同序的五源；JSON不授权选策略。1个真实入口直接检查验证741+8pin/permit/wx/OPS14及三个相关拒绝，384ms/238B/完整RETURN，0实际旅程。生命周期四源/8例和types不变不重跑，原R2/R3 raw与UNKNOWN/KEEP不改。需审固定hash/准确新namespace/默认旧合同与执行前最新资源身份，不把本准备当完整双端PASS或实际许可。
+
 # 当前 TUI01F 进程组生命周期修复
 
-NOT_STARTED（独立源码/结果审查）。目标51e380009559768c246a890f9edcf53ab2d48760，base9435dca65c5b123639976365254359529c6fb955。
+APPROVED_LIMITED_FIXTURE_LIFECYCLE_SOURCE_AND_DIRECT_RESULT（Lead，0P1P2，main782f0ad09）。目标51e380009559768c246a890f9edcf53ab2d48760，base9435dca65c5b123639976365254359529c6fb955。
 
 仅fixture-process.ts/.test.ts、fixture.ts、journey.ts四源与own Interface/records。见[manifest](../../docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json)。8新直接例/真实tiny child及types0；原0child错误、首types红与类型位置修复分别保存，未重跑无关绿例。审查真实child注册、close与absent双证据、未知禁signal/Node reap限制、安全错误及primary保留、fixture先落具体组再汇总结论。原R3失败与UNKNOWN/KEEP不可回填，新实际旅程仍未授。
 
