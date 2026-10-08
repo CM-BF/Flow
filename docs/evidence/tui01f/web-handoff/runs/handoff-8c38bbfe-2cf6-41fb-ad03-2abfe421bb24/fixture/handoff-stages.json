@@ -1,0 +1,1338 @@
+{
+  "identity": {
+    "digest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "8d4de0c96fa631a813c8ae8467b07bbd5391c21b343d53639a8f0496929ba285"
+      },
+      {
+        "path": "apps/tui/src/task-controls/fixture-process.ts",
+        "sha256": "8a767fa813d6b84acf752215b108f6e04922478d5fb8bf387052b5d10fea4cf5"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "7f0a943cf19be3a86a6a29c46a9506408259e224ce967b247656e559e1501c03"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "workPassed": true,
+  "workFailure": null,
+  "cleanupFailures": [],
+  "failures": [],
+  "dom": [
+    {
+      "turn": 1,
+      "status": "running",
+      "visibleText": "Conversation settings\n\nThis conversation’s requested configuration is locked. Start a new conversation to choose another profile.\n\nRequested configuration\nModel\nrunner-default\nThinking\ndisabled\nAccess\nconfigured-readonly\nProfile identifiers\n\nRequested configuration only. Actual settings and provider availability are unknown until execution reports them.\n\nConversation behavior\n\nReply drafts update as the center records them. Drafts are not final replies.\n\nUse Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.\n\nExecution history · 1 turn\n\nReply pending · running\n\nExecution · turn 1\n\nrunning · verification pending\n\nInspect turn 1 Open task controls\nConversation requested\nModel\nrunner-default\nThinking\ndisabled\nTools\nconfigured-readonly\nEffective settings reported by the adapter\nEffective model\nUnknown\nEffective thinking\nunknown\nAvailable tools reported by the adapter\nunknown\nPermission mode\nUnknown\nSettings source\nUnknown\nConversation-wide usage\nUnknown\nClose"
+    },
+    {
+      "turn": 1,
+      "status": "cancelled",
+      "visibleText": "Conversation settings\n\nThis conversation’s requested configuration is locked. Start a new conversation to choose another profile.\n\nRequested configuration\nModel\nrunner-default\nThinking\ndisabled\nAccess\nconfigured-readonly\nProfile identifiers\n\nRequested configuration only. Actual settings and provider availability are unknown until execution reports them.\n\nConversation behavior\n\nReply drafts update as the center records them. Drafts are not final replies.\n\nUse Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.\n\nExecution history · 1 turn\n\nReply unavailable · execution not succeeded\n\nExecution · turn 1\n\ncancelled · verification pending\n\nInspect turn 1 Open task controls\nConversation requested\nModel\nrunner-default\nThinking\ndisabled\nTools\nconfigured-readonly\nEffective settings reported by the adapter\nEffective model\nUnknown\nEffective thinking\nunknown\nAvailable tools reported by the adapter\nunknown\nPermission mode\nUnknown\nSettings source\nUnknown\nConversation-wide usage\nUnknown\nClose"
+    },
+    {
+      "turn": 2,
+      "status": "running",
+      "visibleText": "Conversation settings\n\nThis conversation’s requested configuration is locked. Start a new conversation to choose another profile.\n\nRequested configuration\nModel\nrunner-default\nThinking\ndisabled\nAccess\nconfigured-readonly\nProfile identifiers\n\nRequested configuration only. Actual settings and provider availability are unknown until execution reports them.\n\nConversation behavior\n\nReply drafts update as the center records them. Drafts are not final replies.\n\nUse Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.\n\nExecution history · 2 turns\n\nReply unavailable · execution not succeeded\n\nExecution · turn 1\n\nReply pending · running\n\nExecution · turn 2\n\nrunning · verification pending\n\nInspect turn 2 Open task controls\nConversation requested\nModel\nrunner-default\nThinking\ndisabled\nTools\nconfigured-readonly\nEffective settings reported by the adapter\nEffective model\nUnknown\nEffective thinking\nunknown\nAvailable tools reported by the adapter\nunknown\nPermission mode\nUnknown\nSettings source\nUnknown\nConversation-wide usage\nUnknown\nClose"
+    },
+    {
+      "turn": 2,
+      "status": "succeeded",
+      "visibleText": "Conversation settings\n\nThis conversation’s requested configuration is locked. Start a new conversation to choose another profile.\n\nRequested configuration\nModel\nrunner-default\nThinking\ndisabled\nAccess\nconfigured-readonly\nProfile identifiers\n\nRequested configuration only. Actual settings and provider availability are unknown until execution reports them.\n\nConversation behavior\n\nReply drafts update as the center records them. Drafts are not final replies.\n\nUse Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.\n\nExecution history · 2 turns\n\nReply unavailable · execution not succeeded\n\nExecution · turn 1\nExecution · turn 2\n\nsucceeded · verification passed\n\nInspect turn 2 Open task controls\nConversation requested\nModel\nrunner-default\nThinking\ndisabled\nTools\nconfigured-readonly\nRunner requested\nModel\nrunner-default\nThinking\ndisabled\nPermission mode\ndontAsk\nEffective settings reported by the adapter\nEffective model\nUnknown\nEffective thinking\nunknown\nAvailable tools reported by the adapter\nUnknown\nPermission mode\nUnknown\nSettings source\nassistant-final\nConversation-wide usage\nUnknown\nClose"
+    }
+  ],
+  "writes": [
+    {
+      "role": "terminal",
+      "method": "POST",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns",
+      "key": "2a94e79c-6fbf-43ba-ac6e-bf72a7b26764",
+      "body": "{\"expectedRevision\":0,\"text\":\"保留中文🙂\\nconflicting terminal draft\",\"mode\":\"follow-up\"}",
+      "status": 409,
+      "responseBody": "{\"error\":{\"code\":\"conversation_revision_conflict\",\"message\":\"Refresh the conversation before sending another turn.\"}}",
+      "completed": true
+    },
+    {
+      "role": "web",
+      "method": "POST",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns",
+      "key": "5d896a14-e049-4db0-a689-53a873e0ae9d:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"TUI01F Web first task A\",\"mode\":\"follow-up\"}",
+      "status": 202,
+      "responseBody": "{\"conversation\":{\"id\":\"f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\",\"title\":\"TUI01F shared Web and terminal\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":1,\"createdAt\":\"2026-10-08T02:49:54.534Z\",\"updatedAt\":\"2026-10-08T02:50:02.056Z\"},\"turn\":{\"id\":\"2e2a3204-456c-4f93-863f-4fa71c7f794f\",\"conversationId\":\"f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\",\"number\":1,\"createdAt\":\"2026-10-08T02:50:02.055Z\",\"user\":{\"role\":\"user\",\"text\":\"TUI01F Web first task A\"},\"task\":{\"id\":\"bf9bfcb7-78a0-41fb-a652-976ccda33472\",\"title\":\"TUI01F shared Web and terminal\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-08T02:50:02.050Z\",\"updatedAt\":\"2026-10-08T02:50:02.050Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"bf9bfcb7-78a0-41fb-a652-976ccda33472\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "method": "POST",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/cancel",
+      "key": "4a3cce41-7d3d-485b-865d-a1685191c4d9",
+      "body": "{}",
+      "status": 200,
+      "responseBody": "{\"id\":\"bf9bfcb7-78a0-41fb-a652-976ccda33472\",\"title\":\"TUI01F shared Web and terminal\",\"harness\":\"claude\",\"status\":\"cancel_requested\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-08T02:50:02.050Z\",\"updatedAt\":\"2026-10-08T02:50:04.348Z\"}",
+      "completed": true
+    },
+    {
+      "role": "web",
+      "method": "POST",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns",
+      "key": "8e7945bf-78da-4931-82c1-4e3ed9e126c9:turn",
+      "body": "{\"expectedRevision\":1,\"text\":\"TUI01F Web continued task B\",\"mode\":\"follow-up\"}",
+      "status": 202,
+      "responseBody": "{\"conversation\":{\"id\":\"f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\",\"title\":\"TUI01F shared Web and terminal\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":2,\"createdAt\":\"2026-10-08T02:49:54.534Z\",\"updatedAt\":\"2026-10-08T02:50:06.860Z\"},\"turn\":{\"id\":\"957792bf-4a7e-41eb-ad7e-6f90db016835\",\"conversationId\":\"f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\",\"number\":2,\"createdAt\":\"2026-10-08T02:50:06.860Z\",\"user\":{\"role\":\"user\",\"text\":\"TUI01F Web continued task B\"},\"task\":{\"id\":\"215521fa-5b10-43ab-bfcc-85a6bdef1ec1\",\"title\":\"TUI01F shared Web and terminal\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-08T02:50:06.857Z\",\"updatedAt\":\"2026-10-08T02:50:06.857Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"215521fa-5b10-43ab-bfcc-85a6bdef1ec1\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "completed": true
+    }
+  ],
+  "reads": [
+    {
+      "role": "web",
+      "path": "/api/tasks?limit=40",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations?limit=50",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/execution-profiles?limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks?limit=40",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations?limit=50",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/stream?after=0",
+      "status": 200,
+      "completed": false
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=2",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/bf9bfcb7-78a0-41fb-a652-976ccda33472/assistant-stream/patches?attemptId=e5d80549-1ab8-4c7c-b493-575a4f7ec368&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks?limit=40",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations?limit=50",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/stream?after=0",
+      "status": 200,
+      "completed": false
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "terminal",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream/patches?attemptId=f6c41c06-dec0-402b-8a4a-ee7181be2600&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=3",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream/patches?attemptId=f6c41c06-dec0-402b-8a4a-ee7181be2600&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=5",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream?limit=100",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/tasks/215521fa-5b10-43ab-bfcc-85a6bdef1ec1/assistant-stream/patches?attemptId=f6c41c06-dec0-402b-8a4a-ee7181be2600&after=0&limit=8",
+      "status": 200,
+      "completed": true
+    }
+  ],
+  "bridgeErrors": [],
+  "terminal": {
+    "bytes": 42177,
+    "events": [
+      {
+        "phase": "progress",
+        "stage": "terminal-spawned",
+        "tuiPid": 83539,
+        "pgid": 83520
+      },
+      {
+        "phase": "progress",
+        "stage": "terminal-rendered",
+        "transcriptBytes": 972
+      },
+      {
+        "phase": "progress",
+        "stage": "terminal-raw",
+        "canonicalInput": false
+      },
+      {
+        "phase": "progress",
+        "stage": "terminal-opened"
+      },
+      {
+        "phase": "submitted"
+      },
+      {
+        "phase": "conflict-visible",
+        "draft": "保留中文🙂\nconflicting terminal draft",
+        "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+        "visibleAfterResize": true
+      },
+      {
+        "phase": "cancelled-visible",
+        "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472"
+      },
+      {
+        "phase": "recovered-visible",
+        "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1"
+      },
+      {
+        "phase": "finished",
+        "result": {
+          "taskA": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "taskB": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "exitCode": 0,
+          "tuiPid": 83539,
+          "pgid": 83520,
+          "rawModeRestored": true,
+          "resized": [
+            60,
+            20
+          ],
+          "unsentDraftAtExit": true,
+          "checkpoints": [
+            {
+              "text": "Ctrl-C disconnect and quit",
+              "after": 0,
+              "observedBytes": 972
+            },
+            {
+              "text": "/open f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181",
+              "after": 972,
+              "observedBytes": 2001
+            },
+            {
+              "text": "Saved conversation opened.",
+              "after": 972,
+              "observedBytes": 4073
+            },
+            {
+              "text": "Message or /command",
+              "after": 972,
+              "observedBytes": 4073
+            },
+            {
+              "text": "保留中文🙂",
+              "after": 4073,
+              "observedBytes": 5113
+            },
+            {
+              "text": "conflicting terminal draft",
+              "after": 4073,
+              "observedBytes": 6158
+            },
+            {
+              "text": "Center rejected the request. No replacement request was sent.",
+              "after": 4073,
+              "observedBytes": 10870
+            },
+            {
+              "text": "Task: bf9bfcb7-78a0-41fb-a652-976ccda33472",
+              "after": 4073,
+              "observedBytes": 10870
+            },
+            {
+              "text": "保留中文🙂",
+              "after": 10870,
+              "observedBytes": 12342
+            },
+            {
+              "text": "conflicting terminal draft",
+              "after": 10870,
+              "observedBytes": 12342
+            },
+            {
+              "text": "Message or /command",
+              "after": 12342,
+              "observedBytes": 13366
+            },
+            {
+              "text": "/cancel bf9bfcb7-78a0-41fb-a652-976ccda33472",
+              "after": 13366,
+              "observedBytes": 14460
+            },
+            {
+              "text": "Cancellation acknowledged for the saved task.",
+              "after": 13366,
+              "observedBytes": 16652
+            },
+            {
+              "text": "Message or /command",
+              "after": 13366,
+              "observedBytes": 16652
+            },
+            {
+              "text": " · cancelled",
+              "after": 12342,
+              "observedBytes": 17819
+            },
+            {
+              "text": "/recover",
+              "after": 17945,
+              "observedBytes": 18969
+            },
+            {
+              "text": "Center history reloaded.",
+              "after": 17945,
+              "observedBytes": 20110
+            },
+            {
+              "text": "Message or /command",
+              "after": 17945,
+              "observedBytes": 20110
+            },
+            {
+              "text": "Task: 215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+              "after": 17945,
+              "observedBytes": 20110
+            },
+            {
+              "text": "running",
+              "after": 17945,
+              "observedBytes": 20110
+            },
+            {
+              "text": "退出后仍保留🙂",
+              "after": 20110,
+              "observedBytes": 21152
+            },
+            {
+              "text": "unsent observer draft",
+              "after": 20110,
+              "observedBytes": 22186
+            }
+          ],
+          "transcriptBytes": 23402,
+          "transcript": "\u001b[?2026h\u001b[?25l\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2mMessage or /command\u001b[22m                                                                            │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/open f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[7m \u001b[27m                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing · working\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/open f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[7m \u001b[27m                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂\u001b[7m \u001b[27m                                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected · working\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected · working\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[33mSubmitting immutable request…\u001b[39m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected · working\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  f5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · running · /cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter rejected the request. No replacement request was sent.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[?2026h\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter rejected the request. No replacement request was \u001b[22m\r\n\u001b[2msent.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                             │\r\n│   conflicting terminal draft\u001b[7m \u001b[27m                            │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter rejected the request. No replacement request was \u001b[22m\r\n\u001b[2msent.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                   │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter rejected the request. No replacement request was \u001b[22m\r\n\u001b[2msent.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/cancel bf9bfcb7-78a0-41fb-a652-976ccda33472\u001b[7m \u001b[27m          │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected · working\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 ·\r\ncancel_requested · /cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task cancel_requested]\r\n\u001b[2mcancel_requested · model unknown\u001b[22m\r\n\u001b[2mCenter rejected the request. No replacement request was \u001b[22m\r\n\u001b[2msent.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/cancel bf9bfcb7-78a0-41fb-a652-976ccda33472\u001b[7m \u001b[27m          │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 ·\r\ncancel_requested · /cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [pending; task cancel_requested]\r\n\u001b[2mcancel_requested · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its \u001b[22m\r\n\u001b[2mcurrent state; acknowledgement does not prove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                   │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · cancelled ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [unavailable; task cancelled]\r\n\u001b[2mcancelled · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its \u001b[22m\r\n\u001b[2mcurrent state; acknowledgement does not prove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                   │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: bf9bfcb7-78a0-41fb-a652-976ccda33472 · cancelled ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web first task A\r\nAssistant: [unavailable; task cancelled]\r\n\u001b[2mcancelled · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its \u001b[22m\r\n\u001b[2mcurrent state; acknowledgement does not prove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/recover\u001b[7m \u001b[27m                                              │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: 215521fa-5b10-43ab-bfcc-85a6bdef1ec1 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web continued task B\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter history reloaded.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                   │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: 215521fa-5b10-43ab-bfcc-85a6bdef1ec1 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web continued task B\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter history reloaded.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m退出后仍保留🙂\u001b[7m \u001b[27m                                        │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: 215521fa-5b10-43ab-bfcc-85a6bdef1ec1 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web continued task B\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mCenter history reloaded.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m退出后仍保留🙂                                         │\r\n│   unsent observer draft\u001b[7m \u001b[27m                                 │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mTUI01F shared Web and terminal  \u001b[22m\r\n\u001b[2mf5e346bf-acc0-4fd0-ae6f-b1e3a2ffc181\u001b[22m\r\nTask: 215521fa-5b10-43ab-bfcc-85a6bdef1ec1 · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F Web continued task B\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mDisconnected; center work continues.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m退出后仍保留🙂                                         │\r\n│   unsent observer draft\u001b[7m \u001b[27m                                 │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?25h\u001b[?25h\u001b[?25h"
+        }
+      }
+    ],
+    "failure": null,
+    "stderr": "",
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "pipesClosed": true,
+    "incompleteLineBytes": 0
+  },
+  "chrome": {
+    "pid": 83416,
+    "port": 49630,
+    "diagnosticBytes": 319,
+    "diagnosticsWithinBound": true
+  },
+  "samples": [
+    {
+      "freeBytes": 14305107968,
+      "rawBytes": 3198,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:53.349Z"
+    },
+    {
+      "freeBytes": 14301696000,
+      "rawBytes": 3198,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:53.648Z"
+    },
+    {
+      "freeBytes": 14297325568,
+      "rawBytes": 3198,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:53.949Z"
+    },
+    {
+      "freeBytes": 14292779008,
+      "rawBytes": 3198,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:54.249Z"
+    },
+    {
+      "freeBytes": 14289678336,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:54.550Z"
+    },
+    {
+      "freeBytes": 14289182720,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:54.849Z"
+    },
+    {
+      "freeBytes": 14288896000,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:55.149Z"
+    },
+    {
+      "freeBytes": 14288699392,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:55.450Z"
+    },
+    {
+      "freeBytes": 14288494592,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:55.751Z"
+    },
+    {
+      "freeBytes": 14288179200,
+      "rawBytes": 3198,
+      "privateBytes": 126,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:56.050Z"
+    },
+    {
+      "freeBytes": 14287986688,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:56.351Z"
+    },
+    {
+      "freeBytes": 14287687680,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:56.652Z"
+    },
+    {
+      "freeBytes": 14287495168,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:56.953Z"
+    },
+    {
+      "freeBytes": 14287286272,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:57.253Z"
+    },
+    {
+      "freeBytes": 14287089664,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:57.553Z"
+    },
+    {
+      "freeBytes": 14286856192,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:57.855Z"
+    },
+    {
+      "freeBytes": 14286630912,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:58.154Z"
+    },
+    {
+      "freeBytes": 14286512128,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:58.455Z"
+    },
+    {
+      "freeBytes": 14286249984,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-08T02:49:58.755Z"
+    },
+    {
+      "freeBytes": 14281838592,
+      "rawBytes": 3198,
+      "privateBytes": 8,
+      "chromeBytes": 4194571,
+      "at": "2026-10-08T02:49:59.056Z"
+    },
+    {
+      "freeBytes": 14280232960,
+      "rawBytes": 3198,
+      "privateBytes": 80,
+      "chromeBytes": 6276797,
+      "at": "2026-10-08T02:49:59.409Z"
+    },
+    {
+      "freeBytes": 14279946240,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 6276797,
+      "at": "2026-10-08T02:49:59.702Z"
+    },
+    {
+      "freeBytes": 14278156288,
+      "rawBytes": 3198,
+      "privateBytes": -26909,
+      "chromeBytes": 12734033,
+      "at": "2026-10-08T02:50:00.020Z"
+    },
+    {
+      "freeBytes": 14277423104,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 12734025,
+      "at": "2026-10-08T02:50:00.308Z"
+    },
+    {
+      "freeBytes": 14277169152,
+      "rawBytes": 3198,
+      "privateBytes": 126,
+      "chromeBytes": 12734025,
+      "at": "2026-10-08T02:50:00.607Z"
+    },
+    {
+      "freeBytes": 14276894720,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 12734025,
+      "at": "2026-10-08T02:50:00.905Z"
+    },
+    {
+      "freeBytes": 14275276800,
+      "rawBytes": 3198,
+      "privateBytes": 126,
+      "chromeBytes": 12734025,
+      "at": "2026-10-08T02:50:01.217Z"
+    },
+    {
+      "freeBytes": 14274789376,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 8720583,
+      "at": "2026-10-08T02:50:01.508Z"
+    },
+    {
+      "freeBytes": 14274023424,
+      "rawBytes": 3198,
+      "privateBytes": 46,
+      "chromeBytes": 8864638,
+      "at": "2026-10-08T02:50:01.816Z"
+    },
+    {
+      "freeBytes": 14273507328,
+      "rawBytes": 3635,
+      "privateBytes": 373,
+      "chromeBytes": 8871317,
+      "at": "2026-10-08T02:50:02.120Z"
+    },
+    {
+      "freeBytes": 14272192512,
+      "rawBytes": 3635,
+      "privateBytes": 373,
+      "chromeBytes": 8871317,
+      "at": "2026-10-08T02:50:02.415Z"
+    },
+    {
+      "freeBytes": 14271729664,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:02.718Z"
+    },
+    {
+      "freeBytes": 14271479808,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:03.017Z"
+    },
+    {
+      "freeBytes": 14271401984,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:03.317Z"
+    },
+    {
+      "freeBytes": 14271311872,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:03.617Z"
+    },
+    {
+      "freeBytes": 14271135744,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:03.919Z"
+    },
+    {
+      "freeBytes": 14271115264,
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:04.231Z"
+    },
+    {
+      "freeBytes": 14270787584,
+      "rawBytes": 3635,
+      "privateBytes": 226,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:04.518Z"
+    },
+    {
+      "freeBytes": 14270504960,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8871809,
+      "at": "2026-10-08T02:50:04.818Z"
+    },
+    {
+      "freeBytes": 14270230528,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:05.117Z"
+    },
+    {
+      "freeBytes": 14269956096,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:05.422Z"
+    },
+    {
+      "freeBytes": 14269808640,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:05.720Z"
+    },
+    {
+      "freeBytes": 14269558784,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:06.019Z"
+    },
+    {
+      "freeBytes": 14269460480,
+      "rawBytes": 3635,
+      "privateBytes": 59,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:06.317Z"
+    },
+    {
+      "freeBytes": 14269214720,
+      "rawBytes": 3635,
+      "privateBytes": 139,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:06.619Z"
+    },
+    {
+      "freeBytes": 14294568960,
+      "rawBytes": 3635,
+      "privateBytes": 139,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:06.919Z"
+    },
+    {
+      "freeBytes": 14294294528,
+      "rawBytes": 3635,
+      "privateBytes": 226,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:07.221Z"
+    },
+    {
+      "freeBytes": 14294142976,
+      "rawBytes": 3635,
+      "privateBytes": 213,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:07.520Z"
+    },
+    {
+      "freeBytes": 14294048768,
+      "rawBytes": 3635,
+      "privateBytes": 213,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:07.821Z"
+    },
+    {
+      "freeBytes": 14293954560,
+      "rawBytes": 3635,
+      "privateBytes": 213,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:08.122Z"
+    },
+    {
+      "freeBytes": 14293905408,
+      "rawBytes": 3635,
+      "privateBytes": 213,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:08.426Z"
+    },
+    {
+      "freeBytes": 14293815296,
+      "rawBytes": 3635,
+      "privateBytes": 213,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:08.722Z"
+    },
+    {
+      "freeBytes": 14293647360,
+      "rawBytes": 3635,
+      "privateBytes": 393,
+      "chromeBytes": 8876312,
+      "at": "2026-10-08T02:50:09.027Z"
+    },
+    {
+      "freeBytes": 14293413888,
+      "rawBytes": 3635,
+      "privateBytes": 46,
+      "chromeBytes": 8914023,
+      "at": "2026-10-08T02:50:09.325Z"
+    },
+    {
+      "freeBytes": 14293114880,
+      "rawBytes": 3635,
+      "privateBytes": 46,
+      "chromeBytes": 8914023,
+      "at": "2026-10-08T02:50:09.624Z"
+    },
+    {
+      "freeBytes": 14292938752,
+      "rawBytes": 3635,
+      "privateBytes": 46,
+      "chromeBytes": 8914082,
+      "at": "2026-10-08T02:50:09.924Z"
+    },
+    {
+      "freeBytes": 14292783104,
+      "rawBytes": 3635,
+      "privateBytes": 126,
+      "chromeBytes": 8914082,
+      "at": "2026-10-08T02:50:10.222Z"
+    },
+    {
+      "freeBytes": 14292619264,
+      "rawBytes": 3635,
+      "privateBytes": 126,
+      "chromeBytes": 8914082,
+      "at": "2026-10-08T02:50:10.523Z"
+    },
+    {
+      "freeBytes": 14292484096,
+      "rawBytes": 3635,
+      "privateBytes": 126,
+      "chromeBytes": 8914082,
+      "at": "2026-10-08T02:50:10.824Z"
+    },
+    {
+      "freeBytes": 14292324352,
+      "rawBytes": 3635,
+      "privateBytes": -2338,
+      "chromeBytes": 8916500,
+      "at": "2026-10-08T02:50:11.127Z"
+    },
+    {
+      "freeBytes": 14291595264,
+      "rawBytes": 3635,
+      "privateBytes": 46,
+      "chromeBytes": 9361261,
+      "at": "2026-10-08T02:50:11.424Z"
+    }
+  ],
+  "fixtureObservation": {
+    "incomplete": false,
+    "maximumFrames": 64,
+    "maximumBytes": 32768,
+    "runtimeFinalization": "NOT_OBSERVED",
+    "frames": [
+      {
+        "sequence": 1,
+        "elapsedMs": 9482,
+        "phase": "adapter",
+        "state": "start",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 2,
+        "elapsedMs": 9482,
+        "phase": "session",
+        "state": "start",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 3,
+        "elapsedMs": 9495,
+        "phase": "session",
+        "state": "settled",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 4,
+        "elapsedMs": 9495,
+        "phase": "barrier",
+        "state": "start",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 5,
+        "elapsedMs": 11489,
+        "phase": "barrier",
+        "state": "failed",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        },
+        "error": {
+          "name": "Error",
+          "code": null,
+          "status": null
+        }
+      },
+      {
+        "sequence": 6,
+        "elapsedMs": 11489,
+        "phase": "adapter",
+        "state": "failed",
+        "identity": {
+          "taskId": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+          "attemptId": "e5d80549-1ab8-4c7c-b493-575a4f7ec368",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        },
+        "error": {
+          "name": "Error",
+          "code": null,
+          "status": null
+        }
+      },
+      {
+        "sequence": 7,
+        "elapsedMs": 14038,
+        "phase": "adapter",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 8,
+        "elapsedMs": 14038,
+        "phase": "session",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 9,
+        "elapsedMs": 14047,
+        "phase": "session",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 10,
+        "elapsedMs": 14047,
+        "phase": "barrier",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 11,
+        "elapsedMs": 15928,
+        "phase": "barrier",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 12,
+        "elapsedMs": 15928,
+        "phase": "ownership",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 13,
+        "elapsedMs": 15934,
+        "phase": "ownership",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 14,
+        "elapsedMs": 15934,
+        "phase": "assistant-final",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 15,
+        "elapsedMs": 15949,
+        "phase": "assistant-final",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 16,
+        "elapsedMs": 15949,
+        "phase": "artifact",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 17,
+        "elapsedMs": 15959,
+        "phase": "artifact",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 18,
+        "elapsedMs": 15959,
+        "phase": "verification",
+        "state": "start",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 19,
+        "elapsedMs": 15968,
+        "phase": "verification",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      },
+      {
+        "sequence": 20,
+        "elapsedMs": 15968,
+        "phase": "adapter",
+        "state": "settled",
+        "identity": {
+          "taskId": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+          "attemptId": "f6c41c06-dec0-402b-8a4a-ee7181be2600",
+          "runnerId": "0994e6e1-fa8a-4848-aae1-96d7b471d325",
+          "ownerVersion": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-08T02:53:05.467Z",
+  "errors": [],
+  "humanMissing": [
+    "当前阻塞"
+  ],
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| TUI01F-W-R3-RESOURCE | 2026-10-08T01:56:06.500Z | 2026-10-08T02:08:17.814Z | 资源 | 准备独审后取得唯一新selection；同call核验通过并实际启动 | r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点 |\n2026-10-08T02:08:17.814Z：R3 actual START，operator63460/launcher62721。唯一TUI01F04R3选择latest02:09:51.261Z；samecall fresh claimv7、cleanremote0b6d、741+7pins与依赖、unused namespace、free14447423488>=floor13562019840、availablePG88且max1预检池已关。新permit0600/fsync，原150/.5/2监督入口一次启动；[实际启动](../../docs/evidence/tui01f/web-handoff/r3-actual-start.json)。功能结果及detached/DB/private RETURN尚待观察，不从outer状态推断；原R2KEEP不动，0provider/个人。\n2026-10-08T02:13:19.203Z：R3 02:08:17.814Z START→02:08:36.845Z terminal exit1→02:11:39.152Z精确运行RETURN。实际1选0过，workPassed=true：A cancelled、B succeeded/verification passed、9PTY事件/22checkpoint/4DOM阶段、终端exit0/草稿保留；这些计数不冒额外用例。原fixture-close唯一失败为groups unknown，未记录具体组/error，不能归因EPERM或追认清理。8PID/5组ESRCH/双EOF、DB1377665连接空/admin关闭，DB/private KEEP；return目录identity投影缺字段保UNKNOWN，不另读内容或删除。见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r3-result-manifest.json)、[结果与窄诊断](../../docs/evidence/tui01f/web-handoff/r3-result-summary.json)。0provider/个人/重投，原R1/R2保持；本次实际等待已结束。clean-code复核主失败与清理分离/单一原件，无新增产品变化，source停写交独审。\n2026-10-08T02:18:43.161Z：本轮最小生命周期片实际开工，fresh claim v7/HEAD9435 clean；02:23:21.933Z再次核同owner/exact7。R3结果已获Lead限定保真批准，不改变1选0过/groups unknown/DB与private KEEP。按[本片Interface](../../docs/evidence/tui01f/web-handoff/group-lifecycle/interface.md)复用既有关闭语义，120s累计/≤4受监督children/8MiB scratch/128KiB raw，0PG/Chrome/provider/旧KEEP；未启动检查。历史首次开工UNKNOWN不改。\n2026-10-08T02:29:05Z：新四源码51e380封定，8新直接例全过；首0child解释器导入错误和types TS2540保留，test-only类型位置修正后只types复测0。实际02:27:59.177→02:28:25.983Z三组RETURN，4693ms/2822B，tiny child76310实际close/ESRCH；1空scratch删除，两types cache2715568B静态KEEP，无后续writer。见[唯一结果/来源manifest](../../docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json)、[验证与限制](../../docs/evidence/tui01f/web-handoff/group-lifecycle/validation.md)。Lead确认原R3结果忠实性已main312842ab5，唯一[I02接收](../../../m2-integration/docs/evidence/i02/tui01f-r3-result-intake.json)；不改原1选0过/未知组/KEEP，不推原根因。当前源码停写、0child/0pending，仅独审与集成等待；未建actual permit，下一真实旅程须重绑helper/sourceDigest。\n2026-10-08T02:32:19Z：原TUI01F-04下一R4准备段开始（工具UTC），02:32:38.370Z fresh claim v7/exact7/同owner，base6c6clean。生命周期固定51e380/delivery6c6已Lead限定APPROVED/0P1P2，27bindings/39运行输入原件核同，六精确consumer/Interface/types已main782f0ad09。复用RunSpec增加受信source_paths默认仍旧四路径，仅R4显式五路径含helper；不变150s/原assertions/cleanup，不复制741闭包。当前0actualPG/Chrome/PTY/provider，未建permit；只必要新入口直接检查，不重跑8例/types。另如实补：上轮Python导入OPS14未禁bytecode，可能写root精确tools/owned-process-supervision/__pycache__，Lead观察的untracked保持KEEP，未清理/未冒根树全clean；后续Python统一-B。\n2026-10-08T02:36:09.386Z：R4 source4bb653实际前置直接例1/1通过，384ms/238B；同次741继承+8own实读、真实输入/permit/exclusive目录/OPS14验证后仅拦最终supervise，0actualPG/Chrome/PTY/provider。组absent/双EOF/no signals、空scratch原身份removed。R3原始结果及生命周期8例/types不重跑；生命周期51e380已经main782f0ad09。唯一[r4-preparation](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)绑定新run与小差量，ready=false/无permit/无actual窗口。原失败与root自动bytecode可能副作用KEEP保持；这次Python均-B。源码停止，0child/0pending，等一次独审和D01新资源选择，首次任务时间UNKNOWN不改。\n2026-10-08T02:39:44Z：已只读接收I02 b9904a63e固定R4独审，reviewedAt02:38:55.783Z，0P1/P2，13bindings/新1例原件限定批准。权威队列02:38:10.519Z为S01诊断已选未开始，TUI01F04R4不存在；未执行freshPG/旅程或创建permit。由本owner继续等待匹配新SELECT，收到后同call核完整currentfloor/claim/head/741+8/runtime/未用namespace/PGavailable42及已闭预检池，依原一次入口执行，不借旧R3。当前0工程child/0pending；不重复轮询或旧绿检查。\n| 等待 ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| TUI04-R4-WINDOW | 2026-10-08T02:39:15Z | 2026-10-08T02:49:51.708Z | 资源 | 固定候选已审，需新TUI01F04R4选择与紧前准入 | 本次queue观察与r4-review-receipt |\n2026-10-08T02:49:51.708Z：R4在D01新SELECT/latest02:51:32.162内实际START，operator83409/launcher83392。[紧前准入](../../docs/evidence/tui01f/web-handoff/r4-admission.json)与[启动原件](../../docs/evidence/tui01f/web-handoff/r4-start.json)记录真实remote/clean09c796、claimv7exact7/无重叠、741继承+8own与固定runtime、四namespace未消费、PG可用88且预检pool已关闭、free14307000320>=完整floor13158318080；actual permit以0600独占/fsync冻结。原150/.5/2与0provider/个人保持，terminal和真实detached/DB/private RETURN未发生，不以外层退出推断。旧R2/R3 FAIL/KEEP不改。\n2026-10-08T02:53:05.327Z：R4唯一actual 02:49:51.708Z START→02:50:12.048Z terminal exit0→02:51:19.768Z FULL_RETURN；1选1过/20223ms，A cancelled、B succeeded/verification passed，9PTY事件/22文本checkpoint/4DOM阶段是观察数。Chrome在本run出现EPERM后仅只读等待ESRCH和真实close而收束，不能追认R3原unknown原因。8精确PID/4组ESRCH，outer/PTY双EOF，runner/proxy/center停止、原checkpoint先于正常DROP/tmp同身份移除，后置本专库/连接[]和本目录不存在；0provider/个人/重投，旧KEEP不动。见[单份结果](../../docs/evidence/tui01f/web-handoff/r4-result-manifest.json)、[摘要及限制](../../docs/evidence/tui01f/web-handoff/r4-result-summary.json)、[精确归还](../../docs/evidence/tui01f/web-handoff/r4-window-return.json)。自查披露额外resolver walk误用旧tools说明而实际count0；741+8及4runtime pin确已核，但不能声称19alias另行fresh核过，原准入不改、不事后补成绿。只归档等待独审，原TODO04包含review/main收口仍in-progress；0child/0pending，source停写。",
+    "waitingTable": {
+      "rows": [
+        {
+          "id": "TUI01F-W-R3-RESOURCE",
+          "started": {
+            "state": "known",
+            "at": "2026-10-08T01:56:06.500Z",
+            "record": "2026-10-08T01:56:06.500Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-08T02:08:17.814Z",
+            "record": "2026-10-08T02:08:17.814Z"
+          },
+          "category": "资源",
+          "reason": "准备独审后取得唯一新selection；同call核验通过并实际启动",
+          "source": "r3-review-receipt.json / Execution Lead明确通知，时间为本owner开始记录等待的安全点",
+          "issues": []
+        },
+        {
+          "id": "等待 ID",
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "开始UTC"
+          },
+          "ended": {
+            "state": "unknown",
+            "at": null,
+            "record": "结束UTC"
+          },
+          "category": "类别",
+          "reason": "原因与解除条件",
+          "source": "来源",
+          "issues": [
+            "类别未知",
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+            "时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+          ]
+        },
+        {
+          "id": "TUI04-R4-WINDOW",
+          "started": {
+            "state": "known",
+            "at": "2026-10-08T02:39:15.000Z",
+            "record": "2026-10-08T02:39:15Z"
+          },
+          "ended": {
+            "state": "known",
+            "at": "2026-10-08T02:49:51.708Z",
+            "record": "2026-10-08T02:49:51.708Z"
+          },
+          "category": "资源",
+          "reason": "固定候选已审，需新TUI01F04R4选择与紧前准入",
+          "source": "本次queue观察与r4-review-receipt",
+          "issues": []
+        }
+      ],
+      "issues": [
+        "等待 ID：类别未知",
+        "等待 ID：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+        "等待 ID：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+      ]
+    }
+  }
+}

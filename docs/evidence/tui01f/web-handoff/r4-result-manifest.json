@@ -1,0 +1,173 @@
+{
+  "kind": "TUI01F_R4_ACTUAL_RESULT_MANIFEST",
+  "recordedAt": "2026-10-08T02:53:33.651Z",
+  "executionHead": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "run": "handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24",
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-admission.json",
+      "bytes": 6614,
+      "sha256": "dbf4d977641acf133c2bfc91a0c7fa3bd60752cc68fca11137f595b2b6f5ce2b",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-permit.json",
+      "bytes": 964,
+      "sha256": "4c7bd23d2b54e446fcf4269d25d29636f3d6b1d5c1bf68bf3bfc8bb514360222",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-start.json",
+      "bytes": 358,
+      "sha256": "f0c9bacf92ccbb2f368d8632c9ee59fbb09654ec7a698684b137fd71f95499c8",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-operator-terminal.json",
+      "bytes": 368,
+      "sha256": "8c0dfcb157074b6840ce82fe6836be570404ebaaeae1c361349a6e98802ae28f",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-window-return.json",
+      "bytes": 4055,
+      "sha256": "9d5d03157b310ca60c9a425723f67540405367070ee8773c3f4ea3333e71f32c",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/windows/flow-tui01f04-20261008-r4.json",
+      "bytes": 2593,
+      "sha256": "74edadcff1f2b6022eb48895c1dbcfab4d3ebe374734b05d892c4101f7460780",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-actual-once/disposition.json",
+      "bytes": 195,
+      "sha256": "91c89b4d1d0474b4bc947001baee4f5b5fb743f251538742572b3e536c6b236d",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-actual-once/outer-report.json",
+      "bytes": 820,
+      "sha256": "9f5c695d90b4055b0955fa83eb1e5e55c82beffe16f6c7da1bd0498e0a7b19bb",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-actual-once/reservation.json",
+      "bytes": 826,
+      "sha256": "7a3edc72bf15a902f4a8d60b5023719c86668edd6b6d5ef72b5e520396af732a",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/checkpoint.json",
+      "bytes": 49031,
+      "sha256": "89c107d68f40e64a12940905ff697e22feb023f7e2ae9117ce4f094945d965cb",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/handoff-database-reservation.json",
+      "bytes": 97,
+      "sha256": "436a7db3a42af2080caf03c319c294b25e76edf760dd13a6fea2eea297c4e352",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/handoff-stages.json",
+      "bytes": 72414,
+      "sha256": "2c9f78e7fa87f2b425fb56edf717ca5fd26a8466aeb9930652e8a0c680ff5981",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/held-original-request.json",
+      "bytes": 437,
+      "sha256": "ea5fb193c07329d7f1990c7d92d5960de00b0ae7662e26b623b674538c7364ff",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/reservation.json",
+      "bytes": 484,
+      "sha256": "c646867c5a2687b544094b9f20e5e92d03e398e62e887fae035ba6dc153ca6ab",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/result.json",
+      "bytes": 49362,
+      "sha256": "44d9b9d6fe4af2055acb78cfda2b8b4da68960bc74c1a385328087d8c061a15e",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/fixture/terminal-settlement.json",
+      "bytes": 33550,
+      "sha256": "0ae7084df796ee0ea1568b9fbf03c8376aebcf13f14a14257fe3ae194b9b0822",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/reservation.json",
+      "bytes": 2617,
+      "sha256": "571ed1215848357df2b233a51c5abcacbf2b459c650cf899e46e6192f76b977f",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24/result.json",
+      "bytes": 306,
+      "sha256": "fb3fcf5c1c7b9c178a95ec3f710c5b28f1162320da80558297a5ffb744a45fd7",
+      "role": "actual-raw"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-result-summary.json",
+      "bytes": 4120,
+      "sha256": "e860f1f9763d4fb95eae87e40cf9dc4928b4474a7300c4286f01c5702e893140",
+      "role": "summary-or-metadata-check"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-result-status-parse.json",
+      "bytes": 9834,
+      "sha256": "c857c7cb94fb84a6ebe9a47d66ac24e7234ec516d24ab80bb2ef98476a3175d3",
+      "role": "summary-or-metadata-check"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-result-status-final.json",
+      "bytes": 496,
+      "sha256": "13a1655347f5c46dba13c66832832eb0547588b8b2eced1c5d17f26737c92372",
+      "role": "summary-or-metadata-check"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r4-result-status-final-2.json",
+      "bytes": 341,
+      "sha256": "eac25a9860a43053eeddeb1392576f1cc8d9d1cb4b8573c2cbc4154d1f27e32e",
+      "role": "summary-or-metadata-check"
+    }
+  ],
+  "bindingCount": 22,
+  "logicalBytes": 239882,
+  "rawCount": 18,
+  "rawBytes": 225091,
+  "inheritance": [
+    {
+      "git": "bd132b10cd9bf494ff88313c44b480dc0e1532fe",
+      "path": "docs/evidence/tui01f/web-handoff/r4-preparation.json",
+      "bytes": 8277,
+      "sha256": "d7aee8580c313272547f8e1aed5e24376a2919cf0e4d2975f0b55177ec4c7e14",
+      "scope": "Fixed trusted caller/source741+8+runtime contract and direct entry; no copied closure"
+    },
+    {
+      "git": "b9904a63e",
+      "path": "docs/evidence/i02/tui01f-r4-preparation-review.json",
+      "bytes": 2834,
+      "sha256": "d1486d54011b194adcf6092fb9b4c8e1ce1389058dfd71edb0b1ffae9dfb7c46",
+      "scope": "Independent preparation approval, not actual result"
+    }
+  ],
+  "result": {
+    "selected": 1,
+    "passed": 1,
+    "outerExit": 0,
+    "outerMilliseconds": 20223,
+    "fullReturn": "2026-10-08T02:51:19.768Z",
+    "review": "PENDING",
+    "scope": "Real fixed af51/d629/ec30 fixture App↔TUI journey; provider0/personal0; no current779/native acceptance"
+  },
+  "explicitAdmissionDeviation": "19 resolver/alias independent fresh identity observation was NOT_EXECUTED. Original admission resolverCount0 preserved;741 inherited+8 own and4 runtime pins verified. Do not infer all preparation gates passed from actual1/1.",
+  "history": "R1/R2/R3 FAIL/UNKNOWN/KEEP unchanged; no repetition/cleanup of old resources",
+  "futureGrowth": "This R4 actual fully ended; dedicated DB/private removed by original fixture. Current result records are static after sealing, no pending journey writer. Historical KEEP/unknown allocations unchanged."
+}

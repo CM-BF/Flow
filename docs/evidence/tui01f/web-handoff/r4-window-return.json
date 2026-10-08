@@ -1,0 +1,206 @@
+{
+  "at": "2026-10-08T02:51:19.768Z",
+  "window": "flow-tui01f04-20261008-r4",
+  "run": "handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24",
+  "state": "FULL_RETURN",
+  "operatorTerminal": "2026-10-08T02:50:12.048Z",
+  "operator": {
+    "pid": 83413,
+    "exitCode": 0,
+    "elapsedMs": 20223,
+    "group": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": null
+  },
+  "processes": [
+    {
+      "id": 83392,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83408,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83409,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83413,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83415,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83416,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83520,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83539,
+      "state": "absent",
+      "errno": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": 83413,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83415,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83416,
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 83520,
+      "state": "absent",
+      "errno": 3
+    }
+  ],
+  "fixtureCleanup": {
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "checkpointConfirmed": true,
+    "databaseRemoved": true,
+    "temporaryRemoved": true,
+    "adminClosed": true,
+    "failures": [],
+    "groupDetails": [
+      {
+        "pgid": 83416,
+        "stopped": true,
+        "signals": [
+          "SIGTERM"
+        ],
+        "observations": [
+          {
+            "state": "present",
+            "code": null
+          },
+          {
+            "state": "present",
+            "code": null
+          },
+          {
+            "state": "present",
+            "code": null
+          },
+          {
+            "state": "present",
+            "code": null
+          },
+          {
+            "state": "unknown",
+            "code": "EPERM"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          }
+        ],
+        "child": {
+          "pid": 83416,
+          "closed": true,
+          "exitCode": 0,
+          "signal": null
+        },
+        "firstUnknown": {
+          "state": "unknown",
+          "code": "EPERM"
+        },
+        "failure": null
+      },
+      {
+        "pgid": 83520,
+        "stopped": true,
+        "signals": [],
+        "observations": [
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          },
+          {
+            "state": "absent",
+            "code": "ESRCH"
+          }
+        ],
+        "child": {
+          "pid": 83520,
+          "closed": true,
+          "exitCode": 0,
+          "signal": null
+        },
+        "firstUnknown": null,
+        "failure": null
+      }
+    ]
+  },
+  "databaseObservation": {
+    "database": [],
+    "connections": [],
+    "adminClosed": true
+  },
+  "directory": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-meijE1",
+    "originalIdentity": {
+      "dev": 16777234,
+      "ino": 124766625,
+      "directory": true,
+      "symbolicLink": false
+    },
+    "absent": true
+  },
+  "terminal": {
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "pipesClosed": true,
+    "cleanupFailures": []
+  },
+  "selected": 1,
+  "passed": 1,
+  "provider": 0,
+  "personal": 0,
+  "oldKEEP": "untouched",
+  "originalTransientUnknown": "Chrome group EPERM then read-only ESRCH+actual child close; original observations preserved, no rootcause assigned to earlier R3."
+}

@@ -1,0 +1,67 @@
+{
+  "run": "handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24",
+  "identity": {
+    "digest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "8d4de0c96fa631a813c8ae8467b07bbd5391c21b343d53639a8f0496929ba285"
+      },
+      {
+        "path": "apps/tui/src/task-controls/fixture-process.ts",
+        "sha256": "8a767fa813d6b84acf752215b108f6e04922478d5fb8bf387052b5d10fea4cf5"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "7f0a943cf19be3a86a6a29c46a9506408259e224ce967b247656e559e1501c03"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "permit": {
+    "kind": "flow.tui01f04.r4.permit.v1",
+    "ready": true,
+    "logicalId": "TUI01F04-REAL-HANDOFF-R4-ONCE",
+    "windowId": "flow-tui01f04-20261008-r4",
+    "sourceDigest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+    "inputDigest": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+    "callerDigest": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb",
+    "providerCalls": 0,
+    "personalOperations": 0,
+    "startBefore": "2026-10-08T02:51:32.162Z",
+    "freshObservedAt": "2026-10-08T02:49:51.707Z",
+    "pgAvailable": 88,
+    "preflightPoolClosed": true,
+    "minimumFreshFreeBytes": 13158318080,
+    "actualHolder": null,
+    "claim": {
+      "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+      "version": 7
+    },
+    "note": "Not executable. Fresh new selection/current source/runtime/claim/unused namespace/PG/free required; only then exclusive r4-permit.json. Old R1/R2/R3 permits remain immutable and cannot authorize R4."
+  },
+  "bounds": {
+    "workMs": 90000,
+    "totalMs": 150000,
+    "rawBytes": 4194304,
+    "privateBytes": 16777216,
+    "reserveBytes": 1073741824,
+    "startBytes": 1207959552
+  },
+  "watchdogPid": 83415,
+  "outcome": "unknown-retain"
+}

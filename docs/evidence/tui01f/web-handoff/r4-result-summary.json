@@ -1,0 +1,130 @@
+{
+  "kind": "TUI01F_R4_ACTUAL_RESULT",
+  "recordedAt": "2026-10-08T02:53:05.327Z",
+  "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+  "executionHead": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+  "window": "flow-tui01f04-20261008-r4",
+  "run": "handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24",
+  "start": "2026-10-08T02:49:51.708Z",
+  "terminal": "2026-10-08T02:50:12.048Z",
+  "return": "2026-10-08T02:51:19.768Z",
+  "selected": 1,
+  "passed": 1,
+  "exitCode": 0,
+  "elapsedMs": 20223,
+  "workPassed": true,
+  "workFailure": null,
+  "cleanupFailures": [],
+  "behavior": {
+    "conflict": true,
+    "draftPreserved": true,
+    "singleCancel": true,
+    "recoveredB": true,
+    "exitWithoutCancel": true,
+    "visibleFinal": true
+  },
+  "tasks": [
+    {
+      "id": "bf9bfcb7-78a0-41fb-a652-976ccda33472",
+      "status": "cancelled",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "215521fa-5b10-43ab-bfcc-85a6bdef1ec1",
+      "status": "succeeded",
+      "verificationStatus": "passed"
+    }
+  ],
+  "observations": {
+    "ptyEvents": 9,
+    "textCheckpoints": 22,
+    "domStages": [
+      {
+        "turn": 1,
+        "status": "running"
+      },
+      {
+        "turn": 1,
+        "status": "cancelled"
+      },
+      {
+        "turn": 2,
+        "status": "running"
+      },
+      {
+        "turn": 2,
+        "status": "succeeded"
+      }
+    ],
+    "assertionCount": "NOT_INSTRUMENTED",
+    "theseAreNotAdditionalTestCases": true,
+    "terminalExit": {
+      "code": 0,
+      "signal": null
+    },
+    "pipesClosed": true,
+    "rawModeRestored": true,
+    "unsentDraftAtExit": true,
+    "fixtureFrames": 20,
+    "runtimeFinalization": "NOT_OBSERVED"
+  },
+  "resources": {
+    "returnState": "FULL_RETURN",
+    "processesAbsent": 8,
+    "groupsAbsent": 4,
+    "outerEOF": {
+      "stdout": true,
+      "stderr": true
+    },
+    "databaseRemoved": true,
+    "temporaryRemoved": true,
+    "adminClosed": true,
+    "dedicatedDatabase": "flow_tui01f_b85ad4a575e6",
+    "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-meijE1",
+    "oldKEEP": "UNTOUCHED",
+    "phaseGroupUnknown": "Current Chrome group observed EPERM once; later read-only ESRCH plus actual child close resolved current closure. This does not establish earlier R3 cause."
+  },
+  "admissionLimitation": {
+    "requiredAliasCount": 19,
+    "additionalResolverCountActuallyChecked": 0,
+    "reason": "Extra resolver walk consumed input-request.tools descriptions instead of prior19 resolver identity rows. Original r4-admission.json records0; do not rewrite as complete alias preflight.",
+    "verifiedBeforeSpawn": "13 preparation bindings, fixed preparation/review/entry/input/shared hashes,741 inherited+8 own full pins and4 runtime pins,source identity,claimv7,clean actualremote,namespace,PG and disk/latest gates.",
+    "actualResult": "Real fixed journey completed1/1; does not retrospectively satisfy omitted independent alias observation."
+  },
+  "bounds": {
+    "rawStageBytes": 4194304,
+    "privateNonChromeBytes": 16777216,
+    "outputBytes": 65536,
+    "budgetPlanningNotHardCap": true,
+    "sampleCount": 61,
+    "nonAtomicSamplesNotPeak": true,
+    "negativePrivateSamples": 2,
+    "sampleMaximum": {
+      "rawBytes": 3635,
+      "privateBytes": 540,
+      "chromeBytes": 12734033
+    },
+    "finalBeforeCleanup": {
+      "freeBytes": 14288625664,
+      "rawBytes": 109599,
+      "privateBytes": 46,
+      "chromeBytes": 10621841,
+      "at": "2026-10-08T02:50:11.850Z"
+    }
+  },
+  "scope": {
+    "provider": 0,
+    "personal": 0,
+    "newNativeQuery": 0,
+    "tuple": "fixed af51 backend/d629 Web/ec30 terminal; not current779/native acceptance",
+    "retry": false
+  },
+  "review": "PENDING_INDEPENDENT_ACTUAL_RESULT_REVIEW",
+  "main": "RESULT_NOT_YET_RECEIVED",
+  "cleanCode": {
+    "at": "2026-10-08T02:53:05.327Z",
+    "scope": "result fidelity, primary/cleanup separation, bounded observations and one canonical raw source",
+    "newImplementation": false,
+    "unresolved": "19 resolver independent preflight omitted and explicitly preserved; historical failures/KEEP unchanged"
+  }
+}

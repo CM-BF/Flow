@@ -1,3 +1,9 @@
+# 当前 TUI01F R4 实际结果
+
+状态：PENDING_INDEPENDENT_REVIEW。固定执行source4bb6530e840c961b66afd68fe4634f728159ef2a/executionHead09c796b622b5336c74222398c1fdd9f239bbd19d；见[唯一manifest](../../docs/evidence/tui01f/web-handoff/r4-result-manifest.json)。
+
+实际1选1过/exit0/20223ms，功能及fixture清理均通过；8PID/4组absent、正常DROP/原身份tmp移除及后置确认成立。应审全部新阶段与原件、正确scope、短暂EPERM后真实关闭收束、原FAIL/KEEP不变。额外19alias独立fresh观察遗漏：原admission resolverCount0，741+8和4runtime pin实际已核；不把真实PASS回填为该前置已执行。源码/准备批准不替代此结果独审。
+
 # 当前 TUI01F R4 调用候选
 
 APPROVED_FIXED_CALLER_DELTA_AND_DIRECT_RESULT（Lead，0P1P2，I02 b9904a63e；[唯一引用](../../docs/evidence/tui01f/web-handoff/r4-review-receipt.json)）。固定source4bb6530e840c961b66afd68fe4634f728159ef2a，base6c6b79eb4d68c56e61f61f81088f0d1321776580。见[唯一准备](../../docs/evidence/tui01f/web-handoff/r4-preparation.json)。

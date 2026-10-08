@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-08T02:49:51.818622+00:00",
+  "window": "flow-tui01f04-20261008-r4",
+  "inputDigest": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+  "sourceDigest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+  "inheritedPins": 741,
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "tsx",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "--run",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-permit.json"
+  ],
+  "limits": {
+    "workSeconds": 150,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputBytes": 65536,
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "stageRawBytes": 4194304,
+    "privateBytes": 16777216
+  },
+  "outcome": "UNKNOWN_KEEP"
+}

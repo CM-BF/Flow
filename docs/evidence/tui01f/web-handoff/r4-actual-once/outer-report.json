@@ -1,0 +1,33 @@
+{
+  "pid": 83413,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 20223,
+  "stdout": "{\"run\":\"handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24\",\"selected\":1,\"passed\":1,\"evidence\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/runs/handoff-8c38bbfe-2cf6-41fb-ad03-2abfe421bb24\",\"provider\":0}\n",
+  "stderr": "",
+  "observed_bytes": 256,
+  "retained_bytes": 256,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

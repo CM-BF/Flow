@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-08T02:49:51.707Z",
+  "head": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+  "remote": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/tui/src/journey.test.ts",
+      "apps/tui/src/task-controls",
+      "apps/tui/test-fixtures/cancel_driver.py",
+      "docs/evidence/tui01f",
+      "experiments/tui-web-control-handoff",
+      "packages/interaction/src/task-control",
+      "plans/tui01f-task-cancel"
+    ],
+    "state": "active",
+    "branch": "codex/tui-task-cancel",
+    "origin": "new",
+    "taskId": "TUI01F",
+    "worker": "assignment_review",
+    "claimId": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 7,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "createdAt": "2026-10-06T15:46:19.232Z",
+    "updatedAt": "2026-10-08T01:38:12.746Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "queueAt": "2026-10-08T02:49:50.339Z",
+  "queueDigest": "5e5ccd005b1a500b1a332ab673402db7ead658c1cfcadcf52dd9f6594288c387",
+  "selected": {
+    "at": "2026-10-08T02:45:32.162Z",
+    "logicalId": "TUI01F04-REAL-HANDOFF-R4-ONCE",
+    "state": "SELECTED",
+    "latestStart": "2026-10-08T02:51:32.162Z",
+    "owner": "Original / assignment_review soleoperator",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "branch": "codex/tui-task-cancel",
+    "claim": {
+      "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+      "version": 7,
+      "worker": "assignment_review"
+    },
+    "source": "4bb6530e840c961b66afd68fe4634f728159ef2a",
+    "executionHead": "09c796b622b5336c74222398c1fdd9f239bbd19d",
+    "executionHeadDelta": "Latest4metadata-onlydelta;source4bb/prepared d7a unchanged; managerHEAD+trackingorigin equalclean, operatorfreshactualremote required.",
+    "preparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-preparation.json",
+      "bytes": 8277,
+      "sha256": "d7aee8580c313272547f8e1aed5e24376a2919cf0e4d2975f0b55177ec4c7e14"
+    },
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/tui01f-r4-preparation-review.json",
+      "bytes": 2834,
+      "sha256": "d1486d54011b194adcf6092fb9b4c8e1ce1389058dfd71edb0b1ffae9dfb7c46"
+    },
+    "input": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-inputs.json",
+      "bytes": 6244,
+      "sha256": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff"
+    },
+    "entry": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.py",
+      "bytes": 1077,
+      "sha256": "4f9b2d73bc817378f5d31448e999ee5d6e98b315d17b6336cb43e28b5ea4f87f"
+    },
+    "sharedCaller": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 7002,
+      "sha256": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb"
+    },
+    "sourceDigest": "0234735c636d9b6e21579035311db946de3e3561f3dc32c490dbef2069eb67cb",
+    "argv": [
+      "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "-B",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-run.py",
+      "--run-r4-once"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "windowId": "flow-tui01f04-20261008-r4",
+    "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-actual-once",
+    "permit": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r4-permit.json",
+    "minimumFreshFreeBytes": 13145735168,
+    "candidateAddedPlanningBytes": 1499463680,
+    "naturalResultSealBytes": 8388608,
+    "configuredPG": 13,
+    "requiredPGAvailable": 42,
+    "preflightMaxPG": 1,
+    "preflightPoolClosedBeforeLaunch": true,
+    "Chrome": 1,
+    "provider": 0,
+    "personalOperations": 0,
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "outerWorkSeconds": 150,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "supervisedChildMaxSeconds": 152.5,
+    "outputBytes": 65536,
+    "stageRawBytes": 4194304,
+    "privateNonChromeBytes": 16777216,
+    "fresh": "Samecallmatchingcurrentunconsumedselection/latest/noholder;D04v7exact7workerWTbranch/overlap;cleanactualremote09c796/source4bb/741inherited+8own/runtimealiases/five-sourceidentity fixed. Newpermit/outer/window/capture pathsENOENTincludingdangling;PGavailable>=42/probeclosed;free>=maxfrozen/currentfullterms/intrinsic;obsage<=30s. Onlylistedpermitdynamicfieldsderive/exclusive0600fsync. mismatchUNKNOWN0launchSTOP/noretry/nameschange.",
+    "lifecycle": "ImmediateactualSTART/terminal/exactFULLRETURN separate. OPS14exit/groupEOF notdetachedPTYChromeHTTPRunnerDBTMPproof;originalfixture receipts plusknownidentityobservations;unknownKEEP/noFORCE/oldKEEPuntouched. No concurrentactual.",
+    "scope": "R4oneactualofexistingreviewedfixture lifecycle,0provider/personal; no current779/auth claim. R2/R3FAIL/KEEP and unknownclosure immutable, no priorbudgetreuse. Preparation readyfalse/reviewPENDING historical superseded by fixedI02review andformalREADY; no repeatedprep.",
+    "budgetCaveat": "152.5s supervisedchild only, pre/postpinreads/fsync separate;ChromeDBWALplanningnot hardquotas. reserveOnce1GiB alreadycounted once.",
+    "allowRun": true,
+    "singleUse": true,
+    "selectedAt": "2026-10-08T02:45:32.162Z",
+    "inputDigest": "060c9467df57c457868d7faec872b7e3cf06bb1a4b8a288f36a3ecf44ef03aff",
+    "callerDigest": "45cb944a8dfc2cd29ad2a08df78644c59941bc6ce575b96ced4a4ba708780aeb",
+    "windowRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/windows/flow-tui01f04-20261008-r4.json",
+    "oldCaptureGuard": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/captures/flow-tui01f04-20261008-r4"
+  },
+  "freeBytes": 14307000320,
+  "floorBytes": 13158318080,
+  "pg": {
+    "max": 100,
+    "reserved": 3,
+    "observed": 9,
+    "pid": 83408,
+    "available": 88,
+    "poolClosed": true
+  },
+  "inheritedPins": 741,
+  "ownPins": 8,
+  "resolverCount": 0,
+  "scopeOverlap": false,
+  "namespacesAbsent": true,
+  "provider": 0,
+  "personal": 0
+}
