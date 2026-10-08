@@ -20,6 +20,7 @@ import { measureFinalRun } from './operator-bounds.mjs';
 import { bindChildAssignment } from './assignment.mjs';
 import { sourceIdentity } from './identity.mjs';
 import { verifySourceDelta } from './continuation.mjs';
+import { claimPausedResources } from './resources.mjs';
 
 async function fixture(t) {
   const root = await mkdtemp(join(tmpdir(), 'o16-progression-renewal-')), identity = await lstat(root);
@@ -217,7 +218,33 @@ test('progression-renewal: actual stage paths and meter select preserved executi
   assert.throws(() => pauseReceipt({ run: f.run, phase: 'reauthorize', sourceDigest: f.source.digest, state,
     report: { outcome: 'reauthorized-awaiting-separate-children-permit' }, resources: { ...f.packet.resources, sourceDigest: f.source.digest } }), /expire/);
 });
-test('progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies', async () => {
+test('progression-renewal-resource: real pause consumer reads execution records once and preserves original archive', async t => {
+  const f = await fixture(t), archivePaths = ['pause.json', 'pause-renew.json', 'confirmation.json', 'resources.json'].map(n => join(f.directory, n));
+  archivePaths.push(join(f.runtime, 'journey.json'));
+  const archived = await Promise.all(archivePaths.map(p => readFile(p)));
+  const c = clientFixture(t, f), accepted = await replaceExpiredProgression(c.client, f.value, c.persist);
+  const state = { ...progressionRenewalState(f.value, f.source), stage: 'reauthorized', executionAuthorizationBinding: accepted.executionAuthorizationBinding };
+  const resources = { ...f.packet.resources, sourceDigest: f.source.digest };
+  const report = { outcome: 'reauthorized-awaiting-separate-children-permit', confirmationBinding: state.confirmationBinding,
+    executionAuthorizationBinding: state.executionAuthorizationBinding };
+  const pause = pauseReceipt({ run: f.run, phase: 'reauthorize', sourceDigest: f.source.digest, state, report, resources });
+  await writeRecord(join(f.runtime, 'journey-execution.json'), state, { exclusive: true });
+  for (const [name, value] of Object.entries({ 'execution-resources.json': resources, 'execution-authorization.json': report, 'execution-pause.json': pause })) {
+    await writeRecord(join(f.directory, name), value, { exclusive: true });
+  }
+  const tampered = { ...state, stage: 'children-started-unknown' };
+  await writeRecord(join(f.runtime, 'journey-execution.json'), tampered);
+  await assert.rejects(claimPausedResources(f.directory, f.source, resources, 'continued-children'));
+  await assert.rejects(lstat(join(f.directory, 'pause-consumed-reauthorize.json')), { code: 'ENOENT' });
+  await writeRecord(join(f.runtime, 'journey-execution.json'), state);
+  assert.deepEqual(await claimPausedResources(f.directory, f.source, resources, 'continued-children'), pause);
+  assert.deepEqual((await readRecord(join(f.directory, 'pause-consumed-reauthorize.json'))).receipt, pause);
+  await assert.rejects(claimPausedResources(f.directory, f.source, resources, 'continued-children'), { code: 'EEXIST' });
+  await assert.rejects(claimPausedResources(f.directory, { digest: f.packet.pause.sourceDigest }, f.packet.resources, 'children'), /expired/);
+  assert.deepEqual(await Promise.all(archivePaths.map(p => readFile(p))), archived);
+});
+test('progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies', async t => {
   const source = await sourceIdentity(), proof = await readRecord(new URL('../../docs/evidence/o16/progression-renewal/source-delta.json', import.meta.url));
   verifySourceDelta(source, proof.oldSourceDigest, proof.delta);
+  t.diagnostic(JSON.stringify({ sourceDigest: source.digest, files: source.files.length, dependencies: source.dependencies.length }));
 });
