@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-08T04:15:44.349Z",
+  "event": "AUTHOR_ACCEPTED_INDEPENDENT_REVIEW_AND_DELIVERED_FIXED_SOURCE",
+  "reviewer": "astra_ultra_execution_lead/native_center_owner",
+  "conclusion": "APPROVED_LIMITED_FIXED_NATIVE_TERMINAL_AND_ENVIRONMENT_DELTA",
+  "p1": 0,
+  "p2": 0,
+  "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
+  "delivery": "5e3ac72e2b73cdc2bca732e0b23f4db243af4850",
+  "manifest": {
+    "path": "docs/evidence/svc09-fixed-runtime/manifest.json",
+    "bytes": 12548,
+    "sha256": "0aa46719224f30b364080ff1e36defd351980c64e5336c0749aed98af8aeb0a6"
+  },
+  "basis": "Native independent message; Lead accepted fixed source00c for subsequent artifact candidate. Receipt records actual author acceptance time, not guessed review time.",
+  "verifiedByReviewer": "47 bindings100220B;71source;57reservation;dfba/local-original preimages;6distinct/two type failures/4359ms1816B/five returned groups;two135B cacheKEEP.",
+  "notProven": [
+    "actual artifact build",
+    "cold startup",
+    "dual-slot mixed journey",
+    "four-App compatibility",
+    "personal deployment"
+  ],
+  "taskCompletedAt": "2026-10-08T04:15:44.349Z",
+  "sourceWritesStopped": true,
+  "scopeReturn": "scope-return-receipt.json",
+  "engineeringChildren": 0,
+  "pendingLaunch": 0,
+  "metadataReadError": "One public ledger read used assignments wrapper as array and failed before any mutation; corrected claims shape then fresh v1 amend committed v2. No unknown mutation."
+}
