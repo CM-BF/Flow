@@ -1,0 +1,607 @@
+{
+  "recordedAt": "2026-10-08T00:16:24.855Z",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE_NOT_INTEGRATED",
+  "task": "X01-VERIFIER-ADMISSION-RESULT01",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "branch": "codex/plugin-verifier-admission-result",
+  "claim": "cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24 retained",
+  "fixedDeliveryBeforeIntake": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+  "mainObservation": {
+    "head": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "originMain": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "clean": true,
+    "at": "2026-10-08T00:16:24.855Z",
+    "notAnIntegrationReceipt": true
+  },
+  "rowCount": 22,
+  "productTestCount": 20,
+  "productTestBytes": 136230,
+  "requiredSupportCount": 2,
+  "requiredSupportBytes": 18525,
+  "bytes": 154755,
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "787d26b2e0c8e8274cb338545f5ba339dfb3e08f",
+      "bytes": 8508,
+      "sha256": "2c98ac43c07d9c5079215fb8bda65774fe12627ee7862a50d8369e823ac27323",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "80d6c41cd6dcf2918acc8f00bbdecf91ad6f980b",
+      "beforeSha256": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+      "beforeBytes": 9275,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "5477b64fe07177921d2139615cc0ff59582580bb",
+      "bytes": 9366,
+      "sha256": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "8a4d9dea9373b8d88b4394ce8fe2c0e88272f49e",
+      "beforeSha256": "fa3734adabdd4b996bd6d8e25aefa8fd737c282d544b5998b3f4f2b98f0ae425",
+      "beforeBytes": 8959,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "62262ddda51a9a4e651dd400d4ba5fb82e0b8899",
+      "bytes": 3279,
+      "sha256": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "dc9df3d7e65478e9f9ba2a0b98990abbb58ecb2d",
+      "beforeSha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3",
+      "beforeBytes": 3260,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "29259559734da59ec837bc25be914fe5da084b30",
+      "bytes": 11569,
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "48c1332ec2eaff61c1d2e5b3b8aae7d2812e333a",
+      "beforeSha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83",
+      "beforeBytes": 9868,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "745df29a5de0c3d40db0bca6635cecc33e3e5926",
+      "bytes": 10467,
+      "sha256": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "2b703d0a5202c24b94d9a281da6c7a826604b1c9",
+      "beforeSha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4",
+      "beforeBytes": 9647,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "d72ae751a1d47b79aa3106410908d5a212743c14",
+      "bytes": 7720,
+      "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "128d5e73f6952428ef8a4194610098ab4825993e",
+      "bytes": 7635,
+      "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "c5d0c439cde6f84e87d78fda4704698b0b58c12d",
+      "bytes": 7492,
+      "sha256": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "3770510e38312e89f8b25fc9b119142b7a072b98",
+      "bytes": 6466,
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "sourceBlob": "3da03b1ef4698c445069b0f7d31b1129b700b005",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "57830862c98bd0474064429250a4e66d674329f2",
+      "bytes": 5971,
+      "sha256": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "56b0d58345f1ab0965ca4610ba17b3054f039551",
+      "beforeSha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5",
+      "beforeBytes": 5316,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "f8dff700c5292566ad8dc423d527c600f63bcb79",
+      "bytes": 1239,
+      "sha256": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "35aeac860307fe716aa696f66a184a3e8fa15f36",
+      "bytes": 1930,
+      "sha256": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "7acd25d70ad8cd86da22cca2fce16e876bb85066",
+      "bytes": 655,
+      "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-event.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "37227918153f5b20da352d0d22aab82063e0e6c9",
+      "bytes": 916,
+      "sha256": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "b6c766adbca0fd77cf07787dde27fa151423fdaf",
+      "bytes": 8090,
+      "sha256": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": "40dbecb9e936260917df6c3d997a8c91c090d82e",
+      "beforeSha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5",
+      "beforeBytes": 7873,
+      "operation": "replace-exact-preimage",
+      "sameAsMain": false
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "63425045ba2ead63a2dc43786bcdb3409c166b3a",
+      "bytes": 4613,
+      "sha256": "103f985153b6da6972d4c90559810dafada661a236d9d3fe222634e8d67cf1b7",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "sourceBlob": "580d2724b52a7c486f4e916518606cfaa9f85af5",
+      "bytes": 2526,
+      "sha256": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "sourceBlob": "a00403e4c4e272607f30eba3fc8881cca94b0414",
+      "bytes": 8919,
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "kind": "product-or-test",
+      "sourceCommit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "sourceBlob": "2be57c8563300ceb5fb1907f46ad3a6ecdfa7a2b",
+      "bytes": 25741,
+      "sha256": "7ccd13f0e14f256ac117548618d6e71052cd926e4c09ba2da1209b4fb5d2becc",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts",
+      "kind": "required-test-support",
+      "sourceCommit": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "sourceBlob": "9226e8bd75f70f6ae358b6bfe8410cd1a112d14e",
+      "bytes": 15991,
+      "sha256": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-input.json",
+      "kind": "required-test-support",
+      "sourceCommit": "b4e6bb2b40db29413f3f920d07c34a6fadd7cc3a",
+      "sourceBlob": "90c90f45e9ca8ea1d7c7c18943641261c1f94bab",
+      "bytes": 2534,
+      "sha256": "7191bdb351617e940e4576c272c934eebaf828d227947a85c0eb3e67f7f3a3fc",
+      "expectedMainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "beforeBlob": null,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "operation": "create",
+      "sameAsMain": false
+    }
+  ],
+  "requiredExisting": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "blob": "22d5153688dd057706248c947524565d0ec05439",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395",
+      "action": "required-existing; do not overwrite"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "blob": "27b30715b9ccf11fafca369dd91b033d8b629401",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe",
+      "action": "required-existing; do not overwrite"
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "blob": "f345d1f8f1fc1f0254b580c59d659ff26f4f135e",
+      "bytes": 5115,
+      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
+      "action": "required-existing; do not overwrite"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "blob": "ee83b5ad9172b8e216414561c3a1008f5bafc665",
+      "bytes": 3922,
+      "sha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+      "action": "required-existing; do not overwrite"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "blob": "a0380de245336d6a1d7106b5791f58e8fdab4872",
+      "bytes": 14007,
+      "sha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328",
+      "action": "required-existing; do not overwrite"
+    }
+  ],
+  "directDependencies": [
+    {
+      "path": "apps/server/src/database.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+      "bytes": 7789,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "bytes": 6621,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019",
+      "bytes": 21699,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550",
+      "bytes": 4145,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a",
+      "bytes": 957,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/projects/commands.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "b362828aa9b8a296d46f8105fc40fcd67b0a4efa091d7070f8c13e92f64742ee",
+      "bytes": 4181,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/projects/storage.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "3f2eabe24482b36f0d79bf4d81fadd18e2e2a696b199ac60d695ce658e8c0f3e",
+      "bytes": 4093,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/projects/graph.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "d45ec707df3a1be05d6840abb95517aca1c842612a4c6afccdf388f207772cf1",
+      "bytes": 4152,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9",
+      "bytes": 4657,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "apps/server/src/private-json-configuration.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "ab3f703819e79608c964c0aaacbae1883d021df83d633e2092e7297d02ee3989",
+      "bytes": 198,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc",
+      "bytes": 3044,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1",
+      "bytes": 696,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "bytes": 6201,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3",
+      "bytes": 1293,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa",
+      "bytes": 17609,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "mainCommit": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+      "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955",
+      "bytes": 5976,
+      "fixedInputSource": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "matchesActualInput": true
+    }
+  ],
+  "originalApprovals": [
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/approval.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 1423,
+      "sha256": "d6c57c8fe9dca0cc57a2b8a73a4cba81b1fd4a7e85f072a30322175968982bca",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/approval.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 1123,
+      "sha256": "1ea0e7e993bc7ba817ff7f2cb7e39c6df4a6a6fe075123cff99e18b3dce5ca4c",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/reviews.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 1800,
+      "sha256": "66d1f4ce00b2505073d9e29376adc855453bc234f80b431c4f04ad330eea3d1a",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/coverage-approval.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 964,
+      "sha256": "e664523a57bf98514bca3db36f2a134f79fb245fdbb461a1f72c6b6a69c1e64d",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/preparation-approval.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 1160,
+      "sha256": "6a572fbe5b3e2c6e7885d54946e4091558d509c258a284d2e7ba5386aae18c0a",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/actual-approval.json",
+      "sourceCommit": "aa0c9f8ad509b2f555f630299b017c2e06895ce9",
+      "bytes": 2680,
+      "sha256": "59ee391c236f941458251a219ad041ceb67176f06fe44123ba36f020e1748ea2",
+      "scope": "Reuse original limited conclusion; later approvals close prior findings without rewriting history"
+    }
+  ],
+  "actualEvidence": {
+    "result": "4702e8e268768e1899ece9ebead117a86fd5cdc7",
+    "packet": "792ec7e8b4d981a7b6fc0bae979b9f2939fa0ad2",
+    "reviewReady": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/result-review-ready.json",
+    "reviewReadySha256": "4f330e08acbee513d95c3ca9045e37cd0565b71a206154518804237063d6a2d7",
+    "resultReview": "2026-10-08T00:02:58.000Z ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED 0P1/P2",
+    "selected": 5,
+    "passed": 5,
+    "failed": 0,
+    "fullReturn": "2026-10-07T23:59:27.445Z",
+    "executionHead": "e33b95a3d8a9a02300ce5b2531500067c3f37e86",
+    "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+    "scope": "Real domain admission/reportEvents transactions, public source task/claim/events/project setup, synthetic installed metadata only; no verifier route mount/worker/provider/native/browser"
+  },
+  "intakeOrder": [
+    {
+      "step": 1,
+      "action": "Already main: AV center/036/client predecessor97353e4f and journal; retain current startup/migration prelude",
+      "receipt": "docs/evidence/i02/x01-verifier-center-client-intake.json"
+    },
+    {
+      "step": 2,
+      "action": "Apply these22 exact fixed rows after fresh preimage checks as one cohesive VAR admission+independent verdict+terminal gate set. No whole branch merge, no producer-only split."
+    },
+    {
+      "step": 3,
+      "action": "CENTER owner then applies its four reviewed assembly leaves; new routes remain unmounted/default-disabled before that. Keep current index prelude and apply only remaining delta.",
+      "owner": "db_transaction_owner / native_center_owner integration",
+      "source": "d17125c112240468444b71f6a049303158efad1c",
+      "packet": "82f9588d1712c76b3ffd29c81e82e7da93305511",
+      "delivery": "f440e53d2ca8a8cc9fd237dbb53db420edf8dbd7",
+      "paths": [
+        "apps/server/src/main.ts",
+        "apps/server/src/index.ts",
+        "apps/server/src/plugin-runtime/routes.ts",
+        "apps/server/src/plugin-verification-wiring.test.ts"
+      ]
+    }
+  ],
+  "seams": {
+    "admission": "same command transaction: source/project authority+CAS, one acceptTask, graph node/wake/036 binding/ref and receipt",
+    "events": "reportEvents optional TrustedPluginVerifierPolicy flows to guard after replay and live-owner fence; artifact/typed verdict/completed rollback as a whole; source unchanged",
+    "authorization": "Existing tool403 and phase behavior preserved. Explicit verifier kind plus load/invoke receipts, exact trusted material→algorithm policy, defaultoff.",
+    "runner": "executePluginVerifier shared verificationInput+optional invoker is ready; runtime v4 claim/journal/PROCESS injection and settled outbox remain later acceptance; no new runtime.ts edit in this intake",
+    "factory": "CENTER must pass the same policy to routes, reportEvents, enable/read under existing owner/runner auth hook; never mount producer alone"
+  },
+  "validationRecommendation": {
+    "atIntegration": "Fresh exact preimages then focused affected strict types plus exact9 CENTER factory cases after both deliveries are composed. Integrator decides checks from actual diff.",
+    "reuse": "VAR original15/repair3/route11 and actual5domainPG; AV actual5PG and client11. No automatic repeated PG/full suite.",
+    "testSupport": "PGtest directly imports fixture.ts, which reads adjacentpg-input.json; these2 required supports are included. Existing isolated configs/caller/295closure stay fixed evidence, not copied or reinterpreted as a runnable main harness. Future actual test execution requires a new independently scoped operator/window."
+  },
+  "limits": [
+    "VAR source remains NOT_MAIN until actual receipt. Main receipt is not deployment.",
+    "Public verifier HTTP mount/factory real DB, runtime v4/worker/native/provider and full X01 remain open.",
+    "Old failures, raw, input manifests and historical source remain unchanged; no source copies created for this intake.",
+    "If any preimage changes, stop and coordinate the precise delta with its owner; do not restore an old whole blob."
+  ]
+}

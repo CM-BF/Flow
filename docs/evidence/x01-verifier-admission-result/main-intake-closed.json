@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-08T00:18:31.922Z",
+  "state": "READY_STOP_AFTER_COMMIT_PUSH",
+  "start": "2026-10-08T00:15:05.410Z",
+  "deadline": "2026-10-08T00:25:05.410Z",
+  "claim": "cb699a7a v2 ACTIVE24 retained",
+  "canonical": "main-intake.json",
+  "canonicalSha256": "3c951de0bb0cd5ebb4b9176847bed5ea508691a0acd9c642986e1dea175a507b",
+  "mainObservation": {
+    "head": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "originMain": "b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b",
+    "clean": true,
+    "at": "2026-10-08T00:16:24.855Z",
+    "notAnIntegrationReceipt": true
+  },
+  "mainIntegrated": false,
+  "metadataPaths": [
+    "docs/evidence/x01-verifier-admission-result/main-intake-start.json",
+    "docs/evidence/x01-verifier-admission-result/main-intake.json",
+    "plans/x01-verifier-admission-result/plan.md",
+    "plans/x01-verifier-admission-result/review.md",
+    "plans/x01-verifier-admission-result/status.md"
+  ],
+  "budget": {
+    "capBytes": 3145728,
+    "indexAtomicCopyObservedBytes": 2424168,
+    "newOrRewrittenMetadataBytes": 59202,
+    "newGitObjectsAllowanceBytes": 196608,
+    "atomicAndClosingRecordAllowanceBytes": 65536,
+    "conservativeTotalBytes": 2745514
+  },
+  "actualPeak": "UNKNOWN; conservative allowances not measurement",
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "pendingLaunch": 0,
+  "futureWritingBytesAfterStop": 0,
+  "productsAndFixedInputsChanged": false,
+  "quality": "Installed find-skills/codebase-design/clean-code baseline: single intake, exact fixedGit and current preimages, domain+assembly order, no duplicate progress/raw authority. First metadata stdin encoding failure occurred before any writes; no engineering run, source or evidence change."
+}

@@ -71,3 +71,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## VAR v2真实结果独审批准
 
 2026-10-08T00:04:21.547Z归档chatui 2026-10-08T00:02:58.000Z ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，result4702e8e268768e1899ece9ebead117a86fd5cdc7、packet792ec7e8b4d981a7b6fc0bae979b9f2939fa0ad2。37bindings323690B、295输入零差、真实五例成功及资源收据认可。仅领域PG，非公开verifier装配/worker/主线或全X01完成。完整范围见transaction-pg/v2/actual-approval.json；旧失败、准备结论和原raw保持。
+
+## 精确接收单metadata核对
+
+2026-10-08T00:18:31.922Z：固定22叶154755B来源/main b9ea96aa前像，未改产品或原件；与1b9e前像零差。两个已有测试required-existing，16直接依赖等实测输入。复用core53d/route8eb/57b实际5PG批准；非新增独立source审或main回执。

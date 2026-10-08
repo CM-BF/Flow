@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-08T00:04:21.547Z |
+| 最近更新时间 | 2026-10-08T00:18:31.922Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,27 +14,27 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / core53d50dddcefb5b1e060f45b5a7addd429aa6ec81、route8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd、result4702e8e268768e1899ece9ebead117a86fd5cdc7 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 产品与295运行输入冻结；实际结果独审已归档，本次提交push后clean STOP |
-| 工作分支状态 | awaiting-integration（真实领域PG结果独审通过） |
+| 工作树 dirty 状态 | 产品及运行输入冻结；接收单提交push后clean STOP |
+| 工作分支状态 | awaiting-integration |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 57b188f5ee9fce6589160bb61b75891a800bfb6b：真实领域PG5/5、suite成功；8eb输入边界11/11与types0保留；公开verifier装配/worker未验 |
 | Review | APPROVED 4702e8e268768e1899ece9ebead117a86fd5cdc7：chatui 2026-10-08T00:02:58.000Z实际结果忠实性0P1/P2；原核心/路由/准备批准范围不扩大 |
-| 已集成 main 状态 / HEAD | NOT_INTEGRATED（本VAR）；AV前置center/client已于97353e4f48ea515d268f6e4a6107e778b6c39abb受控接收，不代表本片main/部署 |
+| 已集成 main 状态 / HEAD | NOT_INTEGRATED（本VAR）；接收前像观察b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b clean；未收到VAR main回执 |
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 幂等验证受理、权限拒绝与事件整批回滚已通过真实数据库验证及独立审查 |
-| 下一可用交付 | 受控接收已审领域能力，再验证公开路由装配和执行器完整链路 |
+| 当前产出 | 验证受理、权限拒绝和结果原子提交已获真实数据库验证及独立审查 |
+| 下一可用交付 | 将已审能力接入主线，再接公开接口与执行器完整旅程 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
 | --- | --- | --- | --- |
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
-| VAR-02 | in-progress | architecture_read | 五个真实领域PG通过，等待结果独审及受控接收 |
-| VAR-03 | in-progress | architecture_read | 领域事件原子性PG通过，等待结果独审；与受理同片接收，不先暴露producer |
-| VAR-04 | in-progress | architecture_read | 真实5/5与完整RETURN已发生；结果独审、主线和公开装配/worker仍未完成，历史准备和失败原件保留 |
+| VAR-02 | in-progress | architecture_read | 五个真实领域PG与结果独审通过，等待受控main接收 |
+| VAR-03 | in-progress | architecture_read | 领域事件原子性PG及结果独审通过；与受理同片接收，不先暴露producer |
+| VAR-04 | in-progress | architecture_read | 真实5/5、完整RETURN及独审均通过；主线和公开装配/worker仍未完成，历史准备和失败原件保留 |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -128,3 +128,11 @@ Mika明确允许先用本树固定组合验证五domain PG；AV main receipt移�
 ## 领域PG结果独审批准与STOP
 
 2026-10-08T00:04:21.547Z：chatui于2026-10-08T00:02:58.000Z批准result4702e8e/packet792ec7e，0P1/P2；37bindings323690B和295固定输入零差，23run原件27284B核符。五个真实领域用例、预检91空位及同identity资源收尾仅按实际范围认可，外层双EOF/整体外墙钟仍UNKNOWN，旧失败/EPERM不改。本树产品与运行输入继续冻结，本次metadata提交push后STOP；0child/PG/待launch，保claimv2。原3MiB尾内完成批准归档，不保留新的写入余额。完整VAR/X01未完成，主线集成与公开装配/worker验证另交既有owner推进。
+
+## 精确主线接收单
+
+2026-10-08T00:18:31.922Z：新metadata-only段actualSTART 2026-10-08T00:15:05.410Z，firstWrite 2026-10-08T00:15:05.583Z，deadline 2026-10-08T00:25:05.410Z；fresh cb699v2 ACTIVE24/self/nooverlap，3MiB含own index原子临时副本、Git对象及metadata。0工程/PG/HTTP/产品修改，无295复制。
+
+[唯一main-intake](../../docs/evidence/x01-verifier-admission-result/main-intake.json)：20产品测试136230B+2直接support18525B，共22叶154755B；core53d/route8eb/test57b/support b4e6。main b9ea96aa前像与1b9e一致；两个已main测试skip，16直接依赖等实测输入。先VAR完整gate组再CENTER4叶同policy装配，不先公开producer/覆盖旧index。当前VAR NOT_MAIN，原review/实际结果/旧失败/raw全冻结。
+
+本次一致性核对不代替main接收或扩大产品验收；VAR-02/03待受控main，VAR-04公开HTTP/worker及部署仍OPEN。产品与运行输入STOP，本次commit/push后metadata STOP；未来写入余额0。
