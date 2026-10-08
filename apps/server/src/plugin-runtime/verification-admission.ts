@@ -32,6 +32,7 @@ export async function lockSourceProject(client: PoolClient, taskId: string, work
 export async function admitPluginVerification(pool: Pool, boss: PgBoss, registrationId: string, raw: PluginVerificationAdmission,
   key: string, hosts: TrustedPluginHostPolicy, algorithms: TrustedPluginVerifierPolicy) {
   const input = pluginVerificationAdmissionSchema.parse(raw);
+  const requestIdentity = verificationAdmissionIdentity(registrationId, input);
   const result = await command(pool, `plugin.verification-task:${registrationId}`, key, input, async client => {
     const candidate = await latestRuntimeRevision(client, registrationId);
     if (!candidate?.desired_enabled || !candidate.target_runner_id || !candidate.store_id || !candidate.material_install_operation_id) {
@@ -74,5 +75,5 @@ export async function admitPluginVerification(pool: Pool, boss: PgBoss, registra
     return { task, binding, project: { id: project.id, revision: changed.snapshot.project.revision, nodeId: node!.id } };
   });
   // command() has already compared the normalized digest, including historical receipts.
-  return { ...result.value, replayed: result.replayed, requestIdentity: verificationAdmissionIdentity(registrationId, input) };
+  return { ...result.value, replayed: result.replayed, requestIdentity };
 }

@@ -17,14 +17,14 @@ afterEach(() => vi.unstubAllGlobals());
 test('SDK verification admission freezes normalized body and forwards key, authentication and AbortSignal', async () => {
   let respond!: (response: Response) => void;
   const fetch = vi.fn((_url: string | URL | Request, _init?: RequestInit) => new Promise<Response>(resolve => { respond = resolve; })); vi.stubGlobal('fetch', fetch);
-  const body = input(), signal = new AbortController().signal;
+  const body = input(), controller = new AbortController(), signal = controller.signal;
   const pending = client().admitPluginVerificationTask(registration, body, 'original-key', signal);
   body.title = 'mutated'; body.source.version = 'f'.repeat(64); body.rule.requiredKeys.push('mutated');
   respond(new Response(JSON.stringify(acknowledgement())));
   expect((await pending).binding.scope.projectId).toBeNull();
   const [url, init] = fetch.mock.calls[0]!;
   expect(String(url)).toBe(`https://flow.example/api/plugins/${registration}/verification-tasks`);
-  expect(init?.signal).toBe(signal); expect(new Headers(init?.headers).get('authorization')).toBe('Bearer owner'); expect(new Headers(init?.headers).get('idempotency-key')).toBe('original-key');
+  expect(init?.signal?.aborted).toBe(false); const reason = new Error('caller cancelled'); controller.abort(reason); expect(init?.signal?.aborted).toBe(true); expect(init?.signal?.reason).toBe(reason); expect(new Headers(init?.headers).get('authorization')).toBe('Bearer owner'); expect(new Headers(init?.headers).get('idempotency-key')).toBe('original-key');
   expect(JSON.parse(init!.body as string)).toEqual(pluginVerificationAdmissionSchema.parse(input())); expect(fetch).toHaveBeenCalledTimes(1);
 });
 test.each(['missing', 'registration', 'revision', 'projectRevision', 'title', 'source', 'rule', 'protocol'] as const)('SDK refuses %s request identity without fabricating proof', async kind => {
