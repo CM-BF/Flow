@@ -650,3 +650,12 @@ MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范�
 
 
 同一dashboard后继补[领取详情刷新语义](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-context-claim-sync-explanation.json)：当前“更新此详情”在已有available观察时只更新已加载snapshot，不发新ledger读取；Context v3已合法提交，但旧23:08:38页面观察仍v2，保持PENDING_SYNC。后继应清楚区分更新阅读详情与重新核对领取，保用户已展开内容与时间来源；本次未证服务器失效，不再重复GET或另建产品任务。
+
+### 既有 OPS16 轻量前置与模型显示后继（2026-10-07）
+
+- [ ] 在既有 OPS16 方法内复用真实公共 decoder 检查 fixture 实际目录 DTO，固定供给从实际入口递归核 literal/静态资源并声明动态边界，尽量在 PG/Chrome 前暴露准备错误；不写第二 schema 自证、不扫全库、不造框架、不重开已冻结通过工作。Arc 原 DTO 的 displayName 空格已由真实 codec 证明拒绝、修后通过；Context 原614供给漏固定startup leaf，372文件有限入口图正修准备。上述是当前实施证据，不据此冒完整 runtime/所有动态边界通过。
+- [ ] 沿[MATURE02唯一父计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)自然更新后继：友好 displayName 与实际执行 modelID 应分责。当前只修夹具符合既有合同，不临时放宽共享 schema；后继合同能力/兼容迁移由原 owner 在合法范围内处理。此处为交接引用，不复制父 TODO/status。
+
+### OPS16 本轮连续段实际执行（2026-10-08）
+
+00:12:46.922 实际一次派出 Context25min/320MiB、最多3次90s浏览器累计270s，以及Arc35min/384MiB同范围连续段（运行窗口顺序交接，源检查可并行）。每段最多4个相关局部child20s/累计60s，含清理；旧6352/20654ms等各段均CLOSED，旧余量不转。每个source/result固定记录，已定位普通fixture/CSS/窄产品错误可直接修复与相关复测，末尾一次独审；权限/归属/cleanup/验收含义变化才审变化面。真实START/terminal/RETURN与交接历时保留在原current/owner原件，不把准备或等待冒运行。

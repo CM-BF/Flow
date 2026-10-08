@@ -175,3 +175,10 @@ Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-plat
 URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-classifier-source-review.json)：12 pure 与 affected types 通过，保守3715ms CLOSED。a322 全18范围 STOP，新四组/两张末态图和独立桌面 observation 尚未运行；旧 c1db 同轮1/4失败、0PNG/9145ms保留。
 
 23:51 实际阶段视觉把上述 CSS 风险升级为交付前必须修复的 P2：[桌面独立图审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-desktop-stage-visual-review.json)已真实打开1500×960 PNG，顶部导航撑成约450px空白、聊天约y512开始。当前同次2/4通过（布局导航、三pane读取），材料设置radio前置失败，末态390无图；早桌面图独立保留不冒全通过。下一15min普通源段修独立namespace并诊断材料前置，旧候选/实际不回写，修后另审另授窗口。
+
+固定 b3f5 的命名隔离与夹具 DTO 修正已获[独立源码/局部/准备批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-css-material-source-review.json)。原 DTO 显示名空格被真实公共 codec 拒绝，修正后包含三选项和 profile 身份的原响应通过；没有放宽 schema 或删除材料断言。新 layout 组包含右侧面板打开、切 Terminal、关闭后顶部导航 intrinsic height 不变的真实断言。源码获批不等于视觉修复已实测；新四组/双主题仍待一次独立实际。
+
+- [ ] 既有Arc导航扩展点TODO补[七源具体审计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-navigation-plugin-surface-audit.json)：独立typed workspace-layout identity及已有host权限，不把右侧task panel的workspace.tabs当顶部Arc导航；覆盖disabled/revocation/键盘/compact双主题并保8workspace/3pane/32views。未测性能不冒优化收益，不扩大当前18scope修复。
+- [ ] 既有Recovery后继补[错误生命周期研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-error-lifetime-research.json)：早图旧global恢复warning可能在成功后残留，先实际复现；它不参与Send reason，不替代本次chat4 paused+waiting根因，不准Arc越权改recovery。
+
+当前CSS/material结果见[实际结果与早图审查](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-css-material-actual-review.json)：导航视觉P2已实测关闭，整体2/4及Send前置失败保持。后继连续段沿原4组，不删断言或扩大timeout。

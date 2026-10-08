@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-08T00:10:54.838022+00:00",
+  "kind": "READ_ONLY_EXTENSION_SURFACE_AUDIT",
+  "targetHead": "e82d5c0684cfd8b18631732cf3874d324a8a7aa4",
+  "existingTask": "WPF-MATURE-05 / original full-plugin-system requirement",
+  "newTaskOrWriteClaim": false,
+  "conclusion": "Core rail/sidebar/message/composer/right-panel slots exist. Arc workspace-navigation actions still have no registered contribution surface; full plugin requirement remains open.",
+  "alreadyPresent": [
+    {
+      "surface": "Left rail",
+      "entry": "App PluginRail; activityBar.primary and activityBar.bottom",
+      "scope": "global UI contributions"
+    },
+    {
+      "surface": "Sidebar",
+      "entry": "App sidebar.header/item.actions/footer",
+      "scope": "global plus task/conversation context"
+    },
+    {
+      "surface": "Chat tab",
+      "entry": "PaneTabs renderActions -> AppSlot chat.tab.actions",
+      "scope": "pane/workspace/viewKey identity; existing guarded layout port"
+    },
+    {
+      "surface": "Chat body and composer",
+      "entry": "ConversationThread official local Thread plus MessageActions/Footer/ComposerActions",
+      "scope": "message/composer typed contexts, separate data-renderer registry"
+    },
+    {
+      "surface": "Right panels",
+      "entry": "PluginWorkspace with workspace.header/tabs/actions and artifact.actions",
+      "scope": "workspace context means taskId and WorkspaceTabId, not Arc workspace layout identity"
+    }
+  ],
+  "gap": {
+    "entry": "WorkspaceTabs props only layout/onSelect/onAdd/onClose; no renderActions or AppSlot",
+    "typeConstraint": "SlotId and validator both lack Arc workspace navigation action slot; existing workspace.* is right panel context with taskId/tabId. Reusing that context would lose Arc workspaceId identity.",
+    "consequence": "A plugin cannot add a per-Arc-workspace navigation button/menu through current registered host surface, despite supported chat-tab actions."
+  },
+  "minimalFollowupDesign": [
+    "Under the same existing task after current browser repair, add one narrow render seam for workspace-level navigation actions, with a distinct typed layout-workspace identity rather than aliasing right-panel context.",
+    "Register its slot/context through existing manifest validation, activation and ExtensionSlot; keep one PluginHost and existing capability/disabled/error handling.",
+    "Any layout-changing command must use host-owned invocation checks and close protection, invalidate on connection/view/layout revocation, and never expose editable layout or business draft stores to plugins.",
+    "Place extension buttons beside rather than inside role=tab buttons; preserve roving-tab keyboard behavior and compact row height.",
+    "Keep current UI bounds 8 workspace tabs, 3 visible panes, 32 open views; do not silently widen them for plugin contributions."
+  ],
+  "acceptance": [
+    "A real sample button/menu appears for the intended Arc workspace, triggers existing host authority, and disappears on disable/unregister.",
+    "Inactive/closed workspace or revoked connection cannot commit a delayed action; plugin dispose/activation failure produces bounded diagnostics.",
+    "Keyboard navigation, close-confirmation ownership, no nested interactive tab, both themes and narrow viewport remain covered.",
+    "Adding this slot does not require a second task progress record or revalidate unrelated green server PG tests."
+  ],
+  "performanceNote": "AppLayoutPort currently serializes bounded layout identity; this audit did not measure cost and does not justify an optimization claim or rewrite. Future measurements should target meaningful render/subscription overhead on 3 visible and 32 retained views.",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 3284,
+      "sha256": "315a63f07809e91011c662db80ad1f1f0a2ba239d0a6448da43d732de2c3388a"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 7594,
+      "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 9254,
+      "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "bytes": 4039,
+      "sha256": "f5d234224b7fcd32e9a55a91ac4196bb2e8b30b66d501ae0cec811a44695dc1c"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "bytes": 8309,
+      "sha256": "e22667e137b7ff08a178063a92f906f0767aceab000ca40ccf6bfb0fc43b54ea"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    }
+  ],
+  "skillsApplied": [
+    "find-skills local-first selection reused",
+    "assistant-ui router/architecture reused",
+    "clean-code: typed interfaces, one state authority, narrow surface",
+    "codebase-design: reuse deep host module, avoid second plugin registry"
+  ],
+  "executions": {
+    "productImports": 0,
+    "tests": 0,
+    "HTTP": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "projectWrites": 0
+  }
+}

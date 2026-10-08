@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-07T23:55:41.041136+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra independent read-only",
+  "verdict": "APPROVED_LIMITED_FAILURE_RESULT_FIDELITY",
+  "blockingFidelityFindings": [],
+  "run": "arc-classifier-20261007-235010",
+  "source": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+  "execution": "a32224b5b757c8f75003235b5ab00c8afbf0f785",
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/failure-review-input.json",
+    "bytes": 2383,
+    "sha256": "0c84ebcac5a9b46a4bde74bb9a26b9eddbbab01bedd3f632eb1706d48c636328"
+  },
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/classifier-browser-actual-20261007/manifest.json",
+    "bytes": 13750,
+    "sha256": "337d81c8f619a25c62221ab9f7e24ddf3dd279849696e269c9f4e85118bccf4c"
+  },
+  "verified": {
+    "originalArchivePairs": 24,
+    "hashedFiles": 48,
+    "originalBytes": 501349,
+    "hashMismatches": 0,
+    "passed": [
+      "layout-navigation",
+      "three-pane-reads"
+    ],
+    "completeGroups": 2,
+    "requiredGroups": 4,
+    "earlyDesktopPNG": 1,
+    "final390PNG": 0,
+    "logicalBodyReadCount": 6,
+    "bodyStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "bodyFinished": 6,
+    "clientObserverErrors": [],
+    "serverBodyPeak": 3,
+    "bodyBytes": 23568,
+    "coverage": "Six UI-loading/browser-issued reads and six matching body completions; server concurrency3. This is not six simultaneous HTTP sockets. Hidden workspace and anchor checks passed within original second group."
+  },
+  "failure": {
+    "point": "prepare-await-stable settings(arc-A), radio check timeout5000ms",
+    "reachedMaterialAwait": false,
+    "causeSourceFinding": {
+      "state": "INVALID_FIXTURE_DTO_CONFIRMED_STATIC",
+      "fixture": "apps/web/test/workspace-layout.fixture.ts model.displayName=\"Arc fixture profile\"",
+      "contract": "packages/contracts/src/execution-profiles.ts:14 modelValue excludes spaces; :101 displayName uses modelValue",
+      "consumer": "packages/client/src/index.ts:486 uses claudeMessageSettingsCatalogPageSchema.parse; settings catalog on rejection retains unavailable/stale state. Raw HTTP records confirm GET /api/execution-profiles completed1532B.",
+      "limits": "No root codec execution or captured dialog error text; do not describe as new runtime schema-test pass. DTO incompatibility follows directly from fixed source and contract.",
+      "correction": "Use a valid fixture display ID with prose in description and validate actual fixture DTO through the existing public codec in the next bounded local check; preserve shared contract and arc-A/material assertions."
+    },
+    "independentVisualFinding": {
+      "path": "/private/tmp/root-arc-desktop-stage-visual-review-20261007.json",
+      "bytes": 2959,
+      "sha256": "9605d14818a36172a3d017f6a949d13f73957d9c36bb4570ec6a32db72f73140"
+    }
+  },
+  "resourceResult": {
+    "fullReturn": "2026-10-07T23:51:28.680683Z",
+    "postCleanup": {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/post-cleanup.json",
+      "bytes": 1140,
+      "sha256": "2762f6f8046f70d74837ff240ac4ac8d4a4a088f392a65244b84c1849726e39f"
+    },
+    "chargeMs": 50986,
+    "totalMs": 90000,
+    "unusedMs": 39014,
+    "state": "CLOSED",
+    "unusedTransfers": false,
+    "PIDsAbsent": 4,
+    "PGIDsAbsent": 2,
+    "scratchAndOwnedCacheLinksAbsent": true,
+    "rawContextClosed": true,
+    "rawHTTPClosed": true,
+    "rawCleanupErrors": [],
+    "independentPortProbe": false,
+    "outerAndParentEOF": "both true per capture/parent records",
+    "workerChromeEOF": {
+      "stdout": false,
+      "stderr": false,
+      "note": "Preserve the false worker-recorded flags; later PID/group absence is not an EOF rewrite."
+    },
+    "parentScenarioClosure": "UNKNOWN retained / worker.result=null / parent checks[]; raw scenario confirms closure separately",
+    "PG": 0,
+    "newRootLiveProbe": false
+  },
+  "openBeforeDelivery": [
+    "CSS class collision produces a large empty desktop navigation band; independent visualP2 is blocking fullfeature delivery.",
+    "Fixture message settings DTO must be corrected before material group can be meaningfully evaluated.",
+    "Full material-await/draft retention group and refresh-theme/final390 screenshots remain incomplete.",
+    "Arc-Context combined App/session behavior remains a separate unverified integration."
+  ],
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Reviewed error attribution, shared DTO boundary, component CSS ownership and evidence naming. Preserve logical browser reads versus socket concurrency and each distinct cleanup observation.",
+    "implementationByRoot": false
+  },
+  "next": "Owner normal bounded source segment via D01; no silent changes to consumed candidate, no automatic browser retry, no further result review prerequisite beyond this limited finding record."
+}

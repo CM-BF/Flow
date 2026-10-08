@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:55:17.646Z；网页已发布v4。工作区最新两组通过但桌面导航和材料前置仍待修；上下文初始化缺供给已定位。两实际窗口已归还，下一VAR验收已选。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:14:50.718Z；网页v4已发布；工作区导航高度实际修复、材料夹具继续窄修；上下文已选连续验收，TUI READY按后继排队。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 个人服务已恢复，新版网页已实际发布v4且未强制重载用户页。工作区导航和三栏读取本轮通过，早图发现导航栏撑高；上下文面板代码/局部已审，真实挂载初始化尚未成功。 |
-| 下一可用交付 | 修复工作区CSS隔离及材料前置，补齐上下文固定供给，再分别验收真实界面；已审后台项沿原接收入口集成，当前VAR数据库验收独立排窗。 |
+| 当前产出 | 个人服务已恢复，新网页v4已发布。工作区导航与三栏读取本轮通过，早图灰空白已实际消除；材料Send仍阻塞。上下文closure修复已审，正进入连续有界挂载验收。 |
+| 下一可用交付 | 实际验收已审工作区CSS和材料修正，再接上下文补齐供给后的真实挂载；VAR五领域数据库例已通过且归还，原owner做结果独审和受控接收。 |
 | 当前阻塞 | ACTIVE: 工作区桌面导航撑高与材料前置失败、上下文固定供给缺项，均已由原作者处理；完整界面与工作区组合未验。真实任务领取未观察，网页发布已完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Arc与Context实际均已归还，VAR固定预检候选唯一NEXT；完整冻结11,914,575,872B，180s/17PG1HTTP0Chrome。Web两owner仅合法普通源码准备，无自动实际权限。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)给出每次选择、真实START/RETURN、完整floor与单独历史gate；实时占用以该原件为准，准备包不表示已运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

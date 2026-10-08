@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-08T00:12:16.371483+00:00",
+  "task": "Existing recovery/Arc evidence follow-up; no new writer",
+  "classification": "Static UI diagnostic-lifetime concern, runtime reproduction pending",
+  "observation": "Actual Arc desktop-ready screenshot contains both a queue-paused send reason and the recovery error This queued draft belongs to an older connection or project.",
+  "image": {
+    "path": "/private/tmp/arc-browser-css-material-5g4win44/raw/arc-desktop-ready.png",
+    "sha256": "c47b6a6974ff1f1249146e01b4c40402371bd1068f2086510ed2ed718df32e0f"
+  },
+  "sourceFacts": [
+    {
+      "file": "apps/web/src/recovery/binding.tsx",
+      "lines": [
+        165,
+        173,
+        183,
+        187
+      ],
+      "fact": "enqueue rejects when captured owner/project changes. Success clears the per-draft state.error but its publish updates saving only; the earlier global snapshot.error remains unless a separate path clears it."
+    },
+    {
+      "file": "apps/web/src/recovery/binding.tsx",
+      "lines": [
+        144,
+        147
+      ],
+      "fact": "sendReason checks current authority, not the displayed global snapshot.error."
+    },
+    {
+      "file": "apps/web/src/conversations/ConversationThread.tsx",
+      "lines": [
+        102,
+        112,
+        269
+      ],
+      "fact": "The send reason is wired into official runtime isSendDisabled. The global recovery error is displayed independently in every ConversationThread footer."
+    },
+    {
+      "file": "apps/web/test/conversation.fixture.ts",
+      "lines": [
+        43,
+        46
+      ],
+      "fact": "chat4 initial last turn is completed; only chat1-3 receive later live stream turns in the Arc fixture."
+    }
+  ],
+  "implication": "Do not conflate the visible historical recovery error with the proven paused-queue blocker. A later successful checkpoint may leave an old cross-view global warning visible; current evidence does not yet prove the warning is stale in this actual screenshot.",
+  "futureAcceptance": [
+    "In an authorized ordinary recovery slice, reproduce a draft save queued while the initial conversation project resolves, then prove whether a subsequent exact-owner save succeeds and whether the warning remains.",
+    "If reproduced, derive displayed errors from still-unresolved per-view or command state, or clear only the successful matching error revision. A different view success must not erase another unresolved error.",
+    "Keep all namespace/generation/project checks, old failed receipt history, handoff protection and explicit retry semantics. Do not change shared recovery code under the Arc-only write scope."
+  ],
+  "currentArcAdvice": "Repair fixture paused/queue preconditions first; actual-send test should capture its rendered reason if still disabled. No timeout widening or full product behavior claim from this static analysis.",
+  "method": "Read-only source tracing and already-generated screenshot inspection; no runtime, imports, tests, API, or project writes.",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/test/conversation.fixture.ts",
+      "bytes": 11048,
+      "sha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6"
+    }
+  ]
+}
