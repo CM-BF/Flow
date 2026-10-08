@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-08T01:58:50.000Z",
+  "reviewer": "root / gpt-6-astra",
+  "conclusion": "SOURCE_AND_LOCAL_PREPARATION_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
+  "result": "46294a194344097520a8c1651d2be8c3ad6a6bf7",
+  "packet": "c86f0a209ea355f64d714c2d5947072aebf0f250",
+  "verified": {
+    "bindings": 28,
+    "bindingBytes": 530077,
+    "inputs": 402,
+    "inputBytes": 1910994,
+    "sql": 34,
+    "external": 62,
+    "externalBytes": 24950841
+  },
+  "checks": "initial strict0 (760749), final collect exact1/0hooks, 3child4793ms/raw0, group absent/EOF; first TMP UNKNOWN then independent identity cleanup",
+  "scope": "public three-task case/source and declared local preparation only",
+  "remaining": "failure receipt persistence/operator is OPEN; actual NOT_READY/NOT_OPEN/NOT_RUN; not PG/worker/T7/main"
+}

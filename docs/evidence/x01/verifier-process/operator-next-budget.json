@@ -1,0 +1,43 @@
+{
+  "scope": [
+    "docs/evidence/x01/verifier-process/pg-once.py",
+    "docs/evidence/x01/verifier-process/pg-operator-input.json",
+    "docs/evidence/x01/verifier-process/pg-operator-manifest.json",
+    "docs/evidence/x01/verifier-process/operator-pure.test.py",
+    "docs/evidence/x01/verifier-process/operator-local.py",
+    "docs/evidence/x01/verifier-process/operator-local.json",
+    "docs/evidence/x01/verifier-process/ operator-ready/review/budget metadata",
+    "plans/x01-plugin-management/status.md",
+    "plans/x01-plugin-management/review.md"
+  ],
+  "notAuthorized": true,
+  "indexExistingBytes": 1466843,
+  "indexAndAtomicCopiesBound": 2950070,
+  "newSourceMetadataRawCopiesBound": 220000,
+  "newGitObjectsBound": 300000,
+  "TMP": 131072,
+  "raw": 65536,
+  "editTemporary": 65536,
+  "gitAdmin": 65536,
+  "tailReserve": 262144,
+  "capProposal": 4194304,
+  "checks": [
+    {
+      "name": "precise output selection and business identity settlement",
+      "cases": "one target pass vs missing/duplicate/failed/unknown target; deliberate inactive semver excluded; exact three closed mains and two paired workers; wrong tuple/EOF/resource rejects",
+      "secondsMax": 20
+    },
+    {
+      "name": "failed or missing/oversized final receipt preservation",
+      "cases": "first cause/raw/checkpoint and owned facts retained; no absent receipt promotion to PASS; failure/unknown preserves resources",
+      "secondsMax": 20
+    }
+  ],
+  "maxChildren": 2,
+  "cumulativeSeconds": 40,
+  "PG": 0,
+  "worker": 0,
+  "listener": 0,
+  "sourceCopies": "reuse402 fixed rows and62 external/15links; no input tree recopy",
+  "totalBound": 4059894
+}
