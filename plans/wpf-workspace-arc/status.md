@@ -180,3 +180,7 @@
 2026-10-08T02:19:24.174965+00:00：S01 drain等待02:14:49.518393→02:17:41.864后恢复原source准备，clock未重置。唯一新types3376/15000 CLOSED；source67a4，仅CSS/browser变化。准入current12,154,830,848未取max原13,511,688,192的记录差异保留；samecallfree14,400,385,024确高于两线，不倒改。新browser候选0actual，不借旧97234。
 
 2026-10-08T02:28:21.638540+00:00：scrollbar首轮START02:25:07.015543→18705ms运行→exactRETURN02:27:18.052169，4/4/final2PNG/early1。4PID2PGID absent、scratch/cachelinks absent、rawHTTP/contextclosed；本次Chrome/parent/outerEOF分别true，无独立portprobe。PASS停止无第二。根独审待收；[唯一结果输入](../../docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/final-review-input.json)。
+
+## 2026-10-08 插件诊断两叶交权
+
+2026-10-08T03:41:39.019Z，fresh原c34d v2 exact18/clean后合法partial-amend为v3 ACTIVE exact16。`apps/web/src/plugins/host.ts` 与 `apps/web/test/plugin-host.test.ts` 已永久STOP并移出，未改字节；原8ca9产品/intake与全部验收边界不变，其他16范围保留且本批无产品运行。接收者必须另fresh take。原件：[交权记录](../../docs/evidence/wpf-workspace-arc/plugin-diagnostic-handback-20261008/handoff.json)。本段复用clean-code检查职责/字面scope和错误保留，不改原判定。
