@@ -69,7 +69,9 @@ test('[fixture observation] unknown fields and fetch cause are safe without seri
 
 test('[fixture observation] hostile diagnostic fields do not replace primary errors or success values', async () => {
   const observations = new FixtureObservation(), hostile = new Proxy({}, { get() { throw Error('diagnostic getter'); } });
-  await assert.rejects(observations.run('artifact', hostile, async () => { throw hostile; }), error => error === hostile);
+  let caught: unknown;
+  try { await observations.run('artifact', hostile, async () => { throw hostile; }); } catch (error) { caught = error; }
+  assert.equal(caught === hostile, true); // assert.rejects itself reads properties of thrown values.
   assert.deepEqual(observations.snapshot().frames.at(-1)?.error, { name: null, code: null, status: null });
   const value = {};
   assert.equal(await observations.run('artifact', hostile, async () => value), value);
