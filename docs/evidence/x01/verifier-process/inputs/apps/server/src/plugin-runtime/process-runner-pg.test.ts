@@ -422,10 +422,10 @@ test.runIf(verifierMode)('real center and trusted-process runner verify a failed
   const outcomes = [failed, passed].map(value => ({ taskId: value.binding.taskId, attemptId: value.final.attempt.id,
     ownerVersion: value.final.attempt.ownerVersion, bindingId: value.binding.bindingId, invocationId: value.binding.invocationId,
     status: value.final.status, verificationStatus: value.final.verificationStatus, outputArtifact: value.artifact.source,
-    inputDigest: value.verification.inputDigest, verdict: value.verification.verdict, phases: value.phases }));
+    inputDigest: value.verification.inputDigest, verdict: value.verification.verdict, phases: value.phases.map(row => row.phase) }));
   const evidence = { kind: 'real-verifier-three-task-process', taskIds: [firstId, second.task.id, third.task.id], outcomes, workerNotices: notices,
     observedOwnerRequests: ownerRequests, runnerHttpActual: null, runnerHttpBoundOnly: true, T7: false };
   // The fixture's final receipt is 16 KiB. Avoid retaining duplicate complete task snapshots.
-  expect(Buffer.byteLength(JSON.stringify(evidence))).toBeLessThanOrEqual(6144);
+  expect(Buffer.byteLength(JSON.stringify({ facts: [evidence] }, null, 2))).toBeLessThanOrEqual(6144);
   facts.push(evidence);
 }, 110000);
