@@ -4,30 +4,30 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:50:23.195Z；本人核固定main 3c9345df4aec85a37e8a2a155e079db260d515b1 的18源码与7独审原件、合法接收回执 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:13:41.139049Z；本次后继元数据；原main接收核验2026-10-07T14:50:23.195Z保持历史 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
-| 任务完成时间 | 2026-10-07T14:50:23.195Z |
-| 任务时间来源 | 开工见provision.startedAt实际源码供给；完成为owner于2026-10-07T14:50:23.195Z核原MSGAPP-01–06全部既定交付已满足，见main-closeout-20261007/verification.json；main回执时间2026-10-07T14:46:12.780Z，不按commit/claim推算 |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原任务开工12:11:30.621Z和原六项完成时刻不变；新后继供给firstWrite02:50:38.358088Z、take02:50:52.523Z；独立首次产品编辑UTC UNKNOWN，详successor.json |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
-| 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git） |
-| 工作树dirty状态 | 本批仅own metadata主线接收/完成记录；18源码不变；提交推送后全20scope STOP，实际clean及release另存外部receipt |
-| 工作分支状态 | integrated |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录 |
-| 已集成main状态 / HEAD | INTEGRATED 3c9345df4aec85a37e8a2a155e079db260d515b1；精确18源码等fcf5；Original主线noEmit exit0/6639ms，未新跑behavior/PG/Chrome/provider |
-| 实现目标 | fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 |
-| 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/recovery/binding.tsx, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
+| 工作基线 / HEAD | 原canonical HEAD830bbf7cbaf9d07dc5ec46f93083ba55119cea72（本批metadata提交后见Git）；新执行base bfbf804bdc290ac27787a355b064457fb76bfc58 / source e5c11b3c7ca7e9e3e303e6c861603640f75a1118 / delivery 66abb1c7d73623efeff2717b24ff5ce4c8f38c09 |
+| 工作树dirty状态 | 本批仅exact2元数据；提交后clean/STOP，产品全部不改；新执行树66abb已clean STOP |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | implementation |
+| 检查状态 | PASSED e5c11b3c7ca7e9e3e303e6c861603640f75a1118；仅纯基础：修后7selected+末次focused1分开，旧2生产叶affected types0；4child8872ms CLOSED/首红保留；消费者组合与wholeWeb NOT_RUN |
+| 已集成main状态 / HEAD | NOT_INTEGRATED（versioned creation后继）；原MSGAPP-01–06精确18源已INTEGRATED main3c9345df4aec85a37e8a2a155e079db260d515b1，不撤销历史交付 |
+| 实现目标 | e5c11b3c7ca7e9e3e303e6c861603640f75a1118 |
+| 实现范围 | apps/web/src/execution-profiles/selection.ts, apps/web/src/recovery/binding.tsx, apps/web/test/execution-profiles.test.ts, apps/web/test/conversation-recovery.test.ts（后继执行树；不可单独合入） |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 逐消息设置、发送排队快照与材料恢复已合入主线，原限定验收及独立审查完成 |
-| 下一可用交付 | 本片段已交付；个人可选目录和部署仍由共享owner推进 |
-| 当前阻塞 | NONE |
+| 当前产出 | 版本化profile选择、required tuple资格与Recovery纯基础已完成限定审；原消息设置App交付保持完成 |
+| 下一可用交付 | 合法交权后组合App/Thread/Picker消费者，再做受影响验证与主线接收 |
+| 当前阻塞 | ACTIVE: 消费者合法交权与组合待经理协调；纯基础不可单独并main |
 | 需用户决定 | NONE |
-| Review | APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)和root最终精确18源接收审；合法main已接，个人目录/部署不外推 |
-| Claim | 封存前观察7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE/exact20，14:48:42.135Z fresh无overlap；提交推送后全20 STOP，经理授权fresh CAS release；释放原件仅外部保存、不回写项目 |
+| Review | APPROVED e5c11b3c7ca7e9e3e303e6c861603640f75a1118；仅PURE_FOUNDATION / NOT_INDEPENDENTLY_MERGEABLE；[review.md](review.md) |
+| Claim | 纯基础fee104 v2 RELEASED03:12:39.227Z；本canonical records878cdaec v1 exact2，03:12:39.416Z COMMITTED；原7e3f v4已RELEASED，不复活产品权 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -38,7 +38,15 @@
 | MSGAPP-05 | completed | workspace_panels_owner | [local53579/60000](../../docs/evidence/wpf-message-settings-app/mounted-local-summary.json)；probe6PASS/9c46全部17源noEmit0；c4bee参数独立验证；历史11PASS/57未选；现两browser selector各2/2实际通过，归各自原件 |
 | MSGAPP-06 | completed | workspace_panels_owner | root c1c340精确18源组合批准；[合法主线回执](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/msg03-intake.json)及[逐源核验](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/verification.json)，固定main3c9345 |
 
+| MSGAPP-07 | in-progress | workspace_panels_owner | versioned creation后继：纯基础e5/root027415已限定通过；App/Thread/Picker组合、验证/main OPEN，见[后继入口](../../docs/evidence/wpf-message-settings-app/versioned-creation-successor-20261008/README.md) |
+
 ## 等待记录
+
+| 开始时间 | 结束时间 | 类别 | 等待事项 | 来源 |
+| --- | --- | --- | --- | --- |
+| UNKNOWN | OPEN | 接口 | versioned creation合法消费者交权与组合 | D01本次派工/后继入口；不倒推等待起点 |
+
+当前执行树：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation` / `codex/web-versioned-profile-creation`；这里只维护已注册唯一status。
 
 原只读供给阶段等待Original单片授权属历史，开始UNKNOWN；本登记实施开始前已由当前source-operator规则解除，未虚算为本task实际等待。共享实际窗口按manager交接；首运行清理后归还，下一启动必须fresh。
 

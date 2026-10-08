@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-08T03:13:41.139049Z",
+  "projectFirstWrite": "2026-10-08T03:13:41.139049Z",
+  "task": "WPF-MESSAGESETTINGS03",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "executionWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+  "executionBranch": "codex/web-versioned-profile-creation",
+  "base": "bfbf804bdc290ac27787a355b064457fb76bfc58",
+  "source": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+  "delivery": "66abb1c7d73623efeff2717b24ff5ce4c8f38c09",
+  "foundationClaim": "fee104b3-47a8-4a4e-b25d-7b8111a2d0d9 v1 originally; v2 RELEASED 2026-10-08T03:12:39.227Z",
+  "foundationFirstWrite": "2026-10-08T02:50:38.358088Z",
+  "takeCommitted": "2026-10-08T02:50:52.523Z",
+  "firstWriteMeaning": "TMP/budget and fixed-base provision script start; not first product delta timestamp",
+  "firstProductEditUtc": "UNKNOWN",
+  "orderingEvidence": "Existing tool transcript: fixed317-file SHA-equal provision+clean completed, then fresh take COMMITTED, then readonly source inspection, then first apply_patch to selection/binding. No separately persisted first-product-edit UTC; no inference from mtime/commit.",
+  "timeDifferenceSeconds": 14.164912,
+  "checks": {
+    "directFirst": "6PASS/1FAIL/90NOT_SELECTED fake ACK missing replayed boolean",
+    "directFixed": "7PASS/90NOT_SELECTED source392a",
+    "types": "2 production files/static imports, exit0 source392a; not wholeWeb",
+    "focusedFinal": "1PASS/96NOT_SELECTED sourcee5 null/undefined",
+    "chargeMs": 8872,
+    "children": 4,
+    "state": "CLOSED"
+  },
+  "decision": "APPROVED_LIMITED_PURE_FOUNDATION; NOT_INDEPENDENTLY_MERGEABLE",
+  "consumersOpen": [
+    "App submission pre-detach eligibility wiring",
+    "ConversationThread versioned union handling",
+    "ExecutionProfilePicker versioned entry presentation"
+  ],
+  "main": "SUCCESSOR_NOT_INTEGRATED; originalMSGAPP01-06 main3c9345 remains completed",
+  "metadataFirstWrite": "2026-10-08T03:08:17.108536Z",
+  "metadataDeadline": "2026-10-08T03:16:17.108536Z",
+  "metadataClaim": "878cdaec-5f1d-40d8-a7ac-e840bf69b1ae v1 exact2",
+  "childrenNew": 0
+}

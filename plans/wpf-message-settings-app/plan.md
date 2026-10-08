@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：completed（本登记消费者交付）；开工2026-10-07T12:11:30.621Z；完成2026-10-07T14:50:23.195Z，来源见唯一status及main-closeout。
+状态：in-progress（原MSGAPP-01–06交付完成；同任务versioned creation后继开放）；开工2026-10-07T12:11:30.621Z；原MSGAPP-01–06完成2026-10-07T14:50:23.195Z，来源见唯一status及main-closeout。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -17,6 +17,13 @@
 - [x] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A；b924共享selector修复已过定向局部和修后两条mounted实际，保留旧FAIL。
 - [x] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
 - [x] **MSGAPP-06** 独立review与合法main接收；root精确18源批准、main3c9345逐字核同及Original noEmit0，个人部署不外推。
+
+
+## 当前同任务后继（MATURE02 TODO08/11）
+
+- [ ] **MSGAPP-07** 显式versioned创建选择/required tuple与Recovery完整身份的消费者组合。纯基础e5/root027415限定完成；合法App/Thread/Picker接线、组合验证与main接收仍OPEN。不得单独合入四叶或沿已释放产品权编辑。
+
+[后继来源、准确时点与检查](../../docs/evidence/wpf-message-settings-app/versioned-creation-successor-20261008/README.md)。原01–06完成时间与18源码main历史保持；不建立新task或第二status。
 
 ## 验证与边界
 

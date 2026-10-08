@@ -1,0 +1,30 @@
+{
+  "taskId": "WPF-MESSAGESETTINGS03",
+  "errors": [
+    "存在无法识别的 TODO 状态"
+  ],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务完成时间不是唯一有效的 ISO UTC 时间"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+      "id": "WPF-MATURE-02",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}
