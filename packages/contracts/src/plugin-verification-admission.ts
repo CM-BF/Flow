@@ -10,3 +10,13 @@ export const pluginVerificationAdmissionSchema = z.strictObject({
   rule: jsonObjectRuleSchema,
 });
 export type PluginVerificationAdmission = z.infer<typeof pluginVerificationAdmissionSchema>;
+
+/** Echo of the normalized command identity, not a new receipt or authorization. */
+export const PLUGIN_VERIFICATION_ADMISSION_PROTOCOL = 'flow.plugin-verification-admission.v1' as const;
+export const pluginVerificationAdmissionIdentitySchema = pluginVerificationAdmissionSchema.extend({
+  protocol: z.literal(PLUGIN_VERIFICATION_ADMISSION_PROTOCOL), registrationId: z.uuid(),
+});
+export type PluginVerificationAdmissionIdentity = z.infer<typeof pluginVerificationAdmissionIdentitySchema>;
+export function verificationAdmissionIdentity(registrationId: string, input: PluginVerificationAdmission): PluginVerificationAdmissionIdentity {
+  return pluginVerificationAdmissionIdentitySchema.parse({ ...input, protocol: PLUGIN_VERIFICATION_ADMISSION_PROTOCOL, registrationId });
+}

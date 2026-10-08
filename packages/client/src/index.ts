@@ -1,8 +1,9 @@
+import { pluginVerificationAdmissionSchema, verificationAdmissionIdentity, type PluginVerificationAdmission } from '../../contracts/src/plugin-verification-admission.js';
 import { pluginRemovalQuerySchema, pluginRemovalPageSchema, type PluginRemovalQuery, type PluginRemovalPage } from '../../contracts/src/plugin-removal.js';
 import { pluginCommandSchema } from '../../contracts/src/plugins.js';
 import { pluginHostCandidatesQuerySchema, pluginHostCandidatesPageSchema, type PluginHostCandidatesQuery, type PluginHostCandidatesPage } from '../../contracts/src/plugin-runtime-hosts.js';
 import { PLUGIN_RUNTIME_LIMITS, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolTaskRequest, type PluginToolBinding } from '../../contracts/src/plugin-runtime.js';
-import { pluginRequestIdentity, decodePluginRemovalReferences, decodePluginHostCandidates, decodePluginRegistryChanged, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
+import { pluginRequestIdentity, decodePluginVerificationAccepted, type PluginVerificationAccepted, decodePluginRemovalReferences, decodePluginHostCandidates, decodePluginRegistryChanged, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
 export { UnknownPluginAcknowledgementError } from './plugin-management.js';
 import { readBoundedJson } from './response-json.js';
 import { PluginRunnerClient } from './plugin-runner.js';
@@ -563,6 +564,12 @@ export class FlowClient {
     const frozen = pluginToolTaskRequestSchema.parse(input);
     const request = pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/tool-tasks`, key, frozen);
     return this.pluginAcknowledgement(request, value => decodePluginTaskAccepted(value, id, frozen), signal);
+  }
+  admitPluginVerificationTask(id: string, input: PluginVerificationAdmission, key: string, signal?: AbortSignal): Promise<PluginVerificationAccepted> {
+    const frozen = pluginVerificationAdmissionSchema.parse(input);
+    verificationAdmissionIdentity(id, frozen);
+    const request = pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/verification-tasks`, key, frozen);
+    return this.pluginAcknowledgement(request, value => decodePluginVerificationAccepted(value, id, frozen), signal);
   }
   pluginToolBinding(taskId: string, signal?: AbortSignal): Promise<PluginToolBinding> {
     return this.pluginAcknowledgement(pluginRequestIdentity(`/api/tasks/${encodeURIComponent(taskId)}/plugin-binding`),

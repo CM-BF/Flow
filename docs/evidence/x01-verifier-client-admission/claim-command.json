@@ -1,0 +1,24 @@
+{
+  "role": "writer",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "scope": [
+    "apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.ts",
+    "docs/evidence/x01-verifier-client-admission",
+    "packages/client/src/index.ts",
+    "packages/client/src/plugin-management.ts",
+    "packages/client/src/plugin-verification-admission.test.ts",
+    "packages/contracts/src/plugin-verification-admission.ts",
+    "plans/x01-verifier-client-admission"
+  ],
+  "action": "take",
+  "branch": "codex/plugin-verifier-client-admission",
+  "origin": "new",
+  "taskId": "X01-VERIFIER-CLIENT-ADMISSION01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission",
+  "requestId": "58eb37c0-25de-4a7c-b7db-81403b1ce8b8",
+  "observedAt": null
+}

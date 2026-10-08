@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "../../../apps/server/src/plugin-runtime/verification-admission.ts",
+    "../../../apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "../../../packages/contracts/src/plugin-verification-admission.ts",
+    "../../../packages/client/src/index.ts",
+    "../../../packages/client/src/plugin-management.ts",
+    "../../../packages/client/src/plugin-verification-admission.test.ts"
+  ]
+}

@@ -1,3 +1,4 @@
+import { pluginVerificationAdmissionIdentitySchema, verificationAdmissionIdentity, type PluginVerificationAdmission, type PluginVerificationAdmissionIdentity } from '../../contracts/src/plugin-verification-admission.js';
 import { pluginRemovalPageSchema, type PluginRemovalQuery, type PluginRemovalPage } from '../../contracts/src/plugin-removal.js';
 import { pluginRuntimeViewSchema, pluginToolBindingSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolBinding, type PluginToolTaskRequest } from '../../contracts/src/plugin-runtime.js';
 import { pluginConfigurationSchema, pluginRevisionSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
@@ -151,4 +152,26 @@ export async function decodePluginTaskAccepted(value: unknown, id: string, input
     && binding.registrationId === id && binding.registrationRevision === input.expectedRevision
     && binding.inputDigest === inputDigest);
   return { ...(result as unknown as AcceptedTask), binding };
+}
+
+export type PluginVerificationAccepted = AcceptedTask & {
+  binding: PluginToolBinding;
+  project: { id: string; revision: number; nodeId: string };
+  requestIdentity: PluginVerificationAdmissionIdentity;
+};
+
+/** Proof must come from the center; missing legacy echoes remain an unknown outcome. */
+export function decodePluginVerificationAccepted(value: unknown, id: string, input: PluginVerificationAdmission): PluginVerificationAccepted {
+  const result = record(value), task = record(result.task), project = record(result.project);
+  requireAck(validUuid(task.id));
+  const binding = decodePluginBinding(result.binding, task.id as string);
+  const identity = pluginVerificationAdmissionIdentitySchema.parse(result.requestIdentity);
+  requireAck(JSON.stringify(identity) === JSON.stringify(verificationAdmissionIdentity(id, input))
+    && typeof result.replayed === 'boolean' && task.title === input.title && task.harness === 'fixture'
+    && task.status === 'queued' && task.verificationStatus === 'pending'
+    && validDate(task.createdAt) && validDate(task.updatedAt)
+    && binding.registrationId === id && binding.registrationRevision === input.expectedRevision
+    && validUuid(project.id) && validUuid(project.nodeId) && project.revision === input.expectedSourceProjectRevision + 1
+    && (binding.scope.projectId === null || binding.scope.projectId === project.id));
+  return { ...(result as unknown as PluginVerificationAccepted), binding, requestIdentity: identity };
 }
