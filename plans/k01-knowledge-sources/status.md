@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 19:07 UTC |
+| 最近更新 | 2026-10-08 00:51 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,21 +16,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 当前仅本次候选与审查metadata；提交后STOP，原产品/245供给/旧原件不变 |
+| 工作树dirty状态 | 本次新结果与状态封存中；原产品/实验/245供给/旧原件不变 |
 | 工作分支状态 | integration（入口源码与局部结果已独审；候选READY/CLOSED，实际PG不沿用批准） |
-| 检查状态 | PASSED 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED，当前新候选未实跑 |
-| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
+| 检查状态 | PASSED 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED；本次集成诊断PASS，结果待审 |
+| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复/诊断尚未集成。历史两次PG FAILED与本次PASS分别记录，独立恢复事实不变 |
 | 实现目标 | 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 失败收尾入口已审查，下一次知识检索诊断输入已备齐；真实数据库效果仍待验证 |
-| 下一可用交付 | 在新的明确窗口验证完整检索诊断；当前候选已就绪并停止运行 |
-| 当前阻塞 | ACTIVE: 实际PG验证等待新的150秒窗口；原数据库与临时目录保留，不自动清理或重跑 |
+| 当前产出 | 知识检索真实诊断已完成，金样本与边界通过，固定计划显示当前分块先物化后过滤；结果待独立审查 |
+| 下一可用交付 | 接收本次诊断的独立审查，保留完整知识检索与留存后继 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；Mika18:33:14Z限定批准74934源码及局部结果，0P1/P2；callback静态P2已关闭 |
 
@@ -158,3 +158,9 @@
 2026-10-07T18:32:15.849869+00:00：最终source target 74934ecd9fd8e33f2c83e858dcc3e1b4e343581c仅README补primary18与observer1可能同残留backend短暂重叠，未来准入须纳19或显式额外余量；非运行峰值。实际检查后可执行源逐字未变，原raw无改动；本段最终metadata推送后STOP，待一次独审，不开PG。
 
 2026-10-07T19:08:27.644021+00:00：新8分钟metadata收口段恢复，fresh HEAD/origin3f08866d与30965v2三scope已核；此前drain停写至经理18:58:01.926Z解除。归档Mika18:33:14Z批准，唯一[READY入口](../../docs/evidence/k01/query-pg-integrated-ready.md)绑定150秒/19PG候选与CLOSED过期permit，未来actual argv固定但permit/namespace未创建。0新工程/PG/HTTP/资源探针/KEEP读取。旧29pure与两次FAILED/独立瞬时零连接恢复保持原件；完整真实诊断与main未完成。提交push后全部STOP/0待launch，claim保留，未使用的新metadata预算关闭而不转为运行权。
+
+## 2026-10-08 一次真实集成诊断
+
+实际主体START00:47:44.772253Z，outer terminal00:47:49.282866Z，完整已知资源RETURN观察00:48:30.512887Z；任务原始开工仍UNKNOWN，不以本窗重置。执行8627f990、源码74934未变；12gold/10EXPLAIN/30timed/61HTTP通过，[唯一结果](../../docs/evidence/k01/query-entry-pg-integrated-20261008-once/results.md)与manifest绑定原件。当前结果独审NOT_STARTED，K01-06完整hybrid/vector、性能优化与留存08～10仍开放；实验结果未集成main。原两FAIL/KEEP不改。
+
+账本观察00:45:48.309Z距START116.463253秒，未实现grant要求的同call重读；如实留作准入偏差，未追加probe/重跑。HEAD/native/runtime全部pins与free在调用内核符。新许可已消费，0后续launch；新scratch仅不可变结果KEEP、无活动DB/连接/监听器。独立2MiB自然seal预算覆盖新copy/index/objects，不借旧池。

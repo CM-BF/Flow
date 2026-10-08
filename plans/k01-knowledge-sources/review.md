@@ -121,3 +121,7 @@ Mika lead（父agent /root）于2026-10-06 05:24:35 UTC完成独立只读技术r
 Mika于17:41:15Z对固定7693dd641e2da67b7ec8d4cc3ecdf25525f2519a给出FAILURE_RESULT_FIDELITY_APPROVED，归档范围0P1/P2；18source/11raw14316B、20progress与超时/计算闭合事实已核。此结论不批准失败诊断，也不关闭observedSearch callback接口P2。详见query-pg-startup-failure-independent-review.json。
 
 17:48:38唯一单admin恢复取得精确身份、0连接快照和探针闭合；原FAILED/HOLD/resourceConfirmed=false与DB/scratchKEEP不变。恢复回执单独待审，不沿用结果批准。未运行工程测试或再次诊断。
+
+## 2026-10-08 集成诊断实际结果待审
+
+执行8627f990/source74934；结果入口docs/evidence/k01/query-entry-pg-integrated-20261008-once/manifest.json。12gold/10EXPLAIN/30timed均完成，callerPASS；结果独审NOT_STARTED。重点复核计数/计划/时钟/闭合与同call账本缺口；原两失败不改，无额外运行。

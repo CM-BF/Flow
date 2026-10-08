@@ -1,0 +1,550 @@
+{
+  "recordedAt": "2026-10-08T00:50:58.126396+00:00",
+  "logicalId": "K01-QUERY-INTEGRATED-20261008-ONCE",
+  "executionHead": "8627f9900be6bed7c6333b77827022aac7dd9630",
+  "sourceHead": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
+  "inputSha256": "9d1d91036cbb667031beb958a5e7a1d93b07d7ece34abe4f6c7ced8bc95208d0",
+  "measurementPassed": true,
+  "golden": [
+    {
+      "kind": "gold",
+      "label": "中文两字",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "中文连续句",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "camelCase",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "path",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "underscore",
+      "ftsOnlySourceCount": 1,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "version",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "literal-meta",
+      "ftsOnlySourceCount": 1,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "query-syntax",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "emoji",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "256-byte-cross-chunk",
+      "ftsOnlySourceCount": 0,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "fts-multiple-words",
+      "ftsOnlySourceCount": 1,
+      "combinedSourceCount": 1
+    },
+    {
+      "kind": "gold",
+      "label": "fts-case-fold",
+      "ftsOnlySourceCount": 1,
+      "combinedSourceCount": 1
+    }
+  ],
+  "scaleRows": [
+    {
+      "sources": 16,
+      "query": "知识",
+      "n": 3,
+      "rows": 1,
+      "returnedTextUtf8Bytes": 4096,
+      "decodedJsonBytes": 4487,
+      "queryMsMedian": 0.7150830000000497,
+      "queryMsMin": 0.6658339999999043,
+      "queryMsMax": 0.8970000000003893,
+      "guardMsMedian": 0.1521669999997357,
+      "clientE2EMsMedian": 0.8672499999997854,
+      "explainPlanningMs": 0.269,
+      "explainExecutionMs": 0.183,
+      "materializedCurrentRows": 80,
+      "cteFilterOutputRows": 1,
+      "cteRowsRemovedByFilter": 79,
+      "indexNames": [
+        "knowledge_chunks_pkey"
+      ]
+    },
+    {
+      "sources": 16,
+      "query": "READY",
+      "n": 3,
+      "rows": 16,
+      "returnedTextUtf8Bytes": 65536,
+      "decodedJsonBytes": 71784,
+      "queryMsMedian": 0.8513330000000678,
+      "queryMsMin": 0.8324580000003152,
+      "queryMsMax": 1.0356670000001031,
+      "guardMsMedian": 0.2239159999999174,
+      "clientE2EMsMedian": 1.0801249999999527,
+      "explainPlanningMs": 0.238,
+      "explainExecutionMs": 0.253,
+      "materializedCurrentRows": 80,
+      "cteFilterOutputRows": 16,
+      "cteRowsRemovedByFilter": 64,
+      "indexNames": [
+        "knowledge_chunks_pkey"
+      ]
+    },
+    {
+      "sources": 16,
+      "query": "%value_\\",
+      "n": 3,
+      "rows": 1,
+      "returnedTextUtf8Bytes": 4096,
+      "decodedJsonBytes": 4487,
+      "queryMsMedian": 0.6684159999999792,
+      "queryMsMin": 0.5759579999999005,
+      "queryMsMax": 0.8785839999995915,
+      "guardMsMedian": 0.31033300000035524,
+      "clientE2EMsMedian": 0.9942909999999756,
+      "explainPlanningMs": 0.201,
+      "explainExecutionMs": 0.174,
+      "materializedCurrentRows": 80,
+      "cteFilterOutputRows": 1,
+      "cteRowsRemovedByFilter": 79,
+      "indexNames": [
+        "knowledge_chunks_pkey"
+      ]
+    },
+    {
+      "sources": 16,
+      "query": "alpha beta",
+      "n": 3,
+      "rows": 16,
+      "returnedTextUtf8Bytes": 65536,
+      "decodedJsonBytes": 71800,
+      "queryMsMedian": 1.0286670000000413,
+      "queryMsMin": 0.9506250000004002,
+      "queryMsMax": 1.2762500000003456,
+      "guardMsMedian": 0.3872910000000047,
+      "clientE2EMsMedian": 1.4105420000000777,
+      "explainPlanningMs": 0.256,
+      "explainExecutionMs": 0.347,
+      "materializedCurrentRows": 80,
+      "cteFilterOutputRows": 16,
+      "cteRowsRemovedByFilter": 64,
+      "indexNames": [
+        "knowledge_chunks_pkey"
+      ]
+    },
+    {
+      "sources": 16,
+      "query": "NO_SUCH_TOKEN_72931",
+      "n": 3,
+      "rows": 0,
+      "returnedTextUtf8Bytes": 0,
+      "decodedJsonBytes": 2,
+      "queryMsMedian": 0.6535000000003492,
+      "queryMsMin": 0.6295829999999114,
+      "queryMsMax": 0.8758749999997235,
+      "guardMsMedian": 0.5108749999999418,
+      "clientE2EMsMedian": 1.183875000000171,
+      "explainPlanningMs": 1.008,
+      "explainExecutionMs": 0.151,
+      "materializedCurrentRows": 80,
+      "cteFilterOutputRows": 0,
+      "cteRowsRemovedByFilter": 80,
+      "indexNames": [
+        "knowledge_chunks_pkey"
+      ]
+    },
+    {
+      "sources": 128,
+      "query": "知识",
+      "n": 3,
+      "rows": 1,
+      "returnedTextUtf8Bytes": 4096,
+      "decodedJsonBytes": 4487,
+      "queryMsMedian": 1.812832999999955,
+      "queryMsMin": 1.4466669999997066,
+      "queryMsMax": 1.957582999999886,
+      "guardMsMedian": 0.5317920000002232,
+      "clientE2EMsMedian": 2.344665999999961,
+      "explainPlanningMs": 0.259,
+      "explainExecutionMs": 1.388,
+      "materializedCurrentRows": 640,
+      "cteFilterOutputRows": 1,
+      "cteRowsRemovedByFilter": 639,
+      "indexNames": []
+    },
+    {
+      "sources": 128,
+      "query": "READY",
+      "n": 3,
+      "rows": 21,
+      "returnedTextUtf8Bytes": 86016,
+      "decodedJsonBytes": 94219,
+      "queryMsMedian": 2.398541000000023,
+      "queryMsMin": 2.247041999999965,
+      "queryMsMax": 2.4830830000000788,
+      "guardMsMedian": 0.5950000000002547,
+      "clientE2EMsMedian": 2.9859160000000884,
+      "explainPlanningMs": 0.32,
+      "explainExecutionMs": 1.788,
+      "materializedCurrentRows": 640,
+      "cteFilterOutputRows": 128,
+      "cteRowsRemovedByFilter": 512,
+      "indexNames": []
+    },
+    {
+      "sources": 128,
+      "query": "%value_\\",
+      "n": 3,
+      "rows": 1,
+      "returnedTextUtf8Bytes": 4096,
+      "decodedJsonBytes": 4487,
+      "queryMsMedian": 2.2732499999997344,
+      "queryMsMin": 2.043499999999767,
+      "queryMsMax": 2.74087499999996,
+      "guardMsMedian": 0.8135000000002037,
+      "clientE2EMsMedian": 3.5543750000001637,
+      "explainPlanningMs": 0.303,
+      "explainExecutionMs": 1.764,
+      "materializedCurrentRows": 640,
+      "cteFilterOutputRows": 1,
+      "cteRowsRemovedByFilter": 639,
+      "indexNames": []
+    },
+    {
+      "sources": 128,
+      "query": "alpha beta",
+      "n": 3,
+      "rows": 21,
+      "returnedTextUtf8Bytes": 86016,
+      "decodedJsonBytes": 94240,
+      "queryMsMedian": 3.4260409999997137,
+      "queryMsMin": 3.2394580000000133,
+      "queryMsMax": 4.481708999999682,
+      "guardMsMedian": 0.7752499999996871,
+      "clientE2EMsMedian": 4.213832999999795,
+      "explainPlanningMs": 0.327,
+      "explainExecutionMs": 2.522,
+      "materializedCurrentRows": 640,
+      "cteFilterOutputRows": 128,
+      "cteRowsRemovedByFilter": 512,
+      "indexNames": []
+    },
+    {
+      "sources": 128,
+      "query": "NO_SUCH_TOKEN_72931",
+      "n": 3,
+      "rows": 0,
+      "returnedTextUtf8Bytes": 0,
+      "decodedJsonBytes": 2,
+      "queryMsMedian": 1.8513340000004064,
+      "queryMsMin": 1.7905000000000655,
+      "queryMsMax": 1.9552089999997406,
+      "guardMsMedian": 0.9440830000003189,
+      "clientE2EMsMedian": 2.771625000000313,
+      "explainPlanningMs": 0.317,
+      "explainExecutionMs": 1.419,
+      "materializedCurrentRows": 640,
+      "cteFilterOutputRows": 0,
+      "cteRowsRemovedByFilter": 640,
+      "indexNames": []
+    }
+  ],
+  "counts": {
+    "golden": 12,
+    "explain": 10,
+    "timedSelect": 30,
+    "http": 61,
+    "httpBytes": 157664,
+    "totalChunks": 1644,
+    "totalRawBytes": 5347454
+  },
+  "databaseFinalSampleBytes": 14434831,
+  "seedCounts": [
+    {
+      "projectId": "764c9269-da2e-4b15-a8cf-5cf30a83c40f",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 30
+    },
+    {
+      "projectId": "4df4c986-678c-43dc-bd0b-578c2af7c126",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 30
+    },
+    {
+      "projectId": "dd312a6f-efcd-403b-b806-e59e0e817e76",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 35
+    },
+    {
+      "projectId": "78e5b2b4-fcd9-4775-a695-02a07c812274",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 30
+    },
+    {
+      "projectId": "9b43451c-900e-4997-9ef3-2bbe172c9151",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 16
+    },
+    {
+      "projectId": "ae274bd0-a08b-4bf0-8003-4b392bd56e06",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 20
+    },
+    {
+      "projectId": "d887c9d3-d391-4f7b-a929-e3deab2c8987",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 29
+    },
+    {
+      "projectId": "42690ac8-ab5e-4fe4-8009-ae1a0b17c166",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 24
+    },
+    {
+      "projectId": "452b897d-17a7-4925-ab54-351de193e27e",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 15
+    },
+    {
+      "projectId": "52c877f8-fb6e-4cdc-90ab-bdb8f9d8d3da",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 2,
+      "historyChunks": 0,
+      "rawBytes": 4251
+    },
+    {
+      "projectId": "4ed11b5c-2e46-4e90-b19b-b02ba260e100",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 14
+    },
+    {
+      "projectId": "e8144255-5347-4ad5-a19f-a95aadc8bccb",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 5
+    },
+    {
+      "projectId": "084ae2eb-45ad-4fef-9b6e-974787369610",
+      "sources": 5,
+      "versions": 6,
+      "currentChunks": 8,
+      "historyChunks": 1,
+      "rawBytes": 14048
+    },
+    {
+      "projectId": "77807794-049a-41c8-b914-06382b84df10",
+      "sources": 1,
+      "versions": 1,
+      "currentChunks": 1,
+      "historyChunks": 0,
+      "rawBytes": 11
+    },
+    {
+      "projectId": "0263b610-a335-42fb-858f-eb87baa70e29",
+      "sources": 21,
+      "versions": 21,
+      "currentChunks": 21,
+      "historyChunks": 0,
+      "rawBytes": 86016
+    },
+    {
+      "projectId": "d77dd543-e46f-4c85-822c-a1b92d94e565",
+      "sources": 16,
+      "versions": 32,
+      "currentChunks": 80,
+      "historyChunks": 80,
+      "rawBytes": 524288
+    },
+    {
+      "projectId": "3d2c1517-8617-44e1-8018-e55d51c00741",
+      "sources": 16,
+      "versions": 16,
+      "currentChunks": 80,
+      "historyChunks": 0,
+      "rawBytes": 262144
+    },
+    {
+      "projectId": "975cdeed-9fce-44d6-9bee-31c0f1e759a0",
+      "sources": 128,
+      "versions": 256,
+      "currentChunks": 640,
+      "historyChunks": 640,
+      "rawBytes": 4194304
+    },
+    {
+      "projectId": "7da143d6-8aec-4025-b87a-0ad69aac07ba",
+      "sources": 16,
+      "versions": 16,
+      "currentChunks": 80,
+      "historyChunks": 0,
+      "rawBytes": 262144
+    }
+  ],
+  "postgres": [
+    {
+      "version": "16.13",
+      "work_mem": "4MB",
+      "enable_seqscan": "on",
+      "enable_bitmapscan": "on"
+    }
+  ],
+  "configuration": {
+    "automaticQueueScan": false,
+    "leaseMs": 300000,
+    "background": "lease sweep and pg-boss remain enabled",
+    "diagnosticStatementMs": 1500,
+    "diagnosticLockMs": 500,
+    "factoryBusinessStatementMs": 10000,
+    "pgBossStatementMs": "unchanged factory/default; no shared override"
+  },
+  "cleanup": {
+    "database": "flow_k01_query_c741a0a868874329941b7cab665cad11",
+    "identity": {
+      "oid": "1373524",
+      "owner": "flow",
+      "marker": "031d68b7-e833-4f61-82a5-b0416529d3f5"
+    },
+    "creationAcknowledged": true,
+    "creationReceiptSaved": true,
+    "moduleLoadSettled": true,
+    "startupAttempted": true,
+    "startupSettled": true,
+    "listenAttempted": true,
+    "listenSettled": true,
+    "serverListening": false,
+    "appClosed": true,
+    "auxiliaryClosed": true,
+    "adminClosed": true,
+    "absent": true,
+    "errors": [],
+    "retainedDatabase": null
+  },
+  "resourceFacts": {
+    "configuredConnections": {
+      "admin": 1,
+      "auxiliary": 6,
+      "business": 8,
+      "pgBoss": 3,
+      "total": 18
+    },
+    "observedPeak": "unknown",
+    "connectionObservations": [
+      {
+        "at": "2026-10-08T00:47:49.023Z",
+        "connections": 0
+      }
+    ],
+    "connectionsBeforeDrop": 0
+  },
+  "times": {
+    "preflightStart": "2026-10-08T00:47:44.704411Z",
+    "outerStart": "2026-10-08T00:47:44.772253Z",
+    "childStartedAt": "2026-10-08T00:47:44.838Z",
+    "childEndedAt": "2026-10-08T00:47:49.237Z",
+    "childElapsedMs": 4399,
+    "supervisorElapsedMs": 4388,
+    "operatorReceiptBeforeReturnAt": "2026-10-08T00:47:49.275344+00:00",
+    "operatorReceiptBeforeReturnElapsedMs": 4437,
+    "outerTerminal": "2026-10-08T00:47:49.282866Z",
+    "outerPidPgidAbsentObservedAt": "2026-10-08T00:48:19.571392Z",
+    "completeReturnObservation": "2026-10-08T00:48:30.512887Z"
+  },
+  "admissionLimitations": [
+    "Ledger observation at00:45:48.309Z was116.463253s before actualstart; samecall ledger reread was omitted. No retrospective probe or timestamp substitution.",
+    "Before correction canonical HTTPListener0 conflicted with reviewed1loopback; noPG started until grantHTTPListener1 was reread."
+  ],
+  "resourceClosure": {
+    "preflightPid": 73531,
+    "primaryPid": 73533,
+    "outerPid": 73532,
+    "outerPidState": "ESRCH",
+    "outerPgidState": "ESRCH",
+    "callerResourceConfirmed": true,
+    "observerAttempted": false,
+    "scratch": "KEEP_PG_RECEIPTS",
+    "scratchIdentity": {
+      "dev": 16777234,
+      "ino": 124691472,
+      "marker": "c1eba3beb2644d698f5fe7e7eb7e2390",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-f5d00f7744fd43fc9db6029cd7b3b090"
+    },
+    "runtimeLogicalBytes": 1770423,
+    "runtimeAggregateRawBytes": 466100,
+    "oldKEEP": "untouched",
+    "ongoingChildren": 0,
+    "pendingLaunch": 0
+  },
+  "limits": [
+    "DB128MiB final sample and WAL128MiB planning are not hard peaks.",
+    "19configured connections are not measured peak; background SQL remains enabled/uninstrumented.",
+    "n3 client timings and n1 EXPLAIN per case are diagnostic samples, not SLO/provider capacity or optimizedspeed evidence.",
+    "SQL seed did not test public write path.",
+    "Observer guard time separated from driver roundtrip; neither is serverCPU.",
+    "Source unchanged; earlier2PG failures/recoveries remain immutable; latestpass does not prove prior causal root."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-08T00:47:49.268187+00:00",
+  "report": {
+    "pid": 73533,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 4388,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "event": "finished",
+    "label": "check-01",
+    "mode": "pg",
+    "selection": "caller",
+    "resourceConfirmed": true,
+    "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sourceChanged": [],
+    "fixedInputsAfter": "matched"
+  }
+}

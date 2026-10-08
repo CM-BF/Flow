@@ -1,0 +1,227 @@
+{
+  "createdAt": "2026-10-08T00:50:58.126396+00:00",
+  "executionHead": "8627f9900be6bed7c6333b77827022aac7dd9630",
+  "implementation": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
+  "runtimeInputs": {
+    "path": "docs/evidence/k01/query-pg-integrated-runtime-inputs.json",
+    "bytes": 76062,
+    "sha256": "9d1d91036cbb667031beb958a5e7a1d93b07d7ece34abe4f6c7ced8bc95208d0"
+  },
+  "sourceFiles": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 19016,
+      "sha256": "2fb56027cbe969e9ee385e2632b092ddaabaf1d1e0818ece4106dbc83c6b44dc"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 27781,
+      "sha256": "654c526b10d3f8831f831d7b712a3c98e3979f054bd78d25920355b7c994a434"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13199,
+      "sha256": "fbdfbd8b567e53515e17e5b0288433d5649efbac4a2059cc2f43df11e2da7f54"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.test.ts",
+      "bytes": 5872,
+      "sha256": "48017536803b8a0c2565f0c3a8fec0459cbd2eea34f5220cde9e24b47905b9ab"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.ts",
+      "bytes": 2063,
+      "sha256": "007a10aa4f3bf8f730e87451447be9c25bbfc0087f3099fec227f588d369110e"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-db-observation.mjs",
+      "bytes": 3701,
+      "sha256": "cdd749b95d42d9e356e940c1bc65ba4e3b6d1d2a0d585c77b835a8442a7e2283"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-db-observation.test.mjs",
+      "bytes": 3147,
+      "sha256": "194ee818bc4f5bd7fa465f04a246ffc9171756322b2f244e92e7bc513c084329"
+    },
+    {
+      "path": "experiments/knowledge-search/postflight.test.py",
+      "bytes": 7939,
+      "sha256": "85e9be6fe246cfbf372f06532b34395ac74eb4b6f9ddbb281d525100f9bc12eb"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 268,
+      "sha256": "00e228e82854ae84e4bf66c1b04cee6095611080a0893c70f324907d694d0255"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/check-01.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/iterations.jsonl",
+      "bytes": 5091,
+      "sha256": "dd4e6c55bcf7bd20b1a6a31558039241ace4158a8962fcea167de01b3482177f"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/namespace-owner.json",
+      "bytes": 253,
+      "sha256": "d0bfeb85b4e6700e965cd5cd13ac8097c35e57ddc69e0abb1d71f6396e0e61dc"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/owned.create-ack.json",
+      "bytes": 100,
+      "sha256": "3d58785813277f08536b8818030db59ce8b64bc749103bfdbde72638e43b7318"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/owned.database-identity.json",
+      "bytes": 185,
+      "sha256": "0b286ad62582feb6db0e2c0dbcc0b144cb49f9a5014811c3129d53aea868de8c"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/owned.database-reservation.json",
+      "bytes": 182,
+      "sha256": "26f36c4655d7d98f5fecc4889c691557e27f6459c82308b7d8a96098263bb5d7"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/primary-context.json",
+      "bytes": 478,
+      "sha256": "f45dd3721940c8344d0c34e353bf9d4800a2f973261491ad0012c1e29e49af0e"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/primary-process.json",
+      "bytes": 890,
+      "sha256": "c1b7d3e80c44c6f0320627400c7c8f004697bde8967970439a8f9f4c8aeee5fd"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/progress.jsonl",
+      "bytes": 136646,
+      "sha256": "6c7ae2e58992f9d626c79f6cf50d5e2faec4f7e04fe236ba5758c5dd42ce4fe9"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/result.json",
+      "bytes": 323756,
+      "sha256": "7192bb35129c31881975fe0c132e919f9f0e5a3e7bcb143c29cb59ffb16b8285"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-integrated-20261008-once/summary.json",
+      "bytes": 15272,
+      "sha256": "f8aea3674dc037f95f7bfbb9fe1b0c61e734449a9a2d2e96ed0231e173d1a3ec"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-operator-start.json",
+      "bytes": 809,
+      "sha256": "d64a308bb4adcecb03154a1186c50a90af6592241001f0b703ddb8b381a8e81f"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-operator-terminal.json",
+      "bytes": 213,
+      "sha256": "7c19525381039aa59588ab2ac61123a66557231d9a4021df396da9144a804286"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-operator.raw",
+      "bytes": 89,
+      "sha256": "dc9bca193af578631bbec58fac79da0d266d4c1256c656f703ed30174e302dc1"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-preflight.json",
+      "bytes": 1035,
+      "sha256": "01ec50b9cc0d5b7023adc7f1ba148ed002786b38c891ec6d13607f8276026a2e"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-preflight.raw",
+      "bytes": 192,
+      "sha256": "1604f790b41b3ed99f8d494726a92aaba2808e715cacd197a10e7c77bc64034e"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-20261008-preflight.start.json",
+      "bytes": 7008,
+      "sha256": "e35f5769e572eaa4f9f865afba50f921bde0152aea4afda7f2ef000fa9636ad5"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-integrated-actual-permit.json",
+      "bytes": 4151,
+      "sha256": "55669c6ad23db7d1be8ef578770d83eb3ade0bfc15e4f8e23825d77faa9dfb1a"
+    }
+  ],
+  "rawEvidenceBytes": 496350,
+  "sourceBytes": 192072,
+  "existingFrozenEvidence": "Previous failed directories,closedpermit andruntimeinputs unchanged; newnamespace copies only."
+}

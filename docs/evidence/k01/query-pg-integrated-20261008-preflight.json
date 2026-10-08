@@ -1,0 +1,47 @@
+{
+  "startedAt": "2026-10-08T00:47:44.704411+00:00",
+  "endedAt": "2026-10-08T00:47:44.771559+00:00",
+  "report": {
+    "pid": 73531,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 66,
+    "observed_bytes": 192,
+    "retained_bytes": 192,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "observation": {
+    "startedAt": "2026-10-08T00:47:44.756Z",
+    "endedAt": "2026-10-08T00:47:44.767Z",
+    "elapsedMs": 10.032250000000005,
+    "maximum": 100,
+    "occupied": 9,
+    "available": 91,
+    "closed": true,
+    "error": null,
+    "passed": true
+  },
+  "rawBytes": 192,
+  "rawSha256": "1604f790b41b3ed99f8d494726a92aaba2808e715cacd197a10e7c77bc64034e"
+}
