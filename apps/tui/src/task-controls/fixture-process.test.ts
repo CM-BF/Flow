@@ -10,8 +10,9 @@ import { CancelJourney } from './fixture.js';
 
 const error = (code: string) => Object.assign(Error('not recorded: private detail'), { code });
 function fakeChild() {
-  const child = Object.assign(new EventEmitter(), { pid: 99999999, exitCode: null as number | null, signalCode: null as NodeJS.Signals | null }) as ChildProcess;
-  const exit = () => { child.exitCode = 0; child.emit('exit', 0, null); };
+  const value = Object.assign(new EventEmitter(), { pid: 99999999, exitCode: null as number | null, signalCode: null as NodeJS.Signals | null });
+  const child = value as ChildProcess;
+  const exit = () => { value.exitCode = 0; child.emit('exit', 0, null); };
   return { child, exit, close: () => { exit(); child.emit('close', 0, null); } };
 }
 function clock(onWait: () => void = () => {}) {
