@@ -249,8 +249,10 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const expectNextDraft = async () => {
         await expect(input(4)).toHaveValue("Independent B while A prepares");
         await expect(pane(4).locator(".ep-settings-summary").filter({ hasText: "下一条消息设置" })).toContainText("arc-B");
-        await expect(pane(4).getByRole("button", { name: "File attachment", exact: true })).toHaveCount(1);
-        await expect(pane(4).locator(".aui-attachment-root")).toContainText("arc-next.txt");
+        const nextAttachment = pane(4).locator(".aui-composer-root").getByRole("button", { name: "File attachment", exact: true });
+        await expect(nextAttachment).toHaveCount(1);
+        await nextAttachment.hover(); await expect(page.getByRole("tooltip", { name: "arc-next.txt", exact: true })).toBeVisible();
+        await page.mouse.move(0, 0);
         expect((await probe("snapshot")).ready.find((item: { name: string }) => item.name === "arc-next.txt")).toEqual(nextFile);
       };
       // While A prepares, Recovery deliberately retains A and defers B in-page.

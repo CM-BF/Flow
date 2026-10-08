@@ -24,7 +24,7 @@
     "totalMs": 270000,
     "maxAttempts": 3,
     "perAttemptMs": 90000,
-    "spentMs": 21600,
+    "spentMs": 38056,
     "state": "OPEN_FIX_SAME_HANDOFF_CONTRACT",
     "attempts": [
       {
@@ -38,6 +38,18 @@
         "returnAt": "2026-10-08T00:36:30.434746Z",
         "ownedReturn": true,
         "reason": "Premature journal B assertion during preparing handoff; existing Recovery preserves A until command prepare and defers B in-page."
+      },
+      {
+        "attempt": 2,
+        "packet": "/private/tmp/arc-continuous-attempt2-0z0h86ei",
+        "source": "92a501080a5b15889f768550233a316697b201f1",
+        "exit": 1,
+        "passed": 2,
+        "selected": 4,
+        "chargeMs": 16456,
+        "returnAt": "2026-10-08T00:40:36.377912Z",
+        "ownedReturn": true,
+        "reason": "New UI selector included two held A submission tiles and current composer B. Narrowed to official composer and real filename tooltip, no arbitrary first/nth."
       }
     ]
   },

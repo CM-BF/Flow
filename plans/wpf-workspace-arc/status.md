@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477；本连续段metadata待seal |
-| 工作树dirty状态 | 8935 clean admission后仅status即时更新；continuous attempt1 FAILED/exactRETURN，test时点窄修中，source6ca不变 |
+| 工作树dirty状态 | 8935 clean admission后仅status即时更新；continuous attempt2 FAILED/exactRETURN；第三且最后一次准备，source92a5010 clean admission后仅status更新，source6ca不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | PASSED 8c36f39b63d5d5621eafea616aeb532472caed3c；仅新fixture queue/实际guard8纯例654ms，最终6ca仅诊断错误保留差量；修后browser attempt1 FAILED 2/4（00:35:52.952751Z），00:36:30.434746Z exactRETURN，旧b3f5 2/4 FAIL保留 |
@@ -22,7 +22,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 连续第1轮布局与读取通过；材料已进入prepare，测试过早要求持久化B，正在核对handoff时点 |
+| 当前产出 | 连续第1轮布局与读取通过；已修正handoff观测时点；第2轮B模型/正文已过；附件断言混入提交区，已按official composer和真实文件名提示窄修 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | ACTIVE: 完整材料与主题旅程尚未完成；经理ArcContinuousGrant已授，本轮资源已归还，bundle内有界后继候选 |
 | 需用户决定 | NONE |
@@ -133,3 +133,5 @@
 2026-10-08T00:19:27.781090+00:00：本连续段固定source 6ca0ed7ac01a0b4f3ad21d5c3536a56b857eb477；local #1 START00:16:45.897422Z/PID55594，8PASS/exit0，helper650ms与实际toolwall653.200ms保留、保守charge654/60000，尚余59346（全段deadline不变）。精确PID/PGID与scratchabsent/regularlog，networkdeny/0HTTPPGChrome。publicqueue读取验证在真实QueueProjection而非另造schema；真实sendDisabledReason以受控completed/active状态调用，非mounted。chat1-3仍paused且正文完整字节不变；chat4empty/unpaused，不修改真实发送保护。最新6ca仅被动诊断有帽且不遮蔽原5s错误；[本段入口](../../docs/evidence/wpf-workspace-arc/continuous-acceptance-20261008/entry.json)。0新browsergrant/旧账不转。
 
 2026-10-08T00:35:31.353534Z：continuous browser attempt1实际START，run arc-continuous-1-20261008-003531，outer88847/parent89726/worker89816；fresh free14918766592 >= complete13624803328，207/43/33与claim18/actualremote8935 clean同调用核过。90s单次/270s新总账；原失败账不转。
+
+2026-10-08T00:39:53.708827Z：continuous attempt2 START，source92a501080a5b15889f768550233a316697b201f1；原attempt1=21600/2of4FAIL保留。准备中journal保A、B页内/deferred；命令交接后才验证持久B，未宣准备时B崩溃恢复。
