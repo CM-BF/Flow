@@ -85,3 +85,7 @@ assignment_review完成唯一限定审查，无新P1/P2；main `62e9a83923a3c299
 ## 2026-10-08T01:03:01.782127+00:00 HOME单因素公开源码与纯策略待审
 
 source `c5fc960fc6d15e02fe351eb5187f5b5bb3f1ed7c`；[唯一manifest](../../docs/evidence/o16/auth-home-factor-candidate/manifest.json)只含公开源码定位、纯结果解释和实际环境recipe消费者。13不同/两监督组/179ms/426B，Node首次postprocessor计数未识别spec格式的原passed:null保留，固定原stdout支持1/1。无native/auth/query/PG/个人读取；正常认证HOME写不受private8MiB覆盖，全初始化写闭包UNKNOWN，实际caller dispatch未绑定。请独立审查缺项/exit1精确例外不掩盖其它失败、HOME唯一差集与原四字段parser复用；作者未自批。
+
+## 2026-10-08T01:17:13.198229+00:00 HOME recipe已审，薄实际caller待delta独审
+
+assignment_review经Lead确认 c5fc960fc/b9b7f9ef8 APPROVED_LIMITED_HOME_FACTOR_RECIPE_PREPARATION，0 P1/P2；13绑定42506B及原13消费者限定结果保持，未扩为认证执行批准。本轮 `8ab064493edc42408e219ac058d0eb42e726baf6` 与 [execution-manifest](../../docs/evidence/o16/auth-home-factor-candidate/execution-manifest.json)仅新薄caller/20pin装配/8例直接纯消费者，1child170ms196B/组absent/双EOF/exact空scratchremoved。旧策略源零改；同次D04 fresh检查由operator留receipt，不能以CLAIM字面量代替；没有actualgrant或native调用。作者未自批本delta，等待Lead独立审查。

@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-08T01:16:02.192754+00:00",
+  "source": "8ab064493",
+  "argv": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run_test.py",
+    "--selected-home-caller"
+  ],
+  "selected": 8,
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run.py",
+      "bytes": 11960,
+      "sha256": "a592d446a754e8b2598deaebc9efa4d11f442a89b4007995ce65eb1dd2e37141"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run_test.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/run_test.py",
+      "bytes": 10360,
+      "sha256": "3feacd3351ed26cb229f3941911bc429de3a7f3546c90142a36777d66addf2b1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/home_factor.py",
+      "bytes": 4096,
+      "sha256": "cc4d0576d1f8e9ee7c3c5aa66e0f9ad0bb4104a859ada79a232af70affba5cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/execution-preparation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-candidate/execution-preparation.json",
+      "bytes": 13247,
+      "sha256": "ab90290d86ace8632b30491fc1c8efd95ceda49e919896b8c35ac0679d921e77"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/same-runtime-auth-candidate/run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/same-runtime-auth-candidate/run.py",
+      "bytes": 9615,
+      "sha256": "425761f1c3fe1042fc2e772d9f425e5b8ee993dff5ca9bf18cb94e21f8868bd4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    }
+  ],
+  "queueAt": "2026-10-08T01:15:50.277Z",
+  "queueState": "ARC_NARROW_VISUAL_SOURCE_AUTHORIZED_NO_ACTUAL",
+  "baseFloorBytes": 13567131648,
+  "unlistedIncrementBytes": 8388608,
+  "freshFloorBytes": 13575520256,
+  "freeBytes": 14620479488,
+  "ordinaryParallelAuthority": "Lead 01:06 continuation: 2 child/30s pure; no native/PG/personal",
+  "scratch": {
+    "path": "/private/tmp/flow-o16-home-caller-local-aymd0481",
+    "dev": 16777234,
+    "ino": 124704104
+  },
+  "policy": {
+    "work_seconds": 20,
+    "term_grace_seconds": 0.5,
+    "kill_grace_seconds": 2,
+    "output_bytes": 65536
+  }
+}

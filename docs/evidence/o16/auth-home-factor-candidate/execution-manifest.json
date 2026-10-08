@@ -1,0 +1,61 @@
+{
+  "kind": "O16_HOME_FACTOR_ACTUAL_CALLER_DELTA_PREPARATION",
+  "source": "8ab064493edc42408e219ac058d0eb42e726baf6",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/run.py",
+      "bytes": 11960,
+      "sha256": "a592d446a754e8b2598deaebc9efa4d11f442a89b4007995ce65eb1dd2e37141"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/run_test.py",
+      "bytes": 10360,
+      "sha256": "3feacd3351ed26cb229f3941911bc429de3a7f3546c90142a36777d66addf2b1"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-preparation.json",
+      "bytes": 13247,
+      "sha256": "ab90290d86ace8632b30491fc1c8efd95ceda49e919896b8c35ac0679d921e77"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/execution-interface.md",
+      "bytes": 3507,
+      "sha256": "7a9e310f4905d012e8e8955dee02344acac0d314cbdf237b2d6e9c9c5033cfbf"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/caller-local-result.json",
+      "bytes": 805,
+      "sha256": "e518443552c80fe3a205bc8dcd9a22d085b253953c13aaa85ae368b43d57850b"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/caller-local-01/reservation.json",
+      "bytes": 4637,
+      "sha256": "e04f4251c20746cf98b3ba646fad7c53bf4a3b384a315775767bb80bfc242a77"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/caller-local-01/outer.json",
+      "bytes": 759,
+      "sha256": "9df705efd70665fbe6ec9c54a91fd9eac73ed252218d156be99e41b0251a9701"
+    },
+    {
+      "path": "docs/evidence/o16/auth-home-factor-candidate/caller-local-01/result.json",
+      "bytes": 263,
+      "sha256": "d4bad93edf6940b1a20225a749abbf54b191c5a3c6930e1ba45ff5501a372e6d"
+    }
+  ],
+  "bindingCount": 8,
+  "bindingBytes": 45538,
+  "inherits": [
+    {
+      "commit": "b9b7f9ef8e53cd2978251f8343f625bea6288ac3",
+      "path": "docs/evidence/o16/auth-home-factor-candidate/manifest.json",
+      "bytes": 3513,
+      "sha256": "ca2000d10c78d23a0d2325fdfbdb0b149dfd0cbea509e53f7a62f09da672aa20",
+      "review": "assignment APPROVED_LIMITED_HOME_FACTOR_RECIPE_PREPARATION 0P1/P2 conveyed by Lead; no actual native approval"
+    }
+  ],
+  "executablePins": "execution-preparation.json contains20; native SDK hashes inherited and mandatory actual recheck",
+  "scope": "One new thin caller,8 pure injected direct consumers; no native/auth/query/PG/normalHOME access. Shared normal initialization boundary explicit; new grant required.",
+  "sameCallAdmission": "D04 active exactclaim and queue must be observed by unique operator before this entry; literal CLAIM is not fresh ledger evidence",
+  "currentState": "PREPARATION_READY_FOR_DELTA_REVIEW_ACTUAL_NOT_RUN"
+}

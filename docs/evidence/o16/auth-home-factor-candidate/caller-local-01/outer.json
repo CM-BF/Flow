@@ -1,0 +1,33 @@
+{
+  "pid": 86955,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 170,
+  "stdout": "{\"selected\": 8, \"passed\": 8, \"nativeChildSpawns\": 0, \"queryCalls\": 0, \"personalReads\": 0}\n",
+  "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.022s\n\nOK\n",
+  "observed_bytes": 196,
+  "retained_bytes": 196,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
