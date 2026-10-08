@@ -1,0 +1,23 @@
+TAP version 13
+# Subtest: progression-renewal-resource: real pause consumer reads execution records once and preserves original archive
+ok 1 - progression-renewal-resource: real pause consumer reads execution records once and preserves original archive
+  ---
+  duration_ms: 132.26875
+  type: 'test'
+  ...
+# Subtest: progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies
+ok 2 - progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies
+  ---
+  duration_ms: 309.619291
+  type: 'test'
+  ...
+# {"sourceDigest":"d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e","files":329,"dependencies":39}
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1746.657416

@@ -1,0 +1,188 @@
+{
+  "kind": "O16_SAME_RUN_EXPIRED_PROGRESSION_RENEWAL_PREPARATION",
+  "at": "2026-10-08T02:59:28.780Z",
+  "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+  "productionSource": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+  "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+  "environmentDigest": "fc5eb96c84081b60cc65a5bf912bd26f3e8820ca5bf3fcf5e8105001aa439bd8",
+  "bindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 24458,
+      "sha256": "4ea97b5353f2971455276dc7487e6dd1d6a208f45d81f71d628c7cf1c954f589"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 6425,
+      "sha256": "be1c7346274179467611f271e420fb730f373da3b596dea9cc7eff96facc599a"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 13354,
+      "sha256": "faffea2736b36ccac4c17fe1672abcb8e1ef90b9bb7483ab5e8119a78509a668"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 9700,
+      "sha256": "e823b4db6057c34e5fc85c95c3f9ab9912f2063007c9c8d3bc26c91b0b5c144d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "bytes": 6192,
+      "sha256": "0074a59687b59645e36c1a3d44f2d86539ea4a46719f7d7ed5bd0cb1539ec64c"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+      "bytes": 13966,
+      "sha256": "be722c008844345282f5b321798d14db1e152768fda00bb8ff6207fe431ad15d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+      "bytes": 24942,
+      "sha256": "60b1320c1b0149c73b3a4a3ffc0bb4010975922b20823dc1ad29d524e8e51c26"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 14108,
+      "sha256": "5889242513777567ed9a62bc8d8e27bf5de84541294e2e9cf179b354c89ae0a2"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 8119,
+      "sha256": "e782107fd78df8e521b45bb85d9dfa19cee33e8df043cb45c94de104b740a514"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "bytes": 6790,
+      "sha256": "b8443aae26253d91e41b8014b7939bbb20875da6f9118d303fb2fcc02f48b408"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/candidate.md",
+      "bytes": 7141,
+      "sha256": "0485d957601bf7361590855df9b1074963317da4d4c310ae03ab08a577e5c6d7"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/interface.md",
+      "bytes": 3171,
+      "sha256": "10db606bac191a833420b1f0b180f3d1819b279176ebf8a8de02b795ee31cecd"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-01/outer.json",
+      "bytes": 518,
+      "sha256": "3e995b5acad50750d4972a91b6ee64c75e4d615f7d989d65b15dac7f7da16db3"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-01/reservation.json",
+      "bytes": 12327,
+      "sha256": "a575e99c6a9b22c9cf6a1959268308838a53742397db08599ec51a2ab98c708c"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-01/result.json",
+      "bytes": 397,
+      "sha256": "8a7d2a61b26b090b219810c74b008b43db720af384c6882810fa38f768997d6b"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-01/stdout.txt",
+      "bytes": 3206,
+      "sha256": "584fbdee45a3742aa7cd386a18fb317e0c1f57cfc3e84741e5d0ce6f2925076f"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-02/outer.json",
+      "bytes": 516,
+      "sha256": "4bce41f2fbbf7fda7d63ff18b9c810b23c92ef1b49db9ae5791fb2d50bf4a35f"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-02/reservation.json",
+      "bytes": 12391,
+      "sha256": "fb22c85ceed29f83030e03b7f00dc9a4af81baeaba32184d521393db1264f5ff"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-02/result.json",
+      "bytes": 403,
+      "sha256": "917638d2a5df2fa7a4b1b0d78bd33f968d45953602068c8deed68f8df3079095"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-02/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/local-02/stdout.txt",
+      "bytes": 821,
+      "sha256": "deb2cf0cd6d5d80413322f2e747dd60ba4b821971c01fb8f3686d89eb4b372ca"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/source-delta-214a.json",
+      "bytes": 4915,
+      "sha256": "9af928e6769dd33ddda0ca988eb072ff389ece58f9e81c06d6a97f27d3d1ff24"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/source-delta.json",
+      "bytes": 4915,
+      "sha256": "e638c2ad14da2c10d16e06fa17085eaf539668734a60fb13dcbb4876b1e3ea3c"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/status-check.json",
+      "bytes": 734,
+      "sha256": "5818a16a68bd857ffae0bc8a23908c97a6305c76f348c8719906f184d44a635a"
+    },
+    {
+      "path": "docs/evidence/o16/progression-renewal/validation.json",
+      "bytes": 3072,
+      "sha256": "f3d86f6ba38045b9f16419b2dc4a193b44a97e3dd3c98338d06700ce050da60b"
+    }
+  ],
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/native-children-continuation-20261008-once/renew-result-manifest.json",
+      "bytes": 6694,
+      "sha256": "135b64fddb29293eb06b4ab8e1ca9e83f14d27c610229869fd44eb0e2f59fbc5",
+      "commit": "12dcdbd42cffe47728fabc20380bd960db98cea6"
+    },
+    {
+      "path": "docs/evidence/o16/native-children-continuation-20261008-once/children-not-run.json",
+      "bytes": 2650,
+      "sha256": "627b5bd7856ff7497a0b789ba0bff7fc19436f2eb2463c67c26999b9c95320ac",
+      "commit": "222e933a3d8db7c91d046d1eaf04ddf602704f49"
+    },
+    {
+      "path": "docs/evidence/o16/native-children-continuation-20261008-once/authorization-preparation.json",
+      "bytes": 5682,
+      "sha256": "a93d42411ae2ce166e5cf186897d7560813a10ce3f918f8adb42479cd383d8f7",
+      "commit": "12dcdbd42cffe47728fabc20380bd960db98cea6"
+    }
+  ],
+  "lineage": "local01 source-delta.json bytes archived unchanged as source-delta-214a.json. local01 source and 42 reservation pins retained, not claimed final test bytes. Only test changed in8b31; local02 verifies complete final source inverse. Same 329 source/39 dependencies inherited via sourceIdentity; no full closure copy.",
+  "checks": {
+    "distinctPassed": 12,
+    "executionSelections": 13,
+    "elapsedMs": 3975,
+    "rawBytes": 4027,
+    "groups": 2,
+    "bothAbsent": true,
+    "bothDualEOF": true,
+    "firstFailures": 0,
+    "initialUnknownObservationsPreserved": true,
+    "scratchRemoved": 1,
+    "scratchKept": 1,
+    "keptBytes": 1501866
+  },
+  "decision": "PENDING_INDEPENDENT_REVIEW",
+  "actual": {
+    "PG": 0,
+    "native": 0,
+    "authentication": 0,
+    "queries": 0,
+    "oldPrivateAccess": 0,
+    "operatorRunning": false,
+    "queryCallsHistorical": 4,
+    "remainingPreviouslyGrantedCalls": 2,
+    "newStageAdmission": "NOT_GRANTED"
+  },
+  "limits": "Same run, original DB/two private KEEP; original8MiB private and2MiB evidence cumulative not reset; no thirdprivate/no destructive cleanup. Candidate three deadlines separate; any unknown no retry."
+}

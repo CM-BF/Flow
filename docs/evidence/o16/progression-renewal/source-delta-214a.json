@@ -1,0 +1,130 @@
+{
+  "kind": "O16_PROGRESSION_RENEWAL_SOURCE_DELTA",
+  "oldSource": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "oldSourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "newSource": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+  "delta": [
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/driver.mjs",
+        "bytes": 20664,
+        "sha256": "ff4cfba299979ecdedc5f31e598505b7177129424c79ed2778ddce6c2fef4246"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/driver.mjs",
+        "bytes": 24458,
+        "sha256": "4ea97b5353f2971455276dc7487e6dd1d6a208f45d81f71d628c7cf1c954f589"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+        "bytes": 6371,
+        "sha256": "493cf19237a52495b031728c5907814e1a601715728014a73ff2e5019afc0339"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+        "bytes": 6425,
+        "sha256": "be1c7346274179467611f271e420fb730f373da3b596dea9cc7eff96facc599a"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/operator.mjs",
+        "bytes": 12974,
+        "sha256": "1d6da8d4024dfffe1871063aa5a5029bcaf40a9e7f47e942d10e3216b38c2dad"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/operator.mjs",
+        "bytes": 13354,
+        "sha256": "faffea2736b36ccac4c17fe1672abcb8e1ef90b9bb7483ab5e8119a78509a668"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/permit.mjs",
+        "bytes": 8554,
+        "sha256": "6284d8fc6e34c07697e633062d3c1a44634ff2383401461ad973263b8ffff2a6"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/permit.mjs",
+        "bytes": 9700,
+        "sha256": "e823b4db6057c34e5fc85c95c3f9ab9912f2063007c9c8d3bc26c91b0b5c144d"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+        "bytes": 6075,
+        "sha256": "4326dc8b57d9d4ea85caec12155a96b261d41d44aa63dcb1a5ca76dfb6702a55"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+        "bytes": 6192,
+        "sha256": "0074a59687b59645e36c1a3d44f2d86539ea4a46719f7d7ed5bd0cb1539ec64c"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+      "before": null,
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/progression-renewal.mjs",
+        "bytes": 13966,
+        "sha256": "be722c008844345282f5b321798d14db1e152768fda00bb8ff6207fe431ad15d"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+      "before": null,
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+        "bytes": 22343,
+        "sha256": "6d4d7a5a4eee267bc5670538433ae4131178affd8d4a538daccb15d0b5271083"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/resources.mjs",
+        "bytes": 13216,
+        "sha256": "e298246df4654cb3acf7b8c37d096e649ae0c018d72f815b400694bd75afa875"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/resources.mjs",
+        "bytes": 14108,
+        "sha256": "5889242513777567ed9a62bc8d8e27bf5de84541294e2e9cf179b354c89ae0a2"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+        "bytes": 6882,
+        "sha256": "6e0d33f05980b78e55a54c58e2f594d8f4496b9f68cf495ec46cb0f7bd4d1b83"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+        "bytes": 8119,
+        "sha256": "e782107fd78df8e521b45bb85d9dfa19cee33e8df043cb45c94de104b740a514"
+      }
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "before": {
+        "path": "experiments/continuous-goal-acceptance/worker.mjs",
+        "bytes": 6510,
+        "sha256": "d9956c0022f346324ca0de3f47e39a2d26b3271680b47c81f1ca53657a7db2bd"
+      },
+      "after": {
+        "path": "experiments/continuous-goal-acceptance/worker.mjs",
+        "bytes": 6790,
+        "sha256": "b8443aae26253d91e41b8014b7939bbb20875da6f9118d303fb2fcc02f48b408"
+      }
+    }
+  ]
+}

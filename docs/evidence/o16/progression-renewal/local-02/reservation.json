@@ -1,0 +1,237 @@
+{
+  "at": "2026-10-08T02:56:22.714Z",
+  "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "--test-concurrency=1",
+    "--test-reporter=tap",
+    "--test-name-pattern=^(progression-renewal-resource:|progression-renewal-source:)",
+    "experiments/continuous-goal-acceptance/progression-renewal.test.mjs"
+  ],
+  "expectedSelected": 2,
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/assignment.mjs",
+      "bytes": 3744,
+      "sha256": "ef2f38123896adca4862a9951a8b20750c13caf49eeb05ada558a4fde7e18cfe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/assignment.test.mjs",
+      "bytes": 3138,
+      "sha256": "4402b4394f4b5a22aadd402bc131111af55bacd5423a4bb8638d9155ec6462db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/continuation.mjs",
+      "bytes": 12291,
+      "sha256": "157d57c0797e5e2732354171d2394f58d7ea6368ffc6a2ed9d60552d33750e37"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/continuation.test.mjs",
+      "bytes": 20139,
+      "sha256": "fbc5d96fc158f36721e16eecff8b55a3f83906940280ac2fd0fe05f0ea247665"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/contract.test.mjs",
+      "bytes": 4823,
+      "sha256": "2b5a9dd21323f354a48c7a4278fdb6e566ea0839ad844d56cf26aaf0e9c87636"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/decision-checkpoint.test.mjs",
+      "bytes": 1565,
+      "sha256": "10ca1b2aba2149861d9906a81171188f7992c4085dc0c68c3d8ae4490d4dd065"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/decision.mjs",
+      "bytes": 892,
+      "sha256": "5731378e23c3c90427bb5173603285add473f9cf0dfd233e15abaf6ce10ff224"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/decision.test.mjs",
+      "bytes": 3191,
+      "sha256": "98593b744b52be1d88c120377b3efd00cd1bb2d5737d03de2d03f101f0b1f2e0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 24458,
+      "sha256": "4ea97b5353f2971455276dc7487e6dd1d6a208f45d81f71d628c7cf1c954f589"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.mjs",
+      "bytes": 5044,
+      "sha256": "f87638b251ff9686f3d781bef4ec2f505a76a8f2afb03a98efb0538633c9437e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs",
+      "bytes": 9123,
+      "sha256": "5a130d4803ebe3a3ce335f372653a9465f47fff10a558857f18b72260bd4ba0d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "bytes": 3376,
+      "sha256": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/journey.test.mjs",
+      "bytes": 1302,
+      "sha256": "b516ed3a90f6da219123d0ca43484655bdd1646907586740a884ca0f24a71ff8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment-fixture.mjs",
+      "bytes": 2190,
+      "sha256": "e2e53f77a5b3ffbc857b6a823841f0eefa7fb0da09ff9531666c54f598c65556"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.mjs",
+      "bytes": 9221,
+      "sha256": "fd8fdaf99103a1279b2e30f466c163c93bc775381c64af96c46db6bfc1c5b5c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.test.mjs",
+      "bytes": 12447,
+      "sha256": "ca3db76f35ba33c7754c902d9969b4806236bcac63588ad3d3dd1caeecc87642"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-normal-home.test.mjs",
+      "bytes": 7421,
+      "sha256": "348328d267321e1952953d16794bbe8afcbac25daa8837bf6c27d5aa311990e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 6425,
+      "sha256": "be1c7346274179467611f271e420fb730f373da3b596dea9cc7eff96facc599a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-watchdog.test.mjs",
+      "bytes": 4713,
+      "sha256": "1c92e622a347cbdd6eb98448fae74799914bb29e59b02631d8688f6be44c5e3f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 13354,
+      "sha256": "faffea2736b36ccac4c17fe1672abcb8e1ef90b9bb7483ab5e8119a78509a668"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator.test.mjs",
+      "bytes": 7091,
+      "sha256": "5d0ce10d7fddf6c04fe64ffe7b8180cec159e835d84245e6541436091c6675da"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 9700,
+      "sha256": "e823b4db6057c34e5fc85c95c3f9ab9912f2063007c9c8d3bc26c91b0b5c144d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/permit.test.mjs",
+      "bytes": 5212,
+      "sha256": "f43749bf4fb7912ae661f8380da91ea4e6b16c2f1c105a280bb538f0c1f1d5ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/phase-host.mjs",
+      "bytes": 6192,
+      "sha256": "0074a59687b59645e36c1a3d44f2d86539ea4a46719f7d7ed5bd0cb1539ec64c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/progression-renewal.mjs",
+      "bytes": 13966,
+      "sha256": "be722c008844345282f5b321798d14db1e152768fda00bb8ff6207fe431ad15d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/progression-renewal.test.mjs",
+      "bytes": 24942,
+      "sha256": "60b1320c1b0149c73b3a4a3ffc0bb4010975922b20823dc1ad29d524e8e51c26"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/proposal.mjs",
+      "bytes": 3384,
+      "sha256": "092dd765e1e92e300ccebecccd5aa79fe5ca16eadc5a39fa1233014a87c68906"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-policy.mjs",
+      "bytes": 8388,
+      "sha256": "a70966ea499024b192f2f8cb28336fba15b9347e8879816cca8fd39d8e55b07b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-policy.test.mjs",
+      "bytes": 5240,
+      "sha256": "514f53f527211dbfed418c5e3eeb757be7d0ae9bc7d2e50a4c94d20de650ed94"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs",
+      "bytes": 7465,
+      "sha256": "066471dbf652330ce740281872121366ad645d7ccb22777d38e224882ba3d71d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.test.mjs",
+      "bytes": 6858,
+      "sha256": "7754322ee8486bc01dfe54da5c2f032b8fabcc31a65ed3519db978c51836682b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.test.mjs",
+      "bytes": 1814,
+      "sha256": "ae5577983b2be25c76f34618602453d64137cd5ff093da4356c30963452a070b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/rehearsal.mjs",
+      "bytes": 4899,
+      "sha256": "e8532741524a347ce091d4160ca7a5e828806d6ec9e7cea5eb9e5d14d4a2722f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 14108,
+      "sha256": "5889242513777567ed9a62bc8d8e27bf5de84541294e2e9cf179b354c89ae0a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 8119,
+      "sha256": "e782107fd78df8e521b45bb85d9dfa19cee33e8df043cb45c94de104b740a514"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.test.mjs",
+      "bytes": 12700,
+      "sha256": "b2a0127c2c8d21060b6879ecda3ad48bf5a1228392277537bb143e0053c29a05"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/worker.mjs",
+      "bytes": 6790,
+      "sha256": "b8443aae26253d91e41b8014b7939bbb20875da6f9118d303fb2fcc02f48b408"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/progression-renewal/source-delta.json",
+      "bytes": 4915,
+      "sha256": "e638c2ad14da2c10d16e06fa17085eaf539668734a60fb13dcbb4876b1e3ea3c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "queueAt": null,
+  "floor": 13137346560,
+  "free": 14338949120,
+  "addedOrdinaryOnce": 8388608,
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-progression-local-m7yrnooo",
+    "dev": 16777234,
+    "ino": 124772036
+  },
+  "previousElapsedMs": 2189
+}

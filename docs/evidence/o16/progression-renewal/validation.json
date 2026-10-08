@@ -1,0 +1,70 @@
+{
+  "kind": "O16_PROGRESSION_RENEWAL_LOCAL_RESULT",
+  "at": "2026-10-08T02:58:43.768Z",
+  "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+  "sourceDigest": "d6eb39e51601d66b21919346b302a7035bdeb4ed95470398389ea183d41be30e",
+  "files": 329,
+  "dependencies": 39,
+  "productionSource": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+  "productionDeltaAfterFirstRun": false,
+  "rounds": [
+    {
+      "source": "214a9bf6747e7151cd57208d05d30c56f9e7b6b3",
+      "record": "local-01/result.json",
+      "selected": 11,
+      "passed": 11,
+      "sourceProof": "source-delta-214a.json",
+      "resultSource": "fixed initial ten-source"
+    },
+    {
+      "source": "8b31a1fedb0b7d8400c0ee0c997761710bc935a0",
+      "record": "local-02/result.json",
+      "selected": 2,
+      "passed": 2,
+      "sourceProof": "source-delta.json",
+      "resultSource": "only actual pause-resource consumer plus complete identity proof; one proof repeated because test-source digest changed"
+    }
+  ],
+  "distinctPassed": 12,
+  "executionSelections": 13,
+  "elapsedMs": 3975,
+  "rawBytes": 4027,
+  "childrenUsed": 2,
+  "childrenLimit": 4,
+  "cumulativeLimitMs": 120000,
+  "finalReturn": "2026-10-08T02:56:24.504Z",
+  "processes": {
+    "bothGroupsAbsent": true,
+    "bothDualEof": true,
+    "signals": [],
+    "pendingLaunch": false,
+    "initialEPERM": "Both raw observations retained; final absent does not erase earlier unknown"
+  },
+  "scratch": {
+    "local01": "same identity empty removed",
+    "local02": "same identity 226 entries / 1501866 logical bytes KEEP under empty-only rule",
+    "actualPaths": "each reservation.json",
+    "growthAfterReturn": "No continuing child or scheduled writer; cache is retained stock. Metadata sealing remains within original local bound."
+  },
+  "coverage": [
+    "actual public FlowClient request construction with injected fetch, no HTTP socket",
+    "revoke/create intents and ACK failures; no automatic retry",
+    "source inverse over 329 files and 39 fixed dependency aliases",
+    "same-origin wx exclusivity against old entry and alternate grant",
+    "real driver replacement composition with injected center",
+    "real file-backed claimPausedResources, refusal of altered/expired/reused state and preservation of five original files",
+    "v3 permit and actual assignment/slot consumers",
+    "stage-specific record paths, real metering entry and pause deadline"
+  ],
+  "notRun": [
+    "real PG/server/revoke/create",
+    "native/auth/model query",
+    "old private/credential access",
+    "actual children/independent semantic acceptance"
+  ],
+  "cleanCode": {
+    "at": "2026-10-08T02:58:43.768Z",
+    "scope": "10 experimental leaves, Interface, preserved state and public client consumer",
+    "findings": "No added scheduler/supervisor or replicated progression logic; static stage map owns record names, new module owns replacement validation and public commands; unknown preserves original state and first error. Additional direct file consumer closes injected resource-creation coverage limit; real PG still unverified."
+  }
+}

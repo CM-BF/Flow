@@ -123,3 +123,10 @@ plan入口使用全新标记DB、动态中心端口和自有runtime，resume=fal
 Target `5cf8a5dd529a77f7de054c2ed476cf62213af665`，base `e5c7fd9d664de11ab853c55e0a01577c12530555`，exact7实验路径与可逆前像见 [source-delta](../../docs/evidence/o16/expired-plan-continuation/source-delta.json)。[单份manifest](../../docs/evidence/o16/expired-plan-continuation/manifest.json)绑定15不同通过/两次FAIL、4组归还与完整source逆算；作者不自批。范围为新grant/共享原消费门、原CAS、fresh只读SQL注入与真实adapter/decorator、旧材料与DB/双目录KEEP，不冒实际暂停资源接续通过。
 
 独审请读固定source/Interface/candidate、原raw选择与两次修复，核两个newrun及旧入口不能重复消费同一来源、旧原件不改、新状态独立、fresh中心身份拒绝未知、children只绑定真实ACK且两slot、不因最终接受获取旧资源删除权。真实动态SQL/PG/server/renew/模型和独立语义接受NOT_RUN；全部实际预算尚未授。现有plan结果唯一限定独审/main254ce9579按引用继承，不重审模型原件或读private。当前无作者确认的未修复finding，结论PENDING，不称APPROVED。
+
+
+## 2026-10-08T02:58:43.768Z 同一run已确认授权替换待独审
+
+固定source `8b31a1fedb0b7d8400c0ee0c997761710bc935a0`，生产实现214a9bf、后继仅直接文件consumer与source digest诊断；[单份manifest](../../docs/evidence/o16/progression-renewal/manifest.json)与[候选](../../docs/evidence/o16/progression-renewal/candidate.md)为本次范围。12不同/13实际选择、3975ms/4027B、2组absent/双EOF、初始EPERM及非空cache KEEP均保留。真实PG/revoke/create/模型与旧资源接触0，未自批。
+
+请核原pause共享wx、同run与旧source逆算、保旧确认而以新执行授权绑定真实assignment、public观察与两次独立事务的unknown边界、三期限及same-private新记录不覆盖旧原件。原两次总体模型额度保持，不能将新阶段合同当新增额度或复活过期许可。实际renew唯一限定结果已main d25dda8f1，其raw不复制/重审。

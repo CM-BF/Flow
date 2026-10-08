@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: progression-renewal: same run keeps old expired pause and separates admission from execution deadline
+ok 1 - progression-renewal: same run keeps old expired pause and separates admission from execution deadline
+  ---
+  duration_ms: 69.244042
+  type: 'test'
+  ...
+# Subtest: progression-renewal: actual packet reader rejects private changes and symlink without consuming the source
+ok 2 - progression-renewal: actual packet reader rejects private changes and symlink without consuming the source
+  ---
+  duration_ms: 62.487083
+  type: 'test'
+  ...
+# Subtest: progression-renewal: shared wx blocks old children and a second grant while every original remains byte equal
+ok 3 - progression-renewal: shared wx blocks old children and a second grant while every original remains byte equal
+  ---
+  duration_ms: 61.031667
+  type: 'test'
+  ...
+# Subtest: progression-renewal: real public client observes then revokes and creates exact unchanged nodes with separate durable ACKs
+ok 4 - progression-renewal: real public client observes then revokes and creates exact unchanged nodes with separate durable ACKs
+  ---
+  duration_ms: 54.464584
+  type: 'test'
+  ...
+# Subtest: progression-renewal: nonzero admission or changed input material profile blocks all mutation
+ok 5 - progression-renewal: nonzero admission or changed input material profile blocks all mutation
+  ---
+  duration_ms: 47.985833
+  type: 'test'
+  ...
+# Subtest: progression-renewal: lost create ACK preserves revoke and intent with no retry or rollback
+ok 6 - progression-renewal: lost create ACK preserves revoke and intent with no retry or rollback
+  ---
+  duration_ms: 48.787208
+  type: 'test'
+  ...
+# Subtest: progression-renewal: first intent write failure leaves zero public mutations
+ok 7 - progression-renewal: first intent write failure leaves zero public mutations
+  ---
+  duration_ms: 47.314375
+  type: 'test'
+  ...
+# Subtest: progression-renewal: actual driver preserves same private and old state while closing before fresh execution pause
+ok 8 - progression-renewal: actual driver preserves same private and old state while closing before fresh execution pause
+  ---
+  duration_ms: 122.04425
+  type: 'test'
+  ...
+# Subtest: progression-renewal: v3 permit and actual assignment consume only the new progression and two bounded slots
+ok 9 - progression-renewal: v3 permit and actual assignment consume only the new progression and two bounded slots
+  ---
+  duration_ms: 84.448708
+  type: 'test'
+  ...
+# Subtest: progression-renewal: actual stage paths and meter select preserved execution records and refuse short pause coverage
+ok 10 - progression-renewal: actual stage paths and meter select preserved execution records and refuse short pause coverage
+  ---
+  duration_ms: 44.029333
+  type: 'test'
+  ...
+# Subtest: progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies
+ok 11 - progression-renewal-source: actual complete source inverse preserves original confirmed source and dependencies
+  ---
+  duration_ms: 290.494209
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2143.649417
