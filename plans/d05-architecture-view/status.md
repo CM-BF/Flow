@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:56:14.690Z / main0e8bfa7b3；CENTER来源实际213，首次reload协调配置遗漏已修复；领取API恢复available。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:13:24.689Z / main866f0a9c0；两项插件验证唯一来源实际发布，4320为215；协调领取与登录公开入口同时核对。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
@@ -14,15 +14,15 @@
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | CENTER来源登记已mainbc7fbcd2d；2026-10-08T00:52:45.537Z实际4320读取213来源，CENTER sourceCurrent与开工时间可见，本机登录公开配置保持。 |
+| 已集成 main 状态 | 登记01e1fa6bf已main866f0a9c0；2026-10-08T01:13:24.689Z实际215，RUNTIME/CLIENT sourceCurrent；原213→215一次，214未单独部署。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示新增任务的真实开工时间；本次启动配置遗漏已修复，进度、领取记录和登录入口均可读取。 |
-| 下一可用交付 | 本片段已交付；后续只按合法owner交接维护来源与阶段事实。 |
+| 当前产出 | 看板已展示两项插件验证任务的真实进度，领取记录与本机登录入口保持可用。 |
+| 下一可用交付 | 本片段已交付；后续按原owner来源维护阶段与时间事实。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -296,3 +296,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-08T00:56:14.690Z：D01随后发现领取API unknown；本Lead在首次reload漏带原FLOW_COORDINATION_DATABASE_URL，非摘要/ACCESS成功可覆盖。依既有启动配置[窄修复回执](../../docs/evidence/d05/center-source-coordination-repair.json)已核原owned69822退出→7196，summary213、assignments available/272 claims、ACCESS非敏感元数据逐值不变；只恢复原公开compose协调连接，无schema/DB写或个人服务/token操作。00:52原件不改绿为完整健康，本次精确RETURN已交D01，不等待记录独审才还窗。
 
 2026-10-08T01:10:48.095Z：新增X01-VERIFIER-CLIENT-ADMISSION01唯一来源候选，原owner、8scope与三件套存在；215登记校验通过，canonical历史首次开工仍UNKNOWN、正在独审，不由登记推产品完成。RUNTIME214仍未实际单独发布，拟同一安全点显示两新来源；当前实际213。见[来源核对](../../docs/evidence/d05/verifier-client-source-preparation.json)。
+
+2026-10-08T01:13:24.689Z：215来源实际发布，old7196已确认退出、新80647持有工程看板；582ms。两个新增sourceCurrent、领取API available和原本机登录公开metadata同时通过；未读取token、未操作61227/61228。立即归还部署占用，不以证据复审阻塞下一队。[实际部署](../../docs/evidence/d05/verifier-sources-live.json)。
