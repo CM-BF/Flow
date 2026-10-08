@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:40:46.640Z / mainbc7fbcd2d；CENTER来源已接收待安全reload；TUI R2真实失败已独审、资源已归还，最小诊断实施中。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:05:25.985Z / mainfddde4e71；TUI最小诊断与插件验证runtime已审接收；CENTER实际213/协调配置恢复，RUNTIME214登记已main待安全reload。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main728d3165f已含VAR/CENTER，bc7fbcd2d已收CENTER唯一来源；个人e15/880060、accepting24及Web779/v4为既有部署观察，不冒当前健康或新用户领取。 |
+| 已集成main状态 / HEAD | main0e8bfa7b3含TUI诊断、ec7e72f04含插件验证runtime；fddde4e71含RUNTIME唯一来源候选。个人e15/Web779为既有部署，不冒当前健康或新任务领取。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人新版网页已发布，已审插件验证能力已进入主线。双端旅程走通终端取消与网页状态同步，后续任务完成失败已保留并核对。 |
-| 下一可用交付 | 定位双端接续的完成失败；随后用同一原生版本区分既有登录在隔离环境中的可见性。 |
-| 当前阻塞 | ACTIVE: 双端接续的后续任务未成功，底层原因待有限诊断；真实目标规划仍受认证可见性阻塞，工程写入资格保留原待决边界。 |
+| 当前产出 | 个人新版网页已发布，插件验证的执行与恢复能力已进入主线。双端接续失败的最小诊断已交付，旧失败和未知原因如实保留。 |
+| 下一可用交付 | 用同一原生版本对照本机登录在两种HOME环境中的可见性，并展示插件验证执行任务的真实进度。 |
+| 当前阻塞 | ACTIVE: 双端接续尚未完整通过；目标规划的认证可见性正在零模型对照准备中，尚无新查询结果。工程写入资格仍按原待决边界。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -288,3 +288,9 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 2026-10-08T00:24:02.748Z：本管理安全点同步实际main接收与运行资源边界；[VAR/CENTER唯一回执](../../../m2-integration/docs/evidence/i02/x01-var-center-intake.json)和[SVC06B单叶移交](../../../m2-integration/docs/evidence/i02/svc06b-single-leaf-return-intake.json)可追溯。TUI准备源8cc/独审1b9，真实PTY/Web仍NOT_RUN；当前资源由Web原owner安排，不把无actual holder当有效连续段已结束。新增REQ17只读输入归既有历史缓存/POOL验收，未新领产品scope或运行。历史首次开工UNKNOWN保持。
 
 2026-10-08T00:40:46.640Z：TUI R2在00:29:07.293Z启动、00:29:34.940Z终止，1选中/0通过；00:31:28.325Z运行资源RETURN，原groups unknown和专库/临时材料KEEP保留。assignment_review对固定b186的20绑定限定批准结果保真，不批准成功或新实际窗口；原raw203010B不再复制，见[唯一结果清单](../../../tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-result-manifest.json)。native_center_owner在原scope补合成执行阶段诊断，普通段0PG/Chrome/provider，原8秒/成功/清理断言不变。
+
+### 2026-10-08T01:05:25.985Z 接收与下一验证
+
+TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEEP未变；尚无新真实双端旅程。X01 runtime四文件保持5bdf817d受审字节，209个直接输入与固定基线一致，复用25/25及strict0，于main ec7e72f04接收；回执仅存来源与审查引用，未复制226790B原包。
+
+看板00:52的213来源发布遗漏协调配置，00:56:14.690Z已保留该失败事实并恢复领取API available；没有操作个人服务。214来源已主线登记，仍待原资源owner确认普通部署安全点。O16本段00:47:28.671Z开工，01:01:10.886877Z两个纯检查child归还；12策略例与1真实环境consumer通过，原spec/TAP汇总不匹配保留。b9b7f9ef8源/纯结果正在独审，实际A/B status caller继续准备：0 SDK query、原3次费用与失败不变，不读/复制凭据，不把同环境字段对照当模型资格或根因证明。

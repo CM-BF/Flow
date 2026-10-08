@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:38:30.040Z / main61ca12e7d；VAR/CENTER已main728d3165f；CENTER唯一来源登记独审通过，本段接收。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:06:44.585Z / mainfddde4e71；TUI诊断/runtime接收完成，D05214登记已main，两个父status限定独审通过。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,14 +16,14 @@
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED: VAR/CENTER组合strict0、精确9/9已独审；TUI R2真实1选中0通过，失败原件已独审，未重跑。 |
-| 已集成main状态 / HEAD | 728d3165f已含VAR/CENTER；61ca12e7d管理接收。CENTER新增来源尚未实际reload；个人e15/Web779部署事实保持，当前新用户领取未验。 |
+| 已集成main状态 / HEAD | main0e8bfa7b3含TUI最小诊断，ec7e72f04含X01runtime，fddde4e71含214唯一来源候选；实际4320为213，个人e15/Web779不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 插件验证领域和中心装配已进入主线；真实双端接续走通终端取消与网页状态同步，后续任务完成仍有失败待定位。 |
-| 下一可用交付 | 展示中心装配的权威进度，并补齐双端接续失败阶段的诊断。 |
-| 当前阻塞 | ACTIVE: 双端接续的后续任务未达到成功状态，底层原因尚未确认；失败与保留材料已封存。 |
+| 当前产出 | 插件验证执行与恢复、双端失败诊断已进入主线；新增进度来源已登记。 |
+| 下一可用交付 | 本片段已交付；下一步在安全停点显示新增来源，并完成原生登录环境对照。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -572,3 +572,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:58:29.414Z：X01 verifier runtime四叶固定5bdf已获architecture_read独审，4前像及209其余实际输入逐hash核同，按[单份接收记录](../../docs/evidence/i02/x01-verifier-runtime-intake.json)接收。原25/25与types2→0及生命周期证据复用，无新重测；真实worker/PG/publicE2E及个人发布均不冒完成。
 
 2026-10-08T01:00:09.643Z：D05实际213来源、启动遗漏协调配置的回归及00:56修复均获限定独审，原件保持；runtime来源214候选同时受控接收，尚未reload。见[批次接收](../../docs/evidence/i02/d05-coordination-runtime-registration-intake.json)。没有把summary200当领取健康，没有token/个人操作。
+
+2026-10-08T01:06:44.585Z：两个父status按限定独审e38e0697d接收，未改其他owner、未增加工程检查；[依据](../../docs/evidence/i02/accepted-runtime-auth-preparation-status-review.json)。

@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-08T01:06:44.585Z",
+  "review": "APPROVED_DOCS",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "target": "e38e0697d3be6a2ad10ae06c6b07678cea819b5f",
+  "findings": [],
+  "rows": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "originCommit": "e38e0697d3be6a2ad10ae06c6b07678cea819b5f",
+      "bytes": 49696,
+      "sha256": "98ac73d33e31e60638d6a46d3c3f7af5c3f596d33a74f6b566c61755965910c5"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "originCommit": "e38e0697d3be6a2ad10ae06c6b07678cea819b5f",
+      "bytes": 121004,
+      "sha256": "19c80368841710febaa2c6f3311aa2675652c3c2236bf73e769718a3335a39a7"
+    }
+  ],
+  "scope": "Two owner statuses only; accepted source distinct from actual213, TUI originalFAIL, O16actualNOT_RUN, historicalstartUNKNOWN.",
+  "tests": 0
+}
