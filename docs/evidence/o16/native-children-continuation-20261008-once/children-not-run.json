@@ -1,0 +1,56 @@
+{
+  "kind": "O16_CHILDREN_NOT_RUN",
+  "observedAt": "2026-10-08T02:36:20.596Z",
+  "clockEvidence": "clock current_time2026-10-08 02:35:43 UTC then same local UTC observation",
+  "outcome": "NOT_RUN_LATEST_START_EXPIRED",
+  "logicalId": "native-children-continuation-20261008-once",
+  "stage": "children",
+  "selectedAt": "2026-10-08T02:33:27.236Z",
+  "latestStart": "2026-10-08T02:34:17.000Z",
+  "authorizationExpiresAt": "2026-10-08T02:36:47.000Z",
+  "authority": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+    "bytes": 302891,
+    "sha256": "76035c2c976ae6a1c818bd417579ffd54a673136f18c2d95690e01a8f1c3955d",
+    "topRecordedAt": "2026-10-08T02:28:37.999Z",
+    "stageState": "SELECTED",
+    "topTimestampLimit": "Top recordedAt remains02:28:37.999Z; stage selectedAt is the explicit children event."
+  },
+  "executionHead": "12dcdbd42cffe47728fabc20380bd960db98cea6",
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "permit": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/children-permit.json",
+    "bytes": 1378,
+    "sha256": "50bb52f57836ed23b3cc60239a5575e78595d576cd30e35ffa99a16ea3c22cae"
+  },
+  "preparation": {
+    "path": "docs/evidence/o16/native-children-continuation-20261008-once/children-preparation.json",
+    "bytes": 3351,
+    "sha256": "dc4eed64f8a33fae04f07632064df7bc56759e652e34fa6fbc514fc3d3853e7a"
+  },
+  "namespaces": [
+    {
+      "path": "docs/evidence/o16/operators/native-children-continuation-20261008-once/children",
+      "absent": true
+    },
+    {
+      "path": "docs/evidence/o16/runs/native-children-continuation-20261008-once/children.json",
+      "absent": true
+    },
+    {
+      "path": "docs/evidence/o16/attempts/o16-O16-GO-CHILDREN-CONTINUATION-20261008-children.json",
+      "absent": true
+    }
+  ],
+  "operatorLaunches": 0,
+  "childLaunches": 0,
+  "nativeQueries": 0,
+  "cumulativeQueries": 4,
+  "PGProbes": 0,
+  "privateReads": 0,
+  "pendingLaunch": 0,
+  "oldRenewResult": "Preserved; confirmed pause at02:30:20.624Z remains distinct from earlier confirmation/permit expiry.",
+  "disposition": "STOP; no grant re-signing, run reset, source/state/time/permit modification, replay or resource cleanup. DB and both directories KEEP. A future continuation requires an explicit expiry contract; no automatic extension.",
+  "causeBoundary": "This is an expired dispatch opportunity, not a model or runtime execution failure. No claim that the children preparation failed."
+}

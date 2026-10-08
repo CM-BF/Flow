@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T02:32:23.355Z |
+| 最近更新 | 2026-10-08T02:36:20.596Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -13,7 +13,7 @@
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
 | HEAD | 5cf8a5dd529a77f7de054c2ed476cf62213af665 已审源码不变；renew实际确认成功，结果待独审 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
-| 工作分支状态 | review |
+| 工作分支状态 | in-progress |
 | 检查状态 | 15不同通过（3原+12新）；4监督child/6691ms/10595B，4组absent/双EOF/4exact空scratchremoved；首语法红与真实source逆算红保留。0PG/native/auth/query/旧private读取。 |
 | Review | assignment_review 对7edd6ea/5cf8给出 APPROVED_EXPIRED_PLAN_CONTINUATION_SOURCE_AND_LOCAL_RESULT，0P1/P2；原实际planner76a9限定结果已main254ce9579。只批准源码与局部，不冒实际renew/children通过。 |
 | 实现目标 | 5cf8a5dd529a77f7de054c2ed476cf62213af665 |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 原提案已真实确认，两项任务尚未执行；运行资源已归还，旧材料保持。 |
-| 下一可用交付 | 在有效确认和新的运行窗口内执行两项受限文本任务，再由独立角色核对实际稿件。 |
-| 当前阻塞 | ACTIVE: renew结果待独审；已绑定真实确认的子任务许可等待新D01窗口，确认到期不延长。 |
+| 当前产出 | 原提案已真实确认并保留；两项子任务未启动，本次可启动时限已过。 |
+| 下一可用交付 | 明确过期后的确认续接合同，再安排两项文本任务；当前停止执行并保留材料。 |
+| 当前阻塞 | ACTIVE: 子任务窗口最迟启动时间已过，0调用未消费；既有确认与许可不得自动延长，后继需明确过期合同。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -79,6 +79,8 @@
 | O16-W22 | 2026-10-08T01:48:09.597Z | 2026-10-08T01:54:06.221Z | 审查 | 已收Lead限定实际结果独审/main回执，结束为owner收录时刻；原真实提案与整体未完成分开 | main254ce9579的I02唯一结果回执 |
 | O16-W23 | 2026-10-08T02:16:41.342Z | 2026-10-08T02:19:04.237Z | 审查 | 独立源码/局部审查已通过；结束为owner收录时刻，不冒review实际发生时间，无运行holder | expired-plan-continuation/manifest.json、Lead回执 |
 | O16-W24 | 2026-10-08T02:24:02.858Z | 2026-10-08T02:30:18.714Z | 资源 | 新阶段授权已到，待D01明确窗口与同次fresh；无holder/无pending launch | docs/evidence/o16/native-children-continuation-20261008-once/authorization-preparation.json |
+| O16-W25 | 2026-10-08T02:32:23.355Z | 2026-10-08T02:36:20.596Z | 资源 | children已绑定实际ACK，等待新stage；02:34:17最迟启动已过，首次本次读取时未启动，0child/0query STOP；结束为NOT_RUN记录时点，不冒SDK失败 | native-children-continuation-20261008-once/children-not-run.json |
+| O16-W26 | 2026-10-08T02:36:20.596Z | OPEN | 接口 | 旧确认/permit期限不能自动延长；后继需明确过期合同，不轮询或重试现grant | 同一NOT_RUN原件及Lead派工 |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -181,3 +183,5 @@
 2026-10-08T02:24:02.858Z：收到GO新阶段授权 O16-GO-CHILDREN-CONTINUATION-20261008（issued02:21:47Z/renew expiry02:36:47Z），已固定一次grant及原提案/source/profile/resource绑定，见[授权输入](../../docs/evidence/o16/native-children-continuation-20261008-once/authorization-preparation.json)。新阶段实际窗口未选、旧来源未消费、0query/PG/旧private读取。后续仅真实ACK后独立permit≤2child与独立decide条件授权，每stage均需新D01窗口；原pause到期和4query不改。
 
 2026-10-08T02:32:23.355Z：唯一renew实际02:30:18.714Z START、02:30:20.700Z exit0、02:31:17.205Z精确RETURN；1selected/stage-paused、0query/累计4，3PID+3group absent/目标连接空。实际ACK 38e391…及progression9a39…/admissions0，[单份结果manifest](../../docs/evidence/o16/native-children-continuation-20261008-once/renew-result-manifest.json)待独审；DB/两private KEEP与原state/public档案不改。新pause至02:45:20.624Z不延长更早的confirmation02:36:47；已有GO条件额度仅用于真实ACK绑定的[children输入](../../docs/evidence/o16/native-children-continuation-20261008-once/children-preparation.json)，新的D01窗口尚未选中，不自动启动。
+
+2026-10-08T02:36:20.596Z：权威children grant selected02:33:27.236Z/latestStart02:34:17Z，当前读取已过最迟启动；[NOT_RUN原件](../../docs/evidence/o16/native-children-continuation-20261008-once/children-not-run.json)记录0operator/child/native query/PG探针，phase目录及reservation均absent，累计SDK仍4。renew实际结果与原permit/confirmation/source不改，DB/两private KEEP。停止重复等待/不重新签grant或重置run，后继仅按明确过期合同推进。
