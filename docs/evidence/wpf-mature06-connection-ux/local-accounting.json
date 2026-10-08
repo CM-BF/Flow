@@ -1,0 +1,27 @@
+{
+  "limitMs": 60000,
+  "maxChildren": 3,
+  "runs": [
+    {
+      "kind": "direct-1",
+      "chargeMs": 187,
+      "exitCode": 0,
+      "state": "PASSED",
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "kind": "types-1",
+      "chargeMs": 1339,
+      "exitCode": 0,
+      "state": "PASSED",
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    }
+  ],
+  "spentMs": 1526
+}

@@ -1,0 +1,130 @@
+{
+  "taskId": "MATURE06-04",
+  "parent": "WPF-MATURE-06",
+  "manager": "d01_owner",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+  "branch": "codex/web-connection-actionable",
+  "base": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "sourceTarget": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71466,
+      "sha256": "9b19ca26c7a30e23ba1e820f46e4a83eb054423d12c2bd444ff8bf753fe2e0d6"
+    },
+    {
+      "path": "apps/web/src/connection/Connection.tsx",
+      "bytes": 3662,
+      "sha256": "4a03c73e0665f7ec8337a936cb081841d66f37835be00d32090854458f97cc3d"
+    },
+    {
+      "path": "apps/web/src/connection/presentation.ts",
+      "bytes": 2689,
+      "sha256": "d48592de56d919105e570677ab52157d7fd277df805bba1ae360bc721fcdac6d"
+    },
+    {
+      "path": "apps/web/test/connection-presentation.test.ts",
+      "bytes": 3383,
+      "sha256": "6285a09fb9531a34893796c00bedef4dec3ae8b6eea5c542e036d1dfe1a4344a"
+    }
+  ],
+  "checks": {
+    "direct": {
+      "selected": 7,
+      "passed": 7,
+      "failed": 0
+    },
+    "affectedTypes": {
+      "exitCode": 0,
+      "flags": [
+        "strict",
+        "noUncheckedIndexedAccess",
+        "exactOptionalPropertyTypes",
+        "noEmit",
+        "skipLibCheck=false"
+      ],
+      "scope": "Connection/presentation/test plus direct Button/utils and installed declarations; NOT entire App import graph"
+    },
+    "runs": [
+      {
+        "kind": "direct-1",
+        "sourceHead": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+        "startedAt": "2026-10-08T01:12:57.658142+00:00",
+        "finishedAt": "2026-10-08T01:12:57.733366+00:00",
+        "outerCompletedAt": "2026-10-08T01:12:57.743243+00:00",
+        "chargeMs": 187,
+        "exitCode": 0,
+        "streams": {
+          "stdout": {
+            "eof": true,
+            "bytes": 750,
+            "dropped": 0
+          },
+          "stderr": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          }
+        },
+        "pid": 62273,
+        "pgid": 62273,
+        "freshPidPgidAbsentAt": "2026-10-08T01:14:42.347730+00:00",
+        "scratchAbsent": true,
+        "evidence": "local-results/direct-1/terminal.json"
+      },
+      {
+        "kind": "types-1",
+        "sourceHead": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+        "startedAt": "2026-10-08T01:13:06.790136+00:00",
+        "finishedAt": "2026-10-08T01:13:08.035272+00:00",
+        "outerCompletedAt": "2026-10-08T01:13:08.040596+00:00",
+        "chargeMs": 1339,
+        "exitCode": 0,
+        "streams": {
+          "stdout": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          },
+          "stderr": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          }
+        },
+        "pid": 67605,
+        "pgid": 67605,
+        "freshPidPgidAbsentAt": "2026-10-08T01:14:42.347730+00:00",
+        "scratchAbsent": true,
+        "evidence": "local-results/types-1/terminal.json"
+      }
+    ],
+    "phaseLimitMs": 60000,
+    "spentMs": 1526,
+    "state": "CLOSED"
+  },
+  "runtime": "NO_PG_HTTP_CHROME_PROVIDER",
+  "browser": "NOT_RUN",
+  "main": "NOT_INTEGRATED",
+  "review": "PENDING_INDEPENDENT_REVIEW",
+  "invariants": [
+    "App outside extracted Connection function and added import is byte-identical",
+    "ConnectionSession and BrowserWorkspace are unchanged",
+    "original URL/password labels and callback names remain",
+    "token reset requested before explicit existing callback; no automatic credential reads/persistence",
+    "read/submit pending guard preserves focus via aria-disabled",
+    "onLogout/onDiscardRetained remain original explicit callbacks",
+    "error alert and settings.sections seam retained"
+  ],
+  "limitations": [
+    "No authoritative first-login/expiry reason exists; unauthenticated copy stays neutral",
+    "Pure callback-order evidence is not mounted React state or real authentication evidence",
+    "Keyboard, retained-work user flow, themes and 390px layout need a separately authorized mounted check",
+    "No arbitrary dashboard URL or credential endpoint is inferred"
+  ],
+  "rawIndex": "local-results/index.json",
+  "rawFiles": 30,
+  "rawBytes": 61950,
+  "recordedAt": "2026-10-08T01:14:42.347730+00:00"
+}

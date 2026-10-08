@@ -1,0 +1,32 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-08T01:13:06.627Z",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/connection/Connection.tsx",
+        "apps/web/src/connection/presentation.ts",
+        "apps/web/test/connection-presentation.test.ts",
+        "docs/evidence/wpf-mature06-connection-ux"
+      ],
+      "state": "active",
+      "branch": "codex/web-connection-actionable",
+      "origin": "new",
+      "taskId": "MATURE06-04",
+      "worker": "w01_owner",
+      "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+      "createdAt": "2026-10-08T01:09:14.432Z",
+      "updatedAt": "2026-10-08T01:09:14.432Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "fullLedgerConflictCheck": [],
+  "scopeLimitedSnapshot": true
+}

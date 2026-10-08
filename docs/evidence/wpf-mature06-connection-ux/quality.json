@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-08T01:14:42.347730+00:00",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "method": "Bounded design explicitly approved by manager before implementation; no new installation. Clean-code review of naming, one presentation responsibility, callbacks/error propagation and duplicate prevention.",
+  "findings": [],
+  "checks": "7 behavior cases + affected strict pass; independent review pending",
+  "knownLimitations": [
+    "No authoritative first-login/expiry reason exists; unauthenticated copy stays neutral",
+    "Pure callback-order evidence is not mounted React state or real authentication evidence",
+    "Keyboard, retained-work user flow, themes and 390px layout need a separately authorized mounted check",
+    "No arbitrary dashboard URL or credential endpoint is inferred"
+  ],
+  "credentialBoundary": "No credential read or log; synthetic token literals only in pure test",
+  "initialContextGitAdd": "Sparse add without --sparse was refused with no commit; corrected explicitly within same metadata handoff. No product changes."
+}
