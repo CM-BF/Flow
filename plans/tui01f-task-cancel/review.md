@@ -1,8 +1,8 @@
-# 当前 R2 薄启动准备：待独立审查
+# 当前 R2 薄启动准备：限定批准
 
 Review target commit: 8cc10177f2dfa03f89d598260f742a5befd14d29
 
-NOT_REVIEWED。仅 own R2 caller/input/direct-test；[单份候选](../../docs/evidence/tui01f/web-handoff/r2-preparation.json)引用原741输入，不复制旧源。原5不同入口例/8选择与1真实受限import，首红及定向修正保留；0PG/Chrome/PTY/provider。请核单次namespace、真实OPS14委托、完整source/permit绑定、原counter限制与需要的真实功能窗口。以下历史批准不自动批准该新入口。
+APPROVED_LIMITED_PREPARATION。唯一审查时间2026-10-08T00:04:43.883Z；Lead核固定真实入口/绑定，assignment_review独立核生命周期，0P1/P2，reviewer0重跑；[I02原件](../../../m2-integration/docs/evidence/i02/tui01f-r2-preparation-review.json)，main1b9eda58f。批准仅 own R2 caller/input/direct-test；[单份候选](../../docs/evidence/tui01f/web-handoff/r2-preparation.json)引用原741输入，不复制旧源。原5不同入口例/8选择与1真实受限import，首红及定向修正保留；0PG/Chrome/PTY/provider。请核单次namespace、真实OPS14委托、完整source/permit绑定、原counter限制与需要的真实功能窗口。本次批准不授权实际窗口；原历史批准和失败仍各按原范围保留。
 
 # 当前 TUI01F-04 terminal观察增量
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:59:03.635Z；原c612/main421b接收保持，R2准备尚未main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:06:46Z；R2限定准备审查回执已main1b9eda58f，实际旅程未运行 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 原基线a89f42ab57acb53657af6a2d1b745dabd4d50aa5；本段起始196d705913afefd102b31e451baf8cfd7c4975cf；新source 8cc10177f2dfa03f89d598260f742a5befd14d29 |
-| 工作树dirty状态 | 原四源和失败冻结；本次R2准备/原始局部记录与own metadata，交付提交后clean |
+| 工作树dirty状态 | R2 source/固定准备与原raw冻结；本次仅own审查/等待metadata，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | 新5不同Python入口例8选择+1真实受限Node导入，2760ms/4039B；首floor fixture失败及HOLDER掩盖保留，定向修正；四组absent/双EOF/空scratch确删。0PG/Chrome/PTY/provider。旧F04实际1/0仍FAIL。 |
-| 已集成main状态 / HEAD | 421b2e89f10225bd37d1928ef2b627c6a375b76a；c612观察修复已精确接收，原d147准备/03历史接收保持；完整旅程仍原1/0失败。 |
+| 已集成main状态 / HEAD | 原c612四源已main421b2e89f10225bd37d1928ef2b627c6a375b76a；R2限定准备独审回执已main1b9eda58f，own source8cc/packet43dc由Git引用，不冒新实际能力。 |
 | 实现目标 | 8cc10177f2dfa03f89d598260f742a5befd14d29 |
 | 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r2-run.test.py, docs/evidence/tui01f/web-handoff/r2-inputs.json |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 下一次终端与网页接续的启动入口已固定，准备交独立审查；旧终端诊断修复和原失败保留。 |
-| 下一可用交付 | 独审后，在新功能窗口完成真实终端与网页交替操作同一会话。 |
-| 当前阻塞 | ACTIVE: 等待本次固定准备独审与新的数据库、浏览器和终端功能窗口；当前没有实际旅程运行。 |
+| 当前产出 | 下一次终端与网页接续入口已通过独立审查，旧失败和诊断修复保留。 |
+| 下一可用交付 | 在新的受控窗口中，完成真实终端与网页交替操作同一会话。 |
+| 当前阻塞 | ACTIVE: 等待新的数据库、浏览器和终端功能窗口；当前浏览器窗口由其他任务使用，本任务尚未启动。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：新R2 source等待独审；c612限定APPROVED与旧实际FAIL/独立cleanup保持。 |
-| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-07T23:44:15.712Z fresh核同owner/WT/branch，7原scope；本段仅3实验源/fixture/自有记录 |
+| Review | [review.md](review.md)：R2 APPROVED_LIMITED_PREPARATION，Lead固定入口/绑定与assignment_review生命周期双审0P1/P2；实际未授。 |
+| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-08T00:06:46.936Z fresh核同owner/WT/branch/exact7，原scope未变 |
 | 架构影响 | 仅实验启动装配改用已审OPS14；原journey/fixture拥有任务与清理，生产controller/权限/调度不变。固定af51/d629/ec30不覆盖已发布779全设置/恢复。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -106,4 +106,7 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | TUI04-R2-LOCAL-FLOOR | UNKNOWN | 2026-10-07T23:51:46.610Z | 资源 | ARC选中后普通增长须单列；Lead核完整floor并准入。开始UTC无独立时戳，不反推。 | 本轮Lead协调消息与local01 reservation |
-| TUI04-R2-REVIEW | 2026-10-07T23:59:03.635Z | OPEN | 审查 | 固定薄入口/局部证据待独审；实际旅程另需新窗口。 | r2-interface.md / r2-preparation.json |
+| TUI04-R2-REVIEW | 2026-10-07T23:59:03.635Z | 2026-10-08T00:04:43.883Z | 审查 | 固定薄入口/局部证据获限定独审；实际旅程仍需新窗口。 | I02 tui01f-r2-preparation-review.json |
+| TUI04-R2-WINDOW | 2026-10-08T00:06:46Z | OPEN | 资源 | 权威账本显示其他浏览器运行，尚无匹配TUI新grant；匹配选择、同次fresh身份/资源及预检pool关闭后才可单次运行。 | Web current.json本次只读观察；Lead条件派工 |
+
+2026-10-08T00:06:46Z：已实读唯一[R2独审](../../../m2-integration/docs/evidence/i02/tui01f-r2-preparation-review.json)，APPROVED_LIMITED_PREPARATION / findings[]；main1b9eda58f。43dc固定19/8绑定与source8cc保持，741继承输入不复制、局部不重跑。Lead接受1,499,463,680B前瞻及非硬cap/非原子计量限制；真实运行仍待新grant和同次source/runtime/claim/unusednamespace/free/PG可用42及probe关闭。此刻ARC_CSS_MATERIAL_ACTUAL_RUNNING，无TUI授权。仅更新own状态/审查，0新增工程child/PG/Chrome/PTY/provider/个人操作；原FAIL/KEEP与历史task开工UNKNOWN不变。
