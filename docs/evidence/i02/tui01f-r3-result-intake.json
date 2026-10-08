@@ -1,0 +1,57 @@
+{
+  "kind": "I02_TUI01F_R3_LIMITED_RESULT_INTAKE",
+  "reviewedAt": "2026-10-08T02:15:18.909Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_RESULT_FIDELITY_NOT_FULL_JOURNEY",
+  "P1": 0,
+  "P2": 0,
+  "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "delivery": "9435dca65c5b123639976365254359529c6fb955",
+  "executionHead": "0b6d952bda939b16aeed1ab740d0625518eb89b2",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "manifest": {
+    "path": "docs/evidence/tui01f/web-handoff/r3-result-manifest.json",
+    "bytes": 5806,
+    "sha256": "322c426296ddd1945c5a8f550531ce4a9d4d2d5098a08b6db7486ac5170cfbb7",
+    "fixedGitAndCurrentBindings": 22,
+    "boundBytes": 227903,
+    "mismatches": []
+  },
+  "facts": {
+    "actualStart": "2026-10-08T02:08:17.814Z",
+    "terminal": "2026-10-08T02:08:36.845Z",
+    "runtimeReturn": "2026-10-08T02:11:39.152Z",
+    "elapsedMs": 18922,
+    "selected": 1,
+    "passed": 0,
+    "exit": 1,
+    "functionalWorkPassed": true,
+    "primaryFailure": "fixture-close/groups unknown",
+    "provider": 0,
+    "personal": 0,
+    "retry": 0
+  },
+  "acceptedObservations": [
+    "Saved actual admission matches approved caller/source, same-call claim and unused namespace, free above complete floor, PG preflight closed before launch.",
+    "Actual PTY and production Web fixture observe conflict preserving draft, one cancellation of A, Web continuation B, TUI recovery and exit without cancellation; B subsequently succeeded with verification passed and visible final text.",
+    "Nine PTY events, 22 checkpoints and four DOM states are observations within one selected journey, not extra passing tests.",
+    "Original fixture records groups unknown. Terminal separately closed with exit0; runner/proxy/center stopped, connections empty and admin closed.",
+    "Later exact eight PID/five group ESRCH and dual EOF plus empty target DB connections support runtime return; they do not rewrite original failed cleanup."
+  ],
+  "retention": {
+    "databaseOid": 1377665,
+    "database": "flow_tui01f_9550d9b37544",
+    "private": "KEEP",
+    "originalGroups": "UNKNOWN",
+    "returnDirectoryIdentity": "UNKNOWN due to missing projection field; no filesystem failure or removal inferred",
+    "deletionPerformed": false
+  },
+  "limitations": [
+    "Full journey remains one selected/zero passed; TUI01F and TUI-001 are not completed.",
+    "Original failed group and OS code were discarded; do not infer EPERM, zombie or cached rejection as the actual cause.",
+    "Synthetic adapter fixture is not native provider or current personal deployment validation.",
+    "Old R1/R2 failures and KEEP unchanged; no rerun, private content read or process/DB probe by reviewer.",
+    "Original raw remains once at fixed canonical Git paths; main receives only this provenance."
+  ],
+  "next": "Original owner: bounded saved-evidence/lifecycle diagnostic and minimum direct consumer repair, no automatic full PG/Chrome rerun."
+}

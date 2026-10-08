@@ -1,0 +1,112 @@
+{
+  "kind": "I02_O16_EXPIRED_PLAN_CONTINUATION_INTAKE",
+  "reviewedAt": "2026-10-08T02:19:06.965Z",
+  "reviewer": "assignment_review / gpt-6-astra; intake by astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_EXPIRED_PLAN_CONTINUATION_SOURCE_AND_LOCAL_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "source": "5cf8a5dd529a77f7de054c2ed476cf62213af665",
+  "sourceDigest": "2d0afdf0757c123e8afaff8f0fc2a3b5b2d08f4c999c94d3417f67f5ccff34aa",
+  "delivery": "7edd6ea2269d5d682eedacfbdc3c9221f470a332",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "manifest": {
+    "path": "docs/evidence/o16/expired-plan-continuation/manifest.json",
+    "bytes": 7881,
+    "sha256": "b5ed3e6e45002f5874756b604774053bda297b83610aacf6df98656419a7d37a",
+    "verifiedBindings": 32,
+    "boundBytes": 184655,
+    "inheritedVerified": 2,
+    "runSourcePinsVerified": 28
+  },
+  "accepted": [
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.mjs",
+      "bytes": 12291,
+      "sha256": "157d57c0797e5e2732354171d2394f58d7ea6368ffc6a2ed9d60552d33750e37"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/continuation.test.mjs",
+      "bytes": 20139,
+      "sha256": "fbc5d96fc158f36721e16eecff8b55a3f83906940280ac2fd0fe05f0ea247665"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 20664,
+      "sha256": "ff4cfba299979ecdedc5f31e598505b7177129424c79ed2778ddce6c2fef4246"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 12974,
+      "sha256": "1d6da8d4024dfffe1871063aa5a5029bcaf40a9e7f47e942d10e3216b38c2dad"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "bytes": 8554,
+      "sha256": "6284d8fc6e34c07697e633062d3c1a44634ff2383401461ad973263b8ffff2a6"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 13216,
+      "sha256": "e298246df4654cb3acf7b8c37d096e649ae0c018d72f815b400694bd75afa875"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "bytes": 6882,
+      "sha256": "6e0d33f05980b78e55a54c58e2f594d8f4496b9f68cf495ec46cb0f7bd4d1b83"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/Interface.md",
+      "bytes": 4453,
+      "sha256": "17e3536c73fd74f421a93ae45f11d2f546bdfeff5768c2a023d0bc461fc89f7e"
+    },
+    {
+      "path": "docs/evidence/o16/expired-plan-continuation/source-delta.json",
+      "bytes": 3489,
+      "sha256": "4d64b966ac1b8d7aecf72d251784a277f303b75ff643f1f4c120ae2acbb6fe66"
+    }
+  ],
+  "reviewBasis": [
+    "Seven complete experiment source deltas, actual schema and public renew→shared old-pause wx→existing confirmAt/CAS reviewed.",
+    "Exact seven-file inverse proof reconstructs original complete source digest including 327 current files/39 dependencies; unlisted changes are rejected.",
+    "Old fifteen-minute expiry remains rejected. New run/state/grant preserves old report/pause/private input; origin-level one-shot prevents alternate new runs.",
+    "Fresh read-only DB checks and original confirmation CAS retain source/version/profile/task/material authority. Actual SQL and old resource reattachment have not run.",
+    "Native children require fresh validated v2 permit bound to actual confirmation; original slots, limits, Read-only policy and conservative unknown remain.",
+    "Adopted final acceptance retains original DB and both private directories; no deletion authority inferred."
+  ],
+  "localResult": {
+    "distinctPassed": 15,
+    "supervisedChildren": 4,
+    "elapsedMs": 6691,
+    "rawBytes": 10595,
+    "failuresPreserved": 2,
+    "lastReturnAt": "2026-10-08T02:12:06.112396Z",
+    "successfulSelections": 16,
+    "allFourGroups": "absent",
+    "dualEOF": true,
+    "scratch": "4 exact empty roots removed after identity checks",
+    "rerunByReviewer": false
+  },
+  "integration": "Nine exact reviewed paths; all previous main images equal original e5c7 source or are absent. No new composition fix or engineering rerun. Fixed-source canonical remains the execution authority; moving main is not an actual native candidate.",
+  "limits": [
+    "Actual renew/confirmation/old DB identity/real SQL/children/independent semantic acceptance NOT_RUN.",
+    "Historical four SDK calls remain sealed; no new grant, permit or model budget.",
+    "Two local failures and earlier model FAIL/KEEP unchanged; this source approval does not upgrade full O16.",
+    "Original local raw is retained once at canonical Git; no full source closure copied.",
+    "Candidate-only fixed f4b8 documents 12 steady plus 1 closing transient; at least29 available including16 margin. Source/local result unchanged; not a measured peak or remote-zero barrier."
+  ],
+  "candidateOnlyDelta": {
+    "delivery": "f4b8ffbc99a8b16299687f4f76cd8861ab98ed75",
+    "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+    "decision": "APPROVED_METADATA_CONSERVATIVE_CONNECTION_BUDGET_ONLY",
+    "manifestBytes": 8661,
+    "manifestSHA256": "55e45e2ef858f70547ff41f8ac264b319dab35d923fe8c39006173d24ba434fd",
+    "boundBytes": 184984,
+    "scope": "candidate/manifest/ownstatus only; source and local raw unchanged",
+    "configuredSteady": 12,
+    "closingTransientAllowance": 1,
+    "reservedConnections": 13,
+    "freshRequiredAvailable": 29,
+    "notMeasuredPeak": true,
+    "noNewRuntimeOrAuthorization": true
+  }
+}

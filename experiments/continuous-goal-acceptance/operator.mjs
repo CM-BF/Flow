@@ -82,7 +82,7 @@ export async function supervise({ child, sample, persist, markStop, outputFailur
 export function operationArguments(args) {
   if (args.length === 1 && args[0] === '--rehearse') return { phase: 'rehearse' };
   const [flag, run, file] = args, phase = flag?.slice(2);
-  assert(args.length === 3 && flag === `--${phase}` && ['plan', 'confirm', 'children', 'decide'].includes(phase));
+  assert(args.length === 3 && flag === `--${phase}` && ['plan', 'confirm', 'renew', 'children', 'decide'].includes(phase));
   runPaths(run, phase); assert(typeof file === 'string' && file.length > 0);
   return { phase, run, file: resolve(file) };
 }
@@ -98,7 +98,7 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   assert.equal(process.env.FLOW_O16_PG_WINDOW, 'approved-one-shot');
   const space = await statfs(ROOT); assert(space.bavail * space.bsize >= BOUNDS.startBytes);
   const run = selectedRun ?? `rehearsal-${randomUUID()}`, paths = runPaths(run, phase);
-  if (phase === 'plan' || phase === 'rehearse') {
+  if (phase === 'plan' || phase === 'rehearse' || phase === 'renew') {
     await mkdir(join(paths.operatorRoot, '..'), { recursive: true, mode: 0o700 });
     await mkdir(paths.operatorRoot, { mode: 0o700 }); // Existing namespace is never reused, including partial prior reservations.
     await assert.rejects(lstat(paths.evidence), { code: 'ENOENT' });
@@ -108,7 +108,7 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   if (phase !== 'rehearse') await mkdir(paths.operator, { mode: 0o700 });
   await writeRecord(join(paths.operator, 'reservation.json'), { kind: 'flow.o16.operator.v1', run, sourceDigest: identity.digest,
     base: identity.base, phase, startedAt: new Date().toISOString(), bounds: BOUNDS, outcome: 'unknown',
-    nativeQueries: phase === 'rehearse' || phase === 'confirm' || phase === 'decide' ? 0 : 'not-started' }, { exclusive: true });
+    nativeQueries: ['rehearse', 'confirm', 'renew', 'decide'].includes(phase) ? 0 : 'not-started' }, { exclusive: true });
   const watchdog = await startTotalDeadline({ directory: paths.operator, run, sourceDigest: identity.digest });
   await writeRecord(join(paths.operator, 'watchdog.json'), { pid: watchdog.pid, deadline: watchdog.deadline, state: 'armed' }, { exclusive: true });
   const handles = ['stdout.txt', 'stderr.txt'].map(name => openSync(join(paths.operator, name), 'wx', 0o600));

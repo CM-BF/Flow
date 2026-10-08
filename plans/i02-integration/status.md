@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:55:25.773Z / main254ce9579；已接收原生规划限定实证与TUI fixture修复，R3 caller本次限定独审收口。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:15:18.909Z / main03527839f；TUI真实双端功能/失败收尾限定结果已审，O16明确续接源码限定独审通过。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main254ce9579；本段仅独立审查receipt和自身status，不改变产品或个人运行版本。 |
-| 工作树dirty状态 | 仅本批两份自身metadata；两个原有未知__pycache__保留不纳入。 |
+| 工作基线 / HEAD | main03527839f；本段限定结果接收与原生续接独审，产品/实际运行结论分别记录。 |
+| 工作树dirty状态 | 仅本批自身接收记录与已审输入；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED: 原生规划1次真实调用结果忠实性、TUI fixture4项及R3 caller4项各自限定独审；本段无工程重测。 |
-| 已集成main状态 / HEAD | main254ce9579已接收原生规划结果限定独审；TUI fixture三源已main89a27b983。R3实际旅程尚未启动。 |
+| 检查状态 | PASSED: TUI R3原件忠实性限定独审；实际旅程仍1选0过，功能完成、groups未知保留。O16续接7源/15不同局部检查已独审，原两次失败保留。 |
+| 已集成main状态 / HEAD | main03527839f含此前原生规划实证与TUI caller；本批接收R3限定结果与O16九条已审路径，未重跑产品。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 真实规划已产生可核对的两步计划；终端双端验收的输入与启动入口已修复并完成限定审查。 |
-| 下一可用交付 | 在独立资源段验证终端与网页接续，同时实现已保存计划的明确阶段续接。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 终端与网页的接续功能已实际到达；验收收尾仍有未知，原失败记录保留。 |
+| 下一可用交付 | 收口跨端验收的进程观察，并接收已保存目标计划的明确续接实现。 |
+| 当前阻塞 | ACTIVE: 跨端验收的原始收尾缺少具体进程组错误；目标续接已审，实际新阶段确认和两次子任务执行尚无新额度。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -590,3 +590,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 ### 2026-10-08T01:55:25.773Z 已审准备收口
 
 TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收记录](../../docs/evidence/i02/tui01f-r3-caller-review.json)。原始来源留在唯一canonical与固定Git，不复制741输入或运行原件。实际双端旅程等待新的资源选择与同call准入；旧R2失败不改。O16第四次规划结果已由main254ce接收，确认与children仍未授权，不以规划成功冒完整目标交付。
+
+2026-10-08T02:15:18.909Z：TUI R3限定原件独审完成，22固定绑定/227903B逐hash一致；实际功能workPassed但整次1选0过，仅groups unknown，后置runtime RETURN不改原FAIL/KEEP。见[tui01f-r3-result-intake](../../docs/evidence/i02/tui01f-r3-result-intake.json)。当前O16续接独审并行，0新工程运行/模型调用；本片收录不关闭完整TUI或FLOW。
+
+2026-10-08T02:19:06.965Z：O16过期提案新阶段7源/Interface/来源差量共9路径由原限定独审批准，main旧像逐条等于e5c7或不存在，现精确接收；15不同局部绿/两红均留原件，0真实renew/模型/PG。见[o16-expired-plan-continuation-intake](../../docs/evidence/i02/o16-expired-plan-continuation-intake.json)。原四SDK与旧过期pause永久保留，新阶段授权另待GO具体决定。

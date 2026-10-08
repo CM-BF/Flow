@@ -118,6 +118,7 @@ export async function consumeSlot(reservation, slot, assignment, { now = Date.no
 /** Only an already validated fresh v2 handoff can open the native environment seam. */
 export function assertNativePermit(permit, environmentDigest) {
   check(validated.has(permit) && permit.kind === 'flow.o16.phase-permit.v2' && hex(environmentDigest)
-    && permit.phase === 'plan' && permit.environmentDigest === environmentDigest && Date.parse(permit.expiresAt) > Date.now(),
+    && (permit.phase === 'plan' || permit.phase === 'children' && permit.confirmation)
+    && permit.environmentDigest === environmentDigest && Date.parse(permit.expiresAt) > Date.now(),
     'A fresh source/environment-bound native permit is required; JSON login claims are not authorization.');
 }

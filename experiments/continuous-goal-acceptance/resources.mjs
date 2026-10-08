@@ -10,6 +10,7 @@ import { FlowClient } from '../../packages/client/src/index.ts';
 import { assertCleanupBudget, measureRun } from './operator-bounds.mjs';
 import { readRecord, writeRecord } from './records.mjs';
 import { stageSpec, pauseReceipt, validatePause, settleStage } from './stage-policy.mjs';
+import { assertContinuation, continuationState, verifyContinuationDatabase } from './continuation.mjs';
 
 const ADMIN = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
 const LIMITS = { max: 1, connectionTimeoutMillis: 2000, statement_timeout: 5000, query_timeout: 6000 };
@@ -40,10 +41,13 @@ export async function allocateRuntimeDirectory(parent) {
   return { path, dev: info.dev, ino: info.ino };
 }
 /** Owns only a random marked DB and its recorded dev/ino temporary directory. No existing service is reconfigured. */
-export async function privateCenter(output, source, { resume = false, stage, temporaryParent = tmpdir() } = {}) {
+export async function privateCenter(output, source, { resume = false, stage, temporaryParent = tmpdir(), continuation } = {}) {
+  if (continuation) { assert(!resume && stage === 'renew'); assertContinuation(continuation, source); }
   const gate = await resourceGate(), file = join(output, 'resources.json');
   let facts = resume ? await readRecord(file) : { kind: 'flow.o16.private-resources.v1', database: `flow_o16_${randomUUID().replaceAll('-', '')}`,
     marker: randomUUID(), sourceDigest: source.digest, startedAt: new Date().toISOString(), gate, creationRequested: false, created: false, marked: false };
+  if (continuation) Object.assign(facts, { database: continuation.packet.resources.database, marker: continuation.packet.resources.marker,
+    marked: true, origin: continuation.grant.origin, retention: continuation.grant.retention, created: false });
   assert(facts.kind === 'flow.o16.private-resources.v1' && /^flow_o16_[a-f0-9]{32}$/.test(facts.database)
     && /^[a-f0-9-]{36}$/.test(facts.marker) && facts.sourceDigest === source.digest && !facts.databaseDropped);
   // Validate review material before creating a pool or reconnecting. A partial claim stays consumed.
@@ -54,7 +58,9 @@ export async function privateCenter(output, source, { resume = false, stage, tem
   let app, credentials, client, origin;
   const databaseUrl = ADMIN.replace(/postgres$/, facts.database);
   async function ownership() {
-    assert(facts.marked && facts.directory); await assertDirectory(facts.directory);
+    assert(facts.marked && (facts.directory || facts.origin));
+    if (facts.directory) await assertDirectory(facts.directory);
+    if (facts.origin) await assertDirectory(facts.origin.directory);
     const row = (await admin.query("SELECT shobj_description(oid,'pg_database') AS marker,pg_database_size(oid)::text AS bytes FROM pg_database WHERE datname=$1", [facts.database])).rows[0];
     assert.equal(row?.marker, facts.marker); facts.databaseBytes = Number(row.bytes);
   }
@@ -77,7 +83,10 @@ export async function privateCenter(output, source, { resume = false, stage, tem
   }
   async function start(automaticQueueScan) {
     if (review) assert(Date.now() < Date.parse(review.reviewUntil), 'Review expired before center restart; retain resources.');
-    assert(!app && typeof automaticQueueScan === 'boolean'); await ownership(); facts.serverClosed = false;
+    assert(!app && typeof automaticQueueScan === 'boolean'); await ownership();
+    if (continuation) { assertContinuation(continuation, source); assert.equal(automaticQueueScan, false);
+      await closedConnections(); await freshContinuation(); }
+    facts.serverClosed = false;
     await checkpoint('before-center-start');
     app = await createServer({ databaseUrl, ownerToken: credentials.ownerToken, leaseMs: 20000, automaticQueueScan });
     origin = await app.listen({ host: '127.0.0.1', port: 0 });
@@ -85,6 +94,8 @@ export async function privateCenter(output, source, { resume = false, stage, tem
     return { client, origin };
   }
   async function finish({ destroy, workersStopped }) {
+    // A new stage never acquires deletion rights over an archived origin by adopting it.
+    assert(!destroy || !facts.origin, 'Adopted origin requires separate cleanup authorization.');
     const errors = []; facts.workersStopped = workersStopped;
     if (facts.workerProcess === 'allocation-unknown') errors.push('worker-allocation-unconfirmed');
     for (const row of facts.workerProcesses ?? []) {
@@ -113,10 +124,25 @@ export async function privateCenter(output, source, { resume = false, stage, tem
     facts.errors = errors; facts.endedAt = new Date().toISOString(); await checkpoint(errors.length ? 'unknown-retained' : destroy ? 'cleaned' : 'paused-owned-resources');
     assert.deepEqual(errors, []); return structuredClone(facts);
   }
+  async function freshContinuation() {
+    const pool = new Pool({ connectionString: databaseUrl, ...LIMITS }); let first;
+    try { facts.continuationFresh = await verifyContinuationDatabase(pool, continuation); }
+    catch (error) { first = error; throw error; }
+    finally { try { await pool.end(); } catch (error) { if (!first) throw error; } }
+  }
   try {
     if (resume) {
       assert(facts.phase === 'paused-owned-resources'); await ownership(); await closedConnections(); facts.adminClosed = false;
-      credentials = await readRecord(join(facts.directory.path, 'credentials.json'));
+      credentials = await readRecord(join((facts.origin?.directory ?? facts.directory).path, 'credentials.json'));
+    } else if (continuation) {
+      await ownership(); await closedConnections(); await freshContinuation();
+      credentials = await readRecord(join(facts.origin.directory.path, 'credentials.json')); // Existing synthetic Flow owner token, in memory only.
+      facts.directory = await allocateRuntimeDirectory(temporaryParent); await checkpoint('continuation-directory-created');
+      await mkdir(join(facts.directory.path, 'intents'), { mode: 0o700 });
+      const state = continuationState(continuation, source);
+      await writeRecord(join(facts.directory.path, 'journey.json'), state, { exclusive: true });
+      await writeRecord(join(output, 'continuation.json'), { grant: continuation.grant,
+        fresh: facts.continuationFresh, oldRecordsUnchanged: true, nativeQueries: 0 }, { exclusive: true });
     } else {
       assert.deepEqual((await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [facts.database])).rows, []);
       facts.creationRequested = true; await checkpoint('before-create'); await admin.query(`CREATE DATABASE "${facts.database}"`);

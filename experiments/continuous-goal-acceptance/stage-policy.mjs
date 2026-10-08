@@ -6,6 +6,7 @@ export const REVIEW_MS = 15 * 60_000;
 const STAGES = Object.freeze({
   plan: { file: 'plan.json', outcome: 'actual-proposal-awaiting-owner', state: 'planned', next: 'confirm' },
   confirm: { file: 'confirmation.json', outcome: 'confirmed-awaiting-separate-children-permit', state: 'confirmed', next: 'children' },
+  renew: { file: 'confirmation.json', outcome: 'confirmed-awaiting-separate-children-permit', state: 'confirmed', next: 'children' },
   children: { file: 'children.json', outcome: 'artifacts-awaiting-independent-review', state: 'awaiting-independent-review', next: 'decide' },
   decide: { file: 'decision.json' }, rehearse: { file: 'decision.json' },
 });
@@ -91,6 +92,11 @@ export function stagePassed(phase, report, receipt) {
   if (spec.next) return report?.outcome === spec.outcome && receipt?.phase === phase && receipt?.next === spec.next
     && receipt.reportDigest === recordDigest(report) && receipt.resourcesDigest === recordDigest(report.resources)
     && Date.now() < Date.parse(receipt.reviewUntil);
+  if (phase === 'decide' && report?.retention === 'keep-origin-database-and-both-directories'
+    && report.resources?.origin && report.resources.retention === report.retention) {
+    try { closure(report.resources); } catch { return false; }
+    return ['independently-accepted', 'independently-rejected'].includes(report.outcome);
+  }
   return ['independently-accepted', ...(phase === 'decide' ? ['independently-rejected'] : [])].includes(report?.outcome)
     && report.resources?.databaseDropped === true && report.resources?.directoryRemoved === true && report.resources?.errors?.length === 0;
 }
