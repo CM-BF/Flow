@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-08T01:55:25.773Z",
+  "kind": "LIMITED_INDEPENDENT_REVIEW",
+  "taskId": "TUI01F",
+  "reviewer": "astra_ultra_execution_lead",
+  "model": "gpt-6-astra",
+  "decision": "APPROVED_LIMITED_CALLER_INPUT_AND_LOCAL_RESULT",
+  "blockingP1P2": 0,
+  "source": "bdf11c06ef7cef843b0a52f456408bdb1f539be6",
+  "delivery": "d19f7129a17fd76b0d4f3cb0966885b43e1af944",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "manifest": {
+    "path": "docs/evidence/tui01f/web-handoff/r3-preparation.json",
+    "bytes": 6450,
+    "sha256": "f313d56a68bed216188128d053c8217cb49f1ae87c7a5984fad29f1a0f83f757"
+  },
+  "verification": {
+    "fixedGitAndCurrentBindings": 16,
+    "bindingBytes": 71250,
+    "mismatches": [],
+    "selected": 4,
+    "passed": 4,
+    "rawOutputBytes": 654,
+    "elapsedMs": 682,
+    "ownGroup": "absent",
+    "dualEOF": true,
+    "actualJourney": 0,
+    "rerun": false
+  },
+  "scope": [
+    "docs/evidence/tui01f/web-handoff/r2-run.py",
+    "docs/evidence/tui01f/web-handoff/r3-run.py",
+    "docs/evidence/tui01f/web-handoff/r3-run.test.py",
+    "docs/evidence/tui01f/web-handoff/r3-inputs.json",
+    "docs/evidence/tui01f/web-handoff/r3-permit.pending.json"
+  ],
+  "reason": "Trusted immutable RunSpec reuses the existing fixed admission and OPS14 caller. Original R2 defaults and once/identity rejection remain; actual R3 dispatch is exercised through input verification, permit, fsync and OPS14 validation, stopping only before supervise. Fixed source and evidence remain in canonical Git; no duplicate 741-file closure or raw copied.",
+  "actualAdmission": "PENDING_NEW_D01_SELECTION_AND_SAME_CALL_FRESH_CHECKS",
+  "limits": [
+    "Not a real PG/PTY/browser result.",
+    "Old R2 FAIL/KEEP and actual unknown cause remain.",
+    "No new provider/personal service operation.",
+    "Fixture source already independently approved and integrated main89a27b983.",
+    "Same-call fresh claim/pins/namespace/complete floor/PG capacity/preflight-pool close required; no automatic retry."
+  ],
+  "resourceRequest": {
+    "logicalId": "TUI01F04-REAL-HANDOFF-R3-ONCE",
+    "workSeconds": 150,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "planningGrowthBytes": 1499463680,
+    "PGConnections": 13,
+    "minimumPGAvailable": 42,
+    "Chrome": 1
+  }
+}

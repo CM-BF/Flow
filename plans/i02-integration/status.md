@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:32:11.573Z / main214319132；O16实验环境最小修复和6项直接结果已独审，本批受控接收。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:55:25.773Z / main254ce9579；已接收原生规划限定实证与TUI fixture修复，R3 caller本次限定独审收口。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main61ca12e7d5aa5a50038b1df4a65208d22e41b881；仅已审来源登记和自身接收记录，个人发布版本不变 |
-| 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
+| 工作基线 / HEAD | main254ce9579；本段仅独立审查receipt和自身status，不改变产品或个人运行版本。 |
+| 工作树dirty状态 | 仅本批两份自身metadata；两个原有未知__pycache__保留不纳入。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED: VAR/CENTER组合strict0、精确9/9已独审；TUI R2真实1选中0通过，失败原件已独审，未重跑。 |
-| 已集成main状态 / HEAD | main866f0a9c0含插件验证客户端/受理身份六源及215登记；实际4320在01:13:24.689Z已显示215来源，个人e15/Web779保持历史已发布事实。 |
+| 检查状态 | PASSED: 原生规划1次真实调用结果忠实性、TUI fixture4项及R3 caller4项各自限定独审；本段无工程重测。 |
+| 已集成main状态 / HEAD | main254ce9579已接收原生规划结果限定独审；TUI fixture三源已main89a27b983。R3实际旅程尚未启动。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 原生规划验收入口已显式使用可见既有登录的正常HOME，私有配置、材料和工具权限保持；零模型检查及独立审查已完成。 |
-| 下一可用交付 | 用固定修复候选验证一次真实规划；现仅缺该新模型调用的独立额度与当时资源准入，历史三次查询不复用。 |
+| 当前产出 | 真实规划已产生可核对的两步计划；终端双端验收的输入与启动入口已修复并完成限定审查。 |
+| 下一可用交付 | 在独立资源段验证终端与网页接续，同时实现已保存计划的明确阶段续接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -586,3 +586,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T01:46:45.075Z：TUI01F固定8379三源码及直接类型配置获Lead独立限定APPROVED/0P1P2；4真实fixture→af51消费者与types原件通过，20绑定121904B逐fixed/current/hash一致。原R2失败/未知与type cache KEEP不变，真实双端旅程未重跑。精确接收与角色交接见docs/evidence/i02/tui01f-fixture-source-alignment-intake.json及tui01f-session-fixture-handoff-result.json；旧raw仅固定Git引用。
 
 2026-10-08T01:50:03.069Z：O16真实planner结果76a9获Lead限定忠实性APPROVED/0P1P2，26绑定59564B+2继承逐fixed/hash核验，实际1query累计4、两节点提案、0apply/child、运行资源RETURN；主线只接小原件引用，完整目标未完成。管理fe73三文档获assignment独立APPROVED_DOCS，原首次时间UNKNOWN及新备份恢复NOT_RUN保持。
+
+### 2026-10-08T01:55:25.773Z 已审准备收口
+
+TUI01F R3固定caller/input及4项前置检查已限定独审，见[单份接收记录](../../docs/evidence/i02/tui01f-r3-caller-review.json)。原始来源留在唯一canonical与固定Git，不复制741输入或运行原件。实际双端旅程等待新的资源选择与同call准入；旧R2失败不改。O16第四次规划结果已由main254ce接收，确认与children仍未授权，不以规划成功冒完整目标交付。
