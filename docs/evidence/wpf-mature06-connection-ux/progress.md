@@ -31,3 +31,9 @@ RUNNING 2026-10-08T01:32:27.906470+00:00; single authorized component attempt co
 FAILED / exact RETURN 2026-10-08T01:33:07.664422+00:00; actual exit 1, 10515ms/60000 CLOSED. No reported completed groups or screenshots; no retry authorization. Failure diagnosis pending; original raw kept in /private/tmp/connection-ux-b1.
 
 Current actual receipt: [mounted failure](mounted-runs/connection-20261008-5108a5c2/intake.json), [raw index](mounted-runs/connection-20261008-5108a5c2/index.json). Failure is the fixture CJS-to-browser resolver, not a verified Connection product behavior failure. Preparation source/native review accepted; actual result fidelity review pending. Product and test source remain STOP.
+
+## Loader continuation — 2026-10-08
+
+New 01:35:48.999–02:05:48.999 bounded continuation; firstWrite 01:37:00.388397Z. Product 0f58 stays frozen. Source 3706efa67 keeps Vite noDiscovery but explicitly optimizes the five installed React entries. Six original groups remain; bounded progress/first-error/geometry diagnose a failed mount without input values.
+
+Worker syntax and final affected fixture/browser strict PASS (142+2338=2480ms; two children CLOSED). New browser attempts remain WAIT for exact native-lineage acceptance and manager lease. Old 10515ms failure is immutable and supplies no new budget. [Current intake](loader-continuation/intake.json), [local raw index](loader-continuation/local-results/index.json), [first failure review](loader-continuation/first-failure-review.json).

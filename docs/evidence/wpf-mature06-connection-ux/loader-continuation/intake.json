@@ -1,0 +1,26 @@
+{
+  "task": "MATURE06-04",
+  "at": "2026-10-08T01:39:37.798708+00:00",
+  "state": "SOURCE_PREPARED_FIRST_BROWSER_WAIT_NATIVE_LINEAGE_AND_MANAGER_LEASE",
+  "source": "3706efa67fe2727f7eb8f1b1c3db3d9b520f4d66",
+  "production": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "claim": "01103af8-051e-4282-bbbb-ba432e269ba6 v2 exact7",
+  "packet": "/private/tmp/connection-ux-b2",
+  "manifestSnapshotSha256": "333ba08b4ae45a15f6df76e0842b233722ed284353a538426baf5d8ee1c665da",
+  "parentSha256": "3d64c6bc080f1130dc2e91130834aaceaba20426731c12919b26c161fbf9d7ff",
+  "workerSha256": "5a9024706e707cd5ae7522b4b420bb89dbbae0a033e223d52044cb980b78b936",
+  "localResult": "worker syntax and affected new tests strict/noEmit passed,2480ms,2children CLOSED",
+  "priorFailureReview": "first-failure-review.json",
+  "scope": "Standalone production Connection with synthetic phase and async callback fixture; not live session/auth or full App recovery",
+  "lineage": "supervisor only4 exact identity literals; worker passive bounded diagnostics; tests optimize explicit installed React entries and report completed groups; all production unchanged",
+  "quality": {
+    "cleanCodeAt": "2026-10-08T01:39:37.799077+00:00",
+    "method": "Retained existing fixture and sibling lifecycle; named completed-group callback, safe bounded observer; avoided duplicate auth state authority or alternate loader shim.",
+    "unresolved": [
+      "browser result NOT_RUN",
+      "CJS optimizer runtime unverified",
+      "native acceptance for new exact packet pending"
+    ],
+    "errors": "secondary diagnostics cannot replace report.failure; safe name/category only, no exception text or credentials"
+  }
+}

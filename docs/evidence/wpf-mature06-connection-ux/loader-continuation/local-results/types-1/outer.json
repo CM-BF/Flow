@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-08T01:38:40.956762+00:00",
+  "exit": 0,
+  "elapsed": 2337.9774580243975,
+  "chargeMs": 2338,
+  "dualEOF": true,
+  "terminal": {
+    "state": "PASSED",
+    "resultSha256": "64a112dae42aa5fd9cd192471e49b89cf642f375a86ca2912329129361a84fbc",
+    "budgetSha256": "53f9f49f63e29565eacd4e3c5271e6f02dbf46952ad555ff02a2588ed9782f7c",
+    "elapsedAfterWritesMs": 2297.172,
+    "cleanup": {
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "childExitCode": 0
+  },
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  }
+}

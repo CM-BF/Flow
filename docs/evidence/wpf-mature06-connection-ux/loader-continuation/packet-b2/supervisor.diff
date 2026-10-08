@@ -1,0 +1,35 @@
+--- /private/tmp/connection-ux-b1/supervisor.py
++++ /private/tmp/connection-ux-b2/supervisor.py
+@@ -10,7 +10,7 @@
+ CLEANUP_MS = 15000
+ ENTRY = 'worker.mjs'
+ BOUNDARY = 'native-chrome-sibling-without-custom-outer-write-or-egress-sandbox'
+-TERMINAL_CONTRACT = 'connection-ux-browser-v1-external-exit-required'
++TERMINAL_CONTRACT = 'connection-ux-loader-browser-v1-external-exit-required'
+ 
+ def load(p):
+     assert Path(p).is_file() and not Path(p).is_symlink() and Path(p).stat().st_size <= MiB
+@@ -54,12 +54,12 @@
+     binding = load(BASE/'binding.json')
+     assert binding['state'] == 'REVIEWED_SOURCE_BOUND', 'Independent source review and fresh admission are required'
+     gate = load(sys.argv[2])
+-    assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'connection-ux-browser'
++    assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'connection-ux-loader-browser'
+     assert gate['taskId'] == binding['task'] == 'MATURE06-04'
+     assert gate['bindingSha256'] == sha(BASE/'binding.json') and gate['runnerSha256'] == sha(__file__)
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+     assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+-    assert gate['entry'] == 'connection-ux' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
++    assert gate['entry'] == 'connection-ux-loader' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
+     assert gate['sourceHead'] == binding['head'] and gate['sourceHashes'] == binding['sources']
+     assert gate['previousRuntimeMs'] == binding['previousRuntimeMs']
+     assert gate['previousRuntimeMs'] == 0 and binding['previousEvidenceBytes'] == 0, 'First Connection component browser packet; no prior browser budget inheritance'
+@@ -245,7 +245,7 @@
+             env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_','MESSAGE_SETTINGS_','MSGQUICK_','PLUGIN_RUNTIME_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+             for key in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
+             env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null',
+-              'GIT_OPTIONAL_LOCKS':'0','CONNECTION_UX_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
++              'GIT_OPTIONAL_LOCKS':'0','CONNECTION_UX_LOADER_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
+             checkpoint()
+             worker_log=(BASE/'worker.log').open('xb'); handles.append(worker_log)
+             process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node']['realpath'],'--import',binding['tsxLoader'],str(BASE/ENTRY)],

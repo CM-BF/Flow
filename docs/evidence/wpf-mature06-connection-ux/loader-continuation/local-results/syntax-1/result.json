@@ -1,0 +1,54 @@
+{
+  "startedAt": "2026-10-08T01:38:35.496816+00:00",
+  "state": "PASSED",
+  "sourceHead": "e57e619ba4ef710eb1819f4b79f0f9cc42d442dc",
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "samples": [
+    {
+      "elapsedMs": 65.583,
+      "free": 14552686592,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 68.872,
+      "free": 14552682496,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 89.135,
+      "free": 14552682496,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 104.128,
+      "free": 14552678400,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    }
+  ],
+  "cleanup": {
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "pid": 83313,
+  "pgid": 83313,
+  "childStartedAt": "2026-10-08T01:38:35.565064+00:00",
+  "childExitCode": 0,
+  "errors": [],
+  "finishedAt": "2026-10-08T01:38:35.601092+00:00",
+  "elapsedMs": 104.296
+}

@@ -1,0 +1,889 @@
+{
+  "method": "Installed declared dependency/peer/optional roots; no import or payload copied; missing optional platforms retained",
+  "roots": [
+    {
+      "name": "tsx",
+      "version": "4.23.15",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "device": 16777234,
+      "inode": 116730947,
+      "uid": 501,
+      "packageSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "name": "esbuild",
+      "version": "0.28.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild",
+      "device": 16777234,
+      "inode": 116730958,
+      "uid": 501,
+      "packageSha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "name": "@esbuild/darwin-arm64",
+      "version": "0.28.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64",
+      "device": 16777234,
+      "inode": 116730959,
+      "uid": 501,
+      "packageSha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9"
+    },
+    {
+      "name": "fsevents",
+      "version": "2.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents",
+      "device": 16777234,
+      "inode": 116730972,
+      "uid": 501,
+      "packageSha256": "500839fcc76f6c5efcb454e6614b23c26775e75e1140619fff9ca64c291aec2b"
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.63.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "device": 16777234,
+      "inode": 116730734,
+      "uid": 501,
+      "packageSha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    },
+    {
+      "name": "playwright",
+      "version": "1.63.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright",
+      "device": 16777234,
+      "inode": 116731445,
+      "uid": 501,
+      "packageSha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core",
+      "device": 16777234,
+      "inode": 116736602,
+      "uid": 501,
+      "packageSha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "version": "4.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite",
+      "device": 16777234,
+      "inode": 116848207,
+      "uid": 501,
+      "packageSha256": "cba2bb8613106ca608bbd757998b2cf56a464584e3848310338fe3fe3b4761aa"
+    },
+    {
+      "name": "@tailwindcss/node",
+      "version": "4.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node",
+      "device": 16777234,
+      "inode": 116848194,
+      "uid": 501,
+      "packageSha256": "2afa932dc85e4edc27126e83f8b31df2d5ec5b15f86b5033182d6a82466ed43f"
+    },
+    {
+      "name": "enhanced-resolve",
+      "version": "5.26.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/enhanced-resolve@5.26.0/node_modules/enhanced-resolve",
+      "device": 16777234,
+      "inode": 116848416,
+      "uid": 501,
+      "packageSha256": "445abd049d409dcf5b42df10e6f524fc65a76f6ae33ea037d301c5199a42c7f9"
+    },
+    {
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/graceful-fs@4.2.11/node_modules/graceful-fs",
+      "device": 16777234,
+      "inode": 116848300,
+      "uid": 501,
+      "packageSha256": "5747d4ba6b17165c6ecac30ab3a331715f41c7ad546e1f1574dab1bdcb116181"
+    },
+    {
+      "name": "tapable",
+      "version": "2.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tapable@2.3.3/node_modules/tapable",
+      "device": 16777234,
+      "inode": 116848360,
+      "uid": 501,
+      "packageSha256": "82d5903b3a6f9d6e41868f405176da8122799e8c71a51f5507087091862a2a3d"
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/source-map-js@1.2.2/node_modules/source-map-js",
+      "device": 16777234,
+      "inode": 116731879,
+      "uid": 501,
+      "packageSha256": "9f1ea63b1661d0f6e5fcd50b625d86cddd77de870a0019b23262360987b487f5"
+    },
+    {
+      "name": "jiti",
+      "version": "2.7.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/jiti@2.7.0/node_modules/jiti",
+      "device": 16777234,
+      "inode": 116844286,
+      "uid": 501,
+      "packageSha256": "aab8aafc42d9aeec14a6e2fe0e15ea1514c0c205a624055a7e776f2ec456283c"
+    },
+    {
+      "name": "@jridgewell/remapping",
+      "version": "2.3.5",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@jridgewell+remapping@2.3.5/node_modules/@jridgewell/remapping",
+      "device": 16777234,
+      "inode": 116848413,
+      "uid": 501,
+      "packageSha256": "cc535fb0665977104146fb8fe6c81ff63d2c9ae7f7b783d86e7f7db064cde57a"
+    },
+    {
+      "name": "@jridgewell/gen-mapping",
+      "version": "0.3.13",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@jridgewell+gen-mapping@0.3.13/node_modules/@jridgewell/gen-mapping",
+      "device": 16777234,
+      "inode": 116848365,
+      "uid": 501,
+      "packageSha256": "6264fca78382a9782f8e8d5e653e7bf43dc8aa6d469f3322a82e531093896a01"
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@jridgewell+sourcemap-codec@1.6.0/node_modules/@jridgewell/sourcemap-codec",
+      "device": 16777234,
+      "inode": 116731581,
+      "uid": 501,
+      "packageSha256": "ac7afd57294dbee1f891ca797e19e405340f2cd6031808e6d3845fec60a5b43f"
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@jridgewell+trace-mapping@0.3.31/node_modules/@jridgewell/trace-mapping",
+      "device": 16777234,
+      "inode": 116848489,
+      "uid": 501,
+      "packageSha256": "7f5eacc669d36013f9b792ab15721a97d48b26b093100122aa6c8691ebe656be"
+    },
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@jridgewell+resolve-uri@3.1.2/node_modules/@jridgewell/resolve-uri",
+      "device": 16777234,
+      "inode": 116848288,
+      "uid": 501,
+      "packageSha256": "0793e722ffe08f3b4f1862c4dc96d920a62d6811a3648b4feb02f06c63227e8b"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "4.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss",
+      "device": 16777234,
+      "inode": 116848497,
+      "uid": 501,
+      "packageSha256": "3dc86b46c511947ca00838aa3f1776243abe923ac347c092e60a0cbc7ae68559"
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.32.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.32.0/node_modules/lightningcss",
+      "device": 16777234,
+      "inode": 116848257,
+      "uid": 501,
+      "packageSha256": "1b7fbd47a660ecb37d1fa8304a14b726aa44a31bb3d3338f417593f6276b762f"
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/detect-libc@2.1.2/node_modules/detect-libc",
+      "device": 16777234,
+      "inode": 116731899,
+      "uid": 501,
+      "packageSha256": "ee88e5b954fdf3a8480b1d01ef767d68d8ca2c6da269f58c5cf1c5550e9aa2a7"
+    },
+    {
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.32.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64",
+      "device": 16777234,
+      "inode": 116848241,
+      "uid": 501,
+      "packageSha256": "339b80a4fdb2b8d9dc8e85ceda4b43bebdb45c50bdbd10704095131cbd88d0bd"
+    },
+    {
+      "name": "magic-string",
+      "version": "0.30.21",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/magic-string@0.30.21/node_modules/magic-string",
+      "device": 16777234,
+      "inode": 116731384,
+      "uid": 501,
+      "packageSha256": "86814aaf7dacba9d31fbf361c3285981f1cbbda0a87108caa4131d297bd9eba2"
+    },
+    {
+      "name": "vite",
+      "version": "8.3.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "device": 16777234,
+      "inode": 116848483,
+      "uid": 501,
+      "packageSha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.7",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/picomatch@4.0.7/node_modules/picomatch",
+      "device": 16777234,
+      "inode": 116731549,
+      "uid": 501,
+      "packageSha256": "479b70b87aa7b44344d62c8a459ae7e53dd2bca6c61f1396bd55e63e9de73fc6"
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tinyglobby@0.2.17/node_modules/tinyglobby",
+      "device": 16777234,
+      "inode": 116731880,
+      "uid": 501,
+      "packageSha256": "bd2b2af3c9ba0580f1acfb22c55d0b6d29abf683af5cac8a2efe82fa7c943f23"
+    },
+    {
+      "name": "fdir",
+      "version": "6.5.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fdir@6.5.0_picomatch@4.0.7/node_modules/fdir",
+      "device": 16777234,
+      "inode": 116731488,
+      "uid": 501,
+      "packageSha256": "aca49395d61ef383a09f74555c66ed45817ca2b5724e710a4dc9e0471b83d8f5"
+    },
+    {
+      "name": "rolldown",
+      "version": "1.2.12",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown",
+      "device": 16777234,
+      "inode": 116744397,
+      "uid": 501,
+      "packageSha256": "6cbb247d5ff8ae3d45cba6af71ab424aa887835d917573ad1bb54ef6b2ff3b0f"
+    },
+    {
+      "name": "@oxc-project/types",
+      "version": "0.152.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@oxc-project+types@0.152.0/node_modules/@oxc-project/types",
+      "device": 16777234,
+      "inode": 116744285,
+      "uid": 501,
+      "packageSha256": "78ba8a6b8cf8c037c6e4eb2b9857402c0b51164dadbe9ccf18696a9b5e0bb681"
+    },
+    {
+      "name": "@rolldown/binding-darwin-arm64",
+      "version": "1.2.12",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64",
+      "device": 16777234,
+      "inode": 116744249,
+      "uid": 501,
+      "packageSha256": "f6810bbd99d8d43c6e2e7fcfd647a8fa37b571f4aa9905c40f9d4ac96ea66165"
+    },
+    {
+      "name": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@rolldown+pluginutils@1.0.1/node_modules/@rolldown/pluginutils",
+      "device": 16777234,
+      "inode": 116744191,
+      "uid": 501,
+      "packageSha256": "c3d2bfe0ff94de71fd5b82e6f3a01b12ee4d99b8f1b34cc00b984b9acde61cfa"
+    },
+    {
+      "name": "@types/node",
+      "version": "24.19.1",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "device": 16777234,
+      "inode": 116730960,
+      "uid": 501,
+      "packageSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "name": "undici-types",
+      "version": "7.24.6",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/undici-types@7.24.6/node_modules/undici-types",
+      "device": 16777234,
+      "inode": 116737994,
+      "uid": 501,
+      "packageSha256": "541adf5ec10733ecbf9278ec706914c76b1e5b25cccebdadb7ade8f3066ae052"
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.33.0/node_modules/lightningcss",
+      "device": 16777234,
+      "inode": 116732201,
+      "uid": 501,
+      "packageSha256": "b26fa1b188f90ec672206326e9a1de793f0403a263be9c3797c2e2d56aa48b3c"
+    },
+    {
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.33.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.33.0/node_modules/lightningcss-darwin-arm64",
+      "device": 16777234,
+      "inode": 116732053,
+      "uid": 501,
+      "packageSha256": "1f50679ba283d8cc6c883b516a6b4689bb017d67a4dc35bf64af2f31ea6bbb7d"
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.29",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/postcss@8.5.29/node_modules/postcss",
+      "device": 16777234,
+      "inode": 116731851,
+      "uid": 501,
+      "packageSha256": "d6f3d1e4970b5f3b4424348769974fecc13afccefccb95f09f8883f70b7f3d2e"
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.20",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/nanoid@3.3.20/node_modules/nanoid",
+      "device": 16777234,
+      "inode": 116731881,
+      "uid": 501,
+      "packageSha256": "e2a77185ded1c006171e4e2f8b316d0e3b4c51a135a190851cfc888ea428f6bf"
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/picocolors@1.1.1/node_modules/picocolors",
+      "device": 16777234,
+      "inode": 116731608,
+      "uid": 501,
+      "packageSha256": "ef2ac226c4811d312e12c64214c453878653e834482125ae475f27cea60de737"
+    },
+    {
+      "name": "@tailwindcss/oxide",
+      "version": "4.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide",
+      "device": 16777234,
+      "inode": 116848301,
+      "uid": 501,
+      "packageSha256": "d57385a0a2f680b35a488f9a9816490a6580cc7a989a430e3e426b4c24af212e"
+    },
+    {
+      "name": "@tailwindcss/oxide-darwin-arm64",
+      "version": "4.3.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64",
+      "device": 16777234,
+      "inode": 116848356,
+      "uid": 501,
+      "packageSha256": "d680d9e2413b5a649c1f61afe62f40dde9ae09c048d977f6f51230ee0751516a"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.1.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react",
+      "device": 16777234,
+      "inode": 116848306,
+      "uid": 501,
+      "packageSha256": "b40248af3bd75adf396d903d042c09ca4f585dcdd9460d51eeeeb83c01a48643"
+    },
+    {
+      "name": "tw-animate-css",
+      "version": "1.4.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css",
+      "device": 16777234,
+      "inode": 116848061,
+      "uid": 501,
+      "packageSha256": "66849c41b809ccca55c6484bf102044c73847b21a7d3bc3fd95df133c0a578e1"
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.7.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge",
+      "device": 16777234,
+      "inode": 116848117,
+      "uid": 501,
+      "packageSha256": "048ace99e7a0c877d540e21fd3991795bfca07efe409aacd54465dfc51845939"
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx",
+      "device": 16777234,
+      "inode": 116848025,
+      "uid": 501,
+      "packageSha256": "a5e616b9883177fb47c1fca22b6a4ab42be1c3ed6ffae8595a5c7d88630eeec2"
+    },
+    {
+      "name": "class-variance-authority",
+      "version": "0.7.1",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority",
+      "device": 16777234,
+      "inode": 116848042,
+      "uid": 501,
+      "packageSha256": "f487885eb010b36aec829ab8fb5fc845918006c4633e3c88c750e73bd35c6381"
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.4.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot",
+      "device": 16777234,
+      "inode": 116738894,
+      "uid": 501,
+      "packageSha256": "1e65d7220c8a7939cdcb81514ae55104ba1763543c4a315abbea3fd3f370846b"
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "device": 16777234,
+      "inode": 116738419,
+      "uid": 501,
+      "packageSha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react",
+      "device": 16777234,
+      "inode": 116738182,
+      "uid": 501,
+      "packageSha256": "505c0df4cd73d6a02c946bd9b81451584bd9c83ea72d75cff9b826efceaa19c2"
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/csstype@3.2.3/node_modules/csstype",
+      "device": 16777234,
+      "inode": 116738342,
+      "uid": 501,
+      "packageSha256": "c818b74a9bc1556488b7ec2a65399224738f6619228f9a6491c5c02ca91f849e"
+    },
+    {
+      "name": "@radix-ui/react-compose-refs",
+      "version": "1.1.5",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-compose-refs@1.1.5_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-compose-refs",
+      "device": 16777234,
+      "inode": 116738972,
+      "uid": 501,
+      "packageSha256": "9422da6cb4b0004d394d5f9f521ebd5ede2018400c857abf222dfe2061cfed0e"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom",
+      "device": 16777234,
+      "inode": 116739040,
+      "uid": 501,
+      "packageSha256": "136d4af63de473392ea79d6a21932b0ed9eb37fe518ce70f4621250f3d79e9bb"
+    },
+    {
+      "name": "scheduler",
+      "version": "0.28.0",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/scheduler@0.28.0/node_modules/scheduler",
+      "device": 16777234,
+      "inode": 116739167,
+      "uid": 501,
+      "packageSha256": "06290718f22bcd93f29eaa1ac8d2ec9a7592ba4fec12bf1230e7cdd9a871b324"
+    }
+  ],
+  "missing": [
+    {
+      "from": "esbuild",
+      "name": "@esbuild/android-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/netbsd-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/darwin-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-arm",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-loong64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/aix-ppc64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/openbsd-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/netbsd-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/openharmony-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-s390x",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/openbsd-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/freebsd-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/sunos-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-riscv64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/win32-ia32",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/android-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/freebsd-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-mips64el",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-ia32",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/win32-arm64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/android-arm",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/win32-x64",
+      "optional": true
+    },
+    {
+      "from": "esbuild",
+      "name": "@esbuild/linux-ppc64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-x64-musl",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-darwin-x64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-win32-arm64-msvc",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm64-gnu",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-win32-x64-msvc",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm-gnueabihf",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-x64-gnu",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-android-arm64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-freebsd-x64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm64-musl",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "terser",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "sass",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "stylus",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "sugarss",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "@vitejs/devtools",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "sass-embedded",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "yaml",
+      "optional": true
+    },
+    {
+      "from": "vite",
+      "name": "less",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-openharmony-arm64",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-x64-musl",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-android-arm64",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-darwin-x64",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-android-arm-eabi",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-freebsd-x64",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "optional": true
+    },
+    {
+      "from": "rolldown",
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-x64-musl",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-darwin-x64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-win32-arm64-msvc",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm64-gnu",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-win32-x64-msvc",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm-gnueabihf",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-x64-gnu",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-android-arm64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-freebsd-x64",
+      "optional": true
+    },
+    {
+      "from": "lightningcss",
+      "name": "lightningcss-linux-arm64-musl",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-linux-arm64-musl",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-win32-x64-msvc",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-darwin-x64",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-freebsd-x64",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-linux-x64-musl",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-wasm32-wasi",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-linux-arm-gnueabihf",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-win32-arm64-msvc",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-linux-arm64-gnu",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-android-arm64",
+      "optional": true
+    },
+    {
+      "from": "@tailwindcss/oxide",
+      "name": "@tailwindcss/oxide-linux-x64-gnu",
+      "optional": true
+    },
+    {
+      "from": "@vitejs/plugin-react",
+      "name": "@rolldown/plugin-babel",
+      "optional": true
+    },
+    {
+      "from": "@vitejs/plugin-react",
+      "name": "oxc-transform-react",
+      "optional": true
+    },
+    {
+      "from": "@vitejs/plugin-react",
+      "name": "babel-plugin-react-compiler",
+      "optional": true
+    }
+  ]
+}

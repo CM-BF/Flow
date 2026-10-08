@@ -1,0 +1,76 @@
+{
+  "state": "CLOSED",
+  "limitMs": 30000,
+  "maxChildren": 2,
+  "spentMs": 2480,
+  "checks": [
+    {
+      "run": "syntax-1",
+      "outer": {
+        "at": "2026-10-08T01:38:35.606541+00:00",
+        "exit": 0,
+        "elapsed": 141.301125055179,
+        "chargeMs": 142,
+        "dualEOF": true,
+        "terminal": {
+          "state": "PASSED",
+          "resultSha256": "3f90f16f2888f12d6b83dc7373afed36db98e5a7183925f8b75e3957f2fa579f",
+          "budgetSha256": "a1370b6444ccc4dae49a71a80bdc0c7a59128a73e31a62feb684d53b55779f16",
+          "elapsedAfterWritesMs": 104.793,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 0
+        },
+        "streams": {
+          "stdout": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          },
+          "stderr": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          }
+        }
+      }
+    },
+    {
+      "run": "types-1",
+      "outer": {
+        "at": "2026-10-08T01:38:40.956762+00:00",
+        "exit": 0,
+        "elapsed": 2337.9774580243975,
+        "chargeMs": 2338,
+        "dualEOF": true,
+        "terminal": {
+          "state": "PASSED",
+          "resultSha256": "64a112dae42aa5fd9cd192471e49b89cf642f375a86ca2912329129361a84fbc",
+          "budgetSha256": "53f9f49f63e29565eacd4e3c5271e6f02dbf46952ad555ff02a2588ed9782f7c",
+          "elapsedAfterWritesMs": 2297.172,
+          "cleanup": {
+            "groupAbsent": true,
+            "scratchAbsent": true
+          },
+          "childExitCode": 0
+        },
+        "streams": {
+          "stdout": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          },
+          "stderr": {
+            "eof": true,
+            "bytes": 0,
+            "dropped": 0
+          }
+        }
+      }
+    }
+  ],
+  "browserConsumedMs": 0,
+  "oldBrowser10515": "CLOSED not transferred"
+}

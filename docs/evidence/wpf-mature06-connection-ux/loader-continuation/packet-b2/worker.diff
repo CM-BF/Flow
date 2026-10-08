@@ -1,0 +1,69 @@
+--- /private/tmp/connection-ux-b1/worker.mjs
++++ /private/tmp/connection-ux-b2/worker.mjs
+@@ -8,12 +8,12 @@
+ 
+ const base = dirname(fileURLToPath(import.meta.url));
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+-const gatePath = process.env.CONNECTION_UX_BROWSER_GATE;
++const gatePath = process.env.CONNECTION_UX_LOADER_BROWSER_GATE;
+ assert.equal(gatePath, join(base, 'child-gate.json'));
+ const gateStat = await lstat(gatePath);
+ assert(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size < 65536);
+ const gate = JSON.parse(await readFile(gatePath, 'utf8'));
+-assert.equal(gate.mode, 'connection-ux-browser');
++assert.equal(gate.mode, 'connection-ux-loader-browser');
+ assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
+ assert(Date.parse(gate.expiresAt) > Date.now());
+ const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
+@@ -42,7 +42,7 @@
+ const report = { sourceHead: gate.sourceHead, sourceHashes: gate.sourceHashes, implementation: binding.implementation,
+   startedAt: new Date(startedAtMs).toISOString(), workerPid: process.pid, parentPid, chromePid,
+   chromeProcessGroup: 'separate-parent-owned-session', chromeCleanupOwner: chromeOwnership, checks: [], pageErrors: [], cleanupErrors: [], outcome: 'failed', pg: 0,
+-  journeys: [], budgetOwner: 'external-parent', fixtureClosed: false, contextClosed: false, cdpConnectedAt: null };
++  progress: { phase: 'module-loading', completedChecks: [] }, firstError: null, diagnosticErrors: [], journeys: [], budgetOwner: 'external-parent', fixtureClosed: false, contextClosed: false, cdpConnectedAt: null };
+ let stopped = false, fixture, browser, context, page;
+ const stop = () => { stopped = true; };
+ const checkpoint = () => { if (stopped || Date.now() >= workDeadlineMs) throw new Error('Absolute work deadline; cleanup required'); };
+@@ -74,15 +74,39 @@
+   report.cdpConnectedAt = new Date().toISOString();
+   context = await browser.newContext({ viewport: { width: 1280, height: 844 }, reducedMotion: 'reduce' }); checkpoint();
+   page = await context.newPage(); checkpoint();
+-  page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.name); });
+-  const result = await scenario.checkConnection(page, fixture, output); checkpoint();
++  page.on('pageerror', error => {
++    if (report.pageErrors.length < 8) report.pageErrors.push(/^[A-Za-z]{1,64}$/.test(error.name) ? error.name : 'Error');
++    if (!report.firstError) report.firstError = { phase: report.progress.phase, name: report.pageErrors[0],
++      category: error.name === 'SyntaxError' && error.message.includes('does not provide an export') ? 'MODULE_EXPORT_MISSING' : 'PAGE_ERROR' };
++  });
++  const result = await scenario.checkConnection(page, fixture, output, progress => {
++    assert(binding.expectedChecks.includes(progress.phase) || progress.phase === 'complete');
++    assert(progress.completedChecks.length <= 6 && progress.completedChecks.every((name, index) => name === binding.expectedChecks[index]));
++    report.progress = { phase: progress.phase, completedChecks: [...progress.completedChecks] };
++  }); checkpoint();
+   report.checks = result.checks; report.component = result;
+   assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []);
+   assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 6);
+   report.outcome = 'passed';
+-} catch (error) { report.failure = /^[A-Za-z]{1,64}$/.test(error?.name ?? "") ? error.name : "Error"; report.outcome = 'failed'; }
++} catch (error) { report.failure = /^[A-Za-z]{1,64}$/.test(error?.name ?? "") ? error.name : "Error"; report.firstError ??= { phase: report.progress.phase, name: report.failure, category: 'CHECK_ERROR' }; report.outcome = 'failed'; }
+ finally {
+   clearTimeout(workTimer);
++  // Passive bounded observations only; no text/input values or exception messages.
++  if (report.outcome !== 'passed' && page && !page.isClosed()) {
++    await cleanupStep('Failure observations', async () => {
++      try {
++        const geometry = await page.evaluate(() => ({ ready: document.readyState, width: innerWidth, height: innerHeight,
++          scrollWidth: document.documentElement.scrollWidth, mainCount: document.querySelectorAll('main').length,
++          buttonCount: document.querySelectorAll('main button').length, activeTag: document.activeElement?.tagName ?? null,
++          theme: document.documentElement.dataset.theme === 'dark' ? 'dark' : document.documentElement.dataset.theme === 'light' ? 'light' : 'unknown' }));
++        const encoded = JSON.stringify({ progress: report.progress, firstError: report.firstError, geometry }) + '\n';
++        assert(Buffer.byteLength(encoded, 'utf8') <= 8192);
++        await writeFile(join(output, 'failure-observation.json'), encoded);
++        await page.screenshot({ path: join(output, 'failure-viewport.png'), timeout: 1200,
++          mask: [page.locator('input[type="password"]'), page.locator('vite-error-overlay')] });
++      } catch (error) { report.diagnosticErrors.push(/^[A-Za-z]{1,64}$/.test(error?.name ?? '') ? error.name : 'Error'); }
++    });
++  }
+   await cleanupStep('Context close', async () => { if (context) { await context.close(); report.contextClosed = true; } });
+   // Pinned Playwright CDP close closes its transport; process signalling belongs solely to the parent.
+   await cleanupStep('CDP disconnect', async () => { if (browser) await browser.close(); });
