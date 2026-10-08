@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:48:09.597Z |
+| 最近更新 | 2026-10-08T01:58:09.247Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 真实两步提案的运行结果已独审，提案约束已获语义接受；尚未签发确认或执行子任务。 |
-| 下一可用交付 | 审定有效暂停内的明确续接接口，再准备两项文本任务的有限执行与独立接受；当前不能直接续跑。 |
-| 当前阻塞 | ACTIVE: 续接需要明确的源码身份转换合同；旧暂停期限不延长，确认与两项子任务额度尚未授予。 |
+| 下一可用交付 | 完成保留旧记录的新阶段确认接口，再准备两项文本任务的有限执行与独立接受；当前未授权实际续跑。 |
+| 当前阻塞 | ACTIVE: 新阶段接续实现与独审进行中；旧暂停已到期并保留，实际确认与两项子任务额度尚未授予。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -169,3 +169,5 @@
 2026-10-08T01:50:04.500Z：固定结果76a9已push、源码停写。仅补[后继候选](../../docs/evidence/o16/native-plan-normal-home-20261008-once/next-stage-candidate.md)：真实两步提案/完整确认版本，拟两次children预算与独立接受分开；native guard当前仅plan，修改源码又会触发pause/source绑定拒绝，合法续接合同尚缺。未创建后继许可、未确认或apply、未改private/DB/原pause。当前15min期限不自动延长。
 
 2026-10-08T01:54:06.221Z：新续接设计段仅只读固定源码和公开结果，0工程child/PG/auth/query。收到76a9结果独审/main254ce9579与GO对真实proposal约束的语义接受；不把它当confirmation或child预算。候选新增小Interface明确旧/新source反向重建、原pause先验证/一次消费、仅source字段转换及部分写UNKNOWN；该设计涉及未来旧资源恢复，按Lead边界先交方案，尚未改源或运行。
+
+2026-10-08T01:58:09.247Z：本轮新阶段实现实际开始，fresh账本原55c4 v1 exact3 active、本树ef9d clean。GO明确允许新版本/过期后一次续接设计；01:54旧未过期转换草案被本合同替代，未实施旧state改写。仅源码与自有合成检查（累计120s、≤4 child各≤30s、tmp8MiB），0真实native/auth/query/PG/旧private读取。实际planner76a9限定独审已main254ce9579，原pause/source/state/raw保留。

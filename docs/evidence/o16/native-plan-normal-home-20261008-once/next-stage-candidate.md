@@ -54,3 +54,7 @@ GO已语义接受这份真实proposal的起草→核对/修订、固定引用、
 - 真实confirm装配到center.start前的无PG注入消费者，确认完整封套被实际旧接口消费、无隐含权限变化。
 
 下一检查段上限仍Lead给的累计120s、最多4个受监督child且各≤30s含收尾、8MiB自有材料；目前该新段工程child=0，不因设计稿运行旧阶段。若完成审查时原pause已过期，本方案拒绝本次旧episode，不能追溯改期限或自动改成新goal/新planner；后续处置需显式新方案，旧成功提案与KEEP照常保留。
+
+## 后到决定：过期后显式新阶段
+
+GO明确采用新版本/过期后一次新阶段授权。上节未过期改source方案未实施、已被替代；旧暂停到期按原入口拒绝。当前实现见[新Interface](../expired-plan-continuation/Interface.md)，不以新记录延长或改写旧暂停。实际confirmation/children仍NOT_GRANTED。

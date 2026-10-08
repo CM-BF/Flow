@@ -18,6 +18,7 @@ import { acceptObservedArtifact } from './decision.mjs';
 import { assertNativeReady, settleStage } from './stage-policy.mjs';
 import { nativeEnvironmentPolicy } from './native-environment.mjs';
 import { recordQueryCount } from './query-policy.mjs';
+import { readContinuation, reserveContinuation } from './continuation.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
@@ -103,6 +104,24 @@ export async function plan(run, mode, permitPath) {
 export async function confirm(run, body) {
   experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true, stage: 'confirm' });
+  return confirmAt(center, directory, body, 'confirm');
+}
+/** Post-expiry adoption has its own grant, output, private state and origin-based one-shot reservation. */
+export async function renew(run, grant) {
+  experimentStop.signal.throwIfAborted();
+  const source = await sourceIdentity();
+  return continueSavedPlan({ source, run, grant, runs: RUNS, reservations: RESERVATIONS, createCenter: privateCenter });
+}
+/** Trusted composition seam: callers cannot select these ports through the grant/CLI JSON. */
+export async function continueSavedPlan({ source, run, grant, runs, reservations, createCenter }) {
+  const directory = join(runs, run);
+  const continuation = await readContinuation(grant, { runs, source, run, environmentDigest: nativeEnvironmentPolicy.digest });
+  await reserveContinuation(reservations, continuation, source, runs);
+  await mkdir(directory, { mode: 0o700 });
+  const center = await createCenter(directory, source, { stage: 'renew', continuation, temporaryParent: '/private/tmp' });
+  return confirmAt(center, directory, grant.confirmation, 'renew');
+}
+async function confirmAt(center, directory, body, phase) {
   const report = { stage: 'confirm', outcome: 'unknown', nativeQueryCalls: 0 }; let primaryError;
   try {
     const state = await stateOf(center); assert(['planned', 'confirmation-unknown', 'confirmed'].includes(state.stage));
@@ -124,7 +143,7 @@ export async function confirm(run, body) {
   } catch (error) { primaryError = error; }
   finally {
     await settleStage(report, { primaryError, persist: value => writeRecord(join(directory, 'confirmation.json'), value),
-      finish: options => center.finish(options), pause: value => center.pause('confirm', value) });
+      finish: options => center.finish(options), pause: value => center.pause(phase, value) });
   }
   return report;
 }
@@ -200,7 +219,8 @@ export async function decide(run, decision) {
     Object.assign(report, { outcome: decision.decision === 'accept' ? 'independently-accepted' : 'independently-rejected', decision,
       current, history, rejectionReasonPersistence: decision.decision === 'reject' ? 'experiment-record-only-no-product-rejection-command' : null,
       mode: state.mode, nativeStageConclusion: state.mode === 'native' ? 'bounded-observed-journey-only' : 'not-run' });
-    state.stage = 'reviewed'; await saveState(center, state); destroy = true;
+    state.stage = 'reviewed'; await saveState(center, state); destroy = !state.origin;
+    if (state.origin) report.retention = 'keep-origin-database-and-both-directories';
   } catch (error) {
     primaryError = error; report.decisionFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null };
   } finally {
@@ -225,6 +245,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     if (command === 'rehearse' && !file) result = await rehearse(run);
     else if (command === 'plan' && file) result = await plan(run, 'native', file);
     else if (command === 'confirm' && file) result = await confirm(run, await readRecord(file));
+    else if (command === 'renew' && file) result = await renew(run, await readRecord(file));
     else if (command === 'children' && file) result = await children(run, file);
     else if (command === 'decide' && file) result = await decide(run, await readRecord(file));
     else throw new Error('Unknown finite stage.');
