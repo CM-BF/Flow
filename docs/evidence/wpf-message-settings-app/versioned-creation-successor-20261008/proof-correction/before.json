@@ -1,0 +1,73 @@
+{
+  "firstWrite": "2026-10-08T03:16:26.910096+00:00",
+  "deadline": "2026-10-08T03:21:26.910096+00:00",
+  "prior": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/wpf-message-settings-app/versioned-creation-successor-20261008",
+        "plans/wpf-message-settings-app"
+      ],
+      "state": "released",
+      "branch": "codex/web-message-settings-app",
+      "origin": "new",
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "worker": "workspace_panels_owner",
+      "claimId": "878cdaec-5f1d-40d8-a7ac-e840bf69b1ae",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "createdAt": "2026-10-08T03:12:39.416Z",
+      "updatedAt": "2026-10-08T03:14:56.991Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/conversation-recovery.test.ts",
+        "apps/web/test/execution-profiles.test.ts",
+        "docs/evidence/wpf-msg03/versioned-profile-creation"
+      ],
+      "state": "released",
+      "branch": "codex/web-versioned-profile-creation",
+      "origin": "new",
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "worker": "workspace_panels_owner",
+      "claimId": "fee104b3-47a8-4a4e-b25d-7b8111a2d0d9",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-versioned-profile-creation",
+      "createdAt": "2026-10-08T02:50:52.523Z",
+      "updatedAt": "2026-10-08T03:12:39.227Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "observedAt": "2026-10-08T03:16:26.850Z",
+  "conflicts": [],
+  "head": "0c89b4e802552f7a532c7d07a475d44825ca8e58",
+  "dirty": false,
+  "currentSha256": "af3158881f8ab8f2dea89dc8fe1e968bb91389c196f4985660e16c76daaccfb0",
+  "authorization": {
+    "state": "AUTHORIZED_METADATA_ONLY_NOT_STARTED",
+    "authorizedAt": "2026-10-08T03:15:56.880Z",
+    "owner": "workspace_panels_owner",
+    "taskId": "WPF-MESSAGESETTINGS03",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "branch": "codex/web-message-settings-app",
+    "baseHead": "0c89b4e802552f7a532c7d07a475d44825ca8e58",
+    "scope": [
+      "plans/wpf-message-settings-app",
+      "docs/evidence/wpf-message-settings-app/versioned-creation-successor-20261008"
+    ],
+    "planningBytes": 3145728,
+    "durationMinutes": 5,
+    "engineeringChildren": 0,
+    "instructions": "Fresh D04/all prior claims RELEASED/HEAD clean; exact2 metadata take. Remove only trailing explanatory annotation from implementation source-path field, explanation remains elsewhere. Check full implementation.errors plus normal parser/links; preserve prior proof failure. No product/source/check children. Seal push clean STOP and release this exact2 claim, external receipt; all index/temp/objects/records within new3MiB, no oldcredit."
+  }
+}

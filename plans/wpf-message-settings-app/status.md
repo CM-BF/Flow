@@ -19,7 +19,7 @@
 | 检查状态 | PASSED e5c11b3c7ca7e9e3e303e6c861603640f75a1118；仅纯基础：修后7selected+末次focused1分开，旧2生产叶affected types0；4child8872ms CLOSED/首红保留；消费者组合与wholeWeb NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED（versioned creation后继）；原MSGAPP-01–06精确18源已INTEGRATED main3c9345df4aec85a37e8a2a155e079db260d515b1，不撤销历史交付 |
 | 实现目标 | e5c11b3c7ca7e9e3e303e6c861603640f75a1118 |
-| 实现范围 | apps/web/src/execution-profiles/selection.ts, apps/web/src/recovery/binding.tsx, apps/web/test/execution-profiles.test.ts, apps/web/test/conversation-recovery.test.ts（后继执行树；不可单独合入） |
+| 实现范围 | apps/web/src/execution-profiles/selection.ts, apps/web/src/recovery/binding.tsx, apps/web/test/execution-profiles.test.ts, apps/web/test/conversation-recovery.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 版本化profile选择、required tuple资格与Recovery纯基础已完成限定审；原消息设置App交付保持完成 |

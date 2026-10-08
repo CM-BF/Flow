@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-08T03:17:52.293Z",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "implementation": {
+    "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+    "scopes": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/execution-profiles.test.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "errors": []
+  },
+  "directProofParser": {
+    "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+    "scopes": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/execution-profiles.test.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+    "record": "PASSED e5c11b3c7ca7e9e3e303e6c861603640f75a1118；仅纯基础：修后7selected+末次focused1分开，旧2生产叶affected types0；4child8872ms CLOSED/首红保留；消费者组合与wholeWeb NOT_RUN"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED（仅pure foundation，不能独立集成）",
+    "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118"
+  },
+  "missingLinks": [],
+  "boundary": "Metadata declaration validation only; original027415 is limited pure foundation NOT_INDEPENDENTLY_MERGEABLE; no implementation tree equivalence or wholeWeb/main assertion."
+}

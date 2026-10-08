@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-08T03:16:48.522Z",
+  "sourceHead": "0c89b4e802552f7a532c7d07a475d44825ca8e58",
+  "errors": [],
+  "implementation": {
+    "target": "e5c11b3c7ca7e9e3e303e6c861603640f75a1118",
+    "scopes": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/execution-profiles.test.ts",
+      "apps/web/test/conversation-recovery.test.ts（后继执行树；不可单独合入）"
+    ],
+    "errors": [
+      "实现范围必须为仓库相对 literal 路径，不允许通配符或越界"
+    ]
+  }
+}
