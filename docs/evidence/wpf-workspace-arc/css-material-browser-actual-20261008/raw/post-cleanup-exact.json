@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-08T00:05:12.220887+00:00",
+  "run": "arc-css-material-20261008-000214",
+  "observations": [
+    {
+      "kind": "PID",
+      "id": 84850,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86078,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86203,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 87033,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86078,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86203,
+      "state": "ESRCH"
+    },
+    {
+      "path": "/private/tmp/arc-browser-css-material-5g4win44/scratch",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "state": "ENOENT"
+    }
+  ],
+  "rawClosure": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "parentCleanupErrors": [],
+  "parentScenarioConfirmation": "UNKNOWN",
+  "workerChromeStdoutEOF": true,
+  "workerChromeStderrEOF": true,
+  "parentStdoutEOF": true,
+  "parentStderrEOF": true,
+  "outerStreams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1742,
+      "retainedBytes": 1742,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "8e9d4a83abf00f8d18f7daacad7623fb4da020aef26fe9f81a828beded18f5f6"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "independentPortProbe": false,
+  "PG": false,
+  "ownedReturn": true,
+  "correction": "Original post-cleanup sampled correct identities but looked for contextClosed/httpClosed at top level; actual raw schema nests these under cleanup. Original retained; this fresh observation corrects parser-only false ownedReturn."
+}

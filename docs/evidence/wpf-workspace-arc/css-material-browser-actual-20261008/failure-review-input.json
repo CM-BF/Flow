@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-08T00:06:20.124488+00:00",
+  "source": "b3f5bed1a17019d1de01117f3a510314d5ecd412",
+  "execution": "fcca6ec4c926241365c7a2cc18b6a044604e44e7",
+  "namespace": "/private/tmp/arc-browser-css-material-5g4win44",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/css-material-browser-actual-20261008/manifest.json",
+    "bytes": 14646,
+    "sha256": "a4be1ca17a34f968100d8f622107084925c42ef10efd672fa9473d250260e068"
+  },
+  "actual": "FAILED2/4",
+  "passed": [
+    "layout-navigation",
+    "three-pane-reads"
+  ],
+  "earlyObservationPNG": {
+    "path": "/private/tmp/arc-browser-css-material-5g4win44/raw/arc-desktop-ready.png",
+    "bytes": 85127,
+    "sha256": "c47b6a6974ff1f1249146e01b4c40402371bd1068f2086510ed2ed718df32e0f"
+  },
+  "finalPNG": 0,
+  "chargeMs": 20654,
+  "fullReturnAt": "2026-10-08T00:05:12.220887+00:00",
+  "browserError": "Error: expect(locator).toBeEnabled() failed\n\nLocator:  locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true })\nExpected: enabled\nReceived: disabled\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeEnabled\" locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true }) with timeout 5000ms\n  - waiting for locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true })\n    14 × locator resolved to <button disabled type=\"submit\" data-state=\"closed\" aria-label=\"Send message\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 aui-button-icon p-1 active:scale-90 aui-composer-send size-7 rounded-full\">…</button>\n       - unexpected value \"disabled\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeEnabled (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:238:88)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-browser-css-material-5g4win44/worker.mjs:31:16)",
+  "workspaceNamespace": {
+    "beforePanel": {
+      "top": 58.5,
+      "height": 37.3828125,
+      "flexGrow": "0",
+      "naturalHeight": 37.3953125
+    },
+    "openPanel": {
+      "top": 58.5,
+      "height": 37.3828125,
+      "flexGrow": "0",
+      "naturalHeight": 37.3953125
+    },
+    "closedPanel": {
+      "top": 58.5,
+      "height": 37.3828125,
+      "flexGrow": "0",
+      "naturalHeight": 37.3953125
+    },
+    "rightTab": "Terminal",
+    "scope": "Arc navigation stays intrinsic; right Workspace panels keeps its own flex rule"
+  },
+  "cleanupScope": {
+    "exactOwnedReturn": true,
+    "rawCleanup": {
+      "contextClosed": true,
+      "httpClosed": true
+    },
+    "parentScenarioConfirmation": "UNKNOWN/resultnull preserved",
+    "chromeStdoutEOF": true,
+    "chromeStderrEOF": true,
+    "parentAndOuterEOF": true,
+    "independentPortProbe": false,
+    "PG": false
+  },
+  "sourceChangedAfterActual": false,
+  "observationCorrection": "post-cleanup-exact.json corrects own first parser top-level lookup, original false receipt retained; no fixture receipt changed."
+}

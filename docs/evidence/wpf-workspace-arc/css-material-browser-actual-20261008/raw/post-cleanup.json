@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-08T00:04:42.181689+00:00",
+  "run": "arc-css-material-20261008-000214",
+  "observations": [
+    {
+      "kind": "PID",
+      "id": 84850,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86078,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 86203,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 87033,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86078,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 86203,
+      "state": "ESRCH"
+    },
+    {
+      "path": "/private/tmp/arc-browser-css-material-5g4win44/scratch",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "state": "ENOENT"
+    }
+  ],
+  "rawClosure": {
+    "error": "Error: expect(locator).toBeEnabled() failed\n\nLocator:  locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true })\nExpected: enabled\nReceived: disabled\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeEnabled\" locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true }) with timeout 5000ms\n  - waiting for locator('.flow-tab-body[id=\"panel-conversation:chat-4\"]').getByRole('button', { name: 'Send message', exact: true })\n    14 \u00d7 locator resolved to <button disabled type=\"submit\" data-state=\"closed\" aria-label=\"Send message\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 aui-button-icon p-1 active:scale-90 aui-composer-send size-7 rounded-full\">\u2026</button>\n       - unexpected value \"disabled\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeEnabled (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:238:88)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:83:163)\n    at async Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:215:5)\n    at async <anonymous> (/private/tmp/arc-browser-css-material-5g4win44/worker.mjs:31:16)",
+    "cleanupErrors": []
+  },
+  "parentCleanupErrors": [],
+  "parentScenarioConfirmation": "UNKNOWN",
+  "workerChromeStdoutEOF": true,
+  "workerChromeStderrEOF": true,
+  "parentStdoutEOF": true,
+  "parentStderrEOF": true,
+  "outerStreams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 1742,
+      "retainedBytes": 1742,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "8e9d4a83abf00f8d18f7daacad7623fb4da020aef26fe9f81a828beded18f5f6"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "independentPortProbe": false,
+  "PG": false,
+  "ownedReturn": false
+}

@@ -1,5 +1,9 @@
 # Current Arc review
 
+固定 `b3f5bed1a17019d1de01117f3a510314d5ecd412` / execution `fcca6ec4c926241365c7a2cc18b6a044604e44e7` 本次真实浏览器 **FAILED2/4**。布局与六正文读取通过；导航高度37.3828px，右panel开关前后不变，早图原450px空白消失。材料组通过设置目录后停在Send disabled5s，实际prepare-await未进入，refresh/theme与最终两图未达。早桌面1PNG/85127B只observation；20654/90000 CLOSED，四PID/两PGID及scratch/cache已精确归还，parent scenarioUNKNOWN与rawclosed分列。本次Chrome/parent/outer EOF均true；前次false不改。root4467只批准source/local/preparation，[root908b实际结果/视觉独审](css-material-browser-actual-20261008/root-arc-css-material-actual-review-20261008.json) APPROVED_LIMITED/0blocking；CSS视觉P2实证修复，整体仍FAIL；main未集成。 [唯一实际审入口](css-material-browser-actual-20261008/failure-review-input.json)。
+
+以下为历史固定阶段，旧“当前/NOT_RUN”保留其当时含义。
+
 Source `b3f5bed1a17019d1de01117f3a510314d5ecd412` APPROVED limited source/local/candidate (root4467). [CSS namespace/profile codec fix](css-material-fix-20261007/entry.json). Actual purecodec2PASS/645ms; newbrowserNOT_RUN/NOT_GRANTED. [Prior2/4 failure and visualP2](classifier-browser-actual-20261007/failure-review-input.json), root282c fidelity review archived separately.
 
 # Current Arc actual review

@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-08T00:07:23.277Z",
+  "taskId": "WPF-WORKSPACEARC01",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+      "id": "WPF-MATURE-05",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web/root；执行管理d01_owner",
+      "value": "Web/root；执行管理d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "parser": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+    "sha256": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a"
+  },
+  "priorAttempt": {
+    "exit": 9,
+    "error": "bad option: --no-compile-cache",
+    "parserExecuted": false
+  },
+  "scope": "Only own status parse; no product/test/browser execution",
+  "unknown": "Historical task start UNKNOWN retained; task NOT_COMPLETED."
+}

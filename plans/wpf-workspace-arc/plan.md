@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01：Arc 会话组合工作区
 
-创建2026-10-07T18:02:31.663Z / 更新2026-10-07T21:22:36.031590+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
+创建2026-10-07T18:02:31.663Z / 更新2026-10-08T00:07:02.901429+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
 
 用户目标：在一个工作区中组合最多三个可见真实会话 pane，独立焦点/滚动/草稿与上下文；分拆、交换、合并和比例调整不重建composer或复制业务状态；插件真实上下文动作可随时扩展且旧权限/调用不能复活。
 
@@ -53,3 +53,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T23:37:07.258160+00:00 原TODO05验收修复：读取事件以URL.pathname锚定真实/api结构，开发模块不进入body计数，真实意外/重复API仍拒绝。原四组选定不变，ready桌面观察独立保留（非额外PASS），最终390light/dark两图仍是原完成条件。当前新source与12pure/noEmit见[证据](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)，browser未运行；旧三FAIL不改。
 
 2026-10-07T23:58:36.144826+00:00 原TODO02/05实际失败修复：Arc导航CSS独立namespace，不能被右侧tabflex规则撑满；既有layout组新增右面板开/切Terminal/关的自然尺寸检查，保原4groups。材料fixture公开目录必须通过真实codec而非仅TS结构；合法displayName、3choices与原identity保留。645ms纯codec已验证，实际CSS/材料browser仍待；不增加产品合同或scope。
+
+2026-10-08T00:07:02.901429+00:00：b3f5修后actual2/4；CSS命名空间与右panel独立布局已实际验证，设置目录前置已通过；材料Send disabled，原完整prepare-await/refresh/theme仍未完成。六正文读取与两个HTTP FIFO已有各自限定证据，不外推整个TODO完成。见[本次唯一原件入口](../../docs/evidence/wpf-workspace-arc/css-material-browser-actual-20261008/failure-review-input.json)。root只读提出chat4统一paused/waiting与guard冲突的候选，需后续合法段验证；本批没有产品/fixture修复或新运行。
