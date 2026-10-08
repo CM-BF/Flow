@@ -1,7 +1,60 @@
 import { chromium, expect, type Page } from "@playwright/test";
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { startIntegrationFixture, runRealIntegration } from "./plugin-integration.config";
+/** Selected by an owned browser caller; no legacy HTTP/PG entry is run on import. */
+export async function checkPluginDiagnostics(page: Page, fixtureUrl: string) {
+  const pageErrors: string[] = [];
+  const onError = (error: Error) => { pageErrors.push(error.message); };
+  page.on("pageerror", onError);
+  let mounted = false;
+  try {
+    await page.goto(fixtureUrl);
+    await page.evaluate(async () => {
+      const path = "/src/plugin-integration/slot-fixture.tsx";
+      const fixture = await import(path);
+      const container = document.createElement("div");
+      container.setAttribute("data-diagnostics-fixture", "");
+      document.body.append(container);
+      Reflect.set(window, "diagnosticsFixture", await fixture.mountPluginDiagnosticsFixture(container));
+    });
+    mounted = true;
+    const trigger = page.getByRole("button", { name: "Extensions and appearance", exact: true });
+    await trigger.click();
+    const dialog = page.getByRole("dialog", { name: "Extensions and appearance", exact: true });
+    await expect(dialog.getByText("Extension diagnostics (0)", { exact: true })).toBeVisible();
+    await dialog.getByText("Extension diagnostics (0)", { exact: true }).click();
+    const before = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
+    await dialog.getByRole("button", { name: "Fail diagnostic command", exact: true }).click();
+    await expect(dialog.getByText("Extension diagnostics (1)", { exact: true })).toBeVisible();
+    await expect(dialog.getByText("fixture.diagnostics · command: Fixture command failure", { exact: true })).toBeVisible();
+    await expect.poll(() => page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation().commandResult)).toEqual({ ok: false, error: "Fixture command failure" });
+    const command = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
+    expect(command.ancestorRenders).toBe(before.ancestorRenders);
+    expect(command.registryNotifications).toBe(0); expect(command.slotNotifications).toBe(0);
+    expect(command.registryStable && command.slotStable).toBe(true);
+    await dialog.getByRole("button", { name: "Fail local renderer", exact: true }).click();
+    await expect(dialog.getByText("fixture.diagnostics · render: Fixture local renderer failure", { exact: true })).toBeVisible();
+    await expect(dialog.getByRole("alert")).toContainText("Extension could not render.");
+    const rendered = await page.evaluate(() => Reflect.get(window, "diagnosticsFixture").observation());
+    expect(rendered.ancestorRenders).toBe(before.ancestorRenders);
+    expect(rendered.registryNotifications).toBe(0); expect(rendered.slotNotifications).toBe(0);
+    expect(rendered.registryStable && rendered.slotStable).toBe(true);
+    // Development React may report the deliberate error, never unrelated failures.
+    expect(pageErrors.filter(message => message !== "Fixture local renderer failure")).toEqual([]);
+    await dialog.getByRole("button", { name: "Close", exact: true }).click();
+    await expect(trigger).toBeFocused();
+    return { checks: ["active-command-notifies-open-production-settings", "local-render-error-notifies-without-ancestor-or-registry-publish", "settings-close-restores-focus"],
+      before, command, rendered, pageErrors, input: "Real AppPluginSession/PluginProvider/PluginSettings with synthetic plugin faults; no center/auth/provider proof" };
+  } finally {
+    try {
+      if (mounted) await page.evaluate(async () => { await Reflect.get(window, "diagnosticsFixture")?.dispose(); Reflect.deleteProperty(window, "diagnosticsFixture"); document.querySelector("[data-diagnostics-fixture]")?.remove(); });
+    } finally { page.off("pageerror", onError); }
+  }
+}
+
+// The future owned caller imports only the focused function. Legacy defaults stay explicit.
+if (!process.argv.includes("--diagnostics-module")) {
+const { startIntegrationFixture, runRealIntegration } = await import("./plugin-integration.config");
 
 const output = fileURLToPath(new URL("../../../docs/evidence/wpf-i01/", import.meta.url));
 if (process.argv.includes("--real")) {
@@ -183,4 +236,6 @@ try {
   await writeFile(`${output}browser-results.json`, JSON.stringify({ at: new Date().toISOString(), input: "I01 moving branch; two isolated HTTP fixtures, not real center", checks, pageErrors: errors, cleanup: "Only test-owned Vite, fixtures and browser closed" }, null, 2));
 } catch (error) { await page.screenshot({ path: `${output}browser-failure.png` }); throw error; }
 finally { await browser.close(); await preview.close(); }
+}
+
 }

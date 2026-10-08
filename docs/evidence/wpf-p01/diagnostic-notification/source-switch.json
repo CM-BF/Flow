@@ -1,0 +1,37 @@
+{
+  "taskId": "WPF-P01",
+  "todo": "PLUGIN-DIAGNOSTIC-NOTIFY-01",
+  "oldWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+  "oldHead": "28b70c35dbda1603411bfa87402b3182eacc3a9a",
+  "newWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+  "branch": "codex/web-plugin-diagnostics",
+  "base": "1b1428f3867a5396422f2b8d066a94f8f138030d",
+  "claim": {
+    "claimId": "c106e5aa-0d58-43a6-a326-1148c0e43490",
+    "version": 1,
+    "taskId": "WPF-P01",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+    "branch": "codex/web-plugin-diagnostics",
+    "scope": [
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "apps/web/src/plugins/host.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/plugin-integration.browser.ts",
+      "docs/evidence/wpf-p01",
+      "plans/wpf-p01-plugin-host"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-08T03:42:26.395Z",
+    "createdAt": "2026-10-08T03:42:26.395Z"
+  },
+  "historicalEvidence": "Original old-tree evidence remains immutable; prior three documents preserved here; D05 must replace existing WPF-P01 registry source, not create another task.",
+  "runtime": "NOT_RUN",
+  "start": "2026-10-08T03:42:14.853242+00:00"
+}

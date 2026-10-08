@@ -683,3 +683,83 @@ it("validates the attachment builtin in the existing host and rechecks its expli
   expect(f.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state).toBe("registered");
   await f.host.dispose();
 });
+
+describe("diagnostic notification", () => {
+  it("publishes an active command failure without changing registry or slot snapshots", async () => {
+    const { host } = setup();
+    host.register(definition(context => context.command("test.plugin.open", {
+      parse: value => value, run: async () => { throw Error("original command failure"); },
+    })));
+    await host.activate("test.plugin");
+    const registry = host.list(); const slot = host.getSlotSnapshot("sidebar.item.actions");
+    const before = host.getDiagnostics(); const subscribe = host.subscribeDiagnostics;
+    let diagnostics = 0; let registryChanges = 0; let slotChanges = 0;
+    const stop = host.subscribeDiagnostics(() => { diagnostics++; });
+    const stopRegistry = host.subscribe(() => { registryChanges++; });
+    const stopSlot = host.subscribeSlot("sidebar.item.actions", () => { slotChanges++; });
+    expect(host.getDiagnostics()).toBe(before);
+    expect(await host.execute("test.plugin.open")).toEqual({ ok: false, error: "original command failure" });
+    expect(diagnostics).toBe(1); expect(registryChanges).toBe(0); expect(slotChanges).toBe(0);
+    expect(host.list()).toBe(registry); expect(host.getSlotSnapshot("sidebar.item.actions")).toBe(slot);
+    expect(host.getDiagnostics()).not.toBe(before); expect(host.getDiagnostics()).toBe(host.getDiagnostics());
+    expect(host.subscribeDiagnostics).toBe(subscribe);
+    expect(host.getDiagnostics()).toEqual([{ pluginId: "test.plugin", phase: "command", message: "original command failure" }]);
+    stop(); stopRegistry(); stopSlot(); await host.dispose();
+  });
+
+  it.each(["sync", "async"] as const)("notifies a %s source-subscription failure and preserves the other subscriber", async mode => {
+    const { host, navigation } = setup(); let healthy = 0;
+    host.register(definition(context => {
+      context.navigation.subscribe(mode === "sync"
+        ? () => { throw Error("source subscriber failure"); }
+        : async () => { throw Error("source subscriber failure"); });
+      context.navigation.subscribe(() => { healthy++; });
+    }));
+    await host.activate("test.plugin");
+    let notifications = 0; const stop = host.subscribeDiagnostics(() => { notifications++; });
+    navigation.set({ ...navigation.getSnapshot(), activeTaskId: "B" });
+    await Promise.resolve(); await Promise.resolve();
+    expect(healthy).toBe(1); expect(notifications).toBe(1);
+    expect(host.getDiagnostics()).toEqual([{ pluginId: "test.plugin", phase: "subscription", message: "source subscriber failure" }]);
+    stop(); await host.dispose(); expect(navigation.size).toBe(0);
+  });
+
+  it("publishes immutable render diagnostics in order while keeping only the latest 100", async () => {
+    const { host } = setup(); host.register(definition()); await host.activate("test.plugin");
+    let notifications = 0; const stop = host.subscribeDiagnostics(() => { notifications++; });
+    for (let i = 0; i < 103; i++) host.reportRenderError("test.plugin", Error(`render ${i}`));
+    const snapshot = host.getDiagnostics();
+    expect(notifications).toBe(103); expect(snapshot).toHaveLength(100);
+    expect(snapshot[0]?.message).toBe("render 3"); expect(snapshot.at(-1)?.message).toBe("render 102");
+    expect(Object.isFrozen(snapshot)).toBe(true); expect(snapshot.every(Object.isFrozen)).toBe(true);
+    expect(host.getDiagnostics()).toBe(snapshot); stop(); await host.dispose();
+  });
+
+  it("isolates throwing diagnostic observers without recursively recording or replacing the command error", async () => {
+    const { host } = setup(); host.register(definition(context => context.command("test.plugin.open", {
+      parse: value => value, run: () => { throw Error("original failure"); },
+    }))); await host.activate("test.plugin");
+    host.subscribeDiagnostics(() => { throw Error("observer sync failure"); });
+    host.subscribeDiagnostics(async () => { throw Error("observer async failure"); });
+    let healthy = 0; host.subscribeDiagnostics(() => { healthy++; });
+    expect(await host.execute("test.plugin.open")).toEqual({ ok: false, error: "original failure" });
+    await Promise.resolve();
+    expect(healthy).toBe(1); expect(host.getDiagnostics()).toHaveLength(1);
+    expect(host.getDiagnostics()[0]?.message).toBe("original failure"); await host.dispose();
+  });
+
+  it("detaches on unsubscribe and suppresses diagnostic notifications after disposal, including late work", async () => {
+    const { host } = setup(); const work = deferred<void>();
+    host.register(definition(context => context.command("test.plugin.open", { parse: value => value, run: () => work.promise })));
+    await host.activate("test.plugin"); let removed = 0; let remaining = 0;
+    const stop = host.subscribeDiagnostics(() => { removed++; }); stop(); stop();
+    host.subscribeDiagnostics(() => { remaining++; });
+    host.reportRenderError("test.plugin", Error("before disposal"));
+    expect(removed).toBe(0); expect(remaining).toBe(1);
+    const pending = host.execute("test.plugin.open"); await host.dispose();
+    host.subscribeDiagnostics(() => { remaining++; });
+    work.reject(Error("late failure")); expect(await pending).toEqual({ ok: false, error: "late failure" });
+    host.reportRenderError("test.plugin", Error("after disposal"));
+    expect(removed).toBe(0); expect(remaining).toBe(1);
+  });
+});

@@ -66,6 +66,7 @@ export class PluginHost {
   private entries = new Map<string, Entry>();
   private ids = new Map<string, Entry>();
   private listeners = new Set<() => void>();
+  private diagnosticListeners = new Set<() => void>();
   private slotListeners = new Map<SlotId, Set<() => void>>();
   private snapshot: readonly PluginSummary[] = Object.freeze([]);
   private slotSnapshots = new Map<SlotId, readonly ContributionView[]>();
@@ -74,6 +75,10 @@ export class PluginHost {
   constructor(private readonly port: HostPort) {}
   list = () => this.snapshot;
   getDiagnostics = () => this.diagnostics;
+  subscribeDiagnostics = (listener: () => void) => {
+    if (!this.disposed) this.diagnosticListeners.add(listener);
+    return () => { this.diagnosticListeners.delete(listener); };
+  };
   subscribe = (listener: () => void) => {
     this.listeners.add(listener);
     return () => {
@@ -193,6 +198,7 @@ export class PluginHost {
   async dispose(): Promise<void> {
     if (this.disposed) return;
     this.disposed = true;
+    this.diagnosticListeners.clear();
     const entries = [...this.entries.values()];
     for (const entry of entries) this.stop(entry);
     for (const entry of entries) this.publish(entry);
@@ -635,6 +641,13 @@ export class PluginHost {
       ...this.diagnostics.slice(-99),
       Object.freeze({ pluginId: entry.manifest.id, phase, message }),
     ]);
+    for (const listener of [...this.diagnosticListeners]) {
+      if (!this.diagnosticListeners.has(listener)) continue;
+      try {
+        // A diagnostic observer must not replace the original error or record itself.
+        Promise.resolve(listener()).catch(() => {});
+      } catch { /* Keep notifying other diagnostic observers without recursion. */ }
+    }
   }
   private publish(entry: Entry) {
     this.snapshot = immutable(

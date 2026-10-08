@@ -169,7 +169,7 @@ export function PluginSettings({ registry }: { registry: PluginRegistryReader })
     if (!session.managementAvailable()) { setOpen(false); setManagementExpanded(false); }
   }, [session, centerRuntime]);
   const plugins = useSyncExternalStore(session.host.subscribe, session.host.list);
-  const diagnostics = useSyncExternalStore(session.host.subscribe, session.host.getDiagnostics);
+  const diagnostics = useSyncExternalStore(session.host.subscribeDiagnostics, session.host.getDiagnostics);
   const sections = useSyncExternalStore(listener => session.host.subscribeSlot("settings.sections", listener), () => session.host.getSlotSnapshot("settings.sections"));
   return <>
     <button className="flow-icon" ref={trigger} aria-label="Extensions and appearance" title="Extensions and appearance" onClick={() => { if (session.managementAvailable()) setOpen(true); }}><SlidersHorizontal size={18} /></button>

@@ -2,55 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:05 UTC / 输入main8c57已受控合入 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T03:42:26.395Z / 固定输入 1b1428f3867a5396422f2b8d066a94f8f138030d |
 | Plan | [plan.md](plan.md) |
 | 阶段 | M2 |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | trusted host/真实builtin/sample已独立APPROVED target6ce3ba0；15模块+12browser通过 |
-| 下一可用交付 | I01唯一owner消费六个已审实现提交，验证主App与connection lifetime |
+| 当前产出 | 正在修复扩展出错后诊断列表未即时更新的问题 |
+| 下一可用交付 | 已打开的扩展设置能及时显示插件错误 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 实现目标 | 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 |
-| 实现范围 | apps/web/src/plugins, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-host.browser.ts, apps/web/test/plugin-host.config.ts |
-| 单一status owner / model | w01_owner / 派发gpt-6-astra ultra；运行时无独立型号查询接口 |
-| Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host` |
-| Branch | `codex/web-plugin-host` |
-| 工作基线 / HEAD | `c8900a6fdbca20e683fda6fc808c135f0569c116` / 最近实采metadata `27a12ec17eac0bd68fe7c4ff043f51de60254f36` |
-| 工作树dirty状态 | CLEAN；27a12ec实采clean，根manifest/lock无差异；后续仅文档更新 |
-| 工作分支状态 | completed；trusted host实现/检查/独立review完成，I01主App接入另验 |
-| 检查状态 | PASSED；target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6：15模块tests、12 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；输入main `8c57f2f97345167207fa0d2590e9ad6310c922d4`，WPF-P01实现完成但未集成 |
-| Review | [review.md](review.md)，APPROVED target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6；PH-R1..R4 CLOSED；不含I01 App接入 |
+| 单一status owner / model | w01_owner / gpt-6-astra |
+| 所属大task | X01 [原父计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
+| co-lead | external_web_d01_owner |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics |
+| Branch | codex/web-plugin-diagnostics |
+| 工作基线 / HEAD | 1b1428f3867a5396422f2b8d066a94f8f138030d / 本段实施中 |
+| 工作分支状态 | in-progress |
+| 实现目标 | NOT_FIXED |
+| 实现范围 | apps/web/src/plugins/host.ts, apps/web/src/plugin-integration/react.tsx, apps/web/test/plugin-host.test.ts, apps/web/src/plugin-integration/slot-fixture.tsx, apps/web/test/plugin-integration.browser.ts |
+| 检查状态 | NOT_RUN |
+| 已集成main状态 / HEAD | 历史6ce3ba0已main；本通知修复未集成 |
+| Review | [review.md](review.md)，本片 NOT_STARTED |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原P01整体开工无规范原始时点；本后继实际source开工2026-10-08T03:42:14.853242Z，领取03:42:26.395Z见receipt |
 
-| TODO ID | 状态 | Owner | 完成证据/检查 |
-| --- | --- | --- | --- |
-| WPF-P01-01 | completed | w01_owner | [冻结接口](../../docs/evidence/wpf-p01/interface.md)；M02确认ports/精确上下文/bridge契约 |
-| WPF-P01-02 | completed | w01_owner | 6ce3ba0完整模块和真实builtin/sample；[验证](../../docs/evidence/wpf-p01/validation.md) |
-| WPF-P01-03 | completed | w01_owner | 15模块+12browser/typecheck/build；scope限定fixture |
-| WPF-P01-04 | in-progress | w01_owner / I01接入owner | 本模块整体6ce3ba0 APPROVED；提交交接完成；I01接入验收仍待回传 |
-
-## 已完成与证据
-
-按管理者最新授权，从main108f建立新树后明确merge已审W01最终metadata a22ae38；无冲突，merge输入基线0673653。旧m1-web树保持a22ae38 clean。已读新树规则、主管理草案、plugin-seams/research；[技能/clean-code记录](../../docs/evidence/wpf-p01/quality.md)。
-
-## 阻塞 / 风险 / 未验证
-
-当前无外部阻塞；完整target6ce3ba0已独立APPROVED，I01主App接入单独验收。未知第三方JS不属于本realm信任范围。App接入归M02唯一owner，本树不能修改其接缝。完整X01权限/包安装/隔离/CLI等由Lead统一，本子项不宣称完成。
-
-## 下一步与handoff
-
-预览http://127.0.0.1:5190/src/plugins/fixture/index.html；[启动/证据/四个实现提交](../../docs/evidence/wpf-p01/validation.md)。本模块整体6ce3ba0 APPROVED、PH-R1..R4 CLOSED。I01 owner明确cherry-pick并验证主App/connection lifetime后才能称端到端feature完成。
-
-## 需要用户决定
-
-无，已授权实施不重复审批。
-
-## Dashboard同步
-
-唯一status已转移至本平级计划目录；通知管理者将nested草案转交入口并请Lead/D03登记task→此worktree。管理者转述root于02:38:47.600Z实采：D03已登记22源，P01 human.complete=true、missing/issues为空；后续更新仍以本唯一事实源为准。
-
-02:50:58.898Z owner只读复核4320：来源本树、HEAD27a12ec、dirty=false、human.complete=true、status.errors/implementation.errors/issues均空，implementationProof=unchanged；checks原短SHA显示unknown，本次更正为完整targetSHA。无服务停止/重启或其他owner文件写入。
-
-领取：D04 claim0686525b-d323-49b5-affa-cefc66cb13be v1 active，migration receipt committedAt2026-10-06T02:48:43.178Z；02:59:24.179Z只读CLI复核原6项literal scope/owner/tree一致。review修复期间保留；[回执](../../docs/evidence/wpf-p01/coordination-receipt.json)。当前实现目标6ce3ba0，未扩大scope或写App/workspace。
-
-最终交接：实现与证据齐备，保留P01 claim v1作为模块唯一修复owner；没有release/handoff写权或开始PERF。03:04:15.15Z只读4320实采25f9687 clean、human.complete=true、issues/missing均空、checks绑定6ce3ba0、implementationProof unchanged；本次正式approval仅文档更新，提交后复核聚合。
+原批准与证据保持，当前修复不撤销历史错误隔离通过，也不借历史runtime额度。新D05来源替换待Original，未声称聚合已切换。[来源/claim](../../docs/evidence/wpf-p01/diagnostic-notification/source-switch.json)。

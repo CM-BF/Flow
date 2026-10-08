@@ -1,0 +1,21 @@
+{
+  "requestId": "p01-diagnostics-cc777a8d-dd23-442f-a90f-68eb55284027",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-P01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-diagnostics",
+  "branch": "codex/web-plugin-diagnostics",
+  "scope": [
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/src/plugin-integration/slot-fixture.tsx",
+    "apps/web/test/plugin-integration.browser.ts",
+    "plans/wpf-p01-plugin-host",
+    "docs/evidence/wpf-p01"
+  ],
+  "origin": "new"
+}
