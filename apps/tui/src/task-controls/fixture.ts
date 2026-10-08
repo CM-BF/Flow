@@ -2,7 +2,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { lstat, mkdtemp, mkdir, open, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { isAbsolute, join, resolve } from 'node:path';
-import { spawn } from 'node:child_process';
+import { spawn, type ChildProcess } from 'node:child_process';
 import { createServer as createHttpServer } from 'node:http';
 import { Pool } from 'pg';
 import { FlowClient } from '@flow/client';
@@ -14,6 +14,7 @@ import { runRunner } from '../../../runner/src/runtime.js';
 import { verifyText } from '../../../runner/src/verifier.js';
 import { cleanupAfterCheckpoint, observeConnections, type DirectoryIdentity } from './fixture-cleanup.js';
 import { FixtureObservation, observeFixtureAdapter } from './fixture-observation.js';
+import { ownProcessGroup } from './fixture-process.js';
 
 const pause = (ms: number) => new Promise<void>(done => setTimeout(done, ms));
 async function bounded<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
@@ -21,23 +22,8 @@ async function bounded<T>(promise: Promise<T>, ms: number, label: string): Promi
   try { return await Promise.race([promise, new Promise<never>((_, reject) => { timer = setTimeout(() => reject(Error(label)), ms); })]); }
   finally { clearTimeout(timer); }
 }
-function groupPresent(pgid: number): boolean {
-  try { process.kill(-pgid, 0); return true; }
-  catch (error) { if ((error as NodeJS.ErrnoException).code === 'ESRCH') return false; throw Error('Owned group existence unknown'); }
-}
-async function stopGroup(pgid: number) {
-  const signals: string[] = [];
-  for (const [signal, grace] of [['SIGTERM', 3000], ['SIGKILL', 1000]] as const) {
-    if (!groupPresent(pgid)) return { pgid, stopped: true, signals };
-    try { process.kill(-pgid, signal); signals.push(signal); }
-    catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ESRCH') throw Error('Owned group signal failed'); }
-    const until = performance.now() + grace;
-    while (groupPresent(pgid) && performance.now() < until) await pause(25);
-  }
-  return { pgid, stopped: !groupPresent(pgid), signals };
-}
 type CancelRequest = { path: string; key: string; body: string; upstreamStatus: number; taskId: string; dropped: boolean };
-type OwnedGroup = { pgid: number; stop: () => Promise<Awaited<ReturnType<typeof stopGroup>>> };
+type OwnedGroup = ReturnType<typeof ownProcessGroup>;
 type Center = Pick<Awaited<ReturnType<typeof createServer>>, 'listen' | 'close'>;
 type HandoffRecipe = {
   kind: 'web-handoff';
@@ -204,10 +190,10 @@ export class CancelJourney {
     if (!this.recipe || !this.directory || !['chrome', 'pty-journal'].includes(kind)) throw Error('Handoff runtime is not ready');
     return join(this.directory, kind);
   }
-  registerHandoffGroup(pgid: number) {
-    if (!this.recipe || !Number.isSafeInteger(pgid) || pgid <= 1 || this.groups.length >= 2 || this.groups.some(group => group.pgid === pgid)) throw Error('Unexpected handoff process');
-    let stopping: Promise<Awaited<ReturnType<typeof stopGroup>>> | undefined;
-    const owned = { pgid, stop: () => stopping ??= stopGroup(pgid) }; this.groups.push(owned);
+  registerHandoffGroup(child: ChildProcess) {
+    const pgid = child.pid;
+    if (!this.recipe || !Number.isSafeInteger(pgid) || pgid === undefined || pgid <= 1 || this.groups.length >= 2 || this.groups.some(group => group.pgid === pgid)) throw Error('Unexpected handoff process');
+    const owned = ownProcessGroup(child); this.groups.push(owned);
     return owned;
   }
   async observeHandoffTurn(taskId: string) {
@@ -289,8 +275,7 @@ export class CancelJourney {
         FLOW_URL: this.proxyUrl, FLOW_TOKEN: this.token, FLOW_TUI_STATE_DIR: join(this.directory!, 'pty-journal'),
         TUI_TEST_NODE: process.execPath, TUI_TEST_CONVERSATION: this.conversationId, TUI_TEST_TASK_B: taskB } });
     if (!child.pid) throw Error('Owned PTY leader did not start');
-    let stopping: Promise<Awaited<ReturnType<typeof stopGroup>>> | undefined;
-    const owned = { pgid: child.pid, stop: () => stopping ??= stopGroup(child.pid!) }; this.groups.push(owned);
+    const owned = ownProcessGroup(child); this.groups.push(owned);
     const exit = new Promise<number | null>((done, reject) => { child.once('error', reject); child.once('close', done); });
     void exit.catch(() => {});
     let pending = '', outputBytes = 0, protocol = Promise.resolve(), report: unknown, offered = false;
@@ -319,7 +304,7 @@ export class CancelJourney {
     try {
       code = await bounded(exit, 26_000, 'Owned PTY deadline'); await protocol;
       const group = await owned.stop(); this.record('ptyGroup', group);
-      if (code !== 0 || !group.stopped || !report || pending || failure) throw Error('PTY result incomplete');
+      if (code !== 0 || !group.stopped || group.failure || !report || pending || failure) throw Error('PTY result incomplete');
       return report as { exitCode: number; rawModeRestored: boolean; resized: number[]; unsentCjkMultilineDraft: boolean };
     } finally {
       // Persist even a timeout/driver error before the fixture considers deleting any recovery data.
@@ -329,7 +314,7 @@ export class CancelJourney {
       this.record('ptyGroupFinal', group);
       const capture = { code, group, outputBytes, report: report ?? null, incompleteLine: pending.slice(0, 16000), protocolFailure: failure ? 'PTY protocol failed' : null };
       this.record('ptyCapture', await this.save('pty.json', capture));
-      if (!group.stopped || failure) throw Error('PTY cleanup/protocol unknown');
+      if (!group.stopped || ('failure' in group && group.failure) || failure) throw Error('PTY cleanup/protocol unknown');
     }
   }
   private async readDirectoryIdentity(): Promise<DirectoryIdentity> {
@@ -347,7 +332,8 @@ export class CancelJourney {
     };
     await attempt('groups', async () => {
       const groups = await Promise.all(this.groups.map(group => group.stop()));
-      if (groups.some(group => !group.stopped)) throw Error('Process group remains'); return groups;
+      cleanup.groupDetails = groups; // Preserve every registered identity/error before the aggregate verdict.
+      if (groups.some(group => !group.stopped || group.failure)) throw Error('Process group remains or closure failed'); return groups;
     });
     for (const terminal of this.terminals) await attempt('terminalClosed', () => terminal().then(() => true));
     if (this.client) await attempt('allTasks', () => this.client.queryTasks({ limit: 10 }, AbortSignal.timeout(1500)));

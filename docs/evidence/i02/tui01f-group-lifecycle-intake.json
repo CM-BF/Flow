@@ -1,0 +1,79 @@
+{
+  "kind": "I02_TUI01F_GROUP_LIFECYCLE_SOURCE_AND_LOCAL_RESULT",
+  "reviewedAt": "2026-10-08T02:31:56.777Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXTURE_LIFECYCLE_SOURCE_AND_DIRECT_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "source": "51e380009559768c246a890f9edcf53ab2d48760",
+  "behaviorSource": "89739a0e1b2d0effe954575e50bdb47f80b086cb",
+  "delivery": "6c6b79eb4d68c56e61f61f81088f0d1321776580",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "manifest": {
+    "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/manifest.json",
+    "bytes": 7695,
+    "sha256": "55b3bfe4da2cce61aa6dff58107514cf663540b1172d3075d0c7aa59caebeb1a",
+    "bindingsVerified": 27,
+    "boundBytes": 101545,
+    "inherited": 2,
+    "runtimePinsVerified": 39
+  },
+  "accepted": [
+    {
+      "path": "apps/tui/src/task-controls/fixture-process.ts",
+      "bytes": 4060,
+      "sha256": "8a767fa813d6b84acf752215b108f6e04922478d5fb8bf387052b5d10fea4cf5"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-process.test.ts",
+      "bytes": 7524,
+      "sha256": "02e214751f1f0b3e04d39a6e82e09aba32ab7eedd87cf4dad603dac66028a92c"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27157,
+      "sha256": "8d4de0c96fa631a813c8ae8467b07bbd5391c21b343d53639a8f0496929ba285"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 29170,
+      "sha256": "7f0a943cf19be3a86a6a29c46a9506408259e224ce967b247656e559e1501c03"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/interface.md",
+      "bytes": 2381,
+      "sha256": "bafa67aa92dedc26fea11debb3d8b288f726b1bebf5a261cc9b6c9659052bc96"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/group-lifecycle/tsconfig.json",
+      "bytes": 430,
+      "sha256": "b222fb55f128d7824de5e5bf672fb5b3b9bfa2bf86b62451139bfbf63bb38fbc"
+    }
+  ],
+  "findings": [
+    "Real child ownership registered before yielding; child close and final group absence are separate required evidence. Reaped/unknown group cannot authorize further signals.",
+    "Up to8 safe observations retain firstUnknown; signal/child failures survive later absence. Fixture preserves concrete group detail before aggregate verdict and retains original work failure.",
+    "Final test-only type placement change has no runtime behavior delta; 8 examples are not repeated to erase first types failure. Actual tiny child76310 close/ESRCH exercised real fixture and no irreversible cleanup.",
+    "New helper included in journey source identity; old consumed R2/R3 caller inputs untouched. Future actual input must bind new source."
+  ],
+  "result": {
+    "selected": 8,
+    "passed": 8,
+    "types": "first2 then narrow-fix0",
+    "prelaunchFailure": "0child interpreter import failure preserved",
+    "supervisedChildren": 3,
+    "elapsedMs": 4693,
+    "rawBytes": 2822,
+    "groups": "allabsent",
+    "EOF": "both",
+    "signals": [],
+    "runtimeReturnedAt": "2026-10-08T02:28:25.983Z",
+    "scratch": "one exact empty root removed; two static types caches2715568B KEEP"
+  },
+  "limits": [
+    "0PG/HTTP/Chrome/provider/oldKEEP access; reviewer did not rerun checks.",
+    "Original R3 whole suite1selected0passed/groupsunknown immutable; historical cause not established.",
+    "No new actual handoff journey or permission inferred; no personal service operation.",
+    "Raw and original closures retained once canonical; main receives only6 exact consumer/interface/type paths and this receipt."
+  ]
+}
