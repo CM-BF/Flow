@@ -1,3 +1,13 @@
+# X01 真实 verifier 三任务用例准备
+
+状态：SOURCE/LOCAL REVIEW_PENDING；实际NOT_READY_OPERATOR_REQUIRED/NOT_RUN。
+
+Review target commit: 01b299ed5e6fbd731ea67c929c5641999ebbce7d
+
+root主case与db资源支持分别只读；db成功receipt增量已限定通过。固定[结果](../../docs/evidence/x01/verifier-process/result-summary.json)、[支持审](../../docs/evidence/x01/verifier-process/support-review.json)、[后续薄入口](../../docs/evidence/x01/verifier-process/operator-next.md)。初strict后mode/事实投影变化仅收集与静态review，不倒签最终types。旧UNKNOWN与独立cleanup保留。
+
+---
+
 # X01 真实 verifier 进程旅程设计
 
 状态：APPROVED（仅固定设计与当前metadata增量，0P1/P2；未授实际运行）

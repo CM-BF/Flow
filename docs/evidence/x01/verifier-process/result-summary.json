@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-08T01:57:29.507Z",
+  "source": "01b299ed5e6fbd731ea67c929c5641999ebbce7d",
+  "initialSource": "760749aff43f4192fbb5a915cbf0e73a27b869e1",
+  "checks": {
+    "strict": {
+      "exit": 0,
+      "source": "760749aff43f4192fbb5a915cbf0e73a27b869e1",
+      "finalSourceNotRechecked": true
+    },
+    "collect": {
+      "exit": 0,
+      "exactSelected": 1,
+      "hooks": 0,
+      "behaviorPassed": null,
+      "source": "01b299ed5e6fbd731ea67c929c5641999ebbce7d"
+    }
+  },
+  "children": 3,
+  "supervisorMilliseconds": 4793,
+  "rawBytes": 0,
+  "PG": 0,
+  "worker": 0,
+  "listener": 0,
+  "RETURN": "2026-10-08T01:56:34.002Z",
+  "firstWrapper": "UNKNOWN_ROOT_NONCANONICAL_BEFORE_DELETE",
+  "firstSeparateCleanup": "first-local-separate-cleanup.json",
+  "currentResources": "RETURNED",
+  "initialEPERM": "retained, final owned states absent",
+  "wholeExternalWall": null,
+  "peak": null,
+  "actualReadiness": "NOT_READY_OPERATOR_REQUIRED"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-08T01:46:00.000Z |
+| 最近更新时间 | 2026-10-08T01:57:29.507Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,21 +14,21 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 新准备基线 main2b52b23554e612077bbc25492417fbcf43f299cf；原父17311b4a；仅已领process-runner-pg.test.ts与自有证据，观察接缝待独立已审输入 |
-| 工作树 dirty 状态 | 当前有界源码准备中；固定供给与test尚未交付，不冒clean或review通过 |
+| 工作基线 / HEAD | 固定源01b299ed5e6fbd731ea67c929c5641999ebbce7d；main供给2b52b23554e612077bbc25492417fbcf43f299cf + 已审PROCESS观察581d两叶；原父17311 |
+| 工作树 dirty 状态 | 源码固定；结果/准备packet封存中，提交后push clean STOP |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN；0工程child/PG/worker/listener；等待观察接缝fixed及独审后focused types/精确collect |
-| Review | db_transaction_owner于2026-10-08T01:25:16.000Z对627c1b591设计/当前metadata增量APPROVED，0P1/P2；[正式回执](../../docs/evidence/x01/verifier-parent-design-review.json)。不授源码准备或PG实际窗口，NOT_READY/NOT_RUN |
-| 检查范围 | 三任务真实verifier单例源码准备；旧semver用例未运行；HTTP仅owner/registry实计，runner计数仍null |
-| 检查目标 | [真实进程设计](../../docs/evidence/x01/verifier-real-process-design.md)；各子片固定main回执见verifier-parent-metadata-start.json |
+| 检查状态 | focused strict0（初source760749）；两轮精确collect各1/0hooks，最终01b299未重复strict；实际PG/worker NOT_RUN |
+| Review | root主case只读审进行中；db01:56:14对01b299成功receipt/HTTP限定P2 CLOSED，0P1/P2；[限定支持审](../../docs/evidence/x01/verifier-process/support-review.json)。完整operator/actual仍NOT_READY |
+| 检查范围 | 仅准备：3child/4793ms/raw0；首TMP路径拒绝UNKNOWN后独立同identity三空目录清理，后两TMP正常ENOENT；不把collect当用例PASS |
+| 检查目标 | [source/结果入口](../../docs/evidence/x01/verifier-process/result-summary.json)；新三任务1case，旧semver互斥mode未选 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。  AV center/client97353e4f48ea515d268f6e4a6107e778b6c39abb；VAR+CENTER728d3165f17dfe8272c8ffce6e1eff60d9602d6b；runtime ec7e72f04b7010ab86863c8c11589c78b4588c1d；SDK866f0a9c077df2cd51f03210d02949df17a299f5。均有I02回执，不冒个人部署/真实worker全链。 |
-| 实现目标 | 准备公共来源→真实失败verifier→输出JSON成功verifier的单例，尚未实际执行 |
+| 实现目标 | 三任务真实主进程用例已实现并完成局部准备检查；等待源码/结果独审与薄运行入口准备 |
 | 实现范围 | 本段process-runner-pg.test.ts及docs/evidence/x01；不写其他产品或旧证据；12MiB/30min |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 安装式验证器的中心受理、独立结果门禁、运行器接线和公共客户端已接收主线；各片证据边界保留 |
-| 下一可用交付 | 固定三任务进程用例与生命周期/HTTP/动态依赖输入，随后独立准备审和真实窗口 |
+| 下一可用交付 | 完成三任务用例准备独审；后续补齐薄运行入口的选择、原件保存和实际准入后执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -40,7 +40,7 @@
 | X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游7.8.4→7.8.5→回选7.8.4已真实验收并main；真正invoke函数进行中跨版本/物理卸载仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；Weba952独立管理模块已main9f0，不冒本次生产App挂载或个人部署；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | [AV权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md)：R3真实5PG已验/center与client已main；[VAR](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/status.md)与[CENTER](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring/plans/x01-verifier-center-wiring/status.md)已main728；[RUNTIME](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime/plans/x01-verifier-runtime/status.md)已mainec7e；[SDK](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission/plans/x01-verifier-client-admission/status.md)已main866。下一[三任务真实进程旅程](../../docs/evidence/x01/verifier-real-process-design.md)仅设计NOT_RUN；renderer/真正invoke-inflight/T7/完整三端仍未完成 |
+| X01-07 | in-progress | architecture_read | [AV权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md)：R3真实5PG已验/center与client已main；[VAR](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/status.md)与[CENTER](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring/plans/x01-verifier-center-wiring/status.md)已main728；[RUNTIME](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-runtime/plans/x01-verifier-runtime/status.md)已mainec7e；[SDK](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission/plans/x01-verifier-client-admission/status.md)已main866。下一[三任务真实进程旅程](../../docs/evidence/x01/verifier-real-process-design.md)已实现source准备/实际NOT_RUN；renderer/真正invoke-inflight/T7/完整三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
