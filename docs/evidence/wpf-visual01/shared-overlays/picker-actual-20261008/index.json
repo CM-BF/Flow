@@ -1,0 +1,215 @@
+{
+  "task": "WPF-VISUAL01",
+  "run": "visual-picker-20261008-68653e21",
+  "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "executionHead": "da05581427a47565a3c5be0b0134552048c16ffe",
+  "currentResult": "FAILED",
+  "checksReturned": [
+    "Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "overlayChecksReturned": [],
+  "pngs": [
+    "message-settings-dark-390.png",
+    "message-settings-light-390.png"
+  ],
+  "visualReview": "PENDING_LIMITED_RESULT_REVIEW",
+  "startedAt": "2026-10-08T02:20:41.028602+00:00",
+  "terminalAt": "2026-10-08T02:20:56.569869+00:00",
+  "exactReturnAt": "2026-10-08T02:23:03.771652+00:00",
+  "phase": {
+    "state": "CLOSED",
+    "chargeMs": 15543,
+    "permittedMs": 90000,
+    "unusedMs": 74457,
+    "unusedIsCredit": false,
+    "automaticRetry": false
+  },
+  "cleanup": "EXACT_RETURN",
+  "measurementAdoption": "PARTIAL_RETAINED_ADOPTION",
+  "index": [
+    {
+      "source": "/private/tmp/vis-picker-b1/admission.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/admission.json",
+      "bytes": 5931,
+      "sha256": "8c9c942db04f75506ad7cddae68db7578b860bbc0d609d3acf0976aae5dccd16"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/fresh-gate.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/fresh-gate.json",
+      "bytes": 3072,
+      "sha256": "546271c9382955af01f1ad0f2547916d3fccc13db632aee398e3660549bdd6a8"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/consumed-gate.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/consumed-gate.json",
+      "bytes": 2863,
+      "sha256": "655e902bb27a79b98462ee0a426c8dc3aeedf63c63b0029bcd698377135521c6"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/child-gate.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/child-gate.json",
+      "bytes": 3514,
+      "sha256": "0abdfe4dc49d7b65ad84a59272b16d3dc7862343ae41a736178b10d4399404ce"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/actual-start.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/actual-start.json",
+      "bytes": 171,
+      "sha256": "b5aed8c71a420b7be151c50ed6bdf870fc1beb0a55b0eb169d5843d29b686900"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/outer-result.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/outer-result.json",
+      "bytes": 1174,
+      "sha256": "5b84538cb6f56a66e4a17bc112c230fca50dbc0bee9e437c09750c985d706a2d"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/outer-stdout.txt",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/outer-stdout.txt",
+      "bytes": 654,
+      "sha256": "18dde23ff1d94ed0229502890703c4fdbbe44c2811e36ed131fb024b795c1d85"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/outer-stderr.txt",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/result.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/result.json",
+      "bytes": 91940,
+      "sha256": "a24230f1365e73961759ffd3b52880e1e80c5b6caef8d5700c5c1d25aaaf5ebb"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/browser-budget.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/browser-budget.json",
+      "bytes": 316,
+      "sha256": "e3556938d3087762885c0f11eee8bd23a83832e6005c61e34b59ccb5b9cb8b28"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/worker.log",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/worker.log",
+      "bytes": 3569,
+      "sha256": "8e116c888ad27498c6ff58a8a4f3c9a41b79283483e6e43c811354c887c2dceb"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/exact-return.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/exact-return.json",
+      "bytes": 2835,
+      "sha256": "84f9d003ed67e1f589a16da00e8434a38e59b5aff25c39a316a3c4274eb7a9f0"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/binding.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/binding.json",
+      "bytes": 51418,
+      "sha256": "6263f2f97a469d8b4f573ef108fd896bbc617887ec1e52256f0b6a8b520ad15a"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/manifest.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/manifest.json",
+      "bytes": 1395,
+      "sha256": "d66f57bb14464b916b85649889800e37fb49fc6f3365b20300cf8339807472e3"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/supervisor.py",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/supervisor.py",
+      "bytes": 27096,
+      "sha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/worker.mjs",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/worker.mjs",
+      "bytes": 14467,
+      "sha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/aliases.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/aliases.json",
+      "bytes": 3451,
+      "sha256": "251101182e1553fcdae839c4c58b45436a1e8bd7bca93eab565b3df8640f3996"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/runtime-tsconfig.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/runtime-tsconfig.json",
+      "bytes": 1588,
+      "sha256": "6385ce025173b2e5046cf195fef9ff524cacd688df3a1ebd132ff21ca94ff2e3"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/sandbox.sb",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/sandbox.sb",
+      "bytes": 373,
+      "sha256": "f90c6229963309890ab8fe888e275a1d8b4f5aea24977f625fba745c4b9ae718"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/measure.py",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/dispatch-once.py",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/dispatch-once.py",
+      "bytes": 6167,
+      "sha256": "1295dda0a1b0803a2618a560ea5e14c58da9a823f33cf9288739e5f842dd13bc"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/browser-results.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/browser-results.json",
+      "bytes": 6378,
+      "sha256": "72ce72b8b2f957675ba2febe72c9fb5d628f3ce7a29738948c74ad76cbb45391"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/chrome.log",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/chrome.log",
+      "bytes": 8138,
+      "sha256": "19606311e8efbc828804165a9416e9057f50066d27a431d44ecf315fed0d31d8"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/message-settings-dark-390.png",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/message-settings-dark-390.png",
+      "bytes": 71668,
+      "sha256": "5ea69e0e9bc25b71abed03a7bbd262911dc14d8136e4b6e86e611a3fe78fac98"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/message-settings-light-390.png",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/message-settings-light-390.png",
+      "bytes": 71955,
+      "sha256": "d0e65d60217a9de4d7b68c8bd4eba0d8d64146b71e66ca9b9a1e80cfc1cefd92"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/native-filter-inputs.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/native-filter-inputs.json",
+      "bytes": 32564,
+      "sha256": "f59bf7cd76a634876b1465757f04da0264534bc5eb967ac1052ea015afcb7f1b"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/owned-chrome.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/owned-chrome.json",
+      "bytes": 2294,
+      "sha256": "1becb8fd7d3ee7b01cfc317af00ab2a8a01c3966c8a75870cfd0a36b72e2ec62"
+    },
+    {
+      "source": "/private/tmp/vis-picker-b1/raw/visual-picker-20261008-68653e21/select-diagnostics.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/raw/raw/visual-picker-20261008-68653e21/select-diagnostics.json",
+      "bytes": 65,
+      "sha256": "45ee5c4ab6bc2681c5325d0e98f7728a213ef8c718e4603fdbd9d7d280a7ea64"
+    }
+  ],
+  "bytes": 424035,
+  "sourcePins": {
+    "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+    "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+    "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "apps/web/test/message-settings.browser.ts": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+  },
+  "runtimeSandboxNote": "sandbox.sb archived is actual parent-generated profile. The pre-run prepared hash is preserved in original manifest/binding and reviewed snapshot; no retrofit to those hashes.",
+  "scope": "Independent production MessageSettingsPicker with synthetic HTTP catalog; not actual App/send/queue/provider. Six behavior checks returned; first overlay preparation failed; five overlay screenshots absent. Recovery previous two-group result stays separate."
+}

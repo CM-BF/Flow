@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-08T02:25:46.433679+00:00",
+  "phase": "PICKER_SINGLE_ONCE_CLOSED",
+  "runtime": {
+    "permittedMs": 90000,
+    "outerElapsedMs": 15542.699791956693,
+    "parentElapsedMs": 15487,
+    "terminalAfterFinalWritesMs": 15489,
+    "chargeMs": 15543,
+    "unusedMs": 74457,
+    "unusedCreditTransfer": false,
+    "exactReturnAt": "2026-10-08T02:23:03.771652Z"
+  },
+  "seal": {
+    "deadline": "2026-10-08T02:39:52.831Z",
+    "permitBytes": 28311552,
+    "scratchAbsent": true,
+    "privatePacketObservedBytes": 696563,
+    "canonicalArchiveObservedBytes": 436914,
+    "indexAtomicCopyUpperBytes": 2241780,
+    "gitObjectsConservativeUpperBytes": 1511273,
+    "remainingSmallMetadataReserveBytes": 1048576,
+    "conservativeCombinedUpperBytes": 5935106,
+    "actualPeak": "NOT_OBSERVED",
+    "runtime75MiBAndSeal27MiBNotSummedAsSimultaneous": true
+  },
+  "links": {
+    "count": 60,
+    "missing": []
+  },
+  "statusFieldCheck": "PYTHON_STRUCTURAL_CHECK_ONLY; not product parser execution or functional test",
+  "zeroAdditionalEngineeringChildren": true
+}

@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-08T02:23:03.771652+00:00",
+  "state": "EXACT_RETURN",
+  "run": "visual-picker-20261008-68653e21",
+  "actualExitCode": 1,
+  "terminalState": "FAILED",
+  "chargeMs": 15543,
+  "totalMs": 90000,
+  "phaseState": "CLOSED",
+  "unusedCreditTransfer": false,
+  "freshIdentities": [
+    {
+      "kind": "pid",
+      "id": 73350,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 73350,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 73354,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 73354,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 73379,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 73379,
+      "state": "ESRCH"
+    }
+  ],
+  "scratch": {
+    "path": "/private/tmp/vis-picker-b1/scratch",
+    "absent": true
+  },
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 8138,
+      "keptBytes": 8138,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 3569,
+      "keptBytes": 3569,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "outer.stdout": {
+      "eof": true,
+      "receivedBytes": 654,
+      "keptBytes": 654,
+      "droppedBytes": 0
+    },
+    "outer.stderr": {
+      "eof": true,
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0
+    }
+  },
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cleanupErrors": [],
+  "reportedChecks": 6,
+  "pngs": [
+    "message-settings-dark-390.png",
+    "message-settings-light-390.png"
+  ],
+  "pg": 0,
+  "files": {
+    "result.json": {
+      "bytes": 91940,
+      "sha256": "a24230f1365e73961759ffd3b52880e1e80c5b6caef8d5700c5c1d25aaaf5ebb"
+    },
+    "outer-result.json": {
+      "bytes": 1174,
+      "sha256": "5b84538cb6f56a66e4a17bc112c230fca50dbc0bee9e437c09750c985d706a2d"
+    },
+    "browser-budget.json": {
+      "bytes": 316,
+      "sha256": "e3556938d3087762885c0f11eee8bd23a83832e6005c61e34b59ccb5b9cb8b28"
+    },
+    "raw/visual-picker-20261008-68653e21/browser-results.json": {
+      "bytes": 6378,
+      "sha256": "72ce72b8b2f957675ba2febe72c9fb5d628f3ce7a29738948c74ad76cbb45391"
+    },
+    "actual-start.json": {
+      "bytes": 171,
+      "sha256": "b5aed8c71a420b7be151c50ed6bdf870fc1beb0a55b0eb169d5843d29b686900"
+    },
+    "child-gate.json": {
+      "bytes": 3514,
+      "sha256": "0abdfe4dc49d7b65ad84a59272b16d3dc7862343ae41a736178b10d4399404ce"
+    }
+  },
+  "resourceClosureMeaning": "Worker awaited owned fixture server/context closure, parent reaped owned Chrome and worker groups; fresh ESRCH confirms all exact registered process/group identities. No endpoint probes."
+}

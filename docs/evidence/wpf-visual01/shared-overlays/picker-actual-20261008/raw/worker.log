@@ -1,0 +1,28 @@
+7:20:51 PM [vite] Internal server error: [
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "regex",
+    "pattern": "/^[A-Za-z0-9][A-Za-z0-9._:-]{0,179}$/",
+    "path": [
+      "profile",
+      "configuration",
+      "turnSettings",
+      "choices",
+      0,
+      "model"
+    ],
+    "message": "Invalid string: must match pattern /^[A-Za-z0-9][A-Za-z0-9._:-]{0,179}$/"
+  }
+]
+      at entry (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/apps/web/test/message-settings.browser.ts:16:50)
+      at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/apps/web/test/message-settings.browser.ts:54:23)
+      at call (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13511:5)
+      at next (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13464:4)
+      at hostValidationMiddleware (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:16854:3)
+      at call (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13511:5)
+      at next (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13464:4)
+      at cors (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13810:5)
+      at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13833:9)
+      at originCallback (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js:13827:8)
+{"outcome":"failed","checks":["Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots","No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C","Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)","Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard","Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts","Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"],"cleanupErrors":[]}

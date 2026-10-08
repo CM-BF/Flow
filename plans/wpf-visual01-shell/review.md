@@ -1,8 +1,8 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_NOT_RUN**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_FAILED**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
 
-scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；Recovery appearance选定2组实际PASS及两390PNG已获root限定独立实际/视觉审；Picker NOT_RUN，主线/部署 NOT_INTEGRATED。
+scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；Recovery appearance选定2组实际PASS及两390PNG已获root限定独立实际/视觉审；Picker整体FAILED：六行为组已返回，两图已生成；新增展示首组因夹具模型ID非法而失败，主线/部署 NOT_INTEGRATED。
 
 独审者先核固定 Git target、实际文件 hash 和本次检查原件，再区分 source / local / browser / visual / main / deployment；禁止继承历史 a8 绿项。原 APPROVED 历史见[historical review](../../docs/evidence/wpf-visual01/shared-overlays/historical-review.md)。
 
@@ -28,14 +28,22 @@ Picker [f3b8限定源码准备审](../../docs/evidence/wpf-visual01/shared-overl
 
 [abb32](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/root-preparation-review-with-peer-hold.json)已限定接受原614 own/406 roots/38 links/capture，依赖HOLD不回填。当前新[4peer与2必要声明依赖索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/closure-index.json)待delta确认；412总roots固定不等于实际运行通过。capture/parent与产品六源没有再次修改。
 
-## 当前Recovery选定实际范围
+## Recovery选定实际限定范围（独立于Picker）
 
 [固定原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json)及[c666依赖delta审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-peer-delta-review.json)。经理已明确同capture/native边界并给唯一60s实际窗；实际exit0，cookieRead/themes390两个选定组通过，双390图/geometry已保存。原六源未变，无再次类型检查，Picker仍未运行；[root独审原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json)已逐28source/19原始runtime文件核对并亲看两PNG，0blocking；只接受当前Recovery窄屏状态/观测滚动条模式，不扩大为完整Recovery、Picker、Arc、main或部署。
 
-## Picker固定候选的当前边界
+## 历史Picker固定候选边界
 
 root f3b8仅source-preparation已批准；经理明确接受固定Node24.20/Chrome154/CDP+Playwright1.63/tsx4.23.15与原prm-b1监督清理合同，[native接受记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)系其直接派工转录。parent/worker/五prepared不变，最终metadataHEAD例行重绑不重复审查。Picker实际/7图仍NOT_RUN，没有gate、额外测试或fullApp批准。
 
-## 2026-10-08 例行准备刷新
+## 历史2026-10-08 例行准备刷新
 
 原f3b8 source与268fff native接受保持；只核固定输入并调整预算/元数据执行绑定，0产品/测试/运行器差量，不产生新的行为或视觉PASS。旧1MiB metadata不足实际index已纠正为3MiB提案，raw双拷贝与scratch运行阶段分开计峰。新窗口仍由经理单独授予，旧floor和未用时间均不是许可。
+
+## 2026-10-08 Picker实际失败与限定定位
+
+固定source `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`，执行HEAD `da05581427a47565a3c5be0b0134552048c16ffe`。[28原件/归档单索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json)保存六behavior真实返回、两390PNG以及完整终态/资源归还。整体exit1/FAILED，新增overlay两组未返回，五overlay图未生成。15543/90000ms CLOSED，未用不转credit。
+
+[定位](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/failure-analysis.json)：normal夹具把“Claude Sonnet”显示名称当模型ID，实际公共schema拒绝空格（worker.log的invalid_format/choices[0].model）。保codec不变，后继只需合法模型ID及同源locator；本次没有修复、实验或复跑。6behavior固定证据可独立复用，但不能签整个8组/7图通过。
+
+[root限定失败结果审](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/root-result-review.json)已独核28pairs/56files与六源码、完整RETURN，并亲看两390图（仅behavior长model）。接受本次失败事实及六行为组；overlay0/2仍OPEN，P2夹具阻塞待修。先前准备审漏此公共codec约束如实保留，不将准备批准改写为实际通过。旧affected类型与Recovery限定APPROVED保持，不能当Picker展示PASS。

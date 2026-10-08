@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-08T02:26:19.181858+00:00",
+  "state": "FAILED_CLOSED_AND_SOURCE_STOP",
+  "reviewDecision": "ACCEPT_FAILED_RUN_AND_SIX_BEHAVIOR_GROUPS_ONLY_OVERLAY_VALIDATION_OPEN",
+  "review": {
+    "path": "root-result-review.json",
+    "bytes": 7461,
+    "sha256": "d95088d74b6c23712b4aabf01a9594258818f982cfbe597b394a75bc2cdc7e98"
+  },
+  "fixedPreReviewIndex": {
+    "path": "index.json",
+    "sha256": "accc438350b7660c3dc88ca609c651100f184fe2ecb96e32d4a289c984cbbc7e",
+    "note": "Preserved index creation review-pending snapshot; this subsequent binding and current status/review carry actual review decision."
+  },
+  "productTestCallerDelta": false,
+  "allEightScopes": "STOP_AFTER_NORMAL_SEAL",
+  "claim": "acce2727-f3c0-433d-9b06-b802eefb32cb v1 retained",
+  "newRuntime": false,
+  "remainingOverlayChecks": 2,
+  "remainingOverlayPngs": 5,
+  "main": "NOT_INTEGRATED"
+}

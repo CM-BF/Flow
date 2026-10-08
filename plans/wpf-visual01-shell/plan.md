@@ -28,7 +28,7 @@
 
 ## 验证与未验范围
 
-四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；Recovery appearance 已实际通过cookieRead/themes390两个选定组，2张390图已独立目视接受；Picker、完整Recovery与构建仍未运行。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
+四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；Recovery appearance 已实际通过cookieRead/themes390两个选定组，2张390图已独立目视接受；Picker首次整体FAILED（六行为已返回、两图，新增展示夹具失败）；完整Recovery与构建仍未运行。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
 
@@ -57,3 +57,7 @@ TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚�
 原候选源与native边界已分别由root/经理接受，见[ready记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)。本10min/2MiB段只固定数据批准和自然metadataHEAD，不改source/runnable或重新扫闭包，不重跑类型。原6行为+2展示组/7PNG均未实际执行，TODO06/07不变；个人恢复优先，90s提案不是运行授权。
 
 2026-10-08：Picker现成包仅刷新[READY输入与计量](../../docs/evidence/wpf-visual01/shared-overlays/picker-existing-refresh-20261008/ready.json)，source与验收不改；TODO06/07仍待Picker实际、全片独审/main。新75MiB峰值提案保90s/15cleanup，实际授权另列。
+
+### 2026-10-08 Picker实际与后继最小范围
+
+[单次结果](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json)保六behavior真实完成、两390图及新增展示首组失败；15543/90000ms CLOSED/完整RETURN。公共模型ID codec拒绝含空格的normal夹具输入，未改产品/契约，未放松任何验收。TODO06/07仍OPEN；后继候选是同scope合法代表ID和精确locator、必要公共codec输入验证与未完成overlay两组/五图，不重跑无关已绿矩阵。该后继尚无实际授权。主线与部署未完成。

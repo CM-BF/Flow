@@ -1,0 +1,77 @@
+{
+  "parentPid": 73350,
+  "chromePid": 73354,
+  "pgid": 73354,
+  "processGroup": "separate-parent-owned-session",
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/vis-picker-b1/scratch/profile",
+    "--disk-cache-dir=/private/tmp/vis-picker-b1/scratch/cache",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/vis-picker-b1/scratch/temp",
+    "TMP": "/private/tmp/vis-picker-b1/scratch/temp",
+    "TEMP": "/private/tmp/vis-picker-b1/scratch/temp",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/vis-picker-b1/scratch/temp",
+    "XDG_CACHE_HOME": "/private/tmp/vis-picker-b1/scratch/cache",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/vis-picker-b1/scratch/crash"
+  },
+  "spawnAttemptedAt": "2026-10-08T02:20:41.186788+00:00",
+  "spawnReturnedAt": "2026-10-08T02:20:41.201218+00:00",
+  "cdpPortDiscoveredAt": "2026-10-08T02:20:45.222383+00:00",
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-08T02:20:56.511761+00:00",
+    "beforeCdpPort": false
+  },
+  "close": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-08T02:20:56.512163+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "launchError": null,
+  "signals": [
+    {
+      "signal": "SIGTERM",
+      "at": "2026-10-08T02:20:56.494552+00:00",
+      "target": "owned-chrome-pgid"
+    }
+  ],
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 8138,
+      "keptBytes": 8138,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 3569,
+      "keptBytes": 3569,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "cdpEndpoint": "http://127.0.0.1:62582"
+}

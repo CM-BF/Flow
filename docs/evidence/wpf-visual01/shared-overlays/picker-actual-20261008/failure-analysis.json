@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-08T02:24:44.072315+00:00",
+  "classification": "FIXTURE_INPUT_REJECTED_BY_PUBLIC_CODEC",
+  "sourceUnchanged": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "observed": {
+    "workerLog": "raw/worker.log lines1-25",
+    "error": "invalid_format",
+    "path": "profile.configuration.turnSettings.choices.0.model",
+    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,179}$",
+    "fixtureValue": "Claude Sonnet",
+    "testFile": "apps/web/test/message-settings.browser.ts",
+    "constructLine": 20,
+    "throwLine": 16,
+    "overlayAssertLine": 185,
+    "returnedBehaviorGroups": 6,
+    "pageErrors": []
+  },
+  "interpretation": "Normal overlay fixture substitutes a display name containing a space into a model ID. entry() public schema rejects before sending valid catalog; locator missing is subsequent symptom. No product regression established.",
+  "followupCandidate": "Use a legal representative model ID and matching test name, retain public codec and all tuple/Apply/geometry assertions. Any fix/local/overlay actual requires a separately authorized segment.",
+  "scopeLimits": "No overlay failure DOM/HTTP response body was captured. Existing worker stack directly establishes codec rejection. No tests or browser rerun during diagnosis."
+}

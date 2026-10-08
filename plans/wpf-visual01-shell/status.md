@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-08T02:18:25.824367Z |
+| 最近更新 | 2026-10-08T02:26:02.133Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,18 +15,18 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 恢复对话框的登录读取、窄屏浅深主题和键盘焦点已通过限定独立验收；消息设置浮层候选已具备固定运行准备，尚未运行 |
-| 下一可用交付 | 等待经理按个人恢复优先队列安排消息设置浮层单次旅程；完成后交全片独审与主线接收 |
-| 当前阻塞 | NONE |
+| 当前产出 | Picker实际FAILED：六行为组已返回、两图已生成；新增展示组首步定位失败，全部资源已归还 |
+| 下一可用交付 | 封存本次失败并限定定位展示夹具前置；修复/复验需经理后继明确段，随后全片独审与主线接收 |
+| 当前阻塞 | ACTIVE: Picker正常展示夹具把含空格名称当模型ID，被公共codec拒绝；当前整体FAILED，待合法窄修/复验，无运行holder |
 | 需用户决定 | NONE |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原task首次开工缺精确证据；本后继实际开始 2026-10-07T15:55:42.539Z，见[source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json)，不将领取时间倒当原开工 |
 | 实现目标 | 4ca1deac319afac89f7c0ae5e0142cb9de429a2a |
 | 实现范围 | apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts |
-| 检查状态 | PASSED 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；affected类型与Recovery appearance两组选定实际/双390图已独审；Picker NOT_RUN |
+| 检查状态 | FAILED 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；Picker六行为组已返回/两图，展示首组未完成；原affected类型与Recovery appearance两组限定通过保持 |
 | 已集成main状态 / HEAD | 新共享浮层 NOT_INTEGRATED；原 shell a8b2b22 已 INTEGRATED 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
-| Review | [review.md](review.md)；4ca的类型/窄guard及Recovery选定实际/双图限定APPROVED，Picker与全片仍待完成 |
+| Review | [review.md](review.md)；4ca的类型/窄guard及Recovery选定实际/双图限定APPROVED，Picker首实际FAILED且失败/六组已限定独审，overlay与全片仍待完成 |
 | D04 claim | acce2727-f3c0-433d-9b06-b802eefb32cb v1 active / exact8，[receipt](../../docs/evidence/wpf-visual01/shared-overlays/take-receipt.json) |
 | 架构影响 | 展示布局与组件私有 disclosure；无新状态权威、契约或服务节点 |
 
@@ -37,7 +37,7 @@
 | WPF-VISUAL01-03 | completed | d01_owner（历史） | 原 a8 检查；非当前结果 |
 | WPF-VISUAL01-04 | completed | d01_owner（历史） | 原 main4391 接收及旧 claim v3 released |
 | WPF-VISUAL01-05 | completed | w01_owner | [source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json) |
-| WPF-VISUAL01-06 | pending | w01_owner | affected types与Recovery appearance2组PASSED；Recovery双图已独审；Picker与其余视觉未验 |
+| WPF-VISUAL01-06 | pending | w01_owner | affected types与Recovery appearance2组PASSED；Recovery双图已独审；Picker六行为已报告、展示首组失败；其余视觉未完成 |
 | WPF-VISUAL01-07 | pending | root / w01_owner | 517678类型/窄guard已审；Recovery选定实际/双图已独审；Picker及主线待完成 |
 
 ## 等待记录
@@ -75,12 +75,20 @@ Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2own
 
 当前exact8在本次正常封存后全部STOP、claim保留；0后继runtime/待launch。GO恢复卡片可读标题与主次动作的后继由原大task另排，未混入本次source或PASS范围。
 
-## Picker最终routine准备
+## 历史Picker最终routine准备
 
 [f3b8源审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)与[经理native限定接受](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)已绑定。[READY候选](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)仅数据state/head/approval变化，source4ca、parent1147944e、worker4ff84c50及五prepared保持；旧binding/manifest完整保存。90s含15cleanup仍提案，0gate/0runtime，Recovery余额不借用。全部8scope在本次正常seal后STOP、claim保留；实际前仍需经理新窗口与fresh全部输入/完整组合。
 
-## 2026-10-08 Picker现成包刷新
+## 历史2026-10-08 Picker现成包刷新
 
 现成source4ca与parent/worker/五prepared逐字不变；6own、222readonly、37external、Node/Chrome及原source/native批准指针重新逐hash核齐，未创建gate或启动任何工程/runtime。当前[新READY记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-existing-refresh-20261008/ready.json)保旧73MiB/旧floor历史，新增候选75MiB =64scratch+8retained+3metadata，metadata含index原子副本/objects；raw双副本归档只能在完整RETURN且scratch已删后进行。90s=75work15cleanup、6行为+2展示组/7PNG仍NOT_RUN，仅待经理新lease。Recovery结果不重跑、不转余额；主线/部署仍未完成。
 
 本准备段实际firstWrite02:12:51.611954Z、固定deadline02:32:51.611954Z；等待S01隔离02:14:30→02:17:41.864共191864ms（未OPEN选择已取消），时钟未延长。恢复后仅自然metadata封存，0工程child/0runtime；最终私有binding将指本次clean metadata HEAD，原ready快照与before字节保持。全部8scope在正常seal后STOP，claim保留。
+
+## 2026-10-08 Picker单次实际
+
+实际START 02:20:41.028602Z、terminal 02:20:56.569869Z、fresh exactRETURN 02:23:03.771652Z。run `visual-picker-20261008-68653e21`，执行HEAD `da05581427a47565a3c5be0b0134552048c16ffe`、固定source `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`。父/outer实际exit1；15543/90000ms CLOSED，未用74457不转credit，不自动重试。
+
+真实behavior六组已返回，原浅深390两PNG已生成；独立overlay旅程第一步在message-settings.browser.ts:185等待`Claude Sonnet` radio找不到，新增两展示组未返回、五张overlay图未生成，整体FAILED。不将既有六组或截图存在外推全片通过。3个PID/3个PGID fresh ESRCH、3inner+2outer EOF/drop0、context/fixtureclosed、scratch absent，0PG，cleanupErrors[]。[唯一结果/原件索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json)与[限定定位](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/failure-analysis.json)。worker.log已证实“Claude Sonnet”含空格违反模型ID公共codec；locator未找到是后果，未发现本次证据证明的产品回归。[root限定失败审](../../docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/root-result-review.json)已核失败/六behavior及两图，新增overlay0/2仍OPEN；本轮无后续runtime。
+
+本次正常封存后exact8全STOP、claim保留。0child/0待launch；后继窄夹具修复/实际需经理新的明确段，原90s已CLOSED。

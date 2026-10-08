@@ -1,0 +1,56 @@
+{
+  "mode": "visual-picker-browser",
+  "allowRun": true,
+  "singleUse": true,
+  "taskId": "WPF-VISUAL01",
+  "entry": "visual-picker",
+  "run": "visual-picker-20261008-68653e21",
+  "expiresAt": "2026-10-08T02:22:41.026203+00:00",
+  "bindingSha256": "6263f2f97a469d8b4f573ef108fd896bbc617887ec1e52256f0b6a8b520ad15a",
+  "runnerSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+  "claim": {
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "sourceHead": "da05581427a47565a3c5be0b0134552048c16ffe",
+  "sourceHashes": {
+    "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+    "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+    "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "apps/web/test/message-settings.browser.ts": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+  },
+  "previousRuntimeMs": 0,
+  "totalMs": 90000,
+  "startFreeBytes": 12225085440,
+  "stopFreeBytes": 12225085440,
+  "nativeChromeBoundaryApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json",
+    "sha256": "268fff238a5827cf98d160b3abb522266e40d47668f487d6be97a2ab5adb767d"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-picker-preparation-review-20261007.json",
+    "sha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7"
+  },
+  "priorLocalEvidence": {
+    "sourceTarget": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "reviews": [
+      {
+        "path": "/private/tmp/root-visual01-types-guard-and-results-review-20261007.json",
+        "sha256": "517678935b121f5fd582a9a6893b0487043e7c5e03f74ce6b0c7f25f995e6d5e"
+      }
+    ],
+    "unchangedSources": {
+      "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+      "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+      "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+      "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+      "apps/web/test/message-settings.browser.ts": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+    },
+    "scope": "Affected types only; no prior browser PASS"
+  }
+}
