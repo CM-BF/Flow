@@ -1,4 +1,4 @@
-import type { KeyboardEvent, ReactNode } from "react";
+import type { FocusEvent, KeyboardEvent, ReactNode } from "react";
 import { MAX_WORKSPACE_TABS, type ChatGroup, type WorkspaceLayout } from "../workspace-state";
 
 function focusTab(event: KeyboardEvent<HTMLButtonElement>) {
@@ -9,6 +9,22 @@ function focusTab(event: KeyboardEvent<HTMLButtonElement>) {
     : event.key === "ArrowLeft" ? (index + tabs.length - 1) % tabs.length
       : event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : -1;
   if (next >= 0) { event.preventDefault(); tabs[next]?.focus(); }
+}
+
+/** Reveal only this strip, without changing selection or scrolling the page. */
+function revealFocusedPaneTab(event: FocusEvent<HTMLDivElement>) {
+  const strip = event.currentTarget;
+  const focused = event.target;
+  const tab = focused.closest<HTMLElement>(".flow-tab");
+  if (!tab || tab.parentElement !== strip) return;
+  const viewport = strip.getBoundingClientRect();
+  const left = viewport.left + strip.clientLeft;
+  const right = left + strip.clientWidth;
+  const tabBounds = tab.getBoundingClientRect();
+  // If an unusually narrow pane cannot fit the tab, keep its focused control reachable.
+  const bounds = tabBounds.width <= strip.clientWidth ? tabBounds : focused.getBoundingClientRect();
+  if (bounds.right > right) strip.scrollLeft += bounds.right - right;
+  else if (bounds.left < left) strip.scrollLeft += bounds.left - left;
 }
 
 /** Navigation owns focus only. App owns layout, views and all business state. */
@@ -31,7 +47,7 @@ export function PaneTabs({ pane, focused, position, total, renderTitle, renderCl
   onSelect(id: string): void; onClose(id: string): void; onMove(direction: -1 | 1): void;
 }) {
   return <div className={`flow-pane-header ${focused ? "focused" : ""}`} data-pane-id={pane.id}>
-    <div className="flow-tabs" role="tablist" aria-label={`Chat pane ${position + 1}`}>{pane.tabs.map(id =>
+    <div className="flow-tabs" role="tablist" aria-label={`Chat pane ${position + 1}`} onFocusCapture={revealFocusedPaneTab}>{pane.tabs.map(id =>
       <div key={id} className={`flow-tab ${pane.activeId === id ? "selected" : ""}`}>
         <button type="button" role="tab" id={`tab-${id}`} aria-controls={`panel-${id}`} aria-selected={pane.activeId === id}
           tabIndex={pane.activeId === id ? 0 : -1} onKeyDown={event => {
