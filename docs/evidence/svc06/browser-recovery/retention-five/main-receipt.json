@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-08T03:43:53.984Z",
+  "source": "167958cf229851ecb235975d858d50d839009afc",
+  "delivery": "6c4e6859cf741596b718f7a41112467048ac9477",
+  "independentReview": {
+    "at": "2026-10-08T03:40:54.087Z",
+    "decision": "APPROVED_LIMITED_RETENTION_FIVE_SOURCE_AND_DIRECT_RESULTS",
+    "reviewer": "Execution Lead / gpt-6-astra",
+    "P1": 0,
+    "P2": 0,
+    "path": "docs/evidence/i02/svc06b-retention-five-intake.json",
+    "bytes": 1738,
+    "sha256": "feaa4527df1a5c7ec864dcf035197dc229f48aa25b8b92251306972b4d6c4cee"
+  },
+  "main": "dc694bdc66c1c466d97708ae7337ea6547ed5f2f",
+  "originMain": "dc694bdc66c1c466d97708ae7337ea6547ed5f2f",
+  "exactIntakePaths": [
+    "tools/personal-preview/backend-release/files.mjs",
+    "tools/personal-preview/backend-release/artifact.test.mjs",
+    "docs/evidence/svc06/browser-recovery/retention-five/import-consumer.test.mjs",
+    "docs/evidence/svc06/browser-recovery/retention-five/Interface.md"
+  ],
+  "matchedSource": true,
+  "taskSlice": "SVC06B-06 completed at this actual intake observation; next settings artifact/build/activation remains separately owned",
+  "sourceStop": true,
+  "engineeringChildren": 0,
+  "pendingLaunch": 0,
+  "claimHeld": "95f47f5c-7256-44f5-b97b-c20b6756a2cc v10; no shared product release inferred",
+  "actualNewArtifactOrPersonalChange": false
+}

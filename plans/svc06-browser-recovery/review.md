@@ -1,6 +1,6 @@
 # SVC06B review
 
-当前新片SVC06B-06：**PENDING**，source `167958cf229851ecb235975d858d50d839009afc`，唯一[容量结果](../../docs/evidence/svc06/browser-recovery/retention-five/result.json)。独立review由Execution Lead负责，本owner不自批；6/6定向检查、预期红与资源RETURN为待审原件，本片main尚未接收。原五TODO已完成，但本次同REQ19新TODO06尚待审查/集成，登记task保持NOT_COMPLETED。以下发布及历史独审结论不扩展至本片。
+当前新片SVC06B-06：**APPROVED_LIMITED_RETENTION_FIVE_SOURCE_AND_DIRECT_RESULTS**，0 P1/P2。Execution Lead于2026-10-08T03:40:54.087Z独审source `167958cf229851ecb235975d858d50d839009afc` / delivery `6c4e6859cf741596b718f7a41112467048ac9477`；唯一[I02原件](../../../m2-integration/docs/evidence/i02/svc06b-retention-five-intake.json)。6/6与旧预期红、资源RETURN保真，main/origin `dc694bdc66c1c466d97708ae7337ea6547ed5f2f` 已精确接收四路径；本次实际接收观察见[main receipt](../../docs/evidence/svc06/browser-recovery/retention-five/main-receipt.json)。六TODO限定验收闭合，不声明新设置artifact/冷启动/个人迁入或实际用户任务完成。
 
 当前可见发布结果：`APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY`，0 P1/P2。Execution Lead于2026-10-07T23:40:01.257Z独审source `6491c4815cd6daf8f640648d5e8a25a599d8cd92` / target `5719f0a4cb252324fa1434a7870bf615f31f66dd`；唯一[I02原件](../../../m2-integration/docs/evidence/i02/svc06b-web779-actual-result-review.json)，不复制raw或制造第二结论。
 
