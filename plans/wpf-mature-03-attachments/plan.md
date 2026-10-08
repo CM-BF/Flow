@@ -126,3 +126,5 @@ ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-
 键盘后继修复边界进一步限定为 `@file + Tab` 分支本身：先排已处理事件、IME/keyCode229及Shift/Ctrl/Alt/Meta，再执行普通mention Tab；不要在整个onKeyDown函数统一对所有modifier早退。保留后续Ctrl/Meta+Shift+Enter提示、普通Queue Enter和assistant-ui默认处理。此固定9a815控制流复核沿原03-03/MATURE06-04，不扩大当前Release/I01范围，后继合法owner在独立小段实施真实消费者回归。
 
 既有条目动作后继收到[固定六源controller补充](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-controller-seam-peer.json)，仍仅设计输入：复用draftItems/recoveryDraft与现bounded cache/HTTP组合signal；激活前捕获当前行和授权世代的invocation lease，对cache、capability、body、digest和error每个提交点即时核验，不仅最终body。未读的具体HTTP abort与其他row API不能假设。现七源候选之外最窄可能增加App/controller；connection/session无需由本研究推定修改。等I01正式释放后由合法owner fresh领取，当前不新增任务或实现权。
+
+- [ ] 原材料组件后继采用[命中区研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-attachment-hover-research.json)：实际 hover 被 Remove 区域拦截已观察，普通点击是否误触移除尚未实测。Arc键盘焦点显示真实 filename tooltip 并完成材料旅程，不等于 pointer 通过。由共享材料组件合法 owner 验卡片预览、Remove 各自目标、键盘/触控命中，保 ready-ref/材料身份；不得让 Arc 超 exact18 修改共享组件，也不把该后继加入当前Arc功能前置。

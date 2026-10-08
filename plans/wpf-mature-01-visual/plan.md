@@ -114,3 +114,9 @@ Arc桌面阶段图与失败后保留规则复用[工作区既有验收补充](..
 GO 对本次 Context 双390图的同一后继要求：首屏收敛为已知用量、观测时间及一句明确限制；完整 resolved/requested model 标识和口径放可访问展开区，保留未知/估算/历史语义，不按字符串猜friendly label。后继须同时核正常数据及超长标识画面，再判断成熟视觉。该项链接Mika唯一MATURE04父TODO，不阻本次已审历史面板受控集成、不新增task；pendingdetail/同view替换/隐藏Arc/在途撤权/真实采集仍沿原CT开放。
 
 同一既有 Context 紧凑信息后继采用[具体布局与验收约束](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-compact-summary-design.json)：重排现有 Dialog，不新增 registry/controller；正常短标识与长标识压力画面、双主题/键盘/零值未知错误和显式按需读同验收，保持历史/估算语义。此为已记录长ID项的设计证据，不新建任务或当前集成前置。
+
+首次/过期登录首屏的可行动性与技术下钻沿[原MATURE06-04同一条目](../wpf-mature-06-chat/plan.md#mature06-04首次与过期登录的可行动状态)，不另建任务或凭据authority；正常用户先看到实际状态及下一步，API/CLI/HttpOnly说明放按需详情。
+
+Context内部标题动作扩展沿Mika唯一MATURE04原后继：[三挂载面证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)确认入口/面板已有composer slots，Dialog标题/刷新/详情内部尚无header renderer。后继从现薄binding注入动作，复用唯一session-owned controller；ui.layout不得授历史数据，动作若引用观察必须绑定sample身份。此处仅路由引用，不复制CT矩阵或创建第二status。
+
+原 MATURE01-04 的窄屏验收继续引用[Arc视觉P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)：末轮关闭聊天drawer后的390浅深画面已实际生成，但标题过缩与 More actions 裁切仍不达标。[限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-tooltip-final-acceptance-review.json)接受功能4/4，不接受完整UX完成；最窄修复归Arc原owner，不重复派共享组件writer。

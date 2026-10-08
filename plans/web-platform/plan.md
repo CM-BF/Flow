@@ -669,3 +669,12 @@ OPS16另有只读helper风险：conversation.fixture async经conversation-stream
 RELEASE01-11已由main2dbc受控接收，原owner69d0203 metadata收口、claimb4d7v2仅保2个records目录，两harness叶交回；RELEASE01-10与整体仍OPEN，网页779/v4实际发布引用Original独立回执，不重建或重验4App。
 
 原 TUI01F-04 接续只读研究见[未决 final 事件](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/tui-r2-uncertain-final-peer-research.json)。B exact attempt 的 seq2 assistant-final 证明 barrier 已释放并进入投递链；HTTP拒绝、ACK丢失或重试未结尚未知，原owner限定诊断，不延长8秒断言、不把部分链路通过改成整体PASS。该记录仅既有跨lead接收桥，未派新执行者或清理者。
+
+D05发布健康必须同时验证summary来源数与`/api/assignments`载荷`state=available`，HTTP200不等于领取可用。213发布遗漏显式协调数据库绑定造成全局UNKNOWN，已[原owner修复回执](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-center-source-coordination-repair.json)于00:56:14.690RETURN，213来源/available272claims，root原IAB确认全局unknown消失；[只读机制证据](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-claim-readiness-regression.json)说明后继复用该轻量payload见证，保原summary-only失误，不重置claim或新建DB。
+
+### D01 / WPF-001-37：当前工作段历时后继（2026-10-08）
+
+- [ ] 在唯一 owner 的 status 增加明确的本工作段起止与来源，dashboard 独立显示“本工作段历时（含等待）”。采用[兼容设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-current-segment-timing-design.json)：完整 task 起点 UNKNOWN 与工作段已知时间互不覆盖，段结束不等 task Done，不累计净工时。只对后续真正新段采用，不批量补历史、不从 commit/mtime/claim/自由正文推断，不新增第三层 task、后台计时器或第二手填源。
+- [ ] parser/model/UI 分开 task timing 与 workSegment 的问题；陈旧 snapshot 同时撤销两种 elapsed 的当前断言。原 TIMING02 全部完成记录保持通过，本项是原 D01 后继；实现仍由合法独立 owner/scope 承接。
+
+本轮原要求统一归入既有计划：[MATURE06-04 可行动登录](../wpf-mature-06-chat/plan.md)、[三真实插件挂载面](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)、[MATURE03 附件命中后继](../wpf-mature-03-attachments/plan.md)、[MATURE05 窄 tab 视觉 P2](../wpf-mature-05-workspace/plan.md#arc-visual-narrow-tab-01)。仅引用 Mika 的 MATURE04 唯一父计划，不生成第二份状态源。

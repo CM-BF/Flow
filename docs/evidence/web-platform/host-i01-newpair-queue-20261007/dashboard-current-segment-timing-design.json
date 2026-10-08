@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-08T01:04:35.792114+00:00",
+  "kind": "read-only design for GO existing D01 current-segment timing follow-up",
+  "existingContract": "Task first start/completion/source already delivered; do not change or backfill UNKNOWN. Source status.mjs80-103, app.js175-195, plans/AGENTS.md139-147.",
+  "smallestAdditiveDesign": {
+    "source": "Optional current-segment fields in the same unique owner status top table, for example segment label, start UTC, end UTC or explicit OPEN/UNKNOWN, and source receipt. Exact names chosen once by original timing owner and documented in existing plans contract. No third-level task, extra manual status, timer or accumulated history database.",
+    "validation": "Parse into a separate workSegment value with its own issues. Original task timing UNKNOWN must not invalidate a known segment; malformed segment must not erase valid task/review/main facts. Entire ISO UTC fields and one unique declaration, no free-prose extraction or commit/mtime/claim inference.",
+    "display": "Preserve task start/end UNKNOWN. Add concise 本工作段历时（含等待，截至本次同步） for explicitly OPEN; closed end shows 本工作段已结束 with elapsed, never Task Done. Detailed segment name/start/end/source belongs in existing time-basis disclosure. No extra 4-line metadata block on every card.",
+    "clock": "Use the same trusted live snapshot generatedAt and current/stale/frozen checks. No browser Date.now progression or elapsed timers; future/inverted interval unknown. Do not sum segments or subtract overlapping waits.",
+    "freshness": "Existing timingObservations/updateTimingFreshness must invalidate both task and segment elapsed when an old detail/view loses current source. Do not leave a numerically frozen segment labeled active after refresh failure.",
+    "adoption": "Only owners beginning a real later segment write observed times. A previous unknown task first start stays UNKNOWN. Replacing current-segment fields requires actual new start and source; old evidence remains referenced/committed, no fabricated historical batch."
+  },
+  "meaningfulAcceptance": [
+    "Task first-start UNKNOWN plus a known OPEN current segment displays only segment elapsed while retaining full-task unknown.",
+    "Closing segment on an incomplete task does not change delivery, TODO, review or main state.",
+    "Duplicate/invalid/missing source/future/reversed segment fields make only the segment unknown.",
+    "Stale/frozen/missing/current-mismatch snapshots invalidate both elapsed surfaces; ordinary rerender does not advance time.",
+    "Markup in segment name/source is escaped and source navigation retains existing path restrictions.",
+    "Already delivered timing and wait table behavior stays compatible; no summed net hours, new polling/timer or new manual store."
+  ],
+  "ownership": "Original timing/dashboard owners must coordinate parser/public app/plans contract exact claims; root only research. Do not claim existing TIMING01/02 tests cover this new additive feature.",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+      "bytes": 10959,
+      "sha256": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/public/app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/plans/AGENTS.md",
+      "bytes": 17746,
+      "sha256": "88ef69af6b42de2b1f950d6786e4ffe95737f1f22401399c101ee678a6b1b756"
+    }
+  ]
+}

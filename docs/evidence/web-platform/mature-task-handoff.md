@@ -1,6 +1,8 @@
+> 当前更新 2026-10-08T01:15:03.453Z：D05已01:13:24.689Z一次从213更新215（214未单独部署），assignments.available/双env/publicaccess核符，当前无actual holder。Arc前段4/4功能接受但窄屏P2仍开放，331d已STOP；新原scope视觉连续段已授权至2026-10-08T01:40:03.453Z，source准备后samecall准入，不借旧40912ms。完整forward 13561888768B。
+
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-08T00:44:49.357Z：Arc三轮59595ms已CLOSED、00:42:49.410214完整RETURN，最新2/4、早图1/最终0，只有统一归档尾。唯一NEXT K01 `K01-QUERY-INTEGRATED-20261008-ONCE`，latest 2026-10-08T00:48:49.357Z、完整floor 13,641,580,544B，原150s/19PG+16余量、单次外置10s只读余量预检；此刻未START。旧两次失败/KEEP与DB128MiB非硬峰值边界保留，新增actual276824064B+独立Git结果尾2MiB已计一次。**
+**历史调度（已由页首及current取代）2026-10-08T01:00:17.834Z：Arc新tooltip首轮00:58:57.256215完整RETURN，19006/180000ms；3/4已过（含完整材料），390浅/深两图已产生，末reload按route检查多保存记录失败。现在无active子进程，原新lease保留最后一次至01:17:41.457，按完整B exactrecord身份修正观察，不任意first/nth或减验收；旧三轮59595CLOSED不借。D05已恢复213/available272。**
 
 **Original D05 精确来源：** taskId `WPF-MATURE-04` / worktree `context-transparency` / branch `codex/context-transparency` / planDir `plans/wpf-mature-04-context-transparency` / evidenceDir `docs/evidence/wpf-mature-04`；唯一owner architecture_read/Mika，父HEAD5876d277已00:38:18 STOP。Web只是父TODO `WPF-MATURE-04-05`，`web-context-history` 无plans和独立status，禁止重复登记。
 **历史 Context 紧前修正 2026-10-07T23:41:56.064Z：** 首次只读precheck误比D04 `ACTIVE`/实际 `active`，0业务/PG/namespace/gate/env。经理已明确允许同一未消费选择内仅修两处真实schema字面值（本claim与其他active冲突筛选），原STOP保留，fixed parent/capture/product不变；一次same-call fresh接续，原floor/latest23:45:13.079不变，非自动runtime重试。
@@ -9,17 +11,17 @@
 
 **Original/native可立即接收新四报告：** e15/880060配固定461a/caa1/d629/779与原policy的四份正式报告已[root实际限定独审APPROVED](host-i01-newpair-queue-20261007/release-e15-actual-result-review.json)（13917B/SHA2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad）。[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json)含四canonical报告路径/ID/16checks和两产物descriptor；入口已含实际批准（17583B/SHA905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186），W01已fixed b4222f7660a8e4a176285ff154c82afd95ba3d98 remoteclean/all4STOP正式交付；不需再测或等另一准备审。cold81fa3974限定结果独审同已通过。首次个人恢复已导入e15与四报告、rebind身份拒绝未写并活动RETURN；后继R2六phase实际成功并23:07:45.970561控制RETURN、accepting24；后继779已23:35发布为v4并23:36:06完整RETURN，完整聊天验收仍分开。
 
-**公开center后继已合法领取并源封存：** Mika/db 的 CENTER-WIRING daf9316f v1 ACTIVE6/独立树成立，f440e53d2源与局部独审封存，VAR五领域PG及独审已通过，正准备精确main接收；原仅猜未登记writer的HOLD已撤。旧16MiB池已全STOP归零，不可续用；D05同源登记待Original唯一writer回执。
+**历史接收记录（当前以页首和唯一current为准）—公开center后继已合法领取并源封存：** Mika/db 的 CENTER-WIRING daf9316f v1 ACTIVE6/独立树成立，f440e53d2源与局部独审封存，VAR五领域PG及独审已通过，正准备精确main接收；原仅猜未登记writer的HOLD已撤。旧16MiB池已全STOP归零，不可续用；D05同源登记待Original唯一writer回执。
 
 **Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取，其权威source已随D05三来源211登记；不与个人恢复抢写。
 
-**普通源边界：** Arc c34dv2 exact18/e82d、Context25d7v3 exact8/59aaf保权；新连续段仅各自原范围，App/session双基线组合仍未验。已关闭旧Mika16MiB池；本轮VAR/CENTER各3MiB metadata-only独立封套，包含各自Git index原子副本，不借旧额度。
+**历史接收记录（当前以页首和唯一current为准）—普通源边界：** Arc c34dv2 exact18/e82d、Context25d7v3 exact8/59aaf保权；新连续段仅各自原范围，App/session双基线组合仍未验。已关闭旧Mika16MiB池；本轮VAR/CENTER各3MiB metadata-only独立封套，包含各自Git index原子副本，不借旧额度。
 
-**候选顺序：** Context先执行已审closureR2并在新连续总预算内修复同语义窄缺陷；TUI原operator现已可用并READY，随后正常交接；Arc窄修同期准备，runtime不并用Chrome。K01 READY按后继公平队列，未授actual。
+**历史接收记录（当前以页首和唯一current为准）—候选顺序：** Context先执行已审closureR2并在新连续总预算内修复同语义窄缺陷；TUI原operator现已可用并READY，随后正常交接；Arc窄修同期准备，runtime不并用Chrome。K01 READY按后继公平队列，未授actual。
 
 **未来增长对账：** 原旧cd27/2515未来build峰值已各按固定无writer事实分类，residual仍8,806,203,392 UNKNOWN；当前精确组合见双current，旧frozen gates保留。Arc普通4MiB及779发布538,968,064B已据各作者最终STOP前向关闭，KEEP不删。个人R2旧538MiB、两旧ordinary各9,568,256B及04未知4MiB仍保守。
 
-**Original 单叶交权已完成：** 原95fv8→v9于00:14:48.809原子只移出runtime.ts，永久STOP；Mika00:17:19 freshD04与receipt核符。当前未有新runtime writer，原申请8MiB sparse源段须VAR main实际回执、PROCESS两配置叶顺序amend与新freshclaim；不再要求Original重复确认已解除的runtime阻点。
+**历史接收记录（当前以页首和唯一current为准）—Original 单叶交权已完成：** 原95fv8→v9于00:14:48.809原子只移出runtime.ts，永久STOP；Mika00:17:19 freshD04与receipt核符。当前未有新runtime writer，原申请8MiB sparse源段须VAR main实际回执、PROCESS两配置叶顺序amend与新freshclaim；不再要求Original重复确认已解除的runtime阻点。
 
 **个人恢复事实：** e15/880060构建、cold三角色初始化、C4四报告均通过；首次partialFAIL与未写rebind保历史。后继R2六phase全成功，23:07:45.970561控制RETURN、accepting24及三健康role持久保留；779于23:35发布v4、23:36:06.257控制RETURN并独审通过。main接收与固定部署分开，不重放旧导入或把未观察actualClaim写成通过。
 
@@ -29,7 +31,7 @@
 
 **AV前置历史：** 18:14:43旧admission超过55s，在Popen前0child0PG停止；其后同一grant重新fresh并18:21:48.308Z实际启动，历史前置失败保留，不计为第二次业务执行。
 
-**Release主线接收与释放：** Original main/origin `d669f3acb466f6f11bd6d81c1bffb7ffeedb5010` 已逐字接收已审两harness。原作者 a831c 双端clean，18:35:22.477Z [7d60v3正式释放](host-i01-newpair-queue-20261007/release-main-d669-claim-release.json)，释放后不再写入。个人网页CAS发布仍待Original既有两阶段准备及实际准入；稳定兼容执行器后继仍开放，不冒整体完成。
+**历史接收记录（当前以页首和唯一current为准）—Release主线接收与释放：** Original main/origin `d669f3acb466f6f11bd6d81c1bffb7ffeedb5010` 已逐字接收已审两harness。原作者 a831c 双端clean，18:35:22.477Z [7d60v3正式释放](host-i01-newpair-queue-20261007/release-main-d669-claim-release.json)，释放后不再写入。个人网页CAS发布仍待Original既有两阶段准备及实际准入；稳定兼容执行器后继仍开放，不冒整体完成。
 
 **普通局部已归还：** VISUAL第二轮严格类型检查PASS，18:25:58.676713Z完整归还；首红2745＋复验3020＝5765/30000ms CLOSED，未用24235不转。source4ca1deac仅真实HTMLElement guard与私有声明映射，owner7a8e双端clean/all8STOP。该类型段为历史事实；后继Recovery选定两项和双图现已PASS/归还，Picker仍NOT_RUN。W01已完成Release自身metadata收口与claim归还。
 

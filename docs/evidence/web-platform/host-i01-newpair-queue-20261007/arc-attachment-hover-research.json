@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-08T00:52:18.326630+00:00",
+  "role": "root read-only research, no product mutation or runtime",
+  "head": "a4040e693b4d9e3bea39020d3235a581f0552de5",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "bytes": 9213,
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/components/ui/tooltip.tsx",
+      "bytes": 1271,
+      "sha256": "3600484df5c2bec03d57289e49b30a182a2ce22d8e9bef50cd21819d9f2e725c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+      "bytes": 32112,
+      "sha256": "d4c567172122a09698a3dd43552e02ccec11913a0f4030b605bf136a1cf7b00c"
+    }
+  ],
+  "observed": [
+    "Final actual Arc attempt 3 failed because Remove file intercepted default hover on the unique current composer File attachment button. This remains FAILED 2/4.",
+    "attachment.aui.tsx 166-174 wraps a role=button tabIndex=0 size-14 tile in TooltipTrigger asChild; lines 212-213 render AttachmentPrimitive.Name in TooltipContent.",
+    "attachment.aui.tsx 225-228 Remove uses absolute end-1 top-1 size-5 and pseudo-element after:absolute after:-inset-1.5.",
+    "tooltip.tsx directly aliases Radix Root, Trigger, Provider and portals Content; no project-specific focus prevention exists in that wrapper."
+  ],
+  "inference": {
+    "classification": "static nominal geometry, not measured DOM hit testing",
+    "basis": "At default 16px root and LTR, 56px tile; Remove 20px at x32/y4 expands by 6px to x26..58/y-2..30. Tile center x28/y28 intersects the expanded Remove hit target. Other CSS, scaling and writing direction could change measured coordinates.",
+    "conclusion": "Expanded Remove hit target is a concrete candidate mechanism for default-center hover interception; actual hit-test still needs verification in the next authorized run."
+  },
+  "nextBoundedRepair": [
+    "Use the existing unique composer-scoped attachment tile and normal keyboard focus to inspect the actual filename tooltip; verify focus semantics from installed Radix implementation before running. No forced hover, DOM mutation, arbitrary coordinate bypass, or weakened attachment/ref assertion.",
+    "Retain visible B model/text/ready-ref witnesses before and after layout switch; only after A handoff settles assert exact durable B journal model/text/id/name/reference and reopen checks.",
+    "If focused tooltip fails, report actual keyboard behavior instead of masking it; shared attachment UX changes require its unique owner and are outside Arc exact18.",
+    "Retain original hover failure and add a separate normal repair segment. Original 3 attempts and 59595ms bundle remain CLOSED; this is not a fourth launch under it."
+  ],
+  "scope": "Research belongs in existing Arc task/plan/status/review evidence via D01/owner, no duplicate manual status. Root creates no product diff.",
+  "externalDocs": "Official Radix page fetch was started but did not return before being cancelled; no unobserved external documentation is cited as evidence."
+}

@@ -182,3 +182,12 @@ URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../d
 - [ ] 既有Recovery后继补[错误生命周期研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-error-lifetime-research.json)：早图旧global恢复warning可能在成功后残留，先实际复现；它不参与Send reason，不替代本次chat4 paused+waiting根因，不准Arc越权改recovery。
 
 当前CSS/material结果见[实际结果与早图审查](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-css-material-actual-review.json)：导航视觉P2已实测关闭，整体2/4及Send前置失败保持。后继连续段沿原4组，不删断言或扩大timeout。
+
+材料附件观察后继采用[Remove与tile命中区静态研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-attachment-hover-research.json)：默认hover可能落在Remove扩张区，当前新段验证已安装Radix合法焦点打开真实filename tooltip，保B全部refs/journal和后续持久化断言，不force/不缩超时、不越权改共享attachment；旧三轮失败与59595ms CLOSED原样。
+
+现有“所有位置可扩展按钮”要求采用[三真实挂载面映射](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-action-surface-peer-mapping.json)：Arc已有pane chat.tab.actions，但工作区顶部tab/add/close及pane移动控件缺窄动作入口，沿原Arc导航slot TODO补typed布局身份及合法命令；右侧任务workspace已有Extension panels/button/menu/header/actions，先复用，不新建tab registry。Files/Terminal内部tab并非任意注入，若需每tab按钮再在实际边界扩展。Slot白名单、validation、实际renderer与host授权/失效须同时成立，静态映射不等runtime覆盖。
+
+### ARC-VISUAL-NARROW-TAB-01
+
+- [ ] 沿原 MATURE05 工作区可读性 TODO 修复390px页签标题仅约两字、More actions 在36px栏换行裁切的实测 P2。以[末轮功能与视觉限定审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-tooltip-final-acceptance-review.json)为固定输入，只在原 Arc layout.css 与必要原测试范围给可读最小宽度、单行操作及横向可达；保关闭按钮和真实插件入口，不隐藏按钮、不改 shared App/host。验证正常/长标题、双主题、键盘与菜单可见不裁切。
+- [ ] 原新tooltip两轮40912ms已CLOSED、末轮4/4功能与最终双390图获限定接受，不能转余量再跑第三轮。后继用新的连续有界段同资源验证，段末独审；Context组合、main、shared附件pointer风险、Recovery旧warning各保原后继，不将功能4/4写成整体视觉Done。

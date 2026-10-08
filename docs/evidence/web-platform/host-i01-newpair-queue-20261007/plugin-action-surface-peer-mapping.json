@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-08T01:02:19.614Z",
+  "kind": "Peer readonly fixed-source mapping; manager transcript, no runtime claim",
+  "reviewer": "w01_owner",
+  "interval": "2026-10-08T00:53:51Z to around00:58Z; STOP",
+  "writes": 0,
+  "engineeringRuns": 0,
+  "HTTP": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "claimsCreated": 0,
+  "skills": "Peer reports local assistant-ui/codebase-design/clean-code applied to mount/typedcontext/authority mapping",
+  "fixedInputs": {
+    "Arc": "a4040e693b4d9e3bea39020d3235a581f0552de5",
+    "Context": "8819faa34a5cb08f164c4a4f98b1595218dc2cad",
+    "main": "0e8bfa7b385aff582a85aa211df1c854e064258c"
+  },
+  "surfaces": [
+    {
+      "surface": "Arc navigation",
+      "existing": "App.tsx1100 chat.header;1167 chat.tab.actions withpane workspaceId/paneId/viewKey; layout.ts32-43/62-70 validatecurrentworkspace/stableview/authority lease",
+      "gap": "workspace-layout/WorkspaceTabs.tsx15-25 workspace tabs/add/close and42-44 pane movecontrols have noactionrenderer. App1105-1142 builtin navigation isnotallslot-driven.",
+      "minimalFollowup": "Existinghost/commandpipeline narrowactionrenderer atrealcontrol boundaries; reusepanecontext. Independentlayoutworkspaceidentity+authorizedadd/select/closecommand contract needed; righttaskworkspace context cannotbe reused.",
+      "ownerPlan": "MATURE05 existingArc navigationplugin TODO"
+    },
+    {
+      "surface": "Context history header",
+      "existing": "plugin-integration/context-history.tsx28-39 contributesentry chat.composer.actions andpanel chat.composer.context",
+      "gap": "conversation-context-history/ContextHistoryDialog.tsx69title/71refresh/76details fixedinternalUI noheaderslot/renderActions",
+      "minimalFollowup": "Thinbinding injectheaderactions throughsamehost/session-ownedcontroller, no newreader/store. binding.ts9-38 mustvalidateconnectionId/viewKey/conversationId/taskId/authorityGeneration/attempt. ui.layout nothistoryread permission; observationactions bind sampleidentity.",
+      "ownerPlan": "Mika uniqueMATURE04 parent; existingWebhistory followup, no secondstatus"
+    },
+    {
+      "surface": "Right task workspace",
+      "existing": "plugin-integration/react.tsx199-233 workspace.tabs panels/keyboard Extensionpanels;227button/menu;245workspace{taskId,tabId};262-264workspace.header/actions andartifact.actions referenceidentity",
+      "gap": "components/workspace/WorkspacePanels.tsx51-58/135-170 builtinFiles/Terminal/detail internaltabs remainfixed;data-extension-slot attributeisnotrenderer;types.ts3 files|terminal|detail:id",
+      "minimalFollowup": "Use existingtaskpanel/tab/buttonslots first. Onlyifuserneedsper-builtin-tabcontrol addnarrowtask/tab actionmount, no secondtabregistry.",
+      "ownerPlan": "Existingplugin/workspaceMATURE05 requirements"
+    }
+  ],
+  "sharedConstraints": "SlotId whitelist + validation slot/contextmatch + actual AppSlot/PluginView allrequired. mainhost.ts326-371 commandpre/postauthorization/resourcecapture;546-591 panelactivation/sessionrevocation. NoarbitraryDOMinjection/authoritybypass. Staticmappingnotruntimecoverage/failure."
+}

@@ -220,3 +220,13 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 ### 原06-03与REQ22–23：插件诊断显示一致性
 
 沿既有06-03工程诊断按需可达与插件消费验收，记录[诊断最小设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-diagnostics-minimal-design.json)、[独立peer边界](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-store-peer-addendum.json)、[真实生产fixture补件](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/plugin-diagnostics-fixture-addendum.json)。待执行片只修command/render诊断snapshot变化到真实显示的通知链；保activation已有publish、单一host权威、错误/unknown可达。旧fixture未挂生产Settings，祖先App变化不足以验专用订阅；复用真实小显示组件与同host局部throw，禁止fakecast完整session。当前是固定设计与待挂载复现，未实施/未测性能、不扩Arc20或当前重资源窗口。
+
+### MATURE06-04：首次与过期登录的可行动状态
+
+GO在已发布61228新tab无有效会话时实见“Check existing browser session”仍笼统Reconnect，首屏先呈HttpOnly/API/CLI私有目录，缺少下一步。沿既有恢复与连接体验修复：仅按权威原因明确未登录、过期或检查失败等实际状态与下一步；当前ConnectionSnapshot缺少first/expired原因，先中性呈现“当前浏览器尚未登录”，禁止从本地expiresAt推断过期；正文优先说明如何继续，技术细节进入可访问下钻。本机预览可按需引导到已有安全入口，远端引导管理员；不得硬编码4320、新增凭据存储、自动读取token或把诊断日志当操作结果。复用既有会话检查/安全登录合同，真实首次与过期两种状态、键盘、双主题、窄屏验收；若共享合同缺少原因码，向原中心owner列具体依赖。此为原MATURE06-04/MATURE01后继，不新增task或779发布前置，不改已发布v4事实。
+
+[固定源码和最小文案设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/actionable-connection-ux-research.json)已归档：优先指向现有“本机安装→工程看板→本机登录凭据”，远端由管理员协助；可配置非秘密help链接为后继，不为本修增加新API或强制依赖。
+
+该原 TODO 已实际实施：W01 先在 Context 原 claim25d7 v3→v4 仅交回 App，保余7与既有8819验收；01:09:13.698801Z 于独立 web-connection-actionable / codex同名开始25分钟段，claim01103af8-051e-4282-bbbb-ba432e269ba6 v1 exact5。App 仅 import 与提取原 Connection 局部组件，session/BrowserWorkspace/认证与恢复逻辑不改。唯一父status仍本计划，子片仅own evidence progress。
+
+- [ ] MATURE06-04 接收新组件的类型与必要行为不变量检查；不以逐字符串映射测试自证可行动性。后续 mounted 验实际未登录/离线/拒绝动作、显式提交前清 token、checking 不重复请求、保稿动作、键盘及390双主题；当前未运行这些 UI 验收。没有权威 first/expired 原因时始终使用中性未登录，不虚构原因。

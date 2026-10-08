@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-08T00:56:23.679528+00:00",
+  "kind": "root read-only regression research, no DB/credential/process access",
+  "issue": "After owned4320 replacement66636→69822, summary213 is available but ledger assignment state became unknown. Actual configuration cause not yet inspected by root.",
+  "evidence": [
+    "Root existing IAB refresh showed all plans/evidence213 and retained claim warning 领取观察正在刷新或未知; no reset or take performed.",
+    "GO independently saw all-page unknown after two refreshes. Mika actual GET/api/assignments HTTP200 returned assignments.state=unknown/claims[] at00:52:45 and00:53:21. These are supplied observations.",
+    "Original acknowledged regression and is correcting the owned D05 startup configuration within its existing scope; no personal service action authorized by this research."
+  ],
+  "sourceFindings": [
+    "server.mjs44 returns HTTP200 for /api/assignments regardless of semantic availability.",
+    "ledger.mjs5-7 defaults to FLOW_COORDINATION_DATABASE_URL; missing value throws UNAVAILABLE before PG pool creation.",
+    "ledger.mjs92-96 collapses absent config and connection/query errors to same public unknown and ends pool. Public message alone does not identify root cause.",
+    "read-model.mjs120-125 invokes assignmentSnapshot(undefined,now), so startup environment binding matters. Summary path is independent and cannot stand in for ledger readiness."
+  ],
+  "minimumFixAndVerification": [
+    "Current service owner verifies only presence and equality to previously authorized coordination binding; never print full env, connection value or credentials.",
+    "Preserve existing owned identity/public installation binding; no initialization, claim mutation, new DB or inference that empty unknown claims permit work.",
+    "Post-reload acceptance must inspect /api/assignments payload state=available, retain213 source registry and public local-access metadata equality. HTTP200 alone is insufficient.",
+    "If coordination cannot recover, keep clearly degraded state and prevent new claims relying on that view; retain source summaries as available separate capability.",
+    "Add this failure and compound post-publish acceptance to originalD05 plan/status/review, not another hand-filled task source."
+  ],
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/server.mjs",
+      "bytes": 5890,
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 9470,
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5"
+    }
+  ]
+}

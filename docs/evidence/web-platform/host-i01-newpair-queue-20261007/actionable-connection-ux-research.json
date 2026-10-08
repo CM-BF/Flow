@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-08T00:55:01.766413+00:00",
+  "kind": "root read-only design research; no credentials read, requests, execution or product changes",
+  "goal": "Existing MATURE06-04 actionable first/returning browser connection and MATURE01 concise first view; do not create another manual status",
+  "observations": [
+    "GO observed published 61228 fresh tab lacking session; Check existing browser session produced generic Reconnect. This is supplied live observation, root did not reproduce login or read a token.",
+    "Current source App.tsx1200-1253 puts HttpOnly and /api in first view; unauthenticated maps to Reconnect irrespective of prior login; help leads with CLI/private config path.",
+    "ConnectionSnapshot(session.ts5-12) exposes phase and current identity, not an authoritative first-login/expired reason. session.ts62 explicitly does not declare expiry from local clock.",
+    "Dashboard local-access.mjs25-48 binds nonsecret installation metadata at startup; token read stays behind explicit readOwnerToken; 98+ requires deliberate same-dashboard request. No product login-help URL is exposed by the current snapshot."
+  ],
+  "recommendations": [
+    "Use neutral accurate unauthenticated copy such as This browser is not signed in to this workspace. Enter the workspace access token to continue. Do not label expired unless an authoritative reason exists.",
+    "Keep first view to current state + single next primary action. Idle/checking/offline/forbidden/unsupported remain distinct; retry is appropriate for offline, administrator action for denied/unsupported. Place cookie, proxy and persistence mechanics in expandable technical details.",
+    "Within token help, make the existing safe path discoverable: For a local personal installation, open its engineering dashboard and choose 本机登录凭据; otherwise request credentials/center address from the workspace administrator. This prose works without assuming a hard-coded dashboard origin or adding a credentials data path.",
+    "An optional future direct help link must be explicit nonsecret installation configuration and validated, never guessed from loopback, referrer, query or 4320. It is not necessary to unblock the immediate actionable-copy repair.",
+    "Retain explicit token submission, clearing token from React state after submit, no added credential storage/automatic reads, cookie-only verification, generation invalidation, retained draft decision and logout semantics.",
+    "Keep settings.sections extension seam and existing pluggable button/section architecture; do not fold plugin actions into auth authority."
+  ],
+  "acceptance": [
+    "Render all existing phases with synthetic state and verify a clear next action without claims of expired session.",
+    "Check fresh unauthenticated and returning unauthenticated, offline, denied, unsupported, retained-draft recovery; no duplicate submit while checking.",
+    "Keyboard flow, both themes and 390px; read no real credentials and send no model request.",
+    "Prove no hard-coded4320, no ownerToken URL/storage/console, no automatic token endpoint request. No full auth protocol rewrite for a copy/navigation improvement."
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/local-access.mjs",
+      "bytes": 7687,
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932"
+    }
+  ]
+}
