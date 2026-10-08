@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-08T02:44:26.497336+00:00",
+  "state": "EXACT_RETURN",
+  "run": "visual-overlay-20261008-a602532d",
+  "actualExitCode": 0,
+  "terminalState": "PASS",
+  "chargeMs": 7630,
+  "totalMs": 90000,
+  "phaseState": "CLOSED",
+  "unusedCreditTransfer": false,
+  "freshIdentities": [
+    {
+      "kind": "pid",
+      "id": 81232,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 81232,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 81239,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 81239,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 81311,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 81311,
+      "state": "ESRCH"
+    }
+  ],
+  "scratch": {
+    "path": "/private/tmp/vis-overlay-b1/scratch",
+    "absent": true
+  },
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 6401,
+      "keptBytes": 6401,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 243,
+      "keptBytes": 243,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "outer.stdout": {
+      "eof": true,
+      "receivedBytes": 721,
+      "keptBytes": 721,
+      "droppedBytes": 0
+    },
+    "outer.stderr": {
+      "eof": true,
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0
+    }
+  },
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cleanupErrors": [],
+  "reportedChecks": [
+    "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+    "Desktop normal catalog keeps exact tuple and one explicit Apply"
+  ],
+  "pngs": [
+    "overlay-picker-normal-light-desktop.png",
+    "overlay-picker-long-light-390.png",
+    "overlay-picker-normal-dark-390.png",
+    "overlay-picker-normal-light-390.png",
+    "overlay-picker-long-dark-390.png"
+  ],
+  "pg": 0,
+  "files": {
+    "result.json": {
+      "bytes": 85451,
+      "sha256": "ff14ac9e2d2f05d8e08ec8803a553214777d517e861ea28e7d9c39338fff3c27"
+    },
+    "outer-result.json": {
+      "bytes": 1239,
+      "sha256": "9f7d19bd982f4010fe0d4212b909ed398fd01f291feff0b9820e27f5a065d15e"
+    },
+    "browser-budget.json": {
+      "bytes": 323,
+      "sha256": "dc57db304ed84e65f1cc59843862074bbb8cf0cf659ef98f1766f56a7bf64819"
+    },
+    "runtime-evidence-manifest.json": {
+      "bytes": 3101,
+      "sha256": "9d0d29e3c901d7ac3aeb6d0eddca87b936b43b88a335a4b5d8c7e0ff0c91bbd6"
+    },
+    "raw/visual-overlay-20261008-a602532d/browser-results.json": {
+      "bytes": 5355,
+      "sha256": "f2db598dd77869c120e8f18b6d9f8ca56482e5005db39b5101782e14585b116a"
+    },
+    "actual-start.json": {
+      "bytes": 172,
+      "sha256": "95a33970b58a85ed910b5d8326753bd0506114bd1953f7d96b698a311215903a"
+    },
+    "child-gate.json": {
+      "bytes": 3606,
+      "sha256": "2bdf7e67b345a52f39517e42487b25b71104c01e79183dd0d2c99b23d4bcbe2b"
+    }
+  },
+  "resourceClosureMeaning": "Worker awaited own fixture/context closure and parent reaped own groups; all exact registered numeric PID/PGID freshly ESRCH. No endpoint probes."
+}

@@ -23,12 +23,12 @@
 - [x] **WPF-VISUAL01-03** 原 a8b2b22 检查已完成，不作为新浮层证据。
 - [x] **WPF-VISUAL01-04** 原 a8b2b22 已 main4391 接收/旧 claim 已释放。
 - [x] **WPF-VISUAL01-05** 新独立树/领取/共享 Dialog 与渐进消息设置源码；保全部行为边界。
-- [ ] **WPF-VISUAL01-06** 受影响局部检查与真实代表消费者桌面/390/主题/焦点/滚动模式证据。
+- [x] **WPF-VISUAL01-06** 受影响局部检查与代表消费者桌面/390/主题/焦点/当前观测滚动模式证据；alternate OS模式未验。
 - [ ] **WPF-VISUAL01-07** 固定源码独审与主线接收；实际发布另列。
 
 ## 验证与未验范围
 
-四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；Recovery appearance 已实际通过cookieRead/themes390两个选定组，2张390图已独立目视接受；Picker首次整体FAILED（六行为已返回、两图，新增展示夹具失败）；完整Recovery与构建仍未运行。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
+四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；Recovery appearance 的 cookieRead/themes390 两组选定实际与两图已独审。Picker 首次整体FAILED，但六行为真实返回并已接受；合法模型ID窄修后的独立overlay两组/五图现已实际通过并获root986f限定目视接受。两次组合支持当前组件验收，不冒单轮8/8。当前系统overlay scrollbar已观察，classic OS模式、完整Recovery、全App/真实中心准入、主线及部署仍未验证。不改官方Thread、Arc或任何draft/plugin权威。
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
 
@@ -65,3 +65,9 @@ TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚�
 ### Overlay窄修候选
 
 固定7c727306535ebdfb5e07d8bce5f9023b57daa72e仅正常fixture模型ID/同源locator；公共codecnormal与180char代表已验，旧非法名称继续拒绝。原TODO06/07保持OPEN；新overlay-only两组/五PNG接受后才能合并评估共享浮层范围。原90s失败不覆写，六behavior证据单独复用；新90s候选尚无运行许可。
+
+### 最终限定结果与主线交接
+
+固定六源 `7c727306535ebdfb5e07d8bce5f9023b57daa72e`，本次执行 `d4988b9ed99abb06d38c227a65baf2e120821fdf`。overlay两组及五张390/desktop图已由[986f独审](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/root-final-review.json)逐原件核实和亲自目视，0blocking。02:44:26.497336Z exactRETURN，7630/90000ms CLOSED。旧6组、首FAIL15543、codec120与类型/Recovery各账独立保留，不做额外运行。
+
+TODO06限定完成；TODO07的独审已完成，主线接收仍待。唯一[main intake](../../docs/evidence/wpf-visual01/shared-overlays/main-intake.json)列六源码、固定hash、全部证据入口与未验边界；由D01/Original既有链接收，不以当前分支交付冒主线或部署。所有历史NOT_RUN/HOLD段落均为当时快照，当前结论以本节与status表为准。

@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-08T02:39:08.131Z |
+| 最近更新 | 2026-10-08T02:48:36.659Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,8 +15,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 展示夹具合法模型标识已修复并通过公共校验；剩余两展示组与五图候选已准备，尚未运行 |
-| 下一可用交付 | 完成剩余展示组及图片验收，再交全片独审与主线接收 |
+| 当前产出 | 共享浮层与消息设置展示已通过限定验收；正常与长模型在窄屏、桌面均可读，等待主线接收 |
+| 下一可用交付 | 固定六源码与分层证据已可供主线接收；主线和实际发布尚未完成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 任务开工时间 | UNKNOWN |
@@ -24,9 +24,9 @@
 | 任务时间来源 | 原task首次开工缺精确证据；本后继实际开始 2026-10-07T15:55:42.539Z，见[source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json)，不将领取时间倒当原开工 |
 | 实现目标 | 7c727306535ebdfb5e07d8bce5f9023b57daa72e |
 | 实现范围 | apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts |
-| 检查状态 | FAILED 4ca1deac319afac89f7c0ae5e0142cb9de429a2a（原实际保留）；7c727306535ebdfb5e07d8bce5f9023b57daa72e公共codec局部PASSED，overlay2组/5PNG NOT_RUN；原类型/Recovery/六behavior限定通过保持 |
+| 检查状态 | PASSED 7c727306535ebdfb5e07d8bce5f9023b57daa72e；overlay2组/5PNG及独立目视已通过；原六behavior/类型/Recovery限定通过保持，首FAIL原件保留；非单轮8/8 |
 | 已集成main状态 / HEAD | 新共享浮层 NOT_INTEGRATED；原 shell a8b2b22 已 INTEGRATED 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
-| Review | [review.md](review.md)；4ca的类型/窄guard及Recovery选定实际/双图限定APPROVED，Picker首实际FAILED且失败/六组已限定独审，overlay与全片仍待完成 |
+| Review | APPROVED 7c727306535ebdfb5e07d8bce5f9023b57daa72e；[review.md](review.md)；986f固定两overlay实际/五图与历史六行为限定组合接受，main待接收 |
 | D04 claim | acce2727-f3c0-433d-9b06-b802eefb32cb v1 active / exact8，[receipt](../../docs/evidence/wpf-visual01/shared-overlays/take-receipt.json) |
 | 架构影响 | 展示布局与组件私有 disclosure；无新状态权威、契约或服务节点 |
 
@@ -37,8 +37,8 @@
 | WPF-VISUAL01-03 | completed | d01_owner（历史） | 原 a8 检查；非当前结果 |
 | WPF-VISUAL01-04 | completed | d01_owner（历史） | 原 main4391 接收及旧 claim v3 released |
 | WPF-VISUAL01-05 | completed | w01_owner | [source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json) |
-| WPF-VISUAL01-06 | pending | w01_owner | affected types与Recovery appearance2组PASSED；Recovery双图已独审；Picker六行为已报告、展示首组失败；其余视觉未完成 |
-| WPF-VISUAL01-07 | pending | root / w01_owner | 517678类型/窄guard已审；Recovery选定实际/双图已独审；Picker及主线待完成 |
+| WPF-VISUAL01-06 | completed | w01_owner | affected types、Recovery appearance2组/双图、Picker历史六行为和本次overlay2组/五图限定接受；仅观测OS模式 |
+| WPF-VISUAL01-07 | pending | root / w01_owner | 固定源码与限定实际独审完成；[main intake](../../docs/evidence/wpf-visual01/shared-overlays/main-intake.json)待主线接收 |
 
 ## 等待记录
 
@@ -100,3 +100,11 @@ Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2own
 独立overlay-only候选已固定[窄lineage](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/lineage.json)，只运行未达两组/五PNG，复用六behavior的原审证据而不注入新结果。真实公共codec单次exit0、normal/180char通过、旧非法名称拒绝；120/10000ms CLOSED，0HTTP/PG/Chrome。新90s提案与旧15543ms失败账独立，尚无runtimegrant。
 
 [root add166窄审](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/root-delta-review.json)已接受固定修复/真实codec及overlay-only source/native差量，0blocking；原件与接受形状绑定已归档。只完成正常metadata seal后全exact8 STOP、claim保留，0child/0pending launch；新2组/5图仍NOT_RUN。
+
+## Overlay单次actual结果
+
+START 2026-10-08T02:43:45.067034Z，run visual-overlay-20261008-a602532d，执行HEAD d4988b9ed99abb06d38c227a65baf2e120821fdf/source7c727。parentclean已通过后只更本status；原90s新单次75work15cleanup，只overlay2组/5PNG，0PG。02:43:52.694672Z实际exit0/两组PASS、五PNG；02:44:26.497336Z exactRETURN。7630/90000ms CLOSED，未用82370不转credit；3PID/3PGIDfreshESRCH、5streamsEOFdrop0、HTTP/contextclosed、scratchabsent。
+
+[本次唯一原件索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/index.json)保独立两组与五图。新增实际没有注入历史六组；[986f最终独审](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/root-final-review.json)已亲看五图并接受限定组合，0blocking。
+
+本批只归档固定结果/独审与主线接收清单；正常push clean后全8scope STOP，claim保留，0child/0待launch。任务整体完成时间仍NOT_COMPLETED；新共享浮层main与部署待既有集成链，不用旧shell接收记录替代。当前overlay滚动条已观察，classic OS模式与全App/真实中心准入不在本次通过范围。

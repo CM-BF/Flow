@@ -1,0 +1,92 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-08T02:46:48.486022+00:00",
+  "decision": "APPROVED_LIMITED_PICKER_COMPONENT_BEHAVIOR_AND_OVERLAY_VISUAL_ACCEPTANCE",
+  "blockingFindings": [],
+  "source": "7c727306535ebdfb5e07d8bce5f9023b57daa72e",
+  "executionHead": "d4988b9ed99abb06d38c227a65baf2e120821fdf",
+  "actual": {
+    "index": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/index.json",
+    "bytes": 13813,
+    "sha256": "e03dc1cc42f5754b4a9228ac3f3e57a36258521a2c67e26e14c58774515ae884",
+    "pairsVerified": 32,
+    "filesVerified": 64,
+    "bytesEachSide": 646182,
+    "sourcePins": 6,
+    "runtimeManifestEntriesVerified": 9,
+    "returnBindingsVerified": 7,
+    "terminalSealBindingsVerified": 4,
+    "checks": [
+      "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+      "Desktop normal catalog keeps exact tuple and one explicit Apply"
+    ],
+    "newGroupsPassed": 2,
+    "newImages": 5,
+    "actualExternalExit": 0,
+    "chargeMs": 7630,
+    "phase": "CLOSED",
+    "returnAt": "2026-10-08T02:44:26.497336+00:00",
+    "returnSha256": "345529968ca07031c8c28348bc9141a88bf6d1be3598639d47b854a402b999c5"
+  },
+  "imagesPersonallyInspected": [
+    {
+      "name": "overlay-picker-normal-light-390.png",
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-light-390.png",
+      "sha256": "f99886a26b646da2b690aacbe91191b4647a4c8da1a2785a5e12bd56fdcde2c6"
+    },
+    {
+      "name": "overlay-picker-normal-dark-390.png",
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-dark-390.png",
+      "sha256": "1459ea0c0cc6e1d891de19028c0124197a4af1d738573bc8861089c2cb3d02a3"
+    },
+    {
+      "name": "overlay-picker-long-light-390.png",
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-long-light-390.png",
+      "sha256": "e8c5e2c76c610516a74ee23320c0ce170d5a809fb53d69b4d999d51ff415ea43"
+    },
+    {
+      "name": "overlay-picker-long-dark-390.png",
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-long-dark-390.png",
+      "sha256": "e461997103ce16ab4cefe494b86b751e9aeb51a34d48b527542f61b9163f40ae"
+    },
+    {
+      "name": "overlay-picker-normal-light-desktop.png",
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-light-desktop.png",
+      "sha256": "f20417b5bf546aca37d159dbeca875d77502f30c90e855345825bb236ee4ac38"
+    }
+  ],
+  "visualFindings": [
+    "All four390px views keep the dialog fully inside viewport with title/description and Apply/Cancel footer readable. Normal model selection and full-tuple summary are readable in light and dark.",
+    "Long180-character identifier remains bounded with a full-name disclosure. The captured body is scrolled, and its top-clipped filter content is confined to that scrolling region; the header/footer remain separate.",
+    "Long-name images visibly show the native vertical overlay scrollbar in the reserved right-side area, clear of options and footer. Current geometry reports scrollbarWidth0, so this establishes observed overlay mode only.",
+    "Desktop1280x900 normal view has readable field groups and both actions inside the dialog. Focus indication is visible on long-name disclosure; actual assertions also cover keyboard disclosure, Escape/focus return, unchanged applied draft before Apply and exactly one desktop Apply."
+  ],
+  "geometry": {
+    "390Views": 4,
+    "dialogLeft": 10.5,
+    "dialogRight": 379.5,
+    "top": 128,
+    "bottom": 716,
+    "bodyClientEqualsScroll": 336,
+    "radius": 14,
+    "bodyPaddingEnd": 11.9,
+    "reducedMotion": true,
+    "scrollbarWidth": 0
+  },
+  "combination": {
+    "previousGroupsAccepted": 6,
+    "previousRootReview": "d95088d74b6c23712b4aabf01a9594258818f982cfbe597b394a75bc2cdc7e98",
+    "previousIndex": "accc438350b7660c3dc88ca609c651100f184fe2ecb96e32d4a289c984cbbc7e",
+    "reuseBasis": "Four production inputs and Recovery test unchanged. Original six-group behavior function suffix byte-identical; normal fixture ID repair changes only explicit normal-mode branch. Previous six groups remain separate actual evidence.",
+    "meaning": "Two runs together support the stated component-level behavior and new presentation matrix. This is not an8-of8 single-run claim. First run FAILED remains FAILED; no old runtime credit was reused."
+  },
+  "closure": "3registeredPIDs+3PGIDs freshESRCH; all5captured streamEOF/drop0; own context/fixture closed and exact scratch absent. No port probes or broader escaped-process claim.",
+  "cleanCode": "Final segment review found one normal-ID constant, unchanged public codec and no production workaround for fixture failure; separate historical checks avoid redundant runtime. No new source findings in this bounded presentation delta.",
+  "intake": "Owner may archive this review, update its one status/plan/review/main-intake and perform the already-budgeted final seal/push/clean/STOP. D01 and Original alone coordinate integration; no further browser run requested.",
+  "limits": [
+    "ControlledHTTP catalog with production component; not fullApp, realcenter/session/auth/provider or mainintegration.",
+    "Recovery visual journey not run in this packet. AlternateOS/classic scrollbar and all keyboard/screenreader combinations remain unverified.",
+    "New Web opt-in creation and required-tuple Send/Queue preflight are separate existing MATURE02 work; this component acceptance does not validate real server admission.",
+    "Prior failed run, local charge distinction, raw originals and source preparation records remain immutable."
+  ]
+}

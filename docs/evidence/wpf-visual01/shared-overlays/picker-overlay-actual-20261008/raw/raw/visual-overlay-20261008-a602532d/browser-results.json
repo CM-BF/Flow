@@ -1,0 +1,154 @@
+{
+  "sourceHead": "d4988b9ed99abb06d38c227a65baf2e120821fdf",
+  "sourceHashes": {
+    "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+    "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+    "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "apps/web/test/message-settings.browser.ts": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf"
+  },
+  "implementation": "7c727306535ebdfb5e07d8bce5f9023b57daa72e",
+  "startedAt": "2026-10-08T02:43:45.120Z",
+  "workerPid": 81311,
+  "parentPid": 81232,
+  "chromePid": 81239,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [
+    "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+    "Desktop normal catalog keeps exact tuple and one explicit Apply"
+  ],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "passed",
+  "pg": 0,
+  "journeys": [
+    {
+      "name": "overlay",
+      "checks": [
+        "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+        "Desktop normal catalog keeps exact tuple and one explicit Apply"
+      ]
+    }
+  ],
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-08T02:43:50.293Z",
+  "overlay": {
+    "checks": [
+      "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+      "Desktop normal catalog keeps exact tuple and one explicit Apply"
+    ],
+    "observations": [
+      {
+        "sample": "normal",
+        "theme": "Light",
+        "geometry": {
+          "left": 10.5,
+          "right": 379.5,
+          "top": 128,
+          "bottom": 716,
+          "client": 367,
+          "scroll": 367,
+          "footerTop": 633.53125,
+          "footerBottom": 699.609375,
+          "radius": 14,
+          "bodyPaddingEnd": 11.9,
+          "bodyClient": 336,
+          "bodyScroll": 336,
+          "scrollbarWidth": 0,
+          "gutter": "stable",
+          "reducedMotion": true
+        },
+        "screenshot": "overlay-picker-normal-light-390.png"
+      },
+      {
+        "sample": "normal",
+        "theme": "Dark",
+        "geometry": {
+          "left": 10.5,
+          "right": 379.5,
+          "top": 128,
+          "bottom": 716,
+          "client": 367,
+          "scroll": 367,
+          "footerTop": 633.53125,
+          "footerBottom": 699.609375,
+          "radius": 14,
+          "bodyPaddingEnd": 11.9,
+          "bodyClient": 336,
+          "bodyScroll": 336,
+          "scrollbarWidth": 0,
+          "gutter": "stable",
+          "reducedMotion": true
+        },
+        "screenshot": "overlay-picker-normal-dark-390.png"
+      },
+      {
+        "sample": "long",
+        "theme": "Light",
+        "geometry": {
+          "left": 10.5,
+          "right": 379.5,
+          "top": 128,
+          "bottom": 716,
+          "client": 367,
+          "scroll": 367,
+          "footerTop": 633.53125,
+          "footerBottom": 699.609375,
+          "radius": 14,
+          "bodyPaddingEnd": 11.9,
+          "bodyClient": 336,
+          "bodyScroll": 336,
+          "scrollbarWidth": 0,
+          "gutter": "stable",
+          "reducedMotion": true
+        },
+        "screenshot": "overlay-picker-long-light-390.png"
+      },
+      {
+        "sample": "long",
+        "theme": "Dark",
+        "geometry": {
+          "left": 10.5,
+          "right": 379.5,
+          "top": 128,
+          "bottom": 716,
+          "client": 367,
+          "scroll": 367,
+          "footerTop": 633.53125,
+          "footerBottom": 699.609375,
+          "radius": 14,
+          "bodyPaddingEnd": 11.9,
+          "bodyClient": 336,
+          "bodyScroll": 336,
+          "scrollbarWidth": 0,
+          "gutter": "stable",
+          "reducedMotion": true
+        },
+        "screenshot": "overlay-picker-long-dark-390.png"
+      }
+    ],
+    "scrollbarCoverage": "Observed modes only; alternate OS mode remains NOT_RUN unless a separate admitted run records it"
+  },
+  "requests": [
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20"
+  ],
+  "limitation": "Overlay-only production component with synthetic HTTP catalog; no behavior rerun or actual App integration",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 216,
+    "sha256": "b14004daaed818dd396b02d0f798d835e5b3c8f300fe4028dda6a5b889cb18db",
+    "state": "INSTALLED",
+    "truncated": false
+  },
+  "finishedAt": "2026-10-08T02:43:52.601Z",
+  "observedElapsedMs": 7481,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

@@ -1,0 +1,148 @@
+{
+  "taskId": "WPF-VISUAL01",
+  "parent": "WPF-MATURE-01",
+  "at": "2026-10-08T02:48:36.659Z",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "branch": "codex/web-shared-overlays",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "implementationTarget": "7c727306535ebdfb5e07d8bce5f9023b57daa72e",
+  "actualExecutionHead": "d4988b9ed99abb06d38c227a65baf2e120821fdf",
+  "sourceScopes": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "bytes": 8167,
+      "sha256": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+      "blob": "49111e2e1a1e96e1b93ba23737b4b7f1928e5cfc",
+      "kind": "production"
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3897,
+      "sha256": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+      "blob": "2b6e741527f60c737fe7a60bf8186cab7c5ebdb0",
+      "kind": "production"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27940,
+      "sha256": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+      "blob": "6855d11046d2000f79e5a59e1b7049a5b634743b",
+      "kind": "production"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 5851,
+      "sha256": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+      "blob": "6802d2a998f35e4299a482c0b5e6fa567f7935d0",
+      "kind": "production"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 141850,
+      "sha256": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+      "blob": "0b647b4148ea4082b9bb080d3d38ed7ef6193644",
+      "kind": "test"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 48381,
+      "sha256": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf",
+      "blob": "8a5fef90368eaf5e436184d652faccc4175e3282",
+      "kind": "test"
+    }
+  ],
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/root-final-review.json",
+    "bytes": 5858,
+    "sha256": "986f67be9221f8c8f2e72850dc6b9e806b0e6d50b40fa50fc90e3cc9cb8415d5"
+  },
+  "evidence": {
+    "overlayTwoGroupsFiveImages": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/index.json",
+      "bytes": 13813,
+      "sha256": "e03dc1cc42f5754b4a9228ac3f3e57a36258521a2c67e26e14c58774515ae884"
+    },
+    "priorSixBehaviorFirstRunFailed": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/index.json",
+      "bytes": 11619,
+      "sha256": "accc438350b7660c3dc88ca609c651100f184fe2ecb96e32d4a289c984cbbc7e"
+    },
+    "priorSixBehaviorReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-actual-20261008/root-result-review.json",
+      "bytes": 7461,
+      "sha256": "d95088d74b6c23712b4aabf01a9594258818f982cfbe597b394a75bc2cdc7e98"
+    },
+    "affectedTypes": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/types-actual/index.json",
+      "bytes": 10061,
+      "sha256": "d74dae41b4cc3ab08abda150274b13f7d76c66bad2192899b92019bd113beb13"
+    },
+    "affectedTypesReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json",
+      "bytes": 5418,
+      "sha256": "517678935b121f5fd582a9a6893b0487043e7c5e03f74ce6b0c7f25f995e6d5e"
+    },
+    "recoverySelectedTwoGroupsTwoImages": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json",
+      "bytes": 13547,
+      "sha256": "d9e7510ff3072a026be46fa3a27c6d6215786a0c427acb0e3846e6f641feef94"
+    },
+    "recoveryReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json",
+      "bytes": 10796,
+      "sha256": "0e1de30920953fb2ef7b3ec62a482714b6b401464659883d5a11a04c2cef5576"
+    },
+    "sourceDeltaAndCodec": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/root-delta-review.json",
+      "bytes": 4652,
+      "sha256": "add16695e52751e767a5609d9ccde8ea76501d99b8ed901df3fa2eb509c6179c"
+    }
+  },
+  "acceptedBehavior": "Shared Dialog appearance and progressive Picker controls preserve exact tuple, pending selection, CAS/Apply authority and keyboard/focus behavior. Narrow normal/180-character IDs and desktop normal catalog accepted. Recovery appearance selected cookieRead/themes390 evidence remains separate.",
+  "combination": "Previous six behavior groups plus current two overlay groups; not a single-run8/8. Previous FAILED remains FAILED.",
+  "main": "NOT_INTEGRATED",
+  "deployment": "NOT_DEPLOYED",
+  "integrationInstruction": "Integrate only these six fixed source blobs/deltas through the existing I02 flow, preserving newer main consumers. Ownrecords are evidence; do not overwrite App/session/Thread/attachments or copy an old full consumer tree. Report exact main receipt before owner task completion/release.",
+  "limits": [
+    "Controlled HTTP production Picker component, not full App/session/auth/provider validation.",
+    "Observed native overlay scrollbar only (width0); alternate OS/classic mode and all screenreader/keyboard combinations NOT_RUN.",
+    "No new Web required-tuple Send/Queue preflight or opt-in creation acceptance.",
+    "Recovery selected appearance only; fullRecovery and Arc remain outside this result."
+  ],
+  "runtimeAccounts": {
+    "types": {
+      "spentMs": 5765,
+      "totalMs": 30000,
+      "state": "CLOSED"
+    },
+    "recovery": {
+      "spentMs": 10325,
+      "totalMs": 60000,
+      "state": "CLOSED"
+    },
+    "firstPicker": {
+      "spentMs": 15543,
+      "totalMs": 90000,
+      "state": "FAILED_CLOSED"
+    },
+    "codec": {
+      "spentMs": 120,
+      "totalMs": 10000,
+      "state": "CLOSED"
+    },
+    "overlay": {
+      "spentMs": 7630,
+      "totalMs": 90000,
+      "state": "CLOSED"
+    }
+  },
+  "claim": {
+    "id": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "retained": true,
+    "all8StopAfterSeal": true
+  },
+  "noNewRuntime": true
+}

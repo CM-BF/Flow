@@ -1,8 +1,8 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_FAILED**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。当前候选target `7c727306535ebdfb5e07d8bce5f9023b57daa72e`，其夹具修复/overlay-only入口已获add166限定source/native批准；旧实际target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**APPROVED_LIMITED_PICKER_COMPONENT_BEHAVIOR_AND_OVERLAY_VISUAL_ACCEPTANCE**，固定target `7c727306535ebdfb5e07d8bce5f9023b57daa72e`，0blocking。主线与部署 **NOT_INTEGRATED / NOT_DEPLOYED**；不是全App或所有平台批准。
 
-scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；Recovery appearance选定2组实际PASS及两390PNG已获root限定独立实际/视觉审；Picker整体FAILED：六行为组已返回，两图已生成；新增展示首组因夹具模型ID非法而失败，主线/部署 NOT_INTEGRATED。
+scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。四入口affected类型、Recovery appearance选定两组/双图分别有独立证据。Picker首轮FAILED保留；其六behavior已接受，source修复只改合法normal模型ID与同源locator，本次独立overlay两组/五PNG实际通过。root986f逐32pairs/64files和完整RETURN核验、亲看全部五图后接受限定组合，不能称单轮8/8。当前观测overlay滚动条，alternate OS/classic与全键盘/读屏组合未验。
 
 独审者先核固定 Git target、实际文件 hash 和本次检查原件，再区分 source / local / browser / visual / main / deployment；禁止继承历史 a8 绿项。原 APPROVED 历史见[historical review](../../docs/evidence/wpf-visual01/shared-overlays/historical-review.md)。
 
@@ -51,3 +51,9 @@ root f3b8仅source-preparation已批准；经理明确接受固定Node24.20/Chro
 ## Overlay-only修复准备（NOT_RUN）
 
 [source/local](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/source-local.json)记录合法模型ID与真实公共codec两代表DTO通过、旧非法名称仍拒绝；六behavior函数后缀逐字不变，四产品和Recoverytest不变。新[独立入口差量](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/lineage.json)只移除已验六行为调用及中间关闭/重开，最后fixture/context/Chrome/owned组清理合同不改。新两组/五图NOT_RUN，不以历史六组冒新overlay通过；[root add166](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-repair-20261008/root-delta-review.json)已限定批准source/native，0blocking；真正两组/五图仍NOT_RUN。
+
+## 最终overlay实际/视觉限定独审
+
+[原件索引](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/index.json)保留创建时review PENDING快照，后续[986f独审原件](../../docs/evidence/wpf-visual01/shared-overlays/picker-overlay-actual-20261008/root-final-review.json)为正式接受依据。2组/5PNG、7630ms CLOSED、3PID/3PGID ESRCH、5streams EOF/drop0、context/HTTPclosed/scratchabsent；未新增网络探测或复验。四production与Recoverytest不变、六behavior函数后缀逐字，故历史六组可单独复用，旧FAILED不改签。
+
+[主线接收入口](../../docs/evidence/wpf-visual01/shared-overlays/main-intake.json)绑定唯一固定target和证据。当前只交付组件范围；Send/Queue required-tuple、创建入口、个人网页发布属于另有owner的既有任务。正常封存后全8STOP，保claim等待main实际receipt。

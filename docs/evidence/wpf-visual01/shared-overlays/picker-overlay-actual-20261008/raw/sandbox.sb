@@ -1,0 +1,8 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/vis-overlay-b1/scratch") (subpath "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d") (literal "/dev/null"))
+(deny network*)
+(allow network-bind (local ip "localhost:*"))
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))

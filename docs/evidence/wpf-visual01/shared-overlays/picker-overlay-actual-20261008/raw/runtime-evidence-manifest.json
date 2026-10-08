@@ -1,0 +1,62 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/browser-results.json",
+      "bytes": 5355,
+      "sha256": "f2db598dd77869c120e8f18b6d9f8ca56482e5005db39b5101782e14585b116a"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/owned-chrome.json",
+      "bytes": 2300,
+      "sha256": "801551f5d825d8387a0dda0cf729627044b5c48d852d957c5f20be244562fa71"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/chrome.log",
+      "bytes": 6401,
+      "sha256": "ff4315e74d21a35ae058074894d59fd2521c604a06c616c9144f45a03ddcc217"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/select-diagnostics.json",
+      "bytes": 216,
+      "sha256": "b14004daaed818dd396b02d0f798d835e5b3c8f300fe4028dda6a5b889cb18db"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-light-390.png",
+      "bytes": 75541,
+      "sha256": "f99886a26b646da2b690aacbe91191b4647a4c8da1a2785a5e12bd56fdcde2c6"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-dark-390.png",
+      "bytes": 74695,
+      "sha256": "1459ea0c0cc6e1d891de19028c0124197a4af1d738573bc8861089c2cb3d02a3"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-long-light-390.png",
+      "bytes": 71942,
+      "sha256": "e8c5e2c76c610516a74ee23320c0ce170d5a809fb53d69b4d999d51ff415ea43"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-long-dark-390.png",
+      "bytes": 71149,
+      "sha256": "e461997103ce16ab4cefe494b86b751e9aeb51a34d48b527542f61b9163f40ae"
+    },
+    {
+      "path": "/private/tmp/vis-overlay-b1/raw/visual-overlay-20261008-a602532d/overlay-picker-normal-light-desktop.png",
+      "bytes": 110528,
+      "sha256": "f20417b5bf546aca37d159dbeca875d77502f30c90e855345825bb236ee4ac38"
+    }
+  ],
+  "expectedChecks": [
+    "Normal and180-character identities in light/dark390: disclosures preserve C, footer remains reachable, Escape returns focus",
+    "Desktop normal catalog keeps exact tuple and one explicit Apply"
+  ],
+  "sourceHashes": {
+    "apps/web/src/assistant-ui.css": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf",
+    "apps/web/src/components/ui/dialog.tsx": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3",
+    "apps/web/test/conversation-recovery.browser.ts": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095",
+    "apps/web/test/message-settings.browser.ts": "c8019447e9883590f04496c657d31d076fa6e5c8a898d5fa145a4212433c6abf"
+  },
+  "sourceHead": "d4988b9ed99abb06d38c227a65baf2e120821fdf"
+}
