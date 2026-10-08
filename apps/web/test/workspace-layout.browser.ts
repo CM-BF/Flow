@@ -235,7 +235,12 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const files = pane(4).getByRole("button", { name: "Files", exact: true }); await files.click();
       const picker = page.getByRole("dialog", { name: "Project text files", exact: true }); await expect(picker).toBeVisible(); await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
       await settings("arc-A"); await input(4).fill("Frozen A through actual material preparation"); await upload("arc-one.txt"); await upload("arc-two.txt");
-      await expect(pane(4).getByRole("button", { name: "Send message", exact: true })).toBeEnabled();
+      try { await expect(pane(4).getByRole("button", { name: "Send message", exact: true })).toBeEnabled(); }
+      catch (error) {
+        result.observations.materialReadiness = { paneText: (await pane(4).innerText()).slice(-4096),
+          lastTaskStatus: fixture!.fixture.chats.get("chat-4")!.snapshot.lastTurn?.task.status };
+        throw error;
+      }
       await probe("arm"); await input(4).press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
       await settings("arc-B"); await input(4).fill("Independent B while A prepares"); await upload("arc-next.txt");
       await expect.poll(async () => (await draftRecord(page, "conversation:chat-4"))?.data?.messageSettings?.requested?.model).toBe("arc-B");

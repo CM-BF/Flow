@@ -160,6 +160,12 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
     const queue = /^\/api\/conversations\/(chat-[1-8])\/queue(?:\/(.+))?$/.exec(url.pathname);
     if (queue && method === "GET") {
       const conversationId = queue[1]!, text = `Waiting ${conversationId} ` + "body ".repeat(240);
+      // Material preparation sends a follow-up in chat-4. The read/load panes retain their paused queues.
+      if (conversationId === "chat-4") {
+        if (queue[2]) json(response, { error: { code: "not_found", message: "No waiting material-scene item" } }, 404);
+        else json(response, { conversationId, queueRevision: 1, paused: false, currentTurn: null, blocked: null, items: [], nextCursor: null });
+        return;
+      }
       const item = { id: `${conversationId}-queue`, conversationId, sequence: 1, state: "waiting", preview: text.slice(0, 100), truncated: true, promoted: null, createdAt: at, updatedAt: at };
       const value = { conversationId, queueRevision: 1, paused: true, currentTurn: null, blocked: "queue-paused", ...(queue[2] ? { item: { ...item, text } } : { items: [item], nextCursor: null }) };
       if (queue[2]) bodyResponse(url.pathname, response, () => json(response, value));
