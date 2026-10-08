@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:47:56.807Z / main89a27b983；TUI夹具版本接缝已审接收，O16本次真实规划已结束且运行资源归还，结果待独审。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:56:35.890Z / mainb63bf7eb5；真实规划结果限定独审已接收，终端新入口准备也已独审，实际后继分别待明确续接与资源段。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main2b52b2355含O16实验环境修复；原插件客户端/215登记和实际部署原件已接收。个人e15/Web779仍为既有部署事实，本段未操作服务。 |
+| 已集成main状态 / HEAD | main254ce9579接收真实规划结果的限定审查；TUI fixture源已main89a27b983，R3 caller限定审查记录已mainb63bf7eb5。个人e15/Web779为既有部署事实，本段未操作服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 原生规划已生成一份真实的两节点依赖提案，实际运行资源已归还；终端接续夹具版本修复已独审并合入主线。 |
-| 下一可用交付 | 独立核对真实提案、权限与用量后，给出确认和后继执行的具体候选；终端与网页接续继续准备限定复验。 |
-| 当前阻塞 | ACTIVE: 本次规划结果正在封存独审，确认及子任务执行尚未授权；双端完整旅程仍未通过，不能由夹具局部检查代替。 |
+| 当前产出 | 真实两步计划及其材料、权限和用量已核对，规划语义已接受；终端双端验证入口的修复与前置审查已完成。 |
+| 下一可用交付 | 让已保存的计划按明确的新阶段授权继续，再验证终端与网页之间的任务接续。 |
+| 当前阻塞 | ACTIVE: 计划接续入口正在实现，确认与子任务调用尚未授权；终端实际双端旅程等待隔离资源段，局部检查不代替完整体验。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -305,3 +305,7 @@ TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEE
 2026-10-08T01:47:56.807Z：O16本次实际START01:45:07.705Z，terminal01:45:32.385Z，精确RETURN01:46:25.059Z；1次planner成功、累计SDK4，中心1proposal/0apply/2node1edge/0child，SDK估价USD0.0492524与账户实际费用UNKNOWN分列。5PID/3组ESRCH、双EOF、DB连接空且server/adminclosed；DB13,376,535B/private23,808B按原pause KEEP，02:00:32.316Z到期仅拒绝并保留，不自动清理/后继执行。结果尚待固定独审，不作为O16完整Done；运行/认证窗口已立即归还Web/Mika。唯一[运行归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/window-return.json)。
 TUI01F的8379固定夹具修正/4真实生产consumer注入检查及focused types获Lead独立限定APPROVED，main89a27b983仅收3源、typeconfig、Interface与小回执；20绑定121904B和旧raw仍canonical一次保存。原R2的1选中0通过/causeUNKNOWN及KEEP不变，真实双端新旅程尚未开始。[接收](../../../m2-integration/docs/evidence/i02/tui01f-fixture-source-alignment-intake.json)。
 REQ-19跨时点备份恢复新增验收已归原T04，当前仅只读研究/NOT_RUN；不把普通重启或产物回退当旧库与较新journal一致恢复，不新增个人DB或负载动作。
+
+### 2026-10-08T01:56:35.890Z 已审结果与下一可执行路径
+
+[O16限定实际结果接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-planner-result-intake.json)已main254ce9579；四次SDK调用历史永久分开，本次普通input不代表全部输入。GO接受实际两步规划语义，但未签confirmation、未给children额度或接受最终交付。原owner继续在既有范围准备新阶段的一次性续接：旧pause/source/state/raw保持，过期由旧入口拒绝；新阶段另核真实状态、权限、资源和旧新来源，不重新调用planner或改时间/digest绕guard。TUI准备独审见[唯一回执](../../../m2-integration/docs/evidence/i02/tui01f-r3-caller-review.json)，固定原件保留在原owner；已直接交D01按ready队列安排实际旅程，不预占窗口，不重跑旧绿检查。

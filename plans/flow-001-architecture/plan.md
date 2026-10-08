@@ -693,3 +693,7 @@ GO只读固定main b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b：Web conversations/
 GO的固定`main2b52b2355`八文件只读覆盖审查确认：SVC02明确没有恢复备份证据，SVC03部署、SVC06产物回退及S01P07/C02普通重启证据不能代替数据库回退验收；`scheduler.ts:13`启动会将queued重新标记为可派发，因此跨时点混用属于待测准入风险，不是已发生事故。后继最小专库场景：保存执行前备份→零模型fixture产生一次自有哨兵副作用及较新journal→隔离恢复旧库→证明默认不误重放，并通过既有接口核对旧runner身份/unknown后明确恢复。该小例不替代完整灾备验收。
 
 持久面清单须分列DB、runner journal、worktree/Git、插件内容、配置及受保护凭据的归属、版本一致性和恢复责任；缺失或不可一致恢复明确未知/步骤，不读出或复制秘密。只记录研究条件，本条不授权个人DB备份/恢复、新负载或凭据操作。[PostgreSQL16 SQL dump](https://www.postgresql.org/docs/16/backup-dump.html)说明单DB快照、globals及多DB一致性范围；[WAL归档](https://www.postgresql.org/docs/16/continuous-archiving.html)不覆盖配置文件。固定产物/普通进程重启/真正跨时点恢复分别验收。
+
+### O16 已保存规划的下一阶段（2026-10-08）
+
+本次真实planner产生的两节点/一依赖提案已限定独审并获GO规划语义接受；历史四次SDK调用封存，最终交付仍未验收。原native_center_owner沿O16-06准备新阶段的显式一次接续合同：同一goal/proposal/material/version，固定新阶段实现与旧来源并列，fresh核中心状态/授权/资源，旧pause/source/state/raw不改，过期仍由原入口拒绝。零模型实现及直接消费者先行，确认与最多两child的实际新额度待可运行固定候选一次提出；机械断言不替代独立最终语义审阅，不为工程接线重跑成功planner或另造调度器。唯一实现与实际等待仍读[O16 status](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)。

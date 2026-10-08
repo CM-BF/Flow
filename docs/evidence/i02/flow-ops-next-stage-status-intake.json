@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-08T01:57:53.103Z",
+  "target": "ea8b110d7bb0099eb7dd274e997a6cf4e86c9fe7",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "decision": "APPROVED_DOCS",
+  "blockingP1P2": 0,
+  "bindings": [
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "bytes": 88034,
+      "sha256": "1f41751988d80821b531b6d0028c2acea746b78f16097e0fc493d01bc34ff3a4"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 54143,
+      "sha256": "09e331210d43bd21f356c47b32ee037e28cbffe3accab53e2c09eca695041d86"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 125710,
+      "sha256": "a39d695e4e5cf704c9bcfcc4e288b4c05eabb0f44adba1c3a163c1d3bcd07e8d"
+    }
+  ],
+  "preimageEqual": "fe73ae6ffff1fae03a7016ff0e6a2d1ffd629b64",
+  "scope": "Current user-facing FLOW/OPS fields and original O16 next-stage plan only. No product, old raw, real pause, model budget or service change.",
+  "checks": {
+    "newLinksResolve": true,
+    "ownStatusErrors": [],
+    "ownHumanMissing": [],
+    "historicalFirstStart": "UNKNOWN",
+    "actualDashboardHumanComplete": [
+      "FLOW-001",
+      "OPS-001"
+    ],
+    "engineeringTests": 0
+  },
+  "limits": "Proposal semantic acceptance is not confirmation/child budget/final delivery; old expiry/source/raw remain. TUI four local checks are not actual dual-client acceptance."
+}
