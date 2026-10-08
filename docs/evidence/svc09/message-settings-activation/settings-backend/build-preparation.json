@@ -1,5 +1,5 @@
 {
-  "state": "PREPARATION_PENDING_LOCAL_AND_INDEPENDENT_REVIEW",
+  "state": "FIXED_SOURCE_AND_DIRECT_RESULT_READY_FOR_REVIEW_BUILD_NOT_GRANTED",
   "source": "f9221dbdce367d1794586471991adbe7a5a98c13",
   "bindings": [
     {
@@ -23,5 +23,83 @@
     "bytes": 3302,
     "sha256": "2935f14b13841c318d83eb3841c9185de1a99c4461b6560b2832f9ff0ebd918d"
   },
-  "actual": "NOT_RUN"
+  "actual": "NOT_GRANTED; await Web required contract decision then new D01 selection; no build/PG/provider/personal",
+  "at": "2026-10-08T03:50:37.792Z",
+  "callerSource": "413d956ccc1fb0d383d6d77fd87dce8cba7c5009",
+  "sourceTree": "b08d692bb50a13534c3908e57e4991d8450ffc79",
+  "archive": {
+    "files": 1000,
+    "logicalBytes": 7888748
+  },
+  "runtimePins": [
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "inherited": {
+    "input": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "bytes": 40316,
+      "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+      "gitRef": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+      "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json"
+    },
+    "recipe": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+      "bytes": 3271,
+      "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368"
+    },
+    "baseInput": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-inputs.json",
+      "bytes": 4531,
+      "sha256": "e2e76f058e2721bad376148f296e1e694bc6938b572702d9b55d7b30c507c7ef"
+    },
+    "baseLoader": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4460,
+      "sha256": "fb4156cde5ce05b5c3206d6642703a786a216dd4cec0f2e5340969eaef1b3096"
+    },
+    "runtimeBindingCount": 24,
+    "fixedSourceCount": 80,
+    "sqlCount": 33,
+    "snapshots": 271
+  },
+  "invocation": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-supervise.py",
+    "--execute-settings-build-once"
+  ],
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-once",
+  "namespaceAbsent": true,
+  "resourceLimits": {
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "additionalBytes": 2317352960,
+    "rawBytes": 2097152,
+    "opsCaptureBytes": 1048576,
+    "liveReserveBytes": 1073741824
+  },
+  "local": {
+    "cases": 8,
+    "elapsedMs": 309,
+    "rawBytes": 1919,
+    "lastReturn": "2026-10-08T03:48:42.930Z",
+    "groups": "2 absent/dualEOF",
+    "scratch": "2 exact empty same identity removed"
+  }
 }

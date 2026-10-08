@@ -1,0 +1,97 @@
+{
+  "startedAt": "2026-10-08T03:48:38.367Z",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--no-warnings",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-name-pattern=^settings ",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/public-entry.test.mjs"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/local-check.py",
+      "bytes": 4826,
+      "sha256": "c8c6dd3979481395a05d5cb92b093c97e799e84380372129a3e02f59becf1807"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/public-entry.test.mjs",
+      "bytes": 9473,
+      "sha256": "0eea3348496f8478fcd34b99e4dc0262b91bc0cab09950cd0f36dd61753ad6f0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-dispatch.test.py",
+      "bytes": 3692,
+      "sha256": "dcb97073fa9d629b17b036d8d0ceef45f5b299dbad90a0628546ab77686775c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-inputs.json",
+      "bytes": 5114,
+      "sha256": "8a0b4f1923d7a1c75db6017ec120c620cb2fd6d5fef1131cd9f460b7adad5945"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-preparation.json",
+      "bytes": 925,
+      "sha256": "94a96549e012180417cf4c54875acbc110f4f8a22811896459273b9352c71e6b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-entry.mjs",
+      "bytes": 4063,
+      "sha256": "4807e1a3b922472fa9ba3c98fc0f23459b026e154aeb6f2ac68c6fc45cfd9681"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/settings-backend/build-supervise.py",
+      "bytes": 987,
+      "sha256": "b02207c374675cc340adcd21c8fc94352a213f6289ac86840df94d7d6d2c758e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/supervise.py",
+      "bytes": 3302,
+      "sha256": "2935f14b13841c318d83eb3841c9185de1a99c4461b6560b2832f9ff0ebd918d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/preview.mjs",
+      "bytes": 57126,
+      "sha256": "882385d311836c456a0156444bcd529c6729052e44294c305f38c4069f7604c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/backend-release/host.mjs",
+      "bytes": 8924,
+      "sha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/runner-slots.mjs",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 15896,
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-settings-activation-source/tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "26e6e89409346e1d2cfbc9409d4754b379f8a7819eadc5b7ae2a8613605cb264"
+    }
+  ],
+  "queueSha256": "9d14a21d05046b6a5005203706de4005f4a4db853a1ab5fe5bc151728ddbb53e",
+  "floorBytes": 11824529408,
+  "candidateBytes": 8781824,
+  "freeBytes": 14145884160,
+  "scratch": {
+    "path": "/private/tmp/flow-svc09-settings-local-fhigir1s",
+    "dev": 16777234,
+    "ino": 124790056
+  },
+  "PG": 0,
+  "build": 0,
+  "provider": 0,
+  "personal": 0
+}

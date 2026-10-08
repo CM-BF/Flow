@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: settings source public default load resolves a selected artifact with real host identity checks
+ok 1 - settings source public default load resolves a selected artifact with real host identity checks
+  ---
+  duration_ms: 10.187875
+  type: 'test'
+  ...
+# Subtest: settings source public default rejects a mismatched source
+ok 2 - settings source public default rejects a mismatched source
+  ---
+  duration_ms: 5.530208
+  type: 'test'
+  ...
+# Subtest: settings source center wrapper uses resolve function and sealed single-launch verification
+ok 3 - settings source center wrapper uses resolve function and sealed single-launch verification
+  ---
+  duration_ms: 7.797458
+  type: 'test'
+  ...
+# Subtest: settings source runner wrapper uses resolve function and sealed single-launch verification
+ok 4 - settings source runner wrapper uses resolve function and sealed single-launch verification
+  ---
+  duration_ms: 6.464084
+  type: 'test'
+  ...
+# Subtest: settings source current initialization checks both actual slot keys and rejects stale nonce
+ok 5 - settings source current initialization checks both actual slot keys and rejects stale nonce
+  ---
+  duration_ms: 3.15675
+  type: 'test'
+  ...
+# Subtest: settings build actual input closure composes ten exact leaves and preserves SQL/runtime limits
+ok 6 - settings build actual input closure composes ten exact leaves and preserves SQL/runtime limits
+  ---
+  duration_ms: 40.99775
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 125.48825
