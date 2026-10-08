@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-08T00:42:53.251Z",
+  "state": "APPROVED_LIMITED_R2_RESULT_FIDELITY",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "target": "b1862907a1caaf40673123f86af0c8f5f5861ad8",
+  "findings": [],
+  "manifest": {
+    "originCommit": "b1862907a1caaf40673123f86af0c8f5f5861ad8",
+    "path": "docs/evidence/tui01f/web-handoff/r2-result-manifest.json",
+    "mode": "100644",
+    "bytes": 5251,
+    "sha256": "33c9afd8af8b05a97a4a220c331a191e23f4d4c80ed8e19a7ce656113eaecee2",
+    "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel"
+  },
+  "verified": {
+    "bindings": 20,
+    "bytes": 211141,
+    "rawFiles": 18,
+    "rawBytes": 203010
+  },
+  "actual": {
+    "selected": 1,
+    "passed": 0,
+    "state": "FAIL",
+    "startedAt": "2026-10-08T00:29:07.293Z",
+    "terminalAt": "2026-10-08T00:29:34.940Z",
+    "runningResourcesReturnAt": "2026-10-08T00:31:28.325Z",
+    "earliestFailure": "web-b-final / Task did not reach succeeded",
+    "cause": "UNKNOWN",
+    "B": "running / verification pending",
+    "ptyProtocolEvents": 9,
+    "visibleCheckpoints": 22,
+    "DOMstates": 3,
+    "cancellationRequestRole": "terminal",
+    "web": "observed cancellation state"
+  },
+  "resourceBoundary": "Original groups unknown and database/temp KEEP remain; later 7 PID and 5 groups absent, empty target connections, dual EOF support running-resources RETURN only. No old/private KEEP read or deletion.",
+  "followup": "Fixture-only bounded stage/error observations in original TUI01F scope; not new actual permit, not success or root-cause approval.",
+  "testsByReviewer": 0,
+  "newProviderCalls": 0,
+  "originals": "One fixed canonical/Git source; no duplicate raw archive or 741-source closure."
+}

@@ -15,13 +15,13 @@
 | 工作基线 / HEAD | main61ca12e7d5aa5a50038b1df4a65208d22e41b881；仅已审来源登记和自身接收记录，个人发布版本不变 |
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED: VAR/CENTER组合strict0、精确9/9已独审；TUI R2真实1选中0通过，失败原件正在独审，未重跑。 |
+| 检查状态 | PASSED: VAR/CENTER组合strict0、精确9/9已独审；TUI R2真实1选中0通过，失败原件已独审，未重跑。 |
 | 已集成main状态 / HEAD | 728d3165f已含VAR/CENTER；61ca12e7d管理接收。CENTER新增来源尚未实际reload；个人e15/Web779部署事实保持，当前新用户领取未验。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件验证领域和中心装配已进入主线；真实双端接续走通终端操作与网页取消，后续任务完成仍有失败待定位。 |
+| 当前产出 | 插件验证领域和中心装配已进入主线；真实双端接续走通终端取消与网页状态同步，后续任务完成仍有失败待定位。 |
 | 下一可用交付 | 展示中心装配的权威进度，并补齐双端接续失败阶段的诊断。 |
 | 当前阻塞 | ACTIVE: 双端接续的后续任务未达到成功状态，底层原因尚未确认；失败与保留材料已封存。 |
 | 需用户决定 | NONE |
@@ -564,3 +564,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:22:35.829Z：VAR领域22路径＋CENTER四叶共198692B按固定前像/后像接收，既有034→036启动前导保留；实际组合strict0与exact9factory通过，独立结果审查0P1/P2。[唯一接收记录](../../docs/evidence/i02/x01-var-center-intake.json)绑定原审批与本次3597ms监督/155B输出、两组及空scratch闭合。领域PG/旧route检查未重复，runtime后继和完整公开验收仍开放。普通局部资源已归还，不以结果审查占浏览器/PG。
 
 2026-10-08T00:38:30.040Z：CENTER唯一来源登记已获native_center_owner窄审，固定22cf1c653；见[接收依据](../../docs/evidence/i02/center-source-registration-review.json)。213仅候选，实际4320仍212，待原运行安全点部署。TUI R2原件b186及RETURN已接到，1/0真实失败与后置资源观察不冒通过；结果独审另记。
+
+2026-10-08T00:42:53.251Z：TUI R2固定b186获assignment_review限定结果保真批准，1/0仍FAIL；见[单份来源接收](../../docs/evidence/i02/tui01f-r2-result-review.json)。取消请求来自terminal、Web验证状态同步；没有将后置资源RETURN改写成原cleanup通过或新许可。

@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-08T00:43:07.173Z",
+  "state": "APPROVED_DOCS",
+  "target": "2b8ebe5ca8a4e11afd1aaa6d06f492612abe4234",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "findings": [],
+  "closedFinding": "Cancellation originated from terminal; Web observed its state. Both summaries corrected from bda4f4dbe.",
+  "rows": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "source": "2b8ebe5ca8a4e11afd1aaa6d06f492612abe4234",
+      "bytes": 48705,
+      "sha256": "c771b2d21889df79c5e454525d7339f09e1cf699a629dcffaf6156fd8c983886"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "source": "2b8ebe5ca8a4e11afd1aaa6d06f492612abe4234",
+      "bytes": 120013,
+      "sha256": "9c38ea5627cec2e4b3a20a0066a53b3ab88f9a743488949c00e70ae754f2fa3a"
+    }
+  ],
+  "tests": 0,
+  "historicalTiming": "UNKNOWN preserved; one existing waiting instant normalized to milliseconds from same source."
+}
