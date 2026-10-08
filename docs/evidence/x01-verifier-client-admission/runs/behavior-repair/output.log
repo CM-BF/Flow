@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-client-admission
+
+ ↓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR source project locks before authority recheck and uses the same transaction client
+ ↓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR missing/conflicting/foreign authority and stale project CAS fail before creating work
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR admission creates exactly one task and project binding on the receipt transaction 5ms
+ ↓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair tool phase preserves its public permission error without writing a receipt
+ ↓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair verifier phase preserves its public permission error without writing a receipt
+ ↓ apps/server/src/plugin-runtime/verification-admission.test.ts > VAR repair tool enable retains its existing permission error before revision or binding writes
+ ✓ apps/server/src/plugin-runtime/verification-admission.test.ts > SDK admission adds identity to an old saved receipt without reauthorizing or recreating work 32ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK verification admission freezes normalized body and forwards key, authentication and AbortSignal 20ms
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses missing request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses registration request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses revision request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses projectRevision request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses title request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses source request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses rule request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK refuses protocol request identity without fabricating proof
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-task acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-registration acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent binding-revision acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent scope acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent project acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent node acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK rejects inconsistent project-revision acknowledgement linkage
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK accepts matching project scope and historical replay without a current-state GET
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK admission enforces the exact 65536-byte response boundary
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK admission enforces the exact 65537-byte response boundary
+ ↓ packages/client/src/plugin-verification-admission.test.ts > SDK typed rejection and transport uncertainty retain distinct recovery behavior
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK project revision bound 2147483646 is checked on the ACK without rejecting a valid request 1ms
+ ✓ packages/client/src/plugin-verification-admission.test.ts > SDK project revision bound 2147483647 is checked on the ACK without rejecting a valid request 1ms
+
+ Test Files  2 passed (2)
+      Tests  5 passed | 24 skipped (29)
+   Start at  18:06:46
+   Duration  592ms (transform 248ms, setup 0ms, import 381ms, tests 60ms, environment 0ms)
+

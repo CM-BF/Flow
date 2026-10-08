@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-08T01:06:46.808Z",
+  "supervision": {
+    "pid": 16764,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 869,
+    "observed_bytes": 4364,
+    "retained_bytes": 4364,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "bytes": 4364,
+    "sha256": "35da44af2396a52765e9f75ace91590c06b7d48b53bfab6c81eb5a0e7431eb90"
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "removed": true,
+    "retained": null,
+    "sampleEmpty": true,
+    "exactAbsenceAt": "2026-10-08T01:06:46.808Z"
+  },
+  "sourceHashes": {
+    "apps/server/src/plugin-runtime/verification-admission.ts": "3b4a18fc70a3d356a0bd03d6d96984c2626c9a693dcc5ae4d688cfd24ab4068e",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts": "1d94c1645a43444c9f909399fb85eb79b6a13ac99a81adb93c33d1b22c8dd125",
+    "packages/contracts/src/plugin-verification-admission.ts": "0830fad87c230b0ce247fb4509d5fbeee8a86c3602cd34334bf86be6a0970a0e",
+    "packages/client/src/index.ts": "b6ae9ff026605ea3e5cd121320bc434903152cdc8f0144f3e269ba68e8f26d62",
+    "packages/client/src/plugin-management.ts": "dffa34fb080c33ed4741575726ff67b397b57d60b604bd88b3bb395436808fbe",
+    "packages/client/src/plugin-verification-admission.test.ts": "8d0b4a6f3caefd4697cdef279073bd3eca2b66efa7c4fa5956d35f1cee47c654",
+    "docs/evidence/x01-verifier-client-admission/run-local.py": "d9afee2b72db8abd75c9da2dcefaa7750dc207aea98005ee1a81eb80ae4484de",
+    "docs/evidence/x01-verifier-client-admission/tsconfig.json": "255d8078d349d18e85d66c0fc7c233328ef847153920733514b5ba6b31e1b706",
+    "docs/evidence/x01-verifier-client-admission/vitest.config.mjs": "dac569b3cdd0f38f6013a96e29b08dbc863642bc31062c8a1690f9ab2df8b094"
+  },
+  "wallBeforePersistence": 0.8795122089795768
+}
