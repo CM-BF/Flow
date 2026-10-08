@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-08T00:31:28.325Z",
+  "logicalId": "TUI01F04-REAL-HANDOFF-R2-ONCE",
+  "startedAt": "2026-10-08T00:29:07.293Z",
+  "terminalAt": "2026-10-08T00:29:34.940Z",
+  "state": "RUNNING_RESOURCES_RETURNED_FAILED_KEEP",
+  "processes": [
+    {
+      "target": 39991,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 40027,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 40028,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 40030,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 42005,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 47158,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": 47249,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "processGroups": [
+    {
+      "target": -40027,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -40028,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -40030,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -42005,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "target": -47158,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "operatorEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "innerEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "innerExit": 1,
+  "innerElapsedMs": 27530,
+  "firstFailure": {
+    "stage": "web-b-final",
+    "name": "Error",
+    "code": null,
+    "message": "Task did not reach succeeded"
+  },
+  "cleanupOriginal": {
+    "groups": "unknown",
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 5.2743329999975685,
+          "rows": []
+        }
+      ]
+    },
+    "adminClosed": true,
+    "databaseRemoved": false,
+    "temporaryRemoved": false
+  },
+  "database": {
+    "rows": [
+      {
+        "oid": 1371817,
+        "datname": "flow_tui01f_143d80010905"
+      }
+    ],
+    "connections": [],
+    "observerAdminClosed": true,
+    "disposition": "KEEP; no DROP"
+  },
+  "temporary": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-bmQi0Y",
+    "dev": 16777234,
+    "ino": 124675873,
+    "directory": true,
+    "symbolicLink": false,
+    "matchesCreated": true,
+    "disposition": "KEEP_NO_READ_DELETE"
+  },
+  "pendingLaunches": 0,
+  "provider": 0,
+  "personal": 0,
+  "limits": "Post-terminal exact observation does not rewrite original groups unknown, failed assertions or cleanup PASS. No retry or old KEEP read."
+}

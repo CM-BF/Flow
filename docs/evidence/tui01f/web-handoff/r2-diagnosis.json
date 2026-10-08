@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-08T00:35:57.902Z",
+  "method": "Bounded existing public evidence and fixed source read only; no DB/HTTP/private reads or new engineering checks.",
+  "confirmed": [
+    "Original terminal request was captured; actual PTY conflict/cancel/recovery/exit sequence completed.",
+    "release(B) returned; no Missing fixture barrier error; waitTask(B,succeeded) exhausted its existing 8-second wait.",
+    "At cleanup task A was cancelled; B remained running and verification pending.",
+    "Runner/proxy/center later stopped. Original groups unknown is not overwritten by subsequent runtime-return probes."
+  ],
+  "notEstablished": {
+    "underlyingCause": "UNKNOWN",
+    "adapterStageAfterRelease": "NOT_RECORDED",
+    "runnerNotice": "NOT_RECORDED",
+    "eventReportStatusOrCode": "NOT_RECORDED",
+    "claimOfProductBug": false
+  },
+  "directSourceRead": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27145,
+      "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 28785,
+      "sha256": "11961c79fb35e89b498d3818aef8e89a7ae9190cc5c1ea09a9ab67f336c00b2b"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    }
+  ],
+  "sourceReasoning": [
+    "Fixture release resumes ownership assertion, assistant-final, artifact and verification emits in sequence.",
+    "Runner report failure can interrupt lost ownership and retain the event, leaving task running; this is a possible branch, not attribution of this actual failure.",
+    "Current evidence does not select among ownership assertion/event transport/center rejection/finalization. No error code is backfilled."
+  ],
+  "minimalNextDelta": {
+    "scope": [
+      "apps/tui/src/task-controls/fixture.ts",
+      "apps/tui/src/task-controls/fixture-observation.test.ts"
+    ],
+    "proposal": "Within the synthetic fixture only, record bounded allowlisted stage start/settled/failed for existing adapter awaits plus existing runner onNotice; preserve only safe error name/code/status and task/attempt identity, no body/stack/token. Persist via existing checkpoint/save; never retry or replace primary. Add direct injected failures for each boundary and missing/unknown fields.",
+    "unchanged": [
+      "Original full acceptance assertions",
+      "8-second success wait",
+      "Ownership rules",
+      "Existing cleanup/KEEP rules",
+      "No new supervisor or polling observer"
+    ],
+    "status": "PROPOSED_NOT_IMPLEMENTED; ordinary budget to be coordinated; actual R2 permit consumed."
+  },
+  "skills": {
+    "discovery": "Local find-skills catalog; existing clean-code reused, no install",
+    "sources": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Keep primary versus cleanup separate; one fixture observer responsibility; avoid a second runtime or invented attribution."
+  }
+}

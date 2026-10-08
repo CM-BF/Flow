@@ -1,0 +1,161 @@
+{
+  "schema": "flow.tui01f.r2-result.v1",
+  "at": "2026-10-08T00:35:57.902Z",
+  "source": "8cc10177f2dfa03f89d598260f742a5befd14d29",
+  "executionHead": "db5b246fce00a88da05961521cf42d26e18c08ca",
+  "run": "handoff-3a76bb83-bd80-4d73-b6f7-4772c55cf84b",
+  "decision": "FAIL",
+  "selected": 1,
+  "passed": 0,
+  "assertionCount": null,
+  "assertionCountReason": "No assertion counter was instrumented; protocol/checkpoint/DOM counts below are observations, not additional passed tests.",
+  "timing": {
+    "start": "2026-10-08T00:29:07.293Z",
+    "terminal": "2026-10-08T00:29:34.940Z",
+    "runtimeReturn": "2026-10-08T00:31:28.325Z",
+    "supervisedChildElapsedMs": 27530
+  },
+  "firstWorkFailure": {
+    "stage": "web-b-final",
+    "name": "Error",
+    "code": null,
+    "message": "Task did not reach succeeded"
+  },
+  "cleanupFailures": [
+    {
+      "stage": "fixture-close",
+      "name": "Error",
+      "code": null,
+      "message": "TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of flow_tui01f_143d80010905 or private tmp"
+    }
+  ],
+  "observed": {
+    "ptyProtocolEvents": 9,
+    "ptyVisibleTextCheckpoints": 22,
+    "domSnapshots": [
+      {
+        "turn": 1,
+        "status": "running"
+      },
+      {
+        "turn": 1,
+        "status": "cancelled"
+      },
+      {
+        "turn": 2,
+        "status": "running"
+      }
+    ],
+    "writes": [
+      {
+        "role": "terminal",
+        "method": "POST",
+        "path": "/api/conversations/135dab21-00c0-4559-adbd-ffefdafca2a8/turns",
+        "status": 409,
+        "completed": true
+      },
+      {
+        "role": "web",
+        "method": "POST",
+        "path": "/api/conversations/135dab21-00c0-4559-adbd-ffefdafca2a8/turns",
+        "status": 202,
+        "completed": true
+      },
+      {
+        "role": "terminal",
+        "method": "POST",
+        "path": "/api/tasks/59e91746-2cd1-4e31-8ea7-e51b17f01834/cancel",
+        "status": 200,
+        "completed": true
+      },
+      {
+        "role": "web",
+        "method": "POST",
+        "path": "/api/conversations/135dab21-00c0-4559-adbd-ffefdafca2a8/turns",
+        "status": 202,
+        "completed": true
+      }
+    ],
+    "bridgeErrors": [],
+    "terminalExitCode": 0,
+    "rawModeRestored": true,
+    "unsentDraftAtExit": true,
+    "terminalPipesClosed": true,
+    "tasksBeforeRunnerShutdown": [
+      {
+        "id": "59e91746-2cd1-4e31-8ea7-e51b17f01834",
+        "status": "cancelled",
+        "verificationStatus": "pending",
+        "attempt": {
+          "id": "af0ecb46-2c16-43d9-a9e7-8e4c671bafe8",
+          "runnerId": "57131458-b8ad-4e8c-9d1d-323c0edaae54",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-08T00:29:32.264Z",
+          "nativeSessionId": "7711af7e-ee3e-4034-91b6-d476ea5fab34"
+        }
+      },
+      {
+        "id": "7970df65-6bce-4cc1-b6e3-5d986fa3efdd",
+        "status": "running",
+        "verificationStatus": "pending",
+        "attempt": {
+          "id": "ba4db691-4ab0-4d4c-87ff-860a98af5d74",
+          "runnerId": "57131458-b8ad-4e8c-9d1d-323c0edaae54",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-08T00:29:36.749Z",
+          "nativeSessionId": "7711af7e-ee3e-4034-91b6-d476ea5fab34"
+        }
+      }
+    ]
+  },
+  "runtimeReturn": {
+    "receipt": "r2-window-return.json",
+    "recordedPidsAbsent": 7,
+    "recordedGroupsAbsent": 5,
+    "pendingLaunches": 0,
+    "connections": [],
+    "observerAdminClosed": true
+  },
+  "retained": {
+    "originalGroups": "unknown",
+    "database": {
+      "rows": [
+        {
+          "oid": 1371817,
+          "datname": "flow_tui01f_143d80010905"
+        }
+      ],
+      "connections": [],
+      "observerAdminClosed": true,
+      "disposition": "KEEP; no DROP"
+    },
+    "temporary": {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-bmQi0Y",
+      "dev": 16777234,
+      "ino": 124675873,
+      "directory": true,
+      "symbolicLink": false,
+      "matchesCreated": true,
+      "disposition": "KEEP_NO_READ_DELETE"
+    },
+    "cleanupPass": false,
+    "deleted": false
+  },
+  "resourceObservations": {
+    "samples": 86,
+    "final": {
+      "freeBytes": 15265120256,
+      "rawBytes": 104822,
+      "privateBytes": 844,
+      "chromeBytes": 57226544,
+      "at": "2026-10-08T00:29:34.899Z"
+    },
+    "limitation": "Private minus Chrome is non-atomic; samples are not peak proof. Chrome256MiB/DB128MiB/WAL1GiB are planning reservations, not hard caps."
+  },
+  "nativeQueryCalls": 0,
+  "providerCalls": 0,
+  "personalActions": 0,
+  "scope": "Fixed af51 center / d629 Web / ec30 TUI synthetic two-turn control journey; not current779/settings/native acceptance.",
+  "priorFailures": "Original first journey terminal-request-capture FAIL and all old KEEP unchanged; no read/retry/delete.",
+  "review": "PENDING_INDEPENDENT_RESULT_FIDELITY"
+}

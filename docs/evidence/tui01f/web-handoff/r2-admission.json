@@ -1,0 +1,235 @@
+{
+  "at": "2026-10-08T00:29:07.282Z",
+  "grant": {
+    "at": "2026-10-08T00:25:53.775Z",
+    "logicalId": "TUI01F04-REAL-HANDOFF-R2-ONCE",
+    "state": "SELECTED_NOT_STARTED",
+    "latestStart": "2026-10-08T00:31:53.775Z",
+    "owner": "Original native operator",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "branch": "codex/tui-task-cancel",
+    "claim": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active exact7",
+    "source": "8cc10177f2dfa03f89d598260f742a5befd14d29",
+    "executionHead": "db5b246fce00a88da05961521cf42d26e18c08ca",
+    "delivery": "43dc95fd4d1152ff506b507e4d45355fa90eb2fd",
+    "preparation": "docs/evidence/tui01f/web-handoff/r2-preparation.json",
+    "preparationSha256": "9741cc703da665e7cb28a068e625fe3d97d2324988167e025f4a5aa46e23fad8",
+    "input": "docs/evidence/tui01f/web-handoff/r2-inputs.json",
+    "inputSha256": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3",
+    "callerSha256": "99665a6e48efc3e700d19d984a3c29158e83a8685789c6a235f665ca2d14fa94",
+    "sourceDigest": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+    "review": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/tui01f-r2-preparation-review.json",
+    "windowId": "flow-tui01f04-20261007-r2",
+    "namespace": "docs/evidence/tui01f/web-handoff/r2-actual-once",
+    "permit": "docs/evidence/tui01f/web-handoff/r2-permit.json",
+    "entry": "/opt/homebrew/bin/python3.13 -B docs/evidence/tui01f/web-handoff/r2-run.py --run-r2-once",
+    "minimumFreshFreeBytes": 13757972480,
+    "candidateAddedPlanningBytes": 1499463680,
+    "naturalResultSealBytes": 8388608,
+    "configuredPG": 13,
+    "requiredPGAvailable": 42,
+    "preflightMaxPG": 1,
+    "preflightPoolClosedBeforeLaunch": true,
+    "provider": 0,
+    "personalOperations": 0,
+    "Chrome": 1,
+    "actualTaskScope": "Only originalboundedfixturetaskwrites/cancellation, no personal realtask or779 validation",
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "outerWorkSeconds": 150,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "supervisedChildMaxSeconds": 152.5,
+    "outputBytes": 65536,
+    "stageRawBytes": 4194304,
+    "privateNonChromeBytes": 16777216,
+    "planning": "Chrome256MiB,DB128MiB,WAL1GiB are acceptedplanning nothardcaps/measuredpeaks;1GiBlive reserve once in globalterms. Oldcombinedfloor notinherited. Unknownretainedbackgrounds kept.",
+    "fresh": "Onlyoriginaloperator samecall confirmthismatchingunconsumedlogical/latest and noactualholder, fixeddb5b remoteclean/claimv5exact7/nooverlap/741fixedbytes+4directsources/dependencyresolveridentities/NodePythonOPS14pins/newwindowandouterpermitnamespaceabsent; freshfree>=thiscompletefloor andcurrentfullsum/intrinsic,PGavailable>=42 withmax1probe poolclosed. FreshObservedAt<=30s. Finalize onlylistedpermitresourcefields plus fixedbindings, actualHolder=null.0childSTOP onfailedorunknownpreflight;noautomaticretry.",
+    "lifecycle": "Report actualSTART, terminal, andexactFULLRETURN separately. OPS14group/EOF isnot detachedPTY/Chrome/HTTP/runner/DB/TMPclosure; originalwatchdog andfixture receipts plus ownerexact observations required. OrdinaryDROP/knownidentitycleanup only;unknownKEEP, noforce/noinspectionoldKEEP. No newChrome/PGactual inparallel.",
+    "scope": "Originalaf51backend/d629Web/ec30TUI;doesnotvalidatecurrent779 settings/personaltaskassignment. Sourcepreparationalreadyreviewed;no newsourceapproval.",
+    "ordinary": "AllnewMika17MiB source/metadata andArc384MiB/Context128MiB seal included once; onlyscopeclaimed0PGHTTPChrome source/pure permitted inparallel. No uncountednewgrowth beforeSTART or explicitSTOP.",
+    "budgetCaveat": "152.5s supervisedchild only; pre/postpinreads/fsync outside, no falselyboundedwholeoperator. Historicalfailure/KEEP unchanged."
+  },
+  "authority": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+  "authoritySha256": "cc4346fffe21536c26c1b7ac74603623c2cfa2ff8578683196942cf946d473b2",
+  "claim": {
+    "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+    "version": 5,
+    "scope": [
+      "apps/tui/src/journey.test.ts",
+      "apps/tui/src/task-controls",
+      "apps/tui/test-fixtures/cancel_driver.py",
+      "docs/evidence/tui01f",
+      "experiments/tui-web-control-handoff",
+      "packages/interaction/src/task-control",
+      "plans/tui01f-task-cancel"
+    ],
+    "at": "2026-10-08T00:29:06.937Z"
+  },
+  "verified": {
+    "inputDigest": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3",
+    "sourceDigest": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+    "inheritedPins": 741
+  },
+  "resolvers": [
+    {
+      "package": "zod",
+      "version": "4.6.5",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/zod",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "manifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "exportSha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505"
+    },
+    {
+      "package": "react",
+      "version": "19.3.0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/react",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "manifestSha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "exportSha256": "60caffdecbdc5db3bc4ec4e83df9488345ccb271d07533b9210bf5750918d97e"
+    },
+    {
+      "package": "ink",
+      "version": "8.0.0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ink",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink",
+      "manifestSha256": "84612a46f4b34fa346243b7246cbd1611f16012d8a8c8902f1da2633f393fefe",
+      "exportSha256": "f74b11e2a66d5c2873a29646dc180484b45d61a107fb09abfda101948571f664"
+    },
+    {
+      "package": "@assistant-ui/react-ink",
+      "version": "0.0.46",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@assistant-ui/react-ink",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react-ink@0.0.46_@opentelemetry+api@1.9.1_@types+react@19.3.0_ink@8.0.0_@types+_sglbrv6qzkjet2fvulnoqqrz5y/node_modules/@assistant-ui/react-ink",
+      "manifestSha256": "4080f72047a1ac2f30c202a214297caf2e6ba77d92500b3c399c61e2b59ef487",
+      "exportSha256": "ace4db603714a9b06efe3c248cbc1c88762e7f0d4a20d8b227496b9752e02bea"
+    },
+    {
+      "package": "fastify",
+      "version": "5.12.5",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/fastify",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "manifestSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "exportSha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae"
+    },
+    {
+      "package": "@fastify/cors",
+      "version": "11.3.0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/@fastify/cors",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "manifestSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "exportSha256": "e28c92bd82fcbe9045c8991f8ce441fcac3541b0344c1633a30f461c1636b15b"
+    },
+    {
+      "package": "pg",
+      "version": "8.23.1",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "manifestSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "exportSha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc"
+    },
+    {
+      "package": "pg-boss",
+      "version": "12.37.0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pg-boss",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "manifestSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "exportSha256": "11487d4ee764d73b54bdd72e691a66d08ef7d1239d2c2cf44d80db869848b34f"
+    },
+    {
+      "package": "npm-package-arg",
+      "version": "13.0.2",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/npm-package-arg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "manifestSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "exportSha256": "41cd09e778c4a7588df362588dbe9146a024d5cfcdf449702feb294e6acde761"
+    },
+    {
+      "package": "pacote",
+      "version": "21.5.1",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/pacote",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "manifestSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "exportSha256": "3f4a6a8d7ae3eb72ad61e567bae8d05356cc0a7439e9f7006701728a3af95d32"
+    },
+    {
+      "package": "ssri",
+      "version": "13.0.1",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/ssri",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "manifestSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "exportSha256": "e36be1a5e67217f423148f206bce2ea3aa04bb1271e5ea8069836c4a331f4d3b"
+    },
+    {
+      "package": "tar",
+      "version": "7.5.22",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tar",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "manifestSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "exportSha256": "1902a2a0b8cc2771f7e2aa0a855e9215a2d1023b1345fd504d28eb9c420c958c"
+    },
+    {
+      "package": "tsx",
+      "version": "4.23.15",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "manifestSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "exportSha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "package": "vitest",
+      "version": "4.0.18",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules/vitest",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "manifestSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "exportSha256": "af0b170bd7b3b2c8bca02dc8640ff73cbf490d640556c478bfd39820e9e1bd3a"
+    },
+    {
+      "package": "@flow/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/packages/client",
+      "manifestSha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "package": "@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/packages/contracts",
+      "manifestSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "package": "@flow/interaction",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/packages/interaction",
+      "manifestSha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "package": "@flow/plugin-runtime",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/packages/plugin-runtime",
+      "manifestSha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "package": "@playwright/test",
+      "version": "1.63.0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "manifestSha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    }
+  ],
+  "chromeIdentity": {
+    "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "bytes": 367696,
+    "dev": 16777234,
+    "ino": 123578051,
+    "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+    "scope": "fresh public executable observation; not a full application inventory claim"
+  },
+  "capacity": {
+    "maximum": 100,
+    "reserved": 3,
+    "observed": 9,
+    "available": 88,
+    "preflightPoolClosed": true,
+    "remoteZero": "NOT_OBSERVED_NOT_REQUIRED_FOR_CAPACITY_MARGIN"
+  },
+  "freshFreeBytes": 15330156544,
+  "completeFloorBytes": 13757972480,
+  "sourceUnchanged": true,
+  "priorNamespacesAbsent": true,
+  "wrapperNodePid": 39991
+}

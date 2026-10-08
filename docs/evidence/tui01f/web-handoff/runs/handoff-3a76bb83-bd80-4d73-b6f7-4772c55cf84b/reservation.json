@@ -1,0 +1,63 @@
+{
+  "run": "handoff-3a76bb83-bd80-4d73-b6f7-4772c55cf84b",
+  "identity": {
+    "digest": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "11961c79fb35e89b498d3818aef8e89a7ae9190cc5c1ea09a9ab67f336c00b2b"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "permit": {
+    "kind": "flow.tui01f04.r2.permit.v1",
+    "ready": true,
+    "logicalId": "TUI01F04-REAL-HANDOFF-R2-ONCE",
+    "windowId": "flow-tui01f04-20261007-r2",
+    "sourceDigest": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+    "inputDigest": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3",
+    "callerDigest": "99665a6e48efc3e700d19d984a3c29158e83a8685789c6a235f665ca2d14fa94",
+    "providerCalls": 0,
+    "personalOperations": 0,
+    "startBefore": "2026-10-08T00:31:53.775Z",
+    "freshObservedAt": "2026-10-08T00:29:07.282Z",
+    "pgAvailable": 88,
+    "preflightPoolClosed": true,
+    "minimumFreshFreeBytes": 13757972480,
+    "actualHolder": null,
+    "claim": {
+      "id": "9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a",
+      "version": 5
+    },
+    "note": "Not executable. Lead review plus new resource-owner grant required; approved fields finalized once into absent r2-permit.json, no old grant reuse."
+  },
+  "bounds": {
+    "workMs": 90000,
+    "totalMs": 150000,
+    "rawBytes": 4194304,
+    "privateBytes": 16777216,
+    "reserveBytes": 1073741824,
+    "startBytes": 1207959552
+  },
+  "watchdogPid": 40030,
+  "outcome": "unknown-retain"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:06:46Z；R2限定准备审查回执已main1b9eda58f，实际旅程未运行 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:36:29.687Z；R2实际FAIL/资源RETURN已固定，准备独审main1b9eda58f保持 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | 原基线a89f42ab57acb53657af6a2d1b745dabd4d50aa5；本段起始196d705913afefd102b31e451baf8cfd7c4975cf；新source 8cc10177f2dfa03f89d598260f742a5befd14d29 |
-| 工作树dirty状态 | R2 source/固定准备与原raw冻结；本次仅own审查/等待metadata，提交后clean |
+| 工作树dirty状态 | 源码/旧原件冻结；本次新增R2原始结果、受限诊断与own状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | 新5不同Python入口例8选择+1真实受限Node导入，2760ms/4039B；首floor fixture失败及HOLDER掩盖保留，定向修正；四组absent/双EOF/空scratch确删。0PG/Chrome/PTY/provider。旧F04实际1/0仍FAIL。 |
+| 本片段交付阶段 | review |
+| 检查状态 | R2实际1选中/0通过；真实PTY完成冲突/取消/恢复/退出，Web等待B成功失败。27,530ms/exit1，后置精确运行RETURN；原groups unknown、DB/tmp KEEP保留。局部旧5不同与首红证据未重跑。 |
 | 已集成main状态 / HEAD | 原c612四源已main421b2e89f10225bd37d1928ef2b627c6a375b76a；R2限定准备独审回执已main1b9eda58f，own source8cc/packet43dc由Git引用，不冒新实际能力。 |
 | 实现目标 | 8cc10177f2dfa03f89d598260f742a5befd14d29 |
 | 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r2-run.test.py, docs/evidence/tui01f/web-handoff/r2-inputs.json |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 下一次终端与网页接续入口已通过独立审查，旧失败和诊断修复保留。 |
-| 下一可用交付 | 在新的受控窗口中，完成真实终端与网页交替操作同一会话。 |
-| 当前阻塞 | ACTIVE: 等待新的数据库、浏览器和终端功能窗口；当前浏览器窗口由其他任务使用，本任务尚未启动。 |
+| 当前产出 | 终端与网页已完成冲突、取消和恢复接续；第二任务未完成，原始失败与资源归还证据已保存。 |
+| 下一可用交付 | 独审本次失败记录，再补合成执行器的最小阶段诊断以定位完成失败；完整双端旅程仍未通过。 |
+| 当前阻塞 | ACTIVE: 第二任务保持运行，现有记录缺执行器事件上报阶段及错误分类，无法确认底层原因；需定向诊断修复后另排真实旅程。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R2 APPROVED_LIMITED_PREPARATION，Lead固定入口/绑定与assignment_review生命周期双审0P1/P2；实际未授。 |
+| Review | [review.md](review.md)：R2准备APPROVED_LIMITED；本次实际FAIL保真待独审，旧一次permit已消费，无重试授权。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-08T00:06:46.936Z fresh核同owner/WT/branch/exact7，原scope未变 |
 | 架构影响 | 仅实验启动装配改用已审OPS14；原journey/fixture拥有任务与清理，生产controller/权限/调度不变。固定af51/d629/ec30不覆盖已发布779全设置/恢复。 |
 
@@ -107,6 +107,10 @@
 | --- | --- | --- | --- | --- | --- |
 | TUI04-R2-LOCAL-FLOOR | UNKNOWN | 2026-10-07T23:51:46.610Z | 资源 | ARC选中后普通增长须单列；Lead核完整floor并准入。开始UTC无独立时戳，不反推。 | 本轮Lead协调消息与local01 reservation |
 | TUI04-R2-REVIEW | 2026-10-07T23:59:03.635Z | 2026-10-08T00:04:43.883Z | 审查 | 固定薄入口/局部证据获限定独审；实际旅程仍需新窗口。 | I02 tui01f-r2-preparation-review.json |
-| TUI04-R2-WINDOW | 2026-10-08T00:06:46Z | OPEN | 资源 | 权威账本显示其他浏览器运行，尚无匹配TUI新grant；匹配选择、同次fresh身份/资源及预检pool关闭后才可单次运行。 | Web current.json本次只读观察；Lead条件派工 |
+| TUI04-R2-WINDOW | 2026-10-08T00:06:46Z | 2026-10-08T00:29:07.293Z | 资源 | 权威账本显示其他浏览器运行，尚无匹配TUI新grant；匹配选择、同次fresh身份/资源及预检pool关闭后才可单次运行。 | Web current.json本次只读观察；Lead条件派工 |
 
 2026-10-08T00:06:46Z：已实读唯一[R2独审](../../../m2-integration/docs/evidence/i02/tui01f-r2-preparation-review.json)，APPROVED_LIMITED_PREPARATION / findings[]；main1b9eda58f。43dc固定19/8绑定与source8cc保持，741继承输入不复制、局部不重跑。Lead接受1,499,463,680B前瞻及非硬cap/非原子计量限制；真实运行仍待新grant和同次source/runtime/claim/unusednamespace/free/PG可用42及probe关闭。此刻ARC_CSS_MATERIAL_ACTUAL_RUNNING，无TUI授权。仅更新own状态/审查，0新增工程child/PG/Chrome/PTY/provider/个人操作；原FAIL/KEEP与历史task开工UNKNOWN不变。
+
+2026-10-08T00:29:07.293Z：正式selected00:25:53.775Z、latestStart00:31:53.775Z同一R2唯一入口已实际开始，PID/PGID40027、parentNode39991。紧前source/remote clean db5/claimv5exact7/741+4/19resolver均匹配，新namespace未消费；free15330156544>=完整floor13757972480，PG100−3−9=88可用>=42，max1预检pool.end后启动。内层run handoff-3a76bb83-bd80-4d73-b6f7-4772c55cf84b；0provider/个人，原一次许可已消费，不能重试。terminal和真实资源RETURN尚未发生，不按时钟推断。原af51/d629/ec30范围、旧FAIL/KEEP不变。见r2-start.json/r2-admission.json与本次唯一window。
+
+2026-10-08T00:36:29.687Z：R2 00:29:07.293Z START→00:29:34.940Z terminal exit1→00:31:28.325Z精确运行RETURN。最早web-b-final等待B succeeded失败；9协议事件/22PTY文本checkpoint/3DOM状态是观察数，不冒额外通过用例；断言总数未插桩UNKNOWN。7PID/5组ESRCH、DB连接空/admin关闭，原fixture groups unknown及DB/tmp KEEP不改、不DROP。见[唯一结果manifest](../../docs/evidence/tui01f/web-handoff/r2-result-manifest.json)、[安全摘要](../../docs/evidence/tui01f/web-handoff/r2-result-summary.json)、[有界只读诊断](../../docs/evidence/tui01f/web-handoff/r2-diagnosis.json)。未读取私有tmp/旧KEEP，0新工程检查/provider/个人；底层原因仍UNKNOWN，后继仅拟在fixture补受控阶段观察，不重试旧run。clean-code复核primary/cleanup、数据界限和单一职责，无产品源码改动。
