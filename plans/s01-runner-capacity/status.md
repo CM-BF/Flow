@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:30:53.063Z |
+| 最近更新 | 2026-10-08T01:40:32.222Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -17,20 +17,20 @@
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
 | 工作树dirty状态 | 起点e0f5db4d992fd05a797c964db8a6886d7d1478fe clean；本段只新owned实验/证据与原plan状态，旧ACK candidate/source/raw不改。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
+| 检查状态 | FAILED 1edff536b：types exit2，仅固定projection.d.mts缺件；同源pure19/19、clang link0。8660abe6da98b646646da4b0df1f5752c1b95173补精确声明及有限计量返回，未重types，不冒整片green。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | 3dffa3f0c344767eccc58716343fa1b0a3e0369d |
-| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, experiments/runner-capacity/mixed/queue-probe.ts |
+| 实现目标 | 8660abe6da98b646646da4b0df1f5752c1b95173 |
+| 实现范围 | experiments/runner-capacity/native-initialize 六叶；docs/evidence/s01/native-initialize 准备/固定支持；无生产或旧mixed源码改动。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 初始化资源基线设计已审；正实现固定宿主接缝与有限数字采样模块，尚未运行helper或native。原128 ACK验收仍失败且优先。 |
-| 下一可用交付 | 固定源码与纯输入/类型检查证据，独立审查后再准备真实初始化窗口；本段不进行native测量。 |
-| 当前阻塞 | ACTIVE: 原128 ACK未过；新初始化仅源码准备，实际sampler/native尚未授予窗口。 |
+| 当前产出 | 初始化准备的19个纯端口用例通过，数字采样helper已编译但未执行；固定支持类型缺件已补，首轮类型失败保留。原128 ACK失败与优先级不变。 |
+| 下一可用交付 | 完成修后类型核对与独立源码审查；真实初始化还需固定运行输入、整树关闭/目录门禁及独立窗口，本段无native测量。 |
+| 当前阻塞 | ACTIVE: 首轮类型检查发现固定支持声明缺件，已补待验证；独审待可用审者。原128 ACK未通过，native窗口未开放。 |
 | 需用户决定 | NONE |
-| Review | DESIGN_REVIEW_APPROVED，b01_bounded_reads 2026-10-08T01:17:01.958Z，target756856900491b8b293e739090dc165f89de4f9e9，0P1/P2；仅方法设计，源码/采样/实际窗口未授。原3dffa/84b5批准独立保留。 |
+| Review | PENDING 本源码/局部结果；设计7568569的b01批准仅方法。db正执行已授PROCESS段，未审本实现；不以分支结果冒独审。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v4 ACTIVE/exact8；COMMIT 2026-10-08T01:25:24.929Z，仅追加native-initialize两个目录，正式receipt见新evidence。 |
-| 架构影响 | 私有实验sequence与数字snapshot小Interface，复用固定trusted host/R06/OPS14；新C libproc helper只源/语法候选，不改变产品模块或主线运行。 |
+| 架构影响 | 新增私有sequence/snapshot与host/R06组合driver；单有限libproc helper只数字输出、无信号/清理权。caller保目录/整树关闭权威，actual caller仍待绑定；未改主线产品。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -406,3 +406,7 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 ## 2026-10-08T01:30:53.063Z stock初始化source准备
 
 实际START/firstWrite2026-10-08T01:25:24.924Z，deadline01:50:24.924Z；COMMIT确认后才写，DB committedAt01:25:24.929Z与本机clock差5ms原样分列。新8MiB独立段，33固定支持185051B/13已装入口hash引用，未覆盖旧产品/实验源。至多3serial×20s/cum60，仅类型/纯ports/C语法（等额链接待明确授权）；0helper执行/libproc实采/stock/native/authstatus/initialize/PG/HTTP/Chrome/provider。原128 ACK诊断优先，候选70s/64MiB不授OPEN。
+
+## 2026-10-08T01:40:32.222Z S01-06 受限准备检查收束
+
+源码1edff536b首次固定；3工程child已实际返回，types2/198B（固定支持遗漏相邻716B声明）、纯ports19/19/675B、C compile/link0/0B。三个PID13722/37319/40117依次于01:36:53.288Z/01:37:25.662Z/01:37:32.700Z finalownedabsent/MERGED EOF并同identity清理，监督累计2017ms不称wholewall。产物34320B未执行；历史EPERM、首非零及采样peakUNKNOWN保留。详见[唯一记录](../../docs/evidence/s01/native-initialize/local.json)。固定支持34leaf185767B；13external仅hash引用。首3run inputs和原raw不改；后source补计量frames/intervals及类型支持另在8660提交。0native/libproc/auth/PG/HTTP/provider/旧KEEP访问。原8MiB/01:50:24.924Z截止，普通cap已3/3消费，任何额外检查须正式等额/额外授权且仍同段，不自动执行。

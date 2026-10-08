@@ -322,3 +322,7 @@ Source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[caller ready](../../docs/ev
 ## 2026-10-08T01:17:54.798Z S01-06 初始化设计限定批准
 
 b01_bounded_reads于2026-10-08T01:17:01.958Z对756856900491b8b293e739090dc165f89de4f9e9只读给DESIGN_REVIEW_APPROVED/0P1/P2；原交付消息时间01:17:01.958820Z。四metadata143580B/设计9153B逐Git=WT，SHA3dc92c10e1fb99e6d78a1c1bdf4ce99b0edde9e36464a90f8f2bf406942c0b3c。已核1→2→4、全ready/2s/完整close、同70s origin、64MiB逻辑预算、采样UNKNOWN/RSS共享页/CPU同身份同期、ENG原FAIL与独立cleanup以及128 ACK优先。0审者写/import/工程/native/PG/KEEP。仅设计批准：sampler方法/单位/有限编码、运输层剩余deadline、实际bytes门禁、完整输入和scope仍待实施；不得启动N1或称完整树已测。本owner沿固定本地技能复核唯一生命周期权威及首错/cleanup分列，无新复杂度/第二监督器，字段检查通过而无工程重测。
+
+## 2026-10-08T01:40:32.222Z S01-06 源码与准备结果待审
+
+独立设计批准不覆盖新实现；新source8660abe6da98b646646da4b0df1f5752c1b95173，canonical [README](../../docs/evidence/s01/native-initialize/README.md)。现19纯例、C链接0、首types2及补精确声明如实分列，sampler未执行，whole runtime未READY。已向db发有界只读请求，但其PROCESS有限段未结束，已明确未开始本审；后继可用reviewer由Mika协调。审查要求单deadline/未知不升级、libproc数字ABI边界、有限输出、close/EOF/ownedcleanup、无原128验收替代。
