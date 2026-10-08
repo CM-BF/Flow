@@ -568,3 +568,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T00:42:53.251Z：TUI R2固定b186获assignment_review限定结果保真批准，1/0仍FAIL；见[单份来源接收](../../docs/evidence/i02/tui01f-r2-result-review.json)。取消请求来自terminal、Web验证状态同步；没有将后置资源RETURN改写成原cleanup通过或新许可。
 
 2026-10-08T00:49:10.852Z：TUI合成执行器的有限阶段观察三叶source25174已独审并接收，见[单份Git来源](../../docs/evidence/i02/tui01f-fixture-observation-intake.json)。12不同分轮与types0复用，无PG/浏览器重跑，不推断原R2原因。原owner下一段回O16同版本HOME单因素公开认证准备；累计query3不变。
+
+2026-10-08T00:58:29.414Z：X01 verifier runtime四叶固定5bdf已获architecture_read独审，4前像及209其余实际输入逐hash核同，按[单份接收记录](../../docs/evidence/i02/x01-verifier-runtime-intake.json)接收。原25/25与types2→0及生命周期证据复用，无新重测；真实worker/PG/publicE2E及个人发布均不冒完成。

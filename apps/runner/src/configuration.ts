@@ -1,3 +1,5 @@
+import type { TrustedVerifierAlgorithm } from './plugins/execution.js';
+import { JSON_OBJECT_ALGORITHM } from '../../../packages/contracts/src/plugin-verification.js';
 import { z } from 'zod';
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import { readPrivateJsonConfiguration } from '../../../packages/plugin-runtime/src/private-configuration.js';
@@ -101,20 +103,23 @@ async function readManifest(path: string, harness: 'Claude' | 'Codex'): Promise<
   } finally { await file.close(); }
 }
 
+const trustedVerifier = z.strictObject({ artifactSha256: z.string().regex(/^[a-f0-9]{64}$/), treeDigest: z.string().regex(/^[a-f0-9]{64}$/),
+  hostApiMajor: z.literal(1), algorithmId: z.literal(JSON_OBJECT_ALGORITHM.id), algorithmVersion: z.literal(1) });
 const pluginStore = z.strictObject({
   root: z.string().min(1).max(4096).refine(path => isAbsolute(path) && resolve(path) === path),
   storeId: z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/),
   allowedDigests: z.array(z.string().regex(/^[a-f0-9]{64}$/)).max(512),
   executionMode: z.enum(['in-process', 'trusted-process']).optional(),
+  verifier: z.strictObject({ trustedAlgorithms: z.array(trustedVerifier).min(1).max(1024), toolExecution: z.boolean().optional() }).optional(),
 });
 
 /** Explicit private operator input only; actual materials remain checked by the existing package store. */
-export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore; executionMode?: 'in-process' | 'trusted-process' } | undefined> {
+export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore; executionMode?: 'in-process' | 'trusted-process'; verifier?: { trustedAlgorithms: readonly TrustedVerifierAlgorithm[]; toolExecution?: boolean } } | undefined> {
   if (filename === undefined) return undefined;
   try {
-    const { executionMode, ...store } = pluginStore.parse(await readPrivateJsonConfiguration(filename));
+    const { executionMode, verifier, ...store } = pluginStore.parse(await readPrivateJsonConfiguration(filename));
     if (executionMode === 'trusted-process' && (process.platform !== 'darwin' || process.arch !== 'arm64' || process.version !== 'v24.20.0')) throw new Error('Unsupported trusted process host.');
-    return { store, ...(executionMode ? { executionMode } : {}) };
+    return { store, ...(executionMode ? { executionMode } : {}), ...(verifier ? { verifier } : {}) };
   }
   catch { throw new Error('Plugin execution configuration is invalid or unavailable. Use an owned 0600 regular JSON file.'); }
 }

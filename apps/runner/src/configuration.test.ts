@@ -171,3 +171,18 @@ it('plugin operator file is explicitly selected and returns only strict store po
   expect(await loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'in-process' }))).toEqual({ store, executionMode: 'in-process' });
   await expect(loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'sandbox' }))).rejects.toThrow('invalid or unavailable');
  });
+
+it('verifier private opt-in requires exact trusted material and does not infer tool capability', async () => {
+  const { loadPluginExecutionConfiguration } = await import('./configuration.js');
+  const store = { root: '/operator/materials', storeId: 'private-store', allowedDigests: ['a'.repeat(64)] };
+  const trusted = { artifactSha256: 'a'.repeat(64), treeDigest: 'b'.repeat(64), hostApiMajor: 1,
+    algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1 };
+  const verifier = { trustedAlgorithms: [trusted] };
+  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, verifier }))).toEqual({ store, verifier });
+  for (const invalid of [{ trustedAlgorithms: [] }, { trustedAlgorithms: [{ ...trusted, algorithmId: 'arbitrary' }] },
+    { trustedAlgorithms: [{ ...trusted, treeDigest: 'x' }] }, { ...verifier, toolExecution: 'true' }, { ...verifier, token: 'NO' }]) {
+    await expect(loadPluginExecutionConfiguration(await manifest({ ...store, verifier: invalid }))).rejects.toThrow('invalid or unavailable');
+  }
+  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, verifier: { ...verifier, toolExecution: true } })))
+    .toEqual({ store, verifier: { ...verifier, toolExecution: true } });
+});
