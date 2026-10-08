@@ -1,0 +1,17 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "files": [
+    "../../../../experiments/runner-capacity/native-initialize/driver.ts",
+    "../../../../experiments/runner-capacity/native-initialize/sequence.test.ts",
+    "../../../../experiments/runner-capacity/native-initialize/sequence.ts",
+    "../../../../experiments/runner-capacity/native-initialize/snapshot.test.ts",
+    "../../../../experiments/runner-capacity/native-initialize/snapshot.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

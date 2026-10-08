@@ -1,0 +1,1 @@
+export default { test: { include: ['experiments/runner-capacity/native-initialize/{sequence,snapshot}.test.ts'], maxWorkers: 1, fileParallelism: false, isolate: true, cache: false, reporters: ['default'] } };

@@ -1,0 +1,357 @@
+{
+  "kind": "S01_NATIVE_INITIALIZE_SOURCE_SUPPLY",
+  "at": "2026-10-08T01:26:00.192Z",
+  "source": "81499e616384282a1592881b7542cc844e8eb9d5",
+  "files": [
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/package.json"
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/framing.ts"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/index.ts"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/options.ts"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/stderr-capture.ts"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/types.ts"
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/codex/writer.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.ts",
+      "bytes": 4646,
+      "sha256": "22fa41b44d9793657663655b14e5f5a2657a6dace8d50b98c436904dc4d27148",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-authority-darwin.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority.ts",
+      "bytes": 17592,
+      "sha256": "c2cf7dc6fef0c5fe86472d69f13ea84584b5688e53929d63e96723e3f5f0ba81",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-authority.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "bytes": 4176,
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-policy.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-host.ts",
+      "bytes": 5685,
+      "sha256": "a043fdf9f1cc31c09c07fe59ef344337720ba15a2a0a05a43fbab70171d6c71a",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-tool-host.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-policy.ts",
+      "bytes": 5703,
+      "sha256": "fe0648ca18c8593259069af33108f66f2695baa5f6b561a137c5f8ff823b84b7",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-tool-policy.ts"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-writer.ts",
+      "bytes": 9970,
+      "sha256": "70a0c8ca2ab8044a1673a0ebc43dabe133b281a0e6ef7ecd843495f0cd7d909b",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/engineering/native-tool-writer.ts"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 9997,
+      "sha256": "c63d16a5a7c6c74a077c52ecd6c6fb11889b106d4c7630666240362ece480bed",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/codex/evidence.ts"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 8686,
+      "sha256": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/codex/exchange.ts"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/codex/policy.ts"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/codex/projection.mjs"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2382,
+      "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/codex/wire.ts"
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/apps/runner/src/native-harness/settlement.ts"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/startup-input.sb",
+      "bytes": 17393,
+      "sha256": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/docs/evidence/eng01j/helper-host/startup-input.sb"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/package.json"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/package.json"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/assistant.ts"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/engineering-native.ts"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/engineering.ts"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/harnesses.ts"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/protocol-task.ts"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/packages/contracts/src/tasks.ts"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/tools/owned-process-supervision/supervise.py"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "fixedRef": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+      "destination": "docs/evidence/s01/native-initialize/fixed-source/tsconfig.json"
+    }
+  ],
+  "bytes": 185051,
+  "externalAnchors": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+      "realpath": "/usr/bin/sandbox-exec",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "bytes": 222655232,
+      "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
+      "realpath": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "use": "Planned only in this ENG01L initialize caller; not yet executed here."
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/classic/external.js",
+      "bytes": 1101,
+      "sha256": "c6b584ae70ba4e7132b2cd78c23ea4ecedc9828abf999edee312372e1fb453d6",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/classic/external.js"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+      "bytes": 382,
+      "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/package.json"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+    }
+  ],
+  "headers": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libproc.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/libproc.h",
+      "bytes": 7575,
+      "sha256": "246d87709fc6b9157ce5cf3c475656ac48e0e1ae8bbdc46cf45acd34294448cd"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/proc_info.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sys/proc_info.h",
+      "bytes": 31262,
+      "sha256": "e427fa96b348537b21552b9de71e01039410bcad2cedee5584c5e5fddafd70fc"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/resource.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sys/resource.h",
+      "bytes": 20046,
+      "sha256": "4d55a54011d39c829228a54bd1c4b25c63c8066f4ed3f7a513af11d6ff37c7d3"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/mach_time.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/mach/mach_time.h",
+      "bytes": 2590,
+      "sha256": "d690e304ea595ca216ed51e20aa9747e0b3bcb07446d996abe0080a231c7065f"
+    }
+  ],
+  "scope": "owned nested snapshot; no old source overwritten",
+  "alias": {
+    "path": "docs/evidence/s01/native-initialize/fixed-source/node_modules/zod",
+    "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+  },
+  "nativeExecuted": false
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-08T01:17:54.798Z |
+| 最近更新 | 2026-10-08T01:30:53.063Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 起点4cb21543a415022e5c495532b803e842435ef364 = origin clean；设计target756856900491b8b293e739090dc165f89de4f9e9已审；最终metadata HEAD以Git为准，四文件封存后STOP。 |
+| 工作树dirty状态 | 起点e0f5db4d992fd05a797c964db8a6886d7d1478fe clean；本段只新owned实验/证据与原plan状态，旧ACK candidate/source/raw不改。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 3dffa3f0c344767eccc58716343fa1b0a3e0369d |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, experiments/runner-capacity/mixed/queue-probe.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 零模型1→2→4初始化与关闭资源基线设计已独立审查通过；原128 ACK验收仍失败，未启动任何native测量。 |
-| 下一可用交付 | 先保持128 ACK故障诊断优先；初始化候选需另领源码范围、实现数字采样与期限适配，再形成可运行准备。 |
-| 当前阻塞 | ACTIVE: 原128 ACK完整验收未过；初始化资源方案只到设计，未领新源码范围、未授native窗口。 |
+| 当前产出 | 初始化资源基线设计已审；正实现固定宿主接缝与有限数字采样模块，尚未运行helper或native。原128 ACK验收仍失败且优先。 |
+| 下一可用交付 | 固定源码与纯输入/类型检查证据，独立审查后再准备真实初始化窗口；本段不进行native测量。 |
+| 当前阻塞 | ACTIVE: 原128 ACK未过；新初始化仅源码准备，实际sampler/native尚未授予窗口。 |
 | 需用户决定 | NONE |
 | Review | DESIGN_REVIEW_APPROVED，b01_bounded_reads 2026-10-08T01:17:01.958Z，target756856900491b8b293e739090dc165f89de4f9e9，0P1/P2；仅方法设计，源码/采样/实际窗口未授。原3dffa/84b5批准独立保留。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-08T01:14:19.006Z本人/WT/branch/scope fresh相符；本次未amend。 |
-| 架构影响 | 仅方法设计：复用已有trusted host/R06/OPS14，整树数字sampler为待实现私有Seam；无源码、依赖或运行变化，不更新主线架构能力。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v4 ACTIVE/exact8；COMMIT 2026-10-08T01:25:24.929Z，仅追加native-initialize两个目录，正式receipt见新evidence。 |
+| 架构影响 | 私有实验sequence与数字snapshot小Interface，复用固定trusted host/R06/OPS14；新C libproc helper只源/语法候选，不改变产品模块或主线运行。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -402,3 +402,7 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 实际START01:14:06Z（截止01:24:06Z），firstWrite 2026-10-08T01:16:08.829Z；D01已登记4MiB，fresh claim/head/clean和资源terms已核。只改三plan与[设计](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md)，保持128 ACK优先、原单A FAIL/2KEEP与ENG outerFAIL/cleanupUNKNOWN，后独立cleanup不改原FAIL。0工程/native/auth status/PG/KEEP/raw复制；不授sampler，70s/64MiB仍候选。新设计需独立只读review；本任务startUNKNOWN/NOT_COMPLETED与3个开放TODO不变。唯一status仍供已登记dashboard读取，本段不请求snapshot或声称新HEAD已展示。
 
 2026-10-08T01:17:54.798Z 设计收口：b01独立DESIGN_REVIEW_APPROVED/0P1/P2已收，审查target756856900491b8b293e739090dc165f89de4f9e9；范围与限制见[设计](../../docs/evidence/s01/idle-claim-cost/stock-initialize-design.md#独立设计审查)和review。字段parser errors=[]/human.missing=[]/implementation.errors=[]，仅历史开工未记录提示保持；未调用dashboard快照，不把字段可解析当新页面已部署。本段只四metadata，无工程child/native/PG/auth查询/KEEP读取；实际新增预算在原4MiB内，非新增reserve。首次固定四文件143580B、index781695B、12个新Gitobjects未压缩161069B；审查归档仍用metadata192KiB/Gitobjects512KiB/Gittemp1MiB/index1MiB上限约束，最终实际总量在STOP交付回报。任务整体仍NOT_COMPLETED/三开放TODO，future native NOT_OPEN。
+
+## 2026-10-08T01:30:53.063Z stock初始化source准备
+
+实际START/firstWrite2026-10-08T01:25:24.924Z，deadline01:50:24.924Z；COMMIT确认后才写，DB committedAt01:25:24.929Z与本机clock差5ms原样分列。新8MiB独立段，33固定支持185051B/13已装入口hash引用，未覆盖旧产品/实验源。至多3serial×20s/cum60，仅类型/纯ports/C语法（等额链接待明确授权）；0helper执行/libproc实采/stock/native/authstatus/initialize/PG/HTTP/Chrome/provider。原128 ACK诊断优先，候选70s/64MiB不授OPEN。
