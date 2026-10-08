@@ -1,0 +1,101 @@
+diff --git a/apps/web/test/context-history-fixture.ts b/apps/web/test/context-history-fixture.ts
+index d4ae88194..faf665b6d 100644
+--- a/apps/web/test/context-history-fixture.ts
++++ b/apps/web/test/context-history-fixture.ts
+@@ -9,7 +9,8 @@ import { historyFixture } from "../src/conversation-context-history/fixture";
+ import { browserSessionReadSchema } from "../../../packages/contracts/src/browser-session";
+ 
+ export type HistoryCase = "zero" | "estimate" | "unknown" | "empty" | "invalid" | "error";
+-export interface ContextWire { ordinal: number; method: string; path: string; cookie: boolean; bearer: boolean; status: number; settled: boolean; }
++export interface ContextWire { ordinal: number; method: string; path: string; cookie: boolean; bearer: boolean; status: number; settled: boolean;
++  failure?: { stage: string; errorType: string; authStatus: number | null }; }
+ export interface HistoryFixtureOptions { databaseUrl: string; directory: string; cacheDirectory: string; checkpoint(): Promise<void>; }
+ 
+ /** Real Cookie center + actual App. Only the two history read payloads are synthetic.
+@@ -35,27 +36,48 @@ export async function startContextHistoryFixture(options: HistoryFixtureOptions,
+   };
+   const publicServer = createServer(async (request, response) => {
+     responses.add(response); response.once("close", () => responses.delete(response));
++    let row: ContextWire | undefined, stage = "checkpoint", authStatus: number | null = null;
+     try {
+       await checkpoint();
+       const url = new URL(request.url ?? "/", origin), path = url.pathname;
++      if (path === "/favicon.ico" && (request.method === "GET" || request.method === "HEAD")) { response.writeHead(204).end(); return; }
+       if (!path.startsWith("/api/")) { assert.ok(vite); vite.middlewares(request, response); return; }
+-      const row: ContextWire = { ordinal: wire.length + 1, method: request.method ?? "GET", path,
++      row = { ordinal: wire.length + 1, method: request.method ?? "GET", path,
+         cookie: !!request.headers.cookie, bearer: !!request.headers.authorization, status: 0, settled: false };
+-      append(row); response.once("finish", () => { row.settled = true; });
++      const observed = row;
++      append(row); response.once("finish", () => { observed.settled = true; });
+       const history = /^\/api\/tasks\/([^/]+)\/context\/history$/.exec(path);
+       const detail = /^\/api\/details\/(context-history-fixture-([^/]+))$/.exec(path);
+       if (history || detail) {
+         assert.equal(row.method, "GET");
+         // Do not accept a fixture boolean, token cast, or an unauthenticated DTO request.
+-        const auth = await fetch(center + "/api/browser-session", { headers: { host: new URL(origin).host, cookie: request.headers.cookie ?? "" }, signal });
+-        const identity = browserSessionReadSchema.parse(await auth.json());
+-        if (!auth.ok || identity.state !== "ready" || !row.cookie || row.bearer) { row.status = 401; response.writeHead(401).end(); return; }
++        const authHeaders: Record<string, string> = { host: new URL(origin).host, cookie: request.headers.cookie ?? "" };
++        for (const name of ["origin", "sec-fetch-site"]) {
++          const value = request.headers[name];
++          if (typeof value === "string") authHeaders[name] = value;
++        }
++        stage = "auth-request";
++        const auth = await new Promise<{ status: number; body: string }>((resolve, reject) => {
++          const upstream = httpRequest(center + "/api/browser-session", { method: "GET", headers: { ...authHeaders, connection: "close" }, agent: false, signal }, incoming => {
++            const chunks: Buffer[] = []; let bytes = 0;
++            incoming.on("data", (chunk: Buffer) => { bytes += chunk.length; if (bytes > 8192) { incoming.destroy(Error("Auth response cap exceeded")); return; } chunks.push(chunk); });
++            incoming.once("error", reject);
++            incoming.once("end", () => resolve({ status: incoming.statusCode ?? 502, body: Buffer.concat(chunks).toString("utf8") }));
++          });
++          upstreams.add(upstream); upstream.once("close", () => upstreams.delete(upstream));
++          upstream.once("error", reject); response.once("close", () => upstream.destroy()); upstream.end();
++        });
++        authStatus = auth.status; stage = "auth-decode";
++        const identity = browserSessionReadSchema.parse(JSON.parse(auth.body));
++        if (auth.status !== 200 || identity.state !== "ready" || !row.cookie || row.bearer) { row.status = 401; response.writeHead(401).end(); return; }
++        stage = "task-scope";
+         if (history) assert.ok(taskIds.has(history[1]!));
+         if (detail) assert.ok(taskIds.has(detail[2]!));
+         const selected = selection, selectedHold = history && hold && !hold.arrived ? hold : undefined;
+         if (selectedHold) { selectedHold.arrived = true; selectedHold.outcome = "held"; await selectedHold.wait; }
+         if (response.destroyed) { if (selectedHold) { selectedHold.settled = true; selectedHold.outcome = "abortedWithoutDelivery"; } return; }
+         let payload: unknown;
++        stage = "dto-response";
+         if (detail) payload = { id: detail[1], kind: "detail", mediaType: "text/plain", title: "long-detail-" + "D".repeat(240), content: "Synthetic historical detail; read only on explicit request." };
+         else {
+           const value = historyFixture(history![1]!);
+@@ -78,6 +100,7 @@ export async function startContextHistoryFixture(options: HistoryFixtureOptions,
+         response.writeHead(row.status, { "content-type": "application/json", "cache-control": "no-store" }).end(body); return;
+       }
+       const chunks: Buffer[] = []; let bytes = 0;
++      stage = "proxy";
+       for await (const chunk of request) { bytes += chunk.length; assert.ok(bytes <= 256 * 1024); chunks.push(chunk); }
+       const headers: Record<string, string | string[]> = { host: new URL(origin).host, connection: "close" };
+       for (const name of ["origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream", "x-flow-execution-profile"]) {
+@@ -85,14 +108,21 @@ export async function startContextHistoryFixture(options: HistoryFixtureOptions,
+       }
+       if (row.method !== "GET" && row.method !== "HEAD") headers["content-length"] = String(bytes);
+       const upstream = httpRequest(center + path + url.search, { method: row.method, headers, agent: false, signal }, incoming => {
+-        row.status = incoming.statusCode ?? 502;
+-        response.writeHead(row.status, incoming.headers); incoming.pipe(response);
++        observed.status = incoming.statusCode ?? 502;
++        response.writeHead(observed.status, incoming.headers); incoming.pipe(response);
+         incoming.once("error", () => response.destroy());
+       });
+       upstreams.add(upstream); upstream.once("close", () => upstreams.delete(upstream));
+       upstream.once("error", () => { if (!response.headersSent) response.writeHead(502); response.end(); });
+       response.once("close", () => upstream.destroy()); upstream.end(Buffer.concat(chunks));
+-    } catch { if (!response.headersSent) response.writeHead(500); response.end(); }
++    } catch (error) {
++      if (row) {
++        const name = error instanceof Error ? error.name : "UNKNOWN";
++        row.failure = { stage, errorType: ["Error", "TypeError", "SyntaxError", "AssertionError", "ZodError", "AbortError"].includes(name) ? name : "UNKNOWN", authStatus };
++        if (!response.headersSent) row.status = 500;
++      }
++      if (!response.headersSent) response.writeHead(500); response.end();
++    }
+   });
+   publicServer.on("connection", socket => { sockets.add(socket); socket.once("close", () => sockets.delete(socket)); });
+   let closePromise: Promise<void> | undefined;

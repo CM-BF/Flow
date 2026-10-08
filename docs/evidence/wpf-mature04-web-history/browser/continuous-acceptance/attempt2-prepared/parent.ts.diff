@@ -1,0 +1,22 @@
+--- /private/tmp/context-history-closure-r2-20261007/parent.ts
++++ /private/tmp/context-history-continuous-attempt2-20261008/parent.ts
+@@ -12,8 +12,8 @@
+ // Task presets bind output, phase and selection together; no caller-supplied evidence path.
+ // The default MSG03 preset preserves its closed-phase guard and historical budget.
+ const visualAppearance = true;
+-const taskPreset = { id: "MATURE04-05", evidence: "docs/evidence/wpf-mature04-web-history/browser", runs: "actual-closure-r2",
+-  phaseId: "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007", totalMs: 90_000, approvalEnv: "FLOW_CONTEXT_HISTORY_BROWSER" } as const;
++const taskPreset = { id: "MATURE04-05", evidence: "docs/evidence/wpf-mature04-web-history/browser", runs: "actual-continuous-2",
++  phaseId: "CONTEXT-HISTORY-CONTINUOUS-ATTEMPT2-20261008", totalMs: 90_000, approvalEnv: "FLOW_CONTEXT_HISTORY_BROWSER" } as const;
+ const evidence = join(root, taskPreset.evidence);
+ const TOTAL_MS = taskPreset.totalMs, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+ const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
+@@ -69,7 +69,7 @@
+ type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
+ type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
+   messageSettingsPhase?: { id: "MSG03-MEMBERSHIP-FIX-20261007"; budgetMs: 120000; spentMs: number; cleanupMs: 30000 };
+-  visualAppearancePhase?: { id: "CONTEXT-HISTORY-MOUNTED-CLOSURE-R2-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000 };
++  visualAppearancePhase?: { id: "CONTEXT-HISTORY-CONTINUOUS-ATTEMPT2-20261008"; budgetMs: 90000; spentMs: number; cleanupMs: 30000 };
+   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
+   twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
+ type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };

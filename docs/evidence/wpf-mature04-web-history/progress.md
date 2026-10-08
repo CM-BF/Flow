@@ -1,6 +1,6 @@
 # MATURE04-05 Web history consumer
 
-Stage: MOUNTED_CONTINUOUS_ATTEMPT2_FAILED_RETURNED; auth-subrequest diagnosis remains open. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
+Stage: MOUNTED_SCOPED_EIGHT_GROUPS_PASSED; full resource RETURN; independent review pending. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
 
 Initial module claim start: 2026-10-07T22:35:02.638Z. Conservative source-segment deadline: 2026-10-07T22:59:17Z. Fixed base: b1291faae260be8d86ada12ff63341d44efc2709. Branch: codex/web-context-history. Claim: 25d7e029-9334-479e-8872-61090c406e0a v1, exactly the new conversation-context-history directory, new plugin binding, and this evidence directory.
 
@@ -60,3 +60,7 @@ Attempt1 terminal2026-10-08T00:14:10.585130+00:00/FULL_RETURN2026-10-08T00:15:38
 Attempt2 START2026-10-08T00:18:12.388429Z, fixed9b06331336670404e90256544b616bf1c3da13af. Narrow fixture auth-header forwarding/favicon204; production and8acceptance groups unchanged. Independentphase/namespace actual-continuous-2; prior15603 cumulative and old6352CLOSED kept. Fresh canonical12438863872/free17814568960/PGavailable86 poolclosed. RUNNING; no result yet.
 
 Attempt2 terminal2026-10-08T00:18:28.719831+00:00/FULL_RETURN2026-10-08T00:19:27.848891+00:00: exit1,1/8(cookie-no-task),0PNG; same zero estimate locator with actualhistory500, no favicon error. Subrequest failure cause remains UNKNOWN without bounded diagnostic. Charge16332ms/cumulative31935of270000,2/3attempts; ownDBnormalDROP0connections/groups/scratch/adminexactclosed/EOFdrop0. Originalfailure and priorheaderfix retained; no UI pass inferred.
+
+Attempt3 START2026-10-08T00:22:35.091263Z, fixedc7f3933c1cd815a539192823628847ac5ca6123e. Auth subrequest uses existing node:http transport, explicit publicHost/real received source headers,8KiB in-memory cap and ownupstreams cleanup; finite failure stage/type/status only. Root independently located Node24.20 fetch unconditional Host deletion (official undici fetch/index.js1399), consistent with private destination rejecting Cookie origin. Production auth and8groups unchanged; this is final allowed browser attempt. Fresh12438863872/free15323004928/PGavailable87 poolclosed. RUNNING; no pass inferred.
+
+Attempt3 terminal2026-10-08T00:22:46.972318+00:00/FULL_RETURN2026-10-08T00:23:55.953373+00:00: exit0,8/8originalgroups and2PNG produced; independent image/source/actual review pending. Charge11882ms; continuousbundle15603+16332+11882=43817/270000CLOSED,3/3attempts,0localchildren. PASS stops execution; unused226183 is not newpermission. All own groups freshESRCH/CDPabsent,DBnormalDROP0conn,HTTPpending0,contextclosed,scratchabsent,0600exactdeleted,EOF/drop0. Held reads both abortedWithoutDelivery, not browser-decoded late delivery. B129 independent only; Arc composition/backend observation production/currentcapacity/fullCT remain unverified/open.

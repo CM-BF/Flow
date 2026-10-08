@@ -1,0 +1,375 @@
+{
+  "passed": true,
+  "phase": "authority-revoke",
+  "checks": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "failure": null,
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+      "expected": true
+    }
+  ],
+  "errorOverflow": false,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "ordinal": 1,
+      "method": "GET",
+      "path": "/api/browser-session",
+      "cookie": false,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 2,
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "cookie": false,
+      "bearer": true,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 3,
+      "method": "GET",
+      "path": "/api/browser-session",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 4,
+      "method": "GET",
+      "path": "/api/tasks",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 5,
+      "method": "GET",
+      "path": "/api/conversations",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 6,
+      "method": "GET",
+      "path": "/api/workspace",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 7,
+      "method": "GET",
+      "path": "/api/conversations/392a7422-458e-453b-b8d0-53dfe67cfc0d",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 8,
+      "method": "GET",
+      "path": "/api/conversations/392a7422-458e-453b-b8d0-53dfe67cfc0d/turns",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 9,
+      "method": "GET",
+      "path": "/api/conversations/392a7422-458e-453b-b8d0-53dfe67cfc0d/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 10,
+      "method": "GET",
+      "path": "/api/conversations/48f6dfc3-ee48-4fa2-9565-3f0007441a70",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 11,
+      "method": "GET",
+      "path": "/api/conversations/48f6dfc3-ee48-4fa2-9565-3f0007441a70/turns",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 12,
+      "method": "GET",
+      "path": "/api/conversations/48f6dfc3-ee48-4fa2-9565-3f0007441a70/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 13,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 14,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/assistant-stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 15,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": false
+    },
+    {
+      "ordinal": 16,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 17,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 18,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 19,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 20,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 503,
+      "settled": true
+    },
+    {
+      "ordinal": 21,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 22,
+      "method": "GET",
+      "path": "/api/details/context-history-fixture-79d97a37-2a28-44cb-a6c2-c2a152e2b7ec",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 23,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 0,
+      "settled": false
+    },
+    {
+      "ordinal": 24,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 25,
+      "method": "GET",
+      "path": "/api/tasks/79d97a37-2a28-44cb-a6c2-c2a152e2b7ec/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 0,
+      "settled": false
+    },
+    {
+      "ordinal": 26,
+      "method": "GET",
+      "path": "/api/conversations/e570a9f8-6cdf-4922-8632-82cfbfd5aac6",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 27,
+      "method": "GET",
+      "path": "/api/conversations/e570a9f8-6cdf-4922-8632-82cfbfd5aac6/turns",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 28,
+      "method": "GET",
+      "path": "/api/conversations/e570a9f8-6cdf-4922-8632-82cfbfd5aac6/queue",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 29,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 30,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022/assistant-stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 31,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022/stream",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": false
+    },
+    {
+      "ordinal": 32,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 33,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 34,
+      "method": "GET",
+      "path": "/api/tasks/4f0afc67-f2f9-4e43-b153-b86e23bc4022/context/history",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    },
+    {
+      "ordinal": 35,
+      "method": "POST",
+      "path": "/api/browser-session/logout",
+      "cookie": true,
+      "bearer": false,
+      "status": 200,
+      "settled": true
+    }
+  ],
+  "heldReads": [
+    {
+      "arrived": true,
+      "released": true,
+      "settled": true,
+      "outcome": "abortedWithoutDelivery"
+    },
+    {
+      "arrived": true,
+      "released": true,
+      "settled": true,
+      "outcome": "abortedWithoutDelivery"
+    }
+  ],
+  "timeOrigin": 1791418963674,
+  "scope": "b129 independent App with synthetic history DTOs behind real Cookie authentication; not Arc-combined or backend observation production",
+  "limits": {
+    "sameViewTaskReplacement": "NOT_COVERED",
+    "heldDetail": "NOT_COVERED",
+    "hiddenArcWorkspace": "NOT_COVERED",
+    "pluginDisableDuringModalRead": "NOT_COVERED",
+    "authorityRevocationDuringRead": "NOT_COVERED"
+  }
+}

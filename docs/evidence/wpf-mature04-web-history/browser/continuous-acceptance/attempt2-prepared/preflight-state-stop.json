@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-08T00:18:02.894581+00:00",
+  "state": "STOP_BEFORE_RUNTIME",
+  "line": 12,
+  "expected": "BETWEEN_ATTEMPTS",
+  "canonicalActual": "CONTINUOUS_BUNDLE_BETWEEN_ATTEMPTS",
+  "parentOrCaptureSpawned": false,
+  "PGProbeSpawned": false,
+  "admissionRunGateEnvCreated": false,
+  "reason": "Dispatch comparison used shorthand instead of exact canonical state; no authority ambiguity or external side effect"
+}

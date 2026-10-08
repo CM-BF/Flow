@@ -1,0 +1,179 @@
+{
+  "state": "ACTUAL_PASSED_FULL_RETURN_INDEPENDENT_REVIEW_PENDING",
+  "task": "MATURE04-05",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a v3 exact8",
+  "sourceTarget": "c7f3933c1cd815a539192823628847ac5ca6123e",
+  "productionUnchanged": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "browserAssertionsUnchanged": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "fixture": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history-fixture.ts",
+    "bytes": 13904,
+    "sha256": "574cc725980db3844daaeed6764b817e260043320ee698423cf6b42c3ded007c"
+  },
+  "sourceDelta": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/source.diff",
+    "bytes": 7874,
+    "sha256": "3503131fb71c5c85f526f9c3d12b34c2871175e0f13fc151c374144613da61a4"
+  },
+  "grant": "CONTEXT-HISTORY-CONTINUOUS-ACCEPTANCE-20261008",
+  "grantAt": "2026-10-08T00:12:46.922Z",
+  "deadline": "2026-10-08T00:37:46.922Z",
+  "attempts": [
+    {
+      "number": 1,
+      "source": "59aaf811f89fc2b6ee0b830f96d985e61bf59d3d",
+      "packet": "/private/tmp/context-history-closure-r2-20261007",
+      "parent": {
+        "path": "/private/tmp/context-history-closure-r2-20261007/parent.ts",
+        "bytes": 38415,
+        "sha256": "d433800b4174fa8aee7f76c8a7319dbd6ddf34e7113cca388152d6ebc2495636"
+      },
+      "capture": {
+        "path": "/private/tmp/context-history-closure-r2-20261007/capture.py",
+        "bytes": 9102,
+        "sha256": "d8e4c5f108da352d64d4619f0e572337585157a5b76b178eb80955f2829288f0"
+      },
+      "manifest": {
+        "path": "/private/tmp/context-history-closure-r2-20261007/manifest.json",
+        "bytes": 5362,
+        "sha256": "55deff83747785730c1951f7aefb0591208af484ff3c742648e3a9f90a77a3fd"
+      },
+      "return": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-attempt1/return.json",
+        "bytes": 3186,
+        "sha256": "00683fb98a6bd9eb0b2762ebc7a857cb87bc5ebd437db7caad304a4ce879ccd5"
+      },
+      "start": "2026-10-08T00:13:54.982729+00:00",
+      "terminal": "2026-10-08T00:14:10.585130+00:00",
+      "fullReturn": "2026-10-08T00:15:38.462917+00:00",
+      "exit": 1,
+      "chargeMs": 15603,
+      "checks": [
+        "cookie-no-task"
+      ],
+      "png": []
+    },
+    {
+      "number": 2,
+      "source": "9b06331336670404e90256544b616bf1c3da13af",
+      "packet": "/private/tmp/context-history-continuous-attempt2-20261008",
+      "parent": {
+        "path": "/private/tmp/context-history-continuous-attempt2-20261008/parent.ts",
+        "bytes": 38419,
+        "sha256": "926a1f0088690f26e4ed0175f1c46dc576b16c9b4947faa02a2b4dfb5f249174"
+      },
+      "capture": {
+        "path": "/private/tmp/context-history-continuous-attempt2-20261008/capture.py",
+        "bytes": 9112,
+        "sha256": "bf126a0060676b98df085af776b0eebb2d740f1de66c5a47d9ca1e8d7346ad41"
+      },
+      "manifest": {
+        "path": "/private/tmp/context-history-continuous-attempt2-20261008/manifest.json",
+        "bytes": 2804,
+        "sha256": "cc3685ad5afcf98bb1f745792967e9dfeb3b45beda6cc8675e8553d4c39bd78f"
+      },
+      "return": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-attempt2/return.json",
+        "bytes": 3194,
+        "sha256": "021be14b1fd4b769ebd44c0969abf55b2ad6c8d6e7283252d72023b9a934890c"
+      },
+      "start": "2026-10-08T00:18:12.388429+00:00",
+      "terminal": "2026-10-08T00:18:28.719831+00:00",
+      "fullReturn": "2026-10-08T00:19:27.848891+00:00",
+      "exit": 1,
+      "chargeMs": 16332,
+      "checks": [
+        "cookie-no-task"
+      ],
+      "png": []
+    },
+    {
+      "number": 3,
+      "source": "c7f3933c1cd815a539192823628847ac5ca6123e",
+      "packet": "/private/tmp/context-history-continuous-attempt3-20261008",
+      "parent": {
+        "path": "/private/tmp/context-history-continuous-attempt3-20261008/parent.ts",
+        "bytes": 38419,
+        "sha256": "4fe44236f88050cab10dae17f8c0e6161cc39f843eda0a3f83525dda15a0e7e5"
+      },
+      "capture": {
+        "path": "/private/tmp/context-history-continuous-attempt3-20261008/capture.py",
+        "bytes": 9112,
+        "sha256": "aac508382165b3995d8e356a688bb9a9eb434c074185eaf2fc34fade67565931"
+      },
+      "manifest": {
+        "path": "/private/tmp/context-history-continuous-attempt3-20261008/manifest.json",
+        "bytes": 2356,
+        "sha256": "4a9ce10eaff5b9e5e0f14ec68883950f4a361cf5eb675ecac7ab1c174062b8a0"
+      },
+      "return": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-attempt3/return.json",
+        "bytes": 3430,
+        "sha256": "c99ca555fc66b033d6a3e6cf2765b9620cc077cfeec06360086f20118a2a5b2d"
+      },
+      "start": "2026-10-08T00:22:35.091263+00:00",
+      "terminal": "2026-10-08T00:22:46.972318+00:00",
+      "fullReturn": "2026-10-08T00:23:55.953373+00:00",
+      "exit": 0,
+      "chargeMs": 11882,
+      "checks": [
+        "cookie-no-task",
+        "decoded-read-states",
+        "lazy-detail",
+        "close-late-read",
+        "task-and-visibility",
+        "plugin-revoke",
+        "themes-keyboard",
+        "authority-revoke"
+      ],
+      "png": [
+        "dark-390.png",
+        "light-390.png"
+      ]
+    }
+  ],
+  "browserChargeMs": 43817,
+  "browserLimitMs": 270000,
+  "bundle": "CLOSED_AFTER_PASS",
+  "localChildren": 0,
+  "unusedIsPermission": false,
+  "oldPhase": {
+    "chargeMs": 6352,
+    "state": "CLOSED_FAILED",
+    "creditTransferred": false
+  },
+  "rawIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/raw-index.json",
+    "bytes": 23148,
+    "sha256": "33525e245fe5f4f09a9543196c44f0505263552c817b8a4a26be00c07c9b063e"
+  },
+  "review": null,
+  "coverage": "Original8groups and final2PNG produced; b129 independent Cookie App/officialThread/productionDialog, synthetic two DTO read endpoints through real strict client decoder. Not Arc-combined or backend observation generation/current capacity/fullCT.",
+  "heldReads": "Both abortedWithoutDelivery; not proof of browser-decoded successful late response rejection",
+  "notCovered": [
+    "same-view task replacement",
+    "held detail",
+    "hidden Arc workspace",
+    "plugin disable during modal pending read",
+    "authority revoke during pending read"
+  ],
+  "sourceDiagnosis": "First500 lacked real subrequest diagnostics. Origin/Sec-Fetch-Site forwarding necessary but insufficient. Fixed Node24.20 fetch deletes custom Host, so private destination violates cookieOrigin. NativeHTTP now preserves explicit publicHost/real headers;8KiB cap,ownedupstreams/close,strict schema andauthchecks unchanged. Final real chain passed.",
+  "sourceReviewProvenance": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/continuous-acceptance/root-fetch-host-research.json",
+    "bytes": 2355,
+    "sha256": "e26aef9c204e271764e548c4a2b7d0a69aafefb11517f47caff3c098c0fc1925"
+  },
+  "OPS16": {
+    "runtimeGrantHandoffs": 1,
+    "actualStarts": 3,
+    "exactReturns": 3,
+    "perSHAWholePacketApprovalsRequested": 0,
+    "zeroRuntimeDispatchComparisonCorrections": 1,
+    "userPermissionRequests": 0,
+    "runtimeAndCleanupAccountedMs": 43817,
+    "firstGrantToActualStartMs": 68060.729,
+    "betweenReturn1AndStart2Ms": 153925.512,
+    "betweenReturn2AndStart3Ms": 187242.372,
+    "note": "Between-attempt gaps are owner diagnosis/source/metadata/fresh work within one grant, not waiting for new source approval; final review occurs once."
+  }
+}

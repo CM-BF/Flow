@@ -1,0 +1,46 @@
+{
+  "journey": "context-history",
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "completedGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "checks": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "failure": null,
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "coverage": {
+    "cookie-no-task": "PASSED",
+    "decoded-read-states": "PASSED",
+    "lazy-detail": "PASSED",
+    "close-late-read": "PASSED",
+    "task-and-visibility": "PASSED",
+    "plugin-revoke": "PASSED",
+    "themes-keyboard": "PASSED",
+    "authority-revoke": "PASSED"
+  }
+}

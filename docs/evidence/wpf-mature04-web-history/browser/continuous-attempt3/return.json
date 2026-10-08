@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-08T00:23:55.953373+00:00",
+  "state": "FULL_RETURN_PASSED_SCOPED_ACCEPTANCE",
+  "run": "context-history-002234-cac698",
+  "actualStart": "2026-10-08T00:22:35.091263+00:00",
+  "terminalAt": "2026-10-08T00:22:46.972318+00:00",
+  "outerExit": 0,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 78870,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 84133,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 84133,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 84571,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 84571,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 84849,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 84849,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 83821,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 83821,
+      "state": "ESRCH"
+    }
+  ],
+  "CDP": {
+    "port": 63836,
+    "listenerAbsent": true
+  },
+  "scratch": "/private/tmp/flow-recovery-browser-xM6h3l",
+  "scratchAbsent": true,
+  "adminInputDeleted": true,
+  "adminIdentity": {
+    "path": "/private/tmp/context-history-continuous-attempt3-20261008/admission-context-history-002234-cac698/admin.env",
+    "dev": 16777234,
+    "ino": 124671872,
+    "uid": 501,
+    "mode": 33152,
+    "nlink": 1,
+    "bytes": 84,
+    "sourceBlobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+    "field": "adminUrl"
+  },
+  "databaseCleanup": {
+    "database": "flow_recovery_ddbbcc6620c943139da4e4b40ceadcd1",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.386625000001004,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3304580000003625,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "pendingResponses": 0,
+    "pendingUpstreams": 0,
+    "sockets": 0,
+    "publicListening": false
+  },
+  "contextClosed": true,
+  "streams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 849,
+      "retainedBytes": 849,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "32f475bd28a30bd937fa904d3de1dd6d4fce77ee5ac09afac9b0d7b37ca32894"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "innerStreams": "worker and Chrome stdout/stderr parent settled; no log drop or cleanup errors",
+  "chargeMs": 11882,
+  "browserCumulativeMs": 43817,
+  "browserBundleLimitMs": 270000,
+  "attemptLimitMs": 90000,
+  "attemptClosed": true,
+  "bundleClosed": true,
+  "old6352Transferred": false,
+  "checks": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "png": [
+    "dark-390.png",
+    "light-390.png"
+  ],
+  "actualExitSha256": "063d34b0b2e2654d24b078d11f62d777b9d8a8291a18cd76996e39169c23b634"
+}

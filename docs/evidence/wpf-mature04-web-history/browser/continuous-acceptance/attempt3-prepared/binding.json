@@ -1,0 +1,37 @@
+{
+  "executionHead": "c7f3933c1cd815a539192823628847ac5ca6123e",
+  "sourceCommit": "c7f3933c1cd815a539192823628847ac5ca6123e",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "originalTestSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "phaseId": "CONTEXT-HISTORY-CONTINUOUS-ATTEMPT3-20261008",
+  "runs": "actual-continuous-3",
+  "parent": {
+    "path": "/private/tmp/context-history-continuous-attempt3-20261008/parent.ts",
+    "bytes": 38419,
+    "sha256": "4fe44236f88050cab10dae17f8c0e6161cc39f843eda0a3f83525dda15a0e7e5"
+  },
+  "capture": {
+    "path": "/private/tmp/context-history-continuous-attempt3-20261008/capture.py",
+    "bytes": 9112,
+    "sha256": "aac508382165b3995d8e356a688bb9a9eb434c074185eaf2fc34fade67565931"
+  },
+  "firstReturn": {
+    "path": "/private/tmp/context-history-closure-r2-20261007/actual/context-history-001354-9118a6/return.json",
+    "bytes": 3186,
+    "sha256": "00683fb98a6bd9eb0b2762ebc7a857cb87bc5ebd437db7caad304a4ce879ccd5"
+  },
+  "attemptNumber": 3,
+  "attemptsUsedBefore": 2,
+  "browserCumulativeBeforeMs": 31935,
+  "browserTotalMs": 270000,
+  "perAttemptMs": 90000,
+  "sameSemantics": true,
+  "callerLifecycleChanged": false,
+  "iterationAuthority": "ContextHistoryContinuousGrant",
+  "state": "FIXED_ROUTINE_ITERATION_NO_NEW_SOURCE_APPROVAL_REQUIRED",
+  "secondReturn": {
+    "path": "/private/tmp/context-history-continuous-attempt2-20261008/actual/context-history-001812-6e0a97/return.json",
+    "bytes": 3194,
+    "sha256": "021be14b1fd4b769ebd44c0969abf55b2ad6c8d6e7283252d72023b9a934890c"
+  }
+}
