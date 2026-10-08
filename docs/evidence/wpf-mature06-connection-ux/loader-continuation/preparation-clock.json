@@ -1,0 +1,34 @@
+{
+  "firstWrite": "2026-10-08T01:37:00.388397+00:00",
+  "deadline": "2026-10-08T02:05:48.999Z",
+  "capBytes": 134217728,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/connection/Connection.tsx",
+      "apps/web/src/connection/presentation.ts",
+      "apps/web/test/connection-presentation.test.ts",
+      "apps/web/test/connection-ux.browser.ts",
+      "apps/web/test/connection-ux.fixture.tsx",
+      "docs/evidence/wpf-mature06-connection-ux"
+    ],
+    "state": "active",
+    "branch": "codex/web-connection-actionable",
+    "origin": "new",
+    "taskId": "MATURE06-04",
+    "worker": "w01_owner",
+    "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+    "createdAt": "2026-10-08T01:09:14.432Z",
+    "updatedAt": "2026-10-08T01:21:27.812Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "conflicts": [],
+  "observedAt": "2026-10-08T01:37:00.371Z",
+  "oldPhase": "10515/60000 CLOSED, no credit transfer"
+}
