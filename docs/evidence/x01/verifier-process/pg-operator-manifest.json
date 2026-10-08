@@ -1,0 +1,65 @@
+{
+  "source": "9be8a2e959cd678485c9bbdf78bad4a9f23b9333",
+  "method": "First verify these9fixed bindings, then402 rows from execution-inputs.json and62external/15links from external-inputs.json; no source recopy",
+  "files": [
+    {
+      "path": "docs/evidence/x01/verifier-process/pg-once.py",
+      "commit": "9be8a2e959cd678485c9bbdf78bad4a9f23b9333",
+      "bytes": 26281,
+      "sha256": "06d5890b4832cc690dc039cec0bc5c88f98ca3cea283ee8e3f22928948173a01"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/pg-operator-input.json",
+      "commit": "9ec354a3537f78e6b3aa06eebdeeb387af229891",
+      "bytes": 3893,
+      "sha256": "49039b67f227f59ba1940e6bab814e426576bdf00ec99d2d1d05ed31e3b941a0"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/execution-inputs.json",
+      "commit": "46294a194344097520a8c1651d2be8c3ad6a6bf7",
+      "bytes": 141756,
+      "sha256": "bba04455b7e411547730b1601f98fb1ac306094eb78eb4cb0a2d0b7cddb13e0b"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/external-inputs.json",
+      "commit": "a2201147f9626312d1755a9f23a8abc733f10b80",
+      "bytes": 34316,
+      "sha256": "a32c3511f7b531d74a09521616f84fa408f6d036b88adfdde16f468dd2fb2b6d"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/vitest.config.mjs",
+      "commit": "760749aff43f4192fbb5a915cbf0e73a27b869e1",
+      "bytes": 2263,
+      "sha256": "eaa8e31ef89bb9b0dd0a4e3074085b60743471f216367e1cd8a7ef1b1ed86c8e"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/runtime-tsconfig.json",
+      "commit": "a2201147f9626312d1755a9f23a8abc733f10b80",
+      "bytes": 2306,
+      "sha256": "a72997911c826db346bf33ddc907327a64b1cb09b81e06c8152a86ec5ebd264f"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/fixture.ts",
+      "commit": "760749aff43f4192fbb5a915cbf0e73a27b869e1",
+      "bytes": 15980,
+      "sha256": "ce09cb330ef199308f03bd732de0370587f03bbc3443ef81507fb7c4fa084a2e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "1d85f3d3ece70b6e57fbfe96f1cf2ea3538b4183",
+      "bytes": 21290,
+      "sha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "commit": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    }
+  ],
+  "inputCount": 402,
+  "externalCount": 62,
+  "links": 15,
+  "SQLCount": 34,
+  "basePacket": "c86f0a209ea355f64d714c2d5947072aebf0f250"
+}
