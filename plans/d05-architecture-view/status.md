@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:52:45.537Z / main0e8bfa7b3；CENTER新增唯一来源已mainbc7fbcd2d并实际加载，4320现213来源。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:56:14.690Z / main0e8bfa7b3；CENTER来源实际213，首次reload协调配置遗漏已修复；领取API恢复available。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
@@ -21,7 +21,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示插件验证中心装配的唯一进度和真实开工时间，原来源与登录入口保持可用。 |
+| 当前产出 | 看板已显示新增任务的真实开工时间；本次启动配置遗漏已修复，进度、领取记录和登录入口均可读取。 |
 | 下一可用交付 | 本片段已交付；后续只按合法owner交接维护来源与阶段事实。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -292,3 +292,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-08T00:26:13.916Z：本次原登记范围维护开始。CENTER固定d171与26路径组合已main728d3165f；只登记原db_transaction_owner的canonical plugin-verifier-center-wiring/plans/x01-verifier-center-wiring，保原22:04:21Z开工与阶段边界，不复制status或猜完成。当前4320仍212源，新213候选待独审/main及安全重载；不在活动浏览器/PG段中重启看板。
 
 2026-10-08T00:52:45.537Z：CENTER登记22cf已获native_center_owner限定源码/元数据独审并mainbc7接收；[真实加载回执](../../docs/evidence/d05/center-source-live.json)记录2026-10-08T00:52:45.042Z→2026-10-08T00:52:45.537Z仅owned4320替换与HTTP213。原66636确认退出、新69822；本机登录非敏感绑定逐值相同，0token/个人服务/browser/provider操作。首次只读lsof字段门误拒和随后K01选择门STOP均未动服务；K01精确RETURN后才执行，不追认前两次为实际启动。Context -05由Web明确继续归父WPF-MATURE-04，不新增第二来源。
+
+2026-10-08T00:56:14.690Z：D01随后发现领取API unknown；本Lead在首次reload漏带原FLOW_COORDINATION_DATABASE_URL，非摘要/ACCESS成功可覆盖。依既有启动配置[窄修复回执](../../docs/evidence/d05/center-source-coordination-repair.json)已核原owned69822退出→7196，summary213、assignments available/272 claims、ACCESS非敏感元数据逐值不变；只恢复原公开compose协调连接，无schema/DB写或个人服务/token操作。00:52原件不改绿为完整健康，本次精确RETURN已交D01，不等待记录独审才还窗。
