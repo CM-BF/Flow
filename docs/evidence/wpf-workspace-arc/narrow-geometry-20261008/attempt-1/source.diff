@@ -1,0 +1,117 @@
+diff --git a/apps/web/test/workspace-layout.browser.ts b/apps/web/test/workspace-layout.browser.ts
+index 915a82c93..200ee2a28 100644
+--- a/apps/web/test/workspace-layout.browser.ts
++++ b/apps/web/test/workspace-layout.browser.ts
+@@ -337,36 +337,84 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
+       const tabStrip = page.getByRole("tablist", { name: "Chat pane 1", exact: true });
+       await expect(tabStrip.getByRole("tab")).toHaveCount(3);
+       const tabIds = await tabStrip.getByRole("tab").evaluateAll(nodes => nodes.map(node => node.id));
+-      await tab(4).focus(); await page.keyboard.press("Home");
+-      await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeFocused();
+-      await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeInViewport({ ratio: 1 });
+-      await expect(tab(4)).toHaveAttribute("aria-selected", "true");
+-      await page.keyboard.press("End"); await expect(tab(4)).toBeFocused();
+-      await expect(tab(4)).toBeInViewport({ ratio: 1 });
+-      await expect(input(4)).toHaveValue("Independent B while A prepares");
+-      await page.keyboard.press("Tab");
+       const activeTab = tabStrip.locator(".flow-tab").filter({ has: tab(4) });
+-      const tabAction = activeTab.getByRole("button", { name: "More actions", exact: true });
+-      await expect(tabAction).toBeFocused(); await expect(tabAction).toBeInViewport({ ratio: 1 });
+-      const tabGeometry = await tabStrip.locator(".flow-tab").evaluateAll(nodes => nodes.map(node => {
+-        const title = node.querySelector<HTMLElement>('[role="tab"]')!;
+-        const action = node.querySelector<HTMLElement>('[aria-haspopup="menu"]')!;
+-        const strip = node.parentElement!.getBoundingClientRect(), rect = action.getBoundingClientRect();
+-        const range = document.createRange(); range.selectNodeContents(action);
+-        return { title: title.textContent, titleWidth: title.clientWidth, titleContentWidth: title.scrollWidth,
+-          titleWhiteSpace: getComputedStyle(title).whiteSpace, actionWhiteSpace: getComputedStyle(action).whiteSpace,
+-          actionLines: range.getClientRects().length, actionHeight: rect.height,
+-          clippedVertically: rect.top < strip.top || rect.bottom > strip.bottom };
+-      }));
+-      result.observations.narrowTabs = { tabGeometry, longTitle, stage: "after keyboard focus reached plugin action" };
+-      await expect(activeTab.getByRole("button", { name: `Close ${longTitle}`, exact: true })).toBeInViewport({ ratio: 1 });
+-      for (const item of tabGeometry) {
+-        expect(item.titleWidth).toBeGreaterThanOrEqual(128); expect(item.titleWhiteSpace).toBe("nowrap");
+-        if (item.title !== longTitle) expect(item.titleContentWidth).toBeLessThanOrEqual(item.titleWidth);
+-        expect(item.actionWhiteSpace).toBe("nowrap"); expect(item.actionLines).toBe(1);
+-        expect(item.actionHeight).toBeGreaterThanOrEqual(24); expect(item.clippedVertically).toBe(false);
++      const closeName = `Close ${longTitle}`;
++      const diagnostics: { snapshots: unknown[]; errors: string[]; screenshot?: { path: string; bytes: number } } = { snapshots: [], errors: [] };
++      result.observations.narrowTabDiagnostics = diagnostics;
++      const observationError = (error: unknown) => { if (diagnostics.errors.length < 4) diagnostics.errors.push(String(error).slice(0, 256)); };
++      const observeTabs = async (stage: string) => {
++        if (diagnostics.snapshots.length >= 3) return;
++        try {
++          const snapshot = await activeTab.evaluate((node, { stage, closeName }) => {
++            const close = [...node.querySelectorAll("button")].find(button => button.getAttribute("aria-label") === closeName)!;
++            const title = node.querySelector('[role="tab"]')!;
++            const action = node.querySelector('[aria-haspopup="menu"]')!;
++            const strip = node.parentElement!;
++            const measure = (element: Element) => {
++              const rect = element.getBoundingClientRect(), style = getComputedStyle(element);
++              return { tag: element.tagName, role: element.getAttribute("role"), className: element.getAttribute("class")?.slice(0, 160),
++                rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height, top: rect.top, right: rect.right, bottom: rect.bottom, left: rect.left },
++                clientWidth: element.clientWidth, clientHeight: element.clientHeight, scrollWidth: element.scrollWidth, scrollHeight: element.scrollHeight,
++                scrollLeft: element.scrollLeft, scrollTop: element.scrollTop,
++                style: { overflowX: style.overflowX, overflowY: style.overflowY, clipPath: style.clipPath, contain: style.contain,
++                  transform: style.transform, display: style.display, position: style.position, fontSize: style.fontSize,
++                  lineHeight: style.lineHeight, minWidth: style.minWidth, maxWidth: style.maxWidth, flexShrink: style.flexShrink } };
++            };
++            const ancestors = []; let ancestor = close.parentElement;
++            while (ancestor && ancestors.length < 8) { ancestors.push(measure(ancestor)); ancestor = ancestor.parentElement; }
++            return { stage, rootFontSize: getComputedStyle(document.documentElement).fontSize,
++              viewport: { width: innerWidth, height: innerHeight, devicePixelRatio }, focusedLabel: document.activeElement?.getAttribute("aria-label"),
++              close: measure(close), title: measure(title), action: measure(action), tab: measure(node), strip: measure(strip), ancestors };
++          }, { stage, closeName });
++          if (Buffer.byteLength(JSON.stringify([...diagnostics.snapshots, snapshot])) <= 16 * 1024) diagnostics.snapshots.push(snapshot);
++          else observationError("Tab geometry exceeded the shared 16KiB observation cap");
++        } catch (error) { observationError(error); }
++      };
++      try {
++        await tab(4).focus(); await page.keyboard.press("Home");
++        await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeFocused();
++        await expect(tabStrip.locator(`[id="${tabIds[0]}"]`)).toBeInViewport({ ratio: 1 });
++        await expect(tab(4)).toHaveAttribute("aria-selected", "true");
++        await page.keyboard.press("End"); await expect(tab(4)).toBeFocused();
++        await observeTabs("after End focus");
++        await expect(tab(4)).toBeInViewport({ ratio: 1 });
++        await expect(input(4)).toHaveValue("Independent B while A prepares");
++        await page.keyboard.press("Tab");
++        const tabAction = activeTab.getByRole("button", { name: "More actions", exact: true });
++        await expect(tabAction).toBeFocused(); await observeTabs("after action focus");
++        await expect(tabAction).toBeInViewport({ ratio: 1 });
++        const tabGeometry = await tabStrip.locator(".flow-tab").evaluateAll(nodes => nodes.map(node => {
++          const title = node.querySelector<HTMLElement>('[role="tab"]')!;
++          const action = node.querySelector<HTMLElement>('[aria-haspopup="menu"]')!;
++          const strip = node.parentElement!.getBoundingClientRect(), rect = action.getBoundingClientRect();
++          const range = document.createRange(); range.selectNodeContents(action);
++          return { title: title.textContent, titleWidth: title.clientWidth, titleContentWidth: title.scrollWidth,
++            readableMinimum: 8 * parseFloat(getComputedStyle(document.documentElement).fontSize),
++            titleWhiteSpace: getComputedStyle(title).whiteSpace, actionWhiteSpace: getComputedStyle(action).whiteSpace,
++            actionLines: range.getClientRects().length, actionHeight: rect.height,
++            clippedVertically: rect.top < strip.top || rect.bottom > strip.bottom };
++        }));
++        result.observations.narrowTabs = { tabGeometry, longTitle, stage: "after keyboard focus reached plugin action" };
++        await expect(activeTab.getByRole("button", { name: closeName, exact: true })).toBeInViewport({ ratio: 1 });
++        await expect(tab(4)).toHaveAccessibleName(longTitle);
++        for (const item of tabGeometry) {
++          expect(item.titleWidth).toBeGreaterThanOrEqual(Math.floor(item.readableMinimum)); expect(item.titleWhiteSpace).toBe("nowrap");
++          if (item.title !== longTitle) expect(item.titleContentWidth).toBeLessThanOrEqual(item.titleWidth);
++          expect(item.actionWhiteSpace).toBe("nowrap"); expect(item.actionLines).toBe(1);
++          expect(item.actionHeight).toBeGreaterThanOrEqual(24); expect(item.clippedVertically).toBe(false);
++        }
++        result.observations.narrowTabs = { tabGeometry, keyboard: "Home/End focused offscreen tabs without selecting; Tab reached retained plugin action; close visible", longTitle };
++      } catch (error) {
++        await observeTabs("first failure");
++        try {
++          const bytes = await page.screenshot({ fullPage: false, timeout: 1000 });
++          if (bytes.length <= 512 * 1024) {
++            const path = join(outputDirectory, "arc-narrow-failure-390.png"); await writeFile(path, bytes);
++            diagnostics.screenshot = { path, bytes: bytes.length };
++          } else observationError("Narrow failure screenshot exceeded 512KiB");
++        } catch (observationFailure) { observationError(observationFailure); }
++        throw error;
+       }
+-      result.observations.narrowTabs = { tabGeometry, keyboard: "Home/End focused offscreen tabs without selecting; Tab reached retained plugin action; close visible", longTitle };
+       await input(4).focus();
+       for (const scheme of ["light", "dark"] as const) {
+         const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();

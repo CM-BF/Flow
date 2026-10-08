@@ -1,0 +1,46 @@
+{
+  "previousPacket": "/private/tmp/arc-narrow-final-1zc8oen9",
+  "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245",
+  "changedSource": [
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 36511,
+        "sha256": "735cc39ecb164d7a9161be3abfb3d8f77000f45bddbb07823925734c461b6345",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "915a82c9322645c30814b6320053b4261b5de67b"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 40341,
+        "sha256": "e6240eb551774cd82675a083673d6cc816e31fb4260aaefe8b2735586ca6f2ad",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "200ee2a28d5e55e449fb08ecb1b3a21179c885de"
+      }
+    }
+  ],
+  "unchangedSources": 206,
+  "externalPinsUnchanged": true,
+  "resolverLinksUnchanged": true,
+  "callers": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "unchanged": true
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778",
+      "unchanged": true
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12",
+      "unchanged": true
+    }
+  ],
+  "scope": "Only passive bounded geometry/independentfailurePNG +rem assertion correction; originalclose/all4 unchanged"
+}

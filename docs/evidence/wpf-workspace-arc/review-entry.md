@@ -1,9 +1,9 @@
 # Current Arc review
 
 状态: PENDING — current bounded geometry continuation
-Review target commit: 7b297a226e56b5e020f05b027a8e6fc27fcc4245
+Review target commit: c385faa310dc6e24e005c15e4f9cb19f4a16b0b1
 
-当前唯一组合：[geometry入口](narrow-geometry-20261008/entry.json)。新被动geometry/错误截图与实际8rem口径已fixed，受影响types0/3572ms；新browser最多3次/270k尚未开始。当前CSS与全部close/四组断言不变，旧失败/P2继续，最终同段一次独审。
+当前唯一组合：[geometry入口](narrow-geometry-20261008/entry.json)。新被动geometry/错误截图与实际8rem口径已fixed，受影响types0/3572ms；首geometry实际3/4/51482ms，观测__name错误与首错390图保留；修后c385/types0待第二actual。当前CSS与全部close/四组断言不变，旧失败/P2继续，最终同段一次独审。
 
 ## 历史固定目标与原件
 

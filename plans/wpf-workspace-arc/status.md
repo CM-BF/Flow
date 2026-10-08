@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:38:24.115409+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:43:26.434961+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base8f6174e215bdc39e86fd1acb097992e664736701 / fixedsource7b297a226e56b5e020f05b027a8e6fc27fcc4245；新geometry段准备 |
-| 工作树dirty状态 | 原exact18恢复测试观测源码；fixed browser已提交，ownmetadata准备，0runtime |
+| 工作基线 / HEAD | base8f617 / sourcec385faa310dc6e24e005c15e4f9cb19f4a16b0b1；几何诊断helper修正 |
+| 工作树dirty状态 | geometry首轮3/4失败已RETURN；source修正已提交，仅原自然metadata dirty，0runtime |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PENDING 7b297a226e56b5e020f05b027a8e6fc27fcc4245 — 新被动观测affectedtypes0/3572；browser新270s最多3次尚未开始，旧48670 CLOSED |
+| 检查状态 | FAILED 7b297a226e56b5e020f05b027a8e6fc27fcc4245 — 首geometry3/4；__name观测失败保真。修后c385 affectedtypes0/累计6759，actual待验 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 7b297a226e56b5e020f05b027a8e6fc27fcc4245 |
+| 实现目标 | c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原close fullviewport不变；≤3 geometry snapshots/16KiB、首失败390图≤512KiB独立记录，CSS未动。新30min段deadline02:05:48.999 |
+| 当前产出 | 失败390图已保；三次geometry都被__name拒绝，改无外部named helper闭包，CSS未动。等待current归还/同段第二次 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: close裁剪机制待本新actual几何证据；旧视觉P2仍OPEN |
+| 当前阻塞 | ACTIVE: clip矩形缺失；原close ratio0.02与视觉P2仍OPEN；经理canonical未复位前不launch |
 | 需用户决定 | NONE |
-| Review | PENDING 7b297a226e56b5e020f05b027a8e6fc27fcc4245 — 同段一次最终限定独审，旧4f952仅前段失败保真 |
+| Review | PENDING c385faa310dc6e24e005c15e4f9cb19f4a16b0b1 — 同连续段最终一次独审 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

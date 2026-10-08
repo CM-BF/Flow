@@ -8,19 +8,29 @@
     "maxAttempts": 3,
     "perAttemptMs": 90000,
     "totalMs": 270000,
-    "spentMs": 0
+    "spentMs": 51482,
+    "attempts": 1,
+    "state": "BETWEEN_ATTEMPTS_PENDING_CANONICAL"
   },
   "local": {
     "maxChildren": 2,
     "perChildMs": 15000,
     "totalMs": 30000,
-    "spentMs": 3572,
-    "children": 1,
-    "state": "PASS_TYPES_LOCAL_AVAILABLE_FOR_NEEDED_FIX_ONLY"
+    "spentMs": 6759,
+    "children": 2,
+    "state": "CLOSED_MAX_TWO_CHILDREN"
   },
   "totalBytes": 335544320,
   "oldCreditTransfer": false,
   "scope": "browser passivegeometry/firstfailurePNG and correct8rem title assertion; CSS/PaneTabs only after causal clip observation",
   "skills": "Reuse local find-skills/clean-code/assistant-ui; no installs. Observer catches bounded failures without replacing original assertion error; no new framework.",
-  "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245"
+  "source": "c385faa310dc6e24e005c15e4f9cb19f4a16b0b1",
+  "firstActual": {
+    "packet": "/private/tmp/arc-geometry-first-rgv61qvz",
+    "chargeMs": 51482,
+    "passed": 3,
+    "error": "Close viewport0.02; diagnostic named measure serialized with missing __name",
+    "diagnosticFailurePNG": "/private/tmp/arc-geometry-first-rgv61qvz/raw/arc-narrow-failure-390.png",
+    "returnAt": "2026-10-08T01:41:11.080655Z"
+  }
 }

@@ -1,0 +1,55 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-08T01:39:48.017936+00:00",
+  "actualExit": 1,
+  "elapsedMs": 51441.61650002934,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 106754684,
+    "raw": 783487
+  },
+  "terminalFreeBytes": 14441549824,
+  "errors": [
+    "worker not passed",
+    "required four groups incomplete",
+    "scenario resources not confirmed closed"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [],
+  "limits": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "7b297a226e56b5e020f05b027a8e6fc27fcc4245",
+  "executionHead": "0329ffb9706971af69f2f0cf75ec57a5a288a4a5",
+  "grantSha256": "2f31c14199e6b480ec07a3e3f2ee7416e96b4077016d274cbe110d37cb4a7add",
+  "cacheLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "target": "/private/tmp/arc-geometry-first-rgv61qvz/scratch/.vite",
+      "dev": 16777234,
+      "inode": 124719184
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "target": "/private/tmp/arc-geometry-first-rgv61qvz/scratch/.vite-temp",
+      "dev": 16777234,
+      "inode": 124719186
+    }
+  ],
+  "chargeMs": 51442,
+  "independentPortProbe": false,
+  "PG": false
+}
