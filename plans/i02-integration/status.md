@@ -584,3 +584,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-08T01:32:11.573Z：O16实验环境sourcee5c7fd9d6/delivery2c121937c获独立APPROVED_LIMITED_NORMAL_HOME_POLICY_AND_DIRECT_RESULTS/0P1P2；本批精确三实验源＋Interface/具体候选接收，6/6注入消费者通过并正常归还，无native/auth/PG。[接收](../../docs/evidence/i02/o16-normal-home-policy-intake.json)。公开状态差异不追认R3根因；候选新1次请求仍NOT_GRANTED，无实际permit/reservation，未动生产服务或凭据。
 
 2026-10-08T01:46:45.075Z：TUI01F固定8379三源码及直接类型配置获Lead独立限定APPROVED/0P1P2；4真实fixture→af51消费者与types原件通过，20绑定121904B逐fixed/current/hash一致。原R2失败/未知与type cache KEEP不变，真实双端旅程未重跑。精确接收与角色交接见docs/evidence/i02/tui01f-fixture-source-alignment-intake.json及tui01f-session-fixture-handoff-result.json；旧raw仅固定Git引用。
+
+2026-10-08T01:50:03.069Z：O16真实planner结果76a9获Lead限定忠实性APPROVED/0P1P2，26绑定59564B+2继承逐fixed/hash核验，实际1query累计4、两节点提案、0apply/child、运行资源RETURN；主线只接小原件引用，完整目标未完成。管理fe73三文档获assignment独立APPROVED_DOCS，原首次时间UNKNOWN及新备份恢复NOT_RUN保持。

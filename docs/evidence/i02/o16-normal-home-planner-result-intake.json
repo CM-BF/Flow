@@ -1,0 +1,61 @@
+{
+  "kind": "I02_O16_NORMAL_HOME_PLANNER_RESULT_INTAKE",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "reviewedAt": "2026-10-08T01:50:03.069Z",
+  "decision": "APPROVED_LIMITED_ACTUAL_PLANNER_RESULT_FIDELITY",
+  "P1": 0,
+  "P2": 0,
+  "delivery": "76a9f36b14c3da1604ee38121f609095cf0cc997",
+  "source": "e5c7fd9d664de11ab853c55e0a01577c12530555",
+  "executionHead": "e4b09cb256d9e914047dc17c084f88e0a9e9d2f5",
+  "manifest": {
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/result-manifest.json",
+    "bytes": 6847,
+    "sha256": "99488dc2133755e93d7ea6d5b5528ebb150fb09e9803a4e58051a88ed2784776",
+    "verifiedBindings": 26,
+    "verifiedBytes": 59564,
+    "verifiedInherited": 2
+  },
+  "facts": {
+    "actualStart": "2026-10-08T01:45:07.705Z",
+    "terminal": "2026-10-08T01:45:32.385Z",
+    "resourceReturn": "2026-10-08T01:46:25.059Z",
+    "SDKQueryCalls": 1,
+    "historicalSealedSDKCalls": 3,
+    "cumulativeSDKCalls": 4,
+    "SDKResult": "success/isError=false",
+    "turns": 3,
+    "SDKReportedEstimatedCostUsd": 0.0492524,
+    "actualAccountCharge": "UNKNOWN",
+    "proposalId": "9a3d0320-efd7-4d65-828c-adb42d6dd5c2",
+    "proposalDigest": "fe9b12ce0ef7746c399047633639c7c27ad5fe9f21b82cef60b4a4c4de1e3f7b",
+    "nodes": 2,
+    "edges": 1,
+    "auditCommands": 1,
+    "applications": 0,
+    "childQueries": 0
+  },
+  "reviewBasis": [
+    "26 fixedGit/current/size/SHA bindings and2 inherited reviewed input bindings verified.",
+    "Read saved actual permit/grant/preflight and operator output; source/env/runtime bind approved candidate, fresh available PG88 and free14,505,021,440B above floor13,847,232,512B.",
+    "Actual public proposal and center command audit agree on assignment/task/attempt/ownerVersion, immutable proposal digest, onepropose/zeroapply and complete goal/constraints/acceptance/material references for bothnodes.",
+    "SDK declaration/result, slot consumption and public task usage agree on onequery and bounded model/permission/tool recipe. Estimate is not account charge.",
+    "Actual operator/driver success and closure records plus independent owner saved process observations agree on5registeredPIDs/3groups absent, zero pending, server/adminclosed and targetconnectionsempty. No escaped descendant proof inferred."
+  ],
+  "semanticScope": "The draft-then-fact-check proposal is consistent with the requested synthetic release-note goal; this review does not accept either future artifact or complete O16/goal delivery. Mechanical contains checks are not independent semantic acceptance.",
+  "retention": {
+    "databaseBytesAtClose": 13376535,
+    "privateBytesAtFinalSample": 23808,
+    "disposition": "KEEP_PAUSED",
+    "reviewUntil": "2026-10-08T02:00:32.316Z",
+    "expiredAction": "refuse-and-retain",
+    "nextPhaseAuthorized": false
+  },
+  "limitations": [
+    "No query repeated, no private credentials/runtime body read or copied, no personal service or PG probe in this review.",
+    "Shared HOME/Keychain initialization/refresh and true DB/WALpeak are not measured or covered by private8MiB.",
+    "Prior3 failures/unknown billing remain sealed; this result does not retroactively prove the cause of R3.",
+    "Current native permit implementation permits plan only; native children and source-bound pause continuation remain NOT_READY and require separately reviewed implementation/authorization.",
+    "Raw59564B remains once at fixed canonical Git paths; main stores this provenance only."
+  ]
+}
