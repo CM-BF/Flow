@@ -1,0 +1,72 @@
+{
+  "task": "MATURE06-04",
+  "status": "SOURCE_PREPARED_NOT_RUNTIME_AUTHORIZED",
+  "source": "505009c6a2b027f17157189d6c49a43a21a04cf9",
+  "production": "0f58a64dce1cd8fd7e8f067c542a7db565c003f2",
+  "base": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "entry": [
+    "python3",
+    "/private/tmp/connection-ux-b1/supervisor.py",
+    "--gate",
+    "<fresh single-use gate, not created>"
+  ],
+  "parentSha256": "fafc45383f45093a952d3a0df7727ec0f24bc03d64e7bbeea969380d74d723a8",
+  "workerSha256": "8090ef4434e55b7f7592ba0deaa9868d3a7dbc4acb450169b9728c2dc2d43ab5",
+  "grantRequired": true,
+  "budget": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 3145728,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "1 private Vite fixture; native Chrome CDP private control",
+    "floorMeaning": "Future exact manager grant/full current sum, NO_GRANT",
+    "expectedImages": 2
+  },
+  "topology": "Parent native Chrome sibling, one Node sandbox worker and one owned Vite dynamic loopback HTTP; Chrome private CDP control. No API/PG/session/provider/personal URLs. Optional installed helpers remain inside worker group. No custom outer OS egress sandbox on Chrome; Node localhost only.",
+  "cleanup": "Finally closes context/CDP/Vite even on screenshot/assert failure; parent TERM/KILL/reaps exact two owned PGIDs, captures EOF/drop0, meters retained and requires created scratch identity before removal. Exact outer exit/terminal digest required separately.",
+  "coverage": [
+    "states-next-actions",
+    "checking-keyboard-guard",
+    "transient-submit",
+    "explicit-retained-actions",
+    "details-keyboard",
+    "themes-390-geometry"
+  ],
+  "notCovered": [
+    "Cookie/CSRF/reauth",
+    "actual retained draft store",
+    "App mounted recovery",
+    "main deployment",
+    "OS scrollbar comparison"
+  ],
+  "dependencyBoundary": {
+    "roots": 53,
+    "files": 1210,
+    "logicalBytes": 100339082,
+    "copiedPayloadBytes": 0,
+    "method": "installed dependencies/peers/available optional recursive package roots plus all regular own package files (nested node_modules not traversed)",
+    "limitations": [
+      "Optional absent platform packages listed; dynamic import behavior not executed",
+      "Native Chrome bundle via executable/version pins, not each framework byte",
+      "Native node dynamic library identity inherits existing accepted Node24 method"
+    ]
+  },
+  "freshRequirements": [
+    "exact v2 claim7 no overlap",
+    "HEAD and origin clean",
+    "sources9readonly31external+53rootidentity1210files+7prepared",
+    "scratch/raw/run/budget absent",
+    "same-call canonical terms sum == minimum == floor, max explicit grant",
+    "exact source and native acceptance pointers before launch"
+  ],
+  "logPolicy": "No credential/fixture values; counts and argument equality boolean; failure safe error name only, not stack/message",
+  "checkLimits": {
+    "actualTypesSource": "275f067c61cea05bae9711ff61124c67e3272a20",
+    "finalFixtureDelta": "505009c6a true controlled Promise/release on unmount, source-only after check; not final types rerun",
+    "failedChecksMeaning": "Partial local checks array is not returned on throw; [] means no group report, not no code executed"
+  }
+}

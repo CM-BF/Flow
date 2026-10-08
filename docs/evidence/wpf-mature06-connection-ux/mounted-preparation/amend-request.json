@@ -1,0 +1,18 @@
+{
+  "requestId": "f0d158b4-ba6a-4ea4-82b3-68300078b5ab",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "01103af8-051e-4282-bbbb-ba432e269ba6",
+  "expectedVersion": 1,
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/connection/Connection.tsx",
+    "apps/web/src/connection/presentation.ts",
+    "apps/web/test/connection-presentation.test.ts",
+    "docs/evidence/wpf-mature06-connection-ux",
+    "apps/web/test/connection-ux.fixture.tsx",
+    "apps/web/test/connection-ux.browser.ts"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "limitMs": 30000,
+  "maxChildren": 2,
+  "runs": [
+    {
+      "id": "types-1",
+      "at": "2026-10-08T01:24:28.534770+00:00",
+      "exit": 1,
+      "elapsed": 2120.341833913699,
+      "chargeMs": 2121,
+      "dualEOF": true,
+      "terminal": {
+        "state": "FAILED",
+        "resultSha256": "9c675bbf20f38b1be18ac7867bd57bd47608e7ba60439976bdacd285ccc48646",
+        "budgetSha256": "29dd27c767744fbc5dc80d8b43a823b3521758345e09b76a7541f85bab091a3c",
+        "elapsedAfterWritesMs": 2084.777,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 2
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 955,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      }
+    },
+    {
+      "id": "types-2",
+      "at": "2026-10-08T01:24:56.310517+00:00",
+      "exit": 0,
+      "elapsed": 2417.5034170039,
+      "chargeMs": 2418,
+      "dualEOF": true,
+      "terminal": {
+        "state": "PASSED",
+        "resultSha256": "d8820009900e24d7f0974576407b9d241a99ab115aa18bcfdff25b61efdef572",
+        "budgetSha256": "dd0fdc5d937d46387f540225c4884f0eb09184f1f218eff6fffeaa711fabc39b",
+        "elapsedAfterWritesMs": 2381.594,
+        "cleanup": {
+          "groupAbsent": true,
+          "scratchAbsent": true
+        },
+        "childExitCode": 0
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      }
+    }
+  ],
+  "spentMs": 4539,
+  "state": "CLOSED",
+  "preflightFailure": "types-2 initial data preparer selected absent PW d.mts; assertion before child, then corrected exact d.ts; no third child"
+}
