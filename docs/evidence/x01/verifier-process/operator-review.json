@@ -1,7 +1,67 @@
 {
-  "state": "PENDING",
-  "source": "9be8a2e959cd678485c9bbdf78bad4a9f23b9333",
-  "ready": "operator-ready.json",
-  "scope": "thin caller/new classifiers and2pure checks, inherited sourcecase402unchanged",
-  "requestedAt": "2026-10-08T02:13:20.344Z"
+  "state": "RESULT_DELTA_REVIEW_PENDING",
+  "source": "50896fcb8c1462b4dceecabee81d60328508cec2",
+  "result": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
+  "files": [
+    {
+      "path": "docs/evidence/x01/verifier-process/pg-once.py",
+      "commit": "5e39db61de8f8e9ec9c4d69098c7e579ada86a58",
+      "bytes": 26946,
+      "sha256": "cb95e5afc536dbb9bfa1bbf3075d6f7f53a5d848e321185f36c285a399243204"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/pg-operator-input.json",
+      "commit": "9ec354a3537f78e6b3aa06eebdeeb387af229891",
+      "bytes": 3893,
+      "sha256": "49039b67f227f59ba1940e6bab814e426576bdf00ec99d2d1d05ed31e3b941a0"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/pg-operator-manifest.json",
+      "commit": "4950395097d3f359f8f627bbc1ef357b13464338",
+      "bytes": 2586,
+      "sha256": "b110301971336745a05866957a9385906f7e6fb26eda0393cd480213317ecb99"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-pure.test.py",
+      "commit": "c2e08b712bf5e03e1ff627a70ee00f73db53e9c7",
+      "bytes": 7683,
+      "sha256": "bbf9444da602b845d65d19d890b8cba5600f14c0106b7f8992ef0a5548e8097c"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-local.py",
+      "commit": "50896fcb8c1462b4dceecabee81d60328508cec2",
+      "bytes": 5757,
+      "sha256": "c64d531037779863ce475d646b8779916987dbcde34d4a54da63a5ae0cca2d14"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-local.json",
+      "commit": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
+      "bytes": 34135,
+      "sha256": "b2b2c547349e7830b71cdef631004405dddeb2aee4ff34196126b49880b21cf0"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-start.json",
+      "commit": "9ec354a3537f78e6b3aa06eebdeeb387af229891",
+      "bytes": 443,
+      "sha256": "82130cd7f3a3593d5300063e1bf6591b65eda50eba6f130f21a16aa1d4c55334"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-ready.json",
+      "commit": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
+      "bytes": 2968,
+      "sha256": "a2e8e131fbcf4b34cdeafc8898297ac1ee8b20d4eebe8e61e61d4474684652be"
+    },
+    {
+      "path": "docs/evidence/x01/verifier-process/operator-quality.md",
+      "commit": "a8875f4c40ada6b4402833a23a4b2e3ce885b54e",
+      "bytes": 2645,
+      "sha256": "cc2354ab310f8c9d5e40a6074c27fcd72421f4266c7a7ce8b9c0a40cc7f3177a"
+    }
+  ],
+  "totalBytes": 87056,
+  "sourceApproval": "db fixedc2e delta no remaining sourceP1P2; root495039 second half no P1P2",
+  "oldInputsUnchanged": "402source/62external/15link descriptors and old case/local evidence relativebc511 unchanged",
+  "actual": "NOT_OPEN",
+  "PG": 0,
+  "worker": 0
 }
