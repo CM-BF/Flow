@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:24:02.748Z / main728d3165f；VAR领域与CENTER装配已受控接收；TUI01F准备独审通过、实际双端仍待窗口；个人发布事实不变。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:40:46.640Z / mainbc7fbcd2d；CENTER来源已接收待安全reload；TUI R2真实失败已独审、资源已归还，最小诊断实施中。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main728d3165f接收VAR/CENTER固定26路径及组合strict＋9factory，06fbe收SVC06B完成/单叶交权；已审领域PG复用。个人e15/880060、accepting24及Web779/v4为前次实际部署观察，不冒当前健康或新用户领取。 |
+| 已集成main状态 / HEAD | main728d3165f已含VAR/CENTER，bc7fbcd2d已收CENTER唯一来源；个人e15/880060、accepting24及Web779/v4为既有部署观察，不冒当前健康或新用户领取。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
-| 下一可用交付 | 完成终端与网页交替操作同一会话的实际验收，并继续接入已审的聊天与插件能力。 |
-| 当前阻塞 | ACTIVE: 完整双端聊天仍待实际验收；工程写入模型资格仍待原决定，当前可并行推进零模型工作。 |
+| 当前产出 | 个人新版网页已发布，已审插件验证能力已进入主线。双端旅程走通终端操作与网页取消，后续任务完成失败已保留并核对。 |
+| 下一可用交付 | 定位双端接续的完成失败；随后用同一原生版本区分既有登录在隔离环境中的可见性。 |
+| 当前阻塞 | ACTIVE: 双端接续的后续任务未成功，底层原因待有限诊断；真实目标规划仍受认证可见性阻塞，工程写入资格保留原待决边界。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -512,7 +512,7 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| OPS-WAIT-APP-20261007 | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 接口 | 个人更新需要三个既存页面对固定新后台的真实兼容证据；Web co-lead负责，报告固定并独审后解除。准备期间其他合格检查可使用窗口。 | [SVC唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)与r2实际归还事件 |
+| OPS-WAIT-APP-20261007 | 2026-10-07T10:44:35.378Z | 2026-10-07T11:59:06.606Z | 接口 | 个人更新需要三个既存页面对固定新后台的真实兼容证据；Web co-lead负责，报告固定并独审后解除。准备期间其他合格检查可使用窗口。 | [SVC唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)与r2实际归还事件 |
 
 ### 2026-10-07T11:15:52.756Z 运行归还与接收队列核对
 
@@ -607,3 +607,7 @@ OPS-001-12/16本段方法增量：SVC09A R2的真实mkdtemp字母表与入口不
 2026-10-07T23:50:19.691Z：恢复后的安全接收已消费AV03中心/client（main97353）及GDEP01（mainfe26），没有新工程重测或个人操作。GDEP只接5必要路径44890B与单份Git来源回执，原512运行输入/历史raw仍在canonical，未复制到main；非Git峰值或APFS节省测量。TUI01F owner于23:43:59Z恢复原双端旅程准备，原首FAIL/cleanup保持，已给一个连续有界local段；未来真实PTY/浏览器与headless证据分列。登记和own-status解析只核自身字段，历史首次UNKNOWN不补猜。
 
 2026-10-08T00:24:02.748Z：本管理安全点同步实际main接收与运行资源边界；[VAR/CENTER唯一回执](../../../m2-integration/docs/evidence/i02/x01-var-center-intake.json)和[SVC06B单叶移交](../../../m2-integration/docs/evidence/i02/svc06b-single-leaf-return-intake.json)可追溯。TUI准备源8cc/独审1b9，真实PTY/Web仍NOT_RUN；当前资源由Web原owner安排，不把无actual holder当有效连续段已结束。新增REQ17只读输入归既有历史缓存/POOL验收，未新领产品scope或运行。历史首次开工UNKNOWN保持。
+
+2026-10-08T00:40:46.640Z：TUI R2在00:29:07.293Z启动、00:29:34.940Z终止，1选中/0通过；00:31:28.325Z运行资源RETURN，原groups unknown和专库/临时材料KEEP保留。assignment_review对固定b186的20绑定限定批准结果保真，不批准成功或新实际窗口；原raw203010B不再复制，见[唯一结果清单](../../../tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-result-manifest.json)。native_center_owner在原scope补合成执行阶段诊断，普通段0PG/Chrome/provider，原8秒/成功/清理断言不变。
+
+OPS16本次实际采用：CENTER注册独审后即接main，213候选与实际212分开，等待Arc有限段RETURN后部署；Context -05已由Web确认是既有WPF-MATURE-04父TODO，继续唯一context-transparency状态，不另造来源。VAR/CENTER主线回执已直交Mika，Arc/Q01等待表与Context当前结果由各原owner安全点同步。O16已有HOME单因素候选排在本轮TUI最小诊断后，原owner未新增query额度，独立只读输入核对并行。

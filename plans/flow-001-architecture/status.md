@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T00:24:02.748Z / main728d3165f；VAR领域与CENTER装配已受控接收；TUI01F准备独审通过、实际双端仍待窗口；个人发布事实不变。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T00:40:46.640Z / mainbc7fbcd2d；CENTER来源已接收待安全reload；TUI R2真实失败已独审、资源已归还，最小诊断实施中。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main728d3165f接收VAR/CENTER固定26路径及组合strict＋9factory，06fbe收SVC06B完成/单叶交权；已审领域PG复用。个人e15/880060、accepting24及Web779/v4为前次实际部署观察，不冒当前健康或新用户领取。 |
+| 已集成main状态 / HEAD | main728d3165f已含VAR/CENTER，bc7fbcd2d已收CENTER唯一来源；个人e15/880060、accepting24及Web779/v4为既有部署观察，不冒当前健康或新用户领取。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
-| 下一可用交付 | 完成终端与网页交替操作同一会话的实际验收，并继续接入已审的聊天与插件能力。 |
-| 当前阻塞 | ACTIVE: 完整双端聊天仍待实际验收；工程写入模型资格仍待原决定，当前可并行推进零模型工作。 |
+| 当前产出 | 个人新版网页已发布，已审插件验证能力已进入主线。双端旅程走通终端操作与网页取消，后续任务完成失败已保留并核对。 |
+| 下一可用交付 | 定位双端接续的完成失败；随后用同一原生版本区分既有登录在隔离环境中的可见性。 |
+| 当前阻塞 | ACTIVE: 双端接续的后续任务未成功，底层原因待有限诊断；真实目标规划仍受认证可见性阻塞，工程写入资格保留原待决边界。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -286,3 +286,5 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 2026-10-07T23:50:19.691Z：恢复后的安全接收已消费AV03中心/client（main97353）及GDEP01（mainfe26），没有新工程重测或个人操作。GDEP只接5必要路径44890B与单份Git来源回执，原512运行输入/历史raw仍在canonical，未复制到main；非Git峰值或APFS节省测量。TUI01F owner于23:43:59Z恢复原双端旅程准备，原首FAIL/cleanup保持，已给一个连续有界local段；未来真实PTY/浏览器与headless证据分列。登记和own-status解析只核自身字段，历史首次UNKNOWN不补猜。
 
 2026-10-08T00:24:02.748Z：本管理安全点同步实际main接收与运行资源边界；[VAR/CENTER唯一回执](../../../m2-integration/docs/evidence/i02/x01-var-center-intake.json)和[SVC06B单叶移交](../../../m2-integration/docs/evidence/i02/svc06b-single-leaf-return-intake.json)可追溯。TUI准备源8cc/独审1b9，真实PTY/Web仍NOT_RUN；当前资源由Web原owner安排，不把无actual holder当有效连续段已结束。新增REQ17只读输入归既有历史缓存/POOL验收，未新领产品scope或运行。历史首次开工UNKNOWN保持。
+
+2026-10-08T00:40:46.640Z：TUI R2在00:29:07.293Z启动、00:29:34.940Z终止，1选中/0通过；00:31:28.325Z运行资源RETURN，原groups unknown和专库/临时材料KEEP保留。assignment_review对固定b186的20绑定限定批准结果保真，不批准成功或新实际窗口；原raw203010B不再复制，见[唯一结果清单](../../../tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-result-manifest.json)。native_center_owner在原scope补合成执行阶段诊断，普通段0PG/Chrome/provider，原8秒/成功/清理断言不变。
