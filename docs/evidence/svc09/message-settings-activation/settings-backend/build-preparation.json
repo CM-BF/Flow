@@ -1,5 +1,5 @@
 {
-  "state": "SUCCESSOR_FIXED_SOURCE_DELTA_READY_FOR_DIRECT_REVIEW_BUILD_NOT_GRANTED",
+  "state": "SUCCESSOR_FIXED_SOURCE_DELTA_AND_DIRECT_RESULTS_READY_FOR_REVIEW",
   "source": "00c84910d5ba1cfd1724a996a3649b8680de0e67",
   "bindings": [
     {
@@ -23,9 +23,9 @@
     "bytes": 3302,
     "sha256": "2935f14b13841c318d83eb3841c9185de1a99c4461b6560b2832f9ff0ebd918d"
   },
-  "actual": "NOT_GRANTED; Web contract confirmed sufficient; successor source reviewed, rebind and host ports awaiting direct checks/review then explicit D01 selection",
-  "at": "2026-10-08T04:11:30.387Z",
-  "callerSource": "PENDING_CURRENT_DELTA_FIXED_COMMIT",
+  "actual": "NOT_GRANTED; Web API contracts and source delta approved; current caller/host delta awaiting independent review and explicit D01 build selection",
+  "at": "2026-10-08T04:13:45.351Z",
+  "callerSource": "f9a58e5d0e08827468b01669ba9516394873b97e",
   "sourceTree": "b135557967c0a09650b8cb3740030100221a5125",
   "archive": {
     "files": 1001,
@@ -106,5 +106,13 @@
     "commit": "a266e20364422648f644a3e4cd5cf541862f1524",
     "path": "docs/evidence/svc09/message-settings-activation/settings-backend/build-preparation.json",
     "sha256": "32510a5869b11ff78bde1973e02e6abff6846f19cf483110267a0d584eb9111a"
+  },
+  "deltaLocal": {
+    "cases": 5,
+    "elapsedMs": 208,
+    "rawBytes": 957,
+    "returnAt": "2026-10-08T04:12:48.517Z",
+    "groups": "2 absent/dualEOF/no signals/firstFailure null",
+    "scratch": "2 exact empty same identity removed"
   }
 }

@@ -12,7 +12,7 @@
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 当前产出 | 个人恢复片已交付；现开始组合支持逐消息设置的后端，保持旧会话与默认runner身份。 |
 | 下一可用交付 | 新固定后台的精确构建输入与双槽宿主检查接口，随后进行隔离构建和完整宿主验证。 |
 | 当前阻塞 | ACTIVE: 构建准备已独审、现有 Web 接口已确认足够；运行时与环境差量已固定独审，现将构建和宿主输入绑定同一来源；真实构建仍待窗口。 |
@@ -26,8 +26,8 @@
 | 工作树dirty状态 | 仅本轮own evidence/status；生产路径无写权且未改 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation, plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | a266/source413d 构建候选已独审APPROVED_LIMITED_FIXED_SETTINGS_BUILD_PREPARATION_AND_DIRECT_RESULTS，0 P1/P2；后继host两helper仅源码准备，未检查/未审。 |
-| 检查状态 | 本轮8项直接消费者通过，309ms/1919B，两组absent/双EOF/两空scratch删除；0build/PG/provider/个人。 |
+| Review | 原a266构建准备和SVC09B source00c已限定独审；本次source f9a58e5d0/b3a端口与5直接结果待独立差量审查，actual build/host未执行。 |
+| 检查状态 | 本次新增5项直接检查通过，208ms/957B，两组absent/双EOF/两空scratch同身份删除；原8例309ms/1919B继承不重跑。0build/PG/provider/个人。 |
 | 验证限制 | current初始化=true与accepting24已核；actualClaim NOT_OBSERVED。77表定义投影仅证checkpoint及紧前resume保持，after-resume fullhistory NOT_OBSERVED；未提交模型任务、未发布779，不冒完整双槽或Web用户旅程。 |
 | 已集成main状态 | main/origin 7cbcf04c89ec68f0e75c05ffc3c3964cea3ad784已接收本次限定结果独审；2026-10-07T23:14:19Z读取回执，非推定merge时刻。 |
 | 运行窗口 | 本轮仅普通只读与own metadata；无actual holder或pending launch。历史23:07:45.970561Z RETURN保留。 |
@@ -226,3 +226,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-08T04:02:54.588Z：SVC09B原owner正实施受控环境/terminal-order差量；本owner当前0child/0pending，暂不启动同队局部检查。own两helper及4个port例先固定源码，原a266构建入口/pins未改，待新target一次重绑定。两槽真实旅程/兼容/个人激活均未运行。
 
 2026-10-08T04:12:27.757Z：04:10:26.547Z fresh claim v12/exact2 后开始本次source重绑与host端口局部段。SVC09B source00c84910/delivery5e3ac72 独立限定批准，11产品期待与2支持测试来源已绑定；Git archive1001files/7896835B，原80source/33SQL/工具与预算不扩。旧a266/8例不回跑。Lead授本段≤15s累计监督child、tmp8MiB/raw128KiB，0PG/HTTP/native/个人；只新4个host端口例与1个实际build/host输入对齐例。当前尚未launch，原实际构建未授权；缺artifact不伪造host运行输入。
+
+2026-10-08T04:13:45.351Z：本段局部于04:12:48.517Z实际RETURN，唯一[差量结果](../../docs/evidence/svc09/message-settings-activation/settings-backend/delta-result.json)固定5/5/208ms/957B；2组absent/双EOF，2exact空scratchremoved，无pending。source f9a58e5d0及b3a端口未在运行后改动；只追加本段结果/最终准备metadata，待一次窄审。真实artifact尚不存在，不将受控composition或默认API静态证据当双槽宿主通过，原总验收和个人激活开放。
