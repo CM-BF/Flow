@@ -1,0 +1,47 @@
+{
+  "actualSTART": "2026-10-08T01:18:00.661Z",
+  "firstWriteAt": "2026-10-08T01:18:00.661Z",
+  "deadline": "2026-10-08T01:26:00.661Z",
+  "capBytes": 3145728,
+  "indexBytes": 2299563,
+  "plannedUpper": 2758315,
+  "claim": "03b10778-27dd-4a2d-bbc1-c98c5fcfcb0e",
+  "versionBefore": 1,
+  "productPermanentStop": "2026-10-08T01:18:00.661Z",
+  "paths": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "bytes": 10557,
+      "sha256": "1d94c1645a43444c9f909399fb85eb79b6a13ac99a81adb93c33d1b22c8dd125"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "bytes": 7853,
+      "sha256": "3b4a18fc70a3d356a0bd03d6d96984c2626c9a693dcc5ae4d688cfd24ab4068e"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 69989,
+      "sha256": "b6ae9ff026605ea3e5cd121320bc434903152cdc8f0144f3e269ba68e8f26d62"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 11815,
+      "sha256": "dffa34fb080c33ed4741575726ff67b397b57d60b604bd88b3bb395436808fbe"
+    },
+    {
+      "path": "packages/client/src/plugin-verification-admission.test.ts",
+      "bytes": 8522,
+      "sha256": "8d0b4a6f3caefd4697cdef279073bd3eca2b66efa7c4fa5956d35f1cee47c654"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "bytes": 1431,
+      "sha256": "0830fad87c230b0ce247fb4509d5fbeee8a86c3602cd34334bf86be6a0970a0e"
+    }
+  ],
+  "main": "866f0a9c077df2cd51f03210d02949df17a299f5",
+  "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-verifier-client-admission-intake.json",
+  "receiptSha256": "2d28814ce25ad22098e9105bab857c04b8e020b08e0a1a2941003781a5d60ee9",
+  "engineering": 0
+}
