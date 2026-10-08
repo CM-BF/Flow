@@ -1,0 +1,47 @@
+{
+  "firstWriteAt": "2026-10-08T01:09:13.698801+00:00",
+  "deadline": "2026-10-08T01:34:13.698801+00:00",
+  "base": "ec7e72f04b7010ab86863c8c11589c78b4588c1d",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-connection-actionable",
+  "branch": "codex/web-connection-actionable",
+  "sourcePins": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 18705,
+      "sha256": "4d515c46e644bbea8ed37570e340217231b462aa599f68756224df72e30e35f6"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "apps/web/src/components/ui/button.tsx",
+      "bytes": 1906,
+      "sha256": "225183a39c85425b5a807b082983b21ba8cb337ad76782abd83d65c0a38e698f"
+    },
+    {
+      "path": "apps/web/src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "64fc84c1be627f0d586fb4ba64d824a1604f44282381f5bae68cdf86e10bb6ec"
+    }
+  ],
+  "sourceLogicalBytes": 105226,
+  "indexBytes": 2294957,
+  "indexAllocated": 2297856,
+  "indexTwoCopiesPlanned": 4595712,
+  "totalEnvelope": 12582912,
+  "remainingPlan": "source/index2copies<=6MiB; TMP<=2MiB; raw<=256KiB; metadata/objects<=2MiB; rest reserve",
+  "observedAt": "2026-10-08T01:09:14.273Z",
+  "conflicts": []
+}

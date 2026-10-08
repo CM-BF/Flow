@@ -1,3 +1,4 @@
+import { Connection } from "./connection/Connection";
 import { messageSettingsDraft, type MessageSettingsDraft } from "./plugin-integration/message-settings";
 import { ConnectionSession } from "./connection/session";
 import { ConversationRecoveryJournal, recoveryAddress, namespaceKey, recoveryValue, type RecoveryNamespace, type RecoveryRecord, type CommandRecord } from "./recovery/journal";
@@ -1196,62 +1197,6 @@ function WorkspacePanelMount({
     view.projection.getSnapshot,
   );
   return <PluginWorkspace state={state} activeTab={activeTab} focusRequest={focusRequest} container={container} onClose={onClose} />;
-}
-function Connection({ onConnect, address = "", phase, error, onRead, onLogout, onDiscardRetained }: {
-  onConnect: (url: string, token: string) => void; address?: string; phase?: string; error?: string; onRead?: () => void; onLogout?: () => void; onDiscardRetained?: () => void;
-}) {
-  const [url, setUrl] = useState(address);
-  const [token, setToken] = useState("");
-  return (
-    <main
-      id="main"
-      tabIndex={-1}
-      className="flow-connect"
-      data-extension-slot="settings.sections"
-    >
-      <h1>Connect to Flow</h1>
-      <p>Your owner token is used only for this explicit connection. A supported center can retain an HttpOnly browser session; saved drafts appear only after that center confirms your identity.</p>
-      {phase && <p role="status">{phase === "unauthenticated" ? "Reconnect to this center." : phase === "unsupported" ? "This center has not enabled browser sessions. Ask its operator to configure them." : phase === "offline" ? "Offline. Drafts and pending commands have not been cancelled." : phase === "forbidden" ? "This center denied this browser connection." : phase === "checking" ? "Checking the center session…" : phase === "ready" ? "This browser session is ready." : "Read or connect this center session."}</p>}
-      {error && <p role="alert">{error}</p>}
-      {onRead && <Button variant="outline" onClick={onRead}>Check existing browser session</Button>}
-      {onLogout && <Button variant="outline" onClick={onLogout}>Sign out of this center</Button>}
-      {onDiscardRetained && <Button variant="outline" onClick={onDiscardRetained}>Discard previous page-only work</Button>}
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          const supplied = token; setToken(""); onConnect(url, supplied);
-        }}
-      >
-        <label>
-          Center URL
-          <input
-            type="url"
-            value={url}
-            placeholder="Same-origin proxy"
-            aria-describedby="center-url-help"
-            onChange={(event) => setUrl(event.target.value)}
-          />
-        </label>
-        <small id="center-url-help">Leave blank for this Web app’s configured /api proxy, or enter the center URL supplied by your administrator.</small>
-        <label>
-          Owner token
-          <input
-            type="password"
-            autoComplete="off"
-            required
-            value={token}
-            onChange={(event) => setToken(event.target.value)}
-          />
-        </label>
-        <details className="text-sm">
-          <summary>Where do I get the owner token?</summary>
-          <p>For your local personal preview, run <code>node tools/personal-preview/cli.mjs status --directory "&lt;your-private-preview-directory&gt;"</code>. It reports a credentialsFile path without printing the token. Read that private file’s ownerToken yourself and enter it here. This is a Flow token, not a Claude or Pi login token.</p>
-          <p><a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/tools/personal-preview/README.md" target="_blank" rel="noreferrer">Personal preview setup</a> · <a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/apps/web/README.md" target="_blank" rel="noreferrer">Web connection setup</a></p>
-        </details>
-        <Button>Connect workspace</Button>
-      </form>
-    </main>
-  );
 }
 const CENTER_CHOICE = "flow.browser-center.v1";
 function savedCenter(): string {
