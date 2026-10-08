@@ -1,0 +1,244 @@
+{
+  "at": "2026-10-08T02:30:12.298236+00:00",
+  "task": "WPF-WORKSPACEARC01",
+  "state": "READY_FOR_CONTROLLED_INTAKE_NOT_INTEGRATED",
+  "base": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "target": "67a4c981547fc0b8ea2dfcf27823f7b12f1c9117",
+  "currentExecution": "370971fd82e75264271344b849732d777133e902",
+  "sourceCount": 18,
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "before": {
+        "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+        "bytes": 74808,
+        "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+      },
+      "target": {
+        "blob": "91f706f92e0debadcec68cad31da6b385c8db3fd",
+        "bytes": 83437,
+        "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+      }
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "before": {
+        "blob": "c040dfcccc0dd69e8af31201670647bc9df553e5",
+        "bytes": 14766,
+        "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+      },
+      "target": {
+        "blob": "d0c311c2c06686bf772cf439153b4f0199998418",
+        "bytes": 15735,
+        "sha256": "ac5b4d12308b87eb8ebe4e2773a672fb1f13cbcebccd1dd52191d59cfed87288"
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationList.tsx",
+      "before": {
+        "blob": "8c376b9ac0ab90af375fb3c9ec9d03167a74b4bf",
+        "bytes": 1475,
+        "sha256": "0f2ea12125b11f867cc342d84be4f930bbacf2d6f3f248aa980ec78c9299ae68"
+      },
+      "target": {
+        "blob": "787971be1303a7d194c098d9e629a87d02649652",
+        "bytes": 1575,
+        "sha256": "c8d939f872a3187d0b62bd1952010ecbb52543cf3c3134108e4fdeb67bf22988"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "0089f655fc9eb4280934333aaddaac220e8277f2",
+        "bytes": 4039,
+        "sha256": "f5d234224b7fcd32e9a55a91ac4196bb2e8b30b66d501ae0cec811a44695dc1c"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "before": {
+        "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+        "bytes": 28667,
+        "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+      },
+      "target": {
+        "blob": "526114eabd81d82e8abce7eb06a48bfd3b8f061f",
+        "bytes": 29877,
+        "sha256": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295"
+      }
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "before": {
+        "blob": "d97812469d813db74c202825d8bec267ca4fbad8",
+        "bytes": 21387,
+        "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+      },
+      "target": {
+        "blob": "60e009f856bc49ab88ff93489e6f5b383d1991c8",
+        "bytes": 23812,
+        "sha256": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470"
+      }
+    },
+    {
+      "path": "apps/web/src/plugins/sample.tsx",
+      "before": {
+        "blob": "3fd0fd760f8d31e6352fe96420fada5fa322cd35",
+        "bytes": 4783,
+        "sha256": "9acab2770538e936b26f74c8b7a3cda308a359b7bca1c1eb46271c3866d0e43b"
+      },
+      "target": {
+        "blob": "09620669e2faec0c2c78538b7c51bc84aa08df78",
+        "bytes": 6697,
+        "sha256": "8656acc7a47a08d6474512f438ccb793126ce8375e324ca7e091b4fbb8193190"
+      }
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "before": {
+        "blob": "2fedfc97799938c182d33777ff7672b98252abef",
+        "bytes": 6794,
+        "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+      },
+      "target": {
+        "blob": "a98aa0643773381844494bb4c550018047b7eb18",
+        "bytes": 7594,
+        "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89"
+      }
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "before": {
+        "blob": "e97a20522a4f4621af64b252ec76b5cc28c5e8be",
+        "bytes": 8788,
+        "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831"
+      },
+      "target": {
+        "blob": "64038e50561b9e6f4c5d75a9c1b7170a18d527a4",
+        "bytes": 9254,
+        "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4"
+      }
+    },
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "57df501c2bb03270c271154d6b3ea25830d82293",
+        "bytes": 4183,
+        "sha256": "718882ea10440a1e2d627b2d810ec7ae44c3bb3cdbd974bbb09339328d4d88f2"
+      }
+    },
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "72d716fcd9ffb436c031048a7c6d89b03ad847e3",
+        "bytes": 2600,
+        "sha256": "6e6a1f165a386fbe244be1d997269661fb2c17df268597ff9535e881660ac6d2"
+      }
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "before": {
+        "blob": "12faa5fcd571d9d8bb53a866de318b2485d56965",
+        "bytes": 1784,
+        "sha256": "0ed02e547395893672a4b5f4f16fc4eac759d9841366e62805b030b7cf68a66b"
+      },
+      "target": {
+        "blob": "464f30ff9f0d30c749562e9a7956a0f90054bbd6",
+        "bytes": 8309,
+        "sha256": "e22667e137b7ff08a178063a92f906f0767aceab000ca40ccf6bfb0fc43b54ea"
+      }
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.test.ts",
+      "before": {
+        "blob": "6735728302da3766532d1a974dc1dc09ab12ddeb",
+        "bytes": 12612,
+        "sha256": "d7646add985ef3d288c46aed0ca0e6f7553ce0508a5bc8bb8df2b24f192f96cc"
+      },
+      "target": {
+        "blob": "0eb6f3b734265d320373e22d6fa3ee5c59dee491",
+        "bytes": 19433,
+        "sha256": "3c65cda68939996c9533796665f6edb25a66828bad6f0ae8765749f492c3ec7d"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "before": {
+        "blob": "e38b372aa6a4f2907cc5ee85d6f6b85207154d8f",
+        "bytes": 22382,
+        "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+      },
+      "target": {
+        "blob": "f1a903b00788e384fdb537deaac7dddb731a9cdf",
+        "bytes": 24651,
+        "sha256": "ffcfac5d42aad176554ec8ae316856057ce45550cf4a6ac2a61f399272278b4c"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "before": {
+        "blob": "d9afe2b8853600544724091f158c1bbdfe3f27cc",
+        "bytes": 17691,
+        "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631"
+      },
+      "target": {
+        "blob": "9b671a499e7c3bf81139617f9cd5d15a1f1eea2a",
+        "bytes": 24018,
+        "sha256": "e5d8ccc23f9c636dab325702703da1c5b29b430c20d6cf749385dc3f75771d70"
+      }
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "081cb913a5b56a7ffdffb8d5f816bdc2a9818ec8",
+        "bytes": 43734,
+        "sha256": "cb599abbbb48c95e1ad3d4d5f77352e814cd7fdac08b725aa652b8ea7d4fe3c6"
+      }
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "74b44a0bff6142e1576f1642d14214ba3839f072",
+        "bytes": 20015,
+        "sha256": "1c053e64cffa8c7cc10f51bf722a282752ccbfdc5f8d76334c322e619ab7ad86"
+      }
+    },
+    {
+      "path": "apps/web/test/workspace-layout.test.ts",
+      "before": {
+        "state": "ABSENT"
+      },
+      "target": {
+        "blob": "92289fefef4a0640a9cc0acd7594c0b9a974d4f4",
+        "bytes": 4672,
+        "sha256": "5d200cc1b470ddd0bbddb24c3c5af4db7bc2b495dfbe8a4b14f64860b44662cd"
+      }
+    }
+  ],
+  "currentNarrowDelta": [
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/test/workspace-layout.browser.ts"
+  ],
+  "authority": "App/session removed from current c34dv2exact18 and frozen locally; must coordinate current owners/main preimage and Context combination, never blindly overwrite. No merge performed.",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/root-final-review.json",
+    "bytes": 5162,
+    "sha256": "3904c5f8b6f0cc2cede2df85801f140a05fd273fb5878e8b7c049e5fea2faac1"
+  },
+  "acceptance": "4 fixture groups+390overlay visual approved; main Context real center/provider/native personal integration not claimed; navigation extension slot remains separate."
+}

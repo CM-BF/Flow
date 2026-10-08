@@ -1,5 +1,14 @@
 # Current Arc review
 
+状态: APPROVED — APPROVED_LIMITED_FUNCTIONAL_AND_390_OVERLAY_VISUAL_ACCEPTANCE
+Review target commit: 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117
+
+[root一次最终独审](scrollbar-clearance-20261008/root-final-review.json)；[固定输入](scrollbar-clearance-20261008/final-review-input.json)；[main受控入口](scrollbar-clearance-20261008/main-intake.json)。当前overlay视觉P2关闭，main/Context未接，不冒所有OS/native/provider。
+
+## 历史固定入口（下方current均仅历史当时）
+
+# Current Arc review
+
 状态: PENDING — current bounded geometry continuation
 Review target commit: c385faa310dc6e24e005c15e4f9cb19f4a16b0b1
 

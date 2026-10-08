@@ -5,7 +5,7 @@
   "authorizedAt": "2026-10-08T02:11:29.715Z",
   "base": "17cfaba5e70f39732aba770656e9cab07339e90d",
   "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 active exact18",
-  "capBytes": 8388608,
+  "capBytes": 335544320,
   "local": {
     "maxChildren": 1,
     "perChildMs": 15000,
@@ -20,8 +20,12 @@
     "maxAttempts": 2,
     "perAttemptMs": 90000,
     "totalMs": 180000,
-    "spentMs": 0,
-    "state": "NOT_GRANTED"
+    "spentMs": 18705,
+    "state": "CLOSED_PASS_STOP",
+    "attempts": 1,
+    "allowFurtherRun": false,
+    "actualStart": "2026-10-08T02:25:07.015543Z",
+    "exactReturn": "2026-10-08T02:27:18.052169Z"
   },
   "oldCreditTransfer": false,
   "skills": "Reuse already-read local find-skills/clean-code/assistant-ui; no installs. Scope only intrinsic scrollbar clearance and bounded actual text/rect observations.",
@@ -44,8 +48,16 @@
     "scope": "scoped CSS bottom clearance and original browser observations",
     "findings": "Keep native bar and auto height; Range/rect cannot prove overlay paint so retain visual review. Original error remains primary; bounded failure screenshot expanded to theme assertions. No registry/store/scroll helper changes.",
     "localScope": "one changed browser/staticimports noEmit only, not wholeWeb/old pure/HTTP",
-    "open": "Nativebar paint/clearance actual pending, no browser grant"
+    "open": "main/Context and separate navigation extension slot/pointer followup; other OS scrollbar modes untested"
   },
   "sourceLocalStoppedAt": "2026-10-08T02:20:17.173057+00:00",
-  "packet": "/private/tmp/arc-scrollbar-clearance-_roj0rzk"
+  "packet": "/private/tmp/arc-scrollbar-clearance-_roj0rzk",
+  "originalSourceEnvelopeBytes": 8388608,
+  "allRetainedBytes": 67108864,
+  "runtimeScratchBytes": 268435456,
+  "envelopeIncludesOriginal8MiB": true,
+  "state": "CLOSED_PASS_STOP",
+  "updatedAt": "2026-10-08T02:29:05.280487+00:00",
+  "allScopeStoppedAt": "2026-10-08T02:30:12.298236+00:00",
+  "review": "APPROVED_LIMITED_FUNCTIONAL_AND_390_OVERLAY_VISUAL_ACCEPTANCE"
 }

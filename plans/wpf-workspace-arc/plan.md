@@ -12,7 +12,7 @@
 - [ ] WPF-WORKSPACEARC01-02：稳定唯一composer与MSG/Recovery完整草稿；真实prepare-await布局变化保持A/B/C、冻结请求、附件成员和焦点。
 - [ ] WPF-WORKSPACEARC01-03：真实conversation/view/pane插件上下文与私有布局命令；延迟activation、禁用重启、A→B→A/关闭重开旧invocation拒绝。
 - [ ] WPF-WORKSPACEARC01-04：两stream lease按有界batch公平推进；隐藏/连接失效撤销；六bodyflight、缓存/累计字节和DOM分项实际验收。
-- [ ] WPF-WORKSPACEARC01-05：仅受影响direct/types及真实App窄屏/双主题/键盘/恢复/并发材料验收，固定source独立review。
+- [x] WPF-WORKSPACEARC01-05：仅受影响direct/types及真实App窄屏/双主题/键盘/恢复/并发材料验收，固定source独立review。
 - [ ] WPF-WORKSPACEARC01-06：合法main接收、必要组合检查与单一status/架构记录交接。
 
 ## 边界与执行
@@ -85,3 +85,7 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-08T02:02:36.270088+00:00：root最终07673限定接受e14功能fixture与106原件对，Close横向/8rem单位修复已验证；双390滚动条压字的原视觉P2保留，TODO05/06继续未完成。后继必须新合法段，当前三actual与两local全部CLOSED。
 
 2026-10-08T02:19:24.174965+00:00：原TODO05新scrollbar准备段仅底部非交互留白与必要原组观察，保e14focushelper和四组验收。Range/rect只辅助、不冒UA paint无遮挡；两主题紧随真实键盘横滚截图，不等待fade。唯一affectedtypes3376通过；候选实际尚未授。[入口](../../docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/entry.json)。
+
+2026-10-08T02:29:05.280487+00:00：scrollbar当前source67a4首actual四组同轮PASS、两390主题bar持续可见且文字/动作/Close位于上方净空；owner已亲看，独立最终review待收。底部非交互1rem与intrinsic50px strip保原e14focus/选择/Close/8rem，未hidebar或等fade。18705ms一次CLOSED且PASS停止，不消费第二。该证据仅当前Chrome overlay模式，非全OS；main/Context、导航extension slot与父task其他功能仍独立OPEN。
+
+2026-10-08T02:30:12.298236+00:00：root3904最终限定接受67a4功能四组与390overlay双主题，原滚动条压字P2在该实际模式CLOSED，TODO05按已限定验收完成。其余TODO01–04的最终组合/主线交付待manager收敛，TODO06仍未main/Context集成；导航plugin-slot与其它OS等不伪称完成。原42pairs/两图/局部准入差异/receipt误用与通知迟到完整保留。

@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-08T02:19:24.174965+00:00；本次不核main |
+| 最近更新 / 最近main同步核验 | 2026-10-08T02:30:12.298236+00:00；本次不核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base17cfaba5e70f39732aba770656e9cab07339e90d/source67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 |
-| 工作树dirty状态 | source/local STOP；只本次metadata候选封包，0runtime |
+| 工作树dirty状态 | 全部18 scope/source/local/runtime STOP；本自然metadata seal后clean，0child/无第二轮 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — 必要affected noEmit0/3376ms一次CLOSED；新视觉browser NOT_RUN，原e14四组历史限定 |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — 实际四组同轮PASS/390两图+早桌面1；18705ms一次CLOSED；affected noEmit0/3376ms CLOSED |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
 | 实现目标 | 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已固定底部1rem非交互留白+Range/rect与真实键盘横滚后截图候选；唯一types通过，等待browser lease |
+| 当前产出 | 四组同轮PASS，原生滚动条可见且与文字/动作/Close分离；root限定独审通过，待受控main/Context组合 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 新原生scrollbar净空视觉实际待验；browser NOT_GRANTED，main/Context未集成 |
+| 当前阻塞 | ACTIVE: main/Context未集成；导航插件slot及其它父task后继独立保留 |
 | 需用户决定 | NONE |
-| Review | PENDING 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — 新视觉修复候选；原e14/root07673不外推 |
+| Review | APPROVED 67a4c981547fc0b8ea2dfcf27823f7b12f1c9117 — APPROVED_LIMITED_FUNCTIONAL_AND_390_OVERLAY_VISUAL_ACCEPTANCE；root3904c5。当前overlay双主题visualP2关闭；main/Context/其它OS未覆盖 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -35,13 +35,15 @@
 | WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 末次prepare-await-stable PASS：同composer、B模型/正文/完整readyref，A冻结命令后durable B、retain/reopen；不承诺准备中B崩溃恢复 |
 | WPF-WORKSPACEARC01-03 | in-progress | workspace_panels_owner | 原5AppPort+2Host纯回归、真实插件有效确认/保稿关闭同轮PASS；失效授权证据仍为受控host/port，不冒所有modal mounted排列 |
 | WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三HTTP2PASS原证据保留；本次六logicalpending/六loading、六200finished完整正文/hidden无新增通过，serverpeak与client分层 |
-| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 本段先两次3/4，e14修后最后4/4与双390/Close ratio1通过；97234三次CLOSED。root07673限定接受功能；滚动条压字视觉P2 OPEN，两旧FAIL与更早阶段不覆盖 |
+| WPF-WORKSPACEARC01-05 | completed | workspace_panels_owner | 67a4四组/390双主题/Close/8rem/可见nativebar；root3904限定功能与当前overlay视觉通过，types3376/actual18705CLOSED；其它OS/全键盘/真实中心不外推 |
 | WPF-WORKSPACEARC01-06 | pending | workspace_panels_owner | NOT_INTEGRATED；需与main Context/既有App/session受控组合，不能盲覆 |
 
 ## 等待记录
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
+| ARC-WAIT-SCROLLBAR-DRAIN | 2026-10-08T02:14:49.518393Z | 2026-10-08T02:17:41.864Z | 资源 | S01测量drain后经理取消未OPEN选择；原时钟未重置 | 本段segment.pause及经理current |
+| ARC-WAIT-SCROLLBAR-LEASE | 2026-10-08T02:20:40.688842Z | 2026-10-08T02:24:21.952Z | 资源 | 源/local已STOP，Picker exactRETURN后经理授首90s | 本段preflight.managerGrant |
 | ARC-WAIT-NARROW-O16 | 2026-10-08T01:21:01.959Z | 2026-10-08T01:24:46.001Z | 资源 | O16唯一authstatus段；经理明确恢复第二lease后才运行 | manager ArcNarrowVisualGrant / second preflight |
 | ARC-WAIT-CLASSIFIER-READY | 2026-10-07T23:39:15.523Z | 2026-10-07T23:49:07.270Z | 资源 | 已固定候选等待唯一Chrome；经理正式grant解除 | 本owner delivery与经理ArcClassifierGrant，见本轮preflight |
 | ARC-WAIT-CLASSIFIER-FAIL | 2026-10-07T23:51:01.826Z | 2026-10-08T00:02:35.586Z | 验证失败 | CSS导航与合法设置目录前置已在新actual走过；新的Send前置失败另记 | 原root9605与本次raw workspaceNamespace/材料后续位置，不冒整体通过 |
@@ -176,3 +178,5 @@
 2026-10-08T02:02:36.270088+00:00：root07673最终独审原样归档，限定功能fixture4/4接受/106pairs独核一致；ARC-VISUAL-NARROW-TAB-01继续OPEN不虚称完整UX通过。全18source/checks STOP；本自然尾正常commit/push，无第四/无新local/main接收。
 
 2026-10-08T02:19:24.174965+00:00：S01 drain等待02:14:49.518393→02:17:41.864后恢复原source准备，clock未重置。唯一新types3376/15000 CLOSED；source67a4，仅CSS/browser变化。准入current12,154,830,848未取max原13,511,688,192的记录差异保留；samecallfree14,400,385,024确高于两线，不倒改。新browser候选0actual，不借旧97234。
+
+2026-10-08T02:28:21.638540+00:00：scrollbar首轮START02:25:07.015543→18705ms运行→exactRETURN02:27:18.052169，4/4/final2PNG/early1。4PID2PGID absent、scratch/cachelinks absent、rawHTTP/contextclosed；本次Chrome/parent/outerEOF分别true，无独立portprobe。PASS停止无第二。根独审待收；[唯一结果输入](../../docs/evidence/wpf-workspace-arc/scrollbar-clearance-20261008/final-review-input.json)。

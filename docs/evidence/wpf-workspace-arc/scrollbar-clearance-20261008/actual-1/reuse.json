@@ -1,0 +1,71 @@
+{
+  "previousConsumedPacket": "/private/tmp/arc-geometry-focus-nterbbef",
+  "source": "67a4c981547fc0b8ea2dfcf27823f7b12f1c9117",
+  "changedSource": [
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2564,
+        "sha256": "5645379fc6be5c1dd288471a3a95e7ae149a598615b8989470fa03863f094c2b",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "539457a8145f2b1ab30a915c2d69d549a428b7d1"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/src/workspace-layout/layout.css",
+        "bytes": 2600,
+        "sha256": "6e6a1f165a386fbe244be1d997269661fb2c17df268597ff9535e881660ac6d2",
+        "gitPath": "apps/web/src/workspace-layout/layout.css",
+        "blob": "72d716fcd9ffb436c031048a7c6d89b03ad847e3"
+      }
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 40502,
+        "sha256": "d7c93f11dc1692c442d0056da3763182cd865210e8ecd99e75892a9fe011d84f",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "d97ecdbfbe85e342adb3bd573492a51dcd416765"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 43734,
+        "sha256": "cb599abbbb48c95e1ad3d4d5f77352e814cd7fdac08b725aa652b8ea7d4fe3c6",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "081cb913a5b56a7ffdffb8d5f816bdc2a9818ec8"
+      }
+    }
+  ],
+  "unchangedSourcePins": 205,
+  "sourcePinCount": 207,
+  "externalPinCount": 43,
+  "resolverCount": 33,
+  "focusHelperUnchanged": true,
+  "callers": [
+    {
+      "name": "run.py",
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "bytes": 13757,
+      "unchanged": true
+    },
+    {
+      "name": "worker.mjs",
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778",
+      "bytes": 5014,
+      "unchanged": true
+    },
+    {
+      "name": "capture.py",
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12",
+      "bytes": 8351,
+      "unchanged": true
+    }
+  ],
+  "scope": "Only CSS bottom noninteractive clearance and original theme loop actual keyboard scroll + bounded Range/rect observation. All4 groups/close8rem/focus/selection/material preserved. No native lifecycle delta.",
+  "globalFloor": "binding minimumFreeBytes is historical global complete sum; manager-authorized grant may routine rebind data after max(frozen/current/intrinsic), preserving before."
+}
