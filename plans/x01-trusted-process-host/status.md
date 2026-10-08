@@ -24,11 +24,11 @@
 | 检查状态 | PASSED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 10distinct分轮：9pass+1fixture失败→定向1pass；typed原文定向1pass；两focusedtypes0。首次失败保留。 |
 | Review | APPROVED abc0736dfbfe4c3dcbdd11d73e9386573ef565db chatui01_owner 2026-10-07T19:42:43.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；0P1/P2。见verifier-extension/review-approval-transcript.json（原结论转录，非新审）。 |
 | 已集成main状态 / HEAD | INTEGRATED 3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df；本verifier扩展4叶逐blob等批准abc0736。T7/部署/完整runtime-center链仍未验。 |
-| 最近更新时间 | 2026-10-07T20:34:44.730Z |
+| 最近更新时间 | 2026-10-08T00:30:51.422Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
-| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v4 ACTIVE/11；2026-10-07T20:28:34.055Z原子amend仅移除runtime.ts，其余保留。旧execution两叶永久交回事实不变。 |
+| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v5 ACTIVE/9；2026-10-08T00:30:21.124Z仅移出configuration.ts/configuration.test.ts；runtime与execution既有交回保持。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -103,3 +103,7 @@ clean-code metadata复核：现阶段与历史分开、原审结论注明转录�
 ## Verifier扩展主线接收
 
 2026-10-07T20:34:44.730Z：只读核main/origin3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df clean，中央receipt at20:33:13.567Z，四叶共30016B逐blob等已审abc0736；见[接收核验](../../docs/evidence/x01-trusted-process-host/verifier-extension/main-accepted.json)。中央notValidated是原审边界历史，不能据此否认当前源码已main；本段未重测。T7、runtime分派、center判决/完成门禁及部署仍未验，X01TP-05保持开放。runtime.ts永久交回不变，claimv4/11保留；提交push后全写STOP。架构后继继续由原架构owner根据此main更新，未冒图已更新。
+
+## 2026-10-08T00:30:51.422Z 配置双叶永久交回
+
+本独立3MiB metadata段00:30:21.041Z开始，fresh旧v4/11本人；两配置叶此前23:42:42Z永久STOP，现再次确认并原子amend至v5/9，回执configuration-handback-receipt.json。两叶与main728同字节，无未main差量。新runtime独立树取得exact claim后方可写，本owner不恢复这两叶；其余九scope保留，T7未验事实不变。clean-code核命名/单一status/历史与现态/边界，0产品/工程/PG。预算含旧index额外原子副本2,129,500B；内容提交push后全部STOP。

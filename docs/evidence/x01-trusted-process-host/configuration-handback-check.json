@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-08T00:30:51.422Z",
+  "main": "728d3165f17dfe8272c8ffce6e1eff60d9602d6b",
+  "rows": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 7963,
+      "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 12178,
+      "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b"
+    }
+  ],
+  "newOwner": "X01-VERIFIER-RUNTIME01/db_transaction_owner",
+  "receiptAt": "2026-10-08T00:30:21.124Z",
+  "quality": "Exact two paths only; historical raw and prior receipt unchanged; existing permanent STOP archived; new owner must take before source writes",
+  "budget": {
+    "capBytes": 3145728,
+    "atomicIndexBytes": 2129500,
+    "metadataObjectsManagementUpper": 600000,
+    "conservativeTotal": 2729500
+  },
+  "engineeringChildren": 0
+}
