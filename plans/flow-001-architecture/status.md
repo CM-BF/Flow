@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:34:18.637Z / main2b52b2355；O16最小实验环境修复与6项直接结果已独审/主线接收，实际新规划候选待独立模型额度。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:47:56.807Z / main89a27b983；TUI夹具版本接缝已审接收，O16本次真实规划已结束且运行资源归还，结果待独审。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -18,9 +18,9 @@
 | 已集成main状态 / HEAD | main2b52b2355含O16实验环境修复；原插件客户端/215登记和实际部署原件已接收。个人e15/Web779仍为既有部署事实，本段未操作服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 原生规划验收入口的登录环境已完成最小修正并通过零模型检查；既有工具权限和私有材料边界保持。真实规划尚未验证成功。 |
-| 下一可用交付 | 固定候选已就绪，获得一次新模型运行额度并完成当时资源准入后，验证原始目标能否形成真实计划；其他已审交付继续接收。 |
-| 当前阻塞 | ACTIVE: 真实目标规划等待本次新模型额度决定，旧三次已封存且不可复用；双端接续仍未完整通过，工程写入资格保留原待决边界。 |
+| 当前产出 | 原生规划已生成一份真实的两节点依赖提案，实际运行资源已归还；终端接续夹具版本修复已独审并合入主线。 |
+| 下一可用交付 | 独立核对真实提案、权限与用量后，给出确认和后继执行的具体候选；终端与网页接续继续准备限定复验。 |
+| 当前阻塞 | ACTIVE: 本次规划结果正在封存独审，确认及子任务执行尚未授权；双端完整旅程仍未通过，不能由夹具局部检查代替。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -36,6 +36,7 @@
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04-DEPENDENCY-READ-01 | completed | b01_bounded_reads / Mika；Lead接收 | GDEP01固定bcbce5已mainfe26cc936，16pure/8真实PG独审通过；199依赖一次读取、原错误顺序和项目锁边界已验，不冒完整execute/native/progression或性能结论 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
+| FLOW-001-T04-BACKUP-01 | pending | Execution Lead（实施owner未领取） | REQ-19跨时点备份恢复仅登记只读研究输入；旧库与较新runner/journal混用不得误重放副作用，专库场景NOT_RUN，排在当前规划与聊天交付之后；未授权个人恢复或新负载 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
 | FLOW-001-T03-QUEUE-ACK-01 | pending | Execution Lead与Web协调，产品writer未领取 | Web/TUI矛盾队列回执的共享纯规则与两消费者，当前仅源码发现/NOT_RUN，个人发布和默认宿主定位优先 |
 | FLOW-001-T03-ERROR-01 | pending | Execution Lead排期 / 原runner与中心owner待领取 | 失败轻摘要类别/阶段/可选动作，当前源码与个人只读缺口已记录；发布和双槽验收后实施，0新探针/产品写入 |
@@ -298,3 +299,9 @@ TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEE
 2026-10-08T01:26:07.128Z：O16原owner实际01:22:53.287Z开始、01:23:21.418Z归还；同native2.1.290仅HOME变化，A未登录/exit1且原失败保留，B公开已登录/exit0。assignment_review对23a221c0a的16绑定及2继承作限定结果忠实性APPROVED/0P1P2；5PID/3组absent、双EOF，private427B保留。正常共享认证初始化/刷新可能写入，A可能影响B，故不追认旧失败根因、不证明query资格。0新SDK，累计3不变；后继只准备显式正常HOME环境策略、保持private配置/材料/工具权限与旧许可拒绝，第四query仍NOT_GRANTED。[唯一结果](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/result-analysis.json)与[归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/auth-home-factor-once/window-return.json)。
 
 2026-10-08T01:34:18.637Z：O16正常HOME策略sourcee5c7fd9d6、固定候选2c121937c已获assignment限定源码/6项直接结果独审，main2b52b2355接收；只改实验环境Module及直接fixture/test，不改生产认证/服务。6/6、815ms、0native/auth/PG/SDK，原owner正常归还。新1次planner具体参数沿[固定候选](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-normal-home-candidate/candidate.json)，已向GO合并为完整自然语言路径单一运行blocker；第4query仍NOT_GRANTED，无新permit。此为有明确环境差异依据的下一候选，不称旧失败已归因或实际调用已成功。[主线接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-policy-intake.json)。
+
+2026-10-08T01:38:13.161Z：GO已给定O16-GO-PLANNER-NORMAL-HOME-20261008新1次原始planner，旧3封存、累计最多4；原owner在e4b09cb25记录授权/新permit但尚无reservation/实际启动。原source/env/1proposal0apply0child及权限界限保持，实际待D01资源选择，准备不占holder。[原授权接收](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)。
+
+2026-10-08T01:47:56.807Z：O16本次实际START01:45:07.705Z，terminal01:45:32.385Z，精确RETURN01:46:25.059Z；1次planner成功、累计SDK4，中心1proposal/0apply/2node1edge/0child，SDK估价USD0.0492524与账户实际费用UNKNOWN分列。5PID/3组ESRCH、双EOF、DB连接空且server/adminclosed；DB13,376,535B/private23,808B按原pause KEEP，02:00:32.316Z到期仅拒绝并保留，不自动清理/后继执行。结果尚待固定独审，不作为O16完整Done；运行/认证窗口已立即归还Web/Mika。唯一[运行归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/window-return.json)。
+TUI01F的8379固定夹具修正/4真实生产consumer注入检查及focused types获Lead独立限定APPROVED，main89a27b983仅收3源、typeconfig、Interface与小回执；20绑定121904B和旧raw仍canonical一次保存。原R2的1选中0通过/causeUNKNOWN及KEEP不变，真实双端新旅程尚未开始。[接收](../../../m2-integration/docs/evidence/i02/tui01f-fixture-source-alignment-intake.json)。
+REQ-19跨时点备份恢复新增验收已归原T04，当前仅只读研究/NOT_RUN；不把普通重启或产物回退当旧库与较新journal一致恢复，不新增个人DB或负载动作。

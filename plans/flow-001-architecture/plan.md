@@ -684,3 +684,12 @@ GO只读固定main b9ea96aa2013a1ccb13eed7f910d89ff7e5d302b：Web conversations/
 同固定源server/conversations/index.ts:50–61未将浏览器abort传入只读数据库事务，已有每SQL10秒/业务池8；这是待测资源边界，不是已证泄漏或卡顿。沿现S01/POOL-01/REQ17小例核快速切换、受控持有读取、取消后连接释放与当前视图延迟，再决定有界取消/超时/排队方案；不新增扫描任务或预算。断开观察绝非取消持久任务/写命令，不按可复用backend PID杀查询。reasoning懒读仍引用原MATURE06-LAZY01的Web接线owner，不重复派工。
 
 保原50ms缓存切换目标，分别记录初始反馈、所选正文可读和中心耗时；[INP边界](https://web.dev/articles/inp)到下一帧而非后继异步正文完成，不能用骨架或rAF代替完整切换证据。本条仅吸收GO与只读审查结论，0新增产品检查/服务访问/模型调用，不干扰现有写域。
+
+
+### REQ-19 / T04：跨时点备份恢复的副作用核对（规划输入，NOT_RUN）
+
+- [ ] **FLOW-001-T04-BACKUP-01** 中心从较早备份恢复后，历史可读，回退的队列不能自动重复已发生的文件/工具副作用。Execution Lead安排原SVC/runner owner在当前O16、聊天/Arc及ready交付之后细分，尚无产品writer或运行窗口；不另建恢复平台。
+
+GO的固定`main2b52b2355`八文件只读覆盖审查确认：SVC02明确没有恢复备份证据，SVC03部署、SVC06产物回退及S01P07/C02普通重启证据不能代替数据库回退验收；`scheduler.ts:13`启动会将queued重新标记为可派发，因此跨时点混用属于待测准入风险，不是已发生事故。后继最小专库场景：保存执行前备份→零模型fixture产生一次自有哨兵副作用及较新journal→隔离恢复旧库→证明默认不误重放，并通过既有接口核对旧runner身份/unknown后明确恢复。该小例不替代完整灾备验收。
+
+持久面清单须分列DB、runner journal、worktree/Git、插件内容、配置及受保护凭据的归属、版本一致性和恢复责任；缺失或不可一致恢复明确未知/步骤，不读出或复制秘密。只记录研究条件，本条不授权个人DB备份/恢复、新负载或凭据操作。[PostgreSQL16 SQL dump](https://www.postgresql.org/docs/16/backup-dump.html)说明单DB快照、globals及多DB一致性范围；[WAL归档](https://www.postgresql.org/docs/16/continuous-archiving.html)不覆盖配置文件。固定产物/普通进程重启/真正跨时点恢复分别验收。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-08T01:34:18.637Z / main2b52b2355；O16最小实验环境修复与6项直接结果已独审/主线接收，实际新规划候选待独立模型额度。 |
+| 最近更新 / 最近main同步核验 | 2026-10-08T01:47:56.807Z / main89a27b983；TUI夹具版本接缝已审接收，O16本次真实规划已结束且运行资源归还，结果待独审。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,9 +21,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 原生规划验收入口的登录环境已完成最小修正并通过零模型检查；既有工具权限和私有材料边界保持。真实规划尚未验证成功。 |
-| 下一可用交付 | 固定候选已就绪，获得一次新模型运行额度并完成当时资源准入后，验证原始目标能否形成真实计划；其他已审交付继续接收。 |
-| 当前阻塞 | ACTIVE: 真实目标规划等待本次新模型额度决定，旧三次已封存且不可复用；双端接续仍未完整通过，工程写入资格保留原待决边界。 |
+| 当前产出 | 原生规划已生成一份真实的两节点依赖提案，实际运行资源已归还；终端接续夹具版本修复已独审并合入主线。 |
+| 下一可用交付 | 独立核对真实提案、权限与用量后，给出确认和后继执行的具体候选；终端与网页接续继续准备限定复验。 |
+| 当前阻塞 | ACTIVE: 本次规划结果正在封存独审，确认及子任务执行尚未授权；双端完整旅程仍未通过，不能由夹具局部检查代替。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -624,3 +624,8 @@ TUI诊断三文件已审并于main0e8bfa7b3接收，原R2的1选中0通过及KEE
 本批OPS16实际采用：两项插件来源由一次213→215看板重载交付，协调配置与公开ACCESS同时核对；原213漏配置失败和独立计时差异保留。SDK六源独审后即main866f接收，原owner已收口并交回产品scope；本批不再复制预备源码/旧raw，O16实际原件保留canonical固定Git来源，主线仅收必要接收引用。没有重跑已绿检查或将本批当FLOW整体Done。
 
 2026-10-08T01:34:18.637Z：O16正常HOME策略sourcee5c7fd9d6、固定候选2c121937c已获assignment限定源码/6项直接结果独审，main2b52b2355接收；只改实验环境Module及直接fixture/test，不改生产认证/服务。6/6、815ms、0native/auth/PG/SDK，原owner正常归还。新1次planner具体参数沿[固定候选](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-normal-home-candidate/candidate.json)，已向GO合并为完整自然语言路径单一运行blocker；第4query仍NOT_GRANTED，无新permit。此为有明确环境差异依据的下一候选，不称旧失败已归因或实际调用已成功。[主线接收](../../../m2-integration/docs/evidence/i02/o16-normal-home-policy-intake.json)。
+
+2026-10-08T01:38:13.161Z：GO已给定O16-GO-PLANNER-NORMAL-HOME-20261008新1次原始planner，旧3封存、累计最多4；原owner在e4b09cb25记录授权/新permit但尚无reservation/实际启动。原source/env/1proposal0apply0child及权限界限保持，实际待D01资源选择，准备不占holder。[原授权接收](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/authorization-preparation.json)。
+
+2026-10-08T01:47:56.807Z：O16本次实际START01:45:07.705Z，terminal01:45:32.385Z，精确RETURN01:46:25.059Z；1次planner成功、累计SDK4，中心1proposal/0apply/2node1edge/0child，SDK估价USD0.0492524与账户实际费用UNKNOWN分列。5PID/3组ESRCH、双EOF、DB连接空且server/adminclosed；DB13,376,535B/private23,808B按原pause KEEP，02:00:32.316Z到期仅拒绝并保留，不自动清理/后继执行。结果尚待固定独审，不作为O16完整Done；运行/认证窗口已立即归还Web/Mika。唯一[运行归还](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-plan-normal-home-20261008-once/window-return.json)。
+TUI01F的8379固定夹具修正/4真实生产consumer注入检查及focused types获Lead独立限定APPROVED，main89a27b983仅收3源、typeconfig、Interface与小回执；20绑定121904B和旧raw仍canonical一次保存。原R2的1选中0通过/causeUNKNOWN及KEEP不变，真实双端新旅程尚未开始。[接收](../../../m2-integration/docs/evidence/i02/tui01f-fixture-source-alignment-intake.json)。
