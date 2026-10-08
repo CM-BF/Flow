@@ -7,10 +7,16 @@ const STAGES = Object.freeze({
   plan: { file: 'plan.json', outcome: 'actual-proposal-awaiting-owner', state: 'planned', next: 'confirm' },
   confirm: { file: 'confirmation.json', outcome: 'confirmed-awaiting-separate-children-permit', state: 'confirmed', next: 'children' },
   renew: { file: 'confirmation.json', outcome: 'confirmed-awaiting-separate-children-permit', state: 'confirmed', next: 'children' },
+  reauthorize: { file: 'execution-authorization.json', outcome: 'reauthorized-awaiting-separate-children-permit', state: 'reauthorized', next: 'continued-children', executionRecords: true },
+  'continued-children': { file: 'continued-children.json', outcome: 'artifacts-awaiting-independent-review', state: 'awaiting-independent-review', next: 'continued-decide', executionRecords: true, nativePhase: 'children' },
+  'continued-decide': { file: 'continued-decision.json', executionRecords: true },
   children: { file: 'children.json', outcome: 'artifacts-awaiting-independent-review', state: 'awaiting-independent-review', next: 'decide' },
   decide: { file: 'decision.json' }, rehearse: { file: 'decision.json' },
 });
 export function stageSpec(phase) { assert(Object.hasOwn(STAGES, phase)); return STAGES[phase]; }
+const LEGACY_RECORDS = Object.freeze({ resources: 'resources.json', state: 'journey.json', pause: 'pause.json' });
+const EXECUTION_RECORDS = Object.freeze({ resources: 'execution-resources.json', state: 'journey-execution.json', pause: 'execution-pause.json' });
+export function stageRecords(phase) { return stageSpec(phase).executionRecords ? EXECUTION_RECORDS : LEGACY_RECORDS; }
 export const recordDigest = value => digest(JSON.stringify(value));
 
 /** No login boolean: a new trusted handoff must match the fixed source and environment recipe. */
@@ -33,7 +39,8 @@ function publicBinding(state) {
     return [phase, structuredClone(reference)];
   }));
   return { goalId: state.goalId, proposalId: state.proposal.id, proposalDigest: state.proposal.proposalDigest,
-    profiles, confirmation: state.confirmationBinding ?? null };
+    profiles, confirmation: state.confirmationBinding ?? null,
+    ...(state.executionAuthorizationBinding ? { executionAuthorization: state.executionAuthorizationBinding } : {}) };
 }
 
 /** Immutable review material: closure precedes the receipt; expiry refuses continuation, never deletes. */
@@ -42,6 +49,8 @@ export function pauseReceipt({ run, phase, sourceDigest, state, report, resource
   assert.equal(state.stage, spec.state); assert.equal(report.outcome, spec.outcome);
   assert(!report.primaryFailure && !report.failure && !report.cleanupFailure && !report.pauseFailure);
   assert.equal(resources.sourceDigest, sourceDigest); assert.equal(state.sourceDigest, sourceDigest);
+  if (phase === 'reauthorize') assert(Date.parse(state.executionAuthorizationBinding?.expiresAt) >= now + REVIEW_MS + 150000,
+    'New authorization cannot expire within its fresh review and full child stage.');
   return { kind: 'flow.o16.pause.v1', run, phase, next: spec.next, sourceDigest,
     closedAt: new Date(now).toISOString(), reviewUntil: new Date(now + REVIEW_MS).toISOString(),
     binding: publicBinding(state), stateDigest: recordDigest(state), reportDigest: recordDigest(report),
@@ -92,7 +101,7 @@ export function stagePassed(phase, report, receipt) {
   if (spec.next) return report?.outcome === spec.outcome && receipt?.phase === phase && receipt?.next === spec.next
     && receipt.reportDigest === recordDigest(report) && receipt.resourcesDigest === recordDigest(report.resources)
     && Date.now() < Date.parse(receipt.reviewUntil);
-  if (phase === 'decide' && report?.retention === 'keep-origin-database-and-both-directories'
+  if (['decide', 'continued-decide'].includes(phase) && report?.retention === 'keep-origin-database-and-both-directories'
     && report.resources?.origin && report.resources.retention === report.retention) {
     try { closure(report.resources); } catch { return false; }
     return ['independently-accepted', 'independently-rejected'].includes(report.outcome);

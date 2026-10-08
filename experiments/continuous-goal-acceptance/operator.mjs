@@ -11,7 +11,7 @@ import { sourceIdentity, ROOT } from './identity.mjs';
 import { BOUNDS, runPaths, measureRun, measureFinalRun, measurementFailure } from './operator-bounds.mjs';
 import { recordQueryCount } from './query-policy.mjs';
 import { startTotalDeadline } from './operator-watchdog.mjs';
-import { stageSpec, stagePassed, assertNativeReady } from './stage-policy.mjs';
+import { stageSpec, stageRecords, stagePassed, assertNativeReady } from './stage-policy.mjs';
 import { readPermitFile, validatePermit } from './permit.mjs';
 import { nativeEnvironmentPolicy, prepareDriverEnvironment } from './native-environment.mjs';
 
@@ -82,17 +82,19 @@ export async function supervise({ child, sample, persist, markStop, outputFailur
 export function operationArguments(args) {
   if (args.length === 1 && args[0] === '--rehearse') return { phase: 'rehearse' };
   const [flag, run, file] = args, phase = flag?.slice(2);
-  assert(args.length === 3 && flag === `--${phase}` && ['plan', 'confirm', 'renew', 'children', 'decide'].includes(phase));
+  assert(args.length === 3 && flag === `--${phase}` && ['plan', 'confirm', 'renew', 'reauthorize', 'children', 'continued-children', 'decide', 'continued-decide'].includes(phase));
   runPaths(run, phase); assert(typeof file === 'string' && file.length > 0);
   return { phase, run, file: resolve(file) };
 }
 export async function operate({ phase = 'rehearse', run: selectedRun, file } = {}) {
-  const spec = stageSpec(phase);
-  const rawPermit = ['plan', 'children'].includes(phase) ? await readPermitFile(file) : undefined;
+  const spec = stageSpec(phase), records = stageRecords(phase), nativePhase = spec.nativePhase ?? phase;
+  const rawPermit = ['plan', 'children'].includes(nativePhase) ? await readPermitFile(file) : undefined;
   const identity = await sourceIdentity();
   if (rawPermit) {
     // The driver subsequently binds children to the actual persisted confirmation before reserving a slot.
-    const permit = validatePermit(rawPermit, { identity, phase, confirmation: rawPermit.confirmation, environmentDigest: nativeEnvironmentPolicy.digest });
+    const permit = validatePermit(rawPermit, { identity, phase: nativePhase, confirmation: rawPermit.confirmation,
+      executionAuthorization: phase === 'continued-children' ? rawPermit.executionAuthorization : undefined, environmentDigest: nativeEnvironmentPolicy.digest });
+    if (phase === 'continued-children') assert.equal(permit.kind, 'flow.o16.phase-permit.v3');
     assertNativeReady('native', permit, nativeEnvironmentPolicy.digest);
   }
   assert.equal(process.env.FLOW_O16_PG_WINDOW, 'approved-one-shot');
@@ -108,7 +110,7 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   if (phase !== 'rehearse') await mkdir(paths.operator, { mode: 0o700 });
   await writeRecord(join(paths.operator, 'reservation.json'), { kind: 'flow.o16.operator.v1', run, sourceDigest: identity.digest,
     base: identity.base, phase, startedAt: new Date().toISOString(), bounds: BOUNDS, outcome: 'unknown',
-    nativeQueries: ['rehearse', 'confirm', 'renew', 'decide'].includes(phase) ? 0 : 'not-started' }, { exclusive: true });
+    nativeQueries: ['plan', 'children'].includes(nativePhase) ? 'not-started' : 0 }, { exclusive: true });
   const watchdog = await startTotalDeadline({ directory: paths.operator, run, sourceDigest: identity.digest });
   await writeRecord(join(paths.operator, 'watchdog.json'), { pid: watchdog.pid, deadline: watchdog.deadline, state: 'armed' }, { exclusive: true });
   const handles = ['stdout.txt', 'stderr.txt'].map(name => openSync(join(paths.operator, name), 'wx', 0o600));
@@ -141,7 +143,7 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
       markStop: stop, persist: report => writeRecord(join(paths.operator, 'supervision.json'), report), sample: async () => {
         await registration;
         let resources;
-        try { resources = await readRecord(join(paths.evidence, 'resources.json')); }
+        try { resources = await readRecord(join(paths.evidence, records.resources)); }
         catch (error) { if (error.code !== 'ENOENT') throw Object.assign(error, { measurementStage: 'resources-record' }); }
         if (resources && resources.sourceDigest !== identity.digest) throw Object.assign(new Error('Resource source binding differs.'),
           { code: 'O16_RESOURCE_FACTS', measurementStage: 'resources-record', constraint: 'sourceDigest' });
@@ -158,18 +160,18 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
     await boundedRead(pipesClosed, 1000).catch(() => { outputFailed = true; });
   } finally { for (const fd of handles) { fsyncSync(fd); closeSync(fd); } }
   const final = await readRecord(join(paths.evidence, spec.file), 262_144).catch(() => null);
-  const pause = spec.next ? await readRecord(join(paths.evidence, 'pause.json')).catch(() => null) : undefined;
-  const measurement = await measureFinalRun(run, identity.digest), metrics = measurement.metrics;
+  const pause = spec.next ? await readRecord(join(paths.evidence, records.pause)).catch(() => null) : undefined;
+  const measurement = await measureFinalRun(run, identity.digest, { phase }), metrics = measurement.metrics;
   const passed = !outputFailed && result.outcome === 'processes-complete' && metrics && stagePassed(phase, final, pause);
   const success = phase === 'rehearse' ? 'rehearsal-passed' : spec.next ? 'stage-paused' : 'decision-settled';
   const summary = { run, phase, sourceDigest: identity.digest, outcome: passed ? success : 'unknown-retain', selected: 1,
     process: result, capturedRawBytes: raw, retainedRawBytes: written, finalMetrics: metrics,
     measurementFailure: measurement.failure,
-    nativeQueryCalls: ['plan', 'children'].includes(phase) ? recordQueryCount(final ?? {}) : final?.nativeQueryCalls ?? 'unknown', pause: pause ?? null };
+    nativeQueryCalls: ['plan', 'children'].includes(nativePhase) ? recordQueryCount(final ?? {}) : final?.nativeQueryCalls ?? 'unknown', pause: pause ?? null };
   const summaryBytes = Buffer.byteLength(JSON.stringify(summary, null, 2) + '\n');
   if (!metrics || metrics.rawBytes + summaryBytes > BOUNDS.rawBytes) summary.outcome = 'unknown-retain';
   await writeRecord(join(paths.operator, 'result.json'), summary);
-  const finalMeasurement = await measureFinalRun(run, identity.digest);
+  const finalMeasurement = await measureFinalRun(run, identity.digest, { phase });
   if (!finalMeasurement.metrics) {
     summary.outcome = 'unknown-retain'; summary.measurementFailure ??= finalMeasurement.failure;
     await writeRecord(join(paths.operator, 'result.json'), summary);
