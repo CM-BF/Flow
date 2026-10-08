@@ -53,9 +53,23 @@
     "maxAttempts": 2,
     "totalMs": 180000,
     "eachMs": 90000,
-    "spentMs": 0,
-    "attempts": [],
-    "state": "WAIT_MANAGER_LEASE"
+    "spentMs": 19006,
+    "attempts": [
+      {
+        "attempt": 1,
+        "packet": "/private/tmp/arc-tooltip-keyboard-eahbr_m4",
+        "source": "60caca5210b05a88e4817390a3bd4d4e840d319e",
+        "chargeMs": 19006,
+        "passedGroups": 3,
+        "selectedGroups": 4,
+        "finalPNG": 2,
+        "terminal": "2026-10-08T00:58:36.852404Z",
+        "returnAt": "2026-10-08T00:58:57.256215Z",
+        "ownedReturn": true,
+        "failure": "Final after-reload route-only draft observation found multiple records. Actual does not retain those duplicate contents; static App fresh UUID/journal per-view identity supports exact saved id+namespace+viewKey+route assertion."
+      }
+    ],
+    "state": "OPEN_SECOND_ATTEMPT_AVAILABLE"
   },
   "local": {
     "maxChildren": 2,
@@ -76,5 +90,6 @@
       "assistant-ui"
     ],
     "actual": "One observation helper keeps selector authority unique; keyboard event sequence matches installed implementation; no helper framework/shared component mutation. Existing failing hover retained in old bundle."
-  }
+  },
+  "nextDelta": "Keep route-only ambiguity rejection for existing view observations. Capture B saved identity before close; after reload match exact identity and compare allBdata (stronger than old notNull)."
 }

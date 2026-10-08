@@ -5,8 +5,8 @@ import { startWorkspaceLayoutFixture, workspaceReadKind } from "./workspace-layo
 import type { DraftRecord } from "../src/recovery/journal";
 import { readRecoveryDraft } from "../src/recovery/binding";
 
-async function draftRecord(page: Page, route: string) {
-  const record = await page.evaluate(async routeId => {
+async function draftRecord(page: Page, route: string, identity?: { id: string; namespace: string; viewKey: string }) {
+  const record = await page.evaluate(async ({ routeId, identity }) => {
     const names = await indexedDB.databases();
     if (!names.some(item => item.name === "flow.conversation-recovery.v1")) return null;
     return new Promise<DraftRecord | null>((resolve, reject) => {
@@ -18,11 +18,12 @@ async function draftRecord(page: Page, route: string) {
       open.onsuccess = () => {
         if (expired) { open.result.close(); return; }
         const database = open.result, tx = database.transaction("records", "readonly"), request = tx.objectStore("records").getAll();
-        request.onsuccess = () => { clearTimeout(timer); database.close(); const matches = request.result.filter(value => value.kind === "draft" && value.owner.routeId === routeId); if (matches.length > 1) { reject(Error("Ambiguous route draft observation")); return; } resolve(matches[0] ?? null); };
+        request.onsuccess = () => { clearTimeout(timer); database.close(); const matches = request.result.filter(value => value.kind === "draft" && value.owner.routeId === routeId
+          && (!identity || (value.id === identity.id && value.namespace === identity.namespace && value.owner.viewKey === identity.viewKey))); if (matches.length > 1) { reject(Error("Ambiguous route draft observation")); return; } resolve(matches[0] ?? null); };
         request.onerror = () => { clearTimeout(timer); database.close(); reject(request.error); };
       };
     });
-  }, route);
+  }, { routeId: route, identity });
   return record ? { ...record, data: readRecoveryDraft(record.data) } : null;
 }
 
@@ -299,7 +300,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
         await owner.getByRole("menuitem", { name: "Close this chat", exact: true }).click();
         return page.getByRole("dialog", { name: "Leave attachment drafts?", exact: true });
       };
-      const retained = (await draftRecord(page, "conversation:chat-4"))!.data;
+      const retainedRecord = (await draftRecord(page, "conversation:chat-4"))!;
+      const retained = retainedRecord.data;
       await expect(await closeFromPlugin()).toBeVisible();
       await page.getByRole("button", { name: "Keep this page", exact: true }).click();
       await expect(input(4)).toHaveValue("Independent B while A prepares");
@@ -338,7 +340,11 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const writes = fixture!.fixture.requests.filter(row => row.method === "POST").length;
       await page.reload(); await expect(page.getByRole("tab", { name: "Workspace 2", exact: true })).toHaveAttribute("aria-selected", "true");
       expect(fixture!.fixture.requests.filter(row => row.method === "POST")).toHaveLength(writes);
-      expect(await draftRecord(page, "conversation:chat-4")).not.toBeNull();
+      // Reload creates fresh view ownership; route alone is not a saved-draft identity.
+      const savedIdentity = { id: retainedRecord.id, namespace: retainedRecord.namespace, viewKey: retainedRecord.owner.viewKey };
+      const afterReload = await draftRecord(page, "conversation:chat-4", savedIdentity);
+      expect(afterReload?.data).toEqual(retained);
+      result.observations.persistedDraftIdentity = savedIdentity;
       result.observations.persistedLayout = publicLayout;
     });
     expect(fixture.errors).toEqual([]); expect(bodyObserver!.snapshot().errors).toEqual([]); expect(result.passed).toEqual(result.selected);
