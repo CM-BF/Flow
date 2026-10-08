@@ -134,3 +134,7 @@ Target `5cf8a5dd529a77f7de054c2ed476cf62213af665`，base `e5c7fd9d664de11ab853c5
 ## 2026-10-08T03:39:08.209Z 固定共享计量接缝待独审
 
 Target `82265ef377e56809e766d12fb3a298777d3966c8`，exact3生产/2测试路径及原件见[meter-reuse manifest](../../docs/evidence/o16/meter-reuse/manifest.json)。11不同通过，首语法FAIL保留并可反向重建前像，658ms/4786B/6个串行helper与两组归还明确。请核200ms总期限/close与首因锁定、两直接consumer、shared module准确绑定和限定消失语义；旧实际失败不被合成例归因，旧once不复活。外部依赖/Python进程是明确新增边界，不冒无进程开销。作者未自批；无PG/native/个人材料。
+
+## Meter reuse final intake
+
+2026-10-08T03:52:38.142Z：source82265/deliveryd2a8已获assignment APPROVED_LIMITED_METER_REUSE_SOURCE_AND_DIRECT_RESULTS（0P1/P2），唯一I02记录`docs/evidence/i02/o16-meter-reuse-intake.json` at03:44:14.324Z，main/origin560b3db9e。只批准源码和11不同局部结果；原ENOENT路径NOT_RECORDED、SDKentry5/完成费用UNKNOWN，未授权任何新query。
